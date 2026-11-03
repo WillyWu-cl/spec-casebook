@@ -31,7 +31,8 @@ Spec: <file names>
 
 Source tags: `[PM:<board>]`, `[DS:<board>]`, `[MX:<board>]` (board IDs in `specs/<date>/extracted/boards/`),
 `[DS: flow arrow <node> <URL>]`, `[Req: REQ-…]` (request ledger), `[Build: <TRCode> …]` (RD build notes),
-`[Rule n: …]` (coverage rules), `[DS:figma <label> <node>]` (a Figma-only frame). `check.ts` reads `Walked by:`,
+`[Rule n: …]` (coverage rules), `[DS:figma <label> <node>]` (a Figma-only frame), `[Domain: K<nn>]` (product
+domain knowledge, `library/<product>/domain/`). `check.ts` reads `Walked by:`,
 the three grids, the ledger table, `arrows.json` and `figma-frames.json`, so keep those exact forms.
 
 One requirement per observable behavior. Split compound sentences. Source priority (user rule, 2026-10-19): the

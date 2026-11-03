@@ -27,11 +27,14 @@ export type Manifest = {
 // A feature id is <product>/<feature>, both kebab-case (user, 2026-10-29): library/pdr/ai-mini-drama.
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*\/[a-z0-9]+(-[a-z0-9]+)*$/;
 
+// Product-level folders that are not features: library/<product>/domain/ holds the product's domain knowledge.
+const PRODUCT_FOLDERS = new Set(['domain']);
+
 /** Every feature in the library as <product>/<feature>. */
 export function listFeatures(): string[] {
   if (!existsSync(LIBRARY)) return [];
   const dirs = (d: string) => readdirSync(d).filter(f => !f.startsWith('.') && statSync(join(d, f)).isDirectory());
-  return dirs(LIBRARY).flatMap(product => dirs(join(LIBRARY, product)).map(f => `${product}/${f}`)).sort();
+  return dirs(LIBRARY).flatMap(product => dirs(join(LIBRARY, product)).filter(f => !PRODUCT_FOLDERS.has(f)).map(f => `${product}/${f}`)).sort();
 }
 
 export function assertIds(feature: string, platform: string) {

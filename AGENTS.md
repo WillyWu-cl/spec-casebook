@@ -82,6 +82,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   controls and arrows), read it with the `figma-source` skill, on Design Figma links only (never PM or MX): one
   `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
   per-instance MCP reads (`figma-source/SKILL.md`).
+- **Product domain knowledge (user, 2026-11-03).** `library/phd/domain/` (imported from the PHD spec contract
+  runner's `docs/domain/phd`, 260 eBugs + user rules, K01–K74) is read on every `phd/*` draft and run: confirmed
+  rules become `[Domain: K<nn>]` requirements, the spec still wins (`analysis.md` standing input 6, `run.md`).
 - **Phone fixtures (2026-10-27).** What a run needs on the phone or account is in
   `library/<product>/<feature>/<platform>/fixtures.md`.
 - **Live pages (user, 2026-10-28).** `scripts/pages.ts` serves Cases, Progress, Results and Coverage with one shared

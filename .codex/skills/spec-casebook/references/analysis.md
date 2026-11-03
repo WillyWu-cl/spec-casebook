@@ -127,6 +127,11 @@ Read these on every new or updated draft, even when the spec set has not changed
 4. **Template roster** (rule 6 below), including the category header icons.
 5. **Run findings.** An observation (O-n) or a filed bug from an earlier run that no row would have caught gets a
    row in the next draft.
+6. **Product domain knowledge (user, 2026-11-03)** `library/<product>/domain/`, when the product has one (PHD does;
+   start at its `README.md`). `confirmed-rules.md` rules the spec does not contradict become requirements citing
+   `[Domain: K<nn>]`; `regression-risks.md` adds the variations (entry, first use, lifecycle, size, locale) the
+   feature shares with past bugs; `decisions.md` keeps replaced expectations and version-bound values out of rows
+   (value check); `open-questions.md` items the spec touches become `Q-n`. The spec wins over every K entry.
 
 ## Spec agent comparison (only when the user asks; user, 2026-10-27, REQ-036 / REQ-037; replaces REQ-031)
 

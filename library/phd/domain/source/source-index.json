@@ -1,0 +1,3811 @@
+{
+  "asOf": "2026-10-15",
+  "timezone": "Asia/Taipei",
+  "source": "EbugDownloadCSV.xls",
+  "sourceSha256": "b794e2b4511e45f85e9444a21eca897216f54384083d6e9d10891cb3d396cc5f",
+  "total": 263,
+  "detailRead": 262,
+  "included": 260,
+  "excluded": 3,
+  "sourceContentScope": "Index metadata only. Full detail pages were read through the logged-in browser; raw page text and attachment binaries are not archived in this index.",
+  "remoteStatusCounts": {
+    "Assigned": 10,
+    "NewCreated": 29,
+    "Close": 197,
+    "RDResolved - Already CodeReviewed": 3,
+    "Propose Won't Fix": 7,
+    "ProposeNAB": 2,
+    "未讀取": 1,
+    "BuildResolved": 1,
+    "Postpone": 2,
+    "RDResolved": 1,
+    "QA Propose Won't Fix": 10
+  },
+  "rows": [
+    {
+      "row": 1,
+      "code": "PHA262026-0460",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0460",
+      "title": "PHD-A 20.18.0 - Camera: The selected frame is not showing on the preview",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 2,
+      "code": "PHA262026-0459",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0459",
+      "title": "PHD-A 20.18.0 - [AIAgent] AI Exposure: The generated AI Exposure artwork is displayed under AI Creative Studio instead of AI Exposure",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K47"
+      ]
+    },
+    {
+      "row": 3,
+      "code": "PHA262026-0458",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0458",
+      "title": "PHD-A 20.17.0 - Crop: The crop frame is reset but the ratio is still selected after selecting a ratio and tapping the [Rotate] or [Flip] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K20"
+      ]
+    },
+    {
+      "row": 4,
+      "code": "PHA262026-0457",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0457",
+      "title": "PHD-A 20.17.0 - Crop: The crop effect is gone after using large photo, rotating in Crop and applying Adjustment changes",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K23"
+      ]
+    },
+    {
+      "row": 5,
+      "code": "PHA262026-0444",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0444",
+      "title": "PHD-A 20.17.0 - Video_Editing: The app is showing the Audio selecting page after tapping the [Range Select] button and tapping the [X] button",
+      "product": "PHD Android",
+      "exportStatus": "RDResolved",
+      "remoteStatus": "RDResolved - Already CodeReviewed",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K26"
+      ]
+    },
+    {
+      "row": 6,
+      "code": "PHA262026-0443",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0443",
+      "title": "PHD-A 20.17.0 - Video_Editing: There is a space at the end of the bottom bar",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 7,
+      "code": "PHA262026-0442",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0442",
+      "title": "PHD-A 20.17.0 - Video_Editing: The [X] and [V] button are working the same in every panel",
+      "product": "PHD Android",
+      "exportStatus": "RDResolved",
+      "remoteStatus": "RDResolved - Already CodeReviewed",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K25"
+      ]
+    },
+    {
+      "row": 8,
+      "code": "PHA262026-0441",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0441",
+      "title": "PHD-A 20.17.0 - Video_Editing: The text color is reset to white after selecting a color and tapping the [Undo] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K24"
+      ]
+    },
+    {
+      "row": 9,
+      "code": "PHA262026-0440",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0440",
+      "title": "PHD-A 20.17.0 - Video_Editing: The text is reset to no preset after editing the text and tapping the [X] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K24"
+      ]
+    },
+    {
+      "row": 10,
+      "code": "PHA262026-0439",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0439",
+      "title": "PHD-A 20.17.0 - Video_Editing: The text is reset to no preset after moving the opacity slider",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K24"
+      ]
+    },
+    {
+      "row": 11,
+      "code": "PHA262026-0438",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0438",
+      "title": "PHD-A 20.17.0 - Crop: The photo preview is extended after switching to [Perspective] tab",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K20"
+      ]
+    },
+    {
+      "row": 12,
+      "code": "PHA262026-0437",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0437",
+      "title": "PHD-A 20.17.0 - Save & Share: The [Tiktok] button is led to an item that is not available in our country",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K54"
+      ]
+    },
+    {
+      "row": 13,
+      "code": "PHA262026-0436",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0436",
+      "title": "PHD-A 20.17.0 - [AIFound]My_AI_Artwork: The image generated in AI Headshot is not list in [Recent] tab",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K45",
+        "K47"
+      ]
+    },
+    {
+      "row": 14,
+      "code": "PHA262026-0435",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0435",
+      "title": "PHD-A 20.17.0 - [AIFound][UX]Collage: The preview in Adjustment is for photo not for the whole collage (user cannot know if the adjustment is fit the collage or not)",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 15,
+      "code": "PHA262026-0434",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0434",
+      "title": "PHD-A 20.17.0 - [AIFound]Collage: The right part of the toolbar has no shadow to tell user there is more feature to use",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 16,
+      "code": "PHA262026-0433",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0433",
+      "title": "PHD-A 20.17.0 - [AIFound]Photo Picker: The search box is not cleared after switching from [gettyimages] tab to [Pixels] tab",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 17,
+      "code": "PHA262026-0432",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0432",
+      "title": "PHD-A 20.17.0 - [UX]Image_to_Video: The scrolling time is very long if the user scrolls to the very last part of the style bar",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 18,
+      "code": "PHA262026-0431",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0431",
+      "title": "PHD-A 20.17.0 - [ENG]Open Intro: The bottom part of the video is overlapping with the text",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 19,
+      "code": "PHA262026-0430",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0430",
+      "title": "PHD-A 20.17.0 - Image_to_Video: The actual duration of the video is not sync to the duration on the thumbnail",
+      "product": "PHD Android",
+      "exportStatus": "Propose Won't Fix",
+      "remoteStatus": "Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 20,
+      "code": "PHA262026-0429",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0429",
+      "title": "PHD-A 20.17.0 - Crop: The [Generate] button is changing to [Free Trial] button after switching to [AI Expand] tab",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K31"
+      ]
+    },
+    {
+      "row": 21,
+      "code": "PHA262026-0428",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0428",
+      "title": "PHD-A 20.17.0 - Crop: The [Reset] button is not enabled after doing changes",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K22"
+      ]
+    },
+    {
+      "row": 22,
+      "code": "PHA262026-0427",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0427",
+      "title": "PHD-A 20.17.0 - Crop: The [Redo] button is not enabled after tapping the [Undo] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K21"
+      ]
+    },
+    {
+      "row": 23,
+      "code": "PHA262026-0426",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0426",
+      "title": "PHD-A 20.17.0 - Crop: The [Undo] button is working as [Reset] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K21"
+      ]
+    },
+    {
+      "row": 24,
+      "code": "PHA262026-0425",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0425",
+      "title": "PHD-A 20.17.0 - Crop: The [Reset] button is enabled before doing changes",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K22"
+      ]
+    },
+    {
+      "row": 25,
+      "code": "PHA262026-0424",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0424",
+      "title": "PHD-A 20.17.0 - My_AI_Artwork: The APP crashes after tapping the [Add Text] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K72"
+      ]
+    },
+    {
+      "row": 26,
+      "code": "PHA262026-0423",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0423",
+      "title": "PHD-A 20.17.0 - [Update]Image_to_Video: The model list is not scrollable",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K64"
+      ]
+    },
+    {
+      "row": 27,
+      "code": "PHA262026-0422",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0422",
+      "title": "PHD-A 20.17.0 - AI_Agent: The \"network error\" dialog pops up after sending the APP to background while agent is thinking",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K42"
+      ]
+    },
+    {
+      "row": 28,
+      "code": "PHA262026-0421",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0421",
+      "title": "PHD-A 20.17.0 - [Light mode]AI_Agent: The text on \"photo to video\" dialog is hard to see in light mode",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 29,
+      "code": "PHA262026-0420",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0420",
+      "title": "PHD-A 20.17.0 - AI_Photos: The thumbnail of Style Transfer is not fully loaded",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 30,
+      "code": "PHA262026-0419",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0419",
+      "title": "PHD-A 20.17.0 - [Stage]Crop-AI_Expand: The generate time of AI Expand is 1m48s",
+      "product": "PHD Android",
+      "exportStatus": "Propose Won't Fix",
+      "remoteStatus": "Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K60"
+      ]
+    },
+    {
+      "row": 31,
+      "code": "PHA262026-0418",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0418",
+      "title": "PHD-A 20.17.0 - Crop: The credits are used multiple times but only one image is generated after tapping the [Generate] button multiple times",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K30"
+      ]
+    },
+    {
+      "row": 32,
+      "code": "PHA262026-0417",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0417",
+      "title": "PHD-A 20.17.0 - [UX]Crop: The screen flashes after doing changes, switching the [AI Expand] tab and tapping the [Reset] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 33,
+      "code": "PHA262026-0416",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0416",
+      "title": "PHD-A 20.17.0 - Crop: The photo does not fit the frame after rotating the photo and switch between tabs",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K20"
+      ]
+    },
+    {
+      "row": 34,
+      "code": "PHA262026-0415",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0415",
+      "title": "PHD-A 20.17.0 - AI_Agent: Some of the thumbnails of the inspirations are not showing",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K56"
+      ]
+    },
+    {
+      "row": 35,
+      "code": "PHA262026-0414",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0414",
+      "title": "PHD-A 20.17.0 - AI_Videos: The error toast pops up after tapping the [Continue] button in Trim page",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K16",
+        "K72"
+      ]
+    },
+    {
+      "row": 36,
+      "code": "PHA262026-0413",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0413",
+      "title": "PHD-A 20.17.0 - [AIFound][UX]Image_to_Video: 'Create More' resets the entire Image to Video session - source photo cleared, category reset to All, default style re-selected - forcing a full re-setup for every dress",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K27"
+      ]
+    },
+    {
+      "row": 37,
+      "code": "PHA262026-0412",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0412",
+      "title": "PHD-A 20.17.0 - [UX]Image_to_Video: The text shows \"Import a photo of 1 person\" when selecting a pet style",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 38,
+      "code": "PHA262026-0411",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0411",
+      "title": "PHD-A 20.17.0 - [Light mode]AI_Agent: The text in the rename window is hard to read",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 39,
+      "code": "PHA262026-0410",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0410",
+      "title": "PHD-A 20.17.0 - [Light mode][UX]Image_to_Video: The icon of \"Happy Horse 1.1\" is hard to see in light mode",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 40,
+      "code": "PHA262026-0409",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0409",
+      "title": "PHD-A 20.17.0 - [AIFound]AI_Background: Saved custom styles default to the name 'Custom', producing two adjacent tiles with the same label",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 41,
+      "code": "PHA262026-0408",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0408",
+      "title": "PHD-A 20.17.0 - [AIFound]AI_Background: After Undo the primary CTA still reads 'Retry | 2 credits' in full enabled styling but does nothing",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 42,
+      "code": "PHA262026-0406",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0406",
+      "title": "PHD-A 20.17.0 - [Quality]AI_Headshot: Head in generated headshot image is truncated with specific source photo",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K19"
+      ]
+    },
+    {
+      "row": 43,
+      "code": "PHA262026-0405",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0405",
+      "title": "PHD-A 20.17.0 - [Quality]AI_Headshot: Source photo's background appears in generated image",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K19"
+      ]
+    },
+    {
+      "row": 44,
+      "code": "PHA262026-0404",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0404",
+      "title": "PHD-A 20.17.0 - [CS003193407]Collage: The photo is set to the original size after shrinking the photo and saving",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K50"
+      ]
+    },
+    {
+      "row": 45,
+      "code": "PHA262026-0403",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0403",
+      "title": "PHD-A 20.17.0 - Account: The daily bonus can be claimed in two different APPs",
+      "product": "PHD Android",
+      "exportStatus": "ProposeNAB",
+      "remoteStatus": "ProposeNAB",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K38"
+      ]
+    },
+    {
+      "row": 46,
+      "code": "PHA262026-0402",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0402",
+      "title": "PHD-A 20.17.0 - Account: The account is still able to sign in after binding in with 3 UUIDs a day",
+      "product": "PHD Android",
+      "exportStatus": "ProposeNAB",
+      "remoteStatus": "ProposeNAB",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K38"
+      ]
+    },
+    {
+      "row": 47,
+      "code": "PHA262026-0401",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0401",
+      "title": "PHD-A 20.17.0 - [AIFound][ATFound]My_AI_Artwork-AI_Group_Shot: The APP is going back to \"Recent\" tab after tapping the [Save] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K53",
+        "K72"
+      ]
+    },
+    {
+      "row": 48,
+      "code": "PHA262026-0400",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0400",
+      "title": "PHD-A 20.17.0 - [AIFound]AI_Headshot: The photo is not brought from Edit Room after entering AI Headshot in Edit Room",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K02"
+      ]
+    },
+    {
+      "row": 49,
+      "code": "PHA262026-0399",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0399",
+      "title": "PHD-A 20.17.0 - [ATFound]Cinematic_Reel_Creator: There is no [Edit] button in the bottom bar after tapping the [Full View] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 50,
+      "code": "PHA262026-0398",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0398",
+      "title": "PHD-A 20.17.0 - Image_to_Video: The \"Use Another Inspiration\" dialog pops up after switching model and selecting another inspiration",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K10"
+      ]
+    },
+    {
+      "row": 51,
+      "code": "PHA262026-0397",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0397",
+      "title": "PHD-A 20.17.0 - Image_to_Video: The prompt of the first inspiration in Kling O3 is violating our Terms",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K10"
+      ]
+    },
+    {
+      "row": 52,
+      "code": "PHA262026-0396",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0396",
+      "title": "PHD-A 20.17.0 - Image_to_Video: The prompt of the first inspiration in Pixverse V6 is over 2000 words and is violating our Terms",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K09",
+        "K10"
+      ]
+    },
+    {
+      "row": 53,
+      "code": "PHA262026-0395",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0395",
+      "title": "PHD-A 20.17.0 - AI_Hairstyle: The [Generate] button is not disabled after importing a photo and tapping the [My Style] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K15"
+      ]
+    },
+    {
+      "row": 54,
+      "code": "PHA262026-0394",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0394",
+      "title": "PHD-A 20.17.0 - Image_to_Video: The [X] button is overlapping with the [Off] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 55,
+      "code": "PHA262026-0393",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0393",
+      "title": "PHD-A 20.17.0 - Image_to_Video: The Inspiration title is overlapping with the prompt area",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 56,
+      "code": "PHA262026-0392",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0392",
+      "title": "PHD-A 20.17.0 - [ATFound][SideEffect]AI_Try_On: The No Face dialog pops up after selecting a cloth photo",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K12"
+      ]
+    },
+    {
+      "row": 57,
+      "code": "PHA262026-0391",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0391",
+      "title": "PHD-A 20.17.0 - AI_Headshot: The text color is set to black in demo page",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 58,
+      "code": "PHA262026P0001",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026P0001",
+      "title": "Test bug",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "未讀取",
+      "detailRead": false,
+      "included": false,
+      "exclusion": "使用者確認為 IF3 測試 TR／bug，依指示不讀取",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 59,
+      "code": "PHA262026-0390",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0390",
+      "title": "PHD-A 20.17.0 - [AIFound][UX]AI_Try_On: 'Create More' resets the entire AI Try-On session - source photo cleared, category reset to All, default style re-selected - forcing a full re-setup for every dress",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K27"
+      ]
+    },
+    {
+      "row": 60,
+      "code": "PHA262026-0389",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0389",
+      "title": "PHD-A 20.17.0 - [AIFound]Mine: The 'Mine' tab contains only monetization cards - no account, no saved projects, no settings",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 61,
+      "code": "PHA262026-0388",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0388",
+      "title": "PHD-A 20.17.0 - [AIFound][MX]Edit Room: Premium-gated tools carry no lock, crown or credit-cost indicator in the editor toolbars, so free users cannot tell a tool is paid until after they commit",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 62,
+      "code": "PHA262026-0387",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0387",
+      "title": "PHD-A 20.17.0 - [AIFound][UX]Save: No save confirmation - the Save & Share page never tells the user the photo was saved, and its primary CTA is 'Next Edit'",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K53"
+      ]
+    },
+    {
+      "row": 63,
+      "code": "PHA262026-0386",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0386",
+      "title": "PHD-A 20.17.0 - [AIFound][UX]AI_Enhance: AI Enhance 'Try First' produces a finished result that can never be applied",
+      "product": "PHD Android",
+      "exportStatus": "Propose Won't Fix",
+      "remoteStatus": "Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K37"
+      ]
+    },
+    {
+      "row": 64,
+      "code": "PHA262026-0385",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0385",
+      "title": "PHD-A 20.17.0 - [ATFound][SideEffect]ID_Photo: The APP crashes after taking a photo and tapping the [Next] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K72"
+      ]
+    },
+    {
+      "row": 65,
+      "code": "PHA262026-0384",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0384",
+      "title": "PHD-A 20.16.0 - [ESP][UX]Launcher: The text of shortcuts is too small",
+      "product": "PHD Android",
+      "exportStatus": "BuildResolved",
+      "remoteStatus": "BuildResolved",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K69"
+      ]
+    },
+    {
+      "row": 66,
+      "code": "PHA262026-0383",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0383",
+      "title": "PHD-A 20.16.0 - Mixpanel: The log of saving AI Group Shot image is not showing",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K74"
+      ]
+    },
+    {
+      "row": 67,
+      "code": "PHA262026-0382",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0382",
+      "title": "PHD-A 20.16.0 - [AIFound]Cinematic_Reel_Creator: The original photo instead of the edited photo is brought from Edit Room",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K02"
+      ]
+    },
+    {
+      "row": 68,
+      "code": "PHA262026-0381",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0381",
+      "title": "PHD-A 20.16.0 - AI_Group_Shot: The generated video's BGM is not the same with the preview",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K52"
+      ]
+    },
+    {
+      "row": 69,
+      "code": "PHA262026-0380",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0380",
+      "title": "PHD-A 20.16.0 - AI_Group_Shot: The BGM is on after tapping the [Mute] button the first time",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K52"
+      ]
+    },
+    {
+      "row": 70,
+      "code": "PHA262026-0379",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0379",
+      "title": "PHD-A 20.16.0 - AI_Group_Shot: The photo is still showing after remove the photo in Photo Picker",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K14"
+      ]
+    },
+    {
+      "row": 71,
+      "code": "PHA262026-0378",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0378",
+      "title": "PHD-A 20.16.0 - AI_Group_Shot: The text on the bottom bar shows \"Select 1 to 2 photos\" instead of \"Select 2 photos\"",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K14"
+      ]
+    },
+    {
+      "row": 72,
+      "code": "PHA262026-0377",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0377",
+      "title": "PHD-A 20.16.0 - AI_Group_Shot: The photos in Photo Picker are switching position randomly when tapping on one of them",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K14"
+      ]
+    },
+    {
+      "row": 73,
+      "code": "PHA262029-0005",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262029-0005",
+      "title": "PHD-A 20.16.0 - AI_Video_Try_On/Character_Motion_Swap: The duration shows \"4s\" instead of \"3s\"",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K33"
+      ]
+    },
+    {
+      "row": 74,
+      "code": "PHA262029-0004",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262029-0004",
+      "title": "PHD-A 20.16.0 - Open Intro: The Open Intro videos of new user and update user are not updated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 75,
+      "code": "PHA262029-0003",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262029-0003",
+      "title": "PHD-A 20.16.0 - [AIFound]Character_Motion_Swap: The recommend page shows \"Video of One Person\" instead of \"Photo of One Person\"",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K16"
+      ]
+    },
+    {
+      "row": 76,
+      "code": "PHA262029-0002",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262029-0002",
+      "title": "PHD-A 20.16.0 - [AIFound]Image_to_Video: The description does not fit Image to Video",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 77,
+      "code": "PHA262029-0001",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262029-0001",
+      "title": "PHD-A 20.16.0 - [UX][AIFound]Character_Motion_Swap: The credit cost is showing \"--\" instead of real cost before selecting photo and video",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K34"
+      ]
+    },
+    {
+      "row": 78,
+      "code": "PHA262026-0376",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0376",
+      "title": "PHD-A 20.16.0 - [AIFound]Image_to_Video: The image on the not enough credit dialog is not changed",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 79,
+      "code": "PHA262026-0375",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0375",
+      "title": "PHD-A 20.16.0 - [UX]My_AI_Artwork: There is no image thumbnail under the processing thumbnail",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K48"
+      ]
+    },
+    {
+      "row": 80,
+      "code": "PHA262026-0374",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0374",
+      "title": "PHD-A 20.16.0 - Launcher: The showing page and the selected tab do not sync after switching between tabs quickly",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 81,
+      "code": "PHA262026-0373",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0373",
+      "title": "PHD-A 20.16.0 - Cinematic_Reel_Creator: The system notification showing no text and showing \"APP version does not support feature\" after tapping the notification",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K48"
+      ]
+    },
+    {
+      "row": 82,
+      "code": "PHA262026-0372",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0372",
+      "title": "PHD-A 20.15.0 - Test bug: This is a test bug",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": false,
+      "exclusion": "Test bug，內容為測試新 TR，無產品行為知識",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 83,
+      "code": "PHA262026-0371",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0371",
+      "title": "PHD-A 20.16.0 - Blur Tool: The APP shows black screen after tapping the system [Back] button in Blur Tool",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K63"
+      ]
+    },
+    {
+      "row": 84,
+      "code": "PHA262026-0370",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0370",
+      "title": "PHD-A 20.16.0 - [Android 16]Edit Room: The APP is going to Launcher after tapping the system [Back] button in Edit Room",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K63"
+      ]
+    },
+    {
+      "row": 85,
+      "code": "PHA262026-0369",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0369",
+      "title": "PHD-A 20.16.0 - [AIFound]My_AI_Artwork: There is no checking dialog after tapping the [Create a Video] button",
+      "product": "PHD Android",
+      "exportStatus": "Propose Won't Fix",
+      "remoteStatus": "Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K35"
+      ]
+    },
+    {
+      "row": 86,
+      "code": "PHA262026-0368",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0368",
+      "title": "PHD-A 20.16.0 - [AIFound]AI_Group_Shot: There is no blocking dialog after selecting a photo with no person",
+      "product": "PHD Android",
+      "exportStatus": "Propose Won't Fix",
+      "remoteStatus": "Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K13"
+      ]
+    },
+    {
+      "row": 87,
+      "code": "PHA262026-0367",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0367",
+      "title": "PHD-A 20.16.0 - AI_Group_Shot: The original photo is not in the selected photo list in Photo Picker",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K03",
+        "K14"
+      ]
+    },
+    {
+      "row": 88,
+      "code": "PHA262026-0366",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0366",
+      "title": "PHD-A 20.16.0 - Cinematic_Reel_Creator: The resolution of the sample images in template is very low",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 89,
+      "code": "PHA262026-0365",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0365",
+      "title": "PHD-A 20.16.0 - Launcher: The shortcut icon of AI Agent is not showing the right icon",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K73"
+      ]
+    },
+    {
+      "row": 90,
+      "code": "PHA262026-0364",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0364",
+      "title": "PHD-A 20.16.0 - AI_Group_Shot: The BGM is on when the mute button is set mute",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K52"
+      ]
+    },
+    {
+      "row": 91,
+      "code": "PHA262026-0363",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0363",
+      "title": "PHD-A 20.16.0 - My_AI_Artwork: The photo area is not showing \"Nothing yet.\" after generating a video",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K46"
+      ]
+    },
+    {
+      "row": 92,
+      "code": "PHA262026-0362",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0362",
+      "title": "PHD-A 20.15.0 - My_AI_Artwork: The button is showing \"Create More\" instead of \"Replace More\"",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 93,
+      "code": "PHA262026-0361",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0361",
+      "title": "PHD-A 20.15.0 - AI_Replace: The preview is not change to new image after tapping the [Create More] button",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 94,
+      "code": "PHA262026-0359",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0359",
+      "title": "PHD-A 20.15.0 - [AIFound]AI_Creative_Studio: The text shows \"videos\" instead of \"images\" in My Prompts",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 95,
+      "code": "PHA262026-0358",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0358",
+      "title": "PHD-A 20.15.0 - AI_Creative_Studio: The APP crashes after selecting a style",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K05"
+      ]
+    },
+    {
+      "row": 96,
+      "code": "PHA262026-0357",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0357",
+      "title": "PHD-A 20.15.0 - AI_Agent: The original photo is not included in the Photo Select page after entering AI Agent from Edit Room and tapping the [Add Photo] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K03"
+      ]
+    },
+    {
+      "row": 97,
+      "code": "PHA262026-0356",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0356",
+      "title": "PHD-A 20.15.0 - Character_Motion_Swap/AI_Video_Try_On: The format not support dialog pops up after uploading a video",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 98,
+      "code": "PHA262026-0355",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0355",
+      "title": "PHD-A 20.15.0 - [UX][Light mode]Launcher: The title is hard to see in the dark shadow",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 99,
+      "code": "PHA262026-0354",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0354",
+      "title": "PHD-A 20.15.0 - [UX]Launcher: The icon of AI Agent in shortcut is too small",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 100,
+      "code": "PHA262026-0353",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0353",
+      "title": "PHD-A 20.15.0 - AI_Agent: The response shows twice after tapping the [Suggest] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K41"
+      ]
+    },
+    {
+      "row": 101,
+      "code": "PHA262026-0352",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0352",
+      "title": "PHD-A 20.15.0 - [HEB/PER/ARA]AI_Agent: The text in the prompt area is truncated by the [Add Photo] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 102,
+      "code": "PHA262026-0351",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0351",
+      "title": "PHD-A 20.15.0 - [CHT]AI_Agent: It shows \"無限次暢聊\" in the dialog but actually only 30 times",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K44"
+      ]
+    },
+    {
+      "row": 103,
+      "code": "PHA262026-0350",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0350",
+      "title": "PHD-A 20.15.0 - [AIFound]AI_Face_Swap: The resolution of the generated image is half of the original image",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K19",
+        "K51"
+      ]
+    },
+    {
+      "row": 104,
+      "code": "PHA262026-0349",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0349",
+      "title": "PHD-A 20.15.0 - AI_Agent: The keyboard is blocking the prompt area after tapping the prompt area",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K64"
+      ]
+    },
+    {
+      "row": 105,
+      "code": "PHA262026-0348",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0348",
+      "title": "PHD-A 20.15.0 - [HEB/PER]AI_Agent: The hint bubble is at a weird spot",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 106,
+      "code": "PHA262026-0347",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0347",
+      "title": "PHD-A 20.15.0 - Launcher: There is a thick black area above the bottom bar",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 107,
+      "code": "PHA262026-0346",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0346",
+      "title": "PHD-A 20.15.0 - [AIFound]AI_Hairstyle: The no face dialog pops up after importing a big face photo",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 108,
+      "code": "PHA262026-0345",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0345",
+      "title": "PHD-A 20.15.0 - Image_to_Video: The sample photo is not showing the right photo when selecting style from AI Videos",
+      "product": "PHD Android",
+      "exportStatus": "Propose Won't Fix",
+      "remoteStatus": "Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 109,
+      "code": "PHA262026-0344",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0344",
+      "title": "PHD-A 20.15.0 - AI_Hairstyle: The selected style is not showing in the screen after selecting a hairstyle from Launcher banner",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K04"
+      ]
+    },
+    {
+      "row": 110,
+      "code": "PHA262026-0343",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0343",
+      "title": "PHD-A 20.15.0 - AI_Agent: The response of AI Agent is filling the whole chat room",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 111,
+      "code": "PHA262026-0342",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0342",
+      "title": "PHD-A 20.15.0 - Launcher: The top banner is showing the previous language after changing APP language and relaunching the APP",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K57"
+      ]
+    },
+    {
+      "row": 112,
+      "code": "PHA262026-0341",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0341",
+      "title": "PHD-A 20.15.0 - [ENG/PLK]Launcher: The icon in the two big buttons in Launcher is hard to see",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 113,
+      "code": "PHA262026-0340",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0340",
+      "title": "PHD-A 20.15.0 - [Light mode]Launcher: The icon of AI Agent is hard to see",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K55"
+      ]
+    },
+    {
+      "row": 114,
+      "code": "PHA262026-0339",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0339",
+      "title": "PHD-A 20.15.0 - [Light mode]AI_Agent: The text color in the prompt area is not set to white",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 115,
+      "code": "PHA262026-0338",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0338",
+      "title": "PHD-A 20.15.0 - [UX]AI_Agent: The Info panel can be moved to display only halfway",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 116,
+      "code": "PHA262026-0337",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0337",
+      "title": "PHD-A 20.15.0 - [MUI]AI_Agent: The text in AI Agent is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 117,
+      "code": "PHA262026-0336",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0336",
+      "title": "PHD-A 20.15.0 - [VVIP][UX]AI_Photos: The AI features are not sorted by a consistent standard",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 118,
+      "code": "PHA262026-0335",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0335",
+      "title": "PHD-A 20.15.0 - [PLK]Launcher: The text size of shortcuts is too small",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K69"
+      ]
+    },
+    {
+      "row": 119,
+      "code": "PHA262026-0334",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0334",
+      "title": "PHD-A 20.15.0 - [TRK/PLK]AI_Agent: The line is not aligned to the center",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 120,
+      "code": "PHA262026-0333",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0333",
+      "title": "PHD-A 20.15.0 - Launcher: The icon of AI Agent is too small",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K55"
+      ]
+    },
+    {
+      "row": 121,
+      "code": "PHA262026-0332",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0332",
+      "title": "PHD-A 20.15.0 - Character_Motion_Swap: It is unable to import a photo",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K72"
+      ]
+    },
+    {
+      "row": 122,
+      "code": "PHA262026-0331",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0331",
+      "title": "PHD-A 20.15.0 - AI_Hairstyle: The [Generate] button is disabled after switching between [Prompts] and [Photos] buttons",
+      "product": "PHD Android",
+      "exportStatus": "RDResolved",
+      "remoteStatus": "RDResolved - Already CodeReviewed",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K15"
+      ]
+    },
+    {
+      "row": 123,
+      "code": "PHA262026-0330",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0330",
+      "title": "PHD-A 20.15.0 - AI_Creative_Studio: The model's name is showing \"Nana Banana\" instead of \"Nano Banana\"",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 124,
+      "code": "PHA262026-0329",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0329",
+      "title": "PHD-A 20.15.0 - AI_Hairstyle: There is a \"Downloading Asset\" loading bar after selecting a photo",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K72"
+      ]
+    },
+    {
+      "row": 125,
+      "code": "PHA262026-0328",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0328",
+      "title": "PHD-A 20.15.0 - [UX]AI_Hairstyle: The previous selected style is not selected after tapping the [Back] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K27"
+      ]
+    },
+    {
+      "row": 126,
+      "code": "PHA262026-0327",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0327",
+      "title": "PHD-A 20.15.0 - [Fold7]AI_Creative_Studio: The bottom part of the prompt area is truncated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K65"
+      ]
+    },
+    {
+      "row": 127,
+      "code": "PHA262026-0326",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0326",
+      "title": "PHD-A 20.15.0 - [Fold7]AI_Art/AI_Try_On: The top part of the panel is out of the screen after expanding the panel",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K65"
+      ]
+    },
+    {
+      "row": 128,
+      "code": "PHA262026-0325",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0325",
+      "title": "PHD-A 20.15.0 - [Fold7]Mosaic: The bottom part of the preview is truncated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K65"
+      ]
+    },
+    {
+      "row": 129,
+      "code": "PHA262026-0324",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0324",
+      "title": "PHD-A 20.15.0 - [Fold7]Task Center: The bottom two tasks are not showing and cannot be scrolled",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K65"
+      ]
+    },
+    {
+      "row": 130,
+      "code": "PHA262026-0323",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0323",
+      "title": "PHD-A 20.15.0 - [Fold7]Credit: The credit pack is unable to tapped",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K65"
+      ]
+    },
+    {
+      "row": 131,
+      "code": "PHA262026-0322",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0322",
+      "title": "PHD-A 20.15.0 - [Fold7]Open Intro: The bottom part of the video is truncated",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K65"
+      ]
+    },
+    {
+      "row": 132,
+      "code": "PHA262026-0321",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0321",
+      "title": "PHD-A 20.15.0 - AI_Agent: The generated image is not showing in the chat room after generating, sending the APP to background and going back",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K42",
+        "K62"
+      ]
+    },
+    {
+      "row": 133,
+      "code": "PHA262026-0320",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0320",
+      "title": "PHD-A 20.15.0 - [UX]AI_Agent: There is no warning dialog popping up when user is leaving the room",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K43"
+      ]
+    },
+    {
+      "row": 134,
+      "code": "PHA262026-0319",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0319",
+      "title": "PHD-A 20.15.0 - AI_Agent: The error dialog pops up when using AI generated options",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K40"
+      ]
+    },
+    {
+      "row": 135,
+      "code": "PHI262607-0002",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHI262607-0002",
+      "title": "PHD-i 20.15.0 - AI_Photos: The thumbnail of AI Expand is not updated",
+      "product": "PHD iOS",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K58"
+      ]
+    },
+    {
+      "row": 136,
+      "code": "PHI262607-0001",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHI262607-0001",
+      "title": "PHD-i 20.15.0 - AI_Photos: The thumbnail of AI Try-On is not showing video",
+      "product": "PHD iOS",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K58"
+      ]
+    },
+    {
+      "row": 137,
+      "code": "PHI262606-0078",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHI262606-0078",
+      "title": "PHD-i 20.14.0 - AI_Creative_Studio: The [Generate] button is showing credits before showing free use",
+      "product": "PHD iOS",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K31"
+      ]
+    },
+    {
+      "row": 138,
+      "code": "PHA262026-0318",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0318",
+      "title": "PHD-A 20.14.0 - Mixpanel-AI_Video_Try_On: The \"feature\" in \"Monetize_Subscription_Appear\" line in Mixpanel is not showing \"ai_video_try_on\"",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K16",
+        "K74"
+      ]
+    },
+    {
+      "row": 139,
+      "code": "PHA262026-0317",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0317",
+      "title": "PHD-A 20.14.0 - Mixpanel-AI_Enhance: The \"feature\" in \"Monetize_Subscription_Appear\" line in Mixpanel is not showing \"ai_enhance_advanced\"",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K74"
+      ]
+    },
+    {
+      "row": 140,
+      "code": "PHA262026-0316",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0316",
+      "title": "PHD-A 20.14.0 - RTDN: The RTDN is popping up after canceling the subscription of monthly plan even though Credit Auto Pass is still subscribed",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K36"
+      ]
+    },
+    {
+      "row": 141,
+      "code": "PHA262026-0315",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0315",
+      "title": "PHD-A 20.14.0 - AI_Hairstyle: The new tags are not showing on the new styles",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K56",
+        "K57"
+      ]
+    },
+    {
+      "row": 142,
+      "code": "PHA262026-0314",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0314",
+      "title": "PHD-A 20.14.0 - RTDN: The showing day in notification of account hold is 76320 days",
+      "product": "PHD Android",
+      "exportStatus": "Propose Won't Fix",
+      "remoteStatus": "Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K60"
+      ]
+    },
+    {
+      "row": 143,
+      "code": "PHA262026-0313",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0313",
+      "title": "PHD-A 20.14.0 - RTDN: The Real time push notification does not pop up after canceling the subscription of Yearly plan with free trial",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 144,
+      "code": "PHA262026-0312",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0312",
+      "title": "PHD-A 20.14.0 - Launcher: The IAP button is not showing but the new user offer bubble is still showing",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K39"
+      ]
+    },
+    {
+      "row": 145,
+      "code": "PHA262026-0311",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0311",
+      "title": "PHD-A 20.14.0 - [JPN]Open Intro: The position of the text in Open Intro is too high in JPN",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 146,
+      "code": "PHA262026-0310",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0310",
+      "title": "PHD-A 20.14.0 - Character_Motion_Swap: The model list is not showing after moving the APP to background, waiting and launching the APP",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K62"
+      ]
+    },
+    {
+      "row": 147,
+      "code": "PHA262026-0309",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0309",
+      "title": "PHD-A 20.14.0 - Character_Motion_Swap: The [Generate] button is not working after entering AI Artwork, tapping the [Generate More] button and tapping the [Back] button twice",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K28"
+      ]
+    },
+    {
+      "row": 148,
+      "code": "PHA262026-0308",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0308",
+      "title": "PHD-A 20.14.0 - [UX]AI_Creative_Studio: The selected category is not related to the selected style",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K04"
+      ]
+    },
+    {
+      "row": 149,
+      "code": "PHA262026-0307",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0307",
+      "title": "PHD-A 20.14.0 - [UX][NLD]Blur Tool: The [Auto] tab is cut into two lines",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K69"
+      ]
+    },
+    {
+      "row": 150,
+      "code": "PHA262026-0306",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0306",
+      "title": "PHD-A 20.14.0 - AI_Hairstyle: The selected hairstyle is not the same with the tapped hairstyle banner",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K04"
+      ]
+    },
+    {
+      "row": 151,
+      "code": "PHA262026-0305",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0305",
+      "title": "PHD-A 20.14.0 - [UX][NLD]Edit Room: Some feature name is too small",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K69"
+      ]
+    },
+    {
+      "row": 152,
+      "code": "PHA262026-0304",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0304",
+      "title": "PHD-A 20.14.0 - [UX][NLD]Edit Room: Some feature name is cut into two lines",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K69"
+      ]
+    },
+    {
+      "row": 153,
+      "code": "DRA262605-0212",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=DRA262605-0212",
+      "title": "PDR-A 16.5.0 - [EDF][UX]Text to Video: The \"Saved to Gallery\" toast pops up everytime tapping the generated video",
+      "product": "PowerDirector Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": false,
+      "exclusion": "PowerDirector Android，非 PHD 領域",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 154,
+      "code": "PHA262026-0303",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0303",
+      "title": "PHD-A 20.14.0 - IAP: The APP crashes after entering IAP and changing language",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K62"
+      ]
+    },
+    {
+      "row": 155,
+      "code": "PHA262026-0302",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0302",
+      "title": "PHD-A 20.14.0 - [IND]AI_Headshot: The text in [Credit] button is truncated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 156,
+      "code": "PHA262026-0301",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0301",
+      "title": "PHD-A 20.14.0 - [UX][IND]Beautify: Some feature name is cut into two lines",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 157,
+      "code": "PHA262026-0300",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0300",
+      "title": "PHD-A 20.14.0 - AI_Enhance: The preview is overlapping with the [Standard] and [Advanced] button while scanning",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 158,
+      "code": "PHA262026-0299",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0299",
+      "title": "PHD-A 20.14.0 - [UX][IND]Edit Room: The feature name of AI Removal is cut into two lines",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 159,
+      "code": "PHA262026-0298",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0298",
+      "title": "PHD-A 20.14.0 - [IND]IAP: The APP crashes after entering IAP page",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K70"
+      ]
+    },
+    {
+      "row": 160,
+      "code": "PHA262026-0297",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0297",
+      "title": "PHD-A 20.14.0 - [Stage]Character_Motion_Swap: The video is stuck in processing after generating",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K60"
+      ]
+    },
+    {
+      "row": 161,
+      "code": "PHA262026-0296",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0296",
+      "title": "PHD-A 20.14.0 - [CS003168221]AI_Removal: The error dialog pops up after using specific photo and pro+ removal",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K18"
+      ]
+    },
+    {
+      "row": 162,
+      "code": "PHA262026-0295",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0295",
+      "title": "PHD-A 20.14.0 - AI_Try_On: The \"Network error\" toast pops up after generating with custom photo, tapping the [Back] button and tapping the [Generate] button again",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K28"
+      ]
+    },
+    {
+      "row": 163,
+      "code": "PHA262026-0294",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0294",
+      "title": "PHD-A 20.14.0 - [UX]AI_Enhance: The average waiting time is too long to generate an image (48 sec)",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K61"
+      ]
+    },
+    {
+      "row": 164,
+      "code": "PHA262026-0293",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0293",
+      "title": "PHD-A 20.14.0 - [Quality]AI_Enhance: A man is generated at the background after using AI Enhance",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K19"
+      ]
+    },
+    {
+      "row": 165,
+      "code": "PHA262026-0292",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0292",
+      "title": "PHD-A 20.13.0 - [UX]Text: The Premium icon is too flat",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 166,
+      "code": "PHA262026-0291",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0291",
+      "title": "PHD-A 20.13.0 - Text: The [All Language] tab is overlapping with the font list title",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 167,
+      "code": "PHA262026-0290",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0290",
+      "title": "PHD-A 20.13.0 - [CHT/JPN]Launcher: The hint bubble on the [Discover] button is not translated to CHT and JPN",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 168,
+      "code": "PHA262026-0289",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0289",
+      "title": "PHD-A 20.13.0 - [ATFound]ID_Photo: The preview is showing all black after tapping the [X] button in Makeup",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 169,
+      "code": "PHA262026-0288",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0288",
+      "title": "PHD-A 20.13.0 - [ATFound]AI_Try_On: The bottom bar is showing when tapping the [Import Photo] button and tapping the [Full View] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 170,
+      "code": "PHA262026-0287",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0287",
+      "title": "PHD-A 20.13.0 - [ATFound]AI_Try_On: The [i] button does not display in Photo Picker",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 171,
+      "code": "PHA262026-0286",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0286",
+      "title": "PHD-A 20.13.0 - AI_Try_On: The style area is scrolling from the top to the selected style after importing a photo",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 172,
+      "code": "PHA262026-0285",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0285",
+      "title": "PHD-A 20.13.0 - AI_Try_On: The selected category is set to \"All\" instead of the previous selected category after importing a photo",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K27"
+      ]
+    },
+    {
+      "row": 173,
+      "code": "PHA262026-0284",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0284",
+      "title": "PHD-A 20.13.0 - Image_to_Video: The [Generate] button is not enabled after using template from Discover and selecting a photo",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K17"
+      ]
+    },
+    {
+      "row": 174,
+      "code": "PHA262026-0283",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0283",
+      "title": "PHD-A 20.13.0 - [ATFound]AI_Replace: The top bar does not show after entering AI Replace from Edit Room, generating an image and tapping the [Edit] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K01"
+      ]
+    },
+    {
+      "row": 175,
+      "code": "PHA262026-0282",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0282",
+      "title": "PHD-A 20.13.0 - [UX]Image_to_Video: There is no capsule around the [On] button of BGM",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 176,
+      "code": "PHA262026-0281",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0281",
+      "title": "PHD-A 20.13.0 - AI_Try_On: The APP is not selected at the right tab after tapping the [Don't show again] checkbox and tapping a pet style",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K05"
+      ]
+    },
+    {
+      "row": 177,
+      "code": "PHA262026-0280",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0280",
+      "title": "PHD-A 20.13.0 - My_AI_Artwork: The size of the thumbnail is smaller than other styles when using \"Startled\"",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K51"
+      ]
+    },
+    {
+      "row": 178,
+      "code": "PHA262026-0279",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0279",
+      "title": "PHD-A 20.13.0 - [MEX/THA/ARA/VIT]Interstitial: Description is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Postpone",
+      "remoteStatus": "Postpone",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K71"
+      ]
+    },
+    {
+      "row": 179,
+      "code": "PHA262026-0278",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0278",
+      "title": "PHD-A 20.13.0 - Notification: The APP hang in a black page after tapping the notification \"phd://navigate/page?name=ai_replace\"",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K01",
+        "K06"
+      ]
+    },
+    {
+      "row": 180,
+      "code": "PHA262026-0277",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0277",
+      "title": "PHD-A 20.13.0 - Reshape: The APP hang in Edit Room after tapping the [V] button and purchasing a premium plan",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 181,
+      "code": "PHA262026-0276",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0276",
+      "title": "PHD-A 20.13.0 - Edit Room: The toolbar is auto scrolling to the end after tapping the [Portrait] tab",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 182,
+      "code": "PHA262026-0275",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0275",
+      "title": "PHD-A 20.13.0 - [ATFound]ID_Photo: The background of cutout page is changed after tapping the [Eraser] button and the [X] button",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 183,
+      "code": "PHA262026-0274",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0274",
+      "title": "PHD-A 20.13.0 - [ARA]ID_Photo: The text on the frame is not showing",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 184,
+      "code": "PHA262026-0273",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0273",
+      "title": "PHD-A 20.13.0 - Cutout: The hint bubble on the [Pen] button is not showing",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 185,
+      "code": "PHA262026-0272",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0272",
+      "title": "PHD-A 20.13.0 - [ARA]Text Bubble: The hint bubble in Edit Room is showing in Text Bubble",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 186,
+      "code": "PHA262026-0271",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0271",
+      "title": "PHD-A 20.13.0 - AI_Try_On: The credit cost of Custom text prompt is 6 instead of 3",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K32"
+      ]
+    },
+    {
+      "row": 187,
+      "code": "PHA262026-0270",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0270",
+      "title": "PHD-A 20.13.0 - AI_Hairstyle: The custom prompt is not affect on the image",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K11"
+      ]
+    },
+    {
+      "row": 188,
+      "code": "PHA262026-0269",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0269",
+      "title": "PHD-A 20.13.0 - [RUS]AI_Try_On: The title is overlapping with the [Credit] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K69"
+      ]
+    },
+    {
+      "row": 189,
+      "code": "PHA262026-0268",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0268",
+      "title": "PHD-A 20.13.0 - [RUS/PTB]AI_Try_On: The Pet title is too long to show the whole title",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 190,
+      "code": "PHA262026-0267",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0267",
+      "title": "PHD-A 20.13.0 - [RUS]AI_Hairstyle: The title is overlapping with the [Credit] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K69"
+      ]
+    },
+    {
+      "row": 191,
+      "code": "PHA262026-0266",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0266",
+      "title": "PHD-A 20.13.0 - [VN/ARA]Collage-search: The search result shows \"No Result\" after tapping the default search tabs",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K56",
+        "K59"
+      ]
+    },
+    {
+      "row": 192,
+      "code": "PHA262026-0265",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0265",
+      "title": "PHD-A 20.13.0 - Launcher: The APP is not entering to Sticker feature after tapping the Sticker tab in AIGC and Content dialog",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 193,
+      "code": "PHA262026-0264",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0264",
+      "title": "PHD-A 20.13.0 - AI_Replace: The mask is staying on the generated image after generating with AI Replace",
+      "product": "PHD Android",
+      "exportStatus": "Postpone",
+      "remoteStatus": "Postpone",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K19",
+        "K29"
+      ]
+    },
+    {
+      "row": 194,
+      "code": "PHA262026-0263",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0263",
+      "title": "PHD-A 20.13.0 - AI_Replace: The red mask on the preview disappears after tapping the [Replace] button and the [Back] button in My AI Artwork",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K29"
+      ]
+    },
+    {
+      "row": 195,
+      "code": "PHA262026-0262",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0262",
+      "title": "PHD-A 20.13.0 - Text Bubble: The uploaded photo is added to Add Photo after uploading reference photo in AI Replace, going back to Edit Room and entering Text Bubble",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K07"
+      ]
+    },
+    {
+      "row": 196,
+      "code": "PHA262026-0261",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0261",
+      "title": "PHD-A 20.13.0 - AI_Videos: The loading cursor is not moving when entering AI Videos the first time",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 197,
+      "code": "PHA262026-0260",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0260",
+      "title": "PHD-A 20.13.0 - AI_Replace: The [Replace] button remains disabled after a reference image is selected without entering a prompt",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K08"
+      ]
+    },
+    {
+      "row": 198,
+      "code": "PHA262026-0259",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0259",
+      "title": "PHD-A 20.13.0 - [VN]Launcher: The font size of shortcut is too small",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 199,
+      "code": "PHA262026-0258",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0258",
+      "title": "PHD-A 20.13.0 - Add Photo: The hint bubble in Edit Room is showing in Add Photo",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 200,
+      "code": "PHA262026-0257",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0257",
+      "title": "PHD-A 20.13.0 - [CS]AI_Creative_Studio: The text limit of prompt area is 600 instead of 5000",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K09"
+      ]
+    },
+    {
+      "row": 201,
+      "code": "PHA262026-0256",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0256",
+      "title": "PHD-A 20.13.0 - [Premium]Credits: The text above the [Purchase] button is overlapping with the packs",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 202,
+      "code": "PHA262026-0255",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0255",
+      "title": "PHD-A 20.13.0 - [UX]Discover: The hint bubble above the [Discover] button does not disappear",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K05"
+      ]
+    },
+    {
+      "row": 203,
+      "code": "PHA262026-0254",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0254",
+      "title": "PHD-A 20.13.0 - Background-Template: The position of the object is not correct",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 204,
+      "code": "PHA262026-0253",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0253",
+      "title": "PHD-A 20.13.0 - Camera-Filter: The APP crashes after sliding the screen to the downloaded filter",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K73"
+      ]
+    },
+    {
+      "row": 205,
+      "code": "PHA262026-0252",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0252",
+      "title": "PHD-A 20.13.0 - AI_Hairstyle: The [Generate] button is still showing \"1 Free Trial\" after generating an image",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K31"
+      ]
+    },
+    {
+      "row": 206,
+      "code": "PHA262026-0251",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0251",
+      "title": "PHD-A 20.13.0 - [ATFound]AI_Try_On: The network error toast pops up after generating images with preset styles",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 207,
+      "code": "PHA262026-0250",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0250",
+      "title": "PHD-A 20.13.0 - [MUI]Credits: The [Back up now] button in Back up dialog is not translated",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 208,
+      "code": "PHA262026-0249",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0249",
+      "title": "PHD-A 20.13.0 - [ARA]Character_Motion_Swap: Result: The text above the [Continue] button is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 209,
+      "code": "PHA262026-0248",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0248",
+      "title": "PHD-A 20.13.0 - Discover: Play store is open instead of Instagram after tapping the account name with hyperlink",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K54",
+        "K56"
+      ]
+    },
+    {
+      "row": 210,
+      "code": "PHA262026-0247",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0247",
+      "title": "PHD-A 20.13.0 - Discover: There is no blue check after the account name in Discover page",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 211,
+      "code": "PHA262026-0246",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0246",
+      "title": "PHD-A 20.13.0 - [Upgrade]AI_Hairstyle: The \"Something went wrong\" dialog pops up when entering AI Hairstyle",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 212,
+      "code": "PHA262026-0245",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0245",
+      "title": "PHD-A 20.13.0 - [ATFound]VHS: The preview has no VHS effect after selecting a mask from store and tapping the [V] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K29"
+      ]
+    },
+    {
+      "row": 213,
+      "code": "PHA262026-0244",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0244",
+      "title": "PHD-A 20.13.0 - [ATFound]Glitch: The preview has no glitch effect after selecting a mask from store and tapping the [V] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K29"
+      ]
+    },
+    {
+      "row": 214,
+      "code": "PHA262026-0243",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0243",
+      "title": "PHD-A 20.13.0 - Image_to_Video: The sample image is not showing right after changing language and selecting style",
+      "product": "PHD Android",
+      "exportStatus": "Assigned",
+      "remoteStatus": "Assigned",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K57"
+      ]
+    },
+    {
+      "row": 215,
+      "code": "PHA262026-0242",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0242",
+      "title": "PHD-A 20.13.0 - [PTB]Launcher: The font size of shortcut is too small",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 216,
+      "code": "PHA262026-0241",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0241",
+      "title": "PHD-A 20.13.0 - AI_Try_On: The first style is selected after generating an image and tapping the [Back] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K27"
+      ]
+    },
+    {
+      "row": 217,
+      "code": "PHA262026-0240",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0240",
+      "title": "PHD-A 20.13.0 - [UX]Image_to_Video: The text in the [Generate for Credit] button is not aligned to center",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 218,
+      "code": "PHA262026-0239",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0239",
+      "title": "PHD-A 20.13.0 - [ARA]APP: Some numbers in the features are not changed",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K68"
+      ]
+    },
+    {
+      "row": 219,
+      "code": "PHA262026-0238",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0238",
+      "title": "PHD-A 20.13.0 - [ARA]AI_Headshot: The position of the credit icon in the [Purchase] button is too low",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 220,
+      "code": "PHA262026-0237",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0237",
+      "title": "PHD-A 20.13.0 - [ARA][VIT]AI_Headshot: The style page is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 221,
+      "code": "PHA262026-0236",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0236",
+      "title": "PHD-A 20.13.0 - [ARA]Edit Room: The hint bubble is not on the right feature",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 222,
+      "code": "PHA262026-0235",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0235",
+      "title": "PHD-A 20.13.0 - [ARA]Discover: The [Backup Now] button in back up dialog is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 223,
+      "code": "PHA262026-0234",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0234",
+      "title": "PHD-A 20.13.0 - [ARA]Removal: The [Box] button is not translated",
+      "product": "PHD Android",
+      "exportStatus": "RDResolved",
+      "remoteStatus": "RDResolved",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 224,
+      "code": "PHA262026-0233",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0233",
+      "title": "PHD-A 20.13.0 - AI_Try_On: The template photo is not brought to AI Try-On after tapping the [Use This Template] button in Discover page",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K01"
+      ]
+    },
+    {
+      "row": 225,
+      "code": "PHA262026-0232",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0232",
+      "title": "PHD-A 20.13.0 - [ARA]AI_Try_On: The \"No face\" dialog pops up after using a pet style with dog photo",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K12"
+      ]
+    },
+    {
+      "row": 226,
+      "code": "PHA262026-0231",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0231",
+      "title": "PHD-A 20.13.0 - [ARA]AI_Try_On: The position of recent task bubble is not changed to top left",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 227,
+      "code": "PHA262026-0230",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0230",
+      "title": "PHD-A 20.13.0 - [ARA]Character_Motion_Swap: The [i] button is overlapping with the area number",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 228,
+      "code": "PHA262026-0229",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0229",
+      "title": "PHD-A 20.13.0 - [ARA]Camera: The On Off Switch is not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 229,
+      "code": "PHA262026-0228",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0228",
+      "title": "PHD-A 20.13.0 - [SideEffect]Character_Motion_Swap: The frame of the video area is not sync to photo area",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 230,
+      "code": "PHA262026-0227",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0227",
+      "title": "PHD-A 20.13.0 - [ARA]Blender: The thumbnails of bottom bar are out of the frame",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 231,
+      "code": "PHA262026-0226",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0226",
+      "title": "PHD-A 20.13.0 - [ARA]Light Leak: The thumbnails of bottom bar are out of the frame",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 232,
+      "code": "PHA262026-0225",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0225",
+      "title": "PHD-A 20.13.0 - [ARA]Mirror: The thumbnails of bottom bar are out of the frame",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 233,
+      "code": "PHA262026-0224",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0224",
+      "title": "PHD-A 20.13.0 - [ARA]AI_Relight: The effect on the preview is opposite with the slider",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 234,
+      "code": "PHA262026-0223",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0223",
+      "title": "PHD-A 20.13.0 - [ARA]Image_Quality_Settings: The \"HD\" and \"Ultra HD\" options are not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 235,
+      "code": "PHA262026-0222",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0222",
+      "title": "PHD-A 20.13.0 - [ARA]Beautify: The number in the loading bar is truncated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 236,
+      "code": "PHA262026-0221",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0221",
+      "title": "PHD-A 20.13.0 - [ARA]AI_Denoise: Some words in the pop-up dialog are not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 237,
+      "code": "PHA262026-0220",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0220",
+      "title": "PHD-A 20.13.0 - [ARA]AI_Deblur: Some words in the pop-up dialog are not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 238,
+      "code": "PHA262026-0219",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0219",
+      "title": "PHD-A 20.13.0 - [ARA]AI_Enhance: Some words in the pop-up dialog are not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 239,
+      "code": "PHA262026-0218",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0218",
+      "title": "PHD-A 20.13.0 - [Production]Credits: The credits of premium plan and Credits Auto Pass is not giving properly",
+      "product": "PHD Android",
+      "exportStatus": "NewCreated",
+      "remoteStatus": "NewCreated",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K36",
+        "K60"
+      ]
+    },
+    {
+      "row": 240,
+      "code": "PHA262026-0217",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0217",
+      "title": "PHD-A 20.13.0 - Mine: The style of credit area is not changed to premium style after purchasing a premium plan",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K36"
+      ]
+    },
+    {
+      "row": 241,
+      "code": "PHA262026-0216",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0216",
+      "title": "PHD-A 20.13.0 - [ARA]InstaFill: The text \"Blur\" is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 242,
+      "code": "PHA262026-0215",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0215",
+      "title": "PHD-A 20.13.0 - [ARA]Skin Tone: The effect on the preview is opposite with the slider",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 243,
+      "code": "PHA262026-0214",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0214",
+      "title": "PHD-A 20.13.0 - [ARA]AI_Background: The arrow of one-time free trial is pointing at the wrong position",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 244,
+      "code": "PHA262026-0213",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0213",
+      "title": "PHD-A 20.13.0 - [ARA]Removal: The word \"Premium\" is not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 245,
+      "code": "PHA262026-0212",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0212",
+      "title": "PHD-A 20.13.0 - [ARA]Launcher: Some of the shortcuts are not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 246,
+      "code": "PHA262026-0211",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0211",
+      "title": "PHD-A 20.13.0 - [ARA]Mosaic: The tab in the very right is truncated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K66"
+      ]
+    },
+    {
+      "row": 247,
+      "code": "PHA262026-0210",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0210",
+      "title": "PHD-A 20.13.0 - [ARA]Edit Room-effect: Some feature names are not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 248,
+      "code": "PHA262026-0209",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0209",
+      "title": "PHD-A 20.13.0 - [ARA]Edit Room-portrait: Some feature names are not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 249,
+      "code": "PHA262026-0208",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0208",
+      "title": "PHD-A 20.13.0 - [ARA]Edit Room-enhance: Some feature names are not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 250,
+      "code": "PHA262026-0207",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0207",
+      "title": "PHD-A 20.13.0 - [ARA]Edit Room-edit: Some feature names are not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 251,
+      "code": "PHA262026-0206",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0206",
+      "title": "PHD-A 20.13.0 - [ARA]Quick_Actions-subject: The number of the third slider is not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K68"
+      ]
+    },
+    {
+      "row": 252,
+      "code": "PHA262026-0205",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0205",
+      "title": "PHD-A 20.13.0 - [ARA]Quick_Actions-retouch: The number of sliders is not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K68"
+      ]
+    },
+    {
+      "row": 253,
+      "code": "PHA262026-0204",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0204",
+      "title": "PHD-A 20.13.0 - [ARA]Quick_Actions-retouch: The style name of Conceal is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 254,
+      "code": "PHA262026-0203",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0203",
+      "title": "PHD-A 20.13.0 - [ARA]Quick_Actions-presets: The number of sliders is not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K68"
+      ]
+    },
+    {
+      "row": 255,
+      "code": "PHA262026-0202",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0202",
+      "title": "PHD-A 20.13.0 - [ARA]Quick_Actions-presets: The feature name of Presets is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 256,
+      "code": "PHA262026-0201",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0201",
+      "title": "PHD-A 20.13.0 - [ARA]Quick_Actions-background: The number of sliders is not translated",
+      "product": "PHD Android",
+      "exportStatus": "QA Propose Won't Fix",
+      "remoteStatus": "QA Propose Won't Fix",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K68"
+      ]
+    },
+    {
+      "row": 257,
+      "code": "PHA262026-0200",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0200",
+      "title": "PHD-A 20.13.0 - [ARA]Quick_Actions-background: The style name of Blur is not translated",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K67"
+      ]
+    },
+    {
+      "row": 258,
+      "code": "PHA262026-0199",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0199",
+      "title": "PHD-A 20.13.0 - Credits: The log shows \"Yearly Credit Bonus\" instead of \"Credit Auto Pass\" after purchasing Credit Auto Pass",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K36"
+      ]
+    },
+    {
+      "row": 259,
+      "code": "PHA262026-0198",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0198",
+      "title": "PHD-A 20.13.0 - AI_Replace: The \"change prompt\" toast pops up after typing in 101 characters",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K09"
+      ]
+    },
+    {
+      "row": 260,
+      "code": "PHA262026-0197",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0197",
+      "title": "PHD-A 20.12.0 - [UX]Launcher: There is a wide gap between the banners",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": []
+    },
+    {
+      "row": 261,
+      "code": "PHA262026-0196",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0196",
+      "title": "PHD-A 20.12.0 - AI_Expand: The APP crashes after entering Credits page from AI Expand and tapping the [Subscribe] button",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K39"
+      ]
+    },
+    {
+      "row": 262,
+      "code": "PHA262026-0195",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0195",
+      "title": "PHD-A 20.12.0 - [UX]My_AI_Artwork: The APP is going to full view after tapping the image twice",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K49"
+      ]
+    },
+    {
+      "row": 263,
+      "code": "PHA262026-0194",
+      "url": "https://ecl.cyberlink.com/Ebug/EbugHandle/HandleMainEbug.asp?BugCode=PHA262026-0194",
+      "title": "PHD-A 20.12.0 - [ATFound][SideEffect]My_AI_Artwork-AI_Headshot: The preview does not show the selected image after tapping an image",
+      "product": "PHD Android",
+      "exportStatus": "Close",
+      "remoteStatus": "Close",
+      "detailRead": true,
+      "included": true,
+      "exclusion": "",
+      "knowledgeEntries": [
+        "K45"
+      ]
+    }
+  ]
+}

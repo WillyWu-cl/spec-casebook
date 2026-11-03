@@ -513,8 +513,9 @@ limits the page to one run, to see whether that run pressed everything.
 │   └── lib/                  # Shared helpers (CSV, library paths, spec sets, export)
 ├── templates/                # Review page template
 └── library/
-    └── <product>/            # One folder per product (pdr = PowerDirector Mobile)
+    └── <product>/            # One folder per product (pdr = PowerDirector Mobile, phd = PhotoDirector Mobile)
         ├── product.json      # App ids per platform, TestFlight name, eBug (ECL) product names
+        ├── domain/           # Product domain knowledge, when there is one (phd: rules, risks, setup, triage)
         └── <feature>/        # One folder per feature (see below)
 ```
 
