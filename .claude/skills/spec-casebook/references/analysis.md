@@ -38,6 +38,9 @@ and return, waits), which apply to every job.
 4. **Numbers.** Every number the spec states (credits, durations, counts, sizes, percentages, line limits) gets a
    requirement that quotes it. A pick "at random from a pool of N" gets a row that draws several times and checks the
    picks vary within the pool, not one that taps twice (2026-10-27, 「Surprise me」 from 10 strings). Credit numbers are binding (see requirements.md format).
+   A limit whose unit has two readings (「10 MB」: 10,000,000 or 10,485,760 bytes) gets a `Q-n` on the unit and
+   boundary rows outside the gap (just under the smaller reading, just over the larger), never one row at a number
+   inside it (2026-11-03, PHD Creative Reel Q-22 / TC-048, TC-126).
 5. **Persistence and sessions.** For everything the feature saves (task, title, thumbnail, chat position, episode),
    check reopen, rename, same and new session, reinstall and next episode, as far as the spec states them.
 6. **MX flows.** Tiers, daily chats, charge cards, first-use credits, free trial, discount. The MX file is part of
@@ -92,6 +95,9 @@ and return, waits), which apply to every job.
    does not cover them (TC-218 stood for three tiers). Fill `### Variants`: one line per requirement × variant with
    its rows. `check.ts` fails a requirement naming two or more tiers, or "each tier / model / language", that lacks a
    line per variant.
+   A rule stated for the whole feature that has several sub-features (output 9:16 for Creative, Cinematic Styles and
+   AI Transition) is a variant rule too: one line per sub-feature (2026-11-03, PHD Creative Reel R-023: only
+   Creative's file was measured).
 
 11. **Every control (user, 2026-10-28, REQ-038).** A PDF-only analysis has no `inventory.json`: trace the 「Controls
    (PDF-read)」 lists of `board-notes.md` to rows by hand and leave this pass owed (`reading-the-spec.md`, *No Figma

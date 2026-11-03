@@ -1,0 +1,312 @@
+Reel Creator（原 Cinematic Reel Creator）— Room & Template Preview　｜　spec 依帳本 spec-draft/reel-creator.decisions.md
+9:41
+ 
+Cinematic Styles 🎬
+100
+Year-End Recap 📅
+Cool Transitions 🤳🏻
+Christmas Time 🎄
+第一條: cinematic styles= CineStory
+第二條: year-end recap= Creative Reel (opus 5.5)
+第三條: cool transitions= AI
+= AI Transition
+182
+View photo tips
+Top 5 of My Year
+Rank your year's best moments in one reel
+5–15 photos
+Use Template
+×
+Use Template
+182
+View photo tips
+Photo tips
+✓  Recommended
+✓
+✓
+✓
+•  Portrait (vertical) photos work best
+•  Clear, well-lit photos
+•  One main subject per photo
+✕  Avoid
+✕
+Rank your year's best moments in one reel
+5–15 photos
+•  Blurry or dark photos
+Got it
+×
+Top 5 of My Year
+✕
+✕
+•  Screenshots or photos with heavy text
+Use Template
+‹
+Add Photos
+Recents  ▾
+01
+02
+03
+04
+05
+06
+07
+Select 5–15 photos 7/15
+Next
+session 內
+再次進 picker
+‹
+Add Photos
+Recents  ▾
+Use the 3 photos you 
+picked last time?
+Select 5–15 photos 0/15
+Import
+×
+Next
+Import
+View photo
+tips
+點任一 template
+【 Room：Cinematic Reel Creator → Reel Creator 】
+• 房間改名 Reel Creator（Effects 按鈕、Launcher Shortcut、Launcher Template 列、AI Video Page、room title 同步改）
+• 不分 tab：單一房間由上往下排 section，三個 feature 混排
+  ◦ Cinematic Styles 🎬 = CineStory（既有）
+  ◦ Cool Transitions 🤳🏻 = AI Transition
+  ◦ Year-End Recap 📅、Christmas Time 🎄 … = Creative（Opus 5.5，server 端既有 pipeline）
+• 待決：section 排序 → Meg 與 CMS 討論能否把 CineStory 重新上到新 CMS type
+
+【 從 Edit Room 進入 】
+• 比照 I2V：先跳 dialog 確認是否跳轉，並自動幫用戶存圖
+• 進 Reel Creator room，不帶照片（CineStory 也不再帶，與今天不同）
+
+【 CMS 】
+• Cinematic Styles：沿用既有 CineStory CMS type（見上方待決）
+• AI Transition + Creative：共用一個新 CMS type（暫稱 ReelCreator），category = section
+• 每個 template 帶：DisplayName、description、demo、View photo tips 內容（Recommend／Avoid）、Photo min／max
+  ◦ AI Transition：min = max（固定 4 或 6 張）；Creative：min < max（依 template，可能 > 10 張）
+• 輸出比例寫死 9:16
+• 待決：Creative feature_id（傾向同 CineStory；Meg／11 月初；fallback：共用 CineStory feature_id，action_id vendor 帶 
+Opus 5.5）
+
+【 時程 】Android 11/E、iOS 12/B，三個 feature 一起上
+【 Deeplink 】
+• 沿用舊的 Cinematic Reel Creator deeplink，打開 Reel Creator room
+• 只支援 template = content GUID → 直接開該 template 的 Preview page（未選
+圖）
+  ◦ CineStory GUID 與新 CMS type 的 GUID 都要支援
+• 不帶參數 → 開 room
+• GUID 找不到 → 開 room
+• 不分 tab，所以不支援 category 參數
+【 1. Preview（Reels 式） 】
+• Room 點任一 template → 全螢幕 9:16 demo（auto-play／
+loop），像滑 Reels 一樣上下刷換 template
+• 左上 View photo tips；右側 mute
+• 底部：template name、description、張數（例：5–15 
+photos／1 photo）
+• CTA「Use Template」→ 直接開 photo picker
+•上下刷範圍 = 同一個 category, 無限循環
+• 文字疊在 demo 上（底部壓暗）
+• 第一次進房間會有引導上下滑動的手指動畫
+【 2. View photo tips 】
+• 位置比照 CineStory：左上「View photo tips」
+• 內容從 CMS 帶，每個 template 各自寫（Recommended／
+Avoid 文字＋範例圖）
+• 直式照片建議寫在 Recommended
+• 不自動彈出，只在用戶點擊時開啟
+【 3. Photo picker 】
+• Use Template 後直接進 picker，多選；選取順序以 01、
+02… 標在縮圖上
+• 底部 tray：Select {min}–{max} photos、{已選}/{max}、已選
+縮圖（橫向捲動）、Next
+• 張數在 min～max 內才可按 Next；min = max 時寫「Select 
+N photos」
+• 每張選取當下檢查：300–4096 px、≤ 10 MB、NSFW、名
+人；不合格的標出
+• 橫式、直式都收
+【 4–5. Picker 記憶上次選的圖（NEW） 】
+• App launch 到 session 結束為一個 session；session 內再次
+進 picker 都記得上次選的圖
+• 在 tray 上方顯示：「Use the N photos you picked last 
+time?」＋ Import
+• 按 Import：帶入選取狀態，停留在 picker（不直接離開）
+• 帶入後張數超過／少於該 template 範圍 → tray 顯示紅字，
+強制增減到範圍內才能 Next
+• 手機 gallery 已找不到的圖不帶；上次只選 1 張時不顯示此提
+醒
+• 待確認：「上次選的圖」= 上次按 Next 的那組，還是上次生
+成的那組
+• 待確認：記憶只在 Reel Creator 內，還是 app 其他 picker 
+也共用
+• 待確認：按 × 關掉後，同 session 再進 picker 還出現嗎
+Cinematic Styles（既有 CineStory，1 張照片）— 同一套流程
+182
+View photo tips
+↕ 上下刷換 template
+Micro Cinema
+Dreamy close-ups build a cinematic visual story
+1 photo
+×
+Use Template
+Use Template
+‹
+Add Photos
+Recents  ▾
+01
+Select 1 photo 1/1
+Next
+Next
+182
+Micro Cinema
+1 photo · output 9:16
+Your photos
+Tap the photo to replace
+×
+1
+1/1
+Generate
+40
+【 Cinematic Styles 】
+• 同一套流程：Preview → Use Template → picker 單選 → 確
+認生成頁 → Generate｜40
+• 確認頁點照片可換圖；無 Text language
+• 待確認：上次選了多張時，進 Cinematic picker 要不要出現 
+Import 提醒（帶入後要減到 1 張）
+‹
+Add Photos
+Recents  ▾
+01
+02
+03
+Select 5–15 photos 3/15
+Select at least 5 photos (2 more)
+Next
+Next
+（張數在範圍內）
+182
+Top 5 of My Year
+5–15 photos · output 9:16
+Your photos
+Long-press to reorder · tap × to remove
+×
+×
+1
+2
+3
+×
+4
+7/15
+×
+5
+×
+6
+×
+7
+×
++
+Text language
+English  ▾
+Generate
+60
+刪到 < min
+182
+Top 5 of My Year
+5–15 photos · output 9:16
+Your photos
+Long-press to reorder · tap × to remove
+×
+×
+1
+2
+3
+×
+4
+4/15
+×
++
+Please upload at least 5 photos
+Text language
+English  ▾
+Generate
+60
+【 6–7. 確認生成頁（NEW） 】
+• 頂部：template 縮圖＋name＋張數
+• Your photos：所有 input image，可長按拖曳排序、× 刪除
+（sync AI Creative Studio）
+  ◦ AI Transition：順序 = 出場順序；Creative：不保證照用戶順序
+  ◦ + 方塊：回到 picker，帶著目前選取
+• Creative：Text language 下拉選單（預設 device language）
+• Generate｜60：刪到 < min → disabled，點擊 toast "Please 
+upload at least %d photos"
+• credit 不足：免費用戶 paywall；訂閱用戶 More Credits 
+Required → Credit Shop
+• Content team 確保每張 input 都會用到（不另外提示）
+• 待確認：語言選單從 preview 移到這頁
+182
+Top 5 of My Year
+5–15 photos · output 9:16
+Your photos
+7/15
+✓
+1
+×
+2
+3
+×
+4
+×
+简体中文
+5
+×
+6
+7
+×
+한국어
+Español
+Français
+Deutsch
+Português
+Italiano
+ภาษาไทย
+…
+Text language
+Long-press to reorder · tap × to remove
+English  (Device language)
+繁體中文
+×
+日本語×
+English  ▾
++
+Generate
+60
+Generate
+‹
+Image to Video
+Processing…
+My AI Artwork
+Reel Creator
+Character Motion Swap
+Oct 22
+Top 5 of My Year
+3 minutes remaining…
+Oct 22
+Outfit Swap 
+Transition
+Oct 21
+Micro Cinema
+Oct 20
+Snow Globe 
+Christmas
+Create More
+【 8. Text language（Creative only） 】
+• 預設 = device language，標示 (Device language)
+• 列出 PhD 支援的所有語言（iOS／Android 同一份），可捲動
+• 選定後傳 lang code 給 engine（Opus 5.5 pipeline 全支援）
+• 同一 session 保留選擇；離開房間重置
+• 生成後文字不可修改
+【 My AI Artwork 】
+• 三個 feature 的生成結果都進目前 Cinematic Reel Creator 的 
+Artwork 頁
+• RD 注意：Artwork 的 tab 名稱也要改成 Reel Creator
+• 不分 feature、沒有子 tab，全部依時間排序；每筆顯示 
+template name
+• Create More → 回到 Reel Creator room

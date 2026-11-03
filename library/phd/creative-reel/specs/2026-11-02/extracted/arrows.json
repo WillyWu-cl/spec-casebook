@@ -1,0 +1,16 @@
+{
+  "note": "No Figma links in the spec set: arrows are the orange arrows drawn between the PDF mockups (node = board id + counter) plus the flow stated in the notes (Create More).",
+  "arrows": [
+    { "arrow": "room-a1", "node": "room-a1", "board": "room", "edge": "Room template card (「點任一 template」)", "expected": "Preview of that template (full-screen 9:16 demo)", "requirement": "R-090" },
+    { "arrow": "preview-a1", "node": "preview-a1", "board": "preview", "edge": "Preview 「View photo tips」", "expected": "Photo tips sheet", "requirement": "R-091" },
+    { "arrow": "preview-a2", "node": "preview-a2", "board": "preview", "edge": "Preview 「Use Template」", "expected": "Photo picker 「Add Photos」", "requirement": "R-092" },
+    { "arrow": "picker-a1", "node": "picker-a1", "board": "picker", "edge": "Picker (photos picked, left) → picker entered again in the same session (「session 內再次進 picker」)", "expected": "Picker with 「Use the 3 photos you picked last time?」 + Import above the tray", "requirement": "R-093" },
+    { "arrow": "picker-a2", "node": "picker-a2", "board": "picker", "edge": "Prompt 「Import」", "expected": "Picker with the 3 photos selected, tray in red 「Select at least 5 photos (2 more)」, Next disabled", "requirement": "R-094" },
+    { "arrow": "picker-a3", "node": "picker-a3", "board": "picker", "edge": "Picker 「Next」 (count in range)", "expected": "Confirm-generate page", "requirement": "R-095" },
+    { "arrow": "confirm-a1", "node": "confirm-a1", "board": "confirm", "edge": "Confirm page: remove photos to below min (「刪到 < min」)", "expected": "Count red (4/15), Generate disabled, tap shows toast 「Please upload at least 5 photos」", "requirement": "R-096" },
+    { "arrow": "text-language-a1", "node": "text-language-a1", "board": "text-language", "edge": "Confirm page 「Generate」", "expected": "My AI Artwork, Reel Creator tab, new card 「Processing…」", "requirement": "R-097" },
+    { "arrow": "artwork-a1", "node": "artwork-a1", "board": "artwork", "edge": "My AI Artwork 「Create More」", "expected": "Reel Creator room", "requirement": "R-098" },
+    { "arrow": "cinematic-a1", "node": "cinematic-a1", "board": "cinematic", "edge": "Cinematic preview 「Use Template」", "expected": "Picker 「Select 1 photo」", "requirement": "R-099" },
+    { "arrow": "cinematic-a2", "node": "cinematic-a2", "board": "cinematic", "edge": "Cinematic picker 「Next」", "expected": "Cinematic confirm page (Your photos 1/1, Generate | 40)", "requirement": "R-100" }
+  ]
+}

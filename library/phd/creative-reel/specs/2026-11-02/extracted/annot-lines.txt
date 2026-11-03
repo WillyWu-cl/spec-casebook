@@ -1,0 +1,189 @@
+118 1225 Christmas Time 🎄
+117 1157 【 Room：Cinematic Reel Creator → Reel Creator 】
+117 1186 • 房間改名 Reel Creator（Effects 按鈕、Launcher Shortcut、Launcher Template 列、AI Video Page、room title 同步改）
+
+117 1206 • 不分 tab：單一房間由上往下排 section，三個 feature 混排
+
+117 1226   ◦ Cinematic Styles 🎬 = CineStory（既有）
+
+117 1246   ◦ Cool Transitions 🤳🏻 = AI Transition
+
+117 1266   ◦ Year-End Recap 📅、Christmas Time 🎄 … = Creative（Opus 5.5，server 端既有 pipeline）
+
+117 1286 • 待決：section 排序 → Meg 與 CMS 討論能否把 CineStory 重新上到新 CMS type
+
+
+117 1326 【 從 Edit Room 進入 】
+
+117 1346 • 比照 I2V：先跳 dialog 確認是否跳轉，並自動幫用戶存圖
+
+117 1366 • 進 Reel Creator room，不帶照片（CineStory 也不再帶，與今天不同）
+
+
+117 1406 【 CMS 】
+
+117 1426 • Cinematic Styles：沿用既有 CineStory CMS type（見上方待決）
+
+117 1446 • AI Transition + Creative：共用一個新 CMS type（暫稱 ReelCreator），category = section
+
+117 1466 • 每個 template 帶：DisplayName、description、demo、View photo tips 內容（Recommend／Avoid）、Photo min／max
+
+117 1486   ◦ AI Transition：min = max（固定 4 或 6 張）；Creative：min < max（依 template，可能 > 10 張）
+
+117 1506 • 輸出比例寫死 9:16
+
+117 1526 • 待決：Creative feature_id（傾向同 CineStory；Meg／11 月初；fallback：共用 CineStory feature_id，action_id vendor 帶 
+117 1546 Opus 5.5）
+
+
+117 1586 【 時程 】Android 11/E、iOS 12/B，三個 feature 一起上
+943 1157 【 Deeplink 】
+943 1186 • 沿用舊的 Cinematic Reel Creator deeplink，打開 Reel Creator room
+
+943 1206 • 只支援 template = content GUID → 直接開該 template 的 Preview page（未選
+943 1226 圖）
+
+943 1246   ◦ CineStory GUID 與新 CMS type 的 GUID 都要支援
+
+943 1266 • 不帶參數 → 開 room
+
+943 1286 • GUID 找不到 → 開 room
+
+943 1306 • 不分 tab，所以不支援 category 參數
+1483 1097 【 1. Preview（Reels 式） 】
+1483 1126 • Room 點任一 template → 全螢幕 9:16 demo（auto-play／
+1483 1146 loop），像滑 Reels 一樣上下刷換 template
+
+1483 1166 • 左上 View photo tips；右側 mute
+
+1483 1186 • 底部：template name、description、張數（例：5–15 
+1483 1206 photos／1 photo）
+
+1483 1226 • CTA「Use Template」→ 直接開 photo picker
+
+1483 1246 •上下刷範圍 = 同一個 category, 無限循環
+
+1483 1266 • 文字疊在 demo 上（底部壓暗）
+
+1483 1286 • 第一次進房間會有引導上下滑動的手指動畫
+1933 1097 【 2. View photo tips 】
+1933 1126 • 位置比照 CineStory：左上「View photo tips」
+
+1933 1146 • 內容從 CMS 帶，每個 template 各自寫（Recommended／
+1933 1166 Avoid 文字＋範例圖）
+
+1933 1186 • 直式照片建議寫在 Recommended
+
+1933 1206 • 不自動彈出，只在用戶點擊時開啟
+2383 1097 【 3. Photo picker 】
+2383 1126 • Use Template 後直接進 picker，多選；選取順序以 01、
+2383 1146 02… 標在縮圖上
+
+2383 1166 • 底部 tray：Select {min}–{max} photos、{已選}/{max}、已選
+2383 1186 縮圖（橫向捲動）、Next
+
+2383 1206 • 張數在 min～max 內才可按 Next；min = max 時寫「Select 
+2383 1226 N photos」
+
+2383 1246 • 每張選取當下檢查：300–4096 px、≤ 10 MB、NSFW、名
+2383 1266 人；不合格的標出
+
+2383 1286 • 橫式、直式都收
+2833 1097 【 4–5. Picker 記憶上次選的圖（NEW） 】
+2833 1126 • App launch 到 session 結束為一個 session；session 內再次
+2833 1146 進 picker 都記得上次選的圖
+
+2833 1166 • 在 tray 上方顯示：「Use the N photos you picked last 
+2833 1186 time?」＋ Import
+
+2833 1206 • 按 Import：帶入選取狀態，停留在 picker（不直接離開）
+
+2833 1226 • 帶入後張數超過／少於該 template 範圍 → tray 顯示紅字，
+2833 1246 強制增減到範圍內才能 Next
+
+2833 1266 • 手機 gallery 已找不到的圖不帶；上次只選 1 張時不顯示此提
+2833 1286 醒
+
+2833 1306 • 待確認：「上次選的圖」= 上次按 Next 的那組，還是上次生
+2833 1326 成的那組
+
+2833 1346 • 待確認：記憶只在 Reel Creator 內，還是 app 其他 picker 
+2833 1366 也共用
+
+2833 1386 • 待確認：按 × 關掉後，同 session 再進 picker 還出現嗎
+1466 1880 Cinematic Styles（既有 CineStory，1 張照片）— 同一套流程
+1787 2009 182
+1510 2055 View photo tips
+1486 2498 ↕ 上下刷換 template
+1486 2525 Micro Cinema
+1486 2557 Dreamy close-ups build a cinematic visual story
+1486 2580 1 photo
+1814 2517 ×
+1596 2645 Use Template
+1840 2612 Use Template
+1934 1995 ‹
+1964 2005 Add Photos
+1932 2049 Recents  ▾
+2017 2091 01
+1932 2625 Select 1 photo 1/1
+2238 2624 Next
+2290 2612 Next
+2687 2009 182
+2436 2065 Micro Cinema
+2436 2089 1 photo · output 9:16
+2382 2141 Your photos
+2382 2165 Tap the photo to replace
+2444 2200 ×
+2393 2200 1
+2706 2142 1/1
+2480 2679 Generate
+2604 2679 40
+2833 1967 【 Cinematic Styles 】
+2833 1996 • 同一套流程：Preview → Use Template → picker 單選 → 確
+2833 2016 認生成頁 → Generate｜40
+
+2833 2036 • 確認頁點照片可換圖；無 Text language
+
+2833 2056 • 待確認：上次選了多張時，進 Cinematic picker 要不要出現 
+2833 2076 Import 提醒（帶入後要減到 1 張）
+3733 1097 【 6–7. 確認生成頁（NEW） 】
+3733 1126 • 頂部：template 縮圖＋name＋張數
+
+3733 1146 • Your photos：所有 input image，可長按拖曳排序、× 刪除
+3733 1166 （sync AI Creative Studio）
+
+3733 1186   ◦ AI Transition：順序 = 出場順序；Creative：不保證照用戶順序
+
+3733 1206   ◦ + 方塊：回到 picker，帶著目前選取
+
+3733 1226 • Creative：Text language 下拉選單（預設 device language）
+
+3733 1246 • Generate｜60：刪到 < min → disabled，點擊 toast "Please 
+3733 1266 upload at least %d photos"
+
+3733 1286 • credit 不足：免費用戶 paywall；訂閱用戶 More Credits 
+3733 1306 Required → Credit Shop
+
+3733 1326 • Content team 確保每張 input 都會用到（不另外提示）
+
+3733 1346 • 待確認：語言選單從 preview 移到這頁
+4633 1097 【 8. Text language（Creative only） 】
+4633 1126 • 預設 = device language，標示 (Device language)
+
+4633 1146 • 列出 PhD 支援的所有語言（iOS／Android 同一份），可捲動
+
+4633 1166 • 選定後傳 lang code 給 engine（Opus 5.5 pipeline 全支援）
+
+4633 1186 • 同一 session 保留選擇；離開房間重置
+
+4633 1206 • 生成後文字不可修改
+5083 1097 【 My AI Artwork 】
+5083 1126 • 三個 feature 的生成結果都進目前 Cinematic Reel Creator 的 
+5083 1146 Artwork 頁
+
+5083 1166 • RD 注意：Artwork 的 tab 名稱也要改成 Reel Creator
+
+5083 1186 • 不分 feature、沒有子 tab，全部依時間排序；每筆顯示 
+5083 1206 template name
+
+5083 1226 • Create More → 回到 Reel Creator room
