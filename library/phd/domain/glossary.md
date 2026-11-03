@@ -45,6 +45,13 @@ The features the 2026-04 → 10 eBugs touch; not a full product catalogue.
 - **iOS has two:** Pro and Pro+ are different modes; never apply them to Android.
 - Premium, Credit Auto Pass and the one-time free trial are separate states (K31, K36).
 
+## Common AI feature controls (user, 2026-11-03)
+
+| Control | Looks like | Tap goes to | Rule |
+| --- | --- | --- | --- |
+| Credit button | Blue button with the current credit balance and a [+] | Buy Credit page | K75 |
+| History button | Sheet of paper with a clock at its bottom right (only in some AI features) | My AI Artwork, on that feature's tab | K76 |
+
 ## Platform terms
 
 - **Stage / Production:** server environments; Stage capacity, timing and bonus behaviour do not stand for Production (K60).

@@ -3,7 +3,7 @@
 Product knowledge for every `phd/*` feature: how PHD behaves across features, what its past bugs taught, which
 rules the team has confirmed and which questions are still open. It is distilled from 260 PHD eBugs created
 2026-04-01 → 2026-10-15 (257 Android, 3 iOS; 2 test records and 1 PowerDirector bug excluded) plus rules the user
-confirmed on 2026-10-15/16. Entries keep their stable IDs **K01–K74**, so a requirement or a Note can cite one
+confirmed on 2026-10-15/16 and later (K75–K76, 2026-11-03). Entries keep their stable IDs **K01–K74**, so a requirement or a Note can cite one
 (`[Domain: K21]`); where one source entry held several rules, a letter splits it (`K36a` … `K36e`, `K47a` …).
 
 Imported 2026-11-03 from `qadm-phdm-spec-contract-runner-agent/docs/domain/phd` (commit `c00d9c6`, 2026-10-16) and
