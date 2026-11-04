@@ -109,7 +109,10 @@ screenshot and page source of the screen on the phone and logs it with the case 
   match is saved like `design <id>` with `auto` and the match in `captures.jsonl`, printed as one `design: captured …`
   line: no extra call, navigation or tokens. A match is the check's arrival rule made stricter: the row's own screens
   60 % of 3+ texts, any other screen 80 % of 4+ texts with a clear lead over the next best (a loading or failure state
-  drawn beside it is not taken for it); frames drawn with the same texts share one capture. At `case` the script names
+  drawn beside it is not taken for it); frames drawn with the same texts share one capture. A match is never saved over
+a screen already captured in the run (a hand `design <id>` after `case` takes it off the watch), and a frame with a
+dark or light background (a board drawing each screen in both) is only taken from a screenshot of the same appearance
+(the screenshot's brightness; an unreadable one is not filtered). At `case` the script names
   the row's screens with too few texts to match, and at the next `case` (or `case -`) the ones the row passed without:
   capture those by hand (`design <id>`) if they did show, else a later round does. The `state` check and the review
   passes still catch a wrong state. A computer without the Figma data (`out/`) gets one line saying so and captures by

@@ -11,14 +11,19 @@
 // screens need 3+ texts and 60 %; any other screen 4+ texts and 80 % and a clear lead (0.15) over the next best, so a
 // state drawn beside it (loading, failure) is not taken for it. Screens with fewer texts are listed at `case` for a
 // capture by hand. The check's `state` candidate still catches a wrong state, and the reviewers settle it.
+// Two guards from the first design pass (Android main flow, 2026-11-04): a match is not saved over a screen the run
+// captured since `case` (a hand capture was overwritten by the next tap's source), and a frame whose background is dark
+// or light (the board draws each screen in both) is only taken from a screenshot of the same appearance (light
+// screens were saved for dark frames). A screenshot or frame whose appearance cannot be told is not filtered.
 import { appendFileSync, existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
+import { inflateSync } from 'node:zlib';
 import { normLabel } from './coverage.ts';
 import { appElements, figmaScreen } from './design-match.ts';
 import { featureOfRunDir } from './feature-config.ts';
 import { featureDir } from './library.ts';
 
-type Watch = { case: string; row: string[]; screens: Record<string, { name: string; texts: string[] }> };
+type Watch = { case: string; row: string[]; screens: Record<string, { name: string; texts: string[]; dark?: boolean | null }> };
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
 const watchFile = (runDir: string) => join(runDir, '.design-watch.json');
 const planFile = (runDir: string) => join(dirname(dirname(resolve(runDir))), 'design', 'plan.json');
@@ -43,17 +48,62 @@ export function saveCapture(runDir: string, screen: string, o: { part?: number; 
   return { kase, png: `screenshots/design/${name}.png` };
 }
 
-// Short Figma texts of every routed screen, cached in the run folder until plan.json changes.
-function screenTexts(runDir: string, plan: any, out: string): Record<string, string[]> {
+const luma = (r: number, g: number, b: number) => (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+
+/** A frame's appearance from its own background fill: true dark, false light, null none or unclear. */
+export function darkFill(node: any): boolean | null {
+  const f = (node?.fills ?? []).filter((x: any) => x.type === 'SOLID' && /^#[0-9a-f]{6}(ff)?$/i.test(x.color ?? '')).at(-1);
+  if (!f) return null;
+  const l = luma(...([1, 3, 5].map(i => parseInt(f.color.slice(i, i + 2), 16)) as [number, number, number]));
+  return l < 0.35 ? true : l > 0.65 ? false : null;
+}
+
+/** A screenshot's appearance: true when most of it is dark, false when most is light, null when unreadable or mixed.
+ *  Plain 8-bit RGB / RGBA PNGs (what WDA and UiAutomator2 return); every 4th pixel of every 4th row is sampled. */
+export function darkShot(png: Buffer): boolean | null {
+  try {
+    if (png.length < 33 || png.readUInt32BE(0) !== 0x89504e47) return null;
+    const w = png.readUInt32BE(16), h = png.readUInt32BE(20), depth = png[24], type = png[25];
+    if (depth !== 8 || (type !== 2 && type !== 6) || png[28] !== 0) return null;
+    const idat: Buffer[] = [];
+    for (let o = 8; o + 8 <= png.length;) {
+      const len = png.readUInt32BE(o), kind = png.toString('latin1', o + 4, o + 8);
+      if (kind === 'IDAT') idat.push(png.subarray(o + 8, o + 8 + len));
+      if (kind === 'IEND') break;
+      o += 12 + len;
+    }
+    const raw = inflateSync(Buffer.concat(idat)), bpp = type === 6 ? 4 : 3, stride = w * bpp;
+    let prev = new Uint8Array(stride), cur = new Uint8Array(stride), dark = 0, all = 0;
+    for (let y = 0; y < h; y++) {
+      const at = y * (stride + 1), filter = raw[at];
+      for (let i = 0; i < stride; i++) {
+        const x = raw[at + 1 + i], a = i >= bpp ? cur[i - bpp] : 0, b = prev[i], c = i >= bpp ? prev[i - bpp] : 0;
+        let p = 0;
+        if (filter === 1) p = a; else if (filter === 2) p = b; else if (filter === 3) p = (a + b) >> 1;
+        else if (filter === 4) { const q = a + b - c, pa = Math.abs(q - a), pb = Math.abs(q - b), pc = Math.abs(q - c); p = pa <= pb && pa <= pc ? a : pb <= pc ? b : c; }
+        cur[i] = (x + p) & 255;
+      }
+      if (y % 4 === 0) for (let i = 0; i + 2 < stride; i += 4 * bpp) { all++; if (luma(cur[i], cur[i + 1], cur[i + 2]) < 0.5) dark++; }
+      [prev, cur] = [cur, prev];
+    }
+    if (!all) return null;
+    return dark / all > 0.6 ? true : dark / all < 0.4 ? false : null;
+  } catch { return null; }
+}
+
+// Short Figma texts and the background appearance of every routed screen, cached in the run folder until plan.json
+// changes.
+function screenTexts(runDir: string, plan: any, out: string): Record<string, { texts: string[]; dark: boolean | null }> {
   const cache = join(runDir, '.design-texts.json'), stamp = statSync(planFile(runDir)).mtimeMs;
-  if (existsSync(cache)) { try { const c = read(cache); if (c.plan === stamp) return c.screens; } catch {} }
-  const boards = new Map<string, any[]>(), screens: Record<string, string[]> = {};
+  if (existsSync(cache)) { try { const c = read(cache); if (c.plan === stamp && c.v === 2) return c.screens; } catch {} }
+  const boards = new Map<string, any[]>(), screens: Record<string, { texts: string[]; dark: boolean | null }> = {};
   for (const s of plan.screens.filter((x: any) => x.status === 'routed')) {
     if (!boards.has(s.board)) { const f = join(out, `${s.board.replace(/[:;]/g, '-')}.json`); boards.set(s.board, existsSync(f) ? read(f).nodes : []); }
-    const texts = figmaScreen(boards.get(s.board)!, s, new Set()).texts.filter((t: any) => t.text.length <= 60).map((t: any) => normLabel(t.text)).filter((t: string) => t && t !== '#');
-    screens[s.id] = [...new Set<string>(texts)];
+    const nodes = boards.get(s.board)!;
+    const texts = figmaScreen(nodes, s, new Set()).texts.filter((t: any) => t.text.length <= 60).map((t: any) => normLabel(t.text)).filter((t: string) => t && t !== '#');
+    screens[s.id] = { texts: [...new Set<string>(texts)], dark: darkFill(nodes.find((n: any) => n.id === s.id)) };
   }
-  writeFileSync(cache, JSON.stringify({ plan: stamp, screens }));
+  writeFileSync(cache, JSON.stringify({ v: 2, plan: stamp, screens }));
   return screens;
 }
 
@@ -78,7 +128,7 @@ export function armWatch(runDir: string, caseId: string | null): string[] {
     const done = capturedScreens(runDir), texts = screenTexts(runDir, plan, out);
     const byId = new Map<string, any>(plan.screens.map((s: any) => [s.id, s]));
     const screens: Watch['screens'] = {};
-    for (const [id, t] of Object.entries(texts)) if (!done.has(id) && byId.has(id)) screens[id] = { name: byId.get(id).name, texts: t };
+    for (const [id, t] of Object.entries(texts)) if (!done.has(id) && byId.has(id)) screens[id] = { name: byId.get(id).name, texts: t.texts, dark: t.dark };
     const row = (plan.by_case?.[caseId] ?? []).filter((id: string) => screens[id]);
     writeFileSync(watchFile(runDir), JSON.stringify({ case: caseId, row, screens } satisfies Watch));
     if (row.length) {
@@ -94,6 +144,10 @@ export async function watchSource(runDir: string, xml: string, png: () => Promis
   if (!xml || !existsSync(watchFile(runDir))) return;
   try {
     const w: Watch = read(watchFile(runDir)), w0 = Object.fromEntries(Object.entries(w.screens).map(([id, x]) => [id, x.name]));
+    const drop = (ids: string[]) => { for (const id of ids) delete w.screens[id]; w.row = w.row.filter(id => !ids.includes(id)); };
+    // screens captured since `case` (by hand: `design <id>`) leave the watch and are never saved over
+    const done = capturedScreens(runDir), gone = Object.keys(w.screens).filter(id => done.has(id));
+    if (gone.length) { drop(gone); writeFileSync(watchFile(runDir), JSON.stringify(w)); }
     const app = [...new Set(appElements(xml).flatMap(e => e.text ? e.text.split('\n').concat(e.text) : []).map(normLabel).filter(Boolean))];
     const has = new Set(app), long = app.filter(a => a.length >= 6);
     const score = (id: string) => {
@@ -112,11 +166,15 @@ export async function watchSource(runDir: string, xml: string, png: () => Promis
     const other = !own && !ownBest && top && !rowSet.has(top.id) && top.of >= 4 && top.r >= 0.8 && (!rest[0] || top.r - rest[0].r >= 0.15) ? top : undefined;
     const hit = own ?? other;
     if (!hit) return;
-    const ids = twins(hit, all.filter(x => own ? rowSet.has(x.id) : !rowSet.has(x.id))), shot = await png(), size = await win();
+    let ids = twins(hit, all.filter(x => own ? rowSet.has(x.id) : !rowSet.has(x.id)));
+    // only the frames drawn in the appearance the phone shows (a board drawing each screen dark and light)
+    const shot = await png(), dark = darkShot(shot);
+    if (dark !== null) ids = ids.filter(id => w.screens[id].dark == null || w.screens[id].dark === dark);
+    if (!ids.length) return;
+    const size = await win();
     let kase = '', rel = '';
     for (const id of ids) ({ kase, png: rel } = saveCapture(runDir, id, { png: shot, xml, win: size, extra: { auto: true, match: `${hit.hits}/${hit.of}`, ...(ids.length > 1 ? { same_texts: ids.filter(x => x !== id) } : {}) } }));
-    for (const id of ids) delete w.screens[id];
-    w.row = w.row.filter(id => !ids.includes(id));
+    drop(ids);
     writeFileSync(watchFile(runDir), JSON.stringify(w));
     return `design: captured ${ids.map(id => `${id} ${w0[id]}`).join(', ')} automatically (${hit.hits}/${hit.of} texts${ids.length > 1 ? ', frames with the same texts' : ''}${kase && !rowSet.has(hit.id) ? `, not a screen of ${kase}` : ''}) → ${rel}`;
   } catch (e: any) { return `design: automatic capture failed (${String(e?.message ?? e).slice(0, 120)})`; }

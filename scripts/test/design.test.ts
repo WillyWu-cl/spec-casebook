@@ -428,6 +428,55 @@ test('watch: `case` arms the row\'s screens, a matching page source is captured,
   rmSync(out); rmSync(dir, { recursive: true, force: true });
 });
 
+// a plain 8-bit RGB PNG of one colour (rows filtered Sub, then Paeth, so both unfilters are exercised)
+const pngOf = async (rgb: [number, number, number], w = 40, h = 40) => {
+  const { deflateSync } = await import('node:zlib');
+  const chunk = (kind: string, data: Buffer) => { const b = Buffer.alloc(12 + data.length); b.writeUInt32BE(data.length, 0); b.write(kind, 4, 'latin1'); data.copy(b, 8); return b; };
+  const ihdr = Buffer.alloc(13); ihdr.writeUInt32BE(w, 0); ihdr.writeUInt32BE(h, 4); ihdr[8] = 8; ihdr[9] = 2;
+  const rows = Array.from({ length: h }, (_, y) => {
+    const r = Buffer.alloc(1 + w * 3); r[0] = y % 2 ? 4 : 1;
+    // Sub: the first pixel raw, the rest 0; Paeth on a uniform image predicts the left (or upper) pixel, so also 0
+    if (y % 2 === 0) r.set(rgb, 1);
+    return r;
+  });
+  return Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]), chunk('IHDR', ihdr), chunk('IDAT', deflateSync(Buffer.concat(rows))), chunk('IEND', Buffer.alloc(0))]);
+};
+
+test('watch: a dark or light screenshot is told apart, and so is a frame by its background', async () => {
+  const { darkShot, darkFill } = await import('../lib/design-watch.ts');
+  assert.equal(darkShot(await pngOf([12, 12, 12])), true);
+  assert.equal(darkShot(await pngOf([249, 251, 255])), false);
+  assert.equal(darkShot(Buffer.from('png')), null, 'not a PNG: unknown, never filtered');
+  assert.equal(darkFill({ fills: [{ type: 'SOLID', color: '#0c0c0cff' }] }), true);
+  assert.equal(darkFill({ fills: [{ type: 'SOLID', color: '#f9fbffff' }] }), false);
+  assert.equal(darkFill({ fills: [{ type: 'SOLID', color: '#808080ff' }] }), null, 'mid grey: unclear');
+  assert.equal(darkFill({}), null);
+});
+
+test('watch: never saves over a hand capture, and takes only the frame drawn in the phone\'s appearance', async () => {
+  const { armWatch, saveCapture, watchSource } = await import('../lib/design-watch.ts');
+  const dir = join(RUNS, 'r8'); mkdirSync(dir, { recursive: true });
+  const win = async () => ({ width: 375, height: 812 }), light = await pngOf([249, 251, 255]), dark = await pngOf([12, 12, 12]);
+  const lines = () => readFileSync(join(dir, 'design', 'captures.jsonl'), 'utf8').trim().split('\n').map(l => JSON.parse(l));
+  writeFileSync(join(dir, '.case'), 'TC-001');
+  // a hand capture taken after `case` armed the watch: the next matching source leaves it alone
+  armWatch(dir, 'TC-001');
+  saveCapture(dir, '1:10', { png: dark, xml: iosHome('Choose a template'), win: await win(), note: 'by hand' });
+  assert.equal(await watchSource(dir, iosHome('Choose a template'), async () => light, win), undefined);
+  assert.deepEqual(lines().map(c => [c.screen, c.note, !!c.auto]), [['1:10', 'by hand', false]]);
+  assert.equal(readFileSync(join(dir, 'screenshots', 'design', '1-10.png')).compare(dark), 0, 'the hand capture\'s image is kept');
+  assert.ok(!JSON.parse(readFileSync(join(dir, '.design-watch.json'), 'utf8')).screens['1:10'], 'and the screen left the watch');
+  // a frame drawn dark: a light screenshot is not taken for it, a dark one is
+  rmSync(join(dir, 'design'), { recursive: true }); rmSync(join(dir, 'screenshots'), { recursive: true });
+  armWatch(dir, 'TC-001');
+  const wf = join(dir, '.design-watch.json'), w = JSON.parse(readFileSync(wf, 'utf8'));
+  w.screens['1:10'].dark = true; writeFileSync(wf, JSON.stringify(w));
+  assert.equal(await watchSource(dir, iosHome('Choose a template'), async () => light, win), undefined, 'light phone, dark frame: nothing');
+  assert.ok(!existsSync(join(dir, 'design', 'captures.jsonl')));
+  assert.match(await watchSource(dir, iosHome('Choose a template'), async () => dark, win) ?? '', /captured 1:10 Home automatically/);
+  rmSync(dir, { recursive: true, force: true });
+});
+
 // ---- figma-source receipts -------------------------------------------------------------------------------------------
 test('figma-source: scope.json records the list, boards read and ids not found', () => {
   const resp = join(EX, 'figma-source', 'design', 'responses');
