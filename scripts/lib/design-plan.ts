@@ -55,7 +55,9 @@ export function ensureSource(feature: string, set: string, quiet = false) {
   for (const step of ['merge', 'crop']) {
     const r = spawnSync(process.execPath, [join(import.meta.dirname, '..', 'figma-source.ts'), feature, set, step, 'design'], { encoding: 'utf8' });
     if (!quiet) console.log(`(figma-source ${step}: ${(r.stdout || r.stderr).trim().split('\n').at(-1)})`);
-    if (r.status !== 0 && step === 'merge') throw new Error(`figma-source merge failed: ${(r.stderr || r.stdout).trim()}`);
+    // exit 10 / 11: a board is incomplete / one the casebook knows was never read; the rest is merged and the plan
+    // names the gaps (sourceGaps)
+    if (r.status !== 0 && r.status !== 10 && r.status !== 11 && step === 'merge') throw new Error(`figma-source merge failed: ${(r.stderr || r.stdout).trim()}`);
   }
 }
 
@@ -66,13 +68,45 @@ export function planFresh(feature: string, platform: string, quiet = false) {
   if (set) ensureSource(feature, set, quiet);
   const ex = set && join(featureDir(feature), 'specs', set, 'extracted');
   const inputs = [join(table, 'cases.csv'), join(table, 'requirements.md'), join(table, 'control-trace.json'),
-    ...(ex ? [join(ex, 'figma-source', 'design', 'out', 'screens.json'), join(ex, 'inventory.json')] : [])].filter(existsSync);
+    ...(ex ? [join(ex, 'figma-source', 'design', 'out', 'screens.json'), join(ex, 'figma-source', 'design', 'scope.json'), join(ex, 'inventory.json'),
+      ...(existsSync(ex) ? readdirSync(ex).filter(f => /^figma-inventory-.*\.json$/.test(f)).map(f => join(ex, f)) : [])] : [])].filter(existsSync);
+  // plans built before the source-gap check (2026-11-04) are built again once
+  if (old && !old.source_gaps) old.built_at = '1970-01-01T00:00:00Z';
   const stale = !old || old.spec_set !== set || inputs.some(f => statSync(f).mtimeMs > Date.parse(old.built_at));
-  if (!stale) return old;
+  // the source gaps are cheap and follow the board files themselves, so they are taken again on every call
+  if (!stale) return { ...old, source_gaps: sourceGaps(feature, set, new Set(old.skip ?? [])) };
   const plan = buildPlan(feature, platform, { set, ...kept(old) });
   if (!quiet) console.log(`(plan built again: ${old ? 'its inputs changed' : 'there was none'}) ${summary(plan)}`);
   return plan;
 }
+
+// Boards the source read lacks (REQ-080, 2026-11-04: 1016_Chat navigation was never read and its rows went straight
+// into a design pass): every Design board the casebook's inventories hold (figma-inventory-*.json on the Design file)
+// that has no merged out/<board>.json and is not excluded by the user (`unread`), and every board merge left
+// incomplete (`incomplete`). Both block the design check until read. Boards only the saved `list` return names
+// (`listed`: often superseded versions the spec does not cover) are shown, not blocking: the Plan view and status
+// name them so someone decides whether the spec covers them.
+export function sourceGaps(feature: string, set: string, skip: Set<string> = new Set()) {
+  const ex = join(featureDir(feature), 'specs', set, 'extracted'), dir = join(ex, 'figma-source', 'design');
+  const fileKey = existsSync(join(ex, 'figma-frames.json')) ? read(join(ex, 'figma-frames.json')).files?.design?.fileKey : undefined;
+  const merged = (id: string) => existsSync(join(dir, 'out', `${id.replace(/[:;]/g, '-')}.json`));
+  const known = new Map<string, string>();
+  for (const f of existsSync(ex) ? readdirSync(ex).filter(f => /^figma-inventory-.*\.json$/.test(f)).sort() : []) {
+    const d = read(join(ex, f));
+    if (fileKey && d.file === fileKey) for (const [id, name] of d.boards ?? []) if (!known.has(id)) known.set(id, name);
+  }
+  const incomplete = (existsSync(join(dir, 'out', 'summary.json')) ? read(join(dir, 'out', 'summary.json')).incomplete ?? [] : [])
+    .filter((i: any) => !skip.has(i.board)).map((i: any) => ({ id: i.board, name: i.name, missing: i.missing }));
+  const unread = [...known].filter(([id]) => !merged(id) && !skip.has(id) && !incomplete.some((i: any) => i.id === id)).map(([id, name]) => ({ id, name }));
+  const sc = existsSync(join(dir, 'scope.json')) ? read(join(dir, 'scope.json')) : null;
+  // listed rows: [id, name, type, section] for a section's boards
+  const listed = (sc?.listed ?? []).filter((l: any[]) => l.length > 3 && l[2] !== 'SECTION' && !merged(l[0]) && !known.has(l[0]) && !skip.has(l[0]))
+    .map((l: any[]) => ({ id: l[0], name: l[1] }));
+  return { unread, incomplete, listed, page_listed: !!sc?.listed };
+}
+export const gapLine = (g: { unread: any[]; incomplete: any[] }) => [
+  ...g.unread.map(b => `board ${b.id} 「${b.name}」 is not in the Design source read`),
+  ...g.incomplete.map(b => `board ${b.id} 「${b.name}」 read incompletely (${b.missing.slice(0, 3).join(', ')})`)].join('; ');
 
 // what a rebuild keeps from the plan before it
 export const kept = (old: any) => ({ skip: old?.skip, skipReason: old?.skip_reason ?? undefined, reasons: old?.skip_reasons, review: old?.scope_review });
@@ -200,7 +234,7 @@ export function buildPlan(feature: string, platform: string, opt: PlanOpt = {}):
   const count = (st: string) => entries.filter((e: any) => e.status === st).length;
   const plan = { built_at: new Date().toISOString(), spec_set: set, file: frames.files?.design ?? null, phases: phasesFile?.slice(table.length + 1) ?? null,
     skip: [...skip], skip_reason: opt.skipReason ?? null, skip_reasons: Object.fromEntries(Object.entries(reasons).filter(([k]) => skip.has(k))),
-    scope_review: opt.review ?? null,
+    scope_review: opt.review ?? null, source_gaps: sourceGaps(feature, set, skip),
     casebook: hasTable, counts: { screens: entries.length, routed: count('routed'), figma_paths: entries.filter((e: any) => e.route?.how === 'figma').length,
       gaps: entries.filter((e: any) => e.gap).length, no_route: count('no-route'), excluded: count('excluded') }, by_case: byCase, screens: entries };
   writeJson(planPath(feature, platform), plan);

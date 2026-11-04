@@ -108,6 +108,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
   warns (`formats.md`, writing rules).
+- **Source read before the design check (user, 2026-11-04, REQ-081).** Every Design board the casebook inventories
+  is read whole before any design pass walks its rows; `design.ts status` stops on a source gap until it is read or
+  excluded with a reason (`figma/references/conformance.md` › *Plan*, `source.md` step 1).
 - **Design captures ride on runs (user, 2026-11-04).** In a casebook run, `device.ts … case <ID>` arms automatic
   design captures (every page source already read is matched to the row's Design screens); a design pass walks only
   what runs left (`screens --left`), and the Design tab shows the Progress page's time and usage table for it (`figma/references/conformance.md`

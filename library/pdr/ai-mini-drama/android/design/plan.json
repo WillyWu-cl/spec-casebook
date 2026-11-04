@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-03T10:00:13.444Z",
+  "built_at": "2026-11-04T06:02:06.915Z",
   "spec_set": "2026-10-21-2",
   "file": {
     "fileKey": "dZk5HLzZTdcZwWwvN9aZfZ",
@@ -11,10 +11,33 @@
   "skip_reason": null,
   "skip_reasons": {},
   "scope_review": null,
+  "source_gaps": {
+    "unread": [],
+    "incomplete": [],
+    "listed": [
+      {
+        "id": "4006:73632",
+        "name": "Spec Link"
+      },
+      {
+        "id": "4618:48367",
+        "name": "Spec Link"
+      },
+      {
+        "id": "4006:73634",
+        "name": "Spec Link"
+      },
+      {
+        "id": "4006:73636",
+        "name": "Spec Link"
+      }
+    ],
+    "page_listed": true
+  },
   "casebook": true,
   "counts": {
-    "screens": 225,
-    "routed": 225,
+    "screens": 230,
+    "routed": 230,
     "figma_paths": 0,
     "gaps": 0,
     "no_route": 0,
@@ -27,6 +50,7 @@
       "2778:127350"
     ],
     "TC-011": [
+      "4858:35987",
       "2566:114675",
       "2566:114704",
       "2566:114732",
@@ -35,6 +59,7 @@
       "2778:128904"
     ],
     "TC-013": [
+      "4858:36084",
       "2824:130245",
       "2824:130307",
       "2824:130669",
@@ -84,6 +109,9 @@
       "3172:102080",
       "3172:102038",
       "3975:78547"
+    ],
+    "TC-027": [
+      "4863:32482"
     ],
     "TC-033": [
       "2811:89281",
@@ -259,6 +287,7 @@
       "3172:102052"
     ],
     "TC-106": [
+      "4863:32539",
       "2820:123240",
       "2820:123256"
     ],
@@ -389,6 +418,9 @@
     "TC-440": [
       "2778:128606"
     ],
+    "TC-520": [
+      "4858:35398"
+    ],
     "TC-523": [
       "3142:70057"
     ],
@@ -418,7 +450,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -459,7 +491,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -500,7 +532,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -524,6 +556,47 @@
         "TC-011",
         "TC-425",
         "TC-006"
+      ],
+      "flags": []
+    },
+    {
+      "id": "4858:35987",
+      "name": "② New chat → 開新房間",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "abs": [
+        -12694,
+        32672,
+        375,
+        812
+      ],
+      "board_box": [
+        -15544,
+        32152,
+        3375,
+        1866
+      ],
+      "board_png": "specs/2026-10-21-2/extracted/figma/1016-chat-navigation.png",
+      "inventory_screen": "4858:35987",
+      "status": "routed",
+      "route": {
+        "case": "TC-011",
+        "how": "on",
+        "via": "K-dadcbe",
+        "fit": "mid",
+        "edge": "Create Your Drama",
+        "segment": "A1-a1",
+        "section": "Idea input",
+        "precondition": "Landing open",
+        "action": "Tap 「Create Your Drama」",
+        "result": "Pass",
+        "run": "2026-10-29-a7-full"
+      },
+      "alternatives": [
+        "TC-425",
+        "TC-006",
+        "TC-007",
+        "TC-237"
       ],
       "flags": []
     },
@@ -705,7 +778,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -746,7 +819,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -770,6 +843,47 @@
         "TC-020",
         "TC-025",
         "TC-026"
+      ],
+      "flags": []
+    },
+    {
+      "id": "4858:36084",
+      "name": "AI Mini Drama_template",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "abs": [
+        -13694,
+        32672,
+        375,
+        812
+      ],
+      "board_box": [
+        -15544,
+        32152,
+        3375,
+        1866
+      ],
+      "board_png": "specs/2026-10-21-2/extracted/figma/1016-chat-navigation.png",
+      "inventory_screen": "4858:36084",
+      "status": "routed",
+      "route": {
+        "case": "TC-013",
+        "how": "on",
+        "via": "C-41545b",
+        "fit": "mid",
+        "edge": "Surprise me",
+        "segment": "A1-a1",
+        "section": "Idea input",
+        "precondition": "Empty chat with inspiration chips",
+        "action": "Tap an inspiration chip",
+        "result": "Pass",
+        "run": "2026-10-29-a7-full"
+      },
+      "alternatives": [
+        "TC-020",
+        "TC-025",
+        "TC-026",
+        "TC-524"
       ],
       "flags": []
     },
@@ -951,7 +1065,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -992,7 +1106,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1033,7 +1147,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1369,7 +1483,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1410,7 +1524,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1453,7 +1567,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1496,7 +1610,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1539,7 +1653,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1582,7 +1696,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1625,7 +1739,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1668,7 +1782,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1926,7 +2040,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -1967,7 +2081,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -2008,7 +2122,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -2049,7 +2163,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -2090,7 +2204,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -2321,6 +2435,47 @@
       ]
     },
     {
+      "id": "4863:32482",
+      "name": "Chat (any stage)",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "abs": [
+        -15424,
+        32672,
+        375,
+        812
+      ],
+      "board_box": [
+        -15544,
+        32152,
+        3375,
+        1866
+      ],
+      "board_png": "specs/2026-10-21-2/extracted/figma/1016-chat-navigation.png",
+      "inventory_screen": "4863:32482",
+      "status": "routed",
+      "route": {
+        "case": "TC-027",
+        "how": "arrow",
+        "via": "4877-33089",
+        "fit": "high",
+        "edge": "1016_Chat navigation: leave dialog 「Stay」 → Chat (same stage)",
+        "segment": "A1-a2",
+        "section": "Story outline",
+        "precondition": "Leave this chat? shown",
+        "action": "Tap 「Stay」",
+        "result": "Pass",
+        "run": "2026-10-29-a7-full"
+      },
+      "alternatives": [
+        "TC-138",
+        "TC-357",
+        "TC-020",
+        "TC-025"
+      ],
+      "flags": []
+    },
+    {
       "id": "2811:89281",
       "name": "Character Library",
       "board": "2811:89056",
@@ -2457,7 +2612,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -2498,7 +2653,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -3297,7 +3452,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -3340,7 +3495,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -3588,7 +3743,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -5187,7 +5342,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -5921,7 +6076,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -5962,7 +6117,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -6083,7 +6238,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -6718,6 +6873,47 @@
         "TC-025",
         "TC-067",
         "TC-327"
+      ],
+      "flags": []
+    },
+    {
+      "id": "4863:32539",
+      "name": "④ History → Recent Task",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "abs": [
+        -14194,
+        32672,
+        375,
+        812
+      ],
+      "board_box": [
+        -15544,
+        32152,
+        3375,
+        1866
+      ],
+      "board_png": "specs/2026-10-21-2/extracted/figma/1016-chat-navigation.png",
+      "inventory_screen": "4863:32539",
+      "status": "routed",
+      "route": {
+        "case": "TC-106",
+        "how": "on",
+        "via": "K-1ed4be",
+        "fit": "high",
+        "edge": "New Chat",
+        "segment": "A1-e",
+        "section": "History",
+        "precondition": "History with dramas",
+        "action": "1. Read a card\n2. Tap 「New Chat」",
+        "result": "Pass",
+        "run": "2026-10-29-a7-full"
+      },
+      "alternatives": [
+        "TC-111",
+        "TC-112",
+        "TC-113",
+        "TC-025"
       ],
       "flags": []
     },
@@ -7412,7 +7608,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -7453,7 +7649,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -7494,7 +7690,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -7535,7 +7731,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -7576,7 +7772,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -7617,7 +7813,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -8108,7 +8304,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -8641,7 +8837,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -9092,7 +9288,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -9133,7 +9329,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -9174,7 +9370,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -9215,7 +9411,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -9256,7 +9452,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -9297,7 +9493,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -9420,7 +9616,7 @@
       "board_box": [
         -18405,
         -2803,
-        9294,
+        9909,
         4725
       ],
       "board_png": "specs/2026-10-21-2/extracted/figma/main-flow.png",
@@ -9444,6 +9640,47 @@
         "TC-460",
         "TC-463",
         "TC-432"
+      ],
+      "flags": []
+    },
+    {
+      "id": "4858:35398",
+      "name": "Credit page_free",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "abs": [
+        -13194,
+        32672,
+        375,
+        812
+      ],
+      "board_box": [
+        -15544,
+        32152,
+        3375,
+        1866
+      ],
+      "board_png": "specs/2026-10-21-2/extracted/figma/1016-chat-navigation.png",
+      "inventory_screen": "4858:35398",
+      "status": "routed",
+      "route": {
+        "case": "TC-520",
+        "how": "on",
+        "via": "K-938d8f",
+        "fit": "high",
+        "edge": "Buy More",
+        "segment": "A3-a",
+        "section": "Credits and limits",
+        "precondition": "Free tier; My Credits opened from the chat's credit pill (after TC-358, or the pill at any later stage)",
+        "action": "1. Tap 「Buy More」\n2. Go back with system back (Android back gesture or button)\n3. Tap 「Subscribe Now」\n4. Go back with system back without subscribing\n5. Tap 「Claim」\n6. Finally leave My Credits with system back",
+        "result": "Pass",
+        "run": "2026-10-29-a7-full"
+      },
+      "alternatives": [
+        "TC-060",
+        "TC-379",
+        "TC-025",
+        "TC-067"
       ],
       "flags": []
     },

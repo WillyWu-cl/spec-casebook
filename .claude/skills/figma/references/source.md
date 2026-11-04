@@ -45,9 +45,11 @@ All commands are `node scripts/figma-source.ts <product>/<feature> [<set>] …`;
 0. **A feature the casebook has not read** (no `figma-frames.json` with `files.design`): `init <Design Figma link>`
    (with `?node-id=` of the page or section) records it in the newest spec set, starting one with no files if needed.
 
-1. **List** (1 call): `calls list design [page or section id]`; save it with the others (`save design`), so merge
+1. **List** (1 call, never skipped): `calls list design [page or section id]`; save it with the others (`save design`), so merge
    writes it into `scope.json` with the boards read and every id a plan did not find. The return lists the page's sections, their boards and
-   each board's instance count. Pick the boards the spec covers (skip superseded ones unless asked).
+   each board's instance count. Pick the boards the spec covers (skip superseded ones unless asked), and always every
+   Design board the casebook inventories (`figma-inventory-*.json` on the Design file): `merge` names one no plan
+   covers (`NOT READ`, exit 11) and the design check stops on it (`conformance.md` › *Plan*).
 2. **Plan** (1 call per 4 boards): `calls plan design <board, section or page ids…> [--per 4] [--budget 36000]`. Run
    every plan call **in one message** (parallel). The plan reads no styling (a full read of a big board in one call
    drops the connection): it fingerprints each board, finds the repeated instances and sizes the chunks from an
@@ -57,12 +59,15 @@ All commands are `node scripts/figma-source.ts <product>/<feature> [<set>] …`;
    board (`get_screenshot` with the given `nodeId` and `maxDimension`, the board's longest side × scale, so 1 image px
    = 1 Figma pt at scale 1), saved over the board's shared image. No screenshot for a board whose shared image is
    current: `shots.json` gives it this fingerprint, or the casebook keeps it (its `hash` is the board's hash in
-   `figma-hashes.json`). Up to 4 calls at once. With more than 4 chunk calls, hand them to parallel subagents, 4
+   `figma-hashes.json`) and the board's fingerprint did not change since this read last saw it (a changed board gets a
+   new image unless one was taken at its new fingerprint). Up to 4 calls at once. With more than 4 chunk calls, hand them to parallel subagents, 4
    calls each, with this brief: "For each entry: read the `call` file, call `use_figma` on <server> with fileKey
    <key>, sessionId <id>, skillNames resource:figma-use, description = the entry's `description`, code = the file
    content; write the whole tool result verbatim to `save_to`. Report only the files written and any error."
 4. **Merge**: `save design` (it refuses a return older than its call file: an earlier call with the same
-   description), then `merge design`. It puts every record at its walk index and copies each repeated
+   description; with no names it takes every call whose response is missing or older than its call file, and only
+   the chunk and hidden calls `todo.json` lists, so an older plan's pieces left in `calls/` are never saved), then
+   `merge design`. It puts every record at its walk index and copies each repeated
    instance's inside from the first one, checking a hash of the full description of both (clipped render bounds and
    drawn share are left out of the hash: each copy sends its own). Exit 10 names what is missing: a missing chunk (run
    it), a `fix-…` call (copies whose check failed; one call per 60 copies, already written: it compares them with
@@ -84,7 +89,12 @@ All commands are `node scripts/figma-source.ts <product>/<feature> [<set>] …`;
    `out/` stay local). Another computer rebuilds `out/` with `merge` and `crop` and no Figma call; `design.ts` does
    that by itself when `out/` is missing or older than the responses.
 
-**Re-reading later**: run step 2 (plan calls only), then step 3: unchanged boards get no chunk calls and no screenshot.
+**Re-reading later**: run step 2 (plan calls only), save them, then step 3: unchanged boards get no chunk calls and no
+screenshot. A newer plan with a board's same fingerprint keeps the earlier plan and its chunks (`scope.json` records
+it as `checked_at`); plans are ordered by read time, not file name.
+
+**Incomplete boards never reach the check**: merge removes an earlier merge's `out/<board>.json` for a board it finds
+incomplete, so nothing reads a stale or partial board, and the design check lists it as a source gap.
 
 ## What `out/` holds
 

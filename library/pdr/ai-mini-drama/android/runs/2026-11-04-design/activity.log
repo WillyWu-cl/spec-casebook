@@ -1,0 +1,604 @@
+2026-11-04T02:57:51.637Z restart 
+2026-11-04T02:58:02.492Z logcat start
+2026-11-04T02:58:02.802Z build 
+2026-11-04T02:58:03.076Z shot screenshots/seg-start.png
+2026-11-04T02:58:08.138Z shot seg-start
+2026-11-04T02:58:09.296Z texts 
+2026-11-04T02:58:25.990Z tap 90 200
+2026-11-04T02:58:28.391Z texts 
+2026-11-04T02:58:33.939Z scrollto QA: show all subscription plans
+2026-11-04T02:58:39.617Z texts 
+2026-11-04T02:58:45.809Z shot menu-qa-block
+2026-11-04T02:58:46.527Z back 
+2026-11-04T02:58:48.176Z lbl AI Mini Drama
+2026-11-04T02:58:52.775Z case TC-006
+2026-11-04T02:58:53.330Z texts 
+2026-11-04T02:58:53.668Z shot amd-landing
+2026-11-04T02:59:05.012Z lbl More
+2026-11-04T02:59:09.614Z texts 
+2026-11-04T02:59:10.227Z shot tc006-more
+2026-11-04T02:59:17.839Z scrollto Animated Stories
+2026-11-04T02:59:20.016Z shot tc006-more-bottom
+2026-11-04T02:59:21.343Z back 
+2026-11-04T02:59:23.671Z texts 
+2026-11-04T02:59:24.000Z shot tc006-back
+2026-11-04T02:59:32.200Z run-log set TC-006 Pass
+2026-11-04T02:59:32.323Z case TC-519
+2026-11-04T02:59:32.481Z lbl Create Your Drama
+2026-11-04T02:59:35.949Z els 
+2026-11-04T02:59:41.644Z type A retired lighthouse keeper finds letters from a sailor who drowned fifty years 
+2026-11-04T02:59:44.222Z id button_mini_drama_send
+2026-11-04T02:59:46.549Z texts 
+2026-11-04T02:59:46.807Z shot tc519-thinking
+2026-11-04T02:59:47.494Z id button_mini_drama_back
+2026-11-04T02:59:48.899Z texts 
+2026-11-04T02:59:49.267Z shot tc519-dialog
+2026-11-04T02:59:54.973Z lbl Create Your Drama
+2026-11-04T02:59:58.443Z type A retired lighthouse keeper finds letters from a sailor who drowned fifty years 
+2026-11-04T03:00:00.716Z id button_mini_drama_send
+2026-11-04T03:00:03.941Z els Generate
+2026-11-04T03:00:07.166Z id button_mini_drama_format_continue
+2026-11-04T03:00:07.533Z id button_mini_drama_back
+2026-11-04T03:00:09.705Z texts 
+2026-11-04T03:00:09.886Z shot tc519-dialog
+2026-11-04T03:00:13.447Z lbl Leave anyway
+2026-11-04T03:00:15.801Z texts 
+2026-11-04T03:00:16.135Z shot tc519-home
+2026-11-04T03:00:24.076Z run-log set TC-519 Pass
+2026-11-04T03:00:24.193Z case TC-521
+2026-11-04T03:00:24.323Z lbl Create Your Drama
+2026-11-04T03:00:26.792Z type A shy florist secretly writes the anonymous love column her rival reads every we
+2026-11-04T03:00:29.231Z id button_mini_drama_send
+2026-11-04T03:00:31.367Z id button_mini_drama_format_continue
+2026-11-04T03:00:31.765Z id button_mini_drama_history
+2026-11-04T03:00:33.983Z texts 
+2026-11-04T03:00:34.199Z shot tc521-dialog
+2026-11-04T03:00:37.622Z lbl Leave anyway
+2026-11-04T03:00:39.979Z texts 
+2026-11-04T03:00:40.354Z shot tc521-recent
+2026-11-04T03:00:51.764Z run-log set TC-521 Pass
+2026-11-04T03:00:51.886Z case TC-522
+2026-11-04T03:00:52.013Z lbl New Chat
+2026-11-04T03:00:55.103Z type A night-shift nurse and a sleepless ghost compete to fix the same broken jukebox
+2026-11-04T03:00:57.644Z id button_mini_drama_send
+2026-11-04T03:01:00.779Z id button_mini_drama_format_continue
+2026-11-04T03:01:01.183Z id button_mini_drama_add_chat
+2026-11-04T03:01:03.383Z texts 
+2026-11-04T03:01:03.597Z shot tc522-dialog
+2026-11-04T03:01:04.241Z lbl Leave anyway
+2026-11-04T03:01:06.597Z texts 
+2026-11-04T03:01:06.820Z shot tc522-newchat
+2026-11-04T03:01:11.456Z wait 20
+2026-11-04T03:01:31.661Z id button_mini_drama_history
+2026-11-04T03:01:34.708Z texts 
+2026-11-04T03:01:35.083Z shot tc522-history
+2026-11-04T03:01:35.855Z back 
+2026-11-04T03:01:37.264Z texts 
+2026-11-04T03:01:44.823Z run-log set TC-522 Pass
+2026-11-04T03:01:44.946Z case TC-357
+2026-11-04T03:01:45.084Z type A clumsy wizard's apprentice accidentally turns the king's crown into a talking 
+2026-11-04T03:01:47.699Z id button_mini_drama_send
+2026-11-04T03:01:51.029Z id button_mini_drama_format_continue
+2026-11-04T03:01:51.406Z id button_mini_drama_add_chat
+2026-11-04T03:01:53.576Z texts 
+2026-11-04T03:01:53.813Z shot tc357-newchat
+2026-11-04T03:01:54.447Z lbl Stay
+2026-11-04T03:01:55.333Z id layout_mini_drama_credit
+2026-11-04T03:01:56.744Z texts 
+2026-11-04T03:01:57.573Z shot tc357-pill
+2026-11-04T03:02:02.721Z back 
+2026-11-04T03:02:03.493Z waitfor Story Outline|Confirm|Characters --timeout 90
+2026-11-04T03:02:18.410Z texts 
+2026-11-04T03:02:18.673Z shot tc357-outline
+2026-11-04T03:02:32.940Z run-log set TC-357 Fail
+2026-11-04T03:02:33.046Z run-log set TC-027 Pass
+2026-11-04T03:02:37.579Z case TC-358
+2026-11-04T03:02:37.706Z id button_mini_drama_add_chat
+2026-11-04T03:02:40.847Z texts 
+2026-11-04T03:02:41.069Z clear edit_mini_drama_input
+2026-11-04T03:02:41.335Z type A retired stuntman teaches his timid grandson to ride a unicycle across town.
+2026-11-04T03:02:43.839Z texts 
+2026-11-04T03:02:51.178Z clear edit_mini_drama_input
+2026-11-04T03:02:52.329Z texts 
+2026-11-04T03:02:52.826Z type A retired stuntman teaches his timid grandson to ride a unicycle across town.
+2026-11-04T03:02:55.215Z texts 
+2026-11-04T03:02:59.633Z id button_mini_drama_send
+2026-11-04T03:03:02.093Z id button_mini_drama_format_continue
+2026-11-04T03:03:02.469Z id layout_mini_drama_credit
+2026-11-04T03:03:05.941Z texts 
+2026-11-04T03:03:06.164Z shot tc358-pill
+2026-11-04T03:03:10.864Z case TC-520
+2026-11-04T03:03:11.101Z texts 
+2026-11-04T03:03:15.593Z shot tc520-mycredits
+2026-11-04T03:03:16.592Z lbl Buy More
+2026-11-04T03:03:19.977Z texts 
+2026-11-04T03:03:20.390Z shot tc520-buymore
+2026-11-04T03:03:21.250Z back 
+2026-11-04T03:03:23.954Z texts 
+2026-11-04T03:03:28.486Z lbl Subscribe Now
+2026-11-04T03:03:32.919Z texts 
+2026-11-04T03:03:43.595Z shot tc520-subscribe
+2026-11-04T03:03:44.846Z back 
+2026-11-04T03:03:58.076Z texts 
+2026-11-04T03:04:02.117Z lbl Claim
+2026-11-04T03:04:05.662Z texts 
+2026-11-04T03:04:06.022Z shot tc520-claimed
+2026-11-04T03:04:06.984Z lbl Claimed
+2026-11-04T03:04:09.359Z texts 
+2026-11-04T03:04:12.833Z els Claim
+2026-11-04T03:04:16.752Z id claim_daily_bonus_button
+2026-11-04T03:04:30.286Z texts 
+2026-11-04T03:04:40.630Z shot tc520-claimed
+2026-11-04T03:04:41.555Z id claim_daily_bonus_button
+2026-11-04T03:05:04.131Z texts 
+2026-11-04T03:05:14.798Z shot tc520-retap
+2026-11-04T03:05:24.891Z shot tc520-after-claim
+2026-11-04T03:05:25.540Z tapif Later
+2026-11-04T03:05:25.812Z back 
+2026-11-04T03:05:28.133Z texts 
+2026-11-04T03:05:28.515Z shot tc520-mycredits-after
+2026-11-04T03:05:56.974Z lbl Create Your Drama
+2026-11-04T03:06:00.530Z id layout_mini_drama_credit
+2026-11-04T03:06:02.900Z texts 
+2026-11-04T03:06:03.172Z shot tc520-claimed-state
+2026-11-04T03:06:04.066Z back 
+2026-11-04T03:06:06.345Z texts 
+2026-11-04T03:06:06.609Z shot tc520-leave
+2026-11-04T03:06:13.777Z id button_mini_drama_history
+2026-11-04T03:06:16.824Z texts 
+2026-11-04T03:06:17.271Z shot tc358-history
+2026-11-04T03:06:34.841Z run-log set TC-358 Fail
+2026-11-04T03:06:34.960Z run-log set TC-520 Pass
+2026-11-04T03:06:39.819Z case TC-060
+2026-11-04T03:06:39.944Z lbl Merger Season
+2026-11-04T03:06:45.123Z texts 
+2026-11-04T03:06:45.421Z shot tc060-card
+2026-11-04T03:06:51.251Z els Generate
+2026-11-04T03:06:51.627Z lbl Generate
+2026-11-04T03:06:53.909Z texts 
+2026-11-04T03:06:54.238Z shot tc060-thinking
+2026-11-04T03:06:59.059Z waitfor Storyboard Result|failed|Retry|try again --timeout 480
+2026-11-04T03:15:01.261Z texts 
+2026-11-04T03:15:01.622Z shot tc060-result
+2026-11-04T03:15:25.072Z id layout_mini_drama_credit
+2026-11-04T03:15:27.556Z texts 
+2026-11-04T03:15:27.784Z lbl Details
+2026-11-04T03:15:31.168Z texts 
+2026-11-04T03:15:31.471Z shot tc060-details
+2026-11-04T03:15:43.758Z run-log set TC-060 Fail
+2026-11-04T03:15:43.882Z back 
+2026-11-04T03:15:45.628Z back 
+2026-11-04T03:15:47.912Z texts 
+2026-11-04T03:15:53.719Z run-log set TC-379 Blocked
+2026-11-04T03:15:53.846Z pull-logs board-1016
+2026-11-04T02:58:09.148Z file screenshots/seg-start.png
+2026-11-04T02:58:46.396Z file screenshots/menu-qa-block.png
+2026-11-04T02:58:55.084Z file screenshots/amd-landing.png
+2026-11-04T02:59:11.500Z file screenshots/tc006-more.png
+2026-11-04T02:59:21.169Z file screenshots/tc006-more-bottom.png
+2026-11-04T02:59:25.021Z file screenshots/tc006-back.png
+2026-11-04T02:59:47.352Z file screenshots/tc519-thinking.png
+2026-11-04T03:00:10.396Z file screenshots/tc519-dialog.png
+2026-11-04T03:00:17.088Z file screenshots/tc519-home.png
+2026-11-04T03:00:34.688Z file screenshots/tc521-dialog.png
+2026-11-04T03:00:40.976Z file screenshots/tc521-recent.png
+2026-11-04T03:01:04.096Z file screenshots/tc522-dialog.png
+2026-11-04T03:01:07.317Z file screenshots/tc522-newchat.png
+2026-11-04T03:01:35.707Z file screenshots/tc522-history.png
+2026-11-04T03:01:54.315Z file screenshots/tc357-newchat.png
+2026-11-04T03:01:58.354Z file screenshots/tc357-pill.png
+2026-11-04T03:02:19.198Z file screenshots/tc357-outline.png
+2026-11-04T03:03:06.925Z file screenshots/tc358-pill.png
+2026-11-04T03:03:16.444Z file screenshots/tc520-mycredits.png
+2026-11-04T03:03:21.086Z file screenshots/tc520-buymore.png
+2026-11-04T03:03:44.672Z file screenshots/tc520-subscribe.png
+2026-11-04T03:04:41.417Z file screenshots/tc520-claimed.png
+2026-11-04T03:05:15.814Z file screenshots/tc520-retap.png
+2026-11-04T03:05:25.408Z file screenshots/tc520-after-claim.png
+2026-11-04T03:05:29.526Z file screenshots/tc520-mycredits-after.png
+2026-11-04T03:06:03.923Z file screenshots/tc520-claimed-state.png
+2026-11-04T03:06:07.104Z file screenshots/tc520-leave.png
+2026-11-04T03:06:17.830Z file screenshots/tc358-history.png
+2026-11-04T03:06:45.968Z file screenshots/tc060-card.png
+2026-11-04T03:06:54.776Z file screenshots/tc060-thinking.png
+2026-11-04T03:15:01.004Z file screenshots/waitfor-timeout-20261104-111500.png
+2026-11-04T03:15:02.215Z file screenshots/tc060-result.png
+2026-11-04T03:15:31.939Z file screenshots/tc060-details.png
+2026-11-04T03:15:54.815Z file logs/.live
+2026-11-04T03:15:57.513Z file logs/board-1016-20261104-111553
+2026-11-04T03:32:54.116Z restart 
+2026-11-04T03:33:03.305Z logcat start
+2026-11-04T03:33:03.417Z build 
+2026-11-04T03:33:03.706Z shot mf1-start
+2026-11-04T03:33:11.867Z back 
+2026-11-04T03:33:14.169Z texts 
+2026-11-04T03:33:17.690Z back 
+2026-11-04T03:33:20.555Z shot mf1-launcher
+2026-11-04T03:33:28.681Z tap 90 200
+2026-11-04T03:33:31.000Z texts 
+2026-11-04T03:33:35.580Z lbl Preferences
+2026-11-04T03:33:38.085Z texts 
+2026-11-04T03:33:52.715Z back 
+2026-11-04T03:33:53.986Z back 
+2026-11-04T03:33:55.607Z case TC-001
+2026-11-04T03:33:56.190Z texts 
+2026-11-04T03:34:04.307Z lbl AI Mini Drama
+2026-11-04T03:34:08.555Z case TC-011
+2026-11-04T03:34:08.677Z texts 
+2026-11-04T03:33:04.573Z file screenshots/mf1-start.png
+2026-11-04T03:33:21.429Z file screenshots/mf1-launcher.png
+2026-11-04T03:33:57.889Z file screenshots/design/2778-128368.png
+2026-11-04T03:33:57.889Z file screenshots/design/2778-128368.xml
+2026-11-04T03:33:57.890Z file screenshots/design/2778-139072.png
+2026-11-04T03:33:57.890Z file screenshots/design/2778-139072.xml
+2026-11-04T03:34:09.893Z file screenshots/design/2566-114704.png
+2026-11-04T03:34:09.895Z file screenshots/design/2566-114704.xml
+2026-11-04T03:34:09.896Z file screenshots/design/2566-114761.png
+2026-11-04T03:34:09.899Z file screenshots/design/2566-114761.xml
+2026-11-04T03:34:14.798Z design 2778:138549 light landing (app Appearance Light)
+2026-11-04T03:34:16.121Z lbl Create Your Drama
+2026-11-04T03:34:20.670Z shot mf1-empty
+2026-11-04T03:34:15.979Z file screenshots/design/2778-138549.png
+2026-11-04T03:34:15.982Z file screenshots/design/2778-138549.xml
+2026-11-04T03:34:17.363Z file screenshots/design/2778-128904.png
+2026-11-04T03:34:17.375Z file screenshots/design/2778-128904.xml
+2026-11-04T03:34:21.180Z file screenshots/mf1-empty.png
+2026-11-04T03:34:28.696Z case TC-013
+2026-11-04T03:34:28.829Z design 2778:139486 light empty chat with chips and keyboard
+2026-11-04T03:34:29.576Z tap 450 540
+2026-11-04T03:34:32.418Z shot mf1-chip
+2026-11-04T03:34:30.135Z file screenshots/design/2824-130245.png
+2026-11-04T03:34:30.135Z file screenshots/design/2824-130245.xml
+2026-11-04T03:34:30.136Z file screenshots/design/2824-130307.png
+2026-11-04T03:34:30.137Z file screenshots/design/2824-130307.xml
+2026-11-04T03:34:30.138Z file screenshots/design/2778-139486.png
+2026-11-04T03:34:30.138Z file screenshots/design/2824-130669.png
+2026-11-04T03:34:30.138Z file screenshots/design/2824-130669.xml
+2026-11-04T03:34:30.139Z file screenshots/design/2778-128966.png
+2026-11-04T03:34:30.139Z file screenshots/design/2778-128966.xml
+2026-11-04T03:34:30.139Z file screenshots/design/2778-139486.xml
+2026-11-04T03:34:30.139Z file screenshots/design/2778-139548.png
+2026-11-04T03:34:30.140Z file screenshots/design/2778-139548.xml
+2026-11-04T03:34:32.915Z file screenshots/mf1-chip.png
+2026-11-04T03:34:42.163Z tap 540 648
+2026-11-04T03:34:44.599Z shot mf1-chip2
+2026-11-04T03:34:45.114Z file screenshots/mf1-chip2.png
+2026-11-04T03:34:53.053Z design 2778:139548 light populated unsent idea (chip tapped)
+2026-11-04T03:34:53.819Z case TC-020
+2026-11-04T03:34:53.943Z els 
+2026-11-04T03:34:59.265Z clear edit_mini_drama_input
+2026-11-04T03:34:59.566Z type A lighthouse keeper and a lost courier fall in love during a week-long winter st
+2026-11-04T03:35:02.005Z hidekb 
+2026-11-04T03:35:02.690Z els 
+2026-11-04T03:35:06.804Z id button_mini_drama_send
+2026-11-04T03:35:08.031Z waitfor What format would you like 60
+2026-11-04T03:35:08.657Z file screenshots/design/2778-127414.png
+2026-11-04T03:35:08.660Z file screenshots/design/2778-127414.xml
+2026-11-04T03:35:11.271Z file screenshots/design/3949-74761.png
+2026-11-04T03:35:11.271Z file screenshots/design/3949-74761.xml
+2026-11-04T03:37:30.307Z texts 
+2026-11-04T03:37:38.033Z case TC-022
+2026-11-04T03:37:38.157Z lbl Generate
+2026-11-04T03:37:38.751Z file screenshots/design/2778-127450.png
+2026-11-04T03:37:38.752Z file screenshots/design/2778-127450.xml
+2026-11-04T03:37:42.558Z waitfor Possible Characters|Choose your characters|went wrong|failed --timeout 150 --eve
+2026-11-04T03:38:06.538Z case TC-024
+2026-11-04T03:38:09.702Z shot mf1-outline
+2026-11-04T03:38:10.222Z file screenshots/mf1-outline.png
+2026-11-04T03:38:19.030Z design 2778:139432 light outline with unset character slots (custom drama Stormbound)
+2026-11-04T03:38:19.807Z case TC-033
+2026-11-04T03:38:19.968Z tap 213 1790
+2026-11-04T03:38:23.371Z shot mf1-cc
+2026-11-04T03:38:19.644Z file screenshots/design/2778-139432.png
+2026-11-04T03:38:19.645Z file screenshots/design/2778-139432.xml
+2026-11-04T03:38:24.157Z file screenshots/mf1-cc.png
+2026-11-04T03:38:33.816Z case TC-037
+2026-11-04T03:38:33.943Z design 2778:139610 light Choose Character, no picks yet
+2026-11-04T03:38:35.140Z tap 540 860
+2026-11-04T03:38:37.696Z tap 383 360
+2026-11-04T03:38:34.972Z file screenshots/design/2778-139610.png
+2026-11-04T03:38:34.973Z file screenshots/design/2778-139610.xml
+2026-11-04T03:38:40.310Z tap 880 1200
+2026-11-04T03:38:42.911Z shot mf1-cc2
+2026-11-04T03:38:43.754Z file screenshots/mf1-cc2.png
+2026-11-04T03:38:52.256Z design 2778:139660 light Choose Character, both characters assigned
+2026-11-04T03:38:53.520Z tap 78 155
+2026-11-04T03:38:56.133Z texts 
+2026-11-04T03:38:53.340Z file screenshots/design/2778-139660.png
+2026-11-04T03:38:53.341Z file screenshots/design/2778-139660.xml
+2026-11-04T03:39:01.647Z lbl Keep choosing
+2026-11-04T03:39:03.586Z case TC-044
+2026-11-04T03:39:03.715Z tap 1002 155
+2026-11-04T03:39:04.298Z waitfor Create storyboard|went wrong --timeout 150 --every 5
+2026-11-04T03:40:04.896Z shot mf1-sbcard
+2026-11-04T03:40:13.814Z design 2778:144364 light Characters Result + Create storyboard card (35)
+2026-11-04T03:40:15.486Z case TC-060
+2026-11-04T03:40:16.335Z tap 842 1928
+2026-11-04T03:40:20.795Z shot mf1-sbload
+2026-11-04T03:40:21.486Z texts 
+2026-11-04T03:40:30.127Z waitfor Creating your scene|Creating|Storyboard Result|went wrong --timeout 60 --every 2
+2026-11-04T03:40:30.416Z texts 
+2026-11-04T03:40:34.625Z design 2778:144420 light storyboard loading (app text: Creating storyboard grid for Sto
+2026-11-04T03:40:35.435Z shot mf1-sbload2
+2026-11-04T03:40:43.595Z waitfor Storyboard Preview|Choose your video settings|went wrong|failed --timeout 280 --
+2026-11-04T03:40:05.442Z file screenshots/mf1-sbcard.png
+2026-11-04T03:40:14.457Z file screenshots/design/2778-144364.png
+2026-11-04T03:40:14.457Z file screenshots/design/2778-144364.xml
+2026-11-04T03:40:21.348Z file screenshots/mf1-sbload.png
+2026-11-04T03:40:35.277Z file screenshots/design/2778-144420.png
+2026-11-04T03:40:35.277Z file screenshots/design/2778-144420.xml
+2026-11-04T03:40:35.961Z file screenshots/mf1-sbload2.png
+2026-11-04T03:44:12.454Z texts 
+2026-11-04T03:44:12.727Z back 
+2026-11-04T03:44:14.997Z case TC-009
+2026-11-04T03:44:15.607Z lbl Forbidden Office Romance
+2026-11-04T03:44:19.224Z texts 
+2026-11-04T03:44:24.681Z lbl Make my version
+2026-11-04T03:44:25.296Z waitfor What format would you like --timeout 60 --every 2
+2026-11-04T03:44:26.996Z case TC-021
+2026-11-04T03:44:28.147Z shot mf1-tfmt
+2026-11-04T03:44:26.811Z file screenshots/design/2778-127500.png
+2026-11-04T03:44:26.812Z file screenshots/design/2778-127500.xml
+2026-11-04T03:44:28.805Z file screenshots/mf1-tfmt.png
+2026-11-04T03:44:38.011Z design 3142:68240 light template format card (Forbidden Office Romance)
+2026-11-04T03:44:38.904Z tap 867 1453
+2026-11-04T03:44:39.810Z texts 
+2026-11-04T03:44:44.834Z waitfor Drafting|Building|Possible Characters|Characters Result --timeout 90 --every 1
+2026-11-04T03:44:39.600Z file screenshots/design/2778-127378.png
+2026-11-04T03:44:39.601Z file screenshots/design/2778-127378.xml
+2026-11-04T03:44:39.601Z file screenshots/design/3142-68240.png
+2026-11-04T03:44:39.602Z file screenshots/design/3142-68240.xml
+2026-11-04T03:44:48.095Z texts 
+2026-11-04T03:44:54.706Z shot mf1-toutline
+2026-11-04T03:44:55.274Z file screenshots/mf1-toutline.png
+2026-11-04T03:45:04.471Z case -
+2026-11-04T03:45:04.597Z back 
+2026-11-04T03:45:06.852Z back 
+2026-11-04T03:45:09.673Z tap 90 200
+2026-11-04T03:45:11.924Z lbl Preferences
+2026-11-04T03:45:14.439Z lbl Light Mode
+2026-11-04T03:45:17.261Z texts 
+2026-11-04T03:45:23.355Z lbl Dark Mode
+2026-11-04T03:45:27.270Z texts 
+2026-11-04T03:45:28.055Z shot mf1-dark
+2026-11-04T03:45:28.530Z file screenshots/mf1-dark.png
+2026-11-04T03:45:35.747Z back 
+2026-11-04T03:45:37.505Z back 
+2026-11-04T03:45:39.236Z back 
+2026-11-04T03:45:41.343Z shot mf1-dlauncher
+2026-11-04T03:45:42.452Z file screenshots/mf1-dlauncher.png
+2026-11-04T03:45:51.112Z case TC-001
+2026-11-04T03:45:51.263Z design 2778:128368 dark Launcher (app Appearance Dark)
+2026-11-04T03:45:53.211Z design 2778:139072 dark Launcher (app Appearance Dark)
+2026-11-04T03:45:55.400Z lbl AI Mini Drama
+2026-11-04T03:45:59.934Z design 2778:127350 dark AI Mini Drama landing
+2026-11-04T03:46:01.310Z shot mf1-dland
+2026-11-04T03:46:01.140Z file screenshots/design/2778-127350.png
+2026-11-04T03:46:01.141Z file screenshots/design/2778-127350.xml
+2026-11-04T03:46:02.344Z file screenshots/mf1-dland.png
+2026-11-04T03:46:12.891Z case TC-009
+2026-11-04T03:46:13.057Z lbl The New Guy's Secret
+2026-11-04T03:46:16.584Z lbl Make my version
+2026-11-04T03:46:17.059Z waitfor What format would you like --timeout 60 --every 2
+2026-11-04T03:46:18.248Z case TC-021
+2026-11-04T03:46:18.391Z shot mf1-dtfmt
+2026-11-04T03:46:19.033Z file screenshots/mf1-dtfmt.png
+2026-11-04T03:46:29.555Z design 2778:127378 dark template format card (The New Guy's Secret)
+2026-11-04T03:46:30.507Z case TC-009
+2026-11-04T03:46:30.669Z tap 867 1453
+2026-11-04T03:46:31.045Z design 2778:127500 dark template outline loading right after Generate
+2026-11-04T03:46:43.198Z waitfor Possible Characters --timeout 60 --every 3
+2026-11-04T03:46:52.742Z back 
+2026-11-04T03:46:54.977Z case TC-011
+2026-11-04T03:46:55.110Z lbl Create Your Drama
+2026-11-04T03:46:59.645Z design 2778:128904 dark empty idea chat with keyboard
+2026-11-04T03:47:00.400Z shot mf1-dempty
+2026-11-04T03:47:00.896Z file screenshots/mf1-dempty.png
+2026-11-04T03:47:09.479Z case TC-013
+2026-11-04T03:47:09.604Z tap 540 648
+2026-11-04T03:47:12.026Z els 
+2026-11-04T03:47:12.256Z design 2778:128966 dark populated unsent idea (chip tapped)
+2026-11-04T03:47:18.682Z case TC-020
+2026-11-04T03:47:18.812Z clear edit_mini_drama_input
+2026-11-04T03:47:19.096Z type A night-shift baker and a retired firefighter rebuild a burned bakery and fall i
+2026-11-04T03:47:21.569Z hidekb 
+2026-11-04T03:47:22.178Z id button_mini_drama_send
+2026-11-04T03:47:23.897Z waitfor Generate --timeout 60 --every 2
+2026-11-04T03:47:25.181Z shot mf1-dfmt
+2026-11-04T03:47:25.761Z file screenshots/mf1-dfmt.png
+2026-11-04T03:47:34.010Z design 2778:127414 dark custom format card
+2026-11-04T03:47:34.850Z case TC-022
+2026-11-04T03:47:34.972Z tap 867 1260
+2026-11-04T03:47:35.297Z design 2778:127450 dark custom outline loading right after Generate
+2026-11-04T03:47:36.285Z texts 
+2026-11-04T03:47:41.402Z case TC-024
+2026-11-04T03:47:41.526Z waitfor Building|cast|character|Possible Characters --timeout 90 --every 1
+2026-11-04T03:47:48.482Z case TC-022
+2026-11-04T03:47:48.604Z design 2778:127450 dark custom outline loading (app: Developing your mini drama story a
+2026-11-04T03:47:49.469Z case TC-024
+2026-11-04T03:47:49.602Z waitfor Building|cast|Possible Characters --timeout 90 --every 1
+2026-11-04T03:48:02.778Z texts 
+2026-11-04T03:48:03.027Z shot mf1-dout
+2026-11-04T03:48:03.558Z file screenshots/mf1-dout.png
+2026-11-04T03:48:15.330Z design 2778:128850 dark outline with unset character slots (drama: baker/firefighter)
+2026-11-04T03:48:16.127Z case TC-033
+2026-11-04T03:48:16.253Z tap 213 1790
+2026-11-04T03:48:15.958Z file screenshots/design/2778-128850.png
+2026-11-04T03:48:15.958Z file screenshots/design/2778-128850.xml
+2026-11-04T03:48:19.670Z design 2778:129028 dark Choose Character, no picks yet
+2026-11-04T03:48:20.890Z tap 540 860
+2026-11-04T03:48:20.707Z file screenshots/design/2778-129028.png
+2026-11-04T03:48:20.708Z file screenshots/design/2778-129028.xml
+2026-11-04T03:48:23.629Z tap 383 360
+2026-11-04T03:48:26.219Z tap 880 1200
+2026-11-04T03:48:28.719Z shot mf1-dcc
+2026-11-04T03:48:29.567Z file screenshots/mf1-dcc.png
+2026-11-04T03:48:38.086Z design 2778:129078 dark Choose Character, both assigned
+2026-11-04T03:48:39.321Z case TC-044
+2026-11-04T03:48:39.447Z tap 1002 155
+2026-11-04T03:48:39.961Z waitfor Create storyboard|went wrong --timeout 150 --every 5
+2026-11-04T03:48:39.182Z file screenshots/design/2778-129078.png
+2026-11-04T03:48:39.186Z file screenshots/design/2778-129078.xml
+2026-11-04T03:49:45.316Z design 2778:128662 dark Characters Result + Create storyboard card
+2026-11-04T03:49:46.143Z shot mf1-dsb
+2026-11-04T03:49:56.060Z case TC-060
+2026-11-04T03:49:56.602Z tap 842 1928
+2026-11-04T03:49:57.002Z waitfor Creating --timeout 60 --every 1
+2026-11-04T03:50:10.718Z design 2778:128718 dark storyboard loading (app: Creating storyboard grid for …)
+2026-11-04T03:50:20.066Z waitfor Storyboard Preview|went wrong|failed --timeout 300 --every 10
+2026-11-04T03:49:45.974Z file screenshots/design/2778-128662.png
+2026-11-04T03:49:45.975Z file screenshots/design/2778-128662.xml
+2026-11-04T03:49:46.692Z file screenshots/mf1-dsb.png
+2026-11-04T03:50:11.375Z file screenshots/design/2778-128718.png
+2026-11-04T03:50:11.376Z file screenshots/design/2778-128718.xml
+2026-11-04T03:52:21.997Z texts 
+2026-11-04T03:52:29.781Z case -
+2026-11-04T03:52:29.976Z back 
+2026-11-04T03:52:32.334Z lbl Create Your Drama
+2026-11-04T03:52:37.268Z setval edit_mini_drama_input Two rival street musicians share one subway platform for a
+2026-11-04T03:52:38.948Z hidekb 
+2026-11-04T03:52:40.044Z id button_mini_drama_send
+2026-11-04T03:52:41.800Z waitfor Generate --timeout 60 --every 2
+2026-11-04T03:52:48.957Z texts 
+2026-11-04T03:52:49.205Z case TC-024
+2026-11-04T03:52:49.646Z tap 867 1260
+2026-11-04T03:52:49.992Z texts 
+2026-11-04T03:52:50.962Z texts 
+2026-11-04T03:52:51.200Z texts 
+2026-11-04T03:52:51.420Z texts 
+2026-11-04T03:52:51.646Z texts 
+2026-11-04T03:52:51.875Z texts 
+2026-11-04T03:52:52.097Z texts 
+2026-11-04T03:52:52.335Z texts 
+2026-11-04T03:52:52.561Z texts 
+2026-11-04T03:52:52.805Z texts 
+2026-11-04T03:52:53.027Z texts 
+2026-11-04T03:52:53.274Z texts 
+2026-11-04T03:52:53.488Z texts 
+2026-11-04T03:52:53.702Z texts 
+2026-11-04T03:52:54.576Z texts 
+2026-11-04T03:52:54.793Z texts 
+2026-11-04T03:52:55.004Z texts 
+2026-11-04T03:52:55.234Z texts 
+2026-11-04T03:52:55.447Z texts 
+2026-11-04T03:52:55.660Z texts 
+2026-11-04T03:52:55.890Z texts 
+2026-11-04T03:52:56.143Z texts 
+2026-11-04T03:52:56.346Z texts 
+2026-11-04T03:52:56.559Z texts 
+2026-11-04T03:52:56.768Z texts 
+2026-11-04T03:52:57.020Z texts 
+2026-11-04T03:52:57.241Z texts 
+2026-11-04T03:52:57.470Z texts 
+2026-11-04T03:52:57.686Z texts 
+2026-11-04T03:52:57.918Z texts 
+2026-11-04T03:53:01.555Z texts 
+2026-11-04T03:53:10.940Z texts 
+2026-11-04T03:53:11.162Z texts 
+2026-11-04T03:53:11.375Z texts 
+2026-11-04T03:53:11.610Z texts 
+2026-11-04T03:53:11.852Z texts 
+2026-11-04T03:53:12.069Z texts 
+2026-11-04T03:53:12.284Z texts 
+2026-11-04T03:53:12.492Z texts 
+2026-11-04T03:53:12.704Z texts 
+2026-11-04T03:53:12.908Z texts 
+2026-11-04T03:53:13.118Z texts 
+2026-11-04T03:53:13.362Z texts 
+2026-11-04T03:53:13.568Z texts 
+2026-11-04T03:53:14.745Z texts 
+2026-11-04T03:53:14.994Z texts 
+2026-11-04T03:53:15.252Z texts 
+2026-11-04T03:53:15.495Z texts 
+2026-11-04T03:53:15.752Z texts 
+2026-11-04T03:53:15.962Z texts 
+2026-11-04T03:53:16.169Z texts 
+2026-11-04T03:53:16.403Z texts 
+2026-11-04T03:53:16.645Z texts 
+2026-11-04T03:53:16.894Z texts 
+2026-11-04T03:53:17.130Z texts 
+2026-11-04T03:53:17.377Z texts 
+2026-11-04T03:53:17.619Z texts 
+2026-11-04T03:53:17.861Z texts 
+2026-11-04T03:53:18.106Z texts 
+2026-11-04T03:53:18.351Z texts 
+2026-11-04T03:53:18.593Z texts 
+2026-11-04T03:53:18.842Z texts 
+2026-11-04T03:53:19.086Z texts 
+2026-11-04T03:53:19.344Z texts 
+2026-11-04T03:53:19.598Z texts 
+2026-11-04T03:53:19.842Z texts 
+2026-11-04T03:53:20.088Z texts 
+2026-11-04T03:53:20.336Z texts 
+2026-11-04T03:53:20.589Z texts 
+2026-11-04T03:53:20.860Z texts 
+2026-11-04T03:53:21.114Z texts 
+2026-11-04T03:53:28.002Z case -
+2026-11-04T03:53:28.117Z back 
+2026-11-04T03:53:30.363Z back 
+2026-11-04T03:53:34.763Z tap 90 200
+2026-11-04T03:53:37.191Z lbl Preferences
+2026-11-04T03:53:39.831Z lbl Dark Mode
+2026-11-04T03:53:42.696Z lbl Light Mode
+2026-11-04T03:53:46.621Z back 
+2026-11-04T03:53:48.389Z back 
+2026-11-04T03:53:50.158Z back 
+2026-11-04T03:53:52.283Z shot mf1-backlight
+2026-11-04T03:53:53.231Z file screenshots/mf1-backlight.png
+2026-11-04T03:54:02.107Z lbl AI Mini Drama
+2026-11-04T03:54:05.745Z lbl The Art of Falling
+2026-11-04T03:54:09.348Z lbl Make my version
+2026-11-04T03:54:10.910Z waitfor What format would you like --timeout 60 --every 2
+2026-11-04T03:54:11.169Z case TC-020
+2026-11-04T03:54:11.323Z tap 867 1453
+2026-11-04T03:54:11.730Z design 3142:68271 light template outline loading right after Generate (The Art of Falli
+2026-11-04T03:54:12.973Z file screenshots/design/3142-68271.png
+2026-11-04T03:54:12.974Z file screenshots/design/3142-68271.xml
+2026-11-04T03:54:24.553Z case -
+2026-11-04T03:54:24.685Z pull-logs mf-1
+2026-11-04T03:54:24.686Z file logs/mf-1-20261104-115424
+2026-11-04T03:54:42.787Z logcat status
+2026-11-04T03:54:42.919Z logcat start
+2026-11-04T03:55:14.113Z back 
+2026-11-04T03:55:16.438Z case TC-021
+2026-11-04T03:55:16.881Z lbl Glad We Came
+2026-11-04T03:55:20.423Z lbl Make my version
+2026-11-04T03:55:22.236Z waitfor Generate --timeout 60 --every 2
+2026-11-04T03:55:22.630Z design 3142:68240 light template format card (Glad We Came); replaces an auto capture t
+2026-11-04T03:55:23.454Z case -
+2026-11-04T03:55:23.587Z shot mf1-end
+2026-11-04T03:55:24.203Z file screenshots/mf1-end.png
+2026-11-04T03:55:33.653Z logcat status
+2026-11-04T06:04:37.117Z file screenshots/design/4858-36084.png
+2026-11-04T06:04:37.119Z file screenshots/design/4858-36084.xml
+2026-11-04T06:04:46.213Z file screenshots/design/2778-128368-sheet.png
+2026-11-04T06:04:46.320Z file screenshots/design/2778-139072-sheet.png
+2026-11-04T06:04:46.425Z file screenshots/design/2566-114704-sheet.png
+2026-11-04T06:04:46.523Z file screenshots/design/2566-114761-sheet.png
+2026-11-04T06:04:46.642Z file screenshots/design/2778-138549-sheet.png
+2026-11-04T06:04:46.719Z file screenshots/design/2778-128904-sheet.png
+2026-11-04T06:04:46.789Z file screenshots/design/2778-139486-sheet.png
+2026-11-04T06:04:46.860Z file screenshots/design/2824-130245-sheet.png
+2026-11-04T06:04:46.931Z file screenshots/design/2824-130307-sheet.png
+2026-11-04T06:04:47.004Z file screenshots/design/2824-130669-sheet.png
+2026-11-04T06:04:47.080Z file screenshots/design/2778-128966-sheet.png
+2026-11-04T06:04:47.153Z file screenshots/design/2778-139548-sheet.png
+2026-11-04T06:04:47.249Z file screenshots/design/2778-127414-sheet.png
+2026-11-04T06:04:47.347Z file screenshots/design/3949-74761-sheet.png
+2026-11-04T06:04:47.443Z file screenshots/design/2778-127450-sheet.png
+2026-11-04T06:04:47.526Z file screenshots/design/2778-139432-sheet.png
+2026-11-04T06:04:47.615Z file screenshots/design/2778-139610-sheet.png
+2026-11-04T06:04:47.706Z file screenshots/design/2778-139660-sheet.png
+2026-11-04T06:04:47.790Z file screenshots/design/2778-144364-sheet.png
+2026-11-04T06:04:47.870Z file screenshots/design/2778-144420-sheet.png
+2026-11-04T06:04:47.967Z file screenshots/design/2778-127500-sheet.png
+2026-11-04T06:04:48.061Z file screenshots/design/3142-68240-sheet.png
+2026-11-04T06:04:48.161Z file screenshots/design/2778-127378-sheet.png
+2026-11-04T06:04:48.281Z file screenshots/design/2778-127350-sheet.png
+2026-11-04T06:04:48.367Z file screenshots/design/2778-128850-sheet.png
+2026-11-04T06:04:48.456Z file screenshots/design/2778-129028-sheet.png
+2026-11-04T06:04:48.547Z file screenshots/design/2778-129078-sheet.png
+2026-11-04T06:04:48.635Z file screenshots/design/2778-128662-sheet.png
+2026-11-04T06:04:48.727Z file screenshots/design/2778-128718-sheet.png
+2026-11-04T06:04:48.814Z file screenshots/design/3142-68271-sheet.png
+2026-11-04T06:04:48.885Z file screenshots/design/4858-36084-sheet.png

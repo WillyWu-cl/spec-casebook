@@ -25,9 +25,10 @@
   },
   "main-flow.png": {
     "board": "2778:127318",
-    "group": "d1",
+    "group": null,
     "hash": "881be2b3",
-    "captured_at": "2026-10-30T06:29:40.074Z"
+    "source_hash": "189cb93c",
+    "captured_at": "2026-11-04T06:02:04.506Z"
   },
   "ai-mini-drama-home-page.png": {
     "board": "2566:114674",
@@ -61,9 +62,10 @@
   },
   "video.png": {
     "board": "2820:113981",
-    "group": "d3",
+    "group": null,
     "hash": "4ce7e0a7",
-    "captured_at": "2026-10-30T06:29:45.678Z"
+    "source_hash": "0f8f478f",
+    "captured_at": "2026-11-04T06:02:05.521Z"
   },
   "recent-task.png": {
     "board": "2820:123194",

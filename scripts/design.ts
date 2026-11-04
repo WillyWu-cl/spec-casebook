@@ -56,7 +56,7 @@ import { basename, join } from 'node:path';
 import { normLabel } from './lib/coverage.ts';
 import { appElements, figmaScreen, type Box } from './lib/design-match.ts';
 import { capturedScreens } from './lib/design-watch.ts';
-import { planFresh, buildPlan, kept, planPath, summary } from './lib/design-plan.ts';
+import { planFresh, buildPlan, gapLine, kept, planPath, summary } from './lib/design-plan.ts';
 import { ROOT, arg, assertIds, featureDir, readTable, tableDir, writeJson } from './lib/library.ts';
 
 const [feature, platform, cmd, target] = process.argv.slice(2);
@@ -71,7 +71,10 @@ const USAGE = 'Usage: node scripts/design.ts <product>/<feature> <ios|android> p
 const newestRun = () => existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design', 'captures.jsonl'))).sort().at(-1) : undefined;
 const needsRun = ['check', 'settle', 'ebugs'].includes(cmd);
 if (needsRun && !target) { console.error(USAGE); process.exit(2); }
-const runDir = needsRun ? runOf(target) : cmd === 'status' ? runOf(target ?? newestRun() ?? '') : '';
+// status with no run and none with captures has no run dir (runOf('') would be runs/ itself, and the activity log
+// below would make a stray runs/design/ folder)
+const statusRun = cmd === 'status' ? target ?? newestRun() : undefined;
+const runDir = needsRun ? runOf(target) : statusRun ? runOf(statusRun) : '';
 const designDir = join(runDir, 'design');
 // design work on a run, for the Design tab's token use (design-page.ts): one line per command in design/activity.log
 if (runDir && existsSync(runDir)) { mkdirSync(designDir, { recursive: true }); appendFileSync(join(designDir, 'activity.log'), `${new Date().toISOString()} ${cmd} ${process.argv.slice(5).join(' ').slice(0, 80)}\n`); }
@@ -88,6 +91,7 @@ if (cmd === 'plan') {
   const reason = arg('skip-reason'), reasons = { ...(old?.skip_reasons ?? {}), ...(skip && reason ? Object.fromEntries(skip.map(id => [id, reason])) : {}) };
   const plan = buildPlan(feature, platform, { ...kept(old), skip: skip ?? old?.skip, skipReason: reason ?? old?.skip_reason ?? undefined, reasons });
   console.log(`${shown(join(table, 'design', 'plan.json'))}: ${summary(plan)}`);
+  if (gapLine(plan.source_gaps)) console.log(`  SOURCE READ NOT COMPLETE: ${gapLine(plan.source_gaps)}`);
   for (const e of plan.screens.filter((e: any) => e.status === 'no-route').slice(0, 15)) console.log(`  no route: ${e.id} ${e.name} (${e.board_name}) — ${e.why}`);
 } else if (cmd === 'screens' && (!target || target === '--left')) {
   // every routed screen in journey order: what a design pass walks (rows first, then the Design-arrow paths); with
@@ -117,6 +121,7 @@ type Cand = { id: string; kind: string; severity: string; figma?: any; app?: any
 
 function measure() {
   const plan = planFresh(feature, platform);
+  if (gapLine(plan.source_gaps ?? { unread: [], incomplete: [] })) console.error(`  WARNING source read not complete: ${gapLine(plan.source_gaps)}; captures of those boards' screens cannot be checked (design.ts … status)`);
   const ex = join(featureDir(feature), 'specs', plan.spec_set, 'extracted'), out = join(ex, 'figma-source', 'design', 'out');
   const inv = existsSync(join(ex, 'inventory.json')) ? read(join(ex, 'inventory.json')) : { controls: [] };
   const only = new Set((arg('screen') ?? '').split(',').filter(Boolean));
@@ -325,6 +330,16 @@ print(json.dumps(res))`;
 
 function status() {
   const plan = planFresh(feature, platform);
+  // a board missing from the source read comes before everything else (REQ-080): its screens are not in the plan at all
+  const gaps = gapLine(plan.source_gaps ?? { unread: [], incomplete: [] });
+  if (gaps) {
+    console.log(`Design check: source read not complete: ${gaps}.\n  next: read ${[...plan.source_gaps.unread, ...plan.source_gaps.incomplete].map((b: any) => b.id).join(', ')} ` +
+      `(figma skill, references/source.md: calls plan design <ids>, calls chunks design, run the calls, save, merge, crop), or exclude the board on the Plan view with a reason`);
+    return;
+  }
+  const listed = plan.source_gaps?.listed ?? [];
+  if (listed.length) console.log(`  note: ${listed.length} board(s) on the Design page are neither read nor in the casebook (${listed.slice(0, 6).map((b: any) => b.name).join(', ')}${listed.length > 6 ? ', …' : ''}): read them if the spec covers them, else exclude them on the Plan view`);
+  else if (plan.source_gaps && !plan.source_gaps.page_listed) console.log('  note: the Design page was never listed (figma-source.ts … calls list design), so boards neither read nor in the casebook are not known');
   const rv = plan.scope_review, fresh = rv ? plan.screens.filter((s: any) => !rv.ids?.includes(s.id)).length : 0;
   const scopeLine = rv ? `scope reviewed ${rv.at}${fresh ? `, ${fresh} screen(s) new since` : ''}` : 'scope not reviewed';
   if (!runDir || !existsSync(designDir)) {

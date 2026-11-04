@@ -89,7 +89,7 @@ function buildData(link: (abs: string) => string) {
   const boards = existsSync(sc) ? (read(sc).read ?? []).map((b: any) => ({ id: b.id, name: b.name, read_at: b.read_at })) : [];
   return { feature, title, platform, built_at: new Date().toISOString(), spec_set: plan.spec_set, file: plan.file?.key ?? plan.file?.fileKey ?? '',
     review: plan.scope_review ? { at: plan.scope_review.at, fresh: screens.filter((x: any) => !plan.scope_review.ids?.includes(x.id)).map((x: any) => x.id) } : null,
-    skip: plan.skip ?? [], reasons: plan.skip_reasons ?? {}, boards, screens };
+    skip: plan.skip ?? [], reasons: plan.skip_reasons ?? {}, boards, gaps: plan.source_gaps ?? { unread: [], incomplete: [] }, screens };
 }
 
 // Token use of the design check (user, 2026-11-04), counted like the Progress page (lib/usage-estimate.ts, same

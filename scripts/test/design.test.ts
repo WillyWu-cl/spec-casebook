@@ -439,6 +439,77 @@ test('figma-source: scope.json records the list, boards read and ids not found',
   assert.deepEqual(sc.missing, [{ id: '9:9', plan: 'plan-1-1.json', error: 'node not found' }]);
 });
 
+test('source gaps: a Design board the casebook inventories but the read lacks stops the check until read or excluded', () => {
+  writeOut(); rmSync(join(OUT, 'summary.json'), { force: true });
+  const inv = join(EX, 'figma-inventory-d9.json');
+  put(inv, { file: 'KEY123', group: 'd9', boards: [['1:1', 'Board', 0, 0, 1200, 1712], ['3:1', '1016_New board', 0, 2000, 800, 812]] });
+  put(join(EX, 'figma-inventory-pm.json'), { file: 'PMKEY', group: 'pm', boards: [['8:1', 'PM board', 0, 0, 1, 1]] });
+  const st = design('status');
+  assert.match(st.out, /source read not complete: board 3:1 「1016_New board」 is not in the Design source read/);
+  assert.match(st.out, /next: read 3:1 /);
+  assert.doesNotMatch(st.out, /8:1/, 'a PM board is not a Design source gap');
+  assert.match(design('plan').out, /SOURCE READ NOT COMPLETE/);
+  // excluded on the Plan view: no longer a gap
+  design('plan', '--skip', '3:1', '--skip-reason', 'superseded');
+  assert.doesNotMatch(design('status').out, /source read not complete/);
+  const pp = join(T, 'design', 'plan.json'), pl = read(pp); pl.skip = []; pl.skip_reasons = {}; put(pp, pl);
+  // read: its board file is merged, so the gap closes
+  put(join(OUT, '3-1.json'), { board: { id: '3:1', name: '1016_New board', box: [0, 2000, 800, 812] }, nodes: [] });
+  assert.doesNotMatch(design('status').out, /source read not complete/);
+  rmSync(join(OUT, '3-1.json')); rmSync(inv); rmSync(join(EX, 'figma-inventory-pm.json'));
+  // a board merge left incomplete is a gap too
+  put(join(OUT, 'summary.json'), { boards: [], incomplete: [{ board: '1:1', name: 'Board', missing: ['chunk-1-1_40'], changed_since_plan: [] }] });
+  assert.match(design('status').out, /board 1:1 「Board」 read incompletely \(chunk-1-1_40\)/);
+  rmSync(join(OUT, 'summary.json'));
+});
+
+test('figma-source merge: an incomplete board leaves no stale board file, and a casebook board not planned is named', () => {
+  writeOut();
+  const resp = join(EX, 'figma-source', 'design', 'responses');
+  rmSync(resp, { recursive: true, force: true });
+  put(join(resp, 'plan-1-1.json'), JSON.stringify({ mode: 'plan', read_at: '2026-01-01T00:00:00Z', boards: [{ id: '1:1', name: 'Board', hash: 'abc', box: [0, 0, 1200, 1712], nodes: 80 }], chunks: [['1:1', 0, 80, 0, '1:1', '1:99']], missing: [] }));
+  put(join(EX, 'figma-inventory-d9.json'), { file: 'KEY123', boards: [['1:1', 'Board'], ['3:1', '1016_New board']] });
+  const r = run('figma-source.ts', [F, 'merge', 'design']);
+  assert.equal(r.status, 10);
+  assert.match(r.out, /INCOMPLETE 1:1 Board: missing chunk-1-1_0/);
+  assert.match(r.out, /NOT READ 3:1 1016_New board/);
+  assert.ok(!existsSync(join(OUT, '1-1.json')), 'the earlier merge\'s file for the incomplete board is gone');
+  assert.match(design('status').out, /source read not complete: board 3:1 [^\n]*; board 1:1 「Board」 read incompletely/);
+  rmSync(join(EX, 'figma-inventory-d9.json')); rmSync(resp, { recursive: true, force: true }); rmSync(join(OUT, 'summary.json'), { force: true });
+  writeOut();
+});
+
+test('figma-source merge: a later plan finding a board unchanged keeps its chunks', () => {
+  const resp = join(EX, 'figma-source', 'design', 'responses');
+  rmSync(resp, { recursive: true, force: true });
+  const node = (i: string, p: number) => ({ i, t: 'FRAME', n: 'F', b: [0, 0, 375, 812], p });
+  const tables = { V: [], S: [], P: [] };
+  // z-named first plan, a-named re-check: order is by read time, not file name
+  put(join(resp, 'plan-z.json'), JSON.stringify({ mode: 'plan', read_at: '2026-01-01T00:00:00Z', boards: [{ id: '7:1', name: 'B7', hash: 'h1', box: [0, 0, 375, 812], nodes: 2 }], chunks: [['7:1', 0, 2, 0, '7:1', '7:2']], missing: [] }));
+  put(join(resp, 'chunk-7-1_0.json'), JSON.stringify({ mode: 'chunk', board: '7:1', read_at: '2026-01-01T00:01:00Z', from: 0, to: 2, first: 0, count: 2, bytes: 10, tables, nodes: [node('7:1', -1), node('7:2', 0)] }));
+  put(join(resp, 'hidden-7-1_0.json'), JSON.stringify({ mode: 'hidden', board: '7:1', read_at: '2026-01-01T00:02:00Z', from: 0, count: 2, next: null, nodes: [] }));
+  put(join(resp, 'plan-a.json'), JSON.stringify({ mode: 'plan', read_at: '2026-02-01T00:00:00Z', boards: [{ id: '7:1', name: 'B7', hash: 'h1', box: [0, 0, 375, 812], nodes: 2 }], chunks: [['7:1', 0, 2, 0, '7:1', '7:2']], missing: [] }));
+  const r = run('figma-source.ts', [F, 'merge', 'design']);
+  assert.doesNotMatch(r.out, /INCOMPLETE/, r.out);
+  const sc = read(join(EX, 'figma-source', 'design', 'scope.json')).read[0];
+  assert.equal(sc.plan, 'plan-z.json'); assert.equal(sc.checked_at, '2026-02-01T00:00:00Z');
+  // a changed fingerprint needs its chunks again
+  put(join(resp, 'plan-b.json'), JSON.stringify({ mode: 'plan', read_at: '2026-03-01T00:00:00Z', boards: [{ id: '7:1', name: 'B7', hash: 'h2', box: [0, 0, 375, 812], nodes: 2 }], chunks: [['7:1', 0, 2, 0, '7:1', '7:2']], missing: [] }));
+  assert.match(run('figma-source.ts', [F, 'merge', 'design']).out, /INCOMPLETE 7:1 B7: missing chunk-7-1_0/);
+  rmSync(resp, { recursive: true, force: true }); rmSync(join(OUT, 'summary.json'), { force: true }); rmSync(join(OUT, '7-1.json'), { force: true });
+  rmSync(join(EX, 'figma-source', 'design', 'hashes.json'), { force: true });
+  writeOut();
+});
+
+test('status without any run makes no runs/design folder', () => {
+  const tmp = join(RUNS, '..', 'runs-hold');
+  rmSync(tmp, { recursive: true, force: true });
+  spawnSync('mv', [RUNS, tmp]); mkdirSync(RUNS);
+  design('status');
+  assert.ok(!existsSync(join(RUNS, 'design')));
+  rmSync(RUNS, { recursive: true, force: true }); spawnSync('mv', [tmp, RUNS]);
+});
+
 test('figma-source: board images live in the shared folder, are size-checked and reused', () => {
   writeOut();
   const calls = join(EX, 'figma-source', 'design', 'calls'), shared = join(EX, 'figma');
@@ -468,6 +539,12 @@ test('figma-source: board images live in the shared folder, are size-checked and
   put(join(EX, 'figma-hashes.json'), { boards: { '1:1': { hash: 'cb2' } }, files: {} });
   assert.match(run('figma-source.ts', [F, 'calls', 'chunks', 'design']).out, /1 screenshot\(s\)/);
   assert.equal(read(join(calls, 'todo.json')).screenshots[0].save_to, 'library/zztest/design-fixture/specs/2026-01-01/extracted/figma/board.png', 'saved over the shared image');
+  // a board this read saw under another fingerprint changed since: the casebook's image is not trusted, even if its
+  // own (older) check still matches
+  put(join(EX, 'figma-hashes.json'), { boards: { '1:1': { hash: 'cb1' } }, files: {} });
+  put(join(EX, 'figma-source', 'design', 'hashes.json'), { '1:1': { hash: 'old', read_at: '2026-01-01T00:00:00Z', name: 'Board', nodes: 1 } });
+  assert.match(run('figma-source.ts', [F, 'calls', 'chunks', 'design']).out, /1 screenshot\(s\)/);
+  rmSync(join(EX, 'figma-source', 'design', 'hashes.json'));
 });
 
 test('figma-source: save refuses a return older than its call', () => {

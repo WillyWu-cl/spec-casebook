@@ -108,6 +108,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .sh { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap }
 .badge { font: 600 0.78rem var(--body); border-radius: 999px; padding: 2px 10px; border: 1px solid currentColor }
 .badge.ok { color: var(--matches) } .badge.todo { color: var(--question) }
+.gapnote { font-size: 0.82rem; color: var(--question); white-space: nowrap }
 .sgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 20px; font-size: 0.88rem }
 .sgrid b { display: block; font: 600 0.72rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 4px }
 .sgrid ul { margin: 0; padding-left: 18px } .sgrid li { margin: 1px 0 }
@@ -220,6 +221,7 @@ const T = {
     views: { plan: 'Plan', results: 'Results' }, scope: 'Scope', reviewed: (d, n) => `Reviewed ${d}${n ? ` · ${n} new since` : ''}`, notReviewed: 'Not reviewed yet',
     sFigma: 'Figma read', sScreens: 'Screens', sMeasured: 'Measured on every capture', sLooked: 'Looked at by the two review passes', sNot: 'Not covered',
     boardsRead: (n, d) => `${n} boards read${d ? `, ${d}` : ''}`, specSet: s => `spec set ${s}`,
+    unread: 'Not read yet: its screens are not in this plan. Read it before the check, or exclude it with a reason.', partial: 'Read incompletely: its screens are left out until the read finishes.', unreadS: 'not read yet', partialS: 'read incomplete',
     included: 'Included', excluded: 'Excluded', noRoute: 'No route', toLook: 'Needs your decision', lookT: r => r ? 'Added since the scope review: pick Include or Exclude.' : 'Flagged screens: read the note on each, then pick Include or Exclude.', decided: 'Decided', changed: 'Your changes',
     measured: ['Copy: each Figma text against the app text', 'Missing text and icon controls', 'Truncation (「…」 or past the edge)', 'Wrapping (number of lines)', 'Position, after aligning top and bottom', 'Fill and text colour', 'Arrival: the capture is the frame\'s state'],
     looked: ['Icon drawings and images', 'Font weight and size', 'Corner radius, shadows and borders', 'Anything else the sheet shows'],
@@ -255,6 +257,7 @@ const T = {
     views: { plan: '計畫', results: '結果' }, scope: '範圍', reviewed: (d, n) => `已審查 ${d}${n ? ` · 之後新增 ${n} 個` : ''}`, notReviewed: '尚未審查',
     sFigma: 'Figma 讀取', sScreens: '畫面', sMeasured: '每張擷取圖自動量測', sLooked: '由兩輪審查人工檢視', sNot: '不在範圍內',
     boardsRead: (n, d) => `已讀取 ${n} 個畫板${d ? `，${d}` : ''}`, specSet: s => `規格 ${s}`,
+    unread: '尚未讀取：此畫板的畫面不在計畫中。請先讀取再檢查，或註明原因排除。', partial: '讀取未完成：讀取完成前不含此畫板的畫面。', unreadS: '尚未讀取', partialS: '讀取未完成',
     included: '納入', excluded: '排除', noRoute: '無路徑', toLook: '需要你決定', lookT: r => r ? '範圍審查後新增：請選納入或排除。' : '有標記的畫面：看完每行的說明後選納入或排除。', decided: '已決定', changed: '你的變更',
     measured: ['文案：每個 Figma 文字對照 App 文字', '缺少的文字與圖示控制項', '截斷（「…」或超出邊界）', '換行（行數）', '位置（上下對齊後）', '填色與文字顏色', '到達：擷取圖是否為該畫面的狀態'],
     looked: ['圖示繪製與圖片', '字重與字級', '圓角、陰影與框線', '比對圖上其他可見差異'],
@@ -376,7 +379,11 @@ function planView() {
   $('scope').innerHTML = `<div class="sh"><h2>${esc(t('scope'))}</h2>${D.review ? `<span class="badge ok">${esc(t('reviewed')(D.review.at, D.review.fresh.length))}</span>` : `<span class="badge todo">${esc(t('notReviewed'))}</span>`}</div>
     <div class="sgrid">
       <div><b>${esc(t('sFigma'))}</b>${esc(t('boardsRead')(D.boards.length, last ? last.slice(0, 10) : ''))} · ${esc(t('specSet')(D.spec_set))}
-        <ul>${boardOrder().map(b => `<li>${D.file ? `<a href="https://www.figma.com/design/${esc(D.file)}?node-id=${esc(b.id.replace(':', '-'))}" target="_blank" rel="noopener">${esc(b.name)}</a>` : esc(b.name)} <span class="more">· ${per(b)}</span></li>`).join('')}</ul></div>
+        <ul>${[...boardOrder(), ...D.gaps.unread.filter(g => !D.boards.some(b => b.id === g.id))].map(b => {
+          const k = D.gaps.unread.some(g => g.id === b.id) ? 'unread' : D.gaps.incomplete.some(g => g.id === b.id) ? 'partial' : '';
+          const name = D.file ? `<a href="https://www.figma.com/design/${esc(D.file)}?node-id=${esc(b.id.replace(':', '-'))}" target="_blank" rel="noopener">${esc(b.name)}</a>` : esc(b.name);
+          return `<li${k ? ` title="${esc(t(k))}"` : ''}>${name} ${k ? `<span class="gapnote">⚠ ${esc(t(k + 'S'))}</span>` : `<span class="more">· ${per(b)}</span>`}</li>`; }).join('')}</ul>
+        ${D.gaps.unread.length + D.gaps.incomplete.length ? `<p class="more">⚠ ${esc([D.gaps.unread.length ? t('unread') : '', D.gaps.incomplete.length ? t('partial') : ''].filter(Boolean).join(' '))}</p>` : ''}</div>
       <div><b>${esc(t('sScreens'))}</b><div class="nums"><span><b>${inc.length}</b> ${esc(t('included'))}</span><span><b>${ex.length}</b> ${esc(t('excluded'))}</span>${S.filter(s => s.status === 'no-route').length ? `<span><b>${S.filter(s => s.status === 'no-route').length}</b> ${esc(t('noRoute'))}</span>` : ''}</div>
         <ul>${['area', 'variant', 'drawing', 'gap'].filter(fl).map(f => `<li title="${esc(t('flagT')[f])}">${esc(t('flagN')[f])}: ${fl(f)}</li>`).join('')}</ul></div>
       <div><b>${esc(t('sMeasured'))}</b><ul>${t('measured').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
@@ -423,7 +430,10 @@ function planList() {
       const fl = D.screens.some(s => s.id === k && flaggedOf(s));
       SC[k] = { x, why: x ? (now(k).why || '') : '', ...(fl ? { d: 1 } : {}) }; if (!fl && SC[k].x === was(k).x && SC[k].why === was(k).why) delete SC[k]; saveSc(); keepScroll(planView);
       if (x) $('pl').querySelector(`.dc[data-k="${CSS.escape(k)}"] input`)?.focus(); });
-    d.querySelector('input')?.addEventListener('change', e => { SC[k] = { ...SC[k], x: true, why: e.target.value }; if (!SC[k].d && SC[k].why === was(k).why && was(k).x) delete SC[k]; saveSc(); keepScroll(planView); }); });
+    // the reason is kept as it is typed, without drawing the list again: a redraw on blur (`change`) replaced the
+    // button the user was pressing next, so that click was lost (user, 2026-11-04)
+    d.querySelector('input')?.addEventListener('input', e => { SC[k] = { ...SC[k], x: true, why: e.target.value }; if (!SC[k].d && SC[k].why === was(k).why && was(k).x) delete SC[k]; saveSc(); pbtn();
+      d.closest('.pr')?.classList.toggle('chg', changedIds().includes(k)); }); });
 }
 // Time and plan usage of the design check (design-page.ts usageData): the Progress page's table, one row per run with
 // design work, and under a casebook run the run its captures rode on (the same figure as Progress). Served live, the

@@ -29,9 +29,9 @@
 // Folder: specs/<set>/extracted/figma-source/<role>/ — responses/, hashes.json and scope.json are committed (no one
 // reads an unchanged board again), with the board images in extracted/figma/; calls/ and out/ are local and rebuilt
 // from them by merge and crop (design.ts does that by itself after a pull).
-import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 import { arg, assertIds, featureDir, ROOT, writeJson } from './lib/library.ts';
 import { listSpecSets } from './lib/specs.ts';
 
@@ -119,10 +119,18 @@ const responses = (prefix: string) => existsSync(respDir) ? readdirSync(respDir)
 }) : [];
 const plans = () => {
   const boards = new Map<string, any>(), chunks = new Map<string, any[][]>();
-  for (const { f, r } of responses('plan-')) {
+  // the newest plan per board by read time; a later plan with the same fingerprint (a re-read finding the board
+  // unchanged) keeps the earlier plan and its chunks, only noting when it was checked, so its chunks stay current
+  const all = responses('plan-').sort((a, b) => String(a.r.read_at).localeCompare(String(b.r.read_at)));
+  for (const { f, r } of all) {
     if (r.mode !== 'plan') { console.error(`${f} is a ${r.mode} response, not a plan`); process.exit(2); }
-    for (const b of r.boards) { boards.set(b.id, { ...b, read_at: r.read_at, plan: f }); chunks.set(b.id, []); }
-    for (const row of r.chunks) chunks.get(row[0])?.push(row);
+    const fresh = new Set<string>();
+    for (const b of r.boards) {
+      const was = boards.get(b.id);
+      if (was && was.hash === b.hash) { was.checked_at = r.read_at; continue; }
+      boards.set(b.id, { ...b, read_at: r.read_at, plan: f }); chunks.set(b.id, []); fresh.add(b.id);
+    }
+    for (const row of r.chunks) if (fresh.has(row[0])) chunks.get(row[0])!.push(row);
     if (r.missing?.length) console.log(`${f}: not found in the file: ${r.missing.join(', ')}`);
   }
   return { boards, chunks };
@@ -166,7 +174,10 @@ if (cmd === 'calls' && sub === 'list') {
     calls.push(writeCall(`hidden-${dash(id)}_0`, 'hidden', [id, 0]));
     const [w, h] = (b.render ?? b.box).slice(2);
     const max = Math.ceil(Math.max(w, h) * scale);
-    if (scale === 1 && shotCurrent(id, b.hash)) { reused.push(id); continue; }
+    // a board this read saw before under another fingerprint has changed since: the casebook's image (fingerprinted by
+    // its own, possibly older check) is only trusted when it was taken at this fingerprint (`source_hash`)
+    const changed = !!hashes[id] && hashes[id].hash !== b.hash, e = sharedShot(id)?.[1];
+    if (scale === 1 && shotCurrent(id, b.hash) && (!changed || e?.source_hash === b.hash)) { reused.push(id); continue; }
     shotCalls.push(max <= 65536
       ? { nodeId: id, maxDimension: max, fingerprint: b.hash, save_to: rel(join(shotDir, scale === 1 ? shotName(id, b.name) : `${dash(id)}@${scale}.png`)) }
       : { nodeId: id, note: `${Math.round(w)}×${Math.round(h)} is over get_screenshot's 65536 limit at scale ${scale}: take each screen from out/screens.json after merge` });
@@ -188,7 +199,16 @@ else { console.error(usage); process.exit(2); }
 // description (an earlier plan) and is never saved.
 function save() {
   const names = argv.slice(pos + 2);
-  const want = names.length ? names : existsSync(callsDir) ? readdirSync(callsDir).filter(f => f.endsWith('.js')).map(f => f.slice(0, -3)).filter(n => !existsSync(join(respDir, `${n}.json`))) : [];
+  // without names: every call whose response is missing or older than its call file (a re-run chunk keeps an earlier
+  // read's response until saved); with calls/todo.json, chunk and hidden calls only when it lists them and other calls
+  // only when they have a response or are newer than it, so an older plan and its pieces left in calls/ (a
+  // smaller-budget plan, source.md › When a call fails) are not saved over the current one (2026-11-04)
+  const todoP = join(callsDir, 'todo.json');
+  const listed = existsSync(todoP) ? new Set<string>((JSON.parse(readFileSync(todoP, 'utf8')).chunk_calls ?? []).map((c: any) => basename(c.call, '.js'))) : null;
+  const pending = (n: string) => { const r = join(respDir, `${n}.json`); return !existsSync(r) || statSync(r).mtimeMs < statSync(join(callsDir, `${n}.js`)).mtimeMs; };
+  const want = names.length ? names : existsSync(callsDir) ? readdirSync(callsDir).filter(f => f.endsWith('.js')).map(f => f.slice(0, -3))
+    .filter(n => !listed || (/^(chunk|hidden)-/.test(n) ? listed.has(n) : existsSync(join(respDir, `${n}.json`)) || statSync(join(callsDir, `${n}.js`)).mtimeMs >= statSync(todoP).mtimeMs))
+    .filter(pending) : [];
   if (!want.length) { console.log('Nothing to save.'); return; }
   const home = process.env.HOME ?? '', roots = [join(home, '.claude', 'projects', ROOT.replace(/[^A-Za-z0-9]/g, '-')), join(home, '.codex', 'sessions')];
   const files: { p: string; t: number }[] = [];
@@ -241,7 +261,7 @@ function scope(boards: Map<string, any>) {
   const missing = responses('plan-').flatMap(({ f, r }) => (r.missing ?? []).map((id: string) => ({ id, plan: f, error: 'node not found' })));
   writeJson(join(dir, 'scope.json'), { written_at: new Date().toISOString(), file: file.fileKey, page: list?.page ?? null,
     listed: list ? [...(list.sections ?? []).flatMap((s: any) => [[s[0], s[1], 'SECTION'], ...s[s.length - 1].map((b: any) => [b[0], b[1], b[2], s[0]])]), ...(list.nodes ?? []).map((n: any) => [n[0], n[1], n[2]])] : null,
-    read: [...boards.values()].map(b => ({ id: b.id, name: b.name, read_at: b.read_at, hash: b.hash, plan: b.plan })), missing });
+    read: [...boards.values()].map(b => ({ id: b.id, name: b.name, read_at: b.read_at, ...(b.checked_at ? { checked_at: b.checked_at } : {}), hash: b.hash, plan: b.plan })), missing });
 }
 
 // ---- merge --------------------------------------------------------------------------------------------------------------
@@ -268,6 +288,9 @@ function merge() {
     const have = inRow.filter(c => { const w = want.find(w => w[1] <= c.from && c.to <= w[2])!; return w[1] === c.from && w[2] === c.to || !inRow.some(x => x.from === w[1] && x.to === w[2]); });
     const missing = want.filter(w => !tiles(w)).map(w => `chunk-${dash(id)}_${w[1]}`);
     const drift = have.filter(c => c.drift || c.count !== b.nodes).map(c => c.f);
+    // an earlier merge's file for this board is removed until it merges whole again, so no step reads a stale or
+    // partial board (REQ-080); every `continue` below leaves it removed
+    rmSync(join(outDir, `${dash(id)}.json`), { force: true }); rmSync(join(outDir, `${dash(id)}.metadata.xml`), { force: true });
     if (missing.length || drift.length) {
       summary.incomplete.push({ board: id, name: b.name, missing, changed_since_plan: drift });
       continue;
@@ -392,6 +415,14 @@ function merge() {
   writeJson(hashesPath, hashes);
   console.log(`${summary.boards.length} board(s) merged (${summary.boards.reduce((s: number, b: any) => s + b.nodes, 0)} nodes, ${screens.length} screens, ${arrows.length} arrows) from ${summary.calls.plan} plan and ${summary.calls.chunk} chunk call(s); out: ${rel(outDir)}`);
   for (const i of summary.incomplete) console.log(`INCOMPLETE ${i.board} ${i.name}: ${i.missing.length ? `missing ${i.missing.join(', ')}` : ''}${i.changed_since_plan.length ? ` changed since the plan (${i.changed_since_plan.join(', ')}): plan this board again` : ''}`);
+  // a Design board the casebook inventories but no plan covers was never read (REQ-080): name it, so a design check
+  // never starts without it (design.ts stops on it too)
+  if (role === 'design') {
+    const unread = readdirSync(ex).filter(f => /^figma-inventory-.*\.json$/.test(f)).map(f => read(join(ex, f))).filter(d => d.file === file.fileKey)
+      .flatMap(d => (d.boards ?? []).filter((b: any[]) => !boards.has(b[0])).map((b: any[]) => `${b[0]} ${b[1]}`));
+    for (const b of new Set(unread)) console.log(`NOT READ ${b}: the casebook inventories this Design board; plan it (calls plan design ${b.split(' ')[0]}), run its calls, merge again`);
+    if (unread.length && !summary.incomplete.length) process.exit(11);
+  }
   if (summary.incomplete.length) process.exit(10);
 }
 function r2(n: number) { return Math.round(n * 100) / 100; }
