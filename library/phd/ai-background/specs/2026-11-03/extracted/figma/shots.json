@@ -1,40 +1,4 @@
 {
-  "region-pm-custom.png": {
-    "board": "pm-custom",
-    "group": null,
-    "hash": null,
-    "captured_at": "2026-11-03T09:17:59.904Z",
-    "box": [
-      0,
-      150,
-      3500,
-      1929
-    ]
-  },
-  "region-pm-room.png": {
-    "board": "pm-room",
-    "group": null,
-    "hash": null,
-    "captured_at": "2026-11-03T09:18:00.198Z",
-    "box": [
-      3550,
-      150,
-      2000,
-      1200
-    ]
-  },
-  "region-pm-cms.png": {
-    "board": "pm-cms",
-    "group": null,
-    "hash": null,
-    "captured_at": "2026-11-03T09:18:00.437Z",
-    "box": [
-      5580,
-      150,
-      2515,
-      1000
-    ]
-  },
   "room-dark.png": {
     "board": "1:451",
     "group": "d1",
@@ -58,5 +22,41 @@
     "group": "d1",
     "hash": "be196bb3",
     "captured_at": "2026-11-03T07:48:24.384Z"
+  },
+  "pm-custom.png": {
+    "board": "2403:4094/pm-custom",
+    "group": "p1",
+    "hash": "268df3ef",
+    "captured_at": "2026-11-03T09:55:53.516Z",
+    "box": [
+      -2889,
+      107,
+      3500,
+      1929
+    ]
+  },
+  "pm-room.png": {
+    "board": "2403:4094/pm-room",
+    "group": "p1",
+    "hash": "3b8dbfc1",
+    "captured_at": "2026-11-03T09:55:53.682Z",
+    "box": [
+      661,
+      107,
+      2000,
+      1200
+    ]
+  },
+  "pm-cms.png": {
+    "board": "2403:4094/pm-cms",
+    "group": "p1",
+    "hash": "229b28ff",
+    "captured_at": "2026-11-03T09:55:53.848Z",
+    "box": [
+      2691,
+      107,
+      2515,
+      1000
+    ]
   }
 }

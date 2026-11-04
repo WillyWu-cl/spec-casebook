@@ -2,9 +2,9 @@
   "feature": "phd/ai-background",
   "platform": "ios",
   "title": "AI Background",
-  "version": 2,
-  "approved_at": "2026-11-03T09:37:13.468Z",
-  "draft": "edit-20261103-173713",
+  "version": 3,
+  "approved_at": "2026-11-04T00:50:28.842Z",
+  "draft": "20261103-175601",
   "spec_folder": "specs/2026-11-03",
   "spec_files": [
     {
@@ -30,6 +30,15 @@
       "approved_at": "2026-11-03T09:37:13.468Z",
       "spec_set_sha256": "272ca6c61507f83a557dd525aba9d23b73e2fdabe3a5fa3b256b67a5bdb1c7d5",
       "draft": "edit-20261103-173713",
+      "cases": 45,
+      "csv": "history/v2.csv",
+      "requirements": "history/v2-requirements.md"
+    },
+    {
+      "version": 3,
+      "approved_at": "2026-11-04T00:50:28.842Z",
+      "spec_set_sha256": "272ca6c61507f83a557dd525aba9d23b73e2fdabe3a5fa3b256b67a5bdb1c7d5",
+      "draft": "20261103-175601",
       "cases": 45,
       "csv": "cases.csv",
       "requirements": "requirements.md"

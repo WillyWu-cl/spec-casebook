@@ -4,6 +4,212 @@
   "inventory": "specs/2026-11-03/extracted/inventory.json",
   "entries": [
     {
+      "group": "K-e6fb9a",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "btn_add_credit",
+      "label": "100",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "純文字_輸入前"
+      ],
+      "controls": [
+        "K-1721cf"
+      ],
+      "app": [],
+      "press": "TC-007"
+    },
+    {
+      "group": "K-617887",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "btn_credit_primary_1row",
+      "label": "Generate",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "Frame 758534084"
+      ],
+      "controls": [
+        "K-a410fd"
+      ],
+      "app": [],
+      "press": "TC-026, TC-033, TC-034, TC-042, TC-043",
+      "how": "label"
+    },
+    {
+      "group": "K-ddbc39",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "btn_teritary_outline_small",
+      "label": "My Prompts",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "純文字_放大狀態",
+        "純文字_輸入前"
+      ],
+      "controls": [
+        "K-f10150",
+        "K-080be0"
+      ],
+      "app": [],
+      "press": "TC-022",
+      "how": "label"
+    },
+    {
+      "group": "K-2da581",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "ic_credit_S",
+      "label": "",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "Frame 758534085"
+      ],
+      "controls": [
+        "K-51d5f6"
+      ],
+      "app": [],
+      "press": "n/a: credit icon inside the Generate button, pressed with it (TC-033)"
+    },
+    {
+      "group": "K-7b8f41",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "ic_history",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "純文字_輸入前"
+      ],
+      "controls": [
+        "K-c517df"
+      ],
+      "app": [],
+      "press": "n/a: top bar of the PM prompt-panel mockups only; the Design and the actual app show ⓘ and credits there (Q-12)"
+    },
+    {
+      "group": "K-43eb4c",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "round/ic_check",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "純文字_放大狀態",
+        "純文字_輸入前"
+      ],
+      "controls": [
+        "K-83edc5",
+        "K-2e4969"
+      ],
+      "app": [],
+      "press": "TC-023"
+    },
+    {
+      "group": "K-c76f92",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "round/ic_collapse_text",
+      "label": "",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "純文字_放大狀態"
+      ],
+      "controls": [
+        "K-a555f6"
+      ],
+      "app": [],
+      "press": "TC-020"
+    },
+    {
+      "group": "K-3794b1",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "round/ic_expand_text",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "純文字_輸入前"
+      ],
+      "controls": [
+        "K-abcf27"
+      ],
+      "app": [],
+      "press": "TC-020"
+    },
+    {
+      "group": "K-d1dd4b",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "top/ic_back",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "純文字_輸入前"
+      ],
+      "controls": [
+        "K-03f0fc"
+      ],
+      "app": [],
+      "press": "n/a: top bar of the PM prompt-panel mockups only; the Design and the actual app show ⓘ and credits there (Q-12)"
+    },
+    {
+      "group": "K-995490",
+      "kind": "button",
+      "board": "pm-custom",
+      "boards": [
+        "pm-custom"
+      ],
+      "name": "top/ic_back_n",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "純文字_輸入前"
+      ],
+      "controls": [
+        "K-049517"
+      ],
+      "app": [],
+      "press": "n/a: top bar of the PM prompt-panel mockups only; the Design and the actual app show ⓘ and credits there (Q-12)"
+    },
+    {
       "group": "K-5bac8f",
       "kind": "button",
       "board": "Room dark",
@@ -24,7 +230,8 @@
         "K-75dec5"
       ],
       "app": [],
-      "press": "TC-007"
+      "press": "TC-007",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "K-251bb8",
@@ -47,8 +254,9 @@
         "K-73bab4"
       ],
       "app": [],
-      "press": "TC-033, TC-034",
-      "how": "label"
+      "press": "TC-026, TC-033, TC-034, TC-042, TC-043",
+      "how": "label",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "K-4ad11f",
@@ -69,7 +277,8 @@
         "M-9dd04d"
       ],
       "app": [],
-      "press": "TC-003"
+      "press": "TC-003",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "K-02614c",
@@ -92,7 +301,8 @@
         "K-fb5d30"
       ],
       "app": [],
-      "press": "TC-004"
+      "press": "TC-004",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "C-411474",
@@ -116,8 +326,9 @@
         "M-f3ca02"
       ],
       "app": [],
-      "press": "TC-035, TC-036, TC-037",
-      "how": "label"
+      "press": "TC-035",
+      "how": "label",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "K-2784e3",
@@ -140,7 +351,8 @@
         "K-8853e6"
       ],
       "app": [],
-      "press": "TC-005"
+      "press": "TC-005",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "C-028fab",
@@ -173,8 +385,9 @@
         "K-8e797b"
       ],
       "app": [],
-      "press": "TC-011, TC-010",
-      "how": "label"
+      "press": "TC-010, TC-016, TC-011",
+      "how": "label",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "C-f84db4",
@@ -199,7 +412,8 @@
         "K-96e53c"
       ],
       "app": [],
-      "press": "TC-015"
+      "press": "TC-015",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "C-c1c9cb",
@@ -220,8 +434,9 @@
         "K-3129a6"
       ],
       "app": [],
-      "press": "TC-016, TC-015",
-      "how": "label"
+      "press": "TC-010, TC-016",
+      "how": "label",
+      "carried_from": "20261103-154527"
     },
     {
       "group": "K-a66aef",
@@ -244,7 +459,8 @@
         "K-eb3fba"
       ],
       "app": [],
-      "press": "TC-006"
+      "press": "TC-006",
+      "carried_from": "20261103-154527"
     }
   ]
 }

@@ -33,7 +33,7 @@ qa1 or qa-dm), so the PM is read from its PDF (`figma-pending.json`, Q-13).
 - R-022 [PM:pm-custom mockups 2–3] While the text box is empty, ✓ and the trash button are dimmed; once there is text, ✓ turns orange and the trash button is active.
 - R-023 [PM:pm-custom mockup 3] The counter shows the number of characters typed out of 2,500 (e.g. 「120/2,500」).
 - R-024 [PM:pm-custom 「0/2,500」] The prompt holds at most 2,500 characters: typing or pasting more stops at 2,500 and the counter shows 「2,500/2,500」.
-- R-025 [PM:pm-custom 「設有 expand/ delete btn」, mockup row 2] The expand button opens the text box at full height, showing the whole prompt, with the trash button still at its lower left.
+- R-025 [PM:pm-custom 「設有 expand/ delete btn」, mockup row 2; PM:figma 純文字_放大狀態 2404:6807 round/ic_collapse_text 2404:6852] The expand button opens the text box at full height, showing the whole prompt, with the trash button still at its lower left; the collapse button at the expanded box's top right returns it to its normal height with the prompt kept.
 - R-026 [PM:pm-custom 「設有 expand/ delete btn」] The trash button clears the prompt; the counter returns to 「0/2,500」.
 - R-027 [PM:pm-custom 「& My Prompt」] The panel has a 「My Prompts」 button (title: 「add My Prompt」); what it opens is not described (Q-4).
 - R-028 [PM:pm-custom 「click 空白處 or 勾勾→ panel 不見, Custom 為 selected 狀態 (橘色 stroke), ready for generation」] Tapping a blank area outside the panel, or ✓, closes the panel; the 「Custom」 thumbnail is then selected (orange stroke) and Generate is ready (enabled, orange, with its price).
@@ -81,7 +81,8 @@ qa1 or qa-dm), so the PM is read from its PDF (`figma-pending.json`, Q-13).
 - Q-10 What does a Free user get when tapping a premium (crown) template: Generate with credits, or a subscription page? R-015 (no tier rule stated, KB KP-013).
 - Q-11 Failures are not specified: error copy, refund, retry for a failed Custom or template generation and a failed background removal. Job states grid.
 - Q-12 The PM prompt-panel mockups 2–3 show a top bar with back, home, credits and a history icon; the Design and the actual-app screenshot show ⓘ and credits. The rows follow the Design. R-005.
-- Q-13 The PM Figma file (rCJRmOYzvMhbhTIA7bJjid) is not shared with qa1@cyberlink.com or qa-dm@cyberlink.com, so the PM was read from its PDF only: PM frames newer than the PDF export may be missing (step 8 owed for the PM file).
+- Q-13 (answered 2026-11-03) The PM Figma file was opened through figma-pm (qa1) after the first draft: page 2403:4094 holds the same sections, mockups and note text as the PDF and no dated frames. Its inventory added the collapse button of the expanded text box (R-025) and the mockups' own top bar (back, home, history), which the Design replaces (Q-12).
+- Q-16 The PM page is titled 「26 10E AI Background Upgrade to GPT Image 2.5 Flare」, but its Action IDs name Seedream 5.0 Pro (「…bytedance_seedream5.0pro…」). Which model, and which Action IDs, does this release use? R-051, R-052.
 - Q-14 Do the progress messages (R-032 – R-037) also show for a template generation, and what does a template wait look like? R-038.
 
 ## Added 2026-11-03 — coverage passes and standing inputs
