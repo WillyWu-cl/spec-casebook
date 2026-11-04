@@ -68,6 +68,8 @@ library/*/*/*/runs/*/.window
 library/*/*/*/runs/*/.devices.json
 # Full pulled app logs attached to eBugs (may hold tokens) stay local; excerpts in ebugs/*/logs are checked first
 library/*/*/*/ebugs/*/full_logs/
+# Unpacked eBug log extracts (generators write them, may hold full session logs); the reviewed ZIP beside them is shared
+library/*/*/*/ebugs/*/blueprint-extract/
 
 # Coverage pages embed spec renders and run screenshots (local only, like the images themselves)
 library/*/*/*/coverage.html
