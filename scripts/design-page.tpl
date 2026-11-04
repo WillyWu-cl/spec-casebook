@@ -116,6 +116,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .frame a { display: block }
 .parts { display: flex; gap: 6px; flex-wrap: wrap; font-size: 0.78rem }
 .noboxes .frame svg { display: none }
+.srcapp { font: 600 0.7rem var(--mono); color: var(--matches); border: 1px solid currentColor; border-radius: 4px; padding: 0 4px }
 .dec input.why { flex: 1 1 100%; font: 0.8rem var(--body); border: 1px solid var(--line); border-radius: 5px; padding: 3px 7px; background: var(--panel); color: var(--ink) }
 .dec input.why.need { border-color: var(--differs) }
 .it { cursor: pointer }
@@ -245,7 +246,8 @@ const T = {
     fitNote: (t, b) => `Fit offset: top ${t} pt, bottom ${b} pt`, allKinds: 'All differences', copy: n => `Copy decisions (${n})`, copied: 'Copied',
     bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', boxes: 'Boxes',
     doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click to see it full size', dwhy: 'Why it is not a problem (required)', dwhyOpt: 'Note (optional)',
-    needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`,
+    needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`, srcApp: 'app data', srcAppT: "Read from the app's own view data (exact), not from the screenshot",
+    viewsNote: (m, n, sc) => `App view data: ${m} of the matched texts read exactly (${n} texts in the dump)${sc !== 1 ? `; the phone's font scale is ${sc}` : ''}.`,
     hiddenNote: n => `${n} text(s) of the page source are not on the screen (under another layer, or a button's accessibility name) and were left out.`,
     noOcr: 'The screenshot was not read (OCR runs on macOS): lines, text size and hidden texts come from the view boxes.',
     fontNote: (w, n) => `This platform draws Figma's font ${Math.round(Math.abs(1 - w) * 100)} % ${w < 1 ? 'narrower' : 'wider'} on average (${n} texts read on both sides): text size is judged against that.`, outNote: n => `${n} area(s) of other features left out of the check (dashed on the Figma side).`, outT: 'Another feature: not checked',
@@ -286,7 +288,8 @@ const T = {
     fitNote: (t, b) => `對齊位移：上 ${t} pt，下 ${b} pt`, allKinds: '全部差異', copy: n => `複製決定（${n}）`, copied: '已複製',
     bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', boxes: '框線',
     doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點一下看原尺寸', dwhy: '為什麼不是問題（必填）', dwhyOpt: '備註（選填）',
-    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`,
+    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, srcApp: 'App 資料', srcAppT: '取自 App 自身的 view 資料（精確值），不是截圖',
+    viewsNote: (m, n, sc) => `App view 資料：配對的文字中 ${m} 段取得精確值（dump 共 ${n} 段文字）${sc !== 1 ? `；手機字型縮放為 ${sc}` : ''}。`,
     hiddenNote: n => `頁面原始碼中有 ${n} 段文字不在畫面上（在其他圖層下，或是按鈕的無障礙名稱），已排除。`,
     noOcr: '擷取圖未經文字辨識（OCR 只在 macOS 執行）：行數、文字大小與隱藏文字改用元件框判斷。',
     fontNote: (w, n) => `此平台呈現 Figma 字型平均${w < 1 ? '窄' : '寬'} ${Math.round(Math.abs(1 - w) * 100)}%（兩邊都辨識到的 ${n} 段文字）：文字大小以此為基準判斷。`, outNote: n => `${n} 個其他功能的區域不比對（Figma 圖上的虛線框）。`, outT: '其他功能：不比對',
@@ -327,8 +330,8 @@ const COL = s => `var(--${({ differs: 'differs', question: 'question', unreviewe
 const VN = { en: { bug: 'Bug', question: 'Question', ok: 'OK', 'n/a': 'N/A', unreviewed: 'Unreviewed', info: 'Info' }, zh: { bug: '問題', question: '待確認', ok: '一致', 'n/a': '無法判定', unreviewed: '未審查', info: '資訊' } };
 // Info and N/A in readable colours, not the faint grey (user, 2026-11-04)
 const VC = v => `var(--${({ bug: 'differs', question: 'question', unreviewed: 'unreviewed', ok: 'matches', info: 'info', 'n/a': 'muted' })[v] ?? 'none'})`;
-const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
-  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
+const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', weight: 'Font weight', radius: 'Corner radius', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
+  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', weight: '字重', radius: '圓角', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
 const PAGES = window.CASEBOOK?.pages ?? {};
 let st = '', board = '', kind = '', q = '', open = null, showInfo = true, noBoxes = false;
 const folded = new Set();   // verdict groups folded on the open comparison: kept when it is drawn again
@@ -600,10 +603,15 @@ const MN = { 'one text contains the other': '其中一段文字包含另一段',
   'no tappable app element where Figma draws this control': 'Figma 畫此控制項的位置，App 沒有可點的元素',
   'the screen kept changing while it was captured: the app boxes may not match the screenshot; capture it again once still': '擷取時畫面仍在變動：App 的框線可能與截圖不符；請等畫面靜止後重新擷取',
   'number format differs': '數字格式不同',
+  "text colour, the app's own value": '文字顏色（App 自身的設定值）', "fill, the app's own value": '填色（App 自身的設定值）',
   'the keyboard is up in the capture, Figma draws this screen without it: capture it again with the keyboard down': '擷取圖中鍵盤是開的，Figma 此畫面沒有鍵盤：請收起鍵盤後重新擷取',
   'Figma draws the keyboard up, the capture has it down: capture it again with the field focused': 'Figma 畫有鍵盤，擷取圖沒有：請點選輸入框後重新擷取' };
 // the check's notes with values in them
-const MNX = [[/^Figma draws this screen (dark|light), the capture is (dark|light)(.*)$/, (m, f, c, rest) => `Figma 此畫面為${f === 'dark' ? '深色' : '淺色'}，擷取圖為${c === 'dark' ? '深色' : '淺色'}` + (rest.includes('does not follow') && rest.includes('phone was in') && !rest.includes('capture it again') ? '：手機已是該模式，App 沒有跟著切換' : rest.includes('if the phone was') ? '：若手機已是該模式，表示 App 沒有跟著切換；否則請切換後重新擷取' : '：請切換手機模式後重新擷取')],
+const MNX = [[/^the app sets ([\d.]+) sp \((.*?)\), Figma (.*?)(; the phone's font scale ([\d.]+) is not in this)?$/, (m, sp, fam, f, x, sc) => `App 設定 ${sp} sp（${fam}），Figma 為 ${f}` + (sc ? `；未計入手機字型縮放 ${sc}` : '')],
+  [/^the app draws weight (\d+) \((.*?)\), Figma (\d+) \((.*)\)$/, (m, a, fam, f, ff) => `App 字重 ${a}（${fam}），Figma 為 ${f}（${ff}）`],
+  [/^corner radius ([\d.]+) dp in the app, ([\d.]+) in Figma$/, (m, a, f) => `圓角 App 為 ${a} dp，Figma 為 ${f}`],
+  [/^the phone's font scale is ([\d.]+): wrapping at 1\.0 may differ$/, (m, sc) => `手機字型縮放為 ${sc}：在 1.0 時換行可能不同`],
+[/^Figma draws this screen (dark|light), the capture is (dark|light)(.*)$/, (m, f, c, rest) => `Figma 此畫面為${f === 'dark' ? '深色' : '淺色'}，擷取圖為${c === 'dark' ? '深色' : '淺色'}` + (rest.includes('does not follow') && rest.includes('phone was in') && !rest.includes('capture it again') ? '：手機已是該模式，App 沒有跟著切換' : rest.includes('if the phone was') ? '：若手機已是該模式，表示 App 沒有跟著切換；否則請切換後重新擷取' : '：請切換手機模式後重新擷取')],
   [/^text (wider|narrower|taller|shorter) by (\d+) % than this platform's texts draw Figma's \(size, weight or font differs\); Figma sets (.*)$/, (m, d, n, f) => `文字比此平台一般呈現 Figma 字型時${({ wider: '寬', narrower: '窄', taller: '高', shorter: '矮' })[d]} ${n}%（大小、粗細或字型不同）；Figma 設定為 ${f}`]];
 const mnx = t => { for (const [re, f] of MNX) { const m = t.match(re); if (m) return f(...m); } return null; };
 const lang = (o, k) => L === 'zh' ? o[`${k}_zh`] || (o[k] && (MN[o[k]] ?? mnx(o[k]) ?? o[k].replace(/^only (\d+) of (\d+) Figma texts found: the capture may not be this frame's state$/, '只找到 $1 / $2 個 Figma 文字：擷取圖可能不是此畫面的狀態'))) || ''
@@ -645,7 +653,7 @@ function detail(id) {
     ${s.out.length ? `<p class="more">${esc(t('outNote')(s.out.length))}</p>` : ''}
     ${s.hidden.length ? `<p class="more" title="${esc(s.hidden.map(h => h.text.replace(/\s+/g, ' ').slice(0, 60)).join('\n'))}">${esc(t('hiddenNote')(s.hidden.length))}</p>` : ''}
     ${s.run && s.ocr && !s.ocr.app ? `<p class="more">${esc(t('noOcr'))}</p>` : ''}
-    ${s.font_width ? `<p class="more">${esc(t('fontNote')(s.font_width.width, s.font_width.texts))}</p>` : ''}
+    ${s.views ? `<p class="more">${esc(t('viewsNote')(s.views.matched, s.views.texts, s.views.font_scale))}</p>` : s.font_width ? `<p class="more">${esc(t('fontNote')(s.font_width.width, s.font_width.texts))}</p>` : ''}
     ${r && r.how === 'figma' ? `<div class="route"><div><b>${esc(t('byArrows'))}</b> <span class="more">(${esc(t('pfit')[r.fit] ?? r.fit)})</span></div><div class="more">${esc(r.action)}</div></div>`
     : r ? `<div class="route"><div><b>${esc(t('reached'))}</b> ${esc(r.case)} <span class="more">(${esc(t('fit')[r.fit] ?? r.fit)}, ${esc(t('via'))} ${esc(r.edge || r.via)})</span>
       ${link('review', esc(r.case), t('cases'))} ${link('coverage', `case=${esc(r.case)}`, t('cov'))} ${link('results', `case=${esc(r.case)}`, t('res'))}</div>
@@ -654,7 +662,7 @@ function detail(id) {
       ${s.fit ? `<div class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</div>` : ''}</div>` : s.why ? `<p class="more">${esc(s.why)}</p>` : ''}
     <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" data-v="${esc(v)}"${folded.has(v) ? '' : ' open'}><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)}">
       <div class="h"><span class="num" style="background:${VC(it.verdict)}">${n + 1}</span><span class="k">${esc(KN[L][it.kind] ?? it.kind)}</span>
-      ${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
+      ${it.src === 'app' ? `<span class="srcapp" title="${esc(t('srcAppT'))}">${esc(t('srcApp'))}</span>` : ''}${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
       ${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
       ${it.delta ? `<div class="more">${esc(Object.entries(it.delta).map(([a, b]) => `${a} ${b}`).join(' · '))}</div>` : ''}
       ${it.split ? `<div class="note">${esc(splitL(it.split))}</div>` : ''}${it.decided ? `<div class="note">${esc(decidedL(it.decided))}</div>` : ''}

@@ -36,15 +36,19 @@ export function capturedScreens(runDir: string) {
 }
 
 /** Save the screen on the phone as a design capture of `screen` (both `design` commands and the watch). */
-export function saveCapture(runDir: string, screen: string, o: { part?: number; note?: string; png: Buffer; xml: string; win: { width: number; height: number }; extra?: object }) {
+export function saveCapture(runDir: string, screen: string, o: { part?: number; note?: string; png: Buffer; xml: string; win: { width: number; height: number }; extra?: object;
+  views?: { full: unknown; compact: unknown } | null }) {
   const part = o.part ?? 1, dir = join(runDir, 'screenshots', 'design'), name = fileName(screen, part);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, `${name}.png`), o.png);
   writeFileSync(join(dir, `${name}.xml`), o.xml);
+  // the app's own view data (Android, debuggable build: lib/android-views.ts): the full dump stays local, the compact
+  // texts and fills the check reads go with the capture (design.ts shares them like the page source)
+  if (o.views) { writeFileSync(join(dir, `${name}.viewdump.json`), JSON.stringify(o.views.full)); writeFileSync(join(dir, `${name}.views.json`), JSON.stringify(o.views.compact)); }
   const kase = existsSync(join(runDir, '.case')) ? readFileSync(join(runDir, '.case'), 'utf8').trim() : '';
   mkdirSync(join(runDir, 'design'), { recursive: true });
   appendFileSync(join(runDir, 'design', 'captures.jsonl'), JSON.stringify({ t: new Date().toISOString(), screen, ...(part > 1 ? { part } : {}), case: kase, note: o.note ?? '',
-    png: `screenshots/design/${name}.png`, xml: `screenshots/design/${name}.xml`, win: { w: o.win.width, h: o.win.height }, ...o.extra }) + '\n');
+    png: `screenshots/design/${name}.png`, xml: `screenshots/design/${name}.xml`, ...(o.views ? { views: `screenshots/design/${name}.views.json` } : {}), win: { w: o.win.width, h: o.win.height }, ...o.extra }) + '\n');
   return { kase, png: `screenshots/design/${name}.png` };
 }
 
@@ -180,7 +184,7 @@ export async function settledCapture(source: () => Promise<string>, shot: () => 
  * `again` reads the source once more (without watching it): a screen that moved while its screenshot was taken is not
  * saved, and a later source of it, once still, is. */
 export async function watchSource(runDir: string, xml: string, png: () => Promise<Buffer>, win: () => Promise<{ width: number; height: number }>, again?: () => Promise<string>,
-  keyboard?: () => Promise<boolean | null>): Promise<string | undefined> {
+  keyboard?: () => Promise<boolean | null>, views?: () => Promise<{ full: unknown; compact: unknown } | null>): Promise<string | undefined> {
   if (!xml || !existsSync(watchFile(runDir))) return;
   try {
     const w: Watch = read(watchFile(runDir)), w0 = Object.fromEntries(Object.entries(w.screens).map(([id, x]) => [id, x.name]));
@@ -217,7 +221,8 @@ export async function watchSource(runDir: string, xml: string, png: () => Promis
     if (again && sig(await again()) !== sig(xml)) return;
     const size = await win();
     let kase = '', rel = '';
-    for (const id of ids) ({ kase, png: rel } = saveCapture(runDir, id, { png: shot, xml, win: size, extra: { auto: true, match: `${hit.hits}/${hit.of}`, ...(kb !== null ? { keyboard: kb } : {}), ...(ids.length > 1 ? { same_texts: ids.filter(x => x !== id) } : {}) } }));
+    const vd = views ? await views().catch(() => null) : null;
+    for (const id of ids) ({ kase, png: rel } = saveCapture(runDir, id, { png: shot, xml, win: size, views: vd, extra: { auto: true, match: `${hit.hits}/${hit.of}`, ...(kb !== null ? { keyboard: kb } : {}), ...(ids.length > 1 ? { same_texts: ids.filter(x => x !== id) } : {}) } }));
     drop(ids);
     writeFileSync(watchFile(runDir), JSON.stringify(w));
     return `design: captured ${ids.map(id => `${id} ${w0[id]}`).join(', ')} automatically (${hit.hits}/${hit.of} texts${ids.length > 1 ? ', frames with the same texts' : ''}${kase && !rowSet.has(hit.id) ? `, not a screen of ${kase}` : ''}) → ${rel}`;

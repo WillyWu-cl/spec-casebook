@@ -123,6 +123,11 @@ lines; put the full rule in the skill or reference file that applies it and poin
   phone from the page source (Android layers by drawing order, keyboard window); the screenshot only for colours and,
   by OCR, glyph geometry and a layer cross-check. Captures must match the frame's dark/light and keyboard state;
   reviewers quote texts from compare.json, never from images (`figma/references/conformance.md` §2–§4).
+- **Android view data from inside the app (user, 2026-11-04, REQ-085).** `scripts/android-viewdump.ts` re-signs the
+  installed PowerDirector debuggable (rdqe-spec-contract-agent's viewdump, copied with the user's approval) and dumps
+  exact text colour, size, weight, lines and drawables; the first install replaces the app with an uninstall (data
+  cleared) only with `--yes-uninstall` once agreed. With that build, Android design captures save the view data and
+  the check reads it before OCR and pixels (REQ-086; `figma/references/conformance.md` §3).
 - **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
   the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
 - **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names
@@ -141,6 +146,11 @@ lines; put the full rule in the skill or reference file that applies it and poin
   fresh-install case are off; those cases are recorded Blocked `--as test-data` ("PowerDirector cannot be reinstalled
   on the QA iPhone"). `app-setup.ts` refuses to uninstall unless `CASEBOOK_ALLOW_REINSTALL=1`, which only the
   user lifting this rule allows. WDA is never uninstalled either (below).
+- **First-launch consent on the phone (user, 2026-11-04).** After a (re)install the agent gets past the app's
+  GDPR/consent screen itself (「Get Started」 accepts the Terms of Service and Privacy Policy, authorized by the user);
+  sign-in stays the user's when the agent cannot log in (the agent never types passwords); where a phone signs in with
+  its Google account button and no password (the SM-A5360, `fixtures.md`), the agent does it. Every permission the app
+  asks for (notifications, photos, microphone…) is allowed (user, 2026-11-04).
 - **On the phone (2026-10-21/27).** Wi-Fi may be toggled for offline cases once the phone is on USB (other system
   settings need the user's go-ahead); rows are reached only with `scrollto` / `pink`; Auto-Lock Never, `device.ts
   restart` at every segment, never uninstall WDA; exit 75 = BLOCKER, pushed to the user (`run.md` steps 1, 3, 4).

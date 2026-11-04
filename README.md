@@ -687,6 +687,7 @@ All scripts run from the repository root with `node scripts/<name>.ts`. In the u
 | `annotations.ts <feature> <platform> --draft <id>` | Groups every board's annotations into blocks to trace to requirements (`annotation-trace.json`) |
 | `spec-agent-gaps.ts <feature> <platform> --draft <id>` | Comparison report data (on request): spec agent cases the table doesn't cover, with their source, from the snapshot in `library/<product>/<feature>/spec-agent/` (`--refresh` updates it from a local spec agent clone, read with git only) |
 | `check.ts <feature> <platform> [--draft <id>]` | Validates a table or draft, incl. arrows, controls, ledger, annotation trace and grids |
+| `android-viewdump.ts build \| prepare [--yes-uninstall] \| dump <out.json> \| restore` | Android design data from inside the app: builds the view dumper, re-signs the installed app debuggable and installs it (uninstall, data cleared, only with the flag), dumps every view's text colour, size, weight, lines and drawables with a screenshot, or puts the original APK back (figma `conformance.md` §3) |
 | `pr-check.ts [--base origin/main] [--no-fetch]` | Checks a branch before a push or PR: conflicts with main, git-ignored or large files, credentials, table versions and request IDs main already used, library layout |
 | `sync-skills.ts [--check]` | Copies `.claude/skills/` to `.codex/skills/` (or only lists differences) |
 | `figma/inventory.js` | Figma plugin script the agent runs through Figma MCP (`use_figma`), one call per board group: screens, dialogs, controls, flow arrows |

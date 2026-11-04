@@ -4,6 +4,8 @@ node_modules/
 # Images and videos stay local (user, 2026-10-22): run screenshots, eBug attachments, renders and recordings.
 # The repo keeps the text that points at them (results.csv, reports, eBug drafts with file names).
 *.png
+# the Android view dumper's full output stays local; its compact `.views.json` is shared with the capture (REQ-086)
+*.viewdump.json
 *.jpg
 *.jpeg
 *.gif

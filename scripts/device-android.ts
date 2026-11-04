@@ -21,7 +21,8 @@
 //   design SCREEN [--part N] [--anyway "<why>"] [NOTE]
 //                             design check (figma skill, references/conformance.md): the screenshot and page source of the
 //                             Figma screen SCREEN (node id) now on the phone, refused when it is not in the frame's state
-//                             (dark or light, keyboard up or down; --anyway keeps it with the reason), to
+//                             (dark or light, keyboard up or down; --anyway keeps it with the reason), with the app's own
+//                             view data when the app is the debuggable build (android-viewdump.ts prepare), to
 //                             screenshots/design/<id>.png/.xml, logged in
 //                             design/captures.jsonl with the case running (`case ID`) and the window size
 //   case ID | case -          name the case now running (design captures name it), or clear it; with a design plan it
@@ -98,6 +99,7 @@ import { productValue } from './lib/feature-config.ts';
 import { BLOCKER, env, logActivity, runRecipe, sleep, stamp, webdriver } from './lib/device-common.ts';
 import { armWatch, saveCapture, settledCapture, stateMismatch, watchSource } from './lib/design-watch.ts';
 import { keyboardInSource } from './lib/design-match.ts';
+import { compactViews, dumpViews, viewdumpProblem } from './lib/android-views.ts';
 
 const HOME = homedir();
 const ANDROID_HOME = process.env.ANDROID_HOME ?? process.env.ANDROID_SDK_ROOT ?? join(HOME, 'Library/Android/sdk');
@@ -242,10 +244,17 @@ function parseEls(xml: string, filter?: string) {
 // Automatic design captures (lib/design-watch.ts): while `case ID` has armed a watch, every page source read here is
 // checked for a Design screen still to capture (the screenshot is taken only on a match).
 const watching = () => existsSync(join(runDir, '.design-watch.json'));
+// the app's own view data saved with a design capture (lib/android-views.ts; REQ-086): when the app on the phone is the
+// debuggable build (android-viewdump.ts prepare) and the dumper is built here, else the capture goes without it
+async function appViews() {
+  const a = { serial: serial(), pkg: PKG }, why = viewdumpProblem(a);
+  if (why) { console.log(`design: no app view data (${why})`); return null; }
+  try { const full = await dumpViews(a); return { full, compact: compactViews(full) }; } catch (e: any) { console.log(`design: app view data not read (${String(e?.message ?? e).slice(0, 160)})`); return null; }
+}
 const source = async (): Promise<string> => {
   const xml: string = (await s('GET', '/source')).value;
   if (watching()) { const l = await watchSource(runDir, xml, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'), async () => (await s('GET', '/window/rect')).value, async () => (await s('GET', '/source')).value,
-    async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value)); if (l) console.log(l); }
+    async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value), appViews); if (l) console.log(l); }
   return xml;
 };
 // before a press while watching: the screen it is pressed on
@@ -350,7 +359,7 @@ switch (cmd) {
     const kb = keyboardInSource(one.xml) ?? await (async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value))().catch(() => null);
     const off = part > 1 ? [] : stateMismatch(runDir, rest[0], one.png, kb);
     if (off.length && !anyway) { console.error(`not captured: ${rest[0]} is not in its frame's state: ${off.join('; ')}`); process.exit(1); }
-    const { kase, png } = saveCapture(runDir, rest[0], { part, note: words.join(' '), png: one.png, xml: one.xml, win: (await s('GET', '/window/rect')).value,
+    const { kase, png } = saveCapture(runDir, rest[0], { part, note: words.join(' '), png: one.png, xml: one.xml, win: (await s('GET', '/window/rect')).value, views: await appViews(),
       extra: { ...(one.unsettled ? { unsettled: true } : {}), ...(kb !== null ? { keyboard: kb } : {}), ...(anyway ? { anyway, off } : {}) } });
     console.log(`captured ${rest[0]}${kase ? ` (${kase})` : ''} → ${png}${one.unsettled ? ' — the screen kept changing: wait until it is still and capture again' : ''}`);
     break;

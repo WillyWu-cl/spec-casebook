@@ -26,7 +26,9 @@
 // visible node inside it) with the app's page source and screenshot, and writes <run dir>/design/compare.json
 // (committed) with one candidate per difference. Exact data first (user, 2026-11-04): Figma's texts, fonts, colours
 // and glyph bounds come from the source read; the app's texts, bounds and, on Android, layers (drawing order) and
-// keyboard (its window) from the page source; the screenshot gives colours as drawn and, by OCR (macOS Vision,
+// keyboard (its window) from the page source; on Android with the debuggable build, each text's colour, size (sp),
+// weight and lines and each fill's colour and corner radius from the app's own view data taken with the capture
+// (lib/android-views.ts, `src: app` on the candidate; REQ-086); otherwise the screenshot gives colours as drawn and, by OCR (macOS Vision,
 // scripts/ocr-images.swift, cached in committed files), only what no dump holds: glyph bounds for lines, size and
 // position, and a cross-check of the layers (details at measure() and ocrPass()).
 //   state     under 40 % of the frame's short texts were found (another state), the keyboard is up where the frame has
@@ -37,8 +39,10 @@
 //   missing   a Figma text with no app text near it; long sample text (> 60 characters) is `sample`, info  major
 //   truncated the app text ends in an ellipsis Figma does not have, or runs past the screen edge           major
 //   lines     the app text takes more (or fewer) lines than Figma: wrapping (lines read on the screenshot)  minor
-//   size      a text wider or narrower (same characters), or taller or shorter, than this platform draws Figma's
-//             font on average: size, weight or font differs (sizeCands)                                       minor
+//   size      the app's size in sp 6 % (and 0.5 sp) off Figma's points (view data), else a text wider or narrower
+//             (same characters), or taller or shorter, than this platform draws Figma's font (sizeCands)      minor
+//   weight    the app's font weight 100 or more from Figma's (view data)                                   minor
+//   radius    a fill's corner radius over 2 dp from Figma's (view data)                                     minor
 //   position  a matched text more than 4 pt from where Figma puts it, after the projection below          minor
 //   colour    a filled shape (button, chip, card, badge) ΔE > 12 from its Figma fill, or a text ΔE > 18   minor
 //   control   an unlabelled control of the inventory (icon) with no tappable app element where it is drawn major
@@ -66,6 +70,7 @@ import { appendFileSync, copyFileSync, existsSync, mkdirSync, readdirSync, readF
 import { basename, join } from 'node:path';
 import { normLabel } from './lib/coverage.ts';
 import { appElements, figmaScreen, keyboardInSource, type Box } from './lib/design-match.ts';
+import type { ViewFill, ViewText, Views } from './lib/android-views.ts';
 import { capturedScreens, darkFill, darkShot } from './lib/design-watch.ts';
 import { planFresh, buildPlan, gapLine, kept, planPath, summary } from './lib/design-plan.ts';
 import { ROOT, arg, assertIds, featureDir, readTable, tableDir, writeJson, writeJsonRows } from './lib/library.ts';
@@ -77,7 +82,7 @@ const shown = (p: string) => p.startsWith(ROOT) ? p.slice(ROOT.length + 1) : p;
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
 const runOf = (r: string) => existsSync(r) ? r : join(runsDir, r);
 const OTHER = /^n\/a:\s*other feature\b/i;
-const KINDS = ['state', 'appearance', 'copy', 'missing', 'truncated', 'lines', 'size', 'position', 'colour', 'control', 'extra', 'sample'];
+const KINDS = ['state', 'appearance', 'copy', 'missing', 'truncated', 'lines', 'size', 'weight', 'radius', 'position', 'colour', 'control', 'extra', 'sample'];
 const USAGE = 'Usage: node scripts/design.ts <product>/<feature> <ios|android> plan | screens <TC-…> | check <run dir> | settle <run dir> | decide [file] | scope [file] | ebugs <run dir> | status [run dir]';
 // the newest run folder holding design captures
 const newestRun = () => existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design', 'captures.jsonl'))).sort().at(-1) : undefined;
@@ -130,7 +135,7 @@ else if (cmd === 'ebugs') ebugs();
 else if (cmd === 'status') status();
 else { console.error(USAGE); process.exit(2); }
 
-type Cand = { id: string; kind: string; severity: string; figma?: any; app?: any; delta?: any; note?: string };
+type Cand = { id: string; kind: string; severity: string; figma?: any; app?: any; delta?: any; note?: string; src?: string };
 
 function measure() {
   const plan = planFresh(feature, platform);
@@ -176,10 +181,15 @@ function measure() {
     for (const c of [cap, ...parts.get(cap.screen)!]) {
       if (!existsSync(sourceOf(c.xml)) || !existsSync(imageOf(c.png))) { console.error(`  ${c.screen}: its capture is on another computer (no ${c.xml} or shared copy), skipped`); continue; }
       if (existsSync(join(runDir, c.xml))) { mkdirSync(join(designDir, 'captures'), { recursive: true }); copyFileSync(join(runDir, c.xml), sharedOf(c.xml, '.xml')); }
+      if (c.views && existsSync(join(runDir, c.views))) copyFileSync(join(runDir, c.views), join(designDir, 'captures', basename(c.views)));
       if (existsSync(join(runDir, c.png)) && (!existsSync(sharedOf(c.png, '.webp')) || statSync(sharedOf(c.png, '.webp')).mtimeMs < statSync(join(runDir, c.png)).mtimeMs)) shares.push({ src: join(runDir, c.png), dst: sharedOf(c.png, '.webp') });
     }
     if (!existsSync(sourceOf(cap.xml)) || !existsSync(imageOf(cap.png))) continue;
     const els = appElements(readFileSync(sourceOf(cap.xml), 'utf8'));
+    // the app's own view data taken with this capture (Android, debuggable build: lib/android-views.ts, REQ-086): each
+    // text's colour, size, weight and lines and each fill's colour and radius exactly, ahead of OCR and pixels
+    const vFile = cap.views && [join(runDir, cap.views), join(designDir, 'captures', basename(cap.views))].find(f => existsSync(f));
+    const V: Views | null = vFile ? read(vFile) : null;
     const [Wf, Hf] = [scr.abs[2], scr.abs[3]], k = Wf / cap.win.w, Ha = cap.win.h * k;
     const toFig = (b: Box): Box => [b[0] * k, b[1] * k, b[2] * k, b[3] * k];
     const cands: Cand[] = [], used = new Set<number>();
@@ -304,10 +314,12 @@ function measure() {
       // wrapping: the lines the OCR reads on each side (a text view's box is often taller than its lines: 「AI Mini⏎Drama」
       // drawn on one line passed on its box height, and a padded button read as two; user, 2026-11-04), else Figma's
       // box over its line height and the app's view box
-      const lh = p.t.line_height || p.t.size * 1.2;
-      const fl = gf?.length ?? Math.max(1, Math.round(p.t.box[3] / lh)), al = ga?.length ?? Math.max(1, Math.round(p.a.f[3] / lh));
-      if ((ga || lh > 0) && p.t.auto_resize !== 'TRUNCATE' && fl !== al)
-        cands.push({ id: `lines:${p.t.node}`, kind: 'lines', severity: 'minor', figma: { node: p.t.node, text: p.t.text, box: r1(tb), lines: fl }, app: { box: r1(ab), lines: al } });
+      const lh = p.t.line_height || p.t.size * 1.2, vt = V ? viewTextOf(V, p.a) : null; (p as any).vt = vt;
+      const fl = gf?.length ?? Math.max(1, Math.round(p.t.box[3] / lh)), al = vt?.lines ?? ga?.length ?? Math.max(1, Math.round(p.a.f[3] / lh));
+      if ((vt?.lines || ga || lh > 0) && p.t.auto_resize !== 'TRUNCATE' && fl !== al)
+        cands.push({ id: `lines:${p.t.node}`, kind: 'lines', severity: 'minor', ...(vt?.lines ? { src: 'app', note: scaleNote(V!) } : {}), figma: { node: p.t.node, text: p.t.text, box: r1(tb), lines: fl }, app: { box: r1(ab), lines: al } });
+      // the app's own size and weight (exact; the measured width or height below only where there is none)
+      if (vt) { cands.push(...exactText(p.t, vt, V!, r1(tb), r1(ab))); continue; }
       // text size and face (user, 2026-11-04: a bolder title of another width passed on its height), measured here and
       // judged after every screen (sizeCands): the glyph width when both sides read the same characters, else height
       if (ga && gf && ga.length === gf.length) { const med = (v: number[]) => v.sort((a, b) => a - b)[Math.floor(v.length / 2)];
@@ -343,9 +355,19 @@ function measure() {
         && Math.abs(e.box[0] + e.box[2] / 2 - c[0]) <= tol && Math.abs(e.box[1] + e.box[3] / 2 - c[1]) <= tol)
         .sort((a, b) => Math.hypot(a.box[0] + a.box[2] / 2 - c[0], a.box[1] + a.box[3] / 2 - c[1]) - Math.hypot(b.box[0] + b.box[2] / 2 - c[0], b.box[1] + b.box[3] / 2 - c[1]))[0];
       return e ? e.box : w; };
-    for (const f of fig.fills) samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, figBox: f.box, box: snap(placed(f.box)) });
+    for (const f of fig.fills) {
+      const at = snap(placed(f.box)), vf = V ? viewFillOf(V, at, 40 / k) : null;
+      // the app's own fill and corner radius where a view's background covers the shape's place
+      if (vf) { cands.push(...exactFill(f, vf, V!)); continue; }
+      samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, figBox: f.box, box: at });
+    }
     // a text's colour on its glyphs when read (a button's view box holds the button's fill too), else its view box
-    for (const p of base.filter(p => p.how === 'exact' && p.t.color) as any[]) samples.push({ kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, figBox: p.t.box, box: p.ga ? union(p.ga).map(v => v / k) : p.a.box });
+    for (const p of base.filter(p => p.how === 'exact' && p.t.color) as any[]) {
+      // the app's own text colour when the view data has it
+      if (p.vt?.color) { const d = deltaE(p.t.color, rgb(p.vt.color)); if (d > 6) cands.push({ id: `colour:${p.t.node}`, kind: 'colour', severity: 'minor', src: 'app', note: "text colour, the app's own value",
+        figma: { node: p.t.node, name: p.t.text, color: p.t.color, box: r1(p.t.box) }, app: { color: p.vt.color }, delta: { dE: Math.round(d) } }); continue; }
+      samples.push({ kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, figBox: p.t.box, box: p.ga ? union(p.ga).map((v: number) => v / k) : p.a.box });
+    }
     // recheck: the bugs settled on an earlier build, still measured here or gone
     let recheck: any = null;
     if (oldFindings?.[scr.id]) {
@@ -356,7 +378,8 @@ function measure() {
     results.push({ id: scr.id, name: scr.name, board: scr.board, board_name: scr.board_name, case: cap.case || scr.route?.case || '', captured_at: cap.t, png: cap.png,
       parts: parts.get(cap.screen)!.map(p => p.png), note: cap.note || '', build, win: cap.win, k: r3(k), fw: Wf, arrival, fit,
       ...(fig.out.length ? { out: fig.out.map(o => ({ name: o.name, box: r1(o.box) })) } : {}), ...(cap.unsettled ? { unsettled: true } : {}),
-      ...(hidden.length ? { hidden } : {}), ...(disagree.length ? { layers_disagree: disagree } : {}), ...(sizes.length ? { sizes } : {}), ocr: { app: !!oA, figma: !!oF }, layers: layered,
+      ...(hidden.length ? { hidden } : {}), ...(disagree.length ? { layers_disagree: disagree } : {}),
+      ...(V ? { views: { texts: V.texts.length, fills: V.fills.length, font_scale: V.fontScale, matched: base.filter((p: any) => p.vt).length } } : {}), ...(sizes.length ? { sizes } : {}), ocr: { app: !!oA, figma: !!oF }, layers: layered,
       // every text of both sides as read, for the reviewers to quote (conformance.md §4: never read text off the image)
       texts: { figma: fig.texts.map(t => ({ node: t.node, text: t.text, box: r1(t.box) })), app: appT.filter(a => a.part === 1).map(a => ({ text: a.text, box: r1(a.f) })),
         ...(oA ? { app_ocr: oA.map(o => ({ text: o.text, box: r1(o.box) })) } : {}), ...(oF ? { figma_ocr: oF.map(o => ({ text: o.text, box: r1(o.box) })) } : {}) },
@@ -388,6 +411,48 @@ function measure() {
 }
 
 type OcrLine = { text: string; n: string; box: Box };
+
+// ---- the app's own view data (Android, REQ-086) -------------------------------------------------------------------
+// A matched app text's view: the same words (normalised) where the page source puts it, the most overlap first.
+function viewTextOf(V: Views, a: { text: string; box: Box }): ViewText | null {
+  const n = normLabel(a.text);
+  return V.texts.filter(v => normLabel(v.text) === n && overlap(v.box, a.box, 4))
+    .map(v => ({ v, o: Math.max(0, Math.min(v.box[0] + v.box[2], a.box[0] + a.box[2]) - Math.max(v.box[0], a.box[0])) * Math.max(0, Math.min(v.box[1] + v.box[3], a.box[1] + a.box[3]) - Math.max(v.box[1], a.box[1])) }))
+    .sort((x, y) => y.o - x.o)[0]?.v ?? null;
+}
+// A shape's view: a background over at least half of the place the shape is put on the app, else one of about its size
+// (within a third either way) whose centre is within `near` pixels of it (a text view as wide as its button moved the
+// place the shape was put by its anchor text), the closest first
+function viewFillOf(V: Views, at: Box, near: number): ViewFill | null {
+  const area = (b: number[]) => b[2] * b[3], inter = (a: number[], b: number[]) => Math.max(0, Math.min(a[0] + a[2], b[0] + b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[1] + a[3], b[1] + b[3]) - Math.max(a[1], b[1]));
+  const over = V.fills.map(f => ({ f, iou: inter(f.box, at) / (area(f.box) + area(at) - inter(f.box, at)) })).filter(x => x.iou >= 0.5).sort((a, b) => b.iou - a.iou)[0]?.f;
+  if (over) return over;
+  const ok = (r: number) => r >= 0.75 && r <= 1.33, dist = (f: ViewFill) => Math.hypot(f.box[0] + f.box[2] / 2 - at[0] - at[2] / 2, f.box[1] + f.box[3] / 2 - at[1] - at[3] / 2);
+  return V.fills.filter(f => ok(f.box[2] / at[2]) && ok(f.box[3] / at[3]) && dist(f) <= near).sort((a, b) => dist(a) - dist(b))[0] ?? null;
+}
+function rgb(argb: string) { return `#${argb.slice(3, 9)}`; }
+// the phone's font scale changes every size and wrap: sizes are compared in sp (before it), lines say so
+function scaleNote(V: Views) { return V.fontScale !== 1 ? `the phone's font scale is ${V.fontScale}: wrapping at 1.0 may differ` : undefined; }
+// size in sp against Figma's points (6 % and 0.5 sp, twice that is major) and weight (100 apart), from the app's view
+function exactText(t: any, vt: ViewText, V: Views, tb: number[], ab: number[]): Cand[] {
+  const out: Cand[] = [], fam = `${vt.family ?? 'system font'} ${vt.weight ?? ''}`.trim();
+  if (vt.sp && t.size) { const d = vt.sp / t.size - 1;
+    if (Math.abs(d) > 0.06 && Math.abs(vt.sp - t.size) >= 0.5) out.push({ id: `size:${t.node}`, kind: 'size', severity: Math.abs(d) > 0.15 ? 'major' : 'minor', src: 'app',
+      note: `the app sets ${vt.sp} sp (${fam}), Figma ${t.font ?? `${t.size} pt`}${V.fontScale !== 1 ? `; the phone's font scale ${V.fontScale} is not in this` : ''}`,
+      figma: { node: t.node, text: t.text, box: tb }, app: { text: vt.text, box: ab }, delta: { sp: vt.sp, pt: t.size } } as Cand); }
+  if (vt.weight && t.weight && Math.abs(vt.weight - t.weight) >= 100) out.push({ id: `weight:${t.node}`, kind: 'weight', severity: 'minor', src: 'app',
+    note: `the app draws weight ${vt.weight} (${vt.family ?? 'system font'}), Figma ${t.weight} (${t.font ?? ''})`, figma: { node: t.node, text: t.text, box: tb }, app: { text: vt.text, box: ab }, delta: { app: vt.weight, figma: t.weight } } as Cand);
+  return out;
+}
+// fill colour (ΔE over 6) and corner radius (over 2 dp; a fully round shape's radius only as round) from the app's view
+function exactFill(f: any, vf: ViewFill, V: Views): Cand[] {
+  const out: Cand[] = [], d = deltaE(f.color, rgb(vf.color)), box = r1(f.box), appBox = r1(vf.box.map(v => v / V.density));
+  if (d > 6) out.push({ id: `colour:${f.node}`, kind: 'colour', severity: 'minor', src: 'app', note: "fill, the app's own value", figma: { node: f.node, name: f.name, color: f.color, box }, app: { color: vf.color, box: appBox }, delta: { dE: Math.round(d) } } as Cand);
+  if (typeof f.radius === 'number' && vf.radius !== null) { const r = vf.radius / V.density, round = (x: number, h: number) => x >= h / 2 - 0.5;
+    if (Math.abs(r - f.radius) > 2 && !(round(r, vf.box[3] / V.density) && round(f.radius, f.box[3])))
+      out.push({ id: `radius:${f.node}`, kind: 'radius', severity: 'minor', src: 'app', note: `corner radius ${Math.round(r * 10) / 10} dp in the app, ${f.radius} in Figma`, figma: { node: f.node, name: f.name, box }, app: { box: appBox }, delta: { app: Math.round(r * 10) / 10, figma: f.radius } } as Cand); }
+  return out;
+}
 
 // a Figma text's lines from its render bounds: as many as its height holds at its line height (one line's glyphs are
 // about 0.9 of the font size), stacked, each the glyph height of one line

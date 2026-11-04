@@ -51,7 +51,7 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
       if (n.type === 'TEXT' && n.text?.characters?.trim()) {
         const run = n.text.runs?.[0] ?? {}, solid = n.text.runs?.length === 1 ? run.fills?.filter((f: any) => f.type === 'SOLID') : null;
         texts.push({ node: n.id, text: n.text.characters.trim(), box, align: n.text.align?.[0] ?? 'LEFT', auto_resize: n.text.auto_resize, size: run.font_size,
-          font: run.font_family ? `${run.font_family} ${run.font_style ?? ''} ${run.font_size ?? '?'} pt`.replace(/\s+/g, ' ') : undefined,
+          font: run.font_family ? `${run.font_family} ${run.font_style ?? ''} ${run.font_size ?? '?'} pt`.replace(/\s+/g, ' ') : undefined, weight: run.font_weight,
           // the glyphs as Figma draws them (absoluteRenderBounds from the source read, in the board's frame like `box`)
           render: n.render && n.box ? [n.render[0] - n.box[0] + box[0], n.render[1] - n.box[1] + box[1], n.render[2], n.render[3]] : undefined,
           line_height: typeof run.line_height === 'number' ? run.line_height : 0, color: solid?.length === 1 && /ff$/i.test(solid[0].color) ? solid[0].color.slice(0, 7) : null });
@@ -61,7 +61,8 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
           || (box[2] >= 12 && box[2] <= 120 && box[3] >= 8 && box[3] < 24 && (/tag|badge|label|new|hot|pill/i.test(n.name) || (n.radius && kids.get(n.id)?.some((k: any) => k.type === 'TEXT')))))) {
         // a shape holding an image (a portrait card, a poster) shows the image, not its fill
         const f = (n.fills ?? []).filter((x: any) => x.type === 'SOLID' && x.color && !x.color.endsWith('00')).at(-1);
-        if (f && /ff$/i.test(f.color) && !holdsImage(n.id)) fills.push({ node: n.id, name: n.name, color: f.color.slice(0, 7), box });
+        if (f && /ff$/i.test(f.color) && !holdsImage(n.id)) fills.push({ node: n.id, name: n.name, color: f.color.slice(0, 7), box,
+          radius: typeof n.radius === 'number' ? n.radius : Array.isArray(n.radius) ? Math.max(...n.radius.filter((r: unknown) => typeof r === 'number')) : null });
       }
       walk(n.id);
     }

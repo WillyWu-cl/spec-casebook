@@ -28,12 +28,12 @@ const ids = (c: any[]) => c.map(x => x.id).sort();
 // ---- the fixture -----------------------------------------------------------------------------------------------------
 const W = '#ffffffff';
 const text = (id: string, parent: string, chars: string, box: number[], o: any = {}) => ({ id, parent, type: 'TEXT', name: chars, abs: box,
-  text: { characters: chars, align: [o.align ?? 'LEFT', 'TOP'], auto_resize: 'HEIGHT', runs: [{ font_size: 16, line_height: o.lh ?? 20, fills: [{ type: 'SOLID', color: W }] }] } });
+  text: { characters: chars, align: [o.align ?? 'LEFT', 'TOP'], auto_resize: 'HEIGHT', runs: [{ font_size: 16, font_weight: o.weight, line_height: o.lh ?? 20, fills: [{ type: 'SOLID', color: W }] }] } });
 // screen 1:10 at the canvas origin, 1:20 beside it, 1:30 (no row reaches it) after that
 const S1 = [
   { id: '1:10', parent: '1:1', type: 'FRAME', name: 'Home', abs: [0, 0, 375, 812] },
   text('1:11', '1:10', 'Create Your Drama', [20, 100, 200, 24], { lh: 24 }),
-  text('1:13', '1:10', 'Pick a style for your story', [20, 140, 300, 20]),
+  text('1:13', '1:10', 'Pick a style for your story', [20, 140, 300, 20], { weight: 400 }),
   text('1:1a', '1:10', 'Choose a template', [20, 180, 200, 20]),
   text('1:1g', '1:10', 'See all', [300, 180, 60, 20]),
   text('1:1b', '1:10', 'Recently created dramas', [20, 220, 200, 20]),
@@ -268,6 +268,40 @@ test('check: every planted difference is found, and nothing else', () => {
   assert.equal(s.build, '15.2.0 (190001)');
   assert.equal(s.parts.length, 1);
   assert.ok(existsSync(join(RUNS, 'r1', 'screenshots', 'design', '1-10-sheet.png')), 'review sheet drawn');
+});
+
+test("check: the app's own view data (Android) gives size, weight, colour, lines and radius exactly", () => {
+  // Home captured on Android (run a-views, named to sort before the runs the status test reads) with the debuggable build's view dump (lib/android-views.ts compact form), in pixels at 2.88
+  const px = (b: number[]) => b.map(v => Math.round(v * 2.88));
+  const tv = (t: string, b: number[]) => { const [x, y, w, h] = px(b); return `<android.widget.TextView class="android.widget.TextView" text="${t}" bounds="[${x},${y}][${x + w},${y + h}]" displayed="true"/>`; };
+  const xml = `<hierarchy><android.widget.FrameLayout class="android.widget.FrameLayout" bounds="[0,0][1080,2338]" displayed="true">` +
+    tv('Create Your Drama', [20, 100, 200, 24]) + tv('Pick a style for your story', [20, 140, 300, 20]) + tv('Choose a template', [20, 180, 200, 20]) +
+    tv('Recently created dramas', [20, 220, 200, 20]) + tv('Two line text here', [20, 260, 200, 20]) + tv('Templates', [20, 700, 100, 20]) +
+    `<android.widget.Button class="android.widget.Button" text="Start" clickable="true" bounds="[346,1699][749,1826]" displayed="true"/></android.widget.FrameLayout></hierarchy>`;
+  const vt = (text: string, b: number[], o: any = {}) => ({ text, box: px(b), color: o.color ?? '#FFFFFFFF', px: (o.sp ?? 16) * 2.88, sp: o.sp ?? 16, weight: o.weight ?? null, style: 'normal', family: 'sans-serif', lines: o.lines ?? 1, id: null, window: 0 });
+  const views = { density: 2.88, scaledDensity: 3.168, fontScale: 1.1, windows: [{ title: 'Home', type: 1 }], texts: [
+    vt('Create Your Drama', [20, 100, 200, 24], { sp: 18 }), vt('Pick a style for your story', [20, 140, 300, 20], { weight: 700 }), vt('Choose a template', [20, 180, 200, 20]),
+    vt('Recently created dramas', [20, 220, 200, 20]), vt('Two line text here', [20, 260, 200, 20], { lines: 2 }), vt('Templates', [20, 700, 100, 20], { color: '#FFFF0000' }), vt('Start', [150, 602, 80, 20])],
+    fills: [{ box: px([120, 590, 140, 44]), color: '#FF3366FF', radius: 60, id: 'id/start', window: 0 }] };
+  mkdirSync(join(RUNS, 'a-views', 'design'), { recursive: true });
+  png(join(RUNS, 'a-views', 'screenshots', 'design', '1-10.png'), 1080, 2338, []);
+  put(join(RUNS, 'a-views', 'screenshots', 'design', '1-10.views.json'), views);
+  capture('a-views', '1:10', '1-10', xml, { w: 1080, h: 2338 }, { views: 'screenshots/design/1-10.views.json' });
+  const r = design('check', 'a-views');
+  assert.equal(r.status, 0, r.out);
+  const c = cands('a-views', '1:10'), by = (id: string) => c.find((x: any) => x.id === id);
+  assert.equal(by('size:1:11')?.src, 'app', '18 sp against 16 pt');
+  assert.deepEqual(by('size:1:11')?.delta, { sp: 18, pt: 16 });
+  assert.match(by('size:1:11')?.note, /font scale 1\.1 is not in this/, 'sizes are compared before the phone\'s font scale');
+  assert.equal(by('weight:1:13')?.delta?.app, 700);
+  assert.equal(by('colour:1:12')?.src, 'app', 'the red text from the app\'s own colour');
+  assert.equal(by('lines:1:1c')?.app?.lines, 2);
+  assert.equal(by('radius:1:15')?.delta?.figma, 12, 'the button\'s radius: 60 px / 2.88 = 20.8 dp');
+  assert.ok(!by('colour:1:15'), 'the same fill colour is not a difference');
+  assert.ok(!c.some((x: any) => x.kind === 'size' && x.id !== 'size:1:11'), 'no other size item');
+  assert.ok(existsSync(join(RUNS, 'a-views', 'design', 'captures', '1-10.views.json')), 'the view data is shared with the capture');
+  const s = read(join(RUNS, 'a-views', 'design', 'compare.json')).screens.find((x: any) => x.id === '1:10');
+  assert.deepEqual([s.views.font_scale, s.views.texts], [1.1, 7]);
 });
 
 test('check: an Android capture of another state is flagged on arrival', () => {

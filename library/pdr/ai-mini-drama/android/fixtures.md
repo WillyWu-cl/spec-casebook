@@ -28,6 +28,10 @@ phone (the QA Sony Xperia 10 III, adb serial HQ61563393, Android 12).
   on the AI Drama Assistant page's top row (user, 2026-11-03, REQ-068; steps in `run-android.md` › *Debug info and
   session export*).
 - Signed in with one of the user's CyberLink test accounts (never typed by the agent; the user signs in on the phone).
+  **On the Samsung SM-A5360 (adb serial R5CTB22S05Y), sign-in is the Google button on the sign-in page** (the phone's
+  own Google account, no password): the agent does it itself after a reinstall (user, 2026-11-04). The same reinstall
+  starts on the GDPR consent screen and asks for notifications: the agent presses 「Get Started」 and allows every
+  permission (AGENTS.md › *First-launch consent on the phone*).
   A1 ran signed out up to TC-036, then signed in to the user's test account (Free tier, 1,339 credits at 16:27).
   Paid-tier (Pro) rows need an account with a Pro subscription (REQ-043); until then they are Blocked (`paid-tier`).
 - Credits: the account's balance must cover the charged steps of a segment (storyboard about 22–37, Create my

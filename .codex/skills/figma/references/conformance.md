@@ -139,6 +139,27 @@ dark or light background (a board drawing each screen in both) is only taken fro
 
 ## 3. Check
 
+**Android: the app's own view data (user, 2026-11-04, REQ-085/086).** When the app on the phone is the debuggable
+build, every Android design capture (`device-android.ts … design` and the automatic watch) also saves the app's view
+data: the full dump locally (`<id>.viewdump.json`, git-ignored) and the texts and fills the check reads
+(`<id>.views.json`, shared with the capture). The check then takes each matched text's colour (ΔE over 6), size in sp
+against Figma's points (6 % and 0.5 sp), weight (100 apart) and line count, and each fill's colour and corner radius
+(over 2 dp) from it, marked `src: app` (「app data」 on the Design tab); OCR and pixels only where the view data has no
+match. Sizes are compared in sp, before the phone's font scale; a phone not at font scale 1.0 (the SM-A5360 is at 1.1)
+wraps differently, which the `lines` note says.
+`node scripts/android-viewdump.ts` gets what no outside dump holds, from inside the app: each view's text colour,
+size (px and sp), weight (100–900) and typeface, line count, alpha and visibility, background and outline, elevation,
+on-screen bounds (they match the page source's) and the layout file's own attributes (`@dimen/…`, `@color/…`,
+`@string/…`), for every window. It is the rdqe-spec-contract-agent's viewdump (copied with the user's approval into
+`assets/viewdump/`), attached with `cmd activity attach-agent`, which needs a debuggable app: `prepare` re-signs the
+installed release build debuggable (only `android:debuggable` added, the dex unchanged; their shared QA key from
+`~/.casebook/android/`, not committed) and installs it, which takes an uninstall the first time (the app's data,
+sign-in included, is cleared: only with `--yes-uninstall` once agreed); `restore` puts the original back. Commands:
+`build` (javac, d8, NDK clang; local), `prepare`, `dump <out.json>` (+ the screenshot of the same moment), `restore`.
+Needs the Android SDK build-tools, a platform 31+, an NDK and JDK 17+. Tried on the SM-A5360 with 16.8.0 (2611021):
+the GDPR screen read 「Welcome to⏎PowerDirector」 #FFFFFFFF 40.08 sp weight 800, 2 lines. A debuggable build is
+slower: no timing taken on it counts.
+
 **Exact data first (user, 2026-11-04).** Figma's side is exact from the source read: texts, fonts, colours and each
 text's drawn glyph bounds (`render`). The phone's page source is exact for texts and bounds; on Android UiAutomator2
 also gives each view's `drawing-order`, so a text a later layer draws over (the chat behind a sheet or page) is left
