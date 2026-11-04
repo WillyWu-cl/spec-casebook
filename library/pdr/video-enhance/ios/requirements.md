@@ -11,6 +11,11 @@ the Design decides every conflict it draws. PM-only rules become rows with Notes
 PM [建議] items are proposals (rows at P3, a difference is a PM question, not a defect), [待確認] items are pending
 (Open questions), [衝突] items are settled by the Design where it draws them.
 
+Draft 20261104-100851 reruns the analysis on the same spec set under analysis.md passes 10 (a setting's values are
+variants: each value used in a generation and checked in the saved file) and 11 (twin and look-alike controls), with
+the new Design arrow 3393-18071 [Req: REQ-004]. Changed: R-020, R-031, R-033, R-035, R-054; new: R-191 – R-195,
+Q-21, Q-22.
+
 ## Entry points
 - R-001 [DS:ds-main-flow Launcher_2026_08; DS:ds-routing 「Launcher / AI Magic → Demo page」] The Launcher big shortcut 「AI Video Enhance」 opens the Demo page (until 「Don’t show again」 was confirmed, R-009).
 - R-002 [DS:ds-entry-points Launcher_AI Magic; DS:ds-routing] The AI Magic tab's 「AI Enhance」 section has an 「AI Video Enhance」 card that opens the Demo page (same rule as R-001).
@@ -34,7 +39,7 @@ PM [建議] items are proposals (rows at P3, a difference is a PM question, not 
 - R-016 [PM:pm-draft-logic A2 [建議]] With no videos on the device Add Media shows the empty state 「No videos yet」.
 
 ## Panel layout and first-run bubble
-- R-020 [DS:ds-main-flow VE · 01 / VE · 02] The panel shows: top bar back ‹, title 「AI Video Enhance」, a credit pill with the balance (「0」 on Free, 「35」 after the purchase) and a Recent task icon; the Preview with play, the time 「00:00/<video length>」 and a full-screen icon; 「Selected Length ⓘ」 with the selected length; the thumbnail strip with handles; 「Mode ⓘ」 Standard / Professional; 「Enhancement style ⓘ」 Natural / Sharp; 「fps」 30fps / 60fps / 120fps; 「Resolution」 720p / 1080p / 4K; the CTA; the line 「Charge X credits per second」 under it.
+- R-020 [DS:ds-main-flow VE · 01 / VE · 02] The panel shows: top bar back ‹, title 「AI Video Enhance」, a credit pill with the balance (「0」 on Free, 「35」 after the purchase) and a Recent task icon; the Preview with play, the time 「00:00/<video length>」 and a full-screen icon; 「Selected Length ⓘ」 with the selected length; the thumbnail strip with a left ‹ and a right › trim handle and the playhead (R-192); 「Mode ⓘ」 Standard / Professional; 「Enhancement style ⓘ」 Natural / Sharp; 「fps」 30fps / 60fps / 120fps; 「Resolution」 720p / 1080p / 4K; the CTA; the line 「Charge X credits per second」 under it.
 - R-021 [DS:ds-main-flow 「1005_preview 右下加上影片的來源資訊」] The Preview's lower right shows the source video's frame rate and resolution (「60fps · 1080p」 for a 60 fps 1080p video).
 - R-022 [DS:ds-main-flow 「第一次進入此功能跳出 bubble」; PM:pm-draft-logic B2 [Design]] On the first entry to the panel the bubble 「Max 8 minutes. Drag to choose which part.」 appears by itself at Selected Length; it closes after 3 s or on any tap. (PM's first-run card §10.1 is replaced by this bubble; PM B2's proposed copy loses to the Design copy.)
 - R-023 [PM:pm-main-flow §10.1; PM:pm-draft-logic B2] The automatic bubble appears only on the first entry, never again.
@@ -46,11 +51,13 @@ PM [建議] items are proposals (rows at P3, a difference is a PM question, not 
 
 ## Trim and selected length
 - R-030 [DS:ds-ai-video-enhance Default / Length; PM:pm-main-flow 9/29 ①; PM:pm-draft-logic B1 [9/29 定案]] The default selection starts at 00:00 and is min(video length, Mode limit) long: a 12:30 video selects 「08:00」, a 01:30 video the whole 「01:30」. Selected Length shows mm:ss (Design; PM's 「5m 00s / 8m max」 and 「18s」 / 「1m 30s」 forms are older).
-- R-031 [PM:pm-draft-logic B1 [Design]; DS:ds-ai-video-enhance Length] Dragging a side handle changes the selected length and the Preview shows the frame at that end.
+- R-031 [PM:pm-draft-logic B1 [Design]; DS:ds-ai-video-enhance Length] Either side handle can be dragged: the left ‹ handle moves the start and the right › handle the end; each changes the selected length and the Preview shows the frame at the dragged end. (Two controls, one row each: analysis pass 11.)
 - R-032 [PM:pm-draft-logic B1 [Design]] Dragging the middle of the selection moves the whole range at the same length and the Preview shows its first frame.
-- R-033 [PM:pm-main-flow 9/29 UI; PM:pm-draft-logic UI 規格] At the Mode limit the handle stops, the phone gives a light haptic and a bubble says 「Up to 8 minutes in Standard mode」 (Standard) or 「Up to 2m 30s in Professional mode」 (Professional).
+- R-033 [PM:pm-main-flow 9/29 UI; PM:pm-draft-logic UI 規格] At the Mode limit the dragged handle (left or right) stops, the phone gives a light haptic and a bubble says 「Up to 8 minutes in Standard mode」 (Standard) or 「Up to 2m 30s in Professional mode」 (Professional).
+- R-192 [DS:ds-main-flow VE · 01 strip 「00:00」; DS:ds-ai-video-enhance Default / Length (bubbles 「00:00」, 「02:30」, 「01:00」, 「00:14」)] The strip carries a playhead: a line across the strip with a time bubble above it (「00:00」 on entry) and a ◀▶ drag knob (round/ic_btn_drag) under the strip. The bubble shows the same time as the Preview's 「mm:ss/<video length>」 (「00:14」 with 「00:14/01:30」, 「01:00」 with 「01:00/12:30」). The knob is the playhead's, not a trim handle (role read from the board images, analysis pass 11).
+- R-193 [DS:ds-ai-video-enhance Length; DS:ds-main-flow VE · 01 knob round/ic_btn_drag] Dragging the playhead knob moves the playhead: the Preview shows the frame under it and the bubble and the Preview time follow; the trim handles, Selected Length and the price do not change (how far it may go: Q-21).
 - R-034 [PM:pm-main-flow 9/29 ⑥; PM:pm-draft-logic B1-1 ⑥] The thumbnail strip's scale depends only on the video length: a video ≤ 8:00 fills the strip's width; a longer one scrolls sideways with 8:00 = one strip width; switching Mode does not re-lay the strip.
-- R-035 [PM:pm-draft-logic B1 [建議]] The shortest selection is 1 s.
+- R-035 [PM:pm-draft-logic B1 [建議]] The shortest selection is 1 s, whichever handle is dragged toward the other.
 
 ## Default settings
 - R-040 [DS:ds-ai-video-enhance 預設值規則; PM:pm-defaults 1002] On entering the feature Mode is 「Standard」, a fixed value that does not follow the source video.
@@ -69,7 +76,7 @@ PM [建議] items are proposals (rows at P3, a difference is a PM question, not 
 - R-051 [PM:pm-main-flow 9/29 ②; PM:pm-draft-logic B1-1 ①] With a selection ≤ 2:30, Standard and Professional switch freely; the selection does not change, only the credit price updates.
 - R-052 [DS:ds-ai-video-enhance Mode 長度上限 「點 Professional → 跳 toast 說明上限，不切換」; PM:pm-main-flow 9/29 ③] With a selection over 2:30 in Standard, the Professional chip looks normal (not disabled); tapping it shows the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 for about 3 s, Mode stays Standard and the selection is not changed. (PM 9/29 ③'s toast wording and draft B1-1 ②'s auto-shortening 「…Your selection was shortened.」 lose to the Design.)
 - R-053 [DS:ds-ai-video-enhance Mode 長度上限 「縮短到 02:20 → 再點 Professional → 切換成功」] After the selection is shortened to 2:30 or less, tapping Professional switches the Mode.
-- R-054 [PM:pm-main-flow 9/29 ⑤] In Professional the handle stops at 2:30 (R-033).
+- R-054 [PM:pm-main-flow 9/29 ⑤] In Professional either handle stops at 2:30 (R-033).
 - R-055 [PM:pm-main-flow 9/29 ⑤; PM:pm-draft-logic B1-1 ③] Switching from Professional back to Standard keeps the selection and raises the limit to 8:00; the user can drag it longer. (Draft B1-1 ④ 「restore the earlier selection」 belongs to the auto-shortening the Design rejected.)
 - R-056 [PM:pm-main-flow 9/29 limit rule] The selection is rounded up to whole seconds before it is compared with the limit: 2:30.4 counts as 151 s, over 2:30.
 - R-057 [PM:pm-main-flow 9/29 ⑦] On a clip from the Timeline the same rules apply: a selection over 2:30 and a tap on Professional shows the same toast. (Draft B1-1 ⑦ disables the chip with 「Professional mode supports clips up to 2m 30s. Split the clip to use it.」; the Design rule 「Professional 外觀正常，可點」 decides, Q-10.)
@@ -136,6 +143,8 @@ PM [建議] items are proposals (rows at P3, a difference is a PM question, not 
 - R-124 [DS:ds-main-flow arrow 3293-13720; DS:ds-routing 「Edit More → 回 Media Room」] 「Enhance More」 opens Add Media for the next video.
 - R-125 [DS:ds-main-flow result ‹] Back ‹ on the Result page returns to the page it was opened from (Q-9).
 - R-126 [DS:ds-routing 「所有 Enhance 功能皆耗 credit，一律雲端生成後另存新片」] The result is a new video: the source video in the album is kept unchanged.
+- R-194 [DS:ds-routing 設定面板 「Trim + Mode / Enhancement style / fps / Resolution」 and 「一律雲端生成後另存新片」; PM:pm-main-flow §6.3 SKU {mode}_{style}_{resolution}_{fps}; Rule: analysis pass 10, a setting's values are variants (2026-11-04); Req: REQ-004] The task is made with the values chosen on the panel when 「Enhance」 is tapped: the saved result has the chosen Resolution (720p = 1280 × 720, 1080p = 1920 × 1080, 4K = 3840 × 2160 for a landscape source), the chosen fps (30 / 60 / 120) and the selected length, and the charge is the CTA price those values set (R-060, R-062, R-065, R-089). Each value of Mode, Enhancement style, fps and Resolution is used in one generation (`### Variants`).
+- R-195 [DS:ds-ai-video-enhance Settings › Mode and Enhancement style bubbles; Req: REQ-004] The Mode and style values show in the result as their bubbles say: Professional 「Maximum detail」 (more detail than Standard's 「Great quality」); Sharp 「Moderate enhancement for a sharp, clear image」 (sharper than Natural's 「Lighter enhancement with fewer artifacts, for a more realistic look」).
 
 ## Timeline entry
 - R-130 [PM:pm-timeline arrow 397-1887; DS:ds-entry-points] From the Timeline, the tool opens the panel with the selected clip; after 「Enhance」 the flow is the main one (upload, Recent task, notice).
@@ -153,10 +162,10 @@ PM [建議] items are proposals (rows at P3, a difference is a PM question, not 
 ## Open questions
 - Q-1 Demo page description: the Design draws AI Reframe's text 「AI reframe your video for any aspect ratio, then fine-tune the crop in real time.」; PM A1 [衝突] proposes 「Make blurry, noisy or dark videos look sharp and clear.」. Assumption: the description must not be AI Reframe's; the PM proposal is the expected text until the Design changes. R-007 (TC-011).
 - Q-2 Cancel during upload: Design 「Leaving this page will cancel the process, and the credits will not be restored.」 vs PM §8 (Cancel before the upload reaches the server charges nothing and creates no task) and PM C4 (Leave = keep running in the background). Assumption: the Design (newer, outranks): Leave cancels, back to the panel, credits not restored. R-088 (TC-113).
-- Q-3 Which fps prices a task: PM main page says the source fps, PM B4 [衝突] proposes the output fps now that fps is a choice. Assumption: source fps (the changed fps chip does not change the price); check on device. R-065 (TC-087).
-- Q-4 Per-second rate table: only 1080p Standard 30 fps = 2 credits/s is stated. Assumption: other combinations are checked only for the price changing with Mode / Resolution; ask PM for the table. R-063, R-065.
+- Q-3 Which fps prices a task: PM main page says the source fps, PM B4 [衝突] proposes the output fps now that fps is a choice. Assumption: source fps (the changed fps chip does not change the price); check on device. The fps value rows assert only that the charge equals the price shown. R-065 (TC-087, TC-221, TC-222).
+- Q-4 Per-second rate table: only 1080p Standard 30 fps = 2 credits/s is stated. Assumption: other combinations are checked only for the price changing with Mode / Resolution and the charge equalling the price shown; ask PM for the table. R-063, R-065 (TC-083, TC-219, TC-224).
 - Q-5 Resolution of a portrait video: which side decides (PM B3 proposes the short side, 1080×1920 = 1080p). Assumption: short side. R-044 (TC-059).
-- Q-6 Disabled chips: which fps / Resolution combinations each Mode supports (BytePlus table [待確認]); the Design says a disabled chip cannot be tapped, PM B5 says a tap shows a toast. Assumption: a tap on a disabled chip changes nothing and shows no toast. R-047 (TC-064).
+- Q-6 Disabled chips: which fps / Resolution combinations each Mode supports (BytePlus table [待確認]); the Design says a disabled chip cannot be tapped, PM B5 says a tap shows a toast. Assumption: a tap on a disabled chip changes nothing and shows no toast; a setting-value row whose chip is disabled on the build is recorded Blocked as a question. R-047 (TC-064, TC-221, TC-222, TC-224).
 - Q-7 Pro+ trial: the IAP page offers 「Try Pro+ 7 days for free」 and 「Receive 35 credits during free trial」 while PM §7 says no free trial in v1 (PM C2 [衝突]). Assumption: no row asserts the trial; the IAP page is checked as the Design draws it. R-072 (TC-093).
 - Q-8 「Manage」 on Recent task: the spec does not say what it opens. Assumption: a page to manage (download / delete) stored tasks. R-116 (TC-144).
 - Q-9 Back from Add Media and from the Result page: the spec draws ‹ but no arrow. Assumption: the previous page. R-014, R-125 (TC-021, TC-155).
@@ -170,6 +179,8 @@ PM [建議] items are proposals (rows at P3, a difference is a PM question, not 
 - Q-17 Recent task entry and processing style [待確認] (Gap 7): the Design draws a Recent icon on the panel and 「4 minutes left...」; assumption: as drawn. R-111, R-113.
 - Q-18 Backgrounding or closing the app during the upload: PM C3 [建議] (cancel, no charge) vs the Design rule that a user cancel is not refunded. Assumption: PM C3 (the Design does not draw backgrounding); check on device. R-090 (TC-115).
 - Q-19 Selected Length format and the limit display: PM 9/29 「5m 00s / 8m max」 and B1 「18s」 vs the Design 「08:00」. Assumption: the Design (mm:ss, no 「/ max」). R-030.
+- Q-21 Playhead: the Design draws a playhead on the strip (a line, a time bubble and a ◀▶ knob) but no note says how far it may be dragged (only inside the selection, or the whole video) or whether play starts from it. Assumption: dragging it scrubs the Preview inside the selection and changes neither the selection nor the price. R-192, R-193 (TC-215).
+- Q-22 Completed task card: PM D2 says a completed card opens the Result when tapped (「Completed (tap → Result)」); the Design draws only the 「View」 button. Assumption: tapping the card's thumbnail opens the same Result as 「View」. R-112 (TC-143).
 
 ## Added 2026-11-04 — coverage passes and standing inputs
 
@@ -240,8 +251,28 @@ One line per requirement × variant (pass 10).
 | R-046 | Enhancement style | TC-061 |
 | R-046 | fps | TC-062 |
 | R-046 | Resolution | TC-063 |
-| R-033 | Standard (8:00) | TC-044 |
-| R-033 | Professional (2:30) | TC-074 |
+| R-033 | Standard (8:00), right handle | TC-044 |
+| R-033 | Standard (8:00), left handle | TC-216 |
+| R-033 | Professional (2:30), right handle | TC-074 |
+| R-033 | Professional (2:30), left handle | TC-218 |
+| R-031 | right handle › | TC-042 |
+| R-031 | left handle ‹ | TC-214 |
+| R-035 | right handle › | TC-046 |
+| R-035 | left handle ‹ | TC-217 |
+| R-072 | Pro tab pressed | TC-093 |
+| R-194 | Mode=Standard | TC-110, TC-152 |
+| R-194 | Mode=Professional | TC-219 |
+| R-194 | Enhancement style=Natural | TC-110, TC-152 |
+| R-194 | Enhancement style=Sharp | TC-220 |
+| R-194 | fps=30fps | TC-110, TC-152 |
+| R-194 | fps=60fps | TC-221 |
+| R-194 | fps=120fps | TC-222 |
+| R-194 | Resolution=720p | TC-223 |
+| R-194 | Resolution=1080p | TC-110, TC-152 |
+| R-194 | Resolution=4K | TC-224 |
+| R-195 | Mode=Professional (look) | TC-219 |
+| R-195 | Enhancement style=Sharp (look) | TC-220 |
+| R-195 | Standard / Natural (look) | TC-151 |
 
 ### Flow arrows walked by existing rows
 - R-150 [DS: flow arrow 3294-24049 https://www.figma.com/design/HceGLJVaxnKsv7gXSXzKWh/Video-Enhance?node-id=3294-24049] Launcher 「AI Video Enhance」 shortcut → Demo page. Walked by: TC-001.
@@ -278,6 +309,7 @@ One line per requirement × variant (pass 10).
 - R-181 [PM: flow arrow 397-1887 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=397-1887] Timeline clip tool → panel with the clip. Walked by: TC-003.
 - R-182 [PM: flow arrow 397-1921 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=397-1921] Timeline task succeeded → clip replaced, 「Applied Video Enhance」. Walked by: TC-162.
 - R-183 [PM: flow arrow 377-1127 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=377-1127] Failed card 「View details」 → refunded dialog. Walked by: TC-171.
+- R-191 [DS: flow arrow 3393-18071 https://www.figma.com/design/HceGLJVaxnKsv7gXSXzKWh/Video-Enhance?node-id=3393-18071] Alternative & Exception: the failed task card's 「View Details」 on Recent (3293:15910) → the dialog 「An Error Has Occurred」 / 「Credits have been refunded.」 / 「The server may be busy. Please try again later or use a different video.」 with 「OK」 (3393:18196). Walked by: TC-171.
 
 ### Build checks
 None: no Testing Request build is named for this feature yet.
@@ -290,5 +322,6 @@ None: no Testing Request build is named for this feature yet.
 ### Request ledger coverage
 | Ledger entry | Requirements |
 |---|---|
-| REQ-001 (analysis: build the tables from the Design and PM Figma) | every requirement above (R-001 – R-183) |
+| REQ-001 (analysis: build the tables from the Design and PM Figma) | every requirement above (R-001 – R-195) |
 | REQ-002 (analysis: PM scope 309:643 + 405:1108; 0:1 superseded) | the PM-sourced requirements (e.g. R-033, R-093, R-131); page 0:1 is not read (update-plan.md › Not added) |
+| REQ-004 (analysis: rerun under passes 10 and 11 — left trim handle, setting values end to end, playhead) | R-031, R-033, R-035, R-054 (both handles), R-192, R-193 (playhead), R-194, R-195 (setting values); the ECL rate table (Q-3, Q-4), the 2K+ import block (Q-13) and Android Pro unlocking are left as REQ-004 says |

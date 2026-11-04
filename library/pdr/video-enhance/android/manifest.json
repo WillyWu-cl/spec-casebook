@@ -2,13 +2,13 @@
   "feature": "pdr/video-enhance",
   "platform": "android",
   "title": "Video Enhance",
-  "version": 1,
-  "approved_at": "2026-11-04T01:24:39.114Z",
-  "draft": "20261103-174203",
+  "version": 2,
+  "approved_at": "2026-11-04T02:42:35.614Z",
+  "draft": "20261104-100851",
   "spec_folder": "specs/2026-11-03",
   "spec_files": [],
   "spec_set_sha256": "c1d60aed2d699df6196069d8a0db670b4ca14529f0d3efaa4923aec852188bfe",
-  "cases": 112,
+  "cases": 123,
   "history": [
     {
       "version": 1,
@@ -16,6 +16,15 @@
       "spec_set_sha256": "c1d60aed2d699df6196069d8a0db670b4ca14529f0d3efaa4923aec852188bfe",
       "draft": "20261103-174203",
       "cases": 112,
+      "csv": "history/v1.csv",
+      "requirements": "history/v1-requirements.md"
+    },
+    {
+      "version": 2,
+      "approved_at": "2026-11-04T02:42:35.614Z",
+      "spec_set_sha256": "c1d60aed2d699df6196069d8a0db670b4ca14529f0d3efaa4923aec852188bfe",
+      "draft": "20261104-100851",
+      "cases": 123,
       "csv": "cases.csv",
       "requirements": "requirements.md"
     }
