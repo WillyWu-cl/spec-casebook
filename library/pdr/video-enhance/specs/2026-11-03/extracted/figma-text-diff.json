@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-04T02:21:30.951Z",
+  "set": "2026-11-03",
+  "boards": [
+    {
+      "board": "Alternative & Exception",
+      "id": "3293:15052",
+      "group": "d3",
+      "baseline": "figma",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    }
+  ],
+  "no_texts": [
+    "d1",
+    "d2",
+    "d4",
+    "p1",
+    "p2"
+  ]
+}

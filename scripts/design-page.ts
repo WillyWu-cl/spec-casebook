@@ -107,7 +107,7 @@ if (serve) {
     } catch (e: any) { res.writeHead(500, { 'content-type': 'text/plain' }); res.end(String(e?.message ?? e)); }
   });
   let port = portArg; const host = lan ? '0.0.0.0' : '127.0.0.1';
-  server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 10) { port++; server.listen(port, host); } else throw e; });
+  server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 60) { port++; server.listen(port, host); } else throw e; });
   server.on('listening', () => {
     console.log(`Design (live): http://127.0.0.1:${port}/  — Ctrl+C to stop`);
     if (!lan) return;

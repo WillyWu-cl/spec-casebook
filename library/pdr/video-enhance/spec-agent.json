@@ -1,0 +1,7 @@
+{
+  "repo": "~/Desktop/Spec Agent",
+  "ref": "origin/main",
+  "feature": "video-enhance",
+  "id_prefix": "",
+  "note": "2026-11-04: the Video Enhance cases (test-cases/generated/video-enhance/TC-VE2-*.yaml, one Android set) are not committed in the spec agent repo yet; the snapshot in spec-agent/ was read from its working tree on the user's instruction. Run spec-agent-gaps.ts with --snapshot until they are committed."
+}

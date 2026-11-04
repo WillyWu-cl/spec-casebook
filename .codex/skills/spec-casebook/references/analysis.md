@@ -92,6 +92,14 @@ and return, waits), which apply to every job.
    does not cover them (TC-218 stood for three tiers). Fill `### Variants`: one line per requirement × variant with
    its rows. `check.ts` fails a requirement naming two or more tiers, or "each tier / model / language", that lacks a
    line per variant.
+   **A setting's values are variants too (2026-11-04, Video Enhance).** Every value the user can choose for a
+   setting that changes what the feature makes (Mode, style, fps, resolution, quality, length, voice) gets a row that
+   *uses* it: chosen, carried through the action it changes (generate, export, save) and checked in the result (the
+   saved file's fps and resolution, the look the style names, the price the value sets). Rows that only tap the chip
+   and look at the panel do not cover the value; the default value does not stand for the others. One row per value
+   is enough (not every combination), unless the spec gives a rule for a combination. List them in `### Variants`
+   as `R-… × <setting>=<value>`. Shown by the spec agent comparison of 2026-11-04 (TC-VE2-171, 172, 185–220): no row
+   generated with Professional, Sharp, 60 / 120 fps, 720p or 4K, and none checked the saved file.
 
 11. **Every control (user, 2026-10-28, REQ-038).** A PDF-only analysis has no `inventory.json`: trace the 「Controls
    (PDF-read)」 lists of `board-notes.md` to rows by hand and leave this pass owed (`reading-the-spec.md`, *No Figma
@@ -107,6 +115,20 @@ and return, waits), which apply to every job.
    or a trace naming a row that is not active; Save copies the trace to the table. `app` lists the app's
    accessibility ids or labels for an entry whose Figma label differs (e.g. `creditsHomePage.UIButton.detail`), so a
    tap on it matches first; fill it from the page's "Taps that matched no control".
+   **Twin and look-alike controls (2026-11-04, Video Enhance).** "One copy of a repeated button" means the same
+   control drawn again (the same chip in two frames); controls that do different things are never one press, even
+   when they share a component or icon:
+   - **Twins:** the two ends of a range or trim (left / right handle, start / end), increase / decrease, previous /
+     next. Each gets its own press and its own row when the spec says either can be used ("drag either side handle"
+     = one row per side, each checking its own limit). TC-VE2-020, 022, 110, 111, 157, 158, 242, 256, 258: every
+     row dragged only the right trim handle.
+   - **Role from the screen, not the name:** decide what a control is from where it sits and what is drawn with it
+     on the board image (a knob under a time bubble on the strip is a playhead; a knob at the end of the selection
+     is a trim handle), never from its icon or layer name alone. A control whose role you cannot tell from the image
+     and the notes is a Q-n, not a guess. TC-VE2-159–161: the playhead drag control (`round/ic_btn_drag` under the
+     「00:00」 bubble) was traced as the trim handle, so no row scrubbed the playhead.
+   - Check every `how: label` or `how: arrow` auto trace against the same rule: an auto trace that names a row
+     pressing the control's twin or look-alike is replaced by a row that presses this one.
 
 ## Standing inputs (user, 2026-10-21)
 

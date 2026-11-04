@@ -1,0 +1,16 @@
+{
+  "feature": "pdr/video-enhance",
+  "folder": "2026-11-03",
+  "received_at": "2026-11-03T09:26:17.961Z",
+  "spec_set_sha256": "c1d60aed2d699df6196069d8a0db670b4ca14529f0d3efaa4923aec852188bfe",
+  "files": [],
+  "note": "Figma links only, no spec files (user, 2026-11-03): spec_set_sha256 is the SHA-256 of the figma links; changes are found by figma-check.ts fingerprints.",
+  "figma": {
+    "design": "https://www.figma.com/design/HceGLJVaxnKsv7gXSXzKWh/Video-Enhance?node-id=3293-13053",
+    "pm": "https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=309-643"
+  },
+  "source_priority": [
+    "design",
+    "pm"
+  ]
+}

@@ -198,6 +198,22 @@ modified instead, or the note is answered with that row's ID. If the notes came 
 came as pasted text, add them to the open draft. Then set each note's `status` to `done` with the rows (or the
 answer) in `new-case-notes.json`, and tell the user which rows each note became.
 
+**Question answers (user, 2026-11-04).** The Cases page lists the Open questions of the draft's `requirements.md` (else
+the approved table's) in a collapsed panel above the table, **Questions for the team**: each question in plain words,
+the assumption its rows use, its rows and an answer box; each row a question touches shows a small `Q-n ?` marker that
+opens it (no separate tab: the user wants the pages few and easy to read). **Save answers** works apart from the table
+Save and writes `library/<product>/<feature>/question-answers.json` (one file for both platforms, keyed by Q-id, the
+question text kept with each answer, `status: "open"`). Write Open questions so anyone can read them: what is unclear,
+where the sources differ and what the rows assume, ending `Assumption: …` and the R- and TC- ids (the panel shows
+the ids as row links). Whenever the user says answers are in, and before any other work on the feature, run
+`node scripts/questions.ts <feature> <platform> [--draft <id>]` and settle every open answer as the source it is: an
+answer from PM, Design or RD that the spec lacks is a ruling, so record it in `requests.md` (next REQ ID, From = the
+name given), then change the requirement and its rows in the open draft (a new draft from the approved version when
+there is none, as for new-case notes), move the question out of Open questions with the answer and REQ cited, run
+`check.ts` on both platforms, and set the answer's `status` to `done` with a one-line `resolution` naming the rows and
+requirements changed. An answer that raises a new question stays `open` and gets a reply in chat. Tell the user which
+rows each answer changed.
+
 ### 5. Later questions about a feature
 
 Answer from `library/<product>/<feature>/<platform>/cases.csv` (and `requirements.md`) directly; for large tables read the

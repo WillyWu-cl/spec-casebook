@@ -1,0 +1,285 @@
+{
+  "arrows": [
+    {
+      "arrow": "377-442",
+      "node": "377-442",
+      "edge": "pm-main-flow: Launcher_Home 「Video Enhance」 shortcut → VideoEnhance_MediaPicker",
+      "expected": "Media picker (the Design puts the Demo page first, R-001); R-170",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-443",
+      "node": "377-443",
+      "edge": "pm-main-flow: AIMagic_Home 「Video Enhance」 card → VideoEnhance_MediaPicker",
+      "expected": "Media picker via the Demo page (R-002); R-171",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-444",
+      "node": "377-444",
+      "edge": "pm-main-flow: VideoEnhance_MediaPicker selected clip → VideoEnhance_Panel (觸發 TBD)",
+      "expected": "Panel with the clip; a thumbnail tap opens it (R-013); R-172",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-446",
+      "node": "377-446",
+      "edge": "pm-main-flow: VideoEnhance_Panel 「Enhance · 8 credits」 (checks passed) → VideoEnhance_Panel uploading dialog",
+      "expected": "Uploading dialog with Cancel (R-085); R-173",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-448",
+      "node": "377-448",
+      "edge": "pm-main-flow: uploading dialog (upload succeeded = commit, charge) → VideoEnhance_RecentTask processing",
+      "expected": "Recent task processing card, credits taken (R-089); R-174",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-450",
+      "node": "377-450",
+      "edge": "pm-main-flow: VideoEnhance_RecentTask (background success) → Launcher_2026_08 notification banner",
+      "expected": "Completion notice over the Launcher (R-100, R-103); R-175",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-452",
+      "node": "377-452",
+      "edge": "pm-main-flow: notification 「View」 → VideoEnhance_Result",
+      "expected": "Result of the task (R-101); R-176",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "383-2678",
+      "node": "383-2678",
+      "edge": "pm-main-flow: VideoEnhance_RecentTask · round/ic_chevron_left → VideoEnhance_Panel",
+      "expected": "Back to the panel (R-114); R-177",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "397-1241",
+      "node": "397-1241",
+      "edge": "pm-main-flow: first successful upload → VideoEnhance_Panel 「Turn on notifications」 dialog",
+      "expected": "Notification prompt (R-093); R-178",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-1116",
+      "node": "377-1116",
+      "edge": "pm-access-credit: VideoEnhance_Panel 「Upgrade to Pro+」 → IAP_ProPlus",
+      "expected": "IAP page (Design CTA 「Unlock Pro+ to Enhance」, R-070); R-179",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-1117",
+      "node": "377-1117",
+      "edge": "pm-access-credit: VideoEnhance_Panel 「Enhance」 with balance < price → Credit page_paid",
+      "expected": "Credit page, nothing uploaded or charged (R-076); R-180",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "397-1887",
+      "node": "397-1887",
+      "edge": "pm-timeline: Timeline_Editor toolbar 「Enhance」 → VideoEnhance_Panel with the clip",
+      "expected": "Panel with the clip, no Demo / Add Media (R-003, R-130); R-181",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "397-1921",
+      "node": "397-1921",
+      "edge": "pm-timeline: VideoEnhance_Panel (background success) → Timeline_Editor clip replaced",
+      "expected": "「Applied Video Enhance」, clip replaced (R-131); R-182",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "377-1127",
+      "node": "377-1127",
+      "edge": "pm-failure-refund: VideoEnhance_RecentTask failed row 「View details」 → refunded dialog",
+      "expected": "「An Error Has Occurred」 / 「Credits have been refunded.」 (R-141); R-183",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13677",
+      "node": "3293-13677",
+      "edge": "Main Flow（Free user → IAP）: IAP_US 「Continue」 → IAP_US App Store purchase sheet",
+      "expected": "Store purchase sheet (R-074); R-155",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13678",
+      "node": "3293-13678",
+      "edge": "Main Flow（Free user → IAP）: IAP_US purchase sheet → IAP_US 「You're all set」 dialog",
+      "expected": "Purchase success dialog (R-074); R-156",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13679",
+      "node": "3293-13679",
+      "edge": "Main Flow（Free user → IAP）: purchase success 「OK」 → VE · 02 預設（已訂閱）",
+      "expected": "Panel with the balance updated and the selection kept (R-075); R-157",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13680",
+      "node": "3293-13680",
+      "edge": "Main Flow（Free user → IAP）: Recent · processing (task complete) → Recent · 完成",
+      "expected": "Card turns completed with View (R-112); R-161",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13681",
+      "node": "3293-13681",
+      "edge": "Main Flow（Free user → IAP）: VE · 03 Generating (upload done) → Recent · processing",
+      "expected": "Recent task processing card (R-089); R-159",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13682",
+      "node": "3293-13682",
+      "edge": "Main Flow（Free user → IAP）: VE · 02 預設（已訂閱） · 「Enhance」 → VE · 03 Generating",
+      "expected": "Processing dialog (R-085); R-158",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13683",
+      "node": "3293-13683",
+      "edge": "Main Flow（Free user → IAP）: Recent · 完成 · 「View」 → result",
+      "expected": "Result page (R-112); R-162",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13715",
+      "node": "3293-13715",
+      "edge": "Main Flow（Free user → IAP）: Add Media video thumbnail → VE · 01 預設（未訂閱）",
+      "expected": "Panel with the video (R-013); R-152",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3294-24049",
+      "node": "3294-24049",
+      "edge": "Main Flow（Free user → IAP）: Launcher_2026_08 「AI Video Enhance」 shortcut → Demo page_Straight video",
+      "expected": "Demo page (R-001); R-150",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13716",
+      "node": "3293-13716",
+      "edge": "Main Flow（Free user → IAP）: VE · 01 預設（未訂閱） · back ‹ → Add Media",
+      "expected": "Add Media (R-028); R-153",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13717",
+      "node": "3293-13717",
+      "edge": "Main Flow（Free user → IAP）: VE · 01 預設（未訂閱） · 「Unlock Pro+ to Enhance」 → IAP_US",
+      "expected": "IAP page (R-070); R-154",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3294-24050",
+      "node": "3294-24050",
+      "edge": "Main Flow（Free user → IAP）: Demo page_Straight video · 「Try It Now」 → Add Media",
+      "expected": "Add Media (R-008); R-151",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13718",
+      "node": "3293-13718",
+      "edge": "Main Flow（Free user → IAP）: Recent · processing · round/ic_chevron_left → VE · 02 預設（已訂閱）",
+      "expected": "Back to the panel (R-114); R-160",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-13720",
+      "node": "3293-13720",
+      "edge": "Main Flow（Free user → IAP）: result · 「Enhance More」 → Add Media",
+      "expected": "Add Media for the next video (R-124); R-163",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3388-17846",
+      "node": "3388-17846",
+      "edge": "Cancel: VE · 02 預設（已訂閱） · 「Enhance」 → VE · 03 Generating",
+      "expected": "Processing dialog (R-085); R-164",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3393-18476",
+      "node": "3393-18476",
+      "edge": "Cancel: VE · 03 Generating · 「Cancel」 → VE · 03 Generating 「Sure You Want to Leave?」",
+      "expected": "Leave dialog (R-086); R-165",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3393-18607",
+      "node": "3393-18607",
+      "edge": "Cancel: leave dialog · 「Leave」 → VE · 02 預設（已訂閱）",
+      "expected": "Panel; process cancelled, credits not restored (R-088); R-166",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-15662",
+      "node": "3293-15662",
+      "edge": "Alternative & Exception: VE · 02 預設（已訂閱） · 「Enhance」 (balance too low) → Credit page_paid",
+      "expected": "Credit page (R-076); R-167",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-15874",
+      "node": "3293-15874",
+      "edge": "Alternative & Exception: Recent · round/ic_home → Launcher_2026_08",
+      "expected": "Launcher (R-115); R-168",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3293-15875",
+      "node": "3293-15875",
+      "edge": "Alternative & Exception: Launcher_2026_08 banner 「View」 → result",
+      "expected": "Result of the task (R-101); R-169",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail control, head screen) in inventory.json"
+    },
+    {
+      "arrow": "3393-18071",
+      "node": "3393-18071",
+      "edge": "Alternative & Exception: Recent (3293:15910) failed card · 「View Details」 → Recent (3393:18196) 「An Error Has Occurred」 dialog",
+      "expected": "Dialog 「An Error Has Occurred」 / 「Credits have been refunded.」 / 「The server may be busy. Please try again later or use a different video.」 with 「OK」 (R-141); R-191",
+      "source": "figma-inventory",
+      "checked": "2026-11-04: edge checked against the geometry (tail on the 「View Details」 pill K-3e70e3, head on the dialog frame 3393:18196) in inventory.json"
+    }
+  ],
+  "count": 35
+}

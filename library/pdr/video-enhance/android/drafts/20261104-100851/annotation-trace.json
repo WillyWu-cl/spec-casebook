@@ -1,0 +1,1131 @@
+{
+  "spec_folder": "specs/2026-11-03",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "ds-ai-video-enhance@23930,3337",
+      "board": "ds-ai-video-enhance",
+      "x": 23930,
+      "y": 3337,
+      "low": false,
+      "text": "預設值規則（進入功能時自動帶入）",
+      "trace": "label: heading 「預設值規則（進入功能時自動帶入）」",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-ai-video-enhance@24215,3428",
+      "board": "ds-ai-video-enhance",
+      "x": 24215,
+      "y": 3428,
+      "low": false,
+      "text": "固定值，不隨來源影片改變。 / 固定值，不隨來源影片改變。刻意不採用 API 預設值 hd。 / 選不低於來源 fps 的最小選項；來源超過最高選項時取最高。 / 依來源影片 / 選不低於來源解析度的最小選項；來源超過最高選項時取最高。 / 依來源影片 / 預設選項 / 來源 resolution",
+      "trace": "R-040, R-041, R-043, R-044",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-ai-video-enhance@23930,3657",
+      "board": "ds-ai-video-enhance",
+      "x": 23930,
+      "y": 3657,
+      "low": false,
+      "text": "附註：對照表（等同上方規則，供驗收用） / 來源 fps / 61 以上 / Chips 狀態",
+      "trace": "R-043, R-044, R-046",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-ai-video-enhance@24448,3707",
+      "board": "ds-ai-video-enhance",
+      "x": 24448,
+      "y": 3707,
+      "low": false,
+      "text": "預設選項",
+      "trace": "label: lookup table column heading",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-ai-video-enhance@24215,3956",
+      "board": "ds-ai-video-enhance",
+      "x": 24215,
+      "y": 3956,
+      "low": false,
+      "text": "使用時機 / 可選但目前未選中的選項。 / 目前選中的選項；每組僅一個。 / 當前 Mode 不支援此設定，不可點選。",
+      "trace": "R-046, R-047",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-ai-video-enhance@21430,4416",
+      "board": "ds-ai-video-enhance",
+      "x": 21430,
+      "y": 4416,
+      "low": false,
+      "text": "Mode 長度上限 / 點 Professional / → 跳 toast 說明上限，不切換",
+      "trace": "R-052",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-ai-video-enhance@20842,4519",
+      "board": "ds-ai-video-enhance",
+      "x": 20842,
+      "y": 4519,
+      "low": false,
+      "text": "Standard 選 05:00 / （Professional 外觀正常，可點）",
+      "trace": "R-052",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-ai-video-enhance@21792,4531",
+      "board": "ds-ai-video-enhance",
+      "x": 21792,
+      "y": 4531,
+      "low": false,
+      "text": "縮短到 02:20 → 再點 Professional / → 切換成功",
+      "trace": "R-053",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-alt-exception@20883,6322",
+      "board": "ds-alt-exception",
+      "x": 20883,
+      "y": 6322,
+      "low": false,
+      "text": "購買成功 → 回 AI Video Enhance（餘額已更新、選取狀態保留）",
+      "trace": "R-075, R-077",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-alt-exception@22473,6327",
+      "board": "ds-alt-exception",
+      "x": 22473,
+      "y": 6327,
+      "low": false,
+      "text": "生成完成跳通知",
+      "trace": "R-100",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25787,3249",
+      "board": "ds-cancel",
+      "x": 25787,
+      "y": 3249,
+      "low": false,
+      "text": "Cancel",
+      "trace": "label: board title 「Cancel」",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25198,3452",
+      "board": "ds-cancel",
+      "x": 25198,
+      "y": 3452,
+      "low": false,
+      "text": "AI Video Enhance",
+      "trace": "R-004, R-020",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25673,3452",
+      "board": "ds-cancel",
+      "x": 25673,
+      "y": 3452,
+      "low": false,
+      "text": "AI Video Enhance",
+      "trace": "R-004, R-020",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@26148,3452",
+      "board": "ds-cancel",
+      "x": 26148,
+      "y": 3452,
+      "low": false,
+      "text": "AI Video Enhance",
+      "trace": "R-004, R-020",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25437,3663",
+      "board": "ds-cancel",
+      "x": 25437,
+      "y": 3663,
+      "low": false,
+      "text": "60fps · 1080p / 08:00",
+      "trace": "R-021, R-030",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25912,3663",
+      "board": "ds-cancel",
+      "x": 25912,
+      "y": 3663,
+      "low": false,
+      "text": "60fps · 1080p / 08:00",
+      "trace": "R-021, R-030",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@26387,3663",
+      "board": "ds-cancel",
+      "x": 26387,
+      "y": 3663,
+      "low": false,
+      "text": "60fps · 1080p / 08:00",
+      "trace": "R-021, R-030",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25162,3703",
+      "board": "ds-cancel",
+      "x": 25162,
+      "y": 3703,
+      "low": false,
+      "text": "00:00/12:30 / Selected Length / 00:00 / Mode / Standard / Enhancement style / Natural / 30fps / Resolution / Charge X credits per second / 720p",
+      "trace": "R-020, R-040, R-041, R-064",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25637,3703",
+      "board": "ds-cancel",
+      "x": 25637,
+      "y": 3703,
+      "low": false,
+      "text": "00:00/12:30 / Selected Length / 00:00 / Video uploading... / Please keep the app open / Cancel / Mode / Standard / Enhancement style / Natural / 30fps / Resolution / Charge X credits per second / 720p",
+      "trace": "R-085",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@26112,3703",
+      "board": "ds-cancel",
+      "x": 26112,
+      "y": 3703,
+      "low": false,
+      "text": "00:00/12:30 / Sure You Want to Leave? / Your video is still uploading. Leaving this page will cancel the process, and the credits will not be restored. / Selected Length / 00:00 / Mode / Enhancement style",
+      "trace": "R-086",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@26260,3836",
+      "board": "ds-cancel",
+      "x": 26260,
+      "y": 3836,
+      "low": false,
+      "text": "Leave / Keep Uploading / Standard / Professional / Natural / Sharp / 30fps / 60fps / 120fps / Enhance / 1080p",
+      "trace": "R-086, R-087, R-088",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25377,3915",
+      "board": "ds-cancel",
+      "x": 25377,
+      "y": 3915,
+      "low": false,
+      "text": "Professional / Sharp / 60fps / 120fps / Enhance / 1080p",
+      "trace": "R-020",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@25852,3915",
+      "board": "ds-cancel",
+      "x": 25852,
+      "y": 3915,
+      "low": false,
+      "text": "Professional / Sharp / 60fps / 120fps / Enhance / 1080p",
+      "trace": "R-020",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-cancel@26120,4125",
+      "board": "ds-cancel",
+      "x": 26120,
+      "y": 4125,
+      "low": false,
+      "text": "Resolution / Charge X credits per second / 720p",
+      "trace": "R-020, R-064",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21846,36",
+      "board": "ds-entry-points",
+      "x": 21846,
+      "y": 36,
+      "low": false,
+      "text": "Launcher / Try Pro+ 7 days for free",
+      "trace": "label: column title 「Launcher」 and the Launcher trial chip (MX, not this spec)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22326,36",
+      "board": "ds-entry-points",
+      "x": 22326,
+      "y": 36,
+      "low": false,
+      "text": "AI Magic / AI Music Generator / AI Magic",
+      "trace": "label: column title 「AI Magic」 and another tool card",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22796,36",
+      "board": "ds-entry-points",
+      "x": 22796,
+      "y": 36,
+      "low": false,
+      "text": "Timeline",
+      "trace": "label: column title 「Timeline」",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22509,120",
+      "board": "ds-entry-points",
+      "x": 22509,
+      "y": 120,
+      "low": false,
+      "text": "Text-to-Speech / My Artwork",
+      "trace": "R-104",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@23092,163",
+      "board": "ds-entry-points",
+      "x": 23092,
+      "y": 163,
+      "low": false,
+      "text": "Export",
+      "trace": "label: editor timeline and toolbar of other tools (not this feature)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22815,211",
+      "board": "ds-entry-points",
+      "x": 22815,
+      "y": 211,
+      "low": false,
+      "text": "Pro+ Only / Upgrade Now",
+      "trace": "label: existing Pro+ badge on the editor preview (KP-040), not this feature",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22332,323",
+      "board": "ds-entry-points",
+      "x": 22332,
+      "y": 323,
+      "low": false,
+      "text": "Text to Image / AI Enhance",
+      "trace": "R-002",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21857,335",
+      "board": "ds-entry-points",
+      "x": 21857,
+      "y": 335,
+      "low": false,
+      "text": "AI Mini Drama with Seedance 2.0 / New Project / Image to Video / Text to / Video / What’s Trending / USA Winner / Home / Meme Dance Creator",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21979,417",
+      "board": "ds-entry-points",
+      "x": 21979,
+      "y": 417,
+      "low": false,
+      "text": "Video Edit by Chat / AI Video / Enhance / Character Motion Swap / Cinematic Reel Creator / Auto Edit",
+      "trace": "R-001, R-004",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22120,533",
+      "board": "ds-entry-points",
+      "x": 22120,
+      "y": 533,
+      "low": false,
+      "text": "AI Mini / Drama / Auto / Photo Enhance / Captions / View more / USA Cam / Mine / View more",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22843,575",
+      "board": "ds-entry-points",
+      "x": 22843,
+      "y": 575,
+      "low": false,
+      "text": "0:00/0:06 / Mute / AI Video Enhance",
+      "trace": "R-003, R-005",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22332,580",
+      "board": "ds-entry-points",
+      "x": 22332,
+      "y": 580,
+      "low": false,
+      "text": "AI Video Enhance",
+      "trace": "R-002",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22509,580",
+      "board": "ds-entry-points",
+      "x": 22509,
+      "y": 580,
+      "low": false,
+      "text": "AI Video Upscaler",
+      "trace": "label: another AI Enhance tool (AI Video Upscaler)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22964,607",
+      "board": "ds-entry-points",
+      "x": 22964,
+      "y": 607,
+      "low": false,
+      "text": "00:00 / 00:10 / Intro / Fix Shake / AI Color / AI Video Upscaler / Opacity / Background / Enhance / Enhance",
+      "trace": "R-003, R-005",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@23184,607",
+      "board": "ds-entry-points",
+      "x": 23184,
+      "y": 607,
+      "low": false,
+      "text": "00:20 / 00:30",
+      "trace": "label: timeline ruler",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@23405,607",
+      "board": "ds-entry-points",
+      "x": 23405,
+      "y": 607,
+      "low": false,
+      "text": "00:40 / 00:50 / Outro",
+      "trace": "label: timeline ruler",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@23627,607",
+      "board": "ds-entry-points",
+      "x": 23627,
+      "y": 607,
+      "low": false,
+      "text": "01:00",
+      "trace": "label: timeline ruler",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22332,783",
+      "board": "ds-entry-points",
+      "x": 22332,
+      "y": 783,
+      "low": false,
+      "text": "Photo Enhance / Team BR / Baseball Cam / Home",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22509,783",
+      "board": "ds-entry-points",
+      "x": 22509,
+      "y": 783,
+      "low": false,
+      "text": "Video Quick Actions / AI Magic / Template / Project / Mine",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21993,833",
+      "board": "ds-entry-points",
+      "x": 21993,
+      "y": 833,
+      "low": false,
+      "text": "Team ARG / AI Magic / Template / Project",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@23136,851",
+      "board": "ds-entry-points",
+      "x": 23136,
+      "y": 851,
+      "low": false,
+      "text": "Tools / Duplicate",
+      "trace": "label: editor timeline and toolbar of other tools (not this feature)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@23280,851",
+      "board": "ds-entry-points",
+      "x": 23280,
+      "y": 851,
+      "low": false,
+      "text": "Mask / Portrait",
+      "trace": "label: editor timeline and toolbar of other tools (not this feature)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21865,1040",
+      "board": "ds-entry-points",
+      "x": 21865,
+      "y": 1040,
+      "low": false,
+      "text": "Color Mix / AI-Powered Creation",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21993,1040",
+      "board": "ds-entry-points",
+      "x": 21993,
+      "y": 1040,
+      "low": false,
+      "text": "Dancing Pet",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22121,1040",
+      "board": "ds-entry-points",
+      "x": 22121,
+      "y": 1040,
+      "low": false,
+      "text": "Puppy / View more",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21865,1247",
+      "board": "ds-entry-points",
+      "x": 21865,
+      "y": 1247,
+      "low": false,
+      "text": "AI Anime Video / Recent Projects",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21993,1247",
+      "board": "ds-entry-points",
+      "x": 21993,
+      "y": 1247,
+      "low": false,
+      "text": "AI Anime / 2023/11/06   10:51 AM / Project 1 / 9:16 / 2023/11/06   10:51 AM / Project 1 / 9:16 / 2023/11/06   10:51 AM / Project 1 / 9:16",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@22121,1247",
+      "board": "ds-entry-points",
+      "x": 22121,
+      "y": 1247,
+      "low": false,
+      "text": "Voice Changer / See All / 09:18 / 456 MB / 09:18 / 456 MB / 09:18 / 456 MB / Try Now / Try Now / Try Now",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-entry-points@21857,1735",
+      "board": "ds-entry-points",
+      "x": 21857,
+      "y": 1735,
+      "low": false,
+      "text": "Get Cyberlink App / PhotoDirector / AI photo editing & Object Removal / Vivid Glam / Beauty Edits & Camera Filters / MyEdit / Free AI Image Generator",
+      "trace": "label: Launcher / AI Magic content of other features (sample cards, tiles, projects)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-main-flow@22287,1526",
+      "board": "ds-main-flow",
+      "x": 22287,
+      "y": 1526,
+      "low": false,
+      "text": "1005_preview 右下加上影片的來源資訊 / 第一次進入此功能跳出 bubble",
+      "trace": "R-021, R-022",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-main-flow@22753,1586",
+      "board": "ds-main-flow",
+      "x": 22753,
+      "y": 1586,
+      "low": false,
+      "text": "Free user 需要訂閱才能使用",
+      "trace": "R-070",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-routing@21081,31",
+      "board": "ds-routing",
+      "x": 21081,
+      "y": 31,
+      "low": false,
+      "text": "直接帶入選取的 clip / Timeline 入口，無 Demo page",
+      "trace": "R-003",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-routing@20721,57",
+      "board": "ds-routing",
+      "x": 20721,
+      "y": 57,
+      "low": false,
+      "text": "勾 Don't show again 後不再出現 / Media Room 選一支影片 / Leave → 回設定面板",
+      "trace": "R-009, R-013, R-088",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-routing@20891,215",
+      "board": "ds-routing",
+      "x": 20891,
+      "y": 215,
+      "low": false,
+      "text": "設定面板 / Trim 選段 ＋ Mode / Enhancement style / fps / Resolution",
+      "trace": "R-020, R-030, R-046",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-routing@21205,303",
+      "board": "ds-routing",
+      "x": 21205,
+      "y": 303,
+      "low": false,
+      "text": "價格 = 選取秒數 × 每秒費率 / 長度改變，價格跟著改變",
+      "trace": "R-060, R-061",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-routing@20891,439",
+      "board": "ds-routing",
+      "x": 20891,
+      "y": 439,
+      "low": false,
+      "text": "餘額不足  →  Credit Page / 餘額足夠  →  直接生成 / Generating（雲端）",
+      "trace": "R-076, R-080, R-085",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-routing@20639,575",
+      "board": "ds-routing",
+      "x": 20639,
+      "y": 575,
+      "low": false,
+      "text": "取消確認 / Leave → credit 不退還",
+      "trace": "R-086, R-088",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-routing@21081,739",
+      "board": "ds-routing",
+      "x": 21081,
+      "y": 739,
+      "low": false,
+      "text": "失敗卡片 / Error 縮圖 ＋ View Details / 錯誤說明 dialog / credit 已自動退還",
+      "trace": "R-140, R-141, R-142",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "ds-routing@20721,805",
+      "board": "ds-routing",
+      "x": 20721,
+      "y": 805,
+      "low": false,
+      "text": "Save Result  →  存到手機 / Add to Timeline  →  開新 timeline / Edit More  →  回 Media Room / 所有 Enhance 功能皆耗 credit，一律雲端生成後另存新片。Add to Timeline 是開一條新的 timeline，不取代原 clip。生成失敗系統自動退還 credit；使用者主動取消則不退還。",
+      "trace": "R-122, R-123, R-124, R-126, R-142, R-088",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-access-credit@80,2670",
+      "board": "pm-access-credit",
+      "x": 80,
+      "y": 2670,
+      "low": false,
+      "text": "本功能為 PowerDirector Pro+ 專屬，v1 不提供 free trial（§7） / 非 Pro+：面板 CTA 直接顯示 Upgrade to Pro+ → 導購（PM 9/24 確認） / Pro+ 但 credit 不足：點 Enhance → Top Up／Claim daily credits；不上傳、不扣（§8.1、§10.8）",
+      "trace": "R-070, R-076, Q-7",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-access-credit@90,2916",
+      "board": "pm-access-credit",
+      "x": 90,
+      "y": 2916,
+      "low": false,
+      "text": "9/24 Update · spec §7 待同步 / §7、§10.3 · PM 9/24 確認：CTA 直接顯示升級 / 面板・非 Pro+（CTA＝Upgrade to Pro+）",
+      "trace": "R-070",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-access-credit@565,2916",
+      "board": "pm-access-credit",
+      "x": 565,
+      "y": 2916,
+      "low": false,
+      "text": "TBD · 購買／儲值後回到哪、是否保留設定 / 既有 IAP 頁 · 無 screen map，low-fi / PowerDirector Pro+ 導購頁",
+      "trace": "R-072, R-073, R-075",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-access-credit@80,3976",
+      "board": "pm-access-credit",
+      "x": 80,
+      "y": 3976,
+      "low": false,
+      "text": "§8.1 · 餘額 < 本次 credit：不上傳、不扣 / 面板・Pro+ 但 credit 不足（點 Enhance）",
+      "trace": "R-076",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-access-credit@555,3976",
+      "board": "pm-access-credit",
+      "x": 555,
+      "y": 3976,
+      "low": false,
+      "text": "§10.8 · 既有 credit 頁 · 無 screen map，low-fi / Credit 導購（Top Up／Claim daily credits）",
+      "trace": "R-076, R-078",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-access-credit@447,4203",
+      "board": "pm-access-credit",
+      "x": 447,
+      "y": 4203,
+      "low": false,
+      "text": "餘額 < 本次 credit",
+      "trace": "R-076",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-defaults@7227,1082",
+      "board": "pm-defaults",
+      "x": 7227,
+      "y": 1082,
+      "low": false,
+      "text": "預設值規則（進入功能時自動帶入）",
+      "trace": "label: heading 「預設值規則」 (1002)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-defaults@7512,1173",
+      "board": "pm-defaults",
+      "x": 7512,
+      "y": 1173,
+      "low": false,
+      "text": "固定值，不隨來源影片改變。 / 固定值，不隨來源影片改變。刻意不採用 API 預設值 hd。 / 選最接近來源 fps 的選項；等距時取較低者。 / 依來源影片 / 選最接近來源解析度的選項；等距時取較低者。 / 依來源影片 / 預設選項 / 來源 resolution",
+      "trace": "R-040, R-041, R-043, R-044",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-defaults@7227,1402",
+      "board": "pm-defaults",
+      "x": 7227,
+      "y": 1402,
+      "low": false,
+      "text": "附註：fps 對照表（等同上方規則，供驗收用） / 來源 fps / 61 以上 / Chips 狀態",
+      "trace": "R-043, R-046",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-defaults@7745,1445",
+      "board": "pm-defaults",
+      "x": 7745,
+      "y": 1445,
+      "low": false,
+      "text": "預設選項",
+      "trace": "label: lookup table column heading",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-defaults@7512,1701",
+      "board": "pm-defaults",
+      "x": 7512,
+      "y": 1701,
+      "low": false,
+      "text": "使用時機 / 可選但目前未選中的選項。 / 目前選中的選項；每組僅一個。 / 當前 Mode 不支援此設定，不可點選。",
+      "trace": "R-046, R-047",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-logic@977,2207",
+      "board": "pm-draft-logic",
+      "x": 977,
+      "y": 2207,
+      "low": false,
+      "text": "Logic 補充 · 對齊 Design 26.09 v2（9/29） / 來源：Video Enhance 設計稿 26.09 › Video Enhance_26.09_v2（Main Flow / Routing Logic / Video Enhance / Cancel / Alternative & Exception）。標籤：[Design] 設計稿已定　[建議] PM 建議補齊的規則　[衝突] 與本頁 spec 不一致，需拍板　[待確認] 需 RD／BytePlus／Legal 回覆。UI 文案一律英文。 / A. 流程總覽 & 入口 / A0 主線（Design v2 Routing Logic） / Launcher／AI Magic → Demo page（可略過）→ Add Media 選 1 支影片 → 設定面板（Trim＋Mode／Enhancement style／fps／Resolution）→ 點 CTA → Check Eligibility → 通過：上傳 → 扣 credit → Generating → Recent task → Result。 / Timeline：選中 clip → Enhance → 直接帶 clip 開面板（無 Demo page、無 Add Media）→ 送出後同主線 → 成功後回貼原 clip。 / A1 Demo page（新增，PM spec 原本沒有） / [Design] 從 Launcher／AI Magic 進入時顯示；勾「Don't show again」後不再出現。Timeline 入口不顯示。 / [建議] 「不再顯示」只在勾選＋按 Try It Now 時生效；只勾選但按返回不生效。記錄存本機（重裝 App 會重置）。 / [建議] Demo page 按返回 → 回到入口頁，不進 Add Media。 / [衝突] Demo page 描述目前沿用 AI Reframe 文案（\"AI reframe your video for any aspect ratio…\"），需改為 Video Enhance。建議：\"Make blurry, noisy or dark videos look sharp and clear.\" / [Design] 只顯示 Video tab，v1 單選 1 支。 / [建議] 點縮圖直接進面板，不需要 Next（解 Gap 4）。頁面標題沿用 Add Media。 / [建議] 不支援的影片（見 E1）在縮圖上直接反灰，點擊跳 toast，不要等進面板才擋。 / [建議] 相簿沒有任何影片：顯示 empty state \"No videos yet\"（解 Gap 2 的 Add Media 部分）。",
+      "trace": "label: section title and tag legend ([Design] / [建議] / [衝突] / [待確認], UI copy in English)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-logic@1801,2381",
+      "board": "pm-draft-logic",
+      "x": 1801,
+      "y": 2381,
+      "low": false,
+      "text": "B. 設定面板：選段 & 預設值 / B1 選段 Trim / [9/29 定案] 單次上限依 Mode：Standard 8 分鐘、Professional 2 分 30 秒（取代 Design 的 3 分鐘，設計稿需更新）。預設選段 = 從 00:00 開始，長度取「影片長度」與「目前 Mode 上限」較短者。切換 Mode 的行為見 B1-1。 / [Design] 拖左右把手 = 調整長度，Preview 顯示正在拖的那一端畫面；拖中間 = 長度不變整段平移，Preview 顯示選段第一格。 / [建議] 最短 1 秒；拉到目前 Mode 上限時把手停住（見 B1-1 UI）。 / [建議] Selected Length 顯示「無條件進位後的整秒」，與扣款一致：< 60s 顯示 18s，≥ 60s 顯示 1m 30s（取代本頁 00:03.96 的寫法）。 / B1-1 Trim 上限 × 切換 Mode（9/29 新增） / 上限：Standard 8:00／Professional 2:30（選段秒數無條件進位後與上限比較）。 / ① Standard → Professional，選段 ≤ 2:30：選段不變，只更新 credit。 / ② Standard → Professional，選段 > 2:30：保留起點，終點自動縮為「起點＋2:30」。右把手以動畫縮回（約 200ms），Preview 跳到選段第一格，顯示 toast 3 秒，credit 即時更新。 / ③ Professional → Standard：選段不會自動拉長，上限放寬為 8:00，使用者可自己拖長。 / ④ 還原：在 Professional 期間沒有動過選段，切回 Standard 時還原成切換前的選段（不跳 toast）；有動過就保留目前選段。只算拖曳選段，改 fps／Resolution 不影響還原。 / ⑤ 記住上次 Mode（B3）＝Professional 時，新影片預設選 00:00–02:30（影片較短則選整段）。 / ⑥ 底部縮圖列比例只看影片長度，不隨 Mode 改變：影片 ≤ 8:00 整支撐滿固定寬度；> 8:00 可橫向捲動，8:00＝一個畫面寬。切 Mode 只改選取框，不重排縮圖列。 / ⑦ Timeline 入口（選段鎖定整個 clip）：clip ≤ 2:30 兩種 Mode 都能用；2:30 < clip ≤ 8:00 → Professional chip disable，點擊 toast；clip > 8:00 → 不開面板（D4）。 / ① Standard：選 00:30–05:30",
+      "trace": "R-022, R-024, R-025, R-026, R-030, R-031, R-032, R-033, R-034, R-035, R-040, R-041, R-042, R-043, R-044, R-046, R-047, R-050, R-051, R-052, R-053, R-055, R-056, R-057, R-058, R-060, R-065, Q-5, Q-6, Q-10, Q-19",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-logic@2593,2381",
+      "board": "pm-draft-logic",
+      "x": 2593,
+      "y": 2381,
+      "low": false,
+      "text": "C. Credit、資格檢查、生成 / C1 Credit 顯示 / credit = 選段秒數（無條件進位）× 每秒費率（Mode, Resolution, fps）；Style 不影響價格。 / [衝突] Design CTA 上方寫 \"Charge X credits per second\"（單價）；本頁是即時總額。建議兩者都顯示：CTA \"Enhance · 8 credits\"，上方小字 \"2 credits/sec × 4s\"；拖曳選段或切換設定時即時更新。 / C2 Check Eligibility（點 CTA 時依序檢查） / ① 是否 Pro+ → ② 網路 → ③ 餘額 ≥ 本次 credit。 / [Design] Free user → IAP；餘額不足 → Credit page；餘額足夠 → 直接生成。 / [Design] 購買成功 → 回 Video Enhance，餘額已更新、選段與設定保留（解 Gap 12）。 / [建議] 回到面板後不自動送出，需使用者再按一次 CTA（避免在沒確認的情況下扣款），並重新檢查；新餘額仍不足 → Credit page。 / [建議] 已訂 Pro（非 Pro+）→ IAP 預設停在 Pro+ tab；只買了 Pro → 回面板仍是 Upgrade 狀態。IAP／Credit page 按關閉 → 回面板，內容不變。 / [建議] 送出時 server 再驗一次餘額（避免跨裝置同時使用），不足 → 同餘額不足流程。 / [衝突] IAP 頁顯示 \"Receive 35 credits during free trial\"，但 §7 寫 v1 不提供 free trial → 需確認 Pro+ 試用期間能否使用本功能（35 credits ≈ 1080p Standard 30fps 17 秒）。 / C3 上傳（commit 前） / [建議] Design v2 缺「上傳中」狀態，需補畫：前景 dialog \"Uploading… 45%\" ＋ Cancel。Cancel = 不扣款、不建任務、回面板並保留設定（解 Gap 5）。 / [建議] 上傳失敗／斷網 → 回面板，toast \"Upload failed. Check your connection and try again.\"，不扣款。 / [建議] 上傳中 App 被關閉 → 視同取消，不扣款。成功上傳 = commit，扣 credit 並建立任務。 / [Design] Generating = 面板上的 processing dialog；按 Cancel → 確認 dialog，Leave → credit 不退還。 / [衝突] 本頁 v1 定義「背景生成不可取消」。Design 的 Leave 需要明確：是「離開、任務繼續在背景跑」還是「中止任務」？建議採前者：Leave 後任務繼續，完成時通知，成品在 Recent。確認 dialog 文案建議：\"Keep enhancing in the background? You'll be notified when it's ready. Find it in Recent.\"（Stay／Leave）。若是中止且不退款 → 建議不要做，付了錢卻沒有成品，容易客訴。 / [建議] 生成中 App 切背景或被關閉 → 雲端繼續生成。 / [待確認] 可同時進行幾個任務？建議 v1 最多 3 個，超過時 CTA 跳 toast \"You can run up to 3 enhancements at a time.\"",
+      "trace": "R-060, R-064, R-065, R-070, R-071, R-072, R-073, R-075, R-076, R-079, R-080, R-081, R-085, R-086, R-088, R-089, R-090, R-091, R-092, Q-2, Q-3, Q-7, Q-12, Q-18",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-logic@3385,2381",
+      "board": "pm-draft-logic",
+      "x": 3385,
+      "y": 2381,
+      "low": false,
+      "text": "D. 通知、Recent、Result、Timeline / D1 通知 / [Design] 生成完成時 App 內跳通知（Launcher 上的 notify banner）；點擊 → Result。 / [建議] App 在背景時送系統推播（§9）；點擊 → Result。 / [建議] 失敗也推播，因為已經退款，需要讓使用者知道：\"Video Enhance didn't finish. Your credits have been refunded.\"（解 Gap 8） / [建議] Design 缺「開啟通知」彈窗：第一次成功 commit 後，若系統權限還沒詢問過 → 顯示 soft prompt（Turn On／Later）；Turn On → 系統權限視窗；已授權 → 不顯示；已拒絕 → Turn On 導到系統設定。按完留在 Generating 畫面（解 Gap 6、14）。按 Later 後不再主動詢問。 / [Design] 卡片狀態：Processing → Completed（點擊 → Result）→ Failed（Error 縮圖＋View Details → 錯誤 dialog，說明 credit 已自動退還）。雲端保存 1 年（\"Tasks are stored on the cloud for 1 Year…\"）＋Manage。 / [待確認] Processing 卡片的進度／預估時間樣式；面板 top bar 是否有 Recent 入口（Gap 7）。 / [待確認] Generation Failed dialog 的內文與按鈕需要從 component 確認（Gap 9）。建議：\"Enhancement failed\" / \"Something went wrong. Your X credits have been refunded.\" / OK。 / [建議] 成品同時進 AI Magic › My Artwork 和 Template › My Artwork（§4.3），Design 尚未呈現。 / [Design] Save Result → 存到手機；Add to Timeline → 用成品開新專案；Enhance More → 回 Add Media 選下一支（解 Gap 11）。 / [衝突] 按鈕文案是 Enhance More，Routing Logic 寫 Edit More → 統一為 Enhance More。 / [建議] Save 成功 toast \"Saved to your device\"；失敗 toast \"Couldn't save. Try again.\" / D4 Timeline 入口 / [Design] 帶選中的 clip 開面板，無 Demo page。Design v2 未畫回貼。 / [建議] 從 Timeline 進入時，選段預設 = 該 clip 在時間軸上的範圍；clip > 8 分鐘 → toast \"Split clips longer than 8 minutes first\"，不開面板；clip 介於 2:30–8:00 → Professional chip disable（見 B1-1 ⑦）（避免只取代一部分 clip 的複雜度）。 / [建議] 成功後以成品取代原 clip（位置、轉場、音訊保留），toast \"Video Enhance applied\"，3 秒消失（解 Gap 15）。 / [建議] 生成期間原 clip 被刪除、修改或專案被關閉 → 不回貼，成品留在 Recent，通知 \"Your enhanced video is ready in Recent\"（解 Gap 10）。 / [建議] Timeline 入口的 Result 頁：Add to Timeline 改為回到原專案，不開新專案。",
+      "trace": "R-093, R-094, R-095, R-100, R-103, R-104, R-110, R-111, R-112, R-113, R-122, R-123, R-124, R-130, R-131, R-132, R-134, R-140, R-141, R-143, R-058, Q-11, Q-16, Q-17",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-logic@4177,2381",
+      "board": "pm-draft-logic",
+      "x": 4177,
+      "y": 2381,
+      "low": false,
+      "text": "E. 影片限制 & Gaps 狀態更新 / E1 影片限制（Gap 1） / [待確認] RD／BytePlus 回覆後定案，建議：長度 ≥ 1 秒；MP4／MOV（H.264／HEVC）；來源 ≤ 4K（4K 來源只能選 4K）；超過 4K 不支援。 / [建議] 不支援的影片在 Add Media 反灰，點擊 toast \"This video isn't supported. Try one up to 4K.\" / E2 本頁 Gaps 狀態（對應右上 Gaps 1–16） / 1 影片限制 → 見 E1，待 RD／BytePlus / 2 Empty state → Add Media 已建議（A2）；Timeline 沒選 clip 時 Enhance 反灰 / 3 First-run 文案 → 改成 Bubble（Design），文案見 B2 / 4 媒體選擇器觸發 → 建議點縮圖直接進（A2） / 5 上傳 dialog → Design 缺，需補畫（C3） / 6 通知彈窗落點 → 建議留在 Generating（D1） / 7 Recent 入口／處理中樣式 → 已解：Completed 點擊 → Result；入口與進度樣式仍待定 / 8 失敗推播 → 建議推播（D1） / 9 已退款 dialog → Design 有 Generation Failed dialog，內文待確認（D2） / 10 Timeline 回貼規則 → 建議（D4） / 11 Edit More 去處 → 已解：Enhance More → Add Media（Design） / 12 購買後回哪 → 已解：回面板，保留設定（Design）＋需再按一次 CTA（C2） / 13 §7 同步 → 仍待更新 spec 文件 / 14 已開通知者略過 → 建議略過（D1） / 15 Applied Video Enhance 呈現 → 建議 toast 3 秒（D4） / 16 Trim 上限 → 已定：Standard 8 min／Professional 2m 30s，切換規則見 B1-1 / E3 需拍板的衝突（依優先度） / 1. Generating 的 Leave 是「背景繼續」還是「中止不退款」（C4） / 2. fps 可選 → 計價改用輸出 fps（B4） / 3. Resolution 預設規則：≥ 來源 vs 最接近（B3） / 4. 預設值：記住上次 vs 固定（B3） / 5. CTA 顯示總額 vs 單價（C1） / 6. Pro+ 試用期能否使用（C2） / 7. Demo page 文案錯誤、Enhance More／Edit More 命名（A1、D3） / 8. Design 需補畫：上傳中、開啟通知彈窗、Timeline 回貼 / 9. Design 選段上限仍寫 3 分鐘，需改為依 Mode＋補畫切換 Mode 縮短選段的狀態（B1-1）",
+      "trace": "R-015, R-016, R-013, R-022, R-042, R-044, R-064, R-065, R-007, R-124, R-075, R-131, R-132, R-050, Q-1, Q-2, Q-3, Q-5, Q-7, Q-13",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-logic@2043,3129",
+      "board": "pm-draft-logic",
+      "x": 2043,
+      "y": 3129,
+      "low": false,
+      "text": "② 點 Professional → 保留起點，縮為 2:30",
+      "trace": "older: Design 「Mode 長度上限」 blocks the switch with a toast instead of shortening (R-052)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-logic@2285,3129",
+      "board": "pm-draft-logic",
+      "x": 2285,
+      "y": 3129,
+      "low": false,
+      "text": "③ 沒動選段就切回 Standard → 還原",
+      "trace": "older: Design 「Mode 長度上限」 never shortens, so there is nothing to restore (R-052, R-055)",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-logic@1801,3515",
+      "board": "pm-draft-logic",
+      "x": 1801,
+      "y": 3515,
+      "low": false,
+      "text": "UI 規格 / • Selected Length 右側顯示「目前長度 / 上限」：5m 00s / 8m max（上限為次要灰字，切 Mode 時更新）。 / • Mode ⓘ bubble：\"Standard: up to 8 minutes. Professional: up to 2m 30s.\" / • 切換縮短 toast（②）：\"Professional mode supports up to 2m 30s. Your selection was shortened.\" 快速連續切換時只顯示最後一次。 / • 拖到上限：把手停住＋輕震動＋bubble \"Up to 2m 30s in Professional mode\"／\"Up to 8 minutes in Standard mode\"。 / • Timeline disable toast（⑦）：\"Professional mode supports clips up to 2m 30s. Split the clip to use it.\" / B2 首次說明 Bubble（取代本頁 First-run card） / [Design] 首次進入自動顯示；之後點 Selected Length 旁的 ⓘ 可再開。3 秒後自動消失，期間點畫面任一處也會消失。 / [Design] Mode、Enhancement style 標題旁也有 ⓘ，點擊開啟該設定的說明 bubble。 / [建議] Selected Length bubble 文案：\"Choose up to 8 minutes in Standard or 2m 30s in Professional. Credits are based on the length you choose.\"（涵蓋 §10.1 的「功能用途＋會扣 credit」，解 Gap 3、16） / B3 預設值 / [Design] Mode = Standard、Enhancement style = Natural（固定，不採 API 預設 hd）。 / [Design] fps 依來源：1–45 → 30fps、46–90 → 60fps、91 以上 → 120fps。 / [Design] Resolution：選最接近來源的選項，等距取較低者。 / [衝突] 本頁 §4.3「面板記住上次的 Mode／Style／Resolution」vs Design「固定預設值」。建議：Mode、Style 記住上次選擇（第一次用 Standard／Natural）；fps、Resolution 每支影片依來源重算。 / [衝突] 本頁 §5.2「Resolution 只提供 ≥ 來源、上限 4K」vs Design「最接近、等距取低」，後者可能選到比來源低的檔位（例：900p 來源，720p／1080p 等距 → 取 720p＝降畫質）。建議改為：預設 = ≥ 來源的最小檔位，低於來源的檔位 disable；解析度以短邊判斷（直式 1080×1920 視為 1080p）。 / B4 fps 與計價 / [衝突] 本頁寫 Frame rate = Same as source、計價用「來源 fps」；Design 的 fps 是可選的 30／60／120。需確認：計價與 SKU 的 {fps} 改用「輸出 fps」。 / [建議] 與 Resolution 一致：低於來源的 fps 選項 disable（降幀不算 enhance）。可變幀率（VFR）影片以平均 fps 判斷。 / B5 Chips 狀態 / [Design] unselect／select（每組只有一個）／disable（目前 Mode 不支援）。 / [Design] 點 disable 的 chip → 跳對應 toast（v1 設計稿註記）。建議文案：\"Not available in Professional mode\"、\"Choose a resolution at or above your video's\"。 / [建議] 切換 Mode 後，若已選的 fps／Resolution 變成 disable → 自動改選最接近且可用的選項（等距取低），並 toast \"Frame rate changed to 60fps\"。 / [待確認] 需 BytePlus 提供 Mode × fps × Resolution 支援表，Design 目前沒定義哪些組合 disable。",
+      "trace": "R-030, R-025, R-033, R-052, R-057, Q-19",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-draft-notes@0,1036",
+      "board": "pm-draft-notes",
+      "x": 0,
+      "y": 1036,
+      "low": false,
+      "text": "two routes: / shortcut / Timeline → video enhance",
+      "trace": "R-001, R-003",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-failure-refund@1430,4275",
+      "board": "pm-failure-refund",
+      "x": 1430,
+      "y": 4275,
+      "low": false,
+      "text": "生成失敗 → 自動退款；不提供 Retry（§8.6） / Recent task 按鈕＝View details → 「已退款」dialog（§8.6）",
+      "trace": "R-141, R-142",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-failure-refund@1440,4521",
+      "board": "pm-failure-refund",
+      "x": 1440,
+      "y": 4521,
+      "low": false,
+      "text": "TBD · 失敗是否推播 / §8.6 · 已自動退款，無 Retry / Recent task・失敗（View details）",
+      "trace": "R-140, R-142, Q-16",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-failure-refund@1915,4521",
+      "board": "pm-failure-refund",
+      "x": 1915,
+      "y": 4521,
+      "low": false,
+      "text": "TBD · 已退款 dialog 內文與關閉鈕 / 「已退款」dialog",
+      "trace": "R-141",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-gaps@3255,2690",
+      "board": "pm-gaps",
+      "x": 3255,
+      "y": 2690,
+      "low": false,
+      "text": "Gaps（spec 未定，需 PM 拍板） / 1. 哪些影片不能用：來源已是 4K 能否使用？長度／格式／檔案大小上限？（§5.2 只定 ≥ 來源、上限 4K；draft 頁筆記） / 2. Empty／未帶素材狀態（§10.2）只列名，未描述出現在哪個畫面、文案 / 3. First-run 說明文案（§10.1 只列內容：功能用途、會扣 credit） / 4. 媒體選擇器：選完片段的觸發控制（點縮圖直接進？Next？）、頁面標題 / 5. 上傳 dialog 內文與進度呈現（目前僅 Uploading＋Cancel） / 6. 開啟通知彈窗按 Turn On／Later 後，使用者落在哪（留面板？到 Recent task？） / 7. 使用者如何進入 Video Enhance room 的 Recent task；處理中列樣式；點已完成 task 開啟什麼 / 8. 失敗是否推播（§9 只定義成功推播） / 9. 「已退款」dialog 內文與關閉鈕 / 10. Timeline：背景生成期間原片段被刪／改動時的回貼規則 / 11. 結果頁 Edit More 去處 / 12. 購買 Pro+／儲值完成後回到哪、是否保留面板設定 / 13. spec §7 需同步 PM 9/24 決策：非 Pro+ 面板 CTA 直接顯示 Upgrade to Pro+ / 14. 開啟通知彈窗：已開啟通知的使用者是否略過；與系統通知權限跳窗的先後（§9 只定「首次」） / 15. Timeline 回貼後「Applied Video Enhance」的呈現形式（toast？片段標籤？持續多久）（§4.1） / 16. 面板「trim 最長三分鐘、超過顯示 i」為板上註記，spec v1.1 未載明長度上限與提示文案（§5.1） / 1. 2K 定價（v1 已移除）— 定價團隊 / 2. 現況 baseline（funnel／點擊分佈／免費→Pro+）— Phoebe／Analytics / 3. 揭露法遵措辭（沿用既有 GenAI 同意 dialog，待確認涵蓋 ByteDance 上雲）— Legal",
+      "trace": "R-013, R-015, R-016, R-022, R-045, R-050, R-070, R-075, R-085, R-094, R-113, R-124, R-131, R-132, R-141, R-143, Q-13, Q-14, Q-16, Q-17",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@80,60",
+      "board": "pm-main-flow",
+      "x": 80,
+      "y": 60,
+      "low": false,
+      "text": "三入口導到同一套全螢幕面板；Launcher／AI Magic 先經媒體選擇器，Timeline 帶片段直接預開面板（§4.1） / 計價：credit = 選段秒數（無條件進位為整秒）× 每秒費率(Mode, Resolution, 來源 fps)；Style 不影響計價（§6.1） / commit 點＝成功上傳到 server：上傳中 Cancel 不扣款、不建立任務；成功上傳才扣 credit（§8） / 背景生成 v1 無 cancel；成品同時進 Recent task／AI Magic > My Artwork／Template > My Artwork tab（§4.3、§8） / 面板記住上次的 Mode／Style／Resolution；Resolution 只提供 ≥ 來源檔位、上限 4K、2K v1 移除（§4.3、§5.2） / 首次建立背景任務時跳「開啟通知」彈窗（開啟通知／稍後）（§4.2、§9） / 計費 SKU：genvideo_1_sec_byteplus_{mode}_{style}_{resolution}_{fps}，例 std_hd_1080p_30fps（§6.3） / 本輪不做：送出前 Before/After 預覽、高價額外確認、結果頁分享／cross-sell、失敗一鍵重試（§2.2）",
+      "trace": "R-001, R-002, R-003, R-042, R-045, R-060, R-062, R-066, R-089, R-091, R-093, R-104",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1982,306",
+      "board": "pm-main-flow",
+      "x": 1982,
+      "y": 306,
+      "low": false,
+      "text": "TBD · 處理中列樣式（進度／預估時間） / §4.3、§9 · v1 無 cancel，使用者可離開 App / Recent task・處理中（背景生成）",
+      "trace": "R-091, R-111, Q-17",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@2932,306",
+      "board": "pm-main-flow",
+      "x": 2932,
+      "y": 306,
+      "low": false,
+      "text": "TBD · Edit More 去處 / §4.1 · 成品同時進 Recent task／AI Magic > My Artwork／Template > My Artwork tab（§4.3）",
+      "trace": "R-104, R-124",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1030,328",
+      "board": "pm-main-flow",
+      "x": 1030,
+      "y": 328,
+      "low": false,
+      "text": "Trim 上限依 Mode：Standard 8 min／Professional 2m 30s（切換規則見本 section 右下「Trim × Mode」） / §5、§6.4 例：3.96s→4s × 1080p Std 30fps（2/秒）= 8 / 面板・預設（Pro+：Enhance＋即時 credit）",
+      "trace": "R-020, R-050, R-063",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@80,361",
+      "board": "pm-main-flow",
+      "x": 80,
+      "y": 361,
+      "low": false,
+      "text": "既有畫面 · 無 screen map，low-fi / Launcher（入口：Video Enhance 捷徑）",
+      "trace": "label: 「existing screen, no screen map, low-fi」 and the Launcher column title",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@555,361",
+      "board": "pm-main-flow",
+      "x": 555,
+      "y": 361,
+      "low": false,
+      "text": "§4.2 步驟 1 · v1 單片段 / 媒體選擇器（選 1 片段）",
+      "trace": "R-012",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1505,361",
+      "board": "pm-main-flow",
+      "x": 1505,
+      "y": 361,
+      "low": false,
+      "text": "§8.2–3 · 尚未送達 server：Cancel 不扣款、不建立任務 / 面板・上傳中（前景 blocking，可 Cancel）",
+      "trace": "R-088, Q-2",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@2447,361",
+      "board": "pm-main-flow",
+      "x": 2447,
+      "y": 361,
+      "low": false,
+      "text": "§9 · 系統通知，文案為 spec 原文 / 推播通知（背景生成成功）",
+      "trace": "R-103",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@922,588",
+      "board": "pm-main-flow",
+      "x": 922,
+      "y": 588,
+      "low": false,
+      "text": "觸發 TBD",
+      "trace": "R-013",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1397,588",
+      "board": "pm-main-flow",
+      "x": 1397,
+      "y": 588,
+      "low": false,
+      "text": "檢查通過",
+      "trace": "R-080",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1872,748",
+      "board": "pm-main-flow",
+      "x": 1872,
+      "y": 748,
+      "low": false,
+      "text": "成功上傳＝commit 點・扣 credit",
+      "trace": "R-089",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@2339,748",
+      "board": "pm-main-flow",
+      "x": 2339,
+      "y": 748,
+      "low": false,
+      "text": "背景生成成功",
+      "trace": "R-100, R-103",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1053,1216",
+      "board": "pm-main-flow",
+      "x": 1053,
+      "y": 1216,
+      "low": false,
+      "text": "非 Pro+ → Upgrade to Pro+／credit 不足 → Top Up：見「分岔」section / TBD · First-run 文案與關閉方式 / §10.1 · 首次進入面板顯示 bottom toast／小卡，看過即不再出現 / 面板・First-run 一次性說明",
+      "trace": "R-022, R-023, R-070, R-076",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1515,1306",
+      "board": "pm-main-flow",
+      "x": 1515,
+      "y": 1306,
+      "low": false,
+      "text": "TBD · 已開通知者是否略過 / §4.2 步驟 6、§9、§10.4 · 成功上傳並扣 credit 後，首次建立背景任務時跳出 / 面板・首次：開啟通知提示彈窗",
+      "trace": "R-093, R-094",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@2023,1325",
+      "board": "pm-main-flow",
+      "x": 2023,
+      "y": 1325,
+      "low": false,
+      "text": "面板・Trim 上限 × 切換 Mode（9/29） / 上限：Standard 8:00／Professional 2:30。選段秒數無條件進位後與上限比較（例：2:30.4 → 151 秒 > 150 秒，算超過）。 / ① 預設選段：從 00:00 開始，長度取「影片長度」與「目前 Mode 上限」較短者（Standard 最多 8:00；進面板時若 Mode 為 Professional，最多 2:30）。 / ② 選段 ≤ 2:30：Standard ↔ Professional 可自由切換，選段不變，只更新 credit。 / ③ 選段 > 2:30（只會發生在 Standard）時點 Professional：擋下不切換，Mode 維持 Standard、選段不變，跳 toast 3 秒提醒上限長度。Professional chip 外觀維持一般 unselect 樣式，不做 disable。不自動縮短選段，避免使用者選好的範圍被改掉。 / ④ 使用者把選段拖到 ≤ 2:30 後再點 Professional → 正常切換。 / ⑤ 已在 Professional：拖到 2:30 時把手停住，無法超過。切回 Standard → 選段不變，上限放寬為 8:00，可自己拖長。 / ⑥ 底部縮圖列比例只看影片長度，不隨 Mode 改變：影片 ≤ 8:00 整支撐滿固定寬度；> 8:00 可橫向捲動，8:00＝一個畫面寬。切 Mode 不重排縮圖列。 / ⑦ Timeline 入口帶入的 clip 規則相同：選段 > 2:30 時點 Professional → 跳同一個 toast。 / • 選段 > 2:30 時點 Professional → toast（3 秒）：\"Professional mode supports up to 2m 30s. Shorten your selection to switch.\" / • Mode ⓘ bubble：\"Standard: up to 8 minutes. Professional: up to 2m 30s.\" / • 拖到上限：把手停住＋輕震動＋bubble \"Up to 8 minutes in Standard mode\"／\"Up to 2m 30s in Professional mode\"。 / ① Standard 選 5m 00s（Professional 外觀正常）",
+      "trace": "R-025, R-030, R-033, R-034, R-050, R-051, R-052, R-054, R-055, R-056, R-057",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@80,1366",
+      "board": "pm-main-flow",
+      "x": 80,
+      "y": 1366,
+      "low": false,
+      "text": "既有畫面 · 無 screen map，low-fi / AI Magic（入口：Video Enhance 卡）",
+      "trace": "R-002",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1894,1755",
+      "board": "pm-main-flow",
+      "x": 1894,
+      "y": 1755,
+      "low": false,
+      "text": "成功上傳・首次",
+      "trace": "R-093",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@2275,1782",
+      "board": "pm-main-flow",
+      "x": 2275,
+      "y": 1782,
+      "low": false,
+      "text": "② 點 Professional → 跳 toast 提醒上限，不切換",
+      "trace": "R-052",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@2527,1782",
+      "board": "pm-main-flow",
+      "x": 2527,
+      "y": 1782,
+      "low": false,
+      "text": "③ 拖到 2m 20s → 再點 Professional → 切換成功",
+      "trace": "R-053",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-main-flow@1531,2228",
+      "board": "pm-main-flow",
+      "x": 1531,
+      "y": 2228,
+      "low": false,
+      "text": "按鈕後落點 TBD（Gaps #6）",
+      "trace": "R-094",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-timeline@2390,2916",
+      "board": "pm-timeline",
+      "x": 2390,
+      "y": 2916,
+      "low": false,
+      "text": "TBD · 「Applied Video Enhance」呈現形式（toast／片段標籤） / §4.1、§9 · 背景生成成功後回貼到原片段並通知，顯示「Applied Video Enhance」 / Timeline・回貼原片段",
+      "trace": "R-131, Q-11",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-timeline@1430,2971",
+      "board": "pm-timeline",
+      "x": 1430,
+      "y": 2971,
+      "low": false,
+      "text": "§4.1 · 跳過媒體選擇器 / Timeline・選中片段（工具列 Enhance）",
+      "trace": "R-003",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-timeline@1905,2971",
+      "board": "pm-timeline",
+      "x": 1905,
+      "y": 2971,
+      "low": false,
+      "text": "§4.1 · 帶該片段預開；送出後同主線 / 面板・由 Timeline 帶片段預開",
+      "trace": "R-130",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-timeline@2290,3358",
+      "board": "pm-timeline",
+      "x": 2290,
+      "y": 3358,
+      "low": false,
+      "text": "背景生成成功",
+      "trace": "R-131",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "pm-timeline@1456,3834",
+      "board": "pm-timeline",
+      "x": 1456,
+      "y": 3834,
+      "low": false,
+      "text": "→ 前往：VideoEnhance_Panel（帶該片段預先開啟 · 見主線）",
+      "trace": "R-130",
+      "carried_from": "20261103-174203"
+    }
+  ]
+}

@@ -46,7 +46,9 @@ const acksPath = join(ex, 'board-lint-acks.json');
 const acks: Record<string, string> = existsSync(acksPath) ? read(acksPath) : {};
 
 if (has('ack')) {
-  const ids = (arg('ack') ?? '').split(',').filter(Boolean), why = arg('why');
+  // warning ids end in x,y coordinates ("Routing Logic|note-moved|ds-routing@21081,31"): split only on a comma that does
+  // not start the y coordinate
+  const ids = (arg('ack') ?? '').split(/,(?![-\d])/).filter(Boolean), why = arg('why');
   if (!ids.length || !why) { console.error('--ack <warning id>,… --why "<reason>"'); process.exit(2); }
   for (const id of ids) acks[id] = why;
   writeJson(acksPath, acks); console.log(`Acknowledged ${ids.length} warning(s)`); process.exit(0);

@@ -74,7 +74,7 @@ async function serveMode(): Promise<never> {
     } catch (e: any) { res.writeHead(500, { 'content-type': 'text/plain' }); res.end(String(e?.message ?? e)); }
   });
   let port = portArg; const host = lan ? '0.0.0.0' : '127.0.0.1';
-  server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 10) { port++; server.listen(port, host); } else throw e; });
+  server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 60) { port++; server.listen(port, host); } else throw e; });
   server.on('listening', () => {
     console.log(`Coverage (live): http://127.0.0.1:${port}/  — Ctrl+C to stop`);
     if (!lan) return;
@@ -322,12 +322,27 @@ const blocks: any[] = existsSync(tracePathA) ? JSON.parse(readFileSync(tracePath
 // and every linked item carries its short label and place in the list (link_i), which the page draws as a table
 const linkInfo = new Map(linkBlocks(ex).map(lb => [lb.id, lb]));
 for (const lb of linkInfo.values()) if (!blocks.some(b => b.id === lb.id)) blocks.push(lb);
+const nodeCache = new Map<string, string>();
+const nodeOfBoard = (board: string) => {
+  if (!nodeCache.has(board)) { const md = join(ex, 'boards', `${board}.md`);
+    const src = existsSync(md) ? readFileSync(md, 'utf8').match(/^Source:.*$/m)?.[0] ?? '' : '';
+    nodeCache.set(board, src.match(/· node (\S+)/)?.[1] ?? src.match(/· section (\S+)/)?.[1] ?? ''); }
+  return nodeCache.get(board)!;
+};
 const pdfOfRegion = new Map(Object.entries(regionsByPdf).flatMap(([pdf, list]) => list.map(r => [r.id, pdf] as [string, string])));
 const notes = blocks.flatMap(bk => {
-  const pdf = pdfOfRegion.get(bk.board), key = Object.keys(inv.files).find(k => inv.files[k].pdf?.name === pdf);
+  const pdf = pdfOfRegion.get(bk.board), key = pdf && Object.keys(inv.files).find(k => inv.files[k].pdf?.name === pdf);
   const off = key ? inv.files[key].pdf.offset : [0, 0], fx = bk.x - off[0], fy = bk.y - off[1];
   const at = (b: any, x: number, y: number) => x >= b.box[0] && x <= b.box[0] + b.box[2] && y >= b.box[1] && y <= b.box[1] + b.box[3];
-  const b = boards.find(b => b.file === key && at(b, fx, fy)) ?? boards.find(b => b.region === bk.board);
+  // a Figma-only spec set (no PDF, 2026-11-04) keeps block positions in Figma points of the file its board text came
+  // from: ds-* boards are the Design file, pm-* the PM file, mx-* the MX file
+  // Its boards/<board>.md names the Figma node the text was read from ("· node 3300:32003", else "· section 369:438"):
+  // the note goes on that board only, since another page of the same file can use the same coordinates (a PM draft
+  // page's notes landed on the main page's boards); a node no board is for leaves the note unplaced
+  const role = /^ds-/.test(bk.board) ? 'design' : /^pm-/.test(bk.board) ? 'pm' : /^mx-/.test(bk.board) ? 'mx' : '';
+  const node = !pdf ? nodeOfBoard(bk.board) : '';
+  const inFile = (b: any) => key ? b.file === key : !pdf && !!b.file && (!role || specOf(b.file) === role) && (!node || b.id === node);
+  const b = node && !boards.some(b => b.id === node) ? undefined : boards.find(b => inFile(b) && at(b, fx, fy)) ?? boards.find(b => b.region === bk.board);
   if (!b) return [];
   const [x, y] = b.region ? [bk.x, bk.y] : [fx, fy];
   const reqIds: string[] = /^R-/.test(bk.trace) ? bk.trace.match(/R-\d+/g) : [];

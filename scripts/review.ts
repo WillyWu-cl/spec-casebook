@@ -9,6 +9,9 @@
 // New-case notes (+ Add case opens a free-text box, user 2026-10-28) are not rows: Save appends them to
 // library/<product>/<feature>/<platform>/new-case-notes.json with status "open", and the agent turns them into rows in the next
 // draft (skill: "New-case notes").
+// Open questions (user, 2026-11-04): the page lists the Open questions of requirements.md in a panel above the table and
+// marks the rows they touch; answers go to library/<product>/<feature>/question-answers.json through POST /answers
+// (scripts/lib/questions.ts), separate from Save, and the agent applies them (skill: "Question answers").
 import { copyFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
@@ -17,6 +20,7 @@ import { COLUMNS, arg, assertIds, draftsDir, readManifest, readTable, stamp, tab
 import { renderPage } from './lib/render.ts';
 import { exportTable } from './lib/exporter.ts';
 import { writeFeatureIndex } from './lib/feature-index.ts';
+import { parseQuestions, readAnswers, saveAnswers } from './lib/questions.ts';
 
 const [feature, platform] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -58,6 +62,7 @@ const page = (local: boolean) => renderPage({
   mode: 'review', save: local, feature, platform, title: spec.title ?? feature, draft: draftId,
   based_on_version: manifest?.version ?? null, version: manifest?.version ?? null, approved_at: manifest?.approved_at ?? null,
   spec_files: spec.spec_files, rows, previous: draftArg ? previous : {}, requirements, update_plan: plan,
+  questions: parseQuestions(requirements), answers: readAnswers(feature),
 });
 
 type Note = { id: string; section: string; text: string; at?: string };
@@ -110,6 +115,13 @@ const server = createServer(async (req, res) => {
       console.log(`Saved version ${result.version}: ${result.cases} cases → ${result.csv}${result.notes ? ` · ${result.notes} new-case notes → ${result.notes_file}` : ''}`);
       res.writeHead(200, { 'content-type': 'application/json' }); res.end(JSON.stringify(result)); return;
     }
+    if (req.method === 'POST' && req.url === '/answers') {
+      if (!local) { res.writeHead(403, { 'content-type': 'application/json' }); res.end(JSON.stringify({ error: 'Answers are saved only on the computer running scripts/review.ts.' })); return; }
+      let raw = ''; for await (const c of req) raw += c;
+      const result = saveAnswers(feature, platform, JSON.parse(raw));
+      console.log(`Saved question answers → ${result.file}`);
+      res.writeHead(200, { 'content-type': 'application/json' }); res.end(JSON.stringify(result)); return;
+    }
     res.writeHead(404); res.end('Not found');
   } catch (e: any) {
     console.error(e);
@@ -117,8 +129,8 @@ const server = createServer(async (req, res) => {
   }
 });
 server.on('error', (e: any) => {
-  // the next free port, up to 10 above the one asked for (pages.ts asks for 4487)
-  if (e.code === 'EADDRINUSE' && port < firstPort + 10) { port++; server.listen(port, host); } else throw e;
+  // the next free port, up to 60 above the one asked for (pages.ts asks for 4487; several pages servers share the range)
+  if (e.code === 'EADDRINUSE' && port < firstPort + 60) { port++; server.listen(port, host); } else throw e;
 });
 server.listen(port, host);
 server.on('listening', () => {
