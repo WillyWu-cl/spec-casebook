@@ -39,6 +39,12 @@ h1 { font: 750 1.9rem var(--display); margin: 0; letter-spacing: -0.01em }
 .bar { display: flex; height: 10px; border-radius: 3px; overflow: hidden; background: var(--chip-bg) }
 .bar span { display: block; height: 100% }
 .tools { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 10px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-bottom: 1px solid var(--line) }
+/* Plan view: chips on one row, the rest on the next, every chip always there and Save a fixed width, so nothing moves
+   when a count or the Save label changes (user, 2026-11-04) */
+.tools.two { flex-direction: column; align-items: stretch }
+.tools.two .trow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+.chip:disabled { opacity: 0.45; cursor: default }
+#pcopy { min-width: 17rem; justify-content: center }
 .chip { font: 600 0.82rem var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 5px 12px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center }
 .chip i { width: 9px; height: 9px; border-radius: 2px; display: inline-block }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--panel); border-color: var(--ink) }
@@ -59,13 +65,19 @@ input[type="search"] { flex: 1 1 180px }
 .empty { color: var(--muted); padding: 24px 0 }
 /* the comparison */
 dialog { border: 0; border-radius: 10px; padding: 0; width: min(1180px, 100vw - 24px); max-height: calc(100vh - 24px); background: var(--panel); color: var(--ink) }
+/* the comparison fits the window: images sized to the height left under the header, only the right panel scrolls
+   (user, 2026-11-04: the images ran under the bottom of the browser and scrolled away with the list) */
+#dlg[open] { height: calc(100dvh - 24px); display: flex; flex-direction: column; overflow: hidden }
 dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .dh { position: sticky; top: 0; background: var(--panel); border-bottom: 1px solid var(--line); padding: 12px 16px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; z-index: 2 }
 .dh h2 { font: 700 1.2rem var(--display); margin: 0 }
 .dh .x { margin-left: auto; font: 600 1rem var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 6px; padding: 2px 10px; cursor: pointer }
-.db { padding: 14px 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 380px); gap: 16px }
-@media (max-width: 760px) { .db { grid-template-columns: 1fr } }
-.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: start }
+.db { padding: 14px 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 380px); grid-template-rows: minmax(0, 1fr); gap: 16px; flex: 1; min-height: 0 }
+.pair { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1fr); gap: 10px; align-items: start; min-height: 0; container-type: size }
+.pair .parts { grid-column: 1 / -1 }
+.pair .frame { width: min(100%, calc((100cqh - 24px) * var(--r, 0.46))) }
+.rp { overflow-y: auto; min-height: 0; padding-right: 4px }
+@media (max-width: 760px) { #dlg[open] { overflow-y: auto } .db { grid-template-columns: 1fr; grid-template-rows: none; flex: none } .pair { container-type: normal } .pair .frame { width: 100% } .rp { overflow: visible } }
 .side { display: grid; gap: 4px }
 .side b { font: 600 0.72rem var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em }
 .frame { position: relative; overflow: hidden; border-radius: 6px; background: var(--chip-bg) }
@@ -80,11 +92,16 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .route a { color: var(--accent) }
 .items { display: grid; gap: 8px; align-content: start }
 .it { border: 1px solid var(--line); border-left: 4px solid var(--none); border-radius: 6px; padding: 8px 10px; font-size: 0.86rem; display: grid; gap: 3px }
-.it.hl { box-shadow: 0 0 0 2px var(--accent) }
+.it.hl, .it.pick { box-shadow: 0 0 0 2px var(--accent) }
+.it.pick { animation: pick 1.2s ease-out }
+@keyframes pick { from { background: color-mix(in srgb, var(--accent) 30%, transparent) } to { background: transparent } }
+.box.pick { stroke-width: 5 }
 .it .h { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap }
 .it .num { font: 700 0.8rem var(--mono); color: #fff; border-radius: 4px; padding: 0 6px }
 .it .k { font: 600 0.78rem var(--mono) }
 .it .v { margin-left: auto; font: 600 0.75rem var(--body) }
+.grp { display: grid; gap: 8px }
+.grp > summary { font: 600 0.78rem var(--body); text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; padding: 2px 0 }
 .it q { quotes: "「" "」"; overflow-wrap: anywhere }
 .it .note { color: var(--muted) }
 .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--line); vertical-align: -1px }
@@ -174,13 +191,15 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
   <section class="usage" id="usage" aria-labelledby="usage-h" hidden></section>
   <div id="planv" hidden>
     <section class="scope" id="scope"></section>
-    <div class="tools">
-      <span id="pchips" style="display:contents"></span>
-      <select id="pboard" aria-label="Board"></select>
-      <select id="psort" aria-label="Order"></select>
-      <input type="search" id="pq" autocomplete="off">
-      <span class="count" id="pcount"></span>
-      <button type="button" class="chip" id="pcopy"></button>
+    <div class="tools two">
+      <div class="trow" id="pchips"></div>
+      <div class="trow">
+        <select id="pboard" aria-label="Board"></select>
+        <select id="psort" aria-label="Order"></select>
+        <input type="search" id="pq" autocomplete="off">
+        <span class="count" id="pcount"></span>
+        <button type="button" class="chip" id="pcopy"></button>
+      </div>
     </div>
     <p class="hint" id="phint"></p>
     <div id="pl" style="display:grid;gap:14px"></div>
@@ -239,6 +258,7 @@ const T = {
     flagT: { area: 'The row only reaches the area (a shared control); the runner brings about the state the frame shows.', variant: 'Drawn beside a reached screen: brought about there.',
       drawing: 'Narrower than a phone: a card or detail drawn on its own. Its texts are still compared where the card appears.', gap: 'No casebook row reaches it: the analysis adds one.' },
     include: 'Include', exclude: 'Exclude', why: 'Reason (required)', byBoard: r => `Excluded with its board: ${r}`, excludeBoard: 'Exclude board', includeBoard: 'Include board',
+    boardHidden: n => `${n} screen${n === 1 ? '' : 's'} of this board hidden by the filter`,
     pcopy: n => `Copy for the chat${n ? ` (${n})` : ''}`, needWhy: n => `${n} exclusion(s) need a reason first.`,
     phint: 'Red rows need your decision: read the note, then pick Include (check it on the phone) or Exclude (with a reason). Any other screen can be excluded too. Save writes the choices to the design plan for iOS and Android (the Design screens are the same); once nothing is red the scope is reviewed. Opened as a file, the button copies the choices for you to paste into the chat instead.',
     whys: ['Superseded by a newer frame', 'Drawing only, not a screen', 'State cannot be brought about', 'Not in this release', 'Other platform only'],
@@ -275,6 +295,7 @@ const T = {
     flagT: { area: '案例只到達該區域（共用控制項）；執行者需製造出畫面所示的狀態。', variant: '畫在已到達畫面旁：在那裡製造出此狀態。',
       drawing: '比手機窄：單獨畫出的卡片或細節。其文字仍會在卡片出現處比對。', gap: '沒有測試表案例到達：分析需補上。' },
     include: '納入', exclude: '排除', why: '原因（必填）', byBoard: r => `隨畫板排除：${r}`, excludeBoard: '排除畫板', includeBoard: '納入畫板',
+    boardHidden: n => `此畫板有 ${n} 個畫面被篩選隱藏`,
     pcopy: n => `複製給對話${n ? `（${n}）` : ''}`, needWhy: n => `有 ${n} 項排除需要先填原因。`,
     phint: '紅色的行需要你決定：看完說明後選「納入」（要在手機上比對）或「排除」（填原因）。其他畫面也可以排除。按「儲存」會把選擇寫進設計比對計畫，iOS 與 Android 共用（兩者的 Design 畫面相同）；沒有紅色的行時，範圍即審查完成。若以檔案開啟，按鈕改為複製選擇，貼到對話中。',
     whys: ['已被較新的畫面取代', '僅為示意，非畫面', '無法製造出此狀態', '不在本次版本', '僅適用另一平台'],
@@ -331,11 +352,12 @@ let view = 'plan'; try { view = localStorage.getItem(VKEY) || (D.screens?.some(s
 let SC = {}; try { SC = JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch (e) {}
 const saveSc = () => { try { localStorage.setItem(SKEY, JSON.stringify(SC)); } catch (e) {} };
 let pst = '', pboard = '', pq = '', psort = 'flow';
+const pkeep = new Set();   // boards pressed on this page: kept in the list under any filter
 try { psort = localStorage.getItem('design-sort') || 'flow'; } catch (e) {}
 // needs a decision: before the scope review every flagged or unroutable screen, after it only the screens new since;
 // pressing Include or Exclude on it (or excluding its board) is the decision, kept here until saved
 const flaggedOf = s => D.review ? D.review.fresh.includes(s.id) : s.flags.length > 0 || s.status === 'no-route';
-const lookOf = s => flaggedOf(s) && !SC[s.id] && !exOf(s);
+const lookOf = s => flaggedOf(s) && !SC[s.id] && !exOf(s) && !D.included?.includes(s.id);
 // boards in the chosen order; in flow order a board goes where its earliest-reached screen is, and its screens follow the flow
 const lastFlow = 1e9, flowOf = s => s.flow ?? lastFlow;
 const boardOrder = () => { const S = D.screens, of = b => S.filter(s => s.board_id === b.id), key = {
@@ -394,8 +416,8 @@ function planView() {
   // Included is left out while it equals All; Needs a look says why in its tooltip
   const why = S.filter(look), dec = S.filter(flaggedOf).length - why.length, whyT = [...['area', 'variant', 'drawing', 'gap'].map(f => [t('flagN')[f], why.filter(s => s.flags.includes(f)).length]),
     [t('noRoute'), why.filter(s => s.status === 'no-route').length], [t('newFlag'), D.review ? why.length : 0]].filter(x => x[1]).map(([l, n]) => `${l} ${n}`).join(' · ');
-  const cs = [['', t('all'), S.length], ['look', t('toLook'), why.length, `${t('lookT')(!!D.review)}${whyT ? `\n${whyT}` : ''}`], ['dec', t('decided'), dec], ['inc', t('included'), inc.length < S.length ? inc.length : 0], ['ex', t('excluded'), ex.length], ['chg', t('changed'), S.filter(isChanged).length]];
-  $('pchips').innerHTML = cs.filter(([k, , n]) => !k || n).map(([k, l, n, tt]) => `<button type="button" class="chip" data-p="${k}" aria-pressed="${pst === k}"${tt ? ` title="${esc(tt)}"` : ''}>${esc(l)} <span class="n">${n}</span></button>`).join('')
+  const cs = [['', t('all'), S.length], ['look', t('toLook'), why.length, `${t('lookT')(!!D.review)}${whyT ? `\n${whyT}` : ''}`], ['dec', t('decided'), dec], ['inc', t('included'), inc.length], ['ex', t('excluded'), ex.length], ['chg', t('changed'), S.filter(isChanged).length]];
+  $('pchips').innerHTML = cs.map(([k, l, n, tt]) => `<button type="button" class="chip" data-p="${k}" aria-pressed="${pst === k}"${k && !n && pst !== k ? ' disabled' : ''}${tt ? ` title="${esc(tt)}"` : ''}>${esc(l)} <span class="n">${n}</span></button>`).join('')
     + (pst === 'look' && whyT ? `<span class="more">${esc(whyT)}</span>` : '');
   $('pchips').querySelectorAll('.chip').forEach(b => b.onclick = () => { pst = b.dataset.p; planView(); });
   $('pboard').innerHTML = `<option value="">${esc(t('allBoards'))}</option>` + boardOrder().map(b => `<option value="${esc(b.id)}"${b.id === pboard ? ' selected' : ''}>${esc(b.name)}</option>`).join('');
@@ -412,9 +434,12 @@ function planList() {
   $('pcount').textContent = t('shown')(list.length, D.screens.length);
   const dc = (id, x, why, board, open) => `<div class="dc" data-k="${esc(id)}"><button type="button" data-x="0" aria-pressed="${!open && !x}">${esc(board ? t('includeBoard') : t('include'))}</button><button type="button" data-x="1" aria-pressed="${x}">${esc(board ? t('excludeBoard') : t('exclude'))}</button>
     ${x ? `<input type="text" list="whys" required placeholder="${esc(t('why'))}" value="${esc(why)}">` : ''}</div>`;
-  const groups = boardOrder().filter(b => list.some(s => s.board_id === b.id));
-  $('pl').innerHTML = groups.length ? groups.map(b => { const bx = now(b.id);
-    return `<section class="pb"><div class="pbh"><h3>${esc(b.name)}</h3><span class="more">${list.filter(s => s.board_id === b.id).length} / ${D.screens.filter(s => s.board_id === b.id).length}</span>${dc(b.id, bx.x, bx.why, true)}</div>
+  // a board pressed on this page stays listed whatever the filter, so its other button can undo the press: under
+  // "To look", Exclude board decided every screen and the whole board left the list with its Include button (user, 2026-11-04)
+  const groups = boardOrder().filter(b => (!pboard || b.id === pboard) && (list.some(s => s.board_id === b.id) || pkeep.has(b.id)));
+  $('pl').innerHTML = groups.length ? groups.map(b => { const bx = now(b.id), shown = list.filter(s => s.board_id === b.id).length, all = D.screens.filter(s => s.board_id === b.id);
+    return `<section class="pb"><div class="pbh"><h3>${esc(b.name)}</h3><span class="more">${shown} / ${all.length}</span>${dc(b.id, bx.x, bx.why, true, all.some(look))}</div>
+    ${shown ? '' : `<p class="more">${esc(t('boardHidden')(all.length))}</p>`}
     ${list.filter(s => s.board_id === b.id).map(s => { const e = exOf(s), own = now(s.id), r = s.route;
       const route = r && r.how === 'figma' ? `<b>${esc(t('dpath'))}</b> ${esc(r.action)}` : r ? `<b>${esc(r.case)}</b> · ${esc(t('fit')[r.fit] ?? r.fit)}${r.edge ? ` · ${esc(t('via'))} ${esc(r.edge)}` : ''}` : esc(s.why);
       const todo = look(s), reasons = [...s.flags, ...(s.status === 'no-route' ? ['noroute'] : []), ...(D.review?.fresh.includes(s.id) ? ['fresh'] : [])];
@@ -427,8 +452,12 @@ function planList() {
   $('pl').querySelectorAll('[data-open]').forEach(b => b.onclick = () => { location.hash = `screen=${encodeURIComponent(b.closest('.pr').dataset.id)}`; });
   $('pl').querySelectorAll('.dc').forEach(d => { const k = d.dataset.k;
     d.querySelectorAll('button').forEach(b => b.onclick = () => { const x = b.dataset.x === '1';
-      const fl = D.screens.some(s => s.id === k && flaggedOf(s));
-      SC[k] = { x, why: x ? (now(k).why || '') : '', ...(fl ? { d: 1 } : {}) }; if (!fl && SC[k].x === was(k).x && SC[k].why === was(k).why) delete SC[k]; saveSc(); keepScroll(planView);
+      const fl = D.screens.some(s => s.id === k && flaggedOf(s)), board = D.boards.some(bd => bd.id === k);
+      SC[k] = { x, why: x ? (now(k).why || '') : '', ...(fl ? { d: 1 } : {}) }; if (!fl && SC[k].x === was(k).x && SC[k].why === was(k).why) delete SC[k];
+      // Include board also includes every screen of the board still waiting for a decision (a board is included by
+      // default, so the press alone changed nothing); screens excluded one by one keep their own choice
+      if (board) { pkeep.add(k); if (!x) for (const s of D.screens) if (s.board_id === k && lookOf(s)) SC[s.id] = { x: false, why: '', d: 1 }; }
+      saveSc(); keepScroll(planView);
       if (x) $('pl').querySelector(`.dc[data-k="${CSS.escape(k)}"] input`)?.focus(); });
     // the reason is kept as it is typed, without drawing the list again: a redraw on blur (`change`) replaced the
     // button the user was pressing next, so that click was lost (user, 2026-11-04)
@@ -528,6 +557,9 @@ function grid() {
 }
 // one difference: number, kind, verdict, Figma vs app
 const ORDER = { bug: 0, question: 1, unreviewed: 2, 'n/a': 3, ok: 4, info: 5 };
+// the items of a comparison under one heading per verdict (Bug, Question, …, OK), each foldable; an item keeps its
+// number, which is the number of its box on both images (colleague's request, 2026-11-04)
+const groupsOf = list => { const g = []; list.forEach((it, n) => { const last = g[g.length - 1]; if (last && last[0] === it.verdict) last[1].push([it, n]); else g.push([it.verdict, [[it, n]]]); }); return g; };
 function detail(id) {
   const s = D.screens.find(x => x.id === id); if (!s) return;
   open = id;
@@ -540,17 +572,17 @@ function detail(id) {
       `<rect class="box" data-n="${n}" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}" style="stroke:${VC(it.verdict)}"><title>${n + 1} · ${esc(KN[L][it.kind] ?? it.kind)}</title></rect>`).join('')}</svg>`;
   const txt = (o) => o?.text ? `<q>${esc(o.text.length > 120 ? o.text.slice(0, 120) + '…' : o.text)}</q>` : o?.color ? `<span class="sw" style="background:${esc(o.color)}"></span> ${esc(o.color)}` : o?.name ? `<code>${esc(o.name)}</code>` : '';
   const r = s.route, link = (p, h, l) => PAGES[p] ? `<a href="${PAGES[p]}#${h}">${esc(l)}</a>` : '';
-  const keep = open === id && $('dlg').open ? $('dlg').scrollTop : 0;
+  const keep = open === id && $('dlg').open ? ($('dlg').querySelector('.rp')?.scrollTop ?? 0) : 0;
   const figmaUrl = D.file ? `https://www.figma.com/design/${D.file}?node-id=${encodeURIComponent(s.id.replace(':', '-'))}` : '';
   $('dlg').innerHTML = `<div class="dh"><h2>${esc(s.name)}</h2><span class="st"><i style="background:${COL(s.status)}"></i>${esc(STN[L][s.status])}</span>
     <span class="more">${esc(s.board)} · ${esc(s.id)}${s.run ? ` · ${t('run')} ${esc(s.run)}` : ''}${s.build ? ` · ${t('build')} ${esc(s.build)}` : ''}</span>
     <label class="more"><input type="checkbox" id="bx"${noBoxes ? '' : ' checked'}> ${esc(t('boxes'))}</label>
     ${figmaUrl ? `<a class="more" href="${figmaUrl}" target="_blank" rel="noopener">${esc(t('open'))} ↗</a>` : ''}<button type="button" class="x" id="x" aria-label="${esc(t('close'))}">✕</button></div>
   <div class="db"><div class="pair">
-    <div class="side"><b>${esc(t('figma'))}</b><div class="frame" style="aspect-ratio:${s.w}/${s.h}">${s.figma ? `<a href="${esc(s.figma.src)}" target="_blank" rel="noopener" title="${esc(t('zoom'))}">${fig(s.figma, false)}</a>` + boxes('figma', s.w, s.h) : `<div class="no">${esc(t('noFig'))}</div>`}</div></div>
-    <div class="side"><b>${esc(t('app'))}</b><div class="frame">${s.app ? `<a href="${esc(s.app)}" target="_blank" rel="noopener" title="${esc(t('zoom'))}"><img src="${esc(s.app)}" alt=""></a>${boxes('app', aw, ah)}` : `<div class="no">${esc(s.run ? t('noApp') : s.status === 'not-captured' ? t('notCaptured') : STN[L][s.status])}</div>`}</div></div>
+    <div class="side"><b>${esc(t('figma'))}</b><div class="frame" style="aspect-ratio:${s.w}/${s.h};--r:${s.w / s.h}">${s.figma ? `<a href="${esc(s.figma.src)}" target="_blank" rel="noopener" title="${esc(t('zoom'))}">${fig(s.figma, false)}</a>` + boxes('figma', s.w, s.h) : `<div class="no">${esc(t('noFig'))}</div>`}</div></div>
+    <div class="side"><b>${esc(t('app'))}</b><div class="frame" style="aspect-ratio:${aw}/${ah};--r:${aw / ah}">${s.app ? `<a href="${esc(s.app)}" target="_blank" rel="noopener" title="${esc(t('zoom'))}"><img src="${esc(s.app)}" alt=""></a>${boxes('app', aw, ah)}` : `<div class="no">${esc(s.run ? t('noApp') : s.status === 'not-captured' ? t('notCaptured') : STN[L][s.status])}</div>`}</div></div>
   ${s.parts.length ? `<div class="parts">${s.parts.map((p, i) => `<a href="${esc(p)}" target="_blank" rel="noopener">${esc(t('part')(i + 2))}</a>`).join('')}</div>` : ''}
-  </div><div>
+  </div><div class="rp">
     ${s.arrival && !s.arrival.ok ? `<div class="warn">${esc(t('doubt')(s.arrival.matched, s.arrival.of))}</div>` : ''}
     ${s.recheck ? `<div class="rc"><b>${esc(t('recheck')(s.recheck.run))}</b>${s.recheck.items.map(i => `<div><b class="${i.now}">${esc(t('now')[i.now])}</b> ${esc(KN[L][i.id.split(':')[0]] ?? i.id)} <span class="more">${esc(i.note)}</span></div>`).join('')}</div>` : ''}
     ${s.gap ? `<div class="warn">${esc(t('gap'))}</div>` : ''}
@@ -560,7 +592,7 @@ function detail(id) {
       ${r.precondition ? `<div class="more"><b>${esc(t('pre'))}</b> ${esc(r.precondition)}</div>` : ''}<div class="more"><b>${esc(t('action'))}</b> ${esc(r.action)}</div>
       ${s.alternatives.length ? `<div class="more">${esc(t('also'))}: ${s.alternatives.map(esc).join(', ')}</div>` : ''}
       ${s.fit ? `<div class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</div>` : ''}</div>` : s.why ? `<p class="more">${esc(s.why)}</p>` : ''}
-    <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${shown.map((it, n) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)}">
+    <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" open><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)}">
       <div class="h"><span class="num" style="background:${VC(it.verdict)}">${n + 1}</span><span class="k">${esc(KN[L][it.kind] ?? it.kind)}</span>
       ${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
       ${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
@@ -568,7 +600,7 @@ function detail(id) {
       ${it.split ? `<div class="note">${esc(it.split)}</div>` : ''}${it.decided ? `<div class="note">${esc(it.decided)}</div>` : ''}
       ${s.run && (it.verdict === 'question' || it.verdict === 'unreviewed' || it.verdict === 'bug') ? `<div class="dec" data-k="${esc(dkey(s, it))}">${it.verdict !== 'bug' ? [['bug', t('bug')], ['ok', t('ok')], ['n/a', t('na')]].map(([v, l]) =>
         `<button type="button" data-v="${v}" aria-pressed="${DEC[dkey(s, it)]?.v === v}">${esc(l)}</button>`).join('') : ''}
-        ${it.verdict === 'bug' || DEC[dkey(s, it)]?.v === 'bug' ? `<label><input type="checkbox" data-e${DEC[dkey(s, it)]?.ebug ? ' checked' : ''}> ${esc(t('ebug'))}</label>` : ''}</div>` : ''}${it.note ? `<div class="note">${esc(it.note)}</div>` : ''}${it.reviewer && it.reviewer !== it.note ? `<div class="note">${esc(it.reviewer)}</div>` : ''}</div>`).join('')}
+        ${it.verdict === 'bug' || DEC[dkey(s, it)]?.v === 'bug' ? `<label><input type="checkbox" data-e${DEC[dkey(s, it)]?.ebug ? ' checked' : ''}> ${esc(t('ebug'))}</label>` : ''}</div>` : ''}${it.note ? `<div class="note">${esc(it.note)}</div>` : ''}${it.reviewer && it.reviewer !== it.note ? `<div class="note">${esc(it.reviewer)}</div>` : ''}</div>`).join('')}</details>`).join('')}
     ${info.length ? `<button type="button" class="chip" id="info">${esc(showInfo ? t('hideInfo') : t('showInfo'))} · ${esc(t('info')(info.length))}</button>` : ''}</div>
   </div></div>`;
   $('x').onclick = () => { history.replaceState(null, '', location.pathname + location.search); $('dlg').close(); open = null; };
@@ -588,9 +620,16 @@ function detail(id) {
   $('dlg').querySelectorAll('.it').forEach(e => { e.onmouseenter = () => hl(e.dataset.n, true); e.onmouseleave = () => hl(e.dataset.n, false); });
   $('dlg').querySelectorAll('rect.box').forEach(r => { const n = r.dataset.n;
     r.onmouseenter = () => hl(n, true); r.onmouseleave = () => hl(n, false);
-    r.onclick = () => $('dlg').querySelector(`.it[data-n="${n}"]`)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+    // a box clicked: its item scrolls into view in the right panel and stays marked (with its box) until another click
+    r.onclick = () => { $('dlg').querySelectorAll('.pick').forEach(e => e.classList.remove('pick'));
+      const it = $('dlg').querySelector(`.it[data-n="${n}"]`); if (!it) return;
+      it.closest('details')?.setAttribute('open', '');
+      $('dlg').querySelectorAll(`rect[data-n="${n}"]`).forEach(b => b.classList.add('pick'));
+      void it.offsetWidth; it.classList.add('pick');
+      const rp = it.closest('.rp'), y = it.getBoundingClientRect().top - rp.getBoundingClientRect().top + rp.scrollTop - (rp.clientHeight - it.offsetHeight) / 2;
+      if (rp.scrollHeight > rp.clientHeight) rp.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); else it.scrollIntoView({ block: 'center', behavior: 'smooth' }); }; });
   if (!$('dlg').open) $('dlg').showModal();
-  $('dlg').scrollTop = keep;
+  const rp = $('dlg').querySelector('.rp'); if (rp) rp.scrollTop = keep;
 }
 $('dlg').addEventListener('click', e => { if (e.target === $('dlg')) $('x')?.click(); });
 $('dlg').addEventListener('close', () => { open = null; if (location.hash.startsWith('#screen=')) history.replaceState(null, '', location.pathname + location.search); });

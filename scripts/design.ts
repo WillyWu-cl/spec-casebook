@@ -166,18 +166,27 @@ function measure() {
     // texts of the scrolled parts count for copy and missing only: their positions are not the frame's
     const appT = [...els.filter(e => e.text).map(a => ({ ...a, f: toFig(a.box), n: normLabel(a.text), part: 1 })),
       ...parts.get(cap.screen)!.flatMap(p => appElements(existsSync(sourceOf(p.xml)) ? readFileSync(sourceOf(p.xml), 'utf8') : '').filter(e => e.text).map(a => ({ ...a, f: FAR, n: normLabel(a.text), part: p.part })))];
-    // pair texts: exact, then containment, then the most similar (copy), else missing
+    // pair texts, one to one over the whole screen: every exact pair first (nearest first), then containment, then the
+    // most similar (copy), else missing. Pairing text by text let a longer Figma text take another's exact twin by
+    // containment (「AI Mini Drama with Seedance 2.0」 took the tile label 「AI Mini Drama」, which was then missing; 2026-11-04)
     const pairs: { t: any; a: any; how: string }[] = [];
-    for (const t of fig.texts) {
-      const n = normLabel(t.text), near = (a: any) => Math.hypot(a.f[0] - t.box[0], a.f[1] - t.box[1]);
-      const pick = (f: (a: any) => boolean) => appT.map((a, i) => ({ a, i })).filter(({ a, i }) => !used.has(i) && f(a)).sort((x, y) => near(x.a) - near(y.a))[0];
-      let hit = pick(a => a.n === n), how = 'exact';
-      if (!hit && n.length >= 6) { hit = pick(a => a.n.length >= 6 && (a.n.includes(n) || n.includes(a.n))); how = 'part'; }
-      if (!hit) { const best = appT.map((a, i) => ({ a, i, r: ratio(a.n, n) })).filter(x => !used.has(x.i) && x.r >= 0.7).sort((x, y) => y.r - x.r)[0];
-        if (best) { hit = best; how = 'copy'; } }
+    const hitOf = new Map<number, { a: any; i: number; how: string }>();
+    const fn = fig.texts.map((t: any) => normLabel(t.text));
+    const assign = (how: string, test: (ti: number, a: any) => number | null) => {
+      const opts: [number, number, number][] = [];
+      fig.texts.forEach((t: any, ti: number) => { if (hitOf.has(ti)) return;
+        appT.forEach((a, i) => { if (used.has(i)) return; const c = test(ti, a); if (c !== null) opts.push([c, ti, i]); }); });
+      for (const [, ti, i] of opts.sort((x, y) => x[0] - y[0])) if (!hitOf.has(ti) && !used.has(i)) { hitOf.set(ti, { a: appT[i], i, how }); used.add(i); }
+    };
+    const dist = (ti: number, a: any) => Math.hypot(a.f[0] - fig.texts[ti].box[0], a.f[1] - fig.texts[ti].box[1]);
+    assign('exact', (ti, a) => a.n === fn[ti] ? dist(ti, a) : null);
+    assign('part', (ti, a) => fn[ti].length >= 6 && a.n.length >= 6 && (a.n.includes(fn[ti]) || fn[ti].includes(a.n)) ? dist(ti, a) : null);
+    assign('copy', (ti, a) => { const r = ratio(a.n, fn[ti]); return r >= 0.7 ? -r : null; });
+    for (const [ti, t] of fig.texts.entries()) {
+      const n = fn[ti], got = hitOf.get(ti), hit = got, how = got?.how ?? '';
       if (!hit) { const sample = t.text.length > 60;
         cands.push({ id: `${sample ? 'sample' : 'missing'}:${t.node}`, kind: sample ? 'sample' : 'missing', severity: sample ? 'info' : 'major', figma: { node: t.node, text: t.text, box: r1(t.box) } }); continue; }
-      used.add(hit.i); pairs.push({ t, a: hit.a, how });
+      pairs.push({ t, a: hit.a, how });
       const appBox = hit.a.part > 1 ? undefined : r1(hit.a.f);
       if (how === 'copy' || (how === 'part' && hit.a.n !== n)) cands.push({ id: `copy:${t.node}`, kind: 'copy', severity: how === 'copy' ? 'major' : 'minor', note: how === 'part' ? 'one text contains the other' : undefined, figma: { node: t.node, text: t.text, box: r1(t.box) }, app: { text: hit.a.text, box: appBox } });
       // cut short: the app ends in an ellipsis Figma does not have, or runs past the window's edge
@@ -411,6 +420,7 @@ function scope() {
   const day = new Date().toISOString().slice(0, 10);
   for (const pl of plats) {
     const old = planFresh(feature, pl, true), skip = new Set<string>(old.skip ?? []), reasons: Record<string, string> = { ...(old.skip_reasons ?? {}) };
+    const included = new Set<string>(old.scope_included ?? []);
     for (const id of skip) reasons[id] ??= old.skip_reason ?? 'skipped';
     const known = new Set(old.screens.flatMap((s: any) => [s.id, s.board]));
     let reviewed = false, n = 0;
@@ -419,11 +429,11 @@ function scope() {
       if (l === 'reviewed') { reviewed = true; continue; }
       if (!m || (m[1] === 'exclude' && !m[3])) { console.error(`  skipped: ${l}${m ? ' (an exclusion needs a reason)' : ''}`); continue; }
       if (!known.has(m[2])) { console.error(`  skipped: ${m[2]} is not a screen or board of the plan`); continue; }
-      if (m[1] === 'exclude') { skip.add(m[2]); reasons[m[2]] = m[3]; } else { skip.delete(m[2]); delete reasons[m[2]]; }
+      if (m[1] === 'exclude') { skip.add(m[2]); reasons[m[2]] = m[3]; included.delete(m[2]); } else { skip.delete(m[2]); delete reasons[m[2]]; included.add(m[2]); }
       n++;
     }
     const plan = buildPlan(feature, pl, { skip: [...skip], skipReason: old.skip_reason ?? undefined, reasons,
-      review: reviewed ? { at: day, by: 'user', ids: old.screens.map((s: any) => s.id) } : old.scope_review });
+      review: reviewed ? { at: day, by: 'user', ids: old.screens.map((s: any) => s.id) } : old.scope_review, included: [...included] });
     console.log(`${pl}: ${n} change(s)${reviewed ? ', scope marked reviewed' : ''}; ${summary(plan)}`);
   }
 }

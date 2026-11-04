@@ -1,0 +1,971 @@
+{
+ "screens": {
+  "2778:128368": {
+   "missing:2778:128408": {
+    "verdict": "question",
+    "note": "Figma 橫幅標題為「AI Mini Drama with Seedance 2.0」，App 顯示「Create Your Own Drama」與海報拼貼；無法確定是 CMS 橫幅內容還是應固定的文案，需與 PM 確認。"
+   },
+   "missing:I2778:128463;160:4961;86:10715": {
+    "verdict": "ok",
+    "note": "App 的 AI Mini Drama 圖示上有「NEW」標籤，只是量測未配對到。"
+   },
+   "missing:2778:128473": {
+    "verdict": "ok",
+    "note": "小捷徑由 CMS 設定（KP-012），App 第一頁未列「Auto Edit」不算缺陷。"
+   },
+   "missing:2778:128483": {
+    "verdict": "ok",
+    "note": "小捷徑由 CMS 設定（KP-012），App 第一頁未列「Photo Enhance」不算缺陷。"
+   },
+   "missing:I2778:128531;4164:10411": {
+    "verdict": "ok",
+    "note": "熱門內容名稱為範例資料，App 顯示伺服器的其他內容。"
+   },
+   "missing:I2778:128532;4164:10411": {
+    "verdict": "ok",
+    "note": "熱門內容名稱為範例資料，App 顯示伺服器的其他內容。"
+   },
+   "missing:I2778:128533;4164:10411": {
+    "verdict": "ok",
+    "note": "熱門內容名稱為範例資料，App 顯示伺服器的其他內容。"
+   },
+   "missing:2778:128547": {
+    "verdict": "n/a",
+    "note": "「Meme Dance Creator」位於第二列內容，App 擷取畫面中該列在可視範圍外，無法判斷。"
+   },
+   "missing:I3678:42697;14295:38260": {
+    "verdict": "n/a",
+    "note": "「View more」位於第二列內容，App 擷取畫面中該列在可視範圍外，無法判斷。"
+   },
+   "missing:I2778:128603;496:12239": {
+    "verdict": "ok",
+    "note": "測試帳號已是 Pro，App 顯示「Pro」而非試用文案「Try Pro+ 7 days for free」，屬帳號狀態差異。"
+   },
+   "position:2778:128420": {
+    "verdict": "ok",
+    "note": "「New Project」在兩邊都是單行、位置相近，差異在卡片內排版誤差內。"
+   },
+   "lines:2778:128420": {
+    "verdict": "ok",
+    "note": "「New Project」在兩邊都是單行、位置相近，差異在卡片內排版誤差內。"
+   },
+   "position:2778:128467": {
+    "verdict": "ok",
+    "note": "捷徑順序由 CMS 決定（KP-012），位置不同不算缺陷。"
+   },
+   "position:2778:128478": {
+    "verdict": "ok",
+    "note": "捷徑順序由 CMS 決定（KP-012），位置不同不算缺陷。"
+   },
+   "position:I2778:128595;11856:6755;186:3384;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "position:I2778:128595;11856:6756;186:3497;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "position:I2778:128595;11856:6795;11856:6417;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "position:I2778:128595;11856:6757;186:3496;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "position:I2778:128595;11856:6758;11856:6474;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "colour:2778:128384": {
+    "verdict": "ok",
+    "note": "此處是橫幅圖片區，App 顯示伺服器提供的劇集海報，屬範例內容。"
+   },
+   "colour:2778:128430": {
+    "verdict": "ok",
+    "note": "取樣比對 App 圓形底色與 Figma 幾乎相同（約 #262B35），差異在量測誤差內。"
+   },
+   "colour:2778:128435": {
+    "verdict": "ok",
+    "note": "取樣比對 App 圓形底色與 Figma 幾乎相同（約 #262B35），差異在量測誤差內。"
+   },
+   "colour:2778:128440": {
+    "verdict": "ok",
+    "note": "取樣比對 App 圓形底色與 Figma 幾乎相同（約 #262B35），差異在量測誤差內。"
+   },
+   "colour:2778:128445": {
+    "verdict": "ok",
+    "note": "取樣比對 App 圓形底色與 Figma 幾乎相同（約 #262B35），差異在量測誤差內。"
+   },
+   "colour:2778:128465": {
+    "verdict": "ok",
+    "note": "取樣比對 App 圓形底色與 Figma 幾乎相同（約 #262B35），差異在量測誤差內。"
+   },
+   "colour:2778:128471": {
+    "verdict": "ok",
+    "note": "取樣比對 App 圓形底色與 Figma 幾乎相同（約 #262B35），差異在量測誤差內。"
+   },
+   "colour:2778:128476": {
+    "verdict": "ok",
+    "note": "取樣比對 App 圓形底色與 Figma 幾乎相同（約 #262B35），差異在量測誤差內。"
+   },
+   "colour:2778:128481": {
+    "verdict": "ok",
+    "note": "取樣比對 App 圓形底色與 Figma 幾乎相同（約 #262B35），差異在量測誤差內。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      0,
+      44,
+      375,
+      52
+     ]
+    },
+    "note": "App 頂部列為不透明米色底並遮住橫幅上緣，Figma 頂部列透明疊在主視覺上；可能是捲動後狀態或 CMS 主題，需確認。"
+   }
+  },
+  "2778:139072": {
+   "missing:2778:139112": {
+    "verdict": "question",
+    "note": "Figma 橫幅標題為「AI Mini Drama with Seedance 2.0」，App 顯示「Create Your Own Drama」與海報拼貼；無法確定是 CMS 橫幅內容還是應固定的文案，需與 PM 確認。"
+   },
+   "missing:I2778:139167;160:4961;86:10715": {
+    "verdict": "ok",
+    "note": "App 的 AI Mini Drama 圖示上有「NEW」標籤，只是量測未配對到。"
+   },
+   "missing:2778:139177": {
+    "verdict": "ok",
+    "note": "小捷徑由 CMS 設定（KP-012），App 第一頁未列「Auto Edit」不算缺陷。"
+   },
+   "missing:2778:139187": {
+    "verdict": "ok",
+    "note": "小捷徑由 CMS 設定（KP-012），App 第一頁未列「Photo Enhance」不算缺陷。"
+   },
+   "missing:I2778:139235;4164:10411": {
+    "verdict": "ok",
+    "note": "熱門內容名稱為範例資料，App 顯示伺服器的其他內容。"
+   },
+   "missing:I2778:139236;4164:10411": {
+    "verdict": "ok",
+    "note": "熱門內容名稱為範例資料，App 顯示伺服器的其他內容。"
+   },
+   "missing:I2778:139237;4164:10411": {
+    "verdict": "ok",
+    "note": "熱門內容名稱為範例資料，App 顯示伺服器的其他內容。"
+   },
+   "missing:2778:139251": {
+    "verdict": "n/a",
+    "note": "「Meme Dance Creator」位於第二列內容，App 擷取畫面中該列在可視範圍外，無法判斷。"
+   },
+   "missing:I3678:45419;14295:38260": {
+    "verdict": "n/a",
+    "note": "「View more」位於第二列內容，App 擷取畫面中該列在可視範圍外，無法判斷。"
+   },
+   "missing:I2778:139307;496:12239": {
+    "verdict": "ok",
+    "note": "測試帳號已是 Pro，App 顯示「Pro」而非試用文案「Try Pro+ 7 days for free」，屬帳號狀態差異。"
+   },
+   "position:2778:139124": {
+    "verdict": "ok",
+    "note": "「New Project」在兩邊都是單行、位置相近，差異在卡片內排版誤差內。"
+   },
+   "lines:2778:139124": {
+    "verdict": "ok",
+    "note": "「New Project」在兩邊都是單行、位置相近，差異在卡片內排版誤差內。"
+   },
+   "position:2778:139171": {
+    "verdict": "ok",
+    "note": "捷徑順序由 CMS 決定（KP-012），位置不同不算缺陷。"
+   },
+   "position:2778:139182": {
+    "verdict": "ok",
+    "note": "捷徑順序由 CMS 決定（KP-012），位置不同不算缺陷。"
+   },
+   "position:I2778:139299;11856:6755;186:3384;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "position:I2778:139299;11856:6756;186:3497;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "position:I2778:139299;11856:6795;11856:6417;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "position:I2778:139299;11856:6757;186:3496;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "position:I2778:139299;11856:6758;11856:6474;186:3127": {
+    "verdict": "ok",
+    "note": "底部分頁列整體位置因 Android 系統導覽列而下移，各分頁相對間距一致。"
+   },
+   "colour:2778:139088": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139134": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139139": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139144": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139149": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139169": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139175": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139180": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139185": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139124": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139127": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139130": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139136": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139141": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139146": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139166": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139171": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139182": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:2778:139228": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:I3678:45379;14295:38260": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:I2778:139299;11856:6755;186:3384;186:3127": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:I2778:139299;11856:6756;186:3497;186:3127": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:I2778:139299;11856:6795;11856:6417;186:3127": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:I2778:139299;11856:6757;186:3496;186:3127": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   },
+   "colour:I2778:139299;11856:6758;11856:6474;186:3127": {
+    "verdict": "n/a",
+    "note": "擷取畫面是深色模式，此框為淺色版面，顏色無法比對。"
+   }
+  },
+  "2778:127350": {
+   "missing:I2778:127369;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「The Idol's Secret Girlfriend」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "missing:I2778:127370;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「The Dragon King's Sacrificial Bride」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "missing:I2778:127371;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「Encounter After Closing」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "missing:I2778:127372;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「Bad Boy and the Valedictorian」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "missing:I2778:127373;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「Reality Love」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "position:I2778:127360;931:2392;315:8365": {
+    "verdict": "ok",
+    "note": "「Create Your Drama」兩邊都是單行置中於按鈕內，位移來自上方說明文字換行不同。"
+   },
+   "lines:I2778:127360;931:2392;315:8365": {
+    "verdict": "ok",
+    "note": "「Create Your Drama」兩邊都是單行置中於按鈕內，位移來自上方說明文字換行不同。"
+   },
+   "position:2778:127365": {
+    "verdict": "ok",
+    "note": "「More」位置差 4 pt，屬標題列排版誤差，視覺上一致。"
+   },
+   "position:I2778:127377;145:7579;245:2027": {
+    "verdict": "ok",
+    "note": "點數為帳號範例數值。"
+   },
+   "colour:2778:127360": {
+    "verdict": "ok",
+    "note": "取樣「Create Your Drama」按鈕藍色兩邊相近，ΔE 是量測對位偏差造成。"
+   },
+   "colour:I2778:127360;931:2392": {
+    "verdict": "ok",
+    "note": "取樣「Create Your Drama」按鈕藍色兩邊相近，ΔE 是量測對位偏差造成。"
+   }
+  },
+  "2778:138549": {
+   "missing:I2778:138568;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「The Idol's Secret Girlfriend」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "missing:I2778:138569;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「The Dragon King's Sacrificial Bride」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "missing:I2778:138570;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「Encounter After Closing」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "missing:I2778:138571;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「Bad Boy and the Valedictorian」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "missing:I2778:138572;1440:97054": {
+    "verdict": "ok",
+    "note": "範本名稱「Reality Love」為範例內容，App 顯示伺服器提供的其他範本。"
+   },
+   "position:I2778:138559;931:2392;315:8365": {
+    "verdict": "ok",
+    "note": "「Create Your Drama」兩邊都是單行置中於按鈕內，位移來自上方說明文字換行不同。"
+   },
+   "lines:I2778:138559;931:2392;315:8365": {
+    "verdict": "ok",
+    "note": "「Create Your Drama」兩邊都是單行置中於按鈕內，位移來自上方說明文字換行不同。"
+   },
+   "position:2778:138564": {
+    "verdict": "ok",
+    "note": "「More」位置差 4 pt，屬標題列排版誤差，視覺上一致。"
+   },
+   "position:I2778:138576;145:7579;245:2027": {
+    "verdict": "ok",
+    "note": "點數為帳號範例數值。"
+   },
+   "colour:I2778:138559;931:2392": {
+    "verdict": "ok",
+    "note": "取樣「Create Your Drama」按鈕藍色兩邊相近，ΔE 是量測對位偏差造成。"
+   }
+  },
+  "2778:128904": {
+   "missing:I2778:128960;2773:119526": {
+    "verdict": "ok",
+    "note": "點子建議「Company policy strictly bans office romance」為生成內容，App 顯示其他建議句。"
+   },
+   "missing:I2778:128961;2773:119526": {
+    "verdict": "ok",
+    "note": "點子建議「The celebrity turns admiration into forbidden love」為生成內容，App 顯示其他建議句。"
+   },
+   "position:I2778:128959;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕在兩邊都是單行、靠左，位置差異來自標題區高度不同，視覺上一致。"
+   },
+   "lines:I2778:128959;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕在兩邊都是單行、靠左，位置差異來自標題區高度不同，視覺上一致。"
+   },
+   "colour:2778:128959": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕藍底白字兩邊相同，ΔE 是對位偏差造成。"
+   },
+   "colour:I2778:128959;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕藍底白字兩邊相同，ΔE 是對位偏差造成。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      16,
+      224,
+      330,
+      32
+     ]
+    },
+    "note": "App 點子建議膠囊撐滿整列並以「…」截斷，Figma 膠囊依文字寬度且完整顯示；建議句為生成內容，是否應完整顯示需確認。"
+   },
+   "visual:2": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      272,
+      50,
+      36,
+      36
+     ]
+    },
+    "note": "空白對話時 App 的新對話圖示為灰色停用，Figma 畫成可用狀態；需確認空白狀態是否應停用。"
+   }
+  },
+  "2778:139486": {
+   "missing:I2778:139542;2773:119526": {
+    "verdict": "ok",
+    "note": "點子建議「Company policy strictly bans office romance」為生成內容，App 顯示其他建議句。"
+   },
+   "missing:I2778:139543;2773:119526": {
+    "verdict": "ok",
+    "note": "點子建議「The celebrity turns admiration into forbidden love」為生成內容，App 顯示其他建議句。"
+   },
+   "position:I2778:139541;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕在兩邊都是單行、靠左，位置差異來自標題區高度不同，視覺上一致。"
+   },
+   "lines:I2778:139541;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕在兩邊都是單行、靠左，位置差異來自標題區高度不同，視覺上一致。"
+   },
+   "colour:2778:139541": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕藍底白字兩邊相同，ΔE 是對位偏差造成。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      16,
+      224,
+      330,
+      32
+     ]
+    },
+    "note": "App 點子建議膠囊撐滿整列並以「…」截斷，Figma 膠囊依文字寬度且完整顯示；建議句為生成內容，是否應完整顯示需確認。"
+   },
+   "visual:2": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      272,
+      50,
+      36,
+      36
+     ]
+    },
+    "note": "空白對話時 App 的新對話圖示為灰色停用，Figma 畫成可用狀態；需確認空白狀態是否應停用。"
+   }
+  },
+  "2778:128966": {
+   "missing:I2778:129022;2773:119526": {
+    "verdict": "ok",
+    "note": "點子建議「Company policy strictly bans office romance」為生成內容，App 顯示其他建議句。"
+   },
+   "missing:I2778:129023;2773:119526": {
+    "verdict": "ok",
+    "note": "點子建議「The celebrity turns admiration into forbidden love」為生成內容，App 顯示其他建議句。"
+   },
+   "position:I2778:129021;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕在兩邊都是單行、靠左，位置差異來自標題區高度不同，視覺上一致。"
+   },
+   "lines:I2778:129021;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕在兩邊都是單行、靠左，位置差異來自標題區高度不同，視覺上一致。"
+   },
+   "colour:2778:129021": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕藍底白字兩邊相同，ΔE 是對位偏差造成。"
+   },
+   "colour:I2778:129021;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕藍底白字兩邊相同，ΔE 是對位偏差造成。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "figma": {
+     "box": [
+      32,
+      350,
+      311,
+      60
+     ]
+    },
+    "note": "Figma 輸入框內文字為左右對齊（justify），App 為靠左對齊。",
+    "severity": "cosmetic"
+   }
+  },
+  "2778:139548": {
+   "missing:I2778:139604;2773:119526": {
+    "verdict": "ok",
+    "note": "點子建議「Company policy strictly bans office romance」為生成內容，App 顯示其他建議句。"
+   },
+   "missing:I2778:139605;2773:119526": {
+    "verdict": "ok",
+    "note": "點子建議「The celebrity turns admiration into forbidden love」為生成內容，App 顯示其他建議句。"
+   },
+   "position:I2778:139603;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕在兩邊都是單行、靠左，位置差異來自標題區高度不同，視覺上一致。"
+   },
+   "lines:I2778:139603;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕在兩邊都是單行、靠左，位置差異來自標題區高度不同，視覺上一致。"
+   },
+   "colour:2778:139603": {
+    "verdict": "ok",
+    "note": "「Surprise me」按鈕藍底白字兩邊相同，ΔE 是對位偏差造成。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "figma": {
+     "box": [
+      32,
+      350,
+      311,
+      60
+     ]
+    },
+    "note": "Figma 輸入框內文字為左右對齊（justify），App 為靠左對齊。",
+    "severity": "cosmetic"
+   }
+  },
+  "2778:127414": {
+   "copy:2778:127423": {
+    "verdict": "ok",
+    "note": "Figma 畫面同樣顯示編號「1. Video language」，編號是清單樣式，文案一致。"
+   },
+   "copy:2778:127438": {
+    "verdict": "ok",
+    "note": "Figma 畫面同樣顯示編號「2. Captions」，編號是清單樣式，文案一致。"
+   },
+   "position:2778:127419": {
+    "verdict": "ok",
+    "note": "「What format would you like for your video?」的位移來自上方使用者泡泡或範本圖長度不同，屬範例內容造成。"
+   },
+   "position:I2778:127425;1423:94739": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「English」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I2778:127425;1423:94739": {
+    "verdict": "ok",
+    "note": "「English」兩邊都是單行。"
+   },
+   "position:I2778:127426;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Spanish」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I2778:127426;1423:94737": {
+    "verdict": "ok",
+    "note": "「Spanish」兩邊都是單行。"
+   },
+   "position:I2778:127427;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「French」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I2778:127427;1423:94737": {
+    "verdict": "ok",
+    "note": "「French」兩邊都是單行。"
+   },
+   "position:I2778:127428;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「German」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I2778:127428;1423:94737": {
+    "verdict": "ok",
+    "note": "「German」兩邊都是單行。"
+   },
+   "position:I2778:127429;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Japanese」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I2778:127429;1423:94737": {
+    "verdict": "ok",
+    "note": "「Japanese」兩邊都是單行。"
+   },
+   "position:I2778:127430;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Korean」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I2778:127430;1423:94737": {
+    "verdict": "ok",
+    "note": "「Korean」兩邊都是單行。"
+   },
+   "position:I2778:127431;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Chinese」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I2778:127431;1423:94737": {
+    "verdict": "ok",
+    "note": "「Chinese」兩邊都是單行。"
+   },
+   "lines:I2778:127440;1423:94739": {
+    "verdict": "ok",
+    "note": "「Yes, include captions」兩邊都是單行。"
+   },
+   "lines:I2778:127441;1423:94737": {
+    "verdict": "ok",
+    "note": "「No captions」兩邊都是單行。"
+   },
+   "lines:I3172:101306;2750:25393": {
+    "verdict": "ok",
+    "note": "「Generate」兩邊都是單行。"
+   },
+   "lines:I2778:127445;2499:46952": {
+    "verdict": "ok",
+    "note": "「Enter your idea to create drama」兩邊都是單行。"
+   },
+   "position:I2778:127449;1037:48645;245:2027": {
+    "verdict": "ok",
+    "note": "點數為帳號範例數值。"
+   },
+   "colour:3172:101306": {
+    "verdict": "ok",
+    "note": "取樣「Generate」按鈕藍色兩邊相近（約 #2588FD 對 #4587F6），ΔE 是對位偏差造成。"
+   }
+  },
+  "2778:127378": {
+   "copy:3142:68213": {
+    "verdict": "ok",
+    "note": "Figma 畫面同樣顯示編號「1. Video language」，編號是清單樣式，文案一致。"
+   },
+   "copy:3142:68223": {
+    "verdict": "ok",
+    "note": "Figma 畫面同樣顯示編號「2. Captions」，編號是清單樣式，文案一致。"
+   },
+   "position:2778:127383": {
+    "verdict": "ok",
+    "note": "「What format would you like for your video?」的位移來自上方使用者泡泡或範本圖長度不同，屬範例內容造成。"
+   },
+   "position:I3142:68215;1423:94739": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「English」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68215;1423:94739": {
+    "verdict": "ok",
+    "note": "「English」兩邊都是單行。"
+   },
+   "position:I3142:68216;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Spanish」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68216;1423:94737": {
+    "verdict": "ok",
+    "note": "「Spanish」兩邊都是單行。"
+   },
+   "position:I3142:68217;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「French」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68217;1423:94737": {
+    "verdict": "ok",
+    "note": "「French」兩邊都是單行。"
+   },
+   "position:I3142:68218;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「German」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68218;1423:94737": {
+    "verdict": "ok",
+    "note": "「German」兩邊都是單行。"
+   },
+   "position:I3142:68219;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Japanese」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68219;1423:94737": {
+    "verdict": "ok",
+    "note": "「Japanese」兩邊都是單行。"
+   },
+   "position:I3142:68220;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Korean」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68220;1423:94737": {
+    "verdict": "ok",
+    "note": "「Korean」兩邊都是單行。"
+   },
+   "position:I3142:68221;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Chinese」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68221;1423:94737": {
+    "verdict": "ok",
+    "note": "「Chinese」兩邊都是單行。"
+   },
+   "position:I3142:68225;1423:94739": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「Yes, include captions」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68225;1423:94739": {
+    "verdict": "ok",
+    "note": "「Yes, include captions」兩邊都是單行。"
+   },
+   "position:I3142:68226;1423:94737": {
+    "verdict": "bug",
+    "note": "App 選項膠囊間距比 Figma 窄，「No captions」越往右偏移越多（最多約 31 pt）。",
+    "severity": "minor"
+   },
+   "lines:I3142:68226;1423:94737": {
+    "verdict": "ok",
+    "note": "「No captions」兩邊都是單行。"
+   },
+   "position:I3172:101313;2750:25393": {
+    "verdict": "ok",
+    "note": "「Generate」的位移來自上方使用者泡泡或範本圖長度不同，屬範例內容造成。"
+   },
+   "lines:I3172:101313;2750:25393": {
+    "verdict": "ok",
+    "note": "「Generate」兩邊都是單行。"
+   },
+   "position:I2778:127409;2499:46952": {
+    "verdict": "ok",
+    "note": "「Enter your idea to create drama」的位移來自上方使用者泡泡或範本圖長度不同，屬範例內容造成。"
+   },
+   "lines:I2778:127409;2499:46952": {
+    "verdict": "ok",
+    "note": "「Enter your idea to create drama」兩邊都是單行。"
+   },
+   "position:I2778:127413;1037:48645;245:2027": {
+    "verdict": "ok",
+    "note": "點數為帳號範例數值。"
+   },
+   "colour:3172:101313": {
+    "verdict": "ok",
+    "note": "取樣「Generate」按鈕藍色兩邊相近（約 #2588FD 對 #4587F6），ΔE 是對位偏差造成。"
+   }
+  },
+  "3142:68271": {
+   "missing:I3142:68277;393:31121": {
+    "verdict": "bug",
+    "note": "按下 Generate 後 App 沒有顯示使用者選擇的格式泡泡「1. Video language: English / 2. Captions: Yes」，格式卡直接消失。",
+    "severity": "major"
+   },
+   "missing:3142:68282": {
+    "verdict": "ok",
+    "note": "載入卡上方狀態字 App 顯示「Thinking...」而非「Drafting the storyline...」，屬代理即時狀態文字。"
+   },
+   "lines:I3142:68291;2499:46952": {
+    "verdict": "ok",
+    "note": "輸入框提示文字兩邊都是單行。"
+   },
+   "colour:3142:68276": {
+    "verdict": "ok",
+    "note": "「What format would you like for your video?」兩邊皆為深色文字，ΔE 是對位偏差造成。"
+   },
+   "colour:3142:68279": {
+    "verdict": "bug",
+    "note": "App 缺少助理訊息「I'll create a drama based on this template — give me a moment...」，問句下方直接是載入卡。",
+    "severity": "major"
+   }
+  },
+  "2778:139432": {
+   "state:2778:139432": {
+    "verdict": "ok",
+    "note": "擷取畫面確實是未設定角色格的大綱狀態，配對率低是因為大綱與角色名稱為生成內容。"
+   },
+   "missing:2778:139471": {
+    "verdict": "question",
+    "note": "Figma 角色卡上方標題為「Choose your characters」，App 改為訊息「Ready to create your characters?」；可能是較新的 PM 文案，需確認。"
+   },
+   "missing:I2778:139475;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「Sophie」為範例內容，App 顯示本劇角色。"
+   },
+   "missing:I2778:139476;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「The Manager」為範例內容，App 顯示本劇角色。"
+   },
+   "missing:I2778:139477;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「HR」為範例內容，App 顯示本劇角色。"
+   },
+   "missing:I2778:139478;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「Chloe」為範例內容，App 顯示本劇角色。"
+   },
+   "missing:I2778:139479;1902:90188": {
+    "verdict": "bug",
+    "note": "App 角色卡下方沒有「More ideas」按鈕。",
+    "severity": "major"
+   },
+   "lines:I2778:139481;2499:46952": {
+    "verdict": "ok",
+    "note": "輸入框提示文字兩邊都是單行。"
+   }
+  },
+  "2778:144364": {
+   "missing:I2778:144407;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「Sophie」為範例內容。"
+   },
+   "missing:I2778:144408;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「The Manager」為範例內容。"
+   },
+   "missing:I2778:144409;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「HR」為範例內容。"
+   },
+   "missing:I2778:144410;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「Chloe」為範例內容。"
+   },
+   "missing:I2778:144413;1902:90188": {
+    "verdict": "bug",
+    "note": "App 角色結果與「Create storyboard」卡下方沒有「More ideas」按鈕。",
+    "severity": "major"
+   },
+   "position:I2778:144412;2750:64266": {
+    "verdict": "ok",
+    "note": "訊息文字位置差異在排版誤差內。"
+   },
+   "position:I2778:144412;2750:64276": {
+    "verdict": "ok",
+    "note": "點數 35 對 15 為範例數值。"
+   },
+   "position:I2778:144412;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "「Generate」下移是因 App 卡片多一行「Credits will be consumed for this task.」，按鈕本身一致。"
+   },
+   "lines:I2778:144412;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "「Generate」兩邊行數一致。"
+   },
+   "position:I2778:144415;2499:46952": {
+    "verdict": "ok",
+    "note": "輸入框位置差異來自 Android 版面高度，視覺上一致。"
+   },
+   "lines:I2778:144415;2499:46952": {
+    "verdict": "ok",
+    "note": "「Enter your idea to create dram」兩邊行數一致。"
+   },
+   "colour:I2778:144412;2750:64323": {
+    "verdict": "ok",
+    "note": "取樣「Generate」按鈕藍色兩邊相近，ΔE 是對位偏差造成。"
+   },
+   "colour:2778:144415": {
+    "verdict": "ok",
+    "note": "輸入框底色兩邊相同，ΔE 是輸入框位置不同造成取樣偏差。"
+   }
+  },
+  "2778:144420": {
+   "missing:I2778:144463;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「Sophie」為範例內容。"
+   },
+   "missing:I2778:144464;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「The Manager」為範例內容。"
+   },
+   "missing:I2778:144465;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「HR」為範例內容。"
+   },
+   "missing:I2778:144466;2620:59767": {
+    "verdict": "ok",
+    "note": "角色名稱「Chloe」為範例內容。"
+   },
+   "copy:I2778:144467;393:31121": {
+    "verdict": "bug",
+    "note": "使用者泡泡 Figma 為「Yes, create storyboard」，App 顯示「Create storyboard」。",
+    "severity": "minor"
+   },
+   "missing:2778:144472": {
+    "verdict": "ok",
+    "note": "載入卡狀態字 App 顯示「Creating storyboard grid for Stormbound.」，屬代理即時狀態文字。"
+   },
+   "lines:I2778:144481;2499:46952": {
+    "verdict": "ok",
+    "note": "輸入框提示文字兩邊都是單行。"
+   }
+  },
+  "2778:138725": {
+   "missing:I2778:138779;2778:123550": {
+    "verdict": "ok",
+    "note": "分鏡預覽標題與長度為範例內容（App 為「Rebuilt Ashes」「0:44」）。"
+   },
+   "missing:I2778:138783;393:31121": {
+    "verdict": "question",
+    "note": "Figma 使用者泡泡為「Generate Video / Model: Seedance 2.0 / Length: Preview · 30 sec」，App 顯示「Standard · Preview - 30 sec」；模型名稱可能依較新 PM 規格，需確認。"
+   },
+   "lines:I2778:138779;2778:123551": {
+    "verdict": "bug",
+    "note": "「See your story as pictures with a voice telling it.」Figma 為三行，App 同欄寬只有兩行，字級較小。",
+    "severity": "minor"
+   },
+   "lines:I2778:138788;2499:46952": {
+    "verdict": "ok",
+    "note": "輸入框提示文字兩邊都是單行。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "figma": {
+     "box": [
+      16,
+      352,
+      179,
+      318
+     ]
+    },
+    "note": "影片產生中 Figma 畫的是直式影片佔位圖塊，App 顯示骨架文字卡「Preparing video generation for your mini drama.」。",
+    "severity": "minor"
+   }
+  }
+ }
+}

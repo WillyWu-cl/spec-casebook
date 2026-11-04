@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-04T06:04:48.903Z",
+  "built_at": "2026-11-04T06:57:26.383Z",
   "spec_set": "2026-10-21-2",
   "platform": "android",
   "build": "16.8.0 (2611021)",
@@ -35,8 +35,8 @@
         },
         "bottom": {
           "dy": -21.7,
-          "anchors": 12,
-          "spread": 3.2,
+          "anchors": 13,
+          "spread": 2.4,
           "ok": true
         }
       },
@@ -49,10 +49,9 @@
       },
       "candidates": [
         {
-          "id": "copy:2778:128408",
-          "kind": "copy",
-          "severity": "minor",
-          "note": "one text contains the other",
+          "id": "missing:2778:128408",
+          "kind": "missing",
+          "severity": "major",
           "figma": {
             "node": "2778:128408",
             "text": "AI Mini Drama with Seedance 2.0",
@@ -61,30 +60,6 @@
               232,
               315,
               24
-            ]
-          },
-          "app": {
-            "text": "AI Mini Drama",
-            "box": [
-              279.5,
-              469.4,
-              84,
-              35.8
-            ]
-          }
-        },
-        {
-          "id": "missing:2778:128462",
-          "kind": "missing",
-          "severity": "major",
-          "figma": {
-            "node": "2778:128462",
-            "text": "AI Mini\nDrama",
-            "box": [
-              278.5,
-              430,
-              82,
-              32
             ]
           }
         },
@@ -760,8 +735,8 @@
         },
         "bottom": {
           "dy": -21.7,
-          "anchors": 12,
-          "spread": 3.2,
+          "anchors": 13,
+          "spread": 2.4,
           "ok": true
         }
       },
@@ -774,10 +749,9 @@
       },
       "candidates": [
         {
-          "id": "copy:2778:139112",
-          "kind": "copy",
-          "severity": "minor",
-          "note": "one text contains the other",
+          "id": "missing:2778:139112",
+          "kind": "missing",
+          "severity": "major",
           "figma": {
             "node": "2778:139112",
             "text": "AI Mini Drama with Seedance 2.0",
@@ -786,30 +760,6 @@
               232,
               315,
               24
-            ]
-          },
-          "app": {
-            "text": "AI Mini Drama",
-            "box": [
-              279.5,
-              469.4,
-              84,
-              35.8
-            ]
-          }
-        },
-        {
-          "id": "missing:2778:139166",
-          "kind": "missing",
-          "severity": "major",
-          "figma": {
-            "node": "2778:139166",
-            "text": "AI Mini\nDrama",
-            "box": [
-              278.5,
-              430,
-              82,
-              32
             ]
           }
         },
@@ -1590,6 +1540,29 @@
           }
         },
         {
+          "id": "colour:2778:139166",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "2778:139166",
+            "name": "AI Mini\nDrama",
+            "color": "#000000",
+            "box": [
+              278.5,
+              430,
+              82,
+              32
+            ]
+          },
+          "app": {
+            "color": "#ced5e0"
+          },
+          "delta": {
+            "dE": 85
+          }
+        },
+        {
           "id": "colour:2778:139171",
           "kind": "colour",
           "severity": "minor",
@@ -2167,6 +2140,393 @@
           "severity": "minor",
           "figma": {
             "node": "I2778:127360;931:2392",
+            "name": "btn_mani_text_icon_m",
+            "color": "#2589fe",
+            "box": [
+              40,
+              257,
+              295,
+              44
+            ]
+          },
+          "app": {
+            "color": "#223859"
+          },
+          "delta": {
+            "dE": 56
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "4858:35987",
+      "name": "② New chat → 開新房間",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "case": "TC-011",
+      "captured_at": "2026-11-04T06:13:19.038Z",
+      "png": "screenshots/design/4858-35987.png",
+      "parts": [],
+      "note": "Landing (Create Your Drama page) in Dark, reached from the Launcher AI Mini Drama tile; same page New chat opens",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 7,
+        "of": 12,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -14.8,
+          "anchors": 7,
+          "spread": 2,
+          "ok": true
+        },
+        "bottom": {
+          "dy": 42.2,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 13,
+        "app_texts": 21,
+        "matched": 8,
+        "shapes": 2,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:I4858:36006;1440:97054",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4858:36006;1440:97054",
+            "text": "The Idol's Secret Girlfriend",
+            "box": [
+              135.5,
+              529,
+              104,
+              28
+            ]
+          }
+        },
+        {
+          "id": "missing:I4858:36007;1440:97054",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4858:36007;1440:97054",
+            "text": "The Dragon King's Sacrificial Bride",
+            "box": [
+              255,
+              529,
+              104,
+              28
+            ]
+          }
+        },
+        {
+          "id": "missing:I4858:36008;1440:97054",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4858:36008;1440:97054",
+            "text": "Encounter After Closing",
+            "box": [
+              16,
+              712,
+              104,
+              28
+            ]
+          }
+        },
+        {
+          "id": "missing:I4858:36009;1440:97054",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4858:36009;1440:97054",
+            "text": "Bad Boy and the Valedictorian",
+            "box": [
+              135.5,
+              712,
+              104,
+              28
+            ]
+          }
+        },
+        {
+          "id": "missing:I4858:36010;1440:97054",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4858:36010;1440:97054",
+            "text": "Reality Love",
+            "box": [
+              255,
+              712,
+              104,
+              14
+            ]
+          }
+        },
+        {
+          "id": "position:I4858:35997;931:2392;315:8365",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I4858:35997;931:2392;315:8365",
+            "text": "Create Your Drama",
+            "box": [
+              108.5,
+              269,
+              158,
+              20
+            ]
+          },
+          "app": {
+            "text": "Create Your Drama",
+            "box": [
+              39.2,
+              243.1,
+              296.5,
+              43.1
+            ]
+          },
+          "delta": {
+            "x": 0,
+            "y": -11.1
+          }
+        },
+        {
+          "id": "lines:I4858:35997;931:2392;315:8365",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I4858:35997;931:2392;315:8365",
+            "text": "Create Your Drama",
+            "box": [
+              108.5,
+              269,
+              158,
+              20
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              39.2,
+              243.1,
+              296.5,
+              43.1
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:4858:36002",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "4858:36002",
+            "text": "More",
+            "box": [
+              308,
+              356,
+              35,
+              16
+            ]
+          },
+          "app": {
+            "text": "More",
+            "box": [
+              312.2,
+              336.8,
+              31.6,
+              16
+            ]
+          },
+          "delta": {
+            "x": 0.8,
+            "y": -4.4
+          }
+        },
+        {
+          "id": "position:I4858:36014;145:7579;245:2027",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I4858:36014;145:7579;245:2027",
+            "text": "400",
+            "box": [
+              266,
+              59,
+              29,
+              18
+            ]
+          },
+          "app": {
+            "text": "25211",
+            "box": [
+              260.8,
+              45.8,
+              38.2,
+              16
+            ]
+          },
+          "delta": {
+            "x": -5.2,
+            "y": 1.6
+          }
+        },
+        {
+          "id": "extra:merger season",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Merger Season",
+            "box": [
+              15.6,
+              509.4,
+              104.9,
+              12.8
+            ]
+          }
+        },
+        {
+          "id": "extra:the new guys secret",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "The New Guy's Secret",
+            "box": [
+              254.5,
+              509.4,
+              104.9,
+              12.8
+            ]
+          }
+        },
+        {
+          "id": "extra:the art of falling",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "The Art of Falling",
+            "box": [
+              15.6,
+              691.7,
+              104.9,
+              12.8
+            ]
+          }
+        },
+        {
+          "id": "extra:glad we came",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Glad We Came",
+            "box": [
+              135.1,
+              691.7,
+              104.9,
+              12.8
+            ]
+          }
+        },
+        {
+          "id": "extra:love, unscripted",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Love, Unscripted",
+            "box": [
+              254.5,
+              691.7,
+              104.9,
+              12.8
+            ]
+          }
+        },
+        {
+          "id": "extra:surprise me",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Surprise me",
+            "box": [
+              15.6,
+              170.8,
+              100,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "extra:enter your idea to create drama",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Enter your idea to create drama",
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:4858:35997",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "4858:35997",
+            "name": "Action Button_M",
+            "color": "#ffffff",
+            "box": [
+              40,
+              257,
+              295,
+              44
+            ]
+          },
+          "app": {
+            "color": "#223859"
+          },
+          "delta": {
+            "dE": 80
+          }
+        },
+        {
+          "id": "colour:I4858:35997;931:2392",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I4858:35997;931:2392",
             "name": "btn_mani_text_icon_m",
             "color": "#2589fe",
             "box": [
@@ -5618,7 +5978,7 @@
       "k": 0.347,
       "fw": 375,
       "arrival": {
-        "matched": 14,
+        "matched": 15,
         "of": 15,
         "ok": true
       },
@@ -5631,7 +5991,7 @@
         },
         "bottom": {
           "dy": 64.6,
-          "anchors": 3,
+          "anchors": 4,
           "spread": 10.2,
           "ok": false
         }
@@ -5639,7 +5999,7 @@
       "counts": {
         "figma_texts": 16,
         "app_texts": 17,
-        "matched": 14,
+        "matched": 15,
         "shapes": 2,
         "controls": 0
       },
@@ -5700,26 +6060,11 @@
             ]
           },
           "app": {
-            "text": "Yes, include captions",
+            "text": "2. Captions",
             "box": [
               27.4,
-              365.3,
-              141.7,
-              27.4
-            ]
-          }
-        },
-        {
-          "id": "missing:I2778:127440;1423:94739",
-          "kind": "missing",
-          "severity": "major",
-          "figma": {
-            "node": "I2778:127440;1423:94739",
-            "text": "Yes, include captions",
-            "box": [
-              44,
-              420,
-              130,
+              339.6,
+              320.1,
               16
             ]
           }
@@ -6124,6 +6469,31 @@
           }
         },
         {
+          "id": "lines:I2778:127440;1423:94739",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127440;1423:94739",
+            "text": "Yes, include captions",
+            "box": [
+              44,
+              420,
+              130,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              27.4,
+              365.3,
+              141.7,
+              27.4
+            ],
+            "lines": 2
+          }
+        },
+        {
           "id": "lines:I2778:127441;1423:94737",
           "kind": "lines",
           "severity": "minor",
@@ -6224,20 +6594,6 @@
           "delta": {
             "x": -3.9,
             "y": 37.7
-          }
-        },
-        {
-          "id": "extra:#. captions",
-          "kind": "extra",
-          "severity": "info",
-          "app": {
-            "text": "2. Captions",
-            "box": [
-              27.4,
-              339.6,
-              320.1,
-              16
-            ]
           }
         },
         {
@@ -7364,6 +7720,189 @@
       "recheck": null
     },
     {
+      "id": "2778:138725",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-020",
+      "captured_at": "2026-11-04T06:48:04.629Z",
+      "png": "screenshots/design/2778-138725.png",
+      "parts": [],
+      "note": "Rebuilt Ashes preview-video loading, Light: 'Preparing video generation for your mini drama.' skeleton card where Figma draws a video placeholder tile",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 3,
+        "of": 5,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 80.4,
+          "anchors": 3,
+          "spread": 53.8,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 6,
+        "app_texts": 11,
+        "matched": 4,
+        "shapes": 2,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:I2778:138779;2778:123550",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:138779;2778:123550",
+            "text": "Forbidden Office Romance\n1:30",
+            "box": [
+              128,
+              22,
+              207,
+              32
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:138783;393:31121",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:138783;393:31121",
+            "text": "Generate Video\nModel: Seedance 2.0\nLength: Preview · 30 sec",
+            "box": [
+              180,
+              228,
+              163,
+              54
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:138779;2778:123551",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:138779;2778:123551",
+            "text": "See your story as pictures with a voice telling it. The real video comes next.",
+            "box": [
+              128,
+              62,
+              207,
+              48
+            ],
+            "lines": 3
+          },
+          "app": {
+            "box": [
+              125.3,
+              196.2,
+              210.4,
+              29.5
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I2778:138788;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:138788;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:storyboard preview",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Storyboard Preview",
+            "box": [
+              31.3,
+              124.7,
+              312.5,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:rebuilt ashes",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Rebuilt Ashes",
+            "box": [
+              125.3,
+              158.3,
+              210.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:standard · preview - # sec",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Standard · Preview - 30 sec",
+            "box": [
+              164.9,
+              329.2,
+              194.4,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
       "id": "2778:127378",
       "name": "AI Mini Drama_template",
       "board": "2778:127318",
@@ -7381,7 +7920,7 @@
       "k": 0.347,
       "fw": 375,
       "arrival": {
-        "matched": 14,
+        "matched": 15,
         "of": 15,
         "ok": true
       },
@@ -7394,7 +7933,7 @@
         },
         "bottom": {
           "dy": 50.4,
-          "anchors": 6,
+          "anchors": 7,
           "spread": 3.3,
           "ok": true
         }
@@ -7402,7 +7941,7 @@
       "counts": {
         "figma_texts": 15,
         "app_texts": 16,
-        "matched": 14,
+        "matched": 15,
         "shapes": 2,
         "controls": 1
       },
@@ -7448,26 +7987,11 @@
             ]
           },
           "app": {
-            "text": "Yes, include captions",
+            "text": "2. Captions",
             "box": [
               27.4,
-              432.3,
-              141.7,
-              27.4
-            ]
-          }
-        },
-        {
-          "id": "missing:I3142:68225;1423:94739",
-          "kind": "missing",
-          "severity": "major",
-          "figma": {
-            "node": "I3142:68225;1423:94739",
-            "text": "Yes, include captions",
-            "box": [
-              44,
-              476,
-              130,
+              406.6,
+              320.1,
               16
             ]
           }
@@ -7872,6 +8396,59 @@
           }
         },
         {
+          "id": "position:I3142:68225;1423:94739",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68225;1423:94739",
+            "text": "Yes, include captions",
+            "box": [
+              44,
+              476,
+              130,
+              16
+            ]
+          },
+          "app": {
+            "text": "Yes, include captions",
+            "box": [
+              27.4,
+              432.3,
+              141.7,
+              27.4
+            ]
+          },
+          "delta": {
+            "x": -16.6,
+            "y": 3.2
+          }
+        },
+        {
+          "id": "lines:I3142:68225;1423:94739",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68225;1423:94739",
+            "text": "Yes, include captions",
+            "box": [
+              44,
+              476,
+              130,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              27.4,
+              432.3,
+              141.7,
+              27.4
+            ],
+            "lines": 2
+          }
+        },
+        {
           "id": "position:I3142:68226;1423:94737",
           "kind": "position",
           "severity": "minor",
@@ -8059,20 +8636,6 @@
           }
         },
         {
-          "id": "extra:#. captions",
-          "kind": "extra",
-          "severity": "info",
-          "app": {
-            "text": "2. Captions",
-            "box": [
-              27.4,
-              406.6,
-              320.1,
-              16
-            ]
-          }
-        },
-        {
           "id": "extra:record voice",
           "kind": "extra",
           "severity": "info",
@@ -8129,7 +8692,7 @@
       "k": 0.347,
       "fw": 375,
       "arrival": {
-        "matched": 14,
+        "matched": 15,
         "of": 15,
         "ok": true
       },
@@ -8142,7 +8705,7 @@
         },
         "bottom": {
           "dy": 50.4,
-          "anchors": 6,
+          "anchors": 7,
           "spread": 3.3,
           "ok": true
         }
@@ -8150,7 +8713,7 @@
       "counts": {
         "figma_texts": 15,
         "app_texts": 16,
-        "matched": 14,
+        "matched": 15,
         "shapes": 2,
         "controls": 0
       },
@@ -8196,26 +8759,11 @@
             ]
           },
           "app": {
-            "text": "Yes, include captions",
+            "text": "2. Captions",
             "box": [
               27.4,
-              432.3,
-              141.7,
-              27.4
-            ]
-          }
-        },
-        {
-          "id": "missing:I3142:68261;1423:94739",
-          "kind": "missing",
-          "severity": "major",
-          "figma": {
-            "node": "I3142:68261;1423:94739",
-            "text": "Yes, include captions",
-            "box": [
-              44,
-              476,
-              130,
+              406.6,
+              320.1,
               16
             ]
           }
@@ -8620,6 +9168,59 @@
           }
         },
         {
+          "id": "position:I3142:68261;1423:94739",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68261;1423:94739",
+            "text": "Yes, include captions",
+            "box": [
+              44,
+              476,
+              130,
+              16
+            ]
+          },
+          "app": {
+            "text": "Yes, include captions",
+            "box": [
+              27.4,
+              432.3,
+              141.7,
+              27.4
+            ]
+          },
+          "delta": {
+            "x": -16.6,
+            "y": 3.2
+          }
+        },
+        {
+          "id": "lines:I3142:68261;1423:94739",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68261;1423:94739",
+            "text": "Yes, include captions",
+            "box": [
+              44,
+              476,
+              130,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              27.4,
+              432.3,
+              141.7,
+              27.4
+            ],
+            "lines": 2
+          }
+        },
+        {
           "id": "position:I3142:68262;1423:94737",
           "kind": "position",
           "severity": "minor",
@@ -8804,20 +9405,6 @@
           "delta": {
             "x": -3.9,
             "y": 26.7
-          }
-        },
-        {
-          "id": "extra:#. captions",
-          "kind": "extra",
-          "severity": "info",
-          "app": {
-            "text": "2. Captions",
-            "box": [
-              27.4,
-              406.6,
-              320.1,
-              16
-            ]
           }
         },
         {
@@ -9285,6 +9872,414 @@
           },
           "app": {
             "color": "#1b2129"
+          },
+          "delta": {
+            "dE": 13
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "4863:32482",
+      "name": "Chat (any stage)",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "case": "TC-027",
+      "captured_at": "2026-11-04T06:31:05.042Z",
+      "png": "screenshots/design/4863-32482.png",
+      "parts": [],
+      "note": "Glad We Came chat after Stay on the 'Leave while we're preparing?' dialog (History tapped during preview-video preparation), Dark, scrolled to the storyboard preview; the dialog did not appear for New chat/Back during outline or storyboard generation (4 tries)",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 4,
+        "of": 8,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -13.2,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 248.1,
+          "anchors": 3,
+          "spread": 20.8,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 13,
+        "app_texts": 15,
+        "matched": 5,
+        "shapes": 10,
+        "controls": 4
+      },
+      "candidates": [
+        {
+          "id": "sample:I4863:32522;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I4863:32522;3948:158777",
+            "text": "Late at night under dim neon streetlights, Sophie and The Manager walk closely, their hands...",
+            "box": [
+              93,
+              -6,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32523;3948:158776",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32523;3948:158776",
+            "text": "Scene 4 — Almost Caught",
+            "box": [
+              93,
+              82,
+              242,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I4863:32523;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I4863:32523;3948:158777",
+            "text": "In the dimly lit office break room, Sophie and The Manager lean close over a document, their faces inche...",
+            "box": [
+              93,
+              106,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32524;3948:158776",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32524;3948:158776",
+            "text": "Scene 5 — HR Interrogation",
+            "box": [
+              93,
+              194,
+              242,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I4863:32524;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I4863:32524;3948:158777",
+            "text": "Inside the sterile, windowless HR office, HR sits with his hands folded over a closed folder.  HR：「Is the...",
+            "box": [
+              93,
+              218,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32525;3948:158776",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32525;3948:158776",
+            "text": "Scene 6 — The Price of Going ...",
+            "box": [
+              93,
+              306,
+              242,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I4863:32525;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I4863:32525;3948:158777",
+            "text": "In the bright hallway outside the HR office, The Manager turns to Sophie, his jaw set with determination.  Th...",
+            "box": [
+              93,
+              330,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "copy:I4863:32530;2778:123550",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I4863:32530;2778:123550",
+            "text": "Forbidden Office Romance\n1:30",
+            "box": [
+              128,
+              460,
+              207,
+              32
+            ]
+          },
+          "app": {
+            "text": "Romance",
+            "box": [
+              125.3,
+              233,
+              210.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32531;1902:90188",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32531;1902:90188",
+            "text": "More ideas",
+            "box": [
+              28,
+              646,
+              73,
+              18
+            ]
+          }
+        },
+        {
+          "id": "lines:I4863:32530;2778:123551",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32530;2778:123551",
+            "text": "See your story as pictures with a voice telling it. The real video comes next.",
+            "box": [
+              128,
+              500,
+              207,
+              48
+            ],
+            "lines": 3
+          },
+          "app": {
+            "box": [
+              125.3,
+              270.8,
+              210.4,
+              29.5
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I4863:32533;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32533;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:scene # — glad we came",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 6 — Glad We Came",
+            "box": [
+              91.3,
+              80.9,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:create video",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Create video",
+            "box": [
+              252.8,
+              403.8,
+              106.6,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "extra:standard · preview - # sec",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Standard · Preview - 30 sec",
+            "box": [
+              164.9,
+              524,
+              194.4,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:4863:32522",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "4863:32522",
+            "name": "scene",
+            "color": "#252c36",
+            "box": [
+              32,
+              -38,
+              311,
+              96
+            ]
+          },
+          "app": {
+            "color": "#111214"
+          },
+          "delta": {
+            "dE": 14
+          }
+        },
+        {
+          "id": "colour:I4863:32522;3948:158774",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32522;3948:158774",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              40,
+              -30,
+              45,
+              80
+            ]
+          },
+          "app": {
+            "color": "#141314"
+          },
+          "delta": {
+            "dE": 94
+          }
+        },
+        {
+          "id": "colour:I4863:32523;3948:158774",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32523;3948:158774",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              40,
+              82,
+              45,
+              80
+            ]
+          },
+          "app": {
+            "color": "#262c35"
+          },
+          "delta": {
+            "dE": 82
+          }
+        },
+        {
+          "id": "colour:I4863:32524;3948:158774",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32524;3948:158774",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              40,
+              194,
+              45,
+              80
+            ]
+          },
+          "app": {
+            "color": "#212724"
+          },
+          "delta": {
+            "dE": 85
+          }
+        },
+        {
+          "id": "colour:4863:32533",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "4863:32533",
+            "name": "ai input",
+            "color": "#0c0c0c",
+            "box": [
+              16,
+              706,
+              343,
+              56
+            ]
+          },
+          "app": {
+            "color": "#101d2b"
           },
           "delta": {
             "dE": 13
@@ -12242,6 +13237,4927 @@
       "recheck": null
     },
     {
+      "id": "2778:127550",
+      "name": "Storyboard & Preview",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-075",
+      "captured_at": "2026-11-04T06:29:14.016Z",
+      "png": "screenshots/design/2778-127550.png",
+      "parts": [],
+      "note": "Glad We Came (template) storyboard preview + video settings, Standard (Seedance 2.0) + Preview 30 sec (120), Dark. The settings card did not appear after the template storyboard finished (waited ~4 min, reopened); it came only after typing 'Create video', so a 'Create video' bubble and 'Pick a video model…' line sit above it. App has Quality Best/Standard/Fast, not Figma's Model Seedance 2.0 / 2.0 Mini",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 8,
+        "of": 14,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -53.5,
+          "anchors": 3,
+          "spread": 2.5,
+          "ok": true
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 2,
+          "spread": 35.3,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 15,
+        "app_texts": 20,
+        "matched": 11,
+        "shapes": 8,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "copy:I2778:127604;2778:123550",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I2778:127604;2778:123550",
+            "text": "Forbidden Office Romance\n1:30",
+            "box": [
+              128,
+              184,
+              207,
+              32
+            ]
+          },
+          "app": {
+            "text": "Romance",
+            "box": [
+              125.3,
+              130.2,
+              210.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:67911;2750:118354",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:67911;2750:118354",
+            "text": "Model",
+            "box": [
+              32,
+              378,
+              43,
+              18
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:67911;2750:118356;1902:90136",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I3142:67911;2750:118356;1902:90136",
+            "text": "Seedance 2.0",
+            "box": [
+              68.3,
+              414,
+              87,
+              16
+            ]
+          },
+          "app": {
+            "text": "Seedance 2.0 · Balanced quality for everyday stories",
+            "box": [
+              31.3,
+              521.5,
+              312.5,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:67911;2750:118356;1902:90134",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:67911;2750:118356;1902:90134",
+            "text": "Seedance 2.0 Mini",
+            "box": [
+              206.8,
+              414,
+              113,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:67911;2750:118357",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:67911;2750:118357",
+            "text": "Best for cinematic, beautiful, high-detail videos",
+            "box": [
+              32,
+              444,
+              311,
+              14
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:67911;2750:118360",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I3142:67911;2750:118360",
+            "text": "Length",
+            "box": [
+              32,
+              474,
+              48,
+              18
+            ]
+          },
+          "app": {
+            "text": "Video length",
+            "box": [
+              31.3,
+              551,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:67911;2750:118361;1902:90136",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:67911;2750:118361;1902:90136",
+            "text": "Preview · 30 sec",
+            "box": [
+              59.3,
+              510,
+              105,
+              16
+            ]
+          },
+          "app": {
+            "text": "Preview - 30 sec",
+            "box": [
+              35.1,
+              578.8,
+              152.4,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:67911;2750:118361;1902:90134",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:67911;2750:118361;1902:90134",
+            "text": "Full Video · 90 sec",
+            "box": [
+              206.3,
+              510,
+              114,
+              16
+            ]
+          },
+          "app": {
+            "text": "Full Video - 90 sec",
+            "box": [
+              187.5,
+              578.8,
+              152.4,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:67911;2750:118424;2750:25393",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I3142:67911;2750:118424;2750:25393",
+            "text": "Generate",
+            "box": [
+              263,
+              584,
+              64,
+              18
+            ]
+          },
+          "app": {
+            "text": "Generate video",
+            "box": [
+              220.8,
+              649.3,
+              122.9,
+              33.3
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:127605;1902:90188",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:127605;1902:90188",
+            "text": "More ideas",
+            "box": [
+              28,
+              646,
+              73,
+              18
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:127604;2778:123551",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127604;2778:123551",
+            "text": "See your story as pictures with a voice telling it. The real video comes next.",
+            "box": [
+              128,
+              224,
+              207,
+              48
+            ],
+            "lines": 3
+          },
+          "app": {
+            "box": [
+              125.3,
+              168.1,
+              210.4,
+              29.5
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I2778:127607;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127607;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I2778:127611;1037:48645;245:2027",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127611;1037:48645;245:2027",
+            "text": "400",
+            "box": [
+              214,
+              59,
+              29,
+              18
+            ]
+          },
+          "app": {
+            "text": "25061",
+            "box": [
+              210.1,
+              45.8,
+              38.2,
+              16
+            ]
+          },
+          "delta": {
+            "x": -3.9,
+            "y": 40.3
+          }
+        },
+        {
+          "id": "extra:create video",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Create video",
+            "box": [
+              252.8,
+              301,
+              106.6,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "extra:choose your video settings",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Choose your video settings",
+            "box": [
+              31.3,
+              459.4,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:best",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Best",
+            "box": [
+              35.1,
+              487.2,
+              101.4,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "extra:standard",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Standard",
+            "box": [
+              136.5,
+              487.2,
+              101.7,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "extra:fast",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Fast",
+            "box": [
+              238.2,
+              487.2,
+              101.7,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:I3142:67911;2750:118356;1902:90135",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:67911;2750:118356;1902:90135",
+            "name": "tab",
+            "color": "#ffffff",
+            "box": [
+              36,
+              408,
+              151.5,
+              28
+            ]
+          },
+          "app": {
+            "color": "#171f32"
+          },
+          "delta": {
+            "dE": 89
+          }
+        },
+        {
+          "id": "colour:I3142:67911;2750:118356;1902:90133",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:67911;2750:118356;1902:90133",
+            "name": "tab",
+            "color": "#303b49",
+            "box": [
+              187.5,
+              408,
+              151.5,
+              28
+            ]
+          },
+          "app": {
+            "color": "#17202d"
+          },
+          "delta": {
+            "dE": 12
+          }
+        },
+        {
+          "id": "colour:I3142:67911;2750:118361;1902:90135",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:67911;2750:118361;1902:90135",
+            "name": "tab",
+            "color": "#ffffff",
+            "box": [
+              36,
+              504,
+              151.5,
+              28
+            ]
+          },
+          "app": {
+            "color": "#232930"
+          },
+          "delta": {
+            "dE": 84
+          }
+        },
+        {
+          "id": "colour:I3142:67911;2750:118424",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:67911;2750:118424",
+            "name": "button",
+            "color": "#2589fe",
+            "box": [
+              247,
+              576,
+              96,
+              34
+            ]
+          },
+          "app": {
+            "color": "#1d2328"
+          },
+          "delta": {
+            "dE": 77
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:127612",
+      "name": "Storyboard & Preview",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-075",
+      "captured_at": "2026-11-04T06:26:12.395Z",
+      "png": "screenshots/design/2778-127612.png",
+      "parts": [],
+      "note": "Stormbound (custom) storyboard preview + Choose your video settings, Best + Preview 30 sec selected (180), Dark",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 10,
+        "of": 15,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 64.2,
+          "anchors": 3,
+          "spread": 2.5,
+          "ok": true
+        },
+        "bottom": {
+          "dy": -59.3,
+          "anchors": 7,
+          "spread": 3.3,
+          "ok": true
+        }
+      },
+      "counts": {
+        "figma_texts": 16,
+        "app_texts": 20,
+        "matched": 13,
+        "shapes": 9,
+        "controls": 2
+      },
+      "candidates": [
+        {
+          "id": "missing:I2778:127666;2778:123550",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:127666;2778:123550",
+            "text": "Forbidden Office Romance\n1:30",
+            "box": [
+              128,
+              184,
+              207,
+              32
+            ]
+          }
+        },
+        {
+          "id": "missing:I3139:64913;4845:2150",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3139:64913;4845:2150",
+            "text": "Quality",
+            "box": [
+              32,
+              378,
+              49,
+              18
+            ]
+          }
+        },
+        {
+          "id": "copy:I3139:64913;4845:2156",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I3139:64913;4845:2156",
+            "text": "Length",
+            "box": [
+              32,
+              474,
+              48,
+              18
+            ]
+          },
+          "app": {
+            "text": "Video length",
+            "box": [
+              31.3,
+              551,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I3139:64913;4845:2157;1902:90136",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I3139:64913;4845:2157;1902:90136",
+            "text": "Preview · 30 sec",
+            "box": [
+              59.3,
+              510,
+              105,
+              16
+            ]
+          },
+          "app": {
+            "text": "Preview - 30 sec",
+            "box": [
+              35.1,
+              578.8,
+              152.4,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "copy:I3139:64913;4845:2157;1902:90134",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I3139:64913;4845:2157;1902:90134",
+            "text": "Full Video · 90 sec",
+            "box": [
+              206.3,
+              510,
+              114,
+              16
+            ]
+          },
+          "app": {
+            "text": "Full Video - 90 sec",
+            "box": [
+              187.5,
+              578.8,
+              152.4,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:127667;1902:90188",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:127667;1902:90188",
+            "text": "More ideas",
+            "box": [
+              28,
+              646,
+              73,
+              18
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:127666;2778:123551",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127666;2778:123551",
+            "text": "See your story as pictures with a voice telling it. The real video comes next.",
+            "box": [
+              128,
+              224,
+              207,
+              48
+            ],
+            "lines": 3
+          },
+          "app": {
+            "box": [
+              125.3,
+              288.2,
+              210.4,
+              29.5
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I3139:64913;4845:2165;4845:2118",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I3139:64913;4845:2165;4845:2118",
+            "text": "Best",
+            "box": [
+              72,
+              414,
+              29,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              487.2,
+              101.4,
+              26.7
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I3139:64913;4845:2165;4845:2120",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I3139:64913;4845:2165;4845:2120",
+            "text": "Standard",
+            "box": [
+              159.5,
+              414,
+              56,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              136.5,
+              487.2,
+              101.7,
+              26.7
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I3139:64913;4845:2165;4845:2122",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I3139:64913;4845:2165;4845:2122",
+            "text": "Fast",
+            "box": [
+              275.5,
+              414,
+              26,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              238.2,
+              487.2,
+              101.7,
+              26.7
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I3139:64913;4845:2163",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I3139:64913;4845:2163",
+            "text": "120",
+            "box": [
+              46,
+              596,
+              19,
+              14
+            ]
+          },
+          "app": {
+            "text": "180",
+            "box": [
+              46.9,
+              649,
+              17.7,
+              12.8
+            ]
+          },
+          "delta": {
+            "x": 0.9,
+            "y": 28.8
+          }
+        },
+        {
+          "id": "position:I3139:64913;4845:2164;2750:25393",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I3139:64913;4845:2164;2750:25393",
+            "text": "Generate Video",
+            "box": [
+              220,
+              584,
+              107,
+              18
+            ]
+          },
+          "app": {
+            "text": "Generate video",
+            "box": [
+              220.8,
+              649.3,
+              122.9,
+              33.3
+            ]
+          },
+          "delta": {
+            "x": 8.8,
+            "y": 0
+          }
+        },
+        {
+          "id": "lines:I3139:64913;4845:2164;2750:25393",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I3139:64913;4845:2164;2750:25393",
+            "text": "Generate Video",
+            "box": [
+              220,
+              584,
+              107,
+              18
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              220.8,
+              649.3,
+              122.9,
+              33.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I2778:127669;2499:46952",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127669;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ]
+          },
+          "app": {
+            "text": "Enter your idea to create drama",
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ]
+          },
+          "delta": {
+            "x": -0.9,
+            "y": 64.1
+          }
+        },
+        {
+          "id": "lines:I2778:127669;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127669;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I2778:127673;1037:48645;245:2027",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127673;1037:48645;245:2027",
+            "text": "400",
+            "box": [
+              214,
+              59,
+              29,
+              18
+            ]
+          },
+          "app": {
+            "text": "25181",
+            "box": [
+              210.1,
+              45.8,
+              38.2,
+              16
+            ]
+          },
+          "delta": {
+            "x": -3.9,
+            "y": -77.4
+          }
+        },
+        {
+          "id": "extra:scene # — the broken lock",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 6 — The Broken Lock",
+            "box": [
+              91.3,
+              98.3,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:stormbound",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Stormbound",
+            "box": [
+              125.3,
+              250.3,
+              210.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:choose your video settings",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Choose your video settings",
+            "box": [
+              31.3,
+              459.4,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:I3139:64913;4845:2165;4845:2117",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3139:64913;4845:2165;4845:2117",
+            "name": "tab",
+            "color": "#ffffff",
+            "box": [
+              36,
+              408,
+              101,
+              28
+            ]
+          },
+          "app": {
+            "color": "#28405a"
+          },
+          "delta": {
+            "dE": 76
+          }
+        },
+        {
+          "id": "colour:I3139:64913;4845:2164",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3139:64913;4845:2164",
+            "name": "button",
+            "color": "#2589fe",
+            "box": [
+              204,
+              576,
+              139,
+              34
+            ]
+          },
+          "app": {
+            "color": "#1e2127"
+          },
+          "delta": {
+            "dE": 77
+          }
+        },
+        {
+          "id": "colour:2778:127667",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2778:127667",
+            "name": "AI option",
+            "color": "#29323e",
+            "box": [
+              16,
+              638,
+              117,
+              34
+            ]
+          },
+          "app": {
+            "color": "#0c0c0c"
+          },
+          "delta": {
+            "dE": 19
+          }
+        },
+        {
+          "id": "colour:I3139:64913;4845:2164;2750:25393",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I3139:64913;4845:2164;2750:25393",
+            "name": "Generate Video",
+            "color": "#ffffff",
+            "box": [
+              220,
+              584,
+              107,
+              18
+            ]
+          },
+          "app": {
+            "color": "#191f26"
+          },
+          "delta": {
+            "dE": 89
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2824:130900",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-138",
+      "captured_at": "2026-11-04T06:23:52.681Z",
+      "png": "screenshots/design/2824-130900.png",
+      "parts": [],
+      "note": "Glad We Came storyboard result scene list + Storyboard Preview card, Dark (before the video settings card arrived)",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 4,
+        "of": 9,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -13.7,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 67,
+          "anchors": 3,
+          "spread": 20.8,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 15,
+        "app_texts": 15,
+        "matched": 5,
+        "shapes": 11,
+        "controls": 7
+      },
+      "candidates": [
+        {
+          "id": "sample:I3142:68115;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I3142:68115;3948:158777",
+            "text": "The steel elevator doors slide closed, locking Sophie and The Manager inside a quiet, mirrored s...",
+            "box": [
+              93,
+              4,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:68116;3948:158776",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68116;3948:158776",
+            "text": "Scene 3 — Secret Dates",
+            "box": [
+              93,
+              92,
+              242,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I3142:68116;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I3142:68116;3948:158777",
+            "text": "Late at night under dim neon streetlights, Sophie and The Manager walk closely, their hands...",
+            "box": [
+              93,
+              116,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:68117;3948:158776",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68117;3948:158776",
+            "text": "Scene 4 — Almost Caught",
+            "box": [
+              93,
+              204,
+              242,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I3142:68117;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I3142:68117;3948:158777",
+            "text": "In the dimly lit office break room, Sophie and The Manager lean close over a document, their faces inche...",
+            "box": [
+              93,
+              228,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:68118;3948:158776",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68118;3948:158776",
+            "text": "Scene 5 — HR Interrogation",
+            "box": [
+              93,
+              316,
+              242,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I3142:68118;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I3142:68118;3948:158777",
+            "text": "Inside the sterile, windowless HR office, HR sits with his hands folded over a closed folder.  HR：「Is the...",
+            "box": [
+              93,
+              340,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:68119;3948:158776",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68119;3948:158776",
+            "text": "Scene 6 — The Price of Going ...",
+            "box": [
+              93,
+              428,
+              242,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I3142:68119;3948:158777",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I3142:68119;3948:158777",
+            "text": "In the bright hallway outside the HR office, The Manager turns to Sophie, his jaw set with determination.  Th...",
+            "box": [
+              93,
+              452,
+              242,
+              48
+            ]
+          }
+        },
+        {
+          "id": "copy:I2824:130954;2778:123550",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I2824:130954;2778:123550",
+            "text": "Forbidden Office Romance\n1:30",
+            "box": [
+              128,
+              582,
+              207,
+              32
+            ]
+          },
+          "app": {
+            "text": "Romance",
+            "box": [
+              125.3,
+              536.1,
+              210.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I2824:130955;393:31121",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2824:130955;393:31121",
+            "text": "Create video",
+            "box": [
+              259,
+              788,
+              84,
+              18
+            ]
+          }
+        },
+        {
+          "id": "lines:I2824:130954;2778:123551",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2824:130954;2778:123551",
+            "text": "See your story as pictures with a voice telling it. The real video comes next.",
+            "box": [
+              128,
+              622,
+              207,
+              48
+            ],
+            "lines": 3
+          },
+          "app": {
+            "box": [
+              125.3,
+              574,
+              210.4,
+              29.5
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I2824:130968;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2824:130968;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:scene # — a surprisingly good team",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 3 — A Surprisingly Good Team",
+            "box": [
+              91.3,
+              54.9,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:scene # — more in common",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 4 — More in Common",
+            "box": [
+              91.3,
+              164.6,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:scene # — after the cleanup",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 5 — After the Cleanup",
+            "box": [
+              91.3,
+              274.3,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:scene # — glad we came",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 6 — Glad We Came",
+            "box": [
+              91.3,
+              384,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "control:I3142:68115;3948:158774",
+          "kind": "control",
+          "severity": "major",
+          "note": "no tappable app element where Figma draws this control",
+          "figma": {
+            "node": "I3142:68115;3948:158774",
+            "name": "imput_character",
+            "box": [
+              40,
+              -20,
+              45,
+              80
+            ]
+          }
+        },
+        {
+          "id": "colour:3142:68115",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "3142:68115",
+            "name": "scene",
+            "color": "#252c36",
+            "box": [
+              32,
+              -28,
+              311,
+              96
+            ]
+          },
+          "app": {
+            "color": "#111214"
+          },
+          "delta": {
+            "dE": 14
+          }
+        },
+        {
+          "id": "colour:I3142:68115;3948:158774",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68115;3948:158774",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              40,
+              -20,
+              45,
+              80
+            ]
+          },
+          "app": {
+            "color": "#0f1011"
+          },
+          "delta": {
+            "dE": 95
+          }
+        },
+        {
+          "id": "colour:I3142:68116;3948:158774",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68116;3948:158774",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              40,
+              92,
+              45,
+              80
+            ]
+          },
+          "app": {
+            "color": "#262c35"
+          },
+          "delta": {
+            "dE": 82
+          }
+        },
+        {
+          "id": "colour:I3142:68117;3948:158774",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68117;3948:158774",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              40,
+              204,
+              45,
+              80
+            ]
+          },
+          "app": {
+            "color": "#262c35"
+          },
+          "delta": {
+            "dE": 82
+          }
+        },
+        {
+          "id": "colour:I3142:68118;3948:158774",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68118;3948:158774",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              40,
+              316,
+              45,
+              80
+            ]
+          },
+          "app": {
+            "color": "#262c35"
+          },
+          "delta": {
+            "dE": 82
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "4863:32539",
+      "name": "④ History → Recent Task",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "case": "TC-106",
+      "captured_at": "2026-11-04T06:13:49.513Z",
+      "png": "screenshots/design/4863-32539.png",
+      "parts": [],
+      "note": "",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 11,
+        "of": 19,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -11.9,
+          "anchors": 4,
+          "spread": 2.8,
+          "ok": true
+        },
+        "bottom": {
+          "dy": 41.1,
+          "anchors": 7,
+          "spread": 2.8,
+          "ok": true
+        }
+      },
+      "counts": {
+        "figma_texts": 19,
+        "app_texts": 27,
+        "matched": 13,
+        "shapes": 7,
+        "controls": 6
+      },
+      "candidates": [
+        {
+          "id": "missing:I4863:32541;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32541;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              132,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I4863:32541;12037:8701",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32541;12037:8701",
+            "text": "456 MB",
+            "box": [
+              136,
+              198,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "text": "806 kB",
+            "box": [
+              133,
+              186.8,
+              35.8,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32542;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32542;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              264,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I4863:32542;12037:8701",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32542;12037:8701",
+            "text": "456 MB",
+            "box": [
+              136,
+              330,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "text": "86 kB",
+            "box": [
+              133,
+              316,
+              29.2,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32543;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32543;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              396,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32544;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32544;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              528,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32545;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32545;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              660,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I4863:32546;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I4863:32546;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              792,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "position:I4863:32548;1191:85014",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32548;1191:85014",
+            "text": "New Chat",
+            "box": [
+              280,
+              744,
+              67,
+              16
+            ]
+          },
+          "app": {
+            "text": "New Chat",
+            "box": [
+              249.7,
+              731.6,
+              109.7,
+              39.2
+            ]
+          },
+          "delta": {
+            "x": -30.3,
+            "y": -30.6
+          }
+        },
+        {
+          "id": "lines:I4863:32548;1191:85014",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32548;1191:85014",
+            "text": "New Chat",
+            "box": [
+              280,
+              744,
+              67,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              249.7,
+              731.6,
+              109.7,
+              39.2
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I4863:32551;761:28071",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32551;761:28071",
+            "text": "Manage",
+            "box": [
+              296,
+              58,
+              63,
+              20
+            ]
+          },
+          "app": {
+            "text": "Manage",
+            "box": [
+              285.1,
+              40.3,
+              72.2,
+              39.2
+            ]
+          },
+          "delta": {
+            "x": -1.7,
+            "y": -5.8
+          }
+        },
+        {
+          "id": "lines:I4863:32551;761:28071",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I4863:32551;761:28071",
+            "text": "Manage",
+            "box": [
+              296,
+              58,
+              63,
+              20
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              285.1,
+              40.3,
+              72.2,
+              39.2
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:romance",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Romance",
+            "box": [
+              133,
+              122.9,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:shared turf",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Shared Turf",
+            "box": [
+              133,
+              252.1,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:rebuilt ashes",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Rebuilt Ashes",
+            "box": [
+              133,
+              381.3,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:the new guys secret",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "The New Guy's Secret",
+            "box": [
+              133,
+              510.4,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:forbidden office romance (#)",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Forbidden Office Romance (1)",
+            "box": [
+              133,
+              639.6,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:stormbound",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Stormbound",
+            "box": [
+              133,
+              768.8,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:hi, im your",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Hi, I'm your",
+            "box": [
+              15.6,
+              89.2,
+              343.8,
+              31.9
+            ]
+          }
+        },
+        {
+          "id": "extra:ai drama assistant",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "AI Drama Assistant",
+            "box": [
+              15.6,
+              123.3,
+              343.8,
+              31.9
+            ]
+          }
+        },
+        {
+          "id": "extra:surprise me",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Surprise me",
+            "box": [
+              15.6,
+              170.8,
+              100,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "extra:enter your idea to create drama",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Enter your idea to create drama",
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:4863:32548",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "4863:32548",
+            "name": "btn",
+            "color": "#ffffff",
+            "box": [
+              240,
+              732,
+              119,
+              40
+            ]
+          },
+          "app": {
+            "color": "#17191d"
+          },
+          "delta": {
+            "dE": 91
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2820:123240",
+      "name": "Recent Task",
+      "board": "2820:123194",
+      "board_name": "Recent Task",
+      "case": "TC-106",
+      "captured_at": "2026-11-04T06:13:49.514Z",
+      "png": "screenshots/design/2820-123240.png",
+      "parts": [],
+      "note": "",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 11,
+        "of": 19,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -11.9,
+          "anchors": 4,
+          "spread": 2.8,
+          "ok": true
+        },
+        "bottom": {
+          "dy": 41.1,
+          "anchors": 7,
+          "spread": 2.8,
+          "ok": true
+        }
+      },
+      "counts": {
+        "figma_texts": 20,
+        "app_texts": 27,
+        "matched": 13,
+        "shapes": 8,
+        "controls": 7
+      },
+      "candidates": [
+        {
+          "id": "missing:I2820:123242;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123242;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              132,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I2820:123242;12037:8701",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123242;12037:8701",
+            "text": "456 MB",
+            "box": [
+              136,
+              198,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "text": "806 kB",
+            "box": [
+              133,
+              186.8,
+              35.8,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123243;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123243;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              264,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I2820:123243;12037:8701",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123243;12037:8701",
+            "text": "456 MB",
+            "box": [
+              136,
+              330,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "text": "86 kB",
+            "box": [
+              133,
+              316,
+              29.2,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123244;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123244;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              396,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123245;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123245;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              528,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123246;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123246;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              660,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123247;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123247;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              792,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I2820:123255;513:536",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I2820:123255;513:536",
+            "text": "To keep the file lightweight, we kept only the generated story outline, images and videos.",
+            "box": [
+              54,
+              98,
+              295,
+              32
+            ]
+          }
+        },
+        {
+          "id": "position:I2820:123249;1191:85014",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123249;1191:85014",
+            "text": "New Chat",
+            "box": [
+              280,
+              744,
+              67,
+              16
+            ]
+          },
+          "app": {
+            "text": "New Chat",
+            "box": [
+              249.7,
+              731.6,
+              109.7,
+              39.2
+            ]
+          },
+          "delta": {
+            "x": -30.3,
+            "y": -30.6
+          }
+        },
+        {
+          "id": "lines:I2820:123249;1191:85014",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123249;1191:85014",
+            "text": "New Chat",
+            "box": [
+              280,
+              744,
+              67,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              249.7,
+              731.6,
+              109.7,
+              39.2
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I2820:123252;761:28071",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123252;761:28071",
+            "text": "Manage",
+            "box": [
+              296,
+              58,
+              63,
+              20
+            ]
+          },
+          "app": {
+            "text": "Manage",
+            "box": [
+              285.1,
+              40.3,
+              72.2,
+              39.2
+            ]
+          },
+          "delta": {
+            "x": -1.7,
+            "y": -5.8
+          }
+        },
+        {
+          "id": "lines:I2820:123252;761:28071",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123252;761:28071",
+            "text": "Manage",
+            "box": [
+              296,
+              58,
+              63,
+              20
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              285.1,
+              40.3,
+              72.2,
+              39.2
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:romance",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Romance",
+            "box": [
+              133,
+              122.9,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:shared turf",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Shared Turf",
+            "box": [
+              133,
+              252.1,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:rebuilt ashes",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Rebuilt Ashes",
+            "box": [
+              133,
+              381.3,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:the new guys secret",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "The New Guy's Secret",
+            "box": [
+              133,
+              510.4,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:forbidden office romance (#)",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Forbidden Office Romance (1)",
+            "box": [
+              133,
+              639.6,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:stormbound",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Stormbound",
+            "box": [
+              133,
+              768.8,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:hi, im your",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Hi, I'm your",
+            "box": [
+              15.6,
+              89.2,
+              343.8,
+              31.9
+            ]
+          }
+        },
+        {
+          "id": "extra:ai drama assistant",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "AI Drama Assistant",
+            "box": [
+              15.6,
+              123.3,
+              343.8,
+              31.9
+            ]
+          }
+        },
+        {
+          "id": "extra:surprise me",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Surprise me",
+            "box": [
+              15.6,
+              170.8,
+              100,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "extra:enter your idea to create drama",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Enter your idea to create drama",
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:2820:123249",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2820:123249",
+            "name": "btn",
+            "color": "#ffffff",
+            "box": [
+              240,
+              732,
+              119,
+              40
+            ]
+          },
+          "app": {
+            "color": "#17191d"
+          },
+          "delta": {
+            "dE": 91
+          }
+        },
+        {
+          "id": "colour:I2820:123255;513:535",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123255;513:535",
+            "name": "text",
+            "color": "#0067e0",
+            "box": [
+              42,
+              88,
+              319,
+              52
+            ]
+          },
+          "app": {
+            "color": "#0c0c0c"
+          },
+          "delta": {
+            "dE": 83
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2820:123256",
+      "name": "Recent Task",
+      "board": "2820:123194",
+      "board_name": "Recent Task",
+      "case": "TC-106",
+      "captured_at": "2026-11-04T06:13:49.514Z",
+      "png": "screenshots/design/2820-123256.png",
+      "parts": [],
+      "note": "",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 11,
+        "of": 19,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -11.9,
+          "anchors": 4,
+          "spread": 2.8,
+          "ok": true
+        },
+        "bottom": {
+          "dy": 41.1,
+          "anchors": 7,
+          "spread": 2.8,
+          "ok": true
+        }
+      },
+      "counts": {
+        "figma_texts": 20,
+        "app_texts": 27,
+        "matched": 13,
+        "shapes": 8,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:I2820:123258;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123258;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              132,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I2820:123258;12037:8701",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123258;12037:8701",
+            "text": "456 MB",
+            "box": [
+              136,
+              198,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "text": "806 kB",
+            "box": [
+              133,
+              186.8,
+              35.8,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123259;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123259;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              264,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I2820:123259;12037:8701",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123259;12037:8701",
+            "text": "456 MB",
+            "box": [
+              136,
+              330,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "text": "86 kB",
+            "box": [
+              133,
+              316,
+              29.2,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123260;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123260;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              396,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123261;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123261;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              528,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123262;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123262;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              660,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2820:123263;12037:8693",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2820:123263;12037:8693",
+            "text": "AI Drama 0819",
+            "box": [
+              136,
+              792,
+              177,
+              16
+            ]
+          }
+        },
+        {
+          "id": "sample:I2820:123271;513:536",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I2820:123271;513:536",
+            "text": "To keep the file lightweight, we kept only the generated story outline, images and videos.",
+            "box": [
+              54,
+              98,
+              295,
+              32
+            ]
+          }
+        },
+        {
+          "id": "position:I2820:123265;1191:85014",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123265;1191:85014",
+            "text": "New Chat",
+            "box": [
+              280,
+              744,
+              67,
+              16
+            ]
+          },
+          "app": {
+            "text": "New Chat",
+            "box": [
+              249.7,
+              731.6,
+              109.7,
+              39.2
+            ]
+          },
+          "delta": {
+            "x": -30.3,
+            "y": -30.6
+          }
+        },
+        {
+          "id": "lines:I2820:123265;1191:85014",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123265;1191:85014",
+            "text": "New Chat",
+            "box": [
+              280,
+              744,
+              67,
+              16
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              249.7,
+              731.6,
+              109.7,
+              39.2
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I2820:123268;761:28071",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123268;761:28071",
+            "text": "Manage",
+            "box": [
+              296,
+              58,
+              63,
+              20
+            ]
+          },
+          "app": {
+            "text": "Manage",
+            "box": [
+              285.1,
+              40.3,
+              72.2,
+              39.2
+            ]
+          },
+          "delta": {
+            "x": -1.7,
+            "y": -5.8
+          }
+        },
+        {
+          "id": "lines:I2820:123268;761:28071",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123268;761:28071",
+            "text": "Manage",
+            "box": [
+              296,
+              58,
+              63,
+              20
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              285.1,
+              40.3,
+              72.2,
+              39.2
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:romance",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Romance",
+            "box": [
+              133,
+              122.9,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:shared turf",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Shared Turf",
+            "box": [
+              133,
+              252.1,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:rebuilt ashes",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Rebuilt Ashes",
+            "box": [
+              133,
+              381.3,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:the new guys secret",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "The New Guy's Secret",
+            "box": [
+              133,
+              510.4,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:forbidden office romance (#)",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Forbidden Office Romance (1)",
+            "box": [
+              133,
+              639.6,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:stormbound",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Stormbound",
+            "box": [
+              133,
+              768.8,
+              173.3,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:hi, im your",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Hi, I'm your",
+            "box": [
+              15.6,
+              89.2,
+              343.8,
+              31.9
+            ]
+          }
+        },
+        {
+          "id": "extra:ai drama assistant",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "AI Drama Assistant",
+            "box": [
+              15.6,
+              123.3,
+              343.8,
+              31.9
+            ]
+          }
+        },
+        {
+          "id": "extra:surprise me",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Surprise me",
+            "box": [
+              15.6,
+              170.8,
+              100,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "extra:enter your idea to create drama",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Enter your idea to create drama",
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:2820:123258",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2820:123258",
+            "name": "Project card",
+            "color": "#eaf1fc",
+            "box": [
+              16,
+              104,
+              343,
+              120
+            ]
+          },
+          "app": {
+            "color": "#17191d"
+          },
+          "delta": {
+            "dE": 86
+          }
+        },
+        {
+          "id": "colour:2820:123259",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2820:123259",
+            "name": "Project card",
+            "color": "#eaf1fc",
+            "box": [
+              16,
+              236,
+              343,
+              120
+            ]
+          },
+          "app": {
+            "color": "#17191d"
+          },
+          "delta": {
+            "dE": 86
+          }
+        },
+        {
+          "id": "colour:2820:123260",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2820:123260",
+            "name": "Project card",
+            "color": "#eaf1fc",
+            "box": [
+              16,
+              368,
+              343,
+              120
+            ]
+          },
+          "app": {
+            "color": "#17191d"
+          },
+          "delta": {
+            "dE": 86
+          }
+        },
+        {
+          "id": "colour:2820:123261",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2820:123261",
+            "name": "Project card",
+            "color": "#eaf1fc",
+            "box": [
+              16,
+              500,
+              343,
+              120
+            ]
+          },
+          "app": {
+            "color": "#17191d"
+          },
+          "delta": {
+            "dE": 86
+          }
+        },
+        {
+          "id": "colour:2820:123262",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2820:123262",
+            "name": "Project card",
+            "color": "#eaf1fc",
+            "box": [
+              16,
+              632,
+              343,
+              120
+            ]
+          },
+          "app": {
+            "color": "#17191d"
+          },
+          "delta": {
+            "dE": 86
+          }
+        },
+        {
+          "id": "colour:2820:123263",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2820:123263",
+            "name": "Project card",
+            "color": "#eaf1fc",
+            "box": [
+              16,
+              764,
+              343,
+              120
+            ]
+          },
+          "app": {
+            "color": "#17191d"
+          },
+          "delta": {
+            "dE": 86
+          }
+        },
+        {
+          "id": "colour:I2820:123271;513:535",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:123271;513:535",
+            "name": "text",
+            "color": "#2589fe",
+            "box": [
+              42,
+              88,
+              319,
+              52
+            ]
+          },
+          "app": {
+            "color": "#0c0c0c"
+          },
+          "delta": {
+            "dE": 86
+          }
+        },
+        {
+          "id": "colour:I2820:123258;12037:8692",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123258;12037:8692",
+            "name": "2026/08/19   10:51 AM",
+            "color": "#454b55",
+            "box": [
+              136,
+              116,
+              177,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ced5e0"
+          },
+          "delta": {
+            "dE": 53
+          }
+        },
+        {
+          "id": "colour:I2820:123259;12037:8692",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123259;12037:8692",
+            "name": "2026/08/19   10:51 AM",
+            "color": "#454b55",
+            "box": [
+              136,
+              248,
+              177,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ced5e0"
+          },
+          "delta": {
+            "dE": 53
+          }
+        },
+        {
+          "id": "colour:I2820:123260;12037:8692",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123260;12037:8692",
+            "name": "2026/08/19   10:51 AM",
+            "color": "#454b55",
+            "box": [
+              136,
+              380,
+              177,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ced5e0"
+          },
+          "delta": {
+            "dE": 53
+          }
+        },
+        {
+          "id": "colour:I2820:123260;12037:8701",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123260;12037:8701",
+            "name": "456 MB",
+            "color": "#000000",
+            "box": [
+              136,
+              462,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ffffff"
+          },
+          "delta": {
+            "dE": 100
+          }
+        },
+        {
+          "id": "colour:I2820:123261;12037:8692",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123261;12037:8692",
+            "name": "2026/08/19   10:51 AM",
+            "color": "#454b55",
+            "box": [
+              136,
+              512,
+              177,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ced5e0"
+          },
+          "delta": {
+            "dE": 53
+          }
+        },
+        {
+          "id": "colour:I2820:123261;12037:8701",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123261;12037:8701",
+            "name": "456 MB",
+            "color": "#000000",
+            "box": [
+              136,
+              594,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ffffff"
+          },
+          "delta": {
+            "dE": 100
+          }
+        },
+        {
+          "id": "colour:I2820:123262;12037:8692",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123262;12037:8692",
+            "name": "2026/08/19   10:51 AM",
+            "color": "#454b55",
+            "box": [
+              136,
+              644,
+              177,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ced5e0"
+          },
+          "delta": {
+            "dE": 53
+          }
+        },
+        {
+          "id": "colour:I2820:123262;12037:8701",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123262;12037:8701",
+            "name": "456 MB",
+            "color": "#000000",
+            "box": [
+              136,
+              726,
+              45,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ffffff"
+          },
+          "delta": {
+            "dE": 100
+          }
+        },
+        {
+          "id": "colour:I2820:123263;12037:8692",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123263;12037:8692",
+            "name": "2026/08/19   10:51 AM",
+            "color": "#454b55",
+            "box": [
+              136,
+              776,
+              177,
+              14
+            ]
+          },
+          "app": {
+            "color": "#ffffff"
+          },
+          "delta": {
+            "dE": 69
+          }
+        },
+        {
+          "id": "colour:I2820:123265;1191:85014",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123265;1191:85014",
+            "name": "New Chat",
+            "color": "#ffffff",
+            "box": [
+              280,
+              744,
+              67,
+              16
+            ]
+          },
+          "app": {
+            "color": "#000000"
+          },
+          "delta": {
+            "dE": 100
+          }
+        },
+        {
+          "id": "colour:I2820:123268;761:28071",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I2820:123268;761:28071",
+            "name": "Manage",
+            "color": "#0073ff",
+            "box": [
+              296,
+              58,
+              63,
+              20
+            ]
+          },
+          "app": {
+            "color": "#4587f6"
+          },
+          "delta": {
+            "dE": 20
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:138663",
+      "name": "Storyboard & Preview",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-080",
+      "captured_at": "2026-11-04T06:47:52.872Z",
+      "png": "screenshots/design/2778-138663.png",
+      "parts": [],
+      "note": "Rebuilt Ashes (custom) storyboard preview + video settings, Standard (Seedance 2.0) + Preview 30 sec (120), Light; app has Quality Best/Standard/Fast where Figma draws Model Seedance 2.0 / 2.0 Mini",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 7,
+        "of": 14,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 64.2,
+          "anchors": 3,
+          "spread": 2.5,
+          "ok": true
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 2,
+          "spread": 35.3,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 15,
+        "app_texts": 20,
+        "matched": 10,
+        "shapes": 8,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:I2778:138717;2778:123550",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:138717;2778:123550",
+            "text": "Forbidden Office Romance\n1:30",
+            "box": [
+              128,
+              184,
+              207,
+              32
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:68177;2750:118354",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68177;2750:118354",
+            "text": "Model",
+            "box": [
+              32,
+              378,
+              43,
+              18
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:68177;2750:118356;1902:90136",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I3142:68177;2750:118356;1902:90136",
+            "text": "Seedance 2.0",
+            "box": [
+              68.3,
+              414,
+              87,
+              16
+            ]
+          },
+          "app": {
+            "text": "Seedance 2.0 · Balanced quality for everyday stories",
+            "box": [
+              31.3,
+              521.5,
+              312.5,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:68177;2750:118356;1902:90134",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68177;2750:118356;1902:90134",
+            "text": "Seedance 2.0 Mini",
+            "box": [
+              206.8,
+              414,
+              113,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I3142:68177;2750:118357",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68177;2750:118357",
+            "text": "Best for cinematic, beautiful, high-detail videos",
+            "box": [
+              32,
+              444,
+              311,
+              14
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:68177;2750:118360",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I3142:68177;2750:118360",
+            "text": "Length",
+            "box": [
+              32,
+              474,
+              48,
+              18
+            ]
+          },
+          "app": {
+            "text": "Video length",
+            "box": [
+              31.3,
+              551,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:68177;2750:118361;1902:90136",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68177;2750:118361;1902:90136",
+            "text": "Preview · 30 sec",
+            "box": [
+              59.3,
+              510,
+              105,
+              16
+            ]
+          },
+          "app": {
+            "text": "Preview - 30 sec",
+            "box": [
+              35.1,
+              578.8,
+              152.4,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:68177;2750:118361;1902:90134",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I3142:68177;2750:118361;1902:90134",
+            "text": "Full Video · 90 sec",
+            "box": [
+              206.3,
+              510,
+              114,
+              16
+            ]
+          },
+          "app": {
+            "text": "Full Video - 90 sec",
+            "box": [
+              187.5,
+              578.8,
+              152.4,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "copy:I3142:68177;2750:118424;2750:25393",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I3142:68177;2750:118424;2750:25393",
+            "text": "Generate",
+            "box": [
+              263,
+              584,
+              64,
+              18
+            ]
+          },
+          "app": {
+            "text": "Generate video",
+            "box": [
+              220.8,
+              649.3,
+              122.9,
+              33.3
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:138718;1902:90188",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:138718;1902:90188",
+            "text": "More ideas",
+            "box": [
+              28,
+              646,
+              73,
+              18
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:138717;2778:123551",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:138717;2778:123551",
+            "text": "See your story as pictures with a voice telling it. The real video comes next.",
+            "box": [
+              128,
+              224,
+              207,
+              48
+            ],
+            "lines": 3
+          },
+          "app": {
+            "box": [
+              125.3,
+              288.2,
+              210.4,
+              29.5
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I2778:138720;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:138720;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I2778:138724;1037:48645;245:2027",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:138724;1037:48645;245:2027",
+            "text": "400",
+            "box": [
+              214,
+              59,
+              29,
+              18
+            ]
+          },
+          "app": {
+            "text": "24941",
+            "box": [
+              210.1,
+              45.8,
+              38.2,
+              16
+            ]
+          },
+          "delta": {
+            "x": -3.9,
+            "y": -77.4
+          }
+        },
+        {
+          "id": "extra:scene # — the ceiling cracks",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 6 — The Ceiling Cracks",
+            "box": [
+              91.3,
+              98.3,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:rebuilt ashes",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Rebuilt Ashes",
+            "box": [
+              125.3,
+              250.3,
+              210.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:choose your video settings",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Choose your video settings",
+            "box": [
+              31.3,
+              459.4,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:best",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Best",
+            "box": [
+              35.1,
+              487.2,
+              101.4,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "extra:standard",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Standard",
+            "box": [
+              136.5,
+              487.2,
+              101.7,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "extra:fast",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Fast",
+            "box": [
+              238.2,
+              487.2,
+              101.7,
+              26.7
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:I3142:68177;2750:118424",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I3142:68177;2750:118424",
+            "name": "button",
+            "color": "#0073ff",
+            "box": [
+              247,
+              576,
+              96,
+              34
+            ]
+          },
+          "app": {
+            "color": "#f5f9fd"
+          },
+          "delta": {
+            "dE": 92
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:127956",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-086",
+      "captured_at": "2026-11-04T06:42:48.862Z",
+      "png": "screenshots/design/2778-127956.png",
+      "parts": [],
+      "note": "Glad We Came (template) completed preview + 'Create the full episode (60 sec)' ◆240 offer, Dark; Generate NOT tapped. The open chat kept a blank placeholder tile for ~10 min; the video only showed after leaving and reopening",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 6,
+        "of": 8,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 38.1,
+          "anchors": 2,
+          "spread": 51.7,
+          "ok": false
+        },
+        "bottom": {
+          "dy": -0.4,
+          "anchors": 4,
+          "spread": 6.6,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 9,
+        "app_texts": 12,
+        "matched": 7,
+        "shapes": 2,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:2778:128013",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "2778:128013",
+            "text": "Choose your video settings",
+            "box": [
+              16,
+              20,
+              343,
+              18
+            ]
+          }
+        },
+        {
+          "id": "sample:I2778:128014;393:31121",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I2778:128014;393:31121",
+            "text": "Generate Video\nModel: Seedance 2.0\nGeneration length: Preview · 30 sec",
+            "box": [
+              108,
+              78,
+              235,
+              54
+            ]
+          }
+        },
+        {
+          "id": "copy:I2778:128018;2750:64270",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128018;2750:64270",
+            "text": "Create the full video · 90 sec",
+            "box": [
+              40,
+              586,
+              295,
+              16
+            ]
+          },
+          "app": {
+            "text": "Create the full episode (60 sec)",
+            "box": [
+              39.2,
+              609.4,
+              296.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:128018;2750:64323;2750:25393",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128018;2750:64323;2750:25393",
+            "text": "Generate",
+            "box": [
+              255,
+              622,
+              64,
+              18
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              249,
+              653.1,
+              86.8,
+              33.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I2778:128020;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128020;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:standard · preview - # sec",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Standard · Preview - 30 sec",
+            "box": [
+              164.9,
+              99,
+              194.4,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "extra:credits will be consumed for this task.",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Credits will be consumed for this task.",
+            "box": [
+              39.2,
+              627.4,
+              296.5,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:I2778:128018;2750:64323",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128018;2750:64323",
+            "name": "button",
+            "color": "#2589fe",
+            "box": [
+              239,
+              614,
+              96,
+              34
+            ]
+          },
+          "app": {
+            "color": "#2f62b0"
+          },
+          "delta": {
+            "dE": 25
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:127742",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-086",
+      "captured_at": "2026-11-04T06:42:22.028Z",
+      "png": "screenshots/design/2778-127742.png",
+      "parts": [],
+      "note": "Stormbound (custom) completed preview video + full-episode offer, Dark; offer reads 'Create the full episode (60 sec)' ◆240; Generate NOT tapped",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 6,
+        "of": 9,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 38.1,
+          "anchors": 2,
+          "spread": 51.7,
+          "ok": false
+        },
+        "bottom": {
+          "dy": -0.4,
+          "anchors": 4,
+          "spread": 6.6,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 9,
+        "app_texts": 12,
+        "matched": 7,
+        "shapes": 2,
+        "controls": 2
+      },
+      "candidates": [
+        {
+          "id": "missing:2778:127799",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "2778:127799",
+            "text": "Choose your video settings",
+            "box": [
+              16,
+              20,
+              343,
+              18
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:127800;393:31121",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:127800;393:31121",
+            "text": "Generate Video\nModel: Seedance 2.0\nLength: Preview · 30 sec",
+            "box": [
+              180,
+              78,
+              163,
+              54
+            ]
+          }
+        },
+        {
+          "id": "copy:I2778:127804;2750:64270",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:127804;2750:64270",
+            "text": "Create the full video · 90 sec",
+            "box": [
+              40,
+              586,
+              295,
+              16
+            ]
+          },
+          "app": {
+            "text": "Create the full episode (60 sec)",
+            "box": [
+              39.2,
+              609.4,
+              296.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:127804;2750:64323;2750:25393",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127804;2750:64323;2750:25393",
+            "text": "Generate",
+            "box": [
+              255,
+              622,
+              64,
+              18
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              249,
+              653.1,
+              86.8,
+              33.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I2778:127806;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127806;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:standard · preview - # sec",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Standard · Preview - 30 sec",
+            "box": [
+              164.9,
+              99,
+              194.4,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "extra:credits will be consumed for this task.",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Credits will be consumed for this task.",
+            "box": [
+              39.2,
+              627.4,
+              296.5,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:I2778:127804;2750:64323",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127804;2750:64323",
+            "name": "button",
+            "color": "#2589fe",
+            "box": [
+              239,
+              614,
+              96,
+              34
+            ]
+          },
+          "app": {
+            "color": "#2f62b0"
+          },
+          "delta": {
+            "dE": 25
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "3131:65428",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-087",
+      "captured_at": "2026-11-04T06:43:44.898Z",
+      "png": "screenshots/design/3131-65428.png",
+      "parts": [],
+      "note": "Memory Drift (History, existing full video) completed video + 'Ready for the next episode?' / Create Next Episode, Dark; no full video generated this segment",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 2,
+        "of": 2,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -13.7,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 2,
+        "app_texts": 9,
+        "matched": 2,
+        "shapes": 1,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "lines:I3131:65500;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I3131:65500;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:scene # — the redacted identity",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 6 — The Redacted Identity",
+            "box": [
+              91.3,
+              104.5,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:heres your drama.",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Here's your drama.",
+            "box": [
+              15.6,
+              225.7,
+              343.8,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:ready for the next episode?",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Ready for the next episode?",
+            "box": [
+              31.3,
+              593.4,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:create next episode",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Create Next Episode",
+            "box": [
+              189.9,
+              649.3,
+              153.8,
+              33.3
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2820:115034",
+      "name": "storyboard",
+      "board": "2820:113981",
+      "board_name": "video",
+      "case": "TC-087",
+      "captured_at": "2026-11-04T06:29:34.404Z",
+      "png": "screenshots/design/2820-115034.png",
+      "parts": [],
+      "note": "",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 4,
+        "of": 5,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 80.4,
+          "anchors": 3,
+          "spread": 16.6,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 6,
+        "app_texts": 11,
+        "matched": 4,
+        "shapes": 1,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:2820:115091",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "2820:115091",
+            "text": "Choose your video settings",
+            "box": [
+              16,
+              170,
+              343,
+              18
+            ]
+          }
+        },
+        {
+          "id": "sample:I2820:115092;393:31121",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I2820:115092;393:31121",
+            "text": "Generate Video\nModel: Seedance 2.0\nLength: Full Video · 90 sec",
+            "box": [
+              167,
+              228,
+              176,
+              54
+            ]
+          }
+        },
+        {
+          "id": "lines:I2820:115089;393:31121",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:115089;393:31121",
+            "text": "Create video",
+            "box": [
+              259,
+              112,
+              84,
+              18
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              252.8,
+              209,
+              106.6,
+              49.7
+            ],
+            "lines": 3
+          }
+        },
+        {
+          "id": "lines:I2820:115101;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2820:115101;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:romance",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Romance",
+            "box": [
+              125.3,
+              38.2,
+              210.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:standard · preview - # sec",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Standard · Preview - 30 sec",
+            "box": [
+              164.9,
+              329.2,
+              194.4,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:128097",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-142",
+      "captured_at": "2026-11-04T06:43:46.095Z",
+      "png": "screenshots/design/2778-128097.png",
+      "parts": [],
+      "note": "Memory Drift completed full video, Dark (existing drama; 同居防線 not in History any more, no template drama with a full video found). The app shows no Edit action under the video; Create Next Episode card instead",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 3,
+        "of": 5,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -13.7,
+          "anchors": 2,
+          "spread": 36.6,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 5,
+        "app_texts": 9,
+        "matched": 3,
+        "shapes": 2,
+        "controls": 6
+      },
+      "candidates": [
+        {
+          "id": "missing:I2778:128159;393:31121",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128159;393:31121",
+            "text": "Ready for the full video",
+            "box": [
+              190,
+              218,
+              153,
+              18
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128163;2750:64232",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128163;2750:64232",
+            "text": "Edit",
+            "box": [
+              48,
+              646,
+              27,
+              18
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:128165;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128165;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:scene # — the redacted identity",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 6 — The Redacted Identity",
+            "box": [
+              91.3,
+              104.5,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:ready for the next episode?",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Ready for the next episode?",
+            "box": [
+              31.3,
+              593.4,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:create next episode",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Create Next Episode",
+            "box": [
+              189.9,
+              649.3,
+              153.8,
+              33.3
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "control:2778:128158",
+          "kind": "control",
+          "severity": "major",
+          "note": "no tappable app element where Figma draws this control",
+          "figma": {
+            "node": "2778:128158",
+            "name": "video",
+            "box": [
+              16,
+              -142,
+              180,
+              320
+            ]
+          }
+        },
+        {
+          "id": "control:I2778:128158;739:37642",
+          "kind": "control",
+          "severity": "major",
+          "note": "no tappable app element where Figma draws this control",
+          "figma": {
+            "node": "I2778:128158;739:37642",
+            "name": "btn_play",
+            "box": [
+              76,
+              -12,
+              60,
+              60
+            ]
+          }
+        },
+        {
+          "id": "colour:2778:128163",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2778:128163",
+            "name": "button",
+            "color": "#2589fe",
+            "box": [
+              16,
+              638,
+              75,
+              34
+            ]
+          },
+          "app": {
+            "color": "#181a1c"
+          },
+          "delta": {
+            "dE": 82
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "3153:103325",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-321",
+      "captured_at": "2026-11-04T06:46:57.372Z",
+      "png": "screenshots/design/3153-103325.png",
+      "parts": [],
+      "note": "Memory Drift (existing full video) 'Ready for the next episode?' + Create Next Episode, Light; Create Next Episode not tapped",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 2,
+        "of": 2,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -13.7,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 2,
+        "app_texts": 9,
+        "matched": 2,
+        "shapes": 1,
+        "controls": 3
+      },
+      "candidates": [
+        {
+          "id": "lines:I3153:103397;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I3153:103397;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:scene # — the redacted identity",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 6 — The Redacted Identity",
+            "box": [
+              91.3,
+              104.5,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:heres your drama.",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Here's your drama.",
+            "box": [
+              15.6,
+              225.7,
+              343.8,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:ready for the next episode?",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Ready for the next episode?",
+            "box": [
+              31.3,
+              593.4,
+              312.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "extra:create next episode",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Create Next Episode",
+            "box": [
+              189.9,
+              649.3,
+              153.8,
+              33.3
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
       "id": "2778:127500",
       "name": "AI Mini Drama_template",
       "board": "2778:127318",
@@ -12412,6 +18328,1628 @@
           },
           "delta": {
             "dE": 70
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:127525",
+      "name": "AI Mini Drama_template",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-236",
+      "captured_at": "2026-11-04T06:15:07.146Z",
+      "png": "screenshots/design/2778-127525.png",
+      "parts": [],
+      "note": "Template (Glad We Came) loading after format Generate, Dark: app shows 'Processing your mini drama project.' progress where Figma draws 'Building the cast...' skeleton",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 3,
+        "of": 5,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 26.6,
+          "anchors": 3,
+          "spread": 13.9,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 6,
+        "app_texts": 7,
+        "matched": 4,
+        "shapes": 1,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:I2778:127531;393:31121",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:127531;393:31121",
+            "text": "Video language: English\r\nCaptions: Yes",
+            "box": [
+              160,
+              280,
+              183,
+              36
+            ]
+          }
+        },
+        {
+          "id": "missing:2778:127536",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "2778:127536",
+            "text": "Building the cast...",
+            "box": [
+              32,
+              423,
+              311,
+              14
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:127545;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:127545;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              228.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:processing your mini drama project.",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Processing your mini drama project.",
+            "box": [
+              31.3,
+              452.1,
+              312.5,
+              19.4
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              269.4,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:128784",
+      "name": "AI Mini Drama_template",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-236",
+      "captured_at": "2026-11-04T06:17:32.470Z",
+      "png": "screenshots/design/2778-128784.png",
+      "parts": [],
+      "note": "Glad We Came template storyboard loading ('Creating storyboard for the drama.'), Dark",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 6,
+        "of": 10,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 41.6,
+          "anchors": 3,
+          "spread": 21.1,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 2,
+          "spread": 18.7,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 10,
+        "app_texts": 11,
+        "matched": 6,
+        "shapes": 5,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:I2778:128827;2620:59767",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128827;2620:59767",
+            "text": "Sophie",
+            "box": [
+              32,
+              244,
+              88,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128828;2620:59767",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128828;2620:59767",
+            "text": "The Manager",
+            "box": [
+              132,
+              244,
+              88,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128829;2620:59767",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128829;2620:59767",
+            "text": "HR",
+            "box": [
+              232,
+              244,
+              88,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128830;2620:59767",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128830;2620:59767",
+            "text": "Chloe",
+            "box": [
+              332,
+              244,
+              88,
+              16
+            ]
+          }
+        },
+        {
+          "id": "copy:I2778:128831;393:31121",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "I2778:128831;393:31121",
+            "text": "Yes, create storyboard",
+            "box": [
+              194,
+              316,
+              149,
+              18
+            ]
+          },
+          "app": {
+            "text": "Create storyboard",
+            "box": [
+              220.5,
+              342.4,
+              138.9,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:128845;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128845;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:mia carter",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Mia Carter",
+            "box": [
+              31.3,
+              304.2,
+              86.1,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:ethan bennett",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Ethan Bennett",
+            "box": [
+              129.2,
+              304.2,
+              86.1,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:lily morgan",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Lily Morgan",
+            "box": [
+              227.1,
+              304.2,
+              86.1,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:I2778:128827;2620:59766",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128827;2620:59766",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              32,
+              152,
+              88,
+              88
+            ]
+          },
+          "app": {
+            "color": "#91929b"
+          },
+          "delta": {
+            "dE": 40
+          }
+        },
+        {
+          "id": "colour:I2778:128828;2620:59766",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128828;2620:59766",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              132,
+              152,
+              88,
+              88
+            ]
+          },
+          "app": {
+            "color": "#1b1f24"
+          },
+          "delta": {
+            "dE": 89
+          }
+        },
+        {
+          "id": "colour:I2778:128829;2620:59766",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128829;2620:59766",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              232,
+              152,
+              88,
+              88
+            ]
+          },
+          "app": {
+            "color": "#1b1f24"
+          },
+          "delta": {
+            "dE": 89
+          }
+        },
+        {
+          "id": "colour:I2778:128830;2620:59766",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128830;2620:59766",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              332,
+              152,
+              88,
+              88
+            ]
+          },
+          "app": {
+            "color": "#1b1f24"
+          },
+          "delta": {
+            "dE": 89
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:128300",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-236",
+      "captured_at": "2026-11-04T06:29:25.250Z",
+      "png": "screenshots/design/2778-128300.png",
+      "parts": [],
+      "note": "Glad We Came (template) preview-video loading, Dark: 'Generating video preview with Seedance 2.0.' skeleton card where Figma draws a video placeholder tile",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 4,
+        "of": 5,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 80.4,
+          "anchors": 3,
+          "spread": 16.6,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 4.8,
+          "anchors": 1,
+          "spread": 0,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 6,
+        "app_texts": 11,
+        "matched": 4,
+        "shapes": 1,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:2778:128357",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "2778:128357",
+            "text": "Choose your video settings",
+            "box": [
+              16,
+              170,
+              343,
+              18
+            ]
+          }
+        },
+        {
+          "id": "sample:I2778:128358;393:31121",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "I2778:128358;393:31121",
+            "text": "Generate Video\nModel: Seedance 2.0\nGeneration length: Preview · 30 sec",
+            "box": [
+              108,
+              228,
+              235,
+              54
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:128355;393:31121",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128355;393:31121",
+            "text": "Create video",
+            "box": [
+              259,
+              112,
+              84,
+              18
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              252.8,
+              209,
+              106.6,
+              49.7
+            ],
+            "lines": 3
+          }
+        },
+        {
+          "id": "lines:I2778:128363;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128363;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:romance",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Romance",
+            "box": [
+              125.3,
+              38.2,
+              210.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:standard · preview - # sec",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Standard · Preview - 30 sec",
+            "box": [
+              164.9,
+              329.2,
+              194.4,
+              49.7
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:138793",
+      "name": "storyboard",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-236",
+      "captured_at": "2026-11-04T06:47:25.457Z",
+      "png": "screenshots/design/2778-138793.png",
+      "parts": [],
+      "note": "",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 6,
+        "of": 9,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 38.1,
+          "anchors": 2,
+          "spread": 51.7,
+          "ok": false
+        },
+        "bottom": {
+          "dy": -0.4,
+          "anchors": 4,
+          "spread": 6.6,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 9,
+        "app_texts": 12,
+        "matched": 7,
+        "shapes": 2,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "missing:2778:138850",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "2778:138850",
+            "text": "Choose your video settings",
+            "box": [
+              16,
+              20,
+              343,
+              18
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:138851;393:31121",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:138851;393:31121",
+            "text": "Generate Video\nModel: Seedance 2.0\nLength: Preview · 30 sec",
+            "box": [
+              180,
+              78,
+              163,
+              54
+            ]
+          }
+        },
+        {
+          "id": "copy:I2778:138855;2750:64270",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:138855;2750:64270",
+            "text": "Create the full video · 90 sec",
+            "box": [
+              40,
+              586,
+              295,
+              16
+            ]
+          },
+          "app": {
+            "text": "Create the full episode (60 sec)",
+            "box": [
+              39.2,
+              609.4,
+              296.5,
+              16
+            ]
+          }
+        },
+        {
+          "id": "lines:I2778:138855;2750:64323;2750:25393",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:138855;2750:64323;2750:25393",
+            "text": "Generate",
+            "box": [
+              255,
+              622,
+              64,
+              18
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              249,
+              653.1,
+              86.8,
+              33.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I2778:138857;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:138857;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:scene # — the broken lock",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Scene 6 — The Broken Lock",
+            "box": [
+              91.3,
+              88.9,
+              244.4,
+              14.9
+            ]
+          }
+        },
+        {
+          "id": "extra:credits will be consumed for this task.",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Credits will be consumed for this task.",
+            "box": [
+              39.2,
+              627.4,
+              296.5,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:I2778:138855;2750:64323",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:138855;2750:64323",
+            "name": "button",
+            "color": "#0073ff",
+            "box": [
+              239,
+              614,
+              96,
+              34
+            ]
+          },
+          "app": {
+            "color": "#a8d4fb"
+          },
+          "delta": {
+            "dE": 70
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "2778:128606",
+      "name": "AI Mini Drama_template",
+      "board": "2778:127318",
+      "board_name": "main flow",
+      "case": "TC-440",
+      "captured_at": "2026-11-04T06:17:11.471Z",
+      "png": "screenshots/design/2778-128606.png",
+      "parts": [],
+      "note": "Glad We Came template, Characters Result + Create storyboard offer (31 credits), Dark",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 7,
+        "of": 12,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": 89.4,
+          "anchors": 2,
+          "spread": 102.6,
+          "ok": false
+        },
+        "bottom": {
+          "dy": -48,
+          "anchors": 5,
+          "spread": 5,
+          "ok": true
+        }
+      },
+      "counts": {
+        "figma_texts": 13,
+        "app_texts": 16,
+        "matched": 7,
+        "shapes": 7,
+        "controls": 0
+      },
+      "candidates": [
+        {
+          "id": "sample:2778:128643",
+          "kind": "sample",
+          "severity": "info",
+          "figma": {
+            "node": "2778:128643",
+            "text": "When the company announces a strict ban on office romance, a dedicated employee realizes her growing feelings for her direct manager could put both of their careers at risk. After a late-night elevator incident brings them unexpectedly close, they begin dating in secret, hiding their relationship behind professional distance, coded messages, and discreet meetings outside the office. As rumors spread and they are nearly caught together, her manager becomes colder in public to protect them, creating tension and doubt between them. Their worst fear comes true when HR launches an investigation following an anonymous report, forcing them to choose between their careers and their relationship. In the end, he decides to reveal the truth and request a transfer, accepting the professional consequences so they can finally be together without hiding.\n\nPossible Characters:\nSophie: A careful and detailed office worker who is deeply in love with her manager, constantly trying to balance her career with her secret passion.\nThe Manager: A disciplined, restrained leader who lets his guard down only when alone with Sophie, desperately trying to protect her and their career.\nHR Officer: A vigilant HR representative who strictly enforces the company's no-dating policy and watches employees closely.\nCoworker: An overly curious colleague who frequently wanders the halls and almost catches Sophie and the Manager in their private moments.",
+            "box": [
+              32,
+              -420,
+              311,
+              684
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128649;2620:59767",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128649;2620:59767",
+            "text": "Sophie",
+            "box": [
+              32,
+              418,
+              88,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128650;2620:59767",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128650;2620:59767",
+            "text": "The Manager",
+            "box": [
+              132,
+              418,
+              88,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128651;2620:59767",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128651;2620:59767",
+            "text": "HR",
+            "box": [
+              232,
+              418,
+              88,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128652;2620:59767",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128652;2620:59767",
+            "text": "Chloe",
+            "box": [
+              332,
+              418,
+              88,
+              16
+            ]
+          }
+        },
+        {
+          "id": "missing:I2778:128655;1902:90188",
+          "kind": "missing",
+          "severity": "major",
+          "figma": {
+            "node": "I2778:128655;1902:90188",
+            "text": "More ideas",
+            "box": [
+              28,
+              646,
+              73,
+              18
+            ]
+          }
+        },
+        {
+          "id": "position:I2778:128654;2750:64266",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128654;2750:64266",
+            "text": "The characters look great! Ready to create the storyboard?",
+            "box": [
+              28,
+              482,
+              319,
+              36
+            ]
+          },
+          "app": {
+            "text": "The characters look great! Ready to create the storyboard?",
+            "box": [
+              15.6,
+              553.8,
+              343.8,
+              31.9
+            ]
+          },
+          "delta": {
+            "x": -12.4,
+            "y": 1.6
+          }
+        },
+        {
+          "id": "position:I2778:128654;2750:64276",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128654;2750:64276",
+            "text": "15",
+            "box": [
+              54,
+              588,
+              12,
+              14
+            ]
+          },
+          "app": {
+            "text": "31",
+            "box": [
+              54.9,
+              663.5,
+              11.8,
+              12.8
+            ]
+          },
+          "delta": {
+            "x": 0.9,
+            "y": -5.1
+          }
+        },
+        {
+          "id": "position:I2778:128654;2750:64323;2750:25393",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128654;2750:64323;2750:25393",
+            "text": "Generate",
+            "box": [
+              255,
+              576,
+              64,
+              18
+            ]
+          },
+          "app": {
+            "text": "Generate",
+            "box": [
+              249,
+              653.1,
+              86.8,
+              33.3
+            ]
+          },
+          "delta": {
+            "x": 5.4,
+            "y": -23.1
+          }
+        },
+        {
+          "id": "lines:I2778:128654;2750:64323;2750:25393",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128654;2750:64323;2750:25393",
+            "text": "Generate",
+            "box": [
+              255,
+              576,
+              64,
+              18
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              249,
+              653.1,
+              86.8,
+              33.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "position:I2778:128657;2499:46952",
+          "kind": "position",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128657;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ]
+          },
+          "app": {
+            "text": "Enter your idea to create drama",
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ]
+          },
+          "delta": {
+            "x": -0.9,
+            "y": 52.8
+          }
+        },
+        {
+          "id": "lines:I2778:128657;2499:46952",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128657;2499:46952",
+            "text": "Enter your idea to create drama",
+            "box": [
+              36,
+              725.5,
+              208,
+              17
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              35.1,
+              727.8,
+              271.5,
+              31.3
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "extra:replace",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Replace",
+            "box": [
+              99.7,
+              414.9,
+              17.7,
+              17.7
+            ]
+          }
+        },
+        {
+          "id": "extra:mia carter",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Mia Carter",
+            "box": [
+              31.3,
+              504.9,
+              86.1,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:replace",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Replace",
+            "box": [
+              197.6,
+              414.9,
+              17.7,
+              17.7
+            ]
+          }
+        },
+        {
+          "id": "extra:ethan bennett",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Ethan Bennett",
+            "box": [
+              129.2,
+              504.9,
+              86.1,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:replace",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Replace",
+            "box": [
+              295.5,
+              414.9,
+              17.7,
+              17.7
+            ]
+          }
+        },
+        {
+          "id": "extra:lily morgan",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Lily Morgan",
+            "box": [
+              227.1,
+              504.9,
+              86.1,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:credits will be consumed for this task.",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Credits will be consumed for this task.",
+            "box": [
+              39.2,
+              627.4,
+              296.5,
+              13.9
+            ]
+          }
+        },
+        {
+          "id": "extra:record voice",
+          "kind": "extra",
+          "severity": "info",
+          "app": {
+            "text": "Record voice",
+            "box": [
+              312.5,
+              727.8,
+              31.3,
+              31.3
+            ]
+          }
+        },
+        {
+          "id": "colour:I2778:128649;2620:59766",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128649;2620:59766",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              32,
+              326,
+              88,
+              88
+            ]
+          },
+          "app": {
+            "color": "#1b1f24"
+          },
+          "delta": {
+            "dE": 89
+          }
+        },
+        {
+          "id": "colour:I2778:128650;2620:59766",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128650;2620:59766",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              132,
+              326,
+              88,
+              88
+            ]
+          },
+          "app": {
+            "color": "#31353d"
+          },
+          "delta": {
+            "dE": 78
+          }
+        },
+        {
+          "id": "colour:I2778:128651;2620:59766",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128651;2620:59766",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              232,
+              326,
+              88,
+              88
+            ]
+          },
+          "app": {
+            "color": "#1b1f24"
+          },
+          "delta": {
+            "dE": 89
+          }
+        },
+        {
+          "id": "colour:I2778:128652;2620:59766",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128652;2620:59766",
+            "name": "imput_character",
+            "color": "#ffffff",
+            "box": [
+              332,
+              326,
+              88,
+              88
+            ]
+          },
+          "app": {
+            "color": "#1b1f24"
+          },
+          "delta": {
+            "dE": 89
+          }
+        },
+        {
+          "id": "colour:I2778:128654;2750:64323",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "I2778:128654;2750:64323",
+            "name": "button",
+            "color": "#2589fe",
+            "box": [
+              239,
+              568,
+              96,
+              34
+            ]
+          },
+          "app": {
+            "color": "#2f62b0"
+          },
+          "delta": {
+            "dE": 25
+          }
+        },
+        {
+          "id": "colour:2778:128655",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "2778:128655",
+            "name": "AI option",
+            "color": "#29323e",
+            "box": [
+              16,
+              638,
+              117,
+              34
+            ]
+          },
+          "app": {
+            "color": "#0c0c0c"
+          },
+          "delta": {
+            "dE": 19
+          }
+        }
+      ],
+      "recheck": null
+    },
+    {
+      "id": "4858:35398",
+      "name": "Credit page_free",
+      "board": "4858:34930",
+      "board_name": "1016_Chat navigation",
+      "case": "TC-520",
+      "captured_at": "2026-11-04T06:13:36.930Z",
+      "png": "screenshots/design/4858-35398.png",
+      "parts": [],
+      "note": "Account is Pro (not Free): My Credits captured as it is (still offers Join the Pro / Subscribe Now); daily credits already Claimed today; Dark",
+      "build": "16.8.0 (2611021)",
+      "win": {
+        "w": 1080,
+        "h": 2400
+      },
+      "k": 0.347,
+      "fw": 375,
+      "arrival": {
+        "matched": 10,
+        "of": 13,
+        "ok": true
+      },
+      "fit": {
+        "top": {
+          "dy": -13.9,
+          "anchors": 7,
+          "spread": 7.9,
+          "ok": false
+        },
+        "bottom": {
+          "dy": 26.8,
+          "anchors": 2,
+          "spread": 13.6,
+          "ok": false
+        }
+      },
+      "counts": {
+        "figma_texts": 13,
+        "app_texts": 13,
+        "matched": 13,
+        "shapes": 2,
+        "controls": 1
+      },
+      "candidates": [
+        {
+          "id": "copy:I4858:35418;921:2027",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "I4858:35418;921:2027",
+            "text": "Claim",
+            "box": [
+              289.5,
+              223,
+              39,
+              18
+            ]
+          },
+          "app": {
+            "text": "Claimed",
+            "box": [
+              261.5,
+              208,
+              89.9,
+              35.1
+            ]
+          }
+        },
+        {
+          "id": "copy:4858:35887",
+          "kind": "copy",
+          "severity": "minor",
+          "note": "one text contains the other",
+          "figma": {
+            "node": "4858:35887",
+            "text": "Join the Pro+",
+            "box": [
+              64,
+              497,
+              168,
+              32
+            ]
+          },
+          "app": {
+            "text": "Join the Pro",
+            "box": [
+              62.8,
+              487.2,
+              249.3,
+              36.8
+            ]
+          }
+        },
+        {
+          "id": "copy:4858:35894",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "4858:35894",
+            "text": "50% for all credit packs",
+            "box": [
+              90,
+              569,
+              221,
+              20
+            ]
+          },
+          "app": {
+            "text": "50% off all credit packs",
+            "box": [
+              88.5,
+              563.5,
+              150.7,
+              19.8
+            ]
+          }
+        },
+        {
+          "id": "copy:4858:35897",
+          "kind": "copy",
+          "severity": "major",
+          "figma": {
+            "node": "4858:35897",
+            "text": "Unlock all Pro+ features!",
+            "box": [
+              90,
+              597,
+              221,
+              20
+            ]
+          },
+          "app": {
+            "text": "Unlock all Pro features!",
+            "box": [
+              88.5,
+              591.3,
+              150.7,
+              19.8
+            ]
+          }
+        },
+        {
+          "id": "lines:I4858:35410;919:2017",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I4858:35410;919:2017",
+            "text": "Buy More",
+            "box": [
+              274,
+              133,
+              65,
+              18
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              261.5,
+              105.2,
+              89.9,
+              46.9
+            ],
+            "lines": 3
+          }
+        },
+        {
+          "id": "lines:I4858:35898;533:1292",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I4858:35898;533:1292",
+            "text": "Subscribe Now",
+            "box": [
+              84,
+              659,
+              207,
+              20
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              62.8,
+              640.3,
+              249.3,
+              46.9
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "lines:I4858:35902;4868:9480;450:6834",
+          "kind": "lines",
+          "severity": "minor",
+          "figma": {
+            "node": "I4858:35902;4868:9480;450:6834",
+            "text": "Details",
+            "box": [
+              307,
+              58,
+              52,
+              20
+            ],
+            "lines": 1
+          },
+          "app": {
+            "box": [
+              311.5,
+              30.6,
+              47.9,
+              46.9
+            ],
+            "lines": 2
+          }
+        },
+        {
+          "id": "colour:4858:35410",
+          "kind": "colour",
+          "severity": "minor",
+          "figma": {
+            "node": "4858:35410",
+            "name": "Button/Credit/Action",
+            "color": "#00f1c9",
+            "box": [
+              262,
+              124,
+              89,
+              36
+            ]
+          },
+          "app": {
+            "color": "#0c0c0c"
+          },
+          "delta": {
+            "dE": 100
+          }
+        },
+        {
+          "id": "colour:I4858:35410;919:2017",
+          "kind": "colour",
+          "severity": "minor",
+          "note": "text colour",
+          "figma": {
+            "node": "I4858:35410;919:2017",
+            "name": "Buy More",
+            "color": "#000000",
+            "box": [
+              274,
+              133,
+              65,
+              18
+            ]
+          },
+          "app": {
+            "color": "#6eeecb"
+          },
+          "delta": {
+            "dE": 97
           }
         }
       ],

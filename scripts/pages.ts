@@ -18,6 +18,7 @@ import { createServer, request } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join } from 'node:path';
 import { arg, assertIds, draftsDir, readManifest, tableDir } from './lib/library.ts';
+import { isLocal } from './lib/local.ts';
 
 const [feature, platform] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -133,7 +134,6 @@ if(document.hidden||(${JSON.stringify(current)}==='plan'||${JSON.stringify(curre
 n.querySelectorAll('.cb-lang button').forEach(x=>x.onclick=()=>{const v=x.dataset.l;if(v===CASEBOOK.lang)return;CASEBOOK.lang=v;try{localStorage.setItem('casebook-lang',v)}catch(e){}show(v);dispatchEvent(new CustomEvent('casebook-lang',{detail:v}))});})();</script>`;
 };
 const notAvailable = (p: Page) => `<!doctype html><meta charset="utf-8"><title>${esc(p.label)}</title><body style="margin:0;font:15px system-ui;background:#f4f5f7">${tabBar(p.id)}<p style="padding:24px;max-width:80ch">${esc(p.error ?? 'Not available.')}</p></body>`;
-const isLocal = (a = '') => a === '127.0.0.1' || a === '::1' || a === '::ffff:127.0.0.1';
 
 const server = createServer((req, res) => {
   const url = req.url ?? '/';

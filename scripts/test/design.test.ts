@@ -224,6 +224,7 @@ test('scope: the Plan view block excludes with a reason, includes again and mark
   assert.equal(by('1:30').status, 'routed', 'included again');
   assert.equal(by('1:10').status, 'routed', 'an exclusion without a reason is not applied');
   assert.equal(plan.scope_review.ids.length, plan.screens.length);
+  assert.deepEqual(plan.scope_included, ['1:30'], 'an include is kept, so the Plan view does not ask about the screen again');
   // a rebuild keeps the reasons and the review
   const later = new Date(Date.now() + 9000); utimesSync(join(T, 'cases.csv'), later, later);
   assert.match(design('screens', 'TC-001').out, /plan built again/);
@@ -237,6 +238,7 @@ test('scope: the Plan view block excludes with a reason, includes again and mark
   assert.equal(scope(`DESIGN SCOPE ${F} ios\nexclude 1:30: superseded\ninclude 1:40\ninclude 2:1\n`).status, 0);
   plan = read(join(T, 'design', 'plan.json'));
   assert.deepEqual(plan.skip, ['1:30']); assert.equal(plan.screens.find((s: any) => s.id === '1:30').why, 'superseded');
+  assert.ok(plan.scope_included.includes('1:40') && !plan.scope_included.includes('1:30'), 'an exclusion drops the include');
   assert.equal(scope('DESIGN SCOPE other/feature ios\n').status, 1, 'a block for another feature is refused');
 });
 

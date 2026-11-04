@@ -1,0 +1,434 @@
+{
+  "screens": {
+    "2566:114704": {
+      "missing:I2566:114723;1440:97054": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "missing:I2566:114724;1440:97054": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "missing:I2566:114725;1440:97054": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "position:2566:114709": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "position:2566:114713": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "lines:I2566:114714;931:2392;315:8365": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "position:I2566:114722;1440:97054": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "position:I2566:114731;145:7579;245:2027": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "colour:2566:114714": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "colour:I2566:114714;931:2392": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "colour:2566:114709": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "colour:2566:114713": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "colour:2566:114717": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "colour:I2566:114722;1440:97054": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      },
+      "colour:I2566:114731;145:7579;245:2027": {
+        "verdict": "n/a",
+        "note": "Figma 為首頁的深色主題版本，手機截圖是淺色主題的首頁，不是此框的狀態。"
+      }
+    },
+    "2824:130307": {
+      "missing:I2824:130363;2773:119526": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "missing:I2824:130364;2773:119526": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "position:I2824:130362;2773:119522": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "lines:I2824:130362;2773:119522": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:2824:130362": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:2824:130363": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:2824:130364": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:2824:130359": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:I2824:130368;1037:48645;245:2027": {
+        "verdict": "n/a",
+        "note": "Figma 是點選建議後輸入框已帶入「Company policy strictly bans office romance, …」的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      }
+    },
+    "2824:130669": {
+      "missing:I2824:130725;2773:119526": {
+        "verdict": "n/a",
+        "note": "Figma 是輸入框填入多行長文字並出現捲軸的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "missing:I2824:130726;2773:119526": {
+        "verdict": "n/a",
+        "note": "Figma 是輸入框填入多行長文字並出現捲軸的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "lines:I2824:130724;2773:119522": {
+        "verdict": "n/a",
+        "note": "Figma 是輸入框填入多行長文字並出現捲軸的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:2824:130724": {
+        "verdict": "n/a",
+        "note": "Figma 是輸入框填入多行長文字並出現捲軸的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:2824:130725": {
+        "verdict": "n/a",
+        "note": "Figma 是輸入框填入多行長文字並出現捲軸的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:2824:130726": {
+        "verdict": "n/a",
+        "note": "Figma 是輸入框填入多行長文字並出現捲軸的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:2824:130721": {
+        "verdict": "n/a",
+        "note": "Figma 是輸入框填入多行長文字並出現捲軸的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      },
+      "colour:I2824:130730;1037:48645;245:2027": {
+        "verdict": "n/a",
+        "note": "Figma 是輸入框填入多行長文字並出現捲軸的狀態，截圖的輸入框仍是空白的「Enter your idea to create drama」。"
+      }
+    },
+    "3949:74761": {
+      "copy:I3949:74767;393:31121": {
+        "verdict": "n/a",
+        "note": "Figma 是大綱失敗「I couldn't write a story from this idea. …」的狀態，截圖是尚未送出的格式卡（「Video language」、「Captions」與「Generate」）。"
+      },
+      "lines:I3949:74774;2499:46952": {
+        "verdict": "n/a",
+        "note": "Figma 是大綱失敗「I couldn't write a story from this idea. …」的狀態，截圖是尚未送出的格式卡（「Video language」、「Captions」與「Generate」）。"
+      },
+      "colour:3949:74774": {
+        "verdict": "n/a",
+        "note": "Figma 是大綱失敗「I couldn't write a story from this idea. …」的狀態，截圖是尚未送出的格式卡（「Video language」、「Captions」與「Generate」）。"
+      },
+      "colour:3949:74766": {
+        "verdict": "n/a",
+        "note": "Figma 是大綱失敗「I couldn't write a story from this idea. …」的狀態，截圖是尚未送出的格式卡（「Video language」、「Captions」與「Generate」）。"
+      },
+      "colour:I3949:74778;1037:48645;245:2027": {
+        "verdict": "n/a",
+        "note": "Figma 是大綱失敗「I couldn't write a story from this idea. …」的狀態，截圖是尚未送出的格式卡（「Video language」、「Captions」與「Generate」）。"
+      }
+    },
+    "2820:123240": {
+      "missing:I2820:123242;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "copy:I2820:123242;12037:8701": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "missing:I2820:123243;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "copy:I2820:123243;12037:8701": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "missing:I2820:123244;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "missing:I2820:123245;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "missing:I2820:123246;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "missing:I2820:123247;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "position:I2820:123249;1191:85014": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "lines:I2820:123249;1191:85014": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "position:I2820:123252;761:28071": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "lines:I2820:123252;761:28071": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "colour:2820:123249": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      },
+      "colour:I2820:123255;513:535": {
+        "verdict": "n/a",
+        "note": "Figma 是 Recent Task 上方開著「To keep the file lightweight, …」提示泡泡的狀態，截圖是沒有提示泡泡的一般清單。"
+      }
+    },
+    "2820:123256": {
+      "missing:I2820:123258;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "copy:I2820:123258;12037:8701": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "missing:I2820:123259;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "copy:I2820:123259;12037:8701": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "missing:I2820:123260;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "missing:I2820:123261;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "missing:I2820:123262;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "missing:I2820:123263;12037:8693": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "position:I2820:123265;1191:85014": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "lines:I2820:123265;1191:85014": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "position:I2820:123268;761:28071": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "lines:I2820:123268;761:28071": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:2820:123258": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:2820:123259": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:2820:123260": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:2820:123261": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:2820:123262": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:2820:123263": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123271;513:535": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123258;12037:8692": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123259;12037:8692": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123260;12037:8692": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123260;12037:8701": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123261;12037:8692": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123261;12037:8701": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123262;12037:8692": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123262;12037:8701": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123263;12037:8692": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123265;1191:85014": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      },
+      "colour:I2820:123268;761:28071": {
+        "verdict": "n/a",
+        "note": "Figma 是淺色主題且開著「To keep the file lightweight, …」提示泡泡的 Recent Task，截圖是深色主題、沒有提示泡泡的清單。"
+      }
+    },
+    "2566:114761": {
+      "missing:I2566:114780;1440:97054": {
+        "verdict": "ok",
+        "note": "範本清單由伺服器提供，「The Idol's Secret Girlfriend」只是 Figma 的樣本範本，手機顯示的是其他範本。"
+      },
+      "missing:I2566:114781;1440:97054": {
+        "verdict": "ok",
+        "note": "範本清單由伺服器提供，「The Dragon King's Sacrificial Bride」只是 Figma 的樣本範本，手機顯示的是其他範本。"
+      },
+      "missing:I2566:114782;1440:97054": {
+        "verdict": "ok",
+        "note": "範本清單由伺服器提供，「Encounter After Closing」只是 Figma 的樣本範本，手機顯示的是其他範本。"
+      },
+      "position:2566:114766": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Hi, I'm your」上移約 5 pt、「Describe your idea and watch it come to life as a short drama.」下移約 6 pt，標題與卡片的間距比 Figma 大約 11 pt。"
+      },
+      "position:2566:114770": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Hi, I'm your」上移約 5 pt、「Describe your idea and watch it come to life as a short drama.」下移約 6 pt，標題與卡片的間距比 Figma 大約 11 pt。"
+      },
+      "lines:I2566:114771;931:2392;315:8365": {
+        "verdict": "ok",
+        "note": "手機的「Create Your Drama」仍是一行，量到兩行是因為取到整顆按鈕的範圍。"
+      },
+      "position:I2566:114779;1440:97054": {
+        "verdict": "question",
+        "note": "Figma 的範本是一列可橫向捲動的卡片，手機是三欄格狀排列，「Forbidden Office Romance」因此落在第二格；需確認格狀排列是否為較新的設計。"
+      },
+      "position:I2566:114788;145:7579;245:2027": {
+        "verdict": "ok",
+        "note": "點數是帳號資料（手機為「25272」），寬度不同造成的位移不算問題。"
+      },
+      "colour:2566:114771": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Create Your Drama」按鈕在手機上是較深的藍色 #3171f6，Figma 的按鈕藍色是 #2589fe。"
+      }
+    },
+    "2824:130245": {
+      "missing:I2824:130301;2773:119526": {
+        "verdict": "ok",
+        "note": "建議題材是產生的內容，手機顯示「She fakes being engaged, …」等其他建議，不算缺字。"
+      },
+      "missing:I2824:130302;2773:119526": {
+        "verdict": "ok",
+        "note": "建議題材是產生的內容，手機顯示「She fakes being engaged, …」等其他建議，不算缺字。"
+      },
+      "position:I2824:130300;2773:119522": {
+        "verdict": "ok",
+        "note": "手機的「Surprise me」仍是一行、靠左對齊，量到的差異是取到整顆按鈕的範圍。"
+      },
+      "lines:I2824:130300;2773:119522": {
+        "verdict": "ok",
+        "note": "手機的「Surprise me」仍是一行、靠左對齊，量到的差異是取到整顆按鈕的範圍。"
+      },
+      "colour:2824:130300": {
+        "verdict": "ok",
+        "note": "手機的「Surprise me」按鈕同樣是藍色，量到的淺色是取樣到按鈕外的背景。"
+      },
+      "colour:2824:130301": {
+        "verdict": "n/a",
+        "note": "Figma 是深色主題，手機是淺色主題，這項顏色差異來自主題，無法在此比對。"
+      },
+      "colour:2824:130302": {
+        "verdict": "n/a",
+        "note": "Figma 是深色主題，手機是淺色主題，這項顏色差異來自主題，無法在此比對。"
+      },
+      "colour:2824:130297": {
+        "verdict": "n/a",
+        "note": "Figma 是深色主題，手機是淺色主題，這項顏色差異來自主題，無法在此比對。"
+      },
+      "colour:I2824:130306;1037:48645;245:2027": {
+        "verdict": "n/a",
+        "note": "Figma 是深色主題，手機是淺色主題，這項顏色差異來自主題，無法在此比對。"
+      }
+    },
+    "2820:115034": {
+      "missing:2820:115091": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "Figma 在「Create video」後顯示「Choose your video settings」，手機改顯示「Pick a video model and length on the card to start generating.」。"
+      },
+      "lines:I2820:115089;393:31121": {
+        "verdict": "ok",
+        "note": "手機的「Create video」實際仍是一行，量到多行是因為取到整個氣泡或輸入框的範圍。"
+      },
+      "lines:I2820:115101;2499:46952": {
+        "verdict": "ok",
+        "note": "手機的「Enter your idea to create drama」實際仍是一行，量到多行是因為取到整個氣泡或輸入框的範圍。"
+      }
+    }
+  }
+}

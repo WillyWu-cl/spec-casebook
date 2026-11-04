@@ -30,6 +30,7 @@ import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join, relative } from 'node:path';
 import { readRecords } from './lib/csv.ts';
+import { isLocal } from './lib/local.ts';
 import { ROOT, arg, assertIds, featureDir, readManifest, readTable, tableDir } from './lib/library.ts';
 import { activityPoints, localRunMessages, syncTokens } from './lib/run-ledger.ts';
 import { IDLE, W, activity, estimator, readCalibration, readSnaps, spanStats, weeklyRatio, weight, type Group } from './lib/usage-estimate.ts';
@@ -89,7 +90,7 @@ function buildData(link: (abs: string) => string) {
   const boards = existsSync(sc) ? (read(sc).read ?? []).map((b: any) => ({ id: b.id, name: b.name, read_at: b.read_at })) : [];
   return { feature, title, platform, built_at: new Date().toISOString(), spec_set: plan.spec_set, file: plan.file?.key ?? plan.file?.fileKey ?? '',
     review: plan.scope_review ? { at: plan.scope_review.at, fresh: screens.filter((x: any) => !plan.scope_review.ids?.includes(x.id)).map((x: any) => x.id) } : null,
-    skip: plan.skip ?? [], reasons: plan.skip_reasons ?? {}, boards, gaps: plan.source_gaps ?? { unread: [], incomplete: [] }, screens };
+    skip: plan.skip ?? [], reasons: plan.skip_reasons ?? {}, included: plan.scope_included ?? [], boards, gaps: plan.source_gaps ?? { unread: [], incomplete: [] }, screens };
 }
 
 // Token use of the design check (user, 2026-11-04), counted like the Progress page (lib/usage-estimate.ts, same
@@ -151,7 +152,7 @@ if (serve) {
       }
       const ap = url.match(/^\/apply\/(scope|decide)$/);
       if (ap && req.method === 'POST') {
-        const local = ['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(req.socket.remoteAddress ?? '');
+        const local = isLocal(req.socket.remoteAddress);
         const json = (code: number, o: unknown) => { res.writeHead(code, { 'content-type': 'application/json' }); res.end(JSON.stringify(o)); };
         if (!local) { json(403, { error: 'Save works only on the computer running the page.' }); return; }
         const chunks: Buffer[] = [];

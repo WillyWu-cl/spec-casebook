@@ -21,6 +21,7 @@ import { renderPage } from './lib/render.ts';
 import { exportTable } from './lib/exporter.ts';
 import { writeFeatureIndex } from './lib/feature-index.ts';
 import { parseQuestions, readAnswers, saveAnswers } from './lib/questions.ts';
+import { isLocal } from './lib/local.ts';
 
 const [feature, platform] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -101,7 +102,6 @@ async function save(body: { rows: Record<string, string>[]; decisions: unknown[]
   return { ...out, version, cases: clean.length, csv: join(table, 'cases.csv'), notes: notes.length, notes_file: notes.length ? notesFile : '' };
 }
 
-const isLocal = (a = '') => a === '127.0.0.1' || a === '::1' || a === '::ffff:127.0.0.1';
 const server = createServer(async (req, res) => {
   try {
     const local = isLocal(req.socket.remoteAddress);

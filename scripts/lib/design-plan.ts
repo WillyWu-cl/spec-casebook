@@ -21,7 +21,9 @@
 // control-trace.json, the newest phases.json and every runs/*/results.csv. Writes <table>/design/plan.json (committed).
 // The plan is built again whenever one of those inputs is newer than it (planFresh), keeping what the user decided:
 // the skip list with a reason per screen or board (`skip_reasons`), and the scope review (`scope_review`: when the user
-// reviewed the plan on the Design tab's Plan view, and the screen ids it covered, so screens added later show as new).
+// reviewed the plan on the Design tab's Plan view, and the screen ids it covered, so screens added later show as new),
+// and the flagged screens the user chose to include before the review was done (`scope_included`; user, 2026-11-04: an
+// include saved on its own was lost, so the Plan view asked about the screen again).
 // Each entry also carries `flags`, the reasons the Plan view asks the user to look at it:
 //   area     the row only reaches the area (fit low): the runner brings about the state the frame shows
 //   variant  a state drawn beside a reached screen, brought about there (Design path)
@@ -109,7 +111,7 @@ export const gapLine = (g: { unread: any[]; incomplete: any[] }) => [
   ...g.incomplete.map(b => `board ${b.id} 「${b.name}」 read incompletely (${b.missing.slice(0, 3).join(', ')})`)].join('; ');
 
 // what a rebuild keeps from the plan before it
-export const kept = (old: any) => ({ skip: old?.skip, skipReason: old?.skip_reason ?? undefined, reasons: old?.skip_reasons, review: old?.scope_review });
+export const kept = (old: any) => ({ skip: old?.skip, skipReason: old?.skip_reason ?? undefined, reasons: old?.skip_reasons, review: old?.scope_review, included: old?.scope_included });
 
 export const summary = (plan: any) => {
   const fits = ['high', 'mid', 'low'].map(f => `${plan.screens.filter((e: any) => e.route?.fit === f).length} ${f}`).join(' / ');
@@ -117,7 +119,7 @@ export const summary = (plan: any) => {
     `${plan.counts.figma_paths ?? 0} by Design arrows only${plan.casebook ? ` (${plan.counts.gaps} gaps in the table)` : ' (no casebook table)'}, ${plan.counts.no_route} no route, ${plan.counts.excluded} excluded`;
 };
 
-type PlanOpt = { set?: string; skip?: string[]; skipReason?: string; reasons?: Record<string, string>; review?: any };
+type PlanOpt = { set?: string; skip?: string[]; skipReason?: string; reasons?: Record<string, string>; review?: any; included?: string[] };
 export function buildPlan(feature: string, platform: string, opt: PlanOpt = {}): any {
   const specs = join(featureDir(feature), 'specs'), table = tableDir(feature, platform);
   const set = opt.set ?? designSet(feature);
@@ -234,7 +236,8 @@ export function buildPlan(feature: string, platform: string, opt: PlanOpt = {}):
   const count = (st: string) => entries.filter((e: any) => e.status === st).length;
   const plan = { built_at: new Date().toISOString(), spec_set: set, file: frames.files?.design ?? null, phases: phasesFile?.slice(table.length + 1) ?? null,
     skip: [...skip], skip_reason: opt.skipReason ?? null, skip_reasons: Object.fromEntries(Object.entries(reasons).filter(([k]) => skip.has(k))),
-    scope_review: opt.review ?? null, source_gaps: sourceGaps(feature, set, skip),
+    scope_review: opt.review ?? null, scope_included: (opt.included ?? []).filter(id => !skip.has(id) && entries.some((e: any) => e.id === id)),
+    source_gaps: sourceGaps(feature, set, skip),
     casebook: hasTable, counts: { screens: entries.length, routed: count('routed'), figma_paths: entries.filter((e: any) => e.route?.how === 'figma').length,
       gaps: entries.filter((e: any) => e.gap).length, no_route: count('no-route'), excluded: count('excluded') }, by_case: byCase, screens: entries };
   writeJson(planPath(feature, platform), plan);

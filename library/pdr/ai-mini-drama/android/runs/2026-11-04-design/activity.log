@@ -602,3 +602,513 @@
 2026-11-04T06:04:48.727Z file screenshots/design/2778-128718-sheet.png
 2026-11-04T06:04:48.814Z file screenshots/design/3142-68271-sheet.png
 2026-11-04T06:04:48.885Z file screenshots/design/4858-36084-sheet.png
+2026-11-04T06:10:06.898Z restart 
+2026-11-04T06:10:15.705Z logcat start
+2026-11-04T06:10:15.823Z build 
+2026-11-04T06:10:16.045Z shot 
+2026-11-04T06:10:17.452Z file screenshots/undefined.png
+2026-11-04T06:10:21.254Z shot mf2-start
+2026-11-04T06:10:22.519Z texts 
+2026-11-04T06:10:22.341Z file screenshots/mf2-start.png
+2026-11-04T06:10:36.844Z lbl [AID]IAP_Back
+2026-11-04T06:11:40.354Z shot mf2-launcher
+2026-11-04T06:11:41.153Z texts 
+2026-11-04T06:11:41.010Z file screenshots/mf2-launcher.png
+2026-11-04T06:11:56.818Z tap 95 155
+2026-11-04T06:11:59.114Z texts 
+2026-11-04T06:12:03.145Z back 
+2026-11-04T06:12:05.984Z shot mf2-launcher2
+2026-11-04T06:12:07.046Z els 
+2026-11-04T06:12:06.887Z file screenshots/mf2-launcher2.png
+2026-11-04T06:12:15.016Z tap 89 200
+2026-11-04T06:12:16.780Z scrollto Preferences
+2026-11-04T06:12:17.517Z lbl Preferences
+2026-11-04T06:12:19.622Z texts 
+2026-11-04T06:12:24.115Z lbl Appearance
+2026-11-04T06:12:26.206Z texts 
+2026-11-04T06:12:30.314Z lbl Dark Mode
+2026-11-04T06:12:33.174Z texts 
+2026-11-04T06:12:37.746Z els 
+2026-11-04T06:12:42.758Z back 
+2026-11-04T06:12:44.011Z back 
+2026-11-04T06:12:45.786Z texts 
+2026-11-04T06:12:46.259Z lbl AI Mini Drama
+2026-11-04T06:12:50.581Z shot mf2-landing-dark
+2026-11-04T06:12:51.219Z file screenshots/mf2-landing-dark.png
+2026-11-04T06:12:55.037Z back 
+2026-11-04T06:12:57.174Z lbl AI Mini Drama
+2026-11-04T06:13:00.837Z texts 
+2026-11-04T06:13:12.687Z case TC-011
+2026-11-04T06:13:13.205Z texts 
+2026-11-04T06:13:17.777Z design 4858:35987 Landing (Create Your Drama page) in Dark, reached from the Launcher A
+2026-11-04T06:13:19.035Z file screenshots/design/4858-35987.png
+2026-11-04T06:13:19.038Z file screenshots/design/4858-35987.xml
+2026-11-04T06:13:26.953Z case TC-520
+2026-11-04T06:13:27.076Z tap 782 155
+2026-11-04T06:13:30.023Z texts 
+2026-11-04T06:13:30.877Z file screenshots/design/4858-35398.png
+2026-11-04T06:13:30.878Z file screenshots/design/4858-35398.xml
+2026-11-04T06:13:36.063Z design 4858:35398 Account is Pro (not Free): My Credits captured as it is (still offers
+2026-11-04T06:13:43.415Z back 
+2026-11-04T06:13:45.644Z case TC-106
+2026-11-04T06:13:45.763Z tap 984 155
+2026-11-04T06:13:48.742Z texts 
+2026-11-04T06:13:49.513Z file screenshots/design/2820-123240.png
+2026-11-04T06:13:49.513Z file screenshots/design/4863-32539.png
+2026-11-04T06:13:49.513Z file screenshots/design/4863-32539.xml
+2026-11-04T06:13:49.514Z file screenshots/design/2820-123240.xml
+2026-11-04T06:13:49.514Z file screenshots/design/2820-123256.png
+2026-11-04T06:13:49.514Z file screenshots/design/2820-123256.xml
+2026-11-04T06:13:57.443Z case TC-440
+2026-11-04T06:13:57.578Z lbl Romance
+2026-11-04T06:14:01.703Z texts 
+2026-11-04T06:14:06.064Z shot mf2-artfalling
+2026-11-04T06:14:06.636Z file screenshots/mf2-artfalling.png
+2026-11-04T06:14:14.238Z scrollto storyboard
+2026-11-04T06:14:19.133Z texts 
+2026-11-04T06:14:25.679Z back 
+2026-11-04T06:14:27.469Z texts 
+2026-11-04T06:14:31.571Z lbl Glad We Came
+2026-11-04T06:14:35.059Z texts 
+2026-11-04T06:14:39.086Z lbl Make my version
+2026-11-04T06:14:43.719Z texts 
+2026-11-04T06:14:49.699Z case TC-236
+2026-11-04T06:14:49.824Z lbl Generate
+2026-11-04T06:14:51.880Z texts 
+2026-11-04T06:14:52.099Z shot mf2-gwc-load1
+2026-11-04T06:14:50.580Z file screenshots/design/2778-127525.png
+2026-11-04T06:14:50.581Z file screenshots/design/2778-127525.xml
+2026-11-04T06:14:52.750Z file screenshots/mf2-gwc-load1.png
+2026-11-04T06:14:59.866Z texts 
+2026-11-04T06:15:00.117Z shot mf2-gwc-load2
+2026-11-04T06:15:00.779Z file screenshots/mf2-gwc-load2.png
+2026-11-04T06:15:06.371Z design 2778:127525 Template (Glad We Came) loading after format Generate, Dark: app sho
+2026-11-04T06:15:12.861Z case TC-027
+2026-11-04T06:15:12.981Z tap 95 155
+2026-11-04T06:15:14.880Z texts 
+2026-11-04T06:15:24.532Z tap 984 155
+2026-11-04T06:15:27.600Z texts 
+2026-11-04T06:15:31.686Z lbl Romance (1)
+2026-11-04T06:15:35.654Z texts 
+2026-11-04T06:15:35.900Z shot mf2-gwc-after
+2026-11-04T06:15:36.569Z file screenshots/mf2-gwc-after.png
+2026-11-04T06:15:40.612Z tap 838 155
+2026-11-04T06:15:42.486Z texts 
+2026-11-04T06:15:48.641Z clear edit_mini_drama_input
+2026-11-04T06:15:48.922Z type A night-shift nurse and a radio DJ fall for each other through song requests.
+2026-11-04T06:15:52.372Z texts 
+2026-11-04T06:15:52.597Z els 
+2026-11-04T06:15:57.598Z clear edit_mini_drama_input
+2026-11-04T06:15:57.892Z type A night-shift nurse and a radio DJ fall for each other through song requests.
+2026-11-04T06:16:01.189Z texts 
+2026-11-04T06:16:05.643Z id button_mini_drama_send
+2026-11-04T06:16:09.073Z tap 838 155
+2026-11-04T06:16:11.021Z texts 
+2026-11-04T06:16:17.474Z clear edit_mini_drama_input
+2026-11-04T06:16:17.736Z type A lighthouse cat helps two rival fishermen become friends.
+2026-11-04T06:16:19.776Z texts 
+2026-11-04T06:16:20.717Z id button_mini_drama_send
+2026-11-04T06:16:21.935Z tap 838 155
+2026-11-04T06:16:23.349Z texts 
+2026-11-04T06:16:30.100Z tap 984 155
+2026-11-04T06:16:32.983Z texts 
+2026-11-04T06:16:37.987Z case TC-440
+2026-11-04T06:16:38.117Z lbl Romance (1)
+2026-11-04T06:16:42.283Z scrollto Ready to create
+2026-11-04T06:16:49.902Z texts 
+2026-11-04T06:16:50.136Z shot mf2-gwc-chars
+2026-11-04T06:16:50.792Z file screenshots/mf2-gwc-chars.png
+2026-11-04T06:16:58.201Z tap 990 1994
+2026-11-04T06:17:00.624Z texts 
+2026-11-04T06:17:00.903Z shot mf2-gwc-chars2
+2026-11-04T06:17:01.468Z file screenshots/mf2-gwc-chars2.png
+2026-11-04T06:17:10.786Z design 2778:128606 Glad We Came template, Characters Result + Create storyboard offer (
+2026-11-04T06:17:11.642Z case TC-236
+2026-11-04T06:17:11.779Z lbl Generate
+2026-11-04T06:17:14.474Z texts 
+2026-11-04T06:17:14.771Z shot mf2-sb-load
+2026-11-04T06:17:11.470Z file screenshots/design/2778-128606.png
+2026-11-04T06:17:11.471Z file screenshots/design/2778-128606.xml
+2026-11-04T06:17:15.431Z file screenshots/mf2-sb-load.png
+2026-11-04T06:17:22.729Z texts 
+2026-11-04T06:17:23.055Z shot mf2-sb-load2
+2026-11-04T06:17:23.617Z file screenshots/mf2-sb-load2.png
+2026-11-04T06:17:31.759Z design 2778:128784 Glad We Came template storyboard loading ('Creating storyboard for t
+2026-11-04T06:17:32.653Z case TC-027
+2026-11-04T06:17:32.782Z tap 838 155
+2026-11-04T06:17:32.469Z file screenshots/design/2778-128784.png
+2026-11-04T06:17:32.470Z file screenshots/design/2778-128784.xml
+2026-11-04T06:17:34.720Z texts 
+2026-11-04T06:17:39.996Z case TC-075
+2026-11-04T06:17:40.118Z tap 984 155
+2026-11-04T06:17:43.019Z lbl Romance (1)
+2026-11-04T06:17:47.553Z waitfor Storyboard Preview 240
+2026-11-04T06:23:05.572Z texts 
+2026-11-04T06:23:05.882Z shot mf2-sb-now
+2026-11-04T06:23:06.562Z file screenshots/mf2-sb-now.png
+2026-11-04T06:23:11.333Z scrollto Generate
+2026-11-04T06:23:22.718Z texts 
+2026-11-04T06:23:22.957Z shot mf2-sb-bottom
+2026-11-04T06:23:23.604Z file screenshots/mf2-sb-bottom.png
+2026-11-04T06:23:29.061Z fingerdrag 540 1800 540 400
+2026-11-04T06:23:30.424Z fingerdrag 540 1800 540 400
+2026-11-04T06:23:31.555Z fingerdrag 540 1800 540 400
+2026-11-04T06:23:32.703Z fingerdrag 540 1800 540 400
+2026-11-04T06:23:33.849Z fingerdrag 540 1800 540 400
+2026-11-04T06:23:34.966Z fingerdrag 540 1800 540 400
+2026-11-04T06:23:36.114Z fingerdrag 540 1800 540 400
+2026-11-04T06:23:37.337Z fingerdrag 540 1800 540 400
+2026-11-04T06:23:38.359Z texts 
+2026-11-04T06:23:38.650Z shot mf2-sb-bottom2
+2026-11-04T06:23:39.271Z file screenshots/mf2-sb-bottom2.png
+2026-11-04T06:23:51.439Z case TC-138
+2026-11-04T06:23:51.935Z design 2824:130900 Glad We Came storyboard result scene list + Storyboard Preview card,
+2026-11-04T06:23:52.858Z case TC-027
+2026-11-04T06:23:52.977Z design 4863:32482 Chat at storyboard stage, Dark. The 'Leave this chat?' dialog did not
+2026-11-04T06:23:52.679Z file screenshots/design/2824-130900.png
+2026-11-04T06:23:52.681Z file screenshots/design/2824-130900.xml
+2026-11-04T06:23:53.749Z file screenshots/design/4863-32482.png
+2026-11-04T06:23:53.751Z file screenshots/design/4863-32482.xml
+2026-11-04T06:23:58.954Z texts 
+2026-11-04T06:24:04.939Z case TC-075
+2026-11-04T06:24:05.074Z waitfor video settings|Model|Quality|Generate --timeout 60
+2026-11-04T06:25:06.106Z file screenshots/waitfor-timeout-20261104-142505.png
+2026-11-04T06:25:12.523Z tap 984 155
+2026-11-04T06:25:15.580Z lbl Romance (1)
+2026-11-04T06:25:20.733Z texts 
+2026-11-04T06:25:37.673Z tap 984 155
+2026-11-04T06:25:40.778Z scrollto Stormbound
+2026-11-04T06:25:42.863Z lbl Stormbound
+2026-11-04T06:25:48.199Z texts 
+2026-11-04T06:25:49.185Z shot mf2-storm
+2026-11-04T06:25:49.005Z file screenshots/design/2778-127612.png
+2026-11-04T06:25:49.005Z file screenshots/design/2778-127612.xml
+2026-11-04T06:25:49.793Z file screenshots/mf2-storm.png
+2026-11-04T06:26:02.249Z case TC-080
+2026-11-04T06:26:02.423Z tap 247 1441
+2026-11-04T06:26:06.351Z texts 
+2026-11-04T06:26:11.410Z case TC-075
+2026-11-04T06:26:11.653Z design 2778:127612 Stormbound (custom) storyboard preview + Choose your video settings,
+2026-11-04T06:26:21.770Z tap 540 1441
+2026-11-04T06:26:23.177Z texts 
+2026-11-04T06:26:23.497Z case TC-081
+2026-11-04T06:26:23.653Z lbl Generate video
+2026-11-04T06:26:26.888Z texts 
+2026-11-04T06:26:27.359Z shot mf2-vid-load1
+2026-11-04T06:26:27.953Z file screenshots/mf2-vid-load1.png
+2026-11-04T06:26:36.828Z waitfor Preparing video --gone --timeout 90
+2026-11-04T06:28:09.656Z texts 
+2026-11-04T06:28:09.956Z shot mf2-vid-load2
+2026-11-04T06:28:09.514Z file screenshots/waitfor-timeout-20261104-142808.png
+2026-11-04T06:28:10.566Z file screenshots/mf2-vid-load2.png
+2026-11-04T06:28:16.153Z design 2778:127674 Stormbound (custom) preview-video loading, Dark, 1.5 min after Gener
+2026-11-04T06:28:16.873Z file screenshots/design/2778-127674.png
+2026-11-04T06:28:16.874Z file screenshots/design/2778-127674.xml
+2026-11-04T06:28:21.982Z tap 984 155
+2026-11-04T06:28:24.937Z texts 
+2026-11-04T06:28:30.312Z lbl Romance (1)
+2026-11-04T06:28:36.010Z texts 
+2026-11-04T06:28:41.898Z clear edit_mini_drama_input
+2026-11-04T06:28:42.216Z type Create video
+2026-11-04T06:28:44.272Z texts 
+2026-11-04T06:28:51.249Z id button_mini_drama_send
+2026-11-04T06:28:52.373Z waitfor Choose your video settings|went wrong|failed --timeout 90
+2026-11-04T06:28:57.693Z texts 
+2026-11-04T06:29:02.716Z case TC-075
+2026-11-04T06:29:03.241Z shot mf2-gwc-card
+2026-11-04T06:29:03.847Z file screenshots/mf2-gwc-card.png
+2026-11-04T06:29:13.300Z design 2778:127550 Glad We Came (template) storyboard preview + video settings, Standar
+2026-11-04T06:29:14.188Z case TC-236
+2026-11-04T06:29:14.308Z lbl Generate video
+2026-11-04T06:29:14.014Z file screenshots/design/2778-127550.png
+2026-11-04T06:29:14.015Z file screenshots/design/2778-127550.xml
+2026-11-04T06:29:15.015Z file screenshots/design/2778-128300.png
+2026-11-04T06:29:15.016Z file screenshots/design/2778-128300.xml
+2026-11-04T06:29:19.003Z texts 
+2026-11-04T06:29:19.845Z file screenshots/design/2778-128025.png
+2026-11-04T06:29:19.846Z file screenshots/design/2778-128025.xml
+2026-11-04T06:29:24.511Z design 2778:128300 Glad We Came (template) preview-video loading, Dark: 'Generating vid
+2026-11-04T06:29:33.524Z case TC-087
+2026-11-04T06:29:33.654Z tap 984 155
+2026-11-04T06:29:37.127Z scrollto Memory Drift
+2026-11-04T06:29:34.403Z file screenshots/design/2820-115034.png
+2026-11-04T06:29:34.403Z file screenshots/design/2820-115034.xml
+2026-11-04T06:29:39.688Z file screenshots/design/2778-127811.png
+2026-11-04T06:29:39.689Z file screenshots/design/2778-127811.xml
+2026-11-04T06:29:53.033Z lbl Memory Drift
+2026-11-04T06:29:57.449Z scrollto Ready for the next episode
+2026-11-04T06:30:21.153Z texts 
+2026-11-04T06:30:21.385Z shot mf2-md
+2026-11-04T06:30:22.038Z file screenshots/mf2-md.png
+2026-11-04T06:30:26.558Z tap 984 155
+2026-11-04T06:30:28.974Z texts 
+2026-11-04T06:30:36.023Z shot mf2-leave-dialog
+2026-11-04T06:30:36.720Z case TC-027
+2026-11-04T06:30:36.843Z lbl Stay
+2026-11-04T06:30:38.702Z texts 
+2026-11-04T06:30:38.965Z design 4863:32482 Glad We Came chat after Stay on the 'Leave while we're preparing?' di
+2026-11-04T06:30:36.591Z file screenshots/mf2-leave-dialog.png
+2026-11-04T06:30:45.060Z scrollto Storyboard Preview
+2026-11-04T06:30:54.033Z fingerdrag 540 1500 540 1000
+2026-11-04T06:30:55.119Z shot mf2-stay
+2026-11-04T06:30:55.730Z file screenshots/mf2-stay.png
+2026-11-04T06:31:04.263Z design 4863:32482 Glad We Came chat after Stay on the 'Leave while we're preparing?' di
+2026-11-04T06:31:05.221Z waitfor Here's your drama|went wrong|failed --timeout 540 --every 15
+2026-11-04T06:31:25.314Z case TC-086
+2026-11-04T06:31:25.438Z scrollto Looking good
+2026-11-04T06:31:43.011Z fingerdrag 540 1600 540 900
+2026-11-04T06:31:44.143Z fingerdrag 540 1600 540 900
+2026-11-04T06:31:45.314Z fingerdrag 540 1600 540 900
+2026-11-04T06:31:46.458Z texts 
+2026-11-04T06:31:47.120Z shot mf2-gwc-done
+2026-11-04T06:31:47.663Z file screenshots/mf2-gwc-done.png
+2026-11-04T06:31:53.462Z els 
+2026-11-04T06:31:57.858Z id button_mini_drama_scroll_bottom
+2026-11-04T06:32:00.604Z texts 
+2026-11-04T06:32:00.939Z shot mf2-gwc-done
+2026-11-04T06:32:13.887Z waitfor Looking good|Ready for the full|went wrong|failed --timeout 560 --every 20
+2026-11-04T06:41:39.206Z file screenshots/waitfor-timeout-20261104-144138.png
+2026-11-04T06:41:46.197Z id button_mini_drama_scroll_bottom
+2026-11-04T06:41:46.732Z texts 
+2026-11-04T06:41:47.023Z shot mf2-gwc-w
+2026-11-04T06:41:47.583Z file screenshots/mf2-gwc-w.png
+2026-11-04T06:41:56.910Z tap 984 155
+2026-11-04T06:41:59.873Z texts 
+2026-11-04T06:42:00.886Z scrollto Stormbound
+2026-11-04T06:42:01.303Z lbl Stormbound
+2026-11-04T06:42:06.675Z id button_mini_drama_scroll_bottom
+2026-11-04T06:42:07.697Z file screenshots/design/2778-127742.png
+2026-11-04T06:42:07.699Z file screenshots/design/2778-127742.xml
+2026-11-04T06:42:09.459Z texts 
+2026-11-04T06:42:10.615Z shot mf2-storm-v
+2026-11-04T06:42:10.442Z file screenshots/design/2778-127956.png
+2026-11-04T06:42:10.443Z file screenshots/design/2778-127956.xml
+2026-11-04T06:42:11.439Z file screenshots/mf2-storm-v.png
+2026-11-04T06:42:20.461Z case TC-086
+2026-11-04T06:42:21.027Z design 2778:127742 Stormbound (custom) completed preview video + full-episode offer, Da
+2026-11-04T06:42:27.385Z tap 984 155
+2026-11-04T06:42:30.427Z lbl Romance (1)
+2026-11-04T06:42:36.091Z id button_mini_drama_scroll_bottom
+2026-11-04T06:42:38.110Z texts 
+2026-11-04T06:42:38.533Z shot mf2-gwc-v
+2026-11-04T06:42:39.342Z file screenshots/mf2-gwc-v.png
+2026-11-04T06:42:47.997Z design 2778:127956 Glad We Came (template) completed preview + 'Create the full episode
+2026-11-04T06:42:54.163Z tap 984 155
+2026-11-04T06:42:57.123Z scrollto Memory Drift
+2026-11-04T06:43:02.347Z scrollto 同居
+2026-11-04T06:43:18.302Z scrollto Memory Drift
+2026-11-04T06:43:23.428Z lbl Memory Drift
+2026-11-04T06:43:28.749Z case TC-087
+2026-11-04T06:43:28.896Z id button_mini_drama_scroll_bottom
+2026-11-04T06:43:30.874Z texts 
+2026-11-04T06:43:31.220Z shot mf2-md
+2026-11-04T06:43:43.932Z design 3131:65428 Memory Drift (History, existing full video) completed video + 'Ready 
+2026-11-04T06:43:45.080Z case TC-142
+2026-11-04T06:43:45.209Z design 2778:128097 Memory Drift completed full video, Dark (existing drama; 同居防線 not in
+2026-11-04T06:43:44.897Z file screenshots/design/3131-65428.png
+2026-11-04T06:43:44.897Z file screenshots/design/3131-65428.xml
+2026-11-04T06:43:46.093Z file screenshots/design/2778-128097.png
+2026-11-04T06:43:46.094Z file screenshots/design/2778-128097.xml
+2026-11-04T06:44:00.333Z tap 95 155
+2026-11-04T06:44:02.283Z back 
+2026-11-04T06:44:05.118Z tap 89 200
+2026-11-04T06:44:07.103Z scrollto Preferences
+2026-11-04T06:44:12.619Z lbl Preferences
+2026-11-04T06:44:14.466Z lbl Appearance
+2026-11-04T06:44:16.408Z lbl Light Mode
+2026-11-04T06:44:18.784Z els 
+2026-11-04T06:44:23.499Z texts 
+2026-11-04T06:44:27.493Z shot mf2-where
+2026-11-04T06:44:28.383Z file screenshots/mf2-where.png
+2026-11-04T06:44:36.917Z lbl Close
+2026-11-04T06:44:39.470Z tap 89 200
+2026-11-04T06:44:41.926Z scrollto Preferences
+2026-11-04T06:44:46.115Z lbl Preferences
+2026-11-04T06:44:48.399Z lbl Appearance
+2026-11-04T06:44:50.499Z lbl Light Mode
+2026-11-04T06:44:53.193Z els 
+2026-11-04T06:44:58.218Z texts 
+2026-11-04T06:44:58.524Z els 
+2026-11-04T06:45:03.568Z back 
+2026-11-04T06:45:06.376Z els 
+2026-11-04T06:45:10.937Z texts 
+2026-11-04T06:45:11.569Z shot mf2-where2
+2026-11-04T06:45:12.883Z file screenshots/mf2-where2.png
+2026-11-04T06:45:17.708Z fingerdrag 540 700 540 1900
+2026-11-04T06:45:20.045Z els 
+2026-11-04T06:45:26.097Z id iv_menu
+2026-11-04T06:45:28.649Z scrollto Preferences
+2026-11-04T06:45:29.460Z lbl Preferences
+2026-11-04T06:45:31.592Z lbl Appearance
+2026-11-04T06:45:34.459Z lbl Light Mode
+2026-11-04T06:45:37.806Z els 
+2026-11-04T06:45:44.621Z back 
+2026-11-04T06:45:45.885Z back 
+2026-11-04T06:45:47.631Z texts 
+2026-11-04T06:45:48.234Z lbl AI Mini Drama
+2026-11-04T06:45:53.076Z tap 984 155
+2026-11-04T06:45:56.327Z scrollto Memory Drift
+2026-11-04T06:46:05.180Z lbl Memory Drift
+2026-11-04T06:46:10.279Z case TC-321
+2026-11-04T06:46:10.416Z id button_mini_drama_scroll_bottom
+2026-11-04T06:46:12.635Z shot mf2-md-light
+2026-11-04T06:46:13.276Z file screenshots/mf2-md-light.png
+2026-11-04T06:46:18.073Z texts 
+2026-11-04T06:46:18.547Z back 
+2026-11-04T06:46:20.674Z texts 
+2026-11-04T06:46:26.328Z lbl AI Mini Drama
+2026-11-04T06:46:30.664Z tap 984 155
+2026-11-04T06:46:33.668Z scrollto Memory Drift
+2026-11-04T06:46:38.594Z lbl Memory Drift
+2026-11-04T06:46:44.018Z id button_mini_drama_scroll_bottom
+2026-11-04T06:46:45.964Z shot mf2-md-light
+2026-11-04T06:46:56.401Z case TC-321
+2026-11-04T06:46:56.528Z design 3153:103325 Memory Drift (existing full video) 'Ready for the next episode?' + C
+2026-11-04T06:46:57.526Z case TC-086
+2026-11-04T06:46:57.655Z tap 984 155
+2026-11-04T06:47:00.570Z lbl Stormbound
+2026-11-04T06:46:57.372Z file screenshots/design/3153-103325.png
+2026-11-04T06:46:57.372Z file screenshots/design/3153-103325.xml
+2026-11-04T06:47:05.966Z id button_mini_drama_scroll_bottom
+2026-11-04T06:47:07.985Z shot mf2-storm-light
+2026-11-04T06:47:08.853Z file screenshots/mf2-storm-light.png
+2026-11-04T06:47:17.267Z case TC-236
+2026-11-04T06:47:17.391Z design 2778:138793 Stormbound completed preview + 'Looking good! Ready for the full vid
+2026-11-04T06:47:18.365Z file screenshots/design/2778-138793.png
+2026-11-04T06:47:18.366Z file screenshots/design/2778-138793.xml
+2026-11-04T06:47:24.490Z tap 984 155
+2026-11-04T06:47:28.192Z scrollto Rebuilt Ashes
+2026-11-04T06:47:28.604Z lbl Rebuilt Ashes
+2026-11-04T06:47:33.964Z id button_mini_drama_scroll_bottom
+2026-11-04T06:47:35.962Z texts 
+2026-11-04T06:47:40.681Z case TC-080
+2026-11-04T06:47:40.807Z shot mf2-ra-light
+2026-11-04T06:47:41.404Z file screenshots/mf2-ra-light.png
+2026-11-04T06:47:52.145Z design 2778:138663 Rebuilt Ashes (custom) storyboard preview + video settings, Standard
+2026-11-04T06:47:53.048Z case TC-020
+2026-11-04T06:47:53.171Z lbl Generate video
+2026-11-04T06:47:52.870Z file screenshots/design/2778-138663.png
+2026-11-04T06:47:52.872Z file screenshots/design/2778-138663.xml
+2026-11-04T06:47:57.393Z texts 
+2026-11-04T06:47:58.168Z file screenshots/design/2778-138862.png
+2026-11-04T06:47:58.169Z file screenshots/design/2778-138862.xml
+2026-11-04T06:48:03.911Z design 2778:138725 Rebuilt Ashes preview-video loading, Light: 'Preparing video generat
+2026-11-04T06:48:04.809Z waitfor Here's your drama --timeout 300 --every 10
+2026-11-04T06:48:04.628Z file screenshots/design/2778-138725.png
+2026-11-04T06:48:04.629Z file screenshots/design/2778-138725.xml
+2026-11-04T06:50:02.907Z id button_mini_drama_scroll_bottom
+2026-11-04T06:50:04.357Z shot mf2-ra-tile-light
+2026-11-04T06:50:04.943Z file screenshots/mf2-ra-tile-light.png
+2026-11-04T06:50:10.777Z tap 95 155
+2026-11-04T06:50:13.225Z texts 
+2026-11-04T06:50:13.412Z lbl Love, Unscripted
+2026-11-04T06:50:16.718Z lbl Make my version
+2026-11-04T06:50:20.023Z texts 
+2026-11-04T06:50:20.222Z case TC-020
+2026-11-04T06:50:20.379Z lbl Generate
+2026-11-04T06:50:23.679Z texts 
+2026-11-04T06:50:28.223Z shot mf2-where3
+2026-11-04T06:50:29.498Z els 
+2026-11-04T06:50:29.315Z file screenshots/mf2-where3.png
+2026-11-04T06:50:39.425Z tap 735 288
+2026-11-04T06:50:41.287Z texts 
+2026-11-04T06:50:41.472Z lbl Love, Unscripted
+2026-11-04T06:50:44.778Z lbl Make my version
+2026-11-04T06:50:48.091Z texts 
+2026-11-04T06:50:54.144Z tap 883 1776
+2026-11-04T06:50:57.554Z texts 
+2026-11-04T06:51:02.727Z lbl Love, Unscripted
+2026-11-04T06:51:06.193Z lbl Make my version
+2026-11-04T06:51:09.756Z texts 
+2026-11-04T06:51:10.442Z file screenshots/design/3142-68296.png
+2026-11-04T06:51:10.444Z file screenshots/design/3142-68296.xml
+2026-11-04T06:51:15.434Z case TC-020
+2026-11-04T06:51:15.560Z lbl Generate
+2026-11-04T06:51:18.971Z texts 
+2026-11-04T06:51:24.310Z waitfor Processing your mini drama --timeout 30 --every 2
+2026-11-04T06:51:56.830Z design 3142:68296 Love, Unscripted template loading after format Generate, Light: 'Proc
+2026-11-04T06:51:56.696Z file screenshots/waitfor-timeout-20261104-145156.png
+2026-11-04T06:53:09.109Z case -
+2026-11-04T06:53:09.232Z tap 95 155
+2026-11-04T06:53:11.663Z lbl Forbidden Office Romance
+2026-11-04T06:53:15.056Z lbl Make my version
+2026-11-04T06:53:19.593Z lbl Generate
+2026-11-04T06:53:20.653Z waitfor Processing your mini drama|Building the cast|Possible Characters --timeout 40 --
+2026-11-04T06:53:39.955Z tap 95 155
+2026-11-04T06:53:42.280Z back 
+2026-11-04T06:53:45.131Z texts 
+2026-11-04T06:53:45.957Z fingerdrag 540 700 540 1900
+2026-11-04T06:53:48.357Z id iv_menu
+2026-11-04T06:53:50.342Z scrollto Preferences
+2026-11-04T06:53:51.074Z lbl Preferences
+2026-11-04T06:53:53.014Z lbl Appearance
+2026-11-04T06:53:55.438Z lbl Dark Mode
+2026-11-04T06:53:58.388Z els 
+2026-11-04T06:54:05.570Z back 
+2026-11-04T06:54:06.877Z back 
+2026-11-04T06:54:08.616Z back 
+2026-11-04T06:54:10.771Z texts 
+2026-11-04T06:54:12.006Z lbl AI Mini Drama
+2026-11-04T06:54:15.614Z tap 984 155
+2026-11-04T06:54:18.439Z scrollto Stormbound
+2026-11-04T06:54:18.858Z lbl Stormbound
+2026-11-04T06:54:24.276Z clear edit_mini_drama_input
+2026-11-04T06:54:24.695Z type Create video
+2026-11-04T06:54:26.826Z texts 
+2026-11-04T06:54:31.785Z texts 
+2026-11-04T06:54:32.098Z shot mf2-x
+2026-11-04T06:54:32.859Z file screenshots/mf2-x.png
+2026-11-04T06:54:42.089Z tap 95 155
+2026-11-04T06:54:43.863Z texts 
+2026-11-04T06:54:44.104Z tap 450 2140
+2026-11-04T06:54:45.442Z type Create video
+2026-11-04T06:54:47.212Z texts 
+2026-11-04T06:54:54.239Z hidekb 
+2026-11-04T06:54:55.003Z id button_mini_drama_send
+2026-11-04T06:54:56.596Z waitfor Generate video|went wrong --timeout 60
+2026-11-04T06:55:57.530Z texts 
+2026-11-04T06:55:57.368Z file screenshots/waitfor-timeout-20261104-145556.png
+2026-11-04T06:56:02.467Z id button_mini_drama_scroll_bottom
+2026-11-04T06:56:05.187Z texts 
+2026-11-04T06:56:14.075Z case -
+2026-11-04T06:56:14.196Z tap 95 155
+2026-11-04T06:56:16.545Z back 
+2026-11-04T06:56:19.398Z fingerdrag 540 700 540 1900
+2026-11-04T06:56:21.464Z id iv_menu
+2026-11-04T06:56:23.389Z scrollto Preferences
+2026-11-04T06:56:23.953Z lbl Preferences
+2026-11-04T06:56:26.063Z lbl Appearance
+2026-11-04T06:56:28.444Z lbl Light Mode
+2026-11-04T06:56:31.388Z els 
+2026-11-04T06:56:32.264Z back 
+2026-11-04T06:56:33.517Z back 
+2026-11-04T06:56:34.769Z texts 
+2026-11-04T06:56:41.022Z back 
+2026-11-04T06:56:43.173Z texts 
+2026-11-04T06:56:43.403Z shot mf2-end
+2026-11-04T06:56:44.313Z file screenshots/mf2-end.png
+2026-11-04T06:56:44.495Z pull-logs mf-2
+2026-11-04T06:56:45.000Z file logs/mf-2-20261104-145644
+2026-11-04T06:56:54.462Z lbl Close
+2026-11-04T06:57:24.373Z file screenshots/design/4858-35987-sheet.png
+2026-11-04T06:57:24.462Z file screenshots/design/4858-35398-sheet.png
+2026-11-04T06:57:24.543Z file screenshots/design/4863-32539-sheet.png
+2026-11-04T06:57:24.628Z file screenshots/design/2820-123240-sheet.png
+2026-11-04T06:57:24.708Z file screenshots/design/2820-123256-sheet.png
+2026-11-04T06:57:24.812Z file screenshots/design/2778-127525-sheet.png
+2026-11-04T06:57:24.908Z file screenshots/design/2778-128606-sheet.png
+2026-11-04T06:57:25.009Z file screenshots/design/2778-128784-sheet.png
+2026-11-04T06:57:25.098Z file screenshots/design/2824-130900-sheet.png
+2026-11-04T06:57:25.191Z file screenshots/design/4863-32482-sheet.png
+2026-11-04T06:57:25.282Z file screenshots/design/2778-127612-sheet.png
+2026-11-04T06:57:25.378Z file screenshots/design/2778-127550-sheet.png
+2026-11-04T06:57:25.471Z file screenshots/design/2778-128300-sheet.png
+2026-11-04T06:57:25.562Z file screenshots/design/2820-115034-sheet.png
+2026-11-04T06:57:25.666Z file screenshots/design/2778-127742-sheet.png
+2026-11-04T06:57:25.777Z file screenshots/design/2778-127956-sheet.png
+2026-11-04T06:57:25.884Z file screenshots/design/3131-65428-sheet.png
+2026-11-04T06:57:25.990Z file screenshots/design/2778-128097-sheet.png
+2026-11-04T06:57:26.086Z file screenshots/design/3153-103325-sheet.png
+2026-11-04T06:57:26.187Z file screenshots/design/2778-138793-sheet.png
+2026-11-04T06:57:26.275Z file screenshots/design/2778-138663-sheet.png
+2026-11-04T06:57:26.358Z file screenshots/design/2778-138725-sheet.png

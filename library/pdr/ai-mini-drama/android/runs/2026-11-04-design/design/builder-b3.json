@@ -1,0 +1,575 @@
+{
+  "screens": {
+    "3131:65428": {
+      "lines:I3131:65500;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "cosmetic",
+        "figma": {
+          "box": [
+            32,
+            563,
+            320,
+            60
+          ]
+        },
+        "note": "Figma 的「Ready for the next episode?」與「Create Next Episode」為粗體（semibold），App 為一般字重。"
+      }
+    },
+    "3153:103325": {
+      "lines:I3153:103397;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "cosmetic",
+        "figma": {
+          "box": [
+            32,
+            563,
+            320,
+            60
+          ]
+        },
+        "note": "淺色模式同樣：Figma 的「Ready for the next episode?」與「Create Next Episode」為粗體，App 為一般字重。"
+      }
+    },
+    "2778:128097": {
+      "missing:I2778:128159;393:31121": {
+        "verdict": "n/a",
+        "note": "App 捲動位置不同，使用者泡泡「Ready for the full video」在畫面上方之外；擷取的是成功完成的完整影片（下方為「Ready for the next episode?」卡片，與較新的 3131:65428 相符）；此 frame 畫的是影片下方有「Edit」按鈕的狀態，規格中「Edit」出現在影片失敗退款後，非本擷取狀態。"
+      },
+      "missing:I2778:128163;2750:64232": {
+        "verdict": "n/a",
+        "note": "擷取的是成功完成的完整影片（下方為「Ready for the next episode?」卡片，與較新的 3131:65428 相符）；此 frame 畫的是影片下方有「Edit」按鈕的狀態，規格中「Edit」出現在影片失敗退款後，非本擷取狀態。"
+      },
+      "lines:I2778:128165;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "control:2778:128158": {
+        "verdict": "n/a",
+        "note": "此控制項在 Figma 畫面頂端之外（前一支影片），擷取狀態不同。"
+      },
+      "control:I2778:128158;739:37642": {
+        "verdict": "n/a",
+        "note": "前一支影片的播放鈕在 Figma 畫面頂端之外，擷取狀態不同。"
+      },
+      "colour:2778:128163": {
+        "verdict": "n/a",
+        "note": "這是「Edit」按鈕的底色；擷取狀態沒有「Edit」按鈕。"
+      }
+    },
+    "2778:127500": {
+      "missing:I2778:127506;393:31121": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "截圖比 XML 早一瞬間，泡泡尚未畫出；XML 顯示泡泡文字為「2. Captions: Yes, include captions」，Figma 為「Captions: Yes」（App 直接沿用選項文字）。"
+      },
+      "missing:2778:127511": {
+        "verdict": "n/a",
+        "note": "擷取時是「Thinking…」（計價階段，規格筆記所述），尚未進入 Figma 畫的「Drafting the storyline...」階段。"
+      },
+      "lines:I2778:127520;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "colour:2778:127505": {
+        "verdict": "ok",
+        "note": "App 的「What format would you like for your video?」實際為白字，量測取樣到背景。"
+      },
+      "colour:2778:127508": {
+        "verdict": "n/a",
+        "note": "「I'll create a drama based on this template — give me a moment...」在截圖當下尚未畫出（XML 有），配對到骨架區塊。"
+      }
+    },
+    "2778:127525": {
+      "missing:I2778:127531;393:31121": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "使用者泡泡在 App 為「2. Captions: Yes, include captions」，Figma 為「Captions: Yes」。"
+      },
+      "missing:2778:127536": {
+        "verdict": "question",
+        "note": "App 載入卡片顯示「Processing your mini drama project.」，Figma 為「Building the cast...」；無法判斷之後是否會換成「Building the cast...」階段文字。"
+      },
+      "lines:I2778:127545;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "major",
+        "figma": {
+          "box": [
+            306,
+            710,
+            40,
+            40
+          ]
+        },
+        "note": "生成中 App 輸入框右側出現藍色 ■ 停止鈕；Figma 與 PM（board-notes「after any Generate the input shows no stop button, only the mic」）都只有麥克風。"
+      }
+    },
+    "2778:128784": {
+      "missing:I2778:128827;2620:59767": {
+        "verdict": "ok",
+        "note": "角色名稱與數量是模板的生成內容（App 為「Mia Carter」等三位），屬範例內容。"
+      },
+      "missing:I2778:128828;2620:59767": {
+        "verdict": "ok",
+        "note": "角色名稱與數量是模板的生成內容（App 為「Mia Carter」等三位），屬範例內容。"
+      },
+      "missing:I2778:128829;2620:59767": {
+        "verdict": "ok",
+        "note": "角色名稱與數量是模板的生成內容（App 為「Mia Carter」等三位），屬範例內容。"
+      },
+      "missing:I2778:128830;2620:59767": {
+        "verdict": "ok",
+        "note": "角色名稱與數量是模板的生成內容（App 為「Mia Carter」等三位），屬範例內容。"
+      },
+      "copy:I2778:128831;393:31121": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "使用者泡泡在 App 為「Create storyboard」，Figma 為「Yes, create storyboard」。"
+      },
+      "lines:I2778:128845;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "colour:I2778:128827;2620:59766": {
+        "verdict": "ok",
+        "note": "角色卡底色在 App 同為白色，量測因卡片位置不同取樣到圖片或背景。"
+      },
+      "colour:I2778:128828;2620:59766": {
+        "verdict": "ok",
+        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
+      },
+      "colour:I2778:128829;2620:59766": {
+        "verdict": "ok",
+        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
+      },
+      "colour:I2778:128830;2620:59766": {
+        "verdict": "ok",
+        "note": "第四張角色卡在 App 不存在（模板只有三位角色），屬範例內容。"
+      }
+    },
+    "2778:128300": {
+      "missing:2778:128357": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "Figma 與 PM 為「Choose your video settings」，App 顯示「Pick a video model and length on the card to start generating.」。"
+      },
+      "sample:I2778:128358;393:31121": {
+        "verdict": "question",
+        "note": "使用者泡泡 App 為「Standard · Preview - 30 sec」，Figma 為「Generate Video / Model: Seedance 2.0 / Generation length: Preview · 30 sec」；模型改稱「Standard」是否為新規格無法判斷。"
+      },
+      "lines:I2778:128355;393:31121": {
+        "verdict": "ok",
+        "note": "App 的「Create video」為一行，量到三行是泡泡內距造成的。"
+      },
+      "lines:I2778:128363;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            16,
+            352,
+            180,
+            320
+          ]
+        },
+        "note": "Figma 載入時畫直式影片佔位方塊，App 顯示「Generating video preview with Seedance 2.0.」加文字骨架條的卡片。"
+      }
+    },
+    "2778:138793": {
+      "missing:2778:138850": {
+        "verdict": "ok",
+        "note": "「Choose your video settings」在 App 捲動到畫面上方之外。"
+      },
+      "missing:I2778:138851;393:31121": {
+        "verdict": "ok",
+        "note": "使用者設定泡泡在 App 捲動到畫面上方之外。"
+      },
+      "copy:I2778:138855;2750:64270": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "App 為「Create the full episode (60 sec)」，Figma 為「Create the full video · 90 sec」；PM 與核准表格都是「Create the full episode (90 sec)」，用字依 PM，但長度 60 秒與兩者都不符。"
+      },
+      "lines:I2778:138855;2750:64323;2750:25393": {
+        "verdict": "ok",
+        "note": "App 的「Generate」為一行，量到兩行是按鈕外框高度。"
+      },
+      "lines:I2778:138857;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "colour:I2778:138855;2750:64323": {
+        "verdict": "ok",
+        "note": "App 的「Generate」按鈕同為藍色，量測因卡片多一行「Credits will be consumed for this task.」而取樣錯位。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "cosmetic",
+        "figma": {
+          "box": [
+            16,
+            534,
+            343,
+            152
+          ]
+        },
+        "note": "Figma 把「Looking good! Ready for the full video?」放在有外框的卡片內，App 把這行放在卡片外、上方。"
+      }
+    },
+    "2778:128606": {
+      "missing:I2778:128649;2620:59767": {
+        "verdict": "ok",
+        "note": "角色名稱與數量是模板的生成內容，屬範例內容。"
+      },
+      "missing:I2778:128650;2620:59767": {
+        "verdict": "ok",
+        "note": "角色名稱與數量是模板的生成內容，屬範例內容。"
+      },
+      "missing:I2778:128651;2620:59767": {
+        "verdict": "ok",
+        "note": "角色名稱與數量是模板的生成內容，屬範例內容。"
+      },
+      "missing:I2778:128652;2620:59767": {
+        "verdict": "ok",
+        "note": "角色名稱與數量是模板的生成內容，屬範例內容。"
+      },
+      "missing:I2778:128655;1902:90188": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "輸入框上方的「More ideas +」晶片在 App 沒有出現（XML 也沒有）；Figma 與 PM 筆記都畫在每個聊天階段。"
+      },
+      "position:I2778:128654;2750:64266": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "Figma 把「The characters look great! Ready to create the storyboard?」放在有外框的卡片內（x 28），App 放在卡片外，左移約 12 pt。"
+      },
+      "position:I2778:128654;2750:64276": {
+        "verdict": "ok",
+        "note": "點數「31」與「15」為範例內容；位移來自卡片多了 MX 規格的「Credits will be consumed for this task.」一行。"
+      },
+      "position:I2778:128654;2750:64323;2750:25393": {
+        "verdict": "ok",
+        "note": "「Generate」下移是卡片多了 MX 規格的「Credits will be consumed for this task.」一行。"
+      },
+      "lines:I2778:128654;2750:64323;2750:25393": {
+        "verdict": "ok",
+        "note": "App 的「Generate」為一行，量到兩行是按鈕外框高度。"
+      },
+      "position:I2778:128657;2499:46952": {
+        "verdict": "ok",
+        "note": "輸入框在兩邊都貼底，位移是上下半部對齊不一致的量測誤差。"
+      },
+      "lines:I2778:128657;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "colour:I2778:128649;2620:59766": {
+        "verdict": "ok",
+        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
+      },
+      "colour:I2778:128650;2620:59766": {
+        "verdict": "ok",
+        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
+      },
+      "colour:I2778:128651;2620:59766": {
+        "verdict": "ok",
+        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
+      },
+      "colour:I2778:128652;2620:59766": {
+        "verdict": "ok",
+        "note": "第四張角色卡在 App 不存在（模板只有三位角色），屬範例內容。"
+      },
+      "colour:I2778:128654;2750:64323": {
+        "verdict": "ok",
+        "note": "App 的「Generate」按鈕為藍色，ΔE 25 是取樣到卡片漸層。"
+      },
+      "colour:2778:128655": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "這是「More ideas +」晶片的底色；App 沒有這個晶片（同 More ideas 缺漏）。"
+      }
+    },
+    "4858:35987": {
+      "missing:I4858:36006;1440:97054": {
+        "verdict": "ok",
+        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
+      },
+      "missing:I4858:36007;1440:97054": {
+        "verdict": "ok",
+        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
+      },
+      "missing:I4858:36008;1440:97054": {
+        "verdict": "ok",
+        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
+      },
+      "missing:I4858:36009;1440:97054": {
+        "verdict": "ok",
+        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
+      },
+      "missing:I4858:36010;1440:97054": {
+        "verdict": "ok",
+        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
+      },
+      "position:I4858:35997;931:2392;315:8365": {
+        "verdict": "ok",
+        "note": "「Create Your Drama」在卡片內的相對位置與 Figma 相同，位移是整塊內容隨較矮的標題列上移。"
+      },
+      "lines:I4858:35997;931:2392;315:8365": {
+        "verdict": "ok",
+        "note": "App 的「Create Your Drama」為一行，量到兩行是按鈕外框高度。"
+      },
+      "position:4858:36002": {
+        "verdict": "ok",
+        "note": "「More」只差約 4 pt，屬容許範圍。"
+      },
+      "position:I4858:36014;145:7579;245:2027": {
+        "verdict": "ok",
+        "note": "點數「25211」為帳號實際點數，屬範例內容。"
+      },
+      "colour:4858:35997": {
+        "verdict": "ok",
+        "note": "App 的「Create Your Drama」按鈕為藍色，與 Figma 相符，量測取樣錯位。"
+      },
+      "colour:I4858:35997;931:2392": {
+        "verdict": "ok",
+        "note": "App 的按鈕為藍色，與 Figma 相符，量測取樣錯位。"
+      }
+    },
+    "4858:36084": {
+      "missing:I4895:36269;2773:119526": {
+        "verdict": "ok",
+        "note": "靈感晶片為生成內容，屬範例內容；App 將較長的靈感截成一行並加「…」。"
+      },
+      "missing:I4895:36270;2773:119526": {
+        "verdict": "ok",
+        "note": "靈感晶片為生成內容，屬範例內容；App 將較長的靈感截成一行並加「…」。"
+      },
+      "position:I4895:36268;2773:119522": {
+        "verdict": "ok",
+        "note": "量到的是整個「Surprise me」晶片外框；晶片本身同在 x 16，位置相符。"
+      },
+      "lines:I4895:36268;2773:119522": {
+        "verdict": "ok",
+        "note": "App 的「Surprise me」為一行，量到兩行是晶片外框高度。"
+      },
+      "lines:I4858:36110;2499:46952": {
+        "verdict": "n/a",
+        "note": "擷取時鍵盤開啟、輸入框展開為多行並出現送出鈕，非 Figma 的未聚焦狀態。"
+      },
+      "colour:4895:36268": {
+        "verdict": "n/a",
+        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
+      },
+      "colour:4895:36269": {
+        "verdict": "n/a",
+        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
+      },
+      "colour:4895:36270": {
+        "verdict": "n/a",
+        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
+      },
+      "colour:4858:36110": {
+        "verdict": "n/a",
+        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
+      },
+      "colour:4895:36265": {
+        "verdict": "n/a",
+        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
+      },
+      "colour:I4858:36114;1037:48645;245:2027": {
+        "verdict": "n/a",
+        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "cosmetic",
+        "figma": {
+          "box": [
+            272,
+            50,
+            35,
+            35
+          ]
+        },
+        "note": "空白新聊天時 App 的新聊天圖示呈灰色（停用），Figma 畫成一般狀態；無法判斷 Design 是否預期停用。"
+      }
+    },
+    "4863:32482": {
+      "missing:I4863:32523;3948:158776": {
+        "verdict": "ok",
+        "note": "場景標題為生成內容，且 App 捲動位置較下方，屬範例內容。"
+      },
+      "missing:I4863:32524;3948:158776": {
+        "verdict": "ok",
+        "note": "場景標題為生成內容，且 App 捲動位置較下方，屬範例內容。"
+      },
+      "missing:I4863:32525;3948:158776": {
+        "verdict": "ok",
+        "note": "場景標題為生成內容，App 顯示「Scene 6 — Glad We Came」。"
+      },
+      "copy:I4863:32530;2778:123550": {
+        "verdict": "ok",
+        "note": "Storyboard Preview 的標題與長度為生成內容（App「Romance」「0:44」），History 也以「Romance」列出此劇。"
+      },
+      "missing:I4863:32531;1902:90188": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "輸入框上方的「More ideas +」晶片在 App 沒有出現；Figma「Chat (any stage)」與 PM 筆記都畫在每個聊天階段。"
+      },
+      "lines:I4863:32530;2778:123551": {
+        "verdict": "ok",
+        "note": "App 文字欄較寬，「See your story as pictures with a voice telling it. The real video comes next.」排成兩行，屬寬螢幕重排。"
+      },
+      "lines:I4863:32533;2499:46952": {
+        "verdict": "ok",
+        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
+      },
+      "colour:4863:32522": {
+        "verdict": "ok",
+        "note": "ΔE 14 為捲動後取樣到不同卡片，差異很小。"
+      },
+      "colour:I4863:32522;3948:158774": {
+        "verdict": "ok",
+        "note": "場景縮圖是生成圖片，取樣到圖片內容。"
+      },
+      "colour:I4863:32523;3948:158774": {
+        "verdict": "ok",
+        "note": "場景縮圖是生成圖片，取樣到圖片內容。"
+      },
+      "colour:I4863:32524;3948:158774": {
+        "verdict": "ok",
+        "note": "場景縮圖是生成圖片，取樣到圖片內容。"
+      },
+      "colour:4863:32533": {
+        "verdict": "ok",
+        "note": "輸入框底色 ΔE 13，差異很小。"
+      }
+    },
+    "4863:32539": {
+      "missing:I4863:32541;12037:8693": {
+        "verdict": "ok",
+        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
+      },
+      "copy:I4863:32541;12037:8701": {
+        "verdict": "ok",
+        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
+      },
+      "missing:I4863:32542;12037:8693": {
+        "verdict": "ok",
+        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
+      },
+      "copy:I4863:32542;12037:8701": {
+        "verdict": "ok",
+        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
+      },
+      "missing:I4863:32543;12037:8693": {
+        "verdict": "ok",
+        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
+      },
+      "missing:I4863:32544;12037:8693": {
+        "verdict": "ok",
+        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
+      },
+      "missing:I4863:32545;12037:8693": {
+        "verdict": "ok",
+        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
+      },
+      "missing:I4863:32546;12037:8693": {
+        "verdict": "ok",
+        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
+      },
+      "position:I4863:32548;1191:85014": {
+        "verdict": "ok",
+        "note": "量到的是整個「New Chat」按鈕外框；按鈕同在右下角，位置相符。"
+      },
+      "lines:I4863:32548;1191:85014": {
+        "verdict": "ok",
+        "note": "App 的「New Chat」為一行，量到兩行是按鈕外框高度。"
+      },
+      "position:I4863:32551;761:28071": {
+        "verdict": "ok",
+        "note": "「Manage」只差約 6 pt，因標題列較矮，屬容許範圍。"
+      },
+      "lines:I4863:32551;761:28071": {
+        "verdict": "ok",
+        "note": "App 的「Manage」為一行，量到兩行是點擊區外框高度。"
+      },
+      "colour:4863:32548": {
+        "verdict": "ok",
+        "note": "App 的「New Chat」按鈕同為白色，量測取樣錯位。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            150,
+            114,
+            115,
+            16
+          ]
+        },
+        "note": "日期格式 Figma 為「26/08/19」（兩位數年份），App 為「2026/11/04」；無法判斷是否依系統地區格式。"
+      }
+    },
+    "4858:35398": {
+      "copy:I4858:35418;921:2027": {
+        "verdict": "n/a",
+        "note": "今日每日點數已領取，App 顯示「Claimed」；Figma 畫的是未領取的「Claim」狀態。"
+      },
+      "copy:4858:35887": {
+        "verdict": "question",
+        "note": "App 為「Join the Pro」，Figma 為「Join the Pro+」；帳號為 Pro，Figma 畫的是 Free 方案的點數頁（推「Pro+」），方案不同畫面就不同，不判為 bug。"
+      },
+      "copy:4858:35894": {
+        "verdict": "question",
+        "note": "App 為「50% off all credit packs」，Figma 為「50% for all credit packs」；App 的英文正確，Figma 似為筆誤，需 Design 確認。"
+      },
+      "copy:4858:35897": {
+        "verdict": "question",
+        "note": "App 為「Unlock all Pro features!」，Figma 為「Unlock all Pro+ features!」；帳號為 Pro，Figma 畫的是 Free 方案的點數頁（推「Pro+」），方案不同畫面就不同，不判為 bug。"
+      },
+      "lines:I4858:35410;919:2017": {
+        "verdict": "ok",
+        "note": "App 的「Buy More」為一行，量到三行是按鈕外框高度。"
+      },
+      "lines:I4858:35898;533:1292": {
+        "verdict": "ok",
+        "note": "App 的「Subscribe Now」為一行，量到兩行是按鈕外框高度。"
+      },
+      "lines:I4858:35902;4868:9480;450:6834": {
+        "verdict": "ok",
+        "note": "App 的「Details」為一行，量到兩行是點擊區外框高度。"
+      },
+      "colour:4858:35410": {
+        "verdict": "ok",
+        "note": "App 的「Buy More」按鈕同為薄荷綠，量測取樣錯位。"
+      },
+      "colour:I4858:35410;919:2017": {
+        "verdict": "ok",
+        "note": "App 的「Buy More」文字為深色，與 Figma 相符，量測取樣到按鈕底色。"
+      }
+    }
+  }
+}
