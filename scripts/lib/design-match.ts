@@ -74,24 +74,75 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
 }
 
 // Elements of an XCUITest or UiAutomator2 page source in window units: their text (if any) and whether they can be
-// tapped (buttons, cells, switches, clickable views), for the control presence check.
-export function appElements(xml: string) {
-  const dec = (t: string) => t.replace(/&#10;/g, '\n').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
-  const out: { type: string; text: string; box: Box; actionable: boolean }[] = [];
-  for (const m of xml.matchAll(/<([\w.]+)\s([^>]*?)\/?>/g)) {
+// tapped (buttons, cells, switches, clickable views), for the control presence check. On Android the source is exact
+// about two more things (user, 2026-11-04), read here:
+//   covered  a later-drawn sibling layer (UiAutomator2 `drawing-order`, relative to siblings) of the element or of one of
+//            its ancestors draws over the element's centre: the chat behind the Choose Character sheet (order 8 over 5).
+//            A see-through layer (a scrim) is the one case it gets wrong; the check confirms with the screenshot.
+//   name     the element's words are only its accessibility name (content-desc of an icon button), not drawn text
+// Elements of other apps' windows (the keyboard, with UiAutomator2's `enableMultiWindows`) are left out; see
+// keyboardInSource.
+type Node = { tag: string; at: Record<string, string>; kids: Node[]; parent: Node | null; box: Box | null };
+const dec = (t: string) => t.replace(/&#10;/g, '\n').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+function tree(xml: string): Node[] {
+  const all: Node[] = [], stack: Node[] = [];
+  for (const m of xml.matchAll(/<(\/?)([\w.$-]+)((?:\s[^>]*?)?)(\/?)>/g)) {
+    if (m[2] === 'xml' || m[0].startsWith('<?')) continue;
+    if (m[1]) { stack.pop(); continue; }
     const at: Record<string, string> = {};
-    for (const a of m[2].matchAll(/([\w-]+)="([^"]*)"/g)) at[a[1]] = dec(a[2]);
-    if (at.visible === 'false' || at.displayed === 'false') continue;
+    for (const a of m[3].matchAll(/([\w-]+)="([^"]*)"/g)) at[a[1]] = dec(a[2]);
     let box: Box | null = null;
-    if (at.bounds) { const b = at.bounds.match(/\[(\d+),(\d+)\]\[(\d+),(\d+)\]/); if (b) box = [+b[1], +b[2], +b[3] - +b[1], +b[4] - +b[2]]; }
+    if (at.bounds) { const b = at.bounds.match(/\[(-?\d+),(-?\d+)\]\[(-?\d+),(-?\d+)\]/); if (b) box = [+b[1], +b[2], +b[3] - +b[1], +b[4] - +b[2]]; }
     else if (at.x !== undefined) box = [+at.x, +at.y, +at.width, +at.height];
-    const type = at.type ?? at.class ?? m[1];
+    const n: Node = { tag: m[2], at, kids: [], parent: stack.at(-1) ?? null, box };
+    n.parent?.kids.push(n); all.push(n);
+    if (!m[4]) stack.push(n);
+  }
+  return all;
+}
+const inside = (b: Box, x: number, y: number) => x > b[0] && x < b[0] + b[2] && y > b[1] && y < b[1] + b[3];
+const IME = /inputmethod|honeyboard|keyboard|\.latin|gboard|swiftkey/i;
+const LAYOUT = /(FrameLayout|LinearLayout|RelativeLayout|ConstraintLayout|CoordinatorLayout|ViewGroup|ScrollView|RecyclerView|ViewPager\w*)$/;
+
+/** The keyboard shown on an Android capture taken with `enableMultiWindows` (an input method's window in the source):
+ * true or false; null when the source holds one window only (taken without it) or is not Android. */
+export function keyboardInSource(xml: string): boolean | null {
+  const pk = new Set([...xml.matchAll(/\spackage="([^"]+)"/g)].map(m => m[1])), win = new Set([...xml.matchAll(/\swindow-id="([^"]+)"/g)].map(m => m[1]));
+  if (!pk.size) return null;
+  if ([...pk].some(p => IME.test(p))) return true;
+  return win.size > 1 ? false : null;
+}
+
+export function appElements(xml: string) {
+  const nodes = tree(xml);
+  // the app's own package: the one most elements belong to (a multi-window source also holds the keyboard's)
+  const count = new Map<string, number>(); for (const n of nodes) if (n.at.package) count.set(n.at.package, (count.get(n.at.package) ?? 0) + 1);
+  const app = [...count].sort((a, b) => b[1] - a[1])[0]?.[0];
+  const order = (n: Node) => n.at['drawing-order'] === undefined ? null : +n.at['drawing-order'];
+  const covered = (n: Node) => { if (!n.box || order(n) === null) return false;
+    const cx = n.box[0] + n.box[2] / 2, cy = n.box[1] + n.box[3] / 2;
+    // a layer over the point: a view that draws (an image, a text, a plain view), or a layout holding any of those over
+    // its whole area (a sheet or page with gaps between its rows); an empty layout draws nothing (the template chat's
+    // empty editor frame, order 8, over everything)
+    // a plain android.view.View with nothing in it is a scrim, divider or dimmer: see-through (the chat's top scrim over
+    // the scrolled text, 2026-11-04)
+    const draws = (s: Node): boolean => s.at.displayed !== 'false' && !!s.box && s.box[2] > 0 && (s.kids.length ? s.kids.some(draws) : !LAYOUT.test(s.at.class ?? '') && s.at.class !== 'android.view.View');
+    const over = (s: Node) => !!s.box && s.at.displayed !== 'false' && inside(s.box, cx, cy) && draws(s);
+    for (let x: Node | null = n; x?.parent; x = x.parent) { const o = order(x); if (o === null) continue;
+      if (x.parent.kids.some(sib => sib !== x && (order(sib) ?? -1) > o && over(sib))) return true; }
+    return false; };
+  const out: { type: string; text: string; box: Box; actionable: boolean; covered: boolean; name: boolean }[] = [];
+  for (const n of nodes) {
+    const at = n.at;
+    if (at.visible === 'false' || at.displayed === 'false' || !n.box || n.box[2] <= 0 || n.box[3] <= 0) continue;
+    if (app && at.package && at.package !== app) continue;
+    const type = at.type ?? at.class ?? n.tag;
     const text = (/StaticText|TextView|TextField|Button|Cell|Link/.test(type) ? (at.label || at.value || at.text || at['content-desc'] || '') : (at.text || '')).trim();
-    if (!box || box[2] <= 0 || box[3] <= 0) continue;
     const actionable = /Button|Cell|Switch|Link|Image|TextField|SearchField|Tab/.test(type) || at.clickable === 'true';
-    out.push({ type, text, box, actionable });
+    // Android: words from content-desc alone on a view that draws no text of its own (an ImageButton's name)
+    const name = !!at.class && !at.text && !!at['content-desc'] && !/TextView|EditText|Button$/.test(at.class.replace(/ImageButton$/, 'Image'));
+    out.push({ type, text, box: n.box, actionable, covered: covered(n), name });
   }
   // a button's label repeated by the text inside it: keep the inner text only
   return out.map((o, i) => o.text && out.some((p, j) => j !== i && p.text === o.text && p.box[2] * p.box[3] < o.box[2] * o.box[3] && p.box[0] >= o.box[0] && p.box[1] >= o.box[1]) ? { ...o, text: '' } : o);
 }
-

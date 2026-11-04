@@ -119,6 +119,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   screen (the Launcher) other features' controls are traced `n/a: other feature: …` and the design check leaves their
   areas out; every item on the Design tab takes Bug / OK / N/A with a reason (required to overturn a bug); a capture's
   screenshot and page source are of one moment (`figma/references/conformance.md` §2, §3, §5).
+- **Design check: exact data first (user, 2026-11-04, REQ-084).** Figma from the source read (render bounds), the
+  phone from the page source (Android layers by drawing order, keyboard window); the screenshot only for colours and,
+  by OCR, glyph geometry and a layer cross-check. Captures must match the frame's dark/light and keyboard state;
+  reviewers quote texts from compare.json, never from images (`figma/references/conformance.md` §2–§4).
 - **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
   the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
 - **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names

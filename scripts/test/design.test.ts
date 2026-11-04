@@ -9,7 +9,7 @@ import { spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, utimesSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
-import { figmaScreen } from '../lib/design-match.ts';
+import { appElements, figmaScreen, keyboardInSource } from '../lib/design-match.ts';
 
 const ROOT = join(import.meta.dirname, '..', '..');
 const F = 'zztest/design-fixture', FD = join(ROOT, 'library', 'zztest'), FEAT = join(FD, 'design-fixture');
@@ -643,4 +643,32 @@ test('figma-source: save refuses a return older than its call', () => {
   const fresh = run('figma-source.ts', [F, 'save', 'design', 'plan-9-9'], { env: { HOME: home } });
   assert.match(fresh.out, /saved .*plan-9-9\.json/);
   rmSync(home, { recursive: true, force: true });
+});
+
+test("appElements: Android layers by drawing order, icon names, other windows", () => {
+  const P = 'com.cyberlink.pdr', v = (cls: string, at: string, b: string, kids = '') => `<${cls} class="${cls}" package="${P}" ${at} displayed="true" bounds="${b}"${kids ? `>${kids}</${cls}>` : '/>'}`;
+  const page = (sheet: string) => `<?xml version='1.0' encoding='UTF-8' standalone='yes' ?><hierarchy rotation="0">` +
+    v('android.widget.FrameLayout', 'drawing-order="1"', '[0,0][1080,2400]',
+      v('android.view.ViewGroup', 'resource-id="chat" drawing-order="5"', '[0,0][1080,2000]',
+        v('android.widget.TextView', 'text="Behind" drawing-order="1"', '[40,500][600,560]') +
+        v('android.view.View', 'resource-id="scrim" drawing-order="2"', '[0,0][1080,300]') +
+        v('android.widget.TextView', 'text="Under scrim" drawing-order="1"', '[40,100][600,160]') +
+        v('android.widget.ImageButton', 'content-desc="Record voice" drawing-order="3"', '[900,1900][990,1990]')) +
+      sheet) + '</hierarchy>';
+  const sheet = (inside: string) => v('android.widget.FrameLayout', 'resource-id="sheet" drawing-order="8"', '[0,88][1080,2265]', inside);
+  // a sheet with content drawn after the chat covers it, gaps between its rows included
+  let els = appElements(page(sheet(v('android.widget.TextView', 'text="Choose Character" drawing-order="1"', '[100,100][900,200]'))));
+  const at = (t: string) => els.find(e => e.text === t)!;
+  assert.equal(at('Behind').covered, true, 'under the sheet');
+  assert.equal(at('Choose Character').covered, false);
+  assert.equal(at('Record voice').name, true, "an icon's accessibility name is not drawn text");
+  // an empty frame drawn last draws nothing; a plain View (scrim) is see-through
+  els = appElements(page(sheet('')));
+  assert.equal(at('Behind').covered, false, 'an empty layout covers nothing');
+  assert.equal(at('Under scrim').covered, false, 'a scrim is see-through');
+  // the keyboard's window (enableMultiWindows): its keys are not app texts, and it says the keyboard is up
+  const kb = page('').replace('</hierarchy>', '<android.widget.FrameLayout class="android.widget.FrameLayout" package="com.samsung.android.honeyboard" window-id="9" displayed="true" bounds="[0,1500][1080,2400]"><android.widget.TextView class="android.widget.TextView" package="com.samsung.android.honeyboard" text="Q" displayed="true" bounds="[0,1600][100,1700]"/></android.widget.FrameLayout></hierarchy>');
+  assert.equal(keyboardInSource(kb), true);
+  assert.ok(!appElements(kb).some(e => e.text === 'Q'), "the keyboard's keys are left out");
+  assert.equal(keyboardInSource(page('')), null, 'one window: not known');
 });

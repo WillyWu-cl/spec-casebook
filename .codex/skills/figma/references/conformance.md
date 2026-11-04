@@ -99,11 +99,15 @@ reviewed
 
 ## 2. Capture while running
 
-`node scripts/device.ts <run dir> design <screen id> [--part N] ["note"]` (Android: `device-android.ts`) saves the
+`node scripts/device.ts <run dir> design <screen id> [--part N] [--anyway "<why>"] ["note"]` (Android: `device-android.ts`) saves the
 screenshot and page source of the screen on the phone and logs it with the case running. Both are of one moment
 (user, 2026-11-04): the source is read again after the screenshot and the pair kept only when no text moved, up to 5
 tries; a screen that never holds still is saved `unsettled` and the check flags it (`state`), so capture it again
 once still. A capture taken while a chat was still scrolling put every app box on the wrong thing.
+The capture is refused when it is not in its frame's state (user, 2026-11-04): dark or light (from the frame's fill,
+else its image) and the keyboard up or down, as `design.ts … screens` lists for each screen; `--anyway "<why>"` keeps
+it with the reason (the app ignores dark mode: then it is a finding). The automatic watch skips a screen shown in the
+wrong state the same way. Never copy one frame's capture to another frame of different state.
 
 - **In a casebook run (default): automatic (user, 2026-11-04).** `device.ts <run dir> case <TC-…>` (both platforms)
   arms a watch (`scripts/lib/design-watch.ts`, local `.design-watch.json`) of the screens the row reaches and of every
@@ -134,6 +138,24 @@ dark or light background (a board drawing each screen in both) is only taken fro
   segment reply with the reason. A frame taller than the phone: capture the top, scroll, `--part 2` (3, …).
 
 ## 3. Check
+
+**Exact data first (user, 2026-11-04).** Figma's side is exact from the source read: texts, fonts, colours and each
+text's drawn glyph bounds (`render`). The phone's page source is exact for texts and bounds; on Android UiAutomator2
+also gives each view's `drawing-order`, so a text a later layer draws over (the chat behind a sheet or page) is left
+out as `hidden` (`layer`), as is an icon's accessibility name (`name`), and a design capture also holds the keyboard's
+window (`enableMultiWindows`, switched off again at once). No dump on either platform holds font size, weight, family
+or text colour (checked 2026-11-04: Appium UiAutomator2 6.3 and WebDriverAgent attributes, `dumpsys activity top`;
+the app is not debuggable, and the Figma Agent repo has no phone collector), so the screenshot fills only that: colours
+as drawn, and by OCR (`scripts/ocr-images.swift`, macOS Vision; cached in `design/captures/<id>.ocr.json` and
+`extracted/figma/design-ocr/`, committed) glyph bounds for lines, size and position, plus a cross-check of the layers
+(a covered text the OCR clearly reads is kept and listed in `layers_disagree`: a see-through layer). Without layers
+(iOS, older captures) a text the OCR does not read is `hidden` (`not on the screenshot`). Exact font data needs RD: a
+debuggable build (Layout Inspector) or a UI dump in the app's debug menu.
+
+Also measured from the capture against its frame: dark or light (`appearance`) and the keyboard up or down (`state`);
+text size against the platform's own rendering of Figma's font (Android draws SF Pro about 6 % narrower; the check
+reports `font_width` once and flags a text 12 % off it); a date's digit counts (`copy`, number format). Shapes holding
+an image are not colour-checked, and a shape's colour is the most common colour inside it.
 
 `node scripts/design.ts … check <run dir> [--screen <ids>] [--recheck <earlier run>]` measures every new capture
 against the Figma screen and draws its review sheet (`screenshots/design/<id>-sheet.png`: Figma and app side by side
@@ -173,6 +195,10 @@ Two subagents, each over at most 15 screens with a self-contained brief; the sec
 Each brief starts with `node scripts/design.ts <feature> <platform> status <run dir>` (it marks the pass's start for
 the Design tab's token use).
 
+- **Texts are quoted from the data, never read off an image (user, 2026-11-04).** Each screen's `compare.json` entry
+  lists `texts.figma` (the Figma source), `texts.app` (the page source, hidden ones left out), `texts.app_ocr` and
+  `texts.figma_ocr` (what the screenshot and the Figma image show): a reviewer read 「26/08/19」 off a sheet where a
+  number tag covered 「20」 of 「2026/08/19」. Tags now sit beside their boxes, but the lists are what a note quotes.
 - **Builder.** For each screen, its `compare.json` entry and its sheet: a verdict for every candidate except `extra`
   / `sample` (those only when they matter), plus `visual:<n>` items for what the measure cannot see, each with `kind`,
   `figma.box` (screen points) and a note. Writes `design/builder.json`.

@@ -24,24 +24,35 @@
 // check: for every screen in <run dir>/design/captures.jsonl (device.ts design; the newest whole-screen capture per
 // screen and the scrolled parts taken after it), compares the Figma screen (figma-source out/<board>.json, every
 // visible node inside it) with the app's page source and screenshot, and writes <run dir>/design/compare.json
-// (committed) with one candidate per difference:
-//   state     under 40 % of the frame's short texts were found: the capture may be another state           major
-//   copy      a Figma text whose closest app text differs (normalised: case, quotes, spacing, numbers)    major
+// (committed) with one candidate per difference. Exact data first (user, 2026-11-04): Figma's texts, fonts, colours
+// and glyph bounds come from the source read; the app's texts, bounds and, on Android, layers (drawing order) and
+// keyboard (its window) from the page source; the screenshot gives colours as drawn and, by OCR (macOS Vision,
+// scripts/ocr-images.swift, cached in committed files), only what no dump holds: glyph bounds for lines, size and
+// position, and a cross-check of the layers (details at measure() and ocrPass()).
+//   state     under 40 % of the frame's short texts were found (another state), the keyboard is up where the frame has
+//             it down (or the other way), or the screen kept moving while it was captured                  major
+//   appearance the frame is dark and the capture light (or the other way)                                     major
+//   copy      a Figma text whose closest app text differs (normalised: case, quotes, spacing, numbers; a
+//             date's digit counts are kept)                                                                   major
 //   missing   a Figma text with no app text near it; long sample text (> 60 characters) is `sample`, info  major
 //   truncated the app text ends in an ellipsis Figma does not have, or runs past the screen edge           major
-//   lines     the app text takes more (or fewer) lines than Figma: wrapping                                minor
+//   lines     the app text takes more (or fewer) lines than Figma: wrapping (lines read on the screenshot)  minor
+//   size      a text wider or narrower (same characters), or taller or shorter, than this platform draws Figma's
+//             font on average: size, weight or font differs (sizeCands)                                       minor
 //   position  a matched text more than 4 pt from where Figma puts it, after the projection below          minor
-//   colour    a filled shape (button, chip, card) ΔE > 12 from its Figma fill, or a text ΔE > 18          minor
+//   colour    a filled shape (button, chip, card, badge) ΔE > 12 from its Figma fill, or a text ΔE > 18   minor
 //   control   an unlabelled control of the inventory (icon) with no tappable app element where it is drawn major
 //   extra     short app text (≤ 40 characters) Figma does not draw on the screen                            info
 // Scrolled parts (device.ts design <id> --part 2…) add their texts to copy / missing / extra only.
 // Projection: Figma's frame width maps to the phone's window width (one scale for x and y); texts in the upper half
 // are measured from the top and those in the lower half from the bottom, each half shifted by the median offset of its
-// exactly matched texts (safe areas and status bars differ by phone), so a position candidate is a residual after that
-// fit. A half with under 2 anchors, or anchors spread over 6 pt, measures no positions. System chrome (status bar,
+// exactly matched texts (safe areas and status bars differ by phone), and across by the median offset of the
+// left-aligned ones, so a position candidate is a residual after that fit; a text after another on its row is placed
+// by the gap after it. A half with under 2 anchors, or anchors spread over 6 pt, measures no positions. System chrome (status bar,
 // home indicator, keyboard instances) is left out. Candidate ids are `<kind>:<node>` (`extra:<text>`), so they stay
 // the same when the check runs again and on the next build.
-// Not measured (the reviewers look at the sheet): icons' drawing, images, font weight and size, radius, shadow, borders.
+// Not measured (the reviewers look at the sheet): icons' drawing, images, font weight and family (no dump holds them:
+// only `size` hints at them), radius, shadow, borders.
 // Each screen also gets screenshots/design/<id>-sheet.png (local): the Figma crop and the app screenshot side by side at
 // the same width with every candidate numbered on both, the one image a reviewer reads per screen.
 // --recheck <earlier run>: each bug settled there on a screen measured now is `fixed` (its candidate is gone), `still`
@@ -54,7 +65,7 @@ import { createHash } from 'node:crypto';
 import { appendFileSync, copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
 import { normLabel } from './lib/coverage.ts';
-import { appElements, figmaScreen, type Box } from './lib/design-match.ts';
+import { appElements, figmaScreen, keyboardInSource, type Box } from './lib/design-match.ts';
 import { capturedScreens, darkFill, darkShot } from './lib/design-watch.ts';
 import { planFresh, buildPlan, gapLine, kept, planPath, summary } from './lib/design-plan.ts';
 import { ROOT, arg, assertIds, featureDir, readTable, tableDir, writeJson, writeJsonRows } from './lib/library.ts';
@@ -176,15 +187,22 @@ function measure() {
     // texts of the scrolled parts count for copy and missing only: their positions are not the frame's
     const appT = [...els.filter(e => e.text).map(a => ({ ...a, f: toFig(a.box), n: normLabel(a.text), part: 1 })),
       ...parts.get(cap.screen)!.flatMap(p => appElements(existsSync(sourceOf(p.xml)) ? readFileSync(sourceOf(p.xml), 'utf8') : '').filter(e => e.text).map(a => ({ ...a, f: FAR, n: normLabel(a.text), part: p.part })))];
-    // What is on the screen (user, 2026-11-04). Figma's side is exact from the source read: each text's characters,
-    // font and its drawn glyph bounds (`render`). The phone's page source is exact for texts and structure but holds
-    // what another layer covers (the chat behind a sheet or page) and gives view boxes, not glyphs, with no font or
-    // lines: the screenshot's OCR fills only that. An app text no OCR line near it reads is left out (`hidden`), and its
-    // glyphs give its lines, size and position. A Figma text without render bounds is read on the Figma image the same
-    // way. No OCR (not macOS, no cache): view boxes as before.
+    // What is on the screen (user, 2026-11-04): exact data first. Figma's side is exact from the source read: each
+    // text's characters, font and drawn glyph bounds (`render`). The phone's page source is exact for texts, structure
+    // and, on Android, for layers: a text another layer draws over (`covered`, from UiAutomator2's drawing order) or
+    // that is only an icon's accessibility name (`name`) is left out (`hidden`, with why). The screenshot's OCR only
+    // cross-checks that (a covered text it clearly reads is kept: a see-through scrim; `layers_disagree`) and gives
+    // what no dump holds: glyph bounds, so lines, size and position. A source without layers (iOS, older captures):
+    // a text no OCR line near it reads is left out. A Figma text without render bounds is read on its image the same
+    // way. No OCR (not macOS, no cache): view boxes, and on Android the layers alone.
     const oA = ocr.get(`app:${scr.id}`) ?? null, oF = ocr.get(`fig:${scr.id}`) ?? null;
     const lineNs = (t: string) => t.split('\n').map(normLabel).filter(x => x.replace(/[#\W_]/g, '').length >= 2);
-    const readsAs = (o: OcrLine, n: string) => o.n === n || (n.length >= 3 && (o.n.includes(n) || (o.n.length >= 3 && n.includes(o.n)))) || ratio(o.n, n) >= 0.6;
+    // an OCR line reads part of a text when it is that text, holds it (an icon read beside a label) or is one of its
+    // wrapped lines; whether the text is on the screen at all takes most of its characters read (`readMost`): a short
+    // line inside a long one (「Maya Lin」 inside a paragraph behind a sheet) is not enough
+    const readsAs = (o: OcrLine, n: string) => o.n === n || (n.length >= 3 && o.n.includes(n)) || (o.n.length >= 3 && n.includes(o.n)) || ratio(o.n, n) >= 0.6;
+    const readMost = (g: OcrLine[] | null, text: string) => { if (!g) return false; const n = normLabel(text.replace(/\n/g, ' '));
+      return g.reduce((t, o) => t + Math.min(o.n.length, n.length), 0) >= n.length * 0.6; };
     // a text's OCR lines; a line read with more than the text (an icon beside a label read as 「Et New Chat」) is cut
     // to the text's characters, in proportion
     const glyphs = (lines: OcrLine[] | null, box: Box, text: string) => { if (!lines) return null; const ns = lineNs(text);
@@ -193,9 +211,16 @@ function measure() {
         if (!part) return o; const at = raw.indexOf(part), cw = o.box[2] / raw.length;
         return { ...o, box: [o.box[0] + at * cw, o.box[1], part.length * cw, o.box[3]] as Box }; });
       return g.length ? g : null; };
-    const hidden: any[] = [], sizes: any[] = [];
-    if (oA && oA.length >= 2) for (let i = appT.length - 1; i >= 0; i--) { const a = appT[i];
-      if (a.part === 1 && lineNs(a.text).length && !glyphs(oA, a.f, a.text)) { hidden.push({ text: a.text, box: r1(a.f) }); appT.splice(i, 1); } }
+    const hidden: any[] = [], sizes: any[] = [], disagree: any[] = [];
+    const layered = /\sdrawing-order="/.test(readFileSync(sourceOf(cap.xml), 'utf8')), ocrOk = !!oA && oA.length >= 2;
+    for (let i = appT.length - 1; i >= 0; i--) { const a: any = appT[i]; if (a.part !== 1) continue;
+      // a covered text with an uncovered twin over it (the home page's greeting drawn over the chat's, same place) is
+      // read through its twin: the screenshot cannot confirm it
+      const twin = a.covered && appT.some((b: any) => b !== a && !b.covered && b.part === 1 && b.n === a.n && overlap(b.f, a.f, 2));
+      const seen = ocrOk && lineNs(a.text).length && !twin ? readMost(glyphs(oA, a.f, a.text), a.text) : twin ? false : null;
+      const why = layered ? (a.name ? 'name' : a.covered ? (seen ? null : 'layer') : null) : seen === false ? 'not on the screenshot' : null;
+      if (layered && a.covered && seen) disagree.push({ text: a.text, box: r1(a.f) });
+      if (why) { hidden.push({ text: a.text, box: r1(a.f), why }); appT.splice(i, 1); } }
     // pair texts, one to one over the whole screen: every exact pair first (nearest first), then containment, then the
     // most similar (copy), else missing. Pairing text by text let a longer Figma text take another's exact twin by
     // containment (「AI Mini Drama with Seedance 2.0」 took the tile label 「AI Mini Drama」, which was then missing; 2026-11-04)
@@ -240,7 +265,9 @@ function measure() {
       shot = ocrDark.get(`app:${scr.id}`) ?? (existsSync(join(runDir, cap.png)) ? darkShot(readFileSync(join(runDir, cap.png))) : null);
     if (frameDark !== null && shot !== null && frameDark !== shot)
       cands.unshift({ id: `appearance:${scr.id}`, kind: 'appearance', severity: 'major', note: `Figma draws this screen ${frameDark ? 'dark' : 'light'}, the capture is ${shot ? 'dark' : 'light'}` + (cap.dark === frameDark ? `: the phone was in ${frameDark ? 'dark' : 'light'} mode, so the app does not follow it` : cap.dark === undefined ? ': if the phone was in that mode the app does not follow it, else capture it again in that mode' : `: the phone was in ${cap.dark ? 'dark' : 'light'} mode, capture it again in ${frameDark ? 'dark' : 'light'} mode`) });
-    const kbApp = cap.keyboard ?? keyboardShown(oA, Hf);
+    // the keyboard: the source's own windows (Android capture with enableMultiWindows), else the phone's answer at capture
+    // time (captures.jsonl `keyboard`), else the keys read on the screenshot
+    const kbApp = keyboardInSource(readFileSync(sourceOf(cap.xml), 'utf8')) ?? cap.keyboard ?? keyboardShown(oA, Hf);
     if (kbApp !== null && kbApp !== fig.keyboard)
       cands.unshift({ id: `keyboard:${scr.id}`, kind: 'state', severity: 'major', note: kbApp ? 'the keyboard is up in the capture, Figma draws this screen without it: capture it again with the keyboard down' : 'Figma draws the keyboard up, the capture has it down: capture it again with the field focused' });
     // projection: each half shifted by the median offset of its exact pairs; a half with fewer than 2 anchors, or whose
@@ -329,7 +356,7 @@ function measure() {
     results.push({ id: scr.id, name: scr.name, board: scr.board, board_name: scr.board_name, case: cap.case || scr.route?.case || '', captured_at: cap.t, png: cap.png,
       parts: parts.get(cap.screen)!.map(p => p.png), note: cap.note || '', build, win: cap.win, k: r3(k), fw: Wf, arrival, fit,
       ...(fig.out.length ? { out: fig.out.map(o => ({ name: o.name, box: r1(o.box) })) } : {}), ...(cap.unsettled ? { unsettled: true } : {}),
-      ...(hidden.length ? { hidden } : {}), ...(sizes.length ? { sizes } : {}), ocr: { app: !!oA, figma: !!oF },
+      ...(hidden.length ? { hidden } : {}), ...(disagree.length ? { layers_disagree: disagree } : {}), ...(sizes.length ? { sizes } : {}), ocr: { app: !!oA, figma: !!oF }, layers: layered,
       // every text of both sides as read, for the reviewers to quote (conformance.md §4: never read text off the image)
       texts: { figma: fig.texts.map(t => ({ node: t.node, text: t.text, box: r1(t.box) })), app: appT.filter(a => a.part === 1).map(a => ({ text: a.text, box: r1(a.f) })),
         ...(oA ? { app_ocr: oA.map(o => ({ text: o.text, box: r1(o.box) })) } : {}), ...(oF ? { figma_ocr: oF.map(o => ({ text: o.text, box: r1(o.box) })) } : {}) },

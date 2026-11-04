@@ -97,6 +97,7 @@ import { basename, join } from 'node:path';
 import { productValue } from './lib/feature-config.ts';
 import { BLOCKER, env, logActivity, runRecipe, sleep, stamp, webdriver } from './lib/device-common.ts';
 import { armWatch, saveCapture, settledCapture, stateMismatch, watchSource } from './lib/design-watch.ts';
+import { keyboardInSource } from './lib/design-match.ts';
 
 const HOME = homedir();
 const ANDROID_HOME = process.env.ANDROID_HOME ?? process.env.ANDROID_SDK_ROOT ?? join(HOME, 'Library/Android/sdk');
@@ -341,8 +342,12 @@ switch (cmd) {
     // the screenshot and page source of one moment (lib/design-watch.ts settledCapture), in the frame's state: dark or
     // light and the keyboard as Figma draws them, else refused (--anyway "<why>" keeps it, with the reason)
     const ai = words.indexOf('--anyway'), anyway = ai >= 0 ? words.splice(ai, 2)[1] ?? 'yes' : '';
-    const one = await settledCapture(async () => (await s('GET', '/source')).value, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'));
-    const kb = await (async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value))().catch(() => null);
+    // with the keyboard's window in the source (UiAutomator2 enableMultiWindows), so the keyboard state is in the capture
+    // itself; switched off again at once, as other windows would reach the run's lookups (`lbl`, `texts`)
+    const multi = async () => { await s('POST', '/appium/settings', { settings: { enableMultiWindows: true } });
+      try { return (await s('GET', '/source')).value as string; } finally { await s('POST', '/appium/settings', { settings: { enableMultiWindows: false } }).catch(() => {}); } };
+    const one = await settledCapture(multi, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'));
+    const kb = keyboardInSource(one.xml) ?? await (async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value))().catch(() => null);
     const off = part > 1 ? [] : stateMismatch(runDir, rest[0], one.png, kb);
     if (off.length && !anyway) { console.error(`not captured: ${rest[0]} is not in its frame's state: ${off.join('; ')}`); process.exit(1); }
     const { kase, png } = saveCapture(runDir, rest[0], { part, note: words.join(' '), png: one.png, xml: one.xml, win: (await s('GET', '/window/rect')).value,
