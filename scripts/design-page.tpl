@@ -13,17 +13,17 @@
    differences boxed and listed). Same palette as Results. */
 :root {
   --bg: #f4f6f6; --panel: #ffffff; --ink: #172426; --muted: #5b6b6e; --line: #d8e0e1; --accent: #0f6e73; --chip-bg: #eef2f2;
-  --differs: #b8402f; --question: #a86b12; --unreviewed: #6a55a8; --matches: #2f7d4f; --none: #9aa6a8;
+  --differs: #b8402f; --question: #a86b12; --unreviewed: #6a55a8; --matches: #2f7d4f; --none: #9aa6a8; --info: #2c6fa8;
   --display: "Archivo", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
   --body: "Source Sans 3", "Noto Sans TC", "Segoe UI", system-ui, "PingFang TC", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd; --chip-bg: #213032;
-  --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; color-scheme: dark } }
+  --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; --info: #74b3ea; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd; --chip-bg: #213032;
-  --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; color-scheme: dark }
+  --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; --info: #74b3ea; color-scheme: dark }
 * { box-sizing: border-box }
 [hidden] { display: none !important }
 body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0;
@@ -44,7 +44,7 @@ h1 { font: 750 1.9rem var(--display); margin: 0; letter-spacing: -0.01em }
 .tools.two { flex-direction: column; align-items: stretch }
 .tools.two .trow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
 .chip:disabled { opacity: 0.45; cursor: default }
-#pcopy { min-width: 17rem; justify-content: center }
+#pcopy, #copy { min-width: 17rem; justify-content: center }
 .chip { font: 600 0.82rem var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 5px 12px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center }
 .chip i { width: 9px; height: 9px; border-radius: 2px; display: inline-block }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--panel); border-color: var(--ink) }
@@ -206,13 +206,15 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
     <datalist id="whys"></datalist>
   </div>
   <div id="resv">
-  <div class="tools">
-    <span id="chips" style="display:contents"></span>
-    <select id="board" aria-label="Board"></select>
-    <select id="kind" aria-label="Difference"></select>
-    <input type="search" id="q" autocomplete="off">
-    <span class="count" id="count"></span>
-    <button type="button" class="chip" id="copy" hidden></button>
+  <div class="tools two">
+    <div class="trow" id="chips"></div>
+    <div class="trow">
+      <select id="board" aria-label="Board"></select>
+      <select id="kind" aria-label="Difference"></select>
+      <input type="search" id="q" autocomplete="off">
+      <span class="count" id="count"></span>
+      <button type="button" class="chip" id="copy"></button>
+    </div>
   </div>
   <div class="grid" id="grid"></div>
   </div>
@@ -307,11 +309,13 @@ const STN = { en: { differs: 'Differs', question: 'Question', unreviewed: 'Unrev
   zh: { differs: '有差異', question: '待確認', unreviewed: '未審查', matches: '一致', 'not-captured': '未擷取', 'no-route': '無路徑', excluded: '排除' } };
 const COL = s => `var(--${({ differs: 'differs', question: 'question', unreviewed: 'unreviewed', matches: 'matches' })[s] ?? 'none'})`;
 const VN = { en: { bug: 'Bug', question: 'Question', ok: 'OK', 'n/a': 'N/A', unreviewed: 'Unreviewed', info: 'Info' }, zh: { bug: '問題', question: '待確認', ok: '一致', 'n/a': '無法判定', unreviewed: '未審查', info: '資訊' } };
-const VC = v => `var(--${({ bug: 'differs', question: 'question', unreviewed: 'unreviewed', ok: 'matches' })[v] ?? 'none'})`;
+// Info and N/A in readable colours, not the faint grey (user, 2026-11-04)
+const VC = v => `var(--${({ bug: 'differs', question: 'question', unreviewed: 'unreviewed', ok: 'matches', info: 'info', 'n/a': 'muted' })[v] ?? 'none'})`;
 const KN = { en: { state: 'State', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
   zh: { state: '狀態', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
 const PAGES = window.CASEBOOK?.pages ?? {};
-let st = '', board = '', kind = '', q = '', open = null, showInfo = false, noBoxes = false;
+let st = '', board = '', kind = '', q = '', open = null, showInfo = true, noBoxes = false;
+const folded = new Set();   // verdict groups folded on the open comparison: kept when it is drawn again
 // the user's decisions: run|screen|id → { v: bug | ok | n/a, ebug: true }, kept in this browser until copied to the chat
 const DKEY = `design-decisions:${D.feature}:${D.platform}`;
 let DEC = {}; try { DEC = JSON.parse(localStorage.getItem(DKEY) || '{}'); } catch (e) {}
@@ -319,7 +323,8 @@ const saveDec = () => { try { localStorage.setItem(DKEY, JSON.stringify(DEC)); }
 const dkey = (s, it) => `${s.run}|${s.id}|${it.id}`;
 function copyBtn() {
   const n = Object.values(DEC).filter(d => d.v || d.ebug).length, b = $('copy');
-  b.hidden = !n; b.textContent = D.live ? t('save')(n) : t('copy')(n);
+  // always there, greyed out with nothing to save, so the bar does not shift (user, 2026-11-04)
+  b.disabled = !n; b.textContent = D.live ? t('save')(n) : t('copy')(n);
 }
 $('copy').onclick = async () => {
   const lines = [`DESIGN DECISIONS ${D.feature} ${D.platform}`];
@@ -532,8 +537,9 @@ function render() {
   const n = s => D.screens.filter(x => x.status === s).length;
   $('meta').textContent = t('meta')(D.screens.length, D.screens.filter(s => s.run).length, D.spec_set);
   $('bar').innerHTML = ST.map(s => n(s) ? `<span style="width:${100 * n(s) / D.screens.length}%;background:${COL(s)}" title="${esc(STN[L][s])} ${n(s)}"></span>` : '').join('');
-  $('chips').innerHTML = [['', t('all'), D.screens.length], ...ST.filter(n).map(s => [s, STN[L][s], n(s)])].map(([k, l, c]) =>
-    `<button type="button" class="chip" data-s="${k}" aria-pressed="${st === k}">${k ? `<i style="background:${COL(k)}"></i>` : ''}${esc(l)} <span class="n">${c}</span></button>`).join('');
+  // every status chip always shown (greyed out at 0), like the Plan view, so the bar does not shift
+  $('chips').innerHTML = [['', t('all'), D.screens.length], ...ST.map(s => [s, STN[L][s], n(s)])].map(([k, l, c]) =>
+    `<button type="button" class="chip" data-s="${k}" aria-pressed="${st === k}"${k && !c && st !== k ? ' disabled' : ''}>${k ? `<i style="background:${COL(k)}"></i>` : ''}${esc(l)} <span class="n">${c}</span></button>`).join('');
   $('chips').querySelectorAll('.chip').forEach(b => b.onclick = () => { st = b.dataset.s; render(); });
   const boards = [...new Set(D.screens.map(s => s.board))];
   $('board').innerHTML = `<option value="">${esc(t('allBoards'))}</option>` + boards.map(b => `<option${b === board ? ' selected' : ''}>${esc(b)}</option>`).join('');
@@ -592,7 +598,7 @@ function detail(id) {
       ${r.precondition ? `<div class="more"><b>${esc(t('pre'))}</b> ${esc(r.precondition)}</div>` : ''}<div class="more"><b>${esc(t('action'))}</b> ${esc(r.action)}</div>
       ${s.alternatives.length ? `<div class="more">${esc(t('also'))}: ${s.alternatives.map(esc).join(', ')}</div>` : ''}
       ${s.fit ? `<div class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</div>` : ''}</div>` : s.why ? `<p class="more">${esc(s.why)}</p>` : ''}
-    <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" open><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)}">
+    <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" data-v="${esc(v)}"${folded.has(v) ? '' : ' open'}><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)}">
       <div class="h"><span class="num" style="background:${VC(it.verdict)}">${n + 1}</span><span class="k">${esc(KN[L][it.kind] ?? it.kind)}</span>
       ${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
       ${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
@@ -605,6 +611,7 @@ function detail(id) {
   </div></div>`;
   $('x').onclick = () => { history.replaceState(null, '', location.pathname + location.search); $('dlg').close(); open = null; };
   $('info')?.addEventListener('click', () => { showInfo = !showInfo; detail(id); });
+  $('dlg').querySelectorAll('details.grp').forEach(g => g.addEventListener('toggle', () => g.open ? folded.delete(g.dataset.v) : folded.add(g.dataset.v)));
   $('bx').onchange = e => { noBoxes = !e.target.checked; $('dlg').classList.toggle('noboxes', noBoxes); };
   $('dlg').classList.toggle('noboxes', noBoxes);
   // a decision: press again to clear it
