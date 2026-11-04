@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-04T06:52:37.265Z",
+  "feature": "phd/i2v-reuse",
+  "platform": "android",
+  "set": "specs/2026-11-04",
+  "warnings": [
+    {
+      "id": "pm-ui|note-gone|pm-ui@-1405,-726",
+      "board": "pm-ui",
+      "kind": "note-gone",
+      "text": "spec note 「• Template 影片不顯示 Reuse（沒有 model 設定可選）— 同今天 Template Save & S」 (R-004) is not in the board image",
+      "reqs": [
+        "R-004"
+      ]
+    }
+  ],
+  "skipped": []
+}

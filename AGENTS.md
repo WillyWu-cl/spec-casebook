@@ -117,6 +117,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   §2, *The Design tab*).
 - **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
   the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
+- **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names
+  one platform (`SKILL.md` step 0).
+- **A Figma link is the spec (user, 2026-11-04).** When the user sends a Figma link and no PDF, read the spec from
+  Figma directly; do not ask for a PDF export (`reading-the-spec.md`, *Figma-only spec*).
 - **Phone fixtures (2026-10-27).** What a run needs on the phone or account is in
   `library/<product>/<feature>/<platform>/fixtures.md`.
 - **Live pages (user, 2026-10-28).** `scripts/pages.ts` serves Cases, Progress, Results, Coverage and Design with one

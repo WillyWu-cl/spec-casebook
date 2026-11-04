@@ -200,6 +200,26 @@ and look at the tile images where layout, arrows or states matter.**
      `control-trace.json` (the coverage page then draws no buttons). After a rename, re-run `controls.ts` on every
      draft and approved table and carry each entry's press over by layer name + label.
 
+## Figma-only spec (user, 2026-11-04)
+
+When the user sends a Figma link and no PDF, the Figma page is the spec: read it directly and never ask for a PDF
+export (first used for `phd/i2v-reuse`, PM page 6336:3478).
+
+- **Read.** `whoami` on the right server, `get_metadata` on the page (to choose the boards: its sections, or regions
+  `{ name, parent, box }` in absolute canvas points), then step 10's inventory read, which also returns every text.
+  Save it as `extracted/figma-inventory-<group>.json` with `file` (the file key) and `page` added at the top, so
+  `figma-check.ts` knows its file; add the file to `figma-frames.json` `files.<role>`.
+- **Spec file.** Write a text snapshot of the read (every text per board in reading order, no timestamps) to a scratch
+  folder and give it to `new-draft.ts` as the spec file: its SHA-256 fingerprints the spec set, so an unchanged Figma
+  page gives the same set. Set `figma_only: true` and the links in `spec-set.json`.
+- **Board text.** Write `extracted/boards/<id>.md` from the read's texts in the usual y / x / text form (one line per
+  text line; coordinates from the section's top-left, since `annotations.ts` reads only non-negative numbers), with a
+  header saying it is the Figma text layer. Steps 2–3 (render, OCR) are skipped; step 4 onwards runs as written.
+- **Images.** One `get_screenshot` of the holding section at 1:1, cut per board with `figma-cut.ts` (a section render
+  has a 40-pt margin) and recorded with `figma-check.ts --shot`.
+- **Arrows drawn as frames.** PM pages may draw arrows as frames named 「<from> --> <to>」 holding plain lines, which
+  the extractor does not take: list them in `arrows.json` by hand from the frame names and the legend.
+
 ## No Figma access (PDF-only, user, 2026-10-30)
 
 Only a few machines hold the two Figma sign-ins, and the quota is small, so Figma is not a gate: an analysis can run

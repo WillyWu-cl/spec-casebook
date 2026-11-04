@@ -1,0 +1,245 @@
+{
+  "spec_folder": "specs/2026-11-04",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-draft-tbd@-155,-4702",
+      "board": "pm-draft-tbd",
+      "x": -155,
+      "y": -4702,
+      "low": false,
+      "text": "Q1 4/E 前的舊影片能不能 Reuse？ / • ➡️ 建議：day-1 不顯示 Reuse [D2-03b] / • 主：RD 們／2026-10-28 會議 [D2-03b] / • day-1：不顯示 Reuse [D2-03b] / Q2 每支 Custom 影片都能取得完整設定（兩平台、重裝後）？ / • ➡️ 建議：拿不到就不帶入 default model setting [D2-07] / • 主：RD 們／2026-10-28 會議 [D2-07] / • day-1：不顯示 Reuse [D2-07]",
+      "trace": "R-014, R-015, Q-2, Q-3"
+    },
+    {
+      "id": "pm-error-handling@-1530,-4087",
+      "board": "pm-error-handling",
+      "x": -1530,
+      "y": -4087,
+      "low": false,
+      "text": "用戶看到 / 見 Spec - UI › I2V Custom · model_sunset / 完整帶回；框與字數變紅、Generate disable — 同今天 / 照今天沒網路進 I2V 的行為，Reuse 不另外處理 / 「The photo you uploaded includes a real person, which isn't supported by the selected model.」— 同今天 / Free → Upgrade to Premium；訂閱者 → More Credits Required — 同今天",
+      "trace": "R-042, R-046, R-047, R-048, R-049, R-050"
+    },
+    {
+      "id": "pm-error-handling@-630,-4087",
+      "board": "pm-error-handling",
+      "x": -630,
+      "y": -4087,
+      "low": false,
+      "text": "決策來源",
+      "trace": "label: column heading 「決策來源」 (decision source)"
+    },
+    {
+      "id": "pm-error-handling@-1860,-4036",
+      "board": "pm-error-handling",
+      "x": -1860,
+      "y": -4036,
+      "low": false,
+      "text": "Reuse 的影片 model 已下架 / Reuse 帶回的 prompt 超過新 model 上限（Android 上限 500） / 沒網路時按 Reuse / Reuse 到不支援真人的 model，選了有人臉的照片 / 點數不足",
+      "trace": "R-042, R-046, R-047, R-048, R-049, R-050, Q-7"
+    },
+    {
+      "id": "pm-error-handling@-1110,-4036",
+      "board": "pm-error-handling",
+      "x": -1110,
+      "y": -4036,
+      "low": false,
+      "text": "照常生成 / 用戶自己刪字 / 換照片或換 model",
+      "trace": "R-045, R-046, R-048"
+    },
+    {
+      "id": "pm-error-handling@-890,-4036",
+      "board": "pm-error-handling",
+      "x": -890,
+      "y": -4036,
+      "low": false,
+      "text": "按 Generate 照 default model 現價扣",
+      "trace": "R-045"
+    },
+    {
+      "id": "pm-flow@-3850,-4672",
+      "board": "pm-flow",
+      "x": -3850,
+      "y": -4672,
+      "low": false,
+      "text": "• 情境：用戶對結果滿意，回 My AI Artwork 想換一張照片、用同一組設定再做一支 [D0-01] / • 為何 11/E：model list 變長、可 custom 項目變多，重找 model 成本高；拉高 I2V 重複生成 → credit 消耗 [D0-01] / • 入口只有影片層級 Reuse（Save & Share 頁）；Create More 維持今天（Custom tab、default model），不出 reuse list [D0-03] / • 名稱：Reuse；出現在 Artwork I2V tab、Recent (Video) 進入的 Save & Share 頁 [D0-05] / • Scope：只有 Custom 影片；10/E Start/End frame 影片也算，開關狀態一起帶回 [D0-06][D0-06b] / • 不比競品，以 app 內既有 prompt Reuse 為參照 [D5-01]",
+      "trace": "R-002, R-003, R-004, R-005, R-021, R-041"
+    },
+    {
+      "id": "pm-flow@-3014,-4294",
+      "board": "pm-flow",
+      "x": -3014,
+      "y": -4294,
+      "low": false,
+      "text": "• 設定＋prompt 帶好、照片空、toast [D1-04]",
+      "trace": "R-022, R-023, R-025"
+    },
+    {
+      "id": "pm-flow@-3850,-4279",
+      "board": "pm-flow",
+      "x": -3850,
+      "y": -4279,
+      "low": false,
+      "text": "• 點 Custom 影片 → Save & Share [D1-01]",
+      "trace": "R-008, R-062"
+    },
+    {
+      "id": "pm-flow@-3435,-4279",
+      "board": "pm-flow",
+      "x": -3435,
+      "y": -4279,
+      "low": false,
+      "text": "• Reuse 帶回整組設定 [D0-04b]",
+      "trace": "R-001, R-016"
+    },
+    {
+      "id": "pm-flow@-3850,-2731",
+      "board": "pm-flow",
+      "x": -3850,
+      "y": -2731,
+      "low": false,
+      "text": "Entry B: My AI Artwork › Create More（維持） / • Create More → Custom tab、default model（同今天） [D1-03]",
+      "trace": "R-041, R-066"
+    },
+    {
+      "id": "pm-flow@-3435,-2607",
+      "board": "pm-flow",
+      "x": -3435,
+      "y": -2607,
+      "low": false,
+      "text": "• default 設定，不出任何 reuse list [D0-03]",
+      "trace": "R-002, R-041"
+    },
+    {
+      "id": "pm-flow@-3850,-1214",
+      "board": "pm-flow",
+      "x": -3850,
+      "y": -1214,
+      "low": false,
+      "text": "— 藍線＝去程（點擊觸發）　— 紅線＝回程（‹ 返回）",
+      "trace": "label: legend for the arrows (blue forward, red return); arrows R-062 to R-066"
+    },
+    {
+      "id": "pm-header@-3970,-5032",
+      "board": "pm-header",
+      "x": -3970,
+      "y": -5032,
+      "low": false,
+      "text": "與 Save & Share 頁 Prompt Reuse / My Prompts Reuse 的差異：它們只帶回一段文字；這個功能帶回整組生成設定（model + Duration + Quality + Sound〔+ prompt〕），讓用戶不用在 10 個 model 裡重找、重設，就能用同一組設定換照片再做一支。",
+      "trace": "R-001"
+    },
+    {
+      "id": "pm-tracking@-1875,-4742",
+      "board": "pm-tracking",
+      "x": -1875,
+      "y": -4742,
+      "low": false,
+      "text": "• 成功指標：從 Artwork 進 I2V 後按 Generate 的比例＝ImageToVideo_Result_Generate 依 from 計算 [D0-02][D4-03] / • 命名規則：event 三段 PascalCase（Xxx_Yyy_Zzz）、參數 snake_case，不符合會被兩平台丟掉 [D4-03]",
+      "trace": "R-055"
+    },
+    {
+      "id": "pm-tracking@-1280,-4637",
+      "board": "pm-tracking",
+      "x": -1280,
+      "y": -4637,
+      "low": false,
+      "text": "觸發時機 / Save & Share 按 Reuse 進房後按 Generate / My AI Artwork 按 Create More 進房後按 Generate / 從 Recent (Video) 進 Save & Share 再 Reuse / Save & Share 按 Reuse",
+      "trace": "R-051, R-052, R-053, R-054"
+    },
+    {
+      "id": "pm-tracking@-920,-4637",
+      "board": "pm-tracking",
+      "x": -920,
+      "y": -4637,
+      "low": false,
+      "text": "參數 / 值 / from＝artwork_reuse（iOS 新增，同 Android） / from＝Artwork（同今天） / from＝artwork_reuse（不另外分 Recent）",
+      "trace": "R-052, R-053, R-054"
+    },
+    {
+      "id": "pm-tracking@-500,-4637",
+      "board": "pm-tracking",
+      "x": -500,
+      "y": -4637,
+      "low": false,
+      "text": "決策來源",
+      "trace": "label: column heading 「決策來源」 (decision source)"
+    },
+    {
+      "id": "pm-tracking@-1500,-4586",
+      "board": "pm-tracking",
+      "x": -1500,
+      "y": -4586,
+      "low": false,
+      "text": "既有，新增 from 值 / 既有，不變 / 既有，不變",
+      "trace": "R-052, R-053, R-054"
+    },
+    {
+      "id": "pm-ui@-1405,-726",
+      "board": "pm-ui",
+      "x": -1405,
+      "y": -726,
+      "low": false,
+      "text": "• Template 影片不顯示 Reuse（沒有 model 設定可選）— 同今天 Template Save & Share [D0-06]",
+      "trace": "R-004"
+    },
+    {
+      "id": "pm-ui@-2899,-716",
+      "board": "pm-ui",
+      "x": -2899,
+      "y": -716,
+      "low": false,
+      "text": "• 原 Prompts 區的 Prompt Reuse row 升級：同一顆 Reuse 帶回整組設定（頁面只剩一顆 Reuse）；區塊標題改為「Prompts & Settings」 [D0-04b][D1-10] / • 顯示 model＋Duration · Quality · Sound 摘要與 prompt [D2-01] / • 按 Reuse → 回 I2V Custom tab（設定＋prompt 帶好、照片欄空） [D1-04] / • 從 I2V tab、Recent (Video) 點影片都會到這頁，一樣顯示 Prompts & Settings＋Reuse；列表 tile 上不另加按鈕 [D1-01][D0-05][D1-07] / • 只有生成成功的 Custom 影片顯示；4/E 前舊影片 day-1 不顯示（待 RD） [D2-03][D2-03b] / • 今天 Prompt Reuse 帶回什麼不追問，升級後行為以本頁為準 [D0-07b]",
+      "trace": "R-008, R-009, R-010, R-011, R-012, R-013, R-014, R-016, R-022, R-023, R-007"
+    },
+    {
+      "id": "pm-ui@-3850,-696",
+      "board": "pm-ui",
+      "x": -3850,
+      "y": -696,
+      "low": false,
+      "text": "（Custom 影片）",
+      "trace": "label: state label 「default（Custom 影片）」 of the Save & Share mockup"
+    },
+    {
+      "id": "pm-ui@-3850,382",
+      "board": "pm-ui",
+      "x": -3850,
+      "y": 382,
+      "low": false,
+      "text": "I2V Custom · Reuse 進房",
+      "trace": "label: row title 「I2V Custom · Reuse 進房」"
+    },
+    {
+      "id": "pm-ui@-1405,462",
+      "board": "pm-ui",
+      "x": -1405,
+      "y": 462,
+      "low": false,
+      "text": "【Model 已下架】 / • Reuse 照樣能按；model 改用 default，其他參數能帶就帶、不支援回預設 (同 4/E 切換 model 規則) [D2-02] / • 進房彈出下架 toast (兩句要換行)「This model is no longer available. Switched to recommended model.」，不彈「Settings applied」 [D2-02b][D1-09] / • 按 Generate 照 default model action id 正常扣點 [D3-04]",
+      "trace": "R-042, R-043, R-044, R-045, Q-6"
+    },
+    {
+      "id": "pm-ui@-2905,531",
+      "board": "pm-ui",
+      "x": -2905,
+      "y": 531,
+      "low": false,
+      "text": "• 帶回 model、Duration、Video Quality、Generate Sound by AI、Start/End 開關、prompt；不帶照片、Inspiration [D2-01][D0-06b] / • intro（iOS demo / Steps、AI Processing Notice、Android 說明 sheet）照今天先出，看到 Custom 頁才跳 toast「Settings applied」；toast 優先於 panel [D1-04b][D1-08] / • 房內切 model 照 4/E 記住設定、不支援回預設；離房 reset (同 Image to Video Custom) [D1-06] / • Back ‹ 回 Save & Share 頁 [D1-05] / • Reuse 不扣點；Generate 按鈕顯示該 model 現在的點數；沿用各 model 現有 action ID [D3-01][D3-02][D4-01] / • Free trial 同 I2V Custom [D3-03]",
+      "trace": "R-017, R-018, R-019, R-020, R-021, R-022, R-023, R-024, R-026, R-027, R-031, R-032, R-033, R-028, R-029, R-035, R-030"
+    },
+    {
+      "id": "pm-ui@-2905,1773",
+      "board": "pm-ui",
+      "x": -2905,
+      "y": 1773,
+      "low": false,
+      "text": "• 同 Image to Video 今天的 Artwork；今天只有 Create More（空白進 Custom tab），兩平台一樣 [D0-07] / • Create More：照今天直接進 Custom tab、default model [D1-03][D0-03] / • 點 Custom 影片 → Save & Share（含 Reuse） [D1-01]",
+      "trace": "R-006, R-041, R-008"
+    }
+  ]
+}

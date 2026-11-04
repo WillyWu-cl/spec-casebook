@@ -64,7 +64,8 @@ that showed it). No comparison runs during an analysis or before a proposal.
 **Started with no arguments (user, 2026-10-29).** Ask which feature to work on (offer the features
 `node scripts/status.ts` lists, plus "a new feature"), then which platform when the feature has both. Then:
 1. **No spec files or Figma links yet** (a new feature, or no spec set with a `figma-frames.json` `files` entry):
-   ask for the spec files (PM / Design / MX PDFs) and the Figma links before anything else, and continue with
+   ask for the spec files (PM / Design / MX PDFs) or the Figma links before anything else (a Figma link alone is
+   enough: it is read directly, never sent back for a PDF; `references/reading-the-spec.md`, *Figma-only spec*), and continue with
    step 1 once they arrive. The PDFs are enough to start (user, 2026-10-30): when there are no links, or this machine
    has no signed-in `figma-design` / `figma-pm`, ask once whether to sign in now or go **PDF-only**
    (`references/reading-the-spec.md`, *No Figma access*), and on PDF-only go on without Figma.
@@ -97,8 +98,8 @@ that showed it). No comparison runs during an analysis or before a proposal.
 - Feature ID: `<product>/<feature>`, both kebab-case, e.g. `pdr/ai-mini-drama` (product ids: the folders under
   `library/`; a new product also needs `library/<product>/product.json`, README › Adding a product). Reuse an existing ID from
   `node scripts/status.ts` when the feature is already in the library.
-- Platform: `ios` or `android`. Each platform has its own table, reviewed and approved separately. If the user
-  wants both, run the whole workflow once per platform (the second draft may start from the first platform's
+- Platform: `ios` or `android`. Each platform has its own table, reviewed and approved separately. **When the user
+  names no platform, do both (user, 2026-11-04)**; do not ask. For both, run the whole workflow once per platform (the second draft may start from the first platform's
   rows, adjusted for platform differences the spec states). Then read every Precondition and Action against the second
   platform's controls (its debug menu, log, tier switch, install path, system settings): a step that names a control the
   platform lacks is rewritten or parked, never copied (2026-10-27: 13 Android rows named iOS Pink, Developer Server or

@@ -1,0 +1,40 @@
+{
+  "arrows": [
+    {
+      "arrow": "6366:5631",
+      "node": "6366:5631",
+      "edge": "My AI Artwork I2V tab › Custom video tile → Save & Share · Reuse",
+      "expected": "Tapping a Custom video in the Image to Video tab opens its Save & Share page with Prompts & Settings and Reuse",
+      "how": "frame 「Custom 影片 tile --> Save & Share · Reuse」 (blue = forward, tap)"
+    },
+    {
+      "arrow": "6366:5635",
+      "node": "6366:5635",
+      "edge": "Save & Share › Reuse → I2V Custom · from_video",
+      "expected": "Reuse opens Image to Video Custom tab with the video's settings and prompt filled, photo empty, toast 「Settings applied」",
+      "how": "frame 「Reuse button --> I2V Custom · from_video」 (blue)"
+    },
+    {
+      "arrow": "6366:5639",
+      "node": "6366:5639",
+      "edge": "I2V Custom · from_video › ‹ back → Save & Share",
+      "expected": "Back from the reused Custom room returns to the Save & Share page",
+      "how": "frame 「‹ back --> Save & Share」 (red = return)"
+    },
+    {
+      "arrow": "6366:5643",
+      "node": "6366:5643",
+      "edge": "Save & Share › ‹ back → My AI Artwork",
+      "expected": "Back from Save & Share returns to My AI Artwork Image to Video tab",
+      "how": "frame 「‹ back --> My AI Artwork」 (red)"
+    },
+    {
+      "arrow": "6378:795",
+      "node": "6378:795",
+      "edge": "My AI Artwork › Create more → I2V Custom · default",
+      "expected": "Create more opens the Custom tab with the default model and no reused settings (as today)",
+      "how": "frame 「Create more --> I2V Custom · default」 (blue)"
+    }
+  ],
+  "count": 5
+}

@@ -1,0 +1,23 @@
+{
+  "feature": "phd/i2v-reuse",
+  "folder": "2026-11-04",
+  "received_at": "2026-11-04T06:43:11.941Z",
+  "spec_set_sha256": "060231bc1d8969def98bbc7a6dedf28ba7d4fb5db4d476ab6b15b1e2e2bb5441",
+  "files": [
+    {
+      "name": "Image to Video Reuse - PM Figma 6336-3478.md",
+      "sha256": "f2eb451d3590c3087306a8f804219a11fe8300f67806995b429a155ca4d1e1be",
+      "bytes": 15216
+    }
+  ],
+  "source_priority": [
+    "design",
+    "pm"
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/lSk4JUgbXG3DjauMLS9Et7/Image-to-Video?node-id=6336-3478",
+    "design": null
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-04): the spec file is the text snapshot of the PM Figma page written from the inventory read; no PDF export. Design spec expected 2026-11-05."
+}
