@@ -62,6 +62,9 @@ view (it opens by default until a run has captures):
   included and excluded, the flags below, what every capture measures, what the two review passes look at, and what
   is not covered (excluded screens, animation and timing, other languages and appearances, states that cannot be
   brought about).
+- **Order** (user, 2026-11-04): boards in app-flow order by default (where the row reaching their earliest screen
+  sits in `cases.csv`, screens in flow order within each), or by screen count, by screens needing a look, or as Figma
+  lists them. A screen's image opens full size; a click outside it closes it.
 - **One line per screen, by board**: its image, its route (row and fit, or Design path) and its `flags` (plan.json),
   the reasons to look at it: `area` (the row only reaches the area), `variant` (a state drawn beside a reached
   screen), `drawing` (narrower than 360 pt: a card or detail drawn on its own), `gap`. Each screen and each board has

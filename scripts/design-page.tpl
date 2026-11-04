@@ -113,11 +113,11 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .nums { display: flex; flex-wrap: wrap; gap: 6px 14px } .nums span b { display: inline; font: 700 0.95rem var(--mono); color: var(--ink); text-transform: none; letter-spacing: 0 }
 .pb { display: grid; gap: 6px }
 .pbh { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 6px }
-.pr { display: grid; grid-template-columns: 52px minmax(0, 1.2fr) minmax(0, 1.6fr) minmax(220px, 1fr); gap: 10px; align-items: center;
+.pr { display: grid; grid-template-columns: 88px minmax(0, 1.2fr) minmax(0, 1.6fr) minmax(220px, 1fr); gap: 10px; align-items: center;
   background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--matches); border-radius: 6px; padding: 6px 10px; font-size: 0.86rem }
 .pr.x { border-left-color: var(--none); opacity: 0.72 } .pr.flag { border-left-color: var(--question) } .pr.chg { box-shadow: 0 0 0 2px var(--unreviewed) }
-@media (max-width: 760px) { .pr { grid-template-columns: 52px minmax(0, 1fr) } .pr .rt, .pr .dc { grid-column: 1 / -1 } }
-.pr .tn { width: 52px; aspect-ratio: 375 / 812; overflow: hidden; border-radius: 3px; background: var(--chip-bg); position: relative; cursor: pointer; border: 0; padding: 0 }
+@media (max-width: 760px) { .pr { grid-template-columns: 72px minmax(0, 1fr) } .pr .rt, .pr .dc { grid-column: 1 / -1 } }
+.pr .tn { width: 100%; aspect-ratio: 375 / 812; overflow: hidden; border-radius: 3px; background: var(--chip-bg); position: relative; cursor: pointer; border: 0; padding: 0 }
 .pr .tn img { display: block; width: 100% } .pr .tn .cut { position: absolute; max-width: none }
 .pr .nm { font-weight: 600; overflow-wrap: anywhere; background: none; border: 0; padding: 0; color: var(--ink); text-align: left; cursor: pointer; font-size: inherit }
 .pr .id { font: 0.72rem var(--mono); color: var(--muted) }
@@ -143,6 +143,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
     <div class="tools">
       <span id="pchips" style="display:contents"></span>
       <select id="pboard" aria-label="Board"></select>
+      <select id="psort" aria-label="Order"></select>
       <input type="search" id="pq" autocomplete="off">
       <span class="count" id="pcount"></span>
       <button type="button" class="chip" id="pcopy"></button>
@@ -172,7 +173,7 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 let L = 'en';
 if (window.CASEBOOK) L = window.CASEBOOK.lang; else try { if (localStorage.getItem('casebook-lang') === 'zh') L = 'zh'; } catch (e) {}
 const T = {
-  en: { eyebrow: 'Casebook design check', title: f => `${f} · Design`, all: 'All', allBoards: 'All boards', search: 'Search screen, board or case',
+  en: { eyebrow: 'Casebook design check', title: f => `${f} · Design`, all: 'All', allBoards: 'All boards', sorts: { flow: 'Order: app flow', count: 'Order: most screens', look: 'Order: most to look at', figma: 'Order: as in Figma' }, search: 'Search screen, board or case',
     shown: (n, m) => `${n} of ${m}`, none: 'No screen matches these filters.', noPlan: 'No design plan yet: run node scripts/design.ts <feature> <platform> plan (figma skill, references/conformance.md).',
     meta: (n, c, s) => `${n} Design screens · ${c} captured · spec set ${s}`, figma: 'Figma', app: 'App', noApp: 'No capture on this computer', noFig: 'No Figma image on this computer',
     reached: 'Reached by', fit: { high: 'direct', mid: 'likely', low: 'area only' }, also: 'also', pre: 'Precondition', action: 'Action', via: 'via',
@@ -198,7 +199,7 @@ const T = {
     phint: 'Pick Include or Exclude where a screen should not be checked (superseded, a drawing only, a state that cannot be brought about), then Copy scope review and paste it into the chat. Copying also marks the scope reviewed. It applies to iOS and Android: the Design screens are the same.',
     whys: ['Superseded by a newer frame', 'Drawing only, not a screen', 'State cannot be brought about', 'Not in this release', 'Other platform only'],
     newFlag: 'New since the review', dpath: 'Design path' },
-  zh: { eyebrow: '測試表設計比對', title: f => `${f} · 設計比對`, all: '全部', allBoards: '全部畫板', search: '搜尋畫面、畫板或案例',
+  zh: { eyebrow: '測試表設計比對', title: f => `${f} · 設計比對`, all: '全部', allBoards: '全部畫板', sorts: { flow: '排序：App 流程', count: '排序：畫面最多', look: '排序：待確認最多', figma: '排序：依 Figma' }, search: '搜尋畫面、畫板或案例',
     shown: (n, m) => `${n} / ${m}`, none: '沒有符合篩選條件的畫面。', noPlan: '還沒有設計比對計畫：執行 node scripts/design.ts <feature> <platform> plan（figma 技能，references/conformance.md）。',
     meta: (n, c, s) => `${n} 個 Design 畫面 · 已擷取 ${c} · 規格 ${s}`, figma: 'Figma', app: 'App', noApp: '這台電腦沒有擷取圖', noFig: '這台電腦沒有 Figma 圖',
     reached: '到達方式', fit: { high: '直接', mid: '可能', low: '僅到區域' }, also: '另有', pre: '前置條件', action: '操作', via: '經由',
@@ -270,7 +271,15 @@ const VKEY = `design-view:${D.feature}:${D.platform}`, SKEY = `design-scope:${D.
 let view = 'plan'; try { view = localStorage.getItem(VKEY) || (D.screens?.some(s => s.run) ? 'results' : 'plan'); } catch (e) {}
 let SC = {}; try { SC = JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch (e) {}
 const saveSc = () => { try { localStorage.setItem(SKEY, JSON.stringify(SC)); } catch (e) {} };
-let pst = '', pboard = '', pq = '';
+let pst = '', pboard = '', pq = '', psort = 'flow';
+try { psort = localStorage.getItem('design-sort') || 'flow'; } catch (e) {}
+const lookOf = s => !exOf(s) && (s.flags.length > 0 || s.status === 'no-route' || D.review?.fresh.includes(s.id));
+// boards in the chosen order; in flow order a board goes where its earliest-reached screen is, and its screens follow the flow
+const lastFlow = 1e9, flowOf = s => s.flow ?? lastFlow;
+const boardOrder = () => { const S = D.screens, of = b => S.filter(s => s.board_id === b.id), key = {
+    flow: b => Math.min(lastFlow, ...of(b).map(flowOf)), count: b => -of(b).length, look: b => -of(b).filter(lookOf).length, figma: () => 0 }[psort] ?? (() => 0);
+  return D.boards.map((b, i) => [b, key(b), i]).sort((a, c) => a[1] - c[1] || a[2] - c[2]).map(x => x[0]); };
+const screenOrder = list => psort === 'flow' ? list.map((s, i) => [s, i]).sort((a, c) => flowOf(a[0]) - flowOf(c[0]) || a[1] - c[1]).map(x => x[0]) : list;
 const was = id => D.skip?.includes(id) ? { x: true, why: D.reasons?.[id] ?? '' } : { x: false, why: '' };
 const now = id => SC[id] ?? was(id);
 const changedIds = () => Object.keys(SC).filter(id => SC[id].x !== was(id).x || (SC[id].x && SC[id].why !== was(id).why));
@@ -278,6 +287,7 @@ const changedIds = () => Object.keys(SC).filter(id => SC[id].x !== was(id).x || 
 const exOf = s => now(s.id).x ? { by: 'screen', why: now(s.id).why } : now(s.board_id).x ? { by: 'board', why: now(s.board_id).why } : null;
 const isChanged = s => changedIds().includes(s.id) || changedIds().includes(s.board_id);
 $('pboard').onchange = e => { pboard = e.target.value; planList(); };
+$('psort').onchange = e => { psort = e.target.value; try { localStorage.setItem('design-sort', psort); } catch (e) {} planView(); };
 $('pq').oninput = e => { pq = e.target.value.trim().toLowerCase(); planList(); };
 $('pcopy').onclick = async () => {
   const ids = changedIds(), bad = ids.filter(id => SC[id].x && !SC[id].why.trim());
@@ -294,31 +304,32 @@ function planView() {
   $('scope').innerHTML = `<div class="sh"><h2>${esc(t('scope'))}</h2>${D.review ? `<span class="badge ok">${esc(t('reviewed')(D.review.at, D.review.fresh.length))}</span>` : `<span class="badge todo">${esc(t('notReviewed'))}</span>`}</div>
     <div class="sgrid">
       <div><b>${esc(t('sFigma'))}</b>${esc(t('boardsRead')(D.boards.length, last ? last.slice(0, 10) : ''))} · ${esc(t('specSet')(D.spec_set))}
-        <ul>${D.boards.map(b => `<li>${D.file ? `<a href="https://www.figma.com/design/${esc(D.file)}?node-id=${esc(b.id.replace(':', '-'))}" target="_blank" rel="noopener">${esc(b.name)}</a>` : esc(b.name)} <span class="more">· ${per(b)}</span></li>`).join('')}</ul></div>
+        <ul>${boardOrder().map(b => `<li>${D.file ? `<a href="https://www.figma.com/design/${esc(D.file)}?node-id=${esc(b.id.replace(':', '-'))}" target="_blank" rel="noopener">${esc(b.name)}</a>` : esc(b.name)} <span class="more">· ${per(b)}</span></li>`).join('')}</ul></div>
       <div><b>${esc(t('sScreens'))}</b><div class="nums"><span><b>${inc.length}</b> ${esc(t('included'))}</span><span><b>${ex.length}</b> ${esc(t('excluded'))}</span>${S.filter(s => s.status === 'no-route').length ? `<span><b>${S.filter(s => s.status === 'no-route').length}</b> ${esc(t('noRoute'))}</span>` : ''}</div>
         <ul>${['area', 'variant', 'drawing', 'gap'].filter(fl).map(f => `<li title="${esc(t('flagT')[f])}">${esc(t('flagN')[f])}: ${fl(f)}</li>`).join('')}</ul></div>
       <div><b>${esc(t('sMeasured'))}</b><ul>${t('measured').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
       <div><b>${esc(t('sLooked'))}</b><ul>${t('looked').map(x => `<li>${esc(x)}</li>`).join('')}</ul>
         <b style="margin-top:8px">${esc(t('sNot'))}</b><ul>${t('notCov').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
     </div>`;
-  const look = s => !exOf(s) && (s.flags.length > 0 || s.status === 'no-route' || D.review?.fresh.includes(s.id));
+  const look = lookOf;
   const cs = [['', t('all'), S.length], ['look', t('toLook'), S.filter(look).length], ['inc', t('included'), inc.length], ['ex', t('excluded'), ex.length], ['chg', t('changed'), S.filter(isChanged).length]];
   $('pchips').innerHTML = cs.filter(([k, , n]) => !k || n).map(([k, l, n]) => `<button type="button" class="chip" data-p="${k}" aria-pressed="${pst === k}">${esc(l)} <span class="n">${n}</span></button>`).join('');
   $('pchips').querySelectorAll('.chip').forEach(b => b.onclick = () => { pst = b.dataset.p; planView(); });
-  $('pboard').innerHTML = `<option value="">${esc(t('allBoards'))}</option>` + D.boards.map(b => `<option value="${esc(b.id)}"${b.id === pboard ? ' selected' : ''}>${esc(b.name)}</option>`).join('');
+  $('pboard').innerHTML = `<option value="">${esc(t('allBoards'))}</option>` + boardOrder().map(b => `<option value="${esc(b.id)}"${b.id === pboard ? ' selected' : ''}>${esc(b.name)}</option>`).join('');
+  $('psort').innerHTML = Object.entries(t('sorts')).map(([k, l]) => `<option value="${k}"${k === psort ? ' selected' : ''}>${esc(l)}</option>`).join('');
   $('pq').placeholder = t('search'); $('phint').textContent = t('phint'); $('pcopy').textContent = t('pcopy')(changedIds().length);
   $('whys').innerHTML = t('whys').map(w => `<option value="${esc(w)}">`).join('');
   planList();
 }
 function planList() {
-  const look = s => !exOf(s) && (s.flags.length > 0 || s.status === 'no-route' || D.review?.fresh.includes(s.id));
-  const list = D.screens.filter(s => (!pboard || s.board_id === pboard)
+  const look = lookOf;
+  const list = screenOrder(D.screens).filter(s => (!pboard || s.board_id === pboard)
     && (!pst || (pst === 'look' ? look(s) : pst === 'inc' ? !exOf(s) && s.status !== 'no-route' : pst === 'ex' ? !!exOf(s) : isChanged(s)))
     && (!pq || `${s.name} ${s.board} ${s.id} ${s.route?.case ?? ''}`.toLowerCase().includes(pq)));
   $('pcount').textContent = t('shown')(list.length, D.screens.length);
   const dc = (id, x, why, board) => `<div class="dc" data-k="${esc(id)}"><button type="button" data-x="0" aria-pressed="${!x}">${esc(board ? t('includeBoard') : t('include'))}</button><button type="button" data-x="1" aria-pressed="${x}">${esc(board ? t('excludeBoard') : t('exclude'))}</button>
     ${x ? `<input type="text" list="whys" required placeholder="${esc(t('why'))}" value="${esc(why)}">` : ''}</div>`;
-  const groups = D.boards.filter(b => list.some(s => s.board_id === b.id));
+  const groups = boardOrder().filter(b => list.some(s => s.board_id === b.id));
   $('pl').innerHTML = groups.length ? groups.map(b => { const bx = now(b.id);
     return `<section class="pb"><div class="pbh"><h3>${esc(b.name)}</h3><span class="more">${list.filter(s => s.board_id === b.id).length} / ${D.screens.filter(s => s.board_id === b.id).length}</span>${dc(b.id, bx.x, bx.why, true)}</div>
     ${list.filter(s => s.board_id === b.id).map(s => { const e = exOf(s), own = now(s.id), r = s.route;
@@ -431,6 +442,7 @@ function detail(id) {
   if (!$('dlg').open) $('dlg').showModal();
   $('dlg').scrollTop = keep;
 }
+$('dlg').addEventListener('click', e => { if (e.target === $('dlg')) $('x')?.click(); });
 $('dlg').addEventListener('close', () => { open = null; if (location.hash.startsWith('#screen=')) history.replaceState(null, '', location.pathname + location.search); });
 const fromHash = () => { const m = location.hash.match(/^#screen=(.+)$/); if (m) detail(decodeURIComponent(m[1])); };
 const setLang = l => { L = l; try { localStorage.setItem('casebook-lang', l); } catch (e) {} render(); };

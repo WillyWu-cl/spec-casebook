@@ -18,13 +18,14 @@
 // route to each screen with the flags that need a look (area only, a state beside a screen, a drawing narrower than a
 // phone, a gap), and an Include / Exclude choice with a reason per screen or board. Copy scope review puts a
 // `DESIGN SCOPE` block on the clipboard; design.ts … scope writes it into plan.json (skip list, reasons, review mark).
-// It opens by default until a run has captures.
+// It opens by default until a run has captures. Boards are listed in app-flow order (the earliest row reaching each),
+// or by screen count, by screens needing a look, or as Figma lists them.
 // --serve (default port 4493) rebuilds on every request; scripts/pages.ts serves it as /design/.
 import { existsSync, openSync, readdirSync, readFileSync, readSync, closeSync, statSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join, relative } from 'node:path';
-import { ROOT, arg, assertIds, featureDir, readManifest, tableDir } from './lib/library.ts';
+import { ROOT, arg, assertIds, featureDir, readManifest, readTable, tableDir } from './lib/library.ts';
 
 const [feature, platform] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -48,6 +49,8 @@ function buildData(link: (abs: string) => string) {
     for (const s of read(cf).screens) if ((seen.get(s.id)?.captured_at ?? '') <= s.captured_at) seen.set(s.id, { ...s, run: d, settled: !!found, verdicts: found?.[s.id] ?? {} });
   }
   const widths = new Map<string, number>();
+  // a screen's place in the app flow: the position in cases.csv of the row that reaches it (the table runs in flow order)
+  const casesFile = join(table, 'cases.csv'), pos = new Map<string, number>(existsSync(casesFile) ? readTable(casesFile).map((r, i) => [r.ID, i]) : []);
   const screens = plan.screens.map((s: any) => {
     const crop = join(out, 'crops', s.board.replace(/[:;]/g, '-'), `${s.id.replace(/[:;]/g, '-')}.png`);
     let figma: any = null;
@@ -69,7 +72,7 @@ function buildData(link: (abs: string) => string) {
     const img = (rel: string) => { const full = join(runsDir, m.run, rel), shared = join(runsDir, m.run, 'design', 'captures', rel.split('/').pop()!.replace(/\.png$/, '.webp'));
       return existsSync(full) ? link(full) : existsSync(shared) ? link(shared) : null; };
     const app = m ? img(m.png) : null;
-    return { id: s.id, name: s.name, board: s.board_name, board_id: s.board, flags: s.flags ?? [], status, why: s.why ?? '', gap: !!s.gap, route: s.route ?? null, alternatives: s.alternatives ?? [], figma, app,
+    return { id: s.id, name: s.name, board: s.board_name, board_id: s.board, flags: s.flags ?? [], flow: pos.get(s.route?.case) ?? null, status, why: s.why ?? '', gap: !!s.gap, route: s.route ?? null, alternatives: s.alternatives ?? [], figma, app,
       run: m?.run ?? '', captured_at: m?.captured_at ?? '', build: m?.build ?? '', note: m?.note ?? '', arrival: m?.arrival ?? null, recheck: m?.recheck ?? null,
       parts: (m?.parts ?? []).map((p: string) => img(p)).filter(Boolean),
       settled: !!m?.settled, win: m?.win ?? null, k: m?.k ?? null, fit: m?.fit ?? null, w: s.abs[2], h: s.abs[3], items };
