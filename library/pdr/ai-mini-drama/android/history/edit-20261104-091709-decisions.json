@@ -1,0 +1,22 @@
+{
+  "saved_at": "2026-11-04T01:17:09.157Z",
+  "version": 9,
+  "summary": "REQ-077: TC-341 removed. The live PM board 4294:25661 (§13.23) no longer draws a Discard button on the generated character page (only Save to library, as the Design); the 10/21 PDF did. The X / Back / swipe-down 「Discard this character?」 dialog rows stay.",
+  "notes": [],
+  "decisions": [
+    {
+      "id": "TC-341",
+      "decision": "removed",
+      "before": {
+        "ID": "TC-341",
+        "Section": "Make your character",
+        "Precondition": "Generated character shown",
+        "Action": "Tap the page's 「Discard」 button",
+        "Expected Result": "The result closes at once with no dialog; the character is not saved to Mine or applied",
+        "Priority": "P2",
+        "Spec Ref": "R-248",
+        "Notes": "PM-only: no Design frame yet (Design 2026-10-19)"
+      }
+    }
+  ]
+}

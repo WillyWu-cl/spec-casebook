@@ -1081,7 +1081,6 @@ TC-338,Characters,Finish your characters still generating after 5 minutes,"1. Wa
 TC-339,Make your character,Slot already had a look; a new character generated for it,"1. Tap X
 2. Tap 「Discard」",The result closes; the slot keeps its previous look; the new character is not in Mine,P3,R-248,PM-only: no Design frame yet (Design 2026-10-19). TC-134 covers an empty slot
 TC-340,Make your character,「Discard this character?」 shown,Tap 「Keep」,The dialog closes and the generated character stays on screen,P3,R-248,PM-only: no Design frame yet (Design 2026-10-19)
-TC-341,Make your character,Generated character shown,Tap the page's 「Discard」 button,The result closes at once with no dialog; the character is not saved to Mine or applied,P2,R-248,PM-only: no Design frame yet (Design 2026-10-19)
 TC-342,Make your character,Generated character shown,Swipe the result down,Same as X: 「Discard this character?」 appears,P3,R-248,PM-only: no Design frame yet (Design 2026-10-19)
 TC-401,Make your character,Generated character shown,"1. Use system back (Android back gesture or button)
 2. With the dialog shown use system back again","Same as X: 「Discard this character?」/「It won't be saved, and the credits you spent won't be refunded.」 with 「Keep」 and a red 「Discard」; system back on the dialog closes it like 「Keep」 and the result stays",P2,"R-248, R-293, R-355",PM 10/21 §13.23 names Android back. PM-only: no Design frame yet (Design 2026-10-19)
