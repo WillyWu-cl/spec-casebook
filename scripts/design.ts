@@ -3,6 +3,9 @@
 //   plan [--skip <board or screen ids> --skip-reason "<why>"]
 //                     build design/plan.json (lib/design-plan.ts): each Design screen with the row that reaches it.
 //                     Every other command builds it again first when the table, the traces or the Figma read changed.
+//   scope [file]      apply a pasted Plan-view "Copy scope review" block (from the file, or stdin): screens or boards
+//                     excluded with a reason or included again, and the scope marked reviewed; `both` in its header
+//                     applies it to every platform of the feature with a design plan
 //   screens [TC-…]    the screens a row reaches, to capture while it runs (id, name, fit); without a row, every
 //                     routed screen in journey order with its row or Design path (what a design pass walks)
 //   check <run dir> [--screen <id,…>] [--recheck <earlier run>] [--build <version (build)>]
@@ -47,7 +50,7 @@ import { createHash } from 'node:crypto';
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
 import { normLabel } from './lib/coverage.ts';
-import { planFresh, buildPlan, summary } from './lib/design-plan.ts';
+import { planFresh, buildPlan, kept, planPath, summary } from './lib/design-plan.ts';
 import { ROOT, arg, assertIds, featureDir, readTable, tableDir, writeJson } from './lib/library.ts';
 
 const [feature, platform, cmd, target] = process.argv.slice(2);
@@ -57,7 +60,7 @@ const shown = (p: string) => p.startsWith(ROOT) ? p.slice(ROOT.length + 1) : p;
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
 const runOf = (r: string) => existsSync(r) ? r : join(runsDir, r);
 const KINDS = ['state', 'copy', 'missing', 'truncated', 'lines', 'position', 'colour', 'control', 'extra', 'sample'];
-const USAGE = 'Usage: node scripts/design.ts <product>/<feature> <ios|android> plan | screens <TC-…> | check <run dir> | settle <run dir> | decide [file] | ebugs <run dir> | status [run dir]';
+const USAGE = 'Usage: node scripts/design.ts <product>/<feature> <ios|android> plan | screens <TC-…> | check <run dir> | settle <run dir> | decide [file] | scope [file] | ebugs <run dir> | status [run dir]';
 // the newest run folder holding design captures
 const newestRun = () => existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design', 'captures.jsonl'))).sort().at(-1) : undefined;
 const needsRun = ['check', 'settle', 'ebugs'].includes(cmd);
@@ -74,7 +77,8 @@ const sourceOf = (rel: string) => existsSync(join(runDir, rel)) ? join(runDir, r
 if (cmd === 'plan') {
   const skip = arg('skip')?.split(',').filter(Boolean);
   const old = existsSync(join(table, 'design', 'plan.json')) ? read(join(table, 'design', 'plan.json')) : null;
-  const plan = buildPlan(feature, platform, { skip: skip ?? old?.skip, skipReason: arg('skip-reason') ?? old?.skip_reason ?? undefined });
+  const reason = arg('skip-reason'), reasons = { ...(old?.skip_reasons ?? {}), ...(skip && reason ? Object.fromEntries(skip.map(id => [id, reason])) : {}) };
+  const plan = buildPlan(feature, platform, { ...kept(old), skip: skip ?? old?.skip, skipReason: reason ?? old?.skip_reason ?? undefined, reasons });
   console.log(`${shown(join(table, 'design', 'plan.json'))}: ${summary(plan)}`);
   for (const e of plan.screens.filter((e: any) => e.status === 'no-route').slice(0, 15)) console.log(`  no route: ${e.id} ${e.name} (${e.board_name}) — ${e.why}`);
 } else if (cmd === 'screens' && !target) {
@@ -92,6 +96,7 @@ if (cmd === 'plan') {
 } else if (cmd === 'check') measure();
 else if (cmd === 'settle') settle();
 else if (cmd === 'decide') decide();
+else if (cmd === 'scope') scope();
 else if (cmd === 'ebugs') ebugs();
 else if (cmd === 'status') status();
 else { console.error(USAGE); process.exit(2); }
@@ -360,8 +365,12 @@ print(json.dumps(res))`;
 
 function status() {
   const plan = planFresh(feature, platform);
+  const rv = plan.scope_review, fresh = rv ? plan.screens.filter((s: any) => !rv.ids?.includes(s.id)).length : 0;
+  const scopeLine = rv ? `scope reviewed ${rv.at}${fresh ? `, ${fresh} screen(s) new since` : ''}` : 'scope not reviewed';
   if (!runDir || !existsSync(designDir)) {
-    console.log(`Design check: ${summary(plan)}; no run has captures yet.\n  next: capture during a run (\`design.ts … screens <TC-…>\` lists what each row reaches)`); return; }
+    console.log(`Design check: ${summary(plan)}; ${scopeLine}; no run has captures yet.\n  next: ${!rv || fresh
+      ? 'the user reviews the scope on the Design tab\'s Plan view and pastes Copy scope review (design.ts … scope)'
+      : 'capture during a run (`design.ts … screens <TC-…>` lists what each row reaches)'}`); return; }
   const capFile = join(designDir, 'captures.jsonl'), cmpFile = join(designDir, 'compare.json'), fFile = join(designDir, 'findings.json');
   const caps = existsSync(capFile) ? readFileSync(capFile, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)) : [];
   const captured = new Set(caps.map(c => c.screen));
@@ -373,7 +382,7 @@ function status() {
   const open = verdicts.filter(v => v.verdict === 'question' && !v.decided).length, bugs = verdicts.filter(v => v.verdict === 'bug');
   const run = basename(runDir);
   console.log(`Design check of ${run}: ${captured.size} of ${routed.length} routed screens captured (${plan.counts.no_route} no route), ${measured.size} measured, ` +
-    (found ? `settled: ${bugs.length} bugs (${bugs.filter(v => v.ebug).length} ticked for eBugs), ${open} open questions` : 'not settled'));
+    (found ? `settled: ${bugs.length} bugs (${bugs.filter(v => v.ebug).length} ticked for eBugs), ${open} open questions` : 'not settled') + `; ${scopeLine}`);
   const unmeasured = [...captured].filter(s => !measured.has(s) || caps.filter(c => c.screen === s).at(-1).t > (cmp?.built_at ?? ''));
   const rows = new Map<string, number>(); for (const s of left) { const k = s.route.case || 'Design paths'; rows.set(k, (rows.get(k) ?? 0) + 1); }
   if (left.length) console.log(`  not captured: ${left.length} screens on ${rows.size} rows, e.g. ${[...rows].slice(0, 8).map(([c, n]) => `${c} (${n})`).join(', ')}`);
@@ -411,6 +420,36 @@ function settle() {
   }
   writeJson(join(designDir, 'findings.json'), { settled_at: new Date().toISOString(), builder: hash(b), reviewer: hash(r), screens });
   console.log(`${shown(join(designDir, 'findings.json'))}: ${agree} agreed, ${ask} questions for the user${kept ? `, ${kept} user decisions kept` : ''}`);
+}
+
+// The Plan view's Copy scope review block: `DESIGN SCOPE <feature> <ios|android|both>`, then `exclude <screen or board
+// id>: <reason>`, `include <id>` and `reviewed`. The Design screens are the same on both platforms, so `both` applies
+// it to every platform of the feature that has a design plan.
+function scope() {
+  const lines = readFileSync(target && existsSync(target) ? target : 0, 'utf8').split('\n').map(l => l.trim()).filter(Boolean);
+  const head = lines.findIndex(l => l.startsWith('DESIGN SCOPE'));
+  if (head < 0) { console.error('No "DESIGN SCOPE" block in the input.'); process.exit(1); }
+  const [, , f, p] = lines[head].split(/\s+/);
+  if (f !== feature) { console.error(`The block is for ${f}, not ${feature}.`); process.exit(1); }
+  const plats = p === 'both' ? ['ios', 'android'].filter(x => existsSync(planPath(feature, x))) : [p];
+  const day = new Date().toISOString().slice(0, 10);
+  for (const pl of plats) {
+    const old = planFresh(feature, pl, true), skip = new Set<string>(old.skip ?? []), reasons: Record<string, string> = { ...(old.skip_reasons ?? {}) };
+    for (const id of skip) reasons[id] ??= old.skip_reason ?? 'skipped';
+    const known = new Set(old.screens.flatMap((s: any) => [s.id, s.board]));
+    let reviewed = false, n = 0;
+    for (const l of lines.slice(head + 1)) {
+      const m = l.match(/^(exclude|include) (\S+?)(?:: (.+))?$/);
+      if (l === 'reviewed') { reviewed = true; continue; }
+      if (!m || (m[1] === 'exclude' && !m[3])) { console.error(`  skipped: ${l}${m ? ' (an exclusion needs a reason)' : ''}`); continue; }
+      if (!known.has(m[2])) { console.error(`  skipped: ${m[2]} is not a screen or board of the plan`); continue; }
+      if (m[1] === 'exclude') { skip.add(m[2]); reasons[m[2]] = m[3]; } else { skip.delete(m[2]); delete reasons[m[2]]; }
+      n++;
+    }
+    const plan = buildPlan(feature, pl, { skip: [...skip], skipReason: old.skip_reason ?? undefined, reasons,
+      review: reviewed ? { at: day, by: 'user', ids: old.screens.map((s: any) => s.id) } : old.scope_review });
+    console.log(`${pl}: ${n} change(s)${reviewed ? ', scope marked reviewed' : ''}; ${summary(plan)}`);
+  }
 }
 
 // The Design tab's Copy decisions block: `DESIGN DECISIONS <feature> <platform>`, then `<run> <screen> <id>: bug|ok|n/a|eBug`.

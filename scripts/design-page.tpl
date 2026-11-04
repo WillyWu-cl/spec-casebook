@@ -25,6 +25,7 @@
   --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd; --chip-bg: #213032;
   --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; color-scheme: dark }
 * { box-sizing: border-box }
+[hidden] { display: none !important }
 body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px }
 .wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 18px }
@@ -96,14 +97,61 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .frame a { display: block }
 .parts { display: flex; gap: 6px; flex-wrap: wrap; font-size: 0.78rem }
 .noboxes .frame svg { display: none }
+/* Plan view: the scope, then one line per screen grouped by board, each with Include / Exclude and a reason */
+.views { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel) }
+.views button { font: 650 0.9rem var(--display); border: 0; background: transparent; color: var(--ink); padding: 6px 16px; cursor: pointer }
+.views button[aria-pressed="true"] { background: var(--accent); color: #fff }
+.scope { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 12px }
+.scope h2, .pb h3 { font: 700 1.05rem var(--display); margin: 0 }
+.sh { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap }
+.badge { font: 600 0.78rem var(--body); border-radius: 999px; padding: 2px 10px; border: 1px solid currentColor }
+.badge.ok { color: var(--matches) } .badge.todo { color: var(--question) }
+.sgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 20px; font-size: 0.88rem }
+.sgrid b { display: block; font: 600 0.72rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 4px }
+.sgrid ul { margin: 0; padding-left: 18px } .sgrid li { margin: 1px 0 }
+.sgrid a { color: var(--accent) }
+.nums { display: flex; flex-wrap: wrap; gap: 6px 14px } .nums span b { display: inline; font: 700 0.95rem var(--mono); color: var(--ink); text-transform: none; letter-spacing: 0 }
+.pb { display: grid; gap: 6px }
+.pbh { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 6px }
+.pr { display: grid; grid-template-columns: 52px minmax(0, 1.2fr) minmax(0, 1.6fr) minmax(220px, 1fr); gap: 10px; align-items: center;
+  background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--matches); border-radius: 6px; padding: 6px 10px; font-size: 0.86rem }
+.pr.x { border-left-color: var(--none); opacity: 0.72 } .pr.flag { border-left-color: var(--question) } .pr.chg { box-shadow: 0 0 0 2px var(--unreviewed) }
+@media (max-width: 760px) { .pr { grid-template-columns: 52px minmax(0, 1fr) } .pr .rt, .pr .dc { grid-column: 1 / -1 } }
+.pr .tn { width: 52px; aspect-ratio: 375 / 812; overflow: hidden; border-radius: 3px; background: var(--chip-bg); position: relative; cursor: pointer; border: 0; padding: 0 }
+.pr .tn img { display: block; width: 100% } .pr .tn .cut { position: absolute; max-width: none }
+.pr .nm { font-weight: 600; overflow-wrap: anywhere; background: none; border: 0; padding: 0; color: var(--ink); text-align: left; cursor: pointer; font-size: inherit }
+.pr .id { font: 0.72rem var(--mono); color: var(--muted) }
+.pr .rt { color: var(--muted); overflow-wrap: anywhere } .pr .rt b { color: var(--ink) }
+.fl { display: inline-block; font: 600 0.72rem var(--body); color: var(--question); border: 1px solid var(--question); border-radius: 4px; padding: 0 5px; margin: 2px 4px 0 0 }
+.dc { display: flex; gap: 4px; flex-wrap: wrap; align-items: center }
+.dc button { font: 600 0.76rem var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 5px; padding: 2px 9px; cursor: pointer }
+.dc button[aria-pressed="true"] { background: var(--ink); color: var(--panel); border-color: var(--ink) }
+.dc input { flex: 1 1 140px; font: 0.8rem var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 3px 6px; min-width: 0 }
+.dc input:invalid { border-color: var(--differs) }
+.byb { font-size: 0.78rem; color: var(--muted) }
+.hint { font-size: 0.84rem; color: var(--muted); margin: 0 }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><span class="eyebrow" id="eyebrow"></span><span class="lang" role="group" aria-label="Language"><button type="button" data-l="en">English</button><button type="button" data-l="zh">中文</button></span></div>
+  <div class="top"><span class="eyebrow" id="eyebrow"></span><span class="views" id="views" role="group"></span><span class="lang" role="group" aria-label="Language"><button type="button" data-l="en">English</button><button type="button" data-l="zh">中文</button></span></div>
   <h1 id="h1"></h1>
   <div class="meta" id="meta"></div>
   <div class="bar" id="bar"></div>
+  <div id="planv" hidden>
+    <section class="scope" id="scope"></section>
+    <div class="tools">
+      <span id="pchips" style="display:contents"></span>
+      <select id="pboard" aria-label="Board"></select>
+      <input type="search" id="pq" autocomplete="off">
+      <span class="count" id="pcount"></span>
+      <button type="button" class="chip" id="pcopy"></button>
+    </div>
+    <p class="hint" id="phint"></p>
+    <div id="pl" style="display:grid;gap:14px"></div>
+    <datalist id="whys"></datalist>
+  </div>
+  <div id="resv">
   <div class="tools">
     <span id="chips" style="display:contents"></span>
     <select id="board" aria-label="Board"></select>
@@ -113,6 +161,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
     <button type="button" class="chip" id="copy" hidden></button>
   </div>
   <div class="grid" id="grid"></div>
+  </div>
 </div>
 <dialog id="dlg"></dialog>
 <script>
@@ -133,7 +182,22 @@ const T = {
     bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', boxes: 'Boxes',
     doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click an image to open it full size.',
     now: { fixed: 'fixed', still: 'still there', check: 'look again' }, designPath: 'Design path', byArrows: 'Reached by the Design arrows',
-    gap: 'No casebook row reaches this screen: a gap for the analysis.', pfit: { path: 'arrow path', variant: 'state beside a reached screen', entry: 'first screen of a flow' } },
+    gap: 'No casebook row reaches this screen: a gap for the analysis.', pfit: { path: 'arrow path', variant: 'state beside a reached screen', entry: 'first screen of a flow' },
+    views: { plan: 'Plan', results: 'Results' }, scope: 'Scope', reviewed: (d, n) => `Reviewed ${d}${n ? ` · ${n} new since` : ''}`, notReviewed: 'Not reviewed yet',
+    sFigma: 'Figma read', sScreens: 'Screens', sMeasured: 'Measured on every capture', sLooked: 'Looked at by the two review passes', sNot: 'Not covered',
+    boardsRead: (n, d) => `${n} boards read${d ? `, ${d}` : ''}`, specSet: s => `spec set ${s}`,
+    included: 'Included', excluded: 'Excluded', noRoute: 'No route', toLook: 'Needs a look', changed: 'Your changes',
+    measured: ['Copy: each Figma text against the app text', 'Missing text and icon controls', 'Truncation (「…」 or past the edge)', 'Wrapping (number of lines)', 'Position, after aligning top and bottom', 'Fill and text colour', 'Arrival: the capture is the frame\'s state'],
+    looked: ['Icon drawings and images', 'Font weight and size', 'Corner radius, shadows and borders', 'Anything else the sheet shows'],
+    notCov: ['Excluded screens and boards (reason on each line)', 'Animation, motion and timing', 'Languages and appearances other than the frame\'s', 'Screens whose state cannot be brought about (named in the run)'],
+    flagN: { area: 'Area only', variant: 'State to bring about', drawing: 'Not a phone screen', gap: 'Gap in the table' },
+    flagT: { area: 'The row only reaches the area (a shared control); the runner brings about the state the frame shows.', variant: 'Drawn beside a reached screen: brought about there.',
+      drawing: 'Narrower than a phone: a card or detail drawn on its own. Its texts are still compared where the card appears.', gap: 'No casebook row reaches it: the analysis adds one.' },
+    include: 'Include', exclude: 'Exclude', why: 'Reason (required)', byBoard: r => `Excluded with its board: ${r}`, excludeBoard: 'Exclude board', includeBoard: 'Include board',
+    pcopy: n => `Copy scope review${n ? ` (${n} changes)` : ''}`, needWhy: n => `${n} exclusion(s) need a reason first.`,
+    phint: 'Pick Include or Exclude where a screen should not be checked (superseded, a drawing only, a state that cannot be brought about), then Copy scope review and paste it into the chat. Copying also marks the scope reviewed. It applies to iOS and Android: the Design screens are the same.',
+    whys: ['Superseded by a newer frame', 'Drawing only, not a screen', 'State cannot be brought about', 'Not in this release', 'Other platform only'],
+    newFlag: 'New since the review', dpath: 'Design path' },
   zh: { eyebrow: '測試表設計比對', title: f => `${f} · 設計比對`, all: '全部', allBoards: '全部畫板', search: '搜尋畫面、畫板或案例',
     shown: (n, m) => `${n} / ${m}`, none: '沒有符合篩選條件的畫面。', noPlan: '還沒有設計比對計畫：執行 node scripts/design.ts <feature> <platform> plan（figma 技能，references/conformance.md）。',
     meta: (n, c, s) => `${n} 個 Design 畫面 · 已擷取 ${c} · 規格 ${s}`, figma: 'Figma', app: 'App', noApp: '這台電腦沒有擷取圖', noFig: '這台電腦沒有 Figma 圖',
@@ -144,7 +208,22 @@ const T = {
     bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', boxes: '框線',
     doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點圖片可開啟原尺寸。',
     now: { fixed: '已修正', still: '仍存在', check: '需再看' }, designPath: 'Design 路徑', byArrows: '依 Design 箭頭到達',
-    gap: '沒有任何測試表案例到達此畫面：分析需補上。', pfit: { path: '箭頭路徑', variant: '已到達畫面旁的狀態', entry: '流程的第一個畫面' } },
+    gap: '沒有任何測試表案例到達此畫面：分析需補上。', pfit: { path: '箭頭路徑', variant: '已到達畫面旁的狀態', entry: '流程的第一個畫面' },
+    views: { plan: '計畫', results: '結果' }, scope: '範圍', reviewed: (d, n) => `已審查 ${d}${n ? ` · 之後新增 ${n} 個` : ''}`, notReviewed: '尚未審查',
+    sFigma: 'Figma 讀取', sScreens: '畫面', sMeasured: '每張擷取圖自動量測', sLooked: '由兩輪審查人工檢視', sNot: '不在範圍內',
+    boardsRead: (n, d) => `已讀取 ${n} 個畫板${d ? `，${d}` : ''}`, specSet: s => `規格 ${s}`,
+    included: '納入', excluded: '排除', noRoute: '無路徑', toLook: '需確認', changed: '你的變更',
+    measured: ['文案：每個 Figma 文字對照 App 文字', '缺少的文字與圖示控制項', '截斷（「…」或超出邊界）', '換行（行數）', '位置（上下對齊後）', '填色與文字顏色', '到達：擷取圖是否為該畫面的狀態'],
+    looked: ['圖示繪製與圖片', '字重與字級', '圓角、陰影與框線', '比對圖上其他可見差異'],
+    notCov: ['已排除的畫面與畫板（每行附原因）', '動畫、動態與時間', '畫面以外的語言與外觀模式', '無法製造出狀態的畫面（執行時註明）'],
+    flagN: { area: '僅到區域', variant: '需製造狀態', drawing: '非完整畫面', gap: '測試表缺口' },
+    flagT: { area: '案例只到達該區域（共用控制項）；執行者需製造出畫面所示的狀態。', variant: '畫在已到達畫面旁：在那裡製造出此狀態。',
+      drawing: '比手機窄：單獨畫出的卡片或細節。其文字仍會在卡片出現處比對。', gap: '沒有測試表案例到達：分析需補上。' },
+    include: '納入', exclude: '排除', why: '原因（必填）', byBoard: r => `隨畫板排除：${r}`, excludeBoard: '排除畫板', includeBoard: '納入畫板',
+    pcopy: n => `複製範圍審查${n ? `（${n} 項變更）` : ''}`, needWhy: n => `有 ${n} 項排除需要先填原因。`,
+    phint: '不需比對的畫面（已被取代、僅為示意、無法製造的狀態）選「排除」並填原因，再按「複製範圍審查」貼到對話中。複製也會標記範圍已審查。適用 iOS 與 Android：兩者的 Design 畫面相同。',
+    whys: ['已被較新的畫面取代', '僅為示意，非畫面', '無法製造出此狀態', '不在本次版本', '僅適用另一平台'],
+    newFlag: '審查後新增', dpath: 'Design 路徑' },
 };
 const t = k => T[L][k] ?? T.en[k];
 const ST = ['differs', 'question', 'unreviewed', 'matches', 'not-captured', 'no-route', 'excluded'];
@@ -185,10 +264,85 @@ function fig(f, lazy = true) {
   const [x, y, w] = f.crop, k = 100 / w;
   return `<img class="cut" src="${esc(f.src)}" alt=""${ld} style="width:${f.iw * k}%;left:${-x * k}%;top:0;margin-top:${-y * k}%">`;
 }
+// ---- Plan view ----------------------------------------------------------------------------------------------------
+// the user's scope choices: screen or board id → { x: excluded, why }, kept in this browser until copied to the chat
+const VKEY = `design-view:${D.feature}:${D.platform}`, SKEY = `design-scope:${D.feature}`;
+let view = 'plan'; try { view = localStorage.getItem(VKEY) || (D.screens?.some(s => s.run) ? 'results' : 'plan'); } catch (e) {}
+let SC = {}; try { SC = JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch (e) {}
+const saveSc = () => { try { localStorage.setItem(SKEY, JSON.stringify(SC)); } catch (e) {} };
+let pst = '', pboard = '', pq = '';
+const was = id => D.skip?.includes(id) ? { x: true, why: D.reasons?.[id] ?? '' } : { x: false, why: '' };
+const now = id => SC[id] ?? was(id);
+const changedIds = () => Object.keys(SC).filter(id => SC[id].x !== was(id).x || (SC[id].x && SC[id].why !== was(id).why));
+// a screen is excluded by its own choice or its board's
+const exOf = s => now(s.id).x ? { by: 'screen', why: now(s.id).why } : now(s.board_id).x ? { by: 'board', why: now(s.board_id).why } : null;
+const isChanged = s => changedIds().includes(s.id) || changedIds().includes(s.board_id);
+$('pboard').onchange = e => { pboard = e.target.value; planList(); };
+$('pq').oninput = e => { pq = e.target.value.trim().toLowerCase(); planList(); };
+$('pcopy').onclick = async () => {
+  const ids = changedIds(), bad = ids.filter(id => SC[id].x && !SC[id].why.trim());
+  if (bad.length) { alert(t('needWhy')(bad.length)); return; }
+  const block = [`DESIGN SCOPE ${D.feature} both`, ...ids.map(id => SC[id].x ? `exclude ${id}: ${SC[id].why.trim()}` : `include ${id}`), 'reviewed'].join('\n');
+  try { await navigator.clipboard.writeText(block); $('pcopy').textContent = t('copied'); setTimeout(() => $('pcopy').textContent = t('pcopy')(changedIds().length), 1500); } catch (e) { prompt('', block); }
+};
+// a choice re-renders the list: keep the page where it was
+const keepScroll = f => { const y = scrollY; f(); scrollTo(0, y); };
+function planView() {
+  const S = D.screens, inc = S.filter(s => !exOf(s) && s.status !== 'no-route'), ex = S.filter(s => exOf(s));
+  const fl = f => inc.filter(s => s.flags.includes(f)).length, last = D.boards.map(b => b.read_at).sort().at(-1);
+  const per = b => S.filter(s => s.board_id === b.id).length;
+  $('scope').innerHTML = `<div class="sh"><h2>${esc(t('scope'))}</h2>${D.review ? `<span class="badge ok">${esc(t('reviewed')(D.review.at, D.review.fresh.length))}</span>` : `<span class="badge todo">${esc(t('notReviewed'))}</span>`}</div>
+    <div class="sgrid">
+      <div><b>${esc(t('sFigma'))}</b>${esc(t('boardsRead')(D.boards.length, last ? last.slice(0, 10) : ''))} · ${esc(t('specSet')(D.spec_set))}
+        <ul>${D.boards.map(b => `<li>${D.file ? `<a href="https://www.figma.com/design/${esc(D.file)}?node-id=${esc(b.id.replace(':', '-'))}" target="_blank" rel="noopener">${esc(b.name)}</a>` : esc(b.name)} <span class="more">· ${per(b)}</span></li>`).join('')}</ul></div>
+      <div><b>${esc(t('sScreens'))}</b><div class="nums"><span><b>${inc.length}</b> ${esc(t('included'))}</span><span><b>${ex.length}</b> ${esc(t('excluded'))}</span>${S.filter(s => s.status === 'no-route').length ? `<span><b>${S.filter(s => s.status === 'no-route').length}</b> ${esc(t('noRoute'))}</span>` : ''}</div>
+        <ul>${['area', 'variant', 'drawing', 'gap'].filter(fl).map(f => `<li title="${esc(t('flagT')[f])}">${esc(t('flagN')[f])}: ${fl(f)}</li>`).join('')}</ul></div>
+      <div><b>${esc(t('sMeasured'))}</b><ul>${t('measured').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+      <div><b>${esc(t('sLooked'))}</b><ul>${t('looked').map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        <b style="margin-top:8px">${esc(t('sNot'))}</b><ul>${t('notCov').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+    </div>`;
+  const look = s => !exOf(s) && (s.flags.length > 0 || s.status === 'no-route' || D.review?.fresh.includes(s.id));
+  const cs = [['', t('all'), S.length], ['look', t('toLook'), S.filter(look).length], ['inc', t('included'), inc.length], ['ex', t('excluded'), ex.length], ['chg', t('changed'), S.filter(isChanged).length]];
+  $('pchips').innerHTML = cs.filter(([k, , n]) => !k || n).map(([k, l, n]) => `<button type="button" class="chip" data-p="${k}" aria-pressed="${pst === k}">${esc(l)} <span class="n">${n}</span></button>`).join('');
+  $('pchips').querySelectorAll('.chip').forEach(b => b.onclick = () => { pst = b.dataset.p; planView(); });
+  $('pboard').innerHTML = `<option value="">${esc(t('allBoards'))}</option>` + D.boards.map(b => `<option value="${esc(b.id)}"${b.id === pboard ? ' selected' : ''}>${esc(b.name)}</option>`).join('');
+  $('pq').placeholder = t('search'); $('phint').textContent = t('phint'); $('pcopy').textContent = t('pcopy')(changedIds().length);
+  $('whys').innerHTML = t('whys').map(w => `<option value="${esc(w)}">`).join('');
+  planList();
+}
+function planList() {
+  const look = s => !exOf(s) && (s.flags.length > 0 || s.status === 'no-route' || D.review?.fresh.includes(s.id));
+  const list = D.screens.filter(s => (!pboard || s.board_id === pboard)
+    && (!pst || (pst === 'look' ? look(s) : pst === 'inc' ? !exOf(s) && s.status !== 'no-route' : pst === 'ex' ? !!exOf(s) : isChanged(s)))
+    && (!pq || `${s.name} ${s.board} ${s.id} ${s.route?.case ?? ''}`.toLowerCase().includes(pq)));
+  $('pcount').textContent = t('shown')(list.length, D.screens.length);
+  const dc = (id, x, why, board) => `<div class="dc" data-k="${esc(id)}"><button type="button" data-x="0" aria-pressed="${!x}">${esc(board ? t('includeBoard') : t('include'))}</button><button type="button" data-x="1" aria-pressed="${x}">${esc(board ? t('excludeBoard') : t('exclude'))}</button>
+    ${x ? `<input type="text" list="whys" required placeholder="${esc(t('why'))}" value="${esc(why)}">` : ''}</div>`;
+  const groups = D.boards.filter(b => list.some(s => s.board_id === b.id));
+  $('pl').innerHTML = groups.length ? groups.map(b => { const bx = now(b.id);
+    return `<section class="pb"><div class="pbh"><h3>${esc(b.name)}</h3><span class="more">${list.filter(s => s.board_id === b.id).length} / ${D.screens.filter(s => s.board_id === b.id).length}</span>${dc(b.id, bx.x, bx.why, true)}</div>
+    ${list.filter(s => s.board_id === b.id).map(s => { const e = exOf(s), own = now(s.id), r = s.route;
+      const route = r && r.how === 'figma' ? `<b>${esc(t('dpath'))}</b> ${esc(r.action)}` : r ? `<b>${esc(r.case)}</b> · ${esc(t('fit')[r.fit] ?? r.fit)}${r.edge ? ` · ${esc(t('via'))} ${esc(r.edge)}` : ''}` : esc(s.why);
+      return `<div class="pr${e ? ' x' : look(s) ? ' flag' : ''}${isChanged(s) ? ' chg' : ''}" data-id="${esc(s.id)}">
+        <button type="button" class="tn" data-open aria-label="${esc(s.name)}">${fig(s.figma)}</button>
+        <div><button type="button" class="nm" data-open>${esc(s.name)}</button><div class="id">${esc(s.id)} · ${Math.round(s.w)}×${Math.round(s.h)}</div></div>
+        <div class="rt">${route}<div>${s.flags.map(f => `<span class="fl" title="${esc(t('flagT')[f])}">${esc(t('flagN')[f])}</span>`).join('')}${D.review?.fresh.includes(s.id) ? `<span class="fl">${esc(t('newFlag'))}</span>` : ''}</div></div>
+        ${e?.by === 'board' ? `<div class="byb">${esc(t('byBoard')(e.why))}</div>` : dc(s.id, own.x, own.why)}</div>`; }).join('')}</section>`; }).join('') : `<p class="empty">${esc(t('none'))}</p>`;
+  $('pl').querySelectorAll('[data-open]').forEach(b => b.onclick = () => { location.hash = `screen=${encodeURIComponent(b.closest('.pr').dataset.id)}`; });
+  $('pl').querySelectorAll('.dc').forEach(d => { const k = d.dataset.k;
+    d.querySelectorAll('button').forEach(b => b.onclick = () => { const x = b.dataset.x === '1';
+      SC[k] = { x, why: x ? (now(k).why || '') : '' }; if (SC[k].x === was(k).x && SC[k].why === was(k).why) delete SC[k]; saveSc(); keepScroll(planView);
+      if (x) $('pl').querySelector(`.dc[data-k="${CSS.escape(k)}"] input`)?.focus(); });
+    d.querySelector('input')?.addEventListener('change', e => { SC[k] = { x: true, why: e.target.value }; if (SC[k].why === was(k).why && was(k).x) delete SC[k]; saveSc(); keepScroll(planView); }); });
+}
 function render() {
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.l === L)));
   $('eyebrow').textContent = t('eyebrow'); $('h1').textContent = t('title')(D.title); $('q').placeholder = t('search');
-  if (D.missing) { $('meta').textContent = t('noPlan'); return; }
+  if (D.missing) { $('meta').textContent = t('noPlan'); $('resv').hidden = true; return; }
+  $('views').innerHTML = ['plan', 'results'].map(v => `<button type="button" data-v="${v}" aria-pressed="${view === v}">${esc(t('views')[v])}</button>`).join('');
+  $('views').querySelectorAll('button').forEach(b => b.onclick = () => { view = b.dataset.v; try { localStorage.setItem(VKEY, view); } catch (e) {} render(); });
+  $('planv').hidden = view !== 'plan'; $('resv').hidden = view !== 'results';
+  if (view === 'plan') planView();
   const n = s => D.screens.filter(x => x.status === s).length;
   $('meta').textContent = t('meta')(D.screens.length, D.screens.filter(s => s.run).length, D.spec_set);
   $('bar').innerHTML = ST.map(s => n(s) ? `<span style="width:${100 * n(s) / D.screens.length}%;background:${COL(s)}" title="${esc(STN[L][s])} ${n(s)}"></span>` : '').join('');

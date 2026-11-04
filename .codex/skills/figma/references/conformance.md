@@ -5,7 +5,7 @@ Part of the figma skill (`../SKILL.md`): does the app match the Design, screen b
 `status` always names the next one. The flow:
 
 ```
-plan (automatic) ─► capture while running ─► check ─► two review passes ─► settle ─► your decisions ─► eBugs ─► recheck on the next build
+plan (automatic) ─► scope review ─► capture while running ─► check ─► two review passes ─► settle ─► your decisions ─► eBugs ─► recheck on the next build
 ```
 
 What makes it light: the navigation comes from what is already known (the casebook's rows, else the Design's own
@@ -52,6 +52,34 @@ every rebuild). For each Design screen of the source read, the route that reache
   Design draws. Report it; the analysis fixes it in the reading step or pass that missed it (AGENTS.md *What the repo
   is for*), never the design check.
 - A screen with none of these is `no-route`: ask the user how it is reached.
+
+## 1b. Scope review (user, 2026-11-03)
+
+Before the first capture the user sees what the check covers and what it leaves out, on the Design tab's **Plan**
+view (it opens by default until a run has captures):
+
+- **Scope**: the boards read (each linked to Figma, with its screen count and read date), how many screens are
+  included and excluded, the flags below, what every capture measures, what the two review passes look at, and what
+  is not covered (excluded screens, animation and timing, other languages and appearances, states that cannot be
+  brought about).
+- **One line per screen, by board**: its image, its route (row and fit, or Design path) and its `flags` (plan.json),
+  the reasons to look at it: `area` (the row only reaches the area), `variant` (a state drawn beside a reached
+  screen), `drawing` (narrower than 360 pt: a card or detail drawn on its own), `gap`. Each screen and each board has
+  **Include / Exclude** with a reason (required; common ones are offered).
+- **Copy scope review** puts a block on the clipboard; the user pastes it in the chat and the agent applies it:
+  `node scripts/design.ts <feature> <platform> scope [file]` (stdin by default):
+
+```
+DESIGN SCOPE pdr/ai-mini-drama both
+exclude 5366:70814: Drawing only, not a screen
+include 2820:113367
+reviewed
+```
+
+  `both` applies it to every platform with a plan (the Design screens are the same). It writes the skip list, a
+  reason per screen or board (`skip_reasons`) and `scope_review` (date and the screen ids it covered) into plan.json;
+  every rebuild keeps them, and a screen added later shows as **new since the review** until the next one. `status`
+  says whether the scope was reviewed and names the review as the next step until it is.
 
 ## 2. Capture while running
 
@@ -134,7 +162,8 @@ bug is `fixed` (its candidate is gone), `still` (same id: candidate ids are `<ki
 
 ## The Design tab
 
-`scripts/pages.ts` (`/design/`) or `design-page.ts --serve`: one card per Design screen, coloured by status
+`scripts/pages.ts` (`/design/`) or `design-page.ts --serve`, with two views: **Plan** (the scope review above) and
+**Results**: one card per Design screen, coloured by status
 (**Differs**, **Question**, **Unreviewed**, **Matches**, **Not captured**, **No route**), filtered by board and kind of
 difference. A card opens Figma and the app side by side (click to open either full size; boxes can be hidden) with the
 build, the route (row, or Design path and any gap), an arrival warning, the recheck, and every difference boxed on

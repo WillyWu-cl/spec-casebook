@@ -71,8 +71,10 @@ in the inbox (spec-casebook `run.md`, *Knowledge during a run*).
 
 The design check is the **Design** tab of `scripts/pages.ts` (`/design/`, beside Cases, Progress, Results and
 Coverage, same language switch); `node scripts/design-page.ts <product>/<feature> <platform> [--serve]` serves or
-writes it on its own. Every screen is one small card coloured by status; the comparison opens on click, so the grid
-stays short.
+writes it on its own. Its **Plan** view shows what the check covers before any capture (boards read, each screen's
+route and flags, what is measured and what is not) and takes the user's Include / Exclude per screen or board
+(`design.ts … scope`); its **Results** view has one small card per screen coloured by status, and the comparison
+opens on click, so the grid stays short.
 
 ## Tests
 

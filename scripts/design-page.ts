@@ -14,6 +14,11 @@
 // Decisions (Figma Agent parity, 2026-11-03): each open question takes Bug / OK / N/A and each bug an eBug tick; the
 // choices stay in the browser (localStorage) and Copy decisions puts them on the clipboard for the chat, where the
 // agent writes them into findings.json (`decided`) and drafts the ticked eBugs, like the review page's Copy decisions.
+// Plan view (user, 2026-11-03): before any capture, what the check covers and what it leaves out: the boards read, the
+// route to each screen with the flags that need a look (area only, a state beside a screen, a drawing narrower than a
+// phone, a gap), and an Include / Exclude choice with a reason per screen or board. Copy scope review puts a
+// `DESIGN SCOPE` block on the clipboard; design.ts … scope writes it into plan.json (skip list, reasons, review mark).
+// It opens by default until a run has captures.
 // --serve (default port 4493) rebuilds on every request; scripts/pages.ts serves it as /design/.
 import { existsSync, openSync, readdirSync, readFileSync, readSync, closeSync, statSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
@@ -64,12 +69,16 @@ function buildData(link: (abs: string) => string) {
     const img = (rel: string) => { const full = join(runsDir, m.run, rel), shared = join(runsDir, m.run, 'design', 'captures', rel.split('/').pop()!.replace(/\.png$/, '.webp'));
       return existsSync(full) ? link(full) : existsSync(shared) ? link(shared) : null; };
     const app = m ? img(m.png) : null;
-    return { id: s.id, name: s.name, board: s.board_name, status, why: s.why ?? '', gap: !!s.gap, route: s.route ?? null, alternatives: s.alternatives ?? [], figma, app,
+    return { id: s.id, name: s.name, board: s.board_name, board_id: s.board, flags: s.flags ?? [], status, why: s.why ?? '', gap: !!s.gap, route: s.route ?? null, alternatives: s.alternatives ?? [], figma, app,
       run: m?.run ?? '', captured_at: m?.captured_at ?? '', build: m?.build ?? '', note: m?.note ?? '', arrival: m?.arrival ?? null, recheck: m?.recheck ?? null,
       parts: (m?.parts ?? []).map((p: string) => img(p)).filter(Boolean),
       settled: !!m?.settled, win: m?.win ?? null, k: m?.k ?? null, fit: m?.fit ?? null, w: s.abs[2], h: s.abs[3], items };
   });
-  return { feature, title, platform, built_at: new Date().toISOString(), spec_set: plan.spec_set, file: plan.file?.key ?? plan.file?.fileKey ?? '', screens };
+  const sc = join(fdir, 'specs', plan.spec_set, 'extracted', 'figma-source', 'design', 'scope.json');
+  const boards = existsSync(sc) ? (read(sc).read ?? []).map((b: any) => ({ id: b.id, name: b.name, read_at: b.read_at })) : [];
+  return { feature, title, platform, built_at: new Date().toISOString(), spec_set: plan.spec_set, file: plan.file?.key ?? plan.file?.fileKey ?? '',
+    review: plan.scope_review ? { at: plan.scope_review.at, fresh: screens.filter((x: any) => !plan.scope_review.ids?.includes(x.id)).map((x: any) => x.id) } : null,
+    skip: plan.skip ?? [], reasons: plan.skip_reasons ?? {}, boards, screens };
 }
 
 const page = (data: unknown) => readFileSync(join(import.meta.dirname, 'design-page.tpl'), 'utf8')

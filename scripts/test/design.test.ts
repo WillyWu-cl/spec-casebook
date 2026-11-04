@@ -156,6 +156,8 @@ test('plan: each screen gets the row that reaches it, or no route', () => {
   assert.equal(by('1:30').route.steps[0].control, 'btn_start');
   assert.equal(by('1:30').route.action, 'Home › btn_start › Error_offline › Try again', 'an arrow control written as {id, name} still reads as text');
   assert.equal(by('1:40').route.fit, 'variant', 'a state drawn beside Home takes Home\'s path');
+  assert.deepEqual(by('1:40').flags, ['variant', 'gap'], 'the Plan view asks the user to look at it');
+  assert.deepEqual(by('1:10').flags, []);
   assert.equal(by('2:50').status, 'no-route');
   assert.deepEqual(plan.by_case, { 'TC-001': ['1:10'], 'TC-002': ['1:20'] });
   assert.match(r.out, /2 by Design arrows only \(2 gaps in the table\), 1 no route/);
@@ -205,6 +207,37 @@ test('plan: skip list kept, and built again when the table changes', () => {
   assert.match(r.out, /1:10 {2}Home \(Board\) · fit high/);
   assert.equal(read(join(T, 'design', 'plan.json')).screens.find((s: any) => s.id === '1:30').status, 'excluded', 'skip survives a rebuild');
   assert.match(design('screens', 'TC-999').out, /no Design screen/);
+});
+
+test('scope: the Plan view block excludes with a reason, includes again and marks the review', () => {
+  const scope = (block: string) => run('design.ts', [F, 'ios', 'scope'], { input: block });
+  assert.match(design('status').out, /; scope not reviewed\n/);
+  const r = scope(`DESIGN SCOPE ${F} ios\nexclude 1:40: State cannot be brought about\nexclude 2:1: Other board\ninclude 1:30\nexclude 1:10\nexclude 9:99: nowhere\nnonsense\nreviewed\n`);
+  assert.equal(r.status, 0, r.out);
+  assert.match(r.out, /skipped: exclude 1:10 \(an exclusion needs a reason\)/);
+  assert.match(r.out, /skipped: 9:99 is not a screen or board/);
+  assert.match(r.out, /skipped: nonsense/);
+  assert.match(r.out, /ios: 3 change\(s\), scope marked reviewed/);
+  let plan = read(join(T, 'design', 'plan.json')), by = (id: string) => plan.screens.find((s: any) => s.id === id);
+  assert.equal(by('1:40').status, 'excluded'); assert.equal(by('1:40').why, 'State cannot be brought about');
+  assert.equal(by('2:50').why, 'Other board', 'a board\'s reason covers its screens');
+  assert.equal(by('1:30').status, 'routed', 'included again');
+  assert.equal(by('1:10').status, 'routed', 'an exclusion without a reason is not applied');
+  assert.equal(plan.scope_review.ids.length, plan.screens.length);
+  // a rebuild keeps the reasons and the review
+  const later = new Date(Date.now() + 9000); utimesSync(join(T, 'cases.csv'), later, later);
+  assert.match(design('screens', 'TC-001').out, /plan built again/);
+  plan = read(join(T, 'design', 'plan.json'));
+  assert.equal(plan.skip_reasons['1:40'], 'State cannot be brought about'); assert.ok(plan.scope_review);
+  assert.match(design('status').out, /; scope reviewed \d{4}-\d\d-\d\d\n/);
+  // `both` applies to every platform with a plan; then back to the skip list the later tests expect
+  assert.equal(run('design.ts', [F, 'android', 'plan']).status, 0);
+  assert.match(run('design.ts', [F, 'ios', 'scope'], { input: `DESIGN SCOPE ${F} both\nreviewed\n` }).out, /ios: 0 change[\s\S]*android: 0 change/);
+  assert.ok(read(join(FEAT, 'android', 'design', 'plan.json')).scope_review);
+  assert.equal(scope(`DESIGN SCOPE ${F} ios\nexclude 1:30: superseded\ninclude 1:40\ninclude 2:1\n`).status, 0);
+  plan = read(join(T, 'design', 'plan.json'));
+  assert.deepEqual(plan.skip, ['1:30']); assert.equal(plan.screens.find((s: any) => s.id === '1:30').why, 'superseded');
+  assert.equal(scope('DESIGN SCOPE other/feature ios\n').status, 1, 'a block for another feature is refused');
 });
 
 // ---- check -----------------------------------------------------------------------------------------------------------
@@ -354,6 +387,10 @@ test('page: statuses, the newest capture per screen, and the app image', () => {
   assert.equal(by('1:30').status, 'excluded');
   assert.ok(by('1:10').app?.endsWith('design/captures/1-10.webp'), 'r2\'s phone files are gone: the committed copy');
   assert.equal(data.file, 'KEY123');
+  // the Plan view: the review mark, the skip list with its reason, and each screen's flags and board id
+  assert.ok(data.review?.at); assert.deepEqual(data.review.fresh, []);
+  assert.deepEqual(data.skip, ['1:30']); assert.equal(data.reasons['1:30'], 'superseded');
+  assert.deepEqual(by('1:40').flags, ['variant', 'gap']); assert.equal(by('1:40').board_id, '1:1');
   rmSync(out);
 });
 

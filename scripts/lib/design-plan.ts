@@ -19,7 +19,14 @@
 // Reads specs/<set>/extracted/figma-source/design/out/ (screens.json and the board files; rebuilt by figma-source.ts
 // merge), extracted/inventory.json, arrows.json and figma/shots.json, the table's cases.csv, requirements.md and
 // control-trace.json, the newest phases.json and every runs/*/results.csv. Writes <table>/design/plan.json (committed).
-// The plan is built again whenever one of those inputs is newer than it (planFresh), keeping its skip list.
+// The plan is built again whenever one of those inputs is newer than it (planFresh), keeping what the user decided:
+// the skip list with a reason per screen or board (`skip_reasons`), and the scope review (`scope_review`: when the user
+// reviewed the plan on the Design tab's Plan view, and the screen ids it covered, so screens added later show as new).
+// Each entry also carries `flags`, the reasons the Plan view asks the user to look at it:
+//   area     the row only reaches the area (fit low): the runner brings about the state the frame shows
+//   variant  a state drawn beside a reached screen, brought about there (Design path)
+//   drawing  narrower than a phone (under 360 pt): a card or detail drawn on its own, not a whole screen
+//   gap      no casebook row reaches it (the analysis adds one)
 import { spawnSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
@@ -62,10 +69,13 @@ export function planFresh(feature: string, platform: string, quiet = false) {
     ...(ex ? [join(ex, 'figma-source', 'design', 'out', 'screens.json'), join(ex, 'inventory.json')] : [])].filter(existsSync);
   const stale = !old || old.spec_set !== set || inputs.some(f => statSync(f).mtimeMs > Date.parse(old.built_at));
   if (!stale) return old;
-  const plan = buildPlan(feature, platform, { set, skip: old?.skip, skipReason: old?.skip_reason });
+  const plan = buildPlan(feature, platform, { set, ...kept(old) });
   if (!quiet) console.log(`(plan built again: ${old ? 'its inputs changed' : 'there was none'}) ${summary(plan)}`);
   return plan;
 }
+
+// what a rebuild keeps from the plan before it
+export const kept = (old: any) => ({ skip: old?.skip, skipReason: old?.skip_reason ?? undefined, reasons: old?.skip_reasons, review: old?.scope_review });
 
 export const summary = (plan: any) => {
   const fits = ['high', 'mid', 'low'].map(f => `${plan.screens.filter((e: any) => e.route?.fit === f).length} ${f}`).join(' / ');
@@ -73,13 +83,14 @@ export const summary = (plan: any) => {
     `${plan.counts.figma_paths ?? 0} by Design arrows only${plan.casebook ? ` (${plan.counts.gaps} gaps in the table)` : ' (no casebook table)'}, ${plan.counts.no_route} no route, ${plan.counts.excluded} excluded`;
 };
 
-export function buildPlan(feature: string, platform: string, opt: { set?: string; skip?: string[]; skipReason?: string } = {}): any {
+type PlanOpt = { set?: string; skip?: string[]; skipReason?: string; reasons?: Record<string, string>; review?: any };
+export function buildPlan(feature: string, platform: string, opt: PlanOpt = {}): any {
   const specs = join(featureDir(feature), 'specs'), table = tableDir(feature, platform);
   const set = opt.set ?? designSet(feature);
   if (set) ensureSource(feature, set, true);
   if (!set) throw new Error('No spec set with figma-source/design/out/screens.json: read the Design boards first (figma skill, references/source.md), or run figma-source.ts merge.');
   const ex = join(specs, set, 'extracted'), out = join(ex, 'figma-source', 'design', 'out');
-  const skip = new Set(opt.skip ?? []), skipReason = opt.skipReason ?? 'skipped';
+  const skip = new Set(opt.skip ?? []), skipReason = opt.skipReason ?? 'skipped', reasons = opt.reasons ?? {};
 
   const frames = existsSync(join(ex, 'figma-frames.json')) ? read(join(ex, 'figma-frames.json')) : {};
   const inv = existsSync(join(ex, 'inventory.json')) ? read(join(ex, 'inventory.json')) : { screens: [], controls: [], arrows: [] };
@@ -153,7 +164,7 @@ export function buildPlan(feature: string, platform: string, opt: { set?: string
     const png = Object.entries(shots).find(([, v]: any) => v.board === s.board)?.[0];
     const base = { id: s.id, name: s.name, board: s.board, board_name: board?.name ?? s.board, abs: s.abs, board_box: board?.box ?? null,
       board_png: png ? `specs/${set}/extracted/figma/${png}` : null, inventory_screen: ivs?.id ?? null };
-    if (skip.has(s.board) || skip.has(s.id)) return { ...base, status: 'excluded', why: skipReason };
+    if (skip.has(s.board) || skip.has(s.id)) return { ...base, status: 'excluded', why: reasons[s.id] ?? reasons[s.board] ?? skipReason };
     const ways: { tc: string; how: string; via: string; edge?: string; fit: number }[] = [];
     for (const c of inv.controls.filter((c: any) => c.screens?.includes(sid)))
       for (const tc of pressBy.get(c.group) ?? []) if (active.has(tc)) ways.push({ tc, how: 'on', via: c.group, edge: c.label || c.name, fit: fitOf(groupScreens.get(c.group)?.size ?? 1) });
@@ -183,11 +194,13 @@ export function buildPlan(feature: string, platform: string, opt: { set?: string
       alternatives: ranked.slice(1, 5).map(x => x.tc) };
   }).sort((a: any, b: any) => (order.get(a.route?.case)?.i ?? 1e9) - (order.get(b.route?.case)?.i ?? 1e9) || a.board_name.localeCompare(b.board_name) || a.abs[0] - b.abs[0] || a.abs[1] - b.abs[1]);
 
+  for (const e of entries as any[]) e.flags = [e.route?.fit === 'low' && 'area', e.route?.fit === 'variant' && 'variant', e.abs[2] < 360 && 'drawing', e.gap && 'gap'].filter(Boolean);
   const byCase: Record<string, string[]> = {};
   for (const e of entries as any[]) if (e.route?.case) (byCase[e.route.case] ??= []).push(e.id);
   const count = (st: string) => entries.filter((e: any) => e.status === st).length;
   const plan = { built_at: new Date().toISOString(), spec_set: set, file: frames.files?.design ?? null, phases: phasesFile?.slice(table.length + 1) ?? null,
-    skip: [...skip], skip_reason: opt.skipReason ?? null,
+    skip: [...skip], skip_reason: opt.skipReason ?? null, skip_reasons: Object.fromEntries(Object.entries(reasons).filter(([k]) => skip.has(k))),
+    scope_review: opt.review ?? null,
     casebook: hasTable, counts: { screens: entries.length, routed: count('routed'), figma_paths: entries.filter((e: any) => e.route?.how === 'figma').length,
       gaps: entries.filter((e: any) => e.gap).length, no_route: count('no-route'), excluded: count('excluded') }, by_case: byCase, screens: entries };
   writeJson(planPath(feature, platform), plan);
