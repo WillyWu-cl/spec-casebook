@@ -1,12 +1,12 @@
 {
-  "built_at": "2026-11-03T09:55:57.435Z",
+  "built_at": "2026-11-04T06:22:08.135Z",
   "groups": [
     "figma-inventory-d1.json",
     "figma-inventory-p1.json"
   ],
   "files": {
     "ULY56f3Q9tl6PceuNNoHBD": {"key":"ULY56f3Q9tl6PceuNNoHBD","page":"1:77","section":{"id":"1:77","name":"Design","box":[-9999,-9999,10989,10811]},"groups":[{"group":"d1","extracted_at":"2026-11-03T07:47:12.502Z","boards":["Room dark","Room light","Thumbnail states light","Thumbnail states dark"]}],"boards":{"Room dark":{"id":"1:451","box":[0,0,375,812]},"Room light":{"id":"11:248","box":[413,0,375,812]},"Thumbnail states light":{"id":"25:915","box":[856,273,134,411]},"Thumbnail states dark":{"id":"25:916","box":[-197,273,134,411]}}},
-    "rCJRmOYzvMhbhTIA7bJjid": {"key":"rCJRmOYzvMhbhTIA7bJjid","page":"2403:4094","section":{"id":"2403:4094","name":"26 10E AI Background Upgrade to GPT Image 2.5 Flare","box":[-2889,-59,8095,2094]},"groups":[{"group":"p1","extracted_at":"2026-11-03T09:55:10.104Z","boards":["pm-custom","pm-room","pm-cms"]}],"boards":{"pm-custom":{"id":"2403:4094/pm-custom","box":[-2889,107,3500,1929]},"pm-room":{"id":"2403:4094/pm-room","box":[661,107,2000,1200]},"pm-cms":{"id":"2403:4094/pm-cms","box":[2691,107,2515,1000]}},"pdf":{"name":"Background - PM Spec.pdf","offset":[2889,44]}}
+    "rCJRmOYzvMhbhTIA7bJjid": {"key":"rCJRmOYzvMhbhTIA7bJjid","page":"2403:4094","section":{"id":"2403:4094","name":"26 10E AI Background Upgrade to GPT Image 2.5 Flare","box":[-2889,-59,8095,2094]},"groups":[{"group":"p1","extracted_at":"2026-11-04T06:22:08.014Z","boards":["pm-custom","pm-room","pm-cms"]}],"boards":{"pm-custom":{"id":"2403:4094/pm-custom","box":[-2889,107,3500,1929]},"pm-room":{"id":"2403:4094/pm-room","box":[661,107,2000,1200]},"pm-cms":{"id":"2403:4094/pm-cms","box":[2691,107,2515,1000]}},"pdf":{"name":"Background - PM Spec.pdf","offset":[2889,44]}}
   },
   "screens": [
     {"id":"1:451","file":"ULY56f3Q9tl6PceuNNoHBD","board":"Room dark","name":"Room dark","box":[0,0,375,812],"platform":"ios"},

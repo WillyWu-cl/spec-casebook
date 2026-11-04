@@ -48,7 +48,7 @@ qa1 or qa-dm), so the PM is read from its PDF (`figma-pending.json`, Q-13).
 - R-035 [PM:pm-custom] From 30 to 40 s it shows 「Refining the details...」.
 - R-036 [PM:pm-custom] From 40 to 45 s it shows 「Making the final adjustments...」.
 - R-037 [PM:pm-custom] After 45 s it shows 「Almost done!」 until the result arrives.
-- R-038 [DS:figma 5; PM:pm-room screenshot] Selecting a template and tapping Generate generates a new background from that template in the room, and the canvas shows the subject on it.
+- R-038 [DS:figma 5; PM:pm-room screenshot; Rule: analysis pass 10, a setting's values are variants (2026-11-04); Req: REQ-006] Selecting a template and tapping Generate generates a new background from that template in the room, and the canvas shows the subject on it in that template's look. Each template category (R-011) is used in one generation (`### Variants`).
 - R-039 [PM:pm-custom 「ready for generation」] Tapping Generate with a confirmed Custom prompt generates a new background from the prompt, and the canvas shows the subject on it.
 - R-040 [DS:figma 5 btn_credit_primary_1row 5:461] With a template selected, the Generate button reads 「Generate」 with the credit icon and 「2」, and a template generation charges 2 credits (Q-1).
 - R-041 [PM:pm-custom mockup 4 「Generate 5」] With a confirmed Custom prompt, the Generate button shows 「5」 credits, and a Custom generation charges 5 credits (PM-only; differs from the Design's 「2」, Q-1).
@@ -69,21 +69,23 @@ qa1 or qa-dm), so the PM is read from its PDF (`figma-pending.json`, Q-13).
 - R-055 [DS:figma 5 1:451, 6 11:248] The Design draws the room in a dark version (「5」: black bars, dark thumbnail strips) and a light version (「6」: light bars, orange-tinted credit pill, light thumbnail strips); each shows the same controls in the same places (Q-9: which app setting shows the light version).
 
 ## Open questions
-- Q-1 Credits: the Design's Generate shows 「2」 (template selected), the PM Custom mockup shows 「5」, and the actual-app screenshot shows the free trial as 「2 → 0」. Is a Custom generation 5 credits and a template 2? R-040, R-041, R-045. Credit numbers are binding: the rows follow the Design for templates and the PM for Custom until PM answers.
-- Q-2 The Design spells the third category 「Ballon」; the actual-app screenshot shows 「Balloon」. The row expects 「Balloon」. R-011.
-- Q-3 In the Design's frame 「5」 the template 「Lomo」 is selected but Generate looks dimmed; the PM mockup with Custom confirmed shows Generate orange. Is Generate enabled whenever a thumbnail is selected? R-028, R-029, R-040.
-- Q-4 What does 「My Prompts」 open (saved prompts, saving the current prompt)? Is the typed prompt kept on return? R-027.
-- Q-5 Tapping a blank area (or ✓, if it is not disabled) with an empty text box: is 「Custom」 selected with no prompt, or does the panel just close? R-022, R-028.
-- Q-6 Tapping 「Custom」 again after a prompt was confirmed or generated: does the panel open with the previous prompt? R-020.
-- Q-7 「Handled the same as GAI Enhance」 during the wait: is there a cancel / Stop, a leave dialog, what happens on Home or app switch, and what happens to the credits? R-031.
-- Q-8 CMS type TBD: which categories and templates ship, in which order, and which are premium? R-011, R-053.
-- Q-9 Which app or system setting shows the light Design (frame 「6」)? R-055.
-- Q-10 What does a Free user get when tapping a premium (crown) template: Generate with credits, or a subscription page? R-015 (no tier rule stated, KB KP-013).
-- Q-11 Failures are not specified: error copy, refund, retry for a failed Custom or template generation and a failed background removal. Job states grid.
-- Q-12 The PM prompt-panel mockups 2–3 show a top bar with back, home, credits and a history icon; the Design and the actual-app screenshot show ⓘ and credits. The rows follow the Design. R-005.
-- Q-13 (answered 2026-11-03) The PM Figma file was opened through figma-pm (qa1) after the first draft: page 2403:4094 holds the same sections, mockups and note text as the PDF and no dated frames. Its inventory added the collapse button of the expanded text box (R-025) and the mockups' own top bar (back, home, history), which the Design replaces (Q-12).
-- Q-16 The PM page is titled 「26 10E AI Background Upgrade to GPT Image 2.5 Flare」, but its Action IDs name Seedream 5.0 Pro (「…bytedance_seedream5.0pro…」). Which model, and which Action IDs, does this release use? R-051, R-052.
-- Q-14 Do the progress messages (R-032 – R-037) also show for a template generation, and what does a template wait look like? R-038.
+- Q-1 Credit price. The Design's Generate button shows 「2」 with a template selected; the PM Custom mockup shows 「5」; the actual-app screenshot shows the free trial as 「2 → 0」. The spec never states the prices in words, so it is unclear whether a Custom generation costs 5 and a template 2. Assumption: a template costs 2 (Design) and a Custom prompt 5 (PM); credit numbers are binding, so a different charge is a finding. R-040, R-041, R-042, R-045 (TC-015, TC-023, TC-033, TC-034, TC-056, TC-057, TC-058, TC-059, TC-039, TC-040).
+- Q-2 Spelling of the third category. The Design spells it 「Ballon」; the actual-app screenshot shows 「Balloon」. Assumption: 「Balloon」 is correct and the Design has a typo. R-011 (TC-009, TC-056).
+- Q-3 When Generate is enabled. In the Design's frame 「5」 the template 「Lomo」 is selected but Generate looks dimmed; the PM mockup with Custom confirmed shows Generate orange. Assumption: Generate is enabled (orange) whenever a template or a confirmed Custom prompt is selected, and dimmed only on the Custom tab with nothing selected. R-028, R-029, R-040 (TC-015, TC-023, TC-024, TC-025, TC-034, TC-056, TC-057, TC-058, TC-059).
+- Q-4 What 「My Prompts」 does. The PM panel has a 「My Prompts」 button (title 「add My Prompt」) but does not say what it opens (a list of saved prompts, or saving the current prompt) or whether the typed prompt is kept on return. Assumption: it opens a My Prompts page and the typed prompt is still in the box on return; what the page holds is checked on device and decided with the user before filing. R-027 (TC-022).
+- Q-5 Closing the panel with an empty text box. The PM says a tap on a blank area or on ✓ closes the panel and selects 「Custom」, but ✓ is dimmed while the box is empty, and it does not say what a blank-area tap does with no prompt (select 「Custom」 with no prompt, or just close the panel). Assumption: ✓ is dimmed while the box is empty; no row closes the panel with an empty box. R-022, R-028 (TC-017, TC-021, TC-024).
+- Q-6 Reopening Custom. The spec does not say what tapping 「Custom」 again shows after a prompt was confirmed or generated: the panel with the previous prompt, or an empty one. Assumption: no row reopens it; the first tap opens the panel (TC-016). R-020 (TC-016).
+- Q-7 Leaving during the wait. The PM says the wait is handled the same as in AI Enhance but does not restate it: whether there is a cancel or Stop, a leave dialog, what Home or an app switch does, and what happens to the credits. Assumption: leaving and coming back never silently loses the generation, and credits are charged only for a delivered result; no row taps a cancel or Stop. R-031 (TC-038).
+- Q-8 Which categories and templates ship. The PM leaves the CMS type 「TBD」, so the order of the categories, their templates and which templates are premium are not fixed. Assumption: the Design's tabs 「Custom」, 「Neutrals」, 「Balloon」, 「Wood」, 「Vintage」, 「Life」 in that order, a crown on whichever templates are premium; a category row is Blocked if that category is missing on the build. R-011, R-015, R-053 (TC-009, TC-014, TC-034, TC-056, TC-057, TC-058, TC-059).
+- Q-9 How to see the light room. The Design draws a dark room (frame 「5」) and a light one (frame 「6」) but does not say which app or system setting shows the light one. Assumption: the light room shows under some app or system light appearance; the row is Blocked if the app has none. R-055 (TC-045).
+- Q-10 Premium templates for a Free user. The Design marks premium templates with a crown but neither source says what a Free user gets on tapping one (Generate with credits, or a subscription page), and the spec states no tier rule (KB KP-013). Assumption: rows check only the crown badge; no row taps a premium template as a Free user. R-015 (TC-014).
+- Q-11 Failures. Neither source specifies what happens when a Custom, template or free-trial generation fails, or when the background removal on entry fails: the error copy, whether credits are refunded, and whether there is a retry. Assumption: none; the Job states and Error classes grids mark these n/a. R-001, R-038, R-039, R-046 (no row yet).
+- Q-12 Top bar of the prompt panel. The PM prompt-panel mockups 2–3 show a top bar with back, home, credits and a history icon; the Design and the actual-app screenshot show ⓘ and the credit pill. Assumption: the Design's top bar (ⓘ and credits). R-005 (TC-002).
+- Q-14 Waiting for a template. The PM's six timed progress messages are written for a Custom generation; it does not say whether a template generation shows them too, or what its wait looks like. Assumption: the messages are checked only on a Custom generation; a template generation only needs a wait indicator before the result. R-032, R-033, R-034, R-035, R-036, R-037, R-038 (TC-026, TC-027, TC-028, TC-029, TC-030, TC-031, TC-034, TC-056, TC-057, TC-058, TC-059).
+- Q-16 Which model this release uses. The PM page is titled 「26 10E AI Background Upgrade to GPT Image 2.5 Flare」, but its Action IDs name Seedream 5.0 Pro (「…bytedance_seedream5.0pro…」). Assumption: the Action IDs as written in the PM CMS table (Seedream 5.0 Pro). R-051, R-052 (TC-042, TC-043).
+
+## Answered questions
+- Q-13 Could the PM Figma file be read? Answer (2026-11-03): The PM Figma file was opened through figma-pm (qa1) after the first draft: page 2403:4094 holds the same sections, mockups and note text as the PDF and no dated frames. Its inventory added the collapse button of the expanded text box (R-025) and the mockups' own top bar (back, home, history), which the Design replaces (Q-12).
 
 ## Added 2026-11-03 — coverage passes and standing inputs
 
@@ -133,6 +135,11 @@ Every cell names the rows that check it, or n/a when the spec defines nothing fo
 | R-040 | Template price 2 | TC-015, TC-034 |
 | R-041 | Custom price 5 | TC-023, TC-033 |
 | R-045 | Free trial 2 → 0 | TC-039, TC-040 |
+| R-038 | category=Neutrals | TC-034 |
+| R-038 | category=Balloon | TC-056 |
+| R-038 | category=Wood | TC-057 |
+| R-038 | category=Vintage | TC-058 |
+| R-038 | category=Life | TC-059 |
 
 ### Domain rules
 | Entry | Requirements |

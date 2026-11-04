@@ -24,7 +24,8 @@
 //            the head when it is not a screen (popover, card). Vectors and lines with an arrowhead (or named 「-->」)
 //            and connectors with an arrowhead, inside the board or drawn over it (overlays)
 //   texts:   [[board, x, y, w, h, text, inPhone]]  every visible text of the board and its overlays (absolute box,
-//            text cut at 400 characters, inPhone 1 inside a phone screen), for scripts/figma-text.ts
+//            text cut at 4000 characters: a spec note is read whole, so figma-text.ts never finds its end gone;
+//            inPhone 1 inside a phone screen), for scripts/figma-text.ts
 //   entries, hash, hashed_at: the __BOARDS__ given, one fingerprint per board id and when it was taken (figma-check.ts)
 //   overlay, overlay_box: per board id, the fingerprint of its overlays ('' = none) and the box of the board with them
 // Overlays (user, 2026-11-04): what is drawn over a board without being inside its node — a loose arrow, connector,
@@ -308,7 +309,7 @@ boardNodes.forEach((b, bi) => {
     const bx = box(t), k = `${t.characters}|${bx}`;
     if (seen.has(k)) continue; seen.add(k);
     let ph = 0; for (let q = t.parent; q && q.type !== 'PAGE'; q = q.parent) if (phones.has(q.id)) ph = 1;
-    out.texts.push([bi, ...bx, t.characters.slice(0, 400), ph]);
+    out.texts.push([bi, ...bx, t.characters.slice(0, 4000), ph]);
   }
 });
 out.size = JSON.stringify(out).length;

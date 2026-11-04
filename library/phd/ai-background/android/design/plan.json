@@ -1,0 +1,122 @@
+{
+  "built_at": "2026-11-04T06:18:31.577Z",
+  "spec_set": "2026-11-03",
+  "file": {
+    "fileKey": "ULY56f3Q9tl6PceuNNoHBD",
+    "page": "1:77",
+    "url": "https://www.figma.com/design/ULY56f3Q9tl6PceuNNoHBD/AI-Background?node-id=1-77",
+    "account": "qa-dm@cyberlink.com (Dev seat, CyberLink DC)"
+  },
+  "phases": "drafts/20261103-155417/phases.json",
+  "skip": [],
+  "skip_reason": null,
+  "skip_reasons": {},
+  "scope_review": null,
+  "source_gaps": {
+    "unread": [],
+    "incomplete": [],
+    "listed": [],
+    "page_listed": true
+  },
+  "casebook": true,
+  "counts": {
+    "screens": 2,
+    "routed": 2,
+    "figma_paths": 0,
+    "gaps": 0,
+    "no_route": 0,
+    "excluded": 0
+  },
+  "by_case": {
+    "TC-002": [
+      "1:451"
+    ],
+    "TC-003": [
+      "11:248"
+    ]
+  },
+  "screens": [
+    {
+      "id": "1:451",
+      "name": "5",
+      "board": "1:451",
+      "board_name": "5",
+      "abs": [
+        0,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        0,
+        375,
+        812
+      ],
+      "board_png": "specs/2026-11-03/extracted/figma/room-dark.png",
+      "inventory_screen": "1:451",
+      "status": "routed",
+      "route": {
+        "case": "TC-002",
+        "how": "cited",
+        "via": "1:451",
+        "fit": "high",
+        "edge": "",
+        "segment": "R1-b",
+        "section": "Entry and room",
+        "precondition": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); app in its default (dark) appearance",
+        "action": "Look at the room before tapping anything",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-003",
+        "TC-004",
+        "TC-006",
+        "TC-007"
+      ],
+      "flags": []
+    },
+    {
+      "id": "11:248",
+      "name": "6",
+      "board": "11:248",
+      "board_name": "6",
+      "abs": [
+        413,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        413,
+        0,
+        375,
+        812
+      ],
+      "board_png": "specs/2026-11-03/extracted/figma/room-light.png",
+      "inventory_screen": "11:248",
+      "status": "routed",
+      "route": {
+        "case": "TC-003",
+        "how": "on",
+        "via": "K-4ad11f",
+        "fit": "high",
+        "edge": "editing_area/ic_eraser_n",
+        "segment": "R1-b",
+        "section": "Entry and room",
+        "precondition": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+        "action": "1. Tap the eraser at the canvas's lower left\n2. Erase part of the subject (e.g. a shoulder)\n3. Go back to the room",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-004",
+        "TC-006",
+        "TC-007",
+        "TC-010"
+      ],
+      "flags": []
+    }
+  ]
+}
