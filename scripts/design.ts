@@ -65,6 +65,7 @@ const table = tableDir(feature, platform), runsDir = join(table, 'runs');
 const shown = (p: string) => p.startsWith(ROOT) ? p.slice(ROOT.length + 1) : p;
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
 const runOf = (r: string) => existsSync(r) ? r : join(runsDir, r);
+const OTHER = /^n\/a:\s*other feature\b/i;
 const KINDS = ['state', 'copy', 'missing', 'truncated', 'lines', 'position', 'colour', 'control', 'extra', 'sample'];
 const USAGE = 'Usage: node scripts/design.ts <product>/<feature> <ios|android> plan | screens <TC-…> | check <run dir> | settle <run dir> | decide [file] | scope [file] | ebugs <run dir> | status [run dir]';
 // the newest run folder holding design captures
@@ -124,6 +125,9 @@ function measure() {
   if (gapLine(plan.source_gaps ?? { unread: [], incomplete: [] })) console.error(`  WARNING source read not complete: ${gapLine(plan.source_gaps)}; captures of those boards' screens cannot be checked (design.ts … status)`);
   const ex = join(featureDir(feature), 'specs', plan.spec_set, 'extracted'), out = join(ex, 'figma-source', 'design', 'out');
   const inv = existsSync(join(ex, 'inventory.json')) ? read(join(ex, 'inventory.json')) : { controls: [] };
+  // other features' controls (the trace's `n/a: other feature: …`): left out of the check with their areas
+  const trace = join(table, 'control-trace.json');
+  const otherFeature = new Set<string>(existsSync(trace) ? read(trace).entries.filter((e: any) => OTHER.test(e.press ?? '')).flatMap((e: any) => e.controls) : []);
   const only = new Set((arg('screen') ?? '').split(',').filter(Boolean));
   const capFile = join(designDir, 'captures.jsonl');
   if (!existsSync(capFile)) { console.error(`${capFile}: no captures yet (device.ts <run dir> design <screen id>).`); process.exit(1); }
@@ -150,8 +154,10 @@ function measure() {
   for (const cap of caps.values()) {
     const scr = plan.screens.find((s: any) => s.id === cap.screen);
     if (!scr) { console.error(`  ${cap.screen}: not in design/plan.json, skipped`); continue; }
-    const controlNodes = new Set<string>(inv.controls.filter((c: any) => c.screens?.includes(scr.inventory_screen ?? scr.id) && !c.label).map((c: any) => c.node));
-    const fig = figmaScreen(nodesOf(scr.board), scr, controlNodes);
+    const onScreen = inv.controls.filter((c: any) => c.screens?.includes(scr.inventory_screen ?? scr.id));
+    const controlNodes = new Set<string>(onScreen.filter((c: any) => !c.label && !otherFeature.has(c.id)).map((c: any) => c.node));
+    const ctl = (c: any) => ({ node: c.node, name: c.name, box: c.box });
+    const fig = figmaScreen(nodesOf(scr.board), scr, controlNodes, { other: onScreen.filter((c: any) => otherFeature.has(c.id)).map(ctl), mine: onScreen.filter((c: any) => !otherFeature.has(c.id)).map(ctl) });
     for (const c of [cap, ...parts.get(cap.screen)!]) {
       if (!existsSync(sourceOf(c.xml)) || !existsSync(imageOf(c.png))) { console.error(`  ${c.screen}: its capture is on another computer (no ${c.xml} or shared copy), skipped`); continue; }
       if (existsSync(join(runDir, c.xml))) { mkdirSync(join(designDir, 'captures'), { recursive: true }); copyFileSync(join(runDir, c.xml), sharedOf(c.xml, '.xml')); }
@@ -198,6 +204,8 @@ function measure() {
     const short = fig.texts.filter(t => t.text.length <= 60).length, hits = pairs.filter(p => p.how !== 'copy' && p.t.text.length <= 60).length;
     const arrival = { matched: hits, of: short, ok: short < 3 || hits / short >= 0.4 };
     if (!arrival.ok) cands.unshift({ id: `state:${scr.id}`, kind: 'state', severity: 'major', note: `only ${hits} of ${short} Figma texts found: the capture may not be this frame's state` });
+    // a capture whose screen kept moving (device.ts design): its page source may not be what the screenshot shows
+    else if (cap.unsettled) cands.unshift({ id: `state:${scr.id}`, kind: 'state', severity: 'major', note: 'the screen kept changing while it was captured: the app boxes may not match the screenshot; capture it again once still' });
     // projection: each half shifted by the median offset of its exact pairs; a half with fewer than 2 anchors, or whose
     // anchors disagree by more than 6 pt (median absolute deviation), measures no positions (the Figma Agent refuses a
     // projection whose residual is over 6 px)
@@ -221,11 +229,14 @@ function measure() {
         if (fl !== al) cands.push({ id: `lines:${p.t.node}`, kind: 'lines', severity: 'minor', figma: { node: p.t.node, text: p.t.text, box: r1(p.t.box), lines: fl }, app: { box: r1(p.a.f), lines: al } });
       }
     }
-    const figNorm = new Set(fig.texts.map(t => normLabel(t.text)));
-    appT.forEach((a, i) => { if (!used.has(i) && a.text.length <= 40 && !figNorm.has(a.n) && a.n.replace(/[#\W_]/g, ''))
-      cands.push({ id: `extra:${a.n}`, kind: 'extra', severity: 'info', app: { text: a.text, box: a.part > 1 ? undefined : r1(a.f) } }); });
     // Figma box → window units through its half's fit (screenshot pixels in python)
     const toApp = (b: number[]): Box => { const y = half(b) === 'top' ? b[1] + fit.top.dy : Ha - (Hf - b[1] - b[3]) - fit.bottom.dy - b[3]; return [b[0] / k, y / k, b[2] / k, b[3] / k]; };
+    // app text inside another feature's area is not this feature's either
+    const outApp = fig.out.map(o => toFig(toApp(o.box)));
+    const inOut = (f: Box) => outApp.some(o => f[0] + f[2] / 2 >= o[0] && f[0] + f[2] / 2 <= o[0] + o[2] && f[1] + f[3] / 2 >= o[1] && f[1] + f[3] / 2 <= o[1] + o[3]);
+    const figNorm = new Set(fig.texts.map(t => normLabel(t.text)));
+    appT.forEach((a, i) => { if (!used.has(i) && a.text.length <= 40 && !figNorm.has(a.n) && a.n.replace(/[#\W_]/g, '') && !(a.part === 1 && inOut(a.f)))
+      cands.push({ id: `extra:${a.n}`, kind: 'extra', severity: 'info', app: { text: a.text, box: a.part > 1 ? undefined : r1(a.f) } }); });
     // controls without a label (icons: close, back, more): some app element must sit where Figma draws them
     for (const c of fig.controls) {
       const a = toApp(c.box), cx = a[0] + a[2] / 2, cy = a[1] + a[3] / 2;
@@ -243,6 +254,7 @@ function measure() {
     }
     results.push({ id: scr.id, name: scr.name, board: scr.board, board_name: scr.board_name, case: cap.case || scr.route?.case || '', captured_at: cap.t, png: cap.png,
       parts: parts.get(cap.screen)!.map(p => p.png), note: cap.note || '', build, win: cap.win, k: r3(k), fw: Wf, arrival, fit,
+      ...(fig.out.length ? { out: fig.out.map(o => ({ name: o.name, box: r1(o.box) })) } : {}), ...(cap.unsettled ? { unsettled: true } : {}),
       counts: { figma_texts: fig.texts.length, app_texts: appT.length, matched: pairs.length, shapes: fig.fills.length, controls: fig.controls.length }, candidates: cands, recheck });
     sheets.push({ screen: scr.id, png: imageOf(cap.png), sheet: join(runDir, cap.png.replace(/\.png$/, '-sheet.png')), figma: figmaCrop(scr, out), win: cap.win, k, fw: Wf });
   }
@@ -362,7 +374,8 @@ function status() {
   const found = existsSync(fFile) ? read(fFile) : null;
   const routed = plan.screens.filter((s: any) => s.status === 'routed'), left = routed.filter((s: any) => !captured.has(s.id));
   const at = (n: string) => existsSync(join(designDir, `${n}.json`)) ? statSync(join(designDir, `${n}.json`)).mtimeMs : 0;
-  const verdicts = Object.values<any>(found?.screens ?? {}).flatMap(v => Object.values<any>(v));
+  const cmpOf = new Map<string, any>((cmp?.screens ?? []).map((s: any) => [s.id, s]));
+  const verdicts = Object.entries<any>(found?.screens ?? {}).flatMap(([sid, v]) => Object.entries<any>(v).filter(([id]) => !cmpOf.has(sid) || live(cmpOf.get(sid), id)).map(([, x]) => x));
   const open = verdicts.filter(v => v.verdict === 'question' && !v.decided).length, bugs = verdicts.filter(v => v.verdict === 'bug');
   const run = basename(runDir);
   const auto = new Set(caps.filter(c => c.auto).map(c => c.screen)).size;
@@ -392,7 +405,8 @@ function settle() {
   for (const s of cmp.screens) {
     const bs = b.screens?.[s.id] ?? {}, rs = r.screens?.[s.id] ?? {};
     // every candidate is answered: one neither pass judged is a question too (info kinds only when a pass named them)
-    const ids = new Set([...s.candidates.filter((c: Cand) => c.severity !== 'info').map((c: Cand) => c.id), ...Object.keys(bs), ...Object.keys(rs)]);
+    // a pass's verdict on a candidate the check no longer makes (an area left out since) is dropped
+    const ids = new Set([...s.candidates.filter((c: Cand) => c.severity !== 'info').map((c: Cand) => c.id), ...[...Object.keys(bs), ...Object.keys(rs)].filter(id => live(s, id))]);
     for (const id of ids) {
       const x = bs[id], y = rs[id], prev = before[s.id]?.[id];
       if (prev?.decided) { (screens[s.id] ??= {})[id] = prev; kept++; continue; }
@@ -438,7 +452,8 @@ function scope() {
   }
 }
 
-// The Design tab's decisions block: `DESIGN DECISIONS <feature> <platform>`, then `<run> <screen> <id>: bug|ok|n/a|eBug`.
+// The Design tab's decisions block: `DESIGN DECISIONS <feature> <platform>`, then `<run> <screen> <id>: bug|ok|n/a|eBug|no eBug`,
+// a verdict optionally followed by `: <why>` (the user's reason, user 2026-11-04: why a difference is not a problem), kept as `why`.
 function decide() {
   const text = readFileSync(target && existsSync(target) ? target : 0, 'utf8');
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
@@ -449,14 +464,15 @@ function decide() {
   const day = new Date().toISOString().slice(0, 10), files = new Map<string, any>();
   let n = 0;
   for (const l of lines.slice(head + 1)) {
-    const m = l.match(/^(\S+) (\S+) (\S+): (bug|ok|n\/a|eBug)$/);
+    const m = l.match(/^(\S+) (\S+) (\S+): (bug|ok|n\/a|eBug|no eBug)(?:: (.+))?$/);
     if (!m) { console.error(`  skipped: ${l}`); continue; }
-    const [, run, scr, id, v] = m, fp = join(runOf(run), 'design', 'findings.json');
+    const [, run, scr, id, v, why] = m, fp = join(runOf(run), 'design', 'findings.json');
     if (!files.has(fp)) files.set(fp, existsSync(fp) ? read(fp) : { settled_at: null, screens: {} });
     const cmp = existsSync(join(runOf(run), 'design', 'compare.json')) ? read(join(runOf(run), 'design', 'compare.json')) : { screens: [] };
     const cand = cmp.screens.find((s: any) => s.id === scr)?.candidates.find((c: Cand) => c.id === id);
     const item = ((files.get(fp).screens[scr] ??= {})[id] ??= { kind: cand?.kind, figma: cand?.figma, app: cand?.app, severity: cand?.severity, verdict: 'unreviewed' });
-    if (v === 'eBug') item.ebug = true; else { item.verdict = v; if (v !== 'bug') delete item.ebug; }
+    if (v === 'eBug') item.ebug = true; else if (v === 'no eBug') delete item.ebug; else { item.verdict = v; if (v !== 'bug') delete item.ebug; }
+    if (why?.trim()) item.why = why.trim(); else if (v !== 'eBug' && v !== 'no eBug') delete item.why;
     item.decided = `user ${day}`; n++;
   }
   for (const [fp, data] of files) writeJson(fp, data);
@@ -471,7 +487,7 @@ function ebugs() {
   const out: string[] = [`# Design check bugs — ${basename(runDir)}`, '', `Build ${cmp.build || '(not recorded)'} · ${feature} · ${platform}. Drafted through spec-casebook references/ebugs.md: [UI], owner RD (Doc for copy), never [UX].`, ''];
   let n = 0;
   for (const s of cmp.screens) for (const [id, v] of Object.entries<any>(found[s.id] ?? {})) {
-    if (v.verdict !== 'bug' || (!all && !v.ebug)) continue;
+    if (v.verdict !== 'bug' || (!all && !v.ebug) || !live(s, id)) continue;
     const c = s.candidates.find((x: Cand) => x.id === id) ?? { kind: v.kind ?? id.split(':')[0], figma: v.figma, app: v.app };
     const route = plan.screens.find((x: any) => x.id === s.id)?.route, row = route?.case && existsSync(join(table, 'cases.csv')) ? readTable(join(table, 'cases.csv')).find(r => r.ID === route.case) : undefined;
     const what = (o: any) => o?.text ? `「${o.text}」` : o?.color ? o.color : o?.name ?? '';
@@ -480,12 +496,15 @@ function ebugs() {
       `- Screen: ${s.name} (${s.board_name}), Figma ${s.id}${key ? ` — https://www.figma.com/design/${key}?node-id=${encodeURIComponent(s.id.replace(':', '-'))}` : ''}`,
       route?.how === 'figma' && !s.case ? `- Reached by the Design's arrows: ${route.action}` : `- Reached by: ${s.case || route?.case || '?'}${row ? ` — Precondition: ${row.Precondition || '–'}; Action: ${row.Action}` : ''}`,
       `- Figma: ${what(c.figma)}`, `- App: ${what(c.app)}${c.delta ? ` (${Object.entries(c.delta).map(([a, b]) => `${a} ${b}`).join(', ')})` : ''}`,
-      `- Verdict: ${v.note ?? ''}${v.reviewer && v.reviewer !== v.note ? ` / ${v.reviewer}` : ''}${v.decided ? ` (${v.decided})` : ''}`,
+      `- Verdict: ${v.note ?? ''}${v.reviewer && v.reviewer !== v.note ? ` / ${v.reviewer}` : ''}${v.decided ? ` (${v.decided}${v.why ? `: ${v.why}` : ''})` : ''}`,
       `- Image: ${s.png.replace(/\.png$/, '-sheet.png')} (Figma left, app right)`, `- Finding id: ${s.id} ${id}`, '');
   }
   writeFileSync(join(designDir, 'ebug-findings.md'), out.join('\n'));
   console.log(`${shown(join(designDir, 'ebug-findings.md'))}: ${n} bug(s)${all ? '' : ' ticked for eBugs'}`);
 }
+
+// a verdict still about something the check measures: its candidate, or a reviewer's visual item
+function live(s: any, id: string) { return id.startsWith('visual:') || s.candidates.some((c: Cand) => c.id === id); }
 
 function ratio(a: string, b: string) {
   if (!a || !b) return 0;

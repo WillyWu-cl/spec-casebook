@@ -198,7 +198,7 @@
     "K-ee7b40"
    ],
    "app": [],
-   "press": "n/a: Launcher trial chip (MX entry, not this spec)",
+   "press": "n/a: other feature: Launcher trial chip (MX entry, not this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -220,7 +220,7 @@
     "K-abaaf5"
    ],
    "app": [],
-   "press": "n/a: existing Credit page control (credit history / info, KP-041); this spec only states the page and its Buy More / Claim",
+   "press": "n/a: other feature: existing Credit page control (credit history / info, KP-041); this spec only states the page and its Buy More / Claim",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -310,7 +310,7 @@
     "K-e723b2"
    ],
    "app": [],
-   "press": "n/a: AI Magic tab credit pill, outside this feature (what the pill opens is Q-15)",
+   "press": "n/a: other feature: AI Magic tab credit pill, outside this feature (what the pill opens is Q-15)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -399,7 +399,7 @@
     "K-d08bfd"
    ],
    "app": [],
-   "press": "n/a: editor control outside this feature (the spec only uses the clip toolbar tool)",
+   "press": "n/a: other feature: editor control outside this feature (the spec only uses the clip toolbar tool)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -422,7 +422,7 @@
     "K-da3d10"
    ],
    "app": [],
-   "press": "n/a: editor control outside this feature (the spec only uses the clip toolbar tool)",
+   "press": "n/a: other feature: editor control outside this feature (the spec only uses the clip toolbar tool)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -444,7 +444,7 @@
     "K-3de33a"
    ],
    "app": [],
-   "press": "n/a: editor control outside this feature (the spec only uses the clip toolbar tool)",
+   "press": "n/a: other feature: editor control outside this feature (the spec only uses the clip toolbar tool)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -466,7 +466,7 @@
     "K-345668"
    ],
    "app": [],
-   "press": "n/a: editor control outside this feature (the spec only uses the clip toolbar tool)",
+   "press": "n/a: other feature: editor control outside this feature (the spec only uses the clip toolbar tool)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -488,7 +488,7 @@
     "K-f6c202"
    ],
    "app": [],
-   "press": "n/a: editor control outside this feature (the spec only uses the clip toolbar tool)",
+   "press": "n/a: other feature: editor control outside this feature (the spec only uses the clip toolbar tool)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -510,7 +510,7 @@
     "K-dbd72b"
    ],
    "app": [],
-   "press": "n/a: editor control outside this feature (the spec only uses the clip toolbar tool)",
+   "press": "n/a: other feature: editor control outside this feature (the spec only uses the clip toolbar tool)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -619,7 +619,7 @@
     "K-a1a8df"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -724,7 +724,7 @@
     "K-a652c3"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -756,7 +756,7 @@
     "K-f9bbb9"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1090,7 +1090,7 @@
     "K-c9db3c"
    ],
    "app": [],
-   "press": "n/a: Launcher trial banner (MX entry, not this spec)",
+   "press": "n/a: other feature: Launcher trial banner (MX entry, not this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1181,7 +1181,7 @@
     "M-4abc1a"
    ],
    "app": [],
-   "press": "n/a: existing paywall control (legal pages, Restore purchase asks for the store password, KP-047); this spec only states the page opens",
+   "press": "n/a: other feature: existing paywall control (legal pages, Restore purchase asks for the store password, KP-047); this spec only states the page opens",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1405,7 +1405,7 @@
     "K-ea9bdb"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1431,7 +1431,7 @@
     "K-0fc47a"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1488,7 +1488,7 @@
     "K-504f3e"
    ],
    "app": [],
-   "press": "n/a: shared PowerDirector media picker control; this spec only states the Video tab and the single pick",
+   "press": "n/a: other feature: shared PowerDirector media picker control; this spec only states the Video tab and the single pick",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1510,7 +1510,7 @@
     "K-03e72d"
    ],
    "app": [],
-   "press": "n/a: shared PowerDirector media picker control; this spec only states the Video tab and the single pick",
+   "press": "n/a: other feature: shared PowerDirector media picker control; this spec only states the Video tab and the single pick",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1564,7 +1564,7 @@
     "K-1f79eb"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1586,7 +1586,7 @@
     "K-d46b60"
    ],
    "app": [],
-   "press": "n/a: existing paywall control (legal pages, Restore purchase asks for the store password, KP-047); this spec only states the page opens",
+   "press": "n/a: other feature: existing paywall control (legal pages, Restore purchase asks for the store password, KP-047); this spec only states the page opens",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1612,7 +1612,7 @@
     "K-4e684f"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1747,7 +1747,7 @@
     "K-f28747"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1811,7 +1811,7 @@
     "K-96234d"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1837,7 +1837,7 @@
     "K-e849d0"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1861,7 +1861,7 @@
     "K-ca8d1e"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1920,7 +1920,7 @@
     "K-2a4699"
    ],
    "app": [],
-   "press": "n/a: shared PowerDirector media picker control; this spec only states the Video tab and the single pick",
+   "press": "n/a: other feature: shared PowerDirector media picker control; this spec only states the Video tab and the single pick",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1946,7 +1946,7 @@
     "K-aa7c86"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -1972,7 +1972,7 @@
     "K-7ffb39"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2047,7 +2047,7 @@
     "K-0799ee"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2294,7 +2294,7 @@
     "K-b31b7b"
    ],
    "app": [],
-   "press": "n/a: existing Credit page control (credit history / info, KP-041); this spec only states the page and its Buy More / Claim",
+   "press": "n/a: other feature: existing Credit page control (credit history / info, KP-041); this spec only states the page and its Buy More / Claim",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2316,7 +2316,7 @@
     "K-0443da"
    ],
    "app": [],
-   "press": "n/a: existing Credit page control (credit history / info, KP-041); this spec only states the page and its Buy More / Claim",
+   "press": "n/a: other feature: existing Credit page control (credit history / info, KP-041); this spec only states the page and its Buy More / Claim",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2384,7 +2384,7 @@
     "K-cb4735"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2406,7 +2406,7 @@
     "K-81128d"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2809,7 +2809,7 @@
     "K-d0308c"
    ],
    "app": [],
-   "press": "n/a: Launcher trial chip (MX entry, not this spec)",
+   "press": "n/a: other feature: Launcher trial chip (MX entry, not this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2832,7 +2832,7 @@
     "K-38ce3f"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2854,7 +2854,7 @@
     "K-0b2f3a"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2876,7 +2876,7 @@
     "K-dbfc37"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2920,7 +2920,7 @@
     "K-6469c3"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2943,7 +2943,7 @@
     "K-ce6ee7"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -2965,7 +2965,7 @@
     "K-7ee589"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -3009,7 +3009,7 @@
     "K-ef288a"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -3031,7 +3031,7 @@
     "K-f28de0"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -3053,7 +3053,7 @@
     "K-691ea6"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -3075,7 +3075,7 @@
     "K-3a85a2"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -3120,7 +3120,7 @@
     "K-bc8649"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
@@ -3142,7 +3142,7 @@
     "K-597418"
    ],
    "app": [],
-   "press": "n/a: another feature's Launcher entry or content (not part of this spec)",
+   "press": "n/a: other feature: another feature's Launcher entry or content (not part of this spec)",
    "how": "trace",
    "carried_from": "20261103-174203"
   },
