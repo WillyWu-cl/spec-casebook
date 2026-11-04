@@ -12,20 +12,28 @@
 // in the browser; the app side is the run's screenshots/design/<id>.png on the computer that ran it, else the compact
 // copy committed with the run (design/captures/<id>.webp), so every computer that pulled the repo shows both sides.
 // Decisions (Figma Agent parity, 2026-11-03): each open question takes Bug / OK / N/A and each bug an eBug tick; the
-// choices stay in the browser (localStorage) and Copy decisions puts them on the clipboard for the chat, where the
-// agent writes them into findings.json (`decided`) and drafts the ticked eBugs, like the review page's Copy decisions.
+// choices stay in the browser (localStorage) until Save decisions sends them to design.ts decide (findings.json
+// `decided`); the agent drafts the ticked eBugs. Opened as a file, the button copies the block for the chat instead.
 // Plan view (user, 2026-11-03): before any capture, what the check covers and what it leaves out: the boards read, the
-// route to each screen with the flags that need a look (area only, a state beside a screen, a drawing narrower than a
-// phone, a gap), and an Include / Exclude choice with a reason per screen or board. Copy scope review puts a
-// `DESIGN SCOPE` block on the clipboard; design.ts … scope writes it into plan.json (skip list, reasons, review mark).
+// route to each screen with the flags that need a decision (an approximate route, a state beside a screen, a drawing
+// narrower than a phone, a gap), and an Include / Exclude choice with a reason per screen or board (user, 2026-11-04: a
+// flagged screen stays red, with a plain note, until one is pressed). Save sends a `DESIGN SCOPE` block to design.ts
+// … scope, which writes plan.json (skip list, reasons, and the review mark once nothing is left to decide); opened as a
+// file, the button copies the block for the chat instead.
 // It opens by default until a run has captures. Boards are listed in app-flow order (the earliest row reaching each),
 // or by screen count, by screens needing a look, or as Figma lists them.
-// --serve (default port 4493) rebuilds on every request; scripts/pages.ts serves it as /design/.
+// --serve (default port 4493) rebuilds on every request; scripts/pages.ts serves it as /design/. POST apply/scope and
+// apply/decide take the block as text and run design.ts with it, from this computer only.
+import { spawnSync } from 'node:child_process';
 import { existsSync, openSync, readdirSync, readFileSync, readSync, closeSync, statSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join, relative } from 'node:path';
+import { readRecords } from './lib/csv.ts';
 import { ROOT, arg, assertIds, featureDir, readManifest, readTable, tableDir } from './lib/library.ts';
+import { activityPoints, localRunMessages, syncTokens } from './lib/run-ledger.ts';
+import { IDLE, W, activity, estimator, readCalibration, readSnaps, spanStats, weeklyRatio, weight, type Group } from './lib/usage-estimate.ts';
+import { addMsg, projectTranscripts, zero, type Msg } from './token-usage.ts';
 
 const [feature, platform] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -84,6 +92,51 @@ function buildData(link: (abs: string) => string) {
     skip: plan.skip ?? [], reasons: plan.skip_reasons ?? {}, boards, screens };
 }
 
+// Token use of the design check (user, 2026-11-04), counted like the Progress page (lib/usage-estimate.ts, same
+// calibration and weights, same tokens.jsonl ledger per run folder): per run folder with design work, the messages of
+// the sessions that name it inside the design check's active spans: design/activity.log (every design.ts command on
+// the run) and the first sight of its result files (compare, builder, reviewer, findings), plus, for a design pass on
+// its own (a run folder with no results.csv), the run's own activity (captures, taps). A casebook run's automatic
+// captures cost no call of their own, so for such a run the Design tab also shows that run's own figure (the same as
+// Progress) as the run the captures rode on. Built on every request of /usage.json, which the page polls every 10 s.
+function usageData() {
+  const dirs = existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design'))).sort() : [];
+  const rowsOf = (d: string) => existsSync(join(runsDir, d, 'results.csv')) ? readRecords(readFileSync(join(runsDir, d, 'results.csv'), 'utf8')) : null;
+  const phaseOf = (d: string) => existsSync(join(runsDir, d, 'run-state.md')) ? readFileSync(join(runsDir, d, 'run-state.md'), 'utf8').match(/^# Run state — ([A-Z]+\d+)/m)?.[1] ?? '' : '';
+  // active spans (gaps up to 15 min) and idle gaps of a set of activity points, as run-log.ts time counts them
+  const spansOf = (pts: number[]) => { pts.sort((a, b) => a - b); const spans: { a: number; b: number }[] = [], idle: { a: number; b: number }[] = [];
+    for (let i = 1; i < pts.length; i++) { const a = pts[i - 1], b = pts[i]; if (b > a) (b - a > IDLE ? idle : spans).push({ a, b }); }
+    return { spans, idle, last: pts.at(-1) }; };
+  const cal = readCalibration(runsDir), { snaps, readings, seatAssumed } = readSnaps(runsDir);
+  // the calibration's basis phase, counted the way Progress counts it (its run folder's ledger inside its active spans)
+  const basisDir = cal && existsSync(runsDir) ? readdirSync(runsDir).find(d => phaseOf(d) === cal.basis && rowsOf(d)) : undefined;
+  const files = projectTranscripts(ROOT), local = localRunMessages(files, new Set([...dirs, ...(basisDir ? [basisDir] : [])]));
+  const inSpans = (sp: { a: number; b: number }[]) => (m: Msg) => sp.some(x => m.t > x.a && m.t <= x.b);
+  const ledger = (d: string, sp: { a: number; b: number }[]) => syncTokens(join(runsDir, d, 'tokens.jsonl'), (local.get(d) ?? []).filter(inSpans(sp)));
+  let basisW = cal?.basisWeightedTokens ?? 0;
+  if (cal && basisDir) { const sp = activity(join(runsDir, basisDir), rowsOf(basisDir)!, cal.basis).spans, u = zero(); for (const m of ledger(basisDir, sp)) if (inSpans(sp)(m)) addMsg(u, m); basisW = weight(u) || basisW; }
+  const rate = cal && basisW ? cal.fiveHourPct * (cal.seat ?? 1) / basisW : null, wr = weeklyRatio(cal, readings), est = estimator(rate, wr.weekRatio);
+  const design: Group[] = [], rode: Group[] = [], meta: any[] = [];
+  for (const d of dirs) {
+    const dir = join(runsDir, d), dd = join(dir, 'design'), rows = rowsOf(d);
+    const caps = existsSync(join(dd, 'captures.jsonl')) ? readFileSync(join(dd, 'captures.jsonl'), 'utf8').split('\n').filter(Boolean).flatMap(l => { try { return [JSON.parse(l)]; } catch { return []; } }) : [];
+    const pts = activityPoints(dd, ['compare', 'builder', 'reviewer', 'findings'].map(n => join(dd, `${n}.json`)));
+    if (!rows) pts.push(...activityPoints(dir), ...caps.map(c => Date.parse(c.t)).filter(Boolean));
+    const ds = spansOf(pts), run = rows ? activity(dir, rows, phaseOf(d)) : null;
+    const msgs = ledger(d, [...ds.spans, ...(run?.spans ?? [])]);
+    design.push({ key: d, spans: ds.spans, idle: ds.idle, msgs });
+    if (run) rode.push({ key: d, spans: run.spans, idle: run.idle, msgs });
+    meta.push({ id: d, kind: rows ? 'casebook' : 'pass', phase: phaseOf(d), auto: caps.filter(c => c.auto && !(c.part > 1)).length, hand: caps.filter(c => !c.auto && !(c.part > 1)).length,
+      live: !!ds.last && Date.now() - ds.last < IDLE, runLive: !!run?.last && Date.now() - run.last < IDLE });
+  }
+  const ds = spanStats(design, snaps, readings, est), rs = spanStats(rode, snaps, readings, est);
+  const runs = meta.map(m => ({ ...m, design: ds.rows.get(m.id) ?? null, run: rs.rows.get(m.id) ?? null })).filter(r => r.design || r.auto || r.hand || r.run);
+  const last = readings.at(-1);
+  return { built_at: new Date().toISOString(), weights: W, seatAssumed, snapshots: readings.length, outside5: ds.outside5, outsideW: ds.outsideW, approx: ds.approx,
+    calibration: cal ? { ...cal, seat: cal.seat ?? 1, basisWt: basisW, rate, weekRatio: wr.weekRatio, weekBasis: wr.weekBasis } : null,
+    latest: last ? { at: last.at, seat: last.proMultiplier, fiveHourPct: last.fiveHourPct, weeklyPct: last.weeklyPct } : null, runs };
+}
+
 const page = (data: unknown) => readFileSync(join(import.meta.dirname, 'design-page.tpl'), 'utf8')
   .replaceAll('__TITLE__', `${title} Design check`).replace('__DATA__', () => JSON.stringify(data).replace(/</g, '\\u003c'));
 
@@ -93,9 +146,25 @@ if (serve) {
     try {
       const url = req.url ?? '/';
       if (url === '/' || url.startsWith('/?')) {
-        const html = page(buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`));
+        const html = page({ ...buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`), usage: usageData(), live: true });
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(html); return;
       }
+      const ap = url.match(/^\/apply\/(scope|decide)$/);
+      if (ap && req.method === 'POST') {
+        const local = ['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(req.socket.remoteAddress ?? '');
+        const json = (code: number, o: unknown) => { res.writeHead(code, { 'content-type': 'application/json' }); res.end(JSON.stringify(o)); };
+        if (!local) { json(403, { error: 'Save works only on the computer running the page.' }); return; }
+        const chunks: Buffer[] = [];
+        req.on('data', c => chunks.push(c)).on('end', () => {
+          const block = Buffer.concat(chunks).toString('utf8');
+          if (!block.startsWith(ap[1] === 'scope' ? 'DESIGN SCOPE ' : 'DESIGN DECISIONS ')) { json(400, { error: 'Not a design block.' }); return; }
+          const r = spawnSync(process.execPath, [join(import.meta.dirname, 'design.ts'), feature, platform, ap[1]], { input: block, encoding: 'utf8', cwd: ROOT });
+          console.log(`apply ${ap[1]}: ${(r.stdout + r.stderr).trim()}`);
+          json(r.status === 0 ? 200 : 500, r.status === 0 ? { out: r.stdout, warnings: r.stderr } : { error: (r.stderr || r.stdout).trim() });
+        });
+        return;
+      }
+      if (url.startsWith('/usage.json')) { res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(usageData())); return; }
       // images under this feature's folder only
       const f = url.match(/^\/files\/([^?#]+)/);
       if (f) {
@@ -117,7 +186,7 @@ if (serve) {
   server.listen(port, host);
 } else {
   const out = arg('out') ?? join(table, 'design', 'design.html');
-  const data: any = buildData(abs => encodeURI(relative(join(out, '..'), abs).split('\\').join('/')));
+  const data: any = { ...buildData(abs => encodeURI(relative(join(out, '..'), abs).split('\\').join('/'))), usage: usageData() };
   writeFileSync(out, page(data));
   console.log(`${relative(ROOT, out)}: ${data.missing ? 'no design/plan.json yet' : `${data.screens.length} screens`}`);
 }

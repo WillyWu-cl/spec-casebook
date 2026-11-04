@@ -111,10 +111,13 @@ refuses them), and it runs in one folder, e.g. `runs/<date>-p23-regression-flows
   type a password), `devserver` (⋯ debug page: Write Log ON, 「Use developer server:」 ON, 「Server Changed」 › OK,
   relaunch, Launcher label check), `fresh` (above). A run's first step is `build` and `reinstall … --check-only` to
   record whether a newer build exists; which build to test is the user's call.
-- **Design captures (user, 2026-11-03).** When the feature has a design plan (`<table>/design/plan.json`, figma
-  skill › conformance), a segment captures the Design screens its rows reach as it passes them: with the row running
-  (`case ID`), `node scripts/design.ts <feature> <platform> screens <ID>` lists them, and on each one
-  `device.ts <run dir> design <screen id>` (one call, no extra navigation). Only the frame's state counts (its
+- **Design captures (user, 2026-11-03; automatic 2026-11-04).** When the feature has a design plan
+  (`<table>/design/plan.json`, figma skill › conformance), a segment captures the Design screens its rows reach as it
+  passes them, on its own: name each row with `device.ts <run dir> case <ID>` (Android too) before its first step, and
+  the device script matches every page source it reads against the row's screens and saves a match (one
+  `design: captured …` line; no extra call). Act only on the lines it prints: at `case`, screens with too few texts to
+  match; at the next `case`, the screens the last row passed without; capture those by hand
+  (`device.ts <run dir> design <screen id>`) only if the row did show them. Only the frame's state counts (its
   language, appearance and the state its name says); list any screen it could not bring about in the segment reply.
   The check and the review run at the phase wrap-up (`figma/references/conformance.md` steps 3–4).
 - **Live run plan (user, 2026-10-20/29).** A run starts the full pages server:

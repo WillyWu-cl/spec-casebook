@@ -394,6 +394,38 @@ test('page: statuses, the newest capture per screen, and the app image', () => {
   rmSync(out);
 });
 
+// ---- automatic captures during a casebook run (lib/design-watch.ts) -------------------------------------------------
+test('watch: `case` arms the row\'s screens, a matching page source is captured, leftovers are named', async () => {
+  const { armWatch, watchSource } = await import('../lib/design-watch.ts');
+  const dir = join(RUNS, 'r9'); mkdirSync(dir, { recursive: true });
+  const shot = async () => Buffer.from('png'), win = async () => ({ width: 375, height: 812 });
+  writeFileSync(join(dir, '.case'), 'TC-001');
+  assert.match(armWatch(dir, 'TC-001').join('\n'), /watching 1 screen\(s\) of TC-001/);
+  assert.equal(await watchSource(dir, androidOffline, shot, win), undefined, 'another screen with too few of its texts: nothing');
+  assert.equal(await watchSource(dir, `<A>${st('Create Your Drama', 20, 110, 180, 24)}${st('Templates', 20, 700, 100, 20)}</A>`, shot, win), undefined, 'two texts of nine: nothing');
+  assert.match(await watchSource(dir, iosHome('Choose a template'), shot, win) ?? '', /captured 1:10 Home automatically \(7\/9 texts\)/);
+  assert.equal(await watchSource(dir, iosHome('Choose a template'), shot, win), undefined, 'captured once');
+  const caps = readFileSync(join(dir, 'design', 'captures.jsonl'), 'utf8').trim().split('\n').map(l => JSON.parse(l));
+  assert.deepEqual(caps.map(c => [c.screen, c.case, c.auto, c.match]), [['1:10', 'TC-001', true, '7/9']]);
+  assert.ok(existsSync(join(dir, 'screenshots', 'design', '1-10.xml')));
+  // the next row: nothing left of TC-001; leaving TC-002 without its screen names it
+  assert.doesNotMatch(armWatch(dir, 'TC-002').join('\n'), /passed without/);
+  assert.match(armWatch(dir, null).join('\n'), /TC-002 passed without 1:20 Error_offline/);
+  assert.ok(!existsSync(join(dir, '.design-watch.json')), '`case -` disarms the watch');
+  // a design pass after the run walks only what it left
+  const left = design('screens', '--left', 'r9');
+  assert.match(left.out, /1 screen\(s\) already captured in r9/); assert.doesNotMatch(left.out, /^1:10 /m); assert.match(left.out, /^1:20 /m);
+  // the Design tab counts its captures and design work (no transcripts name r9 here, so no tokens)
+  assert.equal(design('status', 'r9').status, 0);
+  assert.ok(readFileSync(join(dir, 'design', 'activity.log'), 'utf8').includes(' status'), 'design.ts logs its work on the run');
+  const out = join(tmpdir(), `design-usage-${process.pid}.html`);
+  assert.equal(run('design-page.ts', [F, 'ios', '--out', out]).status, 0);
+  const u = JSON.parse(readFileSync(out, 'utf8').match(/const D = (\{.*\});\n/)![1]).usage, r9 = u.runs.find((r: any) => r.id === 'r9');
+  assert.deepEqual([r9.kind, r9.auto, r9.hand, r9.run], ['pass', 1, 0, null]);
+  assert.equal(r9.design.tokens.messages, 0);
+  rmSync(out); rmSync(dir, { recursive: true, force: true });
+});
+
 // ---- figma-source receipts -------------------------------------------------------------------------------------------
 test('figma-source: scope.json records the list, boards read and ids not found', () => {
   const resp = join(EX, 'figma-source', 'design', 'responses');

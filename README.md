@@ -466,8 +466,11 @@ and works beside the casebook or on its own. Two parts:
   1. **Plan** (automatic): each Design screen with the casebook row that reaches it (pressing a control on it or
      walking an arrow into it), else a path along the Design's own arrows. A screen only the Design reaches is
      reported as a gap in the table, for the analysis to fix.
-  2. **Capture while running**: `design.ts … screens TC-012` lists what a row reaches; `device.ts <run> design <screen
-     id>` saves the screenshot and page source (also on Android). A design pass walks every route when asked.
+  2. **Capture while running**: in a casebook run the captures are automatic: `device.ts <run> case TC-012` (also on
+     Android) arms a watch of the screens the row reaches, and every page source the script reads anyway is matched
+     against them; a match is saved as a capture with no extra call. Screens it cannot match are named when the row
+     ends; `device.ts <run> design <screen id>` captures one by hand. A design pass on its own walks only what the
+     runs left (`design.ts … screens --left <run>`), or every route when there is no run.
   3. **Check**: `design.ts … check <run>` measures each capture against Figma (wrong state, copy, missing text,
      truncation, wrapping, position, fill and text colour, icon controls, extra text) and draws a side-by-side sheet.
   4. **Review**: two independent subagent passes, then `settle`; splits become questions.
@@ -476,7 +479,9 @@ and works beside the casebook or on its own. Two parts:
   6. **Recheck** on the next build: `check <new run> --recheck <old run>` marks each earlier bug fixed or still there.
 
   The Design tab (`/design/` on the pages server) shows one card per screen coloured by status; a card opens Figma and
-  the app side by side with every difference boxed and its verdict.
+  the app side by side with every difference boxed and its verdict. Its **Time and plan usage** table is the Progress
+  table (seat, wall, test, idle, tokens, estimate, account total) for the design check's work per run, live while a
+  run works; under a casebook run the captures rode on, that run's own Progress row is shown, not added.
 
 **Shared with the casebook, and with every computer.** Both skills keep a feature's Figma files in the same
 `library/<product>/<feature>/specs/<set>/extracted/` folder: one board image per board in `extracted/figma/` (used by
@@ -509,9 +514,11 @@ browser and Copy. The tab bar is the same on every page and holds the one Englis
 remembered in the browser and applies to every page (table rows stay in English).
 
 **Results** shows what each run found, case by case: the action, the expected result, what happened (the pass, fail
-or block reason, eBug codes highlighted, the blocked note) and the screenshots recorded as evidence, which open in a
-viewer (arrow keys step through them). Pick a run at the top; filter by result, segment or disposition, search, or
-show only cases with screenshots.
+or block reason, eBug codes linked, the blocked note) and the screenshots recorded as evidence, which open in a
+viewer (arrow keys step through them). A failed case shows its **eBugs** under its header, each a link to eCL with
+its title: *filed from this run* (the run's filed batch names the case in a Report step), *existing ticket* (the
+batch's dedupe list: the failure repeats it) or *named in the result*. Pick a run at the top; filter by result,
+segment or disposition, search (eBug codes and titles too), or show only cases with screenshots or with an eBug.
 
 On Cases, **+ Add case** opens a free-text box under the section header: describe the new case in your
 own words. Save (or Copy decisions, pasted into the chat) hands the notes to the agent, which turns each into rows in

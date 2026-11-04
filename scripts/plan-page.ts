@@ -29,7 +29,8 @@ import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join } from 'node:path';
 import { readRecords } from './lib/csv.ts';
-import { activityPoints, localRunMessages, syncTokens } from './lib/run-ledger.ts';
+import { localRunMessages, syncTokens } from './lib/run-ledger.ts';
+import { H5, WEEK, W, activity, estimator, series, upper, wsum, type Series, increments, readCalibration, readSnaps, weeklyRatio, weight, type Span } from './lib/usage-estimate.ts';
 import { addMsg, projectTranscripts, zero, type Msg, type U } from './token-usage.ts';
 
 const args = process.argv.slice(2);
@@ -43,73 +44,10 @@ const ROOT = join(import.meta.dirname, '..');
 const base = join(ROOT, 'library', feature, platform);
 const runsDir = join(base, 'runs');
 
-const IDLE = 15 * 60_000, H5 = 5 * 3_600_000, WEEK = 7 * 24 * 3_600_000;
-type Span = { a: number; b: number; phase: string; seg: string };
 // fiveHour / weekly: account increments during the active time (Pro-%); models: message count per model ID.
 type Stat = { first: number; last: number; test: number; idle: number; gaps: number; tokens: U; models: Record<string, number>; fiveHour: number; weekly: number; covered: boolean; approx: boolean };
 const newStat = (): Stat => ({ first: Infinity, last: -Infinity, test: 0, idle: 0, gaps: 0, tokens: zero(), models: {}, fiveHour: 0, weekly: 0, covered: false, approx: false });
-// Price-ratio weight of a message: the proxy for how much plan usage it cost.
-const W = { input: 1, cacheWrite: 1.25, cacheRead: 0.1, output: 5 };
-const weight = (m: Msg | U) => m.input * W.input + m.cacheWrite * W.cacheWrite + m.cacheRead * W.cacheRead + m.output * W.output;
-// Messages sorted by time plus prefix sums of their weights.
-type Series = { msgs: Msg[]; pre: Float64Array };
-function series(list: Msg[]): Series {
-  const msgs = [...list].sort((a, b) => a.t - b.t), pre = new Float64Array(msgs.length + 1);
-  msgs.forEach((m, i) => { pre[i + 1] = pre[i] + weight(m); });
-  return { msgs, pre };
-}
-const upper = (s: Series, t: number) => { let lo = 0, hi = s.msgs.length; while (lo < hi) { const m = (lo + hi) >> 1; if (s.msgs[m].t <= t) lo = m + 1; else hi = m; } return lo; };
-const wsum = (s: Series, a: number, b: number) => b > a ? s.pre[upper(s, b)] - s.pre[upper(s, a)] : 0;   // weight of messages in (a, b]
 
-// Activity points of a run folder, as `run-log.ts time` collects them; each gap of up to 15 min is an active span,
-// labelled with the segment of the next recorded case (after the last one: "wrap-up").
-function activity(dir: string, rows: Record<string, string>[], phase: string) {
-  const pts = activityPoints(dir);   // activity.log, with evidence file times stamped into it (lib/run-ledger.ts)
-  for (const r of rows) { const t = Date.parse(r['Recorded At']); if (t) pts.push(t); }
-  pts.sort((a, b) => a - b);
-  const recs = rows.map(r => ({ t: Date.parse(r['Recorded At']), seg: r.Segment || '-' })).filter(r => r.t).sort((a, b) => a.t - b.t);
-  const spans: Span[] = [], idle: { a: number; b: number; seg: string }[] = [];
-  let ri = 0;
-  for (let i = 1; i < pts.length; i++) {
-    const a = pts[i - 1], b = pts[i]; if (b === a) continue;
-    while (ri < recs.length && recs[ri].t < b) ri++;
-    const seg = ri < recs.length ? recs[ri].seg : 'wrap-up';
-    (b - a > IDLE ? idle : spans).push({ a, b, phase, seg } as Span);
-  }
-  return { first: pts[0], last: pts.at(-1), spans, idle };
-}
-
-// Plan-usage increments from the snapshots: positive steps of percentUsed within one window; a changed resetsAt,
-// a drop, or (with no resetsAt) a reading after a 100% stop starts a new window from 0.
-// A seat change between snapshots is an account switch: no window spans it, and an increment never reaches back past it.
-// The first reading of the file, and the first after an account switch, is a baseline only: its value holds use from
-// before the run (other work on a shared account), so it adds nothing (2026-10-27: the Android run's first reading,
-// 14 % of a 6.25× seat, showed as 100 % of a Pro window).
-type Snap = { at: string; fiveHourPct: number | null; fiveHourResetsAt: string | null; weeklyPct: number | null; weeklyResetsAt: string | null; proMultiplier: number; note?: string };
-function increments(snaps: Snap[], key: 'fiveHour' | 'weekly', dur: number) {
-  const out: { from: number; to: number; pct: number; mult: number; approx: boolean }[] = [];
-  let prev: { t: number; pct: number; r?: number; mult: number } | undefined;
-  let switchAt = -Infinity;
-  for (let i = 0; i < snaps.length; i++) {
-    const s = snaps[i];
-    if (i && s.proMultiplier !== snaps[i - 1].proMultiplier) { switchAt = Date.parse(s.at); prev = undefined; }
-    const pct = s[`${key}Pct`]; if (pct == null) continue;
-    const t = Date.parse(s.at), r = s[`${key}ResetsAt`] ? Date.parse(s[`${key}ResetsAt`]!) : undefined;
-    let same = false;
-    if (prev) {
-      if (r !== undefined && prev.r !== undefined) same = Math.abs(r - prev.r) < 120_000;
-      else if (prev.r !== undefined) same = t < prev.r;
-      else if (r !== undefined) same = prev.t > r - dur;
-      else same = t - prev.t < dur && prev.pct < 100;
-      if (pct < prev.pct) same = false;
-    }
-    const from = same ? prev!.t : Math.max(r !== undefined ? r - dur : t - dur, prev?.t ?? -Infinity, switchAt);
-    const inc = same ? pct - prev!.pct : pct;
-    if (inc > 0 && prev) out.push({ from, to: t, pct: inc, mult: s.proMultiplier, approx: /approx/i.test(s.note ?? '') || r === undefined });
-    prev = { t, pct, r: r ?? (same ? prev!.r : undefined), mult: s.proMultiplier };
-  }
-  return out;
-}
 
 function buildData() {
   // Phases merged into another (P2 and P3 inside P23) are shown only through the phase that runs them.
@@ -179,11 +117,7 @@ function buildData() {
   for (const g of idles) for (const s of [st(g.phase), st(`${g.phase}/${g.seg}`)]) { s.idle += g.b - g.a; s.gaps++; }
   // Plan usage, in Pro-% (plan-% × the snapshot's seat size). Account figure: each increment the run overlaps, split
   // between its phases (and segments) by their weighted tokens inside it (active time if none).
-  const usageFile = join(runsDir, 'usage.jsonl');
-  const snaps: Snap[] = existsSync(usageFile) ? readFileSync(usageFile, 'utf8').split('\n').filter(Boolean).flatMap(l => { try { return [JSON.parse(l)]; } catch { return []; } }).sort((a, b) => Date.parse(a.at) - Date.parse(b.at)) : [];
-  let seat = 1, seatAssumed = false;
-  for (const s of snaps) if (s.proMultiplier > 0) seat = s.proMultiplier; else { s.proMultiplier = seat; seatAssumed = true; }
-  const readings = snaps.filter(s => s.fiveHourPct != null || s.weeklyPct != null);
+  const { snaps, seatAssumed, readings } = readSnaps(runsDir);
   const total = { fiveHour: 0, weekly: 0, outside5: 0, outsideW: 0, approx: false };
   const incs = { fiveHour: increments(snaps, 'fiveHour', H5), weekly: increments(snaps, 'weekly', WEEK) };
   for (const key of ['fiveHour', 'weekly'] as const) for (const inc of incs[key]) {
@@ -199,31 +133,13 @@ function buildData() {
       for (const s of [st(sp.phase), st(`${sp.phase}/${sp.seg}`)]) { s[key] += pro * by[i] / sum; s.covered = true; s.approx ||= inc.approx; }
     });
   }
-  // Token-rate estimate. rate = the calibrated 5-hour Pro-% ÷ the basis phase's weighted tokens. Weekly ratio: the
-  // calibration's weekPerFiveHour, else Σ Δweekly ÷ Σ Δ5-hour over consecutive readings of the latest seat that both
-  // carry a 5-hour and a weekly value in the same windows (no reset in between). Paired readings only: a reading's
-  // first value on a new account holds use from before it (10/22: 95% weekly from other work counted as a 1-second
-  // increment made the ratio 1.70 instead of 0.19). The seat factor cancels: both are plan-% of one account.
-  const calFile = join(runsDir, 'usage-calibration.json');
-  const cal = existsSync(calFile) ? JSON.parse(readFileSync(calFile, 'utf8')) as { basis: string; fiveHourPct: number; seat?: number; source?: string; weekPerFiveHour?: number | null; basisWeightedTokens?: number } : null;
+  // Token-rate estimate. rate = the calibrated 5-hour Pro-% ÷ the basis phase's weighted tokens; the weekly ratio as
+  // lib/usage-estimate.ts weeklyRatio() explains.
+  const cal = readCalibration(runsDir);
   const basisW = cal ? (stat[cal.basis] ? weight(stat[cal.basis].tokens) : cal.basisWeightedTokens ?? 0) : 0;
   const rate = cal && basisW ? cal.fiveHourPct * (cal.seat ?? 1) / basisW : null;
-  let weekRatio: number | null = cal?.weekPerFiveHour ?? null, weekBasis: { seat: number; weekly: number; fiveHour: number; from: string; to: string } | null = null;
-  const paired = readings.filter(s => s.fiveHourPct != null && s.weeklyPct != null);
-  const close = (x?: string | null, y?: string | null) => !x || !y || Math.abs(Date.parse(x) - Date.parse(y)) < 120_000;
-  for (const wSeat of [...new Set(paired.map(s => s.proMultiplier))].reverse()) {
-    if (weekRatio != null) break;
-    const ps = paired.filter(s => s.proMultiplier === wSeat);
-    let wk = 0, fh = 0, a = Infinity, b = -Infinity;
-    for (let i = 1; i < ps.length; i++) {
-      const p = ps[i - 1], q = ps[i];
-      const dW = q.weeklyPct! - p.weeklyPct!, d5 = q.fiveHourPct! - p.fiveHourPct!;
-      if (dW < 0 || d5 < 0 || !close(p.fiveHourResetsAt, q.fiveHourResetsAt) || !close(p.weeklyResetsAt, q.weeklyResetsAt)) continue;
-      wk += dW; fh += d5; a = Math.min(a, Date.parse(p.at)); b = Math.max(b, Date.parse(q.at));
-    }
-    if (fh > 0) { weekRatio = wk / fh; weekBasis = { seat: wSeat, weekly: wk * wSeat, fiveHour: fh * wSeat, from: new Date(a).toISOString(), to: new Date(b).toISOString() }; }
-  }
-  const est = (wt: number) => ({ est5: rate != null ? wt * rate : null, estW: rate != null && weekRatio != null ? wt * rate * weekRatio : null });
+  const { weekRatio, weekBasis } = weeklyRatio(cal, readings);
+  const est = estimator(rate, weekRatio);
   for (const s of Object.values(stat)) if (readings.some(x => { const t = Date.parse(x.at); return t >= s.first && t <= s.last; })) s.covered = true;
   // Seat size(s) in force during a phase: the latest snapshot at or before its start, plus any inside it.
   const seatsIn = (s: Stat) => [...new Set(snaps.filter((x, i) => { const t = Date.parse(x.at); return (t > s.first && t <= s.last) || (t <= s.first && !(snaps[i + 1] && Date.parse(snaps[i + 1].at) <= s.first)); }).map(x => x.proMultiplier))];

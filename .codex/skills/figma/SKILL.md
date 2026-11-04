@@ -74,11 +74,13 @@ Coverage, same language switch); `node scripts/design-page.ts <product>/<feature
 writes it on its own. Its **Plan** view shows what the check covers before any capture (boards read, each screen's
 route and flags, what is measured and what is not) and takes the user's Include / Exclude per screen or board
 (`design.ts … scope`); its **Results** view has one small card per screen coloured by status, and the comparison
-opens on click, so the grid stays short.
+opens on click, so the grid stays short. A **Time and plan usage** table above both is the Progress page's table for
+the design check's work, live while a run works (conformance.md › *The Design tab*).
 
 ## Tests
 
 `npm test` runs `scripts/test/design.test.ts`: a synthetic feature with every kind of difference planted, run
 through every command (routes with and without a casebook table, check, Android sources, recheck, shared copies on a
-computer without the phone's files, settle, decide, eBug list, status, the page, and the source read's scope, stale
+computer without the phone's files, settle, decide, eBug list, status, the page, automatic captures and the Design
+tab's token use, and the source read's scope, stale
 returns, shared board images and size check). Run it after changing any of these scripts.

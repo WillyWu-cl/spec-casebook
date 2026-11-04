@@ -100,3 +100,7 @@ library/*/*/knowledge/sources/*/extracted/*
 !library/knowledge/sources/*/extracted/*.txt
 !library/*/knowledge/sources/*/extracted/*.txt
 !library/*/*/knowledge/sources/*/extracted/*.txt
+
+# automatic design captures (lib/design-watch.ts): the watch armed by `case ID` and its Figma text cache
+library/*/*/*/runs/*/.design-watch.json
+library/*/*/*/runs/*/.design-texts.json

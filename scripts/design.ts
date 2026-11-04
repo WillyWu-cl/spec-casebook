@@ -3,15 +3,19 @@
 //   plan [--skip <board or screen ids> --skip-reason "<why>"]
 //                     build design/plan.json (lib/design-plan.ts): each Design screen with the row that reaches it.
 //                     Every other command builds it again first when the table, the traces or the Figma read changed.
-//   scope [file]      apply a pasted Plan-view "Copy scope review" block (from the file, or stdin): screens or boards
+//   scope [file]      apply a Plan-view scope block (sent by its Save, or pasted from a file or stdin): screens or boards
 //                     excluded with a reason or included again, and the scope marked reviewed; `both` in its header
 //                     applies it to every platform of the feature with a design plan
-//   screens [TC-…]    the screens a row reaches, to capture while it runs (id, name, fit); without a row, every
-//                     routed screen in journey order with its row or Design path (what a design pass walks)
+//   screens [TC-… | --left <run dir>]
+//                     the screens a row reaches, to capture while it runs (id, name, fit); without a row, every
+//                     routed screen in journey order with its row or Design path (what a design pass walks); --left:
+//                     only those the run has not captured (a design pass after a casebook run walks just these).
+//                     In a casebook run the device scripts capture a row's screens on their own (`case ID` arms
+//                     lib/design-watch.ts); this list is for the ones they could not match.
 //   check <run dir> [--screen <id,…>] [--recheck <earlier run>] [--build <version (build)>]
 //                     measure every new capture (below) and draw its sheet
 //   settle <run dir>  merge the two review passes into design/findings.json
-//   decide [file]     apply a pasted Design-tab "Copy decisions" block (from the file, or stdin) to the runs' findings
+//   decide [file]     apply a Design-tab decisions block (sent by its Save, or pasted from a file or stdin) to the runs' findings
 //   ebugs <run dir>   write design/ebug-findings.md: the settled bugs ticked for filing (all bugs with --all), each with
 //                     its row's steps, Figma vs app, the Figma link and the sheet, for spec-casebook references/ebugs.md
 //   status [run dir]  where the design check stands and the next step (default: the newest run with captures)
@@ -47,9 +51,11 @@
 // a user decision already in findings.json is kept.
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { appendFileSync, copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
 import { normLabel } from './lib/coverage.ts';
+import { appElements, figmaScreen, type Box } from './lib/design-match.ts';
+import { capturedScreens } from './lib/design-watch.ts';
 import { planFresh, buildPlan, kept, planPath, summary } from './lib/design-plan.ts';
 import { ROOT, arg, assertIds, featureDir, readTable, tableDir, writeJson } from './lib/library.ts';
 
@@ -67,6 +73,8 @@ const needsRun = ['check', 'settle', 'ebugs'].includes(cmd);
 if (needsRun && !target) { console.error(USAGE); process.exit(2); }
 const runDir = needsRun ? runOf(target) : cmd === 'status' ? runOf(target ?? newestRun() ?? '') : '';
 const designDir = join(runDir, 'design');
+// design work on a run, for the Design tab's token use (design-page.ts): one line per command in design/activity.log
+if (runDir && existsSync(runDir)) { mkdirSync(designDir, { recursive: true }); appendFileSync(join(designDir, 'activity.log'), `${new Date().toISOString()} ${cmd} ${process.argv.slice(5).join(' ').slice(0, 80)}\n`); }
 // Shared captures (user, 2026-11-03): the full screenshot and page source stay local (screenshots/design/), and check
 // commits a compact copy beside the results (design/captures/<id>.webp, 750 px wide, and <id>.xml), so a computer that
 // pulls the run can check again, draw the sheets, review and show the Design tab without the phone's files.
@@ -81,10 +89,14 @@ if (cmd === 'plan') {
   const plan = buildPlan(feature, platform, { ...kept(old), skip: skip ?? old?.skip, skipReason: reason ?? old?.skip_reason ?? undefined, reasons });
   console.log(`${shown(join(table, 'design', 'plan.json'))}: ${summary(plan)}`);
   for (const e of plan.screens.filter((e: any) => e.status === 'no-route').slice(0, 15)) console.log(`  no route: ${e.id} ${e.name} (${e.board_name}) — ${e.why}`);
-} else if (cmd === 'screens' && !target) {
-  // every routed screen in journey order: what a design pass walks (rows first, then the Design-arrow paths)
-  const plan = planFresh(feature, platform);
-  for (const s of plan.screens.filter((x: any) => x.status === 'routed'))
+} else if (cmd === 'screens' && (!target || target === '--left')) {
+  // every routed screen in journey order: what a design pass walks (rows first, then the Design-arrow paths); with
+  // --left <run>, only those that run has not captured (a casebook run's automatic captures already cover the rest)
+  const plan = planFresh(feature, platform), left = target === '--left' ? process.argv[6] : '';
+  if (target === '--left' && !left) { console.error('screens --left <run dir>'); process.exit(2); }
+  const done = left ? capturedScreens(runOf(left)) : new Set<string>();
+  if (left) console.log(`${done.size} screen(s) already captured in ${basename(runOf(left))}; the ${plan.screens.filter((x: any) => x.status === 'routed' && !done.has(x.id)).length} left:`);
+  for (const s of plan.screens.filter((x: any) => x.status === 'routed' && !done.has(x.id)))
     console.log(`${s.id}  ${s.name} (${s.board_name}) · ${s.route.case ? `${s.route.case}, fit ${s.route.fit}` : `Design ${s.route.fit}: ${s.route.action}`}${s.gap ? ' · gap in the table' : ''}`);
 } else if (cmd === 'screens') {
   const plan = planFresh(feature, platform);
@@ -101,7 +113,6 @@ else if (cmd === 'ebugs') ebugs();
 else if (cmd === 'status') status();
 else { console.error(USAGE); process.exit(2); }
 
-type Box = [number, number, number, number];
 type Cand = { id: string; kind: string; severity: string; figma?: any; app?: any; delta?: any; note?: string };
 
 function measure() {
@@ -242,57 +253,6 @@ function measure() {
   if (py.shared) console.log(`shared: ${py.shared} capture(s) in ${shown(join(designDir, 'captures'))}/ (commit them with the run)`);
 }
 
-// Every visible node inside the screen frame, relative to it; system chrome instances are skipped with their insides.
-// controls: the inventory's unlabelled controls on this screen (by node id), checked for presence.
-function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>) {
-  const kids = new Map<string, any[]>();
-  for (const n of nodes) { if (!kids.has(n.parent)) kids.set(n.parent, []); kids.get(n.parent)!.push(n); }
-  const texts: any[] = [], fills: any[] = [], controls: any[] = [];
-  const CHROME = /status ?bar|home ?indicator|keyboard/i;
-  const walk = (id: string) => {
-    for (const n of kids.get(id) ?? []) {
-      if (n.hidden || (n.drawn ?? 1) < 0.2 || (n.opacity ?? 1) < 0.05 || CHROME.test(`${n.name} ${n.component?.name ?? ''} ${n.component?.set ?? ''}`)) continue;
-      const box: Box = [n.abs[0] - scr.abs[0], n.abs[1] - scr.abs[1], n.abs[2], n.abs[3]];
-      if (box[0] >= scr.abs[2] || box[1] >= scr.abs[3] || box[0] + box[2] <= 0 || box[1] + box[3] <= 0) continue;
-      if (controlNodes.has(n.id)) controls.push({ node: n.id, name: n.name, box });
-      if (n.type === 'TEXT' && n.text?.characters?.trim()) {
-        const run = n.text.runs?.[0] ?? {}, solid = n.text.runs?.length === 1 ? run.fills?.filter((f: any) => f.type === 'SOLID') : null;
-        texts.push({ node: n.id, text: n.text.characters.trim(), box, align: n.text.align?.[0] ?? 'LEFT', auto_resize: n.text.auto_resize, size: run.font_size,
-          line_height: typeof run.line_height === 'number' ? run.line_height : 0, color: solid?.length === 1 && /ff$/i.test(solid[0].color) ? solid[0].color.slice(0, 7) : null });
-      } else if (/^(FRAME|INSTANCE|RECTANGLE|COMPONENT)$/.test(n.type) && box[2] >= 40 && box[3] >= 24 && box[2] * box[3] < 0.4 * scr.abs[2] * scr.abs[3]
-        && (n.radius || /btn|button|cta|chip|tag|card/i.test(n.name))) {
-        const f = (n.fills ?? []).filter((x: any) => x.type === 'SOLID' && x.color && !x.color.endsWith('00')).at(-1);
-        if (f && /ff$/i.test(f.color)) fills.push({ node: n.id, name: n.name, color: f.color.slice(0, 7), box });
-      }
-      walk(n.id);
-    }
-  };
-  walk(scr.id);
-  return { texts, fills: fills.slice(0, 40), controls };
-}
-
-// Elements of an XCUITest or UiAutomator2 page source in window units: their text (if any) and whether they can be
-// tapped (buttons, cells, switches, clickable views), for the control presence check.
-function appElements(xml: string) {
-  const dec = (t: string) => t.replace(/&#10;/g, '\n').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
-  const out: { type: string; text: string; box: Box; actionable: boolean }[] = [];
-  for (const m of xml.matchAll(/<([\w.]+)\s([^>]*?)\/?>/g)) {
-    const at: Record<string, string> = {};
-    for (const a of m[2].matchAll(/([\w-]+)="([^"]*)"/g)) at[a[1]] = dec(a[2]);
-    if (at.visible === 'false' || at.displayed === 'false') continue;
-    let box: Box | null = null;
-    if (at.bounds) { const b = at.bounds.match(/\[(\d+),(\d+)\]\[(\d+),(\d+)\]/); if (b) box = [+b[1], +b[2], +b[3] - +b[1], +b[4] - +b[2]]; }
-    else if (at.x !== undefined) box = [+at.x, +at.y, +at.width, +at.height];
-    const type = at.type ?? at.class ?? m[1];
-    const text = (/StaticText|TextView|TextField|Button|Cell|Link/.test(type) ? (at.label || at.value || at.text || at['content-desc'] || '') : (at.text || '')).trim();
-    if (!box || box[2] <= 0 || box[3] <= 0) continue;
-    const actionable = /Button|Cell|Switch|Link|Image|TextField|SearchField|Tab/.test(type) || at.clickable === 'true';
-    out.push({ type, text, box, actionable });
-  }
-  // a button's label repeated by the text inside it: keep the inner text only
-  return out.map((o, i) => o.text && out.some((p, j) => j !== i && p.text === o.text && p.box[2] * p.box[3] < o.box[2] * o.box[3] && p.box[0] >= o.box[0] && p.box[1] >= o.box[1]) ? { ...o, text: '' } : o);
-}
-
 // the Figma side of a sheet: figma-source's crop when this machine has it, else the committed board screenshot
 function figmaCrop(scr: any, out: string) {
   const crop = join(out, 'crops', scr.board.replace(/[:;]/g, '-'), `${scr.id.replace(/[:;]/g, '-')}.png`);
@@ -369,8 +329,8 @@ function status() {
   const scopeLine = rv ? `scope reviewed ${rv.at}${fresh ? `, ${fresh} screen(s) new since` : ''}` : 'scope not reviewed';
   if (!runDir || !existsSync(designDir)) {
     console.log(`Design check: ${summary(plan)}; ${scopeLine}; no run has captures yet.\n  next: ${!rv || fresh
-      ? 'the user reviews the scope on the Design tab\'s Plan view and pastes Copy scope review (design.ts … scope)'
-      : 'capture during a run (`design.ts … screens <TC-…>` lists what each row reaches)'}`); return; }
+      ? 'the user reviews the scope on the Design tab\'s Plan view and presses Save (design.ts … scope)'
+      : 'capture during a run: `case ID` on the device script watches each row\'s screens and captures them (`design.ts … screens <TC-…>` lists them)'}`); return; }
   const capFile = join(designDir, 'captures.jsonl'), cmpFile = join(designDir, 'compare.json'), fFile = join(designDir, 'findings.json');
   const caps = existsSync(capFile) ? readFileSync(capFile, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)) : [];
   const captured = new Set(caps.map(c => c.screen));
@@ -381,7 +341,8 @@ function status() {
   const verdicts = Object.values<any>(found?.screens ?? {}).flatMap(v => Object.values<any>(v));
   const open = verdicts.filter(v => v.verdict === 'question' && !v.decided).length, bugs = verdicts.filter(v => v.verdict === 'bug');
   const run = basename(runDir);
-  console.log(`Design check of ${run}: ${captured.size} of ${routed.length} routed screens captured (${plan.counts.no_route} no route), ${measured.size} measured, ` +
+  const auto = new Set(caps.filter(c => c.auto).map(c => c.screen)).size;
+  console.log(`Design check of ${run}: ${captured.size} of ${routed.length} routed screens captured${auto ? ` (${auto} automatically during the run)` : ''} (${plan.counts.no_route} no route), ${measured.size} measured, ` +
     (found ? `settled: ${bugs.length} bugs (${bugs.filter(v => v.ebug).length} ticked for eBugs), ${open} open questions` : 'not settled') + `; ${scopeLine}`);
   const unmeasured = [...captured].filter(s => !measured.has(s) || caps.filter(c => c.screen === s).at(-1).t > (cmp?.built_at ?? ''));
   const rows = new Map<string, number>(); for (const s of left) { const k = s.route.case || 'Design paths'; rows.set(k, (rows.get(k) ?? 0) + 1); }
@@ -390,9 +351,9 @@ function status() {
   const next = unmeasured.length ? `check ${unmeasured.length} new capture(s): design.ts … check ${run}`
     : measured.size && !reviewed ? 'the two review passes over the sheets (conformance.md step 4), then settle'
     : reviewed && at('findings') < Math.max(at('builder'), at('reviewer')) ? `design.ts … settle ${run}`
-    : open ? 'the user answers the questions on the Design tab and pastes Copy decisions (design.ts … decide)'
+    : open ? 'the user answers the questions on the Design tab and presses Save decisions (design.ts … decide)'
     : bugs.some(v => v.ebug) && !existsSync(join(designDir, 'ebug-findings.md')) ? `design.ts … ebugs ${run}, then the eBug drafts (spec-casebook references/ebugs.md)`
-    : left.length ? 'capture the remaining screens during the next rounds (design.ts … screens <TC-…>)' : 'done';
+    : left.length ? `capture the remaining screens during the next rounds (\`case ID\` watches them), or a design pass over \`design.ts … screens --left ${run}\`` : 'done';
   console.log(`  next: ${next}`);
 }
 
@@ -422,7 +383,7 @@ function settle() {
   console.log(`${shown(join(designDir, 'findings.json'))}: ${agree} agreed, ${ask} questions for the user${kept ? `, ${kept} user decisions kept` : ''}`);
 }
 
-// The Plan view's Copy scope review block: `DESIGN SCOPE <feature> <ios|android|both>`, then `exclude <screen or board
+// The Plan view's scope block: `DESIGN SCOPE <feature> <ios|android|both>`, then `exclude <screen or board
 // id>: <reason>`, `include <id>` and `reviewed`. The Design screens are the same on both platforms, so `both` applies
 // it to every platform of the feature that has a design plan.
 function scope() {
@@ -452,7 +413,7 @@ function scope() {
   }
 }
 
-// The Design tab's Copy decisions block: `DESIGN DECISIONS <feature> <platform>`, then `<run> <screen> <id>: bug|ok|n/a|eBug`.
+// The Design tab's decisions block: `DESIGN DECISIONS <feature> <platform>`, then `<run> <screen> <id>: bug|ok|n/a|eBug`.
 function decide() {
   const text = readFileSync(target && existsSync(target) ? target : 0, 'utf8');
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);

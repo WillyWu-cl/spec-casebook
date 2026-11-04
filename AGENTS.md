@@ -108,6 +108,12 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
   warns (`formats.md`, writing rules).
+- **Design captures ride on runs (user, 2026-11-04).** In a casebook run, `device.ts … case <ID>` arms automatic
+  design captures (every page source already read is matched to the row's Design screens); a design pass walks only
+  what runs left (`screens --left`), and the Design tab shows the Progress page's time and usage table for it (`figma/references/conformance.md`
+  §2, *The Design tab*).
+- **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
+  the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
 - **Phone fixtures (2026-10-27).** What a run needs on the phone or account is in
   `library/<product>/<feature>/<platform>/fixtures.md`.
 - **Live pages (user, 2026-10-28).** `scripts/pages.ts` serves Cases, Progress, Results, Coverage and Design with one

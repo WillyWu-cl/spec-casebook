@@ -23,14 +23,15 @@ function cleanTracked(dir: string): Set<string> {
 }
 
 const skipped = new Map<string, number>();   // file → mtime seen as a checkout time (re-checked when it changes)
-/** Activity points of a run folder: activity.log lines (with evidence times stamped into it first). */
-export function activityPoints(dir: string): number[] {
+/** Activity points of a run folder: activity.log lines (with evidence times stamped into it first). `also`: more files
+ *  to stamp the same way (the design check's result files in <run>/design/, design-page.ts). */
+export function activityPoints(dir: string, also: string[] = []): number[] {
   const act = join(dir, 'activity.log');
   const text = existsSync(act) ? readFileSync(act, 'utf8') : '';
   const stamped = new Set([...text.matchAll(/^\S+ file (.+)$/gm)].map(m => m[1]));
   const walk = (d: string): string[] => existsSync(d) ? readdirSync(d).flatMap(f => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; }) : [];
   const files = [...walk(join(dir, 'screenshots')), ...walk(join(dir, 'ledger')),
-    ...(existsSync(join(dir, 'logs')) ? readdirSync(join(dir, 'logs')).map(f => join(dir, 'logs', f)) : [])];
+    ...(existsSync(join(dir, 'logs')) ? readdirSync(join(dir, 'logs')).map(f => join(dir, 'logs', f)) : []), ...also.filter(f => existsSync(f))];
   const add: string[] = [];
   let clean: Set<string> | undefined;
   for (const f of files) {

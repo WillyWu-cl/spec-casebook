@@ -22,6 +22,10 @@
 //                             design check (figma skill, references/conformance.md): the screenshot and page source of the
 //                             Figma screen SCREEN (node id) now on the phone, to screenshots/design/<id>.png/.xml, logged in
 //                             design/captures.jsonl with the case running (`case ID`) and the window size
+//   case ID | case -          name the case now running (design captures name it), or clear it; with a design plan it
+//                             also arms the automatic design captures (lib/design-watch.ts): every page source this
+//                             script reads is matched against the Design screens still to capture, and a match is saved
+//                             as `design` would (one `design: captured …` line)
 //   shot NAME                 save <run dir>/screenshots/NAME.png (device pixels; adb screencap when no session)
 //   els [filter]              visible elements (format above); filter matches anywhere in the line, case-insensitive
 //   texts [NAME]              the visible on-screen strings only (text and content-desc, ids dropped, duplicates merged),
@@ -90,6 +94,7 @@ import { homedir } from 'node:os';
 import { basename, join } from 'node:path';
 import { productValue } from './lib/feature-config.ts';
 import { BLOCKER, env, logActivity, runRecipe, sleep, stamp, webdriver } from './lib/device-common.ts';
+import { armWatch, saveCapture, watchSource } from './lib/design-watch.ts';
 
 const HOME = homedir();
 const ANDROID_HOME = process.env.ANDROID_HOME ?? process.env.ANDROID_SDK_ROOT ?? join(HOME, 'Library/Android/sdk');
@@ -231,7 +236,16 @@ function parseEls(xml: string, filter?: string) {
   return parse(xml).filter(e => shown(e) && (e.id || e.text || e.desc))
     .map(line).filter(l => !filter || l.toLowerCase().includes(filter.toLowerCase()));
 }
-const source = async (): Promise<string> => (await s('GET', '/source')).value;
+// Automatic design captures (lib/design-watch.ts): while `case ID` has armed a watch, every page source read here is
+// checked for a Design screen still to capture (the screenshot is taken only on a match).
+const watching = () => existsSync(join(runDir, '.design-watch.json'));
+const source = async (): Promise<string> => {
+  const xml: string = (await s('GET', '/source')).value;
+  if (watching()) { const l = await watchSource(runDir, xml, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'), async () => (await s('GET', '/window/rect')).value); if (l) console.log(l); }
+  return xml;
+};
+// before a press while watching: the screen it is pressed on
+const glance = async () => { if (watching()) await source().catch(() => ''); };
 const center = (e: El) => ({ x: Math.round(e.x + e.w / 2), y: Math.round(e.y + e.h / 2) });
 const tapAt = (x: number, y: number) => mobile('clickGesture', { x, y });
 // The first visible element whose text, content-desc or resource-id contains T (exact matches win).
@@ -321,14 +335,17 @@ switch (cmd) {
     if (!rest[0]) { console.error('design SCREEN: the Figma screen id (design/plan.json)'); process.exit(2); }
     // --part 2, 3…: the same screen scrolled down (a frame taller than the phone); its texts count for copy and missing
     const pi = rest.indexOf('--part'), part = pi > 0 ? Number(rest[pi + 1]) : 1, words = rest.slice(1).filter((_, i) => pi < 0 || (i + 1 !== pi && i + 1 !== pi + 1));
-    const dir = join(runDir, 'screenshots', 'design'), name = rest[0].replace(/[:;]/g, '-') + (part > 1 ? `.p${part}` : ''); mkdirSync(dir, { recursive: true });
-    writeFileSync(join(dir, `${name}.png`), Buffer.from((await s('GET', '/screenshot')).value, 'base64'));
-    writeFileSync(join(dir, `${name}.xml`), await source());
-    const win = (await s('GET', '/window/rect')).value, kase = existsSync(join(runDir, '.case')) ? readFileSync(join(runDir, '.case'), 'utf8').trim() : '';
-    mkdirSync(join(runDir, 'design'), { recursive: true });
-    appendFileSync(join(runDir, 'design', 'captures.jsonl'), JSON.stringify({ t: new Date().toISOString(), screen: rest[0], ...(part > 1 ? { part } : {}), case: kase, note: words.join(' '),
-      png: `screenshots/design/${name}.png`, xml: `screenshots/design/${name}.xml`, win: { w: win.width, h: win.height } }) + '\n');
-    console.log(`captured ${rest[0]}${kase ? ` (${kase})` : ''} → screenshots/design/${name}.png`);
+    const { kase, png } = saveCapture(runDir, rest[0], { part, note: words.join(' '), png: Buffer.from((await s('GET', '/screenshot')).value, 'base64'),
+      xml: (await s('GET', '/source')).value, win: (await s('GET', '/window/rect')).value });
+    console.log(`captured ${rest[0]}${kase ? ` (${kase})` : ''} → ${png}`);
+    break;
+  }
+  case 'case': {
+    // case <ID>: the case now running (design captures name it); `case -` clears it. With a design plan it also arms
+    // the automatic design captures for the row (lib/design-watch.ts) and names the screens the last row passed without.
+    if (!rest[0] || rest[0] === '-') { try { unlinkSync(join(runDir, '.case')); } catch {} console.log('case cleared'); }
+    else { writeFileSync(join(runDir, '.case'), rest[0]); console.log('case', rest[0]); }
+    for (const l of armWatch(runDir, rest[0] && rest[0] !== '-' ? rest[0] : null)) console.log(l);
     break;
   }
   case 'shot': {
@@ -358,7 +375,7 @@ switch (cmd) {
       console.log(`→ screenshots/${rest[0]}.png/.txt`); }
     break;
   }
-  case 'tap': await tapAt(+rest[0], +rest[1]); console.log('tapped', rest[0], rest[1]); break;
+  case 'tap': await glance(); await tapAt(+rest[0], +rest[1]); console.log('tapped', rest[0], rest[1]); break;
   case 'hold': await mobile('longClickGesture', { x: +rest[0], y: +rest[1], duration: Math.round(+(rest[2] ?? 1.5) * 1000) }); console.log('held'); break;
   case 'burst': {
     const [x, y] = rest.map(Number); const n = +(rest[2] ?? 10); const acts: unknown[] = [{ type: 'pointerMove', duration: 0, x, y }];
@@ -478,12 +495,12 @@ switch (cmd) {
     throw new Error(`scrollto: "${text}" not found between y ${TOP}-${BOTTOM} after sweeping both ends`);
   }
   case 'id': {
-    const n = rest.join(' ');
+    const n = rest.join(' '); await glance();
     const e = await s('POST', '/element', { using: 'id', value: resIdSel(n) });
     await s('POST', `/element/${Object.values(e.value)[0]}/click`, {}); console.log('clicked id', n); break;
   }
   case 'lbl': {
-    const t = rest.join(' ');
+    const t = rest.join(' '); await glance();
     let id: string | undefined;
     for (const sel of [`new UiSelector().textContains(${quote(t)})`, `new UiSelector().descriptionContains(${quote(t)})`]) {
       try { id = Object.values((await s('POST', '/element', { using: '-android uiautomator', value: sel })).value)[0] as string; break; } catch {}

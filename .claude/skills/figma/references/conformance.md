@@ -5,7 +5,7 @@ Part of the figma skill (`../SKILL.md`): does the app match the Design, screen b
 `status` always names the next one. The flow:
 
 ```
-plan (automatic) ─► scope review ─► capture while running ─► check ─► two review passes ─► settle ─► your decisions ─► eBugs ─► recheck on the next build
+plan (automatic) ─► scope review ─► capture while running (automatic) ─► check ─► two review passes ─► settle ─► your decisions ─► eBugs ─► recheck on the next build
 ```
 
 What makes it light: the navigation comes from what is already known (the casebook's rows, else the Design's own
@@ -66,11 +66,16 @@ view (it opens by default until a run has captures):
   sits in `cases.csv`, screens in flow order within each), or by screen count, by screens needing a look, or as Figma
   lists them. A screen's image opens full size; a click outside it closes it.
 - **One line per screen, by board**: its image, its route (row and fit, or Design path) and its `flags` (plan.json),
-  the reasons to look at it: `area` (the row only reaches the area), `variant` (a state drawn beside a reached
-  screen), `drawing` (narrower than 360 pt: a card or detail drawn on its own), `gap`. Each screen and each board has
-  **Include / Exclude** with a reason (required; common ones are offered).
-- **Copy scope review** puts a block on the clipboard; the user pastes it in the chat and the agent applies it:
-  `node scripts/design.ts <feature> <platform> scope [file]` (stdin by default):
+  the reasons to look at it: `area` ("approximate route": the row only taps a control shared by many screens, so the
+  run must set up the frame's state by hand), `variant` (a state drawn beside a reached screen), `drawing` (narrower
+  than 360 pt: a card or detail drawn on its own), `gap`. Each screen and each board has **Include / Exclude** with a
+  reason (required; common ones are offered).
+- **Needs your decision** (user, 2026-11-04): before the scope review every flagged or unroutable screen, after it
+  only the screens new since, is red with a plain note saying what to decide, and neither button is pressed until the
+  user picks one.
+- **Save** (served live) sends the choices to `node scripts/design.ts <feature> <platform> scope` and reloads; the
+  block ends with `reviewed` only once nothing is red. Opened as a file, the button copies the block for the chat
+  instead, and the agent passes it to the same command (stdin or a file):
 
 ```
 DESIGN SCOPE pdr/ai-mini-drama both
@@ -89,14 +94,27 @@ reviewed
 `node scripts/device.ts <run dir> design <screen id> [--part N] ["note"]` (Android: `device-android.ts`) saves the
 screenshot and page source of the screen on the phone and logs it with the case running.
 
-- **In a casebook run (default).** At each row, `design.ts … screens <TC-…>` lists the screens it reaches (one line
-  each); capture them as the row passes them. No extra navigation; a few seconds a screen. Rows that already ran are
-  captured on their next round.
-- **A design pass** (asked for on its own, or a feature with no table): its own run folder `runs/<date>-design/`;
-  `design.ts … screens` lists every routed screen in journey order with its row or Design path. Walk them segment by
+- **In a casebook run (default): automatic (user, 2026-11-04).** `device.ts <run dir> case <TC-…>` (both platforms)
+  arms a watch (`scripts/lib/design-watch.ts`, local `.design-watch.json`) of the screens the row reaches and of every
+  other routed screen the run has not captured. Every page source the device script reads anyway (taps, `els`,
+  `texts`, `scrollto`, the end of a `waitfor`; on Android every read) is matched against their short Figma texts, and a
+  match is saved like `design <id>` with `auto` and the match in `captures.jsonl`, printed as one `design: captured …`
+  line: no extra call, navigation or tokens. A match is the check's arrival rule made stricter: the row's own screens
+  60 % of 3+ texts, any other screen 80 % of 4+ texts with a clear lead over the next best (a loading or failure state
+  drawn beside it is not taken for it); frames drawn with the same texts share one capture. At `case` the script names
+  the row's screens with too few texts to match, and at the next `case` (or `case -`) the ones the row passed without:
+  capture those by hand (`design <id>`) if they did show, else a later round does. The `state` check and the review
+  passes still catch a wrong state. A computer without the Figma data (`out/`) gets one line saying so and captures by
+  hand (`design.ts … screens <TC-…>` lists a row's screens).
+- **A design pass** (asked for on its own, or a feature with no table): its own run folder `runs/<date>-design/`.
+  After a casebook run on the same build, `design.ts … screens --left <run>` lists only what that run did not capture,
+  and the pass walks just those (check both run folders; the Design tab shows the newest capture of each screen).
+  Otherwise `design.ts … screens` lists every routed screen in journey order with its row or Design path. Walk them segment by
   segment (one board or at most 40 screens, each in a clean subagent context) under the casebook's run rules
   (spec-casebook `references/run.md`: device restart, `scrollto` / `pink`, fixtures, needs, no reinstall on the QA
   iPhone, nothing charged beyond what the run allows).
+- **Both asked at once** (a casebook run and the design check): one run. The casebook run captures as it goes; the
+  check and the review run at the phase wrap-up on that run folder, and a design pass covers only `--left`.
 - **Only the frame's state.** Match the frame's language (English unless it says otherwise), appearance, tier and the
   state its name says. A screen whose state cannot be brought about is not captured under its id: name it in the
   segment reply with the reason. A frame taller than the phone: capture the top, scroll, `--part 2` (3, …).
@@ -126,6 +144,8 @@ shapes. The reviewers judge those on the sheet as `visual` items.
 ## 4. Two review passes, then settle
 
 Two subagents, each over at most 15 screens with a self-contained brief; the second is never shown the first's file.
+Each brief starts with `node scripts/design.ts <feature> <platform> status <run dir>` (it marks the pass's start for
+the Design tab's token use).
 
 - **Builder.** For each screen, its `compare.json` entry and its sheet: a verdict for every candidate except `extra`
   / `sample` (those only when they matter), plus `visual:<n>` items for what the measure cannot see, each with `kind`,
@@ -150,8 +170,9 @@ a superseded frame is not the spec, and a conflict is a question (AGENTS.md *Des
 ## 5. Decisions and eBugs
 
 - The user answers on the Design tab: Bug / OK / N/A on each question or unreviewed item, an eBug tick on each bug
-  to file, then **Copy decisions**. Pass the pasted block to `design.ts … decide` (stdin or a file): it writes each
-  choice into the run's `findings.json` with `decided: user <date>`.
+  to file, then **Save decisions** (served live; opened as a file it copies the block and the agent passes it to
+  `design.ts … decide`, stdin or a file). It writes each choice into the run's `findings.json` with
+  `decided: user <date>`.
 - `design.ts … ebugs <run dir>` writes `design/ebug-findings.md`: each ticked bug with the screen, its Figma link, the
   row (or Design path) that reaches it, Figma against the app, both review notes, the build and the sheet. Draft from
   it through spec-casebook `references/ebugs.md` and the casebook overlay: `[UI]`, owner RD (Doc for copy), never
@@ -172,6 +193,17 @@ difference. A card opens Figma and the app side by side (click to open either fu
 build, the route (row, or Design path and any gap), an arrival warning, the recheck, and every difference boxed on
 both sides with its verdict and decision buttons. Info items stay folded. Every computer that pulled the repo sees
 both images: the shared board images and the shared capture copies.
+
+**Time and plan usage** (user, 2026-11-04): above both views, the Progress page's table (account seat, wall, test,
+idle gaps, Claude tokens, the token-rate estimate with seat equivalents, the shared account total, and what fell
+outside), one row per run folder with design work, figured by the same code (`scripts/lib/usage-estimate.ts`
+`spanStats`: the same price weights, `usage-calibration.json` estimate and the run folder's `tokens.jsonl` ledger). Design work is the messages of sessions naming the run folder
+inside the design check's active spans: `design/activity.log` (every `design.ts` command on the run writes a line) and
+the first sight of `compare` / `builder` / `reviewer` / `findings.json`; for a design pass on its own, also the run's
+own activity (captures, taps). A casebook run's automatic captures cost nothing of their own, so under such a run the
+panel shows that run's own figure (the same as Progress, not to be added). Served live, the page polls `usage.json`
+every 10 s and redraws only the panel. A review subagent starts with `design.ts … status <run dir>`, which marks the
+start of its span.
 
 ## Coverage of the Figma Agent
 

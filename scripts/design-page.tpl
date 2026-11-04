@@ -73,12 +73,14 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .frame .cut { position: absolute; max-width: none; width: auto }
 .frame svg { position: absolute; inset: 0; width: 100%; height: 100% }
 .frame .no { aspect-ratio: 375 / 812; display: grid; place-items: center; color: var(--muted); font-size: 0.85rem; padding: 12px; text-align: center }
-.box { fill: none; stroke-width: 2.5; vector-effect: non-scaling-stroke }
+.frame svg { pointer-events: none }
+.box { fill: none; stroke-width: 2.5; vector-effect: non-scaling-stroke; pointer-events: all; cursor: pointer }
 .box.hl { stroke-width: 5 }
 .route { font-size: 0.88rem; display: grid; gap: 4px; margin-bottom: 10px }
 .route a { color: var(--accent) }
 .items { display: grid; gap: 8px; align-content: start }
 .it { border: 1px solid var(--line); border-left: 4px solid var(--none); border-radius: 6px; padding: 8px 10px; font-size: 0.86rem; display: grid; gap: 3px }
+.it.hl { box-shadow: 0 0 0 2px var(--accent) }
 .it .h { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap }
 .it .num { font: 700 0.8rem var(--mono); color: #fff; border-radius: 4px; padding: 0 6px }
 .it .k { font: 600 0.78rem var(--mono) }
@@ -116,6 +118,10 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .pr { display: grid; grid-template-columns: 88px minmax(0, 1.2fr) minmax(0, 1.6fr) minmax(220px, 1fr); gap: 10px; align-items: center;
   background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--matches); border-radius: 6px; padding: 6px 10px; font-size: 0.86rem }
 .pr.x { border-left-color: var(--none); opacity: 0.72 } .pr.flag { border-left-color: var(--question) } .pr.chg { box-shadow: 0 0 0 2px var(--unreviewed) }
+.pr.todo { border-left-color: var(--differs); background: color-mix(in srgb, var(--differs) 7%, var(--panel)) }
+.pr .ask { grid-column: 2 / -1; font-size: 0.82rem; color: var(--ink) } .pr .ask b { color: var(--differs) }
+.pr.todo .dc button { border-color: var(--differs) }
+#pcopy.go { background: var(--accent); color: #fff; border-color: var(--accent) }
 @media (max-width: 760px) { .pr { grid-template-columns: 72px minmax(0, 1fr) } .pr .rt, .pr .dc { grid-column: 1 / -1 } }
 .pr .tn { width: 100%; aspect-ratio: 375 / 812; overflow: hidden; border-radius: 3px; background: var(--chip-bg); position: relative; cursor: pointer; border: 0; padding: 0 }
 .pr .tn img { display: block; width: 100% } .pr .tn .cut { position: absolute; max-width: none }
@@ -130,6 +136,32 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .dc input:invalid { border-color: var(--differs) }
 .byb { font-size: 0.78rem; color: var(--muted) }
 .hint { font-size: 0.84rem; color: var(--muted); margin: 0 }
+/* Time and plan usage: the same table as the Progress page, one row per run with design work */
+.usage { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 8px; min-width: 0 }
+.usage h2 { font: 700 1.05rem var(--display); margin: 0; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap }
+.usage .live { font: 600 0.72rem var(--body); color: var(--matches); display: inline-flex; gap: 5px; align-items: center }
+.usage .live i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: pulse 1.6s ease-in-out infinite }
+@keyframes pulse { 50% { opacity: 0.25 } }
+@media (prefers-reduced-motion: reduce) { .usage .live i { animation: none } }
+.usage .tbl { overflow-x: auto }
+.usage table { border-collapse: collapse; width: 100%; font-size: 0.88rem }
+.usage th { text-align: left; font: 600 0.7rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding: 6px; border-bottom: 1px solid var(--line); white-space: normal; vertical-align: bottom }
+.usage td { padding: 6px; border-bottom: 1px solid var(--line); vertical-align: top; white-space: nowrap }
+.usage td.n, .usage th.n { text-align: right; font-variant-numeric: tabular-nums }
+.usage td:first-child { white-space: normal; min-width: 190px; max-width: 280px }
+.usage th.grp { text-align: center }
+.usage td.est { color: var(--accent); font-weight: 600 }
+.usage td.acct, .usage th.acct { color: var(--muted) }
+.usage td.acct { font-size: 0.82rem }
+.usage tr.tot td { font-weight: 600; border-bottom: 0 }
+.usage tr.round td { border-top: 2px solid var(--line) }
+.usage tr.sub td { font-size: 0.8rem; color: var(--muted); padding-block: 3px }
+.usage tr.sub td:first-child { padding-left: 22px }
+.usage tr.sub td.est { color: var(--accent); font-weight: 400 }
+.usage .eq { display: block; font: 400 0.7rem var(--mono); color: var(--muted) }
+.usage .none { color: var(--muted); font-style: italic; font-weight: 400 }
+.usage details.how summary { cursor: pointer; font-size: 0.85rem; color: var(--muted) }
+.usage .notes { color: var(--muted); font-size: 0.85rem; margin: 8px 0 0; display: grid; gap: 4px }
 </style>
 </head>
 <body>
@@ -138,6 +170,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
   <h1 id="h1"></h1>
   <div class="meta" id="meta"></div>
   <div class="bar" id="bar"></div>
+  <section class="usage" id="usage" aria-labelledby="usage-h" hidden></section>
   <div id="planv" hidden>
     <section class="scope" id="scope"></section>
     <div class="tools">
@@ -176,7 +209,7 @@ const T = {
   en: { eyebrow: 'Casebook design check', title: f => `${f} · Design`, all: 'All', allBoards: 'All boards', sorts: { flow: 'Order: app flow', count: 'Order: most screens', look: 'Order: most to look at', figma: 'Order: as in Figma' }, search: 'Search screen, board or case',
     shown: (n, m) => `${n} of ${m}`, none: 'No screen matches these filters.', noPlan: 'No design plan yet: run node scripts/design.ts <feature> <platform> plan (figma skill, references/conformance.md).',
     meta: (n, c, s) => `${n} Design screens · ${c} captured · spec set ${s}`, figma: 'Figma', app: 'App', noApp: 'No capture on this computer', noFig: 'No Figma image on this computer',
-    reached: 'Reached by', fit: { high: 'direct', mid: 'likely', low: 'area only' }, also: 'also', pre: 'Precondition', action: 'Action', via: 'via',
+    reached: 'Reached by', fit: { high: 'direct', mid: 'likely', low: 'approximate' }, also: 'also', pre: 'Precondition', action: 'Action', via: 'via',
     run: 'Run', open: 'Open in Figma', cases: 'Cases', cov: 'Coverage', res: 'Results', info: n => `${n} info items (sample text, app text not in Figma)`,
     showInfo: 'Show', hideInfo: 'Hide', nothing: 'No differences measured.', notCaptured: 'Not captured yet: reach it as shown and capture it (device.ts … design <id>).', close: 'Close',
     fitNote: (t, b) => `Fit offset: top ${t} pt, bottom ${b} pt`, allKinds: 'All differences', copy: n => `Copy decisions (${n})`, copied: 'Copied',
@@ -187,22 +220,31 @@ const T = {
     views: { plan: 'Plan', results: 'Results' }, scope: 'Scope', reviewed: (d, n) => `Reviewed ${d}${n ? ` · ${n} new since` : ''}`, notReviewed: 'Not reviewed yet',
     sFigma: 'Figma read', sScreens: 'Screens', sMeasured: 'Measured on every capture', sLooked: 'Looked at by the two review passes', sNot: 'Not covered',
     boardsRead: (n, d) => `${n} boards read${d ? `, ${d}` : ''}`, specSet: s => `spec set ${s}`,
-    included: 'Included', excluded: 'Excluded', noRoute: 'No route', toLook: 'Needs a look', changed: 'Your changes',
+    included: 'Included', excluded: 'Excluded', noRoute: 'No route', toLook: 'Needs your decision', lookT: r => r ? 'Added since the scope review: pick Include or Exclude.' : 'Flagged screens: read the note on each, then pick Include or Exclude.', decided: 'Decided', changed: 'Your changes',
     measured: ['Copy: each Figma text against the app text', 'Missing text and icon controls', 'Truncation (「…」 or past the edge)', 'Wrapping (number of lines)', 'Position, after aligning top and bottom', 'Fill and text colour', 'Arrival: the capture is the frame\'s state'],
     looked: ['Icon drawings and images', 'Font weight and size', 'Corner radius, shadows and borders', 'Anything else the sheet shows'],
     notCov: ['Excluded screens and boards (reason on each line)', 'Animation, motion and timing', 'Languages and appearances other than the frame\'s', 'Screens whose state cannot be brought about (named in the run)'],
-    flagN: { area: 'Area only', variant: 'State to bring about', drawing: 'Not a phone screen', gap: 'Gap in the table' },
+    flagN: { area: 'Approximate route', variant: 'State to bring about', drawing: 'Not a phone screen', gap: 'Gap in the table' },
+    yourCall: 'Your decision:',
+    ask: { area: 'The test case that gets here only taps a control shared by many screens (back, close, tab bar), so it reaches this part of the app, not this exact state. The run has to set up what the frame shows (an error, an empty list…) by hand. Include if that can be done; Exclude if not.',
+      variant: 'A state drawn beside a screen the run reaches; the run sets it up there. Include if it can be set up; Exclude if not.',
+      drawing: 'Not a full phone screen: a card or detail drawn on its own. Its text is still checked where it appears on a real screen, so this is usually Exclude ("Drawing only").',
+      gap: 'No test case reaches this screen yet. Include to keep it (the analysis adds a case); Exclude if it is not in this release.',
+      noroute: 'No way to reach this screen was found. Exclude it, or Include and say in the chat how to get there.',
+      fresh: 'Added to Figma after the last scope review.' },
+    psave: (n, left) => left ? `Save${n ? ` (${n})` : ''} · ${left} still to decide` : n ? `Save and finish the review (${n})` : 'Saved',
+    save: n => `Save decisions (${n})`, saving: 'Saving…', saveFail: 'Could not save:',
     flagT: { area: 'The row only reaches the area (a shared control); the runner brings about the state the frame shows.', variant: 'Drawn beside a reached screen: brought about there.',
       drawing: 'Narrower than a phone: a card or detail drawn on its own. Its texts are still compared where the card appears.', gap: 'No casebook row reaches it: the analysis adds one.' },
     include: 'Include', exclude: 'Exclude', why: 'Reason (required)', byBoard: r => `Excluded with its board: ${r}`, excludeBoard: 'Exclude board', includeBoard: 'Include board',
-    pcopy: n => `Copy scope review${n ? ` (${n} changes)` : ''}`, needWhy: n => `${n} exclusion(s) need a reason first.`,
-    phint: 'Pick Include or Exclude where a screen should not be checked (superseded, a drawing only, a state that cannot be brought about), then Copy scope review and paste it into the chat. Copying also marks the scope reviewed. It applies to iOS and Android: the Design screens are the same.',
+    pcopy: n => `Copy for the chat${n ? ` (${n})` : ''}`, needWhy: n => `${n} exclusion(s) need a reason first.`,
+    phint: 'Red rows need your decision: read the note, then pick Include (check it on the phone) or Exclude (with a reason). Any other screen can be excluded too. Save writes the choices to the design plan for iOS and Android (the Design screens are the same); once nothing is red the scope is reviewed. Opened as a file, the button copies the choices for you to paste into the chat instead.',
     whys: ['Superseded by a newer frame', 'Drawing only, not a screen', 'State cannot be brought about', 'Not in this release', 'Other platform only'],
     newFlag: 'New since the review', dpath: 'Design path' },
   zh: { eyebrow: '測試表設計比對', title: f => `${f} · 設計比對`, all: '全部', allBoards: '全部畫板', sorts: { flow: '排序：App 流程', count: '排序：畫面最多', look: '排序：待確認最多', figma: '排序：依 Figma' }, search: '搜尋畫面、畫板或案例',
     shown: (n, m) => `${n} / ${m}`, none: '沒有符合篩選條件的畫面。', noPlan: '還沒有設計比對計畫：執行 node scripts/design.ts <feature> <platform> plan（figma 技能，references/conformance.md）。',
     meta: (n, c, s) => `${n} 個 Design 畫面 · 已擷取 ${c} · 規格 ${s}`, figma: 'Figma', app: 'App', noApp: '這台電腦沒有擷取圖', noFig: '這台電腦沒有 Figma 圖',
-    reached: '到達方式', fit: { high: '直接', mid: '可能', low: '僅到區域' }, also: '另有', pre: '前置條件', action: '操作', via: '經由',
+    reached: '到達方式', fit: { high: '直接', mid: '可能', low: '不精確' }, also: '另有', pre: '前置條件', action: '操作', via: '經由',
     run: '執行', open: '在 Figma 開啟', cases: '案例', cov: '覆蓋率', res: '結果', info: n => `${n} 個資訊項目（範例文字、Figma 沒有的 App 文字）`,
     showInfo: '顯示', hideInfo: '隱藏', nothing: '沒有量到差異。', notCaptured: '尚未擷取：依右側方式到達後擷取（device.ts … design <id>）。', close: '關閉',
     fitNote: (t, b) => `對齊位移：上 ${t} pt，下 ${b} pt`, allKinds: '全部差異', copy: n => `複製決定（${n}）`, copied: '已複製',
@@ -213,16 +255,25 @@ const T = {
     views: { plan: '計畫', results: '結果' }, scope: '範圍', reviewed: (d, n) => `已審查 ${d}${n ? ` · 之後新增 ${n} 個` : ''}`, notReviewed: '尚未審查',
     sFigma: 'Figma 讀取', sScreens: '畫面', sMeasured: '每張擷取圖自動量測', sLooked: '由兩輪審查人工檢視', sNot: '不在範圍內',
     boardsRead: (n, d) => `已讀取 ${n} 個畫板${d ? `，${d}` : ''}`, specSet: s => `規格 ${s}`,
-    included: '納入', excluded: '排除', noRoute: '無路徑', toLook: '需確認', changed: '你的變更',
+    included: '納入', excluded: '排除', noRoute: '無路徑', toLook: '需要你決定', lookT: r => r ? '範圍審查後新增：請選納入或排除。' : '有標記的畫面：看完每行的說明後選納入或排除。', decided: '已決定', changed: '你的變更',
     measured: ['文案：每個 Figma 文字對照 App 文字', '缺少的文字與圖示控制項', '截斷（「…」或超出邊界）', '換行（行數）', '位置（上下對齊後）', '填色與文字顏色', '到達：擷取圖是否為該畫面的狀態'],
     looked: ['圖示繪製與圖片', '字重與字級', '圓角、陰影與框線', '比對圖上其他可見差異'],
     notCov: ['已排除的畫面與畫板（每行附原因）', '動畫、動態與時間', '畫面以外的語言與外觀模式', '無法製造出狀態的畫面（執行時註明）'],
-    flagN: { area: '僅到區域', variant: '需製造狀態', drawing: '非完整畫面', gap: '測試表缺口' },
+    flagN: { area: '路徑不精確', variant: '需製造狀態', drawing: '非完整畫面', gap: '測試表缺口' },
+    yourCall: '需要你決定：',
+    ask: { area: '到這裡的測試案例只按了許多畫面共用的控制項（返回、關閉、底部分頁），所以只會到這一區，不一定是這個確切狀態。執行時需手動製造畫面上畫的狀態（錯誤、空清單等）。做得到就選「納入」，做不到就選「排除」。',
+      variant: '畫在已到達畫面旁的狀態，執行時在那裡製造。做得到就選「納入」，做不到就選「排除」。',
+      drawing: '不是完整的手機畫面，而是單獨畫出的卡片或細節。它的文字仍會在真實畫面出現處比對，所以通常選「排除」（僅為示意）。',
+      gap: '還沒有測試案例到達此畫面。選「納入」保留（分析會補案例）；不在本次版本就選「排除」。',
+      noroute: '找不到到達此畫面的方式。選「排除」，或選「納入」並在對話中說明怎麼到。',
+      fresh: '上次範圍審查之後才加到 Figma。' },
+    psave: (n, left) => left ? `儲存${n ? `（${n}）` : ''} · 還有 ${left} 個待決定` : n ? `儲存並完成審查（${n}）` : '已儲存',
+    save: n => `儲存決定（${n}）`, saving: '儲存中…', saveFail: '無法儲存：',
     flagT: { area: '案例只到達該區域（共用控制項）；執行者需製造出畫面所示的狀態。', variant: '畫在已到達畫面旁：在那裡製造出此狀態。',
       drawing: '比手機窄：單獨畫出的卡片或細節。其文字仍會在卡片出現處比對。', gap: '沒有測試表案例到達：分析需補上。' },
     include: '納入', exclude: '排除', why: '原因（必填）', byBoard: r => `隨畫板排除：${r}`, excludeBoard: '排除畫板', includeBoard: '納入畫板',
-    pcopy: n => `複製範圍審查${n ? `（${n} 項變更）` : ''}`, needWhy: n => `有 ${n} 項排除需要先填原因。`,
-    phint: '不需比對的畫面（已被取代、僅為示意、無法製造的狀態）選「排除」並填原因，再按「複製範圍審查」貼到對話中。複製也會標記範圍已審查。適用 iOS 與 Android：兩者的 Design 畫面相同。',
+    pcopy: n => `複製給對話${n ? `（${n}）` : ''}`, needWhy: n => `有 ${n} 項排除需要先填原因。`,
+    phint: '紅色的行需要你決定：看完說明後選「納入」（要在手機上比對）或「排除」（填原因）。其他畫面也可以排除。按「儲存」會把選擇寫進設計比對計畫，iOS 與 Android 共用（兩者的 Design 畫面相同）；沒有紅色的行時，範圍即審查完成。若以檔案開啟，按鈕改為複製選擇，貼到對話中。',
     whys: ['已被較新的畫面取代', '僅為示意，非畫面', '無法製造出此狀態', '不在本次版本', '僅適用另一平台'],
     newFlag: '審查後新增', dpath: 'Design 路徑' },
 };
@@ -244,12 +295,17 @@ const saveDec = () => { try { localStorage.setItem(DKEY, JSON.stringify(DEC)); }
 const dkey = (s, it) => `${s.run}|${s.id}|${it.id}`;
 function copyBtn() {
   const n = Object.values(DEC).filter(d => d.v || d.ebug).length, b = $('copy');
-  b.hidden = !n; b.textContent = t('copy')(n);
+  b.hidden = !n; b.textContent = D.live ? t('save')(n) : t('copy')(n);
 }
 $('copy').onclick = async () => {
   const lines = [`DESIGN DECISIONS ${D.feature} ${D.platform}`];
   for (const [k, d] of Object.entries(DEC)) { const [run, scr, id] = k.split('|');
     if (d.v) lines.push(`${run} ${scr} ${id}: ${d.v}`); if (d.ebug) lines.push(`${run} ${scr} ${id}: eBug`); }
+  if (D.live) {
+    $('copy').disabled = true; $('copy').textContent = t('saving');
+    try { await post('decide', lines.join('\n')); DEC = {}; saveDec(); location.reload(); } catch (e) { alert(`${t('saveFail')}\n${e.message}`); $('copy').disabled = false; copyBtn(); }
+    return;
+  }
   try { await navigator.clipboard.writeText(lines.join('\n')); $('copy').textContent = t('copied'); setTimeout(copyBtn, 1500); } catch (e) { prompt('', lines.join('\n')); }
 };
 $('kind').onchange = e => { kind = e.target.value; grid(); };
@@ -273,7 +329,10 @@ let SC = {}; try { SC = JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch 
 const saveSc = () => { try { localStorage.setItem(SKEY, JSON.stringify(SC)); } catch (e) {} };
 let pst = '', pboard = '', pq = '', psort = 'flow';
 try { psort = localStorage.getItem('design-sort') || 'flow'; } catch (e) {}
-const lookOf = s => !exOf(s) && (s.flags.length > 0 || s.status === 'no-route' || D.review?.fresh.includes(s.id));
+// needs a decision: before the scope review every flagged or unroutable screen, after it only the screens new since;
+// pressing Include or Exclude on it (or excluding its board) is the decision, kept here until saved
+const flaggedOf = s => D.review ? D.review.fresh.includes(s.id) : s.flags.length > 0 || s.status === 'no-route';
+const lookOf = s => flaggedOf(s) && !SC[s.id] && !exOf(s);
 // boards in the chosen order; in flow order a board goes where its earliest-reached screen is, and its screens follow the flow
 const lastFlow = 1e9, flowOf = s => s.flow ?? lastFlow;
 const boardOrder = () => { const S = D.screens, of = b => S.filter(s => s.board_id === b.id), key = {
@@ -282,18 +341,31 @@ const boardOrder = () => { const S = D.screens, of = b => S.filter(s => s.board_
 const screenOrder = list => psort === 'flow' ? list.map((s, i) => [s, i]).sort((a, c) => flowOf(a[0]) - flowOf(c[0]) || a[1] - c[1]).map(x => x[0]) : list;
 const was = id => D.skip?.includes(id) ? { x: true, why: D.reasons?.[id] ?? '' } : { x: false, why: '' };
 const now = id => SC[id] ?? was(id);
-const changedIds = () => Object.keys(SC).filter(id => SC[id].x !== was(id).x || (SC[id].x && SC[id].why !== was(id).why));
+const changedIds = () => Object.keys(SC).filter(id => SC[id].x !== was(id).x || (SC[id].x && SC[id].why !== was(id).why) || SC[id].d);
 // a screen is excluded by its own choice or its board's
 const exOf = s => now(s.id).x ? { by: 'screen', why: now(s.id).why } : now(s.board_id).x ? { by: 'board', why: now(s.board_id).why } : null;
 const isChanged = s => changedIds().includes(s.id) || changedIds().includes(s.board_id);
 $('pboard').onchange = e => { pboard = e.target.value; planList(); };
 $('psort').onchange = e => { psort = e.target.value; try { localStorage.setItem('design-sort', psort); } catch (e) {} planView(); };
 $('pq').oninput = e => { pq = e.target.value.trim().toLowerCase(); planList(); };
+// Save (served live): the choices go to design.ts scope, which writes plan.json; the scope counts as reviewed once no
+// screen still needs a decision. Opened as a file, the same block is copied for the chat instead.
+const pbtn = () => { const n = changedIds().length, left = D.screens.filter(lookOf).length, b = $('pcopy');
+  b.textContent = D.live ? t('psave')(n, left) : t('pcopy')(n); b.disabled = D.live && !n && (left || D.review); b.classList.toggle('go', !!n && !left); };
+// a saved choice is gone from this browser; the page then shows what plan.json holds
+const post = async (cmd, block) => { const r = await fetch(`apply/${cmd}`, { method: 'POST', headers: { 'content-type': 'text/plain' }, body: block });
+  const j = await r.json().catch(() => ({ error: r.statusText })); if (!r.ok || j.error) throw new Error(j.error || r.statusText); return j; };
 $('pcopy').onclick = async () => {
   const ids = changedIds(), bad = ids.filter(id => SC[id].x && !SC[id].why.trim());
   if (bad.length) { alert(t('needWhy')(bad.length)); return; }
-  const block = [`DESIGN SCOPE ${D.feature} both`, ...ids.map(id => SC[id].x ? `exclude ${id}: ${SC[id].why.trim()}` : `include ${id}`), 'reviewed'].join('\n');
-  try { await navigator.clipboard.writeText(block); $('pcopy').textContent = t('copied'); setTimeout(() => $('pcopy').textContent = t('pcopy')(changedIds().length), 1500); } catch (e) { prompt('', block); }
+  const done = !D.screens.some(lookOf);
+  const block = [`DESIGN SCOPE ${D.feature} both`, ...ids.map(id => SC[id].x ? `exclude ${id}: ${SC[id].why.trim()}` : `include ${id}`), ...(done ? ['reviewed'] : [])].join('\n');
+  if (D.live) {
+    $('pcopy').disabled = true; $('pcopy').textContent = t('saving');
+    try { await post('scope', block); SC = {}; saveSc(); location.reload(); } catch (e) { alert(`${t('saveFail')}\n${e.message}`); pbtn(); }
+    return;
+  }
+  try { await navigator.clipboard.writeText(block); $('pcopy').textContent = t('copied'); setTimeout(pbtn, 1500); } catch (e) { prompt('', block); }
 };
 // a choice re-renders the list: keep the page where it was
 const keepScroll = f => { const y = scrollY; f(); scrollTo(0, y); };
@@ -312,44 +384,108 @@ function planView() {
         <b style="margin-top:8px">${esc(t('sNot'))}</b><ul>${t('notCov').map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
     </div>`;
   const look = lookOf;
-  const cs = [['', t('all'), S.length], ['look', t('toLook'), S.filter(look).length], ['inc', t('included'), inc.length], ['ex', t('excluded'), ex.length], ['chg', t('changed'), S.filter(isChanged).length]];
-  $('pchips').innerHTML = cs.filter(([k, , n]) => !k || n).map(([k, l, n]) => `<button type="button" class="chip" data-p="${k}" aria-pressed="${pst === k}">${esc(l)} <span class="n">${n}</span></button>`).join('');
+  // Included is left out while it equals All; Needs a look says why in its tooltip
+  const why = S.filter(look), dec = S.filter(flaggedOf).length - why.length, whyT = [...['area', 'variant', 'drawing', 'gap'].map(f => [t('flagN')[f], why.filter(s => s.flags.includes(f)).length]),
+    [t('noRoute'), why.filter(s => s.status === 'no-route').length], [t('newFlag'), D.review ? why.length : 0]].filter(x => x[1]).map(([l, n]) => `${l} ${n}`).join(' · ');
+  const cs = [['', t('all'), S.length], ['look', t('toLook'), why.length, `${t('lookT')(!!D.review)}${whyT ? `\n${whyT}` : ''}`], ['dec', t('decided'), dec], ['inc', t('included'), inc.length < S.length ? inc.length : 0], ['ex', t('excluded'), ex.length], ['chg', t('changed'), S.filter(isChanged).length]];
+  $('pchips').innerHTML = cs.filter(([k, , n]) => !k || n).map(([k, l, n, tt]) => `<button type="button" class="chip" data-p="${k}" aria-pressed="${pst === k}"${tt ? ` title="${esc(tt)}"` : ''}>${esc(l)} <span class="n">${n}</span></button>`).join('')
+    + (pst === 'look' && whyT ? `<span class="more">${esc(whyT)}</span>` : '');
   $('pchips').querySelectorAll('.chip').forEach(b => b.onclick = () => { pst = b.dataset.p; planView(); });
   $('pboard').innerHTML = `<option value="">${esc(t('allBoards'))}</option>` + boardOrder().map(b => `<option value="${esc(b.id)}"${b.id === pboard ? ' selected' : ''}>${esc(b.name)}</option>`).join('');
   $('psort').innerHTML = Object.entries(t('sorts')).map(([k, l]) => `<option value="${k}"${k === psort ? ' selected' : ''}>${esc(l)}</option>`).join('');
-  $('pq').placeholder = t('search'); $('phint').textContent = t('phint'); $('pcopy').textContent = t('pcopy')(changedIds().length);
+  $('pq').placeholder = t('search'); $('phint').textContent = t('phint'); pbtn();
   $('whys').innerHTML = t('whys').map(w => `<option value="${esc(w)}">`).join('');
   planList();
 }
 function planList() {
   const look = lookOf;
   const list = screenOrder(D.screens).filter(s => (!pboard || s.board_id === pboard)
-    && (!pst || (pst === 'look' ? look(s) : pst === 'inc' ? !exOf(s) && s.status !== 'no-route' : pst === 'ex' ? !!exOf(s) : isChanged(s)))
+    && (!pst || (pst === 'look' ? look(s) : pst === 'dec' ? flaggedOf(s) && !look(s) : pst === 'inc' ? !exOf(s) && s.status !== 'no-route' : pst === 'ex' ? !!exOf(s) : isChanged(s)))
     && (!pq || `${s.name} ${s.board} ${s.id} ${s.route?.case ?? ''}`.toLowerCase().includes(pq)));
   $('pcount').textContent = t('shown')(list.length, D.screens.length);
-  const dc = (id, x, why, board) => `<div class="dc" data-k="${esc(id)}"><button type="button" data-x="0" aria-pressed="${!x}">${esc(board ? t('includeBoard') : t('include'))}</button><button type="button" data-x="1" aria-pressed="${x}">${esc(board ? t('excludeBoard') : t('exclude'))}</button>
+  const dc = (id, x, why, board, open) => `<div class="dc" data-k="${esc(id)}"><button type="button" data-x="0" aria-pressed="${!open && !x}">${esc(board ? t('includeBoard') : t('include'))}</button><button type="button" data-x="1" aria-pressed="${x}">${esc(board ? t('excludeBoard') : t('exclude'))}</button>
     ${x ? `<input type="text" list="whys" required placeholder="${esc(t('why'))}" value="${esc(why)}">` : ''}</div>`;
   const groups = boardOrder().filter(b => list.some(s => s.board_id === b.id));
   $('pl').innerHTML = groups.length ? groups.map(b => { const bx = now(b.id);
     return `<section class="pb"><div class="pbh"><h3>${esc(b.name)}</h3><span class="more">${list.filter(s => s.board_id === b.id).length} / ${D.screens.filter(s => s.board_id === b.id).length}</span>${dc(b.id, bx.x, bx.why, true)}</div>
     ${list.filter(s => s.board_id === b.id).map(s => { const e = exOf(s), own = now(s.id), r = s.route;
       const route = r && r.how === 'figma' ? `<b>${esc(t('dpath'))}</b> ${esc(r.action)}` : r ? `<b>${esc(r.case)}</b> · ${esc(t('fit')[r.fit] ?? r.fit)}${r.edge ? ` · ${esc(t('via'))} ${esc(r.edge)}` : ''}` : esc(s.why);
-      return `<div class="pr${e ? ' x' : look(s) ? ' flag' : ''}${isChanged(s) ? ' chg' : ''}" data-id="${esc(s.id)}">
+      const todo = look(s), reasons = [...s.flags, ...(s.status === 'no-route' ? ['noroute'] : []), ...(D.review?.fresh.includes(s.id) ? ['fresh'] : [])];
+      return `<div class="pr${e ? ' x' : todo ? ' todo' : flaggedOf(s) ? ' flag' : ''}${isChanged(s) ? ' chg' : ''}" data-id="${esc(s.id)}">
         <button type="button" class="tn" data-open aria-label="${esc(s.name)}">${fig(s.figma)}</button>
         <div><button type="button" class="nm" data-open>${esc(s.name)}</button><div class="id">${esc(s.id)} · ${Math.round(s.w)}×${Math.round(s.h)}</div></div>
         <div class="rt">${route}<div>${s.flags.map(f => `<span class="fl" title="${esc(t('flagT')[f])}">${esc(t('flagN')[f])}</span>`).join('')}${D.review?.fresh.includes(s.id) ? `<span class="fl">${esc(t('newFlag'))}</span>` : ''}</div></div>
-        ${e?.by === 'board' ? `<div class="byb">${esc(t('byBoard')(e.why))}</div>` : dc(s.id, own.x, own.why)}</div>`; }).join('')}</section>`; }).join('') : `<p class="empty">${esc(t('none'))}</p>`;
+        ${e?.by === 'board' ? `<div class="byb">${esc(t('byBoard')(e.why))}</div>` : dc(s.id, own.x, own.why, false, todo)}
+        ${flaggedOf(s) && !e ? `<div class="ask">${todo ? `<b>${esc(t('yourCall'))}</b> ` : ''}${reasons.map(f => esc(t('ask')[f] ?? '')).join(' ')}</div>` : ''}</div>`; }).join('')}</section>`; }).join('') : `<p class="empty">${esc(t('none'))}</p>`;
   $('pl').querySelectorAll('[data-open]').forEach(b => b.onclick = () => { location.hash = `screen=${encodeURIComponent(b.closest('.pr').dataset.id)}`; });
   $('pl').querySelectorAll('.dc').forEach(d => { const k = d.dataset.k;
     d.querySelectorAll('button').forEach(b => b.onclick = () => { const x = b.dataset.x === '1';
-      SC[k] = { x, why: x ? (now(k).why || '') : '' }; if (SC[k].x === was(k).x && SC[k].why === was(k).why) delete SC[k]; saveSc(); keepScroll(planView);
+      const fl = D.screens.some(s => s.id === k && flaggedOf(s));
+      SC[k] = { x, why: x ? (now(k).why || '') : '', ...(fl ? { d: 1 } : {}) }; if (!fl && SC[k].x === was(k).x && SC[k].why === was(k).why) delete SC[k]; saveSc(); keepScroll(planView);
       if (x) $('pl').querySelector(`.dc[data-k="${CSS.escape(k)}"] input`)?.focus(); });
-    d.querySelector('input')?.addEventListener('change', e => { SC[k] = { x: true, why: e.target.value }; if (SC[k].why === was(k).why && was(k).x) delete SC[k]; saveSc(); keepScroll(planView); }); });
+    d.querySelector('input')?.addEventListener('change', e => { SC[k] = { ...SC[k], x: true, why: e.target.value }; if (!SC[k].d && SC[k].why === was(k).why && was(k).x) delete SC[k]; saveSc(); keepScroll(planView); }); });
 }
+// Time and plan usage of the design check (design-page.ts usageData): the Progress page's table, one row per run with
+// design work, and under a casebook run the run its captures rode on (the same figure as Progress). Served live, the
+// page fetches usage.json every 10 s and redraws only this table, so open comparisons and unsaved decisions stay put.
+const tx = (en, zh) => L === 'zh' ? zh : en;
+const hm = ms => `${Math.floor(ms / 3600000)}h ${String(Math.round(ms / 60000) % 60).padStart(2, '0')}m`;
+const tok = n => n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}k` : String(n);
+const tokAll = u => u.input + u.cacheWrite + u.cacheRead + u.output;
+const num = n => n.toLocaleString('en-US');
+const tokTitle = u => tx(`${u.messages} msgs · input ${num(u.input)} · cache write ${num(u.cacheWrite)} · cache read ${num(u.cacheRead)} · output ${num(u.output)}`,
+  `${u.messages} 則訊息 · 輸入 ${num(u.input)} · 快取寫入 ${num(u.cacheWrite)} · 快取讀取 ${num(u.cacheRead)} · 輸出 ${num(u.output)}`);
+const fmtP = v => v < 9.95 ? `${v.toFixed(1)}%` : `${Math.round(v)}%`;
+const pct = (v, approx, none) => v == null ? `<span class="none">${none}</span>` : `${approx ? '≈' : ''}${Math.round(v)}%`;
+const utc = s => esc(String(s).slice(5, 16).replace('T', ' '));
+const seatLabel = s => !s ? '' : (s.seats?.length ? s.seats.map(m => m === 1 ? 'Pro 1×' : `${m}× Pro`).join(' + ') : tx('seat unknown', '席位不明')) + (s.readings ? '' : `, ${tx('no readings', '無讀數')}`);
+const seatEq = (v, s) => { const m = s?.seats?.length === 1 && s.seats[0] !== 1 ? s.seats[0] : null; return m && v != null ? `<span class="eq">${tx(`= ${fmtP(v / m)} of ${m}× seat`, `= ${m}× 席位的 ${fmtP(v / m)}`)}</span>` : ''; };
+function renderUsage() {
+  const U = D.usage, el = $('usage');
+  if (!U) { el.hidden = true; return; }
+  el.hidden = false;
+  const runs = U.runs, ps = runs.filter(r => r.design), live = runs.some(r => r.live || (r.run && r.runLive)), C = U.calibration;
+  const estCells = (s, eq = true) => `<td class="n est">${s.est5 == null ? `<span class="none">${s.noTokens ? tx('no token data yet', '尚無 token 資料') : tx('no calibration', '未校準')}</span>` : fmtP(s.est5) + (eq ? seatEq(s.est5, s) : '')}</td><td class="n est">${s.estW == null ? '<span class="none">—</span>' : '~' + fmtP(s.estW) + (eq ? seatEq(s.estW, s) : '')}</td>`;
+  const acctCells = (h5, wk, approx) => `<td class="n acct">${pct(h5, approx, '—')}</td><td class="n acct">${pct(wk, approx, '—')}</td>`;
+  const gaps = n => tx(`${n} gap${n > 1 ? 's' : ''}`, `${n} 段閒置`);
+  const row = (label, seat, s, cls = '') => `<tr class="${cls}"><td>${label}</td><td>${esc(seat.split(', ')[0])}${seat.includes(', ') ? `<span class="eq">${esc(seat.split(', ').slice(1).join(', '))}</span>` : ''}</td><td class="n">${hm(s.wall)}</td><td class="n">${hm(s.test)}</td><td class="n">${hm(s.idle)}${s.gaps ? `<span class="eq">${gaps(s.gaps)}</span>` : ''}</td><td class="n" title="${esc(tokTitle(s.tokens))}">${tok(tokAll(s.tokens))}${s.wt != null ? `<span class="eq">${tx('wtd', '加權')} ${tok(s.wt)}</span>` : ''}</td>`;
+  const full = (label, s, cls = '', eq = true) => row(label, cls === 'sub' ? '' : seatLabel(s), s, cls) + estCells(s, eq) + acctCells(s.fiveHour, s.weekly, s.approx) + '</tr>';
+  const kind = r => r.kind === 'pass' ? tx('design pass', '設計比對專跑') : tx(`casebook run${r.phase ? ` ${r.phase}` : ''}`, `測試表執行${r.phase ? ` ${r.phase}` : ''}`);
+  const caps = r => r.auto || r.hand ? tx(` · captures: ${r.auto} automatic, ${r.hand} by hand`, ` · 擷取：自動 ${r.auto}、手動 ${r.hand}`) : '';
+  const dot = on => on ? ' <span class="live"><i></i></span>' : '';
+  const body = runs.map(r => (r.design ? full(`<b>${esc(r.id)}</b>${dot(r.live)}<span class="eq">${esc(kind(r) + caps(r))}</span><span class="eq">${utc(r.design.from)} → ${utc(r.design.to)} UTC</span>`, r.design)
+      : `<tr><td><b>${esc(r.id)}</b><span class="eq">${esc(kind(r) + caps(r))}</span></td><td colspan="9" class="none">${tx('no design work timed yet', '尚未記錄設計比對的作業時間')}</td></tr>`)
+    + (r.run ? full(`${tx('Run the captures rode on (same as Progress, not added)', '擷取圖附帶的這次執行（與「進度」頁相同，不相加）')}${dot(r.runLive)}<span class="eq">${utc(r.run.from)} → ${utc(r.run.to)} UTC · ${esc(seatLabel(r.run))}</span>`, r.run, 'sub', false) : '')).join('');
+  const sum = k => ps.some(p => p.design[k] != null) ? ps.reduce((a, p) => a + (p.design[k] ?? 0), 0) : null;
+  const z = { wall: 0, test: 0, idle: 0, gaps: 0, tokens: { input: 0, cacheWrite: 0, cacheRead: 0, output: 0, messages: 0 } };
+  for (const p of ps) { for (const k of ['wall', 'test', 'idle', 'gaps']) z[k] += p.design[k]; for (const k in z.tokens) z.tokens[k] += p.design.tokens[k]; }
+  const outside = U.outside5 || U.outsideW ? `<tr><td>${tx('Outside the design check', '設計比對以外')}</td><td></td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n est">—</td><td class="n est">—</td>${acctCells(U.outside5, U.outsideW, U.approx)}</tr>` : '';
+  const total = ps.length > 1 ? row(tx('Design check total', '設計比對合計'), '', { ...z, wt: sum('wt') }, 'tot round') + estCells(ps.every(p => p.design.noTokens) ? { est5: null, estW: null, noTokens: true } : { est5: sum('est5'), estW: sum('estW') }) + acctCells(sum('fiveHour'), sum('weekly'), ps.some(p => p.design.approx)) + '</tr>' : '';
+  const acctTitle = tx("Snapshot increments during the design check's active time, including other users of the account", '設計比對期間帳號用量快照的增加量，包含帳號的其他使用者');
+  const head = `<thead><tr><th rowspan="2">${tx('Run', '執行')}</th><th rowspan="2">${tx('Account', '帳號')}</th><th class="n" rowspan="2">${tx('Wall', '總時長')}</th><th class="n" rowspan="2">${tx('Test', '測試')}</th><th class="n" rowspan="2">${tx('Idle &gt;15 min', '閒置 &gt;15 分')}</th><th class="n" rowspan="2">${tx('Claude tokens', 'Claude token')}</th><th class="grp" colspan="2">${tx('Est. from token rate, % of 1× Pro', '依 token 率估計（1× Pro 的 %）')}</th><th class="grp acct" colspan="2">${tx('Account total (shared), % of 1× Pro', '帳號合計（共用，1× Pro 的 %）')}</th></tr>
+    <tr><th class="n">${tx('5-hour', '5 小時')}</th><th class="n">${tx('Weekly (rough)', '每週（粗估）')}</th><th class="n acct" title="${acctTitle}">${tx('5-hour', '5 小時')}</th><th class="n acct" title="${acctTitle}">${tx('Weekly', '每週')}</th></tr></thead>`;
+  const rateStr = C && C.rate != null ? (C.rate * 1e6).toFixed(2) : '?', w = U.weights;
+  const notes = [
+    tx(`<span><b>Same figures as Progress.</b> A design row is the Claude messages of the sessions that name the run folder, inside the design check's active time: <code>design/activity.log</code> (every design.ts command on the run) and its result files; a design pass on its own also counts its captures and taps. Tokens come from the run folder's <code>tokens.jsonl</code> like Progress. Automatic captures in a casebook run cost no call of their own; that run's own row under it is the Progress figure and is not added to the total.</span>`,
+      `<span><b>與「進度」頁相同的算法。</b>設計比對列 = 提到該執行資料夾的工作階段中、落在設計比對作業時間內的 Claude 訊息：<code>design/activity.log</code>（每個在該執行上的 design.ts 指令）與結果檔；設計比對專跑另含擷取與點擊。token 與「進度」頁一樣取自該資料夾的 <code>tokens.jsonl</code>。測試表執行中的自動擷取不另外花費呼叫；其下方的執行列即「進度」頁的數字，不計入合計。</span>`),
+    C ? tx(`<span><b>Est. from token rate.</b> ${esc(C.source || C.basis)} = ${C.fiveHourPct * (C.seat || 1)}% of a 1× Pro 5-hour window for ${esc(C.basis)}'s ${tok(C.basisWt)} weighted tokens: ${rateStr}% per million weighted tokens (weights: input ${w.input}, cache write ${w.cacheWrite}, cache read ${w.cacheRead}, output ${w.output}); weekly × ${C.weekRatio != null ? C.weekRatio.toFixed(3) : '?'}. "= N% of an N× seat" divides by the seat size the row ran on.</span>`,
+      `<span><b>依 token 率估計。</b>${esc(C.source || C.basis)} = ${esc(C.basis)} 的 ${tok(C.basisWt)} 加權 token 用掉 1× Pro 5 小時額度的 ${C.fiveHourPct * (C.seat || 1)}%：每百萬加權 token ${rateStr}%（權重：輸入 ${w.input}、快取寫入 ${w.cacheWrite}、快取讀取 ${w.cacheRead}、輸出 ${w.output}）；每週 × ${C.weekRatio != null ? C.weekRatio.toFixed(3) : '?'}。「= N× 席位的 N%」是再除以該列所用帳號的席位大小。</span>`)
+      : tx('<span><b>No calibration</b> (<code>runs/usage-calibration.json</code>): tokens only.</span>', '<span><b>尚未校準</b>（<code>runs/usage-calibration.json</code>）：只顯示 token。</span>'),
+    tx(`<span><b>Account total (shared) is muted on purpose:</b> the account's snapshot increments (<code>runs/usage.jsonl</code>, ${U.snapshots} readings) during the active time, split between rows by weighted tokens; other users of the account are in it too.</span>`,
+      `<span><b>帳號合計（共用）刻意淡化顯示：</b>作業期間帳號用量快照（<code>runs/usage.jsonl</code>，${U.snapshots} 筆讀數）的增加量，依加權 token 分給各列；帳號其他使用者的用量也在其中。</span>`),
+  ];
+  el.innerHTML = `<h2 id="usage-h">${tx('Time and plan usage · design check', '時間與方案用量 · 設計比對')}${live ? `<span class="live"><i></i>${tx('live', '即時')}</span>` : ''}</h2>`
+    + `<div class="tbl"><table>${head}<tbody>${runs.length ? body + outside + total : `<tr><td colspan="10" class="none">${tx('No design work recorded yet: the figures start with the first capture or design.ts command on a run folder.', '尚未記錄設計比對的工作：數字從執行資料夾的第一張擷取圖或第一個 design.ts 指令開始。')}</td></tr>`}</tbody></table></div>`
+    + `<details class="how"${usageHow ? ' open' : ''}><summary>${tx('How these figures are computed', '這些數字怎麼算')}</summary><div class="notes">${notes.join('')}</div></details>`;
+  el.querySelector('details.how').addEventListener('toggle', e => { usageHow = e.target.open; });
+}
+let usageHow = false;
+if (D.live) setInterval(async () => { try { const r = await fetch('usage.json', { cache: 'no-store' }); if (r.ok) { D.usage = await r.json(); renderUsage(); } } catch (e) {} }, 10000);
 function render() {
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.l === L)));
   $('eyebrow').textContent = t('eyebrow'); $('h1').textContent = t('title')(D.title); $('q').placeholder = t('search');
   if (D.missing) { $('meta').textContent = t('noPlan'); $('resv').hidden = true; return; }
+  renderUsage();
   $('views').innerHTML = ['plan', 'results'].map(v => `<button type="button" data-v="${v}" aria-pressed="${view === v}">${esc(t('views')[v])}</button>`).join('');
   $('views').querySelectorAll('button').forEach(b => b.onclick = () => { view = b.dataset.v; try { localStorage.setItem(VKEY, view); } catch (e) {} render(); });
   $('planv').hidden = view !== 'plan'; $('resv').hidden = view !== 'results';
@@ -388,9 +524,10 @@ function detail(id) {
   const main = s.items.filter(i => i.verdict !== 'info').sort((a, b) => (ORDER[a.verdict] ?? 9) - (ORDER[b.verdict] ?? 9));
   const info = s.items.filter(i => i.verdict === 'info'), shown = showInfo ? [...main, ...info] : main;
   const k = s.k ? 1 / s.k : 1, aw = s.win ? s.win.w * (s.k ?? 1) : s.w, ah = s.win ? s.win.h * (s.k ?? 1) : s.h;
-  const boxes = (side, w, h) => `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${shown.map((it, n) => {
-    const b = it[side]?.box; if (!b) return '';
-    return `<rect class="box" data-n="${n}" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}" style="stroke:${VC(it.verdict)}"/>`; }).join('')}</svg>`;
+  // smaller boxes are drawn last, so a box inside another stays clickable
+  const boxes = (side, w, h) => `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${shown.map((it, n) => [it[side]?.box, n, it]).filter(x => x[0])
+    .sort((a, c) => c[0][2] * c[0][3] - a[0][2] * a[0][3]).map(([b, n, it]) =>
+      `<rect class="box" data-n="${n}" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}" style="stroke:${VC(it.verdict)}"><title>${n + 1} · ${esc(KN[L][it.kind] ?? it.kind)}</title></rect>`).join('')}</svg>`;
   const txt = (o) => o?.text ? `<q>${esc(o.text.length > 120 ? o.text.slice(0, 120) + '…' : o.text)}</q>` : o?.color ? `<span class="sw" style="background:${esc(o.color)}"></span> ${esc(o.color)}` : o?.name ? `<code>${esc(o.name)}</code>` : '';
   const r = s.route, link = (p, h, l) => PAGES[p] ? `<a href="${PAGES[p]}#${h}">${esc(l)}</a>` : '';
   const keep = open === id && $('dlg').open ? $('dlg').scrollTop : 0;
@@ -436,9 +573,12 @@ function detail(id) {
       if (!DEC[k].v && !DEC[k].ebug) delete DEC[k]; saveDec(); detail(id); });
     d.querySelector('[data-e]')?.addEventListener('change', e => { DEC[k] = { ...(DEC[k] ?? {}), ebug: e.target.checked || undefined }; if (!DEC[k].v && !DEC[k].ebug) delete DEC[k]; saveDec(); });
   });
-  // hovering a difference highlights its boxes on both images
-  $('dlg').querySelectorAll('.it').forEach(e => { const hl = on => $('dlg').querySelectorAll(`rect[data-n="${e.dataset.n}"]`).forEach(r => r.classList.toggle('hl', on));
-    e.onmouseenter = () => hl(true); e.onmouseleave = () => hl(false); });
+  // hovering a difference highlights its boxes on both images, and hovering a box its difference; clicking a box scrolls to it
+  const hl = (n, on) => $('dlg').querySelectorAll(`rect[data-n="${n}"], .it[data-n="${n}"]`).forEach(r => r.classList.toggle('hl', on));
+  $('dlg').querySelectorAll('.it').forEach(e => { e.onmouseenter = () => hl(e.dataset.n, true); e.onmouseleave = () => hl(e.dataset.n, false); });
+  $('dlg').querySelectorAll('rect.box').forEach(r => { const n = r.dataset.n;
+    r.onmouseenter = () => hl(n, true); r.onmouseleave = () => hl(n, false);
+    r.onclick = () => $('dlg').querySelector(`.it[data-n="${n}"]`)?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
   if (!$('dlg').open) $('dlg').showModal();
   $('dlg').scrollTop = keep;
 }
