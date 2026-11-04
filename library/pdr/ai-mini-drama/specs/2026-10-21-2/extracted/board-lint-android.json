@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-11-04T01:58:15.378Z",
+  "feature": "pdr/ai-mini-drama",
+  "platform": "android",
+  "set": "specs/2026-10-21-2",
+  "warnings": [
+    {
+      "id": "MX|note-moved|ds-mx-link@5140,33846",
+      "board": "MX",
+      "kind": "note-moved",
+      "text": "spec note 「Chats 次數用完」 is drawn at -13964,29151; its text is at -13547,29153",
+      "reqs": [
+        "R-102",
+        "R-103"
+      ]
+    },
+    {
+      "id": "MX|note-moved|ds-mx-link@3589,33865",
+      "board": "MX",
+      "kind": "note-moved",
+      "text": "spec note 「Credit 不夠的情況」 is drawn at -15515,29170; its text is at -15164,29172",
+      "reqs": [
+        "R-101"
+      ]
+    },
+    {
+      "id": "pm-update-11|no-arrow|board",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "no-arrow",
+      "text": "2 screens and no flow arrow read, but the text describes a step: 「10/21 update —角色結果頁按X：跳確認、不存進 Mine（DRI261896P0037）」"
+    },
+    {
+      "id": "pm-1022-export|no-arrow|board",
+      "board": "pm-1022-export",
+      "kind": "no-arrow",
+      "text": "2 screens and no flow arrow read, but the text describes a step: 「回跳 dialog （Stop exporting? / Your video won't be s」"
+    },
+    {
+      "id": "pm-update-4|no-arrow|board",
+      "board": "pm-update-4",
+      "title": "PM · Update board 4",
+      "kind": "no-arrow",
+      "text": "6 screens and no flow arrow read, but the text describes a step: 「只是打開任務，就跳到 History 最上面、大小也變了」"
+    },
+    {
+      "id": "pm-1002-update|note-moved|pm-1002-update@18354,15170",
+      "board": "pm-1002-update",
+      "title": "PM · 1002 update",
+      "kind": "note-moved",
+      "text": "spec note 「⑦ §13.7 錯誤文案 (?) / E1 •Chat：部分影片失敗 紅字+ E」 is drawn at 34092,4053; its text is at 34076,4160",
+      "reqs": [
+        "R-080",
+        "R-278"
+      ]
+    }
+  ],
+  "skipped": []
+}

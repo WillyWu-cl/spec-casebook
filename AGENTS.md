@@ -83,6 +83,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only (never PM or MX):
   one `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
   per-instance MCP reads (`figma/references/source.md`).
+- **What is drawn over a board (user, 2026-11-04, REQ-078).** Arrows, connectors and notes drawn over a Figma board
+  are part of it: reads, the change check and board images include them, and a changed board's words are compared
+  with its spec notes (`figma-text.ts`) so its rows follow the redraw; `board-lint.ts` (REQ-079) checks every mark
+  against the board's screenshot text (`reading-the-spec.md` step 10).
 - **Design check on the casebook's flows (user, 2026-11-03).** Whether the app matches the Design is the `figma`
   skill's conformance branch (`scripts/design.ts`): the rows that already reach each Design screen are its navigation
   (else the Design's own arrows), captures ride on casebook runs, two independent review passes settle the findings,

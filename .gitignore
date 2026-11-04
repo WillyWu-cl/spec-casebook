@@ -42,6 +42,8 @@ library/*/*/specs/*/extracted/boards/*/
 library/*/*/specs/*/extracted/figma/*
 !library/*/*/specs/*/extracted/figma/*.png
 !library/*/*/specs/*/extracted/figma/shots.json
+# board-lint.ts OCR of those screenshots (user, 2026-11-04): about 3 minutes per feature on first read, so shared too
+!library/*/*/specs/*/extracted/figma/ocr/
 # figma-source reads (scripts/figma-source.ts): the use_figma returns and board fingerprints are shared so no one reads
 # an unchanged board again; the rendered calls and the expanded output (and the full-size screenshots) stay local
 !library/*/*/specs/*/extracted/figma-source/

@@ -312,7 +312,11 @@ const arrows = inv.arrows.filter((a: any) => !a.duplicate_of && a.kind !== 'poin
 // so no board is left blank. A block traced to requirements takes the state of their rows; label / ui / older / Q-n
 // blocks are excluded with their reason; an untraced block is missing. Block positions are PDF points of its board's
 // PDF (boards.json), placed on the Figma board holding them (pdf point = figma point + offset) or on the region board.
-const tracePathA = join(draftId ? src : join(draftsDir(feature, platform), manifest!.draft ?? ''), 'annotation-trace.json');
+// A direct edit of the approved table (review page Save, "edit-…") has no draft folder: use the newest version's draft
+// that has a trace, so an edit does not show every note as missing.
+const traceOf = (d?: string) => join(draftsDir(feature, platform), d ?? '', 'annotation-trace.json');
+const tracePathA = draftId ? join(src, 'annotation-trace.json')
+  : [manifest!.draft, ...[...(manifest!.history ?? [])].reverse().map(h => h.draft)].map(traceOf).find(p => existsSync(p)) ?? traceOf(manifest!.draft);
 const blocks: any[] = existsSync(tracePathA) ? JSON.parse(readFileSync(tracePathA, 'utf8')).blocks : [];
 // a linked table's items (extracted/links.json) the draft has not traced yet are shown missing, never left off
 // and every linked item carries its short label and place in the list (link_i), which the page draws as a table

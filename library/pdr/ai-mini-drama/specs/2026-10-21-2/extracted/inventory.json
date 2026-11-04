@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-29T06:13:04.714Z",
+  "built_at": "2026-11-04T01:55:20.102Z",
   "groups": [
     "figma-inventory-d1.json",
     "figma-inventory-d2.json",
@@ -2821,18 +2821,7 @@
     {"id":"M-31ecfc","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-9-b","name":"manual/tab","label":"AI Issues","kind":"tab","box":[91,100,73,30],"screens":["4012:23497"],"node":"","parent":null,"group":"C-8df2c9","platforms":["android","ios"],"set":true},
     {"id":"M-66eacb","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-9-b","name":"manual/tab","label":"Order Problems","kind":"tab","box":[173,100,115,30],"screens":["4012:23497"],"node":"","parent":null,"group":"C-8df2c9","platforms":["android","ios"],"set":true},
     {"id":"M-c10e4f","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-9-b","name":"manual/button","label":"Privacy Policy","kind":"button","box":[191,752,80,18],"screens":["4012:23497"],"node":"","parent":null,"group":"K-d285ee","platforms":["android","ios"],"set":false},
-    {"id":"M-62035f","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Female","kind":"item","box":[25,431,69,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-e3f3d1","platforms":["android","ios"],"set":true},
-    {"id":"M-808427","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Male","kind":"item","box":[101,431,60,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-e3f3d1","platforms":["android","ios"],"set":true},
-    {"id":"M-a92eee","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Asian","kind":"item","box":[25,501,60,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-22cce6","platforms":["android","ios"],"set":true},
-    {"id":"M-b26dae","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Caucasian","kind":"item","box":[93,501,87,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-22cce6","platforms":["android","ios"],"set":true},
-    {"id":"M-43765a","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"African","kind":"item","box":[189,501,66,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-22cce6","platforms":["android","ios"],"set":true},
-    {"id":"M-2cdfc2","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Hispanic","kind":"item","box":[265,501,83,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-22cce6","platforms":["android","ios"],"set":true},
-    {"id":"M-910f8f","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Others","kind":"item","box":[25,537,65,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-22cce6","platforms":["android","ios"],"set":true},
-    {"id":"M-082d29","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Others","kind":"item","box":[99,537,65,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-22cce6","platforms":["android","ios"],"set":true},
-    {"id":"M-5a1a0c","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Others","kind":"item","box":[173,537,65,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-22cce6","platforms":["android","ios"],"set":true},
-    {"id":"M-c6b0c2","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/item","label":"Others","kind":"item","box":[247,537,66,28],"screens":["4325:27005"],"node":"","parent":null,"group":"C-22cce6","platforms":["android","ios"],"set":true},
     {"id":"M-94c099","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/input","label":"Age","kind":"input","box":[25,607,55,36],"screens":["4325:27005"],"node":"","parent":null,"group":"K-7ad090","platforms":["android","ios"],"set":false},
-    {"id":"M-6dd274","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-update-11","name":"manual/button","label":"Discard","kind":"button","box":[41,720,295,43],"screens":["4325:27005"],"node":"","parent":null,"group":"K-549562","platforms":["android","ios"],"set":false},
     {"id":"M-25cbf4","file":"44RyrcOcWi2MvhGci9bO5F","board":"pm-1022-leave","name":"manual/button","label":"Leave anyway","kind":"button","box":[188,454,135,46],"screens":["4422:65","4456:79"],"node":"","parent":null,"group":"K-150aaa","platforms":["android","ios"],"set":false}
   ],
   "arrows": [

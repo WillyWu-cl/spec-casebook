@@ -76,8 +76,15 @@ that showed it). No comparison runs during an analysis or before a proposal.
    Also ask whether new PDF exports arrived since the newest spec set (a PDF cannot be checked from here).
    - `FIGMA: CHANGED`: run the printed `reread-<group>.js` calls (one per changed group, saved over
      `figma-inventory-<group>.json`), add each new board to a group (or `--ack` it when it is not spec), re-capture the
-     listed screenshots, then `inventory.ts --sync-arrows` and `figma-check.ts` again (it takes the new hashes from
-     the re-read groups). Go on to step 3 (changed spec → update plan, draft, `check.ts`) and step 4 (review).
+     listed screenshots (a board with something drawn over it is cut from its holder's shot to the printed box), then
+     `inventory.ts --sync-arrows` and `figma-check.ts` again (it takes the new hashes from the re-read groups). A
+     board also counts as changed when what is drawn over it changed or an arrow over it is missing from its read
+     (user, 2026-11-04). Then `node scripts/figma-text.ts <feature>`: what each changed board now says against the
+     spec notes, with the requirements that hold each new or gone line. Every line it lists goes into the update plan
+     (requirement changed, row modified or retired); once the draft is approved run it with `--accept`. Then
+     `node scripts/board-lint.ts <feature> <platform>` for the marks the redraw left stale (`reading-the-spec.md`
+     step 10, *Board warnings*). Go on to step
+     3 (changed spec → update plan, draft, `check.ts`) and step 4 (review).
    - `FIGMA: UNCHANGED` and no new PDFs: the approved table stands; skip to the run.
    - **A spec set with `extracted/figma-pending.json`** (analysed PDF-only) on a machine where both `whoami` are
      right: tell the user the Figma reads it owes and, on their yes, do them (*No Figma access* › *Catching up*)
