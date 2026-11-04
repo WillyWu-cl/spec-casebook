@@ -183,6 +183,15 @@ for the comparison, on an approved table or a draft.
    (pass 7), `not from the spec`, `not covered`) and save it next to the old one.
 3. Build the comparison page `comparisons/<date>_casebook-vs-spec-agent.html`: coverage counts both ways, the cases
    only the casebook has, and every spec agent case it does not cover with the reason. Publish it when the user asks.
+   **Format (user, 2026-11-04):** the design of `library/pdr/ai-mini-drama/ios/comparisons/20261027_casebook-vs-spec-agent.html`
+   (copy its styles): one short column in 繁體中文 and English with a toggle (中文 first); the answer first (one
+   paragraph and three tiles: spec agent cases in the casebook, casebook cases in the spec agent, the one number that
+   matters most), then one status bar with its legend, what each side is based on (spec agent / casebook side by side),
+   where the rules differ, *Only the casebook checks*, *Covered is not the same as tested*, *Next*, and the long lists
+   collapsed at the end with a sources line. By default the page compares the current table as a fresh comparison,
+   with no version history (user, 2026-11-04: 「ignore the v1 v2」); a step line per table version, *What changed since*
+   and the new rows against the spec agent are added only when the user asks how coverage moved. Never stack a summary
+   over an older page's lists (2026-11-04: Video Enhance's 「after the rerun」 page still listed the 50 old gaps).
 4. The report only describes; it adds no rows. Changes to the table come from the analysis (*What this repo is for*)
    or from a request in the ledger.
 
