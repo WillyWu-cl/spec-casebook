@@ -104,3 +104,6 @@ library/*/*/knowledge/sources/*/extracted/*
 # automatic design captures (lib/design-watch.ts): the watch armed by `case ID` and its Figma text cache
 library/*/*/*/runs/*/.design-watch.json
 library/*/*/*/runs/*/.design-texts.json
+
+# Local dev-server configs the desktop app writes per machine (preview_start), not shared
+.claude/launch.json
