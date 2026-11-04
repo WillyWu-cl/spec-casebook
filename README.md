@@ -43,6 +43,7 @@ can read without the spec, not contract catalogs and claim files.
 - [Scripts](#scripts)
 - [What is not committed](#what-is-not-committed)
 - [Contributing](#contributing)
+  - [Before you push or open a PR](#before-you-push-or-open-a-pr)
 - [Further reading](#further-reading)
 
 ---
@@ -686,6 +687,7 @@ All scripts run from the repository root with `node scripts/<name>.ts`. In the u
 | `annotations.ts <feature> <platform> --draft <id>` | Groups every board's annotations into blocks to trace to requirements (`annotation-trace.json`) |
 | `spec-agent-gaps.ts <feature> <platform> --draft <id>` | Comparison report data (on request): spec agent cases the table doesn't cover, with their source, from the snapshot in `library/<product>/<feature>/spec-agent/` (`--refresh` updates it from a local spec agent clone, read with git only) |
 | `check.ts <feature> <platform> [--draft <id>]` | Validates a table or draft, incl. arrows, controls, ledger, annotation trace and grids |
+| `pr-check.ts [--base origin/main] [--no-fetch]` | Checks a branch before a push or PR: conflicts with main, git-ignored or large files, credentials, table versions and request IDs main already used, library layout |
 | `sync-skills.ts [--check]` | Copies `.claude/skills/` to `.codex/skills/` (or only lists differences) |
 | `figma/inventory.js` | Figma plugin script the agent runs through Figma MCP (`use_figma`), one call per board group: screens, dialogs, controls, flow arrows |
 | `inventory.ts <feature> <spec-set> [--sync-arrows]` | Merges the Figma inventory, groups the controls, applies the review overrides; `--sync-arrows` adds missed arrows to `arrows.json` |
@@ -711,7 +713,7 @@ All scripts run from the repository root with `node scripts/<name>.ts`. In the u
 | `ebug-defaults.ts <feature> <platform>` | Filing defaults (creator, TR, source tag) from the newest filed batch |
 
 `npm run <name>` shortcuts exist for the common ones (`status`, `check`, `review`, `export`, `fingerprint`,
-`add-spec`, `new-draft`, `spec-boards`, `render-tiles`, `render-region`, `ebug-defaults`, `coverage`), and `npm test`
+`add-spec`, `new-draft`, `spec-boards`, `render-tiles`, `render-region`, `ebug-defaults`, `coverage`, `pr-check`), and `npm test`
 runs the tests in `scripts/test/`.
 
 ## What is not committed
@@ -721,8 +723,8 @@ runs the tests in `scripts/test/`.
 - **Spec originals** (the large PDFs) and rendered board tiles. Each spec set's `spec-set.json` (names, sizes,
   SHA-256), the extracted text and the notes are committed.
 - **All images and videos**: run screenshots (with the on-screen text dumps saved next to them), eBug attachments and
-  renders. Results, reports and eBug drafts keep the file names that point at them. The eBug review pages are
-  committed with their images embedded.
+  renders. Results, reports and eBug drafts keep the file names that point at them. The eBug review pages embed
+  every screenshot and stay local too.
 - **Coverage and review images**: `coverage.html` (it embeds the board renders), the board renders in
   `extracted/coverage/` and the review sheets in `extracted/inventory-sheets/`. The board screenshots in
   `extracted/figma/` (listed in `shots.json`) are the exception: committed, so no one spends Figma quota on them
@@ -744,6 +746,50 @@ runs the tests in `scripts/test/`.
 - Never edit an approved `cases.csv` by hand without a request; go through a draft and the review page.
 - Keep spec files only under `library/<product>/<feature>/specs/`.
 - Before committing, check staged files for credentials and images.
+
+### Before you push or open a PR
+
+Run this on your branch; it must end with `Ready to push`:
+
+```bash
+node scripts/pr-check.ts
+```
+
+It fetches `origin/main` and blocks the push on everything below. When it flags something, fix it on your branch
+(rebase, then push again with `git push --force-with-lease`; it updates an open PR) or close the PR and open a new
+one from a fresh branch.
+
+**Never push:**
+
+- **Anything `.gitignore` keeps local**, even with `git add -f`: images and videos (other than the shared Figma board
+  shots and 750 px design captures), spec originals (PDFs, Figma exports), knowledge source originals, pulled app
+  logs and `full_logs/`, Appium session files, eBug review pages, evidence ZIPs, `coverage.html`, `.claude/launch.json`.
+- **Credentials**: passwords, API keys, tokens (GitHub, Figma, Anthropic, AWS), private keys, account cookies. Phone
+  and account setup goes in `fixtures.md` as instructions, never as the secret itself.
+- **Files over 5 MB.** Summarise them or keep them local.
+- **Exports from other tools copied in whole**, such as another repo's source index, a knowledge base or a spec
+  agent's case list. Knowledge goes in through the `domain-knowledge` skill (entries plus `source.json` and extracted
+  text); other tools' cases are never copied into a table (AGENTS.md › What the repo is for).
+- **Folders outside the layout**: features live in `library/<product>/<feature>/` (with `ios/`, `android/`,
+  `specs/`), product facts in `library/<product>/knowledge/`, CyberLink-wide facts in `library/knowledge/`. Nothing
+  else goes under `library/` (no `domain/`, `notes/` or per-person folders).
+- **An approved table edited by hand**: `cases.csv` changes only together with its `manifest.json`, through the review
+  page's Save.
+
+**Before you push, bring your branch up to date with main**, because two people often touch the same feature:
+
+- **Rebase on `origin/main`** (`git fetch origin && git rebase origin/main`) and resolve every conflict. For generated
+  files (`cases.html`, `cases.xlsx`, `control-trace.json`, `inventory.json`), take main's copy and rebuild them with the
+  script that writes them (`export.ts`, `controls.ts`, `inventory.ts`); never hand-merge them.
+- **If main approved a new version of a table you also changed** (the check names it), take main's `cases.csv` and
+  `manifest.json`, apply your rows to a new draft based on it and Save it again on the review page. Your table becomes
+  the next version (main's v14 → your v15). Two branches must never both ship the same version number.
+- **Request IDs**: if main already uses your `REQ-` number in `requests.md`, renumber yours after main's last ID
+  (and every place that cites it).
+- **Shared code** (`scripts/`, `templates/`, skills): after the rebase run `npm run typecheck` and `npm test`, and
+  `node scripts/sync-skills.ts` if you changed a skill (edit `.claude/skills/` only).
+- **One topic per PR.** A table update, a script change and a knowledge import are separate PRs, so one can merge
+  while another is still being reviewed.
 
 ## Further reading
 

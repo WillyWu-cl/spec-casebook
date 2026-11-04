@@ -139,6 +139,11 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **One section per context (user, 2026-10-27).** Every run works section by section (segment, phase wrap-up, board
   group); the user's chat only orchestrates, each section in a new subagent with a self-contained brief, else a
   cleared worker session, else a new chat the user opens (`run.md`, "Keep going without asking").
+- **What never gets pushed (user, 2026-11-04).** Run `node scripts/pr-check.ts` before every push or PR and fix
+  each blocker: no git-ignored files (no `add -f`), no credentials, no file over 5 MB, no whole exports from other
+  tools, nothing under `library/` outside a feature or `knowledge/`, no hand-edited `cases.csv`. Rebase on
+  `origin/main` first; a table main approved meanwhile is re-saved as the next version, a clashing `REQ-` is
+  renumbered (README › *Before you push or open a PR*).
 - **Commit and push (user, 2026-10-27).** "Commit and push" (or "push") means push to `origin` right after the
   commit, with no second confirmation; a plain "commit" stays local.
 - **Parallel phones: investigate only.** Running segments on several phones at once is an open idea in
