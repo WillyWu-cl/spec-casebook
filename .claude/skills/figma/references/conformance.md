@@ -100,7 +100,10 @@ reviewed
 ## 2. Capture while running
 
 `node scripts/device.ts <run dir> design <screen id> [--part N] ["note"]` (Android: `device-android.ts`) saves the
-screenshot and page source of the screen on the phone and logs it with the case running.
+screenshot and page source of the screen on the phone and logs it with the case running. Both are of one moment
+(user, 2026-11-04): the source is read again after the screenshot and the pair kept only when no text moved, up to 5
+tries; a screen that never holds still is saved `unsettled` and the check flags it (`state`), so capture it again
+once still. A capture taken while a chat was still scrolling put every app box on the wrong thing.
 
 - **In a casebook run (default): automatic (user, 2026-11-04).** `device.ts <run dir> case <TC-…>` (both platforms)
   arms a watch (`scripts/lib/design-watch.ts`, local `.design-watch.json`) of the screens the row reaches and of every
@@ -143,14 +146,26 @@ window width, each half of the screen is aligned on its matched texts, and what 
 | `copy` | a Figma text whose closest app text differs (case, quotes, spacing and numbers ignored) | major (minor when one contains the other) |
 | `missing` | a Figma text with no app text near it (`sample` when over 60 characters) | major |
 | `truncated` | the app text ends in an ellipsis Figma does not have, or runs past the screen edge | major |
-| `lines` | the app text wraps into more or fewer lines | minor |
+| `lines` | the app text wraps into more or fewer lines (the app's lines counted on the screenshot) | minor |
 | `position` | a matched text more than 4 pt off after the alignment (only where 2+ anchors agree within 6 pt) | minor |
-| `colour` | a filled shape ΔE > 12 from its Figma fill, or a text ΔE > 18 from its Figma colour | minor |
+| `colour` | a filled shape (buttons, chips, cards, and badges and tags from 12 × 8 pt) ΔE > 12 from its Figma fill, or a text ΔE > 18 from its Figma colour | minor |
 | `control` | an icon control of the inventory (no label) with no tappable app element where Figma draws it | major |
 | `extra` | short app text Figma does not draw | info |
 
+A shape is found on the app by the nearest matched text's offset, then the app element of about its size there (a
+badge's own image view); a badge is sampled by its most common inner colour, not its edge (user, 2026-11-04). A
+candidate made after the passes settled (the check run again) shows as Unreviewed until they judge it.
+
 Not measured: how icons and images are drawn, font weight and size, radius, shadow, borders, spacing between non-text
 shapes. The reviewers judge those on the sheet as `visual` items.
+
+**Only this feature's part of a shared screen (user, 2026-11-04).** On a screen other features share (the Launcher),
+the controls the control trace marks `n/a: other feature: <why>` (spec-casebook `scripts/controls.ts`; a group's
+single instances in its `other` list) are left out with the area around each: the largest Figma node around it that
+holds none of this feature's controls and under 60 % of the screen (a shortcut tile with its label, a 「What's
+Trending」 section with its heading, a header of other features' buttons). Their texts, fills and icons are not
+measured, app texts in those areas or equal to their texts are not `extra`, and `compare.json` lists the areas
+(`out`), drawn dashed on the Design tab. Mark other features' controls that way when tracing a shared screen.
 
 ## 4. Two review passes, then settle
 
@@ -161,6 +176,9 @@ the Design tab's token use).
 - **Builder.** For each screen, its `compare.json` entry and its sheet: a verdict for every candidate except `extra`
   / `sample` (those only when they matter), plus `visual:<n>` items for what the measure cannot see, each with `kind`,
   `figma.box` (screen points) and a note. Writes `design/builder.json`.
+- **Notes in both languages (user, 2026-11-04).** Every note is written twice, `note` in English and `note_zh` in
+  Traditional Chinese (the same content, 「」 around quoted UI text in both); the Design tab shows the one for its
+  language switch, and the eBug drafts use the English.
 - **Reviewer.** The same inputs plus only the ids, kinds and boxes of the builder's `visual` items: judges every
   candidate and visual item afresh. Writes `design/reviewer.json`.
 - `design.ts … settle <run dir>` → `findings.json`: the same verdict on both stands; a split, or a candidate either
@@ -168,8 +186,8 @@ the Design tab's token use).
 
 ```json
 { "screens": { "3946:72100": {
-  "copy:3946:72105": { "verdict": "bug", "severity": "minor", "note": "App adds 「now」 to the format question." },
-  "visual:1": { "kind": "visual", "verdict": "bug", "severity": "cosmetic", "figma": { "box": [16, 88, 40, 40] }, "note": "Back icon is a chevron, Figma draws an arrow." } } } }
+  "copy:3946:72105": { "verdict": "bug", "severity": "minor", "note": "App adds 「now」 to the format question.", "note_zh": "App 在格式問題多加了「now」。" },
+  "visual:1": { "kind": "visual", "verdict": "bug", "severity": "cosmetic", "figma": { "box": [16, 88, 40, 40] }, "note": "Back icon is a chevron, Figma draws an arrow.", "note_zh": "返回圖示是 V 形，Figma 畫的是箭頭。" } } } }
 ```
 
 Verdicts: `bug` (the app departs from the frame), `ok` (sample content such as names, credits or generated text; a
@@ -180,10 +198,12 @@ a superseded frame is not the spec, and a conflict is a question (AGENTS.md *Des
 
 ## 5. Decisions and eBugs
 
-- The user answers on the Design tab: Bug / OK / N/A on each question or unreviewed item, an eBug tick on each bug
-  to file, then **Save decisions** (served live; opened as a file it copies the block and the agent passes it to
-  `design.ts … decide`, stdin or a file). It writes each choice into the run's `findings.json` with
-  `decided: user <date>`.
+- The user answers on the Design tab: Bug / OK / N/A on every measured item (the passes' verdict pressed), an eBug
+  tick on each bug to file (or taken off), and a reason once an item is OK or N/A, required when it overturns a bug
+  (user, 2026-11-04), then **Save decisions** (served live; opened as a file it copies the block and the agent passes
+  it to `design.ts … decide`, stdin or a file: `<run> <screen> <id>: bug|ok|n/a[: <why>]`, `…: eBug`, `…: no eBug`).
+  It writes each choice into the run's `findings.json` with `decided: user <date>` and the reason as `why`. A verdict
+  on a candidate the check no longer makes (an area left out since) is not shown, settled or drafted.
 - `design.ts … ebugs <run dir>` writes `design/ebug-findings.md`: each ticked bug with the screen, its Figma link, the
   row (or Design path) that reaches it, Figma against the app, both review notes, the build and the sheet. Draft from
   it through spec-casebook `references/ebugs.md` and the casebook overlay: `[UI]`, owner RD (Doc for copy), never
@@ -200,7 +220,8 @@ bug is `fixed` (its candidate is gone), `still` (same id: candidate ids are `<ki
 `scripts/pages.ts` (`/design/`) or `design-page.ts --serve`, with two views: **Plan** (the scope review above) and
 **Results**: one card per Design screen, coloured by status
 (**Differs**, **Question**, **Unreviewed**, **Matches**, **Not captured**, **No route**), filtered by board and kind of
-difference. A card opens Figma and the app side by side (click to open either full size; boxes can be hidden) with the
+difference. A card opens Figma and the app side by side (click either to see it full size over the page, with its
+boxes; boxes can be hidden; clicking a box or an item selects both) with the
 build, the route (row, or Design path and any gap), an arrival warning, the recheck, and every difference boxed on
 both sides with its verdict and decision buttons. Info items stay folded. Every computer that pulled the repo sees
 both images: the shared board images and the shared capture copies.

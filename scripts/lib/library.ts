@@ -79,12 +79,12 @@ export function writeJson(path: string, data: unknown) {
 // diffs line-sized; nested objects (e.g. inventory "files") stay on one line each.
 export function writeJsonRows(path: string, data: Record<string, unknown>) {
   mkdirSync(dirname(path), { recursive: true });
-  const keys = Object.keys(data);
+  const keys = Object.keys(data).filter(k => data[k] !== undefined); // as JSON.stringify: undefined keys are left out
   const body = keys.map((k, i) => {
     const v = data[k], comma = i < keys.length - 1 ? ',' : '';
     if (Array.isArray(v) && v.length) return `  ${JSON.stringify(k)}: [\n${v.map(x => `    ${JSON.stringify(x)}`).join(',\n')}\n  ]${comma}`;
     if (v && typeof v === 'object' && !Array.isArray(v)) {
-      const sub = Object.entries(v as Record<string, unknown>);
+      const sub = Object.entries(v as Record<string, unknown>).filter(([, sv]) => sv !== undefined);
       return `  ${JSON.stringify(k)}: {\n${sub.map(([sk, sv], j) => `    ${JSON.stringify(sk)}: ${JSON.stringify(sv)}${j < sub.length - 1 ? ',' : ''}`).join('\n')}\n  }${comma}`;
     }
     return `  ${JSON.stringify(k)}: ${JSON.stringify(v)}${comma}`;

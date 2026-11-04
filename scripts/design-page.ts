@@ -11,9 +11,13 @@
 // Images: the Figma side is figma-source's crop when this machine has it, else the committed board screenshot cropped
 // in the browser; the app side is the run's screenshots/design/<id>.png on the computer that ran it, else the compact
 // copy committed with the run (design/captures/<id>.webp), so every computer that pulled the repo shows both sides.
-// Decisions (Figma Agent parity, 2026-11-03): each open question takes Bug / OK / N/A and each bug an eBug tick; the
-// choices stay in the browser (localStorage) until Save decisions sends them to design.ts decide (findings.json
-// `decided`); the agent drafts the ticked eBugs. Opened as a file, the button copies the block for the chat instead.
+// Decisions (Figma Agent parity, 2026-11-03; user, 2026-11-04): every measured item takes Bug / OK / N/A, a bug an
+// eBug tick, and an item moved to OK or N/A a reason (required when it overturns a bug); the choices stay in the
+// browser (localStorage) until Save decisions sends them to design.ts decide (findings.json `decided`, `why`); the
+// agent drafts the ticked eBugs. Opened as a file, the button copies the block for the chat instead.
+// Images (user, 2026-11-04): clicking one opens it full size over the page, with its boxes, not in a new tab; clicking
+// an item selects it and its boxes as clicking a box does. Other features' areas the check left out (the trace's
+// `n/a: other feature: …`, design.ts check) are drawn dashed on the Figma side.
 // Plan view (user, 2026-11-03): before any capture, what the check covers and what it leaves out: the boards read, the
 // route to each screen with the flags that need a decision (an approximate route, a state beside a screen, a drawing
 // narrower than a phone, a gap), and an Include / Exclude choice with a reason per screen or board (user, 2026-11-04: a
@@ -55,7 +59,8 @@ function buildData(link: (abs: string) => string) {
     const cf = join(runsDir, d, 'design', 'compare.json');
     if (!existsSync(cf)) continue;
     const ff = join(runsDir, d, 'design', 'findings.json'), found = existsSync(ff) ? read(ff).screens : null;
-    for (const s of read(cf).screens) if ((seen.get(s.id)?.captured_at ?? '') <= s.captured_at) seen.set(s.id, { ...s, run: d, settled: !!found, verdicts: found?.[s.id] ?? {} });
+    const cmp = read(cf);
+    for (const s of cmp.screens) if ((seen.get(s.id)?.captured_at ?? '') <= s.captured_at) seen.set(s.id, { ...s, run: d, settled: !!found, verdicts: found?.[s.id] ?? {}, font_width: cmp.font_width ?? null });
   }
   const widths = new Map<string, number>();
   // a screen's place in the app flow: the position in cases.csv of the row that reaches it (the table runs in flow order)
@@ -73,8 +78,10 @@ function buildData(link: (abs: string) => string) {
     const m = seen.get(s.id);
     let status = s.status === 'routed' ? 'not-captured' : s.status, items: any[] = [];
     if (m) {
-      items = m.candidates.map((c: any) => ({ ...c, ...(m.verdicts[c.id] ?? {}), verdict: m.verdicts[c.id]?.verdict ?? (m.settled ? (c.severity === 'info' ? 'info' : 'ok') : c.severity === 'info' ? 'info' : 'unreviewed') }));
-      for (const [id, v] of Object.entries<any>(m.verdicts)) if (!items.some(i => i.id === id)) items.push({ id, kind: id.split(':')[0], ...v });
+      // settle answers every candidate, so one with no verdict is new since (a check run again): unreviewed, not OK
+      items = m.candidates.map((c: any) => ({ ...c, ...(m.verdicts[c.id] ?? {}), verdict: m.verdicts[c.id]?.verdict ?? (c.severity === 'info' ? 'info' : 'unreviewed') }));
+      // the reviewers' visual items; a verdict whose candidate the check no longer makes (an area left out since) is not shown
+      for (const [id, v] of Object.entries<any>(m.verdicts)) if (id.startsWith('visual:') && !items.some(i => i.id === id)) items.push({ id, kind: id.split(':')[0], ...v });
       status = items.some(i => i.verdict === 'bug') ? 'differs' : items.some(i => i.verdict === 'question') ? 'question' : items.some(i => i.verdict === 'unreviewed') ? 'unreviewed' : 'matches';
     }
     // the run's own screenshot on the computer that ran it, else the compact copy committed with the run
@@ -84,7 +91,8 @@ function buildData(link: (abs: string) => string) {
     return { id: s.id, name: s.name, board: s.board_name, board_id: s.board, flags: s.flags ?? [], flow: pos.get(s.route?.case) ?? null, status, why: s.why ?? '', gap: !!s.gap, route: s.route ?? null, alternatives: s.alternatives ?? [], figma, app,
       run: m?.run ?? '', captured_at: m?.captured_at ?? '', build: m?.build ?? '', note: m?.note ?? '', arrival: m?.arrival ?? null, recheck: m?.recheck ?? null,
       parts: (m?.parts ?? []).map((p: string) => img(p)).filter(Boolean),
-      settled: !!m?.settled, win: m?.win ?? null, k: m?.k ?? null, fit: m?.fit ?? null, w: s.abs[2], h: s.abs[3], items };
+      settled: !!m?.settled, win: m?.win ?? null, k: m?.k ?? null, fit: m?.fit ?? null, out: m?.out ?? [], hidden: m?.hidden ?? [], ocr: m?.ocr ?? null, font_width: m?.font_width ?? null,
+      w: s.abs[2], h: s.abs[3], items };
   });
   const sc = join(fdir, 'specs', plan.spec_set, 'extracted', 'figma-source', 'design', 'scope.json');
   const boards = existsSync(sc) ? (read(sc).read ?? []).map((b: any) => ({ id: b.id, name: b.name, read_at: b.read_at })) : [];

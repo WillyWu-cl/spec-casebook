@@ -9,6 +9,7 @@ import { spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, utimesSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
+import { figmaScreen } from '../lib/design-match.ts';
 
 const ROOT = join(import.meta.dirname, '..', '..');
 const F = 'zztest/design-fixture', FD = join(ROOT, 'library', 'zztest'), FEAT = join(FD, 'design-fixture');
@@ -86,10 +87,11 @@ im.save(j["path"])`;
   assert.equal(r.status, 0, r.stderr);
 }
 const s3 = (b: number[], inset = 4) => [b[0] * 3 + inset, b[1] * 3 + inset, (b[0] + b[2]) * 3 - inset, (b[1] + b[3]) * 3 - inset];
+// texts as white blocks, one per line (the check counts an app text's lines on the screenshot)
 function homeShot(path: string) {
   png(path, 1125, 2436, [
     [s3([120, 590, 140, 44], 0), '#33cc66'],
-    ...[[20, 110, 180, 24], [20, 190, 180, 20], [20, 230, 150, 20], [20, 270, 150, 40], [165, 602, 45, 20], [20, 700, 100, 20]].map(b => [s3(b), '#ffffff'] as [number[], string]),
+    ...[[20, 110, 180, 24], [20, 190, 180, 20], [20, 230, 150, 20], [20, 271, 150, 16], [20, 291, 150, 16], [165, 602, 45, 20], [20, 700, 100, 20]].map(b => [s3(b), '#ffffff'] as [number[], string]),
     [s3([32, 150, 250, 20]), '#ff2020'],
   ]);
 }
@@ -289,14 +291,15 @@ test('check: a half with too few anchors measures no positions', () => {
 // ---- review, decisions, eBugs ----------------------------------------------------------------------------------------
 test('settle: agreement stands, a split or an unjudged candidate is a question', () => {
   put(join(RUNS, 'r1', 'design', 'builder.json'), { screens: { '1:10': {
-    'copy:1:1a': { verdict: 'bug', severity: 'major', note: 'wrong article' },
+    'copy:1:1a': { verdict: 'bug', severity: 'major', note: 'wrong article', note_zh: '冠詞錯誤' },
     'position:1:13': { verdict: 'ok', note: 'inside padding' },
     'visual:1': { kind: 'visual', verdict: 'bug', severity: 'cosmetic', figma: { box: [330, 50, 24, 24] }, note: 'icon differs' } } } });
   put(join(RUNS, 'r1', 'design', 'reviewer.json'), { screens: { '1:10': {
-    'copy:1:1a': { verdict: 'bug', note: 'article' }, 'position:1:13': { verdict: 'bug', note: '12 pt' }, 'visual:1': { verdict: 'bug', note: 'icon' } } } });
+    'copy:1:1a': { verdict: 'bug', note: 'article', note_zh: '冠詞' }, 'position:1:13': { verdict: 'bug', note: '12 pt' }, 'visual:1': { verdict: 'bug', note: 'icon' } } } });
   const r = design('settle', 'r1');
   assert.equal(r.status, 0, r.out);
   const f = read(join(RUNS, 'r1', 'design', 'findings.json')).screens;
+  assert.deepEqual([f['1:10']['copy:1:1a'].note, f['1:10']['copy:1:1a'].note_zh, f['1:10']['copy:1:1a'].reviewer_zh], ['wrong article', '冠詞錯誤', '冠詞'], 'both languages of both passes are kept');
   assert.equal(f['1:10']['copy:1:1a'].verdict, 'bug');
   assert.equal(f['1:10']['visual:1'].verdict, 'bug');
   assert.deepEqual(f['1:10']['visual:1'].figma, { box: [330, 50, 24, 24] }, 'a visual item keeps its box for the page');
@@ -318,6 +321,32 @@ test('decide: the Design tab block is applied, and settle keeps it', () => {
   f = read(join(RUNS, 'r1', 'design', 'findings.json')).screens;
   assert.equal(f['1:10']['position:1:13'].verdict, 'bug', 'settling again keeps the user decision');
   assert.notEqual(run('design.ts', [F, 'ios', 'decide'], { input: 'DESIGN DECISIONS other/feature ios\n' }).status, 0, 'a block for another feature is refused');
+  // a bug moved to OK with the user's reason, and an eBug tick taken back (user, 2026-11-04)
+  const why = run('design.ts', [F, 'ios', 'decide'], { input: `DESIGN DECISIONS ${F} ios\nr1 1:10 copy:1:1a: no eBug\nr1 1:20 state:1:20: ok: CMS banner, not fixed copy\n` });
+  assert.equal(why.status, 0, why.out);
+  f = read(join(RUNS, 'r1', 'design', 'findings.json')).screens;
+  assert.equal(f['1:20']['state:1:20'].verdict, 'ok'); assert.equal(f['1:20']['state:1:20'].why, 'CMS banner, not fixed copy');
+  assert.equal(f['1:10']['copy:1:1a'].ebug, undefined);
+  run('design.ts', [F, 'ios', 'decide'], { input: `DESIGN DECISIONS ${F} ios\nr1 1:10 copy:1:1a: eBug\nr1 1:20 state:1:20: n/a\n` });
+  assert.equal(read(join(RUNS, 'r1', 'design', 'findings.json')).screens['1:20']['state:1:20'].why, undefined, 'a verdict without a reason clears the old one');
+});
+
+test("figmaScreen: another feature's controls are left out with their area, this feature's stay", () => {
+  // a shared screen: a header of other features' buttons, a grid with one tile of each, a tab bar of this feature
+  const n = (id: string, parent: string, name: string, abs: number[], type = 'FRAME') => ({ id, parent, type, name, abs });
+  const nodes = [n('s', 'b', 'Launcher', [0, 0, 375, 812]),
+    n('hd', 's', 'header', [0, 44, 375, 48]), n('menu', 'hd', 'ic_menu', [20, 56, 24, 24]), text('hdT', 'hd', 'Try Pro+', [60, 60, 100, 16]),
+    n('grid', 's', 'grid', [0, 300, 375, 200]), n('t1', 'grid', 'tile', [16, 300, 80, 96]), n('i1', 't1', 'ic_other', [40, 300, 28, 28]), text('l1', 't1', 'Video Enhance', [16, 340, 80, 16]),
+    n('t2', 'grid', 'tile', [100, 300, 80, 96]), n('i2', 't2', 'ic_mine', [124, 300, 28, 28]), text('l2', 't2', 'AI Mini Drama', [100, 340, 80, 16]),
+    n('tab', 's', 'tabs', [0, 730, 375, 56]), text('home', 'tab', 'Home', [8, 758, 68, 12])];
+  const ctl = (node: string, name: string, box: number[]) => ({ node, name, box: box as any });
+  const r = figmaScreen(nodes, { id: 's', abs: [0, 0, 375, 812] }, new Set(), {
+    other: [ctl('menu', 'ic_menu', [20, 56, 24, 24]), ctl('i1', 'ic_other', [40, 300, 28, 28])],
+    // this feature's tile added by hand: a box, no node
+    mine: [ctl('', 'manual/button', [124, 300, 28, 28]), ctl('home', 'Home', [8, 730, 68, 40])] });
+  assert.deepEqual(r.texts.map((t: any) => t.text).sort(), ['AI Mini Drama', 'Home']);
+  assert.deepEqual(r.out.map(o => o.node).sort(), ['hd', 't1'], 'the header and the other tile, not the grid holding this feature\'s tile');
+  assert.deepEqual(r.outTexts.sort(), ['Try Pro+', 'Video Enhance']);
 });
 
 test('ebugs: the ticked bugs with their row, Figma link and sheet', () => {

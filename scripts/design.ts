@@ -51,13 +51,13 @@
 // a user decision already in findings.json is kept.
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { appendFileSync, copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { appendFileSync, copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
 import { normLabel } from './lib/coverage.ts';
 import { appElements, figmaScreen, type Box } from './lib/design-match.ts';
-import { capturedScreens } from './lib/design-watch.ts';
+import { capturedScreens, darkFill, darkShot } from './lib/design-watch.ts';
 import { planFresh, buildPlan, gapLine, kept, planPath, summary } from './lib/design-plan.ts';
-import { ROOT, arg, assertIds, featureDir, readTable, tableDir, writeJson } from './lib/library.ts';
+import { ROOT, arg, assertIds, featureDir, readTable, tableDir, writeJson, writeJsonRows } from './lib/library.ts';
 
 const [feature, platform, cmd, target] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -66,7 +66,7 @@ const shown = (p: string) => p.startsWith(ROOT) ? p.slice(ROOT.length + 1) : p;
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
 const runOf = (r: string) => existsSync(r) ? r : join(runsDir, r);
 const OTHER = /^n\/a:\s*other feature\b/i;
-const KINDS = ['state', 'copy', 'missing', 'truncated', 'lines', 'position', 'colour', 'control', 'extra', 'sample'];
+const KINDS = ['state', 'appearance', 'copy', 'missing', 'truncated', 'lines', 'size', 'position', 'colour', 'control', 'extra', 'sample'];
 const USAGE = 'Usage: node scripts/design.ts <product>/<feature> <ios|android> plan | screens <TC-…> | check <run dir> | settle <run dir> | decide [file] | scope [file] | ebugs <run dir> | status [run dir]';
 // the newest run folder holding design captures
 const newestRun = () => existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design', 'captures.jsonl'))).sort().at(-1) : undefined;
@@ -101,13 +101,14 @@ if (cmd === 'plan') {
   if (target === '--left' && !left) { console.error('screens --left <run dir>'); process.exit(2); }
   const done = left ? capturedScreens(runOf(left)) : new Set<string>();
   if (left) console.log(`${done.size} screen(s) already captured in ${basename(runOf(left))}; the ${plan.screens.filter((x: any) => x.status === 'routed' && !done.has(x.id)).length} left:`);
+  const st = frameState(plan);
   for (const s of plan.screens.filter((x: any) => x.status === 'routed' && !done.has(x.id)))
-    console.log(`${s.id}  ${s.name} (${s.board_name}) · ${s.route.case ? `${s.route.case}, fit ${s.route.fit}` : `Design ${s.route.fit}: ${s.route.action}`}${s.gap ? ' · gap in the table' : ''}`);
+    console.log(`${s.id}  ${s.name} (${s.board_name}) · ${s.route.case ? `${s.route.case}, fit ${s.route.fit}` : `Design ${s.route.fit}: ${s.route.action}`}${s.gap ? ' · gap in the table' : ''} · ${st(s)}`);
 } else if (cmd === 'screens') {
   const plan = planFresh(feature, platform);
   for (const id of plan.by_case[target ?? ''] ?? []) {
     const s = plan.screens.find((x: any) => x.id === id);
-    console.log(`${s.id}  ${s.name} (${s.board_name}) · fit ${s.route.fit}${s.route.fit === 'low' ? ': bring about the state its name says' : ''}`);
+    console.log(`${s.id}  ${s.name} (${s.board_name}) · fit ${s.route.fit}${s.route.fit === 'low' ? ': bring about the state its name says' : ''} · ${frameState(plan)(s)}`);
   }
   if (!plan.by_case[target ?? '']) console.log(`${target}: no Design screen to capture`);
 } else if (cmd === 'check') measure();
@@ -127,7 +128,7 @@ function measure() {
   const inv = existsSync(join(ex, 'inventory.json')) ? read(join(ex, 'inventory.json')) : { controls: [] };
   // other features' controls (the trace's `n/a: other feature: …`): left out of the check with their areas
   const trace = join(table, 'control-trace.json');
-  const otherFeature = new Set<string>(existsSync(trace) ? read(trace).entries.filter((e: any) => OTHER.test(e.press ?? '')).flatMap((e: any) => e.controls) : []);
+  const otherFeature = new Set<string>(existsSync(trace) ? read(trace).entries.flatMap((e: any) => OTHER.test(e.press ?? '') ? e.controls : e.other ?? []) : []);
   const only = new Set((arg('screen') ?? '').split(',').filter(Boolean));
   const capFile = join(designDir, 'captures.jsonl');
   if (!existsSync(capFile)) { console.error(`${capFile}: no captures yet (device.ts <run dir> design <screen id>).`); process.exit(1); }
@@ -151,6 +152,9 @@ function measure() {
     return boards.get(board)!;
   };
   const results: any[] = [], samples: any[] = [], sheets: any[] = [], shares: any[] = [];
+  const ocrDark = new Map<string, boolean | null>();
+  const ocr = ocrPass(ocrDark, [...caps.values()].flatMap(cap => { const scr = plan.screens.find((s: any) => s.id === cap.screen);
+    return scr && existsSync(imageOf(cap.png)) ? [{ cap, scr, figma: figmaCrop(scr, out), figCache: join(ex, 'figma', 'design-ocr', `${scr.id.replace(/[:;]/g, '-')}.json`) }] : []; }));
   for (const cap of caps.values()) {
     const scr = plan.screens.find((s: any) => s.id === cap.screen);
     if (!scr) { console.error(`  ${cap.screen}: not in design/plan.json, skipped`); continue; }
@@ -172,6 +176,26 @@ function measure() {
     // texts of the scrolled parts count for copy and missing only: their positions are not the frame's
     const appT = [...els.filter(e => e.text).map(a => ({ ...a, f: toFig(a.box), n: normLabel(a.text), part: 1 })),
       ...parts.get(cap.screen)!.flatMap(p => appElements(existsSync(sourceOf(p.xml)) ? readFileSync(sourceOf(p.xml), 'utf8') : '').filter(e => e.text).map(a => ({ ...a, f: FAR, n: normLabel(a.text), part: p.part })))];
+    // What is on the screen (user, 2026-11-04). Figma's side is exact from the source read: each text's characters,
+    // font and its drawn glyph bounds (`render`). The phone's page source is exact for texts and structure but holds
+    // what another layer covers (the chat behind a sheet or page) and gives view boxes, not glyphs, with no font or
+    // lines: the screenshot's OCR fills only that. An app text no OCR line near it reads is left out (`hidden`), and its
+    // glyphs give its lines, size and position. A Figma text without render bounds is read on the Figma image the same
+    // way. No OCR (not macOS, no cache): view boxes as before.
+    const oA = ocr.get(`app:${scr.id}`) ?? null, oF = ocr.get(`fig:${scr.id}`) ?? null;
+    const lineNs = (t: string) => t.split('\n').map(normLabel).filter(x => x.replace(/[#\W_]/g, '').length >= 2);
+    const readsAs = (o: OcrLine, n: string) => o.n === n || (n.length >= 3 && (o.n.includes(n) || (o.n.length >= 3 && n.includes(o.n)))) || ratio(o.n, n) >= 0.6;
+    // a text's OCR lines; a line read with more than the text (an icon beside a label read as 「Et New Chat」) is cut
+    // to the text's characters, in proportion
+    const glyphs = (lines: OcrLine[] | null, box: Box, text: string) => { if (!lines) return null; const ns = lineNs(text);
+      const g = lines.filter(o => overlap(o.box, box, 8) && ns.some(n => readsAs(o, n))).map(o => {
+        const raw = o.text.toLowerCase(), part = text.split('\n').map(t => t.trim().toLowerCase()).find(t => t.length >= 2 && raw.includes(t) && raw.length > t.length);
+        if (!part) return o; const at = raw.indexOf(part), cw = o.box[2] / raw.length;
+        return { ...o, box: [o.box[0] + at * cw, o.box[1], part.length * cw, o.box[3]] as Box }; });
+      return g.length ? g : null; };
+    const hidden: any[] = [], sizes: any[] = [];
+    if (oA && oA.length >= 2) for (let i = appT.length - 1; i >= 0; i--) { const a = appT[i];
+      if (a.part === 1 && lineNs(a.text).length && !glyphs(oA, a.f, a.text)) { hidden.push({ text: a.text, box: r1(a.f) }); appT.splice(i, 1); } }
     // pair texts, one to one over the whole screen: every exact pair first (nearest first), then containment, then the
     // most similar (copy), else missing. Pairing text by text let a longer Figma text take another's exact twin by
     // containment (「AI Mini Drama with Seedance 2.0」 took the tile label 「AI Mini Drama」, which was then missing; 2026-11-04)
@@ -198,6 +222,8 @@ function measure() {
       // cut short: the app ends in an ellipsis Figma does not have, or runs past the window's edge
       if (/(…|\.\.\.)$/.test(hit.a.text) && !/(…|\.\.\.)$/.test(t.text)) cands.push({ id: `truncated:${t.node}`, kind: 'truncated', severity: 'major', figma: { node: t.node, text: t.text, box: r1(t.box) }, app: { text: hit.a.text, box: appBox } });
       else if (hit.a.part === 1 && (hit.a.f[0] < -1 || hit.a.f[0] + hit.a.f[2] > Wf + 1)) cands.push({ id: `truncated:${t.node}`, kind: 'truncated', severity: 'major', note: 'runs past the screen edge', figma: { node: t.node, text: t.text, box: r1(t.box) }, app: { text: hit.a.text, box: appBox } });
+      // numbers are sample data, their format is not (user, 2026-11-04): 「2026/08/19」 against 「26/08/19」 or 「8/19」
+      else if (how === 'exact' && numShape(t.text) !== numShape(hit.a.text)) cands.push({ id: `copy:${t.node}`, kind: 'copy', severity: 'minor', note: 'number format differs', figma: { node: t.node, text: t.text, box: r1(t.box) }, app: { text: hit.a.text, box: appBox } });
     }
     // arrival: a capture matching under 40 % of the frame's short texts is probably another state (Figma Agent's
     // arrival assertion); every candidate of it is then in doubt, which the reviewers settle (n/a or a real gap)
@@ -206,36 +232,73 @@ function measure() {
     if (!arrival.ok) cands.unshift({ id: `state:${scr.id}`, kind: 'state', severity: 'major', note: `only ${hits} of ${short} Figma texts found: the capture may not be this frame's state` });
     // a capture whose screen kept moving (device.ts design): its page source may not be what the screenshot shows
     else if (cap.unsettled) cands.unshift({ id: `state:${scr.id}`, kind: 'state', severity: 'major', note: 'the screen kept changing while it was captured: the app boxes may not match the screenshot; capture it again once still' });
+    // the frame's own state (user, 2026-11-04: a light capture with the keyboard up was taken for a dark frame without
+    // one): dark or light, and the keyboard shown or not. A dark frame captured light is a bug when the phone was in
+    // dark mode (`dark` in captures.jsonl, else the reviewers ask), else a capture to take again.
+    // both read on their images (ocrPass), else the frame's fill and the PNG
+    const frameDark = ocrDark.get(`fig:${scr.id}`) ?? darkFill(nodesOf(scr.board).find((n: any) => n.id === scr.id)),
+      shot = ocrDark.get(`app:${scr.id}`) ?? (existsSync(join(runDir, cap.png)) ? darkShot(readFileSync(join(runDir, cap.png))) : null);
+    if (frameDark !== null && shot !== null && frameDark !== shot)
+      cands.unshift({ id: `appearance:${scr.id}`, kind: 'appearance', severity: 'major', note: `Figma draws this screen ${frameDark ? 'dark' : 'light'}, the capture is ${shot ? 'dark' : 'light'}` + (cap.dark === frameDark ? `: the phone was in ${frameDark ? 'dark' : 'light'} mode, so the app does not follow it` : cap.dark === undefined ? ': if the phone was in that mode the app does not follow it, else capture it again in that mode' : `: the phone was in ${cap.dark ? 'dark' : 'light'} mode, capture it again in ${frameDark ? 'dark' : 'light'} mode`) });
+    const kbApp = cap.keyboard ?? keyboardShown(oA, Hf);
+    if (kbApp !== null && kbApp !== fig.keyboard)
+      cands.unshift({ id: `keyboard:${scr.id}`, kind: 'state', severity: 'major', note: kbApp ? 'the keyboard is up in the capture, Figma draws this screen without it: capture it again with the keyboard down' : 'Figma draws the keyboard up, the capture has it down: capture it again with the field focused' });
     // projection: each half shifted by the median offset of its exact pairs; a half with fewer than 2 anchors, or whose
     // anchors disagree by more than 6 pt (median absolute deviation), measures no positions (the Figma Agent refuses a
     // projection whose residual is over 6 px)
     const base = pairs.filter(p => p.a.part === 1);
+    // each pair's glyph boxes: positions compare glyphs with glyphs when both sides were read, else the two boxes
+    for (const p of base as any[]) { p.ga = glyphs(oA, p.a.f, p.a.text); p.gf = p.t.render ? renderLines(p.t) : glyphs(oF, p.t.box, p.t.text);
+      [p.tb, p.ab] = p.ga && p.gf ? [union(p.gf), union(p.ga)] : [p.t.box, p.a.f]; }
     const half = (b: number[]) => b[1] + b[3] / 2 < Hf / 2 ? 'top' : 'bottom';
-    const dyOf = (p: any) => half(p.t.box) === 'top' ? p.a.f[1] - p.t.box[1] : (Ha - p.a.f[1] - p.a.f[3]) - (Hf - p.t.box[1] - p.t.box[3]);
+    const dyOf = (p: any) => half(p.t.box) === 'top' ? p.ab[1] - p.tb[1] : (Ha - p.ab[1] - p.ab[3]) - (Hf - p.tb[1] - p.tb[3]);
     const fit: Record<string, { dy: number; anchors: number; spread: number; ok: boolean }> = {};
     for (const h of ['top', 'bottom']) {
       const d = base.filter(p => p.how === 'exact' && half(p.t.box) === h).map(dyOf).sort((a, b) => a - b), med = d.length ? d[Math.floor(d.length / 2)] : 0;
       const dev = d.map(x => Math.abs(x - med)).sort((a, b) => a - b), spread = dev.length ? dev[Math.floor(dev.length / 2)] : 0;
       fit[h] = { dy: r1n(med), anchors: d.length, spread: r1n(spread), ok: d.length >= 2 && spread <= 6 };
     }
+    // and across: the median offset of the left-aligned anchors (3 or more) on their left edges, as for the halves: Figma's
+    // exact glyph bounds and an OCR box differ by a few points on every text alike (−5 pt on 37 texts, 2026-11-04)
+    const lx = (base as any[]).filter(p => p.how === 'exact' && (p.t.align ?? 'LEFT') === 'LEFT').map(p => p.ab[0] - p.tb[0]).sort((a, b) => a - b);
+    const fx = lx.length >= 3 ? lx[Math.floor(lx.length / 2)] : 0; (fit as any).x = { dx: r1n(fx), anchors: lx.length };
     for (const p of base.filter(p => p.how === 'exact')) {
-      const ax = p.t.align === 'CENTER' ? [p.t.box[0] + p.t.box[2] / 2, p.a.f[0] + p.a.f[2] / 2] : p.t.align === 'RIGHT' ? [p.t.box[0] + p.t.box[2], p.a.f[0] + p.a.f[2]] : [p.t.box[0], p.a.f[0]];
-      const dx = ax[1] - ax[0], dy = dyOf(p) - fit[half(p.t.box)].dy;
+      const [tb, ab] = [(p as any).tb, (p as any).ab], ga = (p as any).ga as OcrLine[] | null, gf = (p as any).gf as OcrLine[] | null;
+      // the edge the text is aligned on (sample texts of other widths keep it), glyphs to glyphs when both were read: a
+      // centred glyph box aligned on the left moved by its own width
+      const ax = p.t.align === 'CENTER' ? [tb[0] + tb[2] / 2, ab[0] + ab[2] / 2] : p.t.align === 'RIGHT' ? [tb[0] + tb[2], ab[0] + ab[2]] : [tb[0], ab[0]];
+      // a text after another on the same row (chips, tabs) is placed by the gap after it: the platform font narrows each
+      // one, so absolute x drifts along the row (−5 to −19 pt over a row of language chips, 2026-11-04)
+      const prevOnRow = p.t.align === 'LEFT' || !p.t.align ? (base as any[]).filter(q => q !== p && q.how === 'exact' && Math.abs((q.tb[1] + q.tb[3] / 2) - (tb[1] + tb[3] / 2)) < 4 && q.tb[0] + q.tb[2] <= tb[0] + 1)
+        .sort((a, b) => (b.tb[0] + b.tb[2]) - (a.tb[0] + a.tb[2]))[0] : undefined;
+      const dx = prevOnRow ? (ab[0] - (prevOnRow.ab[0] + prevOnRow.ab[2])) - (tb[0] - (prevOnRow.tb[0] + prevOnRow.tb[2])) : ax[1] - ax[0] - fx, dy = dyOf(p) - fit[half(p.t.box)].dy;
       if (fit[half(p.t.box)].ok && (Math.abs(dx) > 4 || Math.abs(dy) > 4))
-        cands.push({ id: `position:${p.t.node}`, kind: 'position', severity: 'minor', figma: { node: p.t.node, text: p.t.text, box: r1(p.t.box) }, app: { text: p.a.text, box: r1(p.a.f) }, delta: { x: r1n(dx), y: r1n(dy) } });
+        cands.push({ id: `position:${p.t.node}`, kind: 'position', severity: 'minor', figma: { node: p.t.node, text: p.t.text, box: r1(tb) }, app: { text: p.a.text, box: r1(ab) }, delta: { x: r1n(dx), y: r1n(dy) } });
+      // wrapping: the lines the OCR reads on each side (a text view's box is often taller than its lines: 「AI Mini⏎Drama」
+      // drawn on one line passed on its box height, and a padded button read as two; user, 2026-11-04), else Figma's
+      // box over its line height and the app's view box
       const lh = p.t.line_height || p.t.size * 1.2;
-      if (lh > 0 && p.t.auto_resize !== 'TRUNCATE') {
-        const fl = Math.max(1, Math.round(p.t.box[3] / lh)), al = Math.max(1, Math.round(p.a.f[3] / lh));
-        if (fl !== al) cands.push({ id: `lines:${p.t.node}`, kind: 'lines', severity: 'minor', figma: { node: p.t.node, text: p.t.text, box: r1(p.t.box), lines: fl }, app: { box: r1(p.a.f), lines: al } });
-      }
+      const fl = gf?.length ?? Math.max(1, Math.round(p.t.box[3] / lh)), al = ga?.length ?? Math.max(1, Math.round(p.a.f[3] / lh));
+      if ((ga || lh > 0) && p.t.auto_resize !== 'TRUNCATE' && fl !== al)
+        cands.push({ id: `lines:${p.t.node}`, kind: 'lines', severity: 'minor', figma: { node: p.t.node, text: p.t.text, box: r1(tb), lines: fl }, app: { box: r1(ab), lines: al } });
+      // text size and face (user, 2026-11-04: a bolder title of another width passed on its height), measured here and
+      // judged after every screen (sizeCands): the glyph width when both sides read the same characters, else height
+      if (ga && gf && ga.length === gf.length) { const med = (v: number[]) => v.sort((a, b) => a - b)[Math.floor(v.length / 2)];
+        // compared on as many lines on both sides (a wrap is its own `lines` item); width when the characters are the same
+        const flat = (t: string) => t.replace(/\s+/g, ' ').trim().toLowerCase(), same = flat(p.t.text) === flat(p.a.text);
+        sizes.push({ node: p.t.node, text: p.t.text, app: p.a.text, font: p.t.font, tb: r1(tb), ab: r1(ab), by: same ? 'width' : 'height',
+          r: Math.round((same ? ab[2] / tb[2] : med(ga.map(o => o.box[3])) / med(gf.map(o => o.box[3]))) * 1000) / 1000 }); }
     }
     // Figma box → window units through its half's fit (screenshot pixels in python)
     const toApp = (b: number[]): Box => { const y = half(b) === 'top' ? b[1] + fit.top.dy : Ha - (Hf - b[1] - b[3]) - fit.bottom.dy - b[3]; return [b[0] / k, y / k, b[2] / k, b[3] / k]; };
-    // app text inside another feature's area is not this feature's either
-    const outApp = fig.out.map(o => toFig(toApp(o.box)));
+    // app text inside another feature's area is not this feature's either: an area is placed on the app by the offset
+    // of the exactly matched text nearest to it (a shared screen's halves may have no anchors left), and an app text
+    // equal to a Figma text drawn in such an area counts as in it wherever it is (CMS order)
+    const near = (b: number[]) => base.filter(p => p.how === 'exact').sort((x, y) => Math.abs(x.t.box[1] - b[1]) - Math.abs(y.t.box[1] - b[1]))[0];
+    const outApp = fig.out.map(o => { const p = near(o.box); return p ? [o.box[0] + p.a.f[0] - p.t.box[0], o.box[1] + p.a.f[1] - p.t.box[1], o.box[2], o.box[3]] : toFig(toApp(o.box)); });
     const inOut = (f: Box) => outApp.some(o => f[0] + f[2] / 2 >= o[0] && f[0] + f[2] / 2 <= o[0] + o[2] && f[1] + f[3] / 2 >= o[1] && f[1] + f[3] / 2 <= o[1] + o[3]);
-    const figNorm = new Set(fig.texts.map(t => normLabel(t.text)));
-    appT.forEach((a, i) => { if (!used.has(i) && a.text.length <= 40 && !figNorm.has(a.n) && a.n.replace(/[#\W_]/g, '') && !(a.part === 1 && inOut(a.f)))
+    const figNorm = new Set(fig.texts.map(t => normLabel(t.text))), outNorm = new Set(fig.outTexts.map(normLabel));
+    appT.forEach((a, i) => { if (!used.has(i) && a.text.length <= 40 && !figNorm.has(a.n) && !outNorm.has(a.n) && a.n.replace(/[#\W_]/g, '') && !(a.part === 1 && inOut(a.f)))
       cands.push({ id: `extra:${a.n}`, kind: 'extra', severity: 'info', app: { text: a.text, box: a.part > 1 ? undefined : r1(a.f) } }); });
     // controls without a label (icons: close, back, more): some app element must sit where Figma draws them
     for (const c of fig.controls) {
@@ -243,22 +306,37 @@ function measure() {
       const hit = els.some(e => e.box[2] * e.box[3] < cap.win.w * cap.win.h * 0.5 && cx >= e.box[0] - 6 && cx <= e.box[0] + e.box[2] + 6 && cy >= e.box[1] - 6 && cy <= e.box[1] + e.box[3] + 6 && e.actionable);
       if (!hit) cands.push({ id: `control:${c.node}`, kind: 'control', severity: 'major', note: 'no tappable app element where Figma draws this control', figma: { node: c.node, name: c.name, box: r1(c.box) } });
     }
-    for (const f of fig.fills) samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, figBox: f.box, box: toApp(f.box) });
-    for (const p of base.filter(p => p.how === 'exact' && p.t.color)) samples.push({ kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, figBox: p.t.box, box: p.a.box });
+    // a shape is placed on the app by the offset of the nearest exactly matched text (within 150 pt), else its half's fit:
+    // a tile's badge moves with the tile's label when the layout above it differs (the Launcher's banner)
+    const anchorOf = (b: number[]) => base.filter(p => p.how === 'exact').map(p => ({ p, d: Math.hypot(p.t.box[0] - b[0], p.t.box[1] - b[1]) })).sort((a, c) => a.d - c.d)[0];
+    const placed = (b: number[]): Box => { const a = anchorOf(b); return a && a.d <= 150 ? [(b[0] + a.p.a.f[0] - a.p.t.box[0]) / k, (b[1] + a.p.a.f[1] - a.p.t.box[1]) / k, b[2] / k, b[3] / k] : toApp(b); };
+    // then onto the app element of about its size whose centre is within 12 pt (the badge's own image view), if any
+    const snap = (w: Box): Box => { const c = [w[0] + w[2] / 2, w[1] + w[3] / 2], tol = 12 / k;
+      const e = els.filter(e => !e.text && e.box[2] >= w[2] * 0.6 && e.box[2] <= w[2] * 1.6 && e.box[3] >= w[3] * 0.6 && e.box[3] <= w[3] * 1.6
+        && Math.abs(e.box[0] + e.box[2] / 2 - c[0]) <= tol && Math.abs(e.box[1] + e.box[3] / 2 - c[1]) <= tol)
+        .sort((a, b) => Math.hypot(a.box[0] + a.box[2] / 2 - c[0], a.box[1] + a.box[3] / 2 - c[1]) - Math.hypot(b.box[0] + b.box[2] / 2 - c[0], b.box[1] + b.box[3] / 2 - c[1]))[0];
+      return e ? e.box : w; };
+    for (const f of fig.fills) samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, figBox: f.box, box: snap(placed(f.box)) });
+    // a text's colour on its glyphs when read (a button's view box holds the button's fill too), else its view box
+    for (const p of base.filter(p => p.how === 'exact' && p.t.color) as any[]) samples.push({ kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, figBox: p.t.box, box: p.ga ? union(p.ga).map(v => v / k) : p.a.box });
     // recheck: the bugs settled on an earlier build, still measured here or gone
     let recheck: any = null;
     if (oldFindings?.[scr.id]) {
       const now = new Set(cands.map(c => c.id));
       recheck = { run: basename(oldDir!), items: Object.entries<any>(oldFindings[scr.id]).filter(([, v]) => v.verdict === 'bug')
-        .map(([id, v]) => ({ id, note: v.note ?? '', now: id.startsWith('visual:') ? 'check' : now.has(id) ? 'still' : 'fixed' })) };
+        .map(([id, v]) => ({ id, note: v.note ?? '', ...(v.note_zh ? { note_zh: v.note_zh } : {}), now: id.startsWith('visual:') ? 'check' : now.has(id) ? 'still' : 'fixed' })) };
     }
     results.push({ id: scr.id, name: scr.name, board: scr.board, board_name: scr.board_name, case: cap.case || scr.route?.case || '', captured_at: cap.t, png: cap.png,
       parts: parts.get(cap.screen)!.map(p => p.png), note: cap.note || '', build, win: cap.win, k: r3(k), fw: Wf, arrival, fit,
       ...(fig.out.length ? { out: fig.out.map(o => ({ name: o.name, box: r1(o.box) })) } : {}), ...(cap.unsettled ? { unsettled: true } : {}),
+      ...(hidden.length ? { hidden } : {}), ...(sizes.length ? { sizes } : {}), ocr: { app: !!oA, figma: !!oF },
+      // every text of both sides as read, for the reviewers to quote (conformance.md §4: never read text off the image)
+      texts: { figma: fig.texts.map(t => ({ node: t.node, text: t.text, box: r1(t.box) })), app: appT.filter(a => a.part === 1).map(a => ({ text: a.text, box: r1(a.f) })),
+        ...(oA ? { app_ocr: oA.map(o => ({ text: o.text, box: r1(o.box) })) } : {}), ...(oF ? { figma_ocr: oF.map(o => ({ text: o.text, box: r1(o.box) })) } : {}) },
       counts: { figma_texts: fig.texts.length, app_texts: appT.length, matched: pairs.length, shapes: fig.fills.length, controls: fig.controls.length }, candidates: cands, recheck });
     sheets.push({ screen: scr.id, png: imageOf(cap.png), sheet: join(runDir, cap.png.replace(/\.png$/, '-sheet.png')), figma: figmaCrop(scr, out), win: cap.win, k, fw: Wf });
   }
-  // one python call samples every shape (median of a 3-pt band inside its edge) and every text (the pixels farthest
+  // one python call samples every shape (the most common colour inside it) and every text (the pixels farthest
   // from its background), and draws the sheets
   const py = python({ shares, samples: samples.map(s => ({ ...s, png: imageOf(caps.get(s.screen).png), win: caps.get(s.screen).win })), sheets: sheets.map(s => ({ ...s, cands: results.find(r => r.id === s.screen).candidates })) });
   for (const [i, s] of samples.entries()) {
@@ -269,7 +347,10 @@ function measure() {
       r.candidates.push({ id: `colour:${s.node}`, kind: 'colour', severity: 'minor', note: s.kind === 'text' ? 'text colour' : undefined, figma: { node: s.node, name: s.name, color: s.color, box: r1(s.figBox) }, app: { color: got }, delta: { dE: Math.round(d) } });
   }
   const all = [...prev, ...results].sort((a, b) => plan.screens.findIndex((s: any) => s.id === a.id) - plan.screens.findIndex((s: any) => s.id === b.id));
-  writeJson(join(designDir, 'compare.json'), { built_at: new Date().toISOString(), spec_set: plan.spec_set, platform, build, recheck_of: old ? basename(oldDir!) : undefined, screens: all });
+  const fontWidth = sizeCands(all, results);
+  // one screen per line (writeJsonRows): the file is rewritten on every check and committed with the run
+  writeJsonRows(join(designDir, 'compare.json'), { built_at: new Date().toISOString(), spec_set: plan.spec_set, platform, build, recheck_of: old ? basename(oldDir!) : undefined,
+    ...(fontWidth ? { font_width: fontWidth } : {}), screens: all });
   const n = (kind: string) => results.reduce((t, r) => t + r.candidates.filter((c: Cand) => c.kind === kind).length, 0);
   console.log(`${shown(join(designDir, 'compare.json'))}: ${results.length} screens measured (${all.length} in the file); ` +
     KINDS.map(k => `${n(k)} ${k}`).join(', '));
@@ -277,6 +358,101 @@ function measure() {
   if (old) { const it = results.flatMap(r => r.recheck?.items ?? []); console.log(`  recheck of ${basename(oldDir!)}: ${['fixed', 'still', 'check'].map(s => `${it.filter(i => i.now === s).length} ${s}`).join(', ')}`); }
   if (py.sheets?.length) console.log(`sheets: ${py.sheets.length} in ${shown(join(runDir, 'screenshots', 'design'))}/`);
   if (py.shared) console.log(`shared: ${py.shared} capture(s) in ${shown(join(designDir, 'captures'))}/ (commit them with the run)`);
+}
+
+type OcrLine = { text: string; n: string; box: Box };
+
+// a Figma text's lines from its render bounds: as many as its height holds at its line height (one line's glyphs are
+// about 0.9 of the font size), stacked, each the glyph height of one line
+function renderLines(t: any): OcrLine[] {
+  const [x, y, w, h] = t.render as Box, lh = t.line_height || (t.size ?? 12) * 1.2, n = Math.max(1, 1 + Math.round((h - (t.size ?? 12) * 0.9) / lh)), gh = n > 1 ? h - (n - 1) * lh : h;
+  return Array.from({ length: n }, (_, i) => ({ text: t.text, n: normLabel(t.text), box: [x, y + i * lh, w, gh] as Box }));
+}
+
+// Text size against the platform's own font (user, 2026-11-04): Android draws the Design's SF Pro in Roboto, about
+// 12 % narrower at the same size, on every screen alike, so a text is judged against the run's typical ratio (the median
+// over every screen in compare.json): 12 % off it in width (the middle 90 % of texts sit within ±8 %) (same characters on both sides) or 25 % in height is a
+// `size` candidate (twice that is major). The platform's own ratio is returned and shown once, not per text.
+function sizeCands(all: any[], results: any[]) {
+  const w = all.flatMap(s => (s.sizes ?? []).filter((x: any) => x.by === 'width').map((x: any) => x.r)).sort((a: number, b: number) => a - b);
+  const h = all.flatMap(s => (s.sizes ?? []).filter((x: any) => x.by === 'height').map((x: any) => x.r)).sort((a: number, b: number) => a - b);
+  const mw = w.length >= 5 ? w[Math.floor(w.length / 2)] : 1, mh = h.length >= 5 ? h[Math.floor(h.length / 2)] : 1;
+  for (const r of results) for (const x of r.sizes ?? []) {
+    const base = x.by === 'width' ? mw : mh, lim = x.by === 'width' ? 0.12 : 0.25, d = x.r / base - 1;
+    if (Math.abs(d) <= lim) continue;
+    r.candidates.push({ id: `size:${x.node}`, kind: 'size', severity: Math.abs(d) > 2 * lim ? 'major' : 'minor',
+      note: `text ${x.by === 'width' ? (d > 0 ? 'wider' : 'narrower') : (d > 0 ? 'taller' : 'shorter')} by ${Math.round(Math.abs(d) * 100)} % than this platform's texts draw Figma's (size, weight or font differs); Figma sets ${x.font ?? '?'}`,
+      figma: { node: x.node, text: x.text, box: x.tb }, app: { text: x.app, box: x.ab }, delta: { [x.by]: x.r, platform: Math.round(base * 100) / 100 } });
+  }
+  return w.length >= 5 ? { width: Math.round(mw * 1000) / 1000, height: Math.round(mh * 1000) / 1000, texts: w.length } : null;
+}
+function union(g: { box: Box }[]): Box { const x = Math.min(...g.map(o => o.box[0])), y = Math.min(...g.map(o => o.box[1]));
+  return [x, y, Math.max(...g.map(o => o.box[0] + o.box[2])) - x, Math.max(...g.map(o => o.box[1] + o.box[3])) - y]; }
+function overlap(a: Box, b: Box, pad: number) { return a[0] < b[0] + b[2] + pad && b[0] < a[0] + a[2] + pad && a[1] < b[1] + b[3] + pad && b[1] < a[1] + a[3] + pad; }
+// a number's format: a date (three groups split by / - .) keeps its digit counts (「2026/08/19」 is not 「26/08/19」),
+// any other number is one mark whatever its digits (credits, sizes and times are sample data)
+function numShape(t: string) { return t.replace(/\s+/g, ' ').trim().replace(/\d+[/.-]\d+[/.-]\d+/g, d => d.replace(/\d/g, '9')).replace(/\d+([.,]\d+)*/g, '#'); }
+// a keyboard on the capture: a dozen or more single keys read in the lower half
+function keyboardShown(o: OcrLine[] | null, H: number) { return o ? o.filter(l => l.box[1] > H * 0.5 && /^[a-z0-9]$/i.test(l.text.trim())).length >= 12 : null; }
+
+// OCR of both sides (scripts/ocr-images.swift, macOS Vision), cached in committed files so another computer needs
+// neither macOS nor the local images: the app's next to its shared capture (design/captures/<id>.ocr.json), the Figma
+// screen's in extracted/figma/design-ocr/<id>.json. Boxes are kept in Figma points. A Figma crop is read at 3× (its
+// small text is a few pixels high at 1×). Keyed `app:<id>` / `fig:<id>`; a side not read is missing from the map.
+// `dark` gets each image's appearance (most of it dark or light, else null), read on the same images.
+function ocrPass(dark: Map<string, boolean | null>, jobs: { cap: any; scr: any; figma: any; figCache: string }[]): Map<string, OcrLine[]> {
+  const got = new Map<string, OcrLine[]>(), todo: any[] = [];
+  const load = (f: string, key: string, newer?: string) => { if (!existsSync(f) || (newer && existsSync(newer) && statSync(newer).mtimeMs > statSync(f).mtimeMs)) return false;
+    const c = read(f); if (!('dark' in c)) return false;
+    got.set(key, c.lines.map((l: any) => ({ ...l, n: normLabel(l.text) }))); dark.set(key, c.dark); return true; };
+  for (const j of jobs) {
+    const appCache = sharedOf(j.cap.png, '.ocr.json'), wf = j.scr.abs[2];
+    if (!load(appCache, `app:${j.scr.id}`, join(runDir, j.cap.png))) todo.push({ key: `app:${j.scr.id}`, src: imageOf(j.cap.png), up: 1, wf, cache: appCache });
+    if (!load(j.figCache, `fig:${j.scr.id}`) && j.figma) todo.push({ key: `fig:${j.scr.id}`, src: j.figma.png, box: j.figma.box, board_w: j.figma.board_w, up: 3, wf, cache: j.figCache });
+  }
+  if (!todo.length) return got;
+  if (process.platform !== 'darwin') { console.error(`  OCR: ${todo.length} image(s) not read (macOS only): lines, size and hidden texts fall back to the view boxes`); return got; }
+  const tmp = join(designDir, '.ocr'); mkdirSync(tmp, { recursive: true });
+  // the images as read: a board screenshot cut to the screen, a Figma crop scaled up; the app's as they are
+  const prep = spawnSync('python3', ['-c', String.raw`
+import json, sys
+from PIL import Image
+jobs = json.load(sys.stdin); out = []
+def dark(im):
+    # the page's background shows in the upper half (below the status bar); a keyboard or sheet fills the lower one
+    g = im.convert("L").crop((0, int(im.height * 0.06), im.width, int(im.height * 0.5))).resize((60, 70)); px = list(g.getdata()); d = sum(1 for v in px if v < 128) / len(px)
+    return True if d > 0.6 else False if d < 0.4 else None
+for i, j in enumerate(jobs):
+    im = Image.open(j["src"]).convert("RGB")
+    if j.get("box"):
+        s = im.width / j["board_w"]; b = j["box"]; im = im.crop((int(b[0] * s), int(b[1] * s), int((b[0] + b[2]) * s), int((b[1] + b[3]) * s)))
+    if j["up"] == 1 and not j.get("box"): out.append([j["src"], dark(im)]); continue
+    p = sys.argv[1] + "/%d.png" % i; im.resize((im.width * j["up"], im.height * j["up"]), Image.LANCZOS).save(p); out.append([p, dark(im)])
+print(json.dumps(out))`, tmp], { input: JSON.stringify(todo), encoding: 'utf8' });
+  if (prep.status !== 0) { console.error(`  OCR: images not prepared (${prep.stderr.trim().split('\n').at(-1)})`); return got; }
+  const prepared: [string, boolean | null][] = JSON.parse(prep.stdout), paths = prepared.map(x => x[0]); writeFileSync(join(tmp, 'job.json'), JSON.stringify(paths));
+  const r = spawnSync('swift', [join(import.meta.dirname, 'ocr-images.swift'), join(tmp, 'job.json')], { encoding: 'utf8', maxBuffer: 64 << 20 });
+  if (r.status !== 0) { console.error(`  OCR: not read (${(r.stderr || '').trim().split('\n').at(-1)})`); return got; }
+  const res = JSON.parse(r.stdout); rmSync(tmp, { recursive: true, force: true });
+  todo.forEach((j, i) => { const o = res[paths[i]]; if (!o) return;
+    const s = j.wf / o.w;   // the image spans the screen's width in Figma points
+    const lines = o.lines.filter((l: any) => l.conf >= 0.3).map((l: any) => ({ text: l.text, box: [l.x, l.y, l.w, l.h].map(v => r1n(v * s)) }));
+    mkdirSync(join(j.cache, '..'), { recursive: true }); writeFileSync(j.cache, JSON.stringify({ read_at: new Date().toISOString(), dark: prepared[i][1], lines }) + '\n');
+    got.set(j.key, lines.map((l: any) => ({ ...l, n: normLabel(l.text) }))); dark.set(j.key, prepared[i][1]); });
+  console.log(`  OCR: ${todo.length} image(s) read`);
+  return got;
+}
+
+// the state a screen is captured in (user, 2026-11-04): dark or light and the keyboard, as the frame draws them; the
+// capture command refuses another (device.ts design)
+function frameState(plan: any) {
+  const out = join(featureDir(feature), 'specs', plan.spec_set, 'extracted', 'figma-source', 'design', 'out'), boards = new Map<string, any[]>();
+  return (s: any) => { try {
+    if (!boards.has(s.board)) { const f = join(out, `${s.board.replace(/[:;]/g, '-')}.json`); boards.set(s.board, existsSync(f) ? read(f).nodes : []); }
+    const nodes = boards.get(s.board)!, crop = join(out, 'crops', s.board.replace(/[:;]/g, '-'), `${s.id.replace(/[:;]/g, '-')}.png`);
+    const dark = darkFill(nodes.find((n: any) => n.id === s.id)) ?? (existsSync(crop) ? darkShot(readFileSync(crop)) : null);
+    return `${dark === null ? 'dark or light: see the frame' : dark ? 'dark' : 'light'}, keyboard ${figmaScreen(nodes, s, new Set()).keyboard ? 'up' : 'down'}`;
+  } catch { return 'state: see the frame'; } };
 }
 
 // the Figma side of a sheet: figma-source's crop when this machine has it, else the committed board screenshot
@@ -305,7 +481,7 @@ def img(p):
 def dist(a, b): return sum((a[i] - b[i]) ** 2 for i in range(3))
 for s in job["samples"]:
     try:
-        im = img(s["png"]); r = im.width / s["win"]["w"]; x, y, w, h = [v * r for v in s["box"]]; b = 3 * r
+        im = img(s["png"]); r = im.width / s["win"]["w"]; x, y, w, h = [v * r for v in s["box"]]
         if s["kind"] == "text":
             # background: the box's edge pixels; text: the 3 % of pixels farthest from it (glyph cores, not their anti-aliased edges)
             box = im.crop((int(x), int(y), int(x + w), int(y + h))); px = list(box.getdata())
@@ -313,14 +489,14 @@ for s in job["samples"]:
             edge = [box.getpixel((i, j)) for i in range(box.width) for j in (0, box.height - 1)] + [box.getpixel((i, j)) for j in range(box.height) for i in (0, box.width - 1)]
             bg = tuple(median(c[i] for c in edge) for i in range(3)); far = sorted(px, key=lambda c: -dist(c, bg))[:max(5, len(px) * 3 // 100)]
             res["colours"].append("#%02x%02x%02x" % tuple(int(median(c[i] for c in far)) for i in range(3))); continue
-        px = []
-        for yy in range(int(y + b / 2), int(y + h - b / 2), max(1, int(h / 30))):
-            for xx in (int(x + b / 2), int(x + w - b / 2)):
-                if 0 <= xx < im.width and 0 <= yy < im.height: px.append(im.getpixel((xx, yy)))
-        for xx in range(int(x + b / 2), int(x + w - b / 2), max(1, int(w / 30))):
-            for yy in (int(y + b / 2), int(y + h - b / 2)):
-                if 0 <= xx < im.width and 0 <= yy < im.height: px.append(im.getpixel((xx, yy)))
-        res["colours"].append("#%02x%02x%02x" % tuple(int(median(c[i] for c in px)) for i in range(3)) if px else None)
+        # a shape's fill: the most common colour of its inner part (user, 2026-11-04). An edge band read the rounded ends
+        # of a badge as the background and an input's border glow as its fill; a label in the middle is outnumbered
+        box = im.crop((int(x + w * 0.15), int(y + h * 0.2), int(x + w * 0.85), int(y + h * 0.8))); px = list(box.getdata())
+        if not px: res["colours"].append(None); continue
+        q = {}
+        for c in px: q.setdefault(tuple(v // 24 for v in c), []).append(c)
+        top = max(q.values(), key=len)
+        res["colours"].append("#%02x%02x%02x" % tuple(int(median(c[i] for c in top)) for i in range(3)))
     except Exception: res["colours"].append(None)
 COL = {"major": (220, 50, 50), "minor": (230, 150, 20), "info": (90, 120, 200), "cosmetic": (150, 150, 150)}
 for sh in job["sheets"]:
@@ -341,7 +517,9 @@ for sh in job["sheets"]:
             bx = (c.get(side) or {}).get("box")
             if not bx or (side == "figma" and not fig): continue
             x, y, w, h = [v * sc for v in bx]; d.rectangle((ox + x, y, ox + x + w, y + h), outline=col, width=3)
-            tx, ty = ox + x, max(0, y - 30); d.rectangle((tx, ty, tx + 16 + 14 * len(str(i)), ty + 28), fill=col); d.text((tx + 7, ty + 1), str(i), fill="white", font=FONT)
+            # the number beside the box, not above it: a tag above covered the text over it (「2026」 read as 「26」, 2026-11-04)
+            tw = 16 + 14 * len(str(i)); tx = ox + x - tw - 2 if x >= tw + 2 else ox + x + w + 2; ty = y
+            d.rectangle((tx, ty, tx + tw, ty + 28), fill=col); d.text((tx + 7, ty + 1), str(i), fill="white", font=FONT)
     p = sh["sheet"]; os.makedirs(os.path.dirname(p), exist_ok=True); out.save(p); res["sheets"].append(p)
 print(json.dumps(res))`;
   const r = spawnSync('python3', ['-I', '-c', code], { input: JSON.stringify(input), encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
@@ -412,12 +590,14 @@ function settle() {
       if (prev?.decided) { (screens[s.id] ??= {})[id] = prev; kept++; continue; }
       const same = x && y && x.verdict === y.verdict;
       const where = { kind: x?.kind ?? y?.kind, figma: x?.figma ?? y?.figma, app: x?.app ?? y?.app };
-      (screens[s.id] ??= {})[id] = same ? { ...where, verdict: x.verdict, severity: x.severity ?? y.severity, note: x.note, reviewer: y.note }
-        : { ...where, verdict: 'question', severity: x?.severity ?? y?.severity, note: x?.note ?? '', reviewer: y?.note ?? '', split: `builder ${x?.verdict ?? 'skipped'} · reviewer ${y?.verdict ?? 'skipped'}` };
+      // each pass's note in English (`note`) and Traditional Chinese (`note_zh`): the Design tab shows the page's language
+      const notes = { note: x?.note ?? '', note_zh: x?.note_zh, reviewer: y?.note ?? '', reviewer_zh: y?.note_zh };
+      (screens[s.id] ??= {})[id] = same ? { ...where, verdict: x.verdict, severity: x.severity ?? y.severity, ...notes }
+        : { ...where, verdict: 'question', severity: x?.severity ?? y?.severity, ...notes, split: `builder ${x?.verdict ?? 'skipped'} · reviewer ${y?.verdict ?? 'skipped'}` };
       same ? agree++ : ask++;
     }
   }
-  writeJson(join(designDir, 'findings.json'), { settled_at: new Date().toISOString(), builder: hash(b), reviewer: hash(r), screens });
+  writeJsonRows(join(designDir, 'findings.json'), { settled_at: new Date().toISOString(), builder: hash(b), reviewer: hash(r), screens });
   console.log(`${shown(join(designDir, 'findings.json'))}: ${agree} agreed, ${ask} questions for the user${kept ? `, ${kept} user decisions kept` : ''}`);
 }
 
@@ -475,7 +655,7 @@ function decide() {
     if (why?.trim()) item.why = why.trim(); else if (v !== 'eBug' && v !== 'no eBug') delete item.why;
     item.decided = `user ${day}`; n++;
   }
-  for (const [fp, data] of files) writeJson(fp, data);
+  for (const [fp, data] of files) writeJsonRows(fp, data);
   console.log(`${n} decision(s) written to ${[...files.keys()].map(shown).join(', ')}`);
 }
 

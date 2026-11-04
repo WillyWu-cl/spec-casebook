@@ -18,9 +18,11 @@
 // Recovery: a command that fails because UiAutomator2 is gone (instrumentation crashed, socket hang up, dead session)
 // restarts it once, re-activates the app and retries. When the phone is unplugged, unauthorized, offline or
 // locked behind a PIN/pattern, the script prints BLOCKER and exits 75 (same convention as device.ts).
-//   design SCREEN [--part N] [NOTE]
+//   design SCREEN [--part N] [--anyway "<why>"] [NOTE]
 //                             design check (figma skill, references/conformance.md): the screenshot and page source of the
-//                             Figma screen SCREEN (node id) now on the phone, to screenshots/design/<id>.png/.xml, logged in
+//                             Figma screen SCREEN (node id) now on the phone, refused when it is not in the frame's state
+//                             (dark or light, keyboard up or down; --anyway keeps it with the reason), to
+//                             screenshots/design/<id>.png/.xml, logged in
 //                             design/captures.jsonl with the case running (`case ID`) and the window size
 //   case ID | case -          name the case now running (design captures name it), or clear it; with a design plan it
 //                             also arms the automatic design captures (lib/design-watch.ts): every page source this
@@ -94,7 +96,7 @@ import { homedir } from 'node:os';
 import { basename, join } from 'node:path';
 import { productValue } from './lib/feature-config.ts';
 import { BLOCKER, env, logActivity, runRecipe, sleep, stamp, webdriver } from './lib/device-common.ts';
-import { armWatch, saveCapture, watchSource } from './lib/design-watch.ts';
+import { armWatch, saveCapture, settledCapture, stateMismatch, watchSource } from './lib/design-watch.ts';
 
 const HOME = homedir();
 const ANDROID_HOME = process.env.ANDROID_HOME ?? process.env.ANDROID_SDK_ROOT ?? join(HOME, 'Library/Android/sdk');
@@ -241,7 +243,8 @@ function parseEls(xml: string, filter?: string) {
 const watching = () => existsSync(join(runDir, '.design-watch.json'));
 const source = async (): Promise<string> => {
   const xml: string = (await s('GET', '/source')).value;
-  if (watching()) { const l = await watchSource(runDir, xml, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'), async () => (await s('GET', '/window/rect')).value); if (l) console.log(l); }
+  if (watching()) { const l = await watchSource(runDir, xml, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'), async () => (await s('GET', '/window/rect')).value, async () => (await s('GET', '/source')).value,
+    async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value)); if (l) console.log(l); }
   return xml;
 };
 // before a press while watching: the screen it is pressed on
@@ -335,9 +338,16 @@ switch (cmd) {
     if (!rest[0]) { console.error('design SCREEN: the Figma screen id (design/plan.json)'); process.exit(2); }
     // --part 2, 3…: the same screen scrolled down (a frame taller than the phone); its texts count for copy and missing
     const pi = rest.indexOf('--part'), part = pi > 0 ? Number(rest[pi + 1]) : 1, words = rest.slice(1).filter((_, i) => pi < 0 || (i + 1 !== pi && i + 1 !== pi + 1));
-    const { kase, png } = saveCapture(runDir, rest[0], { part, note: words.join(' '), png: Buffer.from((await s('GET', '/screenshot')).value, 'base64'),
-      xml: (await s('GET', '/source')).value, win: (await s('GET', '/window/rect')).value });
-    console.log(`captured ${rest[0]}${kase ? ` (${kase})` : ''} → ${png}`);
+    // the screenshot and page source of one moment (lib/design-watch.ts settledCapture), in the frame's state: dark or
+    // light and the keyboard as Figma draws them, else refused (--anyway "<why>" keeps it, with the reason)
+    const ai = words.indexOf('--anyway'), anyway = ai >= 0 ? words.splice(ai, 2)[1] ?? 'yes' : '';
+    const one = await settledCapture(async () => (await s('GET', '/source')).value, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'));
+    const kb = await (async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value))().catch(() => null);
+    const off = part > 1 ? [] : stateMismatch(runDir, rest[0], one.png, kb);
+    if (off.length && !anyway) { console.error(`not captured: ${rest[0]} is not in its frame's state: ${off.join('; ')}`); process.exit(1); }
+    const { kase, png } = saveCapture(runDir, rest[0], { part, note: words.join(' '), png: one.png, xml: one.xml, win: (await s('GET', '/window/rect')).value,
+      extra: { ...(one.unsettled ? { unsettled: true } : {}), ...(kb !== null ? { keyboard: kb } : {}), ...(anyway ? { anyway, off } : {}) } });
+    console.log(`captured ${rest[0]}${kase ? ` (${kase})` : ''} → ${png}${one.unsettled ? ' — the screen kept changing: wait until it is still and capture again' : ''}`);
     break;
   }
   case 'case': {

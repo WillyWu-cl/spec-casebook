@@ -23,7 +23,7 @@ import { appElements, figmaScreen } from './design-match.ts';
 import { featureOfRunDir } from './feature-config.ts';
 import { featureDir } from './library.ts';
 
-type Watch = { case: string; row: string[]; screens: Record<string, { name: string; texts: string[]; dark?: boolean | null }> };
+type Watch = { case: string; row: string[]; screens: Record<string, { name: string; texts: string[]; dark?: boolean | null; kb?: boolean }> };
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
 const watchFile = (runDir: string) => join(runDir, '.design-watch.json');
 const planFile = (runDir: string) => join(dirname(dirname(resolve(runDir))), 'design', 'plan.json');
@@ -58,7 +58,7 @@ export function darkFill(node: any): boolean | null {
   return l < 0.35 ? true : l > 0.65 ? false : null;
 }
 
-/** A screenshot's appearance: true when most of it is dark, false when most is light, null when unreadable or mixed.
+/** A screenshot's appearance (its upper half): true when most of it is dark, false when most is light, null when unreadable or mixed.
  *  Plain 8-bit RGB / RGBA PNGs (what WDA and UiAutomator2 return); every 4th pixel of every 4th row is sampled. */
 export function darkShot(png: Buffer): boolean | null {
   try {
@@ -83,7 +83,8 @@ export function darkShot(png: Buffer): boolean | null {
         else if (filter === 4) { const q = a + b - c, pa = Math.abs(q - a), pb = Math.abs(q - b), pc = Math.abs(q - c); p = pa <= pb && pa <= pc ? a : pb <= pc ? b : c; }
         cur[i] = (x + p) & 255;
       }
-      if (y % 4 === 0) for (let i = 0; i + 2 < stride; i += 4 * bpp) { all++; if (luma(cur[i], cur[i + 1], cur[i + 2]) < 0.5) dark++; }
+      // the page's background shows in the upper half below the status bar; a keyboard or sheet fills the lower one
+      if (y % 4 === 0 && y > h * 0.06 && y < h * 0.5) for (let i = 0; i + 2 < stride; i += 4 * bpp) { all++; if (luma(cur[i], cur[i + 1], cur[i + 2]) < 0.5) dark++; }
       [prev, cur] = [cur, prev];
     }
     if (!all) return null;
@@ -93,18 +94,37 @@ export function darkShot(png: Buffer): boolean | null {
 
 // Short Figma texts and the background appearance of every routed screen, cached in the run folder until plan.json
 // changes.
-function screenTexts(runDir: string, plan: any, out: string): Record<string, { texts: string[]; dark: boolean | null }> {
+type Frame = { texts: string[]; dark: boolean | null; kb: boolean };
+// a frame's appearance from its fill, else from its crop's pixels (a gradient or image background has no single fill:
+// the template chat's dark frame passed a light capture, 2026-11-04); `kb`: the frame draws the keyboard up
+function screenTexts(runDir: string, plan: any, out: string): Record<string, Frame> {
   const cache = join(runDir, '.design-texts.json'), stamp = statSync(planFile(runDir)).mtimeMs;
-  if (existsSync(cache)) { try { const c = read(cache); if (c.plan === stamp && c.v === 2) return c.screens; } catch {} }
-  const boards = new Map<string, any[]>(), screens: Record<string, { texts: string[]; dark: boolean | null }> = {};
+  if (existsSync(cache)) { try { const c = read(cache); if (c.plan === stamp && c.v === 3) return c.screens; } catch {} }
+  const boards = new Map<string, any[]>(), screens: Record<string, Frame> = {};
   for (const s of plan.screens.filter((x: any) => x.status === 'routed')) {
     if (!boards.has(s.board)) { const f = join(out, `${s.board.replace(/[:;]/g, '-')}.json`); boards.set(s.board, existsSync(f) ? read(f).nodes : []); }
     const nodes = boards.get(s.board)!;
-    const texts = figmaScreen(nodes, s, new Set()).texts.filter((t: any) => t.text.length <= 60).map((t: any) => normLabel(t.text)).filter((t: string) => t && t !== '#');
-    screens[s.id] = { texts: [...new Set<string>(texts)], dark: darkFill(nodes.find((n: any) => n.id === s.id)) };
+    const fs = figmaScreen(nodes, s, new Set()), texts = fs.texts.filter((t: any) => t.text.length <= 60).map((t: any) => normLabel(t.text)).filter((t: string) => t && t !== '#');
+    const crop = join(out, 'crops', s.board.replace(/[:;]/g, '-'), `${s.id.replace(/[:;]/g, '-')}.png`);
+    screens[s.id] = { texts: [...new Set<string>(texts)], dark: darkFill(nodes.find((n: any) => n.id === s.id)) ?? (existsSync(crop) ? darkShot(readFileSync(crop)) : null), kb: fs.keyboard };
   }
-  writeFileSync(cache, JSON.stringify({ v: 2, plan: stamp, screens }));
+  writeFileSync(cache, JSON.stringify({ v: 3, plan: stamp, screens }));
   return screens;
+}
+
+/** A hand capture (`device.ts design <id>`) against its frame's state: the reasons it does not match (dark or light,
+ * keyboard up or down), empty when it does or cannot be told. The capture is refused unless `--anyway "<why>"`. */
+export function stateMismatch(runDir: string, screen: string, png: Buffer, kb: boolean | null): string[] {
+  try {
+    const feature = featureOfRunDir(runDir); if (!feature || !existsSync(planFile(runDir))) return [];
+    const plan = read(planFile(runDir)), out = join(featureDir(feature), 'specs', plan.spec_set, 'extracted', 'figma-source', 'design', 'out');
+    if (!existsSync(join(out, 'screens.json'))) return [];
+    const f = screenTexts(runDir, plan, out)[screen]; if (!f) return [];
+    const why: string[] = [], dark = darkShot(png);
+    if (f.dark !== null && dark !== null && f.dark !== dark) why.push(`Figma draws it ${f.dark ? 'dark' : 'light'}, the phone shows it ${dark ? 'dark' : 'light'} (set the phone or app to ${f.dark ? 'dark' : 'light'} mode; if it is already, the app ignores it: capture with --anyway "app ignores ${f.dark ? 'dark' : 'light'} mode")`);
+    if (kb !== null && kb !== f.kb) why.push(f.kb ? 'Figma draws the keyboard up, it is down (focus the field)' : 'the keyboard is up, Figma draws it down (hide it)');
+    return why;
+  } catch { return []; }
 }
 
 /** `case ID` / `case -`: report what the previous row left, then watch the new row's screens (and the rest). Lines to print. */
@@ -128,7 +148,7 @@ export function armWatch(runDir: string, caseId: string | null): string[] {
     const done = capturedScreens(runDir), texts = screenTexts(runDir, plan, out);
     const byId = new Map<string, any>(plan.screens.map((s: any) => [s.id, s]));
     const screens: Watch['screens'] = {};
-    for (const [id, t] of Object.entries(texts)) if (!done.has(id) && byId.has(id)) screens[id] = { name: byId.get(id).name, texts: t.texts, dark: t.dark };
+    for (const [id, t] of Object.entries(texts)) if (!done.has(id) && byId.has(id)) screens[id] = { name: byId.get(id).name, texts: t.texts, dark: t.dark, kb: t.kb };
     const row = (plan.by_case?.[caseId] ?? []).filter((id: string) => screens[id]);
     writeFileSync(watchFile(runDir), JSON.stringify({ case: caseId, row, screens } satisfies Watch));
     if (row.length) {
@@ -139,8 +159,28 @@ export function armWatch(runDir: string, caseId: string | null): string[] {
   return lines;
 }
 
-/** A page source the device script just read: capture a watched screen it shows. Returns a line to print, if any. */
-export async function watchSource(runDir: string, xml: string, png: () => Promise<Buffer>, win: () => Promise<{ width: number; height: number }>): Promise<string | undefined> {
+// One moment for both files (user, 2026-11-04): the screenshot and the page source were read one after the other, and
+// on a screen still moving (a chat scrolling in its new messages) the app's boxes landed on other things than the
+// screenshot shows (AI Mini Drama_template, Android). A capture now reads the source again after the screenshot and
+// keeps the pair only when the texts and their boxes did not move in between.
+const sig = (xml: string) => appElements(xml).filter(e => e.text).map(e => `${e.text}@${e.box.join(',')}`).join('\n');
+
+/** A screenshot and the page source of the same moment: up to 5 tries 0.8 s apart; `unsettled` when it never held still. */
+export async function settledCapture(source: () => Promise<string>, shot: () => Promise<Buffer>) {
+  let a = await source(), png = await shot();
+  for (let i = 0; i < 5; i++) {
+    const b = await source();
+    if (sig(a) === sig(b)) return { png, xml: b, unsettled: false };
+    await new Promise(r => setTimeout(r, 800)); a = await source(); png = await shot();
+  }
+  return { png, xml: a, unsettled: true };
+}
+
+/** A page source the device script just read: capture a watched screen it shows. Returns a line to print, if any.
+ * `again` reads the source once more (without watching it): a screen that moved while its screenshot was taken is not
+ * saved, and a later source of it, once still, is. */
+export async function watchSource(runDir: string, xml: string, png: () => Promise<Buffer>, win: () => Promise<{ width: number; height: number }>, again?: () => Promise<string>,
+  keyboard?: () => Promise<boolean | null>): Promise<string | undefined> {
   if (!xml || !existsSync(watchFile(runDir))) return;
   try {
     const w: Watch = read(watchFile(runDir)), w0 = Object.fromEntries(Object.entries(w.screens).map(([id, x]) => [id, x.name]));
@@ -170,10 +210,14 @@ export async function watchSource(runDir: string, xml: string, png: () => Promis
     // only the frames drawn in the appearance the phone shows (a board drawing each screen dark and light)
     const shot = await png(), dark = darkShot(shot);
     if (dark !== null) ids = ids.filter(id => w.screens[id].dark == null || w.screens[id].dark === dark);
+    // and with the keyboard as the frame draws it (up or down)
+    const kb = keyboard ? await keyboard().catch(() => null) : null;
+    if (kb !== null) ids = ids.filter(id => (w.screens[id].kb ?? false) === kb);
     if (!ids.length) return;
+    if (again && sig(await again()) !== sig(xml)) return;
     const size = await win();
     let kase = '', rel = '';
-    for (const id of ids) ({ kase, png: rel } = saveCapture(runDir, id, { png: shot, xml, win: size, extra: { auto: true, match: `${hit.hits}/${hit.of}`, ...(ids.length > 1 ? { same_texts: ids.filter(x => x !== id) } : {}) } }));
+    for (const id of ids) ({ kase, png: rel } = saveCapture(runDir, id, { png: shot, xml, win: size, extra: { auto: true, match: `${hit.hits}/${hit.of}`, ...(kb !== null ? { keyboard: kb } : {}), ...(ids.length > 1 ? { same_texts: ids.filter(x => x !== id) } : {}) } }));
     drop(ids);
     writeFileSync(watchFile(runDir), JSON.stringify(w));
     return `design: captured ${ids.map(id => `${id} ${w0[id]}`).join(', ')} automatically (${hit.hits}/${hit.of} texts${ids.length > 1 ? ', frames with the same texts' : ''}${kase && !rowSet.has(hit.id) ? `, not a screen of ${kase}` : ''}) → ${rel}`;

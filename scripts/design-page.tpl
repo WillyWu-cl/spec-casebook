@@ -116,6 +116,14 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .frame a { display: block }
 .parts { display: flex; gap: 6px; flex-wrap: wrap; font-size: 0.78rem }
 .noboxes .frame svg { display: none }
+.dec input.why { flex: 1 1 100%; font: 0.8rem var(--body); border: 1px solid var(--line); border-radius: 5px; padding: 3px 7px; background: var(--panel); color: var(--ink) }
+.dec input.why.need { border-color: var(--differs) }
+.it { cursor: pointer }
+.outa { fill: color-mix(in srgb, var(--muted) 14%, transparent); stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; vector-effect: non-scaling-stroke }
+.frame .zm { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in }
+.lb { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; background: rgba(10, 16, 18, 0.85); cursor: zoom-out }
+.lb .frame { height: calc(100dvh - 32px); width: auto; max-width: calc(100vw - 32px) }
+.lb .frame.plain { height: auto; max-height: calc(100dvh - 32px); overflow: auto }
 /* Plan view: the scope, then one line per screen grouped by board, each with Include / Exclude and a reason */
 .views { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel) }
 .views button { font: 650 0.9rem var(--display); border: 0; background: transparent; color: var(--ink); padding: 6px 16px; cursor: pointer }
@@ -236,7 +244,11 @@ const T = {
     showInfo: 'Show', hideInfo: 'Hide', nothing: 'No differences measured.', notCaptured: 'Not captured yet: reach it as shown and capture it (device.ts … design <id>).', close: 'Close',
     fitNote: (t, b) => `Fit offset: top ${t} pt, bottom ${b} pt`, allKinds: 'All differences', copy: n => `Copy decisions (${n})`, copied: 'Copied',
     bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', boxes: 'Boxes',
-    doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click an image to open it full size.',
+    doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click to see it full size', dwhy: 'Why it is not a problem (required)', dwhyOpt: 'Note (optional)',
+    needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`,
+    hiddenNote: n => `${n} text(s) of the page source are not on the screen (under another layer, or a button's accessibility name) and were left out.`,
+    noOcr: 'The screenshot was not read (OCR runs on macOS): lines, text size and hidden texts come from the view boxes.',
+    fontNote: (w, n) => `This platform draws Figma's font ${Math.round(Math.abs(1 - w) * 100)} % ${w < 1 ? 'narrower' : 'wider'} on average (${n} texts read on both sides): text size is judged against that.`, outNote: n => `${n} area(s) of other features left out of the check (dashed on the Figma side).`, outT: 'Another feature: not checked',
     now: { fixed: 'fixed', still: 'still there', check: 'look again' }, designPath: 'Design path', byArrows: 'Reached by the Design arrows',
     gap: 'No casebook row reaches this screen: a gap for the analysis.', pfit: { path: 'arrow path', variant: 'state beside a reached screen', entry: 'first screen of a flow' },
     views: { plan: 'Plan', results: 'Results' }, scope: 'Scope', reviewed: (d, n) => `Reviewed ${d}${n ? ` · ${n} new since` : ''}`, notReviewed: 'Not reviewed yet',
@@ -273,7 +285,11 @@ const T = {
     showInfo: '顯示', hideInfo: '隱藏', nothing: '沒有量到差異。', notCaptured: '尚未擷取：依右側方式到達後擷取（device.ts … design <id>）。', close: '關閉',
     fitNote: (t, b) => `對齊位移：上 ${t} pt，下 ${b} pt`, allKinds: '全部差異', copy: n => `複製決定（${n}）`, copied: '已複製',
     bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', boxes: '框線',
-    doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點圖片可開啟原尺寸。',
+    doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點一下看原尺寸', dwhy: '為什麼不是問題（必填）', dwhyOpt: '備註（選填）',
+    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`,
+    hiddenNote: n => `頁面原始碼中有 ${n} 段文字不在畫面上（在其他圖層下，或是按鈕的無障礙名稱），已排除。`,
+    noOcr: '擷取圖未經文字辨識（OCR 只在 macOS 執行）：行數、文字大小與隱藏文字改用元件框判斷。',
+    fontNote: (w, n) => `此平台呈現 Figma 字型平均${w < 1 ? '窄' : '寬'} ${Math.round(Math.abs(1 - w) * 100)}%（兩邊都辨識到的 ${n} 段文字）：文字大小以此為基準判斷。`, outNote: n => `${n} 個其他功能的區域不比對（Figma 圖上的虛線框）。`, outT: '其他功能：不比對',
     now: { fixed: '已修正', still: '仍存在', check: '需再看' }, designPath: 'Design 路徑', byArrows: '依 Design 箭頭到達',
     gap: '沒有任何測試表案例到達此畫面：分析需補上。', pfit: { path: '箭頭路徑', variant: '已到達畫面旁的狀態', entry: '流程的第一個畫面' },
     views: { plan: '計畫', results: '結果' }, scope: '範圍', reviewed: (d, n) => `已審查 ${d}${n ? ` · 之後新增 ${n} 個` : ''}`, notReviewed: '尚未審查',
@@ -311,25 +327,30 @@ const COL = s => `var(--${({ differs: 'differs', question: 'question', unreviewe
 const VN = { en: { bug: 'Bug', question: 'Question', ok: 'OK', 'n/a': 'N/A', unreviewed: 'Unreviewed', info: 'Info' }, zh: { bug: '問題', question: '待確認', ok: '一致', 'n/a': '無法判定', unreviewed: '未審查', info: '資訊' } };
 // Info and N/A in readable colours, not the faint grey (user, 2026-11-04)
 const VC = v => `var(--${({ bug: 'differs', question: 'question', unreviewed: 'unreviewed', ok: 'matches', info: 'info', 'n/a': 'muted' })[v] ?? 'none'})`;
-const KN = { en: { state: 'State', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
-  zh: { state: '狀態', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
+const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
+  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
 const PAGES = window.CASEBOOK?.pages ?? {};
 let st = '', board = '', kind = '', q = '', open = null, showInfo = true, noBoxes = false;
 const folded = new Set();   // verdict groups folded on the open comparison: kept when it is drawn again
-// the user's decisions: run|screen|id → { v: bug | ok | n/a, ebug: true }, kept in this browser until copied to the chat
+// the user's decisions: run|screen|id → { v: bug | ok | n/a, ebug: true | false, why, b: the passes' verdict, w0: the
+// saved reason }, each field only when it changes what findings.json holds; kept in this browser until saved
 const DKEY = `design-decisions:${D.feature}:${D.platform}`;
 let DEC = {}; try { DEC = JSON.parse(localStorage.getItem(DKEY) || '{}'); } catch (e) {}
 const saveDec = () => { try { localStorage.setItem(DKEY, JSON.stringify(DEC)); } catch (e) {} copyBtn(); };
 const dkey = (s, it) => `${s.run}|${s.id}|${it.id}`;
 function copyBtn() {
-  const n = Object.values(DEC).filter(d => d.v || d.ebug).length, b = $('copy');
+  const n = Object.keys(DEC).length, b = $('copy');
   // always there, greyed out with nothing to save, so the bar does not shift (user, 2026-11-04)
   b.disabled = !n; b.textContent = D.live ? t('save')(n) : t('copy')(n);
 }
 $('copy').onclick = async () => {
   const lines = [`DESIGN DECISIONS ${D.feature} ${D.platform}`];
-  for (const [k, d] of Object.entries(DEC)) { const [run, scr, id] = k.split('|');
-    if (d.v) lines.push(`${run} ${scr} ${id}: ${d.v}`); if (d.ebug) lines.push(`${run} ${scr} ${id}: eBug`); }
+  const whyOf = d => (d.why ?? d.w0 ?? '').replace(/\s+/g, ' ').trim();
+  const bad = Object.values(DEC).filter(d => d.b === 'bug' && (d.v === 'ok' || d.v === 'n/a') && !whyOf(d));
+  if (bad.length) { alert(t('needDecWhy')(bad.length)); return; }
+  for (const [k, d] of Object.entries(DEC)) { const [run, scr, id] = k.split('|'), v = d.v ?? d.b;
+    if (v && (d.v || d.why !== undefined)) lines.push(`${run} ${scr} ${id}: ${v}${whyOf(d) ? `: ${whyOf(d)}` : ''}`);
+    if (d.ebug === true) lines.push(`${run} ${scr} ${id}: eBug`); else if (d.ebug === false) lines.push(`${run} ${scr} ${id}: no eBug`); }
   if (D.live) {
     $('copy').disabled = true; $('copy').textContent = t('saving');
     try { await post('decide', lines.join('\n')); DEC = {}; saveDec(); location.reload(); } catch (e) { alert(`${t('saveFail')}\n${e.message}`); $('copy').disabled = false; copyBtn(); }
@@ -561,6 +582,35 @@ function grid() {
   }).join('') : `<p class="empty">${esc(t('none'))}</p>`;
   $('grid').querySelectorAll('.card').forEach(c => c.onclick = () => { location.hash = `screen=${encodeURIComponent(c.dataset.id)}`; });
 }
+// an item's decision row: Bug / OK / N/A (the current verdict pressed), the eBug tick on a bug, and the reason once it
+// is OK or N/A (required when it overturns a bug)
+const effV = (s, it) => DEC[dkey(s, it)]?.v ?? it.verdict;
+const effW = (s, it) => DEC[dkey(s, it)]?.why ?? it.why ?? '';
+function decRow(s, it) {
+  const k = dkey(s, it), v = effV(s, it), need = it.verdict === 'bug' && (v === 'ok' || v === 'n/a');
+  const btns = [['bug', t('bug')], ['ok', t('ok')], ['n/a', t('na')]].map(([x, l]) => `<button type="button" data-v="${x}" aria-pressed="${v === x}">${esc(l)}</button>`).join('');
+  const eb = v === 'bug' ? `<label><input type="checkbox" data-e${(DEC[k]?.ebug ?? !!it.ebug) ? ' checked' : ''}> ${esc(t('ebug'))}</label>` : '';
+  const why = v === 'ok' || v === 'n/a' || effW(s, it) ? `<input type="text" class="why${need && !effW(s, it).trim() ? ' need' : ''}" data-w placeholder="${esc(need ? t('dwhy') : t('dwhyOpt'))}" value="${esc(effW(s, it))}">` : '';
+  return `<div class="dec" data-k="${esc(k)}">${btns}${eb}${why}</div>`;
+}
+// the review notes in the page's language (user, 2026-11-04): each pass writes `note` (English) and `note_zh`; a note
+// in one language only is shown as it is. The check's own notes and the settle split are fixed English, put into
+// Chinese here.
+const MN = { 'one text contains the other': '其中一段文字包含另一段', 'runs past the screen edge': '超出畫面邊緣', 'text colour': '文字顏色',
+  'no tappable app element where Figma draws this control': 'Figma 畫此控制項的位置，App 沒有可點的元素',
+  'the screen kept changing while it was captured: the app boxes may not match the screenshot; capture it again once still': '擷取時畫面仍在變動：App 的框線可能與截圖不符；請等畫面靜止後重新擷取',
+  'number format differs': '數字格式不同',
+  'the keyboard is up in the capture, Figma draws this screen without it: capture it again with the keyboard down': '擷取圖中鍵盤是開的，Figma 此畫面沒有鍵盤：請收起鍵盤後重新擷取',
+  'Figma draws the keyboard up, the capture has it down: capture it again with the field focused': 'Figma 畫有鍵盤，擷取圖沒有：請點選輸入框後重新擷取' };
+// the check's notes with values in them
+const MNX = [[/^Figma draws this screen (dark|light), the capture is (dark|light)(.*)$/, (m, f, c, rest) => `Figma 此畫面為${f === 'dark' ? '深色' : '淺色'}，擷取圖為${c === 'dark' ? '深色' : '淺色'}` + (rest.includes('does not follow') && rest.includes('phone was in') && !rest.includes('capture it again') ? '：手機已是該模式，App 沒有跟著切換' : rest.includes('if the phone was') ? '：若手機已是該模式，表示 App 沒有跟著切換；否則請切換後重新擷取' : '：請切換手機模式後重新擷取')],
+  [/^text (wider|narrower|taller|shorter) by (\d+) % than this platform's texts draw Figma's \(size, weight or font differs\); Figma sets (.*)$/, (m, d, n, f) => `文字比此平台一般呈現 Figma 字型時${({ wider: '寬', narrower: '窄', taller: '高', shorter: '矮' })[d]} ${n}%（大小、粗細或字型不同）；Figma 設定為 ${f}`]];
+const mnx = t => { for (const [re, f] of MNX) { const m = t.match(re); if (m) return f(...m); } return null; };
+const lang = (o, k) => L === 'zh' ? o[`${k}_zh`] || (o[k] && (MN[o[k]] ?? mnx(o[k]) ?? o[k].replace(/^only (\d+) of (\d+) Figma texts found: the capture may not be this frame's state$/, '只找到 $1 / $2 個 Figma 文字：擷取圖可能不是此畫面的狀態'))) || ''
+  : o[k] || o[`${k}_zh`] || '';
+const PASS = { builder: '建構者', reviewer: '審查者', skipped: '略過' };
+const splitL = x => L === 'zh' ? x.replace(/\b(builder|reviewer|skipped)\b/g, m => PASS[m]).replace(/\b(bug|ok|n\/a|question|unreviewed)\b/g, m => VN.zh[m] ?? m) : x;
+const decidedL = x => L === 'zh' ? x.replace(/^user /, '使用者 ') : x;
 // one difference: number, kind, verdict, Figma vs app
 const ORDER = { bug: 0, question: 1, unreviewed: 2, 'n/a': 3, ok: 4, info: 5 };
 // the items of a comparison under one heading per verdict (Bug, Question, …, OK), each foldable; an item keeps its
@@ -573,7 +623,7 @@ function detail(id) {
   const info = s.items.filter(i => i.verdict === 'info'), shown = showInfo ? [...main, ...info] : main;
   const k = s.k ? 1 / s.k : 1, aw = s.win ? s.win.w * (s.k ?? 1) : s.w, ah = s.win ? s.win.h * (s.k ?? 1) : s.h;
   // smaller boxes are drawn last, so a box inside another stays clickable
-  const boxes = (side, w, h) => `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${shown.map((it, n) => [it[side]?.box, n, it]).filter(x => x[0])
+  const boxes = (side, w, h, out = []) => `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${out.map(o => `<rect class="outa" x="${o.box[0]}" y="${o.box[1]}" width="${o.box[2]}" height="${o.box[3]}"><title>${esc(t('outT'))}: ${esc(o.name)}</title></rect>`).join('')}${shown.map((it, n) => [it[side]?.box, n, it]).filter(x => x[0])
     .sort((a, c) => c[0][2] * c[0][3] - a[0][2] * a[0][3]).map(([b, n, it]) =>
       `<rect class="box" data-n="${n}" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}" style="stroke:${VC(it.verdict)}"><title>${n + 1} · ${esc(KN[L][it.kind] ?? it.kind)}</title></rect>`).join('')}</svg>`;
   const txt = (o) => o?.text ? `<q>${esc(o.text.length > 120 ? o.text.slice(0, 120) + '…' : o.text)}</q>` : o?.color ? `<span class="sw" style="background:${esc(o.color)}"></span> ${esc(o.color)}` : o?.name ? `<code>${esc(o.name)}</code>` : '';
@@ -585,13 +635,17 @@ function detail(id) {
     <label class="more"><input type="checkbox" id="bx"${noBoxes ? '' : ' checked'}> ${esc(t('boxes'))}</label>
     ${figmaUrl ? `<a class="more" href="${figmaUrl}" target="_blank" rel="noopener">${esc(t('open'))} ↗</a>` : ''}<button type="button" class="x" id="x" aria-label="${esc(t('close'))}">✕</button></div>
   <div class="db"><div class="pair">
-    <div class="side"><b>${esc(t('figma'))}</b><div class="frame" style="aspect-ratio:${s.w}/${s.h};--r:${s.w / s.h}">${s.figma ? `<a href="${esc(s.figma.src)}" target="_blank" rel="noopener" title="${esc(t('zoom'))}">${fig(s.figma, false)}</a>` + boxes('figma', s.w, s.h) : `<div class="no">${esc(t('noFig'))}</div>`}</div></div>
-    <div class="side"><b>${esc(t('app'))}</b><div class="frame" style="aspect-ratio:${aw}/${ah};--r:${aw / ah}">${s.app ? `<a href="${esc(s.app)}" target="_blank" rel="noopener" title="${esc(t('zoom'))}"><img src="${esc(s.app)}" alt=""></a>${boxes('app', aw, ah)}` : `<div class="no">${esc(s.run ? t('noApp') : s.status === 'not-captured' ? t('notCaptured') : STN[L][s.status])}</div>`}</div></div>
-  ${s.parts.length ? `<div class="parts">${s.parts.map((p, i) => `<a href="${esc(p)}" target="_blank" rel="noopener">${esc(t('part')(i + 2))}</a>`).join('')}</div>` : ''}
+    <div class="side"><b>${esc(t('figma'))}</b><div class="frame" style="aspect-ratio:${s.w}/${s.h};--r:${s.w / s.h}">${s.figma ? `<button type="button" class="zm" title="${esc(t('zoom'))}">${fig(s.figma, false)}</button>` + boxes('figma', s.w, s.h, s.out) : `<div class="no">${esc(t('noFig'))}</div>`}</div></div>
+    <div class="side"><b>${esc(t('app'))}</b><div class="frame" style="aspect-ratio:${aw}/${ah};--r:${aw / ah}">${s.app ? `<button type="button" class="zm" title="${esc(t('zoom'))}"><img src="${esc(s.app)}" alt=""></button>${boxes('app', aw, ah)}` : `<div class="no">${esc(s.run ? t('noApp') : s.status === 'not-captured' ? t('notCaptured') : STN[L][s.status])}</div>`}</div></div>
+  ${s.parts.length ? `<div class="parts">${s.parts.map((p, i) => `<button type="button" class="chip" data-part="${esc(p)}">${esc(t('part')(i + 2))}</button>`).join('')}</div>` : ''}
   </div><div class="rp">
     ${s.arrival && !s.arrival.ok ? `<div class="warn">${esc(t('doubt')(s.arrival.matched, s.arrival.of))}</div>` : ''}
-    ${s.recheck ? `<div class="rc"><b>${esc(t('recheck')(s.recheck.run))}</b>${s.recheck.items.map(i => `<div><b class="${i.now}">${esc(t('now')[i.now])}</b> ${esc(KN[L][i.id.split(':')[0]] ?? i.id)} <span class="more">${esc(i.note)}</span></div>`).join('')}</div>` : ''}
+    ${s.recheck ? `<div class="rc"><b>${esc(t('recheck')(s.recheck.run))}</b>${s.recheck.items.map(i => `<div><b class="${i.now}">${esc(t('now')[i.now])}</b> ${esc(KN[L][i.id.split(':')[0]] ?? i.id)} <span class="more">${esc(lang(i, 'note'))}</span></div>`).join('')}</div>` : ''}
     ${s.gap ? `<div class="warn">${esc(t('gap'))}</div>` : ''}
+    ${s.out.length ? `<p class="more">${esc(t('outNote')(s.out.length))}</p>` : ''}
+    ${s.hidden.length ? `<p class="more" title="${esc(s.hidden.map(h => h.text.replace(/\s+/g, ' ').slice(0, 60)).join('\n'))}">${esc(t('hiddenNote')(s.hidden.length))}</p>` : ''}
+    ${s.run && s.ocr && !s.ocr.app ? `<p class="more">${esc(t('noOcr'))}</p>` : ''}
+    ${s.font_width ? `<p class="more">${esc(t('fontNote')(s.font_width.width, s.font_width.texts))}</p>` : ''}
     ${r && r.how === 'figma' ? `<div class="route"><div><b>${esc(t('byArrows'))}</b> <span class="more">(${esc(t('pfit')[r.fit] ?? r.fit)})</span></div><div class="more">${esc(r.action)}</div></div>`
     : r ? `<div class="route"><div><b>${esc(t('reached'))}</b> ${esc(r.case)} <span class="more">(${esc(t('fit')[r.fit] ?? r.fit)}, ${esc(t('via'))} ${esc(r.edge || r.via)})</span>
       ${link('review', esc(r.case), t('cases'))} ${link('coverage', `case=${esc(r.case)}`, t('cov'))} ${link('results', `case=${esc(r.case)}`, t('res'))}</div>
@@ -603,10 +657,8 @@ function detail(id) {
       ${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
       ${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
       ${it.delta ? `<div class="more">${esc(Object.entries(it.delta).map(([a, b]) => `${a} ${b}`).join(' · '))}</div>` : ''}
-      ${it.split ? `<div class="note">${esc(it.split)}</div>` : ''}${it.decided ? `<div class="note">${esc(it.decided)}</div>` : ''}
-      ${s.run && (it.verdict === 'question' || it.verdict === 'unreviewed' || it.verdict === 'bug') ? `<div class="dec" data-k="${esc(dkey(s, it))}">${it.verdict !== 'bug' ? [['bug', t('bug')], ['ok', t('ok')], ['n/a', t('na')]].map(([v, l]) =>
-        `<button type="button" data-v="${v}" aria-pressed="${DEC[dkey(s, it)]?.v === v}">${esc(l)}</button>`).join('') : ''}
-        ${it.verdict === 'bug' || DEC[dkey(s, it)]?.v === 'bug' ? `<label><input type="checkbox" data-e${DEC[dkey(s, it)]?.ebug ? ' checked' : ''}> ${esc(t('ebug'))}</label>` : ''}</div>` : ''}${it.note ? `<div class="note">${esc(it.note)}</div>` : ''}${it.reviewer && it.reviewer !== it.note ? `<div class="note">${esc(it.reviewer)}</div>` : ''}</div>`).join('')}</details>`).join('')}
+      ${it.split ? `<div class="note">${esc(splitL(it.split))}</div>` : ''}${it.decided ? `<div class="note">${esc(decidedL(it.decided))}</div>` : ''}
+      ${s.run ? decRow(s, it) : ''}${lang(it, 'note') ? `<div class="note">${esc(lang(it, 'note'))}</div>` : ''}${lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note">${esc(lang(it, 'reviewer'))}</div>` : ''}</div>`).join('')}</details>`).join('')}
     ${info.length ? `<button type="button" class="chip" id="info">${esc(showInfo ? t('hideInfo') : t('showInfo'))} · ${esc(t('info')(info.length))}</button>` : ''}</div>
   </div></div>`;
   $('x').onclick = () => { history.replaceState(null, '', location.pathname + location.search); $('dlg').close(); open = null; };
@@ -614,30 +666,55 @@ function detail(id) {
   $('dlg').querySelectorAll('details.grp').forEach(g => g.addEventListener('toggle', () => g.open ? folded.delete(g.dataset.v) : folded.add(g.dataset.v)));
   $('bx').onchange = e => { noBoxes = !e.target.checked; $('dlg').classList.toggle('noboxes', noBoxes); };
   $('dlg').classList.toggle('noboxes', noBoxes);
-  // a decision: press again to clear it
+  // a decision: pressing the passes' own verdict (or the chosen one again) goes back to it; a field equal to what
+  // findings.json holds is dropped, and an empty decision with it
   $('dlg').querySelectorAll('.dec').forEach(d => {
-    const k = d.dataset.k;
-    d.querySelectorAll('button').forEach(b => b.onclick = () => { const cur = DEC[k] ?? {};
-      DEC[k] = { ...cur, v: cur.v === b.dataset.v ? undefined : b.dataset.v }; if (DEC[k].v !== 'bug' && !s.items.find(i => dkey(s, i) === k && i.verdict === 'bug')) delete DEC[k].ebug;
-      if (!DEC[k].v && !DEC[k].ebug) delete DEC[k]; saveDec(); detail(id); });
-    d.querySelector('[data-e]')?.addEventListener('change', e => { DEC[k] = { ...(DEC[k] ?? {}), ebug: e.target.checked || undefined }; if (!DEC[k].v && !DEC[k].ebug) delete DEC[k]; saveDec(); });
+    const k = d.dataset.k, it = s.items.find(i => dkey(s, i) === k);
+    const tidy = () => { const x = DEC[k]; for (const f of ['v', 'ebug', 'why']) if (x[f] === undefined) delete x[f];
+      if (x.ebug !== undefined && (x.v ?? it.verdict) !== 'bug') delete x.ebug;
+      if (x.v === undefined && x.ebug === undefined && x.why === undefined) delete DEC[k]; saveDec(); };
+    const base = () => ({ b: it.verdict, ...(it.why ? { w0: it.why } : {}), ...(DEC[k] ?? {}) });
+    d.querySelectorAll('button').forEach(b => b.onclick = e => { e.stopPropagation(); const x = b.dataset.v, cur = base();
+      DEC[k] = { ...cur, v: cur.v === x || x === it.verdict ? undefined : x }; tidy(); detail(id);
+      $('dlg').querySelector(`.dec[data-k="${CSS.escape(k)}"] input.why`)?.focus(); });
+    d.querySelector('[data-e]')?.addEventListener('change', e => { DEC[k] = { ...base(), ebug: e.target.checked === !!it.ebug ? undefined : e.target.checked }; tidy(); });
+    // the reason is kept as it is typed, without drawing the panel again
+    d.querySelector('[data-w]')?.addEventListener('input', e => { DEC[k] = { ...base(), why: e.target.value === (it.why ?? '') ? undefined : e.target.value }; tidy();
+      e.target.classList.toggle('need', it.verdict === 'bug' && ['ok', 'n/a'].includes(effV(s, it)) && !e.target.value.trim()); });
   });
   // hovering a difference highlights its boxes on both images, and hovering a box its difference; clicking a box scrolls to it
   const hl = (n, on) => $('dlg').querySelectorAll(`rect[data-n="${n}"], .it[data-n="${n}"]`).forEach(r => r.classList.toggle('hl', on));
   $('dlg').querySelectorAll('.it').forEach(e => { e.onmouseenter = () => hl(e.dataset.n, true); e.onmouseleave = () => hl(e.dataset.n, false); });
   $('dlg').querySelectorAll('rect.box').forEach(r => { const n = r.dataset.n;
     r.onmouseenter = () => hl(n, true); r.onmouseleave = () => hl(n, false);
-    // a box clicked: its item scrolls into view in the right panel and stays marked (with its box) until another click
-    r.onclick = () => { $('dlg').querySelectorAll('.pick').forEach(e => e.classList.remove('pick'));
-      const it = $('dlg').querySelector(`.it[data-n="${n}"]`); if (!it) return;
-      it.closest('details')?.setAttribute('open', '');
-      $('dlg').querySelectorAll(`rect[data-n="${n}"]`).forEach(b => b.classList.add('pick'));
-      void it.offsetWidth; it.classList.add('pick');
-      const rp = it.closest('.rp'), y = it.getBoundingClientRect().top - rp.getBoundingClientRect().top + rp.scrollTop - (rp.clientHeight - it.offsetHeight) / 2;
-      if (rp.scrollHeight > rp.clientHeight) rp.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); else it.scrollIntoView({ block: 'center', behavior: 'smooth' }); }; });
+    r.onclick = () => pick(n, true); });
+  // an item clicked (not its buttons or reason) is selected like its box (user, 2026-11-04)
+  $('dlg').querySelectorAll('.it').forEach(e => e.addEventListener('click', ev => { if (!ev.target.closest('button, input, label, a')) pick(e.dataset.n, false); }));
+  // an image clicked: full size over the page with its boxes (user, 2026-11-04: not a new tab); a click or Esc closes it
+  $('dlg').querySelectorAll('.frame .zm').forEach(b => b.onclick = () => { const fr = b.closest('.frame').cloneNode(true);
+    fr.querySelector('.zm').replaceWith(...fr.querySelector('.zm').childNodes); lightbox(fr); });
+  $('dlg').querySelectorAll('[data-part]').forEach(b => b.onclick = () => { const fr = document.createElement('div'); fr.className = 'frame plain';
+    fr.innerHTML = `<img src="${esc(b.dataset.part)}" alt="">`; lightbox(fr); });
   if (!$('dlg').open) $('dlg').showModal();
   const rp = $('dlg').querySelector('.rp'); if (rp) rp.scrollTop = keep;
 }
+// a box or an item clicked: both marked until another click; from a box, its item scrolls into view in the right panel
+function pick(n, scroll) {
+  $('dlg').querySelectorAll('.pick').forEach(e => e.classList.remove('pick'));
+  const it = $('dlg').querySelector(`.it[data-n="${n}"]`); if (!it) return;
+  it.closest('details')?.setAttribute('open', '');
+  $('dlg').querySelectorAll(`rect[data-n="${n}"]`).forEach(b => b.classList.add('pick'));
+  void it.offsetWidth; it.classList.add('pick');
+  if (!scroll) return;
+  const rp = it.closest('.rp'), y = it.getBoundingClientRect().top - rp.getBoundingClientRect().top + rp.scrollTop - (rp.clientHeight - it.offsetHeight) / 2;
+  if (rp.scrollHeight > rp.clientHeight) rp.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); else it.scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+function lightbox(fr) {
+  const lb = document.createElement('div'); lb.className = 'lb'; lb.append(fr);
+  lb.onclick = () => lb.remove(); $('dlg').append(lb);
+}
+// Esc closes the full-size image first, then the comparison
+$('dlg').addEventListener('cancel', e => { const lb = $('dlg').querySelector('.lb'); if (lb) { e.preventDefault(); lb.remove(); } });
 $('dlg').addEventListener('click', e => { if (e.target === $('dlg')) $('x')?.click(); });
 $('dlg').addEventListener('close', () => { open = null; if (location.hash.startsWith('#screen=')) history.replaceState(null, '', location.pathname + location.search); });
 const fromHash = () => { const m = location.hash.match(/^#screen=(.+)$/); if (m) detail(decodeURIComponent(m[1])); };

@@ -115,6 +115,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   design captures (every page source already read is matched to the row's Design screens); a design pass walks only
   what runs left (`screens --left`), and the Design tab shows the Progress page's time and usage table for it (`figma/references/conformance.md`
   §2, *The Design tab*).
+- **Design check: only this feature's part, and decisions with a reason (user, 2026-11-04, REQ-082).** On a shared
+  screen (the Launcher) other features' controls are traced `n/a: other feature: …` and the design check leaves their
+  areas out; every item on the Design tab takes Bug / OK / N/A with a reason (required to overturn a bug); a capture's
+  screenshot and page source are of one moment (`figma/references/conformance.md` §2, §3, §5).
 - **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
   the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
 - **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names

@@ -7,6 +7,11 @@
 // entry's `press` (and `dismiss` for inputs):
 //   TC-…[, TC-…]      the rows that press it (any one counts; several are fine)
 //   n/a: <why>        not tappable in the app, decorative, another platform's frame, or out of this table's scope
+//   n/a: other feature: <why>
+//                     another feature's control on a screen this feature shares (the Launcher's other shortcuts): the
+//                     design check leaves it out with the area around it (design.ts check, lib/design-match.ts)
+// `other` (optional) lists the group's controls that are another feature's although the group is pressed by rows (the
+// Launcher's 「View more」 grouped with this feature's 「View more」 by label): the design check leaves those out too.
 // Entries already traced in this file are kept; others are carried from the newest earlier draft (same group id), then
 // filled automatically where the table says so (`how`):
 //   arrow   the control starts a flow arrow whose requirement is covered by these rows
@@ -31,7 +36,7 @@ const inv = JSON.parse(readFileSync(invPath, 'utf8'));
 const rows = readTable(join(dir, draft ? 'draft.csv' : 'cases.csv')).filter(r => r.Change !== 'removed');
 const req = existsSync(join(dir, 'requirements.md')) ? readFileSync(join(dir, 'requirements.md'), 'utf8') : '';
 const outPath = join(dir, 'control-trace.json');
-type Entry = { group: string; kind: string; board: string; boards: string[]; name: string; label: string; set: boolean; instances: number; screens: string[]; controls: string[]; app: string[]; press: string; dismiss?: string; how?: string; carried_from?: string };
+type Entry = { group: string; kind: string; board: string; boards: string[]; name: string; label: string; set: boolean; instances: number; screens: string[]; controls: string[]; app: string[]; press: string; dismiss?: string; how?: string; carried_from?: string; other?: string[] };
 const own: Entry[] = existsSync(outPath) ? JSON.parse(readFileSync(outPath, 'utf8')).entries : [];
 const drafts = draftsDir(feature, platform);
 // carry from the newest earlier draft; the approved table carries from nothing (its trace comes from the draft it was
@@ -73,6 +78,8 @@ for (const [group, cs] of groups) {
   e.app = [...new Set([...(k?.app ?? []), ...(p?.app ?? [])])];
   if (k?.press) Object.assign(e, { press: k.press, dismiss: k.dismiss, how: k.how, carried_from: k.carried_from });
   else if (p?.press) Object.assign(e, { press: p.press, dismiss: p.dismiss, how: p.how, carried_from: earlier });
+  const other = (k?.other ?? p?.other ?? []).filter((id: string) => e.controls.includes(id));
+  if (other.length) e.other = other;
   if (!e.press || e.how === 'arrow' || e.how === 'label') {
     const viaArrow = [...new Set(cs.flatMap((c: any) => arrowRows.get(c.id) ?? []))];
     const viaLabel = viaArrow.length ? [] : [...new Set(cs.flatMap((c: any) => labelRows(c.label)))];
