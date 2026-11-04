@@ -1,0 +1,424 @@
+{
+  "spec_folder": "specs/2026-11-04",
+  "platform": "android",
+  "inventory": "specs/2026-11-04/extracted/inventory.json",
+  "entries": [
+    {
+      "group": "K-1326ae",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_add_credit",
+      "label": "0",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "I2V Custom · reuse_from_video (NEW)",
+        "I2V Custom · default（同 Image to Video 今天",
+        "I2V Custom · from_video (NEW)",
+        "I2V Custom · model_sunset (NEW)"
+      ],
+      "controls": [
+        "K-391187",
+        "K-33ef1c"
+      ],
+      "app": [],
+      "press": "TC-048, TC-017"
+    },
+    {
+      "group": "K-cddf5f",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_credit_primary_1row",
+      "label": "Generate",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "I2V Custom · reuse_from_video (NEW)",
+        "I2V Custom · default（同 Image to Video 今天",
+        "I2V Custom · from_video (NEW)",
+        "I2V Custom · model_sunset (NEW)"
+      ],
+      "controls": [
+        "K-ec5566",
+        "K-0c0a2d"
+      ],
+      "app": [],
+      "press": "TC-023, TC-027, TC-031, TC-034, TC-035, TC-036",
+      "how": "label"
+    },
+    {
+      "group": "K-3cf2a1",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_primary_l_with_ar",
+      "label": "Save",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Save & Share · Reuse (NEW)",
+        "Save & Share · Reuse · default (NEW)",
+        "Save & Share · template_video（同 Image to"
+      ],
+      "controls": [
+        "K-8fdbfb",
+        "K-a620cf",
+        "K-82608f"
+      ],
+      "app": [],
+      "press": "n/a: Save & Share 「Save」 (save the video) is unchanged by this feature, as today",
+      "how": "label"
+    },
+    {
+      "group": "K-f02789",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_primary_small",
+      "label": "Reuse",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "Save & Share · Reuse (NEW)",
+        "Save & Share · Reuse · default (NEW)"
+      ],
+      "controls": [
+        "K-5cc351",
+        "K-83d5a2"
+      ],
+      "app": [],
+      "press": "TC-010, TC-012, TC-013, TC-014, TC-015, TC-016",
+      "how": "label"
+    },
+    {
+      "group": "K-54b38e",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_teritary_outline_small",
+      "label": "Retry",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "ctn"
+      ],
+      "controls": [
+        "K-b92dc1",
+        "K-e0f44d"
+      ],
+      "app": [],
+      "press": "n/a: failed-tile 「Retry」 in My AI Artwork is unchanged, as today"
+    },
+    {
+      "group": "K-85766f",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_teritary_outline_small",
+      "label": "Report",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "ctn"
+      ],
+      "controls": [
+        "K-230069",
+        "K-4853ef"
+      ],
+      "app": [],
+      "press": "n/a: failed-tile 「Report」 in My AI Artwork is unchanged, as today"
+    },
+    {
+      "group": "K-13e864",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_teritary_outline_small",
+      "label": "View Details",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "ctn"
+      ],
+      "controls": [
+        "K-4e2427",
+        "K-7753e8"
+      ],
+      "app": [],
+      "press": "TC-004",
+      "how": "label"
+    },
+    {
+      "group": "K-9d6e85",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_teritary_outline_small",
+      "label": "My Prompt",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "I2V Custom · reuse_from_video (NEW)",
+        "I2V Custom · default（同 Image to Video 今天",
+        "I2V Custom · from_video (NEW)",
+        "I2V Custom · model_sunset (NEW)"
+      ],
+      "controls": [
+        "K-8e9c92",
+        "K-96b8fe"
+      ],
+      "app": [],
+      "press": "n/a: 「My Prompt」 in Image to Video Custom is unchanged; the reused prompt fills the box without it (TC-010)"
+    },
+    {
+      "group": "K-39a868",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "btn_top_home_n",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Save & Share · Reuse (NEW)",
+        "Save & Share · Reuse · default (NEW)",
+        "Save & Share · template_video（同 Image to"
+      ],
+      "controls": [
+        "K-ef3820",
+        "K-79df6d"
+      ],
+      "app": [],
+      "press": "n/a: the Save & Share home button is unchanged, as today"
+    },
+    {
+      "group": "K-9575dc",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "ic_history",
+      "label": "",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "I2V Custom · reuse_from_video (NEW)",
+        "I2V Custom · default（同 Image to Video 今天",
+        "I2V Custom · from_video (NEW)",
+        "I2V Custom · model_sunset (NEW)"
+      ],
+      "controls": [
+        "K-151eb4",
+        "K-5ef3ae"
+      ],
+      "app": [],
+      "press": "TC-047"
+    },
+    {
+      "group": "K-de7144",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "round/ic_caution",
+      "label": "",
+      "set": false,
+      "instances": 9,
+      "screens": [
+        "ctn"
+      ],
+      "controls": [
+        "K-abf045",
+        "K-b4f292",
+        "K-aef289",
+        "K-a8db7b",
+        "K-11de5f",
+        "K-17de69"
+      ],
+      "app": [],
+      "press": "n/a: warning icon on a failed tile, not a control"
+    },
+    {
+      "group": "K-ec60e5",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "round/ic_chevron_right",
+      "label": "",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "I2V Custom · reuse_from_video (NEW)",
+        "I2V Custom · default（同 Image to Video 今天",
+        "I2V Custom · from_video (NEW)",
+        "I2V Custom · model_sunset (NEW)"
+      ],
+      "controls": [
+        "K-5338f4",
+        "K-da51ae"
+      ],
+      "app": [],
+      "press": "TC-021"
+    },
+    {
+      "group": "K-e907c7",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "round/ic_expand_text",
+      "label": "",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "I2V Custom · reuse_from_video (NEW)",
+        "I2V Custom · default（同 Image to Video 今天",
+        "I2V Custom · from_video (NEW)",
+        "I2V Custom · model_sunset (NEW)"
+      ],
+      "controls": [
+        "K-b992dc",
+        "K-71ee5b"
+      ],
+      "app": [],
+      "press": "n/a: the prompt box expand icon is unchanged, as today"
+    },
+    {
+      "group": "K-e59fbb",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "round/ic_ig",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Save & Share · Reuse (NEW)",
+        "Save & Share · Reuse · default (NEW)",
+        "Save & Share · template_video（同 Image to"
+      ],
+      "controls": [
+        "K-72faf2",
+        "K-867219",
+        "K-8e7226"
+      ],
+      "app": [],
+      "press": "n/a: 「Share to」 Instagram is unchanged, as today"
+    },
+    {
+      "group": "K-d9bab2",
+      "kind": "tab",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "tab/text/content/set",
+      "label": "Custom",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "I2V Custom · reuse_from_video (NEW)",
+        "I2V Custom · default（同 Image to Video 今天",
+        "I2V Custom · from_video (NEW)",
+        "I2V Custom · model_sunset (NEW)"
+      ],
+      "controls": [
+        "K-b6c47a",
+        "K-3dfe67"
+      ],
+      "app": [],
+      "press": "n/a: the reused room opens with 「Custom」 selected (TC-010 checks it); the Custom / Templates tabs are unchanged"
+    },
+    {
+      "group": "K-9d5633",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "top/ic_back",
+      "label": "",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "I2V Custom · reuse_from_video (NEW)",
+        "I2V Custom · default（同 Image to Video 今天",
+        "I2V Custom · from_video (NEW)",
+        "I2V Custom · model_sunset (NEW)"
+      ],
+      "controls": [
+        "K-d841c4",
+        "K-ee1a9e"
+      ],
+      "app": [],
+      "press": "TC-020"
+    },
+    {
+      "group": "K-a94558",
+      "kind": "button",
+      "board": "pm-flow",
+      "boards": [
+        "pm-flow",
+        "pm-ui"
+      ],
+      "name": "top/ic_back_n",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Save & Share · Reuse (NEW)",
+        "Save & Share · Reuse · default (NEW)",
+        "Save & Share · template_video（同 Image to"
+      ],
+      "controls": [
+        "K-024236",
+        "K-aa34ba"
+      ],
+      "app": [],
+      "press": "TC-009"
+    }
+  ]
+}
