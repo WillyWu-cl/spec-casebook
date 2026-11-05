@@ -1,7 +1,7 @@
 // Figma source reader: every node of a board (geometry, visibility, fills, strokes, radius, effects, auto
 // layout, text runs, component and variant, variables, styles, prototype links, arrows) read by ONE read-only use_figma
 // script per call instead of one Figma MCP read per frame, data type and component instance.
-// Run by the agent through scripts/figma-source.ts (figma-source skill), which fills the three placeholders and writes
+// Run by the agent through scripts/figma-source.ts (figma skill, references/source.md), which fills the three placeholders and writes
 // each call's `code` to a file; the agent passes that file to use_figma (read-only) and saves the return verbatim.
 //   __MODE__     'list'  sections and top-level nodes of the page holding the first target (one small call)
 //                'plan'  walks the target boards (no styling read, so it is fast), returns one fingerprint per board
@@ -200,7 +200,9 @@ const describe = async (n, origin, hid) => {
   if (Object.keys(st).length) d.st = st;
   if ('boundVariables' in n && n.boundVariables && Object.keys(n.boundVariables).length) {
     const bv = {};
-    for (const k in n.boundVariables) { const v = n.boundVariables[k]; bv[k] = Array.isArray(v) ? v.map(a => a.id) : v.id; }
+    // componentProperties holds one alias per property: kept as componentProperties.<property name>
+    for (const k in n.boundVariables) { const v = n.boundVariables[k];
+      if (k === 'componentProperties') { for (const q in v) bv[`${k}.${q.replace(/#[^#]*$/, '')}`] = v[q].id; } else bv[k] = Array.isArray(v) ? v.map(a => a.id) : v.id; }
     d.bv = bv;
   }
   if ('explicitVariableModes' in n && n.explicitVariableModes && Object.keys(n.explicitVariableModes).length) {

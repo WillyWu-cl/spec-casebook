@@ -19,6 +19,12 @@ library/<product>/<feature>/
                        runs/<date>/ (evidence from running the table), ebugs/<date>/ (eBug drafts and filing)
 ```
 
+Domain knowledge (facts about the app no spec states) lives in `knowledge/` folders at three scopes, CyberLink
+(`library/knowledge/`), product (`library/<product>/knowledge/`) and feature (`library/<product>/<feature>/knowledge/`),
+read merged by `node scripts/knowledge.ts`. Whenever someone gives some (a note, "remember that…", a colleague's
+notes), hand it to the **domain-knowledge** skill; during a run only park it (`references/run.md`, *Knowledge during a
+run*).
+
 Spec files are copied in by the scripts (`add-spec.ts`, `new-draft.ts`); never store them anywhere else. Put any
 other per-feature material the user asks to keep (exports, notes) under `library/<product>/<feature>/`, never at the repo root.
 
@@ -32,7 +38,8 @@ repo or any other QA tool. A later request may ask to turn exploration findings 
 a normal draft (new rows, `Change` = `new`, the finding named in `Notes`) and send it through review like any
 other change. Never push anything the other way. Requests the user made elsewhere (for example to the spec agent)
 reach the casebook only as entries in the feature's `requests.md`; the one-time import of 2026-10-21 is recorded
-there. Everything a table, a run or a filing needs is in this repo. The spec agent comparison (`references/analysis.md`) reads a
+there. Domain knowledge from those tools reaches it the same way, as a one-time import into `knowledge/sources/`
+(the exploration knowledge bases on 2026-11-03, user-approved; domain-knowledge skill). Everything a table, a run or a filing needs is in this repo. The spec agent comparison (`references/analysis.md`) reads a
 snapshot of the spec agent's cases committed here (`library/<product>/<feature>/spec-agent/<platform>.json`); a clone of the
 spec agent repo, when one is on the machine, only refreshes that snapshot (git only, never its working tree).
 
@@ -57,7 +64,8 @@ that showed it). No comparison runs during an analysis or before a proposal.
 **Started with no arguments (user, 2026-10-29).** Ask which feature to work on (offer the features
 `node scripts/status.ts` lists, plus "a new feature"), then which platform when the feature has both. Then:
 1. **No spec files or Figma links yet** (a new feature, or no spec set with a `figma-frames.json` `files` entry):
-   ask for the spec files (PM / Design / MX PDFs) and the Figma links before anything else, and continue with
+   ask for the spec files (PM / Design / MX PDFs) or the Figma links before anything else (a Figma link alone is
+   enough: it is read directly, never sent back for a PDF; `references/reading-the-spec.md`, *Figma-only spec*), and continue with
    step 1 once they arrive. The PDFs are enough to start (user, 2026-10-30): when there are no links, or this machine
    has no signed-in `figma-design` / `figma-pm`, ask once whether to sign in now or go **PDF-only**
    (`references/reading-the-spec.md`, *No Figma access*), and on PDF-only go on without Figma.
@@ -69,8 +77,15 @@ that showed it). No comparison runs during an analysis or before a proposal.
    Also ask whether new PDF exports arrived since the newest spec set (a PDF cannot be checked from here).
    - `FIGMA: CHANGED`: run the printed `reread-<group>.js` calls (one per changed group, saved over
      `figma-inventory-<group>.json`), add each new board to a group (or `--ack` it when it is not spec), re-capture the
-     listed screenshots, then `inventory.ts --sync-arrows` and `figma-check.ts` again (it takes the new hashes from
-     the re-read groups). Go on to step 3 (changed spec → update plan, draft, `check.ts`) and step 4 (review).
+     listed screenshots (a board with something drawn over it is cut from its holder's shot to the printed box), then
+     `inventory.ts --sync-arrows` and `figma-check.ts` again (it takes the new hashes from the re-read groups). A
+     board also counts as changed when what is drawn over it changed or an arrow over it is missing from its read
+     (user, 2026-11-04). Then `node scripts/figma-text.ts <feature>`: what each changed board now says against the
+     spec notes, with the requirements that hold each new or gone line. Every line it lists goes into the update plan
+     (requirement changed, row modified or retired); once the draft is approved run it with `--accept`. Then
+     `node scripts/board-lint.ts <feature> <platform>` for the marks the redraw left stale (`reading-the-spec.md`
+     step 10, *Board warnings*). Go on to step
+     3 (changed spec → update plan, draft, `check.ts`) and step 4 (review).
    - `FIGMA: UNCHANGED` and no new PDFs: the approved table stands; skip to the run.
    - **A spec set with `extracted/figma-pending.json`** (analysed PDF-only) on a machine where both `whoami` are
      right: tell the user the Figma reads it owes and, on their yes, do them (*No Figma access* › *Catching up*)
@@ -83,8 +98,8 @@ that showed it). No comparison runs during an analysis or before a proposal.
 - Feature ID: `<product>/<feature>`, both kebab-case, e.g. `pdr/ai-mini-drama` (product ids: the folders under
   `library/`; a new product also needs `library/<product>/product.json`, README › Adding a product). Reuse an existing ID from
   `node scripts/status.ts` when the feature is already in the library.
-- Platform: `ios` or `android`. Each platform has its own table, reviewed and approved separately. If the user
-  wants both, run the whole workflow once per platform (the second draft may start from the first platform's
+- Platform: `ios` or `android`. Each platform has its own table, reviewed and approved separately. **When the user
+  names no platform, do both (user, 2026-11-04)**; do not ask. For both, run the whole workflow once per platform (the second draft may start from the first platform's
   rows, adjusted for platform differences the spec states). Then read every Precondition and Action against the second
   platform's controls (its debug menu, log, tier switch, install path, system settings): a step that names a control the
   platform lacks is rewritten or parked, never copied (2026-10-27: 13 Android rows named iOS Pink, Developer Server or
@@ -151,8 +166,9 @@ node scripts/review.ts <feature> <platform>                  # edit the approved
 
 Run it in the background (it is a local server on 127.0.0.1, port 4387 or the next free one), give the user the
 printed URL, and tell them what to do. When the user wants the pages shared or together, run
-`node scripts/pages.ts <feature> <platform> [--draft <id>] [--lan]` instead: four tabs on one address, **Cases** (this review
-page, `/cases/`), **Progress** (the run plan, `/progress/`), **Results** and **Coverage** (user, 2026-10-28), with one
+`node scripts/pages.ts <feature> <platform> [--draft <id>] [--lan]` instead: five tabs on one address, **Cases** (this review
+page, `/cases/`), **Progress** (the run plan, `/progress/`), **Results** and **Coverage** (user, 2026-10-28), and **Design**
+(the design check, figma skill), with one
 shared tab bar holding the only English / 中文 switch; each row's **Coverage →** opens the coverage page on that case
 (its requirements, their spec boards and the controls it presses), **Results →** its run records with the screenshots
 and the pass / fail / block reason, and Save works only on this computer:
@@ -182,6 +198,22 @@ modified instead, or the note is answered with that row's ID. If the notes came 
 `draft.csv`, `requirements.md` and `spec.json` copy the version just saved, add the rows there, run `check.ts`, and open the review again on it; if they
 came as pasted text, add them to the open draft. Then set each note's `status` to `done` with the rows (or the
 answer) in `new-case-notes.json`, and tell the user which rows each note became.
+
+**Question answers (user, 2026-11-04).** The Cases page lists the Open questions of the draft's `requirements.md` (else
+the approved table's) in a collapsed panel above the table, **Questions for the team**: each question in plain words,
+the assumption its rows use, its rows and an answer box; each row a question touches shows a small `Q-n ?` marker that
+opens it (no separate tab: the user wants the pages few and easy to read). **Save answers** works apart from the table
+Save and writes `library/<product>/<feature>/question-answers.json` (one file for both platforms, keyed by Q-id, the
+question text kept with each answer, `status: "open"`). Write Open questions so anyone can read them: what is unclear,
+where the sources differ and what the rows assume, ending `Assumption: …` and the R- and TC- ids (the panel shows
+the ids as row links). Whenever the user says answers are in, and before any other work on the feature, run
+`node scripts/questions.ts <feature> <platform> [--draft <id>]` and settle every open answer as the source it is: an
+answer from PM, Design or RD that the spec lacks is a ruling, so record it in `requests.md` (next REQ ID, From = the
+name given), then change the requirement and its rows in the open draft (a new draft from the approved version when
+there is none, as for new-case notes), move the question out of Open questions with the answer and REQ cited, run
+`check.ts` on both platforms, and set the answer's `status` to `done` with a one-line `resolution` naming the rows and
+requirements changed. An answer that raises a new question stays `open` and gets a reply in chat. Tell the user which
+rows each answer changed.
 
 ### 5. Later questions about a feature
 

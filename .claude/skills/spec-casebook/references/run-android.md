@@ -41,8 +41,29 @@ adb serial HQ61563393, Android 12, 1080 × 2520; setup in README › Android pho
   region): never tap the consume or purchase rows. Fault rows stay Blocked `--as observability` until fault switches
   ship (planned for a later build, user 2026-10-28; recheck each new build and update this paragraph); failure cases
   otherwise need real failures (network loss). The tier comes from the signed-in account. Builds come from the TR's
-  OneDrive folder (`CL_Deluxe.<build>_<SR>_R9.zip`, APK + `Cyberlink.MD5`), installed with `adb install -r` after the
-  user approves the download (`fixtures.md`).
+  OneDrive folder (`CL_Deluxe.<build>_<SR>_R9.zip`, APK + `Cyberlink.MD5`), installed with `adb install -r`; the agent
+  downloads the TR's build without asking (user, 2026-11-05; `fixtures.md`).
+  Fully automated, no popup (user, 2026-11-05): never click Download in OneDrive inside the browser pane (the app asks
+  the user to approve every pane download, and the transfer stalled). Open the TR's 「OneDrive Shared Link」 in the
+  pane (the user signs in once), then in the page run `fetch('/personal/sr_auto_cyberlink_com/_api/v2.0/shares/u!' +
+  base64url(link) + '/driveItem/children?select=name,size,file,@content.downloadUrl')` and `curl -L` the zip's
+  short-lived `@content.downloadUrl` into `~/.casebook/android/apks/<build>/` (outside the repo; the URL carries a
+  temporary token, never commit or paste it). Check the size against `size`, then the APK's MD5.
+- **Debug info and session export (user, 2026-11-03, REQ-068).** AI Mini Drama has a Pink-like switch: on the 「Hi I'm
+  your AI Drama Assistant」 page, keep tapping the top row with two fingers between Back and the credit icon until the
+  toast 「Tap for debug info: ON」; the Create Your Drama page's top bar then turns yellow (like Stage). Tapping the top
+  of a chat box (Storyboard Result, Story Outline…) opens a menu whose download button exports the session; the
+  popup asks whether to include media (bigger file), EXPORT shows a toast with the path (default under Download).
+  This is how to get a session's `blueprint.json` (the app's private files are not readable over adb). Scripted
+  (2026-11-03): `debug-info on|off` (from the assistant page; reads the toast), `debug-export [OUT] [--media]` (from a
+  drama chat; pulls the zip the toast names into OUT, default `<run dir>/exports/`), and the recipe
+  `do library/pdr/ai-mini-drama/android/recipes/export-session.steps "<History title>" [OUT]` (assistant page →
+  drama → export). The zip holds `blueprint.json`, `blueprint_versions/V*.json`, `host_inputs/`, `engine_events/`,
+  `chat_history.json`, `perf/`; attach it (or its blueprint) to the eBug batch folder. Export without media unless
+  the media is needed.
+  Debug info stays off in test runs unless a case needs it. Export a finding's session when the finding is made,
+  before any reinstall or `pm clear`: both wipe History (the A7 blueprints for DRA262610P0420 / P0421 were lost to
+  the A7-j reinstalls, 2026-11-03).
 - **Server: Stage vs Production (user, 2026-10-28).** An empty `testserver.config` in `/sdcard/cyberlink/PDR/` means
   Stage at the next launch, absent means Production (`/sdcard/cyberlink/tester.config` holds the SR code and is not
   the switch). A fresh install keeps the file (shared storage); if it is missing the app comes up on Production with

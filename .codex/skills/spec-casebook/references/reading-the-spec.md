@@ -23,6 +23,10 @@ and look at the tile images where layout, arrows or states matter.**
    `specs/<date>/extracted/boards/<id>.md`: the board's text in reading order with canvas coordinates. Tiles stay in
    `boards/<id>/tiles/` (local only). Re-running skips finished steps. Expect about 45–75 min for a 230 MB PM file with `--jobs 3` (10/21: 48 min for 14 boards; the main-flow board alone took 48 min), so run it in the background.
    Do not use macOS Preview/Quick Look/CoreGraphics or pdf.js to render these files: they draw them blank or crash.
+   **White annotations (2026-11-03, phd/ai-background).** A PM page exported from a dark Figma canvas can carry its
+   notes as white text, which renders blank on the white page, so OCR finds nothing. Render one note area first; when
+   it is blank and the PDF's text layer reads cleanly (mupdf `toStructuredText`, Chinese included), write
+   `boards/<id>.md` from the text layer in the same y / x / text form instead of OCR, and say so in its header.
 4. **Read board by board.** Read `boards/<id>.md` first (cheap); then open the tiles of that board that hold
    flows, states or mockups (`boards/<id>/tiles/x<X>-y<Y>.png`, coordinates in the file name) to see what the text
    annotates. Zoom on a spot with `render-region.ts <pdf> <out.png> x y w h --max 2000` when small print matters.
@@ -118,7 +122,16 @@ and look at the tile images where layout, arrows or states matter.**
    - **Fingerprints (user, 2026-10-29).** Each group read records one hash per board (`hash`, `hashed_at`, `entries`).
      `scripts/figma-check.ts` checks a whole file in one call against the committed `extracted/figma-hashes.json` and
      names the groups to re-read (workflow step 0). Everything a read produces (group files, hashes, `inventory.json`,
-     `figma-frames.json`, board screenshots) is committed, so no machine reads an unchanged board again.
+     `figma-frames.json`, board screenshots, `figma-text/`) is committed, so no machine reads an unchanged board again.
+   - **What is drawn over a board (user, 2026-11-04).** A loose arrow, connector or note on the page, a section or the
+     board's parent that reaches into a board is part of it: designers draw flow arrows over boards without putting
+     them inside (PM board 11's X → dialog arrow was missed that way). Reads take those overlays' arrows (connectors
+     too) and texts, and each check returns an overlay fingerprint and the arrows drawn over each board; `--compare`
+     flags a board whose overlays changed or whose read lacks one of those arrows, so reads made before this are
+     found by the next check with no extra call. Each group read also returns every text of its boards (`texts`);
+     `scripts/figma-text.ts` compares a changed board's words with what the notes were read from (its last accepted
+     Figma text, else its PDF OCR) and names the requirements that hold each new or gone line, so a redrawn board
+     never keeps its old rows.
    - **Merge.** `node scripts/inventory.ts <feature> <set> --sync-arrows` merges the groups into
      `extracted/inventory.json` (screens by platform; controls as button / input / toggle / tab / item; arrows as flow /
      auto / pointer) and adds every arrow missing from `arrows.json` (write its `expected` and requirement in pass 1).
@@ -151,7 +164,9 @@ and look at the tile images where layout, arrows or states matter.**
      `get_screenshot` → `extracted/figma/<board>.png`, run `node scripts/figma-check.ts <feature> --shot <png> <board
      id>` (records it in `extracted/figma/shots.json` with the board's hash and shrinks it to 256 colours; needs Python
      3 with Pillow). Re-capture only when `--compare` lists the board, overwriting the same file, never a copy beside
-     it. `figma-check.ts --prune` deletes every image `shots.json` does not list and the screenshots of a superseded
+     it. A board with overlays is captured from its holder (the section or frame `--compare` prints; only the page
+     holds it: the board itself) and cut to the printed box with `figma-cut.ts`, so its overlays show; `shots.json`
+     keeps the overlay fingerprint and a change to it re-captures the image. `figma-check.ts --prune` deletes every image `shots.json` does not list and the screenshots of a superseded
      spec set (`SUPERSEDED.md`); commit the deletion. Never commit other images (renders, tiles, run screenshots).
      **Every board the coverage page shows has one (user, 2026-10-30)**, so any checkout shows the current Figma
      boards with no spec PDFs and no `--render` (the PDFs lag Figma and are not in git). Capture right after the
@@ -163,6 +178,14 @@ and look at the tile images where layout, arrows or states matter.**
      frame shot where one covers the box — check it is not only a background panel), and record it with
      `--shot <png> <board id> --box x,y,w,h --tiles <tile ids>` so a change to any tile re-captures it. Look at a crop
      of each image at full size before committing it.
+   - **Board warnings (user, 2026-11-04, REQ-079).** `node scripts/board-lint.ts <feature> <platform>` checks what
+     the coverage page marks on each board against the text of its committed Figma screenshot (macOS Vision OCR,
+     cached in `extracted/figma/ocr/`, committed; no Figma call): review-sheet marks the image no longer shows
+     (`stale-mark`) or that sit on another mark (`overlap`), traced notes drawn away from their words (`note-moved`)
+     or missing from the image (`note-gone`), notes no board holds (`note-off`) and boards whose text describes a step
+     with no arrow read (`no-arrow`). Run it after every Figma re-read and before a review: fix each warning in the
+     overrides, the trace or a re-read, or acknowledge one that is right (`--ack <id> --why "…"`). Boards under 0.9 px
+     per point are only checked for arrows.
    - **Everything is marked (user, 2026-10-29).** Every board the coverage page shows has all it draws marked: its
      screens, controls and arrows, and every annotation block as a note (state from the rows of its requirements;
      label / ui / older / Q-n traces show as Excluded). A bare spec region or a board with nothing marked is a gap of
@@ -170,6 +193,35 @@ and look at the tile images where layout, arrows or states matter.**
      spec content (step 9, *Follow every link*), so a board holding only a link shows every linked item marked. Board
      images are the committed screenshots (above); `coverage-page.ts --render` (local, from the spec PDFs; pdf point
      = figma point + `files.<key>.pdf.offset`) only fills a board that has none, e.g. in a PDF-only analysis.
+     **A spec read PDF-only keeps committed region images too (user, 2026-11-03, phd/ai-background: the PM boards
+     showed blank).** Render each `boards.json` region of a PDF no Figma file covers into
+     `extracted/figma/region-<id>.png` (`render-region.ts … --max <≥ 0.5 px per pt>`, `--bg 38` when its notes are
+     white text) and record it with `figma-check.ts --shot region-<id>.png <id> --box <region>`; the coverage page
+     shows it on every checkout. **Board names:** a Design board whose Figma name says nothing (「5」, 「Frame 4922」)
+     is read as `{ id, name }` with a name saying what it draws (「Room dark」), and its screenshot is named after it.
+     Name boards before the first control trace: control ids hash the board name, so a later rename orphans every
+     `control-trace.json` (the coverage page then draws no buttons). After a rename, re-run `controls.ts` on every
+     draft and approved table and carry each entry's press over by layer name + label.
+
+## Figma-only spec (user, 2026-11-04)
+
+When the user sends a Figma link and no PDF, the Figma page is the spec: read it directly and never ask for a PDF
+export (first used for `phd/i2v-reuse`, PM page 6336:3478).
+
+- **Read.** `whoami` on the right server, `get_metadata` on the page (to choose the boards: its sections, or regions
+  `{ name, parent, box }` in absolute canvas points), then step 10's inventory read, which also returns every text.
+  Save it as `extracted/figma-inventory-<group>.json` with `file` (the file key) and `page` added at the top, so
+  `figma-check.ts` knows its file; add the file to `figma-frames.json` `files.<role>`.
+- **Spec file.** Write a text snapshot of the read (every text per board in reading order, no timestamps) to a scratch
+  folder and give it to `new-draft.ts` as the spec file: its SHA-256 fingerprints the spec set, so an unchanged Figma
+  page gives the same set. Set `figma_only: true` and the links in `spec-set.json`.
+- **Board text.** Write `extracted/boards/<id>.md` from the read's texts in the usual y / x / text form (one line per
+  text line; coordinates from the section's top-left, since `annotations.ts` reads only non-negative numbers), with a
+  header saying it is the Figma text layer. Steps 2–3 (render, OCR) are skipped; step 4 onwards runs as written.
+- **Images.** One `get_screenshot` of the holding section at 1:1, cut per board with `figma-cut.ts` (a section render
+  has a 40-pt margin) and recorded with `figma-check.ts --shot`.
+- **Arrows drawn as frames.** PM pages may draw arrows as frames named 「<from> --> <to>」 holding plain lines, which
+  the extractor does not take: list them in `arrows.json` by hand from the frame names and the legend.
 
 ## No Figma access (PDF-only, user, 2026-10-30)
 

@@ -1,0 +1,20 @@
+{
+  "png": "pm-cms.png",
+  "box": [
+    2691,
+    107,
+    2515,
+    1000
+  ],
+  "lines": [
+    ["3.CMS &IDS",2738,180,252,40],
+    ["CMS type",2738,307,149,33],
+    ["TBD",2738,347,65,29],
+    ["IDs",2738,427,51,33],
+    ["• Feature ID: PeopleBackgroundV3",2756,504,515,33],
+    ["• Action ID",2749,548,171,29],
+    ["• Custom: genimage_1_img_bytedance_seedream5.0pro_none_custom",2800,585,1005,33],
+    ["• Template: genimage_1_img_bytedance_seedream5.0pro_none_tmpl",2797,625,990,36],
+    ["• First time free trial task ID: temp_one_time_free",2753,665,712,33]
+  ]
+}

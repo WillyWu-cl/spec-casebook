@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-04",
+  "how": "Figma-only spec set (user, 2026-11-04: a Figma link is read directly, no PDF). PM page 6336:3478 「26'11/E support to reuse model settings in My artwork」 listed with get_metadata (figma-pm, qa1): one section 「Spec」 (6336:3479) holding Spec - Flow, Spec - UI, 【Tracking Event】, Draft / TBD and Error Handling; read whole in one inventory call (group p1). No dated frames or labels. Flow arrows are frames named 「<from> --> <to>」 (drawn lines inside), which the extractor does not take; listed by hand in arrows.json. Design spec not yet shared (expected 2026-11-05).",
+  "pm_checked_at": "2026-11-04",
+  "files": {
+    "pm": {
+      "fileKey": "lSk4JUgbXG3DjauMLS9Et7",
+      "page": "6336:3478",
+      "url": "https://www.figma.com/design/lSk4JUgbXG3DjauMLS9Et7/Image-to-Video?node-id=6336-3478",
+      "account": "qa1@cyberlink.com (Dev seat, PM Workspace)"
+    }
+  },
+  "frames": []
+}

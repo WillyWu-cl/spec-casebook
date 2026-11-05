@@ -1,0 +1,2985 @@
+{
+ "note": "2026-11-04 (b): iOS draft 20261104-100851 (109 rows: v1 plus 11 rows from the analysis rerun under passes 10 and 11, REQ-004) against the same 271 spec agent cases (uncommitted working tree). Only the 50 earlier gaps were re-decided; every other decision is carried from 20261104. Codes: cov covered, part partly covered, value each setting value covered but not this combination, diff stated differently, older older spec, nonspec not from the spec, gap not covered.",
+ "spec_agent_commit": "uncommitted-20261104",
+ "sa": {
+  "TC-VE2-001": "cov",
+  "TC-VE2-002": "cov",
+  "TC-VE2-003": "cov",
+  "TC-VE2-004": "cov",
+  "TC-VE2-005": "cov",
+  "TC-VE2-006": "cov",
+  "TC-VE2-007": "cov",
+  "TC-VE2-008": "cov",
+  "TC-VE2-009": "cov",
+  "TC-VE2-010": "cov",
+  "TC-VE2-011": "cov",
+  "TC-VE2-012": "cov",
+  "TC-VE2-013": "cov",
+  "TC-VE2-014": "cov",
+  "TC-VE2-015": "cov",
+  "TC-VE2-016": "cov",
+  "TC-VE2-017": "cov",
+  "TC-VE2-018": "cov",
+  "TC-VE2-019": "cov",
+  "TC-VE2-020": "cov",
+  "TC-VE2-021": "cov",
+  "TC-VE2-022": "cov",
+  "TC-VE2-023": "cov",
+  "TC-VE2-024": "cov",
+  "TC-VE2-025": "cov",
+  "TC-VE2-026": "diff",
+  "TC-VE2-027": "cov",
+  "TC-VE2-028": "cov",
+  "TC-VE2-029": "cov",
+  "TC-VE2-030": "cov",
+  "TC-VE2-031": "cov",
+  "TC-VE2-032": "cov",
+  "TC-VE2-033": "cov",
+  "TC-VE2-034": "cov",
+  "TC-VE2-035": "cov",
+  "TC-VE2-036": "cov",
+  "TC-VE2-037": "cov",
+  "TC-VE2-038": "older",
+  "TC-VE2-039": "cov",
+  "TC-VE2-040": "cov",
+  "TC-VE2-041": "cov",
+  "TC-VE2-042": "cov",
+  "TC-VE2-043": "cov",
+  "TC-VE2-044": "cov",
+  "TC-VE2-045": "cov",
+  "TC-VE2-046": "cov",
+  "TC-VE2-047": "cov",
+  "TC-VE2-048": "cov",
+  "TC-VE2-049": "cov",
+  "TC-VE2-050": "cov",
+  "TC-VE2-051": "cov",
+  "TC-VE2-052": "cov",
+  "TC-VE2-053": "cov",
+  "TC-VE2-054": "cov",
+  "TC-VE2-055": "cov",
+  "TC-VE2-056": "cov",
+  "TC-VE2-057": "cov",
+  "TC-VE2-058": "cov",
+  "TC-VE2-059": "cov",
+  "TC-VE2-060": "cov",
+  "TC-VE2-061": "cov",
+  "TC-VE2-062": "cov",
+  "TC-VE2-063": "cov",
+  "TC-VE2-064": "cov",
+  "TC-VE2-065": "cov",
+  "TC-VE2-066": "cov",
+  "TC-VE2-067": "cov",
+  "TC-VE2-068": "cov",
+  "TC-VE2-069": "cov",
+  "TC-VE2-070": "cov",
+  "TC-VE2-071": "cov",
+  "TC-VE2-072": "cov",
+  "TC-VE2-073": "cov",
+  "TC-VE2-074": "cov",
+  "TC-VE2-075": "cov",
+  "TC-VE2-076": "cov",
+  "TC-VE2-077": "gap",
+  "TC-VE2-078": "cov",
+  "TC-VE2-079": "cov",
+  "TC-VE2-080": "cov",
+  "TC-VE2-081": "cov",
+  "TC-VE2-082": "cov",
+  "TC-VE2-083": "cov",
+  "TC-VE2-084": "cov",
+  "TC-VE2-085": "cov",
+  "TC-VE2-086": "cov",
+  "TC-VE2-087": "cov",
+  "TC-VE2-088": "cov",
+  "TC-VE2-089": "cov",
+  "TC-VE2-090": "cov",
+  "TC-VE2-091": "cov",
+  "TC-VE2-092": "cov",
+  "TC-VE2-093": "cov",
+  "TC-VE2-094": "cov",
+  "TC-VE2-095": "cov",
+  "TC-VE2-096": "cov",
+  "TC-VE2-097": "diff",
+  "TC-VE2-098": "diff",
+  "TC-VE2-099": "cov",
+  "TC-VE2-100": "cov",
+  "TC-VE2-101": "cov",
+  "TC-VE2-102": "cov",
+  "TC-VE2-103": "cov",
+  "TC-VE2-104": "cov",
+  "TC-VE2-105": "cov",
+  "TC-VE2-106": "cov",
+  "TC-VE2-107": "cov",
+  "TC-VE2-108": "cov",
+  "TC-VE2-109": "cov",
+  "TC-VE2-110": "part",
+  "TC-VE2-111": "cov",
+  "TC-VE2-112": "cov",
+  "TC-VE2-113": "cov",
+  "TC-VE2-114": "nonspec",
+  "TC-VE2-115": "cov",
+  "TC-VE2-116": "nonspec",
+  "TC-VE2-117": "diff",
+  "TC-VE2-118": "diff",
+  "TC-VE2-119": "diff",
+  "TC-VE2-120": "diff",
+  "TC-VE2-121": "diff",
+  "TC-VE2-122": "diff",
+  "TC-VE2-123": "nonspec",
+  "TC-VE2-124": "cov",
+  "TC-VE2-125": "nonspec",
+  "TC-VE2-126": "diff",
+  "TC-VE2-127": "diff",
+  "TC-VE2-128": "diff",
+  "TC-VE2-129": "diff",
+  "TC-VE2-130": "diff",
+  "TC-VE2-131": "diff",
+  "TC-VE2-132": "nonspec",
+  "TC-VE2-133": "nonspec",
+  "TC-VE2-134": "nonspec",
+  "TC-VE2-135": "diff",
+  "TC-VE2-136": "diff",
+  "TC-VE2-137": "diff",
+  "TC-VE2-138": "diff",
+  "TC-VE2-139": "diff",
+  "TC-VE2-140": "diff",
+  "TC-VE2-141": "nonspec",
+  "TC-VE2-142": "nonspec",
+  "TC-VE2-143": "nonspec",
+  "TC-VE2-144": "diff",
+  "TC-VE2-145": "diff",
+  "TC-VE2-146": "diff",
+  "TC-VE2-147": "diff",
+  "TC-VE2-148": "diff",
+  "TC-VE2-149": "diff",
+  "TC-VE2-150": "cov",
+  "TC-VE2-151": "cov",
+  "TC-VE2-152": "cov",
+  "TC-VE2-153": "nonspec",
+  "TC-VE2-154": "cov",
+  "TC-VE2-155": "nonspec",
+  "TC-VE2-156": "nonspec",
+  "TC-VE2-157": "cov",
+  "TC-VE2-158": "cov",
+  "TC-VE2-159": "part",
+  "TC-VE2-160": "cov",
+  "TC-VE2-161": "part",
+  "TC-VE2-162": "cov",
+  "TC-VE2-163": "nonspec",
+  "TC-VE2-164": "cov",
+  "TC-VE2-165": "cov",
+  "TC-VE2-166": "cov",
+  "TC-VE2-167": "cov",
+  "TC-VE2-168": "nonspec",
+  "TC-VE2-169": "cov",
+  "TC-VE2-170": "cov",
+  "TC-VE2-171": "cov",
+  "TC-VE2-172": "cov",
+  "TC-VE2-173": "cov",
+  "TC-VE2-174": "nonspec",
+  "TC-VE2-175": "cov",
+  "TC-VE2-176": "cov",
+  "TC-VE2-177": "cov",
+  "TC-VE2-178": "cov",
+  "TC-VE2-179": "cov",
+  "TC-VE2-180": "cov",
+  "TC-VE2-181": "cov",
+  "TC-VE2-182": "cov",
+  "TC-VE2-183": "cov",
+  "TC-VE2-184": "cov",
+  "TC-VE2-185": "cov",
+  "TC-VE2-186": "cov",
+  "TC-VE2-187": "cov",
+  "TC-VE2-188": "value",
+  "TC-VE2-189": "cov",
+  "TC-VE2-190": "value",
+  "TC-VE2-191": "value",
+  "TC-VE2-192": "cov",
+  "TC-VE2-193": "value",
+  "TC-VE2-194": "value",
+  "TC-VE2-195": "cov",
+  "TC-VE2-196": "value",
+  "TC-VE2-197": "value",
+  "TC-VE2-198": "value",
+  "TC-VE2-199": "value",
+  "TC-VE2-200": "value",
+  "TC-VE2-201": "value",
+  "TC-VE2-202": "value",
+  "TC-VE2-203": "value",
+  "TC-VE2-204": "cov",
+  "TC-VE2-205": "value",
+  "TC-VE2-206": "value",
+  "TC-VE2-207": "value",
+  "TC-VE2-208": "value",
+  "TC-VE2-209": "value",
+  "TC-VE2-210": "value",
+  "TC-VE2-211": "value",
+  "TC-VE2-212": "value",
+  "TC-VE2-213": "value",
+  "TC-VE2-214": "value",
+  "TC-VE2-215": "value",
+  "TC-VE2-216": "value",
+  "TC-VE2-217": "value",
+  "TC-VE2-218": "value",
+  "TC-VE2-219": "value",
+  "TC-VE2-220": "value",
+  "TC-VE2-221": "nonspec",
+  "TC-VE2-222": "nonspec",
+  "TC-VE2-223": "nonspec",
+  "TC-VE2-224": "cov",
+  "TC-VE2-225": "nonspec",
+  "TC-VE2-226": "cov",
+  "TC-VE2-227": "cov",
+  "TC-VE2-228": "older",
+  "TC-VE2-230": "older",
+  "TC-VE2-231": "cov",
+  "TC-VE2-232": "cov",
+  "TC-VE2-233": "cov",
+  "TC-VE2-234": "cov",
+  "TC-VE2-235": "cov",
+  "TC-VE2-236": "cov",
+  "TC-VE2-237": "cov",
+  "TC-VE2-238": "cov",
+  "TC-VE2-239": "cov",
+  "TC-VE2-240": "cov",
+  "TC-VE2-241": "cov",
+  "TC-VE2-242": "cov",
+  "TC-VE2-243": "cov",
+  "TC-VE2-244": "cov",
+  "TC-VE2-245": "older",
+  "TC-VE2-246": "older",
+  "TC-VE2-247": "older",
+  "TC-VE2-248": "older",
+  "TC-VE2-249": "older",
+  "TC-VE2-250": "older",
+  "TC-VE2-251": "cov",
+  "TC-VE2-252": "cov",
+  "TC-VE2-253": "cov",
+  "TC-VE2-254": "cov",
+  "TC-VE2-256": "cov",
+  "TC-VE2-257": "cov",
+  "TC-VE2-258": "cov",
+  "TC-VE2-259": "cov",
+  "TC-VE2-260": "cov",
+  "TC-VE2-261": "cov",
+  "TC-VE2-262": "cov",
+  "TC-VE2-263": "cov",
+  "TC-VE2-264": "diff",
+  "TC-VE2-265": "diff",
+  "TC-VE2-266": "diff",
+  "TC-VE2-267": "diff",
+  "TC-VE2-268": "older",
+  "TC-VE2-269": "older",
+  "TC-VE2-270": "cov",
+  "TC-VE2-271": "cov",
+  "TC-VE2-272": "cov",
+  "TC-VE2-276": "nonspec"
+ },
+ "sa_detail": {
+  "TC-VE2-001": {
+   "code": "cov",
+   "rows": [
+    "TC-001"
+   ],
+   "reason": "Launcher shortcut 「AI Video Enhance」 opens the Demo page."
+  },
+  "TC-VE2-002": {
+   "code": "cov",
+   "rows": [
+    "TC-002"
+   ],
+   "reason": "AI Magic 「AI Enhance」 section card 「AI Video Enhance」."
+  },
+  "TC-VE2-003": {
+   "code": "cov",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "The clip toolbar tool 「AI Video Enhance」 (the Design draws it among the clip tools; their path is Toolbar › Enhance)."
+  },
+  "TC-VE2-004": {
+   "code": "cov",
+   "rows": [
+    "TC-001",
+    "TC-012"
+   ],
+   "reason": "Demo page appears from the Launcher / AI Magic until 「Don’t show again」 is saved."
+  },
+  "TC-VE2-005": {
+   "code": "cov",
+   "rows": [
+    "TC-001",
+    "TC-010"
+   ],
+   "reason": "Demo page title 「AI Video Enhance」."
+  },
+  "TC-VE2-006": {
+   "code": "cov",
+   "rows": [
+    "TC-010"
+   ],
+   "reason": "「Try It Now」 opens Add Media."
+  },
+  "TC-VE2-007": {
+   "code": "cov",
+   "rows": [
+    "TC-020"
+   ],
+   "reason": "A thumbnail opens the panel with that video."
+  },
+  "TC-VE2-008": {
+   "code": "cov",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "Timeline tool opens the panel with the clip, no Demo page and no Add Media."
+  },
+  "TC-VE2-009": {
+   "code": "cov",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "Timeline tool opens the panel with the clip, no Demo page and no Add Media."
+  },
+  "TC-VE2-010": {
+   "code": "cov",
+   "rows": [
+    "TC-014"
+   ],
+   "reason": "「Don’t show again」 + 「Try It Now」 stops the Demo page from the Launcher and AI Magic."
+  },
+  "TC-VE2-011": {
+   "code": "cov",
+   "rows": [
+    "TC-033"
+   ],
+   "reason": "Panel title 「AI Video Enhance」."
+  },
+  "TC-VE2-012": {
+   "code": "cov",
+   "rows": [
+    "TC-033",
+    "TC-052"
+   ],
+   "reason": "Preview lower right shows the source fps and resolution (1005_preview)."
+  },
+  "TC-VE2-013": {
+   "code": "cov",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "A video longer than 8:00 selects 00:00–08:00 in Standard."
+  },
+  "TC-VE2-014": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-015": {
+   "code": "cov",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Right handle stops at 8:00 in Standard (haptic + bubble)."
+  },
+  "TC-VE2-016": {
+   "code": "cov",
+   "rows": [
+    "TC-030"
+   ],
+   "reason": "First-entry bubble 「Max 8 minutes. Drag to choose which part.」 appears by itself and closes after about 3 s."
+  },
+  "TC-VE2-017": {
+   "code": "cov",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "ⓘ reopens the Selected Length bubble; a tap anywhere closes it."
+  },
+  "TC-VE2-018": {
+   "code": "cov",
+   "rows": [
+    "TC-030"
+   ],
+   "reason": "First-entry bubble 「Max 8 minutes. Drag to choose which part.」 appears by itself and closes after about 3 s."
+  },
+  "TC-VE2-019": {
+   "code": "cov",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "ⓘ reopens the Selected Length bubble; a tap anywhere closes it."
+  },
+  "TC-VE2-020": {
+   "code": "cov",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Covered by TC-214 (left handle dragged right: start, length, price and the Preview at the handle follow)."
+  },
+  "TC-VE2-021": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Right handle drag changes the length; the Preview shows the frame at that end."
+  },
+  "TC-VE2-022": {
+   "code": "cov",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Covered by TC-214 (left handle dragged right: start, length, price and the Preview at the handle follow)."
+  },
+  "TC-VE2-023": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Right handle drag changes the length; the Preview shows the frame at that end."
+  },
+  "TC-VE2-024": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-025": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-026": {
+   "code": "diff",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant."
+  },
+  "TC-VE2-027": {
+   "code": "cov",
+   "rows": [
+    "TC-050",
+    "TC-051"
+   ],
+   "reason": "Mode defaults to Standard on every entry."
+  },
+  "TC-VE2-028": {
+   "code": "cov",
+   "rows": [
+    "TC-050"
+   ],
+   "reason": "Enhancement style defaults to Natural."
+  },
+  "TC-VE2-029": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-053",
+    "TC-054",
+    "TC-055"
+   ],
+   "reason": "fps default = smallest option not below the source (1–30 → 30, 31–60 → 60, 61+ → 120)."
+  },
+  "TC-VE2-030": {
+   "code": "cov",
+   "rows": [
+    "TC-056",
+    "TC-057",
+    "TC-058"
+   ],
+   "reason": "Resolution default = smallest option not below the source. Their 「2K and above is rejected」 clause is TC-VE2-097/098 (stated differently)."
+  },
+  "TC-VE2-031": {
+   "code": "cov",
+   "rows": [
+    "TC-070"
+   ],
+   "reason": "Mode chips are exclusive; switching with a selection ≤ 2:30 keeps the selection."
+  },
+  "TC-VE2-032": {
+   "code": "cov",
+   "rows": [
+    "TC-061"
+   ],
+   "reason": "Natural / Sharp exclusive."
+  },
+  "TC-VE2-033": {
+   "code": "cov",
+   "rows": [
+    "TC-062"
+   ],
+   "reason": "fps 30 / 60 / 120, one selected."
+  },
+  "TC-VE2-034": {
+   "code": "cov",
+   "rows": [
+    "TC-063"
+   ],
+   "reason": "Resolution 720p / 1080p / 4K, one selected."
+  },
+  "TC-VE2-035": {
+   "code": "cov",
+   "rows": [
+    "TC-061",
+    "TC-062",
+    "TC-063"
+   ],
+   "reason": "Selected / unselected chip states as each tap moves the selection."
+  },
+  "TC-VE2-036": {
+   "code": "cov",
+   "rows": [
+    "TC-061",
+    "TC-062",
+    "TC-063"
+   ],
+   "reason": "Selected / unselected chip states as each tap moves the selection."
+  },
+  "TC-VE2-037": {
+   "code": "cov",
+   "rows": [
+    "TC-064"
+   ],
+   "reason": "A disabled chip cannot be selected."
+  },
+  "TC-VE2-038": {
+   "code": "older",
+   "rows": [
+    "TC-035"
+   ],
+   "reason": "Their pass text uses PM 9/29 「Standard: up to 8 minutes. Professional: up to 2m 30s.」 (their own title quotes the Design); the Design bubble 「Standard: Great quality · up to 8 min」 / 「Professional: Maximum detail · up to 2:30」 is newer (TC-035)."
+  },
+  "TC-VE2-039": {
+   "code": "cov",
+   "rows": [
+    "TC-036"
+   ],
+   "reason": "Enhancement style ⓘ bubble copy (Natural / Sharp)."
+  },
+  "TC-VE2-040": {
+   "code": "cov",
+   "rows": [
+    "TC-090"
+   ],
+   "reason": "On iOS their tier is Pro+, as ours: a Free user sees 「Unlock Pro+ to Enhance」."
+  },
+  "TC-VE2-041": {
+   "code": "cov",
+   "rows": [
+    "TC-090",
+    "TC-091"
+   ],
+   "reason": "On iOS their route is the Pro+ IAP, as ours."
+  },
+  "TC-VE2-042": {
+   "code": "cov",
+   "rows": [
+    "TC-095"
+   ],
+   "reason": "After the subscription purchase the app returns to the panel with the selection kept."
+  },
+  "TC-VE2-043": {
+   "code": "cov",
+   "rows": [
+    "TC-096"
+   ],
+   "reason": "Too few credits → Credit page, nothing uploaded or charged."
+  },
+  "TC-VE2-044": {
+   "code": "cov",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy More → back on the panel with the new balance and the selection and settings kept."
+  },
+  "TC-VE2-045": {
+   "code": "cov",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy More → back on the panel with the new balance and the selection and settings kept."
+  },
+  "TC-VE2-046": {
+   "code": "cov",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy More → back on the panel with the new balance and the selection and settings kept."
+  },
+  "TC-VE2-047": {
+   "code": "cov",
+   "rows": [
+    "TC-080"
+   ],
+   "reason": "Price = seconds rounded up × per-second rate (3.96 s → 4 s × 2 = 8)."
+  },
+  "TC-VE2-048": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Changing the length changes the CTA price at once."
+  },
+  "TC-VE2-049": {
+   "code": "cov",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Enhance starts at once: progress ring, 「Video uploading...」, 「Please keep the app open」, 「Cancel」."
+  },
+  "TC-VE2-050": {
+   "code": "cov",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Enhance starts at once: progress ring, 「Video uploading...」, 「Please keep the app open」, 「Cancel」."
+  },
+  "TC-VE2-051": {
+   "code": "cov",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Enhance starts at once: progress ring, 「Video uploading...」, 「Please keep the app open」, 「Cancel」."
+  },
+  "TC-VE2-052": {
+   "code": "cov",
+   "rows": [
+    "TC-111"
+   ],
+   "reason": "「Cancel」 opens 「Sure You Want to Leave?」 with 「Leave」 / 「Keep Uploading」."
+  },
+  "TC-VE2-053": {
+   "code": "cov",
+   "rows": [
+    "TC-112"
+   ],
+   "reason": "「Keep Uploading」 closes the dialog and the upload goes on. (TC-VE2-234 also wants the CTA greyed behind the dialog, from colleague feedback item 11; no row asserts that.)"
+  },
+  "TC-VE2-054": {
+   "code": "cov",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "「Leave」 returns to the panel; credits are not restored."
+  },
+  "TC-VE2-055": {
+   "code": "cov",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "「Leave」 returns to the panel; credits are not restored."
+  },
+  "TC-VE2-056": {
+   "code": "cov",
+   "rows": [
+    "TC-114"
+   ],
+   "reason": "Recent task processing card with 「processing...」 and the time left."
+  },
+  "TC-VE2-057": {
+   "code": "cov",
+   "rows": [
+    "TC-114"
+   ],
+   "reason": "Recent task processing card with 「processing...」 and the time left."
+  },
+  "TC-VE2-058": {
+   "code": "cov",
+   "rows": [
+    "TC-140"
+   ],
+   "reason": "Recent task title 「AI Video Enhance」 and the one-year cloud notice."
+  },
+  "TC-VE2-059": {
+   "code": "cov",
+   "rows": [
+    "TC-143"
+   ],
+   "reason": "Completed card 「View」 opens the Result."
+  },
+  "TC-VE2-060": {
+   "code": "cov",
+   "rows": [
+    "TC-143"
+   ],
+   "reason": "Completed card 「View」 opens the Result."
+  },
+  "TC-VE2-061": {
+   "code": "cov",
+   "rows": [
+    "TC-150",
+    "TC-151"
+   ],
+   "reason": "Result 「Original」 / 「Result」."
+  },
+  "TC-VE2-062": {
+   "code": "cov",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Result player: play, slider, time. (Their PDF frame reads 01:48/03:00; our newer Design reads 04:48/08:00.)"
+  },
+  "TC-VE2-063": {
+   "code": "cov",
+   "rows": [
+    "TC-152"
+   ],
+   "reason": "「Save Result」 saves the video to the phone gallery. (TC-VE2-236 also imports it back into a Timeline, colleague feedback item 14.)"
+  },
+  "TC-VE2-064": {
+   "code": "cov",
+   "rows": [
+    "TC-153"
+   ],
+   "reason": "「Add to Timeline」 opens a new project; no existing project changes."
+  },
+  "TC-VE2-065": {
+   "code": "cov",
+   "rows": [
+    "TC-153"
+   ],
+   "reason": "「Add to Timeline」 opens a new project; no existing project changes."
+  },
+  "TC-VE2-066": {
+   "code": "cov",
+   "rows": [
+    "TC-154"
+   ],
+   "reason": "「Enhance More」 opens Add Media."
+  },
+  "TC-VE2-067": {
+   "code": "cov",
+   "rows": [
+    "TC-142"
+   ],
+   "reason": "⌂ on Recent task opens the Launcher."
+  },
+  "TC-VE2-068": {
+   "code": "cov",
+   "rows": [
+    "TC-130"
+   ],
+   "reason": "Completion banner on the Launcher."
+  },
+  "TC-VE2-069": {
+   "code": "cov",
+   "rows": [
+    "TC-131"
+   ],
+   "reason": "Banner 「View」 opens the Result."
+  },
+  "TC-VE2-070": {
+   "code": "cov",
+   "rows": [
+    "TC-170"
+   ],
+   "reason": "Failed card: 「Error」 thumbnail and 「View Details」."
+  },
+  "TC-VE2-071": {
+   "code": "cov",
+   "rows": [
+    "TC-170"
+   ],
+   "reason": "Failed card: 「Error」 thumbnail and 「View Details」."
+  },
+  "TC-VE2-072": {
+   "code": "cov",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "「An Error Has Occurred」 / 「Credits have been refunded.」 / server-busy text; 「OK」 closes it."
+  },
+  "TC-VE2-073": {
+   "code": "cov",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "「An Error Has Occurred」 / 「Credits have been refunded.」 / server-busy text; 「OK」 closes it."
+  },
+  "TC-VE2-074": {
+   "code": "cov",
+   "rows": [
+    "TC-173"
+   ],
+   "reason": "A failure refunds the credits automatically."
+  },
+  "TC-VE2-075": {
+   "code": "cov",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "「An Error Has Occurred」 / 「Credits have been refunded.」 / server-busy text; 「OK」 closes it."
+  },
+  "TC-VE2-076": {
+   "code": "cov",
+   "rows": [
+    "TC-114"
+   ],
+   "reason": "The balance drops by the CTA price when the upload finishes."
+  },
+  "TC-VE2-077": {
+   "code": "gap",
+   "rows": [
+    "TC-140"
+   ],
+   "reason": "Left out on purpose: one-year cloud retention (R-117) cannot be checked in a run."
+  },
+  "TC-VE2-078": {
+   "code": "cov",
+   "rows": [
+    "TC-116"
+   ],
+   "reason": "The task keeps running on the server while the app is away."
+  },
+  "TC-VE2-079": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-080": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-081": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-082": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-083": {
+   "code": "cov",
+   "rows": [
+    "TC-055",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-084": {
+   "code": "cov",
+   "rows": [
+    "TC-053",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-085": {
+   "code": "cov",
+   "rows": [
+    "TC-053",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-086": {
+   "code": "cov",
+   "rows": [
+    "TC-055",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-087": {
+   "code": "cov",
+   "rows": [
+    "TC-054",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-088": {
+   "code": "cov",
+   "rows": [
+    "TC-054",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-089": {
+   "code": "cov",
+   "rows": [
+    "TC-054",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-090": {
+   "code": "cov",
+   "rows": [
+    "TC-054",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-091": {
+   "code": "cov",
+   "rows": [
+    "TC-056",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-092": {
+   "code": "cov",
+   "rows": [
+    "TC-056",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-093": {
+   "code": "cov",
+   "rows": [
+    "TC-056",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-094": {
+   "code": "cov",
+   "rows": [
+    "TC-057",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-095": {
+   "code": "cov",
+   "rows": [
+    "TC-057",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-096": {
+   "code": "cov",
+   "rows": [
+    "TC-058",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-097": {
+   "code": "diff",
+   "rows": [
+    "TC-058",
+    "TC-022"
+   ],
+   "reason": "Theirs (user requirement 2026-10-16) rejects any 2K-or-higher source before the panel opens; our spec (Design lookup 1081p+ → 4K, PM E1 「≤ 4K」) lets 1440p and 4K sources open with 4K selected (TC-058) and rejects only sources over 4K (TC-022). Their rule is newer but not in our spec set: confirm with PM (our Q-13)."
+  },
+  "TC-VE2-098": {
+   "code": "diff",
+   "rows": [
+    "TC-058",
+    "TC-022"
+   ],
+   "reason": "Theirs (user requirement 2026-10-16) rejects any 2K-or-higher source before the panel opens; our spec (Design lookup 1081p+ → 4K, PM E1 「≤ 4K」) lets 1440p and 4K sources open with 4K selected (TC-058) and rejects only sources over 4K (TC-022). Their rule is newer but not in our spec set: confirm with PM (our Q-13)."
+  },
+  "TC-VE2-099": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-100": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-101": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-102": {
+   "code": "cov",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "A video longer than 8:00 selects 00:00–08:00 in Standard."
+  },
+  "TC-VE2-103": {
+   "code": "cov",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "A video longer than 8:00 selects 00:00–08:00 in Standard."
+  },
+  "TC-VE2-104": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-105": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-106": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-107": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-108": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-109": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-110": {
+   "code": "part",
+   "rows": [
+    "TC-214",
+    "TC-216"
+   ],
+   "reason": "Partly: TC-216 drags the left handle earlier but checks the stop, not the Preview frame while dragging; TC-214 checks the Preview only when dragging later."
+  },
+  "TC-VE2-111": {
+   "code": "cov",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Covered by TC-214 (left handle dragged right: start, length, price and the Preview at the handle follow)."
+  },
+  "TC-VE2-112": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Right handle drag changes the length; the Preview shows the frame at that end."
+  },
+  "TC-VE2-113": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Right handle drag changes the length; the Preview shows the frame at that end."
+  },
+  "TC-VE2-114": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-115": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-061"
+   ],
+   "reason": "1080p Standard 30 fps = 2 credits/s, the one rate our spec states; style does not change it (TC-061)."
+  },
+  "TC-VE2-116": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-117": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-118": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-119": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-120": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-121": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-122": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-123": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-124": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-061"
+   ],
+   "reason": "1080p Standard 30 fps = 2 credits/s, the one rate our spec states; style does not change it (TC-061)."
+  },
+  "TC-VE2-125": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-126": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-127": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-128": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-129": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-130": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-131": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-132": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-133": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-134": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-135": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-136": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-137": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-138": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-139": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-140": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-141": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-142": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-143": {
+   "code": "nonspec",
+   "rows": [
+    "TC-063",
+    "TC-083"
+   ],
+   "reason": "The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price."
+  },
+  "TC-VE2-144": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-145": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-146": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-147": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-148": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-149": {
+   "code": "diff",
+   "rows": [
+    "TC-087"
+   ],
+   "reason": "Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change."
+  },
+  "TC-VE2-150": {
+   "code": "cov",
+   "rows": [
+    "TC-010",
+    "TC-020",
+    "TC-110",
+    "TC-114",
+    "TC-143"
+   ],
+   "reason": "The main flow Demo → Add Media → panel → upload → Recent → Result."
+  },
+  "TC-VE2-151": {
+   "code": "cov",
+   "rows": [
+    "TC-150",
+    "TC-154"
+   ],
+   "reason": "Button reads 「Enhance More」."
+  },
+  "TC-VE2-152": {
+   "code": "cov",
+   "rows": [
+    "TC-033"
+   ],
+   "reason": "The panel lists Selected Length, Mode, Enhancement style, fps and Resolution."
+  },
+  "TC-VE2-153": {
+   "code": "nonspec",
+   "rows": [
+    "TC-020"
+   ],
+   "reason": "Every Media Room source tab and album, including stock libraries, comes from the colleague’s build; the Design’s Add Media draws one 「Video」 tab with Recents (TC-020)."
+  },
+  "TC-VE2-154": {
+   "code": "cov",
+   "rows": [
+    "TC-020"
+   ],
+   "reason": "A local video picked in Add Media opens the panel."
+  },
+  "TC-VE2-155": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Pexels / Pixabay stock tabs are not in the Design’s Add Media (one 「Video」 tab); from the colleague’s build."
+  },
+  "TC-VE2-156": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Pexels / Pixabay stock tabs are not in the Design’s Add Media (one 「Video」 tab); from the colleague’s build."
+  },
+  "TC-VE2-157": {
+   "code": "cov",
+   "rows": [
+    "TC-216"
+   ],
+   "reason": "Covered by TC-216 (left handle dragged left until the Standard 8:00 stop, with haptic and bubble)."
+  },
+  "TC-VE2-158": {
+   "code": "cov",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Covered by TC-214 (left handle dragged right: start, length, price and the Preview at the handle follow)."
+  },
+  "TC-VE2-159": {
+   "code": "part",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "Partly: TC-215 drags the playhead later only; how far it may go is Q-21."
+  },
+  "TC-VE2-160": {
+   "code": "cov",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "Covered by TC-215 (playhead knob dragged later scrubs the Preview)."
+  },
+  "TC-VE2-161": {
+   "code": "part",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "Partly: TC-215 drags the playhead later only; how far it may go is Q-21."
+  },
+  "TC-VE2-162": {
+   "code": "cov",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Play, full-screen preview and its return with the selection kept."
+  },
+  "TC-VE2-163": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Pause on a player: the Design draws a play control only and states no pause rule; a generic player check."
+  },
+  "TC-VE2-164": {
+   "code": "cov",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Play, full-screen preview and its return with the selection kept."
+  },
+  "TC-VE2-165": {
+   "code": "cov",
+   "rows": [
+    "TC-132"
+   ],
+   "reason": "Banner 「Close」 dismisses it."
+  },
+  "TC-VE2-166": {
+   "code": "cov",
+   "rows": [
+    "TC-151"
+   ],
+   "reason": "Original vs Result look different."
+  },
+  "TC-VE2-167": {
+   "code": "cov",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Result player: play, slider, time. (Their PDF frame reads 01:48/03:00; our newer Design reads 04:48/08:00.)"
+  },
+  "TC-VE2-168": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Pause on a player: the Design draws a play control only and states no pause rule; a generic player check."
+  },
+  "TC-VE2-169": {
+   "code": "cov",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Result player: play, slider, time. (Their PDF frame reads 01:48/03:00; our newer Design reads 04:48/08:00.)"
+  },
+  "TC-VE2-170": {
+   "code": "cov",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Play, full-screen preview and its return with the selection kept."
+  },
+  "TC-VE2-171": {
+   "code": "cov",
+   "rows": [
+    "TC-221",
+    "TC-222",
+    "TC-152"
+   ],
+   "reason": "Covered: TC-221 / TC-222 check the saved file is 60 / 120 fps, TC-152 30 fps."
+  },
+  "TC-VE2-172": {
+   "code": "cov",
+   "rows": [
+    "TC-223",
+    "TC-224",
+    "TC-152"
+   ],
+   "reason": "Covered: TC-223 / TC-224 check the saved file is 1280 × 720 / 3840 × 2160, TC-152 1920 × 1080."
+  },
+  "TC-VE2-173": {
+   "code": "cov",
+   "rows": [
+    "TC-170",
+    "TC-171"
+   ],
+   "reason": "Failure card and dialog (their NSFW video is a way to make a failure; ours needs a failure fixture)."
+  },
+  "TC-VE2-174": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "The Credit Detail debit is named 「AI Video Enhance」: from the PM naming decision their colleague relayed; our spec does not draw the ledger."
+  },
+  "TC-VE2-175": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-176": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-177": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-178": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-179": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-180": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-181": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-182": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-183": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-184": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-076"
+   ],
+   "reason": "Seconds are rounded up before pricing (TC-080) and before the Mode limit (TC-076); their extra boundary values test the same rule."
+  },
+  "TC-VE2-185": {
+   "code": "cov",
+   "rows": [
+    "TC-223"
+   ],
+   "reason": "Covered by TC-223: the same settings (one value changed from the defaults)."
+  },
+  "TC-VE2-186": {
+   "code": "cov",
+   "rows": [
+    "TC-110",
+    "TC-114",
+    "TC-143"
+   ],
+   "reason": "The default configuration of a 1080p video (Standard / Natural / 1080p) is generated in the main flow."
+  },
+  "TC-VE2-187": {
+   "code": "cov",
+   "rows": [
+    "TC-224"
+   ],
+   "reason": "Covered by TC-224: the same settings (one value changed from the defaults)."
+  },
+  "TC-VE2-188": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-189": {
+   "code": "cov",
+   "rows": [
+    "TC-221"
+   ],
+   "reason": "Covered by TC-221: the same settings (one value changed from the defaults)."
+  },
+  "TC-VE2-190": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-191": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-192": {
+   "code": "cov",
+   "rows": [
+    "TC-222"
+   ],
+   "reason": "Covered by TC-222: the same settings (one value changed from the defaults)."
+  },
+  "TC-VE2-193": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-194": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-195": {
+   "code": "cov",
+   "rows": [
+    "TC-220"
+   ],
+   "reason": "Covered by TC-220: the same settings (one value changed from the defaults)."
+  },
+  "TC-VE2-196": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-197": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-198": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-199": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-200": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-201": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-202": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-203": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-204": {
+   "code": "cov",
+   "rows": [
+    "TC-219"
+   ],
+   "reason": "Covered by TC-219: the same settings (one value changed from the defaults)."
+  },
+  "TC-VE2-205": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-206": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-207": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-208": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-209": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-210": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-211": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-212": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-213": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-214": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-215": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-216": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-217": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-218": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-219": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-220": {
+   "code": "value",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224"
+   ],
+   "reason": "Each value in this combination is generated once (TC-219–224, analysis pass 10: one row per value); this exact combination is not, since the spec gives no rule for combinations."
+  },
+  "TC-VE2-221": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Generation time 1.5–2.5 × the video length: a company performance standard adopted by user instruction, not in the spec."
+  },
+  "TC-VE2-222": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Generation time 1.5–2.5 × the video length: a company performance standard adopted by user instruction, not in the spec."
+  },
+  "TC-VE2-223": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Generation time 1.5–2.5 × the video length: a company performance standard adopted by user instruction, not in the spec."
+  },
+  "TC-VE2-224": {
+   "code": "cov",
+   "rows": [
+    "TC-140"
+   ],
+   "reason": "Recent task title 「AI Video Enhance」 and the one-year cloud notice."
+  },
+  "TC-VE2-225": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Picking from a named local album: a generic picker check; the Design draws Recents only."
+  },
+  "TC-VE2-226": {
+   "code": "cov",
+   "rows": [
+    "TC-073"
+   ],
+   "reason": "Shortened to ≤ 2:30, Professional switches."
+  },
+  "TC-VE2-227": {
+   "code": "cov",
+   "rows": [
+    "TC-073",
+    "TC-074"
+   ],
+   "reason": "At 2:30 Professional is allowed (limit 2:30 inclusive)."
+  },
+  "TC-VE2-228": {
+   "code": "older",
+   "rows": [
+    "TC-071",
+    "TC-073"
+   ],
+   "reason": "Behaviour is ours too (TC-071, TC-073: blocked, Mode stays, chip looks normal). Only the toast copy differs: theirs is PM 9/29 「Professional mode supports up to 2m 30s. Shorten your selection to switch.」; the newer Design frame 「Mode 長度上限」 (Design 26.09 v2, 1005; none of its copy is in their 10/07 PDF) says 「Professional supports clips up to 2:30. Shorten your selection to switch.」."
+  },
+  "TC-VE2-230": {
+   "code": "older",
+   "rows": [
+    "TC-071",
+    "TC-073"
+   ],
+   "reason": "Behaviour is ours too (TC-071, TC-073: blocked, Mode stays, chip looks normal). Only the toast copy differs: theirs is PM 9/29 「Professional mode supports up to 2m 30s. Shorten your selection to switch.」; the newer Design frame 「Mode 長度上限」 (Design 26.09 v2, 1005; none of its copy is in their 10/07 PDF) says 「Professional supports clips up to 2:30. Shorten your selection to switch.」."
+  },
+  "TC-VE2-231": {
+   "code": "cov",
+   "rows": [
+    "TC-074"
+   ],
+   "reason": "Professional: right handle stops at 2:30 (haptic + bubble)."
+  },
+  "TC-VE2-232": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-233": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-234": {
+   "code": "cov",
+   "rows": [
+    "TC-112"
+   ],
+   "reason": "「Keep Uploading」 closes the dialog and the upload goes on. (TC-VE2-234 also wants the CTA greyed behind the dialog, from colleague feedback item 11; no row asserts that.)"
+  },
+  "TC-VE2-235": {
+   "code": "cov",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "「Leave」 returns to the panel; credits are not restored."
+  },
+  "TC-VE2-236": {
+   "code": "cov",
+   "rows": [
+    "TC-152"
+   ],
+   "reason": "「Save Result」 saves the video to the phone gallery. (TC-VE2-236 also imports it back into a Timeline, colleague feedback item 14.)"
+  },
+  "TC-VE2-237": {
+   "code": "cov",
+   "rows": [
+    "TC-141"
+   ],
+   "reason": "‹ on Recent task returns to the panel."
+  },
+  "TC-VE2-238": {
+   "code": "cov",
+   "rows": [
+    "TC-141"
+   ],
+   "reason": "‹ on Recent task returns to the panel."
+  },
+  "TC-VE2-239": {
+   "code": "cov",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "ⓘ reopens the Selected Length bubble; a tap anywhere closes it."
+  },
+  "TC-VE2-240": {
+   "code": "cov",
+   "rows": [
+    "TC-038"
+   ],
+   "reason": "Panel ‹ returns to Add Media."
+  },
+  "TC-VE2-241": {
+   "code": "cov",
+   "rows": [
+    "TC-033",
+    "TC-110"
+   ],
+   "reason": "On iOS a Pro+ account gets the enabled 「Enhance ◆ <credits>」, as ours."
+  },
+  "TC-VE2-242": {
+   "code": "cov",
+   "rows": [
+    "TC-216"
+   ],
+   "reason": "Covered by TC-216 (left handle dragged left until the Standard 8:00 stop, with haptic and bubble)."
+  },
+  "TC-VE2-243": {
+   "code": "cov",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Right handle stops at 8:00 in Standard (haptic + bubble)."
+  },
+  "TC-VE2-244": {
+   "code": "cov",
+   "rows": [
+    "TC-075"
+   ],
+   "reason": "Back to Standard keeps the selection; it can then be dragged past 2:30 up to 8:00."
+  },
+  "TC-VE2-245": {
+   "code": "older",
+   "rows": [
+    "TC-051"
+   ],
+   "reason": "PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional."
+  },
+  "TC-VE2-246": {
+   "code": "older",
+   "rows": [
+    "TC-051"
+   ],
+   "reason": "PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional."
+  },
+  "TC-VE2-247": {
+   "code": "older",
+   "rows": [
+    "TC-051"
+   ],
+   "reason": "PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional."
+  },
+  "TC-VE2-248": {
+   "code": "older",
+   "rows": [
+    "TC-051"
+   ],
+   "reason": "PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional."
+  },
+  "TC-VE2-249": {
+   "code": "older",
+   "rows": [
+    "TC-051"
+   ],
+   "reason": "PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional."
+  },
+  "TC-VE2-250": {
+   "code": "older",
+   "rows": [
+    "TC-051"
+   ],
+   "reason": "PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional."
+  },
+  "TC-VE2-251": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-252": {
+   "code": "cov",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "A video longer than 8:00 selects 00:00–08:00 in Standard."
+  },
+  "TC-VE2-253": {
+   "code": "cov",
+   "rows": [
+    "TC-076",
+    "TC-073"
+   ],
+   "reason": "The limit compares rounded-up seconds (2:30.4 = 151 s is over)."
+  },
+  "TC-VE2-254": {
+   "code": "cov",
+   "rows": [
+    "TC-076",
+    "TC-073"
+   ],
+   "reason": "The limit compares rounded-up seconds (2:30.4 = 151 s is over)."
+  },
+  "TC-VE2-256": {
+   "code": "cov",
+   "rows": [
+    "TC-216"
+   ],
+   "reason": "Covered by TC-216 (left handle dragged left until the Standard 8:00 stop, with haptic and bubble)."
+  },
+  "TC-VE2-257": {
+   "code": "cov",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Right handle stops at 8:00 in Standard (haptic + bubble)."
+  },
+  "TC-VE2-258": {
+   "code": "cov",
+   "rows": [
+    "TC-218"
+   ],
+   "reason": "Covered by TC-218 (left handle stops at the Professional 2:30 limit)."
+  },
+  "TC-VE2-259": {
+   "code": "cov",
+   "rows": [
+    "TC-074"
+   ],
+   "reason": "Professional: right handle stops at 2:30 (haptic + bubble)."
+  },
+  "TC-VE2-260": {
+   "code": "cov",
+   "rows": [
+    "TC-070",
+    "TC-083"
+   ],
+   "reason": "A permitted switch keeps the range; the price changes to the new Mode’s rate."
+  },
+  "TC-VE2-261": {
+   "code": "cov",
+   "rows": [
+    "TC-070",
+    "TC-083"
+   ],
+   "reason": "A permitted switch keeps the range; the price changes to the new Mode’s rate."
+  },
+  "TC-VE2-262": {
+   "code": "cov",
+   "rows": [
+    "TC-070",
+    "TC-083"
+   ],
+   "reason": "A permitted switch keeps the range; the price changes to the new Mode’s rate."
+  },
+  "TC-VE2-263": {
+   "code": "cov",
+   "rows": [
+    "TC-070",
+    "TC-083"
+   ],
+   "reason": "A permitted switch keeps the range; the price changes to the new Mode’s rate."
+  },
+  "TC-VE2-264": {
+   "code": "diff",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant."
+  },
+  "TC-VE2-265": {
+   "code": "diff",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant."
+  },
+  "TC-VE2-266": {
+   "code": "diff",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant."
+  },
+  "TC-VE2-267": {
+   "code": "diff",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant."
+  },
+  "TC-VE2-268": {
+   "code": "older",
+   "rows": [
+    "TC-071",
+    "TC-073"
+   ],
+   "reason": "Behaviour is ours too (TC-071, TC-073: blocked, Mode stays, chip looks normal). Only the toast copy differs: theirs is PM 9/29 「Professional mode supports up to 2m 30s. Shorten your selection to switch.」; the newer Design frame 「Mode 長度上限」 (Design 26.09 v2, 1005; none of its copy is in their 10/07 PDF) says 「Professional supports clips up to 2:30. Shorten your selection to switch.」."
+  },
+  "TC-VE2-269": {
+   "code": "older",
+   "rows": [
+    "TC-160"
+   ],
+   "reason": "Behaviour is ours too (TC-160 on a Timeline clip: blocked, Mode stays, chip looks normal). Only the toast copy differs: theirs is PM 9/29 「Professional mode supports up to 2m 30s. Shorten your selection to switch.」; the newer Design frame 「Mode 長度上限」 (Design 26.09 v2, 1005; none of its copy is in their 10/07 PDF) says 「Professional supports clips up to 2:30. Shorten your selection to switch.」."
+  },
+  "TC-VE2-270": {
+   "code": "cov",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Light haptic at the Standard limit."
+  },
+  "TC-VE2-271": {
+   "code": "cov",
+   "rows": [
+    "TC-074"
+   ],
+   "reason": "Professional: right handle stops at 2:30 (haptic + bubble)."
+  },
+  "TC-VE2-272": {
+   "code": "cov",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy More → back on the panel with the new balance and the selection and settings kept."
+  },
+  "TC-VE2-276": {
+   "code": "nonspec",
+   "rows": [],
+   "reason": "Total duration after the slash is rounded up (150.01 s → 02:31): user requirement 2026-10-21; our spec draws 「00:00/12:30」 with no rounding rule."
+  }
+ },
+ "cb": {
+  "TC-001": "full",
+  "TC-002": "full",
+  "TC-003": "full",
+  "TC-004": "none",
+  "TC-010": "full",
+  "TC-011": "none",
+  "TC-012": "partial",
+  "TC-013": "none",
+  "TC-014": "full",
+  "TC-020": "full",
+  "TC-021": "none",
+  "TC-022": "partial",
+  "TC-023": "none",
+  "TC-030": "full",
+  "TC-031": "full",
+  "TC-032": "none",
+  "TC-033": "partial",
+  "TC-035": "partial",
+  "TC-036": "full",
+  "TC-037": "full",
+  "TC-038": "full",
+  "TC-040": "full",
+  "TC-041": "full",
+  "TC-042": "partial",
+  "TC-043": "full",
+  "TC-044": "partial",
+  "TC-045": "partial",
+  "TC-046": "none",
+  "TC-050": "full",
+  "TC-051": "partial",
+  "TC-052": "full",
+  "TC-053": "full",
+  "TC-054": "full",
+  "TC-055": "full",
+  "TC-056": "full",
+  "TC-057": "full",
+  "TC-058": "partial",
+  "TC-059": "none",
+  "TC-061": "full",
+  "TC-062": "full",
+  "TC-063": "partial",
+  "TC-064": "full",
+  "TC-070": "full",
+  "TC-071": "partial",
+  "TC-073": "partial",
+  "TC-074": "partial",
+  "TC-075": "full",
+  "TC-076": "full",
+  "TC-080": "full",
+  "TC-083": "partial",
+  "TC-087": "partial",
+  "TC-090": "full",
+  "TC-091": "full",
+  "TC-093": "none",
+  "TC-094": "none",
+  "TC-095": "full",
+  "TC-096": "full",
+  "TC-097": "full",
+  "TC-098": "none",
+  "TC-100": "none",
+  "TC-110": "full",
+  "TC-111": "full",
+  "TC-112": "full",
+  "TC-113": "full",
+  "TC-114": "full",
+  "TC-115": "none",
+  "TC-116": "partial",
+  "TC-117": "none",
+  "TC-118": "none",
+  "TC-119": "none",
+  "TC-120": "none",
+  "TC-121": "none",
+  "TC-130": "full",
+  "TC-131": "full",
+  "TC-132": "full",
+  "TC-133": "none",
+  "TC-134": "none",
+  "TC-140": "partial",
+  "TC-141": "full",
+  "TC-142": "full",
+  "TC-143": "full",
+  "TC-144": "none",
+  "TC-150": "full",
+  "TC-151": "full",
+  "TC-152": "partial",
+  "TC-153": "full",
+  "TC-154": "full",
+  "TC-155": "none",
+  "TC-160": "partial",
+  "TC-161": "none",
+  "TC-162": "none",
+  "TC-163": "none",
+  "TC-164": "none",
+  "TC-165": "none",
+  "TC-170": "full",
+  "TC-171": "full",
+  "TC-173": "full",
+  "TC-174": "none",
+  "TC-214": "full",
+  "TC-215": "full",
+  "TC-216": "full",
+  "TC-217": "none",
+  "TC-218": "full",
+  "TC-219": "full",
+  "TC-220": "full",
+  "TC-221": "full",
+  "TC-222": "full",
+  "TC-223": "full",
+  "TC-224": "full"
+ },
+ "cb_detail": {
+  "TC-001": {
+   "match": "full",
+   "spec_agent": "TC-VE2-001, TC-VE2-004, TC-VE2-005",
+   "note": ""
+  },
+  "TC-002": {
+   "match": "full",
+   "spec_agent": "TC-VE2-002",
+   "note": ""
+  },
+  "TC-003": {
+   "match": "full",
+   "spec_agent": "TC-VE2-003, TC-VE2-008, TC-VE2-009",
+   "note": ""
+  },
+  "TC-004": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Pro+ badge on the clip toolbar tool"
+  },
+  "TC-010": {
+   "match": "full",
+   "spec_agent": "TC-VE2-005, TC-VE2-006, TC-VE2-150",
+   "note": ""
+  },
+  "TC-011": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Demo description must not be AI Reframe’s copy (Q-1)"
+  },
+  "TC-012": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-004",
+   "note": ""
+  },
+  "TC-013": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Ticking 「Don’t show again」 and leaving with ‹ does not save it"
+  },
+  "TC-014": {
+   "match": "full",
+   "spec_agent": "TC-VE2-010",
+   "note": ""
+  },
+  "TC-020": {
+   "match": "full",
+   "spec_agent": "TC-VE2-007, TC-VE2-150, TC-VE2-154",
+   "note": ""
+  },
+  "TC-021": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Add Media ‹ returns to where it was opened from"
+  },
+  "TC-022": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-097, TC-VE2-098",
+   "note": ""
+  },
+  "TC-023": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Add Media empty state 「No videos yet」"
+  },
+  "TC-030": {
+   "match": "full",
+   "spec_agent": "TC-VE2-016, TC-VE2-018",
+   "note": ""
+  },
+  "TC-031": {
+   "match": "full",
+   "spec_agent": "TC-VE2-017, TC-VE2-019, TC-VE2-239",
+   "note": ""
+  },
+  "TC-032": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "The automatic bubble does not come back on later entries"
+  },
+  "TC-033": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-011, TC-VE2-012, TC-VE2-091, TC-VE2-092, TC-VE2-093, TC-VE2-094, TC-VE2-095, TC-VE2-096, TC-VE2-152, TC-VE2-241",
+   "note": ""
+  },
+  "TC-035": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-038",
+   "note": ""
+  },
+  "TC-036": {
+   "match": "full",
+   "spec_agent": "TC-VE2-039",
+   "note": ""
+  },
+  "TC-037": {
+   "match": "full",
+   "spec_agent": "TC-VE2-162, TC-VE2-164, TC-VE2-170",
+   "note": ""
+  },
+  "TC-038": {
+   "match": "full",
+   "spec_agent": "TC-VE2-240",
+   "note": ""
+  },
+  "TC-040": {
+   "match": "full",
+   "spec_agent": "TC-VE2-013, TC-VE2-102, TC-VE2-103, TC-VE2-252",
+   "note": ""
+  },
+  "TC-041": {
+   "match": "full",
+   "spec_agent": "TC-VE2-014, TC-VE2-099, TC-VE2-100, TC-VE2-101, TC-VE2-251",
+   "note": ""
+  },
+  "TC-042": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-021, TC-VE2-023, TC-VE2-048, TC-VE2-112, TC-VE2-113",
+   "note": ""
+  },
+  "TC-043": {
+   "match": "full",
+   "spec_agent": "TC-VE2-024, TC-VE2-025, TC-VE2-104, TC-VE2-105, TC-VE2-106, TC-VE2-107, TC-VE2-108, TC-VE2-109, TC-VE2-232, TC-VE2-233",
+   "note": ""
+  },
+  "TC-044": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-015, TC-VE2-243, TC-VE2-257, TC-VE2-270",
+   "note": ""
+  },
+  "TC-045": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-026, TC-VE2-264, TC-VE2-265, TC-VE2-266, TC-VE2-267",
+   "note": ""
+  },
+  "TC-046": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Shortest selection 1 s"
+  },
+  "TC-050": {
+   "match": "full",
+   "spec_agent": "TC-VE2-027, TC-VE2-028, TC-VE2-079, TC-VE2-080, TC-VE2-081, TC-VE2-082, TC-VE2-083, TC-VE2-084, TC-VE2-085, TC-VE2-086, TC-VE2-087, TC-VE2-088, TC-VE2-089, TC-VE2-090",
+   "note": ""
+  },
+  "TC-051": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-027, TC-VE2-245, TC-VE2-246, TC-VE2-247, TC-VE2-248, TC-VE2-249, TC-VE2-250",
+   "note": ""
+  },
+  "TC-052": {
+   "match": "full",
+   "spec_agent": "TC-VE2-012, TC-VE2-029, TC-VE2-079, TC-VE2-080, TC-VE2-081, TC-VE2-082",
+   "note": ""
+  },
+  "TC-053": {
+   "match": "full",
+   "spec_agent": "TC-VE2-029, TC-VE2-084, TC-VE2-085",
+   "note": ""
+  },
+  "TC-054": {
+   "match": "full",
+   "spec_agent": "TC-VE2-029, TC-VE2-087, TC-VE2-088, TC-VE2-089, TC-VE2-090",
+   "note": ""
+  },
+  "TC-055": {
+   "match": "full",
+   "spec_agent": "TC-VE2-029, TC-VE2-083, TC-VE2-086",
+   "note": ""
+  },
+  "TC-056": {
+   "match": "full",
+   "spec_agent": "TC-VE2-030, TC-VE2-091, TC-VE2-092, TC-VE2-093",
+   "note": ""
+  },
+  "TC-057": {
+   "match": "full",
+   "spec_agent": "TC-VE2-030, TC-VE2-094, TC-VE2-095",
+   "note": ""
+  },
+  "TC-058": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-030, TC-VE2-096, TC-VE2-097, TC-VE2-098",
+   "note": ""
+  },
+  "TC-059": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Portrait video: the short side picks the resolution (Q-5)"
+  },
+  "TC-061": {
+   "match": "full",
+   "spec_agent": "TC-VE2-032, TC-VE2-035, TC-VE2-036, TC-VE2-115, TC-VE2-124",
+   "note": ""
+  },
+  "TC-062": {
+   "match": "full",
+   "spec_agent": "TC-VE2-033, TC-VE2-035, TC-VE2-036",
+   "note": ""
+  },
+  "TC-063": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-034, TC-VE2-035, TC-VE2-036",
+   "note": ""
+  },
+  "TC-064": {
+   "match": "full",
+   "spec_agent": "TC-VE2-037",
+   "note": ""
+  },
+  "TC-070": {
+   "match": "full",
+   "spec_agent": "TC-VE2-031, TC-VE2-260, TC-VE2-261, TC-VE2-262, TC-VE2-263",
+   "note": ""
+  },
+  "TC-071": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-228, TC-VE2-230, TC-VE2-268",
+   "note": ""
+  },
+  "TC-073": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-226, TC-VE2-227, TC-VE2-228, TC-VE2-230, TC-VE2-253, TC-VE2-254, TC-VE2-268",
+   "note": ""
+  },
+  "TC-074": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-227, TC-VE2-231, TC-VE2-259, TC-VE2-271",
+   "note": ""
+  },
+  "TC-075": {
+   "match": "full",
+   "spec_agent": "TC-VE2-244",
+   "note": ""
+  },
+  "TC-076": {
+   "match": "full",
+   "spec_agent": "TC-VE2-175, TC-VE2-176, TC-VE2-177, TC-VE2-178, TC-VE2-179, TC-VE2-180, TC-VE2-181, TC-VE2-182, TC-VE2-183, TC-VE2-184, TC-VE2-253, TC-VE2-254",
+   "note": ""
+  },
+  "TC-080": {
+   "match": "full",
+   "spec_agent": "TC-VE2-047, TC-VE2-115, TC-VE2-124, TC-VE2-175, TC-VE2-176, TC-VE2-177, TC-VE2-178, TC-VE2-179, TC-VE2-180, TC-VE2-181, TC-VE2-182, TC-VE2-183, TC-VE2-184",
+   "note": ""
+  },
+  "TC-083": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-260, TC-VE2-261, TC-VE2-262, TC-VE2-263",
+   "note": ""
+  },
+  "TC-087": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-117, TC-VE2-118, TC-VE2-119, TC-VE2-120, TC-VE2-121, TC-VE2-122, TC-VE2-126, TC-VE2-127, TC-VE2-128, TC-VE2-129, TC-VE2-130, TC-VE2-131, TC-VE2-135, TC-VE2-136, TC-VE2-137, TC-VE2-138, TC-VE2-139, TC-VE2-140, TC-VE2-144, TC-VE2-145, TC-VE2-146, TC-VE2-147, TC-VE2-148, TC-VE2-149",
+   "note": ""
+  },
+  "TC-090": {
+   "match": "full",
+   "spec_agent": "TC-VE2-040, TC-VE2-041",
+   "note": ""
+  },
+  "TC-091": {
+   "match": "full",
+   "spec_agent": "TC-VE2-041",
+   "note": ""
+  },
+  "TC-093": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "IAP page layout and plan taps"
+  },
+  "TC-094": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Closing the IAP page leaves the panel unchanged"
+  },
+  "TC-095": {
+   "match": "full",
+   "spec_agent": "TC-VE2-042",
+   "note": ""
+  },
+  "TC-096": {
+   "match": "full",
+   "spec_agent": "TC-VE2-043",
+   "note": ""
+  },
+  "TC-097": {
+   "match": "full",
+   "spec_agent": "TC-VE2-044, TC-VE2-045, TC-VE2-046, TC-VE2-272",
+   "note": ""
+  },
+  "TC-098": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Claim daily credits on the Credit page"
+  },
+  "TC-100": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Offline Enhance: toast, nothing sent or charged"
+  },
+  "TC-110": {
+   "match": "full",
+   "spec_agent": "TC-VE2-049, TC-VE2-050, TC-VE2-051, TC-VE2-150, TC-VE2-186, TC-VE2-241",
+   "note": ""
+  },
+  "TC-111": {
+   "match": "full",
+   "spec_agent": "TC-VE2-052",
+   "note": ""
+  },
+  "TC-112": {
+   "match": "full",
+   "spec_agent": "TC-VE2-053, TC-VE2-234",
+   "note": ""
+  },
+  "TC-113": {
+   "match": "full",
+   "spec_agent": "TC-VE2-054, TC-VE2-055, TC-VE2-235",
+   "note": ""
+  },
+  "TC-114": {
+   "match": "full",
+   "spec_agent": "TC-VE2-056, TC-VE2-057, TC-VE2-076, TC-VE2-150, TC-VE2-186",
+   "note": ""
+  },
+  "TC-115": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Home during the upload cancels it and charges nothing (Q-18)"
+  },
+  "TC-116": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-078",
+   "note": ""
+  },
+  "TC-117": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "A processing task cannot be cancelled in v1"
+  },
+  "TC-118": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "First-task 「Turn on notifications」 prompt (PM-only)"
+  },
+  "TC-119": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Turn On opens the system permission / settings"
+  },
+  "TC-120": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "「Later」: never asked again"
+  },
+  "TC-121": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Two tasks at once (Q-12)"
+  },
+  "TC-130": {
+   "match": "full",
+   "spec_agent": "TC-VE2-068",
+   "note": ""
+  },
+  "TC-131": {
+   "match": "full",
+   "spec_agent": "TC-VE2-069",
+   "note": ""
+  },
+  "TC-132": {
+   "match": "full",
+   "spec_agent": "TC-VE2-165",
+   "note": ""
+  },
+  "TC-133": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "System notification 「Your video is ready. Tap to view.」 (PM-only)"
+  },
+  "TC-134": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Result listed in AI Magic › My Artwork and Template › My Artwork"
+  },
+  "TC-140": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-058, TC-VE2-224",
+   "note": ""
+  },
+  "TC-141": {
+   "match": "full",
+   "spec_agent": "TC-VE2-237, TC-VE2-238",
+   "note": ""
+  },
+  "TC-142": {
+   "match": "full",
+   "spec_agent": "TC-VE2-067",
+   "note": ""
+  },
+  "TC-143": {
+   "match": "full",
+   "spec_agent": "TC-VE2-059, TC-VE2-060, TC-VE2-150, TC-VE2-186",
+   "note": ""
+  },
+  "TC-144": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Recent task 「Manage」"
+  },
+  "TC-150": {
+   "match": "full",
+   "spec_agent": "TC-VE2-061, TC-VE2-062, TC-VE2-151, TC-VE2-167, TC-VE2-169",
+   "note": ""
+  },
+  "TC-151": {
+   "match": "full",
+   "spec_agent": "TC-VE2-061, TC-VE2-166",
+   "note": ""
+  },
+  "TC-152": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-063, TC-VE2-236",
+   "note": ""
+  },
+  "TC-153": {
+   "match": "full",
+   "spec_agent": "TC-VE2-064, TC-VE2-065",
+   "note": ""
+  },
+  "TC-154": {
+   "match": "full",
+   "spec_agent": "TC-VE2-066, TC-VE2-151",
+   "note": ""
+  },
+  "TC-155": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Result ‹ returns to Recent task"
+  },
+  "TC-160": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-269",
+   "note": ""
+  },
+  "TC-161": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "A Timeline clip over 8:00 does not open the panel"
+  },
+  "TC-162": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Timeline task: the result replaces the clip, 「Applied Video Enhance」"
+  },
+  "TC-163": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Panel ‹ from the Timeline returns to the editor"
+  },
+  "TC-164": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Clip deleted during generation: nothing pasted, result stays in Recent"
+  },
+  "TC-165": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Timeline task Result: 「Add to Timeline」 returns to the original project"
+  },
+  "TC-170": {
+   "match": "full",
+   "spec_agent": "TC-VE2-070, TC-VE2-071, TC-VE2-173",
+   "note": ""
+  },
+  "TC-171": {
+   "match": "full",
+   "spec_agent": "TC-VE2-072, TC-VE2-073, TC-VE2-075, TC-VE2-173",
+   "note": ""
+  },
+  "TC-173": {
+   "match": "full",
+   "spec_agent": "TC-VE2-074",
+   "note": ""
+  },
+  "TC-174": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Failure notification 「Video Enhance didn’t finish…」 (PM proposal)"
+  }
+ }
+}

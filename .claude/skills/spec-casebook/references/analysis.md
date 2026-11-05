@@ -98,6 +98,14 @@ and return, waits), which apply to every job.
    A rule stated for the whole feature that has several sub-features (output 9:16 for Creative, Cinematic Styles and
    AI Transition) is a variant rule too: one line per sub-feature (2026-11-03, PHD Creative Reel R-023: only
    Creative's file was measured).
+   **A setting's values are variants too (2026-11-04, Video Enhance).** Every value the user can choose for a
+   setting that changes what the feature makes (Mode, style, fps, resolution, quality, length, voice) gets a row that
+   *uses* it: chosen, carried through the action it changes (generate, export, save) and checked in the result (the
+   saved file's fps and resolution, the look the style names, the price the value sets). Rows that only tap the chip
+   and look at the panel do not cover the value; the default value does not stand for the others. One row per value
+   is enough (not every combination), unless the spec gives a rule for a combination. List them in `### Variants`
+   as `R-… × <setting>=<value>`. Shown by the spec agent comparison of 2026-11-04 (TC-VE2-171, 172, 185–220): no row
+   generated with Professional, Sharp, 60 / 120 fps, 720p or 4K, and none checked the saved file.
 
 11. **Every control (user, 2026-10-28, REQ-038).** A PDF-only analysis has no `inventory.json`: trace the 「Controls
    (PDF-read)」 lists of `board-notes.md` to rows by hand and leave this pass owed (`reading-the-spec.md`, *No Figma
@@ -113,6 +121,20 @@ and return, waits), which apply to every job.
    or a trace naming a row that is not active; Save copies the trace to the table. `app` lists the app's
    accessibility ids or labels for an entry whose Figma label differs (e.g. `creditsHomePage.UIButton.detail`), so a
    tap on it matches first; fill it from the page's "Taps that matched no control".
+   **Twin and look-alike controls (2026-11-04, Video Enhance).** "One copy of a repeated button" means the same
+   control drawn again (the same chip in two frames); controls that do different things are never one press, even
+   when they share a component or icon:
+   - **Twins:** the two ends of a range or trim (left / right handle, start / end), increase / decrease, previous /
+     next. Each gets its own press and its own row when the spec says either can be used ("drag either side handle"
+     = one row per side, each checking its own limit). TC-VE2-020, 022, 110, 111, 157, 158, 242, 256, 258: every
+     row dragged only the right trim handle.
+   - **Role from the screen, not the name:** decide what a control is from where it sits and what is drawn with it
+     on the board image (a knob under a time bubble on the strip is a playhead; a knob at the end of the selection
+     is a trim handle), never from its icon or layer name alone. A control whose role you cannot tell from the image
+     and the notes is a Q-n, not a guess. TC-VE2-159–161: the playhead drag control (`round/ic_btn_drag` under the
+     「00:00」 bubble) was traced as the trim handle, so no row scrubbed the playhead.
+   - Check every `how: label` or `how: arrow` auto trace against the same rule: an auto trace that names a row
+     pressing the control's twin or look-alike is replaced by a row that presses this one.
 
 ## Standing inputs (user, 2026-10-21)
 
@@ -133,7 +155,24 @@ Read these on every new or updated draft, even when the spec set has not changed
 4. **Template roster** (rule 6 below), including the category header icons.
 5. **Run findings.** An observation (O-n) or a filed bug from an earlier run that no row would have caught gets a
    row in the next draft.
-6. **Product domain knowledge (user, 2026-11-03)** `library/<product>/domain/`, when the product has one (PHD does;
+6. **Domain knowledge (user, 2026-11-03).** `node scripts/knowledge.ts <feature> <platform> --for analysis --out
+   <draft>/knowledge.md`, read once before the coverage passes (the CyberLink, product and feature entries merged;
+   the store is kept by the domain-knowledge skill, which you need only when someone gives new knowledge).
+   - `term` entries settle what the spec's words mean (the screen, job or control they name).
+   - A `rule` with authority `spec` or `team` applies wherever it names a job, screen or input the feature has, like
+     the user's QA rules in the coverage passes: write the requirements it gives, cited `[KB: KP-004]`, and list every
+     applicable rule in `requirements.md` › `### Domain rules` (entry → requirements, or `n/a (<why>)`).
+   - A `decision` is applied in the value check: no row asserts what it rules out, and a run finding it explains is
+     not filed. A `risk` tells the passes what to vary (an extra variant or hidden clause on the requirement it names).
+     A `question` goes to Open questions, citing the entry.
+   - An `observed` rule, a `fact` or a `quirk` is an expectation, never a row's only basis: use it to spot what the
+     spec leaves unsaid (an Open question, or a hidden clause the spec does state). A finding resting only on one is a
+     PM question, not an eBug (AGENTS.md, owner and type).
+   - Where the spec and an entry disagree, the spec wins for its feature: an Open question, and the entry goes to the
+     domain-knowledge skill to be marked `disputed`.
+   `check.ts` fails a draft that leaves an applicable rule out and warns when the knowledge changed after the draft
+   read it.
+7. **Product domain knowledge (user, 2026-11-03)** `library/<product>/domain/`, when the product has one (PHD does;
    start at its `README.md`). `confirmed-rules.md` rules the spec does not contradict become requirements citing
    `[Domain: K<nn>]`; `regression-risks.md` adds the variations (entry, first use, lifecycle, size, locale) the
    feature shares with past bugs; `decisions.md` keeps replaced expectations and version-bound values out of rows
@@ -155,6 +194,15 @@ for the comparison, on an approved table or a draft.
    (pass 7), `not from the spec`, `not covered`) and save it next to the old one.
 3. Build the comparison page `comparisons/<date>_casebook-vs-spec-agent.html`: coverage counts both ways, the cases
    only the casebook has, and every spec agent case it does not cover with the reason. Publish it when the user asks.
+   **Format (user, 2026-11-04):** the design of `library/pdr/ai-mini-drama/ios/comparisons/20261027_casebook-vs-spec-agent.html`
+   (copy its styles): one short column in 繁體中文 and English with a toggle (中文 first); the answer first (one
+   paragraph and three tiles: spec agent cases in the casebook, casebook cases in the spec agent, the one number that
+   matters most), then one status bar with its legend, what each side is based on (spec agent / casebook side by side),
+   where the rules differ, *Only the casebook checks*, *Covered is not the same as tested*, *Next*, and the long lists
+   collapsed at the end with a sources line. By default the page compares the current table as a fresh comparison,
+   with no version history (user, 2026-11-04: 「ignore the v1 v2」); a step line per table version, *What changed since*
+   and the new rows against the spec agent are added only when the user asks how coverage moved. Never stack a summary
+   over an older page's lists (2026-11-04: Video Enhance's 「after the rerun」 page still listed the 50 old gaps).
 4. The report only describes; it adds no rows. Changes to the table come from the analysis (*What this repo is for*)
    or from a request in the ledger.
 

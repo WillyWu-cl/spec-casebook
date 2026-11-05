@@ -1,0 +1,120 @@
+{
+  "pm-main-flow.png": {
+    "board": "369:438",
+    "group": "p1",
+    "hash": "f07df8c5",
+    "overlay": "10919e1b",
+    "captured_at": "2026-11-04T02:07:31.519Z",
+    "box": [
+      0,
+      0,
+      4091,
+      2370
+    ]
+  },
+  "pm-access-credit.png": {
+    "board": "369:439",
+    "group": "p2",
+    "hash": "47e2ca6b",
+    "overlay": "47e2ca6b",
+    "captured_at": "2026-11-04T02:07:31.746Z",
+    "box": [
+      0,
+      2610,
+      1110,
+      2370
+    ]
+  },
+  "pm-timeline.png": {
+    "board": "369:440",
+    "group": "p2",
+    "hash": "4b9bdc11",
+    "overlay": "4b9bdc11",
+    "captured_at": "2026-11-04T02:07:31.945Z",
+    "box": [
+      1350,
+      2610,
+      1637,
+      1365
+    ]
+  },
+  "pm-failure-refund.png": {
+    "board": "369:441",
+    "group": "p2",
+    "hash": "75a9284d",
+    "overlay": "75a9284d",
+    "captured_at": "2026-11-04T02:07:32.136Z",
+    "box": [
+      1350,
+      4215,
+      1110,
+      1365
+    ]
+  },
+  "pm-gaps.png": {
+    "board": "369:442",
+    "group": "p2",
+    "hash": "28b5027e",
+    "overlay": "28b5027e",
+    "captured_at": "2026-11-04T02:07:32.328Z",
+    "box": [
+      3175,
+      2610,
+      1300,
+      1142
+    ]
+  },
+  "alternative-exception.png": {
+    "board": "3293:15052",
+    "group": "d3",
+    "hash": "f9bf17ed",
+    "overlay": "67de530e",
+    "captured_at": "2026-11-04T02:07:32.695Z",
+    "box": [
+      20612,
+      5985,
+      6100,
+      1552
+    ]
+  },
+  "cancel.png": {
+    "board": "3396:20438",
+    "group": null,
+    "hash": null,
+    "source_hash": "38c3aceb",
+    "captured_at": "2026-11-03T10:03:29.078Z"
+  },
+  "main-flow-free-user-iap.png": {
+    "board": "3293:13054",
+    "group": null,
+    "hash": "db0a9006",
+    "source_hash": "074bd941",
+    "captured_at": "2026-11-04T00:55:36.338Z"
+  },
+  "routing-logic.png": {
+    "board": "3293:14560",
+    "group": "d2",
+    "hash": "360c22ee",
+    "captured_at": "2026-11-03T10:07:56.207Z"
+  },
+  "entry-points.png": {
+    "board": "3293:14642",
+    "group": null,
+    "hash": "08418530",
+    "source_hash": "a07a9ce6",
+    "captured_at": "2026-11-04T00:55:36.398Z"
+  },
+  "ai-video-enhance.png": {
+    "board": "3300:32003",
+    "group": "d4",
+    "hash": "33dd9b93",
+    "overlay": "a64ece62",
+    "captured_at": "2026-11-04T02:07:33.105Z",
+    "box": [
+      20612,
+      3054,
+      4148,
+      2590
+    ]
+  }
+}

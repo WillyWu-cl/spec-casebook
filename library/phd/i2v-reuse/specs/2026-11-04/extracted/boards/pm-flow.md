@@ -1,0 +1,119 @@
+# Spec - Flow
+
+Source: PM Figma https://www.figma.com/design/lSk4JUgbXG3DjauMLS9Et7/Image-to-Video?node-id=6336-3478 · board `pm-flow` · node 6366:4241/pm-flow · box x=-3910 y=-4802 w=1820 h=3712 (absolute Figma canvas points)
+Figma text layer (inventory read 2026-11-04, figma-pm / qa1); no PDF export exists, so no OCR. Columns: y, x, text (one line per text line); [phone] = inside a phone mockup.
+
+```
+ -4702  -3850  Overview
+ -4672  -3850  • 情境：用戶對結果滿意，回 My AI Artwork 想換一張照片、用同一組設定再做一支 [D0-01]
+ -4641  -3850  • 為何 11/E：model list 變長、可 custom 項目變多，重找 model 成本高；拉高 I2V 重複生成 → credit 消耗 [D0-01]
+ -4611  -3850  • 入口只有影片層級 Reuse（Save & Share 頁）；Create More 維持今天（Custom tab、default model），不出 reuse list [D0-03]
+ -4580  -3850  • 名稱：Reuse；出現在 Artwork I2V tab、Recent (Video) 進入的 Save & Share 頁 [D0-05]
+ -4550  -3850  • Scope：只有 Custom 影片；10/E Start/End frame 影片也算，開關狀態一起帶回 [D0-06][D0-06b]
+ -4519  -3850  • 不比競品，以 app 內既有 prompt Reuse 為參照 [D5-01]
+ -4403  -3850  Entry A: My AI Artwork › video artwork › Reuse
+ -4294  -3014  • 設定＋prompt 帶好、照片空、toast [D1-04]
+ -4279  -3850  • 點 Custom 影片 → Save & Share [D1-01]
+ -4279  -3435  • Reuse 帶回整組設定 [D0-04b]
+ -4218  -3825  9:41
+ -4218  -3410  [phone] 9:41
+ -4218  -2989  [phone] 9:41
+ -4174  -3709  My AI Artwork
+ -4173  -2724  [phone] 0
+ -4172  -3292  [phone] Save & Share
+ -4126  -2894  [phone] Custom
+ -4126  -2813  [phone] Templates
+ -4124  -3834  Image to Video
+ -4124  -3711  AI Art
+ -4124  -3652  AI Face Swap
+ -4124  -3539  AI Outfit
+ -4094  -2996  [phone] Model
+ -4077  -3533  [phone] Select
+ -4052  -2940  [phone] Kling 2.6
+ -4037  -3672  [phone] 2025/01/20
+ -4017  -3672  [phone] Image to Vdieo - A Template Name 2
+ -4002  -2996  [phone] Specify Video Start / End 
+ -3982  -3793  [phone] Processing...
+ -3971  -2996  [phone] Add your images
+ -3935  -3672  [phone] 9 minutes remaining ...
+ -3879  -3672  [phone] 2025/01/20
+ -3859  -3672  [phone] Custom
+ -3809  -2996  [phone] Prompts *
+ -3807  -3262  [phone] Save
+ -3807  -2742  [phone] My Prompt
+ -3766  -3417  [phone] Prompts & Settings
+ -3764  -3826  [phone] 0:04
+ -3751  -2983  [phone] A girl turning around in the snow, hair flowing in the wind
+ -3726  -3379  [phone] Kling 2.6 · 10s · Pro · Sound On
+ -3721  -3672  [phone] 2025/01/20
+ -3701  -3672  [phone] Template Name 2
+ -3700  -3407  [phone] A girl turning around in the snow, hair flowing in the wind
+ -3637  -2713  [phone] 58/2,500
+ -3612  -3146  [phone] Reuse
+ -3606  -3826  [phone] 0:04
+ -3582  -2983  [phone] Try with inspirations
+ -3572  -3419  [phone] Share to
+ -3563  -3672  [phone] 2025/01/20
+ -3551  -2881  [phone] Settings applied
+ -3543  -3672  [phone] Image to Vdieo - A Template Name 2
+ -3487  -3371  [phone] Instagram
+ -3487  -3274  [phone] Facebook
+ -3487  -3166  [phone] More
+ -3484  -2858  [phone] Generate
+ -3484  -2700  [phone] 30
+ -3461  -3552  [phone] Retry
+ -3457  -3419  [phone] You might also like
+ -3405  -3672  [phone] 2025/01/20
+ -3385  -3672  [phone] Image to Vdieo - A Template Name 2
+ -3303  -3560  [phone] Report
+ -3247  -3672  [phone] 2025/01/20
+ -3227  -3672  [phone] Image to Vdieo - A Template Name 2
+ -3145  -3594  [phone] View Details
+ -3077  -3707  Create more
+ -2731  -3850  Entry B: My AI Artwork › Create More（維持）
+ -2637  -3850  • Create More → Custom tab、default model（同今天） [D1-03]
+ -2607  -3435  • default 設定，不出任何 reuse list [D0-03]
+ -2546  -3825  9:41
+ -2546  -3410  [phone] 9:41
+ -2502  -3709  My AI Artwork
+ -2501  -3145  [phone] 0
+ -2454  -3315  [phone] Custom
+ -2454  -3234  [phone] Templates
+ -2452  -3834  Image to Video
+ -2452  -3711  AI Art
+ -2452  -3652  AI Face Swap
+ -2452  -3539  AI Outfit
+ -2422  -3417  [phone] Model
+ -2405  -3533  [phone] Select
+ -2380  -3361  [phone] Kling 3.0
+ -2365  -3672  [phone] 2025/01/20
+ -2345  -3672  [phone] Image to Vdieo - A Template Name 2
+ -2330  -3417  [phone] Specify Video Start / End 
+ -2310  -3793  [phone] Processing...
+ -2299  -3417  [phone] Add your images
+ -2263  -3672  [phone] 9 minutes remaining ...
+ -2207  -3672  [phone] 2025/01/20
+ -2187  -3672  [phone] Custom
+ -2137  -3417  [phone] Prompts *
+ -2135  -3163  [phone] My Prompt
+ -2092  -3826  [phone] 0:04
+ -2079  -3404  [phone] Describe the subject, action, and overall scene, e.g. A woman walking in a park on a sunny afternoon.
+ -2049  -3672  [phone] 2025/01/20
+ -2029  -3672  [phone] Template Name 2
+ -1965  -3127  [phone] 0/2,500
+ -1934  -3826  [phone] 0:04
+ -1910  -3404  [phone] Try with inspirations
+ -1891  -3672  [phone] 2025/01/20
+ -1871  -3672  [phone] Image to Vdieo - A Template Name 2
+ -1812  -3279  [phone] Generate
+ -1812  -3121  [phone] 30
+ -1789  -3552  [phone] Retry
+ -1733  -3672  [phone] 2025/01/20
+ -1713  -3672  [phone] Image to Vdieo - A Template Name 2
+ -1631  -3560  [phone] Report
+ -1575  -3672  [phone] 2025/01/20
+ -1555  -3672  [phone] Image to Vdieo - A Template Name 2
+ -1473  -3594  [phone] View Details
+ -1405  -3707  Create more
+ -1214  -3850  — 藍線＝去程（點擊觸發）　— 紅線＝回程（‹ 返回）
+```

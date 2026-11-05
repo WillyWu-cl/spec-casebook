@@ -9,7 +9,10 @@
 //   --compare         compares those results with extracted/figma-hashes.json (committed: the baseline everyone
 //                     shares) and writes extracted/figma-check.json; prints FIGMA: UNCHANGED or FIGMA: CHANGED with
 //                     the groups to re-read (their calls are written as figma-check/reread-<group>.js), the new
-//                     boards and the screenshots to re-capture; exit 0 unchanged, 10 changed
+//                     boards and the screenshots to re-capture; exit 0 unchanged, 10 changed. A board also counts as
+//                     changed when what is drawn over it changed (overlays: loose arrows, connectors, notes) or when
+//                     an arrow drawn over it is missing from its group's read (user, 2026-11-04: reads before the
+//                     overlays existed missed them; the first check finds those boards, no extra Figma call)
 //   --ack <id,…>      new boards that are not part of the spec (scratch frames): stop reporting them
 //   --shot <png> <board id> [--box x,y,w,h] [--tiles id,…]   shrinks a saved board screenshot (extracted/figma/<png>)
 //                     to 256 colours and records it; --box is the canvas box the image covers when it is not exactly
@@ -37,14 +40,17 @@ const read = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
 const has = (f: string) => process.argv.includes(`--${f}`);
 
 // groups: what each board group file read, and the exact entries to read it again
-type Group = { name: string; file: string; page: string; entries: any[]; ids: string[]; hash?: Record<string, string>; hashed_at?: string };
+type Group = { name: string; file: string; page: string; entries: any[]; ids: string[]; hash?: Record<string, string>; overlay?: Record<string, string>;
+  hashed_at?: string; arrows: Set<string>; boxes: Map<string, number[]> };
 const groups: Group[] = readdirSync(ex).filter(f => /^figma-inventory-.+\.json$/.test(f) && !f.endsWith('-boards.json')).sort().map(f => {
   const g = read(join(ex, f));
   // older reads lack `entries`: rebuild them from the boards (a region id is "<parent>/<name>", its box is saved)
   const entries = g.entries ?? g.boards.map((b: any[]) => b[0].includes('/') ? { name: b[1], parent: b[0].split('/')[0], box: b.slice(2, 6) } : { id: b[0], name: b[1] });
-  return { name: f.replace(/^figma-inventory-|\.json$/g, ''), file: g.file, page: g.page, entries, ids: g.boards.map((b: any[]) => b[0]), hash: g.hash, hashed_at: g.hashed_at };
+  return { name: f.replace(/^figma-inventory-|\.json$/g, ''), file: g.file, page: g.page, entries, ids: g.boards.map((b: any[]) => b[0]), hash: g.hash,
+    overlay: g.overlay, hashed_at: g.hashed_at, arrows: new Set((g.arrows ?? []).map((a: any[]) => a[0])), boxes: new Map(g.boards.map((b: any[]) => [b[0], b.slice(2, 6)])) };
 });
 const groupOf = new Map(groups.flatMap(g => g.ids.map(id => [id, g.name] as [string, string])));
+const groupByName = new Map(groups.map(g => [g.name, g]));
 
 // which Figma file is which: figma-frames.json names the design / pm / mx file keys; design reads go through
 // figma-design (qa-dm), the PM and MX files through figma-pm (qa1)
@@ -60,7 +66,7 @@ const store: any = existsSync(storePath) ? read(storePath) : { boards: {}, files
 let absorbed = 0;
 for (const g of groups) if (g.hash && g.hashed_at) for (const [id, h] of Object.entries(g.hash)) {
   const b = store.boards[id];
-  if (!b || b.at < g.hashed_at) { store.boards[id] = { hash: h, at: g.hashed_at, group: g.name }; absorbed++; }
+  if (!b || b.at < g.hashed_at) { store.boards[id] = { hash: h, ...(g.overlay ? { overlay: g.overlay[id] ?? '' } : {}), at: g.hashed_at, group: g.name }; absorbed++; }
 }
 const shotsPath = join(shotDir, 'shots.json');
 const shots: Record<string, any> = existsSync(shotsPath) ? read(shotsPath) : {};
@@ -90,7 +96,8 @@ if im.mode != 'P': (im.convert('RGBA') if a < 255 else im.convert('RGB')).quanti
   else console.log(`${png}: ${Math.round(before / 1024)} KB → ${Math.round(statSync(join(shotDir, png)).size / 1024)} KB`);
   const box = arg('box')?.split(',').map(Number), tiles = arg('tiles')?.split(',').filter(Boolean);
   if (box && (box.length !== 4 || box.some(n => !Number.isFinite(n)))) { console.error('--box x,y,w,h (canvas points)'); process.exit(2); }
-  shots[png] = { board: id, group: groupOf.get(id) ?? null, hash: store.boards[id]?.hash ?? null, captured_at: new Date().toISOString(),
+  shots[png] = { board: id, group: groupOf.get(id) ?? null, hash: store.boards[id]?.hash ?? null,
+    ...(store.boards[id]?.overlay !== undefined ? { overlay: store.boards[id].overlay } : {}), captured_at: new Date().toISOString(),
     ...(box ? { box } : {}), ...(tiles ? { tiles: Object.fromEntries(tiles.map(t => [t, store.boards[t]?.hash ?? null])) } : {}) };
   writeJson(shotsPath, shots); console.log(`${png}: recorded for board ${id} (hash ${shots[png].hash ?? 'none yet'})`);
 } else if (has('prune')) {
@@ -100,19 +107,29 @@ if im.mode != 'P': (im.convert('RGBA') if a < 255 else im.convert('RGB')).quanti
   if (superseded && !has('dry-run') && existsSync(shotsPath)) rmSync(shotsPath);
   console.log(`${extra.length} screenshot(s) ${has('dry-run') ? 'to prune' : 'pruned'}${superseded ? ' (superseded set)' : ''}`);
 } else if (has('compare')) {
-  const report: any = { checked_at: '', set, unchanged: [], changed: [], removed: [], baseline: [], new_boards: [], reread: [], shots: [] };
+  const report: any = { checked_at: '', set, unchanged: [], changed: [], removed: [], baseline: [], new_boards: [], missed_arrows: [], reread: [], shots: [] };
   const missing = files.filter(f => !existsSync(join(checkDir, `${tag(f)}.json`)));
   if (missing.length) { console.error(`No result for ${missing.map(tag).join(', ')}: run the figma-check/<role>.js calls first`); process.exit(2); }
   for (const f of files) {
     const res = read(join(checkDir, `${tag(f)}.json`));
     if (res.mode !== 'hash') { console.error(`${tag(f)}.json is not a check result (mode: hash)`); process.exit(2); }
     report.checked_at = res.hashed_at;
-    for (const [id, h] of res.boards as [string, string | null][]) {
-      const b = store.boards[id], row = { id, group: groupOf.get(id) };
+    for (const [id, h, ov, ovArrows, ubox, holder] of res.boards as [string, string | null, string?, string[]?, number[]?, string?][]) {
+      const b = store.boards[id], row: any = { id, group: groupOf.get(id) };
+      // an arrow drawn over the board that its group's read does not have (a read made before overlays were read)
+      const missed = (ovArrows ?? []).filter(a => !groupByName.get(row.group)?.arrows.has(a));
+      if (missed.length) report.missed_arrows.push({ ...row, arrows: missed });
+      if (ubox) Object.assign(row, { box: ubox, holder: holder ?? '' });
       if (h === null) report.removed.push(row);
-      else if (!b) { store.boards[id] = { hash: h, at: res.hashed_at, group: groupOf.get(id), from: 'check' }; report.baseline.push(row); }
-      else if (b.hash === h) { delete b.changed; report.unchanged.push(row); }
-      else { b.changed = { hash: h, at: res.hashed_at }; report.changed.push(row); }
+      else if (!b) { store.boards[id] = { hash: h, ...(ov !== undefined ? { overlay: ov } : {}), at: res.hashed_at, group: groupOf.get(id), from: 'check' }; (missed.length ? report.changed : report.baseline).push(row); if (missed.length) store.boards[id].changed = { hash: h, overlay: ov, at: res.hashed_at, missed }; }
+      else {
+        // the first check with overlays takes them as the baseline; the missed arrows still flag what was lost before
+        if (ov !== undefined && b.overlay === undefined) b.overlay = ov;
+        const why = [b.hash !== h && 'board', ov !== undefined && b.overlay !== ov && 'overlay', missed.length && 'missed arrows'].filter(Boolean);
+        if (!why.length) { delete b.changed; report.unchanged.push(row); }
+        else { b.changed = { hash: h, ...(ov !== undefined ? { overlay: ov } : {}), at: res.hashed_at, ...(missed.length ? { missed } : {}) }; report.changed.push({ ...row, why }); }
+      }
+      if (ubox) store.boards[id].box = ubox, store.boards[id].holder = holder ?? '';
     }
     const fs = store.files[tag(f)] ??= { key: f.key, page: f.page };
     const known = new Set([...(fs.others ?? []), ...(fs.acked ?? [])]);
@@ -131,7 +148,12 @@ if im.mode != 'P': (im.convert('RGBA') if a < 255 else im.convert('RGB')).quanti
   for (const [png, s] of Object.entries<any>(shots)) {
     const b = store.boards[s.board];
     const tileChanged = Object.entries<any>(s.tiles ?? {}).some(([t, h]) => store.boards[t]?.changed || (h && store.boards[t] && h !== store.boards[t].hash));
-    if (b?.changed || (s.hash && b && s.hash !== b.hash) || tileChanged) report.shots.push({ png, board: s.board });
+    // a board with something drawn over it, or over its edge, is cut from its holder's screenshot so the overlays show
+    const own = groupByName.get(s.group ?? groupOf.get(s.board))?.boxes.get(s.board), ub = b?.box;
+    const grows = !!(ub && own && (ub[0] < own[0] || ub[1] < own[1] || ub[0] + ub[2] > own[0] + own[2] || ub[1] + ub[3] > own[1] + own[3]));
+    const overlayNew = s.overlay === undefined ? !!b?.overlay : b?.overlay !== undefined && s.overlay !== b.overlay;
+    if (b?.changed || (s.hash && b && s.hash !== b.hash) || tileChanged || overlayNew)
+      report.shots.push({ png, board: s.board, ...(grows || (b?.overlay && !s.box) ? { box: ub, holder: b.holder } : {}) });
   }
   const orphans = existsSync(shotDir) ? readdirSync(shotDir).filter(f => /\.(png|jpe?g)$/i.test(f) && !shots[f]) : [];
   save(); writeJson(join(ex, 'figma-check.json'), report);
@@ -139,7 +161,11 @@ if im.mode != 'P': (im.convert('RGBA') if a < 255 else im.convert('RGB')).quanti
   console.log(`${changed ? 'FIGMA: CHANGED' : 'FIGMA: UNCHANGED'} — ${set}: ${report.unchanged.length} unchanged, ${report.changed.length} changed, ${report.removed.length} removed, ${report.new_boards.length} new, ${report.baseline.length} baselined now${absorbed ? `, ${absorbed} hash(es) taken from re-read groups` : ''}`);
   for (const r of report.reread) console.log(`  re-read ${r.group} via ${r.server}: ${r.code} → ${r.save_as}`);
   for (const n of report.new_boards) console.log(`  new board ${n.id} 「${n.name}」 in ${n.file}: add it to a group or --ack it`);
-  for (const s of report.shots) console.log(`  re-capture ${s.png} (board ${s.board}), then --shot ${s.png} ${s.board}`);
+  for (const m of report.missed_arrows) console.log(`  board ${m.id} (${m.group}): ${m.arrows.length} arrow(s) drawn over it are not in its read (${m.arrows.join(', ')})`);
+  for (const s of report.shots) console.log(s.box
+    ? `  re-capture ${s.png} (board ${s.board}) with what is drawn over it: get_screenshot of ${s.holder || 'the board (only the page holds the overlays: those past the board edge are cut off)'}, cut to --box ${s.box.join(',')} with figma-cut.ts, then --shot ${s.png} ${s.board} --box ${s.box.join(',')}`
+    : `  re-capture ${s.png} (board ${s.board}), then --shot ${s.png} ${s.board}`);
+  if (report.changed.length || report.missed_arrows.length) console.log(`  after the re-reads: node scripts/figma-text.ts ${feature} ${set} (what the changed boards now say against the spec notes)`);
   if (orphans.length) console.log(`  ${orphans.length} screenshot(s) not in shots.json (${orphans.join(', ')}): record them with --shot or delete them with --prune`);
   if (report.baseline.length && !report.unchanged.length && !report.changed.length) console.log('  first check: the hashes are the baseline from now on; changes made before today were not compared');
   process.exit(changed ? 10 : 0);

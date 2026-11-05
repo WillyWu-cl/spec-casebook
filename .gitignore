@@ -4,6 +4,8 @@ node_modules/
 # Images and videos stay local (user, 2026-10-22): run screenshots, eBug attachments, renders and recordings.
 # The repo keeps the text that points at them (results.csv, reports, eBug drafts with file names).
 *.png
+# the Android view dumper's full output stays local; its compact `.views.json` is shared with the capture (REQ-086)
+*.viewdump.json
 *.jpg
 *.jpeg
 *.gif
@@ -42,6 +44,8 @@ library/*/*/specs/*/extracted/boards/*/
 library/*/*/specs/*/extracted/figma/*
 !library/*/*/specs/*/extracted/figma/*.png
 !library/*/*/specs/*/extracted/figma/shots.json
+# board-lint.ts OCR of those screenshots (user, 2026-11-04): about 3 minutes per feature on first read, so shared too
+!library/*/*/specs/*/extracted/figma/ocr/
 # figma-source reads (scripts/figma-source.ts): the use_figma returns and board fingerprints are shared so no one reads
 # an unchanged board again; the rendered calls and the expanded output (and the full-size screenshots) stay local
 !library/*/*/specs/*/extracted/figma-source/
@@ -51,6 +55,12 @@ library/*/*/*/drafts/*/server.log
 
 # Run screenshot folders stay local, including the on-screen text dumps saved next to each screenshot
 library/*/*/*/runs/*/screenshots/
+# Design check captures (figma skill, user 2026-11-03): a compact copy of each capture (750 px WebP and its page source)
+# is shared with the run, so another computer can check, review and show the Design tab without the phone's files
+!library/*/*/*/runs/*/design/captures/*.webp
+
+# QA Report evidence ZIPs (qa-report skill) are rebuilt from the screenshots and uploaded to the QR; they stay local
+library/*/*/*/runs/*/*_evidence.zip
 
 # Pulled app logs (may hold tokens) stay local
 library/*/*/*/runs/*/logs/
@@ -60,6 +70,8 @@ library/*/*/*/runs/*/.window
 library/*/*/*/runs/*/.devices.json
 # Full pulled app logs attached to eBugs (may hold tokens) stay local; excerpts in ebugs/*/logs are checked first
 library/*/*/*/ebugs/*/full_logs/
+# Unpacked eBug log extracts (generators write them, may hold full session logs); the reviewed ZIP beside them is shared
+library/*/*/*/ebugs/*/blueprint-extract/
 
 # Coverage pages embed spec renders and run screenshots (local only, like the images themselves)
 library/*/*/*/coverage.html
@@ -71,3 +83,34 @@ library/*/*/*/runs/plan-server*.log
 # eBug filing staging folders are regenerated copies of the drafts' bodies and attachments (drafts_to_bodies.py)
 library/*/*/*/ebugs/*/upload/
 library/*/*/*/ebugs/*/upload_filing/
+
+# Domain knowledge (user, 2026-11-03): entries are small Markdown and are committed; a source's original files (docs,
+# PDFs, exports, images) stay local like spec files, and only its source.json and extracted text are shared.
+library/knowledge/sources/*/*
+library/*/knowledge/sources/*/*
+library/*/*/knowledge/sources/*/*
+!library/knowledge/sources/*/source.json
+!library/*/knowledge/sources/*/source.json
+!library/*/*/knowledge/sources/*/source.json
+!library/knowledge/sources/*/extracted/
+!library/*/knowledge/sources/*/extracted/
+!library/*/*/knowledge/sources/*/extracted/
+library/knowledge/sources/*/extracted/*
+library/*/knowledge/sources/*/extracted/*
+library/*/*/knowledge/sources/*/extracted/*
+!library/knowledge/sources/*/extracted/*.md
+!library/*/knowledge/sources/*/extracted/*.md
+!library/*/*/knowledge/sources/*/extracted/*.md
+!library/knowledge/sources/*/extracted/*.txt
+!library/*/knowledge/sources/*/extracted/*.txt
+!library/*/*/knowledge/sources/*/extracted/*.txt
+
+# automatic design captures (lib/design-watch.ts): the watch armed by `case ID` and its Figma text cache
+library/*/*/*/runs/*/.design-watch.json
+library/*/*/*/runs/*/.design-texts.json
+
+# Local dev-server configs the desktop app writes per machine (preview_start), not shared
+.claude/launch.json
+
+# Debug-info session exports: hold app credit tokens (2026-11-05)
+library/**/runs/*/exports/

@@ -5,13 +5,20 @@
 //        node scripts/results-page.ts <product>/<feature> <platform> --serve [port] [--lan]
 // Reads runs/*/results.csv (the latest record per case in each run folder), each folder's run-state.md (phase, build)
 // and blocked-reasons.json, and the table's cases.csv (Precondition, Priority). --serve (default port 4492) rebuilds on
-// every request and sends the screenshots as files/<path under the repo>; scripts/pages.ts serves it as /results/.
+// every request and sends the screenshots as files/<path under the repo> (with ?thumb a small JPEG copy for the list,
+// lib/thumbs.ts; the viewer opens the original); scripts/pages.ts serves it as /results/.
 // Without --serve: runs/results.html, with the screenshots linked relative to it (open it from the runs folder).
+// eBugs (user, 2026-11-04): each Fail case links the eBugs it belongs to, from the table's ebugs/<batch>/ folders: the
+// batch filed from a run (the run folder its drafts and notes name most) gives `filed` (a draft entry whose Report step
+// names the case → its ISS → filed_bugcodes.json) and `known` (dedupe.txt: the existing ticket a Fail row repeats);
+// any other eBug code in the row's Actual or Disposition is `mentioned`. Links use the eCL address the ebug-tr-filer
+// skill prescribes (HandleMainEbug.asp?BugCode=).
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join, relative } from 'node:path';
 import { readRecords } from './lib/csv.ts';
+import { thumbnail } from './lib/thumbs.ts';
 import { ROOT, arg, assertIds, readManifest, readTable, tableDir } from './lib/library.ts';
 
 const [feature, platform] = process.argv.slice(2);
@@ -21,7 +28,56 @@ const si = process.argv.indexOf('--serve'), serve = si >= 0, lan = process.argv.
 const IMG = /\.(png|jpe?g)$/i;
 const title = readManifest(feature, platform)?.title ?? feature;
 
+const CODE = /\b[A-Z]{3}\d{6}(?:P|-)\d{4}\b/g;
+// "PDR-A 16.8.0 - [AIAgent][UI] AI Mini Drama: Leaving …" → tags "[AIAgent][UI]" and the title "Leaving …"
+const reTitle = new RegExp(`^(${title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}|${feature.split('/').pop()!.replace(/-/g, '[ -]')})\\s*:\\s*`, 'i');
+const split = (t = '') => { const rest = t.replace(/^[A-Z][\w-]* [\d.]+ - /, ''), tags = rest.match(/^(\[[^\]]*\])+/)?.[0] ?? '';
+  return { tags, title: rest.slice(tags.length).trim().replace(reTitle, '') }; };
+function ebugIndex() {
+  const root = join(table, 'ebugs'), info = new Map<string, { title: string; tags: string }>();
+  const byRun = new Map<string, Map<string, Map<string, 'filed' | 'known'>>>();
+  const add = (run: string, tc: string, code: string, kind: 'filed' | 'known') => {
+    const r = byRun.get(run) ?? byRun.set(run, new Map()).get(run)!, m = r.get(tc) ?? r.set(tc, new Map()).get(tc)!;
+    if (m.get(code) !== 'filed') m.set(code, kind);
+  };
+  for (const b of existsSync(root) ? readdirSync(root).filter(b => statSync(join(root, b)).isDirectory()) : []) {
+    const dir = join(root, b), texts = readdirSync(dir).filter(f => /\.(md|txt)$/.test(f)).map(f => readFileSync(join(dir, f), 'utf8'));
+    const named = new Map<string, number>();
+    for (const t of texts) for (const m of t.matchAll(/runs\/(20\d\d-\d\d-\d\d[\w-]*)/g)) named.set(m[1], (named.get(m[1]) ?? 0) + 1);
+    const run = [...named].sort((x, y) => y[1] - x[1])[0]?.[0];
+    const filed = existsSync(join(dir, 'filed_bugcodes.json')) ? JSON.parse(readFileSync(join(dir, 'filed_bugcodes.json'), 'utf8')).bugs ?? [] : [];
+    const iss = new Map<string, string>();
+    for (const f of filed) { if (!f.bugcode) continue; info.set(f.bugcode, split(f.short)); if (f.iss) iss.set(f.iss, f.bugcode); if (f.key) iss.set(f.key, f.bugcode); }
+    if (!run) continue;
+    // drafts: "## 3. ISS-AMDA-62 — …" then "**Report step:** TC-465, O-6"
+    for (const f of readdirSync(dir).filter(f => /_eBug_drafts_.*\.md$/.test(f))) {
+      const parts = readFileSync(join(dir, f), 'utf8').split(/^## /m);
+      for (const p of parts) {
+        const id = p.match(/^\d+\.\s+([\w-]+)/)?.[1], code = id && iss.get(id), steps = p.match(/\*\*Report step:\*\*([^\n]*)/)?.[1];
+        if (code && steps) for (const tc of steps.match(/TC-\d+/g) ?? []) add(run, tc, code, 'filed');
+      }
+    }
+    // dedupe.txt: "<code> [<status>] <title>[ / <code> [<status>] <title>]" then indented "    TC-412: …" lines
+    if (existsSync(join(dir, 'dedupe.txt'))) {
+      let codes: string[] = [];
+      for (const l of readFileSync(join(dir, 'dedupe.txt'), 'utf8').split('\n')) {
+        if (/^[A-Z]{3}\d{6}[P-]\d{4} \[/.test(l)) {
+          codes = [];
+          for (const m of l.matchAll(/([A-Z]{3}\d{6}[P-]\d{4}) \[[^\]]*\] (.*?)(?= \/ [A-Z]{3}\d{6}[P-]\d{4} \[|\s+⚑|$)/g)) { codes.push(m[1]); if (!info.has(m[1])) info.set(m[1], split(m[2].trim())); }
+        } else if (/^\s+(TC-\d+)/.test(l)) for (const c of codes) add(run, l.trim().match(/^TC-\d+/)![0], c, 'known');
+        else if (!/^\s/.test(l)) codes = [];
+      }
+    }
+  }
+  return (run: string, id: string, text: string) => {
+    const m = new Map<string, string>(byRun.get(run)?.get(id) ?? []);
+    for (const c of text.match(CODE) ?? []) if (!m.has(c)) m.set(c, 'mentioned');
+    return [...m].map(([code, kind]) => ({ code, kind, title: info.get(code)?.title ?? '', tags: info.get(code)?.tags ?? '' }));
+  };
+}
+
 function buildData(link: (abs: string) => string) {
+  const ebugsOf = ebugIndex();
   const cases = existsSync(join(table, 'cases.csv')) ? readTable(join(table, 'cases.csv')) : [];
   const row = new Map(cases.map(r => [r.ID, r]));
   const runs: any[] = [];
@@ -42,7 +98,7 @@ function buildData(link: (abs: string) => string) {
       latest.set(id, { id, t: at, at: r['Recorded At'] ?? '', phase: r.Phase ?? '', seg: r.Segment ?? '', needs: r.Needs ?? '', section: r.Section || t?.Section || '',
         pre: t?.Precondition ?? '', prio: t?.Priority ?? '', action: r.Action || t?.Action || '', expected: r['Expected Result'] || t?.['Expected Result'] || '',
         result: r.Result || 'Not run', disp: r.Disposition ?? '', actual: r.Actual ?? '', why: blocked[id]?.note ?? '', group: blocked[id]?.group ?? '',
-        shots, files: other });
+        shots, files: other, ebugs: /^fail/i.test(r.Result ?? '') ? ebugsOf(d, id, `${r.Actual ?? ''} ${r.Disposition ?? ''}`) : [] });
     }
     if (!latest.size) continue;
     const list = [...latest.values()].sort((a, b) => a.seg.localeCompare(b.seg, 'en', { numeric: true }) || a.id.localeCompare(b.id, 'en', { numeric: true }));
@@ -66,18 +122,27 @@ if (serve) {
         const html = page(buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`));
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(html); return;
       }
+      // the same data alone, for the in-place update (scripts/pages.ts __check)
+      if (url.startsWith('/data.json')) {
+        res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });
+        res.end(JSON.stringify(buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`))); return;
+      }
       // screenshots: images under this table's runs folder only
       const f = url.match(/^\/files\/([^?#]+)/);
       if (f) {
         const p = join(ROOT, decodeURIComponent(f[1]));
         if (IMG.test(p) && relative(runsDir, p).split(/[\\/]/)[0] !== '..' && existsSync(p)) {
-          res.writeHead(200, { 'content-type': /png$/i.test(p) ? 'image/png' : 'image/jpeg', 'cache-control': 'max-age=300' }); res.end(readFileSync(p)); return; }
+          const send = (file: string, type: string) => { res.writeHead(200, { 'content-type': type, 'cache-control': 'max-age=300' }); res.end(readFileSync(file)); };
+          const original = () => send(p, /png$/i.test(p) ? 'image/png' : 'image/jpeg');
+          if (/[?&]thumb\b/.test(url)) thumbnail(p).then(t => t ? send(t, 'image/jpeg') : original()).catch(() => { if (!res.headersSent) original(); });
+          else original();
+          return; }
       }
       res.writeHead(404); res.end('Not found');
     } catch (e: any) { res.writeHead(500, { 'content-type': 'text/plain' }); res.end(String(e?.message ?? e)); }
   });
   let port = portArg; const host = lan ? '0.0.0.0' : '127.0.0.1';
-  server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 10) { port++; server.listen(port, host); } else throw e; });
+  server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 60) { port++; server.listen(port, host); } else throw e; });
   server.on('listening', () => {
     console.log(`Results (live): http://127.0.0.1:${port}/  — Ctrl+C to stop`);
     if (!lan) return;

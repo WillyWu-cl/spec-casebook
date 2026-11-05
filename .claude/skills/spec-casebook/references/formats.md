@@ -25,12 +25,13 @@ Spec: <file names>
 - R-150 [DS: flow arrow <node> <Figma URL>] <from → to>: <expected>. Walked by: TC-033.
 ### Build checks
 - R-160 [Build: <TRCode> RD Note (<build>); Req: REQ-021] <statement>
+### Domain rules         | Entry | Requirements |   every applicable spec/team rule of the draft's knowledge.md: R-… or n/a (<why>)
 ### Request ledger coverage
 | Ledger entry | Requirements |      every open table entry of requests.md for this platform
 ```
 
 Source tags: `[PM:<board>]`, `[DS:<board>]`, `[MX:<board>]` (board IDs in `specs/<date>/extracted/boards/`),
-`[DS: flow arrow <node> <URL>]`, `[Req: REQ-…]` (request ledger), `[Build: <TRCode> …]` (RD build notes),
+`[DS: flow arrow <node> <URL>]`, `[Req: REQ-…]` (request ledger), `[KB: KP-…]` (domain knowledge, domain-knowledge skill), `[Build: <TRCode> …]` (RD build notes),
 `[Rule n: …]` (coverage rules), `[DS:figma <label> <node>]` (a Figma-only frame), `[Domain: K<nn>]` (product
 domain knowledge, `library/<product>/domain/`). `check.ts` reads `Walked by:`,
 the three grids, the ledger table, `arrows.json` and `figma-frames.json`, so keep those exact forms.
@@ -62,6 +63,14 @@ Writing rules (the table must be usable by a tester who has not read the spec):
   the spec shows them, with 「」 or "".
 - One check per row: one action (or a short numbered sequence for one outcome) and the outcome to verify.
   Put setup in Precondition, not in Action.
+- **One step per line (user, 2026-11-03).** Whenever a cell holds two or more steps the tester performs, each
+  step goes on its own line inside the cell, numbered (`1. Open a template` newline `2. Send one typed message`
+  newline `3. Tap 「Generate」`). This covers numbered runs (`1. … 2. … 3. …`) and plain sentences or clauses of
+  steps (`Open a template, then send a message, then tap …`, `Tap X. Tap Y.`, `Tap X; tap Y`). One tap is one
+  step: `Tap 「General」, then 「AI Issues」` is two lines. A single step needs no number. Precondition states
+  joined by `;` (`Tier Pro; scene videos done`) are conditions, not steps, and may stay on one line; setup
+  steps in a Precondition follow the rule. The CSV field is quoted because it holds line breaks; the review page,
+  Excel and Results pages show them as separate lines. `check.ts` warns on steps run together on one line.
 - Section = the spec's own feature area, in user-journey order (entry → main flow → edge cases → errors →
   settings / history). Rows are grouped by Section and follow the user journey inside it, so a later row can sit
   between earlier ones (REQ-033); IDs keep their numbers and need not be in sequence.

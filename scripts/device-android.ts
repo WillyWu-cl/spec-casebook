@@ -18,6 +18,17 @@
 // Recovery: a command that fails because UiAutomator2 is gone (instrumentation crashed, socket hang up, dead session)
 // restarts it once, re-activates the app and retries. When the phone is unplugged, unauthorized, offline or
 // locked behind a PIN/pattern, the script prints BLOCKER and exits 75 (same convention as device.ts).
+//   design SCREEN [--part N] [--anyway "<why>"] [NOTE]
+//                             design check (figma skill, references/conformance.md): the screenshot and page source of the
+//                             Figma screen SCREEN (node id) now on the phone, refused when it is not in the frame's state
+//                             (dark or light, keyboard up or down; --anyway keeps it with the reason), with the app's own
+//                             view data when the app is the debuggable build (android-viewdump.ts prepare), to
+//                             screenshots/design/<id>.png/.xml, logged in
+//                             design/captures.jsonl with the case running (`case ID`) and the window size
+//   case ID | case -          name the case now running (design captures name it), or clear it; with a design plan it
+//                             also arms the automatic design captures (lib/design-watch.ts): every page source this
+//                             script reads is matched against the Design screens still to capture, and a match is saved
+//                             as `design` would (one `design: captured …` line)
 //   shot NAME                 save <run dir>/screenshots/NAME.png (device pixels; adb screencap when no session)
 //   els [filter]              visible elements (format above); filter matches anywhere in the line, case-insensitive
 //   texts [NAME]              the visible on-screen strings only (text and content-desc, ids dropped, duplicates merged),
@@ -29,6 +40,7 @@
 //   drag X1 Y1 X2 Y2 [ms]     finger drag
 //   fingerdrag X1 Y1 X2 Y2 [steps]  drag sent as adb `input motionevent` DOWN, STEPS moves (default 10), UP: use it
 //                             when `drag` is taken as a tap (text that scrolls inside its own box)
+//   twotap X1 Y1 X2 Y2 [n]   two fingers tapped together n times (default 1)
 //   pinch X Y FROM TO [ms]    two fingers on a horizontal line through (X, Y), FROM → TO pixels apart (TO > FROM zooms in)
 //   scrollto TEXT [X TOP BOTTOM]  scroll the list under column X until the element whose text or content-desc is exactly
 //                             TEXT sits between TOP and BOTTOM, then print its line (plus the row's switch state when the
@@ -65,6 +77,15 @@
 //                             many commands as one call (recipes: library/<product>/<feature>/android/recipes/*.steps, "$1".."$9"
 //                             from args, "?" before a line = may fail); stops at the first failure with a screenshot
 //                             and the visible elements
+//   debug-info on|off         AI Mini Drama debug info (REQ-068), from the 「Hi, I'm your AI Drama Assistant」 page: two-finger
+//                             taps on the top row between Back and the credit pill until the toast 「Tap for debug info: ON|OFF」
+//                             says the wanted state
+//   debug-export [OUT] [--media]
+//                             AI Mini Drama session export (debug info on, a drama chat open): a result card's header opens
+//                             the debug viewer, Export session › Include media (off unless --media) › EXPORT writes
+//                             Download/<session>_<time>.zip; the zip named in the toast is pulled into OUT (default
+//                             <run dir>/exports/) and the viewer closed. The zip holds blueprint.json, every blueprint
+//                             version, host_inputs, engine events, chat history and perf.
 //   stop                      delete this run's session (the Appium server keeps running)
 // Defaults (override with env): ANDROID_HOME ~/Library/Android/sdk, JAVA_HOME Homebrew openjdk@17,
 // CASEBOOK_ANDROID_PACKAGE (else android.package in library/<product>/product.json), CASEBOOK_SERIAL (else the only adb device).
@@ -73,9 +94,12 @@
 import { appendFileSync, closeSync, existsSync, mkdirSync, openSync, readdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
 import { execFileSync, spawn } from 'node:child_process';
 import { homedir } from 'node:os';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 import { productValue } from './lib/feature-config.ts';
 import { BLOCKER, env, logActivity, runRecipe, sleep, stamp, webdriver } from './lib/device-common.ts';
+import { armWatch, saveCapture, settledCapture, stateMismatch, watchSource } from './lib/design-watch.ts';
+import { keyboardInSource } from './lib/design-match.ts';
+import { compactViews, dumpViews, viewdumpProblem } from './lib/android-views.ts';
 
 const HOME = homedir();
 const ANDROID_HOME = process.env.ANDROID_HOME ?? process.env.ANDROID_SDK_ROOT ?? join(HOME, 'Library/Android/sdk');
@@ -217,7 +241,24 @@ function parseEls(xml: string, filter?: string) {
   return parse(xml).filter(e => shown(e) && (e.id || e.text || e.desc))
     .map(line).filter(l => !filter || l.toLowerCase().includes(filter.toLowerCase()));
 }
-const source = async (): Promise<string> => (await s('GET', '/source')).value;
+// Automatic design captures (lib/design-watch.ts): while `case ID` has armed a watch, every page source read here is
+// checked for a Design screen still to capture (the screenshot is taken only on a match).
+const watching = () => existsSync(join(runDir, '.design-watch.json'));
+// the app's own view data saved with a design capture (lib/android-views.ts; REQ-086): when the app on the phone is the
+// debuggable build (android-viewdump.ts prepare) and the dumper is built here, else the capture goes without it
+async function appViews() {
+  const a = { serial: serial(), pkg: PKG }, why = viewdumpProblem(a);
+  if (why) { console.log(`design: no app view data (${why})`); return null; }
+  try { const full = await dumpViews(a); return { full, compact: compactViews(full) }; } catch (e: any) { console.log(`design: app view data not read (${String(e?.message ?? e).slice(0, 160)})`); return null; }
+}
+const source = async (): Promise<string> => {
+  const xml: string = (await s('GET', '/source')).value;
+  if (watching()) { const l = await watchSource(runDir, xml, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'), async () => (await s('GET', '/window/rect')).value, async () => (await s('GET', '/source')).value,
+    async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value), appViews); if (l) console.log(l); }
+  return xml;
+};
+// before a press while watching: the screen it is pressed on
+const glance = async () => { if (watching()) await source().catch(() => ''); };
 const center = (e: El) => ({ x: Math.round(e.x + e.w / 2), y: Math.round(e.y + e.h / 2) });
 const tapAt = (x: number, y: number) => mobile('clickGesture', { x, y });
 // The first visible element whose text, content-desc or resource-id contains T (exact matches win).
@@ -226,6 +267,7 @@ function findText(els: El[], t: string, exactOnly = false) {
   return vis.find(e => e.text === t || e.desc === t) ?? vis.find(e => e.id === t)
     ?? (exactOnly ? undefined : vis.find(e => e.text.includes(t) || e.desc.includes(t) || (e.id && e.id.includes(t))));
 }
+const toastText = (xml: string) => dec(/<android\.widget\.Toast\b[^>]*\btext="([^"]*)"/.exec(xml)?.[1] ?? '');
 const winSize = async () => (await s('GET', '/window/rect')).value as { width: number; height: number };
 // Run another command without its own output (for composite commands).
 async function quiet(c: string, a: string[]) { const o = console.log; console.log = () => {}; try { return await run(c, a); } finally { console.log = o; } }
@@ -237,7 +279,8 @@ async function elementByIdOrText(name: string) {
   }
   throw new Error(`no element with resource-id, text or content-desc "${name}"`);
 }
-function uid() { const m = /userId=(\d+)/.exec(sh(`dumpsys package ${PKG} 2>/dev/null | grep -m1 userId=`)); if (!m) throw new Error(`${PKG} is not installed`); return m[1]; }
+// dumpsys prints userId= up to Android 13, appId= from 14 (the Samsung A53 on 15)
+function uid() { const m = /(?:userId|appId)=(\d+)/.exec(sh(`dumpsys package ${PKG} 2>/dev/null | grep -m1 -E 'userId=|appId='`)); if (!m) throw new Error(`${PKG} is not installed`); return m[1]; }
 const logcatRunning = () => { if (!existsSync(LOGCAT_PID)) return 0; const pid = +readFileSync(LOGCAT_PID, 'utf8'); try { process.kill(pid, 0); return pid; } catch { return 0; } };
 function startLogcat() {
   mkdirSync(LIVE, { recursive: true });
@@ -301,6 +344,34 @@ switch (cmd) {
     const lp = logcatRunning(); console.log(lp ? `logcat capture running (pid ${lp}) → ${readFileSync(join(LIVE, 'current'), 'utf8')}` : 'logcat capture not running');
     break;
   }
+  case 'design': {
+    if (!rest[0]) { console.error('design SCREEN: the Figma screen id (design/plan.json)'); process.exit(2); }
+    // --part 2, 3…: the same screen scrolled down (a frame taller than the phone); its texts count for copy and missing
+    const pi = rest.indexOf('--part'), part = pi > 0 ? Number(rest[pi + 1]) : 1, words = rest.slice(1).filter((_, i) => pi < 0 || (i + 1 !== pi && i + 1 !== pi + 1));
+    // the screenshot and page source of one moment (lib/design-watch.ts settledCapture), in the frame's state: dark or
+    // light and the keyboard as Figma draws them, else refused (--anyway "<why>" keeps it, with the reason)
+    const ai = words.indexOf('--anyway'), anyway = ai >= 0 ? words.splice(ai, 2)[1] ?? 'yes' : '';
+    // with the keyboard's window in the source (UiAutomator2 enableMultiWindows), so the keyboard state is in the capture
+    // itself; switched off again at once, as other windows would reach the run's lookups (`lbl`, `texts`)
+    const multi = async () => { await s('POST', '/appium/settings', { settings: { enableMultiWindows: true } });
+      try { return (await s('GET', '/source')).value as string; } finally { await s('POST', '/appium/settings', { settings: { enableMultiWindows: false } }).catch(() => {}); } };
+    const one = await settledCapture(multi, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'));
+    const kb = keyboardInSource(one.xml) ?? await (async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value))().catch(() => null);
+    const off = part > 1 ? [] : stateMismatch(runDir, rest[0], one.png, kb);
+    if (off.length && !anyway) { console.error(`not captured: ${rest[0]} is not in its frame's state: ${off.join('; ')}`); process.exit(1); }
+    const { kase, png } = saveCapture(runDir, rest[0], { part, note: words.join(' '), png: one.png, xml: one.xml, win: (await s('GET', '/window/rect')).value, views: await appViews(),
+      extra: { ...(one.unsettled ? { unsettled: true } : {}), ...(kb !== null ? { keyboard: kb } : {}), ...(anyway ? { anyway, off } : {}) } });
+    console.log(`captured ${rest[0]}${kase ? ` (${kase})` : ''} → ${png}${one.unsettled ? ' — the screen kept changing: wait until it is still and capture again' : ''}`);
+    break;
+  }
+  case 'case': {
+    // case <ID>: the case now running (design captures name it); `case -` clears it. With a design plan it also arms
+    // the automatic design captures for the row (lib/design-watch.ts) and names the screens the last row passed without.
+    if (!rest[0] || rest[0] === '-') { try { unlinkSync(join(runDir, '.case')); } catch {} console.log('case cleared'); }
+    else { writeFileSync(join(runDir, '.case'), rest[0]); console.log('case', rest[0]); }
+    for (const l of armWatch(runDir, rest[0] && rest[0] !== '-' ? rest[0] : null)) console.log(l);
+    break;
+  }
   case 'shot': {
     const dir = join(runDir, 'screenshots'); mkdirSync(dir, { recursive: true });
     const p = join(dir, `${rest[0]}.png`);
@@ -328,7 +399,7 @@ switch (cmd) {
       console.log(`→ screenshots/${rest[0]}.png/.txt`); }
     break;
   }
-  case 'tap': await tapAt(+rest[0], +rest[1]); console.log('tapped', rest[0], rest[1]); break;
+  case 'tap': await glance(); await tapAt(+rest[0], +rest[1]); console.log('tapped', rest[0], rest[1]); break;
   case 'hold': await mobile('longClickGesture', { x: +rest[0], y: +rest[1], duration: Math.round(+(rest[2] ?? 1.5) * 1000) }); console.log('held'); break;
   case 'burst': {
     const [x, y] = rest.map(Number); const n = +(rest[2] ?? 10); const acts: unknown[] = [{ type: 'pointerMove', duration: 0, x, y }];
@@ -352,6 +423,59 @@ switch (cmd) {
     });
     sh([`input motionevent DOWN ${x1} ${y1}`, ...moves, `input motionevent UP ${x2} ${y2}`].join('; '));
     console.log('finger-dragged', steps, 'steps'); break;
+  }
+  case 'twotap': {
+    // Two fingers down and up together, n times (default 1): the AI Mini Drama debug-info switch is a two-finger tap
+    // repeated on the assistant page's top row.
+    const [x1, y1, x2, y2] = rest.map(Number); const n = +(rest[4] ?? 1);
+    const finger = (id: string, x: number, y: number) => {
+      const acts: unknown[] = [{ type: 'pointerMove', duration: 0, x, y }];
+      for (let i = 0; i < n; i++) acts.push({ type: 'pointerDown', button: 0 }, { type: 'pause', duration: 60 }, { type: 'pointerUp', button: 0 }, { type: 'pause', duration: 120 });
+      return { type: 'pointer', id, parameters: { pointerType: 'touch' }, actions: acts };
+    };
+    await s('POST', '/actions', { actions: [finger('f1', x1, y1), finger('f2', x2, y2)] });
+    console.log('two-finger tapped', n, 'time(s)'); break;
+  }
+  case 'debug-info': {
+    const want = (rest[0] ?? 'on').toUpperCase(); if (!/^(ON|OFF)$/.test(want)) throw new Error('debug-info on|off');
+    const els = parse(await source());
+    if (!findText(els, 'AI Drama Assistant')) throw new Error("debug-info: open the 「Hi, I'm your AI Drama Assistant」 page first");
+    const back = els.find(e => shown(e) && /^button_mini_drama(_home)?_back$/.test(e.id)), credit = els.find(e => shown(e) && /^layout_mini_drama(_home)?_credit$/.test(e.id));
+    const y = back ? center(back).y : 69, xl = back ? back.x + back.w + 120 : 250, xr = credit ? credit.x - 80 : 600;
+    // The switch toggles after several two-finger taps; each toggle posts the toast, so tap once and read it until it
+    // shows the wanted state (a toast of the other state means keep tapping).
+    for (let i = 1; i <= 40; i++) {
+      await quiet('twotap', [xl, y, xr, y, 1].map(String));
+      const t = toastText(await source());
+      if (t.includes(`debug info: ${want}`)) { console.log(`debug info ${want} after ${i} two-finger tap(s) at ${xl},${y} + ${xr},${y}`); return; }
+    }
+    throw new Error(`debug-info: no 「Tap for debug info: ${want}」 toast after 40 two-finger taps`);
+  }
+  case 'debug-export': {
+    const media = rest.includes('--media'), out = rest.find(a => !a.startsWith('--')) || join(runDir, 'exports');
+    const find = (els: El[], f: (e: El) => boolean) => els.find(e => shown(e) && f(e));
+    let els = parse(await source());
+    if (!find(els, e => e.id === 'button_mini_drama_debug_export')) {
+      const hdr = find(els, e => /card_header$/.test(e.id));
+      if (!hdr) throw new Error('debug-export: no result card header on screen (open a drama chat and scroll to a Story Outline / Characters / Storyboard card)');
+      const c = center(hdr); await tapAt(c.x, c.y); await sleep(2); els = parse(await source());
+    }
+    const exp = find(els, e => e.id === 'button_mini_drama_debug_export');
+    if (!exp) throw new Error('debug-export: the debug viewer did not open; turn debug info on first (debug-info on)');
+    let c = center(exp); await tapAt(c.x, c.y); await sleep(1.5); els = parse(await source());
+    const box = find(els, e => e.text === 'Include media');
+    if (box && (box.a.checked === 'true') !== media) { c = center(box); await tapAt(c.x, c.y); await sleep(0.5); els = parse(await source()); }
+    // EXPORT by its centre: an element click on the dialog button does not fire it (2026-11-03).
+    const ok = find(els, e => e.text === 'EXPORT'); if (!ok) throw new Error('debug-export: no EXPORT button in the Export session dialog');
+    c = center(ok); await tapAt(c.x, c.y);
+    let path = '';
+    for (let i = 0; i < 120 && !path; i++) { const m = /Exported to (\S+\.zip)/.exec(toastText(await source())); if (m) path = m[1]; else await sleep(0.5); }
+    if (!path) throw new Error('debug-export: no 「Exported to …」 toast within 60 s');
+    mkdirSync(out, { recursive: true }); const local = join(out, basename(path));
+    adb(['pull', `/sdcard/${path}`, local], { timeout: 600_000 });
+    const close = find(parse(await source()), e => e.id === 'button_mini_drama_debug_close');
+    if (close) { c = center(close); await tapAt(c.x, c.y); }
+    console.log(`exported ${path} (media ${media ? 'included' : 'left out'}) → ${local}`); return local;
   }
   case 'pinch': {
     const [x, y, from, to, ms] = rest.map(Number);
@@ -395,12 +519,12 @@ switch (cmd) {
     throw new Error(`scrollto: "${text}" not found between y ${TOP}-${BOTTOM} after sweeping both ends`);
   }
   case 'id': {
-    const n = rest.join(' ');
+    const n = rest.join(' '); await glance();
     const e = await s('POST', '/element', { using: 'id', value: resIdSel(n) });
     await s('POST', `/element/${Object.values(e.value)[0]}/click`, {}); console.log('clicked id', n); break;
   }
   case 'lbl': {
-    const t = rest.join(' ');
+    const t = rest.join(' '); await glance();
     let id: string | undefined;
     for (const sel of [`new UiSelector().textContains(${quote(t)})`, `new UiSelector().descriptionContains(${quote(t)})`]) {
       try { id = Object.values((await s('POST', '/element', { using: '-android uiautomator', value: sel })).value)[0] as string; break; } catch {}

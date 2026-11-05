@@ -46,6 +46,8 @@ type Control = { id: string; file: string; board: string; name: string; label: s
 type Arrow = { id: string; file: string; board: string; name: string; points: number[]; from: string | null; src: string | null; to: string | null; target: string; kind: string; duplicate_of?: string };
 const files: Record<string, any> = {};
 const screens: Screen[] = [], controls: Control[] = [], arrows: Arrow[] = [];
+// an arrow drawn over two boards (an overlay, user 2026-11-04) is read by both groups: keep the first
+const seenArrow = new Set<string>();
 const seenScreen = new Set<string>(), ctlById = new Map<string, Control>();
 
 for (const g of groups) {
@@ -83,6 +85,8 @@ for (const g of groups) {
   for (const c of controls) if (c.parent?.startsWith('#')) c.parent = local[+c.parent.slice(1)] || null;
   const byPts = new Map<string, string>();
   for (const [id, name, pts, from, src, to, toNode, toName] of j.arrows) {
+    if (seenArrow.has(id)) continue;
+    seenArrow.add(id);
     const a: Arrow = { id: id.replace(':', '-'), file: j.file, board: '', name, points: pts, from: from >= 0 ? sIds[from] : null, src: src >= 0 ? local[src] || null : null, to: to >= 0 ? sIds[to] : null, target: to >= 0 ? '' : `${toNode} ${toName}`.trim(), kind: '' };
     // designers name flow arrows (「a --> b」, 「flow line」); annotation pointers keep Figma's default name (「Vector 2758」)
     a.kind = src >= 0 ? 'flow' : from >= 0 ? 'auto' : /^(Vector|Line|Arrow)( \d+)?$/.test(name.trim()) ? 'pointer' : 'flow';

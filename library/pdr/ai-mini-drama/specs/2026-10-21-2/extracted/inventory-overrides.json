@@ -294,18 +294,7 @@
     {"screen":"4012:23497","label":"AI Issues","box":[91,100,73,30],"kind":"tab","why":"Feedback category tab; none of the three is boxed. (review pm-updates-b)"},
     {"screen":"4012:23497","label":"Order Problems","box":[173,100,115,30],"kind":"tab","why":"Feedback category tab; none of the three is boxed. (review pm-updates-b)"},
     {"screen":"4012:23497","label":"Privacy Policy","box":[191,752,80,18],"kind":"button","why":"Underlined/linked 'Privacy Policy' at the end of the legal line above the home indicator; no box. (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Female","box":[25,431,69,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Male","box":[101,431,60,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Asian","box":[25,501,60,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Caucasian","box":[93,501,87,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"African","box":[189,501,66,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Hispanic","box":[265,501,83,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Others","box":[25,537,65,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Others","box":[99,537,65,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Others","box":[173,537,65,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Others","box":[247,537,66,28],"kind":"item","why":"Chip of the Gender / Ethnicity selectors in the Make your character sheet; no selector or chip is boxed on this screen (the 'Others' chips repeat the same label in the design). (review pm-updates-b)"},
     {"screen":"4325:27005","label":"Age","box":[25,607,55,36],"kind":"input","why":"Outlined age value '28' under Age; looks like an editable / stepper field, no box. (review pm-updates-b)"},
-    {"screen":"4325:27005","label":"Discard","box":[41,720,295,43],"kind":"button","why":"Grey 'Discard' pill under Save to library; the box labelled Save to library (K-3abae8) sits on it. (review pm-updates-b)"},
     {"screen":"4422:65","screens":["4456:79"],"label":"Leave anyway","box":[188,454,135,46],"kind":"button","why":"Right half of the 'Leave while we're preparing?' dialog; the only box (labelled Stay) spans both halves. (review pm-updates-b)"}
   ],
   "drop": [
@@ -1176,5 +1165,8 @@
     {"groups":["K-2509de","K-c9e4c6"],"into":"K-951b92","why":"One cast-tab row: the selected tab (65 pt with a ring, K-2509de) and the tabs drawn as imput_characters_v1 (K-951b92) or thumb_media (K-c9e4c6) are the same control; K-951b92 carries the trace (TC-120) (REQ-053, 2026-10-29)"},
     {"groups":["C-c23065"],"into":"K-8618a7","set":false,"why":"The composer mic: the hand-added copies (round/ic_vocal, read as a 「choice of 12」 because each add lists the same 12 screens) are the mic K-8618a7, a single button, not a choice set (REQ-053, 2026-10-29)"},
     {"groups":["K-5138c4"],"into":"K-87581d","why":"The PM credit pill (Button/Credit/Balance 「182」 on the scene detail) is the credit pill K-87581d of the Design (a numbers-only label groups by file and layer, so the PM copy stood apart) (REQ-053, 2026-10-29)"}
+  ],
+  "removed_adds": [
+    {"screen":"4325:27005","labels":["African","Asian","Caucasian","Discard","Female","Hispanic","Male","Others","Others","Others","Others"],"why":"PDF 10/21 layout of PM Update board 11; the Figma board redrawn before 10/28 has no chips and no Discard pill (board-lint 2026-11-04, REQ-079, user approved)"}
   ]
 }

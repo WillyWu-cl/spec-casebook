@@ -1,0 +1,227 @@
+ID,Section,Precondition,Action,Expected Result,Priority,Spec Ref,Notes,Change,Change Reason
+TC-001,Entry points,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); the Demo page was never dismissed with 「Don’t show again」 on this install; Launcher open",Tap the big shortcut 「AI Video Enhance」 on the Launcher,The Demo page opens with the title 「AI Video Enhance」 (not 「Video Enhance」),P1,"R-001, R-004","Design 1005_Update wording 「AI Video Enhance」; PM and KP-010 (observed build) say 「Video Enhance」: the Design wins. Run the Demo rows before TC-014, which turns the Demo page off for good on this install.",unchanged,
+TC-002,Entry points,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); Demo page not dismissed with 「Don’t show again」","1. Tap 「AI Magic」 in the bottom bar
+2. Scroll to the 「AI Enhance」 section
+3. Tap the 「AI Video Enhance」 card",The 「AI Enhance」 section lists 「AI Video Enhance」; the card opens the Demo page,P2,R-002,,unchanged,
+TC-003,Entry points,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a project open in the editor with one video clip of 2:30 or less on the timeline","1. Tap the clip on the timeline
+2. Tap 「AI Video Enhance」 in the clip toolbar",The AI Video Enhance panel opens directly with that clip in the Preview; no Demo page and no Add Media appear,P1,"R-003, R-130",PM calls the tool 「Enhance」 (pm-timeline); the Design draws 「AI Video Enhance」. Whether the trim applies to a Timeline clip is Q-10.,unchanged,
+TC-004,Entry points,A project open in the editor with a video clip selected,Look at the 「AI Video Enhance」 tool in the clip toolbar,The tool carries the 「Pro+」 badge (as 「Fix Shake」 does),P3,R-005,,unchanged,
+TC-010,Demo page,Demo page open from the Launcher (TC-001); 「Don’t show again」 not ticked,Tap 「Try It Now」,"Before the tap the Demo page shows ‹, 「AI Video Enhance」, a sample video, a description, 「Don’t show again」 and 「Try It Now」; the tap opens 「Add Media」 with only the 「Video」 tab",P1,"R-006, R-008, R-012",,unchanged,
+TC-011,Demo page,Demo page open,Read the description under the title,"The description is about enhancing video (PM proposal 「Make blurry, noisy or dark videos look sharp and clear.」), not AI Reframe's 「AI reframe your video for any aspect ratio, then fine-tune the crop in real time.」",P3,R-007,"Q-1: the Design frame still carries AI Reframe's text (PM A1 [衝突]). A different video-enhance text is a PM question, not a defect.",unchanged,
+TC-012,Demo page,Demo page was left with 「Try It Now」 without ticking 「Don’t show again」 (TC-010),"1. Go back to the Launcher
+2. Tap 「AI Video Enhance」",The Demo page appears again,P2,R-009,,unchanged,
+TC-013,Demo page,Demo page open from the Launcher,"1. Tick 「Don’t show again」
+2. Tap ‹ on the Demo page
+3. Tap 「AI Video Enhance」 on the Launcher again",Step 2 returns to the Launcher without opening Add Media; step 3 shows the Demo page again (the tick was not saved),P3,"R-010, R-011",PM A1 [建議] (proposal): a difference is a PM question. PM-only: no Design frame yet.,unchanged,
+TC-014,Demo page,Demo page open from the Launcher; every other Demo page row done,"1. Tick 「Don’t show again」
+2. Tap 「Try It Now」
+3. Go back to the Launcher
+4. Tap 「AI Video Enhance」
+5. Go back to the Launcher
+6. Open 「AI Magic」 › 「AI Video Enhance」",Steps 4 and 6 open Add Media directly; the Demo page no longer appears from the Launcher or AI Magic,P2,R-009,"Destructive for the Demo rows: the setting is stored locally (PM A1) and PowerDirector cannot be reinstalled on the QA iPhone (AGENTS.md), so run it last.",unchanged,
+TC-020,Add Media,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); Add Media open from the feature; a 12:30 1080p 60 fps video in the album",Tap that video's thumbnail,Only the 「Video」 tab is offered and one video can be picked; the tap opens the panel with that video in the Preview at once (no Next button),P1,"R-012, R-013",,unchanged,
+TC-021,Add Media,Add Media open from the Demo page,Tap ‹ on Add Media,"The page Add Media was opened from (the Demo page, or the Launcher after 「Don’t show again」) is shown again",P3,R-014,Q-9: the spec draws ‹ but no arrow; the previous page is the assumption.,unchanged,
+TC-022,Add Media,"Add Media open; the album holds a video over 4K (e.g. 8K), one under 1 s and one that is not MP4 / MOV",Tap each of those thumbnails,Each is greyed; each tap shows 「This video isn't supported. Try one up to 4K.」 and opens no panel,P3,R-015,"PM E1 / A2 [建議] and [待確認] (Q-13): PM-only, a difference is a PM question. Needs the three fixtures (fixtures.md).",unchanged,
+TC-023,Add Media,No video in the album (all videos hidden or a test device with photos only),Open Add Media from the feature,Add Media shows the empty state 「No videos yet」,P3,R-016,PM A2 [建議]; needs an album with no videos (parked: test-data).,unchanged,
+TC-030,Panel layout and first-run bubble,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); the panel was never opened on this install; a 12:30 1080p 60 fps video in the album","1. Pick the video in Add Media
+2. Wait 4 s without touching the screen",The bubble 「Max 8 minutes. Drag to choose which part.」 appears by itself at 「Selected Length」 and closes after about 3 s,P2,R-022,"First-use state: run before any other panel row. iOS: PowerDirector cannot be reinstalled on the QA iPhone, so record Blocked --as test-data if the panel was already opened. PM B2 proposed copy 「Choose up to 8 minutes…」 loses to the Design.",unchanged,
+TC-031,Panel layout and first-run bubble,Panel open; the first-run bubble already seen,"1. Tap ⓘ next to 「Selected Length」
+2. Tap anywhere on the screen within 3 s",Step 1 shows the bubble 「Max 8 minutes. Drag to choose which part.」 again; step 2 closes it at once,P3,"R-022, R-024",,unchanged,
+TC-032,Panel layout and first-run bubble,TC-030 done,"1. Tap ‹ to Add Media
+2. Pick a video again",The panel opens with no automatic bubble,P2,R-023,,unchanged,
+TC-033,Panel layout and first-run bubble,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); panel open with a 12:30 1080p 60 fps video in the album",Look at the panel top to bottom,"Top bar ‹, 「AI Video Enhance」, the credit pill with the balance and the Recent task icon; the Preview with 「60fps · 1080p」 at its lower right, 「00:00/12:30」, play and full-screen; 「Selected Length ⓘ」 「08:00」 and the thumbnail strip with a left ‹ and a right › trim handle and the playhead (a line with the bubble 「00:00」 above the strip and a ◀▶ knob under it); 「Mode ⓘ」 Standard / Professional; 「Enhancement style ⓘ」 Natural / Sharp; 「fps」 30fps / 60fps / 120fps; 「Resolution」 720p / 1080p / 4K (no 2K); CTA 「Enhance ◆ <credits>」 with 「Charge X credits per second」 under it",P1,"R-020, R-021, R-045, R-070, R-192",,modified,"R-020 reworded and R-192 new: the strip has two trim handles and a playhead, each its own control (pass 11)"
+TC-035,Panel layout and first-run bubble,Panel open,Tap ⓘ next to 「Mode」,A bubble shows 「Standard: Great quality · up to 8 min」 and 「Professional: Maximum detail · up to 2:30」,P3,R-025,"PM 1002 「Great quality, quick results」 and PM 9/29 「Standard: up to 8 minutes…」 are older.",unchanged,
+TC-036,Panel layout and first-run bubble,Panel open,Tap ⓘ next to 「Enhancement style」,"A bubble shows 「Natural: Lighter enhancement with fewer artifacts, for a more realistic look」 and 「Sharp: Moderate enhancement for a sharp, clear image」",P3,R-026,,unchanged,
+TC-037,Panel layout and first-run bubble,Panel open with a video,"1. Tap play under the Preview
+2. Tap the full-screen icon
+3. Close the full-screen preview",Step 1 plays the video and the time advances; step 2 shows it full screen; step 3 returns to the panel with the selection and settings unchanged,P3,R-027,,unchanged,
+TC-038,Panel layout and first-run bubble,"Panel open from Add Media, nothing running",Tap ‹ in the panel's top bar,Add Media is shown again,P2,R-028,,unchanged,
+TC-040,Trim and selected length,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 12:30 1080p 30 fps video in the album",Pick the video in Add Media,The selection starts at 00:00 and 「Selected Length」 reads 「08:00」 (mm:ss); Mode is Standard,P1,R-030,PM 9/29 「5m 00s / 8m max」 and B1 「18s」 formats lose to the Design (Q-19).,unchanged,
+TC-041,Trim and selected length,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 01:30 1080p 30 fps video in the album",Pick the video in Add Media,The whole video is selected and 「Selected Length」 reads 「01:30」,P2,R-030,,unchanged,
+TC-042,Trim and selected length,"Panel open with the 12:30 video, selection 00:00–08:00",Drag the right handle left to about 06:00,While dragging the Preview shows the frame at the right handle; 「Selected Length」 follows (about 「06:00」) and the CTA price drops at once,P1,"R-031, R-061",,unchanged,
+TC-214,Trim and selected length,"Panel open with the 12:30 video, selection 00:00–08:00; note the CTA price",Drag the left handle right to about 02:00,"While dragging the Preview shows the frame at the left handle (its time about 「02:00/12:30」); the selection is about 02:00–08:00, 「Selected Length」 follows (about 「06:00」), the right handle stays at 08:00 and the CTA price drops at once",P1,"R-031, R-061",Twin of TC-042 (analysis pass 11: either side handle is its own control).,new,"R-031: the left trim handle is a twin of the right one and gets its own row (pass 11, twin controls; REQ-004)"
+TC-043,Trim and selected length,"Panel open with the 12:30 video, selection about 6:00 long",Drag the middle of the selection to the right,The whole range moves with the same length (「Selected Length」 unchanged) and the Preview shows the selection's first frame,P2,R-032,,unchanged,
+TC-215,Trim and selected length,"Panel open with the 12:30 video, selection 00:00–08:00; note the CTA price","1. Look at the strip
+2. Drag the ◀▶ knob under the 「00:00」 bubble to the right to about 03:00","Step 1: a playhead line sits at the selection start with the bubble 「00:00」 above the strip and the ◀▶ knob under it, and the Preview reads 「00:00/12:30」. Step 2: the playhead moves, the bubble and the Preview time follow together (about 「03:00」 and 「03:00/12:30」) and the Preview shows that frame; both trim handles, 「Selected Length」 「08:00」 and the CTA price stay the same",P2,"R-192, R-193","The knob (round/ic_btn_drag) is the playhead, not a trim handle (analysis pass 11, role from the board image). Q-21: how far the playhead may go is not stated.",new,"R-192, R-193 new: the ◀▶ knob under the 「00:00」 bubble is the playhead, not the trim handle (pass 11, role from the board image; REQ-004)"
+TC-044,Trim and selected length,"Panel open with the 12:30 video in Standard, selection 00:00–06:00",Drag the right handle as far right as it goes,The handle stops at 8:00 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」,P2,"R-033, R-050",PM-only: no Design frame yet (PM 9/29 UI).,unchanged,
+TC-216,Trim and selected length,Panel open with the 12:30 video in Standard; the selection moved and trimmed to 06:30–12:30 (「06:00」),Drag the left handle as far left as it goes,The left handle stops at 04:30 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」; the right handle stays at 12:30,P2,"R-033, R-050",Twin of TC-044 for the left handle. PM-only: no Design frame yet (PM 9/29 UI).,new,"R-033: the left handle stops at the Standard 8:00 limit on its own (pass 11, twin controls; REQ-004)"
+TC-045,Trim and selected length,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 06:00 video and a 12:30 video in the album","1. Open the panel with the 06:00 video
+2. Go back and open it with the 12:30 video
+3. Scroll the strip sideways
+4. Switch Mode to Professional","The 06:00 strip fills the strip width; the 12:30 strip scrolls sideways with 8:00 filling one width; switching Mode changes only the selection box, not the strip",P3,R-034,PM-only: no Design frame yet (PM 9/29 ⑥).,unchanged,
+TC-046,Trim and selected length,Panel open with a 01:30 video,Drag the right handle toward the left handle as far as it goes,The selection cannot get shorter than 1 s,P3,R-035,PM B1 [建議] (proposal).,unchanged,
+TC-217,Trim and selected length,Panel open with a 01:30 video,Drag the left handle toward the right handle as far as it goes,The selection cannot get shorter than 1 s; the right handle stays where it was,P3,R-035,Twin of TC-046 for the left handle. PM B1 [建議] (proposal).,new,"R-035: the 1 s minimum with the left handle (pass 11, twin controls)"
+TC-050,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 01:30 1080p 60 fps video in the album",Pick the video in Add Media,Mode 「Standard」 and Enhancement style 「Natural」 are selected,P1,"R-040, R-041",,unchanged,
+TC-051,Default settings,Panel open; selection 2:30 or less,"1. Select 「Professional」 and 「Sharp」
+2. Tap ‹ to Add Media
+3. Pick another video","The panel opens with 「Standard」 and 「Natural」 again (the defaults are fixed, not remembered)",P2,R-042,PM §4.3 「記住上次」 and PM B3 [衝突] proposal lose to the Design 預設值規則 and the PM 1002 rule.,unchanged,
+TC-052,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 24 fps and a 30 fps video in the album","1. Open the panel with the 24 fps video
+2. Go back and open it with the 30 fps video",Both select 「30fps」; the Preview label reads 「24fps · …」 and 「30fps · …」,P1,"R-043, R-021",,unchanged,
+TC-053,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 50 fps and a 60 fps video in the album","1. Open the panel with the 50 fps video
+2. Go back and open it with the 60 fps video",Both select 「60fps」,P1,R-043,,unchanged,
+TC-054,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 120 fps and a 240 fps (slow-motion) video in the album","1. Open the panel with the 120 fps video
+2. Go back and open it with the 240 fps video",Both select 「120fps」 (the highest option when the source is above it),P2,R-043,,unchanged,
+TC-055,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 31 fps and a 61 fps video in the album (made for the test)","1. Open the panel with the 31 fps video
+2. Go back and open it with the 61 fps video",31 fps selects 「60fps」 and 61 fps selects 「120fps」 (smallest option not below the source),P3,R-043,"Boundaries of the Design lookup table. PM 1002 「nearest, tie lower」 would give 30fps / 60fps: the Design wins. Needs the two fixture videos.",unchanged,
+TC-056,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 480p and a 720p video in the album","1. Open the panel with the 480p video
+2. Go back and open it with the 720p video",Both select 「720p」,P1,R-044,,unchanged,
+TC-057,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 900p (e.g. 1600×900) and a 1080p video in the album","1. Open the panel with the 900p video
+2. Go back and open it with the 1080p video",Both select 「1080p」,P1,R-044,"PM B3 「nearest, tie lower」 would give 900p → 720p (a downgrade); the Design rule (not below the source) wins.",unchanged,
+TC-058,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 1440p and a 4K (2160p) video in the album","1. Open the panel with the 1440p video
+2. Go back and open it with the 4K video",Both select 「4K」,P2,R-044,Whether a 4K source may be enhanced at all is Q-13 (PM E1: a 4K source can only choose 4K).,unchanged,
+TC-059,Default settings,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a portrait 1080×1920 video in the album",Open the panel with it,「1080p」 is selected (the short side decides),P3,R-044,Q-5: assumption from PM B3; check on device and decide with the user before filing.,unchanged,
+TC-061,Settings chips,"Panel open, 「Natural」 selected; note the CTA price","1. Tap 「Sharp」
+2. Tap 「Natural」",Each tap selects the tapped chip and unselects the other; the CTA price stays the same (style does not change the price),P2,"R-046, R-062",,unchanged,
+TC-062,Settings chips,Panel open with a 60 fps video (「60fps」 selected),Tap another fps chip that is not disabled,That chip is selected and 「60fps」 unselected; one fps chip is selected at a time,P2,R-046,,unchanged,
+TC-063,Settings chips,Panel open with a 1080p video (「1080p」 selected); note the CTA price,Tap 「4K」 (or 「720p」 when 4K is disabled),The tapped chip is selected and 「1080p」 unselected; the CTA price and 「Charge X credits per second」 change to that resolution's rate,P2,"R-046, R-065",,unchanged,
+TC-064,Settings chips,Panel open in a Mode where an fps or Resolution chip is drawn disabled,Tap the disabled chip,Nothing changes: the selection stays where it was and no toast appears,P3,R-047,Q-6: which combinations are disabled is pending (BytePlus); PM B5 says a tap shows a toast. Not run when no chip is disabled on the build (record that).,unchanged,
+TC-070,Mode length limit,"Panel open with the 12:30 video, selection about 02:00 in Standard; note the CTA price","1. Tap 「Professional」
+2. Tap 「Standard」",Each tap switches the Mode at once; the selection and 「Selected Length」 stay the same and only the CTA price changes,P1,"R-051, R-046",,unchanged,
+TC-071,Mode length limit,"Panel open with the 12:30 video in Standard, selection 00:30–05:30 (「05:00」)",Tap 「Professional」,Before the tap 「Professional」 looks normal (not disabled); the tap shows the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 for about 3 s; Mode stays 「Standard」 and the selection stays 05:00,P1,R-052,Design 「Mode 長度上限」 frames. PM 9/29 ③ toast 「Professional mode supports up to 2m 30s…」 and draft B1-1 ② auto-shortening lose to the Design.,unchanged,
+TC-073,Mode length limit,"TC-071 done (Standard, 05:00 selected)","1. Drag the right handle until 「Selected Length」 reads 「02:20」
+2. Tap 「Professional」",The Mode switches to 「Professional」 with no toast; the selection stays 02:20,P1,R-053,,unchanged,
+TC-074,Mode length limit,"Professional selected, selection 02:20",Drag the right handle as far right as it goes,The handle stops at 2:30 (「02:30」) with a light haptic and the bubble 「Up to 2m 30s in Professional mode」,P2,"R-054, R-033",,unchanged,
+TC-218,Mode length limit,"Panel open with the 12:30 video; Professional selected, selection 05:00–07:20 (「02:20」)",Drag the left handle as far left as it goes,The left handle stops at 04:50 (「Selected Length」 「02:30」) with a light haptic and the bubble 「Up to 2m 30s in Professional mode」; the right handle stays at 07:20,P2,"R-054, R-033",Twin of TC-074 for the left handle.,new,"R-054: the left handle stops at the Professional 2:30 limit on its own (pass 11, twin controls; REQ-004)"
+TC-075,Mode length limit,"Professional selected, selection 02:30","1. Tap 「Standard」
+2. Drag the right handle further right",Step 1 keeps the selection at 02:30; step 2 lengthens it past 2:30 up to 8:00,P2,R-055,,unchanged,
+TC-076,Mode length limit,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 2:30.4 long video in the album (made for the test)","1. Open the panel with it (the whole video is selected in Standard)
+2. Tap 「Professional」",The toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 appears and the Mode stays Standard (2:30.4 counts as 151 s),P3,R-056,,unchanged,
+TC-080,Credit price,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a 00:03.96 long 1080p 30 fps video in the album","Open the panel with it (whole video, Standard, Natural, 30fps, 1080p)",The CTA reads 「Enhance ◆ 8」 (3.96 s rounds up to 4 s × 2 credits) and 「Charge 2 credits per second」,P1,"R-060, R-063",Credit numbers are binding (formats.md): another price is a defect.,unchanged,
+TC-083,Credit price,Panel open with the 00:03.96 video in Standard; note the price,Tap 「Professional」,The CTA price and the per-second line change to the Professional rate (the price = 4 s × the shown rate),P2,"R-065, R-064","Q-4: the Professional rate is not in the spec; check the arithmetic, ask PM for the table.",unchanged,
+TC-087,Credit price,Panel open with a 30 fps video; note the price,Tap another enabled fps chip,The CTA price does not change (the source fps prices the task),P3,R-065,Q-3: PM B4 proposes pricing by the output fps; check on device and decide with the user before filing.,unchanged,
+TC-090,Eligibility and purchase,"Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine); panel open with a video",Tap 「Unlock Pro+ to Enhance」,The CTA reads 「Unlock Pro+ to Enhance」 (no price) with 「Charge X credits per second」 under it; the tap opens the IAP page,P1,R-070,PM 「Upgrade to Pro+」 is older (Design wins).,unchanged,
+TC-091,Eligibility and purchase,"Tier Pro (Launcher › Pink › ☰ › [0] IAP › status = Pro, checked in Mine); panel open with a video",Tap 「Unlock Pro+ to Enhance」,Pro is not enough: the CTA reads 「Unlock Pro+ to Enhance」 and the tap opens the IAP page on the 「Pro+」 tab,P1,"R-070, R-071",,unchanged,
+TC-093,Eligibility and purchase,IAP page open from the panel (TC-090),"1. Tap 「Monthly」
+2. Tap 「Yearly」
+3. Tap 「Tap to compare」
+4. Close the comparison
+5. Tap the 「Pro」 tab
+6. Tap the 「Pro+」 tab","The page shows the Pro / Pro+ tabs, 「Yearly」 with 「Best Value」 and 「65% OFF」, 「Monthly」, 「Continue」 and the footer 「Terms of Service」 「Privacy Policy」 「Restore purchase」; each plan tap selects that plan; the comparison opens and closes; each tab shows its own plans and 「Pro+」 brings back the Pro+ plans",P3,R-072,Prices are store data: never assert them (KP-042). Q-7: the trial line 「Receive 35 credits during free trial」 conflicts with PM §7; not asserted.,modified,R-072: the Pro and Pro+ tabs are twin controls; the row now presses both (pass 11)
+TC-094,Eligibility and purchase,"Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine); panel open with selection 00:30–05:30 and 「Sharp」; IAP page opened from the CTA",Tap ‹ on the IAP page without buying,"The panel is back unchanged: selection 05:00, 「Sharp」, CTA 「Unlock Pro+ to Enhance」",P2,R-073,,unchanged,
+TC-095,Eligibility and purchase,"Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine) on an account that may buy Pro+; panel open with selection 00:30–05:30 and 「Sharp」; IAP page open","1. Tap 「Continue」
+2. Complete the App Store purchase sheet
+3. Tap 「OK」 on 「You're all set」","Step 2 ends on 「You're all set」 / 「Your purchase was successful.」; step 3 returns to the panel with the balance updated in the credit pill, the selection and 「Sharp」 kept, the CTA 「Enhance ◆ <credits>」, and nothing sent until the CTA is tapped",P1,"R-074, R-075",Parked: needs purchase (runs make no purchases). Design arrows 3293-13677 / 13678 / 13679; 「no auto-send」 is PM C2 [建議].,unchanged,
+TC-096,Eligibility and purchase,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); credit balance below the CTA price (e.g. 0); panel open; note the balance",Tap 「Enhance」,"The Credit page opens (「My Credits」, 「Buy More」, 「Expiring within 7 days: … credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card); no upload dialog appears, Recent task gets no card and the balance is unchanged",P1,R-076,Parked: needs low-balance (the shared account holds many credits).,unchanged,
+TC-097,Eligibility and purchase,TC-096 setup: Credit page open from the panel,"1. Tap 「Buy More」
+2. Buy a credit pack on the App Store purchase sheet",The app returns to the panel with the new balance in the credit pill and the selection and settings kept,P2,R-077,Parked: needs purchase.,unchanged,
+TC-098,Eligibility and purchase,Credit page open from the panel (TC-096); the daily credits not claimed in the last 24 h,"1. Tap 「Claim」
+2. Tap ‹ on the Credit page",Step 1 adds the daily credits; step 2 returns to the panel with the selection and settings unchanged and the new balance in the credit pill,P2,"R-073, R-078","Parked with TC-096 (needs low-balance). 「Details」 on the Credit page opens the credit history (existing page, KP-041).",unchanged,
+TC-100,Eligibility and purchase,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; panel open with a video; Wi-Fi off (phone on USB) and no cellular data; note the balance",Tap 「Enhance」,"The toast 「Upload failed. Check your connection and try again.」 appears, the panel stays with its settings, Recent task gets no card and the balance is unchanged",P2,R-079,PM C2 / C3 [建議] copy: a different offline message is a PM question; an upload that starts or a charge is a defect. Turn Wi-Fi back on after the row.,unchanged,
+TC-110,Generating and cancel,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p); note the balance",Tap 「Enhance ◆ <credits>」,"No confirmation appears first; a processing dialog covers the panel with a progress ring counting up (「25%」…), 「Video uploading...」, 「Please keep the app open」 and 「Cancel」; the ring keeps moving (no frozen wait over 10 s)",P1,"R-080, R-085, R-070, R-194",,modified,"R-194 new: the main-flow generation is the run that uses the default values (Standard, Natural, 30fps, 1080p), so its source is fixed at 1080p 30 fps (pass 10)"
+TC-111,Generating and cancel,Processing dialog showing (TC-110),Tap 「Cancel」,"The dialog 「Sure You Want to Leave?」 / 「Your video is still uploading. Leaving this page will cancel the process, and the credits will not be restored.」 appears with 「Leave」 and 「Keep Uploading」",P1,R-086,,unchanged,
+TC-112,Generating and cancel,Leave dialog showing (TC-111),Tap 「Keep Uploading」,"The leave dialog closes, the processing dialog continues from where it was and the upload finishes (TC-114)",P2,R-087,,unchanged,
+TC-113,Generating and cancel,A new task: the leave dialog showing after 「Cancel」 on the processing dialog; balance before 「Enhance」 noted,Tap 「Leave」,"The panel is back with the selection and settings; the process stops (no completed result for it appears in Recent task); the balance is the noted balance minus the price (credits not restored, as the dialog says)",P1,"R-086, R-088","Q-2: PM §8 says a cancel before the upload reaches the server charges nothing and creates no task; the Design (newer, outranks) wins. Check on device and decide with the user before filing a charge either way.",unchanged,
+TC-114,Generating and cancel,Processing dialog showing (TC-110); balance before 「Enhance」 noted,Wait until the upload finishes,"Recent task opens with a processing card (thumbnail, date, name, 「processing...」, 「<n> minutes left...」, progress bar); the balance is the noted balance minus the CTA price; the card offers no cancel",P1,"R-089, R-111, R-091",Design arrow 3293-13681; PM: credits are taken when the upload reaches the server.,unchanged,
+TC-115,Generating and cancel,A new task: processing dialog showing; balance before 「Enhance」 noted,"1. Press Home (swipe up) while 「Video uploading...」 shows
+2. Wait 10 s
+3. Reopen PowerDirector from the Home screen","The upload was cancelled: the panel shows no processing dialog, Recent task has no new card and the balance equals the noted balance",P3,R-090,Q-18: PM C3 [建議]; the Design does not draw backgrounding. Check on device and decide with the user before filing.,unchanged,
+TC-116,Generating and cancel,A task processing in Recent task (TC-114),"1. Press Home (swipe up)
+2. Wait until the time the card gave has passed
+3. Reopen PowerDirector from the Home screen",The task kept running on the server: its card is completed with 「View」 (or still processing with less time left),P2,R-091,,unchanged,
+TC-117,Generating and cancel,A task processing in Recent task,Long-press and swipe the processing card,"No cancel, stop or delete action is offered for a processing task (v1)",P2,R-091,,unchanged,
+TC-118,Generating and cancel,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); PowerDirector has never asked for the notification permission; no Video Enhance task created yet on this install",Tap 「Enhance」 and wait for the upload to finish,After the upload the dialog 「Turn on notifications」 / 「We'll let you know when it's done.」 appears with 「Turn On」 and 「Later」,P2,R-093,"PM-only: no Design frame yet (PM 397:1151). iOS: needs a fresh install (permission never asked), which the QA iPhone cannot do: record Blocked --as test-data.",unchanged,
+TC-119,Generating and cancel,The 「Turn on notifications」 dialog showing (TC-118),Tap 「Turn On」,The iOS permission dialog for notifications appears; after answering it the app stays on the Generating / Recent task screen,P3,R-094,PM D1 [建議] (Gap 6 landing): blocked with TC-118 on iOS.,unchanged,
+TC-120,Generating and cancel,The 「Turn on notifications」 dialog showing (TC-118 setup),"1. Tap 「Later」
+2. Start a second task and wait for its upload",Step 1 closes the dialog; step 2 shows no notification prompt,P3,R-095,PM D1 [建議]; blocked with TC-118 on iOS.,unchanged,
+TC-121,Generating and cancel,One task processing in Recent task; enough credits for another,"1. Go back to the panel
+2. Pick another video and tap 「Enhance」",The second task uploads and Recent task shows two processing cards,P3,R-092,"Q-12: the limit is pending (PM proposes 3, 「You can run up to 3 enhancements at a time.」).",unchanged,
+TC-130,Background task and notifications,A task processing; the user on the Launcher (app in front),Wait on the Launcher until the task completes,A banner shows 「Good news! Your AI Video Enhance task has been completed. Tap here to view your results.」 with 「Close」 and 「View」,P1,R-100,,unchanged,
+TC-131,Background task and notifications,The completion banner showing (TC-130),Tap 「View」 on the banner at once,The Result of that task opens and its video plays (not a black 00:00/00:00 player),P1,R-101,KP-059 risk (other features): the banner's View was offered before the result downloaded; tap it at once.,unchanged,
+TC-132,Background task and notifications,Another task completes while on the Launcher (banner showing),"1. Tap 「Close」 on the banner
+2. Open Recent task from the panel",Step 1 dismisses the banner and nothing opens; in step 2 that task's card is completed with 「View」,P2,R-102,,unchanged,
+TC-133,Background task and notifications,Notifications allowed for PowerDirector; a task processing,"1. Press Home (swipe up)
+2. Wait for the notification
+3. Tap it",A system notification 「Your video is ready. Tap to view.」 arrives; tapping it opens PowerDirector on that task's Result,P2,R-103,"PM-only: no Design frame yet (PM §9 copy, D1 [建議]); Q-16.",unchanged,
+TC-134,Background task and notifications,At least one completed Video Enhance task,"1. Open 「AI Magic」 › 「My Artwork」
+2. Open 「Template」 › 「My Artwork」",Both list the enhanced video,P2,R-104,PM §4.3 / D2 [建議]: the Design does not draw it yet (PM-only).,unchanged,
+TC-140,Recent task,Panel open,Tap the Recent task icon at the top right of the panel,"Recent task opens: title 「AI Video Enhance」, ‹, ⌂, the notice 「Tasks are stored on the cloud for 1 Year. Please download any you want to keep in local storage.」 with 「Manage」, and the task cards",P2,"R-110, R-113",,unchanged,
+TC-141,Recent task,"Recent task open from the panel, a task processing",Tap ‹ on Recent task,The panel is shown again,P2,R-114,,unchanged,
+TC-142,Recent task,Recent task open,Tap ⌂ on Recent task,The Launcher opens,P2,R-115,,unchanged,
+TC-143,Recent task,Recent task open with a processing card,"1. Wait on Recent task until the task completes
+2. Tap 「View」 on its card
+3. Tap ‹ on the Result
+4. Tap the completed card's thumbnail","Step 1 turns the card completed (thumbnail, date, name, 「View」) without leaving the page; step 2 opens the Result; step 3 returns to Recent task; step 4 opens the same Result",P1,R-112,Step 4: PM D2 「Completed (tap → Result)」; the Design draws only 「View」 (Q-22).,modified,"R-112: the completed card's thumbnail is a look-alike of 「View」 and is pressed on its own (pass 11, Q-22)"
+TC-144,Recent task,Recent task open with a completed task,Tap 「Manage」,"A page to manage the stored tasks opens (select, download or delete them)",P3,R-116,Q-8: the spec does not say what Manage opens; record what it does.,unchanged,
+TC-150,Result,A completed task's Result open (TC-143),"1. Tap play
+2. Drag the progress slider","The page shows ‹, 「Original」 / 「Result」 with 「Result」 selected, the video with the time (「mm:ss/mm:ss」) and 「Save Result」, 「Add to Timeline」, 「Enhance More」; play and the slider move through the result",P1,R-120,PM 「Edit More」 is older (D3 [衝突]: 「Enhance More」).,unchanged,
+TC-151,Result,Result open,"1. Tap 「Original」
+2. Tap 「Result」","「Original」 shows the source video, 「Result」 the enhanced one (visibly sharper or cleaner)",P2,R-121,,unchanged,
+TC-152,Result,"Result of the TC-110 task open (01:30 1080p 30 fps source; Standard, Natural, 30fps, 1080p)","1. Tap 「Save Result」
+2. In Photos, swipe up on the saved video to show its info","The toast 「Saved to your device」 appears within 10 s; the enhanced video is in Photos, 01:30 long, 1920 × 1080 and 30 fps (the values chosen on the panel)",P1,"R-122, R-194",Toast copy is PM D3 [建議]. Covers the default values of the setting-value rows TC-219–TC-224 (analysis pass 10).,modified,"R-194 new: the saved file is checked for the chosen resolution and fps, not only its length (pass 10; REQ-004)"
+TC-219,Result,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance","1. Open the panel with the 00:05 video (whole video selected)
+2. Tap 「Professional」
+3. Note the CTA price and the 「Charge X credits per second」 line
+4. Tap 「Enhance ◆ <credits>」
+5. Wait in Recent task until the task completes
+6. Tap 「View」 on its card
+7. Tap 「Original」
+8. Tap 「Result」
+9. Tap 「Save Result」
+10. In Photos, swipe up on the saved video to show its info","The CTA price and the per-second line change from the Standard price when 「Professional」 is tapped; after the upload the balance is the noted balance minus that price; 「Result」 shows more detail than 「Original」 (「Maximum detail」); the saved video is 00:05, 1920 × 1080 and 30 fps",P1,"R-194, R-195, R-065, R-060, R-089","Setting value Mode=Professional used end to end (analysis pass 10). Q-4: the Professional rate is not in the spec, so only the charge = the shown price is asserted. Needs the 00:05 fixture video and one full generation.",new,"R-194, R-195 new: Mode=Professional used in a generation and checked in the saved file and the charge (pass 10; REQ-004)"
+TC-220,Result,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance","1. Open the panel with the 00:05 video (whole video selected)
+2. Tap 「Sharp」
+3. Note the CTA price and the 「Charge X credits per second」 line
+4. Tap 「Enhance ◆ <credits>」
+5. Wait in Recent task until the task completes
+6. Tap 「View」 on its card
+7. Tap 「Original」
+8. Tap 「Result」
+9. Tap 「Save Result」
+10. In Photos, swipe up on the saved video to show its info","The CTA price does not change when 「Sharp」 is tapped (style does not set the price) and the balance drops by exactly that price; 「Result」 looks sharper and clearer than 「Original」 (「Moderate enhancement for a sharp, clear image」); the saved video is 00:05, 1920 × 1080 and 30 fps",P2,"R-194, R-195, R-062, R-060, R-089",Setting value Enhancement style=Sharp used end to end (analysis pass 10); compare with the Natural result of TC-152. Needs the 00:05 fixture video and one full generation.,new,"R-194, R-195 new: Enhancement style=Sharp used in a generation (pass 10; REQ-004)"
+TC-221,Result,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance","1. Open the panel with the 00:05 video (whole video selected)
+2. Tap 「60fps」
+3. Note the CTA price and the 「Charge X credits per second」 line
+4. Tap 「Enhance ◆ <credits>」
+5. Wait in Recent task until the task completes
+6. Tap 「View」 on its card
+7. Tap 「Original」
+8. Tap 「Result」
+9. Tap 「Save Result」
+10. In Photos, swipe up on the saved video to show its info","The balance drops by exactly the CTA price shown when 「Enhance」 was tapped; the saved video is 00:05, 1920 × 1080 and 60 fps",P2,"R-194, R-060, R-089","Setting value fps=60fps used end to end (analysis pass 10). Q-3: whether the output fps changes the price is open; only the charge = the shown price is asserted. If the chip is disabled (Q-6), record it Blocked --as question. Needs the 00:05 fixture video and one full generation.",new,R-194 new: fps=60fps used in a generation and checked in the saved file (pass 10; REQ-004)
+TC-222,Result,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance","1. Open the panel with the 00:05 video (whole video selected)
+2. Tap 「120fps」
+3. Note the CTA price and the 「Charge X credits per second」 line
+4. Tap 「Enhance ◆ <credits>」
+5. Wait in Recent task until the task completes
+6. Tap 「View」 on its card
+7. Tap 「Original」
+8. Tap 「Result」
+9. Tap 「Save Result」
+10. In Photos, swipe up on the saved video to show its info","The balance drops by exactly the CTA price shown when 「Enhance」 was tapped; the saved video is 00:05, 1920 × 1080 and 120 fps",P2,"R-194, R-060, R-089",Setting value fps=120fps used end to end (analysis pass 10). Q-3 and Q-6 as in TC-221. Needs the 00:05 fixture video and one full generation.,new,R-194 new: fps=120fps used in a generation and checked in the saved file (pass 10; REQ-004)
+TC-223,Result,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; a 00:05 720p 30 fps landscape video in the album (made for the test); note the balance","1. Open the panel with the 00:05 video (whole video selected)
+2. Check that 「720p」 is selected (tap it if not)
+3. Note the CTA price and the 「Charge X credits per second」 line
+4. Tap 「Enhance ◆ <credits>」
+5. Wait in Recent task until the task completes
+6. Tap 「View」 on its card
+7. Tap 「Original」
+8. Tap 「Result」
+9. Tap 「Save Result」
+10. In Photos, swipe up on the saved video to show its info","「720p」 is selected; the balance drops by exactly the CTA price shown when 「Enhance」 was tapped; the saved video is 00:05, 1280 × 720 and 30 fps",P2,"R-194, R-044, R-060, R-089","Setting value Resolution=720p used end to end (analysis pass 10), from a 720p source so the value is allowed whatever Q-6 decides. Needs the 00:05 720p fixture video and one full generation.",new,R-194 new: Resolution=720p used in a generation and checked in the saved file (pass 10; REQ-004)
+TC-224,Result,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance","1. Open the panel with the 00:05 video (whole video selected)
+2. Tap 「4K」
+3. Note the CTA price and the 「Charge X credits per second」 line
+4. Tap 「Enhance ◆ <credits>」
+5. Wait in Recent task until the task completes
+6. Tap 「View」 on its card
+7. Tap 「Original」
+8. Tap 「Result」
+9. Tap 「Save Result」
+10. In Photos, swipe up on the saved video to show its info","The CTA price and the per-second line change from the 1080p price when 「4K」 is tapped; the balance drops by exactly that price; the saved video is 00:05, 3840 × 2160 and 30 fps",P2,"R-194, R-065, R-060, R-089","Setting value Resolution=4K used end to end (analysis pass 10). Q-4: the 4K rate is not in the spec. If 4K is disabled (Q-6), record it Blocked --as question. Needs the 00:05 fixture video and one full generation.",new,R-194 new: Resolution=4K used in a generation and checked in the saved file (pass 10; REQ-004)
+TC-153,Result,Result of a task started from Add Media open,Tap 「Add to Timeline」,A new project opens with the enhanced video on its timeline; no existing project is changed and the source video in the album is unchanged,P1,"R-123, R-126",,unchanged,
+TC-154,Result,Result open,Tap 「Enhance More」,Add Media opens for the next video,P2,R-124,,unchanged,
+TC-155,Result,Result open from a Recent task card,Tap ‹ on the Result page,Recent task is shown again,P3,R-125,Q-9: no arrow; the previous page is the assumption.,unchanged,
+TC-160,Timeline entry,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a project with a 05:00 clip; panel opened on it from the clip toolbar",Tap 「Professional」,The toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 appears and the Mode stays Standard,P2,R-057,Q-10: draft B1-1 ⑦ disables the chip with 「Professional mode supports clips up to 2m 30s. Split the clip to use it.」; check on device and decide with the user.,unchanged,
+TC-161,Timeline entry,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a project with a 10:00 clip","1. Tap the clip
+2. Tap 「AI Video Enhance」 in the clip toolbar",The panel does not open; the toast 「Split clips longer than 8 minutes first」 appears,P3,R-058,PM D4 [建議] / B1-1 ⑦ (Q-10): PM-only.,unchanged,
+TC-162,Timeline entry,"Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a project with a 00:30 clip; panel opened on it from the clip toolbar","1. Tap 「Enhance ◆ <credits>」
+2. Stay in the editor until the task completes",The upload dialog and the Recent task flow are those of the main flow; when the task completes the clip on the timeline is replaced by the result (same position) and 「Applied Video Enhance」 is shown,P2,"R-131, R-130","PM-only: no Design frame yet (pm-timeline 397:1888; form of the notice TBD, D4 proposes a 3 s toast 「Video Enhance applied」). Q-11: the Design note says results never replace the original clip.",unchanged,
+TC-163,Timeline entry,"Panel opened from the clip toolbar, nothing running",Tap ‹ in the panel's top bar,The editor is back with the project and the clip unchanged,P2,R-133,,unchanged,
+TC-164,Timeline entry,A Timeline task processing (TC-162 setup),"1. Delete the clip from the timeline
+2. Wait until the task completes",Nothing is pasted into the project; the result is in Recent task,P3,R-132,PM D4 [建議] (Gap 10).,unchanged,
+TC-165,Timeline entry,Result of a task started from the Timeline open,Tap 「Add to Timeline」,The original project opens (no new project is made),P3,R-134,PM D4 [建議]; conflicts with the Design 「Add to Timeline → 開新 timeline」 (Q-11).,unchanged,
+TC-170,Failure and refund,A Video Enhance task that failed on the server,Open Recent task,The failed task's card shows an 「Error」 thumbnail and 「View Details」 (no Retry),P1,R-140,Parked: needs a failure fixture (no fault switch for Video Enhance is known; ask RD).,unchanged,
+TC-171,Failure and refund,A failed card in Recent task (TC-170),"1. Tap 「View Details」
+2. Tap 「OK」",Step 1 shows 「An Error Has Occurred」 / 「Credits have been refunded.」 / 「The server may be busy. Please try again later or use a different video.」 with 「OK」; step 2 closes it and Recent task stays,P1,"R-141, R-191",Parked with TC-170. Walks the Design arrow 3393-18071 (Recent 「View Details」 → the dialog).,modified,R-191 new: the Design arrow 3393-18071 (failed card 「View Details」 → 「An Error Has Occurred」) is walked by this row
+TC-173,Failure and refund,Balance noted before a task that failed (TC-170),Open the credit pill or the Credit page after the failure,The balance is back to the noted value (the charge was refunded automatically); the ledger shows the refund; nothing offers Retry,P1,R-142,KP-007: a missing or wrong refund is its own defect. Parked with TC-170.,unchanged,
+TC-174,Failure and refund,Notifications allowed; a task processing that will fail; app in the background,Wait for the notification,A notification 「Video Enhance didn't finish. Your credits have been refunded.」 arrives,P3,R-143,"PM D1 [建議] (Gap 8, Q-16). Parked with TC-170.",unchanged,

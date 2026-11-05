@@ -1,0 +1,11 @@
+2026-11-05 10:22:07.147 21609 21648 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 10:22:36.906 22522 22647 D MiniDrama Log: [SYS] deploying assets...
+2026-11-05 10:22:36.965 22522 22647 D MiniDrama Log: [SYS] agent_create requested
+2026-11-05 10:22:37.515 22522 22647 D MiniDrama Log: [SYS] agent created after 550ms
+2026-11-05 10:22:37.565 22522 22646 D MiniDrama Log: [SYS] session_created: 261105_102237_061a1761
+2026-11-05 10:22:43.566 22522 22647 D MiniDrama Log: [SYS] opening 261105_100433_d5cd3d5d: agent ready after 0ms
+2026-11-05 10:22:43.592 22522 22647 D MiniDrama Log: [SYS] restored session 261105_100433_d5cd3d5d (chars=3, shots=6)
+2026-11-05 10:22:43.634 22522 22647 D MiniDrama Log: [SYS] reopened 1 question(s) from the blueprint
+2026-11-05 10:23:36.843 22522 22648 D MiniDrama Log: [SYS] session_created: 261105_102336_a6249204
+2026-11-05 10:23:44.633 22522 22522 I WindowManager: WindowManagerGlobal#addView, ty=2, view=com.android.internal.policy.DecorView{292fe8b V.E...... R.....I. 0,0-0,0}[MiniDramaActivity], caller= … android.app.Dialog.sh
+2026-11-05 10:23:44.635 22522 22522 I InsetsController: setRequestedVisibleTypes: visible=false, mask=statusBars captionBar, host=com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.iris.ui.MiniDramaActi

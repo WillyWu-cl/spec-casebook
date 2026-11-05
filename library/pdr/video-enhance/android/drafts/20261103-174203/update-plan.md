@@ -1,0 +1,21 @@
+# Update plan — pdr/video-enhance / android: new table → draft 20261103-174203
+
+## Not added (value check)
+- PM page 0:1 「spec - AI Video Enhance- Denoise / Lighting (Cloud solution)」: older spec — superseded by the user (REQ-002); not read into requirements.
+- PM §2.2 「not in this round」 (Before/After preview before sending, extra confirmation for high prices, result share / cross-sell, one-tap retry of a failure): drop — out of v1 scope; TC-110 checks there is no confirmation, TC-173 that there is no Retry.
+- PM §4.3 「the panel remembers the last Mode / Style / Resolution」 and PM B3 [衝突] proposal to remember Mode / Style: older spec — the Design 預設值規則 and the PM 1002 rule fix the defaults (R-042, TC-051).
+- PM B3 fps bands 1–45 / 46–90 / 91+ and PM 1002 「nearest option, tie lower」 for fps and Resolution: older spec — the Design rule 「smallest option not below the source」 and its lookup table decide (R-043, R-044; TC-055 and TC-057 Notes name the difference).
+- PM draft B1-1 ② auto-shortening to start + 2:30 with 「Professional mode supports up to 2m 30s. Your selection was shortened.」, ④ restoring the earlier selection, ⑤ a remembered Professional selecting 00:00–02:30: older spec — the Design 「Mode 長度上限」 frames block the switch with a toast (R-052) and the defaults are fixed (R-040).
+- PM draft B1-1 ⑦ Professional chip disabled for 2:30–8:00 Timeline clips with 「Professional mode supports clips up to 2m 30s. Split the clip to use it.」: merge — folded into TC-160's Notes; the Design rule 「Professional 外觀正常，可點」 and PM 9/29 ⑦ decide (Q-10).
+- PM B5 [建議] toasts on a disabled chip (「Not available in Professional mode」, 「Choose a resolution at or above your video's」) and auto-reselect with 「Frame rate changed to 60fps」: merge — folded into TC-064's Notes; the Design says a disabled chip cannot be tapped (Q-6).
+- PM B4 [建議] fps options below the source disabled, VFR judged by its average fps: drop — a proposal the Design does not draw (it shows all three fps chips); revisit with Q-3 / Q-6.
+- PM C1 [衝突] proposed hint 「2 credits/sec × 4s」 and CTA 「Enhance · 8 credits」: older spec — the Design draws 「Enhance ◆ XX」 and 「Charge X credits per second」 (R-060, R-064).
+- PM C4 [衝突] proposed dialog 「Keep enhancing in the background? You'll be notified when it's ready. Find it in Recent.」 (Stay / Leave): older spec — the Design Cancel board draws 「Sure You Want to Leave?」 / 「Leave」 / 「Keep Uploading」 (R-086, Q-2).
+- PM D2 [待確認] proposed failure copy 「Enhancement failed」 / 「Something went wrong. Your X credits have been refunded.」: older spec — the Design draws 「An Error Has Occurred」 (R-141).
+- PM §10.1 first-run card (「Feature purpose · TBD」 「Uses credits · TBD」): older spec — replaced by the Design bubble (R-022, PM B2).
+- PM Selected Length forms 「00:03.96」, 「5m 00s / 8m max」, 「18s」 / 「1m 30s」: older spec — the Design shows mm:ss (R-030, Q-19).
+- PM Gaps Open questions 1–3 (2K price, baseline funnel metrics, disclosure wording): drop — 2K is removed in v1 (R-045 checks no 2K option), metrics are analytics, the disclosure is Q-14.
+- Billing SKU genvideo_1_sec_byteplus_{mode}_{style}_{resolution}_{fps} (R-066), server re-check of the balance (R-081), cloud storage for one year (R-117): drop — not testable in the app.
+- PM A1 [建議] 「Don't show again」 stored locally and reset on reinstall: drop — a proposal about reinstalling; TC-014 Notes say clearing app data resets it.
+- KP-019 (observed: repeated taps open one page) for 「Enhance」: drop — an observed rule is not a row's only basis; a double charge found in a run is filed on its own.
+- Parked rows (kept, recorded Blocked until the fixture exists): TC-095, TC-097 (needs purchase); TC-096, TC-098 (needs low-balance: the shared account holds many credits); TC-170, TC-171, TC-173, TC-174 (needs a failure fixture: Android has no fault switches yet, run-android.md); TC-090, TC-091, TC-095 (need a Free and a Pro Google account: Android has no tier switch); TC-210 (with TC-170); TC-207 (with TC-096); TC-118 – TC-120 need notifications turned off in Android Settings (user go-ahead for the system setting); TC-030 needs a first panel entry (clear app data first); TC-023 (album with no videos); TC-022, TC-055, TC-076 (made-for-test videos: over 4K / under 1 s / not MP4, 31 and 61 fps, 2:30.4 long).

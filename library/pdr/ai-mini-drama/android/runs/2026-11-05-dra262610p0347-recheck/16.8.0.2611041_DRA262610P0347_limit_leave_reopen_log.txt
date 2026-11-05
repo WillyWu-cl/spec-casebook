@@ -1,0 +1,15 @@
+2026-11-05 10:09:31.557 14724 17041 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 10:13:51.902 14724 14724 I WindowManager: WindowManagerGlobal#addView, ty=2, view=com.android.internal.policy.DecorView{afb3d60 V.E...... R.....I. 0,0-0,0}[MiniDramaActivity], caller= … android.app.Dialog.sh
+2026-11-05 10:13:58.834 14724 14724 I WindowManager: WindowManagerGlobal#addView, ty=2, view=com.android.internal.policy.DecorView{e910a55 V.E...... R.....I. 0,0-0,0}[MiniDramaActivity], caller= … android.app.Dialog.sh
+2026-11-05 10:13:58.836 14724 14724 I InsetsController … android.app.Dialog.show
+2026-11-05 10:18:47.994 14724 14724 I WindowManager: WindowManagerGlobal#addView, ty=2, view=com.android.internal.policy.DecorView{5f01d2d V.E...... R.....I. 0,0-0,0}[MiniDramaActivity], caller= … android.app.Dialog.sh
+2026-11-05 10:19:28.256 21609 21731 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[BonusItem(remainCredit=16, category=give_away, eventId=giveawa
+2026-11-05 10:19:35.817 21609 21649 D MiniDrama Log: [SYS] deploying assets...
+2026-11-05 10:19:35.903 21609 21649 D MiniDrama Log: [SYS] agent_create requested
+2026-11-05 10:19:36.217 21609 21649 D MiniDrama Log: [SYS] agent created after 314ms
+2026-11-05 10:19:36.254 21609 21949 D MiniDrama Log: [SYS] session_created: 261105_101936_8013e68a
+2026-11-05 10:19:36.672 21609 22061 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[BonusItem(remainCredit=16, category=give_away, eventId=giveawa
+2026-11-05 10:19:36.709 21609 21992 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[BonusItem(remainCredit=16, category=give_away, eventId=giveawa
+2026-11-05 10:19:47.271 21609 22061 D MiniDrama Log: [SYS] opening 261105_100433_d5cd3d5d: agent ready after 0ms
+2026-11-05 10:19:47.289 21609 22061 D MiniDrama Log: [SYS] restored session 261105_100433_d5cd3d5d (chars=3, shots=0)
+2026-11-05 10:19:47.314 21609 22061 D MiniDrama Log: [SYS] reopened 1 question(s) from the blueprint

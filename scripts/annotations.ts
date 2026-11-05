@@ -62,7 +62,8 @@ for (const file of readdirSync(boardsDir).filter(f => f.endsWith('.md')).sort())
   // a skipped board (a superseded version) keeps its blocks, traced as older, so the coverage page marks them too
   const skipped = skip.some(p => board.startsWith(p));
   const all = readFileSync(join(boardsDir, file), 'utf8').split('\n')
-    .map(l => l.match(/^\s*(\d+)\s+(\d+)\s+(.*)$/)).filter((m): m is RegExpMatchArray => !!m && m[3].replace('(?)', '').trim().length > 3);
+    // Figma-only boards (2026-11-04) keep absolute Figma points, which can be negative
+    .map(l => l.match(/^\s*(-?\d+)\s+(-?\d+)\s+(.*)$/)).filter((m): m is RegExpMatchArray => !!m && m[3].replace('(?)', '').trim().length > 3);
   // a board with no annotation line (English only, e.g. MX 「③ Credit Charging Table / Action ID & Charging Table
   // Link」, 2026-10-29) is one block of all its text, so no board goes untraced
   const own = all.filter(m => isAnnotation(m[3]));

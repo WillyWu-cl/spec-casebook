@@ -1,0 +1,349 @@
+2026-11-05T03:49:13.466Z restart HQ61563393
+2026-11-05T03:49:21.054Z build 
+2026-11-05T03:49:21.288Z logcat start
+2026-11-05T03:49:21.494Z texts 
+2026-11-05T03:49:31.497Z shot 16.8.0.2611041_DRA262610P0420_launcher
+2026-11-05T03:50:05.418Z lbl AI Mini Drama
+2026-11-05T03:50:06.273Z wait 4
+2026-11-05T03:50:10.509Z els 
+2026-11-05T03:50:14.461Z id btn_try_it_now
+2026-11-05T03:50:14.899Z wait 4
+2026-11-05T03:50:19.234Z els 
+2026-11-05T03:50:24.433Z debug-info on
+2026-11-05T03:50:26.942Z source 
+2026-11-05T03:50:32.797Z scrollto The New Guy's Secret
+2026-11-05T03:50:33.364Z lbl The New Guy's Secret
+2026-11-05T03:50:33.814Z wait 3
+2026-11-05T03:50:37.071Z texts 
+2026-11-05T03:50:41.726Z lbl Make my version
+2026-11-05T03:50:42.235Z waitfor Jenna|Characters|Choose --timeout 180 --every 5
+2026-11-05T03:53:17.693Z texts 
+2026-11-05T03:53:21.632Z els 
+2026-11-05T03:53:25.736Z tap 651 1205
+2026-11-05T03:53:26.042Z els 
+2026-11-05T03:53:26.872Z id button_mini_drama_format_continue
+2026-11-05T03:53:31.142Z waitfor Jenna|Choose|went wrong|Try again --timeout 300 --every 10
+2026-11-05T03:53:47.346Z texts 
+2026-11-05T03:55:13.912Z texts 
+2026-11-05T03:55:23.322Z fingerdrag 540 1900 540 700
+2026-11-05T03:55:24.345Z texts 
+2026-11-05T03:55:30.158Z tapif button_mini_drama_scroll_bottom
+2026-11-05T03:55:30.663Z id button_mini_drama_scroll_bottom
+2026-11-05T03:55:31.491Z els 
+2026-11-05T03:55:35.736Z tap 319 1142
+2026-11-05T03:55:36.003Z wait 3
+2026-11-05T03:55:39.267Z texts 
+2026-11-05T03:55:44.871Z lbl Mine
+2026-11-05T03:55:46.072Z wait 2
+2026-11-05T03:55:48.347Z shot mine-library
+2026-11-05T03:56:09.503Z drag 540 2200 540 900 600
+2026-11-05T03:56:10.521Z shot mine2
+2026-11-05T03:56:11.638Z drag 540 2200 540 900 600
+2026-11-05T03:56:12.575Z shot mine3
+2026-11-05T03:56:25.329Z drag 540 900 540 2200 600
+2026-11-05T03:56:26.317Z drag 540 1300 540 1900 600
+2026-11-05T03:56:27.285Z shot mine4
+2026-11-05T03:57:10.844Z scrollto Create my character
+2026-11-05T03:57:46.988Z lbl Create my character
+2026-11-05T03:57:47.685Z wait 2
+2026-11-05T03:57:49.950Z els 
+2026-11-05T03:57:55.893Z drag 540 900 540 2200 300
+2026-11-05T03:57:56.566Z drag 540 900 540 2200 300
+2026-11-05T03:57:57.224Z drag 540 900 540 2200 300
+2026-11-05T03:57:57.872Z drag 540 900 540 2200 300
+2026-11-05T03:57:58.539Z lbl Create my character
+2026-11-05T03:58:00.411Z wait 2
+2026-11-05T03:58:02.680Z els 
+2026-11-05T03:58:08.255Z texts 
+2026-11-05T03:58:08.980Z shot tmp
+2026-11-05T03:58:19.804Z drag 540 700 540 2200 250
+2026-11-05T03:58:20.438Z els 
+2026-11-05T03:58:22.470Z drag 540 700 540 2200 250
+2026-11-05T03:58:23.071Z els 
+2026-11-05T03:58:24.839Z drag 540 700 540 2200 250
+2026-11-05T03:58:25.466Z els 
+2026-11-05T03:58:27.259Z drag 540 700 540 2200 250
+2026-11-05T03:58:27.889Z els 
+2026-11-05T03:58:29.985Z drag 540 700 540 2200 250
+2026-11-05T03:58:30.620Z els 
+2026-11-05T03:58:31.434Z els 
+2026-11-05T03:58:36.567Z id text_mini_drama_character_library_create
+2026-11-05T03:58:37.055Z wait 2
+2026-11-05T03:58:39.300Z els 
+2026-11-05T03:58:44.810Z id image_mini_drama_make_character_reference_add
+2026-11-05T03:58:46.396Z wait 3
+2026-11-05T03:58:49.662Z texts 
+2026-11-05T03:58:50.647Z shot tmp
+2026-11-05T03:59:02.818Z drag 540 2100 540 700 800
+2026-11-05T03:59:04.023Z shot am1
+2026-11-05T03:59:05.841Z drag 540 2100 540 700 800
+2026-11-05T03:59:07.037Z shot am2
+2026-11-05T03:59:08.822Z drag 540 2100 540 700 800
+2026-11-05T03:59:10.026Z shot am3
+2026-11-05T03:59:22.739Z drag 540 700 540 2100 800
+2026-11-05T03:59:23.962Z drag 540 700 540 2100 800
+2026-11-05T03:59:25.134Z shot am4
+2026-11-05T03:59:35.831Z tap 540 1634
+2026-11-05T03:59:36.109Z wait 3
+2026-11-05T03:59:39.342Z texts 
+2026-11-05T03:59:45.294Z els 
+2026-11-05T03:59:45.648Z shot tmp
+2026-11-05T03:59:53.140Z id iv_apply
+2026-11-05T03:59:54.781Z wait 3
+2026-11-05T03:59:58.051Z id chip_mini_drama_make_character_female
+2026-11-05T03:59:58.964Z id chip_mini_drama_make_character_white
+2026-11-05T03:59:59.869Z setval edit_mini_drama_make_character_age 75
+2026-11-05T04:00:01.644Z hidekb 
+2026-11-05T04:00:02.960Z els 
+2026-11-05T04:00:09.485Z shot 16.8.0.2611041_DRA262610P0420_mine_form
+2026-11-05T04:00:10.322Z id layout_mini_drama_make_character_generate
+2026-11-05T04:00:11.424Z waitfor Save to library|Couldn't|busy --timeout 150 --every 5
+2026-11-05T04:01:03.925Z shot 16.8.0.2611041_DRA262610P0420_mine_result
+2026-11-05T04:01:18.262Z id button_mini_drama_make_character_close
+2026-11-05T04:01:18.674Z wait 2
+2026-11-05T04:01:20.908Z texts 
+2026-11-05T04:01:26.483Z lbl Keep
+2026-11-05T04:01:26.885Z wait 1
+2026-11-05T04:01:28.125Z lbl Save to library
+2026-11-05T04:01:29.643Z wait 3
+2026-11-05T04:01:32.913Z texts 
+2026-11-05T04:01:38.036Z id text_mini_drama_character_library_create
+2026-11-05T04:01:38.543Z wait 2
+2026-11-05T04:01:40.782Z els 
+2026-11-05T04:01:48.086Z id image_mini_drama_make_character_reference_add
+2026-11-05T04:01:48.491Z wait 3
+2026-11-05T04:01:51.751Z drag 540 2100 540 700 800
+2026-11-05T04:01:52.939Z shot tmp
+2026-11-05T04:02:04.498Z tap 540 1470
+2026-11-05T04:02:04.784Z wait 3
+2026-11-05T04:02:08.051Z id iv_apply
+2026-11-05T04:02:09.692Z wait 3
+2026-11-05T04:02:12.934Z id chip_mini_drama_make_character_female
+2026-11-05T04:02:13.835Z id chip_mini_drama_make_character_white
+2026-11-05T04:02:14.717Z setval edit_mini_drama_make_character_age 75
+2026-11-05T04:02:16.145Z setval edit_mini_drama_make_character_prompt Short grey bob haircut, wearing a white ch
+2026-11-05T04:02:18.069Z hidekb 
+2026-11-05T04:02:18.951Z els 
+2026-11-05T04:02:26.014Z shot 16.8.0.2611041_DRA262610P0420_mine_form2
+2026-11-05T04:02:26.863Z id layout_mini_drama_make_character_generate
+2026-11-05T04:02:28.368Z waitfor Save to library|Couldn't|busy --timeout 150 --every 5
+2026-11-05T04:03:14.930Z shot 16.8.0.2611041_DRA262610P0420_mine_result2
+2026-11-05T04:03:26.280Z lbl Save to library
+2026-11-05T04:03:27.802Z wait 3
+2026-11-05T04:03:31.053Z shot slot-applied
+2026-11-05T04:03:40.680Z id button_mini_drama_character_room_confirm
+2026-11-05T04:03:41.829Z waitfor Create storyboard --timeout 120 --every 5
+2026-11-05T04:04:24.976Z id button_mini_drama_scroll_bottom
+2026-11-05T04:04:25.337Z texts 
+2026-11-05T04:04:30.584Z els 
+2026-11-05T04:04:37.305Z shot 16.8.0.2611041_DRA262610P0420_characters_result
+2026-11-05T04:04:38.247Z tap 218 1242
+2026-11-05T04:04:38.494Z wait 3
+2026-11-05T04:04:41.734Z texts 
+2026-11-05T04:04:42.550Z shot 16.8.0.2611041_DRA262610P0420_jenna_sheet
+2026-11-05T04:04:50.446Z els 
+2026-11-05T04:04:56.910Z tap 657 655
+2026-11-05T04:04:57.171Z wait 3
+2026-11-05T04:05:00.403Z texts 
+2026-11-05T04:05:01.202Z shot 16.8.0.2611041_DRA262610P0420_jenna_sheet
+2026-11-05T04:05:12.665Z lbl Cancel
+2026-11-05T04:05:13.955Z wait 1
+2026-11-05T04:05:15.192Z id button_mini_drama_character_room_close
+2026-11-05T04:05:16.178Z wait 2
+2026-11-05T04:05:18.405Z texts 
+2026-11-05T04:05:23.809Z id button_mini_drama_credit_confirm
+2026-11-05T04:05:25.032Z waitfor Storyboard Result|went wrong|couldn't --timeout 600 --every 15
+2026-11-05T04:08:28.629Z id button_mini_drama_scroll_bottom
+2026-11-05T04:08:29.871Z texts 
+2026-11-05T04:08:41.741Z els 
+2026-11-05T04:08:46.469Z tap 830 1550
+2026-11-05T04:08:46.767Z wait 1
+2026-11-05T04:08:48.004Z texts 
+2026-11-05T04:08:53.497Z id button_mini_drama_video_model_credit_confirm
+2026-11-05T04:08:54.718Z waitfor Here's your drama|couldn't be generated|went wrong --timeout 1500 --every 30
+2026-11-05T04:34:04.861Z id button_mini_drama_scroll_bottom
+2026-11-05T04:34:05.149Z texts 
+2026-11-05T04:34:29.463Z wifi status
+2026-11-05T04:34:36.278Z back 
+2026-11-05T04:34:36.573Z wait 2
+2026-11-05T04:34:38.806Z texts 
+2026-11-05T04:34:39.255Z tapif Leave
+2026-11-05T04:34:39.717Z id button_mini_drama_home_history
+2026-11-05T04:34:40.160Z wait 3
+2026-11-05T04:34:43.404Z texts 
+2026-11-05T04:34:50.861Z els 
+2026-11-05T04:34:55.670Z tap 600 300
+2026-11-05T04:34:55.941Z wait 5
+2026-11-05T04:35:01.179Z id button_mini_drama_scroll_bottom
+2026-11-05T04:35:01.528Z texts 
+2026-11-05T04:35:07.863Z id edit_mini_drama_input
+2026-11-05T04:35:08.334Z setval edit_mini_drama_input Create the video
+2026-11-05T04:35:10.850Z els 
+2026-11-05T04:35:16.240Z id button_mini_drama_send
+2026-11-05T04:35:16.679Z hidekb 
+2026-11-05T04:35:17.699Z waitfor Generate video|Generate --timeout 120 --every 5
+2026-11-05T04:35:28.502Z id button_mini_drama_scroll_bottom
+2026-11-05T04:35:28.808Z texts 
+2026-11-05T04:35:33.845Z els 
+2026-11-05T04:35:39.607Z tap 835 669
+2026-11-05T04:35:39.840Z wait 20
+2026-11-05T04:43:45.921Z id button_mini_drama_scroll_bottom
+2026-11-05T04:43:46.305Z texts 
+2026-11-05T04:43:52.673Z id button_mini_drama_credit_confirm
+2026-11-05T04:51:50.852Z id button_mini_drama_scroll_bottom
+2026-11-05T04:51:51.195Z texts 
+2026-11-05T04:51:56.955Z debug-export /Users/ethanhsuqa2/Desktop/AI Agent/pdr-spec-casebook/library/pdr/ai-mini-drama/
+2026-11-05T04:52:02.788Z fingerdrag 540 700 540 1900
+2026-11-05T04:52:04.008Z els 
+2026-11-05T04:52:04.723Z fingerdrag 540 700 540 1900
+2026-11-05T04:52:05.695Z els 
+2026-11-05T04:52:06.406Z fingerdrag 540 700 540 1900
+2026-11-05T04:52:07.371Z els 
+2026-11-05T04:52:08.080Z fingerdrag 540 700 540 1900
+2026-11-05T04:52:09.037Z els 
+2026-11-05T04:52:09.821Z els 
+2026-11-05T04:52:10.254Z debug-export /Users/ethanhsuqa2/Desktop/AI Agent/pdr-spec-casebook/library/pdr/ai-mini-drama/
+2026-11-05T04:52:18.760Z fingerdrag 540 800 540 1400
+2026-11-05T04:52:19.733Z els 
+2026-11-05T04:52:20.498Z debug-export /Users/ethanhsuqa2/Desktop/AI Agent/pdr-spec-casebook/library/pdr/ai-mini-drama/
+2026-11-05T04:53:52.531Z pull-logs recheck
+2026-11-05T04:55:37.655Z id button_mini_drama_scroll_bottom
+2026-11-05T04:55:39.047Z els 
+2026-11-05T04:55:44.270Z tap 305 1040
+2026-11-05T04:55:44.506Z wait 4
+2026-11-05T04:55:48.755Z els 
+2026-11-05T04:55:54.941Z els 
+2026-11-05T04:56:00.959Z shot 16.8.0.2611041_DRA262610P0420_player
+2026-11-05T04:56:13.020Z back 
+2026-11-05T04:56:13.282Z wait 2
+2026-11-05T04:56:15.516Z back 
+2026-11-05T04:56:15.754Z wait 2
+2026-11-05T04:56:18.017Z texts 
+2026-11-05T04:56:18.536Z debug-info off
+2026-11-05T04:56:21.127Z source 
+2026-11-05T04:56:21.613Z back 
+2026-11-05T04:56:22.671Z wait 2
+2026-11-05T04:56:24.921Z back 
+2026-11-05T04:56:25.195Z wait 2
+2026-11-05T04:56:27.426Z texts 
+2026-11-05T04:58:05.145Z logcat stop
+2026-11-05T05:43:46.766Z restart HQ61563393
+2026-11-05T05:43:54.150Z build 
+2026-11-05T05:43:54.493Z logcat start
+2026-11-05T05:43:54.716Z texts 
+2026-11-05T05:44:01.541Z shot try2_launcher
+2026-11-05T05:44:33.244Z lbl AI Mini Drama
+2026-11-05T05:44:34.016Z wait 4
+2026-11-05T05:44:38.242Z els 
+2026-11-05T05:44:41.395Z id btn_try_it_now
+2026-11-05T05:44:41.865Z wait 4
+2026-11-05T05:44:46.130Z debug-info on
+2026-11-05T05:44:48.747Z texts 
+2026-11-05T05:44:53.740Z shot try2_assistant
+2026-11-05T05:44:59.966Z lbl The New Guy's Secret
+2026-11-05T05:45:00.483Z wait 3
+2026-11-05T05:45:03.739Z texts 
+2026-11-05T05:45:04.345Z lbl Make my version
+2026-11-05T05:45:04.800Z waitfor Jenna|Characters|Choose|Language|English --timeout 180 --every 5
+2026-11-05T05:45:05.750Z texts 
+2026-11-05T05:45:06.048Z els 
+2026-11-05T05:45:09.731Z tap 651 1205
+2026-11-05T05:45:10.000Z els 
+2026-11-05T05:45:10.778Z id button_mini_drama_format_continue
+2026-11-05T05:45:11.182Z waitfor Choose|went wrong|Try again|Replace --timeout 300 --every 10
+2026-11-05T05:47:33.414Z id button_mini_drama_scroll_bottom
+2026-11-05T05:47:34.695Z texts 
+2026-11-05T05:47:39.330Z els 
+2026-11-05T05:47:43.556Z tap 319 1142
+2026-11-05T05:47:43.830Z wait 3
+2026-11-05T05:47:47.102Z texts 
+2026-11-05T05:47:54.549Z lbl Mine
+2026-11-05T05:47:55.737Z wait 2
+2026-11-05T05:47:57.995Z shot try2_mine
+2026-11-05T05:47:59.251Z els 
+2026-11-05T05:48:12.990Z els 
+2026-11-05T05:48:19.190Z id button_mini_drama_character_room_confirm
+2026-11-05T05:48:20.330Z wait 3
+2026-11-05T05:48:23.588Z texts 
+2026-11-05T05:48:24.071Z shot try2_cast
+2026-11-05T05:48:30.765Z waitfor Create storyboard|went wrong|Try again --timeout 110 --every 5
+2026-11-05T05:49:18.754Z id button_mini_drama_scroll_bottom
+2026-11-05T05:49:19.130Z texts 
+2026-11-05T05:49:19.551Z shot try2_cast
+2026-11-05T05:49:24.536Z id button_mini_drama_credit_confirm
+2026-11-05T05:49:25.718Z waitfor Storyboard Result|went wrong|couldn't --timeout 600 --every 15
+2026-11-05T05:54:08.017Z id button_mini_drama_scroll_bottom
+2026-11-05T05:54:09.374Z texts 
+2026-11-05T05:54:13.422Z els 
+2026-11-05T05:54:17.978Z tap 830 1550
+2026-11-05T05:54:18.265Z wait 1
+2026-11-05T05:54:19.512Z texts 
+2026-11-05T05:54:25.772Z id button_mini_drama_video_model_credit_confirm
+2026-11-05T05:54:26.991Z waitfor Here's your drama|couldn't be generated|went wrong --timeout 1500 --every 30
+2026-11-05T06:00:41.883Z id button_mini_drama_scroll_bottom
+2026-11-05T06:00:42.179Z texts 
+2026-11-05T06:00:42.597Z text 5556
+2026-11-05T06:00:42.725Z texts 
+2026-11-05T06:00:47.415Z id edit_mini_drama_input
+2026-11-05T06:00:47.878Z setval edit_mini_drama_input Create the video
+2026-11-05T06:00:50.160Z id button_mini_drama_send
+2026-11-05T06:00:51.213Z hidekb 
+2026-11-05T06:00:52.291Z waitfor Generate video|Generate --timeout 110 --every 5
+2026-11-05T06:01:03.195Z id button_mini_drama_scroll_bottom
+2026-11-05T06:01:03.549Z texts 
+2026-11-05T06:01:03.960Z els 
+2026-11-05T06:01:08.416Z tap 835 669
+2026-11-05T06:01:08.706Z wait 20
+2026-11-05T06:01:28.979Z waitfor Here's your drama|couldn't be generated|went wrong --timeout 1500 --every 30
+2026-11-05T06:03:47.003Z id button_mini_drama_scroll_bottom
+2026-11-05T06:03:47.411Z texts 
+2026-11-05T06:03:47.800Z els 
+2026-11-05T06:03:52.614Z waitfor rest of the video|full episode --timeout 100 --every 10
+2026-11-05T06:05:36.093Z texts 
+2026-11-05T06:05:36.522Z els 
+2026-11-05T06:05:54.132Z waitfor rest of the video|couldn't be generated|went wrong --timeout 1200 --every 30
+2026-11-05T06:09:04.224Z texts 
+2026-11-05T06:09:04.636Z els 
+2026-11-05T06:09:16.751Z id button_mini_drama_credit_confirm
+2026-11-05T06:18:15.142Z id button_mini_drama_scroll_bottom
+2026-11-05T06:18:15.504Z texts 
+2026-11-05T06:18:15.937Z debug-export /Users/ethanhsuqa2/Desktop/AI Agent/pdr-spec-casebook/library/pdr/ai-mini-drama/
+2026-11-05T06:18:21.596Z fingerdrag 540 700 540 1900
+2026-11-05T06:18:22.611Z texts 
+2026-11-05T06:18:23.313Z fingerdrag 540 700 540 1900
+2026-11-05T06:18:24.297Z texts 
+2026-11-05T06:18:25.043Z fingerdrag 540 700 540 1900
+2026-11-05T06:18:26.019Z texts 
+2026-11-05T06:18:26.783Z fingerdrag 540 700 540 1900
+2026-11-05T06:18:27.762Z texts 
+2026-11-05T06:18:28.555Z texts 
+2026-11-05T06:18:29.032Z debug-export /Users/ethanhsuqa2/Desktop/AI Agent/pdr-spec-casebook/library/pdr/ai-mini-drama/
+2026-11-05T06:18:37.077Z texts 
+2026-11-05T06:18:37.626Z els 
+2026-11-05T06:18:42.909Z fingerdrag 540 800 540 1400
+2026-11-05T06:18:43.900Z els 
+2026-11-05T06:18:44.681Z debug-export /Users/ethanhsuqa2/Desktop/AI Agent/pdr-spec-casebook/library/pdr/ai-mini-drama/
+2026-11-05T06:20:23.039Z pull-logs try2
+2026-11-05T06:21:26.355Z id button_mini_drama_scroll_bottom
+2026-11-05T06:21:27.793Z els 
+2026-11-05T06:21:33.426Z tap 305 1040
+2026-11-05T06:21:33.680Z wait 6
+2026-11-05T06:21:39.901Z texts 
+2026-11-05T06:21:40.547Z shot try2_player
+2026-11-05T06:21:46.932Z back 
+2026-11-05T06:21:47.179Z wait 2
+2026-11-05T06:21:49.422Z back 
+2026-11-05T06:21:49.665Z wait 2
+2026-11-05T06:21:51.920Z tapif Leave
+2026-11-05T06:21:52.430Z texts 
+2026-11-05T06:21:57.490Z debug-info off
+2026-11-05T06:22:00.109Z back 
+2026-11-05T06:22:01.374Z wait 2
+2026-11-05T06:22:03.598Z back 
+2026-11-05T06:22:13.998Z wait 2
+2026-11-05T06:22:16.240Z texts 
+2026-11-05T06:22:29.691Z logcat stop
+2026-11-05T06:22:34.002Z els 
+2026-11-05T06:22:52.327Z id btnCancel
+2026-11-05T06:23:23.620Z wait 2
+2026-11-05T06:23:25.872Z texts 

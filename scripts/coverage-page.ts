@@ -60,6 +60,13 @@ async function serveMode(): Promise<never> {
   const server = createServer((req, res) => {
     try {
       if (req.url === '/' || req.url?.startsWith('/?')) { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(build(String(req.headers['x-casebook-stamp'] ?? builtFor))); return; }
+      // the page's data alone, for the in-place update (scripts/pages.ts __check): its `let D = …;` line (the
+      // template's first), which JSON.stringify keeps on one line
+      if (req.url?.startsWith('/data.json')) {
+        const page = build(String(req.headers['x-casebook-stamp'] ?? builtFor)), at = page.indexOf('\nlet D = ') + 9;
+        if (at < 9) throw new Error('No data line in the built page.');
+        res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(page.slice(at, page.indexOf('\n', at)).replace(/;\s*$/, '')); return;
+      }
       // board renders and tap screenshots (--files): images under library/ only
       const f = req.url?.match(/^\/files\/([^?#]+)/);
       if (f) {
@@ -74,7 +81,7 @@ async function serveMode(): Promise<never> {
     } catch (e: any) { res.writeHead(500, { 'content-type': 'text/plain' }); res.end(String(e?.message ?? e)); }
   });
   let port = portArg; const host = lan ? '0.0.0.0' : '127.0.0.1';
-  server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 10) { port++; server.listen(port, host); } else throw e; });
+  server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 60) { port++; server.listen(port, host); } else throw e; });
   server.on('listening', () => {
     console.log(`Coverage (live): http://127.0.0.1:${port}/  — Ctrl+C to stop`);
     if (!lan) return;
@@ -85,11 +92,12 @@ async function serveMode(): Promise<never> {
   return new Promise<never>(() => {});
 }
 const table = tableDir(feature, platform);
-const manifest = readManifest(feature, platform)!;
+// null for a feature's first table (no approved version yet): only --draft works then
+const manifest = readManifest(feature, platform);
 // --draft <id>: the draft's rows, requirements and control trace (run results still come from <table>/runs)
 const draftId = arg('draft');
 const src = draftId ? join(draftsDir(feature, platform), draftId) : table;
-const specFolder: string = draftId ? JSON.parse(readFileSync(join(src, 'spec.json'), 'utf8')).spec_folder : manifest.spec_folder;
+const specFolder: string = draftId ? JSON.parse(readFileSync(join(src, 'spec.json'), 'utf8')).spec_folder : manifest!.spec_folder;
 const specDir = join(featureDir(feature), specFolder);
 const ex = join(specDir, 'extracted');
 const inv = JSON.parse(readFileSync(join(ex, 'inventory.json'), 'utf8'));
@@ -185,8 +193,12 @@ for (const [pdf, list] of Object.entries(regionsByPdf)) {
     if (!inside.length) {
       // region- in front: a PM or MX Figma board can carry the same name as a region
       const name = `${SPEC_NAME[spec]} · ${r.title}`, img = join(imgDir, `region-${r.id}.jpg`);
-      if (render && existsSync(join(specDir, pdf)) && (!renderSpecs || renderSpecs.includes(spec))) queue(join(specDir, pdf), img, r.region, r.region);
-      boards.push({ name, file: '', spec, id: r.id, region: r.id, box: r.region, imgPath: img, note: `No render yet: run with --render (draws ${r.id} from ${pdf})` });
+      // a spec with no readable Figma file keeps a committed render of the region instead (extracted/figma/region-<id>.png,
+      // recorded with figma-check.ts --shot … --box), so every checkout shows it with no PDF (2026-11-03)
+      const shotPng = join(ex, 'figma', `region-${r.id}.png`), shot = existsSync(shotPng) ? shots[`region-${r.id}.png`] ?? {} : null;
+      if (render && !shot && existsSync(join(specDir, pdf)) && (!renderSpecs || renderSpecs.includes(spec))) queue(join(specDir, pdf), img, r.region, r.region);
+      boards.push({ name, file: '', spec, id: r.id, region: r.id, box: r.region, imgPath: shot ? shotPng : img, ...(shot ? { imgBox: shot.box ?? r.region } : {}),
+        note: `No render yet: run with --render (draws ${r.id} from ${pdf})` });
       inside.push(name);
     }
     regionOf.set(r.id, { id: r.id, title: r.title, spec, boards: inside });
@@ -307,18 +319,37 @@ const arrows = inv.arrows.filter((a: any) => !a.duplicate_of && a.kind !== 'poin
 // so no board is left blank. A block traced to requirements takes the state of their rows; label / ui / older / Q-n
 // blocks are excluded with their reason; an untraced block is missing. Block positions are PDF points of its board's
 // PDF (boards.json), placed on the Figma board holding them (pdf point = figma point + offset) or on the region board.
-const tracePathA = join(draftId ? src : join(draftsDir(feature, platform), manifest.draft ?? ''), 'annotation-trace.json');
+// A direct edit of the approved table (review page Save, "edit-…") has no draft folder: use the newest version's draft
+// that has a trace, so an edit does not show every note as missing.
+const traceOf = (d?: string) => join(draftsDir(feature, platform), d ?? '', 'annotation-trace.json');
+const tracePathA = draftId ? join(src, 'annotation-trace.json')
+  : [manifest!.draft, ...[...(manifest!.history ?? [])].reverse().map(h => h.draft)].map(traceOf).find(p => existsSync(p)) ?? traceOf(manifest!.draft);
 const blocks: any[] = existsSync(tracePathA) ? JSON.parse(readFileSync(tracePathA, 'utf8')).blocks : [];
 // a linked table's items (extracted/links.json) the draft has not traced yet are shown missing, never left off
 // and every linked item carries its short label and place in the list (link_i), which the page draws as a table
 const linkInfo = new Map(linkBlocks(ex).map(lb => [lb.id, lb]));
 for (const lb of linkInfo.values()) if (!blocks.some(b => b.id === lb.id)) blocks.push(lb);
+const nodeCache = new Map<string, string>();
+const nodeOfBoard = (board: string) => {
+  if (!nodeCache.has(board)) { const md = join(ex, 'boards', `${board}.md`);
+    const src = existsSync(md) ? readFileSync(md, 'utf8').match(/^Source:.*$/m)?.[0] ?? '' : '';
+    nodeCache.set(board, src.match(/· node (\S+)/)?.[1] ?? src.match(/· section (\S+)/)?.[1] ?? ''); }
+  return nodeCache.get(board)!;
+};
 const pdfOfRegion = new Map(Object.entries(regionsByPdf).flatMap(([pdf, list]) => list.map(r => [r.id, pdf] as [string, string])));
 const notes = blocks.flatMap(bk => {
-  const pdf = pdfOfRegion.get(bk.board), key = Object.keys(inv.files).find(k => inv.files[k].pdf?.name === pdf);
+  const pdf = pdfOfRegion.get(bk.board), key = pdf && Object.keys(inv.files).find(k => inv.files[k].pdf?.name === pdf);
   const off = key ? inv.files[key].pdf.offset : [0, 0], fx = bk.x - off[0], fy = bk.y - off[1];
   const at = (b: any, x: number, y: number) => x >= b.box[0] && x <= b.box[0] + b.box[2] && y >= b.box[1] && y <= b.box[1] + b.box[3];
-  const b = boards.find(b => b.file === key && at(b, fx, fy)) ?? boards.find(b => b.region === bk.board);
+  // a Figma-only spec set (no PDF, 2026-11-04) keeps block positions in Figma points of the file its board text came
+  // from: ds-* boards are the Design file, pm-* the PM file, mx-* the MX file
+  // Its boards/<board>.md names the Figma node the text was read from ("· node 3300:32003", else "· section 369:438"):
+  // the note goes on that board only, since another page of the same file can use the same coordinates (a PM draft
+  // page's notes landed on the main page's boards); a node no board is for leaves the note unplaced
+  const role = /^ds-/.test(bk.board) ? 'design' : /^pm-/.test(bk.board) ? 'pm' : /^mx-/.test(bk.board) ? 'mx' : '';
+  const node = !pdf ? nodeOfBoard(bk.board) : '';
+  const inFile = (b: any) => key ? b.file === key : !pdf && !!b.file && (!role || specOf(b.file) === role) && (!node || b.id === node);
+  const b = node && !boards.some(b => b.id === node) ? undefined : boards.find(b => inFile(b) && at(b, fx, fy)) ?? boards.find(b => b.region === bk.board);
   if (!b) return [];
   const [x, y] = b.region ? [bk.x, bk.y] : [fx, fy];
   const reqIds: string[] = /^R-/.test(bk.trace) ? bk.trace.match(/R-\d+/g) : [];
@@ -383,7 +414,7 @@ const reqs = Object.fromEntries([...new Set(rows.flatMap(refsOf))].filter(rid =>
 const rowInfo = Object.fromEntries(rows.map(r => { const x = result.get(r.ID);
   return [r.ID, { action: r.Action, expected: r['Expected Result'], section: r.Section, refs: refsOf(r), ...(x ?? { result: 'Not run' }), ...(x?.result === 'Blocked' ? { reason: blockReason(x) } : {}) }]; }));
 const data = {
-  feature, platform, draft: draftId ?? null, title: manifest.title ?? feature, version: draftId ? `${manifest.version} + draft ${draftId}` : manifest.version, spec_folder: specFolder, built_at: new Date().toISOString(),
+  feature, platform, draft: draftId ?? null, title: manifest?.title ?? feature, version: draftId ? (manifest ? `${manifest.version} + draft ${draftId}` : `new table · draft ${draftId}`) : manifest!.version, spec_folder: specFolder, built_at: new Date().toISOString(),
   runs: runNames, taps: taps.length, unmatched: unmatchedView, figma: Object.fromEntries(Object.entries<any>(inv.files).map(([k, f]) => [k, `https://www.figma.com/design/${k}/?node-id=`])),
   boards, screens: inv.screens.map((s: any) => ({ id: s.id, board: s.board, box: s.box, name: s.name, panel: !!s.panel, other: s.platform !== platform && s.platform !== 'any' })),
   groups, arrows, notes, rows: rowInfo, reqs,

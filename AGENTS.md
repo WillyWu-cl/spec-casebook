@@ -9,7 +9,8 @@ two differ).
 
 - The approved table for a feature is `library/<product>/<feature>/<ios|android>/cases.csv`. Treat it as the correct answer
   for that feature; change it only through the review page's Save or an explicit user request.
-- Keep this repo independent from the exploration-test folder, the spec agent repo and other QA tools.
+- Keep this repo independent from the exploration-test folder, the spec agent repo and other QA tools. (One user-approved
+  exception, 2026-11-03: a one-time copy of the exploration knowledge bases into `knowledge/sources/`, see below.)
 - Table rows are written in English.
 - Scripts are TypeScript run directly with Node ≥ 22.18 (types are stripped, not checked). Keep new scripts in
   TypeScript and run `npm run typecheck` after changing any script.
@@ -79,28 +80,94 @@ lines; put the full rule in the skill or reference file that applies it and poin
   (`extracted/figma-pending.json`) and a machine with them catches up later (`reading-the-spec.md`, *No Figma access*). Quota is small: bulk reads per board group, changes found by fingerprint (`figma-check.ts`), every
   read committed (`reading-the-spec.md` step 10).
 - **Full Figma data by script (user, 2026-10-30).** When every node's geometry and styling is needed (not just
-  controls and arrows), read it with the `figma-source` skill, on Design Figma links only (never PM or MX): one
-  `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
-  per-instance MCP reads (`figma-source/SKILL.md`).
+  controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only (never PM or MX):
+  one `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
+  per-instance MCP reads (`figma/references/source.md`).
 - **Product domain knowledge (user, 2026-11-03).** `library/phd/domain/` (imported from the PHD spec contract
   runner's `docs/domain/phd`, 260 eBugs + user rules, K01–K74) is read on every `phd/*` draft and run: confirmed
-  rules become `[Domain: K<nn>]` requirements, the spec still wins (`analysis.md` standing input 6, `run.md`).
+  rules become `[Domain: K<nn>]` requirements, the spec still wins (`analysis.md` standing input 7, `run.md`).
+- **What is drawn over a board (user, 2026-11-04, REQ-078).** Arrows, connectors and notes drawn over a Figma board
+  are part of it: reads, the change check and board images include them, and a changed board's words are compared
+  with its spec notes (`figma-text.ts`) so its rows follow the redraw; `board-lint.ts` (REQ-079) checks every mark
+  against the board's screenshot text (`reading-the-spec.md` step 10).
+- **Design check on the casebook's flows (user, 2026-11-03).** Whether the app matches the Design is the `figma`
+  skill's conformance branch (`scripts/design.ts`): the rows that already reach each Design screen are its navigation
+  (else the Design's own arrows), captures ride on casebook runs, two independent review passes settle the findings,
+  and the Design tab shows them; a screen only the Design's arrows reach is a gap for the analysis
+  (`figma/references/conformance.md`). It also works with no casebook table (`figma-source.ts init`).
+- **Figma data shared, one folder per feature (user, 2026-11-03).** Both skills keep a feature's Figma files in
+  `library/<product>/<feature>/specs/<set>/extracted/` (board images in `figma/` with `shots.json`, used by both) and
+  commit what another computer needs (source responses, board images, design plans, captures as 750 px copies, results
+  and verdicts), so a pull needs no Figma call or phone file (`figma/SKILL.md` › *One feature folder*). `npm test`
+  covers the figma scripts.
+- **Domain knowledge (user, 2026-11-03).** Facts about an app that no spec states go in `knowledge/` at the
+  narrowest true scope: CyberLink (`library/knowledge/`, `KC-`), product (`library/<product>/knowledge/`, `KP-`) or
+  feature (`library/<product>/<feature>/knowledge/`, `KF-`); `scripts/knowledge.ts` merges them for analyses
+  (Standing inputs 6) and run segments. Generated or second-hand ones go in as `observed`; originals stay local, only
+  entries, `source.json` and extracted text are committed. Intake and upkeep are the `domain-knowledge` skill; during a
+  run knowledge is only parked (`knowledge.ts … inbox add`) and processed by a fresh subagent at the phase wrap-up.
+- **QA Reports (user, 2026-11-03, REQ-072 / REQ-073).** A TR's QR is written with the `qa-report` skill (`scripts/qa-report.ts`): only OK and Fail rows; a bug not fully verified is left off the QR and left alone (still "Not yet verified"), never filed as NotVerified. A scenario that can no longer be completed or triggered by any means counts as fixed (OK, with a Note saying why). Lettered Details like the team's QRs, one evidence ZIP, `qr-review.html` approved by the tester before the IF3 Standard Report is filled and saved once. Replaces the Spec agent's `verify-tr-ebugs` report format here.
+- **AI Mini Drama credits (user, 2026-11-03, REQ-073, until lifted).** For runs and rechecks, use whatever credits a check needs for anything except a full video generation (characters, outlines, storyboards, regenerations, updates); a full video generation still needs the user's go-ahead or an existing video. Check every path a bug names rather than stopping at one to save credits.
+- **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
+  numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
+  warns (`formats.md`, writing rules).
+- **Source read before the design check (user, 2026-11-04, REQ-081).** Every Design board the casebook inventories
+  is read whole before any design pass walks its rows; `design.ts status` stops on a source gap until it is read or
+  excluded with a reason (`figma/references/conformance.md` › *Plan*, `source.md` step 1).
+- **Design captures ride on runs (user, 2026-11-04).** In a casebook run, `device.ts … case <ID>` arms automatic
+  design captures (every page source already read is matched to the row's Design screens); a design pass walks only
+  what runs left (`screens --left`), and the Design tab shows the Progress page's time and usage table for it (`figma/references/conformance.md`
+  §2, *The Design tab*).
+- **Design check: only this feature's part, and decisions with a reason (user, 2026-11-04, REQ-082).** On a shared
+  screen (the Launcher) other features' controls are traced `n/a: other feature: …` and the design check leaves their
+  areas out; every item on the Design tab takes Bug / OK / N/A with a reason (required to overturn a bug); a capture's
+  screenshot and page source are of one moment (`figma/references/conformance.md` §2, §3, §5).
+- **Design check: exact data first (user, 2026-11-04, REQ-084).** Figma from the source read (render bounds), the
+  phone from the page source (Android layers by drawing order, keyboard window); the screenshot only for colours and,
+  by OCR, glyph geometry and a layer cross-check. Captures must match the frame's dark/light and keyboard state;
+  reviewers quote texts from compare.json, never from images (`figma/references/conformance.md` §2–§4).
+- **Android view data from inside the app (user, 2026-11-04, REQ-085).** `scripts/android-viewdump.ts` re-signs the
+  installed PowerDirector debuggable (rdqe-spec-contract-agent's viewdump, copied with the user's approval) and dumps
+  exact text colour, size, weight, lines and drawables; the first install replaces the app with an uninstall (data
+  cleared) only with `--yes-uninstall` once agreed. With that build, Android design captures save the view data and
+  the check reads it before OCR and pixels (REQ-086; `figma/references/conformance.md` §3).
+- **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
+  the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
+- **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names
+  one platform (`SKILL.md` step 0).
+- **A Figma link is the spec (user, 2026-11-04).** When the user sends a Figma link and no PDF, read the spec from
+  Figma directly; do not ask for a PDF export (`reading-the-spec.md`, *Figma-only spec*).
+- **Build downloads (user, 2026-11-05).** The build under test from a TR's OneDrive folder is always downloaded
+  without asking; say the file name and size in chat, then check the MD5 (`run-android.md`, `fixtures.md`).
 - **Phone fixtures (2026-10-27).** What a run needs on the phone or account is in
   `library/<product>/<feature>/<platform>/fixtures.md`.
-- **Live pages (user, 2026-10-28).** `scripts/pages.ts` serves Cases, Progress, Results and Coverage with one shared
-  tab bar holding the only language switch. `+ Add case` takes free text; the agent turns open notes into rows
-  (`SKILL.md` step 4, New-case notes).
+- **Live pages (user, 2026-10-28).** `scripts/pages.ts` serves Cases, Progress, Results, Coverage and Design with one
+  shared tab bar holding the only language switch. `+ Add case` takes free text; the agent turns open notes into rows
+  (`SKILL.md` step 4, New-case notes). No new tabs without asking (user, 2026-11-04: keep the pages few and readable);
+  a table's Open questions sit on Cases above the table with answer boxes, applied as rulings (`SKILL.md` step 4,
+  Question answers). Open pages update only when what they show changed (user, 2026-11-05): Progress, Results, Coverage and
+  Design redraw in place, patching only what differs; Cases offers a Reload button (`scripts/pages.ts` header).
 - **Never uninstall PowerDirector on the QA iPhone (user, 2026-10-29, until lifted).** The build cannot be installed
   again for now, so no command may uninstall or reinstall it: `app-setup.ts reinstall` / `fresh` and every
   fresh-install case are off; those cases are recorded Blocked `--as test-data` ("PowerDirector cannot be reinstalled
   on the QA iPhone"). `app-setup.ts` refuses to uninstall unless `CASEBOOK_ALLOW_REINSTALL=1`, which only the
   user lifting this rule allows. WDA is never uninstalled either (below).
+- **First-launch consent on the phone (user, 2026-11-04).** After a (re)install the agent gets past the app's
+  GDPR/consent screen itself (「Get Started」 accepts the Terms of Service and Privacy Policy, authorized by the user);
+  sign-in stays the user's when the agent cannot log in (the agent never types passwords); where a phone signs in with
+  its Google account button and no password (the SM-A5360, `fixtures.md`), the agent does it. Every permission the app
+  asks for (notifications, photos, microphone…) is allowed (user, 2026-11-04).
 - **On the phone (2026-10-21/27).** Wi-Fi may be toggled for offline cases once the phone is on USB (other system
   settings need the user's go-ahead); rows are reached only with `scrollto` / `pink`; Auto-Lock Never, `device.ts
   restart` at every segment, never uninstall WDA; exit 75 = BLOCKER, pushed to the user (`run.md` steps 1, 3, 4).
 - **One section per context (user, 2026-10-27).** Every run works section by section (segment, phase wrap-up, board
   group); the user's chat only orchestrates, each section in a new subagent with a self-contained brief, else a
   cleared worker session, else a new chat the user opens (`run.md`, "Keep going without asking").
+- **What never gets pushed (user, 2026-11-04).** Run `node scripts/pr-check.ts` before every push or PR and fix
+  each blocker: no git-ignored files (no `add -f`), no credentials, no file over 5 MB, no whole exports from other
+  tools, nothing under `library/` outside a feature or `knowledge/`, no hand-edited `cases.csv`. Rebase on
+  `origin/main` first; a table main approved meanwhile is re-saved as the next version, a clashing `REQ-` is
+  renumbered (README › *Before you push or open a PR*).
 - **Commit and push (user, 2026-10-27).** "Commit and push" (or "push") means push to `origin` right after the
   commit, with no second confirmation; a plain "commit" stays local.
 - **Parallel phones: investigate only.** Running segments on several phones at once is an open idea in

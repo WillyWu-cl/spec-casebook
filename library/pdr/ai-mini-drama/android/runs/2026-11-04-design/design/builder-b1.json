@@ -1,0 +1,636 @@
+{
+  "screens": {
+    "2778:128368": {
+      "missing:2778:128408": {
+        "verdict": "question",
+        "severity": "major",
+        "note": "The Launcher's AI Mini Drama banner headline is 「Create Your Own Drama」 where the Design draws 「AI Mini Drama with Seedance 2.0」; the banner artwork and headline are probably set on the CMS, so PM should confirm which headline is intended.",
+        "note_zh": "Launcher 的 AI Mini Drama 橫幅標題為「Create Your Own Drama」，Design 畫的是「AI Mini Drama with Seedance 2.0」；橫幅圖與標題可能由 CMS 設定，需 PM 確認應使用哪個標題。"
+      },
+      "missing:I2778:128463;160:4961;86:10715": {
+        "verdict": "ok",
+        "note": "The 「NEW」 badge is drawn as an image on the AI Mini Drama tile in the app (visible on the capture), so no text is found; the badge is present.",
+        "note_zh": "App 的 AI Mini Drama 圖塊上「NEW」標籤是圖片（截圖可見），所以找不到文字；標籤存在。"
+      },
+      "position:2778:128462": {
+        "verdict": "ok",
+        "note": "The tile label sits about 20 pt higher relative to the bottom tabs because the Launcher's shortcut grid (shared, other features' tiles, CMS-driven) is laid out differently on the phone; the AI Mini Drama tile itself is in the same grid slot.",
+        "note_zh": "標籤相對底部分頁高約 20 pt，原因是 Launcher 共用的捷徑格（其他功能圖塊、由 CMS 決定）在手機上排法不同；AI Mini Drama 圖塊本身位於相同格位。"
+      },
+      "lines:2778:128462": {
+        "verdict": "ok",
+        "note": "The label 「AI Mini Drama」 fits on one line in the app's wider tile where the Design wraps 「AI Mini\nDrama」 into two; same words, a wider phone's reflow (every tile label in the app follows the same rule).",
+        "note_zh": "App 較寬的圖塊讓「AI Mini Drama」一行放得下，Design 斷成兩行「AI Mini\nDrama」；文字相同，是寬螢幕重排（App 所有圖塊標籤皆同）。"
+      },
+      "weight:2778:128462": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The tile label 「AI Mini Drama」 is drawn at weight 400 (app data) where the Design uses SF Pro Medium (510); the app's other tile labels are regular too, so this is a Launcher-wide style.",
+        "note_zh": "圖塊標籤「AI Mini Drama」字重為 400（app 資料），Design 為 SF Pro Medium（510）；App 其他圖塊標籤也是常規字重，屬 Launcher 全域樣式。"
+      },
+      "position:I2778:128595;11856:6755;186:3384;186:3127": {
+        "verdict": "ok",
+        "note": "The 「Home」 tab label is about 6 pt left of the Design's: the Launcher's bottom tab bar (not this feature) spreads five equal tabs over the full width; it is the same tab bar.",
+        "note_zh": "「Home」分頁標籤比 Design 左約 6 pt：Launcher 底部分頁列（非本功能）以五個等寬分頁鋪滿寬度；分頁列相同。"
+      },
+      "colour:2778:128462": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The tile label 「AI Mini Drama」 is light grey #CCD5E1 (app data) in dark mode where the Design draws white #FFFFFF (ΔE 17); Launcher-wide label colour.",
+        "note_zh": "深色模式下圖塊標籤「AI Mini Drama」為淺灰 #CCD5E1（app 資料），Design 為白色 #FFFFFF（ΔE 17）；屬 Launcher 全域標籤顏色。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "ok",
+        "figma": {
+          "box": [
+            0,
+            0,
+            375,
+            262
+          ]
+        },
+        "note": "The banner artwork differs (the app shows a character-chat preview, the Design a poster image); banner imagery is CMS content, judged only through the headline item.",
+        "note_zh": "橫幅圖不同（App 顯示角色聊天預覽，Design 為海報圖）；橫幅圖為 CMS 內容，僅以標題項目判斷。"
+      }
+    },
+    "2778:139072": {
+      "missing:2778:139112": {
+        "verdict": "question",
+        "severity": "major",
+        "note": "The Launcher's AI Mini Drama banner headline is 「Create Your Own Drama」 where the Design draws 「AI Mini Drama with Seedance 2.0」; the banner artwork and headline are probably set on the CMS, so PM should confirm which headline is intended.",
+        "note_zh": "Launcher 的 AI Mini Drama 橫幅標題為「Create Your Own Drama」，Design 畫的是「AI Mini Drama with Seedance 2.0」；橫幅圖與標題可能由 CMS 設定，需 PM 確認應使用哪個標題。"
+      },
+      "missing:I2778:139167;160:4961;86:10715": {
+        "verdict": "ok",
+        "note": "The 「NEW」 badge is drawn as an image on the AI Mini Drama tile in the app (visible on the capture), so no text is found; the badge is present.",
+        "note_zh": "App 的 AI Mini Drama 圖塊上「NEW」標籤是圖片（截圖可見），所以找不到文字；標籤存在。"
+      },
+      "position:2778:139166": {
+        "verdict": "ok",
+        "note": "The tile label sits about 20 pt higher relative to the bottom tabs because the Launcher's shortcut grid (shared, other features' tiles, CMS-driven) is laid out differently on the phone; the AI Mini Drama tile itself is in the same grid slot.",
+        "note_zh": "標籤相對底部分頁高約 20 pt，原因是 Launcher 共用的捷徑格（其他功能圖塊、由 CMS 決定）在手機上排法不同；AI Mini Drama 圖塊本身位於相同格位。"
+      },
+      "lines:2778:139166": {
+        "verdict": "ok",
+        "note": "The label 「AI Mini Drama」 fits on one line in the app's wider tile where the Design wraps 「AI Mini\nDrama」 into two; same words, a wider phone's reflow (every tile label in the app follows the same rule).",
+        "note_zh": "App 較寬的圖塊讓「AI Mini Drama」一行放得下，Design 斷成兩行「AI Mini\nDrama」；文字相同，是寬螢幕重排（App 所有圖塊標籤皆同）。"
+      },
+      "weight:2778:139166": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The tile label 「AI Mini Drama」 is drawn at weight 400 (app data) where the Design uses SF Pro Medium (510); the app's other tile labels are regular too, so this is a Launcher-wide style.",
+        "note_zh": "圖塊標籤「AI Mini Drama」字重為 400（app 資料），Design 為 SF Pro Medium（510）；App 其他圖塊標籤也是常規字重，屬 Launcher 全域樣式。"
+      },
+      "position:I2778:139299;11856:6755;186:3384;186:3127": {
+        "verdict": "ok",
+        "note": "The 「Home」 tab label is about 6 pt left of the Design's: the Launcher's bottom tab bar (not this feature) spreads five equal tabs over the full width; it is the same tab bar.",
+        "note_zh": "「Home」分頁標籤比 Design 左約 6 pt：Launcher 底部分頁列（非本功能）以五個等寬分頁鋪滿寬度；分頁列相同。"
+      },
+      "colour:2778:139166": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The tile label 「AI Mini Drama」 is dark grey #454B55 (app data) in light mode where the Design draws black #000000 (ΔE 32); Launcher-wide label colour.",
+        "note_zh": "淺色模式下圖塊標籤「AI Mini Drama」為深灰 #454B55（app 資料），Design 為黑色 #000000（ΔE 32）；屬 Launcher 全域標籤顏色。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "ok",
+        "figma": {
+          "box": [
+            0,
+            0,
+            375,
+            262
+          ]
+        },
+        "note": "The banner artwork differs (the app shows a character-chat preview, the Design a poster image); banner imagery is CMS content, judged only through the headline item.",
+        "note_zh": "橫幅圖不同（App 顯示角色聊天預覽，Design 為海報圖）；橫幅圖為 CMS 內容，僅以標題項目判斷。"
+      }
+    },
+    "2778:127350": {
+      "missing:I2778:127369;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「The Idol's Secret Girlfriend」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「The Idol's Secret Girlfriend」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "missing:I2778:127370;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「The Dragon King's Sacrificial Bride」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「The Dragon King's Sacrificial Bride」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "missing:I2778:127371;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「Encounter After Closing」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「Encounter After Closing」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "missing:I2778:127372;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「Bad Boy and the Valedictorian」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「Bad Boy and the Valedictorian」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "missing:I2778:127373;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「Reality Love」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「Reality Love」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "position:2778:127363": {
+        "verdict": "ok",
+        "note": "「Start from a template」 is 4.5 pt higher than the Design after alignment, 0.5 pt over the threshold; within the difference in line height, not a visible layout change.",
+        "note_zh": "「Start from a template」對齊後比 Design 高 4.5 pt，僅超出門檻 0.5 pt；屬行高差，不是可見的版面變化。"
+      },
+      "position:2778:127365": {
+        "verdict": "ok",
+        "note": "「More」 moves with 「Start from a template」 (4.5 pt higher); same row, same right alignment.",
+        "note_zh": "「More」與「Start from a template」一起上移（4.5 pt）；同一列、同樣靠右。"
+      }
+    },
+    "2778:138549": {
+      "missing:I2778:138568;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「The Idol's Secret Girlfriend」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「The Idol's Secret Girlfriend」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "missing:I2778:138569;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「The Dragon King's Sacrificial Bride」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「The Dragon King's Sacrificial Bride」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "missing:I2778:138570;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「Encounter After Closing」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「Encounter After Closing」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "missing:I2778:138571;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「Bad Boy and the Valedictorian」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「Bad Boy and the Valedictorian」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "missing:I2778:138572;1440:97054": {
+        "verdict": "ok",
+        "note": "Template title 「Reality Love」 is sample content: the app lists the server's templates (「The New Guy's Secret」, 「The Art of Falling」, 「Merger Season」, 「Glad We Came」, 「Love, Unscripted」) in the same 3 × 2 grid.",
+        "note_zh": "模板名稱「Reality Love」為範例內容：App 以相同 3 × 2 格列出伺服器的模板（「The New Guy's Secret」、「The Art of Falling」、「Merger Season」、「Glad We Came」、「Love, Unscripted」）。"
+      },
+      "position:2778:138562": {
+        "verdict": "ok",
+        "note": "「Start from a template」 is 4.5 pt higher than the Design after alignment, 0.5 pt over the threshold; within the difference in line height, not a visible layout change.",
+        "note_zh": "「Start from a template」對齊後比 Design 高 4.5 pt，僅超出門檻 0.5 pt；屬行高差，不是可見的版面變化。"
+      },
+      "position:2778:138564": {
+        "verdict": "ok",
+        "note": "「More」 moves with 「Start from a template」 (4.5 pt higher); same row, same right alignment.",
+        "note_zh": "「More」與「Start from a template」一起上移（4.5 pt）；同一列、同樣靠右。"
+      }
+    },
+    "2778:128904": {
+      "missing:I2778:128960;2773:119526": {
+        "verdict": "ok",
+        "note": "Suggestion 「Company policy strictly bans office romance」 is sample content: the app's suggestions are generated (e.g. 「He crashes the wrong wedding and somehow gets mistaken for the groom.」) and sit in the same chip slot.",
+        "note_zh": "建議「Company policy strictly bans office romance」為範例內容：App 的建議為生成內容（如「He crashes the wrong wedding and somehow gets mistaken for the groom.」），位於相同晶片位置。"
+      },
+      "missing:I2778:128961;2773:119526": {
+        "verdict": "ok",
+        "note": "Suggestion 「The celebrity turns admiration into forbidden love」 is sample content; the app shows a generated idea in the second chip.",
+        "note_zh": "建議「The celebrity turns admiration into forbidden love」為範例內容；App 第二個晶片顯示生成的點子。"
+      },
+      "position:I2778:128959;2773:119522": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Surprise me」 sits about 5 pt left of the Design's: the chip's left padding (around the sparkle icon) is narrower and the chip is about 11 pt narrower than the Design's 110 pt.",
+        "note_zh": "「Surprise me」比 Design 左約 5 pt：晶片左側內距（星形圖示周圍）較窄，晶片寬度比 Design 的 110 pt 少約 11 pt。"
+      },
+      "weight:I2778:128959;2773:119522": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Surprise me」 is drawn at weight 400 (app data) where the Design uses SF Pro Medium (510).",
+        "note_zh": "「Surprise me」字重為 400（app 資料），Design 為 SF Pro Medium（510）。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            16,
+            224,
+            304,
+            72
+          ]
+        },
+        "note": "The suggestion chips run to the full width and cut the idea with an ellipsis (「A strict teacher wakes up trapped inside the body of their worst student.」 shows truncated); the Design draws short one-line ideas whose chips hug the text. Whether ideas should be short titles or may be truncated is for PM/Design.",
+        "note_zh": "建議晶片佔滿寬度並以省略號截斷點子（「A strict teacher wakes up trapped inside the body of their worst student.」被截斷）；Design 畫的是短的一行點子，晶片貼合文字。點子應為短標題或可截斷，需 PM/Design 決定。"
+      },
+      "visual:2": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "cosmetic",
+        "figma": {
+          "box": [
+            271,
+            50,
+            36,
+            36
+          ]
+        },
+        "note": "With an empty input the app's new-chat icon in the top bar is greyed out (disabled); the Design draws it in the normal enabled style on this frame.",
+        "note_zh": "輸入框為空時，App 頂列的新對話圖示呈灰色（停用）；Design 此畫面畫成一般可用樣式。"
+      }
+    },
+    "2778:128966": {
+      "missing:I2778:129022;2773:119526": {
+        "verdict": "ok",
+        "note": "Suggestion 「Company policy strictly bans office romance」 is sample content: the app's suggestions are generated (e.g. 「He crashes the wrong wedding and somehow gets mistaken for the groom.」) and sit in the same chip slot.",
+        "note_zh": "建議「Company policy strictly bans office romance」為範例內容：App 的建議為生成內容（如「He crashes the wrong wedding and somehow gets mistaken for the groom.」），位於相同晶片位置。"
+      },
+      "missing:I2778:129023;2773:119526": {
+        "verdict": "ok",
+        "note": "Suggestion 「The celebrity turns admiration into forbidden love」 is sample content; the app shows a generated idea in the second chip.",
+        "note_zh": "建議「The celebrity turns admiration into forbidden love」為範例內容；App 第二個晶片顯示生成的點子。"
+      },
+      "position:I2778:129021;2773:119522": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Surprise me」 sits about 5 pt left of the Design's: the chip's left padding (around the sparkle icon) is narrower and the chip is about 11 pt narrower than the Design's 110 pt.",
+        "note_zh": "「Surprise me」比 Design 左約 5 pt：晶片左側內距（星形圖示周圍）較窄，晶片寬度比 Design 的 110 pt 少約 11 pt。"
+      },
+      "weight:I2778:129021;2773:119522": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Surprise me」 is drawn at weight 400 (app data) where the Design uses SF Pro Medium (510).",
+        "note_zh": "「Surprise me」字重為 400（app 資料），Design 為 SF Pro Medium（510）。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            16,
+            224,
+            304,
+            72
+          ]
+        },
+        "note": "The suggestion chips run to the full width and cut the idea with an ellipsis (「A strict teacher wakes up trapped inside the body of their worst student.」 shows truncated); the Design draws short one-line ideas whose chips hug the text. Whether ideas should be short titles or may be truncated is for PM/Design.",
+        "note_zh": "建議晶片佔滿寬度並以省略號截斷點子（「A strict teacher wakes up trapped inside the body of their worst student.」被截斷）；Design 畫的是短的一行點子，晶片貼合文字。點子應為短標題或可截斷，需 PM/Design 決定。"
+      }
+    },
+    "2778:139486": {
+      "state:2778:139486": {
+        "verdict": "ok",
+        "note": "The capture is this frame's state (new chat, empty input, light, keyboard up): the page source held only the keyboard's window, so the app's texts were not matched; the screenshot OCR reads 「Hi, I'm your」, 「Surprise me」 and the suggestion chips.",
+        "note_zh": "截圖即為此畫面狀態（新對話、輸入框為空、淺色、鍵盤展開）：頁面來源只含鍵盤視窗，所以 App 文字未配對；截圖 OCR 讀到「Hi, I'm your」、「Surprise me」與建議晶片。"
+      },
+      "missing:2778:139538": {
+        "verdict": "ok",
+        "note": "「Hi, I'm your」 is on the capture (OCR reads it); missed only because the page source held the keyboard window.",
+        "note_zh": "截圖上有「Hi, I'm your」（OCR 讀到）；僅因頁面來源只含鍵盤視窗而漏抓。"
+      },
+      "missing:2778:139539": {
+        "verdict": "ok",
+        "note": "「AI Drama Assistant」 is on the capture (OCR reads 「Al Drama Assistant」); missed only because the page source held the keyboard window.",
+        "note_zh": "截圖上有「AI Drama Assistant」（OCR 讀為「Al Drama Assistant」）；僅因頁面來源只含鍵盤視窗而漏抓。"
+      },
+      "missing:I2778:139541;2773:119522": {
+        "verdict": "ok",
+        "note": "「Surprise me」 is on the capture with its sparkle icon (OCR reads 「• Surprise me」).",
+        "note_zh": "截圖上有「Surprise me」與星形圖示（OCR 讀為「• Surprise me」）。"
+      },
+      "missing:I2778:139542;2773:119526": {
+        "verdict": "ok",
+        "note": "The first suggestion chip is there with generated sample text (「She lies about having a boyfriend, then hires her annoying n...」 by OCR); 「Company policy strictly bans office romance」 is sample content.",
+        "note_zh": "第一個建議晶片存在，內容為生成範例（OCR：「She lies about having a boyfriend, then hires her annoying n...」）；「Company policy strictly bans office romance」為範例內容。"
+      },
+      "missing:I2778:139543;2773:119526": {
+        "verdict": "ok",
+        "note": "The second suggestion chip is there with generated sample text (「He crashes the wrong wedding and somehow gets mistake...」 by OCR).",
+        "note_zh": "第二個建議晶片存在，內容為生成範例（OCR：「He crashes the wrong wedding and somehow gets mistake...」）。"
+      },
+      "colour:2778:139541": {
+        "verdict": "ok",
+        "note": "Mis-sample: with no matched texts the shape was looked up in the wrong place; on the capture the 「Surprise me」 chip is the same blue as the Design's.",
+        "note_zh": "取樣錯誤：沒有配對文字，形狀定位錯誤；截圖上「Surprise me」晶片與 Design 同為藍色。"
+      },
+      "colour:2778:139542": {
+        "verdict": "ok",
+        "note": "Mis-sample (the area sampled is the keyboard); on the capture the suggestion chip is light grey like the Design's #E3E9F5.",
+        "note_zh": "取樣錯誤（取到鍵盤區域）；截圖上建議晶片為淺灰，與 Design 的 #E3E9F5 相同。"
+      },
+      "colour:2778:139543": {
+        "verdict": "ok",
+        "note": "Mis-sample (the area sampled is the keyboard); on the capture the second suggestion chip is light grey like the Design's.",
+        "note_zh": "取樣錯誤（取到鍵盤區域）；截圖上第二個建議晶片為淺灰，與 Design 相同。"
+      },
+      "colour:I2778:139547;1037:48645;245:2027": {
+        "verdict": "ok",
+        "note": "Mis-sample: the credit count 「28671」 is drawn dark on the light pill like the Design's 「400」; the sampled spot is elsewhere.",
+        "note_zh": "取樣錯誤：點數「28671」在淺色膠囊上為深色字，與 Design 的「400」相同；取樣點在別處。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            16,
+            224,
+            304,
+            72
+          ]
+        },
+        "note": "The suggestion chips run to the full width and cut the idea with an ellipsis (「A strict teacher wakes up trapped inside the body of their worst student.」 shows truncated); the Design draws short one-line ideas whose chips hug the text. Whether ideas should be short titles or may be truncated is for PM/Design.",
+        "note_zh": "建議晶片佔滿寬度並以省略號截斷點子（「A strict teacher wakes up trapped inside the body of their worst student.」被截斷）；Design 畫的是短的一行點子，晶片貼合文字。點子應為短標題或可截斷，需 PM/Design 決定。"
+      },
+      "visual:2": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "cosmetic",
+        "figma": {
+          "box": [
+            271,
+            50,
+            36,
+            36
+          ]
+        },
+        "note": "With an empty input the app's new-chat icon in the top bar is greyed out (disabled); the Design draws it in the normal enabled style on this frame.",
+        "note_zh": "輸入框為空時，App 頂列的新對話圖示呈灰色（停用）；Design 此畫面畫成一般可用樣式。"
+      }
+    },
+    "2778:139548": {
+      "state:2778:139548": {
+        "verdict": "ok",
+        "note": "The capture is this frame's state (chip idea placed in the input, light, keyboard up): the page source held only the keyboard's window, so the app's texts were not matched; the screenshot OCR reads 「Hi, I'm your」, 「Surprise me」 and the suggestion chips.",
+        "note_zh": "截圖即為此畫面狀態（晶片點子已放入輸入框、淺色、鍵盤展開）：頁面來源只含鍵盤視窗，所以 App 文字未配對；截圖 OCR 讀到「Hi, I'm your」、「Surprise me」與建議晶片。"
+      },
+      "missing:2778:139600": {
+        "verdict": "ok",
+        "note": "「Hi, I'm your」 is on the capture (OCR reads it); missed only because the page source held the keyboard window.",
+        "note_zh": "截圖上有「Hi, I'm your」（OCR 讀到）；僅因頁面來源只含鍵盤視窗而漏抓。"
+      },
+      "missing:2778:139601": {
+        "verdict": "ok",
+        "note": "「AI Drama Assistant」 is on the capture (OCR reads 「Al Drama Assistant」); missed only because the page source held the keyboard window.",
+        "note_zh": "截圖上有「AI Drama Assistant」（OCR 讀為「Al Drama Assistant」）；僅因頁面來源只含鍵盤視窗而漏抓。"
+      },
+      "missing:I2778:139603;2773:119522": {
+        "verdict": "ok",
+        "note": "「Surprise me」 is on the capture with its sparkle icon (OCR reads 「• Surprise me」).",
+        "note_zh": "截圖上有「Surprise me」與星形圖示（OCR 讀為「• Surprise me」）。"
+      },
+      "missing:I2778:139604;2773:119526": {
+        "verdict": "ok",
+        "note": "The first suggestion chip is there with generated sample text (「She lies about having a boyfriend, then hires her annoying n...」 by OCR); 「Company policy strictly bans office romance」 is sample content.",
+        "note_zh": "第一個建議晶片存在，內容為生成範例（OCR：「She lies about having a boyfriend, then hires her annoying n...」）；「Company policy strictly bans office romance」為範例內容。"
+      },
+      "missing:I2778:139605;2773:119526": {
+        "verdict": "ok",
+        "note": "The second suggestion chip is there with generated sample text (「He crashes the wrong wedding and somehow gets mistake...」 by OCR).",
+        "note_zh": "第二個建議晶片存在，內容為生成範例（OCR：「He crashes the wrong wedding and somehow gets mistake...」）。"
+      },
+      "colour:2778:139603": {
+        "verdict": "ok",
+        "note": "Mis-sample: with no matched texts the shape was looked up in the wrong place; on the capture the 「Surprise me」 chip is the same blue as the Design's.",
+        "note_zh": "取樣錯誤：沒有配對文字，形狀定位錯誤；截圖上「Surprise me」晶片與 Design 同為藍色。"
+      },
+      "colour:2778:139604": {
+        "verdict": "ok",
+        "note": "Mis-sample (the area sampled is the keyboard); on the capture the suggestion chip is light grey like the Design's #E3E9F5.",
+        "note_zh": "取樣錯誤（取到鍵盤區域）；截圖上建議晶片為淺灰，與 Design 的 #E3E9F5 相同。"
+      },
+      "colour:2778:139605": {
+        "verdict": "ok",
+        "note": "Mis-sample (the area sampled is the keyboard); on the capture the second suggestion chip is light grey like the Design's.",
+        "note_zh": "取樣錯誤（取到鍵盤區域）；截圖上第二個建議晶片為淺灰，與 Design 相同。"
+      },
+      "colour:I2778:139609;1037:48645;245:2027": {
+        "verdict": "ok",
+        "note": "Mis-sample: the credit count 「28671」 is drawn dark on the light pill like the Design's 「400」; the sampled spot is elsewhere.",
+        "note_zh": "取樣錯誤：點數「28671」在淺色膠囊上為深色字，與 Design 的「400」相同；取樣點在別處。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            16,
+            224,
+            304,
+            72
+          ]
+        },
+        "note": "The suggestion chips run to the full width and cut the idea with an ellipsis (「A strict teacher wakes up trapped inside the body of their worst student.」 shows truncated); the Design draws short one-line ideas whose chips hug the text. Whether ideas should be short titles or may be truncated is for PM/Design.",
+        "note_zh": "建議晶片佔滿寬度並以省略號截斷點子（「A strict teacher wakes up trapped inside the body of their worst student.」被截斷）；Design 畫的是短的一行點子，晶片貼合文字。點子應為短標題或可截斷，需 PM/Design 決定。"
+      }
+    },
+    "2778:127414": {
+      "copy:2778:127423": {
+        "verdict": "ok",
+        "note": "The Design's 「Video language」 is drawn with list numbering (the frame shows 「1. Video language」), so the app's 「1. Video language」 matches.",
+        "note_zh": "Design 的「Video language」以清單編號呈現（畫面顯示「1. Video language」），App 的「1. Video language」相符。"
+      },
+      "copy:2778:127438": {
+        "verdict": "ok",
+        "note": "The Design's 「Captions」 is drawn with list numbering as 「2. Captions」; the app's 「2. Captions」 matches.",
+        "note_zh": "Design 的「Captions」以清單編號呈現為「2. Captions」；App 的「2. Captions」相符。"
+      },
+      "position:2778:127419": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「What format would you like for your video?」 sits about 8 pt lower and 5 pt off relative to the card: the gap between the question and the format card is smaller and the card's inner padding narrower (options start at x 27 vs the Design's 32).",
+        "note_zh": "「What format would you like for your video?」相對卡片低約 8 pt、偏移 5 pt：問題與格式卡間距較小，卡片內距較窄（選項起點 x 27，Design 為 32）。"
+      },
+      "position:I2778:127426;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Spanish」 is about 6 pt left of the Design's: the option chips have narrower horizontal padding, so each later chip shifts left.",
+        "note_zh": "「Spanish」比 Design 左約 6 pt：選項晶片左右內距較窄，後面的晶片逐一左移。"
+      },
+      "position:I2778:127428;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「German」 is about 4 pt left of the Design's (narrower chip padding, same cause as 「Spanish」).",
+        "note_zh": "「German」比 Design 左約 4 pt（晶片內距較窄，與「Spanish」同因）。"
+      },
+      "position:I2778:127430;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Korean」 is about 5 pt left of the Design's (narrower chip padding, same cause as 「Spanish」).",
+        "note_zh": "「Korean」比 Design 左約 5 pt（晶片內距較窄，與「Spanish」同因）。"
+      },
+      "weight:I3172:101306;2750:25393": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Generate」 is drawn bold (700, app data) where the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Generate」為粗體（700，app 資料），Design 為 SF Pro Semibold（590）。"
+      },
+      "position:I2778:127449;1037:48645;245:2027": {
+        "verdict": "ok",
+        "note": "The credit pill (「28787」, a per-account balance vs the Design's sample 「400」) is in the same top-bar slot; the offset comes from aligning on the chat texts below, and the Android window starts under the status bar.",
+        "note_zh": "點數膠囊（「28787」為帳號餘額，Design 範例為「400」）位於相同頂列位置；偏移來自以下方聊天文字對齊，且 Android 視窗從狀態列下方開始。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "cosmetic",
+        "figma": {
+          "box": [
+            327,
+            676,
+            32,
+            32
+          ]
+        },
+        "note": "A round scroll-to-bottom arrow button floats over the chat above the input bar; the Design draws none on this frame although the chat fits on the screen.",
+        "note_zh": "輸入列上方浮著一個圓形「捲到底部」箭頭按鈕；Design 此畫面未畫，且聊天內容一屏可容納。"
+      }
+    },
+    "3142:68271": {
+      "missing:I3142:68277;393:31121": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "After 「Generate」 the app shows no user reply bubble with the chosen format (Design: 「Video language: English\r\nCaptions: Yes」); the format question is followed directly by the loading card.",
+        "note_zh": "按「Generate」後 App 沒有顯示所選格式的使用者回覆泡泡（Design：「Video language: English\r\nCaptions: Yes」）；格式問題後直接接載入卡。"
+      },
+      "sample:3142:68279": {
+        "verdict": "question",
+        "severity": "minor",
+        "note": "The assistant line 「I'll create a drama based on this template — give me a moment...」 is not shown before the loading card; it may be generated text, so whether a fixed acknowledgement is expected is for PM.",
+        "note_zh": "載入卡前未顯示助理訊息「I'll create a drama based on this template — give me a moment...」；這可能是生成文字，是否需要固定回覆需 PM 確認。"
+      },
+      "missing:3142:68282": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "The loading card reads 「Thinking…」 where the Design has 「Drafting the storyline...」.",
+        "note_zh": "載入卡顯示「Thinking…」，Design 為「Drafting the storyline...」。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "ok",
+        "figma": {
+          "box": [
+            240,
+            40,
+            119,
+            156
+          ]
+        },
+        "note": "The template poster above the chat is per template (「The New Guy's Secret」 vs the Design's 「Forbidden Office Romance」): sample content, same place and shape.",
+        "note_zh": "聊天上方的模板海報依模板而定（「The New Guy's Secret」對 Design 的「Forbidden Office Romance」）：範例內容，位置與形狀相同。"
+      }
+    },
+    "2778:139432": {
+      "state:2778:139432": {
+        "verdict": "ok",
+        "note": "The capture is this frame's step (outline done, empty character slots before generation); the low match comes from the sample outline and names and the different heading copy below.",
+        "note_zh": "截圖即為此畫面步驟（大綱完成、生成前的空角色槽）；配對率低是因大綱與名稱為範例，以及下方標題文字不同。"
+      },
+      "missing:2778:139471": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "The heading 「Choose your characters」 is missing: the app shows 「I have created the characters for Borrowed Boyfriend, introducing Claire, Liam, and Marcus.」 and 「Ready to create your characters?」 above slots that are still empty.",
+        "note_zh": "缺少標題「Choose your characters」：App 在仍為空的角色槽上方顯示「I have created the characters for Borrowed Boyfriend, introducing Claire, Liam, and Marcus.」與「Ready to create your characters?」。"
+      },
+      "missing:I2778:139475;2620:59767": {
+        "verdict": "ok",
+        "note": "Slot name 「Sophie」 is sample content; the app's first slot is 「Claire」 from this drama's outline.",
+        "note_zh": "槽名「Sophie」為範例內容；App 第一槽為本劇大綱的「Claire」。"
+      },
+      "missing:I2778:139476;2620:59767": {
+        "verdict": "ok",
+        "note": "Slot name 「The Manager」 is sample content; the app's second slot is 「Liam」.",
+        "note_zh": "槽名「The Manager」為範例內容；App 第二槽為「Liam」。"
+      },
+      "missing:I2778:139477;2620:59767": {
+        "verdict": "ok",
+        "note": "Slot name 「HR」 is sample content; the app's third slot is 「Marcus」.",
+        "note_zh": "槽名「HR」為範例內容；App 第三槽為「Marcus」。"
+      },
+      "missing:I2778:139478;2620:59767": {
+        "verdict": "ok",
+        "note": "The Design's fourth character 「Chloe」 is sample content: this drama has three characters, and the app's fourth tile is 「Add New」.",
+        "note_zh": "Design 第四個角色「Chloe」為範例內容：本劇只有三個角色，App 第四格為「Add New」。"
+      },
+      "missing:I2778:139479;1902:90188": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "The 「More ideas」 button under the character slots is missing.",
+        "note_zh": "角色槽下方缺少「More ideas」按鈕。"
+      },
+      "colour:I2778:139478;2620:59766": {
+        "verdict": "ok",
+        "note": "Mis-sample: the fourth slot is the dashed 「Add New」 tile cut at the screen edge; its fill is the same light grey as the other slots.",
+        "note_zh": "取樣錯誤：第四格為被螢幕邊緣裁切的虛線「Add New」格；底色與其他槽同為淺灰。"
+      }
+    },
+    "2778:144364": {
+      "missing:I2778:144407;2620:59767": {
+        "verdict": "ok",
+        "note": "Character name 「Sophie」 is sample content; the app shows 「Claire」.",
+        "note_zh": "角色名「Sophie」為範例內容；App 顯示「Claire」。"
+      },
+      "missing:I2778:144408;2620:59767": {
+        "verdict": "ok",
+        "note": "Character name 「The Manager」 is sample content; the app shows 「Liam」.",
+        "note_zh": "角色名「The Manager」為範例內容；App 顯示「Liam」。"
+      },
+      "missing:I2778:144409;2620:59767": {
+        "verdict": "ok",
+        "note": "Character name 「HR」 is sample content; the app shows 「Marcus」.",
+        "note_zh": "角色名「HR」為範例內容；App 顯示「Marcus」。"
+      },
+      "missing:I2778:144410;2620:59767": {
+        "verdict": "ok",
+        "note": "The Design's fourth character 「Chloe」 is sample content; this drama has three characters.",
+        "note_zh": "Design 第四個角色「Chloe」為範例內容；本劇只有三個角色。"
+      },
+      "missing:I2778:144413;1902:90188": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "The 「More ideas」 button below the storyboard offer is missing.",
+        "note_zh": "分鏡提議下方缺少「More ideas」按鈕。"
+      },
+      "position:I2778:144412;2750:64266": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「The characters look great! Ready to create the storyboard?」 is plain chat text at the left margin (about 12 pt left); the Design puts it inside the offer card with the 「Create storyboard」 block.",
+        "note_zh": "「The characters look great! Ready to create the storyboard?」在 App 是靠左邊界的一般聊天文字（左移約 12 pt）；Design 將它放在含「Create storyboard」區塊的提議卡內。"
+      },
+      "weight:I2778:144412;2750:64270": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Create storyboard」 is drawn bold (700, app data) where the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Create storyboard」為粗體（700，app 資料），Design 為 SF Pro Semibold（590）。"
+      },
+      "position:I2778:144412;2750:64276": {
+        "verdict": "ok",
+        "note": "The price (「28」, per drama, vs the Design's 「15」) sits about 5 pt off because the card holds the extra 「Credits will be consumed for this task.」 line; judged on that item.",
+        "note_zh": "價格（「28」依劇而定，Design 為「15」）偏移約 5 pt，因卡片多了「Credits will be consumed for this task.」一行；於該項判斷。"
+      },
+      "position:I2778:144412;2750:64323;2750:25393": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Generate」 sits about 7 pt further right and 16 pt off: the 「Create storyboard」 card is not nested in the Design's outer card, so it is wider, and the extra credits line makes it taller.",
+        "note_zh": "「Generate」右移約 7 pt、偏移 16 pt：「Create storyboard」卡未包在 Design 的外層卡內，因此較寬，且多出的點數說明行使其較高。"
+      },
+      "weight:I2778:144412;2750:64323;2750:25393": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Generate」 is drawn bold (700, app data) where the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Generate」為粗體（700，app 資料），Design 為 SF Pro Semibold（590）。"
+      },
+      "position:I2778:144415;2499:46952": {
+        "verdict": "ok",
+        "note": "「Enter your idea to create drama」 is in the input bar pinned to the bottom on both; the 60 pt offset comes from aligning on the chat texts above, which scroll differently.",
+        "note_zh": "「Enter your idea to create drama」在兩邊都位於固定在底部的輸入列；60 pt 偏移來自以上方捲動不同的聊天文字對齊。"
+      },
+      "extra:credits will be consumed for this task.": {
+        "verdict": "question",
+        "severity": "minor",
+        "note": "The offer card adds 「Credits will be consumed for this task.」, which the Design does not draw; it may be PM copy, so PM should confirm.",
+        "note_zh": "提議卡多了「Credits will be consumed for this task.」，Design 未畫；可能是 PM 文案，需 PM 確認。"
+      }
+    }
+  }
+}

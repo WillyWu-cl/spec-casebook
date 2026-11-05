@@ -231,7 +231,7 @@ function renderUsage(tableId, subset, totalLabel, emptyText) {
   if (!ps.length) { document.getElementById(tableId).innerHTML = `<tbody><tr><td class="none">${esc(emptyText)}</td></tr></tbody>`; }
   const z = { wall: 0, test: 0, idle: 0, gaps: 0, tokens: { input: 0, cacheWrite: 0, cacheRead: 0, output: 0, messages: 0 } };
   for (const p of ps) { for (const k of ['wall', 'test', 'idle', 'gaps']) z[k] += p.stats[k]; for (const k in z.tokens) z.tokens[k] += p.stats.tokens[k]; }
-  const estCells = (s, eq = true) => `<td class="n est">${s.est5 == null ? `<span class="none">${tx('no calibration', '未校準')}</span>` : fmtP(s.est5) + (eq ? seatEq(s.est5, s) : '')}</td><td class="n est">${s.estW == null ? '<span class="none">—</span>' : '~' + fmtP(s.estW) + (eq ? seatEq(s.estW, s) : '')}</td>`;
+  const estCells = (s, eq = true) => `<td class="n est">${s.est5 == null ? `<span class="none">${s.noTokens ? `<span title="${esc(tx('No messages in this run folder\'s tokens.jsonl yet: the computer that ran it has to build this page and commit the file', '此執行資料夾的 tokens.jsonl 尚無訊息：需由執行它的電腦建置此頁並 commit 該檔'))}">${tx('no token data yet', '尚無 token 資料')}</span>` : tx('no calibration', '未校準')}</span>` : fmtP(s.est5) + (eq ? seatEq(s.est5, s) : '')}</td><td class="n est">${s.estW == null ? '<span class="none">—</span>' : '~' + fmtP(s.estW) + (eq ? seatEq(s.estW, s) : '')}</td>`;
   const acctCells = (h5, wk, approx) => `<td class="n acct">${pct(h5, approx, '—')}</td><td class="n acct">${pct(wk, approx, '—')}</td>`;
   const gaps = n => tx(`${n} gap${n > 1 ? 's' : ''}`, `${n} 段閒置`);
   const row = (label, seat, s, cls = '') => `<tr class="${cls}"><td>${label}</td><td>${esc(seat.split(', ')[0])}${seat.includes(', ') ? `<span class="eq">${esc(seat.split(', ').slice(1).join(', '))}</span>` : ''}</td><td class="n">${hm(s.wall)}</td><td class="n">${hm(s.test)}</td><td class="n">${hm(s.idle)}${s.gaps ? `<span class="eq">${gaps(s.gaps)}</span>` : ''}</td><td class="n" title="${esc(tokTitle(s.tokens))}">${tok(tokAll(s.tokens))}${s.wt != null ? `<span class="eq">${tx('wtd', '加權')} ${tok(s.wt)}</span>` : ''}</td>`;
@@ -250,7 +250,7 @@ function renderUsage(tableId, subset, totalLabel, emptyText) {
   if (ps.length) document.getElementById(tableId).innerHTML = `<thead><tr><th rowspan="2">${tx('Phase', '階段')}</th><th rowspan="2">${tx('Account', '帳號')}</th><th class="n" rowspan="2">${tx('Wall', '總時長')}</th><th class="n" rowspan="2">${tx('Test', '測試')}</th><th class="n" rowspan="2">${tx('Idle &gt;15 min', '閒置 &gt;15 分')}</th><th class="n" rowspan="2">${tx('Claude tokens', 'Claude token')}</th><th class="grp" colspan="2">${tx('Est. from token rate, % of 1× Pro', '依 token 率估計（1× Pro 的 %）')}</th><th class="grp acct" colspan="2">${tx('Account total (shared), % of 1× Pro', '帳號合計（共用，1× Pro 的 %）')}</th></tr>
     <tr><th class="n" title="${tx('Weighted tokens × the calibrated rate', '加權 token × 校準後的比率')}">${tx('5-hour', '5 小時')}</th><th class="n" title="${tx('5-hour estimate × the weekly ÷ 5-hour ratio', '5 小時估計 × 每週 ÷ 5 小時比')}">${tx('Weekly (rough)', '每週（粗估）')}</th><th class="n acct" title="${acctTitle}">${tx('5-hour', '5 小時')}</th><th class="n acct" title="${acctTitle}">${tx('Weekly', '每週')}</th></tr></thead><tbody>` +
     body + outside +
-    (ps.length > 1 ? row(esc(totalLabel), '', { ...z, wt: sum('wt') }, 'tot round') + estCells({ est5: sum('est5'), estW: sum('estW'), seats: [] }) + acctCells(sum('fiveHour'), sum('weekly'), ps.some(p => p.stats.approx)) + '</tr>' : '') + '</tbody>';
+    (ps.length > 1 ? row(esc(totalLabel), '', { ...z, wt: sum('wt') }, 'tot round') + estCells(ps.every(p => p.stats.noTokens) ? { est5: null, estW: null, noTokens: true, seats: [] } : { est5: sum('est5'), estW: sum('estW'), seats: [] }) + acctCells(sum('fiveHour'), sum('weekly'), ps.some(p => p.stats.approx)) + '</tr>' : '') + '</tbody>';
   if (tableId !== 'usage') return;
   const L = U.latest, w = U.weights;
   const opm = t => t.messages ? t.output / t.messages : 0;
@@ -283,8 +283,8 @@ function renderUsage(tableId, subset, totalLabel, emptyText) {
       `<span><b>每個帳號的席位大小。</b>每筆用量快照都記錄該帳號的席位大小（<code>proMultiplier</code>，<code>usage-log.ts --seat N</code>）：Pro-% = 方案 % × 席位大小，所以 625% = 6.25× Pro Team 席位的一整個 5 小時額度。席位改變代表換了帳號，並開始新的一輪；額度不會跨過它。${U.seatAssumed ? '沒有記錄席位的列沿用前一列（最前面為 1）。' : ''}方案 % 來自 ${U.snapshots} 筆用量讀數${U.markers ? `與 ${U.markers} 個帳號標記` : ''}（<code>runs/usage.jsonl</code>）。</span>`),
     L ? tx(`<span>Latest reading ${esc(L.at.slice(0, 16).replace('T', ' '))} UTC (${L.seat}× Pro seat): 5-hour ${L.fiveHourPct ?? '?'}%${L.fiveHourResetsAt ? ` (resets ${utc(L.fiveHourResetsAt)})` : ''} · weekly ${L.weeklyPct ?? '?'}%${L.weeklyResetsAt ? ` (resets ${utc(L.weeklyResetsAt)})` : ''} of the plan.</span>`,
       `<span>最新讀數 ${esc(L.at.slice(0, 16).replace('T', ' '))} UTC（${L.seat}× Pro 席位）：5 小時 ${L.fiveHourPct ?? '?'}%${L.fiveHourResetsAt ? `（${utc(L.fiveHourResetsAt)} 重設）` : ''} · 每週 ${L.weeklyPct ?? '?'}%${L.weeklyResetsAt ? `（${utc(L.weeklyResetsAt)} 重設）` : ''}（方案用量）。</span>`) : '',
-    tx(`<span>Time as <code>run-log.ts time</code> (activity points per run folder; test = gaps up to 15 min). Claude tokens = input + cache write + cache read + output from ${U.transcripts} transcripts of this project (sessions and subagents) inside each run's active spans; "wtd" = weighted. A phase row includes its wrap-up.</span>`,
-      `<span>時間同 <code>run-log.ts time</code>（各執行資料夾的活動時間點；測試 = 15 分鐘以內的間隔）。Claude token = 輸入 + 快取寫入 + 快取讀取 + 輸出，取自本專案 ${U.transcripts} 份對話紀錄（工作階段與子代理）在各執行活動期間的部分；「加權」= 加權後。階段列包含它的收尾。</span>`)
+    tx(`<span>Time as <code>run-log.ts time</code> (activity points per run folder; test = gaps up to 15 min). Claude tokens = input + cache write + cache read + output of the ${U.ledgerMessages ?? 0} messages in the run folders' <code>tokens.jsonl</code>, which every computer that builds this page tops up from its own transcripts (sessions and subagents that name the run folder, inside its active spans) and which is committed with the run, so every computer shows the same figures once it has pulled; "wtd" = weighted. A phase row includes its wrap-up.</span>`,
+      `<span>時間同 <code>run-log.ts time</code>（各執行資料夾的活動時間點；測試 = 15 分鐘以內的間隔）。Claude token = 輸入 + 快取寫入 + 快取讀取 + 輸出，取自各執行資料夾 <code>tokens.jsonl</code> 的 ${U.ledgerMessages ?? 0} 則訊息；每台建置此頁的電腦都會從自己的對話紀錄補進去（提到該執行資料夾的工作階段與子代理，在它的活動期間內），並隨執行一起 commit，所以 pull 之後每台電腦顯示的數字相同；「加權」= 加權後。階段列包含它的收尾。</span>`)
   ].join('');
 }
 // Blocked reasons. Group keys come from plan-page.ts: need:<n> (Blocked up front: the run can't provide <n>),
@@ -418,12 +418,25 @@ function showCase() {
   document.getElementById(`${p.id}--${s.id}`)?.querySelector(`tr[data-case="${CSS.escape(focusCase)}"]`)?.scrollIntoView({ block: 'center' });
 }
 addEventListener('hashchange', showCase);
+// The open segments are kept in the address (?open=…), so a reload or a shared link opens them again, and for this
+// browser tab, so leaving Progress for another page and coming back keeps them too.
+const VIEW = `plan-view:${DATA.feature}`;
+function saveView() {
+  const ids = [...document.querySelectorAll('details.seg[open], details.hist[open]')].map(d => d.id), s = ids.length ? `open=${ids.map(encodeURIComponent).join(',')}` : '';
+  try { history.replaceState(history.state, '', location.pathname + (s ? `?${s}` : '') + location.hash); sessionStorage.setItem(VIEW, s); } catch (e) {}
+}
+document.addEventListener('toggle', e => { if (e.target.matches?.('details.seg, details.hist')) saveView(); }, true);
 applyStatic();
 render();
+{ let s = location.search.slice(1); if (!s && !location.hash) try { s = sessionStorage.getItem(VIEW) ?? ''; } catch (e) {}
+  for (const id of (new URLSearchParams(s).get('open') ?? '').split(',').filter(Boolean)) { const d = document.getElementById(id); if (d) d.open = true; } }
 showCase();
 /*LIVE*/
-// Served by `plan-page.ts --serve`: pick up each recorded case without a reload.
-if (LIVE) setInterval(async () => {
+// Served by `plan-page.ts --serve`: pick up each recorded case without a reload. Under scripts/pages.ts the tab bar
+// redraws only when the data changed and patches only what differs; the 10 s check stays for the usage figures, which
+// come from transcripts outside the library.
+if (LIVE && window.CASEBOOK?.check) { CASEBOOK.onData = d => { DATA = d; render(); }; setInterval(() => CASEBOOK.check(true), 10000); }
+else if (LIVE) setInterval(async () => {
   try { const r = await fetch('data.json', { cache: 'no-store' }); if (r.ok) { DATA = await r.json(); render(); } } catch {}
 }, 10000);
 /*/LIVE*/

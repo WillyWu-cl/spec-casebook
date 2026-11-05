@@ -380,13 +380,14 @@ Every cell names the rows that check it, or n/a when the spec defines nothing fo
 | REQ-052 PM / MX Figma inventory; PM Figma 10/22 frames (2026-10-29) | R-332 – R-340; changed R-051, R-052, R-071, R-158, R-249, R-262, R-264 |
 | REQ-057 MX ③ Credit Charging Table (linked sheet): discount prices, no discount on regenerate, action ids (2026-10-29) | R-463, R-464, R-465; Q-32, Q-33 |
 | REQ-059 original prices by default, the promotion price held (2026-10-29) | R-040, R-050, R-061, R-069, R-081, R-147, R-254, R-259, R-260, R-463, R-464, R-465; Q-32, Q-33 |
+| REQ-076 Design screens no row reached (figma source read, 2026-11-03) | R-466, R-467, R-468 |
 
 ## Added 2026-10-21 — PM Spec 20261021 (16:04)
 PM-only rows carry 「PM-only: no Design frame yet (Design 2026-10-19)」 in Notes and change when the Design spec draws them (REQ-024).
 - R-245 [PM:pm-update-9 (10/16); Req: REQ-025] While a character generates: 「This usually takes about 1 minute.」 under the attribute chips, X stays enabled and 「Cancel」 sits under the Generating button; Cancel or X asks 「Stop and lose your credits?」 (Leave anyway stops with no refund; Keep Generating continues).
 - R-246 [PM:pm-update-9 (10/16 定案); Req: REQ-025] After 5 minutes a character generation shows 「We couldn't create your character」/「This is taking longer than expected. Send us feedback and our support team will check your credits.」 with Close (back to the form, input kept) and Send Feedback (AI Issues tab, prefilled feature, issue text with the time, prompt and e-mail).
 - R-247 [PM:pm-update-9 (10/16); Req: REQ-025] Finish your characters while generating shows 「Creating {n} characters...」 and the time hint, X and Cancel ask 「Stop and lose your credits?」 (Leave anyway stops the unfinished characters and keeps finished ones, no refund), and after 5 minutes 「We couldn't create your characters」 with Send Feedback naming {n} characters.
-- R-248 [PM:pm-update-11 §13.23 (10/21); Req: REQ-025] On the character result only Save to library saves to Mine; X, Android back or swipe down asks 「Discard this character?」 (Discard closes, not saved, the slot keeps what it had; Keep stays); the page's Discard button closes with no dialog.
+- R-248 [PM:pm-update-11 §13.23 (10/21); Req: REQ-025] On the character result only Save to library saves to Mine; X, Android back or swipe down asks 「Discard this character?」 (Discard closes, not saved, the slot keeps what it had; Keep stays). — The page's own Discard button (10/21 PDF mockup) is gone from the live board, which now draws only Save to library like the Design (checked 2026-11-04, REQ-077); only a leftover note still names it. TC-341 retired.
 - R-249 [PM:pm-update-10 (10/20); PM:figma 10/22 Export Full Video while exporting 4418:2 https://www.figma.com/design/44RyrcOcWi2MvhGci9bO5F/AI-Mini-Drama?node-id=4418-2; Req: REQ-025, REQ-052] Export Full Video saves the flattened video to the photo library with no dialog. While it exports, a loading spinner shows in the middle of the preview, the play button is hidden and the video paused; 「Full Edit」, 「Export Full Video」 (label unchanged) and the download icon at the preview's bottom right are disabled (40 % opacity) and cannot be pressed. When done the spinner goes, the play button and the three controls return, and the toast reads 「Saved to Photos.」 on iOS. — Changed 2026-10-29 (PM Figma 10/22, frame 4418:2): was 「the button shows loading」.
 - R-250 [PM:pm-1002-update §13.2 (10/20); Req: REQ-025] After the user sends, the message is scrolled to the top and the reply generates below without the view following it; ↓ appears when the reply runs past the screen and scrolls smoothly to the bottom.
 - R-251 [PM:pm-main-flow; Req: REQ-025] The Full Video length on the video settings card is 15 s × the number of scenes (90 s for 6 scenes).
@@ -797,3 +798,16 @@ kept: R-040, R-050, R-061, R-069, R-081, R-254, R-259, R-260, R-450, R-465. Held
 R-464 (no discount on regenerate, which only matters inside the promotion), with the R-147 discount price; TC-231
 is parked (removed) and the other REQ-057 discount rows now check the original price and the `_normal` ids.
 Q-32 is answered.
+
+## Added 2026-11-03 — Design screens no row reached (figma source read, REQ-076)
+The design check's plan found four Design frames no row reaches: the light chat on Choose Character, the two long-name
+Characters Result cards of 「1029_DRA262610P0372」 and the Recent Task chat reopened at the outline stage. Each row's Notes
+name its frame's node id, which routes the design check to it.
+- R-466 [DS:figma Choose Character light chat 2811:112113 https://www.figma.com/design/dZk5HLzZTdcZwWwvN9aZfZ/AI-Mini-Drama?node-id=2811-112113; Req: REQ-076] With the app in Light mode, the chat holding the 「Story Outline & Characters Result」 card is drawn light: white page, dark text, the outline card and the 「Choose your characters」 slots on a light surface, 「More ideas +」 and the idea box light; no part stays dark.
+- R-467 [DS:figma Choose Character 「1029_DRA262610P0372」 5366:70814 / 5366:70880 https://www.figma.com/design/dZk5HLzZTdcZwWwvN9aZfZ/AI-Mini-Drama?node-id=5366-70814 (2026-10-29); Req: REQ-076] 「卡片高度依據名字高度彈性增高」: a long character name in the Characters Result row wraps onto a second line under its image (「Detective Jack Vance」), nothing is cut off with 「…」, and the card grows taller to fit; short names keep one line.
+- R-468 [DS:figma Recent Task 「做到 story outline」 2824:128852 https://www.figma.com/design/dZk5HLzZTdcZwWwvN9aZfZ/AI-Mini-Drama?node-id=2824-128852, flow arrow 2820:123493; Req: REQ-076] Tapping a History card of a drama saved at the outline stage reopens its chat at that stage: the idea image, 「What format would you like for your video?」 with the chosen format, the 「Story Outline & Characters Result」 card (Story Outline and Possible Characters), 「Choose your characters」 with empty slots, 「More ideas +」 and the idea box.
+
+### Domain rules
+| Entry | Requirements |
+|---|---|
+| KP-007 A failed generation refunds its credits | R-035, R-036, R-056, R-057, R-067, R-080, R-084, R-157 |

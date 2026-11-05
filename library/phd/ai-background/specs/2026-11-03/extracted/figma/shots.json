@@ -1,0 +1,62 @@
+{
+  "room-dark.png": {
+    "board": "1:451",
+    "group": "d1",
+    "hash": "4042d2f8",
+    "captured_at": "2026-11-03T07:48:23.844Z"
+  },
+  "room-light.png": {
+    "board": "11:248",
+    "group": "d1",
+    "hash": "0115f9bf",
+    "captured_at": "2026-11-03T07:48:24.034Z"
+  },
+  "thumbnail-states-light.png": {
+    "board": "25:915",
+    "group": "d1",
+    "hash": "b528982c",
+    "captured_at": "2026-11-03T07:48:24.207Z"
+  },
+  "thumbnail-states-dark.png": {
+    "board": "25:916",
+    "group": "d1",
+    "hash": "be196bb3",
+    "captured_at": "2026-11-03T07:48:24.384Z"
+  },
+  "pm-custom.png": {
+    "board": "2403:4094/pm-custom",
+    "group": "p1",
+    "hash": "268df3ef",
+    "captured_at": "2026-11-03T09:55:53.516Z",
+    "box": [
+      -2889,
+      107,
+      3500,
+      1929
+    ]
+  },
+  "pm-room.png": {
+    "board": "2403:4094/pm-room",
+    "group": "p1",
+    "hash": "3b8dbfc1",
+    "captured_at": "2026-11-03T09:55:53.682Z",
+    "box": [
+      661,
+      107,
+      2000,
+      1200
+    ]
+  },
+  "pm-cms.png": {
+    "board": "2403:4094/pm-cms",
+    "group": "p1",
+    "hash": "229b28ff",
+    "captured_at": "2026-11-03T09:55:53.848Z",
+    "box": [
+      2691,
+      107,
+      2515,
+      1000
+    ]
+  }
+}

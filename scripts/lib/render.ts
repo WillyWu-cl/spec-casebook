@@ -13,6 +13,9 @@ export type PageData = {
   rows: Record<string, string>[];
   previous: Record<string, Record<string, string>>;
   requirements: string; update_plan: string;
+  // Open questions and their answers (scripts/lib/questions.ts); the review page shows them above the table
+  questions?: { id: string; text: string; rows: string[] }[];
+  answers?: Record<string, { answer: string; by: string; at: string; platform: string; status: string; resolution?: string; question: string }>;
 };
 
 export function renderPage(data: PageData): string {

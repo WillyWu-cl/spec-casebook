@@ -1,0 +1,35 @@
+{
+  "png": "pm-update-10.png",
+  "box": [
+    30113,
+    19809,
+    1869,
+    1232
+  ],
+  "lines": [
+    ["10/20 update -Export Full Video 完成後跳toast （comment）",30191,19832,993,45],
+    ["A•iOS：按 Export Full Video，匯出完成",30189,20092,353,23],
+    ["toast : Saved to Photos.",30192,20113,220,18],
+    ["9:41",30224,20164,34,14],
+    ["B•Android：同上，toast 改成 Saved to",30668,20092,341,21],
+    ["Gallery.",30668,20112,72,19],
+    ["9:41",30699,20164,34,14],
+    ["三 口",30482,20164,67,14],
+    ["Full Edit",30329,20208,60,14],
+    ["Export Full Video",30422,20208,120,16],
+    ["Full Edit",30805,20208,58,14],
+    ["三 0",30959,20164,65,14],
+    ["Export Full Video",30896,20208,120,16],
+    ["10/20 update - Export Full Video",31140,20150,253,16],
+    ["•按 Export Full Video +影片存到手機相簿，完成後跳",31140,20185,379,18],
+    ["toast（沿用 guideline toast 樣式）",31140,20204,253,16],
+    ["- iOS :Saved to Photos.",31150,20222,186,14],
+    ["- Android: Saved to Gallery.",31150,20240,216,14],
+    ["•匯出中：按鈕變 loading，不跳 dialog（同§8下載）。",31140,20257,388,18],
+    ["10/20 update : Export Full Video 完成 toast （iOS Photos/",31150,20305,560,23],
+    ["Saved to Photos.",30333,20548,90,12],
+    ["Saved to Gallery.",30808,20547,93,14],
+    ["山",30489,20748,20,20],
+    ["st （ioS Photos/ Android Gallery）",31553,20306,329,23]
+  ]
+}

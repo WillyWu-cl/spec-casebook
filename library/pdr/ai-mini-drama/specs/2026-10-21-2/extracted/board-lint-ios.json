@@ -1,0 +1,276 @@
+{
+  "checked_at": "2026-11-04T01:51:57.379Z",
+  "feature": "pdr/ai-mini-drama",
+  "platform": "ios",
+  "set": "specs/2026-10-21-2",
+  "warnings": [
+    {
+      "id": "MX|note-moved|ds-mx-link@5140,33846",
+      "board": "MX",
+      "kind": "note-moved",
+      "text": "spec note 「Chats 次數用完」 is drawn at -13964,29151; its text is at -13547,29153",
+      "reqs": [
+        "R-102",
+        "R-103"
+      ]
+    },
+    {
+      "id": "MX|note-moved|ds-mx-link@3589,33865",
+      "board": "MX",
+      "kind": "note-moved",
+      "text": "spec note 「Credit 不夠的情況」 is drawn at -15515,29170; its text is at -15164,29172",
+      "reqs": [
+        "R-101"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|K-549562@30234,22250",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Discard」 (K-549562, added by a review sheet) is marked at 30234,22250, but the image shows it at 30891,21659",
+      "group": "K-549562",
+      "rect": [
+        30234,
+        22250,
+        295,
+        43
+      ],
+      "rows": [
+        "TC-134",
+        "TC-339"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-e3f3d1@30218,21961",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Female」 (C-e3f3d1, added by a review sheet) is marked at 30218,21961, but the image shows no such text on this board",
+      "group": "C-e3f3d1",
+      "rect": [
+        30218,
+        21961,
+        69,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-e3f3d1@30294,21961",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Male」 (C-e3f3d1, added by a review sheet) is marked at 30294,21961, but the image shows no such text on this board",
+      "group": "C-e3f3d1",
+      "rect": [
+        30294,
+        21961,
+        60,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-22cce6@30218,22031",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Asian」 (C-22cce6, added by a review sheet) is marked at 30218,22031, but the image shows no such text on this board",
+      "group": "C-22cce6",
+      "rect": [
+        30218,
+        22031,
+        60,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-22cce6@30286,22031",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Caucasian」 (C-22cce6, added by a review sheet) is marked at 30286,22031, but the image shows no such text on this board",
+      "group": "C-22cce6",
+      "rect": [
+        30286,
+        22031,
+        87,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-22cce6@30382,22031",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「African」 (C-22cce6, added by a review sheet) is marked at 30382,22031, but the image shows no such text on this board",
+      "group": "C-22cce6",
+      "rect": [
+        30382,
+        22031,
+        66,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-22cce6@30458,22031",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Hispanic」 (C-22cce6, added by a review sheet) is marked at 30458,22031, but the image shows no such text on this board",
+      "group": "C-22cce6",
+      "rect": [
+        30458,
+        22031,
+        83,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-22cce6@30218,22067",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Others」 (C-22cce6, added by a review sheet) is marked at 30218,22067, but the image shows no such text on this board",
+      "group": "C-22cce6",
+      "rect": [
+        30218,
+        22067,
+        65,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-22cce6@30292,22067",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Others」 (C-22cce6, added by a review sheet) is marked at 30292,22067, but the image shows no such text on this board",
+      "group": "C-22cce6",
+      "rect": [
+        30292,
+        22067,
+        65,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-22cce6@30366,22067",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Others」 (C-22cce6, added by a review sheet) is marked at 30366,22067, but the image shows no such text on this board",
+      "group": "C-22cce6",
+      "rect": [
+        30366,
+        22067,
+        65,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|stale-mark|C-22cce6@30440,22067",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "stale-mark",
+      "text": "「Others」 (C-22cce6, added by a review sheet) is marked at 30440,22067, but the image shows no such text on this board",
+      "group": "C-22cce6",
+      "rect": [
+        30440,
+        22067,
+        66,
+        28
+      ],
+      "rows": [
+        "TC-048"
+      ]
+    },
+    {
+      "id": "pm-update-11|overlap|K-549562+K-31bfac",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "overlap",
+      "text": "「Discard」 (K-549562) and 「Save to library」 (K-31bfac) overlap at 30217,22240: one is behind the other or stale",
+      "groups": [
+        "K-549562",
+        "K-31bfac"
+      ]
+    },
+    {
+      "id": "pm-update-11|no-arrow|board",
+      "board": "pm-update-11",
+      "title": "PM · Update board 11 (new 10/21)",
+      "kind": "no-arrow",
+      "text": "2 screens and no flow arrow read, but the text describes a step: 「10/21 update —角色結果頁按X：跳確認、不存進 Mine（DRI261896P0037）」"
+    },
+    {
+      "id": "pm-1022-export|no-arrow|board",
+      "board": "pm-1022-export",
+      "kind": "no-arrow",
+      "text": "2 screens and no flow arrow read, but the text describes a step: 「回跳 dialog （Stop exporting? / Your video won't be s」"
+    },
+    {
+      "id": "pm-update-4|no-arrow|board",
+      "board": "pm-update-4",
+      "title": "PM · Update board 4",
+      "kind": "no-arrow",
+      "text": "6 screens and no flow arrow read, but the text describes a step: 「只是打開任務，就跳到 History 最上面、大小也變了」"
+    },
+    {
+      "id": "pm-update-6|stale-mark|K-514c73@30379,13266",
+      "board": "pm-update-6",
+      "title": "PM · Update board 6 (Error)",
+      "kind": "stale-mark",
+      "text": "「Regenerate image」 (K-514c73, added by a review sheet) is marked at 30379,13266, but the image shows it at 32317,13474",
+      "group": "K-514c73",
+      "rect": [
+        30379,
+        13266,
+        26,
+        26
+      ],
+      "rows": [
+        "TC-141",
+        "TC-071"
+      ]
+    },
+    {
+      "id": "pm-1002-update|note-moved|pm-1002-update@18354,15170",
+      "board": "pm-1002-update",
+      "title": "PM · 1002 update",
+      "kind": "note-moved",
+      "text": "spec note 「⑦ §13.7 錯誤文案 (?) / E1 •Chat：部分影片失敗 紅字+ E」 is drawn at 34092,4053; its text is at 34076,4160",
+      "reqs": [
+        "R-080",
+        "R-278"
+      ]
+    }
+  ],
+  "skipped": []
+}

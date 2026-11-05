@@ -1,0 +1,88 @@
+DRA262610P0420 recheck — PowerDirector 16.8.0.2611041 (Stage), Sony XQ-BT52 Android 12, 2026-11-05
+Session 261105_115015_e7b457a0 · drama 「Hidden identity」 (template The New Guy's Secret › Make my version) · Jenna Morales = Mine look
+Excerpt of logcat (MiniDrama Log); paths shortened, no keys or tokens. Full session: the export zip.
+
+Summary: Jenna's age is stated as 75 in clips 1-4 and missing in clip 6 (the only full-episode prompt without it). Every Jenna reference image is t3 img_1.png (her Mine chef sheet). Blueprint asset char_jenna_morales age="75".
+== Jenna's Mine character sheet (Create my character, turn t3) ==
+2026-11-05 12:02:37.550  TextToImage (character-generate, t3) — prompt lines:
+    Age impression: 75 years old.
+    Gender presentation: female.
+    Ethnicity: White.
+
+== Preview 1st try failed, no charge ==
+2026-11-05 12:09:00.969  prompt_1 error: HTTP POST Add Media failed: Could not establish connection (turn ended, UI stuck on 「give me a moment」)
+
+== RefToVideo dispatches (model, ACTIVE REFERENCES, reference images, Jenna wardrobe/locks) ==
+2026-11-05 12:37:31.967  t8 · clip 1 (preview vid_1) · model=dreamina-seedance-2-0-mini-260615 · duration=15 · 720p 9:16
+    @Image 1: JENNA, 75-year-old female, average athletic build, short grey bob, sharp dark eyes. 100% matches the reference.   [STATES AGE]
+    @Image 2: NOAH, 30-year-old male, tall athletic build, broad shoulders, slightly tousled wavy blond hair, clean-shaven. 100% matches the reference.
+    @Image 3: the environment reference -- (environment reference text cut)
+    WARDROBE CUT 1 — JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots; NOAH wears a clean navy blue polo shirt, khaki work pants, and sturdy leather boots.
+    LOCK JENNA's short grey bob stays neat; NOAH's hair remains slightly tousled. JENNA holds the clipboard in her left hand in CUT 1 and CUT 3.
+    [TOOL] RefToVideo image[0] out_261105_115015_e7b457a0_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1.png
+    [TOOL] RefToVideo image[1] character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] out_261105_115015_e7b457a0_t5_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_1.png
+
+2026-11-05 12:37:31.980  t8 · clip 2 (preview vid_2) · model=dreamina-seedance-2-0-mini-260615 · duration=15 · 720p 9:16
+    @Image 1: JENNA, 75-year-old female, average athletic build, short grey bob, sharp dark eyes. 100% matches the reference.   [STATES AGE]
+    @Image 2: NOAH, 30-year-old male, tall athletic build, broad shoulders, slightly tousled wavy blond hair, clean-shaven. 100% matches the reference.
+    @Image 3: the environment reference -- (environment reference text cut)
+    WARDROBE CUT 1 — JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots.
+    LOCK NOAH is clean-shaven in all cuts. JENNA's utility vest remains fully zipped.
+    [TOOL] RefToVideo image[0] out_261105_115015_e7b457a0_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1.png
+    [TOOL] RefToVideo image[1] character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] out_261105_115015_e7b457a0_t5_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_2.png
+
+2026-11-05 12:45:11.113  t9 · clip 3 (full vid_1) · model=dreamina-seedance-2-0-mini-260615 · duration=15 · 720p 9:16
+    @Image 1: JENNA, 75-year-old female, average height, athletic and practical build, structured jawline, sharp dark eyes, short grey bob, voice exhausted but direct. 100% matches the reference.   [STATES AGE]
+    @Image 2: NOAH, 30-year-old male, tall, athletic, broad-shouldered, symmetrical clean-shaven, bright eyes, short wavy blond hair, voice warm and steady. 100% matches the reference.
+    @Image 3: the environment reference -- (environment reference text cut)
+    WARDROBE CUT 1 — JENNA: durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, steel-toed boots.
+    WARDROBE CUT 2 — JENNA: identical to CUT 1. NOAH: clean navy blue polo shirt, khaki work pants, sturdy leather boots.
+    WARDROBE CUT 3 — JENNA: identical to CUT 1. NOAH: identical to CUT 2.
+    WARDROBE CUT 4 — JENNA: identical to CUT 1. NOAH: identical to CUT 2.
+    WARDROBE CUT 5 — JENNA: identical to CUT 1. NOAH: identical to CUT 2.
+    LOCK JENNA's canvas vest and NOAH's polo shirt remain consistent across all cuts. The desk lamp remains on. Clean frame, the image carries no subtitles, captions, speech bubbles or watermark.
+    [TOOL] RefToVideo image[0] out_261105_115015_e7b457a0_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1.png
+    [TOOL] RefToVideo image[1] character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] out_261105_115015_e7b457a0_t5_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_3.png
+
+2026-11-05 12:45:11.132  t9 · clip 4 (full vid_2) · model=dreamina-seedance-2-0-mini-260615 · duration=15 · 720p 9:16
+    @Image 1: JENNA, 75-year-old female warehouse manager, athletic and practical build, dry skin, structured jawline, short grey bob, voice dry and skeptical. 100% matches the reference.   [STATES AGE]
+    @Image 2: NOAH, 30-year-old male warehouse rookie, tall and broad-shouldered, clean-shaven, short wavy blond hair, voice hesitant. 100% matches the reference.
+    @Image 3: the environment reference -- (environment reference text cut)
+    WARDROBE CUT 1 — JENNA: durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, steel-toed boots. NOAH: clean navy blue polo shirt, khaki work pants, sturdy leather boots.
+    LOCK JENNA and NOAH retain consistent facial features and hair across the prompt. JENNA's workwear outfit stays exactly as resolved in every cut. NOAH's polo shirt outfit stays exactly as resolved in every cut. The CANVAS TOOL BAG stays in NOAH's right hand. Clean 
+    [TOOL] RefToVideo image[0] out_261105_115015_e7b457a0_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1.png
+    [TOOL] RefToVideo image[1] character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] out_261105_115015_e7b457a0_t5_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_4.png
+
+2026-11-05 12:45:11.150  t9 · clip 5 (full vid_3) · model=dreamina-seedance-2-0-mini-260615 · duration=15 · 720p 9:16
+    @Image 1: NOAH, 30 years old, tall athletic build, clean-shaven strong jawline, bright sincere eyes, slightly tousled short wavy blond hair. 100% matches the reference.
+    @Image 2: CALEB, 30 years old, slim build, average height, oval friendly face, warm brown eyes, light stubble. 100% matches the reference.
+    @Image 3: the environment reference -- (environment reference text cut)
+    [TOOL] RefToVideo image[0] character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[1] character_char_caleb_Style_Mini-Drama-Character_male_hispanic_30_Coworker-2_c388aa73_image.jpg
+    [TOOL] RefToVideo image[2] out_261105_115015_e7b457a0_t5_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_5.png
+
+2026-11-05 12:45:11.157  t9 · clip 6 (full vid_4) · model=dreamina-seedance-2-0-mini-260615 · duration=15 · 720p 9:16
+    @Image 1: JENNA, capable adult warehouse manager, average height, athletic and practical build, structured jawline, sharp and observant dark eyes, expressive eyebrows, short grey bob. 100% matches the reference.   [NO AGE]
+    @Image 2: NOAH, handsome adult heir, tall, athletic, broad-shouldered, symmetrical, clean-shaven, strong jawline, bright sincere eyes, slightly tousled short-textured wavy blond hair. 100% matches the reference.
+    @Image 3: RICHARD, authoritative adult owner, tall, commanding presence, erect posture, well-tailored build, sharp mature contours, piercing grey eyes, distinguished laugh lines, sleek silver-grey hair parted neatly to the side. 100% matches the reference.
+    @Image 4: the environment reference -- (environment reference text cut)
+    WARDROBE CUT 1 — JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots. NOAH wears a clean navy blue polo shirt, khaki work pants, and sturdy leather boots. RICHARD wears
+    WARDROBE CUT 2 — JENNA, NOAH, and RICHARD wear the same outfits as CUT 1.
+    WARDROBE CUT 3 — JENNA, NOAH, and RICHARD wear the same outfits as CUT 1.
+    WARDROBE CUT 4 — JENNA, NOAH, and RICHARD wear the same outfits as CUT 1.
+    WARDROBE CUT 5 — JENNA, NOAH, and RICHARD wear the same outfits as CUT 1.
+    WARDROBE CUT 6 — JENNA, NOAH, and RICHARD wear the same outfits as CUT 1.
+    WARDROBE CUT 7 — JENNA, NOAH, and RICHARD wear the same outfits as CUT 1.
+    WARDROBE CUT 8 — JENNA, NOAH, and RICHARD wear the same outfits as CUT 1.
+    LOCK JENNA, NOAH, and RICHARD maintain their facial identities and hairstyles in every cut. JENNA's canvas vest, NOAH's navy polo, and RICHARD's charcoal suit remain consistent across all cuts. The warehouse racks stay in their fixed positions. Clean frame, the ima
+    [TOOL] RefToVideo image[0] out_261105_115015_e7b457a0_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1.png
+    [TOOL] RefToVideo image[1] character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] character_char_richard_sterling_Style_Mini-Drama-Character_male_white_75_Whitmore-Relatives_7893abe9_image.jpg
+    [TOOL] RefToVideo image[3] out_261105_115015_e7b457a0_t5_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_1.png
+
+Clip ↔ dispatch: t9 dispatches are in vid_1..vid_4 order (the env image of each matches the clip's location: office, rain awning, locker room, warehouse aisle).
+Completion: preview vid_2 12:42:28, vid_1 12:43:28 (turn_complete 12:43:28); full vid_3 12:50:21, vid_1 12:50:31, vid_2 12:50:41, vid_4 ~12:51:20 (turn_complete 12:51:22). All status=done, no tool_error.

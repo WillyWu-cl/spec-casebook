@@ -1,0 +1,50 @@
+{
+  "files": {
+    "design": {
+      "fileKey": "HceGLJVaxnKsv7gXSXzKWh",
+      "page": "3293:13053",
+      "url": "https://www.figma.com/design/HceGLJVaxnKsv7gXSXzKWh/Video-Enhance?node-id=3293-13053&t=5DNNFMGr4vKsnxrV-1",
+      "account": "qa-dm@cyberlink.com (figma-design); refused earlier on 2026-11-03, opened later the same day"
+    },
+    "pm": {
+      "fileKey": "mppB4GYkuVMVvHrdBeSAAU",
+      "page": "309:643",
+      "pages_read": [
+        "309:643",
+        "365:2"
+      ],
+      "url": "https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=309-643",
+      "account": "qa1@cyberlink.com (figma-pm, Dev seat, PM Workspace)",
+      "pdf": null
+    }
+  },
+  "checked_at": "2026-11-03",
+  "how": "PM file mppB4GYkuVMVvHrdBeSAAU read through figma-pm (qa1, Dev seat, PM Workspace) on 2026-11-03: pages listed with get_metadata; page 309:643 'Spec - Video Enhance with Byteplus' (5 sections + the loose 1002 settings rules) and the draft page 365:2 section 405:1108 'Logic 補充 - 對齊 Design 26.09 v2' are the spec (user, 2026-11-03); page 0:1 (older Denoise / Lighting cloud solution, 2025-10) is superseded, 132:643 is the cover. No PDF: the board text comes from the Figma text layers (figma-text/). The Design file HceGLJVaxnKsv7gXSXzKWh refused qa-dm and qa1 at first ('you don't have edit access'); shared later on 2026-11-03 and read through figma-design (qa-dm): page 2974:19965 '26.09' is current, the other pages are older versions.",
+  "pm_checked_at": "2026-11-03",
+  "frames": [
+    {
+      "label": "9/24 Update · spec §7 待同步",
+      "node": "377:1119",
+      "in_pdf": false,
+      "read": "pm-access-credit"
+    },
+    {
+      "label": "面板・Trim 上限 × 切換 Mode（9/29）",
+      "node": "407:1108",
+      "in_pdf": false,
+      "read": "pm-main-flow"
+    },
+    {
+      "label": "Logic 補充 · 對齊 Design 26.09 v2（9/29）",
+      "node": "405:1108",
+      "in_pdf": false,
+      "read": "pm-draft-logic"
+    },
+    {
+      "label": "1002 update rule",
+      "node": "413:1433",
+      "in_pdf": false,
+      "read": "pm-defaults"
+    }
+  ]
+}

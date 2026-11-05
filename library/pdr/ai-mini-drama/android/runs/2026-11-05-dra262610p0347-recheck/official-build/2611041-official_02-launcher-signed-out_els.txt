@@ -1,0 +1,92 @@
+LinearLayout | action_bar_root |  |  | 0,0,1080,2400
+FrameLayout | content |  |  | 0,0,1080,2400
+FrameLayout | full_layout_container |  |  | 0,88,1080,2177
+FrameLayout | layout_container |  |  | 0,88,1080,1994
+ScrollView | project_main |  |  | 0,88,1080,1994
+LinearLayout | appbar |  |  | 0,88,1080,1087
+ViewGroup | layout_banner_overlay |  |  | 0,88,1080,783
+ViewGroup | toolbar |  | [AID]Stage_Server | 0,88,1080,180
+ImageView | iv_menu |  |  | 22,133,135,135
+ViewGroup | layout_try_badge_container |  |  | 177,133,187,135
+LinearLayout | layout_try_badge |  |  | 177,133,187,135
+TextView | tv_try | Pro |  | 272,180,53,40
+ImageView | iv_notification |  |  | 931,133,135,135
+TextView | tv_banner_tagline | Create Your Own Drama |  | 48,780,545,68
+ImageView | iv_banner_tagline_chevron |  |  | 964,780,68,68
+LinearLayout | layout_edit_entry |  |  | 45,871,990,248
+ImageView | iv_icon |  |  | 159,899,79,79
+TextView | tv_title | New Project |  | 64,1014,269,46
+ImageView | iv_icon |  |  | 500,899,79,79
+TextView | tv_title | Video Edit by Chat |  | 386,991,307,92
+ImageView | iv_icon |  |  | 842,899,79,79
+TextView | tv_title | Video Enhance |  | 727,991,308,92
+ScrollView | nested_scroll_view |  |  | 0,1175,1080,907
+LinearLayout | content_view |  |  | 0,1175,1080,907
+FrameLayout | vp_instant_edits |  |  | 0,1175,1080,598
+ViewPager | vp_instant_edits |  |  | 0,1175,1080,598
+GridView | rv_instant_edits |  |  | 0,1175,1080,598
+ViewGroup | shortcut_entry_item |  |  | 25,1175,257,299
+FrameLayout | iv_thumb_frame |  |  | 33,1184,241,282
+ImageView | iv_icon |  |  | 86,1195,135,135
+ImageView | iv_hot |  |  | 173,1184,96,48
+TextView | tv_name | Image to Video |  | 33,1353,241,102
+ViewGroup | shortcut_entry_item |  |  | 282,1175,258,299
+FrameLayout | iv_thumb_frame |  |  | 290,1183,242,283
+ImageView | iv_icon |  |  | 344,1194,135,135
+TextView | tv_name | Character Motion Swap |  | 290,1352,242,103
+ViewGroup | shortcut_entry_item |  |  | 540,1175,257,299
+FrameLayout | iv_thumb_frame |  |  | 548,1184,241,282
+ImageView | iv_icon |  |  | 601,1195,135,135
+TextView | tv_name | Cinematic Reel Creator |  | 548,1353,241,102
+ViewGroup | shortcut_entry_item |  |  | 797,1175,258,299
+FrameLayout | iv_thumb_frame |  |  | 805,1183,242,283
+ImageView | iv_icon |  |  | 859,1194,135,135
+ImageView | iv_new |  |  | 946,1183,96,48
+TextView | tv_name | AI Mini Drama |  | 805,1352,242,103
+ViewGroup | shortcut_entry_item |  |  | 25,1474,257,299
+FrameLayout | iv_thumb_frame |  |  | 33,1483,241,282
+ImageView | iv_icon |  |  | 86,1494,135,135
+TextView | tv_name | AI Storytelling |  | 33,1652,241,102
+ViewGroup | shortcut_entry_item |  |  | 282,1474,258,299
+FrameLayout | iv_thumb_frame |  |  | 290,1482,242,283
+ImageView | iv_icon |  |  | 344,1493,135,135
+TextView | tv_name | AI Video Upscaler |  | 290,1651,242,103
+ViewGroup | shortcut_entry_item |  |  | 540,1474,257,299
+FrameLayout | iv_thumb_frame |  |  | 548,1483,241,282
+ImageView | iv_icon |  |  | 601,1494,135,135
+TextView | tv_name | Text To Video |  | 548,1652,241,102
+ViewGroup | shortcut_entry_item |  |  | 797,1474,258,299
+FrameLayout | iv_thumb_frame |  |  | 805,1482,242,283
+ImageView | iv_icon |  |  | 859,1493,135,135
+TextView | tv_name | Auto Captions |  | 805,1651,242,103
+ViewGroup | layout_instant_edits_indicator |  |  | 483,1801,113,11
+HorizontalScrollView | tl_instant_edits |  |  | 483,1801,113,11
+LinearLayout | first_section_layout |  |  | 0,1868,1080,214
+LinearLayout | trending_section |  |  | 0,1868,1080,214
+TextView | tv_trending | What’s Trending |  | 48,1868,366,68
+ImageView | iv_trending_icon |  |  | 425,1868,56,68
+LinearLayout | layout_trending_view_more |  |  | 805,1877,227,51
+TextView | tv_trending_view_more | View more |  | 805,1877,176,51
+ImageView | iv_trending_view_more_arrow |  |  | 987,1880,45,45
+RecyclerView | rv_trending |  |  | 0,1959,1080,123
+FrameLayout | card_container |  |  | 42,1976,326,106
+ImageView | image_style |  |  | 42,1976,326,106
+FrameLayout | card_container |  |  | 402,1976,326,106
+ImageView | image_style |  |  | 402,1976,326,106
+FrameLayout | card_container |  |  | 762,1976,318,106
+ImageView | image_style |  |  | 762,1976,318,106
+View | view_bottom_bg |  |  | 0,2082,1080,183
+LinearLayout | layout_home |  |  | 0,2082,215,183 | selected
+ImageView | iv_home |  |  | 73,2110,68,68 | selected
+TextView | tv_home | Home |  | 6,2195,203,42 | selected
+View | view_bottom_divider |  |  | 0,2082,1080,3
+LinearLayout | layout_ai_magic |  |  | 215,2082,216,183
+ImageView | iv_ai_magic |  |  | 289,2110,68,68
+TextView | tv_ai_magic | AI Magic |  | 221,2195,204,42
+LinearLayout | layout_template |  |  | 431,2082,215,183
+TextView |  | Template |  | 437,2195,203,42
+LinearLayout | layout_project |  |  | 649,2082,216,183
+TextView |  | Project |  | 655,2195,204,42
+ViewGroup | layout_premium |  |  | 865,2040,215,225
+ImageView | iv_premium |  |  | 939,2110,68,68
+TextView | tv_premium | Mine |  | 865,2195,215,42

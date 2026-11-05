@@ -1,0 +1,16 @@
+LinearLayout | action_bar_root |  |  | 0,0,1080,2400
+FrameLayout | content |  |  | 0,0,1080,2400
+FrameLayout | full_layout_container |  |  | 0,88,1080,2177
+FrameLayout | layout_container |  |  | 0,88,1080,1994
+ScrollView | project_main |  |  | 0,88,1080,1994
+LinearLayout | appbar |  |  | 0,88,1080,1087
+ViewGroup | layout_banner_overlay |  |  | 0,88,1080,783
+ViewGroup | toolbar |  | [AID]Stage_Server | 0,88,1080,180
+ImageView | iv_menu |  |  | 22,133,135,135
+ViewGroup | layout_try_badge_container |  |  | 177,133,187,135
+LinearLayout | layout_try_badge |  |  | 177,133,187,135
+TextView | tv_try | Pro |  | 272,180,53,40
+ImageView | iv_notification |  |  | 931,133,135,135
+TextView | tv_banner_tagline | Create Your Own Drama |  | 48,780,545,68
+ImageView | iv_banner_tagline_chevron |  |  | 964,780,68,68
+LinearLayout | layout_edit_entry |  |  | 45,871,990,248

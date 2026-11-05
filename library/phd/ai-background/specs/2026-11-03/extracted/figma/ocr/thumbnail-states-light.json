@@ -1,0 +1,14 @@
+{
+  "png": "thumbnail-states-light.png",
+  "box": [
+    856,
+    273,
+    134,
+    411
+  ],
+  "lines": [
+    ["Custom",901,378,40,11],
+    ["Long Wavy",893,506,54,12],
+    ["Long Wavy",893,634,54,9]
+  ]
+}

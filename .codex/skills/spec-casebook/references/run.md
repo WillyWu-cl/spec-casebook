@@ -9,10 +9,24 @@ verdict rules.
 `library/<product>/<feature>/<platform>/fixtures.md`, because none of it can be committed. Check it before the first segment;
 when a new row needs a new photo or account state, add it there in the same draft. What the scripts need to know about
 the feature (its log files and tags for `log-slice.ts` and `pull-logs`, its Pink menu and the switches `fresh` turns
-on) is in `library/<product>/<feature>/feature.json`; a new feature adds its own before the first run. A product
+on) is in `library/<product>/<feature>/feature.json`; a new feature adds its own before the first run. What is known
+about driving the app (debug menus, tier and server switches, log lines, quirks) is the domain knowledge. A product
 with `library/<product>/domain/test-setup.md` (PHD: free user and 0 credits, reset through the debug dialog) does
 that setup once at the start of each round, before the first case; its `triage.md` is where a finding's cause is
 looked for first.
+
+**Knowledge during a run (user, 2026-11-03).** A run spends no tokens on taking knowledge in:
+- Each segment reads `node scripts/knowledge.ts <feature> <platform> --for run [--tags <area>]` once at its start:
+  how-tos, quirks, facts and decisions in full, rules, risks, questions and terms as titles (`--grep <id>` prints
+  one when a case needs it), and any parked `--now` item on top. It never runs the domain-knowledge skill. When the
+  phone contradicts an entry it records an observation naming it (`O-3 contradicts KP-002`) and follows the phone.
+- Knowledge someone gives the orchestrator mid-run is parked word for word, not processed:
+  `knowledge.ts <feature> inbox add "<text>" --from "<who, where>"`, with `--now` when the next segment must follow it
+  (it then heads every run brief). Then the orchestrator carries on.
+- The **phase wrap-up** ends with one fresh subagent briefed "Process the knowledge inbox and the observations of
+  <run dir> per the domain-knowledge skill" (skip it when `knowledge.ts <feature> inbox` shows nothing open and no
+  observation names an entry). It corrects contradicted entries, stamps `verified` on entries the run used and found
+  true, files the parked items, and replies in at most 10 lines; the phase report quotes them.
 
 **Tap log and coverage proof (user, 2026-10-28, REQ-038).** Every press through `device.ts` (`tap`, `hold`, `burst`,
 `id`, `lbl`, `tapif`, `clear`, `setval`) is logged to `<run dir>/taps.jsonl` with the element hit, a small screenshot
@@ -65,7 +79,7 @@ refuses them), and it runs in one folder, e.g. `runs/<date>-p23-regression-flows
   subagent, one at a time (Claude Code: Agent tool, general-purpose; Codex: one new native subagent per segment,
   closed after its reply; wait for it to finish before the next), with the one-line brief "Resume casebook run
   <run dir> (or start phase <Pn>) per <RUN-PLAN>: read the plan, run-state.md and `run-log.ts <run dir> next`;
-  follow the spec-casebook skill (SKILL.md, references/run.md); do exactly one segment, then pull and slice the logs,
+  follow the spec-casebook skill (SKILL.md, references/run.md) and read `knowledge.ts <feature> <platform> --for run`; do exactly one segment, then pull and slice the logs,
   checkpoint, update the plan's Status and Log, and reply with at most 10 lines: tally, next case, blockers." A
   phase's last segment adds the phase wrap-up (summary, `time`, tokens, eBug drafts and review page, report.md). The
   orchestrator reads only that reply (never screenshots or logs), decides the next brief from `run-log next` and
@@ -100,6 +114,15 @@ refuses them), and it runs in one folder, e.g. `runs/<date>-p23-regression-flows
   type a password), `devserver` (⋯ debug page: Write Log ON, 「Use developer server:」 ON, 「Server Changed」 › OK,
   relaunch, Launcher label check), `fresh` (above). A run's first step is `build` and `reinstall … --check-only` to
   record whether a newer build exists; which build to test is the user's call.
+- **Design captures (user, 2026-11-03; automatic 2026-11-04).** When the feature has a design plan
+  (`<table>/design/plan.json`, figma skill › conformance), a segment captures the Design screens its rows reach as it
+  passes them, on its own: name each row with `device.ts <run dir> case <ID>` (Android too) before its first step, and
+  the device script matches every page source it reads against the row's screens and saves a match (one
+  `design: captured …` line; no extra call). Act only on the lines it prints: at `case`, screens with too few texts to
+  match; at the next `case`, the screens the last row passed without; capture those by hand
+  (`device.ts <run dir> design <screen id>`) only if the row did show them. Only the frame's state counts (its
+  language, appearance and the state its name says); list any screen it could not bring about in the segment reply.
+  The check and the review run at the phase wrap-up (`figma/references/conformance.md` steps 3–4).
 - **Live run plan (user, 2026-10-20/29).** A run starts the full pages server:
   `node scripts/pages.ts <feature> <platform> --plan <RUN-PLAN.md> --plan-draft <draft id> [--lan]` serves
   http://127.0.0.1:4386/ with **Progress** (this run plan) beside Cases, Results and Coverage. Reuse a running pages
@@ -117,6 +140,11 @@ refuses them), and it runs in one folder, e.g. `runs/<date>-p23-regression-flows
   is shown as % of a 1× Pro user's limits: the main figure is "est. from token rate", calibrated in
   `runs/usage-calibration.json` (the formula and fields are in the header of `plan-page.ts`; AGENTS.md *Plan usage*);
   "Account total (shared)" stays a muted upper bound, since other users of the account are invisible here.
+  **Same figures on every computer (user, 2026-11-03).** Transcripts and screenshots stay on the machine that ran the
+  session, so the page keeps what it needs in the run folder: every build appends the messages of sessions that name
+  the run folder (inside its active spans) to `<run dir>/tokens.jsonl` and stamps each evidence file's time once into
+  `activity.log` (`<ISO> file <path>`; `scripts/lib/run-ledger.ts`). Keep the page server running on the run machine
+  during the run and commit both files with the run; a computer that did not run it shows the same figures after a pull.
 - **Time and token summary (user, 2026-10-19).** device.ts, app-setup.ts and run-log.ts stamp every command into
   `<run dir>/activity.log`. `run-log.ts <run dir> time [--cases]` reports wall, test and idle time (gaps over 15 min)
   per segment and case. `token-usage.ts --since <run start> <transcript.jsonl …>` sums Claude tokens from every

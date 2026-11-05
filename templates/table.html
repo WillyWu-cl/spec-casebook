@@ -76,6 +76,25 @@ footer .counts{font-size:.84rem;color:var(--muted)} footer .counts b{color:var(-
 a.spec{display:inline-block;margin-top:4px;font:600 .7rem var(--mono);color:var(--edit);text-decoration:none;border:1px solid var(--edit-soft);border-radius:4px;padding:1px 5px}
 a.spec:hover{background:var(--edit-soft)}
 .xl{display:flex;flex-wrap:wrap;gap:4px}
+/* Open questions (user, 2026-11-04): one plain panel above the table, and a marker on each row a question touches */
+details.qs>summary{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+details.qs>summary .qhint{font-weight:400;font-size:.84rem;color:var(--muted)}
+.qwrap{padding:0 14px 14px;display:grid;gap:10px}
+.qname{display:flex;gap:8px;align-items:center;font-size:.84rem;color:var(--muted)}
+.qname input{font:inherit;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+.qitem{border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:grid;gap:6px}
+.qitem.hit{box-shadow:0 0 0 2px var(--edit)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-weight:600}
+.qstate{font:600 .7rem var(--body);border-radius:999px;padding:2px 8px;background:var(--bg);color:var(--muted)}
+.qstate.answered{background:var(--mod-soft);color:var(--mod)} .qstate.done{background:var(--new-soft);color:var(--new)}
+.qtext{font-size:13px;white-space:pre-wrap}
+.qassume{font-size:13px;color:var(--muted)} .qassume b{color:var(--fg);font-weight:600}
+.qrows{font-size:.8rem;color:var(--muted)} .qrows a{font-family:var(--mono);color:var(--edit);margin-right:6px}
+.qitem textarea{border:1px solid var(--line);background:var(--surface);min-height:3.2em;font-size:13.5px}
+.qmeta{font-size:.76rem;color:var(--muted)} .qres{font-size:.8rem;color:var(--new)}
+.qfoot{display:flex;gap:10px;align-items:center;justify-content:flex-end}
+a.qmark{display:inline-block;margin-top:4px;font:600 .7rem var(--body);color:var(--mod);background:var(--mod-soft);border-radius:4px;padding:1px 6px;text-decoration:none}
+a.qmark.answered{color:var(--edit);background:var(--edit-soft)} a.qmark.done{color:var(--new);background:var(--new-soft)}
 tr.focus td{background:var(--edit-soft)} tr.focus td.id{box-shadow:inset 3px 0 0 var(--edit)}
 </style>
 </head>
@@ -85,6 +104,7 @@ tr.focus td{background:var(--edit-soft)} tr.focus td.id{box-shadow:inset 3px 0 0
   <div class="facts" id="facts"></div>
 </header>
 <main>
+  <details class="panel qs" id="qBox" hidden><summary id="qSum"></summary><div class="qwrap" id="qList"></div></details>
   <details class="panel" id="planBox" hidden><summary>Update plan</summary><div class="md" id="plan"></div></details>
   <details class="panel" id="reqBox" hidden><summary>Requirements extracted from the spec</summary><div class="md" id="req"></div></details>
   <div class="panel bar" id="filters"></div>
@@ -139,6 +159,42 @@ function md(src){
   }
   flush();return out.join('');
 }
+// Open questions (user, 2026-11-04): each question of requirements.md with the assumption its rows use and a box for
+// anyone who knows the answer. Answers are saved on their own (POST answers, shared by iOS and Android) and the agent
+// applies them; they do not need the table to be saved, and typing one is kept in this browser until it is saved.
+const QKEY=KEY+':answers';let qEdits={};try{qEdits=JSON.parse(localStorage.getItem(QKEY)||'{}')}catch(e){}
+const qSaved=id=>(D.answers||{})[id];
+const qState=id=>{const a=qSaved(id);return !a?'open':a.status==='done'?'done':'answered'};
+function qSplit(t){const i=t.search(/Assumption:/i);let q=i<0?t:t.slice(0,i),a=i<0?'':t.slice(i).replace(/^Assumption:\s*/i,'');
+  // the requirement and row ids at the end are shown as row links instead
+  a=a.replace(/\s*(?:\(?\bR-\d+[^.]*\)?\.?\s*)+$/,'').replace(/[.;]\s*$/,'');return [q.trim().replace(/[.;]\s*$/,''),a.trim()]}
+function questions(){
+  const qs=D.questions||[];if(!qs.length)return;
+  const open=qs.filter(q=>qState(q.id)==='open').length,ans=qs.length-open;
+  $('#qBox').hidden=false;
+  $('#qSum').innerHTML=`Questions for the team <span class="note">(${open} open${ans?` · ${ans} answered`:''})</span><span class="qhint">Where the spec is unclear the rows follow an assumption. Answer any question you know; leave the rest.</span>`;
+  const unsaved=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;
+  let by='';try{by=localStorage.getItem('casebook-q-by')||''}catch(e){}
+  $('#qList').innerHTML=`<label class="qname">Your name <input id="qBy" value="${esc(by)}" placeholder="optional"></label>`+qs.map(q=>{
+    const [text,assume]=qSplit(q.text),a=qSaved(q.id),st=qState(q.id),v=qEdits[q.id]!==undefined?qEdits[q.id]:(a?a.answer:'');
+    const rowsHtml=q.rows.length?`<div class="qrows">Rows: ${q.rows.map(id=>`<a href="#${esc(id)}">${esc(id)}</a>`).join('')}</div>`:'';
+    return `<div class="qitem" id="q-${esc(q.id)}"><div class="qhead">${esc(q.id)} <span class="qstate ${st}">${st==='open'?'Open':st==='done'?'Applied':'Answered · waiting for the agent'}</span></div>
+      <div class="qtext">${esc(text)}</div>${assume?`<div class="qassume"><b>For now the rows assume:</b> ${esc(assume)}</div>`:''}${rowsHtml}
+      <textarea data-qa="${esc(q.id)}" placeholder="Your answer, if you know it">${esc(v)}</textarea>
+      ${a?`<div class="qmeta">Answered ${esc(a.at.slice(0,16).replace('T',' '))}${a.by?' by '+esc(a.by):''} (${esc(a.platform==='ios'?'iOS':'Android')} page)${a.question!==q.text?' · the question has changed since':''}</div>`:''}${a&&a.resolution?`<div class="qres">${esc(a.resolution)}</div>`:''}</div>`}).join('')+
+    `<div class="qfoot"><span class="note" id="qSt">${unsaved?unsaved+' unsaved':''}</span><button class="btn primary" id="qSave"${unsaved&&D.save?'':' disabled'}${D.save?'':' title="Answers can be saved only on the computer running the pages."'}>Save answers</button></div>`;
+  $('#qBy').oninput=e=>{try{localStorage.setItem('casebook-q-by',e.target.value)}catch(x){}};
+  $('#qList').querySelectorAll('textarea[data-qa]').forEach(t=>t.oninput=()=>{qEdits[t.dataset.qa]=t.value;try{localStorage.setItem(QKEY,JSON.stringify(qEdits))}catch(e){}
+    const n=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;$('#qSt').textContent=n?n+' unsaved':'';$('#qSave').disabled=!n||!D.save});
+  $('#qSave').onclick=async()=>{
+    const items=Object.keys(qEdits).map(id=>({id,answer:(qEdits[id]||'').trim(),question:(qs.find(q=>q.id===id)||{}).text||''})).filter(x=>x.answer!==((qSaved(x.id)||{}).answer||''));
+    $('#qSt').textContent='Saving…';
+    try{const res=await fetch('answers',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({by:$('#qBy').value.trim(),items})});const j=await res.json();if(!res.ok)throw new Error(j.error||res.status);
+      D.answers=j.answers;qEdits={};try{localStorage.removeItem(QKEY)}catch(e){}questions();body();toast('Answers saved. Tell the agent they are in; it updates the rows.')}
+    catch(e){$('#qSt').textContent='Not saved: '+e.message}};
+}
+function openQuestion(id){const el=document.getElementById('q-'+id);if(!el)return;$('#qBox').open=true;
+  document.querySelectorAll('.qitem.hit').forEach(x=>x.classList.remove('hit'));el.classList.add('hit');el.scrollIntoView({block:'center'});el.querySelector('textarea')?.focus({preventScroll:true})}
 function header(){
   const plat=D.platform==='ios'?'iOS':'Android';
   $('#h').textContent=`${D.title} · ${plat} · ${REVIEW?'Cases':'Approved test cases'}`;
@@ -183,7 +239,10 @@ function idCell(r){
     PAGES.plan&&`<a class="spec" href="${esc(PAGES.plan)}#case=${encodeURIComponent(r.cur.ID)}" title="Progress: the segment that runs this case and its latest result">Progress →</a>`,
     PAGES.results&&`<a class="spec" href="${esc(PAGES.results)}#case=${encodeURIComponent(r.cur.ID)}" title="Results: what each run found, with screenshots">Results →</a>`].filter(Boolean);
   const spec=links.length?`<div class="xl">${links.join('')}</div>`:'';
-  return `${esc(r.cur.ID)}<div>${badges}</div>${spec}${r.cur['Change Reason']?`<div class="reason">${esc(r.cur['Change Reason'])}</div>`:''}`;
+  // the open questions this row's assumption depends on: a marker that opens the question above the table
+  const qm=(D.questions||[]).filter(q=>q.rows.includes(r.cur.ID)).map(q=>{const st=qState(q.id);
+    return `<a class="qmark ${st}" href="#q-${esc(q.id)}" data-q="${esc(q.id)}" title="${esc(st==='open'?'This row assumes an answer to an open question: read it or answer it':st==='done'?'Answered and applied':'Answered, waiting for the agent')}">${esc(q.id)}${st==='open'?' ?':' ✓'}</a>`}).join(' ');
+  return `${esc(r.cur.ID)}<div>${badges}</div>${qm?`<div>${qm}</div>`:''}${spec}${r.cur['Change Reason']?`<div class="reason">${esc(r.cur['Change Reason'])}</div>`:''}`;
 }
 function body(){
   const tb=$('#tbl tbody');let h='';
@@ -265,7 +324,10 @@ function focusRow(){
   document.querySelector(`tr[data-row="${CSS.escape(id)}"]`)?.scrollIntoView({block:'center'});
 }
 addEventListener('hashchange',focusRow);
-header();filters();body();counts();focusRow();
+// a row's question marker (and a #q-Q-3 link) opens that question above the table, also when clicked twice
+addEventListener('hashchange',()=>{if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3))});
+document.addEventListener('click',e=>{const m=e.target.closest?.('a.qmark');if(!m)return;e.preventDefault();openQuestion(m.dataset.q)});
+header();questions();filters();body();counts();focusRow();if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3));
 </script>
 </body>
 </html>

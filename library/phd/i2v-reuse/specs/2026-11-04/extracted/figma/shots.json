@@ -1,0 +1,80 @@
+{
+  "pm-header.png": {
+    "board": "6336:3479/pm-header",
+    "group": "p1",
+    "hash": "95d480c9",
+    "overlay": "",
+    "captured_at": "2026-11-04T06:44:19.428Z",
+    "box": [
+      -4070,
+      -5362,
+      4775,
+      560
+    ]
+  },
+  "pm-flow.png": {
+    "board": "6366:4241/pm-flow",
+    "group": "p1",
+    "hash": "d006d89b",
+    "overlay": "",
+    "captured_at": "2026-11-04T06:44:20.248Z",
+    "box": [
+      -3910,
+      -4802,
+      1820,
+      3712
+    ]
+  },
+  "pm-ui.png": {
+    "board": "6366:5664/pm-ui",
+    "group": "p1",
+    "hash": "9a11f233",
+    "overlay": "",
+    "captured_at": "2026-11-04T06:44:20.844Z",
+    "box": [
+      -3910,
+      -968,
+      2965,
+      3967
+    ]
+  },
+  "pm-tracking.png": {
+    "board": "6394:586/pm-tracking",
+    "group": "p1",
+    "hash": "71abc327",
+    "overlay": "",
+    "captured_at": "2026-11-04T06:44:21.034Z",
+    "box": [
+      -1935,
+      -4802,
+      1620,
+      542
+    ]
+  },
+  "pm-draft-tbd.png": {
+    "board": "6394:588/pm-draft-tbd",
+    "group": "p1",
+    "hash": "185daf63",
+    "overlay": "",
+    "captured_at": "2026-11-04T06:44:21.230Z",
+    "box": [
+      -215,
+      -4802,
+      820,
+      446
+    ]
+  },
+  "pm-error-handling.png": {
+    "board": "6401:625/pm-error-handling",
+    "group": "p1",
+    "hash": "884613ab",
+    "overlay": "",
+    "captured_at": "2026-11-04T06:44:21.506Z",
+    "box": [
+      -1935,
+      -4160,
+      1480,
+      551
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "written_at": "2026-11-04T00:55:35.880Z",
+  "file": "HceGLJVaxnKsv7gXSXzKWh",
+  "page": [
+    "2974:19965",
+    "26.09"
+  ],
+  "listed": [
+    [
+      "3293:13054",
+      "Main Flow（Free user → IAP）",
+      "FRAME"
+    ],
+    [
+      "3293:14560",
+      "Routing Logic",
+      "FRAME"
+    ],
+    [
+      "3293:14642",
+      "Entry Points",
+      "FRAME"
+    ],
+    [
+      "3293:15052",
+      "Alternative & Exception",
+      "FRAME"
+    ],
+    [
+      "3300:32003",
+      "AI Video Enhance",
+      "FRAME"
+    ],
+    [
+      "3300:32004",
+      "觸發：首次進入功能時自動顯示；之後可點 Selected Length 旁的 ⓘ 再開啟。 消失：顯示 3 秒後自動消失",
+      "TEXT"
+    ],
+    [
+      "3313:39638",
+      "Bubble 顯示規則",
+      "TEXT"
+    ],
+    [
+      "3300:32693",
+      "影片長於上限",
+      "TEXT"
+    ],
+    [
+      "3300:32694",
+      "影片短於上限",
+      "TEXT"
+    ],
+    [
+      "3300:33452",
+      "拖曳中間：移動選取區段",
+      "TEXT"
+    ],
+    [
+      "3303:33456",
+      "拖曳左右把手：調整選取長度",
+      "TEXT"
+    ],
+    [
+      "3313:39621",
+      "影片短於上限示意",
+      "TEXT"
+    ],
+    [
+      "3303:33455",
+      "長度不變，整段前後平移。 Preview 同步顯示選取範圍的第一格。",
+      "TEXT"
+    ],
+    [
+      "3313:39622",
+      "底部影片寬度固定",
+      "TEXT"
+    ],
+    [
+      "3303:33457",
+      "Preview 顯示正在拖的那一端的畫面",
+      "TEXT"
+    ],
+    [
+      "3393:18071",
+      "View --> result",
+      "VECTOR"
+    ],
+    [
+      "3396:20438",
+      "Cancel",
+      "FRAME"
+    ],
+    [
+      "3659:21279",
+      "PM Spec Link",
+      "TEXT"
+    ]
+  ],
+  "read": [
+    {
+      "id": "3293:13054",
+      "name": "Main Flow（Free user → IAP）",
+      "read_at": "2026-11-03T09:45:26.652Z",
+      "hash": "074bd941",
+      "plan": "plan-3293-13054-4.json"
+    },
+    {
+      "id": "3293:14560",
+      "name": "Routing Logic",
+      "read_at": "2026-11-03T09:45:26.652Z",
+      "hash": "237d1cd8",
+      "plan": "plan-3293-13054-4.json"
+    },
+    {
+      "id": "3293:14642",
+      "name": "Entry Points",
+      "read_at": "2026-11-03T09:45:26.652Z",
+      "hash": "a07a9ce6",
+      "plan": "plan-3293-13054-4.json"
+    },
+    {
+      "id": "3293:15052",
+      "name": "Alternative & Exception",
+      "read_at": "2026-11-03T09:45:26.652Z",
+      "hash": "a55ed4cc",
+      "plan": "plan-3293-13054-4.json"
+    },
+    {
+      "id": "3300:32003",
+      "name": "AI Video Enhance",
+      "read_at": "2026-11-03T09:47:14.394Z",
+      "hash": "fc77c78d",
+      "plan": "plan-3300-32003-2.json"
+    },
+    {
+      "id": "3396:20438",
+      "name": "Cancel",
+      "read_at": "2026-11-03T09:47:14.394Z",
+      "hash": "38c3aceb",
+      "plan": "plan-3300-32003-2.json"
+    }
+  ],
+  "missing": []
+}

@@ -1,0 +1,431 @@
+2026-11-05T02:03:57.426Z restart 
+2026-11-05T02:03:57.548Z build 
+2026-11-05T02:03:57.664Z logcat start
+2026-11-05T02:04:04.261Z restart R5CTB22S05Y
+2026-11-05T02:04:15.443Z build 
+2026-11-05T02:04:15.758Z logcat start
+2026-11-05T02:04:18.952Z texts 
+2026-11-05T02:04:19.953Z shot launch0
+2026-11-05T02:04:28.038Z lbl AI Mini Drama
+2026-11-05T02:04:32.770Z tapif Try It Now
+2026-11-05T02:04:37.218Z els 
+2026-11-05T02:04:40.649Z els credit
+2026-11-05T02:04:41.049Z id button_mini_drama_home_create
+2026-11-05T02:04:45.445Z els 
+2026-11-05T02:04:50.257Z type A retired projectionist, his daughter and a young usher save an old cinema on it
+2026-11-05T02:04:54.173Z id button_mini_drama_send
+2026-11-05T02:04:55.635Z waitfor Choose your characters|Confirm|couldn't|Try again --timeout 240
+2026-11-05T02:08:56.422Z texts 
+2026-11-05T02:09:00.468Z lbl English
+2026-11-05T02:09:01.323Z lbl No captions
+2026-11-05T02:09:01.664Z lbl Generate
+2026-11-05T02:09:02.471Z waitfor Choose your characters|Confirm|couldn't|Try again|Generate ◆ --timeout 240
+2026-11-05T02:13:04.389Z texts 
+2026-11-05T02:13:07.539Z shot a_outline
+2026-11-05T02:13:13.109Z tap 990 1992
+2026-11-05T02:13:15.411Z shot a_outline2
+2026-11-05T02:13:21.445Z tap 216 1788
+2026-11-05T02:13:24.741Z els 
+2026-11-05T02:13:25.191Z shot a_picker
+2026-11-05T02:13:29.557Z tap 520 850
+2026-11-05T02:13:31.838Z els 
+2026-11-05T02:13:32.167Z shot a_pick1
+2026-11-05T02:13:38.946Z tap 880 850
+2026-11-05T02:13:41.231Z tap 383 358
+2026-11-05T02:13:43.513Z tap 540 1530
+2026-11-05T02:13:45.800Z shot a_picks
+2026-11-05T02:13:52.017Z id button_mini_drama_character_room_confirm
+2026-11-05T02:13:54.406Z texts 
+2026-11-05T02:13:54.612Z shot a_unset_dialog
+2026-11-05T02:13:58.988Z lbl Generate
+2026-11-05T02:13:59.319Z waitfor Your characters are ready|couldn't|Try again --timeout 240
+2026-11-05T02:18:01.871Z texts 
+2026-11-05T02:18:02.057Z shot 16.8.0.2611041_DRA262610P0347_A_ready_sheet
+2026-11-05T02:18:37.952Z tap 966 556
+2026-11-05T02:18:40.239Z texts 
+2026-11-05T02:18:40.452Z shot 16.8.0.2611041_DRA262610P0347_A_after_limit_close
+2026-11-05T02:18:45.786Z lbl Cancel
+2026-11-05T02:18:48.157Z id button_mini_drama_character_room_close
+2026-11-05T02:18:50.533Z texts 
+2026-11-05T02:18:50.723Z shot 16.8.0.2611041_DRA262610P0347_E_leave_dialog
+2026-11-05T02:18:55.057Z lbl Leave
+2026-11-05T02:18:58.430Z texts 
+2026-11-05T02:18:58.622Z shot 16.8.0.2611041_DRA262610P0347_E_after_leave_chat
+2026-11-05T02:19:06.908Z tap 540 1284
+2026-11-05T02:19:10.197Z texts 
+2026-11-05T02:19:10.478Z shot 16.8.0.2611041_DRA262610P0347_E_after_leave_chat
+2026-11-05T02:19:16.824Z id button_mini_drama_back
+2026-11-05T02:19:19.212Z texts 
+2026-11-05T02:19:22.065Z activate 
+2026-11-05T02:19:30.533Z tapif AI Mini Drama
+2026-11-05T02:19:35.563Z tapif Try It Now
+2026-11-05T02:19:38.943Z id button_mini_drama_home_history
+2026-11-05T02:19:42.371Z texts 
+2026-11-05T02:19:47.448Z lbl Last Reel
+2026-11-05T02:19:53.548Z texts 
+2026-11-05T02:19:53.784Z shot 16.8.0.2611041_DRA262610P0347_E_reopen1
+2026-11-05T02:19:59.613Z pull-logs recheck
+2026-11-05T02:20:28.598Z lbl Nora Vance
+2026-11-05T02:20:32.593Z els 
+2026-11-05T02:20:36.527Z shot c_tmp
+2026-11-05T02:20:43.957Z tap 990 1992
+2026-11-05T02:20:46.240Z shot 16.8.0.2611041_DRA262610P0347_E_reopen1
+2026-11-05T02:20:46.924Z els 
+2026-11-05T02:20:54.223Z tap 216 1788
+2026-11-05T02:20:57.525Z tap 880 850
+2026-11-05T02:20:58.805Z tap 383 358
+2026-11-05T02:21:00.090Z tap 540 1530
+2026-11-05T02:21:01.378Z tap 620 358
+2026-11-05T02:21:02.681Z tap 540 1190
+2026-11-05T02:21:04.977Z shot c_picks
+2026-11-05T02:21:06.058Z id button_mini_drama_character_room_confirm
+2026-11-05T02:21:09.429Z texts 
+2026-11-05T02:21:10.105Z shot 16.8.0.2611041_DRA262610P0347_C_confirm_attempt
+2026-11-05T02:21:14.855Z waitfor Create storyboard|Ready to create the storyboard|Limit|couldn't --timeout 200
+2026-11-05T02:22:08.589Z texts 
+2026-11-05T02:22:08.862Z shot 16.8.0.2611041_DRA262610P0347_C_chat_before_leave
+2026-11-05T02:22:18.071Z id button_mini_drama_back
+2026-11-05T02:22:22.667Z activate 
+2026-11-05T02:22:31.399Z tapif AI Mini Drama
+2026-11-05T02:22:36.654Z tapif Try It Now
+2026-11-05T02:22:40.027Z id button_mini_drama_home_history
+2026-11-05T02:22:43.479Z texts 
+2026-11-05T02:22:43.795Z lbl Last Reel
+2026-11-05T02:22:50.953Z tapif 
+2026-11-05T02:22:51.362Z texts 
+2026-11-05T02:22:52.752Z shot 16.8.0.2611041_DRA262610P0347_C_reopen1
+2026-11-05T02:23:01.362Z id button_mini_drama_character_room_close
+2026-11-05T02:23:04.347Z texts 
+2026-11-05T02:23:07.563Z shot 16.8.0.2611041_DRA262610P0347_C_reopen1
+2026-11-05T02:23:16.170Z id button_mini_drama_back
+2026-11-05T02:23:18.602Z id button_mini_drama_home_history
+2026-11-05T02:23:22.006Z lbl Last Reel
+2026-11-05T02:23:28.906Z texts 
+2026-11-05T02:23:29.176Z shot 16.8.0.2611041_DRA262610P0347_C_reopen2
+2026-11-05T02:23:34.616Z id button_mini_drama_back
+2026-11-05T02:23:37.041Z id button_mini_drama_home_create
+2026-11-05T02:23:41.245Z type Two rival food stall owners and a health inspector on one busy night market. Thr
+2026-11-05T02:23:43.919Z id button_mini_drama_send
+2026-11-05T02:23:46.096Z waitfor Video language|Limit|couldn't --timeout 200
+2026-11-05T02:23:46.302Z texts 
+2026-11-05T02:23:51.017Z shot 16.8.0.2611041_DRA262610P0347_daily_chat_limit_new_drama
+2026-11-05T02:23:51.948Z lbl Cancel
+2026-11-05T02:23:54.290Z id button_mini_drama_back
+2026-11-05T02:23:57.566Z els credit
+2026-11-05T02:23:57.935Z pull-logs recheck-end
+2026-11-05T03:03:32.766Z status 
+2026-11-05T03:03:36.759Z els 
+2026-11-05T03:03:42.932Z els 
+2026-11-05T03:03:43.993Z tap 972 2215
+2026-11-05T03:03:47.268Z texts 
+2026-11-05T03:03:51.385Z lbl User Sign in
+2026-11-05T03:03:55.858Z texts 
+2026-11-05T03:04:03.461Z shot official-signin
+2026-11-05T03:04:04.067Z els 
+2026-11-05T03:04:09.104Z tap 414 1358
+2026-11-05T03:04:14.391Z shot official-google
+2026-11-05T03:04:15.034Z texts 
+2026-11-05T03:04:19.781Z lbl No thanks
+2026-11-05T03:04:25.157Z shot official-google2
+2026-11-05T03:04:25.769Z texts 
+2026-11-05T03:04:30.121Z activate 
+2026-11-05T03:04:34.788Z texts 
+2026-11-05T03:04:39.280Z lbl Got it
+2026-11-05T03:04:44.658Z texts 
+2026-11-05T03:04:50.686Z tap 108 2215
+2026-11-05T03:04:55.493Z els 
+2026-11-05T03:05:00.585Z lbl AI Mini Drama
+2026-11-05T03:05:06.324Z shot official-amd
+2026-11-05T03:05:07.192Z texts 
+2026-11-05T03:05:11.279Z lbl Try It Now
+2026-11-05T03:05:17.695Z shot official-amd2
+2026-11-05T03:05:19.019Z texts 
+2026-11-05T03:05:26.326Z tap 984 154
+2026-11-05T03:05:33.052Z texts 
+2026-11-05T03:05:37.246Z lbl New Chat
+2026-11-05T03:05:43.234Z shot official-newchat
+2026-11-05T03:05:43.911Z els 
+2026-11-05T03:05:47.397Z setval edit_mini_drama_input A short story about two friends opening a cafe. Two charac
+2026-11-05T03:05:49.761Z els 
+2026-11-05T03:05:54.970Z id button_mini_drama_send
+2026-11-05T03:06:02.796Z texts 
+2026-11-05T03:06:24.890Z lbl Generate
+2026-11-05T03:06:33.793Z texts 
+2026-11-05T03:07:05.626Z texts 
+2026-11-05T03:08:47.810Z texts 
+2026-11-05T03:10:38.830Z texts 
+2026-11-05T03:10:49.306Z texts 
+2026-11-05T03:10:59.785Z texts 
+2026-11-05T03:13:51.394Z status 
+2026-11-05T03:14:09.591Z status 
+2026-11-05T03:14:10.058Z logcat status
+2026-11-05T03:14:10.180Z build 
+2026-11-05T03:14:10.578Z texts 
+2026-11-05T03:14:15.879Z els 
+2026-11-05T03:14:16.134Z shot work_cafe_now
+2026-11-05T03:14:21.746Z id button_mini_drama_scroll_bottom
+2026-11-05T03:14:24.014Z els 
+2026-11-05T03:14:24.315Z shot work_cafe_bottom
+2026-11-05T03:14:30.716Z case A
+2026-11-05T03:14:31.482Z tap 214 1790
+2026-11-05T03:14:33.910Z els 
+2026-11-05T03:14:34.357Z shot A_01_choose_character
+2026-11-05T03:14:38.590Z tap 520 850
+2026-11-05T03:14:41.185Z texts 
+2026-11-05T03:14:41.636Z shot A_02_maya_picked
+2026-11-05T03:14:49.290Z id button_mini_drama_character_room_confirm
+2026-11-05T03:14:51.893Z texts A_03_unset_dialog
+2026-11-05T03:14:56.861Z lbl Generate
+2026-11-05T03:15:00.847Z texts A_04_after_generate
+2026-11-05T03:15:01.742Z waitfor Your characters are ready|Daily Free Chat Limit|failed|Something went wrong --ti
+2026-11-05T03:16:13.356Z texts A_05_ready_sheet
+2026-11-05T03:16:14.244Z els 
+2026-11-05T03:16:17.531Z id button_mini_drama_finish_close
+2026-11-05T03:16:19.905Z texts A_06_after_sheet_x
+2026-11-05T03:16:27.190Z id button_mini_drama_character_room_close
+2026-11-05T03:16:29.310Z texts A_07_leave_dialog
+2026-11-05T03:16:33.643Z lbl Leave
+2026-11-05T03:16:37.007Z texts A_08_chat_after_leave
+2026-11-05T03:16:48.081Z texts A_08b_chat_after_leave_13s
+2026-11-05T03:16:54.672Z els Leave
+2026-11-05T03:16:58.018Z id action1Button
+2026-11-05T03:17:01.371Z texts A_08_chat_after_leave
+2026-11-05T03:17:14.271Z texts A_08b_chat_after_leave_15s
+2026-11-05T03:17:31.508Z logcat stop
+2026-11-05T03:17:31.629Z logcat start
+2026-11-05T03:17:31.873Z logcat status
+2026-11-05T03:17:45.957Z id button_mini_drama_back
+2026-11-05T03:17:48.416Z texts 
+2026-11-05T03:17:52.069Z els 
+2026-11-05T03:17:57.378Z id button_mini_drama_home_history
+2026-11-05T03:17:59.899Z texts A_09_history
+2026-11-05T03:18:00.561Z els 
+2026-11-05T03:18:08.835Z tap 540 1500
+2026-11-05T03:18:10.245Z texts 
+2026-11-05T03:18:10.545Z tap 210 440
+2026-11-05T03:18:15.014Z id button_mini_drama_scroll_bottom
+2026-11-05T03:18:16.435Z texts A_10_plain_reopen
+2026-11-05T03:18:22.826Z drag 540 600 540 1800 400
+2026-11-05T03:18:24.622Z texts A_10b_plain_reopen_up
+2026-11-05T03:18:44.610Z drag 540 1700 540 900 300
+2026-11-05T03:18:46.309Z els 
+2026-11-05T03:18:47.222Z drag 540 1700 540 900 300
+2026-11-05T03:18:48.911Z els 
+2026-11-05T03:18:49.201Z shot A_10c_plain_reopen_mid
+2026-11-05T03:18:57.006Z id button_mini_drama_back
+2026-11-05T03:19:00.636Z logcat status
+2026-11-05T03:19:00.756Z launch 
+2026-11-05T03:19:07.632Z texts 
+2026-11-05T03:19:13.122Z shot A_11_relaunch
+2026-11-05T03:19:14.274Z els 
+2026-11-05T03:19:20.354Z id btn_try_it_now
+2026-11-05T03:19:24.854Z texts 
+2026-11-05T03:19:25.084Z id button_mini_drama_home_history
+2026-11-05T03:19:27.439Z tapif Shared Dreams
+2026-11-05T03:19:28.693Z texts 
+2026-11-05T03:19:33.695Z lbl Try It Now
+2026-11-05T03:19:39.620Z id button_mini_drama_home_history
+2026-11-05T03:19:42.203Z texts 
+2026-11-05T03:19:48.652Z lbl Shared Dreams
+2026-11-05T03:19:54.780Z id button_mini_drama_scroll_bottom
+2026-11-05T03:19:56.211Z texts A_12_reopen_after_forcestop
+2026-11-05T03:19:57.018Z drag 540 700 540 1700 300
+2026-11-05T03:19:58.701Z els 
+2026-11-05T03:19:58.935Z drag 540 700 540 1700 300
+2026-11-05T03:20:00.627Z els 
+2026-11-05T03:20:00.871Z drag 540 700 540 1700 300
+2026-11-05T03:20:02.560Z els 
+2026-11-05T03:20:16.407Z id button_mini_drama_back
+2026-11-05T03:20:17.796Z id button_mini_drama_home_history
+2026-11-05T03:20:21.002Z lbl Shared Dreams
+2026-11-05T03:20:27.080Z id button_mini_drama_scroll_bottom
+2026-11-05T03:20:28.481Z texts A_13_reopen2
+2026-11-05T03:20:33.419Z els choose_character
+2026-11-05T03:20:39.071Z tap 496 1790
+2026-11-05T03:20:41.447Z shot A_14_reopen2_picker
+2026-11-05T03:20:42.456Z id button_mini_drama_character_room_close
+2026-11-05T03:20:45.023Z texts 
+2026-11-05T03:20:55.577Z case B
+2026-11-05T03:20:55.702Z id button_mini_drama_add_chat
+2026-11-05T03:20:58.850Z texts 
+2026-11-05T03:20:59.084Z setval edit_mini_drama_input Two rival food stall owners compete on the same street cor
+2026-11-05T03:21:00.402Z id button_mini_drama_send
+2026-11-05T03:21:02.456Z waitfor What format|Daily Free Chat Limit --timeout 60
+2026-11-05T03:21:02.713Z texts B_01_format
+2026-11-05T03:21:08.867Z lbl Generate
+2026-11-05T03:21:10.104Z waitfor Ready to create your characters|Daily Free Chat Limit|went wrong|failed --timeou
+2026-11-05T03:23:43.894Z texts 
+2026-11-05T03:23:49.910Z id button_mini_drama_scroll_bottom
+2026-11-05T03:23:52.173Z texts B_02_outline
+2026-11-05T03:23:52.995Z els choose_character
+2026-11-05T03:24:00.773Z tap 214 1790
+2026-11-05T03:24:03.196Z texts 
+2026-11-05T03:24:03.608Z id button_mini_drama_character_room_confirm
+2026-11-05T03:24:06.144Z texts B_03_unset_dialog
+2026-11-05T03:24:07.015Z els 
+2026-11-05T03:24:13.227Z id layout_mini_drama_finish_generate
+2026-11-05T03:24:16.216Z texts B_04_creating
+2026-11-05T03:24:17.521Z els finish_close
+2026-11-05T03:24:33.961Z texts B_05_after_x
+2026-11-05T03:24:34.190Z restart (auto, after: HTTP 500: unknown error 'GET /session/8d05cb77-4977-4373-865)
+2026-11-05T03:24:44.921Z els Leave
+2026-11-05T03:25:00.597Z texts B_06_after_leave_anyway
+2026-11-05T03:25:07.402Z id button_mini_drama_character_room_close
+2026-11-05T03:25:09.491Z texts B_07_picker_x
+2026-11-05T03:25:16.267Z id button_mini_drama_scroll_bottom
+2026-11-05T03:25:17.678Z texts B_08_chat_after_leave
+2026-11-05T03:25:30.733Z case B2
+2026-11-05T03:25:30.857Z tap 214 1790
+2026-11-05T03:25:33.392Z id button_mini_drama_character_room_confirm
+2026-11-05T03:25:36.007Z texts B2_01_unset_dialog
+2026-11-05T03:25:52.334Z id layout_mini_drama_finish_generate
+2026-11-05T03:25:55.338Z els finish_close
+2026-11-05T03:27:26.722Z texts B2_02_after_leave_anyway
+2026-11-05T03:27:35.322Z id button_mini_drama_character_room_close
+2026-11-05T03:27:37.388Z texts B2_03_leave_dialog
+2026-11-05T03:27:38.234Z id action1Button
+2026-11-05T03:27:41.618Z id button_mini_drama_scroll_bottom
+2026-11-05T03:27:43.007Z texts B2_04_chat_after_leave
+2026-11-05T03:27:50.486Z id button_mini_drama_back
+2026-11-05T03:27:51.937Z id button_mini_drama_home_history
+2026-11-05T03:27:55.085Z texts 
+2026-11-05T03:27:59.079Z lbl Corner Turf
+2026-11-05T03:28:04.064Z id button_mini_drama_scroll_bottom
+2026-11-05T03:28:05.512Z texts B2_05_plain_reopen
+2026-11-05T03:28:11.797Z id button_mini_drama_back
+2026-11-05T03:28:15.473Z launch 
+2026-11-05T03:28:22.330Z tapif Continue
+2026-11-05T03:28:26.008Z tapif Try It Now
+2026-11-05T03:28:30.755Z id button_mini_drama_home_history
+2026-11-05T03:28:34.722Z lbl Corner Turf
+2026-11-05T03:28:41.667Z id button_mini_drama_scroll_bottom
+2026-11-05T03:28:44.568Z texts B2_06_reopen_after_forcestop
+2026-11-05T03:28:52.656Z lbl AI Mini Drama
+2026-11-05T03:28:57.921Z tapif Continue
+2026-11-05T03:29:01.244Z tapif Try It Now
+2026-11-05T03:29:05.652Z id button_mini_drama_home_history
+2026-11-05T03:29:08.163Z lbl Corner Turf
+2026-11-05T03:29:14.271Z id button_mini_drama_scroll_bottom
+2026-11-05T03:29:15.668Z texts B2_06_reopen_after_forcestop
+2026-11-05T03:29:21.751Z id button_mini_drama_back
+2026-11-05T03:29:23.160Z id button_mini_drama_home_history
+2026-11-05T03:29:25.714Z lbl Corner Turf
+2026-11-05T03:29:31.644Z id button_mini_drama_scroll_bottom
+2026-11-05T03:29:33.029Z texts B2_07_reopen2
+2026-11-05T03:30:37.166Z id button_mini_drama_back
+2026-11-05T03:30:37.576Z case -
+2026-11-05T03:48:59.037Z status 
+2026-11-05T03:48:59.551Z restart 
+2026-11-05T03:49:08.762Z logcat start
+2026-11-05T03:49:11.616Z case limit-official
+2026-11-05T03:49:11.752Z build 
+2026-11-05T03:49:12.018Z texts limit_00_start
+2026-11-05T03:49:19.715Z id button_mini_drama_home_history
+2026-11-05T03:49:20.196Z texts limit_01_history
+2026-11-05T03:49:24.440Z lbl Shared Dreams
+2026-11-05T03:49:28.754Z id button_mini_drama_scroll_bottom
+2026-11-05T03:49:29.121Z shot limit_02_shared_dreams
+2026-11-05T03:49:29.786Z els 
+2026-11-05T03:49:39.046Z shot limit_09_before
+2026-11-05T03:49:39.711Z setval edit_mini_drama_input Please change the story title to Morning Brew.
+2026-11-05T03:49:41.007Z id button_mini_drama_send
+2026-11-05T03:49:48.105Z shot limit_09_after5s
+2026-11-05T03:49:48.822Z texts limit_09_after5s
+2026-11-05T03:50:30.548Z shot limit_09_done
+2026-11-05T03:50:31.226Z texts limit_09_done
+2026-11-05T03:50:35.183Z setval edit_mini_drama_input Please change the story title to Second Cup.
+2026-11-05T03:50:36.542Z id button_mini_drama_send
+2026-11-05T03:50:58.588Z shot limit_10_done
+2026-11-05T03:50:59.310Z texts limit_10_done
+2026-11-05T03:51:03.252Z setval edit_mini_drama_input Please change the story title to Morning Brew.
+2026-11-05T03:51:04.622Z id button_mini_drama_send
+2026-11-05T03:51:10.633Z shot limit_11_after
+2026-11-05T03:51:11.340Z texts limit_11_after
+2026-11-05T03:51:30.535Z shot limit_11_done
+2026-11-05T03:51:31.224Z texts limit_11_done
+2026-11-05T03:51:32.053Z setval edit_mini_drama_input Please change the story title to Second Cup.
+2026-11-05T03:51:33.403Z id button_mini_drama_send
+2026-11-05T03:51:39.633Z shot limit_12_after
+2026-11-05T03:51:40.341Z texts limit_12_after
+2026-11-05T03:51:59.462Z shot limit_12_done
+2026-11-05T03:52:00.171Z texts limit_12_done
+2026-11-05T03:52:01.003Z setval edit_mini_drama_input Please change the story title to Morning Brew.
+2026-11-05T03:52:02.330Z id button_mini_drama_send
+2026-11-05T03:52:08.475Z shot limit_13_after
+2026-11-05T03:52:09.204Z texts limit_13_after
+2026-11-05T03:52:26.892Z shot limit_13_done
+2026-11-05T03:52:27.595Z texts limit_13_done
+2026-11-05T03:52:46.086Z pull-logs official-limit
+2026-11-05T03:53:40.561Z status 
+2026-11-05T03:53:41.288Z case limit-official-newchat
+2026-11-05T03:53:41.427Z id button_mini_drama_add_chat
+2026-11-05T03:53:45.645Z texts limit_14_newchat
+2026-11-05T03:53:50.109Z setval edit_mini_drama_input Two neighbours share a garden. Two characters.
+2026-11-05T03:53:51.457Z id button_mini_drama_send
+2026-11-05T03:53:57.669Z shot limit_14_after
+2026-11-05T03:53:58.440Z texts limit_14_after
+2026-11-05T03:54:04.180Z texts limit_14_after
+2026-11-05T03:55:45.551Z case limit-official-paid
+2026-11-05T03:55:45.682Z els 
+2026-11-05T03:55:51.494Z id button_mini_drama_format_continue
+2026-11-05T03:55:55.898Z shot limit_14_gen
+2026-11-05T03:55:56.602Z texts limit_14_gen
+2026-11-05T03:56:23.058Z texts limit_14_done
+2026-11-05T03:56:28.743Z id button_mini_drama_scroll_bottom
+2026-11-05T03:56:29.994Z els 
+2026-11-05T03:56:33.831Z shot limit_15_pre
+2026-11-05T03:56:45.696Z tap 214 1788
+2026-11-05T03:56:49.112Z shot limit_15_choose
+2026-11-05T03:56:50.117Z els 
+2026-11-05T03:57:00.876Z tap 880 900
+2026-11-05T03:57:02.451Z tap 382 360
+2026-11-05T03:57:04.012Z tap 198 1240
+2026-11-05T03:57:05.577Z shot limit_15_picked
+2026-11-05T03:57:15.043Z id button_mini_drama_character_room_confirm
+2026-11-05T03:57:20.369Z shot limit_15_after
+2026-11-05T03:57:21.101Z texts limit_15_after
+2026-11-05T03:59:29.353Z texts limit_15_done
+2026-11-05T03:59:34.181Z els 
+2026-11-05T03:59:50.922Z id button_mini_drama_credit_confirm
+2026-11-05T03:59:56.120Z shot limit_16_after
+2026-11-05T03:59:56.823Z texts limit_16_after
+2026-11-05T04:03:03.650Z id button_mini_drama_scroll_bottom
+2026-11-05T04:03:04.099Z texts limit_16_done
+2026-11-05T04:03:17.870Z id button_mini_drama_scroll_bottom
+2026-11-05T04:03:19.268Z shot limit_16_done
+2026-11-05T04:03:20.050Z texts limit_16_done
+2026-11-05T04:03:25.332Z setval edit_mini_drama_input Please change the story title to Garden Truce.
+2026-11-05T04:03:26.801Z id button_mini_drama_send
+2026-11-05T04:03:32.961Z shot limit_17_after
+2026-11-05T04:03:33.664Z texts limit_17_after
+2026-11-05T04:03:34.547Z els 
+2026-11-05T04:04:08.466Z shot limit_17_done
+2026-11-05T04:04:09.195Z texts limit_17_done
+2026-11-05T04:04:10.111Z setval edit_mini_drama_input Please change the story title to Shared Plot.
+2026-11-05T04:04:11.474Z texts x
+2026-11-05T04:04:13.037Z id button_mini_drama_send
+2026-11-05T04:04:18.518Z shot limit_18_after
+2026-11-05T04:04:19.215Z texts limit_18_after
+2026-11-05T04:04:20.048Z els 
+2026-11-05T04:04:20.315Z els 
+2026-11-05T04:04:55.868Z shot limit_18_done
+2026-11-05T04:04:56.623Z texts limit_18_done
+2026-11-05T04:04:57.552Z setval edit_mini_drama_input Please change the story title to Garden Truce.
+2026-11-05T04:04:58.978Z texts x
+2026-11-05T04:05:00.558Z id button_mini_drama_send
+2026-11-05T04:05:05.167Z shot limit_19_after
+2026-11-05T04:05:06.124Z texts limit_19_after
+2026-11-05T04:05:07.152Z els 
+2026-11-05T04:05:07.337Z els 
+2026-11-05T04:05:12.641Z els 
+2026-11-05T04:05:22.426Z tap 540 2000
+2026-11-05T04:05:24.824Z els 
+2026-11-05T04:05:25.170Z shot limit_19_tap_outside
+2026-11-05T04:05:29.732Z els 
+2026-11-05T04:05:30.062Z id button_mini_drama_send
+2026-11-05T04:05:32.624Z els 
+2026-11-05T04:05:32.822Z shot limit_19b_resend
+2026-11-05T04:05:33.760Z id button_mini_drama_chat_quota_close
+2026-11-05T04:05:36.105Z els 
+2026-11-05T04:05:36.405Z shot limit_19c_after_x
+2026-11-05T04:05:37.192Z els 
