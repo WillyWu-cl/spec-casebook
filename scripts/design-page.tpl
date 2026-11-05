@@ -63,6 +63,8 @@ input[type="search"] { flex: 1 1 180px }
 .st { font: 600 0.72rem var(--body); display: inline-flex; gap: 5px; align-items: center }
 .st i { width: 8px; height: 8px; border-radius: 50%; display: inline-block }
 .empty { color: var(--muted); padding: 24px 0 }
+.grid .gh { grid-column: 1 / -1; font: 700 1rem var(--display); margin: 10px 0 -4px; border-bottom: 1px solid var(--line); padding-bottom: 4px }
+.grid .gh:first-child { margin-top: 0 }
 /* the comparison */
 dialog { border: 0; border-radius: 10px; padding: 0; width: min(1180px, 100vw - 24px); max-height: calc(100vh - 24px); background: var(--panel); color: var(--ink) }
 /* the comparison fits the window: images sized to the height left under the header, only the right panel scrolls
@@ -87,15 +89,18 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .frame .no { aspect-ratio: 375 / 812; display: grid; place-items: center; color: var(--muted); font-size: 0.85rem; padding: 12px; text-align: center }
 .frame svg { pointer-events: none }
 .box { fill: none; stroke-width: 2.5; vector-effect: non-scaling-stroke; pointer-events: all; cursor: pointer }
-.box.hl { stroke-width: 5 }
 .route { font-size: 0.88rem; display: grid; gap: 4px; margin-bottom: 10px }
 .route a { color: var(--accent) }
-.items { display: grid; gap: 8px; align-content: start }
+.items { display: grid; gap: 8px; align-content: start; padding: 6px }
 .it { border: 1px solid var(--line); border-left: 4px solid var(--none); border-radius: 6px; padding: 8px 10px; font-size: 0.86rem; display: grid; gap: 3px }
-.it.hl, .it.pick { box-shadow: 0 0 0 2px var(--accent) }
-.it.pick { animation: pick 1.2s ease-out }
+/* hover: a thin dashed outline; selected (a box or its item clicked): the Coverage page's mark, a white ring between
+   two black ones just outside, the item's border in its verdict colour (user, 2026-11-05) */
+.it.hl { outline: 2px dashed var(--muted); outline-offset: 2px }
+.it.pick { outline: 0; border-color: var(--vc); box-shadow: 0 0 0 1.5px #000, 0 0 0 4px #fff, 0 0 0 5.5px #000 }
+.it.flash { animation: pick 1.2s ease-out }
 @keyframes pick { from { background: color-mix(in srgb, var(--accent) 30%, transparent) } to { background: transparent } }
-.box.pick { stroke-width: 5 }
+.box.hl { stroke-width: 3 }
+.ring { fill: none; pointer-events: none }
 .it .h { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap }
 .it .num { font: 700 0.8rem var(--mono); color: #fff; border-radius: 4px; padding: 0 6px }
 .it .k { font: 600 0.78rem var(--mono) }
@@ -220,6 +225,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
     <div class="trow">
       <select id="board" aria-label="Board"></select>
       <select id="kind" aria-label="Difference"></select>
+      <select id="rsort" aria-label="Order"></select>
       <input type="search" id="q" autocomplete="off">
       <span class="count" id="count"></span>
       <button type="button" class="chip" id="copy"></button>
@@ -237,7 +243,8 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 let L = 'en';
 if (window.CASEBOOK) L = window.CASEBOOK.lang; else try { if (localStorage.getItem('casebook-lang') === 'zh') L = 'zh'; } catch (e) {}
 const T = {
-  en: { eyebrow: 'Casebook design check', title: f => `${f} · Design`, all: 'All', allBoards: 'All boards', sorts: { flow: 'Order: app flow', count: 'Order: most screens', look: 'Order: most to look at', figma: 'Order: as in Figma' }, search: 'Search screen, board or case',
+  en: { eyebrow: 'Casebook design check', title: f => `${f} · Design`, all: 'All', captured: 'Captured',
+    rsorts: { status: 'Order: by state', board: 'Order: by board', flow: 'Order: app flow', look: 'Order: most to look at', recent: 'Order: latest capture', figma: 'Order: as in Figma' },allBoards: 'All boards', sorts: { flow: 'Order: app flow', count: 'Order: most screens', look: 'Order: most to look at', figma: 'Order: as in Figma' }, search: 'Search screen, board or case',
     shown: (n, m) => `${n} of ${m}`, none: 'No screen matches these filters.', noPlan: 'No design plan yet: run node scripts/design.ts <feature> <platform> plan (figma skill, references/conformance.md).',
     meta: (n, c, s) => `${n} Design screens · ${c} captured · spec set ${s}`, figma: 'Figma', app: 'App', noApp: 'No capture on this computer', noFig: 'No Figma image on this computer',
     reached: 'Reached by', fit: { high: 'direct', mid: 'likely', low: 'approximate' }, also: 'also', pre: 'Precondition', action: 'Action', via: 'via',
@@ -279,7 +286,8 @@ const T = {
     phint: 'Red rows need your decision: read the note, then pick Include (check it on the phone) or Exclude (with a reason). Any other screen can be excluded too. Save writes the choices to the design plan for iOS and Android (the Design screens are the same); once nothing is red the scope is reviewed. Opened as a file, the button copies the choices for you to paste into the chat instead.',
     whys: ['Superseded by a newer frame', 'Drawing only, not a screen', 'State cannot be brought about', 'Not in this release', 'Other platform only'],
     newFlag: 'New since the review', dpath: 'Design path' },
-  zh: { eyebrow: '測試表設計比對', title: f => `${f} · 設計比對`, all: '全部', allBoards: '全部畫板', sorts: { flow: '排序：App 流程', count: '排序：畫面最多', look: '排序：待確認最多', figma: '排序：依 Figma' }, search: '搜尋畫面、畫板或案例',
+  zh: { eyebrow: '測試表設計比對', title: f => `${f} · 設計比對`, all: '全部', captured: '已擷取',
+    rsorts: { status: '排序：依狀態', board: '排序：依畫板', flow: '排序：App 流程', look: '排序：待確認最多', recent: '排序：最新擷取', figma: '排序：依 Figma' },allBoards: '全部畫板', sorts: { flow: '排序：App 流程', count: '排序：畫面最多', look: '排序：待確認最多', figma: '排序：依 Figma' }, search: '搜尋畫面、畫板或案例',
     shown: (n, m) => `${n} / ${m}`, none: '沒有符合篩選條件的畫面。', noPlan: '還沒有設計比對計畫：執行 node scripts/design.ts <feature> <platform> plan（figma 技能，references/conformance.md）。',
     meta: (n, c, s) => `${n} 個 Design 畫面 · 已擷取 ${c} · 規格 ${s}`, figma: 'Figma', app: 'App', noApp: '這台電腦沒有擷取圖', noFig: '這台電腦沒有 Figma 圖',
     reached: '到達方式', fit: { high: '直接', mid: '可能', low: '不精確' }, also: '另有', pre: '前置條件', action: '操作', via: '經由',
@@ -562,23 +570,48 @@ function render() {
   $('meta').textContent = t('meta')(D.screens.length, D.screens.filter(s => s.run).length, D.spec_set);
   $('bar').innerHTML = ST.map(s => n(s) ? `<span style="width:${100 * n(s) / D.screens.length}%;background:${COL(s)}" title="${esc(STN[L][s])} ${n(s)}"></span>` : '').join('');
   // every status chip always shown (greyed out at 0), like the Plan view, so the bar does not shift
-  $('chips').innerHTML = [['', t('all'), D.screens.length], ...ST.map(s => [s, STN[L][s], n(s)])].map(([k, l, c]) =>
+  // Captured: every screen run on the phone, whatever its result, beside Not captured (user, 2026-11-05)
+  $('chips').innerHTML = [['', t('all'), D.screens.length], ['captured', t('captured'), D.screens.filter(s => s.run).length], ...ST.map(s => [s, STN[L][s], n(s)])].map(([k, l, c]) =>
     `<button type="button" class="chip" data-s="${k}" aria-pressed="${st === k}"${k && !c && st !== k ? ' disabled' : ''}>${k ? `<i style="background:${COL(k)}"></i>` : ''}${esc(l)} <span class="n">${c}</span></button>`).join('');
   $('chips').querySelectorAll('.chip').forEach(b => b.onclick = () => { st = b.dataset.s; render(); });
   const boards = [...new Set(D.screens.map(s => s.board))];
   $('board').innerHTML = `<option value="">${esc(t('allBoards'))}</option>` + boards.map(b => `<option${b === board ? ' selected' : ''}>${esc(b)}</option>`).join('');
   const kinds = [...new Set(D.screens.flatMap(s => s.items.filter(i => i.verdict !== 'ok' && i.verdict !== 'info').map(i => i.kind)))];
   $('kind').innerHTML = `<option value="">${esc(t('allKinds'))}</option>` + kinds.map(k => `<option value="${esc(k)}"${k === kind ? ' selected' : ''}>${esc(KN[L][k] ?? k)}</option>`).join('');
+  $('rsort').innerHTML = Object.entries(t('rsorts')).map(([k, l]) => `<option value="${k}"${k === rsort ? ' selected' : ''}>${esc(l)}</option>`).join('');
   copyBtn(); grid(); if (open) detail(open);
 }
+// The Results order (user, 2026-11-05), each falling back to app flow and then the plan's Figma order: by state (the chip
+// order, Differs first), by board (boards where their earliest screen comes in the app flow, screens in flow order),
+// app flow (the cases.csv position of the row reaching the screen), most to look at (bugs, then questions and
+// unreviewed items), latest capture first, or as in Figma (the plan's order, as the page had it before)
+let rsort = 'status';
+try { rsort = localStorage.getItem('design-rsort') || 'status'; } catch (e) {}
+$('rsort').onchange = e => { rsort = e.target.value; try { localStorage.setItem('design-rsort', rsort); } catch (e) {} grid(); };
+function resultOrder() {
+  const S = D.screens, rank = s => ST.indexOf(s.status) < 0 ? ST.length : ST.indexOf(s.status);
+  const bfirst = new Map(); for (const s of S) bfirst.set(s.board_id, Math.min(bfirst.get(s.board_id) ?? lastFlow, flowOf(s)));
+  const bi = new Map(); S.forEach(s => { if (!bi.has(s.board_id)) bi.set(s.board_id, bi.size); });
+  const nOf = (s, v) => s.items.filter(i => v.includes(i.verdict)).length;
+  const key = { status: [rank], board: [s => bfirst.get(s.board_id), s => bi.get(s.board_id)], flow: [],
+    look: [s => -nOf(s, ['bug']), s => -nOf(s, ['question', 'unreviewed']), rank], recent: [s => s.captured_at ? -Date.parse(s.captured_at) : Infinity],
+    figma: null }[rsort in { status: 1, board: 1, flow: 1, look: 1, recent: 1, figma: 1 } ? rsort : 'status'];
+  if (!key) return S;
+  const ks = [...key, flowOf];
+  return S.map((s, i) => [s, i]).sort((a, c) => { for (const k of ks) { const d = k(a[0]) - k(c[0]); if (d) return d; } return a[1] - c[1]; }).map(x => x[0]);
+}
 function grid() {
-  const list = D.screens.filter(s => (!st || s.status === st) && (!board || s.board === board)
+  const list = resultOrder()
+    .filter(s => (!st || (st === 'captured' ? !!s.run : s.status === st)) && (!board || s.board === board)
     && (!kind || s.items.some(i => i.kind === kind && i.verdict !== 'ok' && i.verdict !== 'info'))
     && (!q || `${s.name} ${s.board} ${s.id} ${s.route?.case ?? ''}`.toLowerCase().includes(q)));
   $('count').textContent = t('shown')(list.length, D.screens.length);
-  $('grid').innerHTML = list.length ? list.map(s => {
+  // by board: a heading over each board's cards
+  const head = (s, i) => rsort === 'board' && (i === 0 || list[i - 1].board_id !== s.board_id)
+    ? `<h3 class="gh">${esc(s.board)} <span class="more">${list.filter(x => x.board_id === s.board_id).length}</span></h3>` : '';
+  $('grid').innerHTML = list.length ? list.map((s, i) => {
     const bugs = s.items.filter(i => i.verdict === 'bug').length, qs = s.items.filter(i => i.verdict === 'question' || i.verdict === 'unreviewed').length;
-    return `<button type="button" class="card" data-id="${esc(s.id)}" style="border-top-color:${COL(s.status)}">
+    return `${head(s, i)}<button type="button" class="card" data-id="${esc(s.id)}" style="border-top-color:${COL(s.status)}">
       <div class="thumb">${fig(s.figma)}</div>
       <span class="st"><i style="background:${COL(s.status)}"></i>${esc(STN[L][s.status])}${bugs ? ` · ${bugs}` : qs ? ` · ${qs}` : ''}</span>
       <span class="nm">${esc(s.name)}</span><span class="sub">${esc(s.board)}${s.route ? ` · ${esc(s.route.case || t('designPath'))}` : ''}</span></button>`;
@@ -626,6 +659,7 @@ const ORDER = { bug: 0, question: 1, unreviewed: 2, 'n/a': 3, ok: 4, info: 5 };
 const groupsOf = list => { const g = []; list.forEach((it, n) => { const last = g[g.length - 1]; if (last && last[0] === it.verdict) last[1].push([it, n]); else g.push([it.verdict, [[it, n]]]); }); return g; };
 function detail(id) {
   const s = D.screens.find(x => x.id === id); if (!s) return;
+  if (open !== id) picked = null;
   open = id;
   const main = s.items.filter(i => i.verdict !== 'info').sort((a, b) => (ORDER[a.verdict] ?? 9) - (ORDER[b.verdict] ?? 9));
   const info = s.items.filter(i => i.verdict === 'info'), shown = showInfo ? [...main, ...info] : main;
@@ -660,7 +694,7 @@ function detail(id) {
       ${r.precondition ? `<div class="more"><b>${esc(t('pre'))}</b> ${esc(r.precondition)}</div>` : ''}<div class="more"><b>${esc(t('action'))}</b> ${esc(r.action)}</div>
       ${s.alternatives.length ? `<div class="more">${esc(t('also'))}: ${s.alternatives.map(esc).join(', ')}</div>` : ''}
       ${s.fit ? `<div class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</div>` : ''}</div>` : s.why ? `<p class="more">${esc(s.why)}</p>` : ''}
-    <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" data-v="${esc(v)}"${folded.has(v) ? '' : ' open'}><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)}">
+    <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" data-v="${esc(v)}"${folded.has(v) ? '' : ' open'}><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)};--vc:${VC(it.verdict)}">
       <div class="h"><span class="num" style="background:${VC(it.verdict)}">${n + 1}</span><span class="k">${esc(KN[L][it.kind] ?? it.kind)}</span>
       ${it.src === 'app' ? `<span class="srcapp" title="${esc(t('srcAppT'))}">${esc(t('srcApp'))}</span>` : ''}${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
       ${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
@@ -705,14 +739,29 @@ function detail(id) {
     fr.innerHTML = `<img src="${esc(b.dataset.part)}" alt="">`; lightbox(fr); });
   if (!$('dlg').open) $('dlg').showModal();
   const rp = $('dlg').querySelector('.rp'); if (rp) rp.scrollTop = keep;
+  // the selection survives a redraw (a decision pressed, info shown or hidden)
+  if (picked?.id === id) pick(picked.n, false, true);
 }
-// a box or an item clicked: both marked until another click; from a box, its item scrolls into view in the right panel
-function pick(n, scroll) {
-  $('dlg').querySelectorAll('.pick').forEach(e => e.classList.remove('pick'));
-  const it = $('dlg').querySelector(`.it[data-n="${n}"]`); if (!it) return;
+// a box or an item clicked: both marked until another click (the same one again clears it); from a box, its item
+// scrolls into view in the right panel. The box is marked as on the Coverage page: a black / white / black ring just
+// clear of it (so it never covers what the box holds), then the box itself redrawn on top in its verdict colour.
+let picked = null;
+function pick(n, scroll, again = false) {
+  $('dlg').querySelectorAll('.pick, .flash').forEach(e => e.classList.remove('pick', 'flash'));
+  $('dlg').querySelectorAll('.ring, .box.top').forEach(e => e.remove());
+  if (!again && picked?.id === open && picked.n === n) { picked = null; return; }
+  const it = $('dlg').querySelector(`.it[data-n="${n}"]`); if (!it) { picked = null; return; }
+  picked = { id: open, n };
   it.closest('details')?.setAttribute('open', '');
-  $('dlg').querySelectorAll(`rect[data-n="${n}"]`).forEach(b => b.classList.add('pick'));
-  void it.offsetWidth; it.classList.add('pick');
+  $('dlg').querySelectorAll(`rect.box[data-n="${n}"]`).forEach(b => {
+    // the ring stays clear of the box (its inner edge 2 px outside the box's stroke) and the box keeps its width: these
+    // boxes hug a line of text, and a thicker box or a ring on its edge covered the glyphs (user, 2026-11-05)
+    const svg = b.ownerSVGElement, k = svg.viewBox.baseVal.width / (svg.clientWidth || svg.viewBox.baseVal.width), o = 5.5 * k;
+    const [x, y, w, h] = ['x', 'y', 'width', 'height'].map(a => +b.getAttribute(a));
+    const ring = (c, sw) => `<rect class="ring" x="${x - o}" y="${y - o}" width="${w + 2 * o}" height="${h + 2 * o}" rx="${3 * k}" stroke="${c}" stroke-width="${sw * k}"/>`;
+    const top = b.cloneNode(true); top.classList.add('top'); top.style.pointerEvents = 'none'; top.querySelector('title')?.remove();
+    b.classList.add('pick'); svg.insertAdjacentHTML('beforeend', ring('rgba(0,0,0,0.85)', 3.5) + ring('#fff', 1.5)); svg.append(top); });
+  void it.offsetWidth; it.classList.add('pick'); if (!again) it.classList.add('flash');
   if (!scroll) return;
   const rp = it.closest('.rp'), y = it.getBoundingClientRect().top - rp.getBoundingClientRect().top + rp.scrollTop - (rp.clientHeight - it.offsetHeight) / 2;
   if (rp.scrollHeight > rp.clientHeight) rp.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); else it.scrollIntoView({ block: 'center', behavior: 'smooth' });
