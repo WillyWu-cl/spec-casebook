@@ -1,0 +1,394 @@
+{
+  "collage-room-banner-new.png": {
+    "board": "1:238",
+    "group": null,
+    "hash": null,
+    "source_hash": "eef08790",
+    "captured_at": "2026-11-05T07:45:54.732Z"
+  },
+  "collage-room-banner-new-111-6261.png": {
+    "board": "111:6261",
+    "group": null,
+    "hash": null,
+    "source_hash": "365fd767",
+    "captured_at": "2026-11-05T07:45:55.069Z"
+  },
+  "template-page-default-new.png": {
+    "board": "3:336",
+    "group": null,
+    "hash": null,
+    "source_hash": "bcc6ad53",
+    "captured_at": "2026-11-05T07:45:55.363Z"
+  },
+  "template-page-default-new-111-6441.png": {
+    "board": "111:6441",
+    "group": null,
+    "hash": null,
+    "source_hash": "ec6ad8d3",
+    "captured_at": "2026-11-05T07:45:55.657Z"
+  },
+  "entry-launcher2.png": {
+    "board": "18:386",
+    "group": null,
+    "hash": null,
+    "source_hash": "8fd1377b",
+    "captured_at": "2026-11-05T07:45:55.963Z"
+  },
+  "entry-launcher2-111-6596.png": {
+    "board": "111:6596",
+    "group": null,
+    "hash": null,
+    "source_hash": "8f2a8b35",
+    "captured_at": "2026-11-05T07:45:56.258Z"
+  },
+  "photo-picker.png": {
+    "board": "23:531",
+    "group": null,
+    "hash": null,
+    "source_hash": "db32118d",
+    "captured_at": "2026-11-05T07:45:56.560Z"
+  },
+  "photo-picker-111-6645.png": {
+    "board": "111:6645",
+    "group": null,
+    "hash": null,
+    "source_hash": "52531672",
+    "captured_at": "2026-11-05T07:45:56.835Z"
+  },
+  "2-add-text.png": {
+    "board": "111:8511",
+    "group": null,
+    "hash": null,
+    "source_hash": "9887b18b",
+    "captured_at": "2026-11-05T07:45:57.162Z"
+  },
+  "3-add-sticker.png": {
+    "board": "54:1835",
+    "group": null,
+    "hash": null,
+    "source_hash": "e50ff2b9",
+    "captured_at": "2026-11-05T07:45:57.462Z"
+  },
+  "3-add-sticker-111-8637.png": {
+    "board": "111:8637",
+    "group": null,
+    "hash": null,
+    "source_hash": "5a0f96ea",
+    "captured_at": "2026-11-05T07:45:57.752Z"
+  },
+  "4-frame.png": {
+    "board": "54:2110",
+    "group": null,
+    "hash": null,
+    "source_hash": "da338578",
+    "captured_at": "2026-11-05T07:45:58.081Z"
+  },
+  "4-frame-111-8809.png": {
+    "board": "111:8809",
+    "group": null,
+    "hash": null,
+    "source_hash": "9ec3ae0d",
+    "captured_at": "2026-11-05T07:45:58.408Z"
+  },
+  "5-text-bubble.png": {
+    "board": "54:2359",
+    "group": null,
+    "hash": null,
+    "source_hash": "e9695d2b",
+    "captured_at": "2026-11-05T07:45:58.702Z"
+  },
+  "5-text-bubble-111-9057.png": {
+    "board": "111:9057",
+    "group": null,
+    "hash": null,
+    "source_hash": "1f25acf0",
+    "captured_at": "2026-11-05T07:45:58.992Z"
+  },
+  "background-panel-texture.png": {
+    "board": "72:1505",
+    "group": null,
+    "hash": null,
+    "source_hash": "433243d9",
+    "captured_at": "2026-11-05T07:45:59.329Z"
+  },
+  "1-add-img.png": {
+    "board": "54:520",
+    "group": null,
+    "hash": null,
+    "source_hash": "91eae11a",
+    "captured_at": "2026-11-05T07:45:59.629Z"
+  },
+  "1-add-img-111-6745.png": {
+    "board": "111:6745",
+    "group": null,
+    "hash": null,
+    "source_hash": "9686a9d6",
+    "captured_at": "2026-11-05T07:45:59.911Z"
+  },
+  "1-entry.png": {
+    "board": "23:989",
+    "group": null,
+    "hash": null,
+    "source_hash": "5205da84",
+    "captured_at": "2026-11-05T07:46:00.263Z"
+  },
+  "1-entry-111-6824.png": {
+    "board": "111:6824",
+    "group": null,
+    "hash": null,
+    "source_hash": "89265d11",
+    "captured_at": "2026-11-05T07:46:00.612Z"
+  },
+  "canvas-default.png": {
+    "board": "69:6711",
+    "group": null,
+    "hash": null,
+    "source_hash": "1e967d50",
+    "captured_at": "2026-11-05T07:46:00.968Z"
+  },
+  "canvas-default-111-6952.png": {
+    "board": "111:6952",
+    "group": null,
+    "hash": null,
+    "source_hash": "1b57ec62",
+    "captured_at": "2026-11-05T07:46:01.301Z"
+  },
+  "ratio.png": {
+    "board": "74:2830",
+    "group": null,
+    "hash": null,
+    "source_hash": "c202bf45",
+    "captured_at": "2026-11-05T07:46:01.637Z"
+  },
+  "ratio-111-7080.png": {
+    "board": "111:7080",
+    "group": null,
+    "hash": null,
+    "source_hash": "47b40992",
+    "captured_at": "2026-11-05T07:46:01.961Z"
+  },
+  "background-panel-texture-111-9172.png": {
+    "board": "111:9172",
+    "group": null,
+    "hash": null,
+    "source_hash": "ff78da9c",
+    "captured_at": "2026-11-05T07:46:02.294Z"
+  },
+  "gai-removal.png": {
+    "board": "61:4517",
+    "group": null,
+    "hash": null,
+    "source_hash": "f654810f",
+    "captured_at": "2026-11-05T07:46:02.627Z"
+  },
+  "gai-removal-111-9400.png": {
+    "board": "111:9400",
+    "group": null,
+    "hash": null,
+    "source_hash": "4d0d8712",
+    "captured_at": "2026-11-05T07:46:02.945Z"
+  },
+  "enhance-2.png": {
+    "board": "67:6424",
+    "group": null,
+    "hash": null,
+    "source_hash": "ed179f85",
+    "captured_at": "2026-11-05T07:46:03.230Z"
+  },
+  "enhance-2-111-9730.png": {
+    "board": "111:9730",
+    "group": null,
+    "hash": null,
+    "source_hash": "61c8720e",
+    "captured_at": "2026-11-05T07:46:03.511Z"
+  },
+  "background-panel-solid.png": {
+    "board": "69:6938",
+    "group": null,
+    "hash": null,
+    "source_hash": "4908c88e",
+    "captured_at": "2026-11-05T07:46:03.845Z"
+  },
+  "background-panel-solid-111-9880.png": {
+    "board": "111:9880",
+    "group": null,
+    "hash": null,
+    "source_hash": "64c9ab3b",
+    "captured_at": "2026-11-05T07:46:04.178Z"
+  },
+  "layers.png": {
+    "board": "73:2199",
+    "group": null,
+    "hash": null,
+    "source_hash": "d25b8a8f",
+    "captured_at": "2026-11-05T07:46:04.506Z"
+  },
+  "page.png": {
+    "board": "74:3076",
+    "group": null,
+    "hash": null,
+    "source_hash": "a45de196",
+    "captured_at": "2026-11-05T07:46:04.779Z"
+  },
+  "add-layer-function.png": {
+    "board": "49:1511",
+    "group": null,
+    "hash": null,
+    "source_hash": "9e9e7987",
+    "captured_at": "2026-11-05T07:46:05.109Z"
+  },
+  "add-layer-function-111-7291.png": {
+    "board": "111:7291",
+    "group": null,
+    "hash": null,
+    "source_hash": "e5ec12a0",
+    "captured_at": "2026-11-05T07:46:05.430Z"
+  },
+  "canvas-img-focus.png": {
+    "board": "28:1621",
+    "group": null,
+    "hash": null,
+    "source_hash": "29db4b54",
+    "captured_at": "2026-11-05T07:46:05.746Z"
+  },
+  "canvas-img-focus-111-7455.png": {
+    "board": "111:7455",
+    "group": null,
+    "hash": null,
+    "source_hash": "dbcb904c",
+    "captured_at": "2026-11-05T07:46:06.054Z"
+  },
+  "canvas-img-focus-66-5255.png": {
+    "board": "66:5255",
+    "group": null,
+    "hash": null,
+    "source_hash": "0c3640ae",
+    "captured_at": "2026-11-05T07:46:06.342Z"
+  },
+  "canvas-img-focus-111-7605.png": {
+    "board": "111:7605",
+    "group": null,
+    "hash": null,
+    "source_hash": "e1034e32",
+    "captured_at": "2026-11-05T07:46:06.637Z"
+  },
+  "canvas-img-focus-82-4349.png": {
+    "board": "82:4349",
+    "group": null,
+    "hash": null,
+    "source_hash": "345d543f",
+    "captured_at": "2026-11-05T07:46:06.925Z"
+  },
+  "layers-111-10134.png": {
+    "board": "111:10134",
+    "group": null,
+    "hash": null,
+    "source_hash": "affc5b9e",
+    "captured_at": "2026-11-05T07:46:07.252Z"
+  },
+  "background-panel-solid-72-1786.png": {
+    "board": "72:1786",
+    "group": null,
+    "hash": null,
+    "source_hash": "d26bf526",
+    "captured_at": "2026-11-05T07:46:07.566Z"
+  },
+  "background-panel-solid-111-10344.png": {
+    "board": "111:10344",
+    "group": null,
+    "hash": null,
+    "source_hash": "d9141570",
+    "captured_at": "2026-11-05T07:46:07.861Z"
+  },
+  "b-mimic-vvg-beauty-plus.png": {
+    "board": "103:6032",
+    "group": null,
+    "hash": null,
+    "source_hash": "1123c802",
+    "captured_at": "2026-11-05T07:46:08.151Z"
+  },
+  "b-mimic-vvg-beauty-plus-111-10489.png": {
+    "board": "111:10489",
+    "group": null,
+    "hash": null,
+    "source_hash": "08f3f0e9",
+    "captured_at": "2026-11-05T07:46:08.541Z"
+  },
+  "b-mimic-vvg-beauty-plus-103-6121.png": {
+    "board": "103:6121",
+    "group": null,
+    "hash": null,
+    "source_hash": "2b2bca4d",
+    "captured_at": "2026-11-05T07:46:08.838Z"
+  },
+  "b-mimic-vvg-beauty-plus-111-10570.png": {
+    "board": "111:10570",
+    "group": null,
+    "hash": null,
+    "source_hash": "683db68a",
+    "captured_at": "2026-11-05T07:46:09.227Z"
+  },
+  "canvas-img-focus-111-7761.png": {
+    "board": "111:7761",
+    "group": null,
+    "hash": null,
+    "source_hash": "dfc5c63e",
+    "captured_at": "2026-11-05T07:46:09.519Z"
+  },
+  "canvas-frame-focus.png": {
+    "board": "33:2230",
+    "group": null,
+    "hash": null,
+    "source_hash": "ca61c04c",
+    "captured_at": "2026-11-05T07:46:09.837Z"
+  },
+  "canvas-frame-focus-111-7917.png": {
+    "board": "111:7917",
+    "group": null,
+    "hash": null,
+    "source_hash": "17aa48d3",
+    "captured_at": "2026-11-05T07:46:10.130Z"
+  },
+  "save.png": {
+    "board": "45:723",
+    "group": null,
+    "hash": null,
+    "source_hash": "dfcf0de1",
+    "captured_at": "2026-11-05T07:46:10.479Z"
+  },
+  "save-111-8106.png": {
+    "board": "111:8106",
+    "group": null,
+    "hash": null,
+    "source_hash": "910cc55f",
+    "captured_at": "2026-11-05T07:46:10.886Z"
+  },
+  "save-only-1-img.png": {
+    "board": "103:5778",
+    "group": null,
+    "hash": null,
+    "source_hash": "96ccaad0",
+    "captured_at": "2026-11-05T07:46:11.217Z"
+  },
+  "save-only-1-img-111-8308.png": {
+    "board": "111:8308",
+    "group": null,
+    "hash": null,
+    "source_hash": "c0a4b9b0",
+    "captured_at": "2026-11-05T07:46:11.597Z"
+  },
+  "2-add-text-54-1487.png": {
+    "board": "54:1487",
+    "group": null,
+    "hash": null,
+    "source_hash": "ed334af7",
+    "captured_at": "2026-11-05T07:46:11.922Z"
+  },
+  "page-112-3247.png": {
+    "board": "112:3247",
+    "group": null,
+    "hash": null,
+    "source_hash": "b5c1ee10",
+    "captured_at": "2026-11-05T07:46:12.204Z"
+  }
+}
