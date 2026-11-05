@@ -107,14 +107,14 @@ lines; put the full rule in the skill or reference file that applies it and poin
   (Standing inputs 6) and run segments. Generated or second-hand ones go in as `observed`; originals stay local, only
   entries, `source.json` and extracted text are committed. Intake and upkeep are the `domain-knowledge` skill; during a
   run knowledge is only parked (`knowledge.ts … inbox add`) and processed by a fresh subagent at the phase wrap-up.
-- **QA Reports (user, 2026-11-03, REQ-072 / REQ-073).** A TR's QR is written with the `qa-report` skill (`scripts/qa-report.ts`): only OK and Fail rows; a bug not fully verified is left off the QR and left alone (still "Not yet verified"), never filed as NotVerified. A scenario that can no longer be completed or triggered by any means counts as fixed (OK, with a Note saying why). Lettered Details like the team's QRs, one evidence ZIP, `qr-review.html` approved by the tester before the IF3 Standard Report is filled and saved once. Replaces the Spec agent's `verify-tr-ebugs` report format here.
+- **QA Reports (user, 2026-11-03, REQ-072 / REQ-073).** A TR's QR is written with the `qa-report` skill (`scripts/qa-report.ts`): only OK and Fail rows; a bug not fully verified is left off the QR and left alone (still "Not yet verified"), never filed as NotVerified. A scenario that can no longer be completed or triggered by any means counts as fixed (OK, with a Note saying why). Lettered Details like the team's QRs, `qr-review.html` approved by the tester before the IF3 Standard Report is filled and saved once. Replaces the Spec agent's `verify-tr-ebugs` report format here.
 - **Verify in one journey (user, 2026-11-05, REQ-093).** `/qa-report <TR>` verifies the tester's bugs on the TR's
   build first when they have no verdicts; the checks are ordered along the flow in `verify-plan.md` so one drama
   carries as many bugs as it passes, shared steps and long waits are reused, never a fresh start per bug
   (`qa-report/SKILL.md` › *Verify first*).
 - **Evidence on each eBug (user, 2026-11-05, REQ-099).** A QR's screenshots and logs are uploaded to each bug in it
-  (`qa-report.ts upload … --send`, before Create) and its Reason names them like a description (`{file.png}`), not
-  the ZIP link; uploads can't be removed, so only after the tester approves (`qa-report/SKILL.md` › *Evidence on
+  (`qa-report.ts upload … --send`, before Create) and its Reason names them like a description (`{file.png}`); no
+  ZIP goes on the QR (REQ-101), readers check the bug and its files; uploads can't be removed, so only after the tester approves (`qa-report/SKILL.md` › *Evidence on
   each eBug*). The one exception to *No comments on existing eBugs*: files only, never a comment.
 - **QR account line (user, 2026-11-05, REQ-100).** A QR's Details name the phone's signed-in account as the app's menu
   shows it, with its tier (`Account: cltqauiap2@gmail.com (Premium)`), read from the menu at each verify run

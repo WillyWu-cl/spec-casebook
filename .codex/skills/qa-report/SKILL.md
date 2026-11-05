@@ -1,6 +1,6 @@
 ---
 name: qa-report
-description: Write and file the QA Report (QR) for a CyberLink Testing Request after verifying its eBugs — OK / Fail per bug (anything not fully verified is left off), readable Test Result Details, one evidence ZIP, a review page the tester approves, then the IF3 「Create QA Report」 form (Standard Report) filled, saved once and read back. Use when the user asks to create, write, draft or file a QR / QA Report for a TR, or to report verification results on a TR. Includes verifying the tester's bugs on the TR's build first when no verdicts exist yet: one ordered journey that checks every bug where the flow reaches it, not a fresh start per bug.
+description: Write and file the QA Report (QR) for a CyberLink Testing Request after verifying its eBugs — OK / Fail per bug (anything not fully verified is left off), readable Test Result Details naming the phone's signed-in account, each bug's screenshots and logs uploaded to that eBug and named in its Reason (no ZIP), a review page the tester approves, then the IF3 「Create QA Report」 form (Standard Report) filled, saved once and read back. Use when the user asks to create, write, draft or file a QR / QA Report for a TR, or to report verification results on a TR. Includes verifying the tester's bugs on the TR's build first when no verdicts exist yet: one ordered journey that checks every bug where the flow reaches it, not a fresh start per bug.
 ---
 
 # QA Report for a Testing Request
@@ -87,10 +87,10 @@ through `ebug-tr-filer` only if the user asks).
    scope, including Hold rows. `summary` is the one-line Details entry; Fail rows take `observed` and `expected`
    from the eBug's own Result / Expect Result, rewritten for what this build does. Use the decisive screenshots
    only (2–4 per bug), with the log excerpt for timing or charge claims. Never put tokens or local paths in any text,
-   and no e-mail except the tested account on the Account line (*Wording*). Set `"attachToBugs": true` (*Evidence on each eBug* below): every file of a row is named
+   and no e-mail except the tested account on the Account line (*Wording*). Evidence goes on each eBug (*Evidence
+   on each eBug* below; `"attachToBugs": false` is only for the old ZIP drafts): every file of a row is named
    `<version.build>_<BugCode>_…` (a frame two bugs share gets a copy under each bug's name) and stays under 5 MB.
-2. **Check and pack.** `node scripts/qa-report.ts check <draft>` (must pass), then `pack` (one ZIP, folders
-   `OK/` and `Fail/` with an `index.html` and a SHA-256 manifest), then `render` (`qr-review.html`) and
+2. **Check and render.** `node scripts/qa-report.ts check <draft>` (must pass), then `render` (`qr-review.html`) and
    `text` (every field exactly as it will be typed). Then `upload <draft>` (dry run): it lists, per bug, the
    files that will be added and those already on the page.
 3. **Review.** Open `qr-review.html` in the browser pane and look at every image yourself before showing it. The
@@ -101,14 +101,13 @@ through `ebug-tr-filer` only if the user asks).
    Description, Test Result, Testing Date, Test Result Details, Product Version, Build Day, Build No., Operation
    System and OS Language. In the bug list set State and Reason only for the approved rows; leave every other row on
    「Not Yet Verified」. First `node scripts/qa-report.ts upload <draft> --send`: each row's files go on its own
-   eBug and `uploaded` records what each page lists; `text` warns while any row is missing. Then upload the evidence
-   ZIP in the form's upload section and put its link in the draft (*Form notes* › Attachments; with `attachToBugs`
-   it is a convenience bundle on the QR, named once in Details), regenerate `text`, then fill. Read the whole form back against `text`, then press the submit button (**Create**) once; never twice —
+   eBug and `uploaded` records what each page lists; `text` warns while any row is missing. No ZIP goes on the QR
+   (user, 2026-11-05, REQ-101): readers open each bug and its files. Then fill. Read the whole form back against `text`, then press the submit button (**Create**) once; never twice —
    if unsure whether it saved, reload the TR and look for a new QR in its list.
 5. **Read back.** Open the new `https://ecl.cyberlink.com/IF3/qr/BPM/FormView/<QR>` and compare every field, State
-   and Reason with `text`, and the attachment name and size with the ZIP. Reload the TR: its Pass / Fail / Not yet
+   and Reason with `text`; check each bug's page lists the files its Reason names (`ecl_if3.py files <BugCode…>`). Reload the TR: its Pass / Fail / Not yet
    verified counts must move by the filed rows. Save `qr-receipt.json` in the run folder (QR code, URL, time,
-   counts, ZIP sha256, any mismatch) and add the QR to the run's `result.md` and the request's REQ line.
+   counts, the files on each bug, any mismatch) and add the QR to the run's `result.md` and the request's REQ line.
 
 The first time the form is filled on a new template, record the field names you actually found in this file
 (*Form notes*) so the next filing does not have to rediscover them.
@@ -123,13 +122,14 @@ The first time the form is filled on a new template, record the field names you 
   of the verify run (it changes when someone signs in another account) and write it in the run's `result.md`; never
   copy it from an earlier run.
 - Reasons in English, short, no test IDs, tool names, timestamps or retry history; the detail lives in the run
-  folder. Never write a `.zip` file name in a Reason (ECL links it as a web address). With `attachToBugs` the last
-  line is `Evidence: {file.png} {file_log.txt}`, the names of the files on that eBug, like a description (OK rows
-  too); without it, the ZIP link and folder.
+  folder. Never write a `.zip` file name in a Reason (ECL links it as a web address). The last line is
+  `Evidence: {file.png} {file_log.txt}`, the names of the files on that eBug, like a description (OK rows too).
+  Details end with `Evidence: screenshots and logs are attached to each eBug and named in its Reason.`
 
-## Evidence on each eBug (user, 2026-11-05, REQ-099)
+## Evidence on each eBug (user, 2026-11-05, REQ-099 / REQ-101)
 
-A QR's Reason reaches every linked bug, so each bug's evidence goes on that bug instead of only in a ZIP on the QR:
+A QR's Reason reaches every linked bug, so each bug's evidence goes on that bug, and the QR carries no ZIP (others
+check the bug and the files there; `pack` refuses per-bug drafts):
 `qa-report.ts upload` runs `ebug-tr-filer`'s `ecl_if3.py upload` per row (public code endpoint, `formDataPath=
 $.UploadFiles`), which skips names already on the page and reads the page's list back. Tested 2026-11-05 on
 DRA262610P0388 in Fail status: six files added, credited to the tester, no Activity Log line, status and handler
@@ -154,7 +154,8 @@ never a comment.
   before the submit button, which is labelled **Create** (one press; the page then shows the new QR).
 - **Effect.** Saving closes OK tickets (status Close) and sets Fail tickets to Fail at once; check with
   `ecl_query.py tr <TR>`.
-- **Attachments (user, 2026-11-03, REQ-074).** The ZIP goes in the Create form's upload section (its
+- **Attachments (user, 2026-11-03, REQ-074; retired 2026-11-05, REQ-101: no ZIP on the QR any more, kept for
+  the old drafts QR261103-0042 and QR261105-0035).** The ZIP went in the Create form's upload section (its
   `input[type=file]`), which uploads at once and lists the file with its link
   `https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/…zip`. That link goes in `evidence.url` of the draft; `text`
   then puts it in Details and in every Fail reason (`Evidence: <link>` / `Folder: Fail/<BugCode>/`). The agent fills

@@ -11,7 +11,7 @@
   "env": {
     "device": "Samsung Galaxy A53 (SM-A5360) / Android 15",
     "server": "Stage",
-    "account": "signed in to the tester's CyberLink test account (Premium)",
+    "account": "cltqauiap2@gmail.com (Premium)",
     "testedBy": "AI agent (Claude Opus 5.5) driving the phone over Appium; verdicts and evidence reviewed by ETHAN_HSU",
     "install": "APK from the TR's OneDrive folder (MD5 checked), installed over the previous build with data kept",
     "scope": "the eBugs created by ETHAN_HSU in this TR's verify list"

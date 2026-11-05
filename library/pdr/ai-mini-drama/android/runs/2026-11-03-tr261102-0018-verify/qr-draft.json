@@ -19,6 +19,13 @@
   "observations": [
     "AI Mini Drama export: if 「Stop exporting?」 is left open, the export finishes underneath it and the video is saved while the dialog still says 「Your video won't be saved.」"
   ],
+  "evidence": {
+    "file": "TR261102-0018_16.8.0.2611021_evidence.zip",
+    "sha256": "105b0e32a83c5863d9c04facdb8ec956d8d3ba6cae5404dfc3fbb17c1d008a1b",
+    "files": 41,
+    "url": "https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/03/67d9bf6a-e00b-402a-8a2e-da0a1958c281.zip"
+  },
+  "attachToBugs": false,
   "rows": [
     {
       "bug": "DRA262610P0326",
@@ -238,11 +245,5 @@
       "creator": "ETHAN_HSU",
       "logs": []
     }
-  ],
-  "evidence": {
-    "file": "TR261102-0018_16.8.0.2611021_evidence.zip",
-    "sha256": "105b0e32a83c5863d9c04facdb8ec956d8d3ba6cae5404dfc3fbb17c1d008a1b",
-    "files": 41,
-    "url": "https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/03/67d9bf6a-e00b-402a-8a2e-da0a1958c281.zip"
-  }
+  ]
 }
