@@ -1,575 +1,705 @@
 {
-  "screens": {
-    "3131:65428": {
-      "lines:I3131:65500;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "bug",
-        "severity": "cosmetic",
-        "figma": {
-          "box": [
-            32,
-            563,
-            320,
-            60
-          ]
-        },
-        "note": "Figma 的「Ready for the next episode?」與「Create Next Episode」為粗體（semibold），App 為一般字重。"
-      }
+ "screens": {
+  "2778:127550": {
+   "missing:I2778:127604;2778:123550": {
+    "verdict": "ok",
+    "note": "Sample content: the drama title and length are per drama (the app shows this drama's own title and length).",
+    "note_zh": "樣本內容：劇名與長度依劇而異（App 顯示該劇自己的標題與長度）。"
+   },
+   "missing:I3142:67911;2750:118354": {
+    "verdict": "ok",
+    "note": "The 「Model」 label belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "「Model」標籤屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "copy:I3142:67911;2750:118356;1902:90136": {
+    "verdict": "ok",
+    "note": "The 「Seedance 2.0」 tab belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "「Seedance 2.0」分頁屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "missing:I3142:67911;2750:118356;1902:90134": {
+    "verdict": "ok",
+    "note": "The 「Seedance 2.0 Mini」 tab belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "「Seedance 2.0 Mini」分頁屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "missing:I3142:67911;2750:118357": {
+    "verdict": "ok",
+    "note": "The subtitle 「Best for cinematic, beautiful, high-detail videos」 belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "副標「Best for cinematic, beautiful, high-detail videos」屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "copy:I3142:67911;2750:118360": {
+    "verdict": "question",
+    "note": "Design labels the row 「Length」, the app 「Video length」, which is the PM main flow's wording (R-068). Which one is current?",
+    "note_zh": "Design 標示為「Length」，App 為「Video length」，與 PM main flow 用語相同（R-068）。以哪一個為準？"
+   },
+   "copy:I3142:67911;2750:118361;1902:90136": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The length option reads 「Preview - 30 sec」 with a hyphen; Design (and PM R-068) separate with a middle dot: 「Preview · 30 sec」.",
+    "note_zh": "長度選項為「Preview - 30 sec」，使用連字號；Design（及 PM R-068）以中間點分隔：「Preview · 30 sec」。"
+   },
+   "copy:I3142:67911;2750:118361;1902:90134": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The length option reads 「Full Video - 90 sec」 with a hyphen; Design (and PM R-068) use a middle dot: 「Full Video · 90 sec」.",
+    "note_zh": "長度選項為「Full Video - 90 sec」，使用連字號；Design（及 PM R-068）使用中間點：「Full Video · 90 sec」。"
+   },
+   "copy:I3142:67911;2750:118424;2750:25393": {
+    "verdict": "ok",
+    "note": "This frame's button reads 「Generate」; the newer Quality variant (2778:127612) reads 「Generate Video」, which the app's 「Generate video」 follows (compared there).",
+    "note_zh": "本畫面按鈕為「Generate」；較新的 Quality 版本（2778:127612）為「Generate Video」，App 的「Generate video」依循該版本（於該畫面比較）。"
+   },
+   "missing:I2778:127605;1902:90188": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "The 「More ideas」 chip above the composer is missing; the frame draws it once the chat has content (R-017).",
+    "note_zh": "輸入框上方缺少「More ideas」按鈕；畫面在聊天有內容後即繪製此按鈕（R-017）。"
+   },
+   "lines:I2778:127604;2778:123551": {
+    "verdict": "ok",
+    "note": "Same text in a box of the same width; Android's narrower system font fits it in 2 lines instead of 3, no truncation.",
+    "note_zh": "同寬的文字框內為同一段文字；Android 系統字體較窄，排成 2 行而非 3 行，沒有截斷。"
+   },
+   "position:I2778:127611;1037:48645;245:2027": {
+    "verdict": "ok",
+    "note": "The credit balance is the account's own value and sits in the fixed header; the offset comes from aligning on the scrolled chat content.",
+    "note_zh": "點數餘額為帳號本身的數值，位於固定標題列；位移來自以捲動中的聊天內容對齊。"
+   },
+   "colour:I3142:67911;2750:118356;1902:90135": {
+    "verdict": "ok",
+    "note": "The Model selector's tab fill belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "Model 選擇器分頁的底色屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "colour:I3142:67911;2750:118356;1902:90133": {
+    "verdict": "ok",
+    "note": "The Model selector's tab fill belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "Model 選擇器分頁的底色屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "colour:I3142:67911;2750:118424": {
+    "verdict": "ok",
+    "note": "The sample point missed the button (the bottom alignment failed, spread 42 pt); the app's 「Generate video」 button is drawn in the same blue as the frame's.",
+    "note_zh": "取樣點未落在按鈕上（下方對齊失敗，誤差 42 pt）；App 的「Generate video」按鈕與畫面同為藍色。"
+   },
+   "colour:2778:127605": {
+    "verdict": "n/a",
+    "note": "Nothing to sample: the 「More ideas」 chip is not drawn in the app (judged under the missing 「More ideas」 item).",
+    "note_zh": "無可取樣處：App 未繪製「More ideas」按鈕（已於缺少「More ideas」項目判定）。"
+   },
+   "position:2778:127603": {
+    "verdict": "ok",
+    "note": "「Storyboard Preview」 is 4.9 pt off after alignment, within the alignment's own spread (4.9 pt); the label-to-card spacing looks the same.",
+    "note_zh": "「Storyboard Preview」對齊後偏 4.9 pt，在對齊本身的誤差（4.9 pt）內；標題與卡片的間距看起來相同。"
+   }
+  },
+  "2778:138663": {
+   "missing:I2778:138717;2778:123550": {
+    "verdict": "ok",
+    "note": "Sample content: the drama title and length are per drama (the app shows this drama's own title and length).",
+    "note_zh": "樣本內容：劇名與長度依劇而異（App 顯示該劇自己的標題與長度）。"
+   },
+   "missing:I3142:68177;2750:118354": {
+    "verdict": "ok",
+    "note": "The 「Model」 label belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "「Model」標籤屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "copy:I3142:68177;2750:118356;1902:90136": {
+    "verdict": "ok",
+    "note": "The 「Seedance 2.0」 tab belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "「Seedance 2.0」分頁屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "missing:I3142:68177;2750:118356;1902:90134": {
+    "verdict": "ok",
+    "note": "The 「Seedance 2.0 Mini」 tab belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "「Seedance 2.0 Mini」分頁屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "missing:I3142:68177;2750:118357": {
+    "verdict": "ok",
+    "note": "The subtitle 「Best for cinematic, beautiful, high-detail videos」 belongs to the Model selector this frame draws; PM 10/16 replaced it with Quality Best / Standard / Fast (Q-15, R-253, decided 2026-10-22), which the app shows and frame 2778:127612 draws.",
+    "note_zh": "副標「Best for cinematic, beautiful, high-detail videos」屬於本畫面繪製的 Model 選擇器；PM 10/16 已改為 Quality Best / Standard / Fast（Q-15、R-253，2026-10-22 決定），App 依此顯示，畫面 2778:127612 亦如此繪製。"
+   },
+   "copy:I3142:68177;2750:118360": {
+    "verdict": "question",
+    "note": "Design labels the row 「Length」, the app 「Video length」, which is the PM main flow's wording (R-068). Which one is current?",
+    "note_zh": "Design 標示為「Length」，App 為「Video length」，與 PM main flow 用語相同（R-068）。以哪一個為準？"
+   },
+   "copy:I3142:68177;2750:118361;1902:90136": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The length option reads 「Preview - 30 sec」 with a hyphen; Design (and PM R-068) separate with a middle dot: 「Preview · 30 sec」.",
+    "note_zh": "長度選項為「Preview - 30 sec」，使用連字號；Design（及 PM R-068）以中間點分隔：「Preview · 30 sec」。"
+   },
+   "copy:I3142:68177;2750:118361;1902:90134": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The length option reads 「Full Video - 90 sec」 with a hyphen; Design (and PM R-068) use a middle dot: 「Full Video · 90 sec」.",
+    "note_zh": "長度選項為「Full Video - 90 sec」，使用連字號；Design（及 PM R-068）使用中間點：「Full Video · 90 sec」。"
+   },
+   "copy:I3142:68177;2750:118424;2750:25393": {
+    "verdict": "ok",
+    "note": "This frame's button reads 「Generate」; the newer Quality variant (2778:127612) reads 「Generate Video」, which the app's 「Generate video」 follows (compared there).",
+    "note_zh": "本畫面按鈕為「Generate」；較新的 Quality 版本（2778:127612）為「Generate Video」，App 的「Generate video」依循該版本（於該畫面比較）。"
+   },
+   "missing:I2778:138718;1902:90188": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "The 「More ideas」 chip above the composer is missing; the frame draws it once the chat has content (R-017).",
+    "note_zh": "輸入框上方缺少「More ideas」按鈕；畫面在聊天有內容後即繪製此按鈕（R-017）。"
+   },
+   "lines:I2778:138717;2778:123551": {
+    "verdict": "ok",
+    "note": "Same text in a box of the same width; Android's narrower system font fits it in 2 lines instead of 3, no truncation.",
+    "note_zh": "同寬的文字框內為同一段文字；Android 系統字體較窄，排成 2 行而非 3 行，沒有截斷。"
+   },
+   "position:I2778:138724;1037:48645;245:2027": {
+    "verdict": "ok",
+    "note": "The credit balance is the account's own value and sits in the fixed header; the offset comes from aligning on the scrolled chat content.",
+    "note_zh": "點數餘額為帳號本身的數值，位於固定標題列；位移來自以捲動中的聊天內容對齊。"
+   },
+   "colour:I3142:68177;2750:118424": {
+    "verdict": "ok",
+    "note": "The sample point missed the button (the bottom alignment failed, spread 42 pt); the app's 「Generate video」 button is drawn in the same blue as the frame's.",
+    "note_zh": "取樣點未落在按鈕上（下方對齊失敗，誤差 42 pt）；App 的「Generate video」按鈕與畫面同為藍色。"
+   }
+  },
+  "2778:127612": {
+   "missing:I2778:127666;2778:123550": {
+    "verdict": "ok",
+    "note": "Sample content: the drama title and length are per drama (the app shows this drama's own title and length).",
+    "note_zh": "樣本內容：劇名與長度依劇而異（App 顯示該劇自己的標題與長度）。"
+   },
+   "copy:I3139:64913;4845:2150": {
+    "verdict": "question",
+    "note": "The app draws no label above the Best / Standard / Fast selector (only the card title 「Choose your video settings」); Design labels it 「Quality」, PM R-302 「Model • Seedance」. Which label, if any, should show?",
+    "note_zh": "App 在 Best / Standard / Fast 選擇器上方沒有標籤（只有卡片標題「Choose your video settings」）；Design 標為「Quality」，PM R-302 為「Model • Seedance」。應顯示哪一個標籤？"
+   },
+   "missing:I3139:64913;4845:2165;4845:2123": {
+    "verdict": "n/a",
+    "note": "The frame shows Best's subtitle 「Seedance 2.5 · Sharper motion and richer detail」; the app has Standard selected and shows Standard's subtitle 「Seedance 2.0 · Balanced quality for everyday stories」, as R-253 specifies.",
+    "note_zh": "畫面顯示 Best 的副標「Seedance 2.5 · Sharper motion and richer detail」；App 選取 Standard，顯示 Standard 的副標「Seedance 2.0 · Balanced quality for everyday stories」，符合 R-253。"
+   },
+   "copy:I3139:64913;4845:2156": {
+    "verdict": "question",
+    "note": "Design labels the row 「Length」, the app 「Video length」, which is the PM main flow's wording (R-068). Which one is current?",
+    "note_zh": "Design 標示為「Length」，App 為「Video length」，與 PM main flow 用語相同（R-068）。以哪一個為準？"
+   },
+   "copy:I3139:64913;4845:2157;1902:90136": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The length option reads 「Preview - 30 sec」 with a hyphen; Design (and PM R-068) separate with a middle dot: 「Preview · 30 sec」.",
+    "note_zh": "長度選項為「Preview - 30 sec」，使用連字號；Design（及 PM R-068）以中間點分隔：「Preview · 30 sec」。"
+   },
+   "copy:I3139:64913;4845:2157;1902:90134": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The length option reads 「Full Video - 90 sec」 with a hyphen; Design (and PM R-068) use a middle dot: 「Full Video · 90 sec」.",
+    "note_zh": "長度選項為「Full Video - 90 sec」，使用連字號；Design（及 PM R-068）使用中間點：「Full Video · 90 sec」。"
+   },
+   "copy:I3139:64913;4845:2164;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The button reads 「Generate video」; Design capitalises it 「Generate Video」.",
+    "note_zh": "按鈕為「Generate video」；Design 大寫為「Generate Video」。"
+   },
+   "missing:I2778:127667;1902:90188": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "The 「More ideas」 chip above the composer is missing; the frame draws it once the chat has content (R-017).",
+    "note_zh": "輸入框上方缺少「More ideas」按鈕；畫面在聊天有內容後即繪製此按鈕（R-017）。"
+   },
+   "position:2778:127665": {
+    "verdict": "ok",
+    "note": "「Storyboard Preview」 is 4.9 pt off after alignment, within the alignment's own spread (4.9 pt); the label-to-card spacing looks the same.",
+    "note_zh": "「Storyboard Preview」對齊後偏 4.9 pt，在對齊本身的誤差（4.9 pt）內；標題與卡片的間距看起來相同。"
+   },
+   "lines:I2778:127666;2778:123551": {
+    "verdict": "ok",
+    "note": "Same text in a box of the same width; Android's narrower system font fits it in 2 lines instead of 3, no truncation.",
+    "note_zh": "同寬的文字框內為同一段文字；Android 系統字體較窄，排成 2 行而非 3 行，沒有截斷。"
+   },
+   "weight:I3139:64913;4845:2165;4845:2118": {
+    "verdict": "n/a",
+    "note": "The frame has 「Best」 selected, the app 「Standard」 (the default model is still open, Q-15), so the tabs' fills, text colours and weights belong to different selections; in both the selected tab is white with dark text.",
+    "note_zh": "畫面選取「Best」，App 選取「Standard」（預設模型仍未定，Q-15），因此分頁底色、文字顏色與字重屬於不同的選取狀態；兩邊被選取的分頁皆為白底深色字。"
+   },
+   "weight:I3139:64913;4845:2165;4845:2120": {
+    "verdict": "n/a",
+    "note": "The frame has 「Best」 selected, the app 「Standard」 (the default model is still open, Q-15), so the tabs' fills, text colours and weights belong to different selections; in both the selected tab is white with dark text.",
+    "note_zh": "畫面選取「Best」，App 選取「Standard」（預設模型仍未定，Q-15），因此分頁底色、文字顏色與字重屬於不同的選取狀態；兩邊被選取的分頁皆為白底深色字。"
+   },
+   "position:I2778:127673;1037:48645;245:2027": {
+    "verdict": "ok",
+    "note": "The credit balance is the account's own value and sits in the fixed header; the offset comes from aligning on the scrolled chat content.",
+    "note_zh": "點數餘額為帳號本身的數值，位於固定標題列；位移來自以捲動中的聊天內容對齊。"
+   },
+   "colour:I3139:64913;4845:2165;4845:2119": {
+    "verdict": "n/a",
+    "note": "The frame has 「Best」 selected, the app 「Standard」 (the default model is still open, Q-15), so the tabs' fills, text colours and weights belong to different selections; in both the selected tab is white with dark text.",
+    "note_zh": "畫面選取「Best」，App 選取「Standard」（預設模型仍未定，Q-15），因此分頁底色、文字顏色與字重屬於不同的選取狀態；兩邊被選取的分頁皆為白底深色字。"
+   },
+   "colour:I3139:64913;4845:2165;4845:2118": {
+    "verdict": "n/a",
+    "note": "The frame has 「Best」 selected, the app 「Standard」 (the default model is still open, Q-15), so the tabs' fills, text colours and weights belong to different selections; in both the selected tab is white with dark text.",
+    "note_zh": "畫面選取「Best」，App 選取「Standard」（預設模型仍未定，Q-15），因此分頁底色、文字顏色與字重屬於不同的選取狀態；兩邊被選取的分頁皆為白底深色字。"
+   },
+   "colour:I3139:64913;4845:2165;4845:2120": {
+    "verdict": "n/a",
+    "note": "The frame has 「Best」 selected, the app 「Standard」 (the default model is still open, Q-15), so the tabs' fills, text colours and weights belong to different selections; in both the selected tab is white with dark text.",
+    "note_zh": "畫面選取「Best」，App 選取「Standard」（預設模型仍未定，Q-15），因此分頁底色、文字顏色與字重屬於不同的選取狀態；兩邊被選取的分頁皆為白底深色字。"
+   },
+   "colour:I3139:64913;4845:2165;4845:2117": {
+    "verdict": "n/a",
+    "note": "The frame has 「Best」 selected, the app 「Standard」 (the default model is still open, Q-15), so the tabs' fills, text colours and weights belong to different selections; in both the selected tab is white with dark text.",
+    "note_zh": "畫面選取「Best」，App 選取「Standard」（預設模型仍未定，Q-15），因此分頁底色、文字顏色與字重屬於不同的選取狀態；兩邊被選取的分頁皆為白底深色字。"
+   },
+   "colour:2778:127667": {
+    "verdict": "n/a",
+    "note": "Nothing to sample: the 「More ideas」 chip is not drawn in the app (judged under the missing 「More ideas」 item).",
+    "note_zh": "無可取樣處：App 未繪製「More ideas」按鈕（已於缺少「More ideas」項目判定）。"
+   }
+  },
+  "2824:130900": {
+   "state:2824:130900": {
+    "verdict": "ok",
+    "note": "Same state as the frame: storyboard scenes 3–6, then the Storyboard Preview card with the floating ↓ button; few texts match only because scene titles and descriptions are per drama.",
+    "note_zh": "與畫面同一狀態：分鏡場景 3–6，接著 Storyboard Preview 卡片與浮動 ↓ 按鈕；文字比對少只因場景標題與描述依劇而異。"
+   },
+   "missing:I3142:68116;3948:158776": {
+    "verdict": "ok",
+    "note": "Sample content: scene titles are generated per drama.",
+    "note_zh": "樣本內容：場景標題依劇生成。"
+   },
+   "missing:I3142:68117;3948:158776": {
+    "verdict": "ok",
+    "note": "Sample content: scene titles are generated per drama.",
+    "note_zh": "樣本內容：場景標題依劇生成。"
+   },
+   "copy:I3142:68118;3948:158776": {
+    "verdict": "ok",
+    "note": "Sample content: scene titles are generated per drama.",
+    "note_zh": "樣本內容：場景標題依劇生成。"
+   },
+   "missing:I3142:68119;3948:158776": {
+    "verdict": "ok",
+    "note": "Sample content: scene titles are generated per drama.",
+    "note_zh": "樣本內容：場景標題依劇生成。"
+   },
+   "missing:I2824:130954;2778:123550": {
+    "verdict": "ok",
+    "note": "Sample content: the drama title and length are per drama (the app shows this drama's own title and length).",
+    "note_zh": "樣本內容：劇名與長度依劇而異（App 顯示該劇自己的標題與長度）。"
+   },
+   "missing:I2824:130955;393:31121": {
+    "verdict": "ok",
+    "note": "「Create video」 lies at y 788, under the composer at the bottom of the frame: not visible in either.",
+    "note_zh": "「Create video」位於 y 788，在畫面底部輸入框之下：兩邊皆不可見。"
+   },
+   "lines:I2824:130954;2778:123551": {
+    "verdict": "ok",
+    "note": "Same text in a box of the same width; Android's narrower system font fits it in 2 lines instead of 3, no truncation.",
+    "note_zh": "同寬的文字框內為同一段文字；Android 系統字體較窄，排成 2 行而非 3 行，沒有截斷。"
+   },
+   "control:I3142:68115;3948:158774": {
+    "verdict": "ok",
+    "note": "The control sits at y −20, above the frame's top edge (a scrolled-out scene thumbnail): off screen in both.",
+    "note_zh": "此控制項位於 y −20，在畫面頂端之上（已捲出的場景縮圖）：兩邊皆在畫面外。"
+   }
+  },
+  "2778:127674": {
+   "missing:I2778:127728;2778:123550": {
+    "verdict": "ok",
+    "note": "Sample content: the drama title and length are per drama (the app shows this drama's own title and length).",
+    "note_zh": "樣本內容：劇名與長度依劇而異（App 顯示該劇自己的標題與長度）。"
+   },
+   "missing:I2778:127732;393:31121": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The user bubble reads 「Standard · Preview - 30 sec」; Design draws 「Generate Video」 with labelled lines 「Model: Seedance 2.0」 and the length. The model line follows the superseded Model selector, but the heading and labels are also left out.",
+    "note_zh": "使用者泡泡為「Standard · Preview - 30 sec」；Design 繪製「Generate Video」與標示的「Model: Seedance 2.0」及長度行。Model 行依循已被取代的 Model 選擇器，但標題與標籤也一併省略。"
+   },
+   "lines:I2778:127728;2778:123551": {
+    "verdict": "ok",
+    "note": "Same text in a box of the same width; Android's narrower system font fits it in 2 lines instead of 3, no truncation.",
+    "note_zh": "同寬的文字框內為同一段文字；Android 系統字體較窄，排成 2 行而非 3 行，沒有截斷。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "severity": "minor",
+    "figma": {
+     "box": [
+      16,
+      352,
+      179,
+      318
+     ]
     },
-    "3153:103325": {
-      "lines:I3153:103397;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "bug",
-        "severity": "cosmetic",
-        "figma": {
-          "box": [
-            32,
-            563,
-            320,
-            60
-          ]
-        },
-        "note": "淺色模式同樣：Figma 的「Ready for the next episode?」與「Create Next Episode」為粗體，App 為一般字重。"
-      }
+    "note": "Design shows a portrait video placeholder while the video generates; the app shows a full-width text-skeleton card (「Generating videos for the mini drama.」 / 「Generating videos with Seedance 2.0.」 with grey bars).",
+    "note_zh": "Design 在影片生成時顯示直式影片佔位框；App 顯示全寬文字骨架卡片（「Generating videos for the mini drama.」／「Generating videos with Seedance 2.0.」加灰色條）。"
+   }
+  },
+  "2778:127956": {
+   "missing:2778:128013": {
+    "verdict": "ok",
+    "note": "「Choose your video settings」 sits at the very top of the frame, under the status bar and header: scrolled out in both.",
+    "note_zh": "「Choose your video settings」位於畫面最上方、狀態列與標題列之下：兩邊都已捲出畫面。"
+   },
+   "sample:I2778:128014;393:31121": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The user bubble reads 「Standard · Preview - 30 sec」; Design draws 「Generate Video」 with labelled lines 「Model: Seedance 2.0」 and the length. The model line follows the superseded Model selector, but the heading and labels are also left out.",
+    "note_zh": "使用者泡泡為「Standard · Preview - 30 sec」；Design 繪製「Generate Video」與標示的「Model: Seedance 2.0」及長度行。Model 行依循已被取代的 Model 選擇器，但標題與標籤也一併省略。"
+   },
+   "missing:I2778:128018;2750:64270": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "The offer reads 「Create the rest of the video (60 sec)」; Design draws 「Create the full video · 90 sec」 and PM R-075 「Create the full episode (90 sec)」: the app offers 60 sec instead of the full 90 sec video.",
+    "note_zh": "邀請文字為「Create the rest of the video (60 sec)」；Design 繪製「Create the full video · 90 sec」，PM R-075 為「Create the full episode (90 sec)」：App 提供 60 秒而非完整 90 秒影片。"
+   },
+   "weight:I2778:128018;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The app draws 「Generate」 at weight 700 (bold); Figma uses SF Pro Semibold (590).",
+    "note_zh": "App 以字重 700（粗體）繪製「Generate」；Figma 使用 SF Pro Semibold（590）。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "severity": "minor",
+    "figma": {
+     "box": [
+      16,
+      534,
+      343,
+      137
+     ]
     },
-    "2778:128097": {
-      "missing:I2778:128159;393:31121": {
-        "verdict": "n/a",
-        "note": "App 捲動位置不同，使用者泡泡「Ready for the full video」在畫面上方之外；擷取的是成功完成的完整影片（下方為「Ready for the next episode?」卡片，與較新的 3131:65428 相符）；此 frame 畫的是影片下方有「Edit」按鈕的狀態，規格中「Edit」出現在影片失敗退款後，非本擷取狀態。"
-      },
-      "missing:I2778:128163;2750:64232": {
-        "verdict": "n/a",
-        "note": "擷取的是成功完成的完整影片（下方為「Ready for the next episode?」卡片，與較新的 3131:65428 相符）；此 frame 畫的是影片下方有「Edit」按鈕的狀態，規格中「Edit」出現在影片失敗退款後，非本擷取狀態。"
-      },
-      "lines:I2778:128165;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "control:2778:128158": {
-        "verdict": "n/a",
-        "note": "此控制項在 Figma 畫面頂端之外（前一支影片），擷取狀態不同。"
-      },
-      "control:I2778:128158;739:37642": {
-        "verdict": "n/a",
-        "note": "前一支影片的播放鈕在 Figma 畫面頂端之外，擷取狀態不同。"
-      },
-      "colour:2778:128163": {
-        "verdict": "n/a",
-        "note": "這是「Edit」按鈕的底色；擷取狀態沒有「Edit」按鈕。"
-      }
+    "note": "Figma puts 「Looking good! Ready for the full video?」 inside an outlined outer card that also holds the blue offer card; the app draws the question as plain chat text above the blue card, with no outer card.",
+    "note_zh": "Figma 將「Looking good! Ready for the full video?」放在帶外框的外層卡片內，並包住藍色邀請卡；App 將此問句畫成藍卡上方的一般聊天文字，沒有外層卡片。"
+   },
+   "visual:2": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      40,
+      602,
+      295,
+      14
+     ]
     },
-    "2778:127500": {
-      "missing:I2778:127506;393:31121": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "截圖比 XML 早一瞬間，泡泡尚未畫出；XML 顯示泡泡文字為「2. Captions: Yes, include captions」，Figma 為「Captions: Yes」（App 直接沿用選項文字）。"
-      },
-      "missing:2778:127511": {
-        "verdict": "n/a",
-        "note": "擷取時是「Thinking…」（計價階段，規格筆記所述），尚未進入 Figma 畫的「Drafting the storyline...」階段。"
-      },
-      "lines:I2778:127520;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "colour:2778:127505": {
-        "verdict": "ok",
-        "note": "App 的「What format would you like for your video?」實際為白字，量測取樣到背景。"
-      },
-      "colour:2778:127508": {
-        "verdict": "n/a",
-        "note": "「I'll create a drama based on this template — give me a moment...」在截圖當下尚未畫出（XML 有），配對到骨架區塊。"
-      }
+    "note": "The app adds 「Credits will be consumed for this task.」 under the offer title; the frame has no such line. Is it a newer PM text?",
+    "note_zh": "App 在邀請標題下多了「Credits will be consumed for this task.」；畫面沒有這一行。是否為較新的 PM 文字？"
+   }
+  },
+  "2778:127742": {
+   "missing:2778:127799": {
+    "verdict": "ok",
+    "note": "「Choose your video settings」 sits at the very top of the frame, under the status bar and header: scrolled out in both.",
+    "note_zh": "「Choose your video settings」位於畫面最上方、狀態列與標題列之下：兩邊都已捲出畫面。"
+   },
+   "missing:I2778:127800;393:31121": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The user bubble reads 「Standard · Preview - 30 sec」; Design draws 「Generate Video」 with labelled lines 「Model: Seedance 2.0」 and the length. The model line follows the superseded Model selector, but the heading and labels are also left out.",
+    "note_zh": "使用者泡泡為「Standard · Preview - 30 sec」；Design 繪製「Generate Video」與標示的「Model: Seedance 2.0」及長度行。Model 行依循已被取代的 Model 選擇器，但標題與標籤也一併省略。"
+   },
+   "missing:I2778:127804;2750:64270": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "The offer reads 「Create the rest of the video (60 sec)」; Design draws 「Create the full video · 90 sec」 and PM R-075 「Create the full episode (90 sec)」: the app offers 60 sec instead of the full 90 sec video.",
+    "note_zh": "邀請文字為「Create the rest of the video (60 sec)」；Design 繪製「Create the full video · 90 sec」，PM R-075 為「Create the full episode (90 sec)」：App 提供 60 秒而非完整 90 秒影片。"
+   },
+   "weight:I2778:127804;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The app draws 「Generate」 at weight 700 (bold); Figma uses SF Pro Semibold (590).",
+    "note_zh": "App 以字重 700（粗體）繪製「Generate」；Figma 使用 SF Pro Semibold（590）。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "severity": "minor",
+    "figma": {
+     "box": [
+      16,
+      534,
+      343,
+      137
+     ]
     },
-    "2778:127525": {
-      "missing:I2778:127531;393:31121": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "使用者泡泡在 App 為「2. Captions: Yes, include captions」，Figma 為「Captions: Yes」。"
-      },
-      "missing:2778:127536": {
-        "verdict": "question",
-        "note": "App 載入卡片顯示「Processing your mini drama project.」，Figma 為「Building the cast...」；無法判斷之後是否會換成「Building the cast...」階段文字。"
-      },
-      "lines:I2778:127545;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "bug",
-        "severity": "major",
-        "figma": {
-          "box": [
-            306,
-            710,
-            40,
-            40
-          ]
-        },
-        "note": "生成中 App 輸入框右側出現藍色 ■ 停止鈕；Figma 與 PM（board-notes「after any Generate the input shows no stop button, only the mic」）都只有麥克風。"
-      }
+    "note": "Figma puts 「Looking good! Ready for the full video?」 inside an outlined outer card that also holds the blue offer card; the app draws the question as plain chat text above the blue card, with no outer card.",
+    "note_zh": "Figma 將「Looking good! Ready for the full video?」放在帶外框的外層卡片內，並包住藍色邀請卡；App 將此問句畫成藍卡上方的一般聊天文字，沒有外層卡片。"
+   },
+   "visual:2": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      40,
+      602,
+      295,
+      14
+     ]
     },
-    "2778:128784": {
-      "missing:I2778:128827;2620:59767": {
-        "verdict": "ok",
-        "note": "角色名稱與數量是模板的生成內容（App 為「Mia Carter」等三位），屬範例內容。"
-      },
-      "missing:I2778:128828;2620:59767": {
-        "verdict": "ok",
-        "note": "角色名稱與數量是模板的生成內容（App 為「Mia Carter」等三位），屬範例內容。"
-      },
-      "missing:I2778:128829;2620:59767": {
-        "verdict": "ok",
-        "note": "角色名稱與數量是模板的生成內容（App 為「Mia Carter」等三位），屬範例內容。"
-      },
-      "missing:I2778:128830;2620:59767": {
-        "verdict": "ok",
-        "note": "角色名稱與數量是模板的生成內容（App 為「Mia Carter」等三位），屬範例內容。"
-      },
-      "copy:I2778:128831;393:31121": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "使用者泡泡在 App 為「Create storyboard」，Figma 為「Yes, create storyboard」。"
-      },
-      "lines:I2778:128845;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "colour:I2778:128827;2620:59766": {
-        "verdict": "ok",
-        "note": "角色卡底色在 App 同為白色，量測因卡片位置不同取樣到圖片或背景。"
-      },
-      "colour:I2778:128828;2620:59766": {
-        "verdict": "ok",
-        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
-      },
-      "colour:I2778:128829;2620:59766": {
-        "verdict": "ok",
-        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
-      },
-      "colour:I2778:128830;2620:59766": {
-        "verdict": "ok",
-        "note": "第四張角色卡在 App 不存在（模板只有三位角色），屬範例內容。"
-      }
+    "note": "The app adds 「Credits will be consumed for this task.」 under the offer title; the frame has no such line. Is it a newer PM text?",
+    "note_zh": "App 在邀請標題下多了「Credits will be consumed for this task.」；畫面沒有這一行。是否為較新的 PM 文字？"
+   }
+  },
+  "2778:138793": {
+   "missing:2778:138850": {
+    "verdict": "ok",
+    "note": "「Choose your video settings」 sits at the very top of the frame, under the status bar and header: scrolled out in both.",
+    "note_zh": "「Choose your video settings」位於畫面最上方、狀態列與標題列之下：兩邊都已捲出畫面。"
+   },
+   "missing:I2778:138851;393:31121": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The user bubble reads 「Standard · Preview - 30 sec」; Design draws 「Generate Video」 with labelled lines 「Model: Seedance 2.0」 and the length. The model line follows the superseded Model selector, but the heading and labels are also left out.",
+    "note_zh": "使用者泡泡為「Standard · Preview - 30 sec」；Design 繪製「Generate Video」與標示的「Model: Seedance 2.0」及長度行。Model 行依循已被取代的 Model 選擇器，但標題與標籤也一併省略。"
+   },
+   "missing:I2778:138855;2750:64270": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "The offer reads 「Create the rest of the video (60 sec)」; Design draws 「Create the full video · 90 sec」 and PM R-075 「Create the full episode (90 sec)」: the app offers 60 sec instead of the full 90 sec video.",
+    "note_zh": "邀請文字為「Create the rest of the video (60 sec)」；Design 繪製「Create the full video · 90 sec」，PM R-075 為「Create the full episode (90 sec)」：App 提供 60 秒而非完整 90 秒影片。"
+   },
+   "weight:I2778:138855;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The app draws 「Generate」 at weight 700 (bold); Figma uses SF Pro Semibold (590).",
+    "note_zh": "App 以字重 700（粗體）繪製「Generate」；Figma 使用 SF Pro Semibold（590）。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "severity": "minor",
+    "figma": {
+     "box": [
+      16,
+      534,
+      343,
+      137
+     ]
     },
-    "2778:128300": {
-      "missing:2778:128357": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "Figma 與 PM 為「Choose your video settings」，App 顯示「Pick a video model and length on the card to start generating.」。"
-      },
-      "sample:I2778:128358;393:31121": {
-        "verdict": "question",
-        "note": "使用者泡泡 App 為「Standard · Preview - 30 sec」，Figma 為「Generate Video / Model: Seedance 2.0 / Generation length: Preview · 30 sec」；模型改稱「Standard」是否為新規格無法判斷。"
-      },
-      "lines:I2778:128355;393:31121": {
-        "verdict": "ok",
-        "note": "App 的「Create video」為一行，量到三行是泡泡內距造成的。"
-      },
-      "lines:I2778:128363;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "bug",
-        "severity": "minor",
-        "figma": {
-          "box": [
-            16,
-            352,
-            180,
-            320
-          ]
-        },
-        "note": "Figma 載入時畫直式影片佔位方塊，App 顯示「Generating video preview with Seedance 2.0.」加文字骨架條的卡片。"
-      }
+    "note": "Figma puts 「Looking good! Ready for the full video?」 inside an outlined outer card that also holds the blue offer card; the app draws the question as plain chat text above the blue card, with no outer card.",
+    "note_zh": "Figma 將「Looking good! Ready for the full video?」放在帶外框的外層卡片內，並包住藍色邀請卡；App 將此問句畫成藍卡上方的一般聊天文字，沒有外層卡片。"
+   },
+   "visual:2": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      40,
+      602,
+      295,
+      14
+     ]
     },
-    "2778:138793": {
-      "missing:2778:138850": {
-        "verdict": "ok",
-        "note": "「Choose your video settings」在 App 捲動到畫面上方之外。"
-      },
-      "missing:I2778:138851;393:31121": {
-        "verdict": "ok",
-        "note": "使用者設定泡泡在 App 捲動到畫面上方之外。"
-      },
-      "copy:I2778:138855;2750:64270": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "App 為「Create the full episode (60 sec)」，Figma 為「Create the full video · 90 sec」；PM 與核准表格都是「Create the full episode (90 sec)」，用字依 PM，但長度 60 秒與兩者都不符。"
-      },
-      "lines:I2778:138855;2750:64323;2750:25393": {
-        "verdict": "ok",
-        "note": "App 的「Generate」為一行，量到兩行是按鈕外框高度。"
-      },
-      "lines:I2778:138857;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "colour:I2778:138855;2750:64323": {
-        "verdict": "ok",
-        "note": "App 的「Generate」按鈕同為藍色，量測因卡片多一行「Credits will be consumed for this task.」而取樣錯位。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "bug",
-        "severity": "cosmetic",
-        "figma": {
-          "box": [
-            16,
-            534,
-            343,
-            152
-          ]
-        },
-        "note": "Figma 把「Looking good! Ready for the full video?」放在有外框的卡片內，App 把這行放在卡片外、上方。"
-      }
+    "note": "The app adds 「Credits will be consumed for this task.」 under the offer title; the frame has no such line. Is it a newer PM text?",
+    "note_zh": "App 在邀請標題下多了「Credits will be consumed for this task.」；畫面沒有這一行。是否為較新的 PM 文字？"
+   }
+  },
+  "2778:127500": {
+   "missing:I2778:127506;393:31121": {
+    "verdict": "question",
+    "note": "The user bubble reads 「1. Video language: English\n2. Captions: Yes, include captions」, echoing the PM option label 「Yes, include captions」 (R-018); Design shortens it to 「Captions: Yes」. Which is intended?",
+    "note_zh": "使用者泡泡為「1. Video language: English\n2. Captions: Yes, include captions」，沿用 PM 的選項文字「Yes, include captions」（R-018）；Design 簡寫為「Captions: Yes」。以哪一個為準？"
+   },
+   "missing:2778:127511": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "The loading card says 「Thinking…」 while the outline is drafted; Design shows 「Drafting the storyline...」.",
+    "note_zh": "大綱生成時讀取卡片顯示「Thinking…」；Design 顯示「Drafting the storyline...」。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "ok",
+    "figma": {
+     "box": [
+      300,
+      712,
+      40,
+      40
+     ]
     },
-    "2778:128606": {
-      "missing:I2778:128649;2620:59767": {
-        "verdict": "ok",
-        "note": "角色名稱與數量是模板的生成內容，屬範例內容。"
-      },
-      "missing:I2778:128650;2620:59767": {
-        "verdict": "ok",
-        "note": "角色名稱與數量是模板的生成內容，屬範例內容。"
-      },
-      "missing:I2778:128651;2620:59767": {
-        "verdict": "ok",
-        "note": "角色名稱與數量是模板的生成內容，屬範例內容。"
-      },
-      "missing:I2778:128652;2620:59767": {
-        "verdict": "ok",
-        "note": "角色名稱與數量是模板的生成內容，屬範例內容。"
-      },
-      "missing:I2778:128655;1902:90188": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "輸入框上方的「More ideas +」晶片在 App 沒有出現（XML 也沒有）；Figma 與 PM 筆記都畫在每個聊天階段。"
-      },
-      "position:I2778:128654;2750:64266": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 把「The characters look great! Ready to create the storyboard?」放在有外框的卡片內（x 28），App 放在卡片外，左移約 12 pt。"
-      },
-      "position:I2778:128654;2750:64276": {
-        "verdict": "ok",
-        "note": "點數「31」與「15」為範例內容；位移來自卡片多了 MX 規格的「Credits will be consumed for this task.」一行。"
-      },
-      "position:I2778:128654;2750:64323;2750:25393": {
-        "verdict": "ok",
-        "note": "「Generate」下移是卡片多了 MX 規格的「Credits will be consumed for this task.」一行。"
-      },
-      "lines:I2778:128654;2750:64323;2750:25393": {
-        "verdict": "ok",
-        "note": "App 的「Generate」為一行，量到兩行是按鈕外框高度。"
-      },
-      "position:I2778:128657;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框在兩邊都貼底，位移是上下半部對齊不一致的量測誤差。"
-      },
-      "lines:I2778:128657;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "colour:I2778:128649;2620:59766": {
-        "verdict": "ok",
-        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
-      },
-      "colour:I2778:128650;2620:59766": {
-        "verdict": "ok",
-        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
-      },
-      "colour:I2778:128651;2620:59766": {
-        "verdict": "ok",
-        "note": "角色卡底色在 App 同為白色，量測取樣位置錯開。"
-      },
-      "colour:I2778:128652;2620:59766": {
-        "verdict": "ok",
-        "note": "第四張角色卡在 App 不存在（模板只有三位角色），屬範例內容。"
-      },
-      "colour:I2778:128654;2750:64323": {
-        "verdict": "ok",
-        "note": "App 的「Generate」按鈕為藍色，ΔE 25 是取樣到卡片漸層。"
-      },
-      "colour:2778:128655": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "這是「More ideas +」晶片的底色；App 沒有這個晶片（同 More ideas 缺漏）。"
-      }
+    "note": "The app shows a Stop button in the composer while the outline is drafted; the frame does not draw it, but the outline keeps a Stop under PM 10/22 (R-138, R-315).",
+    "note_zh": "大綱生成時 App 在輸入框顯示停止按鈕；畫面未繪製，但依 PM 10/22 大綱仍保留停止功能（R-138、R-315）。"
+   }
+  },
+  "2778:128784": {
+   "missing:2778:128825": {
+    "verdict": "ok",
+    "note": "「Characters Result」 is scrolled above the top in the app, whose chat holds two more turns before the storyboard request.",
+    "note_zh": "App 的「Characters Result」已捲到上方，因其聊天在分鏡請求前多了兩則訊息。"
+   },
+   "missing:I2778:128827;2620:59767": {
+    "verdict": "ok",
+    "note": "Sample content: character names are generated per drama.",
+    "note_zh": "樣本內容：角色名稱依劇生成。"
+   },
+   "missing:I2778:128828;2620:59767": {
+    "verdict": "ok",
+    "note": "Sample content: character names are generated per drama.",
+    "note_zh": "樣本內容：角色名稱依劇生成。"
+   },
+   "missing:I2778:128829;2620:59767": {
+    "verdict": "ok",
+    "note": "Sample content: character names are generated per drama.",
+    "note_zh": "樣本內容：角色名稱依劇生成。"
+   },
+   "missing:I2778:128830;2620:59767": {
+    "verdict": "ok",
+    "note": "Sample content: character names are generated per drama.",
+    "note_zh": "樣本內容：角色名稱依劇生成。"
+   },
+   "copy:I2778:128831;393:31121": {
+    "verdict": "n/a",
+    "note": "The bubble 「Create storyboard」 is text the tester typed (the storyboard card did not appear at first), not the card button's echo 「Yes, create storyboard」 the frame draws.",
+    "note_zh": "泡泡「Create storyboard」是測試者自行輸入的文字（分鏡卡片一開始未出現），不是畫面繪製的卡片按鈕回顯「Yes, create storyboard」。"
+   },
+   "copy:2778:128836": {
+    "verdict": "ok",
+    "note": "Same text: 「Creating your scene…」 uses an ellipsis character where Figma has three dots.",
+    "note_zh": "文字相同：「Creating your scene…」使用省略號字元，Figma 為三個句點。"
+   }
+  },
+  "2778:128300": {
+   "missing:2778:128357": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "After 「Create video」 the assistant says 「Pick a video model and length on the card to start generating.」; Design shows 「Choose your video settings」. The app's line also speaks of a 「video model」 while the card offers Quality Best / Standard / Fast.",
+    "note_zh": "輸入「Create video」後助理說「Pick a video model and length on the card to start generating.」；Design 顯示「Choose your video settings」。App 的句子提到「video model」，但卡片提供的是 Quality Best / Standard / Fast。"
+   },
+   "sample:I2778:128358;393:31121": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The user bubble reads 「Standard · Preview - 30 sec」; Design draws 「Generate Video」 with labelled lines 「Model: Seedance 2.0」 and the length. The model line follows the superseded Model selector, but the heading and labels are also left out.",
+    "note_zh": "使用者泡泡為「Standard · Preview - 30 sec」；Design 繪製「Generate Video」與標示的「Model: Seedance 2.0」及長度行。Model 行依循已被取代的 Model 選擇器，但標題與標籤也一併省略。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "severity": "minor",
+    "figma": {
+     "box": [
+      16,
+      352,
+      179,
+      318
+     ]
     },
-    "4858:35987": {
-      "missing:I4858:36006;1440:97054": {
-        "verdict": "ok",
-        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
-      },
-      "missing:I4858:36007;1440:97054": {
-        "verdict": "ok",
-        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
-      },
-      "missing:I4858:36008;1440:97054": {
-        "verdict": "ok",
-        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
-      },
-      "missing:I4858:36009;1440:97054": {
-        "verdict": "ok",
-        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
-      },
-      "missing:I4858:36010;1440:97054": {
-        "verdict": "ok",
-        "note": "模板名稱與排序由伺服器提供，屬範例內容。"
-      },
-      "position:I4858:35997;931:2392;315:8365": {
-        "verdict": "ok",
-        "note": "「Create Your Drama」在卡片內的相對位置與 Figma 相同，位移是整塊內容隨較矮的標題列上移。"
-      },
-      "lines:I4858:35997;931:2392;315:8365": {
-        "verdict": "ok",
-        "note": "App 的「Create Your Drama」為一行，量到兩行是按鈕外框高度。"
-      },
-      "position:4858:36002": {
-        "verdict": "ok",
-        "note": "「More」只差約 4 pt，屬容許範圍。"
-      },
-      "position:I4858:36014;145:7579;245:2027": {
-        "verdict": "ok",
-        "note": "點數「25211」為帳號實際點數，屬範例內容。"
-      },
-      "colour:4858:35997": {
-        "verdict": "ok",
-        "note": "App 的「Create Your Drama」按鈕為藍色，與 Figma 相符，量測取樣錯位。"
-      },
-      "colour:I4858:35997;931:2392": {
-        "verdict": "ok",
-        "note": "App 的按鈕為藍色，與 Figma 相符，量測取樣錯位。"
-      }
+    "note": "Design shows a portrait video placeholder while the video generates; the app shows a full-width text-skeleton card (「Generating videos for the mini drama.」 / 「Generating videos with Seedance 2.0.」 with grey bars).",
+    "note_zh": "Design 在影片生成時顯示直式影片佔位框；App 顯示全寬文字骨架卡片（「Generating videos for the mini drama.」／「Generating videos with Seedance 2.0.」加灰色條）。"
+   }
+  },
+  "2778:128606": {
+   "missing:I2778:128649;2620:59767": {
+    "verdict": "ok",
+    "note": "Sample content: character names are generated per drama.",
+    "note_zh": "樣本內容：角色名稱依劇生成。"
+   },
+   "missing:I2778:128650;2620:59767": {
+    "verdict": "ok",
+    "note": "Sample content: character names are generated per drama.",
+    "note_zh": "樣本內容：角色名稱依劇生成。"
+   },
+   "missing:I2778:128651;2620:59767": {
+    "verdict": "ok",
+    "note": "Sample content: character names are generated per drama.",
+    "note_zh": "樣本內容：角色名稱依劇生成。"
+   },
+   "missing:I2778:128652;2620:59767": {
+    "verdict": "ok",
+    "note": "Sample content: character names are generated per drama.",
+    "note_zh": "樣本內容：角色名稱依劇生成。"
+   },
+   "missing:I2778:128655;1902:90188": {
+    "verdict": "bug",
+    "severity": "major",
+    "note": "The 「More ideas」 chip above the composer is missing; the frame draws it once the chat has content (R-017).",
+    "note_zh": "輸入框上方缺少「More ideas」按鈕；畫面在聊天有內容後即繪製此按鈕（R-017）。"
+   },
+   "position:I2778:128654;2750:64266": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "「The characters look great! Ready to create the storyboard?」 sits 12 pt further left: the app draws it as plain chat text outside the card, Figma inside the outlined card with an inset.",
+    "note_zh": "「The characters look great! Ready to create the storyboard?」偏左 12 pt：App 將它畫成卡片外的一般聊天文字，Figma 則放在帶外框的卡片內並有內距。"
+   },
+   "weight:I2778:128654;2750:64270": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The app draws 「Create storyboard」 at weight 700 (bold); Figma uses SF Pro Semibold (590).",
+    "note_zh": "App 以字重 700（粗體）繪製「Create storyboard」；Figma 使用 SF Pro Semibold（590）。"
+   },
+   "position:I2778:128654;2750:64276": {
+    "verdict": "ok",
+    "note": "The price is per drama (「37」 here, 「15」 in the frame); its small offset follows the extra credits line above it.",
+    "note_zh": "價格依劇而異（此處「37」，畫面為「15」）；小幅位移來自上方多出的點數說明行。"
+   },
+   "position:I2778:128654;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "「Generate」 moves down with the price row because of the extra 「Credits will be consumed for this task.」 line (judged as visual:2).",
+    "note_zh": "「Generate」因多出的「Credits will be consumed for this task.」一行隨價格列下移（於 visual:2 判定）。"
+   },
+   "weight:I2778:128654;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The app draws 「Generate」 at weight 700 (bold); Figma uses SF Pro Semibold (590).",
+    "note_zh": "App 以字重 700（粗體）繪製「Generate」；Figma 使用 SF Pro Semibold（590）。"
+   },
+   "position:I2778:128657;2499:46952": {
+    "verdict": "ok",
+    "note": "The composer is fixed at the bottom; the 60 pt offset comes from aligning on the scrolled chat (bottom fit dy −48.7).",
+    "note_zh": "輸入框固定於底部；60 pt 位移來自以捲動中的聊天內容對齊（下方對齊 dy −48.7）。"
+   },
+   "colour:2778:128655": {
+    "verdict": "n/a",
+    "note": "Nothing to sample: the 「More ideas」 chip is not drawn in the app (judged under the missing 「More ideas」 item).",
+    "note_zh": "無可取樣處：App 未繪製「More ideas」按鈕（已於缺少「More ideas」項目判定）。"
+   },
+   "visual:1": {
+    "kind": "visual",
+    "verdict": "bug",
+    "severity": "minor",
+    "figma": {
+     "box": [
+      16,
+      470,
+      343,
+      155
+     ]
     },
-    "4858:36084": {
-      "missing:I4895:36269;2773:119526": {
-        "verdict": "ok",
-        "note": "靈感晶片為生成內容，屬範例內容；App 將較長的靈感截成一行並加「…」。"
-      },
-      "missing:I4895:36270;2773:119526": {
-        "verdict": "ok",
-        "note": "靈感晶片為生成內容，屬範例內容；App 將較長的靈感截成一行並加「…」。"
-      },
-      "position:I4895:36268;2773:119522": {
-        "verdict": "ok",
-        "note": "量到的是整個「Surprise me」晶片外框；晶片本身同在 x 16，位置相符。"
-      },
-      "lines:I4895:36268;2773:119522": {
-        "verdict": "ok",
-        "note": "App 的「Surprise me」為一行，量到兩行是晶片外框高度。"
-      },
-      "lines:I4858:36110;2499:46952": {
-        "verdict": "n/a",
-        "note": "擷取時鍵盤開啟、輸入框展開為多行並出現送出鈕，非 Figma 的未聚焦狀態。"
-      },
-      "colour:4895:36268": {
-        "verdict": "n/a",
-        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
-      },
-      "colour:4895:36269": {
-        "verdict": "n/a",
-        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
-      },
-      "colour:4895:36270": {
-        "verdict": "n/a",
-        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
-      },
-      "colour:4858:36110": {
-        "verdict": "n/a",
-        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
-      },
-      "colour:4895:36265": {
-        "verdict": "n/a",
-        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
-      },
-      "colour:I4858:36114;1037:48645;245:2027": {
-        "verdict": "n/a",
-        "note": "擷取為淺色模式且鍵盤開啟，Figma frame 為深色，顏色無法比較。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "question",
-        "severity": "cosmetic",
-        "figma": {
-          "box": [
-            272,
-            50,
-            35,
-            35
-          ]
-        },
-        "note": "空白新聊天時 App 的新聊天圖示呈灰色（停用），Figma 畫成一般狀態；無法判斷 Design 是否預期停用。"
-      }
+    "note": "Figma puts the question and the blue 「Create storyboard」 card inside one outlined outer card; the app has no outer card and draws the question as plain chat text.",
+    "note_zh": "Figma 將問句與藍色「Create storyboard」卡片放在同一個帶外框的外層卡片內；App 沒有外層卡片，問句畫成一般聊天文字。"
+   },
+   "visual:2": {
+    "kind": "visual",
+    "verdict": "question",
+    "figma": {
+     "box": [
+      40,
+      560,
+      295,
+      14
+     ]
     },
-    "4863:32482": {
-      "missing:I4863:32523;3948:158776": {
-        "verdict": "ok",
-        "note": "場景標題為生成內容，且 App 捲動位置較下方，屬範例內容。"
-      },
-      "missing:I4863:32524;3948:158776": {
-        "verdict": "ok",
-        "note": "場景標題為生成內容，且 App 捲動位置較下方，屬範例內容。"
-      },
-      "missing:I4863:32525;3948:158776": {
-        "verdict": "ok",
-        "note": "場景標題為生成內容，App 顯示「Scene 6 — Glad We Came」。"
-      },
-      "copy:I4863:32530;2778:123550": {
-        "verdict": "ok",
-        "note": "Storyboard Preview 的標題與長度為生成內容（App「Romance」「0:44」），History 也以「Romance」列出此劇。"
-      },
-      "missing:I4863:32531;1902:90188": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "輸入框上方的「More ideas +」晶片在 App 沒有出現；Figma「Chat (any stage)」與 PM 筆記都畫在每個聊天階段。"
-      },
-      "lines:I4863:32530;2778:123551": {
-        "verdict": "ok",
-        "note": "App 文字欄較寬，「See your story as pictures with a voice telling it. The real video comes next.」排成兩行，屬寬螢幕重排。"
-      },
-      "lines:I4863:32533;2499:46952": {
-        "verdict": "ok",
-        "note": "App 的輸入框只顯示一行「Enter your idea to create drama」，量到兩行是輸入框外框高度造成的，非換行。"
-      },
-      "colour:4863:32522": {
-        "verdict": "ok",
-        "note": "ΔE 14 為捲動後取樣到不同卡片，差異很小。"
-      },
-      "colour:I4863:32522;3948:158774": {
-        "verdict": "ok",
-        "note": "場景縮圖是生成圖片，取樣到圖片內容。"
-      },
-      "colour:I4863:32523;3948:158774": {
-        "verdict": "ok",
-        "note": "場景縮圖是生成圖片，取樣到圖片內容。"
-      },
-      "colour:I4863:32524;3948:158774": {
-        "verdict": "ok",
-        "note": "場景縮圖是生成圖片，取樣到圖片內容。"
-      },
-      "colour:4863:32533": {
-        "verdict": "ok",
-        "note": "輸入框底色 ΔE 13，差異很小。"
-      }
+    "note": "The app adds 「Credits will be consumed for this task.」 under the offer title; the frame has no such line. Is it a newer PM text?",
+    "note_zh": "App 在邀請標題下多了「Credits will be consumed for this task.」；畫面沒有這一行。是否為較新的 PM 文字？"
+   },
+   "visual:3": {
+    "kind": "visual",
+    "verdict": "bug",
+    "severity": "major",
+    "figma": {
+     "box": [
+      16,
+      470,
+      343,
+      155
+     ]
     },
-    "4863:32539": {
-      "missing:I4863:32541;12037:8693": {
-        "verdict": "ok",
-        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
-      },
-      "copy:I4863:32541;12037:8701": {
-        "verdict": "ok",
-        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
-      },
-      "missing:I4863:32542;12037:8693": {
-        "verdict": "ok",
-        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
-      },
-      "copy:I4863:32542;12037:8701": {
-        "verdict": "ok",
-        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
-      },
-      "missing:I4863:32543;12037:8693": {
-        "verdict": "ok",
-        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
-      },
-      "missing:I4863:32544;12037:8693": {
-        "verdict": "ok",
-        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
-      },
-      "missing:I4863:32545;12037:8693": {
-        "verdict": "ok",
-        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
-      },
-      "missing:I4863:32546;12037:8693": {
-        "verdict": "ok",
-        "note": "History 卡片的標題與檔案大小為帳號實際資料，屬範例內容。"
-      },
-      "position:I4863:32548;1191:85014": {
-        "verdict": "ok",
-        "note": "量到的是整個「New Chat」按鈕外框；按鈕同在右下角，位置相符。"
-      },
-      "lines:I4863:32548;1191:85014": {
-        "verdict": "ok",
-        "note": "App 的「New Chat」為一行，量到兩行是按鈕外框高度。"
-      },
-      "position:I4863:32551;761:28071": {
-        "verdict": "ok",
-        "note": "「Manage」只差約 6 pt，因標題列較矮，屬容許範圍。"
-      },
-      "lines:I4863:32551;761:28071": {
-        "verdict": "ok",
-        "note": "App 的「Manage」為一行，量到兩行是點擊區外框高度。"
-      },
-      "colour:4863:32548": {
-        "verdict": "ok",
-        "note": "App 的「New Chat」按鈕同為白色，量測取樣錯位。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "question",
-        "severity": "minor",
-        "figma": {
-          "box": [
-            150,
-            114,
-            115,
-            16
-          ]
-        },
-        "note": "日期格式 Figma 為「26/08/19」（兩位數年份），App 為「2026/11/04」；無法判斷是否依系統地區格式。"
-      }
-    },
-    "4858:35398": {
-      "copy:I4858:35418;921:2027": {
-        "verdict": "n/a",
-        "note": "今日每日點數已領取，App 顯示「Claimed」；Figma 畫的是未領取的「Claim」狀態。"
-      },
-      "copy:4858:35887": {
-        "verdict": "question",
-        "note": "App 為「Join the Pro」，Figma 為「Join the Pro+」；帳號為 Pro，Figma 畫的是 Free 方案的點數頁（推「Pro+」），方案不同畫面就不同，不判為 bug。"
-      },
-      "copy:4858:35894": {
-        "verdict": "question",
-        "note": "App 為「50% off all credit packs」，Figma 為「50% for all credit packs」；App 的英文正確，Figma 似為筆誤，需 Design 確認。"
-      },
-      "copy:4858:35897": {
-        "verdict": "question",
-        "note": "App 為「Unlock all Pro features!」，Figma 為「Unlock all Pro+ features!」；帳號為 Pro，Figma 畫的是 Free 方案的點數頁（推「Pro+」），方案不同畫面就不同，不判為 bug。"
-      },
-      "lines:I4858:35410;919:2017": {
-        "verdict": "ok",
-        "note": "App 的「Buy More」為一行，量到三行是按鈕外框高度。"
-      },
-      "lines:I4858:35898;533:1292": {
-        "verdict": "ok",
-        "note": "App 的「Subscribe Now」為一行，量到兩行是按鈕外框高度。"
-      },
-      "lines:I4858:35902;4868:9480;450:6834": {
-        "verdict": "ok",
-        "note": "App 的「Details」為一行，量到兩行是點擊區外框高度。"
-      },
-      "colour:4858:35410": {
-        "verdict": "ok",
-        "note": "App 的「Buy More」按鈕同為薄荷綠，量測取樣錯位。"
-      },
-      "colour:I4858:35410;919:2017": {
-        "verdict": "ok",
-        "note": "App 的「Buy More」文字為深色，與 Figma 相符，量測取樣到按鈕底色。"
-      }
-    }
+    "note": "The frame shows the storyboard offer right after Characters Result; in the app the chat first ended with 「The language is already set to English.」 and no card, the card came only after typing 「Create storyboard」, and the assistant claimed 「I have created the six-beat storyboard…」 before any storyboard existed.",
+    "note_zh": "畫面在 Characters Result 之後直接顯示分鏡邀請卡；App 的聊天先以「The language is already set to English.」結束且沒有卡片，輸入「Create storyboard」後卡片才出現，且助理在分鏡尚未產生前就說「I have created the six-beat storyboard…」。"
+   }
   }
+ }
 }

@@ -1,983 +1,767 @@
 {
   "screens": {
-    "3142:68240": {
-      "copy:3142:68249": {
+    "2778:144420": {
+      "missing:I2778:144463;2620:59767": {
         "verdict": "ok",
-        "note": "Figma 的編號「1.」「2.」由清單樣式產生，畫面上同樣顯示「1. Video language」「2. Captions」，文字一致。"
+        "note": "Character name is per-drama sample content: Figma 「Sophie」, the app lists its own cast (「Claire」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「Sophie」，App 顯示自己的角色（「Claire」）。"
       },
-      "copy:3142:68259": {
+      "missing:I2778:144464;2620:59767": {
         "verdict": "ok",
-        "note": "Figma 的編號「1.」「2.」由清單樣式產生，畫面上同樣顯示「1. Video language」「2. Captions」，文字一致。"
+        "note": "Character name is per-drama sample content: Figma 「The Manager」, the app lists its own cast (「Liam」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「The Manager」，App 顯示自己的角色（「Liam」）。"
       },
-      "position:3142:68245": {
+      "missing:I2778:144465;2620:59767": {
         "verdict": "ok",
-        "note": "「What format would you like for your video?」位移來自上方模板縮圖高度不同，整體版面相同。"
+        "note": "Character name is per-drama sample content: Figma 「HR」, the app lists its own cast (「Marcus」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「HR」，App 顯示自己的角色（「Marcus」）。"
       },
-      "position:I3142:68251;1423:94739": {
+      "missing:I2778:144466;2620:59767": {
         "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「English」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
+        "note": "Figma draws a fourth character 「Chloe」; this drama has three characters, so no fourth slot. Sample content.",
+        "note_zh": "Figma 畫了第四個角色「Chloe」；此劇只有三個角色，故無第四格。屬範例內容。"
       },
-      "lines:I3142:68251;1423:94739": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「English」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
+      "copy:I2778:144467;393:31121": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The user bubble reads 「Create storyboard」; the Design has 「Yes, create storyboard」.",
+        "note_zh": "使用者泡泡顯示「Create storyboard」；Design 為「Yes, create storyboard」。"
       },
-      "position:I3142:68252;1423:94737": {
+      "copy:2778:144472": {
         "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Spanish」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3142:68252;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Spanish」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3142:68253;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「French」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3142:68253;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「French」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3142:68254;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「German」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3142:68254;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「German」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3142:68255;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Japanese」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3142:68255;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Japanese」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3142:68256;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Korean」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3142:68256;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Korean」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3142:68257;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Chinese」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3142:68257;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Chinese」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3142:68261;1423:94739": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Yes, include captions」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3142:68261;1423:94739": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Yes, include captions」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3142:68262;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「No captions」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3142:68262;1423:94737": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「No captions」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3172:101316;2750:25393": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Generate」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "lines:I3172:101316;2750:25393": {
-        "verdict": "ok",
-        "note": "app 量到的是整個 chip／按鈕的框而非文字，「Generate」單行、位置在寬螢幕重排範圍內，與 Figma 一致。"
-      },
-      "position:I3142:68266;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "lines:I3142:68266;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "position:I3142:68270;1037:48645;245:2027": {
-        "verdict": "ok",
-        "note": "點數餘額為帳號樣本數值（Figma「400」），非設計差異。"
-      },
-      "colour:3172:101316": {
-        "verdict": "ok",
-        "note": "Generate 按鈕藍色與 Figma 只有輕微色差，同為品牌藍，視為一致。"
+        "note": "「Creating your scene…」 uses the single ellipsis character where Figma types three dots (「Creating your scene...」); same copy.",
+        "note_zh": "「Creating your scene…」使用單一省略號字元，Figma 為三個句點（「Creating your scene...」）；文案相同。"
       },
       "visual:1": {
         "kind": "visual",
+        "verdict": "question",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            32,
+            152,
+            320,
+            88
+          ]
+        },
+        "note": "Two characters show the same look image (「Liam」 and 「Marcus」 share one character sheet). Check whether the app assigned one look to two characters or the generation returned the same image.",
+        "note_zh": "兩個角色顯示同一張造型圖（「Liam」與「Marcus」共用同一角色圖）。請確認是 App 將同一造型套給兩個角色，或是生成結果相同。"
+      }
+    },
+    "2778:138725": {
+      "missing:I2778:138779;2778:123550": {
         "verdict": "ok",
+        "note": "Storyboard title and length are per-drama: Figma 「Forbidden Office Romance\n1:30」, the app 「Borrowed Boyfriend」 / 「0:40」.",
+        "note_zh": "分鏡標題與長度為各劇內容：Figma 為「Forbidden Office Romance\n1:30」，App 為「Borrowed Boyfriend」／「0:40」。"
+      },
+      "missing:I2778:138783;393:31121": {
+        "verdict": "bug",
+        "severity": "major",
+        "note": "The user bubble after Generate reads 「Standard · Preview - 30 sec」; the Design draws 「Generate Video\nModel: Seedance 2.0\nLength: Preview · 30 sec」: no 「Generate Video」 heading, no Model line (the app’s settings card has Quality instead of Model), and a hyphen where the Design uses 「·」. Tied to the settings-card difference; may need a PM ruling.",
+        "note_zh": "按下 Generate 後的使用者泡泡為「Standard · Preview - 30 sec」；Design 為「Generate Video\nModel: Seedance 2.0\nLength: Preview · 30 sec」：缺「Generate Video」標題、缺 Model 行（App 設定卡為 Quality 而非 Model），且以連字號取代 Design 的「·」。與設定卡差異相關，可能需 PM 裁定。"
+      },
+      "lines:I2778:138779;2778:123551": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「See your story as pictures with a voice telling it. The real video comes next.」 wraps into 2 lines in the app (app view data) where the Design wraps it into 3 at the same column width: the app text is smaller than the frame’s.",
+        "note_zh": "「See your story as pictures with a voice telling it. The real video comes next.」在 App 中換成 2 行（App 視圖資料），Design 同欄寬為 3 行：App 字級比設計稿小。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "minor",
         "figma": {
           "box": [
             16,
-            320,
-            343,
-            260
+            352,
+            179,
+            319
           ]
         },
-        "note": "格式卡的 chip 圓角、選取的藍色外框、分隔線與 Generate 膠囊按鈕形狀，與 Figma 一致。"
+        "note": "While the video is being prepared the Design draws a portrait video placeholder card; the app shows a text-skeleton loading card with 「Preparing video generation for Borrowed Boyfriend.」 and grey lines instead.",
+        "note_zh": "影片準備中時 Design 畫的是直式影片佔位卡；App 改為文字骨架載入卡，顯示「Preparing video generation for Borrowed Boyfriend.」與灰色線條。"
+      }
+    },
+    "2778:127378": {
+      "copy:3142:68213": {
+        "verdict": "ok",
+        "note": "Figma’s list draws the number too (its image reads 「1. Video language」); the app’s 「1. Video language」 matches.",
+        "note_zh": "Figma 清單本身也有編號（圖上為「1. Video language」）；App 的「1. Video language」相符。"
+      },
+      "copy:3142:68223": {
+        "verdict": "ok",
+        "note": "Figma’s list draws the number too (its image reads 「2. Captions」); the app’s 「2. Captions」 matches.",
+        "note_zh": "Figma 清單本身也有編號（圖上為「2. Captions」）；App 的「2. Captions」相符。"
+      },
+      "position:2778:127383": {
+        "verdict": "ok",
+        "note": "The gap from 「What format would you like for your video?」 to the card is the same (about 12 pt); the offset comes from the card’s smaller inner padding (see the visual item).",
+        "note_zh": "「What format would you like for your video?」到卡片的間距相同（約 12 pt）；偏移來自卡片內距較小（見視覺項目）。"
+      },
+      "position:I3142:68216;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Spanish」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「Spanish」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3142:68218;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「German」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「German」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3142:68220;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Korean」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「Korean」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3142:68226;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「No captions」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「No captions」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3172:101313;2750:25393": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The 「Generate」 button is wider (about 93 pt vs 64 pt plus padding in the Design) and sits about 12 pt right / 14 pt lower relative to the card content.",
+        "note_zh": "「Generate」按鈕較寬（約 93 pt，Design 約 64 pt 加內距），相對卡片內容偏右約 12 pt、偏下約 14 pt。"
+      },
+      "weight:I3172:101313;2750:25393": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Generate」 is drawn bold (weight 700, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Generate」以粗體繪製（字重 700，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
+      },
+      "position:I2778:127409;2499:46952": {
+        "verdict": "ok",
+        "note": "The input bar is pinned to the bottom above the Android navigation bar; the large vertical delta is the chat alignment, not a real offset of 「Enter your idea to create drama」.",
+        "note_zh": "輸入列固定在底部、位於 Android 導覽列上方；大的垂直差是聊天內容對齊造成，非「Enter your idea to create drama」真的偏移。"
+      },
+      "position:I2778:127413;1037:48645;245:2027": {
+        "verdict": "ok",
+        "note": "Credit balance is account data (Figma 「400」, app 「28787」); the badge sits in the same header slot, the delta is the chat alignment.",
+        "note_zh": "點數餘額為帳號資料（Figma「400」，App「28787」）；徽章位於相同的標頭位置，差值來自聊天對齊。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            16,
+            318,
+            343,
+            270
+          ]
+        },
+        "note": "The format card’s inner padding is about 12 pt where the Design has 16 pt, and the option chips are narrower with tighter spacing; the card ends higher because 「Generate」 sits closer to the captions row.",
+        "note_zh": "格式卡內距約 12 pt（Design 16 pt），選項膠囊較窄、間距較緊；「Generate」較貼近字幕列，卡片因此較早結束。"
+      },
+      "visual:2": {
+        "kind": "visual",
+        "verdict": "n/a",
+        "figma": {
+          "box": [
+            240,
+            104,
+            119,
+            160
+          ]
+        },
+        "note": "The Design opens this format card under a template poster; the capture is a custom-idea chat, which shows the idea bubble and no poster. Not this frame’s entry path.",
+        "note_zh": "Design 在範本海報下方顯示此格式卡；此截圖為自訂點子聊天，顯示點子泡泡而無海報。非此畫面的進入路徑。"
+      }
+    },
+    "3142:68240": {
+      "copy:3142:68249": {
+        "verdict": "ok",
+        "note": "Figma’s list draws the number too (its image reads 「1. Video language」); the app’s 「1. Video language」 matches.",
+        "note_zh": "Figma 清單本身也有編號（圖上為「1. Video language」）；App 的「1. Video language」相符。"
+      },
+      "copy:3142:68259": {
+        "verdict": "ok",
+        "note": "Figma’s list draws the number too (its image reads 「2. Captions」); the app’s 「2. Captions」 matches.",
+        "note_zh": "Figma 清單本身也有編號（圖上為「2. Captions」）；App 的「2. Captions」相符。"
+      },
+      "position:3142:68245": {
+        "verdict": "ok",
+        "note": "The gap from 「What format would you like for your video?」 to the card is the same (about 12 pt); the offset comes from the card’s smaller inner padding (see the visual item).",
+        "note_zh": "「What format would you like for your video?」到卡片的間距相同（約 12 pt）；偏移來自卡片內距較小（見視覺項目）。"
+      },
+      "position:I3142:68252;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Spanish」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「Spanish」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3142:68254;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「German」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「German」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3142:68256;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Korean」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「Korean」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3142:68257;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Chinese」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「Chinese」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3142:68262;1423:94737": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「No captions」 sits about 4–6 pt left of the Design: the app’s chips have less horizontal padding (「English」 chip about 62 pt wide vs 68 pt) and the card’s inner padding is about 12 pt vs 16 pt, so each later chip shifts left.",
+        "note_zh": "「No captions」比 Design 偏左約 4–6 pt：App 選項膠囊的左右內距較小（「English」約 62 pt 寬，Design 68 pt），卡片內距約 12 pt（Design 16 pt），後面的膠囊因此逐一左移。"
+      },
+      "position:I3172:101316;2750:25393": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The 「Generate」 button is wider (about 93 pt vs 64 pt plus padding in the Design) and sits about 12 pt right / 14 pt lower relative to the card content.",
+        "note_zh": "「Generate」按鈕較寬（約 93 pt，Design 約 64 pt 加內距），相對卡片內容偏右約 12 pt、偏下約 14 pt。"
+      },
+      "weight:I3172:101316;2750:25393": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Generate」 is drawn bold (weight 700, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Generate」以粗體繪製（字重 700，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
+      },
+      "position:I3142:68266;2499:46952": {
+        "verdict": "ok",
+        "note": "The input bar is pinned to the bottom above the Android navigation bar; the large vertical delta is the chat alignment, not a real offset of 「Enter your idea to create drama」.",
+        "note_zh": "輸入列固定在底部、位於 Android 導覽列上方；大的垂直差是聊天內容對齊造成，非「Enter your idea to create drama」真的偏移。"
+      },
+      "position:I3142:68270;1037:48645;245:2027": {
+        "verdict": "ok",
+        "note": "Credit balance is account data (Figma 「400」, app 「28671」); the badge sits in the same header slot, the delta is the chat alignment.",
+        "note_zh": "點數餘額為帳號資料（Figma「400」，App「28671」）；徽章位於相同的標頭位置，差值來自聊天對齊。"
+      },
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            16,
+            318,
+            343,
+            270
+          ]
+        },
+        "note": "The format card’s inner padding is about 12 pt where the Design has 16 pt, and the option chips are narrower with tighter spacing; the card ends higher because 「Generate」 sits closer to the captions row.",
+        "note_zh": "格式卡內距約 12 pt（Design 16 pt），選項膠囊較窄、間距較緊；「Generate」較貼近字幕列，卡片因此較早結束。"
+      },
+      "visual:2": {
+        "kind": "visual",
+        "verdict": "n/a",
+        "figma": {
+          "box": [
+            240,
+            104,
+            119,
+            160
+          ]
+        },
+        "note": "The Design opens this format card under a template poster; the capture is a custom-idea chat, which shows the idea bubble and no poster. Not this frame’s entry path.",
+        "note_zh": "Design 在範本海報下方顯示此格式卡；此截圖為自訂點子聊天，顯示點子泡泡而無海報。非此畫面的進入路徑。"
       }
     },
     "2778:127450": {
       "missing:I2778:127456;393:31121": {
         "verdict": "bug",
         "severity": "minor",
-        "note": "Figma 與 PM 的回答泡泡為「2. Captions: Yes」，app 顯示「2. Captions: Yes, include captions」，直接帶入選項文字。"
+        "note": "The answer bubble reads 「1. Video language: English\n2. Captions: Yes, include captions」; the Design has 「Video language: English」 / 「Captions: Yes」 (drawn numbered). The captions answer repeats the whole chip label instead of 「Yes」.",
+        "note_zh": "回答泡泡為「1. Video language: English\n2. Captions: Yes, include captions」；Design 為「Video language: English」／「Captions: Yes」（有編號）。字幕答案重複整個選項文字，而非「Yes」。"
       },
       "missing:2778:127461": {
         "verdict": "bug",
         "severity": "major",
-        "note": "Figma 載入卡標題為「Drafting the storyline...」，app 顯示「Developing your mini drama story and characters.」，文案不同。"
-      },
-      "position:2778:127458": {
-        "verdict": "ok",
-        "note": "「I'll create a drama based on this template — give me a moment...」文字相同，位移來自上方泡泡的樣本內容高度不同。"
-      },
-      "lines:I2778:127470;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
+        "note": "The loading card says 「Thinking…」; the Design has 「Drafting the storyline...」.",
+        "note_zh": "載入卡顯示「Thinking…」；Design 為「Drafting the storyline...」。"
       },
       "visual:1": {
         "kind": "visual",
-        "verdict": "ok",
+        "verdict": "question",
+        "severity": "minor",
         "figma": {
           "box": [
-            16,
-            404,
-            343,
-            268
+            290,
+            706,
+            56,
+            56
           ]
         },
-        "note": "載入卡的骨架長條數量、長短與圓角與 Figma 一致；app 多了停止按鈕屬生成中狀態。"
+        "note": "While generating, the app adds a blue stop (square) button in the input bar next to the microphone; the Design draws only the microphone. Check whether the stop control is specified.",
+        "note_zh": "生成中 App 在輸入列麥克風旁加了藍色停止（方形）按鈕；Design 只畫麥克風。請確認停止控制項是否有規格。"
       }
     },
     "2778:128850": {
       "state:2778:128850": {
         "verdict": "ok",
-        "note": "擷取畫面就是大綱加未設定角色欄位的狀態；找不到的多為樣本角色名，不是狀態錯誤。"
+        "note": "This is the frame’s step (character slots waiting for looks under the outline); few texts match only because the cast names and outline are per-drama.",
+        "note_zh": "此為該畫面的步驟（大綱下方等待選造型的角色格）；文字匹配少只是因為角色名與大綱為各劇內容。"
       },
       "missing:2778:128889": {
-        "verdict": "question",
-        "note": "Figma 角色欄位上方提示為「Tap each character to choose their look.」，app 顯示「Ready to create your characters?」；後者在 PM 文案清單（R-090），Design 與 PM 不一致，需確認以哪個為準。"
+        "verdict": "bug",
+        "severity": "major",
+        "note": "The prompt 「Tap each character to choose their look.」 is missing; the app shows 「I have created the characters for Body Swap.」 and 「Ready to create your characters?」 instead.",
+        "note_zh": "缺少提示「Tap each character to choose their look.」；App 改顯示「I have created the characters for Body Swap.」與「Ready to create your characters?」。"
       },
       "missing:I2778:128893;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「Sophie」, the app lists its own cast (「Claire」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「Sophie」，App 顯示自己的角色（「Claire」）。"
       },
       "missing:I2778:128894;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「The Manager」, the app lists its own cast (「Leo」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「The Manager」，App 顯示自己的角色（「Leo」）。"
       },
       "missing:I2778:128895;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「HR」, the app lists its own cast (「Marcus」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「HR」，App 顯示自己的角色（「Marcus」）。"
       },
       "missing:I2778:128896;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Figma’s fourth character 「Chloe」 is sample content; this drama has three characters and the fourth place holds 「Add New」.",
+        "note_zh": "Figma 第四個角色「Chloe」為範例內容；此劇有三個角色，第四格為「Add New」。"
       },
       "missing:I2778:128897;1902:90188": {
         "verdict": "bug",
         "severity": "major",
-        "note": "Figma 與 PM 都在輸入框上方畫「More ideas +」chip，app 這一頁沒有顯示。"
+        "note": "The 「More ideas」 chip under the character card is missing.",
+        "note_zh": "角色卡下方缺少「More ideas」選項。"
       },
-      "lines:I2778:128899;2499:46952": {
+      "colour:I2778:128893;2620:59766": {
         "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
+        "note": "The slot tile is #323b48 on the capture, matching Figma #303b49; the measure sampled the background around the tile.",
+        "note_zh": "截圖中角色格為 #323b48，與 Figma #303b49 相符；量測取到格子外的背景。"
+      },
+      "colour:I2778:128894;2620:59766": {
+        "verdict": "ok",
+        "note": "The slot tile is #323b48 on the capture, matching Figma #303b49; the measure sampled the background around the tile.",
+        "note_zh": "截圖中角色格為 #323b48，與 Figma #303b49 相符；量測取到格子外的背景。"
       },
       "colour:I2778:128895;2620:59766": {
         "verdict": "ok",
-        "note": "空角色欄位為深灰虛線框，app 欄位顏色與 Figma 一致；差異來自欄位位置不同（app 只有兩個角色）。"
+        "note": "The slot tile is #323b48 on the capture, matching Figma #303b49; the measure sampled the background around the tile.",
+        "note_zh": "截圖中角色格為 #323b48，與 Figma #303b49 相符；量測取到格子外的背景。"
+      },
+      "colour:I2778:128896;2620:59766": {
+        "verdict": "ok",
+        "note": "No fourth character in this drama (the fourth place is the 「Add New」 slot); nothing to compare.",
+        "note_zh": "此劇無第四個角色（第四格為「Add New」）；無可比較。"
       },
       "visual:1": {
         "kind": "visual",
         "verdict": "question",
+        "severity": "minor",
         "figma": {
           "box": [
-            16,
-            488,
-            359,
-            130
+            332,
+            502,
+            88,
+            108
           ]
         },
-        "note": "app 的角色欄位列最後多一個虛線「Add New」欄位，Figma 未畫；規格沒有 Add New 規則（TC-480 待 PM 裁定）。"
+        "note": "The app adds a dashed 「Add New」 slot after the characters (cut off at the right edge); the Design draws only character slots. Check whether adding a character here is specified.",
+        "note_zh": "App 在角色後加了虛線「Add New」格（右緣被截斷）；Design 只畫角色格。請確認此處新增角色是否有規格。"
       }
     },
     "2778:129028": {
       "state:2778:129028": {
         "verdict": "ok",
-        "note": "擷取畫面正是 Choose Character（尚未選擇）狀態；找不到的是樣本角色名與「Choose for Sophie」中的名字。"
+        "note": "This is the 「Choose Character」 sheet of the frame; few texts match only because the cast names are per-drama.",
+        "note_zh": "此為該畫面的「Choose Character」面板；文字匹配少只是因為角色名為各劇內容。"
       },
-      "missing:2778:129031": {
+      "copy:2778:129031": {
         "verdict": "ok",
-        "note": "app 顯示「Choose for Maya Lin」等，格式「Choose for {name}」相同，名字為樣本。"
+        "note": "「Choose for Claire」 names this drama’s first character; Figma’s 「Choose for Sophie」 is sample content.",
+        "note_zh": "「Choose for Claire」顯示此劇第一個角色；Figma 的「Choose for Sophie」為範例內容。"
       },
       "missing:2778:129068": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「Sophie」, the app lists its own cast (「Claire」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「Sophie」，App 顯示自己的角色（「Claire」）。"
       },
       "missing:2778:129071": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「The Manager」, the app lists its own cast (「Leo」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「The Manager」，App 顯示自己的角色（「Leo」）。"
       },
       "missing:2778:129074": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「HR」, the app lists its own cast (「Marcus」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「HR」，App 顯示自己的角色（「Marcus」）。"
       },
       "missing:2778:129077": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Figma draws a fourth character 「Chloe」; this drama has three characters, so no fourth slot. Sample content.",
+        "note_zh": "Figma 畫了第四個角色「Chloe」；此劇只有三個角色，故無第四格。屬範例內容。"
       },
-      "position:I2848:63246;2842:95482": {
-        "verdict": "ok",
-        "note": "「Choose Character」標題置中單行；app 量到的是整條標題列的框，非實際偏移。"
+      "weight:I2778:129034;2616:60019": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Create\nmy character」 is drawn at regular weight (400, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Create\nmy character」以一般字重繪製（400，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
       },
-      "lines:I2848:63246;2842:95482": {
-        "verdict": "ok",
-        "note": "「Choose Character」標題置中單行；app 量到的是整條標題列的框，非實際偏移。"
+      "weight:I2848:63246;2842:95482": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The title 「Choose Character」 is drawn bold (700, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "標題「Choose Character」以粗體繪製（700，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
       },
       "control:2778:129046": {
         "verdict": "ok",
-        "note": "此位置在 app 仍有可點的角色圖卡，只是格線起點不同、被導覽列遮住，非缺少控制項。"
+        "note": "The library grid continues here in the app (the next row of look thumbnails starts at about the same height above the navigation bar); the Figma thumbnails lie past the frame’s visible area, so no control is missing.",
+        "note_zh": "App 的造型庫格線在此延續（下一列造型縮圖約在同一高度、導覽列上方開始）；Figma 縮圖位於畫面可見範圍外，並無缺少控制項。"
       },
       "control:2778:129047": {
         "verdict": "ok",
-        "note": "此位置在 app 仍有可點的角色圖卡，只是格線起點不同、被導覽列遮住，非缺少控制項。"
+        "note": "The library grid continues here in the app (the next row of look thumbnails starts at about the same height above the navigation bar); the Figma thumbnails lie past the frame’s visible area, so no control is missing.",
+        "note_zh": "App 的造型庫格線在此延續（下一列造型縮圖約在同一高度、導覽列上方開始）；Figma 縮圖位於畫面可見範圍外，並無缺少控制項。"
       },
       "control:2778:129048": {
         "verdict": "ok",
-        "note": "此位置在 app 仍有可點的角色圖卡，只是格線起點不同、被導覽列遮住，非缺少控制項。"
+        "note": "The library grid continues here in the app (the next row of look thumbnails starts at about the same height above the navigation bar); the Figma thumbnails lie past the frame’s visible area, so no control is missing.",
+        "note_zh": "App 的造型庫格線在此延續（下一列造型縮圖約在同一高度、導覽列上方開始）；Figma 縮圖位於畫面可見範圍外，並無缺少控制項。"
       },
-      "control:2778:129073": {
+      "colour:2778:129067": {
         "verdict": "ok",
-        "note": "Figma 畫四個角色欄位，本劇只有兩個角色，第三、四欄不存在屬樣本差異。"
-      },
-      "control:2778:129076": {
-        "verdict": "ok",
-        "note": "Figma 畫四個角色欄位，本劇只有兩個角色，第三、四欄不存在屬樣本差異。"
-      },
-      "colour:2778:129044": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129046": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129047": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129048": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
+        "note": "The selected tile is #1b1f24 on the capture, matching Figma #1a1f25; the measure sampled outside the tile.",
+        "note_zh": "截圖中選取格為 #1b1f24，與 Figma #1a1f25 相符；量測取到格子外。"
       }
     },
     "2778:129078": {
       "state:2778:129078": {
         "verdict": "ok",
-        "note": "擷取畫面正是 Choose Character（兩個角色都已選）狀態；找不到的是樣本角色名與「Choose for Sophie」中的名字。"
+        "note": "This is the 「Choose Character」 sheet of the frame; few texts match only because the cast names are per-drama.",
+        "note_zh": "此為該畫面的「Choose Character」面板；文字匹配少只是因為角色名為各劇內容。"
       },
-      "missing:2778:129081": {
+      "copy:2778:129081": {
         "verdict": "ok",
-        "note": "app 顯示「Choose for Maya Lin」等，格式「Choose for {name}」相同，名字為樣本。"
+        "note": "「Choose for Claire」 names this drama’s first character; Figma’s 「Choose for Sophie」 is sample content.",
+        "note_zh": "「Choose for Claire」顯示此劇第一個角色；Figma 的「Choose for Sophie」為範例內容。"
       },
       "missing:2778:129118": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「Sophie」, the app lists its own cast (「Claire」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「Sophie」，App 顯示自己的角色（「Claire」）。"
       },
       "missing:2778:129121": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「The Manager」, the app lists its own cast (「Leo」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「The Manager」，App 顯示自己的角色（「Leo」）。"
       },
       "missing:2778:129124": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「HR」, the app lists its own cast (「Marcus」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「HR」，App 顯示自己的角色（「Marcus」）。"
       },
       "missing:2778:129127": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Figma draws a fourth character 「Chloe」; this drama has three characters, so no fourth slot. Sample content.",
+        "note_zh": "Figma 畫了第四個角色「Chloe」；此劇只有三個角色，故無第四格。屬範例內容。"
       },
-      "position:I2848:63260;2842:95482": {
-        "verdict": "ok",
-        "note": "「Choose Character」標題置中單行；app 量到的是整條標題列的框，非實際偏移。"
+      "weight:I2778:129084;2616:60019": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Create\nmy character」 is drawn at regular weight (400, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Create\nmy character」以一般字重繪製（400，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
       },
-      "lines:I2848:63260;2842:95482": {
-        "verdict": "ok",
-        "note": "「Choose Character」標題置中單行；app 量到的是整條標題列的框，非實際偏移。"
+      "weight:I2848:63260;2842:95482": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The title 「Choose Character」 is drawn bold (700, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "標題「Choose Character」以粗體繪製（700，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
       },
-      "colour:2778:129089": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129094": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129096": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129097": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129098": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129117": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129120": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129123": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:129126": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
+      "visual:1": {
+        "kind": "visual",
+        "verdict": "n/a",
+        "figma": {
+          "box": [
+            16,
+            104,
+            324,
+            72
+          ]
+        },
+        "note": "The Design shows every character with a look; the capture has a look only for Claire (Leo and Marcus still empty), a partial state of this frame. The selected thumbnail’s blue border and check match.",
+        "note_zh": "Design 顯示每個角色都已選造型；截圖只有 Claire 已選（Leo、Marcus 仍為空），為此畫面的部分狀態。選取縮圖的藍框與勾選相符。"
       }
     },
     "2778:139610": {
       "state:2778:139610": {
         "verdict": "ok",
-        "note": "擷取畫面正是 Choose Character（尚未選擇）狀態；找不到的是樣本角色名與「Choose for Sophie」中的名字。"
+        "note": "This is the 「Choose Character」 sheet of the frame; few texts match only because the cast names are per-drama.",
+        "note_zh": "此為該畫面的「Choose Character」面板；文字匹配少只是因為角色名為各劇內容。"
       },
-      "missing:2778:139613": {
+      "copy:2778:139613": {
         "verdict": "ok",
-        "note": "app 顯示「Choose for Maya Lin」等，格式「Choose for {name}」相同，名字為樣本。"
+        "note": "「Choose for Claire」 names this drama’s first character; Figma’s 「Choose for Sophie」 is sample content.",
+        "note_zh": "「Choose for Claire」顯示此劇第一個角色；Figma 的「Choose for Sophie」為範例內容。"
       },
       "missing:2778:139650": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「Sophie」, the app lists its own cast (「Claire」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「Sophie」，App 顯示自己的角色（「Claire」）。"
       },
       "missing:2778:139653": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「The Manager」, the app lists its own cast (「Liam」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「The Manager」，App 顯示自己的角色（「Liam」）。"
       },
       "missing:2778:139656": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「HR」, the app lists its own cast (「Marcus」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「HR」，App 顯示自己的角色（「Marcus」）。"
       },
       "missing:2778:139659": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Figma draws a fourth character 「Chloe」; this drama has three characters, so no fourth slot. Sample content.",
+        "note_zh": "Figma 畫了第四個角色「Chloe」；此劇只有三個角色，故無第四格。屬範例內容。"
       },
-      "position:I2848:63269;2842:95482": {
-        "verdict": "ok",
-        "note": "「Choose Character」標題置中單行；app 量到的是整條標題列的框，非實際偏移。"
-      },
-      "lines:I2848:63269;2842:95482": {
-        "verdict": "ok",
-        "note": "「Choose Character」標題置中單行；app 量到的是整條標題列的框，非實際偏移。"
-      },
-      "colour:2778:139628": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:139629": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:139630": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "visual:1": {
-        "kind": "visual",
+      "weight:I2778:139616;2616:60019": {
         "verdict": "bug",
         "severity": "minor",
-        "figma": {
-          "box": [
-            0,
-            208,
-            375,
-            604
-          ]
-        },
-        "note": "淺色模式下 Figma 的「Choose for …」下方面板是淡藍底（約 #E9F3FC）並有圓角頂邊，app 面板與頂部同為白底，看不出面板分界。"
+        "note": "「Create\nmy character」 is drawn at regular weight (400, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Create\nmy character」以一般字重繪製（400，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
+      },
+      "weight:I2848:63269;2842:95482": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The title 「Choose Character」 is drawn bold (700, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "標題「Choose Character」以粗體繪製（700，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
+      },
+      "colour:2778:139649": {
+        "verdict": "ok",
+        "note": "The selected tile is #ebf1fb on the capture, matching Figma #eaf1fc; the measure sampled outside the tile.",
+        "note_zh": "截圖中選取格為 #ebf1fb，與 Figma #eaf1fc 相符；量測取到格子外。"
       }
     },
     "2778:139660": {
       "state:2778:139660": {
         "verdict": "ok",
-        "note": "擷取畫面正是 Choose Character（兩個角色都已選）狀態；找不到的是樣本角色名與「Choose for Sophie」中的名字。"
+        "note": "This is the 「Choose Character」 sheet of the frame; few texts match only because the cast names are per-drama.",
+        "note_zh": "此為該畫面的「Choose Character」面板；文字匹配少只是因為角色名為各劇內容。"
       },
-      "missing:2778:139663": {
+      "copy:2778:139663": {
         "verdict": "ok",
-        "note": "app 顯示「Choose for Maya Lin」等，格式「Choose for {name}」相同，名字為樣本。"
+        "note": "「Choose for Claire」 names this drama’s first character; Figma’s 「Choose for Sophie」 is sample content.",
+        "note_zh": "「Choose for Claire」顯示此劇第一個角色；Figma 的「Choose for Sophie」為範例內容。"
       },
       "missing:2778:139700": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「Sophie」, the app lists its own cast (「Claire」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「Sophie」，App 顯示自己的角色（「Claire」）。"
       },
       "missing:2778:139703": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「The Manager」, the app lists its own cast (「Liam」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「The Manager」，App 顯示自己的角色（「Liam」）。"
       },
       "missing:2778:139706": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「HR」, the app lists its own cast (「Marcus」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「HR」，App 顯示自己的角色（「Marcus」）。"
       },
       "missing:2778:139709": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Figma draws a fourth character 「Chloe」; this drama has three characters, so no fourth slot. Sample content.",
+        "note_zh": "Figma 畫了第四個角色「Chloe」；此劇只有三個角色，故無第四格。屬範例內容。"
       },
-      "position:I2848:63278;2842:95482": {
-        "verdict": "ok",
-        "note": "「Choose Character」標題置中單行；app 量到的是整條標題列的框，非實際偏移。"
+      "weight:I2778:139666;2616:60019": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Create\nmy character」 is drawn at regular weight (400, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Create\nmy character」以一般字重繪製（400，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
       },
-      "lines:I2848:63278;2842:95482": {
-        "verdict": "ok",
-        "note": "「Choose Character」標題置中單行；app 量到的是整條標題列的框，非實際偏移。"
-      },
-      "colour:2778:139678": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:139679": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:2778:139680": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
+      "weight:I2848:63278;2842:95482": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "The title 「Choose Character」 is drawn bold (700, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "標題「Choose Character」以粗體繪製（700，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
       },
       "visual:1": {
         "kind": "visual",
-        "verdict": "bug",
-        "severity": "minor",
+        "verdict": "n/a",
         "figma": {
           "box": [
-            0,
-            208,
-            375,
-            604
+            16,
+            104,
+            324,
+            72
           ]
         },
-        "note": "淺色模式下 Figma 的「Choose for …」下方面板是淡藍底並有圓角頂邊，app 面板與頂部同為白底，看不出面板分界。"
+        "note": "The Design shows every character with a look; the capture has a look only for Claire (Liam and Marcus still empty), a partial state of this frame. The selected thumbnail’s blue border and check match.",
+        "note_zh": "Design 顯示每個角色都已選造型；截圖只有 Claire 已選（Liam、Marcus 仍為空），為此畫面的部分狀態。選取縮圖的藍框與勾選相符。"
       }
     },
     "2778:128662": {
       "missing:I2778:128705;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「Sophie」, the app lists its own cast (「Claire」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「Sophie」，App 顯示自己的角色（「Claire」）。"
       },
       "missing:I2778:128706;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「The Manager」, the app lists its own cast (「Leo」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「The Manager」，App 顯示自己的角色（「Leo」）。"
       },
       "missing:I2778:128707;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「HR」, the app lists its own cast (「Marcus」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「HR」，App 顯示自己的角色（「Marcus」）。"
       },
       "missing:I2778:128708;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Figma draws a fourth character 「Chloe」; this drama has three characters, so no fourth slot. Sample content.",
+        "note_zh": "Figma 畫了第四個角色「Chloe」；此劇只有三個角色，故無第四格。屬範例內容。"
       },
       "missing:I2778:128711;1902:90188": {
         "verdict": "bug",
         "severity": "major",
-        "note": "Figma 與 PM 都在輸入框上方畫「More ideas +」chip，app 這一頁沒有顯示。"
+        "note": "The 「More ideas」 chip under the storyboard offer is missing.",
+        "note_zh": "分鏡提議下方缺少「More ideas」選項。"
       },
       "position:I2778:128710;2750:64266": {
         "verdict": "bug",
         "severity": "minor",
-        "note": "Figma 把「The characters look great! Ready to create the storyboard?」放在 Create storyboard 卡片內，app 把這句放在卡片外上方，版面位置不同。"
+        "note": "「The characters look great! Ready to create the storyboard?」 sits outside the offer card at the chat margin (about 12 pt left); the Design places it inside the card above the 「Create storyboard」 block.",
+        "note_zh": "「The characters look great! Ready to create the storyboard?」位於提議卡外、對齊聊天邊界（偏左約 12 pt）；Design 將它放在卡片內、「Create storyboard」區塊上方。"
+      },
+      "weight:I2778:128710;2750:64270": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Create storyboard」 is drawn bold (700, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Create storyboard」以粗體繪製（700，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
       },
       "position:I2778:128710;2750:64276": {
         "verdict": "ok",
-        "note": "分鏡價格依場景數計算（Figma「15」為樣本），app「26」屬計價內容，位置相同。"
+        "note": "The credit price is per task (Figma 「15」, app 「32」); its place in the block is the same within 4 pt.",
+        "note_zh": "點數價格依任務而定（Figma「15」，App「32」）；在區塊中的位置相差 4 pt 內。"
       },
       "position:I2778:128710;2750:64323;2750:25393": {
         "verdict": "ok",
-        "note": "Generate 按鈕文字相同、單行；位移來自卡片多了一行說明，app 量到的是按鈕框。"
+        "note": "「Generate」 sits lower only because the block is taller with the added credits line (see the visual item); its place at the block’s bottom right is the same.",
+        "note_zh": "「Generate」較低只因區塊多了點數說明行而變高（見視覺項目）；它在區塊右下的位置相同。"
       },
-      "lines:I2778:128710;2750:64323;2750:25393": {
-        "verdict": "ok",
-        "note": "Generate 按鈕文字相同、單行；位移來自卡片多了一行說明，app 量到的是按鈕框。"
+      "weight:I2778:128710;2750:64323;2750:25393": {
+        "verdict": "bug",
+        "severity": "minor",
+        "note": "「Generate」 is drawn bold (700, app view data); the Design uses SF Pro Semibold (590).",
+        "note_zh": "「Generate」以粗體繪製（700，App 視圖資料）；Design 為 SF Pro Semibold（590）。"
       },
       "position:I2778:128713;2499:46952": {
         "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "lines:I2778:128713;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "colour:I2778:128705;2620:59766": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I2778:128706;2620:59766": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I2778:128707;2620:59766": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I2778:128708;2620:59766": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I2778:128710;2750:64323": {
-        "verdict": "ok",
-        "note": "Generate 按鈕藍色與 Figma 只有輕微色差，同為品牌藍，視為一致。"
+        "note": "The input bar is pinned to the bottom above the Android navigation bar; the vertical delta is the chat alignment, not a real offset of 「Enter your idea to create drama」.",
+        "note_zh": "輸入列固定在底部、位於 Android 導覽列上方；垂直差來自聊天對齊，非「Enter your idea to create drama」真的偏移。"
       },
       "colour:2778:128711": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "這是「More ideas +」chip 的位置，app 沒有這個 chip（同 More ideas 缺漏）。"
+        "verdict": "n/a",
+        "note": "The 「More ideas」 chip itself is absent (its own item); the measure sampled the empty background, nothing to compare.",
+        "note_zh": "「More ideas」選項本身不存在（另列項目）；量測取到空背景，無可比較。"
       },
       "visual:1": {
         "kind": "visual",
-        "verdict": "ok",
+        "verdict": "question",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            40,
+            540,
+            295,
+            40
+          ]
+        },
+        "note": "The offer block adds a line 「Credits will be consumed for this task.」 under 「Create storyboard」; the Design draws none. Check whether PM specifies this notice.",
+        "note_zh": "提議區塊在「Create storyboard」下多了一行「Credits will be consumed for this task.」；Design 沒有。請確認 PM 是否有規定此提示。"
+      },
+      "visual:2": {
+        "kind": "visual",
+        "verdict": "bug",
+        "severity": "minor",
+        "figma": {
+          "box": [
+            16,
+            470,
+            343,
+            156
+          ]
+        },
+        "note": "Layout of the offer: the Design wraps the question and the 「Create storyboard」 block in one card; the app puts the question as a plain chat line and the card holds only the block. The app also adds 「I have created the characters for Body Swap.」 above it.",
+        "note_zh": "提議版面：Design 將問題與「Create storyboard」區塊包在同一卡片內；App 將問題作為一般聊天文字，卡片只含區塊。App 另在上方加了「I have created the characters for Body Swap.」。"
+      },
+      "visual:3": {
+        "kind": "visual",
+        "verdict": "question",
+        "severity": "minor",
         "figma": {
           "box": [
             32,
             326,
-            300,
-            110
+            320,
+            88
           ]
         },
-        "note": "「Characters Result」角色圖卡的白底圓角與右上的換裝圖示，與 Figma 一致。"
+        "note": "Two characters show the same look image (「Leo」 and 「Marcus」 share one character sheet). Check whether the app assigned one look to two characters or the generation returned the same image.",
+        "note_zh": "兩個角色顯示同一張造型圖（「Leo」與「Marcus」共用同一角色圖）。請確認是 App 將同一造型套給兩個角色，或是生成結果相同。"
       }
     },
     "2778:128718": {
       "missing:I2778:128761;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「Sophie」, the app lists its own cast (「Claire」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「Sophie」，App 顯示自己的角色（「Claire」）。"
       },
       "missing:I2778:128762;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「The Manager」, the app lists its own cast (「Leo」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「The Manager」，App 顯示自己的角色（「Leo」）。"
       },
       "missing:I2778:128763;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Character name is per-drama sample content: Figma 「HR」, the app lists its own cast (「Marcus」).",
+        "note_zh": "角色名稱為各劇範例內容：Figma 為「HR」，App 顯示自己的角色（「Marcus」）。"
       },
       "missing:I2778:128764;2620:59767": {
         "verdict": "ok",
-        "note": "角色名（Sophie、The Manager、HR、Chloe）為 Figma 樣本，app 顯示本次劇本的角色，屬樣本內容。"
+        "note": "Figma draws a fourth character 「Chloe」; this drama has three characters, so no fourth slot. Sample content.",
+        "note_zh": "Figma 畫了第四個角色「Chloe」；此劇只有三個角色，故無第四格。屬範例內容。"
       },
       "copy:I2778:128765;393:31121": {
         "verdict": "bug",
         "severity": "minor",
-        "note": "Figma 使用者泡泡為「Yes, create storyboard」，app 顯示「Create storyboard」；PM 1002 則要求不加泡泡，app 與兩者都不同（既有 Android 單 DRA262610P0122）。"
+        "note": "The user bubble reads 「Create storyboard」; the Design has 「Yes, create storyboard」.",
+        "note_zh": "使用者泡泡顯示「Create storyboard」；Design 為「Yes, create storyboard」。"
       },
-      "lines:I2778:128779;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "colour:I2778:128761;2620:59766": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I2778:128762;2620:59766": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I2778:128763;2620:59766": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I2778:128764;2620:59766": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      }
-    },
-    "2778:127550": {
-      "copy:I2778:127604;2778:123550": {
-        "verdict": "ok",
-        "note": "劇名與片長（Figma「Forbidden Office Romance」「1:30」）是生成內容，app 顯示本次劇名與片長，屬樣本內容。"
-      },
-      "missing:I3142:67911;2750:118354": {
+      "missing:2778:128770": {
         "verdict": "bug",
         "severity": "major",
-        "note": "控制項上方的標題在 app 不見了：此 frame 為「Model」，1016 frame 為「Quality」，PM 10/16 為「Model • Seedance」，app 三者皆無。"
-      },
-      "copy:I3142:67911;2750:118356;1902:90136": {
-        "verdict": "ok",
-        "note": "舊版 Model 選項已被 PM 10/16 改為 Best / Standard / Fast；app 選 Standard 時顯示「Seedance 2.0 · Balanced quality for everyday stories」，符合 PM。"
-      },
-      "missing:I3142:67911;2750:118356;1902:90134": {
-        "verdict": "ok",
-        "note": "此 frame 仍畫舊版「Model」Seedance 2.0 / 2.0 Mini；PM 10/16（較新）改為 Best / Standard / Fast，casebook 依 PM 版本，app 沒有「Seedance 2.0 Mini」符合 PM。"
-      },
-      "missing:I3142:67911;2750:118357": {
-        "verdict": "ok",
-        "note": "此 frame 仍畫舊版「Model」Seedance 2.0 / 2.0 Mini；PM 10/16（較新）改為 Best / Standard / Fast，casebook 依 PM 版本，app 沒有「Best for cinematic, beautiful, high-detail videos」符合 PM。"
-      },
-      "copy:I3142:67911;2750:118360": {
-        "verdict": "ok",
-        "note": "Figma 為「Length」，app 為「Video length」；PM（較新）寫「Video length」，casebook 依 PM 文案。"
-      },
-      "copy:I3142:67911;2750:118361;1902:90136": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 為「Preview · 30 sec」，app 顯示「Preview - 30 sec」：中間點「·」被換成連字號「-」。"
-      },
-      "copy:I3142:67911;2750:118361;1902:90134": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 為「Full Video · 90 sec」，app 顯示「Full Video - 90 sec」：中間點「·」被換成連字號「-」。"
-      },
-      "copy:I3142:67911;2750:118424;2750:25393": {
-        "verdict": "ok",
-        "note": "此舊 frame 寫「Generate」；較新的 1016 frame 與 PM 皆為「Generate Video」，app「Generate video」符合（大小寫不計）。"
-      },
-      "missing:I2778:127605;1902:90188": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "Figma 與 PM 都在輸入框上方畫「More ideas +」chip，app 這一頁沒有顯示。"
-      },
-      "lines:I2778:127604;2778:123551": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Storyboard Preview 說明「See your story as pictures with a voice telling it. The real video comes next.」Figma 三行，app 兩行；寬度相近，app 字級較小。"
-      },
-      "lines:I2778:127607;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "position:I2778:127611;1037:48645;245:2027": {
-        "verdict": "ok",
-        "note": "點數餘額為帳號樣本數值（Figma「400」），非設計差異。"
-      },
-      "colour:I3142:67911;2750:118356;1902:90135": {
-        "verdict": "n/a",
-        "note": "此色塊是舊版 Model 分段控制（Seedance 2.0 / Mini），app 已改為 Best / Standard / Fast 且選的是 Standard，不是同一狀態。"
-      },
-      "colour:I3142:67911;2750:118356;1902:90133": {
-        "verdict": "n/a",
-        "note": "此色塊是舊版 Model 分段控制（Seedance 2.0 / Mini），app 已改為 Best / Standard / Fast 且選的是 Standard，不是同一狀態。"
-      },
-      "colour:I3142:67911;2750:118361;1902:90135": {
-        "verdict": "ok",
-        "note": "分段控制選取白底、未選深藍底與 Generate 按鈕藍色，與 Figma 一致或只有輕微色差。"
-      },
-      "colour:I3142:67911;2750:118424": {
-        "verdict": "ok",
-        "note": "分段控制選取白底、未選深藍底與 Generate 按鈕藍色，與 Figma 一致或只有輕微色差。"
+        "note": "The loading card says 「Preparing shots for the storyboard.」; the Design has 「Creating your scene...」 (another run of the same step showed 「Creating your scene…」, so the loading copy varies).",
+        "note_zh": "載入卡顯示「Preparing shots for the storyboard.」；Design 為「Creating your scene...」（同一步驟的另一次執行顯示「Creating your scene…」，載入文案不一致）。"
       },
       "visual:1": {
         "kind": "visual",
         "verdict": "question",
-        "severity": "major",
+        "severity": "minor",
         "figma": {
           "box": [
-            16,
-            362,
-            343,
-            262
-          ]
-        },
-        "note": "擷取備註：分鏡完成後設定卡沒有自動出現，輸入「Create video」後才出現；Figma 畫的是分鏡後直接接設定卡，需確認是否為行為缺陷。"
-      }
-    },
-    "2778:127612": {
-      "missing:I2778:127666;2778:123550": {
-        "verdict": "ok",
-        "note": "劇名與片長（Figma「Forbidden Office Romance」「1:30」）是生成內容，app 顯示本次劇名與片長，屬樣本內容。"
-      },
-      "missing:I3139:64913;4845:2150": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "Figma 在 Best / Standard / Fast 上方有「Quality」標題（PM 10/16 為「Model • Seedance」），app 沒有任何標題。"
-      },
-      "copy:I3139:64913;4845:2156": {
-        "verdict": "ok",
-        "note": "Figma 為「Length」，app 為「Video length」；PM（較新）寫「Video length」，casebook 依 PM 文案。"
-      },
-      "copy:I3139:64913;4845:2157;1902:90136": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 為「Preview · 30 sec」，app 顯示「Preview - 30 sec」：中間點「·」被換成連字號「-」。"
-      },
-      "copy:I3139:64913;4845:2157;1902:90134": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 為「Full Video · 90 sec」，app 顯示「Full Video - 90 sec」：中間點「·」被換成連字號「-」。"
-      },
-      "missing:I2778:127667;1902:90188": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "Figma 與 PM 都在輸入框上方畫「More ideas +」chip，app 這一頁沒有顯示。"
-      },
-      "lines:I2778:127666;2778:123551": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Storyboard Preview 說明「See your story as pictures with a voice telling it. The real video comes next.」Figma 三行，app 兩行；寬度相近，app 字級較小。"
-      },
-      "lines:I3139:64913;4845:2165;4845:2118": {
-        "verdict": "ok",
-        "note": "「Best」單行；app 量到的是整個分段按鈕的框，非換行。"
-      },
-      "lines:I3139:64913;4845:2165;4845:2120": {
-        "verdict": "ok",
-        "note": "「Standard」單行；app 量到的是整個分段按鈕的框，非換行。"
-      },
-      "lines:I3139:64913;4845:2165;4845:2122": {
-        "verdict": "ok",
-        "note": "「Fast」單行；app 量到的是整個分段按鈕的框，非換行。"
-      },
-      "position:I3139:64913;4845:2163": {
-        "verdict": "ok",
-        "note": "Figma「120」是舊價；PM 10/16 Best · Preview 30 sec 為 ◆180，app「180」符合 PM。"
-      },
-      "position:I3139:64913;4845:2164;2750:25393": {
-        "verdict": "ok",
-        "note": "「Generate video」單行，按鈕比 Figma 寬，屬寬螢幕重排；app 量到的是按鈕框。"
-      },
-      "lines:I3139:64913;4845:2164;2750:25393": {
-        "verdict": "ok",
-        "note": "「Generate video」單行，按鈕比 Figma 寬，屬寬螢幕重排；app 量到的是按鈕框。"
-      },
-      "position:I2778:127669;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "lines:I2778:127669;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "position:I2778:127673;1037:48645;245:2027": {
-        "verdict": "ok",
-        "note": "點數餘額為帳號樣本數值（Figma「400」），非設計差異。"
-      },
-      "colour:I3139:64913;4845:2165;4845:2117": {
-        "verdict": "ok",
-        "note": "分段控制選取白底、未選深藍底與 Generate 按鈕藍色，與 Figma 一致或只有輕微色差。"
-      },
-      "colour:I3139:64913;4845:2164": {
-        "verdict": "ok",
-        "note": "分段控制選取白底、未選深藍底與 Generate 按鈕藍色，與 Figma 一致或只有輕微色差。"
-      },
-      "colour:2778:127667": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "這是「More ideas +」chip 的位置，app 沒有這個 chip（同 More ideas 缺漏）。"
-      },
-      "colour:I3139:64913;4845:2164;2750:25393": {
-        "verdict": "ok",
-        "note": "分段控制選取白底、未選深藍底與 Generate 按鈕藍色，與 Figma 一致或只有輕微色差。"
-      }
-    },
-    "2824:130900": {
-      "missing:I3142:68116;3948:158776": {
-        "verdict": "ok",
-        "note": "場景標題（如「Scene 3 — Secret Dates」）是生成內容，app 顯示本次劇本的場景標題，格式「Scene n — 標題」相同。"
-      },
-      "missing:I3142:68117;3948:158776": {
-        "verdict": "ok",
-        "note": "場景標題（如「Scene 3 — Secret Dates」）是生成內容，app 顯示本次劇本的場景標題，格式「Scene n — 標題」相同。"
-      },
-      "missing:I3142:68118;3948:158776": {
-        "verdict": "ok",
-        "note": "場景標題（如「Scene 3 — Secret Dates」）是生成內容，app 顯示本次劇本的場景標題，格式「Scene n — 標題」相同。"
-      },
-      "missing:I3142:68119;3948:158776": {
-        "verdict": "ok",
-        "note": "場景標題（如「Scene 3 — Secret Dates」）是生成內容，app 顯示本次劇本的場景標題，格式「Scene n — 標題」相同。"
-      },
-      "copy:I2824:130954;2778:123550": {
-        "verdict": "ok",
-        "note": "劇名與片長（Figma「Forbidden Office Romance」「1:30」）是生成內容，app 顯示本次劇名與片長，屬樣本內容。"
-      },
-      "missing:I2824:130955;393:31121": {
-        "verdict": "question",
-        "note": "Figma 在預覽卡下方畫「Create video」（被輸入框蓋住一半），app 擷取時沒有這個項目；PM-only 的「Create video」尚待確認（Q-A16），無法判斷。"
-      },
-      "lines:I2824:130954;2778:123551": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Storyboard Preview 說明「See your story as pictures with a voice telling it. The real video comes next.」Figma 三行，app 兩行；寬度相近，app 字級較小。"
-      },
-      "lines:I2824:130968;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "control:I3142:68115;3948:158774": {
-        "verdict": "ok",
-        "note": "此控制項（場景縮圖）在 Figma 位於畫面頂端外，app 各場景同樣有縮圖，非缺少。"
-      },
-      "colour:3142:68115": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I3142:68115;3948:158774": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I3142:68116;3948:158774": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I3142:68117;3948:158774": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      },
-      "colour:I3142:68118;3948:158774": {
-        "verdict": "ok",
-        "note": "此處為角色或分鏡圖片，色塊差異來自圖片內容，屬樣本。"
-      }
-    },
-    "2778:138663": {
-      "missing:I2778:138717;2778:123550": {
-        "verdict": "ok",
-        "note": "劇名與片長（Figma「Forbidden Office Romance」「1:30」）是生成內容，app 顯示本次劇名與片長，屬樣本內容。"
-      },
-      "missing:I3142:68177;2750:118354": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "控制項上方的標題在 app 不見了：此 frame 為「Model」，1016 frame 為「Quality」，PM 10/16 為「Model • Seedance」，app 三者皆無。"
-      },
-      "copy:I3142:68177;2750:118356;1902:90136": {
-        "verdict": "ok",
-        "note": "舊版 Model 選項已被 PM 10/16 改為 Best / Standard / Fast；app 選 Standard 時顯示「Seedance 2.0 · Balanced quality for everyday stories」，符合 PM。"
-      },
-      "missing:I3142:68177;2750:118356;1902:90134": {
-        "verdict": "ok",
-        "note": "此 frame 仍畫舊版「Model」Seedance 2.0 / 2.0 Mini；PM 10/16（較新）改為 Best / Standard / Fast，casebook 依 PM 版本，app 沒有「Seedance 2.0 Mini」符合 PM。"
-      },
-      "missing:I3142:68177;2750:118357": {
-        "verdict": "ok",
-        "note": "此 frame 仍畫舊版「Model」Seedance 2.0 / 2.0 Mini；PM 10/16（較新）改為 Best / Standard / Fast，casebook 依 PM 版本，app 沒有「Best for cinematic, beautiful, high-detail videos」符合 PM。"
-      },
-      "copy:I3142:68177;2750:118360": {
-        "verdict": "ok",
-        "note": "Figma 為「Length」，app 為「Video length」；PM（較新）寫「Video length」，casebook 依 PM 文案。"
-      },
-      "copy:I3142:68177;2750:118361;1902:90136": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 為「Preview · 30 sec」，app 顯示「Preview - 30 sec」：中間點「·」被換成連字號「-」。"
-      },
-      "copy:I3142:68177;2750:118361;1902:90134": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 為「Full Video · 90 sec」，app 顯示「Full Video - 90 sec」：中間點「·」被換成連字號「-」。"
-      },
-      "copy:I3142:68177;2750:118424;2750:25393": {
-        "verdict": "ok",
-        "note": "此舊 frame 寫「Generate」；較新的 1016 frame 與 PM 皆為「Generate Video」，app「Generate video」符合（大小寫不計）。"
-      },
-      "missing:I2778:138718;1902:90188": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "Figma 與 PM 都在輸入框上方畫「More ideas +」chip，app 這一頁沒有顯示。"
-      },
-      "lines:I2778:138717;2778:123551": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Storyboard Preview 說明「See your story as pictures with a voice telling it. The real video comes next.」Figma 三行，app 兩行；寬度相近，app 字級較小。"
-      },
-      "lines:I2778:138720;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "position:I2778:138724;1037:48645;245:2027": {
-        "verdict": "ok",
-        "note": "點數餘額為帳號樣本數值（Figma「400」），非設計差異。"
-      },
-      "colour:I3142:68177;2750:118424": {
-        "verdict": "ok",
-        "note": "分段控制選取白底、未選深藍底與 Generate 按鈕藍色，與 Figma 一致或只有輕微色差。"
-      }
-    },
-    "2778:127956": {
-      "missing:2778:128013": {
-        "verdict": "ok",
-        "note": "Figma 的「Choose your video settings」位於狀態列下方已捲出畫面，app 同樣已捲過，不是缺漏。"
-      },
-      "sample:I2778:128014;393:31121": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 使用者泡泡為「Generate Video / Model: Seedance 2.0 / Generation length: Preview · 30 sec」，app 只顯示「Standard · Preview - 30 sec」，少了「Generate Video」與「Model:」「Length:」標籤。"
-      },
-      "copy:I2778:128018;2750:64270": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "Figma 為「Create the full video · 90 sec」（PM 為「Create the full episode (90 sec)」），app 顯示「Create the full episode (60 sec)」，長度與兩份規格都不同（既有 Android 單 DRA262610P0159）。"
-      },
-      "lines:I2778:128018;2750:64323;2750:25393": {
-        "verdict": "ok",
-        "note": "「Generate」單行；app 量到的是按鈕框，非換行。"
-      },
-      "lines:I2778:128020;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "colour:I2778:128018;2750:64323": {
-        "verdict": "ok",
-        "note": "Generate 按鈕藍色與 Figma 只有輕微色差，同為品牌藍，視為一致。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "bug",
-        "severity": "cosmetic",
-        "figma": {
-          "box": [
+            32,
             152,
-            480,
-            30,
-            30
+            320,
+            88
           ]
         },
-        "note": "影片卡右下的下載圖示，app 加了深色圓形底，Figma 只有線條圖示。"
-      }
-    },
-    "2778:127742": {
-      "missing:2778:127799": {
-        "verdict": "ok",
-        "note": "Figma 的「Choose your video settings」位於狀態列下方已捲出畫面，app 同樣已捲過，不是缺漏。"
-      },
-      "missing:I2778:127800;393:31121": {
-        "verdict": "bug",
-        "severity": "minor",
-        "note": "Figma 使用者泡泡為「Generate Video / Model: Seedance 2.0 / Length: Preview · 30 sec」，app 只顯示「Standard · Preview - 30 sec」，少了「Generate Video」與「Model:」「Length:」標籤。"
-      },
-      "copy:I2778:127804;2750:64270": {
-        "verdict": "bug",
-        "severity": "major",
-        "note": "Figma 為「Create the full video · 90 sec」（PM 為「Create the full episode (90 sec)」），app 顯示「Create the full episode (60 sec)」，長度與兩份規格都不同（既有 Android 單 DRA262610P0159）。"
-      },
-      "lines:I2778:127804;2750:64323;2750:25393": {
-        "verdict": "ok",
-        "note": "「Generate」單行；app 量到的是按鈕框，非換行。"
-      },
-      "lines:I2778:127806;2499:46952": {
-        "verdict": "ok",
-        "note": "輸入框佔位字「Enter your idea to create drama」相同且為單行，app 量到的是整個輸入框，非排版差異。"
-      },
-      "colour:I2778:127804;2750:64323": {
-        "verdict": "ok",
-        "note": "Generate 按鈕藍色與 Figma 只有輕微色差，同為品牌藍，視為一致。"
-      },
-      "visual:1": {
-        "kind": "visual",
-        "verdict": "bug",
-        "severity": "cosmetic",
-        "figma": {
-          "box": [
-            152,
-            480,
-            30,
-            30
-          ]
-        },
-        "note": "影片卡右下的下載圖示，app 加了深色圓形底，Figma 只有線條圖示。"
+        "note": "Two characters show the same look image (「Leo」 and 「Marcus」 share one character sheet). Check whether the app assigned one look to two characters or the generation returned the same image.",
+        "note_zh": "兩個角色顯示同一張造型圖（「Leo」與「Marcus」共用同一角色圖）。請確認是 App 將同一造型套給兩個角色，或是生成結果相同。"
       }
     }
   }
