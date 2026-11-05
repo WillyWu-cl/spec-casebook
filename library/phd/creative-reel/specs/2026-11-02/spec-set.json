@@ -1,0 +1,13 @@
+{
+  "feature": "phd/creative-reel",
+  "folder": "2026-11-02",
+  "received_at": "2026-11-02T09:59:16.596Z",
+  "spec_set_sha256": "2c1d72489c9244b7fe3d72d0d6a754cafedca8402829b7bb81e301516fa39cee",
+  "files": [
+    {
+      "name": "Creative Reel.pdf",
+      "sha256": "c9f02f8fec0b953133fd38585a52ef89cd3d61c1b489bb13785f22d3fb9fe289",
+      "bytes": 4965907
+    }
+  ]
+}

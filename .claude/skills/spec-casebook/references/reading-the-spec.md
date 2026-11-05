@@ -85,7 +85,10 @@ and look at the tile images where layout, arrows or states matter.**
    block, with the row that checks that variant (`R-463 (TC-231)`), or a `Q-n` when the linked page disagrees with
    PM, Design or the app (list the conflict as a question, never pick a side alone). `check.ts` fails a draft whose
    trace lacks an item of `links.json`, and the coverage page shows any untraced item as missing. A link that cannot
-   be opened (no access) is a `Q-n` asking for access, never skipped.
+   be opened (no access) is a `Q-n` asking for access, never skipped. A file the spec only **names** is a link too: a
+   title or heading such as 「spec 依帳本 spec-draft/reel-creator.decisions.md」 points at the source the board was
+   written from, so read the board titles as well as the notes (2026-11-03, PHD Creative Reel Q-21: the title was
+   read as a label and the ledger it names never asked for).
 10. **Inventory every screen, control and arrow from Figma (user, 2026-10-28, REQ-038).** The run must press every
    tappable element the spec draws and walk every arrow, and the coverage page proves it.
    - **Accounts and servers.** The Design file is read through the `figma-design` server (qa-dm, Dev seat), the PM and

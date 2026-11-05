@@ -1,0 +1,16 @@
+{
+  "Creative Reel.pdf": {
+    "page_size": [5566, 2862],
+    "note": "One Figma export page (\"Reel Creator（原 Cinematic Reel Creator）— Room & Template Preview\"). Read from the PDF text layer (it maps Chinese correctly; saved as pdf-text.txt / annot-lines.txt) and renders of the phone rows and note boxes; macOS Vision OCR (spec-boards.ts) is not available on this Windows machine, so there is no boards/ folder. Red note lines are pending items (待決 / 待確認) or late additions.",
+    "boards": [
+      { "id": "room", "title": "Room: Cinematic Reel Creator → Reel Creator (room mockup, Edit Room entry, CMS, schedule notes)", "region": [60, 200, 1400, 1450] },
+      { "id": "deeplink", "title": "Deeplink notes", "region": [900, 1100, 600, 300] },
+      { "id": "preview", "title": "1. Preview (Reels style) + 2. View photo tips (mockups and notes)", "region": [1400, 200, 1000, 1150] },
+      { "id": "picker", "title": "3. Photo picker + 4–5. Picker remembers last photos (NEW)", "region": [2300, 200, 1350, 1250] },
+      { "id": "confirm", "title": "6–7. Confirm-generate page (NEW)", "region": [3600, 200, 1100, 1200] },
+      { "id": "text-language", "title": "8. Text language (Creative only)", "region": [4550, 200, 520, 1100] },
+      { "id": "artwork", "title": "My AI Artwork", "region": [5000, 200, 566, 1100] },
+      { "id": "cinematic", "title": "Cinematic Styles (existing CineStory, 1 photo) — same flow", "region": [1400, 1850, 1900, 1000] }
+    ]
+  }
+}

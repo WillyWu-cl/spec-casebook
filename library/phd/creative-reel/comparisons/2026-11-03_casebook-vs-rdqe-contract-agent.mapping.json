@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-03",
+  "request": "REQ-005",
+  "casebook": { "draft": "library/phd/creative-reel/android/drafts/20261102-175916", "requirements": 113, "rows": 125 },
+  "other": {
+    "repo": "C:/Users/willy_wu/Desktop/Agent/rdqe-spec-contract-agent (commit ea0ba1a, files untracked in that checkout, read 2026-11-03)",
+    "contracts": "test-specs/features/phda-creative-reel/{testable,limitation-to-testable,not-testable}-contracts.yaml",
+    "cases": "test-cases/generated/phda-creative-reel/TC-PHDA-CR-*.yaml (15 cases)",
+    "spec_sha256": "c9f02f8fec0b953133fd38585a52ef89cd3d61c1b489bb13785f22d3fb9fe289 (same file as the casebook spec set 2026-11-02)"
+  },
+  "note": "Report only (SKILL.md: the comparison adds no rows). Contract IDs drop the prefix PHDA-CR-20261103-S001-.",
+  "testable": {
+    "ROOM-NAME": "TC-005", "NAME-EFFECTS": "TC-001", "NAME-SHORTCUT": "TC-002", "NAME-LAUNCHER-ROW": "TC-003", "NAME-AI-VIDEO": "TC-004",
+    "SECTIONS": "TC-006", "CATEGORIES": "TC-006", "EDIT-DIALOG": "TC-010", "EDIT-EMPTY": "TC-013 (theirs: implementation gap)",
+    "PREVIEW": "TC-023", "AUTOPLAY": "TC-023", "LOOP": "TC-023", "SWIPE": "TC-026", "WRAP": "TC-027, TC-028, TC-029",
+    "TIPS-CONTROL": "TC-024", "MUTE-CONTROL": "TC-024, TC-025", "PREVIEW-META": "TC-024", "USE-TEMPLATE": "TC-037",
+    "TIPS-MANUAL": "TC-032", "TIPS-OPEN": "TC-033, TC-035", "TIPS-PORTRAIT": "TC-033", "TIPS-GOT-IT": "TC-034",
+    "PICKER-ORDER": "TC-038", "PICKER-TRAY": "TC-037, TC-038", "TRAY-SCROLL": "TC-041", "NEXT-LOW": "TC-038, TC-039",
+    "NEXT-MIN": "TC-040", "NEXT-MAX": "TC-042", "NEXT-OVER": "TC-042", "FIXED-LABEL": "TC-092, TC-098",
+    "TRANSITION-COUNT": "TC-098, TC-102", "CREATIVE-COUNT": "TC-024, TC-040", "LANDSCAPE": "TC-044", "PORTRAIT": "TC-044",
+    "VALIDATE-RESOLUTION": "TC-045, TC-046, TC-047", "VALIDATE-SIZE": "TC-048 (above only; no explicit just-under row)",
+    "VALIDATE-NSFW": "TC-049 (theirs: gap)", "VALIDATE-CELEBRITY": "TC-050 (theirs: gap)",
+    "RECALL": "TC-054", "IMPORT": "TC-055", "IMPORT-LOW": "TC-057 (theirs: gap)", "IMPORT-OVER": "TC-058", "IMPORT-SINGLE": "TC-060",
+    "CONFIRM-HEADER": "TC-063", "CONFIRM-PHOTOS": "TC-063", "REORDER": "TC-064", "REMOVE": "TC-065", "ADD": "TC-068, TC-069",
+    "GENERATE-LOW": "TC-066", "GENERATE-TOAST": "TC-067", "CREATIVE-COST": "TC-063, TC-074", "CINE-COST": "TC-094, TC-096",
+    "CINE-ONE": "TC-092, TC-093", "CINE-REPLACE": "TC-095", "CINE-NO-LANGUAGE": "TC-094",
+    "LANG-DEFAULT": "TC-075, TC-076", "LANG-SCROLL": "TC-075, TC-077", "LANG-CHOOSE": "TC-078", "LANG-RETAIN": "TC-079",
+    "LANG-RESET": "TC-080", "LANG-IMMUTABLE": "TC-084", "RATIO": "TC-086 (Creative only)",
+    "ARTWORK-TAB": "TC-089", "ARTWORK-MIXED-CREATIVE": "TC-085, TC-090", "ARTWORK-MIXED-CINEMATIC": "TC-090, TC-096",
+    "ARTWORK-MIXED-TRANSITION": "TC-090", "ARTWORK-NO-SUBTABS": "TC-090", "ARTWORK-SORT": "TC-090", "ARTWORK-NAME": "TC-086, TC-090",
+    "CREATE-MORE": "TC-091"
+  },
+  "limitation_to_testable": {
+    "EDIT-SAVE": "TC-012", "FIRST-HINT": "TC-021, TC-022", "IMPORT-MISSING": "TC-059", "LANG-ALL": "TC-077",
+    "LANG-CODE": "TC-081, TC-082, TC-083 (observed as the reel's text language)", "TRANSITION-OUTPUT-ORDER": "TC-101",
+    "ALL-INPUTS": "TC-087", "FREE-PAYWALL": "TC-072", "SUBSCRIBER-CREDITS": "TC-073", "CREDIT-SHOP": "TC-073",
+    "DEEPLINK-ROOT": "TC-014", "DEEPLINK-GUID-CINE": "TC-017", "DEEPLINK-GUID-NEW": "TC-015, TC-016", "DEEPLINK-MISSING": "TC-018",
+    "DEEPLINK-CATEGORY": "TC-019", "CMS-TYPE": "not added (server setup; update-plan Not added)", "CMS-FIELDS": "visible part: TC-024, TC-033, TC-037"
+  },
+  "not_testable": {
+    "NOTE-SECTION-ORDER": "Q-1 (TC-006 records the order)", "NOTE-FEATURE-ID": "Q-2, R-024 NOT TESTABLE", "NOTE-MEMORY-ANCHOR": "Q-3",
+    "NOTE-MEMORY-SCOPE": "Q-4 (TC-062 records)", "NOTE-MEMORY-DISMISS": "Q-5 (TC-056 records)", "NOTE-CINE-RECALL": "Q-7 (TC-097 records)",
+    "NOTE-LANG-PLACEMENT": "Q-6", "NOTE-SCHEDULE": "R-025 NOT TESTABLE", "NOTE-PIPELINE": "not a requirement",
+    "NOTE-CREATIVE-ORDER": "R-066 (order not asserted; every input used is)", "NOTE-EXAMPLE-COPY": "same reading (template names used as fixtures; 182 / 100 balances not asserted)",
+    "NOTE-SOURCE-LEDGER": "MISSED by the casebook: the heading's linked spec-draft/reel-creator.decisions.md is not traced (reading-the-spec step 9, Follow every link)"
+  }
+}
