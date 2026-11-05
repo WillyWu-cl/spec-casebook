@@ -1,0 +1,27 @@
+{
+  "qr": "QR261105-0035",
+  "url": "https://ecl.cyberlink.com/IF3/qr/BPM/FormView/QR261105-0035",
+  "tr": "TR261104-0065",
+  "tester": "ETHAN_HSU",
+  "created": "2026-11-05 16:3x (IF3 Standard Report, template 14564)",
+  "build": "16.8.0.2611041",
+  "shortDescription": "16.8.0.2611041 - Bug verify report (ETHAN_HSU)",
+  "testResult": "PDR-A - Bug verification [OK=7, Fail=4]",
+  "os": "Android 15",
+  "osLanguage": "English",
+  "readBack": "every field, State and Reason matched qr-text.txt; only the 11 ETHAN_HSU rows set, the 16 other rows left Not Yet Verified; ZIP listed once under Attachment",
+  "ticketsAfter": {
+    "Close": ["DRA262610P0324", "DRA262610P0326", "DRA262610P0328", "DRA262610P0332", "DRA262610P0350", "DRA262610P0354", "DRA262610P0381"],
+    "Fail": ["DRA262610P0388", "DRA262610P0415", "DRA262610P0416", "DRA262610P0424"]
+  },
+  "evidence": {
+    "file": "TR261104-0065_16.8.0.2611041_evidence.zip",
+    "sha256": "e71284ba74402ddd8eb29cb1e7c415f0e76408abe8e3c357a2a3f59ad1585cdc",
+    "files": 35,
+    "url": "https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/05/28bf1987-0c5c-472f-8fa5-9a775f068a2c.zip",
+    "attached": true,
+    "downloadCheck": "downloaded from ECL, SHA-256 matches the local ZIP"
+  },
+  "notes": "An earlier upload of the ZIP (before P0350 moved from Hold to OK at the user's request) was removed from the form before Create.",
+  "mismatches": []
+}

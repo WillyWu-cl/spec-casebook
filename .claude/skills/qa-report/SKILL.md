@@ -59,11 +59,17 @@ Then judge the build's current behaviour against the current spec:
   or rule), not from the bug's original text, and test every stage the newer spec splits the flow into.
 - An open question decides it (RD's reading is not a PM ruling) → Hold. Tell the user which question it is.
 
+**Does what the bug expected = pass (user, 2026-11-05, REQ-098).** When the build now does what the bug's Expect
+Result says, it is OK. An unread or newer board, a pending Figma check or an open question does not hold it: list
+that in the run's result and tell the user, since a newer spec that wants something else is a new finding, not a
+reason to keep this ticket open. Hold is only for a path not checked, or for a build that differs from the bug's
+Expect Result where an open question decides which is right.
+
 ## Verdicts (user, 2026-11-03, REQ-073)
 
 | Result | When | Reason on the form |
 | --- | --- | --- |
-| OK | Every path the original eBug names is fixed on this build, **or the scenario can no longer be completed or triggered by any means** (flow or control removed, input capped so the state can't be reached) | `Verified OK with build (v<version.build>) on <device> / <OS>`, plus one `Note:` line when it needs one: why the scenario can't happen any more, or a fix that is the spec's fallback |
+| OK | Every path the original eBug names is fixed on this build (it does what the bug's Expect Result says, REQ-098), **or the scenario can no longer be completed or triggered by any means** (flow or control removed, input capped so the state can't be reached) | `Verified OK with build (v<version.build>) on <device> / <OS>`, plus one `Note:` line when it needs one: why the scenario can't happen any more, or a fix that is the spec's fallback |
 | Fail | Any original symptom still happens | first line `Verify Fail with build (…) on …`, then `Result:` and `Expected Result:` (one or two plain sentences each), then the evidence folder |
 | Hold | Anything not fully verified: a path not checked, a fixture missing, a run stopped | **not on the QR at all** (not in the bug rows, not in Details); the bug is left alone and stays "Not yet verified" on the TR |
 

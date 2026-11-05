@@ -1,0 +1,201 @@
+{
+  "tr": "TR261104-0065",
+  "product": "PowerDirector Mobile for Android",
+  "tester": "ETHAN_HSU",
+  "template": "Standard Report",
+  "testingDate": "2026/11/05",
+  "version": "16.8.0",
+  "build": "2611041",
+  "buildDay": "1104",
+  "os": "Android 15",
+  "env": {
+    "device": "Samsung Galaxy A53 (SM-A5360) / Android 15",
+    "server": "Stage",
+    "account": "signed in to the tester's CyberLink test account (Premium)",
+    "testedBy": "AI agent (Claude Opus 5.5) driving the phone over Appium; verdicts and evidence reviewed by ETHAN_HSU",
+    "install": "APK from the TR's OneDrive folder (MD5 checked), installed over the previous build with data kept",
+    "scope": "the eBugs created by ETHAN_HSU in this TR's verify list"
+  },
+  "observations": [
+    "Each storyboard image is charged 3 credits and the Update characters card ◆4, below today's charging table (6 each).",
+    "French: 「You'll have N left」 stays in English on the Create storyboard card; the Launcher label is 「Mini Fiction AI」 while the feature title is 「Mini Drama IA」.",
+    "Credit Details shows one Text to Image row at 15:07 where two location images were charged (the rows add up to 3 credits less than the balance dropped).",
+    "The first cast confirmation once ended in 「Something went wrong on my end. Let's try that again.」; Try again worked."
+  ],
+  "rows": [
+    {
+      "bug": "DRA262610P0324",
+      "result": "OK",
+      "summary": "five Surprise me taps add five different inspirations",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0324_tap1.png",
+        "screenshots/16.8.0.2611041_DRA262610P0324_tap3.png",
+        "screenshots/16.8.0.2611041_DRA262610P0324_tap5.png"
+      ],
+      "logs": [],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Surprise me appends the same inspiration on every tap",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0326",
+      "result": "OK",
+      "summary": "the Gender filter lists Female, Male and Other once each",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0326_01_filter.png",
+        "screenshots/16.8.0.2611041_DRA262610P0326_02_gender_swiped.png"
+      ],
+      "logs": [],
+      "title": "PDR-A 16.8.0 - [AIAgent][UI] AI Mini Drama: Character filter lists 「Other」 twice under Gender",
+      "severity": "2",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0328",
+      "result": "OK",
+      "summary": "the Update characters card shows 「1 character」",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0328_01_card.png"
+      ],
+      "logs": [],
+      "title": "PDR-A 16.8.0 - [AIAgent][UI] AI Mini Drama: Update characters card shows no character count",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0332",
+      "result": "OK",
+      "summary": "a typed character name brings the Update characters card for that character",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0332_s3_01_question.png",
+        "screenshots/16.8.0.2611041_DRA262610P0332_s3_02_after_name.png"
+      ],
+      "logs": [
+        "16.8.0.2611041_DRA262610P0332_s3_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: A typed character name does not lead to the Update characters card",
+      "severity": "2",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0350",
+      "result": "OK",
+      "summary": "the sent message moves to the top, the view stays put while the reply grows, and ↓ appears when it overflows",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0350_s3_21_storyboard_generate_top.png",
+        "screenshots/16.8.0.2611041_DRA262610P0350_s3_23_storyboard_reply_arrow.png"
+      ],
+      "logs": [],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Sent message is not moved to the top and the view follows the reply",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0354",
+      "result": "OK",
+      "summary": "「You'll have N left」 shows under Generate on the storyboard and video cards",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0354_02_storyboard_card.png",
+        "screenshots/16.8.0.2611041_DRA262610P0354_01_video_card.png"
+      ],
+      "logs": [],
+      "title": "PDR-A 16.8.0 - [AIAgent][UI] AI Mini Drama: Video and storyboard cards show no 「You'll have N left」 line under Generate",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0381",
+      "result": "OK",
+      "summary": "the credit pill during outline generation asks 「Leave this chat?」; Stay keeps the chat, Leave anyway saves nothing",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0381_01_thinking.png",
+        "screenshots/16.8.0.2611041_DRA262610P0381_02_after_pill.png",
+        "screenshots/16.8.0.2611041_DRA262610P0381_s3_03_after_leave.png",
+        "screenshots/16.8.0.2611041_DRA262610P0381_s3_05_history_end.png"
+      ],
+      "logs": [
+        "16.8.0.2611041_DRA262610P0381_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Credit pill leaves a generating outline with no 「Leave this chat?」 dialog",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0388",
+      "result": "Fail",
+      "summary": "a failed scene image in a chat update is still not refunded after 70 minutes, and the chat does not mention the failure",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0388_05_reply.png",
+        "screenshots/16.8.0.2611041_DRA262610P0388_07_scene4_detail.png",
+        "screenshots/16.8.0.2611041_DRA262610P0388_s4_08_details_1536_to_1508.png",
+        "screenshots/16.8.0.2611041_DRA262610P0388_s4_09_my_credits_after.png"
+      ],
+      "logs": [
+        "16.8.0.2611041_DRA262610P0388_log.txt",
+        "16.8.0.2611041_DRA262610P0388_s4_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Failed scene images in a chat update show no 「!」 and keep their 6 credits",
+      "severity": "2",
+      "creator": "ETHAN_HSU",
+      "observed": "Scene 4 was charged 3 credits and failed offline; its view says 「Your credits have been refunded」, but after 70 min none came back (no refund line in Credit Details). The chat says only 「Here's your storyboard」.",
+      "expected": "The failed image's 3 credits are returned (「Generation failed, credits returned」) and the chat says the image couldn't be updated and was refunded, with Edit."
+    },
+    {
+      "bug": "DRA262610P0415",
+      "result": "Fail",
+      "summary": "a storyboard scene image charged and then failed is still not refunded after 30 minutes",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0415_s4_03_wifi_off.png",
+        "screenshots/16.8.0.2611041_DRA262610P0415_s4_05_scene2_view.png",
+        "screenshots/16.8.0.2611041_DRA262610P0415_s4_04_end.png",
+        "screenshots/16.8.0.2611041_DRA262610P0388_s4_01_details_p1.png"
+      ],
+      "logs": [
+        "16.8.0.2611041_DRA262610P0415_s4_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Failed storyboard images claim a refund, but the 15 credits never return",
+      "severity": "2",
+      "creator": "ETHAN_HSU",
+      "observed": "One scene image was charged 3 credits and then failed. Its view says 「Your credits have been refunded」, but after 31 minutes the balance has not risen and Credit Details has no refund line.",
+      "expected": "Each failed image's credits are returned and Credit Details shows 「Generation failed, credits returned」."
+    },
+    {
+      "bug": "DRA262610P0416",
+      "result": "Fail",
+      "summary": "video prices still differ from the charging table (Standard Preview 30 s is 120, not 390)",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0416_Preview_Best.png",
+        "screenshots/16.8.0.2611041_DRA262610P0416_Preview_Standard.png",
+        "screenshots/16.8.0.2611041_DRA262610P0416_Preview_Fast.png",
+        "screenshots/16.8.0.2611041_DRA262610P0416_Full_Standard.png"
+      ],
+      "logs": [],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Video is priced below the charging sheet: Standard 30 s is 120 credits, not 390",
+      "severity": "2",
+      "creator": "ETHAN_HSU",
+      "observed": "Preview 30 sec: Best 180, Standard 120, Fast 60. Full Video 90 sec: Best 544, Standard 364, Fast 184. Best now matches; Standard and Fast are still below the table.",
+      "expected": "Standard 13/s (390 / 1170), Fast 4/s (120 / 360), Best 6/s (180 / 540), per the MX credit charging table."
+    },
+    {
+      "bug": "DRA262610P0424",
+      "result": "Fail",
+      "summary": "「Langage de la vidéo」 is still on the French format card; the storyboard line is fixed",
+      "images": [
+        "screenshots/16.8.0.2611041_DRA262610P0424_s4_06_format_card.png",
+        "screenshots/16.8.0.2611041_DRA262610P0424_s4_07_storyboard_card.png"
+      ],
+      "logs": [],
+      "title": "PDR-A 16.8.0 - [AIAgent][UI] AI Mini Drama: French copy: 「Crédits seront consommés」 lacks an article; 「Langage de la vidéo」",
+      "severity": "3",
+      "creator": "ETHAN_HSU",
+      "observed": "The format card still reads 「1. Langage de la vidéo」. The Create storyboard card now reads 「Des crédits seront consommés pour cette tâche.」 (fixed).",
+      "expected": "「1. Langue de la vidéo」."
+    }
+  ],
+  "evidence": {
+    "file": "TR261104-0065_16.8.0.2611041_evidence.zip",
+    "sha256": "e71284ba74402ddd8eb29cb1e7c415f0e76408abe8e3c357a2a3f59ad1585cdc",
+    "files": 35,
+    "url": "https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/05/28bf1987-0c5c-472f-8fa5-9a775f068a2c.zip"
+  }
+}

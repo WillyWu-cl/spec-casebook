@@ -115,7 +115,8 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **Bug verify against today's spec (user, 2026-11-05, REQ-091).** Before verifying a bug, check its Expect Result
   against the current spec in the repo (ticket comments, row, `requirements.md` changes and open questions, newer
   frames in `extracted/`), then judge the build's current behaviour against that. An open question means Hold
-  (`qa-report/SKILL.md` › *Expected = today's spec*).
+  (`qa-report/SKILL.md` › *Expected = today's spec*). But a build that does what the bug expected is OK even
+  with a board unread or a question open (user, 2026-11-05, REQ-098).
 - **AI Mini Drama credits (user, 2026-11-03, REQ-073, until lifted).** For runs and rechecks, use whatever credits a check needs for anything except a full video generation (characters, outlines, storyboards, regenerations, updates); a full video generation still needs the user's go-ahead or an existing video. Check every path a bug names rather than stopping at one to save credits.
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
