@@ -1,0 +1,77 @@
+2026-11-05T01:09:35.624Z restart R5CTB22S05Y
+2026-11-05T01:09:45.555Z build 
+2026-11-05T01:09:45.826Z logcat start
+2026-11-05T01:09:46.083Z texts launch0
+2026-11-05T01:09:53.602Z launch 
+2026-11-05T01:10:01.175Z texts launch1
+2026-11-05T01:10:12.106Z lbl AI Mini Drama
+2026-11-05T01:10:17.055Z texts amd1
+2026-11-05T01:10:21.119Z lbl Try It Now
+2026-11-05T01:10:25.545Z els 
+2026-11-05T01:10:35.060Z id button_mini_drama_home_history
+2026-11-05T01:10:38.542Z texts history0
+2026-11-05T01:10:43.601Z lbl The New Guy's Secret
+2026-11-05T01:10:49.798Z texts d1
+2026-11-05T01:10:56.370Z back 
+2026-11-05T01:10:59.649Z texts 
+2026-11-05T01:11:00.065Z lbl Forbidden Office Romance
+2026-11-05T01:11:05.478Z texts d2
+2026-11-05T01:11:12.031Z back 
+2026-11-05T01:11:14.411Z id button_mini_drama_home_history
+2026-11-05T01:11:17.862Z lbl Forbidden Office Romance
+2026-11-05T01:11:24.029Z texts d2
+2026-11-05T01:11:32.229Z els EditText
+2026-11-05T01:11:32.552Z els 
+2026-11-05T01:11:37.026Z id edit_mini_drama_input
+2026-11-05T01:11:37.444Z type The characters look good. Let's create the storyboard.
+2026-11-05T01:11:40.055Z els 
+2026-11-05T01:11:45.731Z id button_mini_drama_send
+2026-11-05T01:11:46.126Z waitfor Generate|Ready to create --timeout 180
+2026-11-05T01:13:04.897Z texts card1
+2026-11-05T01:13:11.670Z els credit
+2026-11-05T01:13:11.979Z shot 16.8.0.2611041_DRA262610P0343_drama1_card_before_generate
+2026-11-05T01:13:12.865Z case TC-061
+2026-11-05T01:13:22.082Z texts 
+2026-11-05T01:13:30.150Z texts 
+2026-11-05T01:13:36.915Z lbl Stay
+2026-11-05T01:13:37.252Z texts 16.8.0.2611041_DRA262610P0343_stage1_after_stay
+2026-11-05T01:13:38.645Z case TC-513
+2026-11-05T01:13:38.767Z waitfor Creating your|Here's your storyboard|couldn't --timeout 240
+2026-11-05T01:13:57.441Z texts 
+2026-11-05T01:14:08.856Z case -
+2026-11-05T01:14:08.977Z id button_mini_drama_home_history
+2026-11-05T01:14:12.433Z texts 16.8.0.2611041_DRA262610P0343_history_during_drama1
+2026-11-05T01:14:13.654Z lbl The New Guy's Secret
+2026-11-05T01:14:19.834Z id edit_mini_drama_input
+2026-11-05T01:14:21.275Z type The characters look good. Let's create the storyboard.
+2026-11-05T01:14:23.839Z id button_mini_drama_send
+2026-11-05T01:14:25.218Z waitfor Generate|couldn't --timeout 180
+2026-11-05T01:15:31.498Z texts card2
+2026-11-05T01:15:40.026Z els text_mini_drama_credit 
+2026-11-05T01:15:40.359Z shot 16.8.0.2611041_DRA262610P0343_drama2_card_before_generate
+2026-11-05T01:15:41.222Z case TC-513
+2026-11-05T01:15:41.346Z lbl Generate
+2026-11-05T01:15:42.590Z waitfor Creating your|Here's your storyboard|couldn't --timeout 240
+2026-11-05T01:16:02.958Z texts 
+2026-11-05T01:23:13.398Z case -
+2026-11-05T01:23:13.523Z els text_mini_drama_home_credit
+2026-11-05T01:23:13.988Z id button_mini_drama_home_history
+2026-11-05T01:23:17.460Z texts 16.8.0.2611041_DRA262610P0343_history_on_return
+2026-11-05T01:23:25.327Z lbl Forbidden Office Romance
+2026-11-05T01:23:32.656Z texts 16.8.0.2611041_DRA262610P0343_drama1_reopened_from_history
+2026-11-05T01:23:40.300Z id button_mini_drama_history
+2026-11-05T01:23:43.732Z lbl The New Guy's Secret
+2026-11-05T01:23:51.220Z texts 16.8.0.2611041_DRA262610P0343_drama2_reopened_from_history
+2026-11-05T01:23:56.761Z back 
+2026-11-05T01:23:59.033Z back 
+2026-11-05T01:24:02.043Z back 
+2026-11-05T01:24:04.332Z texts 
+2026-11-05T01:24:05.396Z tap 89 200
+2026-11-05T01:24:07.685Z texts menu1
+2026-11-05T01:24:14.240Z drag 540 1900 540 600
+2026-11-05T01:24:15.100Z drag 540 1900 540 600
+2026-11-05T01:24:15.982Z drag 540 1900 540 600
+2026-11-05T01:24:16.873Z texts menu2
+2026-11-05T01:24:23.319Z back 
+2026-11-05T01:24:23.960Z pull-logs recheck
+2026-11-05T01:24:59.457Z logcat stop

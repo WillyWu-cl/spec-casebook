@@ -1,0 +1,69 @@
+# PowerDirector 16.8.0 build 2611041 (official), SM-A5360, 2026-11-05 11:49-11:53: chats 9-13 on 「Shared Dreams」 (session 261105_110537_5edec7d2)
+2026-11-05 11:49:05.021 30889 31243 D GoogleBillingWrapper: updateSubscribingStatus: false
+2026-11-05 11:49:06.872 30889 31012 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28146, data=[BonusItem(remainCredit=100, category=give_
+2026-11-05 11:49:08.382 30889 31242 D GoogleBillingWrapper: updateSubscribingStatus: false
+2026-11-05 11:49:08.627 30889 30954 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28146, data=[BonusItem(remainCredit=96, category=give_a
+2026-11-05 11:49:41.708 30889 30926 D MiniDrama Log: [TOKEN] token_request: fetching member token...
+2026-11-05 11:49:41.714 30889 30926 D MiniDrama Log: [TOKEN] resolve_token (member_token ok, uuid ok) -> 0
+2026-11-05 11:49:44.195 30889 30926 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_110537_5edec7d2_t4_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"261105_110537_5edec7d2","type":
+2026-11-05 11:49:57.547 30889 30954 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 11:50:41.719 30889 31010 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_110537_5edec7d2_t5_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"261105_110537_5edec7d2","type":
+2026-11-05 11:50:54.248 30889 30954 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 11:51:07.052 30889 31004 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_110537_5edec7d2_t6_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"261105_110537_5edec7d2","type":
+2026-11-05 11:51:22.254 30889 31007 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 11:51:35.910 30889 31007 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_110537_5edec7d2_t7_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"261105_110537_5edec7d2","type":
+2026-11-05 11:51:54.055 30889 31007 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 11:52:04.996 30889 30926 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_110537_5edec7d2_t8_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"261105_110537_5edec7d2","type":
+2026-11-05 11:52:20.584 30889 31004 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+
+# 11:53 New Chat + idea send (new session 261105_115341_188ed74c): no [TURN]/[TOKEN]/[EVENT] dispatch, no limit line
+2026-11-05 11:53:41.414 30889 31434 D MiniDramaPerf: t14 +0ms                          iris   event         session_created
+2026-11-05 11:53:41.416 30889 31010 D MiniDrama Log: [SYS] session_created: 261105_115341_188ed74c
+
+# 11:55-12:06 chats 14-19 in session 261105_115341_188ed74c (「Two neighbours share a garden」)
+2026-11-05 11:55:58.326 30889  1167 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_115341_188ed74c_t1_i2_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"2
+2026-11-05 11:56:21.764 30889 31011 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 11:57:19.322 30889  1168 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_115341_188ed74c_t2_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"2
+2026-11-05 11:59:24.095 30889 30954 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 11:59:54.153 30889 31434 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_115341_188ed74c_t3_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"2
+2026-11-05 12:01:16.368 30889 31007 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28146, data=[BonusItem(re
+2026-11-05 12:01:17.107 30889 30954 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28143, data=[BonusItem(re
+2026-11-05 12:01:17.465 30889 31007 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28143, data=[BonusItem(re
+2026-11-05 12:01:37.122 30889 31007 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28143, data=[BonusItem(re
+2026-11-05 12:01:37.282 30889  2366 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28143, data=[BonusItem(re
+2026-11-05 12:01:39.895 30889 31434 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:01:40.103 30889  2366 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:04.752 30889 31434 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:04.998 30889 31007 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:05.179 30889  2780 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:05.188 30889  1168 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:05.338 30889 31011 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:05.352 30889  2782 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:05.500 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:05.507 30889  2367 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, data=[BonusItem(re
+2026-11-05 12:02:14.942 30889 31011 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28139, data=[BonusItem(re
+2026-11-05 12:02:30.810 30889  2777 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28136, data=[BonusItem(re
+2026-11-05 12:02:30.880 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28133, data=[BonusItem(re
+2026-11-05 12:02:31.419 30889  2777 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28133, data=[BonusItem(re
+2026-11-05 12:02:31.473 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28130, data=[BonusItem(re
+2026-11-05 12:02:32.060 30889  2777 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28130, data=[BonusItem(re
+2026-11-05 12:02:32.061 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28130, data=[BonusItem(re
+2026-11-05 12:02:32.585 30889  2777 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, data=[BonusItem(re
+2026-11-05 12:02:32.586 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, data=[BonusItem(re
+2026-11-05 12:02:33.442 30889  2777 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:33.612 30889 31011 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:33.614 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:33.963 30889  2367 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:45.643 30889 31011 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:55.336 30889 31011 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:57.367 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:58.669 30889 31011 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:59.187 30889 31011 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:02:59.940 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:03:00.382 30889  2367 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 12:03:00.586 30889  2779 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28121, data=[BonusItem(re
+2026-11-05 12:03:31.489 30889  2782 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_115341_188ed74c_t4_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"2
+2026-11-05 12:04:04.261 30889  2779 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 12:04:21.913 30889  2777 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_115341_188ed74c_t5_i1_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"2
+2026-11-05 12:04:54.882 30889  2779 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+# 12:04:58 and 12:05:29 sends blocked by 「Daily Free Chat Limit Reached」: no [TOKEN]/[EVENT]/[TURN] line after 12:04:54

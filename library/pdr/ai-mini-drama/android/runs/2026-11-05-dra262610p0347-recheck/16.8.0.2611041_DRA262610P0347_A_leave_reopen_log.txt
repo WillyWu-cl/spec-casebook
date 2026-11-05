@@ -1,0 +1,49 @@
+# Path A (official 16.8.0.2611041, SM-A5360) — logcat excerpt, session 261105_110537_5edec7d2 ('Shared Dreams' / chat title 'Cafe Opening Story')
+# Taps (device clock): ✓ with Julian unset 11:14:5x; Generate ◆4 11:14:56; sheet X 11:16:17; picker X 11:16:27; Leave 11:16:57; ← 11:17:45; plain reopen 11:18:0x; ← + force-stop 11:18:58; reopen 11:19:48; reopen 2 (no force-stop) 11:20:20
+# --- ring buffer (pid 25730) ---
+11-05 11:14:43.977 25730 25730 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda15@addcc1
+11-05 11:14:56.762 25730 25730 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+11-05 11:14:56.762 25730 25730 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+11-05 11:15:05.720 25730 26598 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"characters_synced","step_call_id":"261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama_s_plan_s_routed_s_characters_synce
+11-05 11:15:05.721 25730 26598 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama-final","step":"final","step_call_id":"261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama_s_plan_s_routed_s_characters_synced_s_fi
+11-05 11:15:05.721 25730 26598 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama-final","step":"final","step_call_id":"261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama_s_plan_s_routed_s_characters_s
+11-05 11:15:05.722 25730 26598 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"characters_synced","step_call_id":"261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama_s_plan_s_routed_s_charac
+11-05 11:15:05.723 25730 26596 D MiniDramaPerf: t3 +26.8s–+26.8s           <1ms  amd    tool          amd_plan                       ai-mini-drama/plan/routed committed=true  key=261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama_s_plan_s_routed_s_characters_synced
+11-05 11:15:05.725 25730 26598 D MiniDramaPerf: t3 +26.8s                        iris   event         turn_complete
+11-05 11:15:05.726 25730 26596 D MiniDramaPerf: t3 +20.1s–+26.8s          6.71s  amd    tool          ai-mini-drama                  ai-mini-drama committed=true  key=261105_110537_5edec7d2_t2_i1_d1_ai-mini-drama
+11-05 11:15:05.727 25730 26596 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+11-05 11:15:05.756 25730 25730 D MiniDramaPerf: t3 +26.8s                        host   turn          turn_end                       superseded
+11-05 11:15:05.756 25730 25730 D MiniDramaPerf: t4 +0ms                          host   turn          user_prompt
+11-05 11:15:05.760 25730 26596 D MiniDrama Log: [BLUEPRINT] sent (chars=2, shots=0, files=1, 224KB)
+11-05 11:15:05.760 25730 26596 D MiniDrama Log: [BLUEPRINT] shot fill: no shots
+11-05 11:15:13.106 25730 26598 D MiniDrama Log: [TOOL] tool_dispatch: TextToImage args={"aspect_ratio":"16:9","output_format":"png","prompt":"Create a character design sheet \/ turnaround reference sheet on a wide 16:9 canvas.\n\nLayout:\nleft side: one large close-up portrait of the character's fac
+11-05 11:15:13.121 25730 25834 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"text-to-image","step":"img_1","step_call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_
+11-05 11:15:13.851 25730 26596 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[…
+11-05 11:15:14.471 25730 27561 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[…
+11-05 11:15:16.183 25730 27560 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28163, data=[…
+11-05 11:15:16.270 25730 27559 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28163, data=[…
+11-05 11:15:17.297 25730 27559 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28162, data=[…
+11-05 11:15:33.550 25730 27559 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"text-to-image","step":"img_1","step_call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_pro
+11-05 11:15:33.961 25730 27561 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28162, data=[…
+11-05 11:15:36.968 25730 27560 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"storyboard-executor","step":"execute_storyboard","step_call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_rou
+11-05 11:15:37.261 25730 27561 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28162, data=[…
+11-05 11:15:52.687 25730 26598 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"storyboard-executor","step":"execute_storyboard","step_call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s
+11-05 11:16:02.907 25730 27560 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"environment-executor","step":"describe_environments","step_call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset
+11-05 11:16:08.768 25730 27561 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"environment-executor","step":"describe_environments","step_call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama_s_plan_s_rout
+11-05 11:16:08.771 25730 27561 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama-final","step":"final","step_call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts
+11-05 11:16:08.772 25730 27561 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama-final","step":"final","step_call_id":"261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed
+11-05 11:16:08.785 25730 27561 D MiniDramaPerf: t4 +3.54s–+63.0s          59.5s  amd    tool          ai-mini-drama                  ai-mini-drama committed=true  key=261105_110537_5edec7d2_t3_i1_d1_ai-mini-drama
+11-05 11:16:08.786 25730 26598 D MiniDramaPerf: t4 +63.0s                        iris   event         turn_complete
+11-05 11:16:08.787 25730 26598 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+11-05 11:16:08.847 25730 25730 D MiniDramaPerf: t4 +63.1s                        host   turn          turn_end                       complete stage=storyboard→storyboard
+11-05 11:16:17.419 25730 25730 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda15@60f019a
+11-05 11:16:57.873 25730 25730 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda15@b890bd4
+# --- live capture after relaunch (pid 28651) ---
+2026-11-05 11:19:34.036 28651 28772 D MiniDrama Log: [SYS] deploying assets...
+2026-11-05 11:19:34.113 28651 28772 D MiniDrama Log: [SYS] cc_chat_base_url = https://demo.myedit.online/iris-relay
+2026-11-05 11:19:34.113 28651 28772 D MiniDrama Log: [SYS] agent_create requested
+2026-11-05 11:19:34.483 28651 28772 D MiniDrama Log: [SYS] agent created after 369ms
+2026-11-05 11:19:34.501 28651 29027 D MiniDrama Log: [SYS] session_created: 261105_111934_ee511042
+2026-11-05 11:19:48.625 28651 28772 D MiniDrama Log: [SYS] opening 261105_110537_5edec7d2: agent ready after 0ms
+2026-11-05 11:19:48.632 28651 28772 D MiniDrama Log: [SYS] restored session 261105_110537_5edec7d2 (chars=2, shots=0)
+2026-11-05 11:19:48.651 28651 28772 D MiniDrama Log: [SYS] reopened 1 question(s) from the blueprint

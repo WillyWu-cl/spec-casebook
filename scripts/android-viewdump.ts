@@ -9,7 +9,8 @@
 //   build                 javac + d8 → viewdumper.dex, NDK clang (aarch64-linux-android30) → libviewdump.so, into
 //                         ~/.casebook/android/viewdump/ with the source digest they were built from (local: GitHub
 //                         takes no binaries; a stale build is refused)
-//   prepare [--yes-uninstall]
+//   prepare [--apk <release.apk>] [--yes-uninstall]
+//                         (--apk: re-sign that release APK, e.g. a newer TR build, instead of the installed one)
 //                         pull the installed APK (kept as ~/.casebook/android/apks/<package>-<versionCode>-original.apk),
 //                         re-sign it debuggable (the manifest edit proven the only change, the dex unchanged) and
 //                         install it: over the app when it was signed with the same QA key, else only with
@@ -95,14 +96,21 @@ function install(apk: string, allowUninstall: boolean) {
   return 'uninstalled and installed';
 }
 function prepare() {
-  const now = installed() ?? die(`${PKG} is not installed on ${phone()}.`, 3);
-  if (now.debuggable && runAsWorks()) { console.log(`${PKG} ${now.versionCode} is already debuggable on ${phone()}: ready`); return settings(); }
+  const installed0 = installed(), given = opt('apk');
+  if (!given && !installed0) die(`${PKG} is not installed on ${phone()}.`, 3);
+  if (!given && installed0!.debuggable && runAsWorks()) { console.log(`${PKG} ${installed0!.versionCode} is already debuggable on ${phone()}: ready`); return settings(); }
   mkdirSync(APKS, { recursive: true });
-  const original = join(APKS, `${PKG}-${now.versionCode}-original.apk`);
-  if (!existsSync(original)) { adb(['pull', now.path, `${original}.partial`]); renameSync(`${original}.partial`, original); }
+  // --apk: a release APK from a TR (a newer build) instead of the one installed; kept under its own version code
+  const givenSum = given ? manifestSummary(parseAxml(zipEntry(readFileSync(given), 'AndroidManifest.xml')!)) : undefined;
+  const vc = givenSum?.version_code ?? installed0!.versionCode;
+  const original = join(APKS, `${PKG}-${vc}-original.apk`);
+  if (!existsSync(original)) {
+    if (given) copyFileSync(given, `${original}.partial`); else adb(['pull', installed0!.path, `${original}.partial`]);
+    renameSync(`${original}.partial`, original);
+  }
   const rel = readFileSync(original), sum = manifestSummary(parseAxml(zipEntry(rel, 'AndroidManifest.xml')!));
   if (sum.package !== PKG) die(`${original} is ${sum.package}, not ${PKG}`);
-  const out = join(APKS, `${PKG}-${now.versionCode}-debuggable.apk`);
+  const out = join(APKS, `${PKG}-${vc}-debuggable.apk`);
   if (!existsSync(out)) {
     if (!existsSync(KEY.ks)) die(`No re-sign keystore at ${KEY.ks} (the rdqe tool's shared QA keystore, or set CASEBOOK_ANDROID_KEYSTORE).`, 3);
     const man = zipEntry(rel, 'AndroidManifest.xml')!, edited = setApplicationDebuggable(man), diff = debuggableOnlyDiff(parseAxml(man), parseAxml(edited));

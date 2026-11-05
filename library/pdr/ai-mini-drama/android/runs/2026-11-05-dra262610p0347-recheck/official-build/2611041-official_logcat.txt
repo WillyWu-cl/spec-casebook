@@ -1,0 +1,248 @@
+11-05 11:02:25.530 25730 25730 D CreditSystemManager: CreditSystemManager init
+11-05 11:02:25.544 25730 25730 D GoogleBillingWrapper: startConnections
+11-05 11:02:25.548 25730 25730 D GoogleBillingWrapper: connectToPlayBillingService
+11-05 11:02:25.657 25730 25730 D CreditSystemManager: CreditSystemManager initCreditSystem
+11-05 11:02:25.703 25730 25809 D GoogleBillingWrapper: onBillingSetupFinished
+11-05 11:02:25.704 25730 25809 D GoogleBillingWrapper: queryProductDetails with callback
+11-05 11:02:25.705 25730 25809 D GoogleBillingWrapper: queryProductDetails with callback
+11-05 11:02:25.719 25730 25818 D GoogleBillingWrapper: updateInAppStatus: false
+11-05 11:02:25.741 25730 25817 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:02:25.777 25730 25831 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:02:25.782 25730 25730 D App     : observeSubscribedStatusForever: regProduct
+11-05 11:02:25.917 25730 25816 D GoogleBillingWrapper: onProductDetailssResponse
+11-05 11:02:25.918 25730 25816 I GoogleBillingWrapper: onProductDetailsResponse: 0 
+11-05 11:02:25.918 25730 25816 I GoogleBillingWrapper: onProductDetailsResponse: count 102
+11-05 11:02:26.462 25730 25730 D CreditSystemManager: getCreditStagePublicKey, publicKeyResponse: KeyResult(id=1, key=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzTp9l9G+ZJ+f1FkhKmlS2S7n93gRVtQKc1DM7doW3sMGrU6E4hWjoxy+rCcHvUGcAsOyk5jfYvIZnAGX3isNZfKULM7srg37cXGKDB9ecMoXHMu+Y5jFkoQAT74ySqpNlbBddPNKFbM6UfQTDK1KFUgbF1+zue+VqNvG4lsdb35RZs5LW0QfOt9OwbZeltvFh5YfhOFOELkz+T8VTyblR/E2hHw7ZEY4/764eCEH6HuSth
+11-05 11:02:26.770 25730 25815 D GoogleBillingWrapper: onProductDetailssResponse
+11-05 11:02:26.770 25730 25815 I GoogleBillingWrapper: onProductDetailsResponse: 0 
+11-05 11:02:26.771 25730 25815 I GoogleBillingWrapper: onProductDetailsResponse: count 131
+11-05 11:02:27.013 25730 25730 D CreditSystemManager: getVerifyPurchaseServerKey, gGetVerifyPurchaseServerKeyResponse: GGetVerifyPurchaseServerKeyResponse(keyInfo=ServerKeyResult(id=5499168165299175529, key=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuK2Mspa2jopO1Xe+22V3kLskol9N6JAAyWkDmeSwwTF2H+Yhy3jY+pqaCHpiZycYrsFZc2TPTBLtI0UjfoJo68d66i5yCVn3nUg5aB5AIeiqgukI4/dicEq9IgyLesDkgsWJVq29FoxMKOJXZU96W
+11-05 11:02:28.018 25730 25730 D CreditSystemManager: getMemberAuthServerKey, gGetMemberAuthServerKeyResponse: GGetMemberAuthServerKeyResponse(keyInfo=MemberAuthServerKeyResult(id=4, public_key=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt5YWwoy/Db9iXkqyeGNwKR89E4muH/GwDpNwnpQj2JQGS55o/D+DwWHlCMLLz4hhYk3+OFY1DCCjbb0OzKjBMBJroSkTbElL8HbxMWT9IR5zIKQAdiLPm3OXbEcPtWq9Ua5WERHxSgStdqNevLShb6xwak9SM/YelE
+11-05 11:02:28.225 25730 25761 D CreditSystemManager: creditSystemFeatureCreditList: true
+11-05 11:02:41.678 25730 26006 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:02:44.963 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:02:44.963 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:02:44.963 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:02:44.963 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:02:44.972 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:02:44.972 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:02:44.974 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:02:44.974 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:02:44.974 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:02:44.974 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:02:45.042 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:02:45.042 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:02:45.043 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:02:45.043 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: null
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812 price: NT$310.00
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: null
+11-05 11:02:45.055 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812
+11-05 11:02:45.056 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812 price: NT$310.00
+11-05 11:02:45.056 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:02:45.056 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:02:45.056 25730 25730 D GoogleBillingWrapper: queryProductDetails with callback
+11-05 11:02:45.081 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:02:45.081 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:02:45.093 25730 25817 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:02:45.132 25730 25730 D CreditSystemManager: [doVerifyPurchase]: Purchase. Json: {"orderId":"REDACTED","packageName":"com.cyberlink.powerdirector.DRA140225_01","productId":"pdrm_2000_credits_paiduser_non_consumable","purchaseTime":1783068965962,"purchaseState":0,"purchaseToken":"REDACTED11-05 11:02:45.133 25730 25730 D CreditSystemManager: setUUIDAndSubscriptionState
+11-05 11:02:45.136 25730 25730 D CreditSystemManager: getSubscriptionPlans, plans: SubscriptionPlan(sid=0d340bc5, sku=, info=SubscriptionPlanInfo(subscriptionType=monthly, credit=100, trialCredit=35, loyaltyWeekly=null, loyaltyMonthly=10, loyaltyQuarterly=15, loyaltyYearly=30, dailyBonus={"old":3,"new":3,"valid_days":7,"valid_months":0}, perpetualBonus=null, isCreditPack=false))
+11-05 11:02:45.382 25730 25818 D GoogleBillingWrapper: onProductDetailssResponse
+11-05 11:02:45.382 25730 25818 I GoogleBillingWrapper: onProductDetailsResponse: 0 
+11-05 11:02:45.382 25730 25818 I GoogleBillingWrapper: onProductDetailsResponse: count 132
+11-05 11:02:45.487 25730 25831 D CreditSystemManager: setUUIDAndSubscriptionState
+11-05 11:02:45.501 25730 25730 D CreditSystemManager: getSubscriptionPlans, plans: SubscriptionPlan(sid=0d340bc5, sku=, info=SubscriptionPlanInfo(subscriptionType=monthly, credit=100, trialCredit=35, loyaltyWeekly=null, loyaltyMonthly=10, loyaltyQuarterly=15, loyaltyYearly=30, dailyBonus={"old":3,"new":3,"valid_days":7,"valid_months":0}, perpetualBonus=null, isCreditPack=false))
+11-05 11:02:45.502 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209 price: NT$240.00
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812 price: NT$310.00
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209 price: NT$240.00
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812 price: NT$310.00
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:02:45.503 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:02:45.508 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209 price: NT$240.00
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812 price: NT$310.00
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209 price: NT$240.00
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: quarterly_sub_usd9.99_yfree_201812 price: NT$310.00
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:02:45.509 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:02:45.515 25730 25730 D CreditSystemManager: checkFeatureCredit, Exception: java.lang.IllegalStateException: getCreditSystemFeatureListByFeature, Exception: com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 2 path $
+11-05 11:02:45.753 25730 26594 D CreditSystemManager: getUUID from server: e61295c4-7517-11f1-9df0-37aeb71b6d03
+11-05 11:02:45.753 25730 26594 D CreditSystemManager: getUUID, Exception: java.lang.IllegalStateException: Cannot invoke setValue on a background thread
+11-05 11:02:45.756 25730 25730 D CreditSystemManager: doVerifyPurchase error, creditSystemUUID is null
+11-05 11:02:45.756 25730 25730 D CreditSystemManager: doVerifyPurchase error, creditSystemVerificationKeyInfo is null
+11-05 11:02:45.852 25730 25730 D CreditSystemManager: getSubscriptionPlans, plans: SubscriptionPlan(sid=0d340bc5, sku=, info=SubscriptionPlanInfo(subscriptionType=monthly, credit=100, trialCredit=35, loyaltyWeekly=null, loyaltyMonthly=10, loyaltyQuarterly=15, loyaltyYearly=30, dailyBonus={"old":3,"new":3,"valid_days":7,"valid_months":0}, perpetualBonus=null, isCreditPack=false))
+11-05 11:02:45.867 25730 25730 D GoogleBillingWrapper: showInAppMessagesResult responseCode: 0
+11-05 11:02:45.871 25730 25730 D CreditSystemManager: getUUID from server: e61295c4-7517-11f1-9df0-37aeb71b6d03
+11-05 11:02:46.195 25730 25730 D CreditSystemManager: getUUID from server: e61295c4-7517-11f1-9df0-37aeb71b6d03
+11-05 11:02:46.243 25730 25795 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=0, data=null, timestamp=null, result=1)
+11-05 11:02:46.704 25730 25795 D CreditSystemManager: getCreditHistory, gGetMemberUsageResponse: GGetMemberUsageResponse(totalRecord=0, categoryList=[], data=[])
+11-05 11:02:46.706 25730 26595 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=0, data=null, timestamp=null, result=1)
+11-05 11:02:47.230 25730 26595 D CreditSystemManager: getCreditHistory, gGetMemberUsageResponse: GGetMemberUsageResponse(totalRecord=0, categoryList=[], data=[])
+11-05 11:02:47.336 25730 25730 D CreditSystemManager: checkDailyBonus, hasReceivedToday: 1, dailyCredit: 0
+11-05 11:02:48.056 25730 25730 D CreditSystemManager: checkDailyBonus, hasReceivedToday: 1, dailyCredit: 0
+11-05 11:02:58.551 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:02:58.551 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:02:58.561 25730 25815 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:02:59.374 25730 26596 D CreditSystemManager: getSubscriptionPlans, plans: SubscriptionPlan(sid=0d340bc5, sku=, info=SubscriptionPlanInfo(subscriptionType=monthly, credit=100, trialCredit=35, loyaltyWeekly=null, loyaltyMonthly=10, loyaltyQuarterly=15, loyaltyYearly=30, dailyBonus={"old":3,"new":3,"valid_days":7,"valid_months":0}, perpetualBonus=null, isCreditPack=false))
+11-05 11:02:59.526 25730 25730 D GoogleBillingWrapper: showInAppMessagesResult responseCode: 0
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209 price: NT$240.00
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: monthly_sub_usd6.99_202209 price: NT$240.00
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:03:43.820 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:03:44.260 25730 25833 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=0, data=null, timestamp=null, result=1)
+11-05 11:03:51.317 25730 25809 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:04:13.721 25730 25730 D CreditSystemManager: bindMember, bindMemberSuccess: 0
+11-05 11:04:14.240 25730 25730 D CreditSystemManager: checkDailyBonus, hasReceivedToday: 0, dailyCredit: 3
+11-05 11:04:14.918 25730 26598 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[BonusItem(remainCredit=16, category=give_away, eventId=giveaway_monthly, sid=0d340bc5, activeDate=2026-10-28T00:00:00+00:00, expireDate=2026-11-28T23:59:59+00:00, product=PowerDirector (Android), detail=Monthly Credit Bonus (for Pro Subscribers)),
+11-05 11:04:15.538 25730 26598 D CreditSystemManager: getCreditHistory, gGetMemberUsageResponse: GGetMemberUsageResponse(totalRecord=1015, categoryList=[consume, expired, give_away, purchase, refund, returned], data=[RecordItem(creditUsage=-3, featureId=TextToImage, unit=1, actionId=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama, category=consume, categoryWording=Consume, sid=0d34
+11-05 11:04:30.461 25730 26602 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:04:39.129 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:04:39.129 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:04:39.134 25730 25817 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:04:40.036 25730 25730 D GoogleBillingWrapper: showInAppMessagesResult responseCode: 0
+11-05 11:04:40.073 25730 26598 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[BonusItem(remainCredit=16, category=give_away, eventId=giveaway_monthly, sid=0d340bc5, activeDate=2026-10-28T00:00:00+00:00, expireDate=2026-11-28T23:59:59+00:00, product=PowerDirector (Android), detail=Monthly Credit Bonus (for Pro Subscribers)),
+11-05 11:04:50.598 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:04:50.599 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:04:50.599 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:04:50.599 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:05:00.866 25730 25816 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:05:11.276 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:05:11.276 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:05:11.282 25730 25831 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:05:11.546 25730 25834 D MiniDrama Log: [SYS] deploying assets...
+11-05 11:05:11.594 25730 25730 V MiniDramaActivity: GDPRHandler.checkGDPRPrivacyPolicy: None
+11-05 11:05:11.603 25730 25815 D GoogleBillingWrapper: updateSubscribingStatus: false
+11-05 11:05:11.766 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307
+11-05 11:05:11.766 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd27.99_introductory_202307 price: NT$1,140.00
+11-05 11:05:11.767 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307
+11-05 11:05:11.767 25730 25730 D GoogleBillingWrapper: getProductDetails: yearly_sub_usd34.99_yfree_202307 price: NT$1,190.00
+11-05 11:05:11.844 25730 25834 D MiniDrama Log: [SYS] cc_chat_base_url = https://demo.myedit.online/iris-relay
+11-05 11:05:11.844 25730 25834 D MiniDrama Log: [SYS] agent_create requested
+11-05 11:05:11.947 25730 25974 D GetMiniDramaTemplateTask: MiniDramaTemplate pagination finished with count: accumulated=20
+11-05 11:05:12.053 25730 25730 D GoogleBillingWrapper: showInAppMessagesResult responseCode: 0
+11-05 11:05:12.091 25730 26598 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[BonusItem(remainCredit=16, category=give_away, eventId=giveaway_monthly, sid=0d340bc5, activeDate=2026-10-28T00:00:00+00:00, expireDate=2026-11-28T23:59:59+00:00, product=PowerDirector (Android), detail=Monthly Credit Bonus (for Pro Subscribers)),
+11-05 11:05:12.161 25730 25834 D MiniDrama Log: [SYS] agent created after 318ms
+11-05 11:05:12.166 25730 25834 D MiniDramaPerf: t1 +0ms                          iris   event         session_created
+11-05 11:05:12.168 25730 27559 D MiniDrama Log: [SYS] session_created: 261105_110512_1d13b60b
+11-05 11:05:12.284 25730 25974 D GetMiniDramaInspirationTask: MiniDramaInspiration pagination finished with count: accumulated=10
+11-05 11:05:12.286 25730 26595 D MiniDrama Log: [CMS] inspirations loaded: 10
+11-05 11:05:12.477 25730 27560 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28166, data=[BonusItem(remainCredit=16, category=give_away, eventId=giveaway_monthly, sid=0d340bc5, activeDate=2026-10-28T00:00:00+00:00, expireDate=2026-11-28T23:59:59+00:00, product=PowerDirector (Android), detail=Monthly Credit Bonus (for Pro Subscribers)),
+11-05 11:05:12.606 25730 27560 D MiniDrama Log: [CMS] templates loaded: 20 in 5 categories
+11-05 11:05:37.072 25730 26595 D MiniDramaPerf: t1 +24.9s                        iris   event         session_created
+11-05 11:05:37.075 25730 27560 D MiniDrama Log: [SYS] session_created: 261105_110537_5edec7d2
+11-05 11:06:24.757 25730 25834 D MiniDramaPerf: t1 +72.6s–+72.6s           11ms  amd    apply         setConfig                      APPLIED  key=amd:d7a5c865-01d7-43a7-a45b-bd90882e1d43
+11-05 11:06:24.759 25730 25834 D MiniDramaPerf: t1 +72.6s–+72.6s            2ms  amd    apply         setConfig                      APPLIED  key=amd:a9f1fffe-e13e-43ee-bf84-bdc798aeaa3c
+11-05 11:06:24.762 25730 25730 D MiniDramaPerf: t1 +72.6s                        host   turn          turn_end                       superseded
+11-05 11:06:24.762 25730 25730 D MiniDramaPerf: t2 +0ms                          host   turn          user_prompt
+11-05 11:06:24.763 25730 25834 D MiniDrama Log: [USER] A short story about two friends opening a cafe. Two characters.
+11-05 11:06:24.763 25730 25834 D MiniDrama Log: 
+11-05 11:06:24.763 25730 25834 D MiniDrama Log: Selected video settings:
+11-05 11:06:24.763 25730 25834 D MiniDrama Log: - Video language: en_US
+11-05 11:06:24.763 25730 25834 D MiniDrama Log: - Captions: yes
+11-05 11:06:24.763 25730 25834 D MiniDrama Log: Use the ai-mini-drama skill for this request. In replies, never mention blueprints, files, stages, skills, or other internal details.
+11-05 11:06:24.763 25730 25834 D MiniDrama Log: [BLUEPRINT] sent (chars=0, shots=0, files=0, 0KB)
+11-05 11:06:24.763 25730 25834 D MiniDrama Log: [BLUEPRINT] shot fill: no shots
+11-05 11:06:24.766 25730 25834 D MiniDramaPerf: t2 +3ms–+5ms                2ms  host   send          blueprint_prepare              files=1  key=blueprint_prepare
+11-05 11:06:24.768 25730 25834 D MiniDramaPerf: t2 +5ms–+6ms                1ms  host   send          native_send  key=native_send
+11-05 11:06:24.807 25730 25834 D MiniDramaPerf: t2 +46ms                         iris   event         token_request
+11-05 11:06:24.808 25730 25834 D MiniDrama Log: [TOKEN] token_request: fetching member token...
+11-05 11:06:24.815 25730 26595 D MiniDramaPerf: t2 +47ms–+54ms              7ms  server gate          token_gate  key=261105_110537_5edec7d2_t1_req_1
+11-05 11:06:24.816 25730 26595 D MiniDrama Log: [TOKEN] resolve_token (member_token ok, uuid ok) -> 0
+11-05 11:09:06.242 25730 26595 D MiniDramaPerf: t2 +161s                         iris   event         dispatch_planned
+11-05 11:09:06.243 25730 26595 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"261105_110537_5edec7d2","type":"dispatch_planned"}
+11-05 11:09:06.243 25730 26595 D MiniDramaPerf: t2 +161s                         iris   event         narration
+11-05 11:09:06.243 25730 26595 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","phase":"dispatch","session_id":"261105_110537_5edec7d2","text":"Creating your cafe opening story with two friends.","tool":"ai-mini-drama","type":"narration"}
+11-05 11:09:06.243 25730 26595 D MiniDramaPerf: t2 +161s                         iris   event         tool_call_start
+11-05 11:09:06.243 25730 26595 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json"},"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","name":"ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","type":"tool_call_start"}
+11-05 11:09:06.343 25730 26596 D MiniDramaPerf: t2 +161s                         iris   event         workflow_step_start
+11-05 11:09:06.344 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"plan","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan","type":"workflow_step_start","workflow":"ai-mini-drama"}
+11-05 11:09:06.344 25730 26596 D MiniDramaPerf: t2 +161s                         iris   event         tool_call_start
+11-05 11:09:06.344 25730 26596 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json"},"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan","name":"amd_plan","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","type":"tool_call_start"}
+11-05 11:09:06.345 25730 26596 D MiniDramaPerf: t2 +161s                         iris   event         tool_call_done
+11-05 11:09:06.345 25730 26596 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json"},"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan","committed":true,"name":"amd_plan","pass_eval":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","tool_
+11-05 11:09:06.345 25730 26596 D MiniDramaPerf: t2 +161s                         iris   event         workflow_step_start
+11-05 11:09:06.345 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"main-router","step":"route","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_route","type":"workflow_step_start","workflow":"ai-mini-drama/plan"}
+11-05 11:09:06.346 25730 26595 D MiniDramaPerf: t2 +161s–+161s              1ms  amd    tool          amd_plan                       ai-mini-drama committed=true  key=261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan
+11-05 11:09:15.360 25730 26595 D MiniDramaPerf: t2 +170s                         iris   event         workflow_step_done
+11-05 11:09:15.360 25730 26595 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"main-router","step":"route","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_route","tool_result":{"artifacts":[{"data":{"vlm_output":{"global_config":{"cinematic_style":"L01"},"intent":"outline","is_answer
+11-05 11:09:15.361 25730 26595 D MiniDramaPerf: t2 +170s                         iris   event         workflow_step_start
+11-05 11:09:15.361 25730 26595 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"routed","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed","type":"workflow_step_start","workflow":"ai-mini-drama/plan"}
+11-05 11:09:15.361 25730 26596 D MiniDramaPerf: t2 +161s–+170s            9.01s  iris   step          route                          ai-mini-drama/plan ok=true  key=step:261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_route
+11-05 11:09:15.361 25730 26595 D MiniDramaPerf: t2 +170s                         iris   event         tool_call_start
+11-05 11:09:15.361 25730 26595 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json","failures":[],"module":"routed","result":{"vlm_output":{"global_config":{"cinematic_style":"L01"},"intent":"outline","is_answer":false,"is_clear":true,"reply_language":"en_US","reply_tex
+11-05 11:09:15.361 25730 26595 D MiniDramaPerf: t2 +170s                         iris   event         tool_call_done
+11-05 11:09:15.362 25730 26595 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json","failures":[],"module":"routed","result":{"vlm_output":{"global_config":{"cinematic_style":"L01"},"intent":"outline","is_answer":false,"is_clear":true,"reply_language":"en_US","reply_tex
+11-05 11:09:15.362 25730 26595 D MiniDramaPerf: t2 +170s                         iris   event         workflow_step_start
+11-05 11:09:15.362 25730 26596 D MiniDramaPerf: t2 +170s–+170s              1ms  amd    tool          amd_plan                       ai-mini-drama/plan committed=true  key=261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed
+11-05 11:09:15.362 25730 26595 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"outline-executor","step":"execute","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_execute","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed"}
+11-05 11:09:26.578 25730 26596 D MiniDramaPerf: t2 +181s                         iris   event         workflow_step_done
+11-05 11:09:26.579 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"outline-executor","step":"execute","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_execute","tool_result":{"artifacts":[{"data":{"vlm_output":{"outline":{"beat_plan":[{"change":"They transition fr
+11-05 11:09:26.579 25730 26596 D MiniDramaPerf: t2 +181s                         iris   event         workflow_step_start
+11-05 11:09:26.579 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"executed","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed"}
+11-05 11:09:26.579 25730 26596 D MiniDramaPerf: t2 +181s                         iris   event         tool_call_start
+11-05 11:09:26.580 25730 26596 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json","failures":[],"module":"executed","phase":"written","result":{"vlm_output":{"outline":{"beat_plan":[{"change":"They transition from easy morning banter to checking off their very final o
+11-05 11:09:26.580 25730 26596 D MiniDramaPerf: t2 +181s                         iris   event         tool_call_done
+11-05 11:09:26.580 25730 26596 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json","failures":[],"module":"executed","phase":"written","result":{"vlm_output":{"outline":{"beat_plan":[{"change":"They transition from easy morning banter to checking off their very final o
+11-05 11:09:26.581 25730 26596 D MiniDramaPerf: t2 +181s                         iris   event         workflow_step_start
+11-05 11:09:26.581 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"character-executor","step":"execute_chained","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_execute_chained","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed/executed"}
+11-05 11:09:26.581 25730 26596 D MiniDramaPerf: t2 +170s–+181s            11.2s  iris   step          execute                        ai-mini-drama/plan/routed ok=true  key=step:261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_execute
+11-05 11:09:26.582 25730 26596 D MiniDramaPerf: t2 +181s–+181s             <1ms  amd    tool          amd_plan                       ai-mini-drama/plan/routed committed=true  key=261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed
+11-05 11:09:36.996 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         workflow_step_done
+11-05 11:09:36.996 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"character-executor","step":"execute_chained","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_execute_chained","tool_result":{"artifacts":[{"data":{"vlm_output":{"assets":[{"age":28,"ass
+11-05 11:09:36.998 25730 26595 D MiniDramaPerf: t2 +181s–+192s            10.4s  iris   step          execute_chained                ai-mini-drama/plan/routed/executed ok=true  key=step:261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_execute_chained
+11-05 11:09:36.998 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         workflow_step_start
+11-05 11:09:36.998 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"executed_chained","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_executed_chained","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed/executed"}
+11-05 11:09:36.999 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         tool_call_start
+11-05 11:09:37.000 25730 26596 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json","failures":[],"module":"executed","phase":"chained_character","result":{"vlm_output":{"assets":[{"age":28,"asset_id":"","default_wardrobe":"Off-white linen long-sleeve shirt with sleeves
+11-05 11:09:37.003 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         tool_call_done
+11-05 11:09:37.003 25730 26596 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json","failures":[],"module":"executed","phase":"chained_character","result":{"vlm_output":{"assets":[{"age":28,"asset_id":"","default_wardrobe":"Off-white linen long-sleeve shirt with sleeves
+11-05 11:09:37.008 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         workflow_step_start
+11-05 11:09:37.009 25730 25834 D MiniDramaPerf: t2 +192s–+192s              8ms  amd    tool          amd_plan                       ai-mini-drama/plan/routed/executed committed=true  key=261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_executed_chained
+11-05 11:09:37.009 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama-final","step":"final","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_executed_chained_s_final","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed/executed/executed_
+11-05 11:09:37.009 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         workflow_step_done
+11-05 11:09:37.010 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama-final","step":"final","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_executed_chained_s_final","tool_result":{"artifacts":[{"data":{"response_path":"/data/user/0/com.cybe
+11-05 11:09:37.010 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         workflow_step_done
+11-05 11:09:37.010 25730 25834 D MiniDramaPerf: t2 +192s–+192s              1ms  iris   step          final                          ai-mini-drama/plan/routed/executed/executed_chained ok=true  key=step:261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_executed_chained_s_final
+11-05 11:09:37.011 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"executed_chained","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_executed_chained","tool_result":{"artifacts":[{"data":{"response_path":"/data/user/0/com.cyberli
+11-05 11:09:37.011 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         workflow_step_done
+11-05 11:09:37.012 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"executed","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed","tool_result":{"artifacts":[{"data":{"response_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_
+11-05 11:09:37.013 25730 25834 D MiniDramaPerf: t2 +192s–+192s             14ms  iris   step          executed_chained               ai-mini-drama/plan/routed/executed ok=true  key=step:261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed_s_executed_chained
+11-05 11:09:37.013 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         workflow_step_done
+11-05 11:09:37.014 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"routed","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed","tool_result":{"artifacts":[{"data":{"response_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/iris
+11-05 11:09:37.015 25730 25834 D MiniDramaPerf: t2 +181s–+192s            10.4s  iris   step          executed                       ai-mini-drama/plan/routed ok=true  key=step:261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed_s_executed
+11-05 11:09:37.015 25730 25834 D MiniDramaPerf: t2 +170s–+192s            21.7s  iris   step          routed                         ai-mini-drama/plan ok=true  key=step:261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan_s_routed
+11-05 11:09:37.015 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         workflow_step_done
+11-05 11:09:37.016 25730 26596 D MiniDrama Log: [EVENT] {"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","ok":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","step":"plan","step_call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan","tool_result":{"artifacts":[{"data":{"response_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/iris/data/sessi
+11-05 11:09:37.017 25730 26596 D MiniDramaPerf: t2 +192s                         iris   event         tool_call_done
+11-05 11:09:37.017 25730 26596 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_110537_5edec7d2/host_inputs/blueprint.json"},"call_id":"261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama","committed":true,"name":"ai-mini-drama","pass_eval":true,"session_id":"261105_110537_5edec7d2","skill":"ai-mini-drama","tool_re
+11-05 11:09:37.017 25730 25834 D MiniDramaPerf: t2 +161s–+192s            30.7s  iris   step          plan                           ai-mini-drama ok=true  key=step:261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama_s_plan
+11-05 11:09:37.017 25730 25834 D MiniDramaPerf: t2 +161s–+192s            30.8s  amd    tool          ai-mini-drama                  ai-mini-drama committed=true  key=261105_110537_5edec7d2_t1_i2_d1_ai-mini-drama
+11-05 11:09:37.019 25730 25834 D MiniDramaPerf: t2 +192s                         iris   event         turn_complete
+11-05 11:09:37.020 25730 25834 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+11-05 11:09:37.036 25730 25834 D MiniDrama Log: [AI] I've created the character profiles for Maya and Julian.
+11-05 11:09:37.037 25730 25834 D MiniDramaPerf: t2 +192s                         host   ui            reply_published
+11-05 11:09:37.041 25730 25834 D MiniDramaPerf: t2 +192s–+192s             18ms  host   apply         apply_response  key=apply_response
+11-05 11:09:37.084 25730 25730 D MiniDramaPerf: t2 +192s                         host   ui            ui_rendered
+11-05 11:09:37.084 25730 25730 D MiniDramaPerf: t2 +192s                         host   turn          turn_end                       complete stage=-→character

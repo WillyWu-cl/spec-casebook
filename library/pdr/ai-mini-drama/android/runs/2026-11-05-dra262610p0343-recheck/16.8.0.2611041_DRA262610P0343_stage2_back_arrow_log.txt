@@ -1,0 +1,16 @@
+# Stage 2, drama 1 (Forbidden Office Romance): top-left ← tapped 09:13:49.8
+2026-11-05 09:13:44.539 14724 15072 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261104_180818_88476dee_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_1 consumeTaskId=91679735 files=1
+2026-11-05 09:13:44.868 14724 14764 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28243)
+2026-11-05 09:13:45.186 14724 15072 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28243)
+2026-11-05 09:13:49.571 14724 14724 I Toast   : show: caller = ezk.a:27 
+2026-11-05 09:13:49.571 14724 14724 I Toast   : show: contextDispId = 0 mCustomDisplayId = -1 focusedDisplayId = 0 isActivityContext = false
+2026-11-05 09:14:01.452 14724 14831 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:14:01.454 14724 14831 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:14:02.035 14724 14764 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28243)
+2026-11-05 09:14:02.250 14724 15072 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28243)
+2026-11-05 09:14:03.956 14724 14764 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261104_180818_88476dee_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_2 consumeTaskId=91679736 files=1
+2026-11-05 09:14:04.237 14724 14764 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28240)
+2026-11-05 09:14:04.648 14724 15072 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28240)
+# ... background completion
+2026-11-05 09:16:58.455 14724 16555 D MiniDramaPerf: t11 +77.1s                        iris   event         turn_complete
+2026-11-05 09:16:58.494 14724 16561 D MiniDrama Log: [TURN] background blueprint committed for 261104_180818_88476dee

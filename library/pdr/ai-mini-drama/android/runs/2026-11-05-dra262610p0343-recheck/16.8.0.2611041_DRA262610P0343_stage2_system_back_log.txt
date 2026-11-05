@@ -1,0 +1,57 @@
+# Stage 2, drama 2 (The New Guy's Secret): Generate 09:15:41, system Back (KEYCODE_BACK) 09:15:56.5
+2026-11-05 09:15:41.310 14724 14724 D MiniDrama Log: [DECISION] pre-approved 'storyboard': {IMAGE=11, VOICE=5}
+2026-11-05 09:15:41.314 14724 14724 D MiniDramaPerf: t11 +0ms                          host   turn          user_prompt
+2026-11-05 09:15:41.320 14724 14764 D MiniDrama Log: [USER] AnswerCreateStoryboard
+2026-11-05 09:15:44.334 14724 15079 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261104_181938_085817e5/host_inputs/blueprint.json","failures":[],"module":"asset_routed","route":{"confirm_answer":1,"from_char_leav
+2026-11-05 09:15:47.912 14724 14834 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:15:47.913 14724 14834 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:15:47.918 14724 14764 D MiniDrama Log: [TOOL] tool_dispatch: TextToImage args={"aspect_ratio":"16:9","output_format":"png","prompt":"SUBJECT\r\nA relight of the supplied image: Open Office Floor. The same room, the same camera, the\r\nsame objects in the same places -- the light is the
+2026-11-05 09:15:47.918 14724 14764 D MiniDrama Log: The SPACE description below is background about the location, not an instruction
+2026-11-05 09:15:47.918 14724 14764 D MiniDrama Log: Evening. Deep indigo dusk outside the exterior glass panels with scattered city exterior lights in the background. The main ceiling LED grid is powered down to low emergency levels, leaving the open floor dim, while warm amber tungsten light spill
+2026-11-05 09:15:48.162 14724 15072 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28231)
+2026-11-05 09:15:48.318 14724 15079 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28231)
+2026-11-05 09:15:49.608 14724 15079 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261104_180818_88476dee_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_3 consumeTaskId=91679740 files=1
+2026-11-05 09:15:49.780 14724 14830 D MiniDrama Log: [EVENT] {"call_id":"261104_181938_085817e5_t3_i1_d1_ai-mini-drama","ok":true,"session_id":"261104_181938_085817e5","skill":"beat-generate","step":"prompt_10","step_call_id":"261104_181938_085817e5_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_rou
+2026-11-05 09:15:50.098 14724 15079 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28228)
+2026-11-05 09:15:50.113 14724 15072 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28228)
+2026-11-05 09:15:52.685 14724 15072 D MiniDrama Log: [EVENT] {"call_id":"261104_181938_085817e5_t3_i1_d1_ai-mini-drama","ok":true,"session_id":"261104_181938_085817e5","skill":"beat-generate","step":"prompt_9","step_call_id":"261104_181938_085817e5_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_rout
+2026-11-05 09:15:54.597 14724 15079 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:15:54.637 14724 15079 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:15:55.156 14724 14764 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28228)
+2026-11-05 09:15:55.696 14724 15079 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261104_181938_085817e5_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_1 consumeTaskId=91679741 files=1
+2026-11-05 09:15:56.176 14724 14764 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28225)
+2026-11-05 09:15:56.190 14724 14830 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28225)
+2026-11-05 09:15:56.353 14724 14724 I Toast   : show: caller = ezk.a:27 
+2026-11-05 09:15:56.354 14724 14724 I Toast   : show: contextDispId = 0 mCustomDisplayId = -1 focusedDisplayId = 0 isActivityContext = false
+2026-11-05 09:16:11.081 14724 14834 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:16:11.082 14724 14834 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.087 14724 15079 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:16:11.088 14724 15079 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.097 14724 15072 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:16:11.098 14724 14830 D MiniDrama Log: [TOOL] tool_dispatch: TextToImage args={"aspect_ratio":"9:16","output_format":"png","prompt":"Image 1 = Emily Carter\nImage 2 = Nathan Reed\nImage 3 = Coworker\nImage 4 = set: Open Office Floor | Morning\n\nKEYFRAME:\nNathan Reed stands tall besid
+2026-11-05 09:16:11.099 14724 14830 D MiniDrama Log: Nathan Reed stands tall beside Emily Carter's workstation, extending a sleek black project folder down toward her desk. Emily sits frozen in her office chair, looking up at him with an arrested, slightly guarded expression. In the blurred backgrou
+2026-11-05 09:16:11.119 14724 15072 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.122 14724 15072 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:16:11.123 14724 15072 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.135 14724 16551 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:16:11.139 14724 16551 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.146 14724 14834 D MiniDrama Log: [DECISION] allowing 'TextToSpeech' x1 (already approved)
+2026-11-05 09:16:11.149 14724 14834 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.163 14724 16549 D MiniDrama Log: [DECISION] allowing 'TextToSpeech' x1 (already approved)
+2026-11-05 09:16:11.167 14724 16549 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.179 14724 16556 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:16:11.180 14724 16556 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.189 14724 16556 D MiniDrama Log: [DECISION] allowing 'TextToSpeech' x1 (already approved)
+2026-11-05 09:16:11.207 14724 16556 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.217 14724 16556 D MiniDrama Log: [DECISION] allowing 'TextToSpeech' x1 (already approved)
+2026-11-05 09:16:11.221 14724 16556 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.233 14724 16556 D MiniDrama Log: [DECISION] allowing 'TextToSpeech' x1 (already approved)
+2026-11-05 09:16:11.239 14724 16556 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:16:11.263 14724 16563 D MiniDrama Log: [NARRATION] voice remembered (narrator, en-US)
+2026-11-05 09:16:11.347 14724 14764 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28225)
+2026-11-05 09:16:11.859 14724 14766 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28225)
+2026-11-05 09:16:11.882 14724 16563 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28225)
+# ... completion
+2026-11-05 09:18:28.745 14724 17048 D MiniDramaPerf: t11 +167s                         iris   event         turn_complete
+2026-11-05 09:18:28.785 14724 17040 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 09:18:34.757 14724 14724 D MiniDramaPerf: t11 +173s                         host   turn          turn_end                       complete stage=storyboard→storyboard

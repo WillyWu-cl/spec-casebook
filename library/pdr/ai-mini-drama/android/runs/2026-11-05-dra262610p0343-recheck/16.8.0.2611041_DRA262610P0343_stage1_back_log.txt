@@ -1,0 +1,13 @@
+# Stage 1: Generate 09:13:25.9, top-left ← 09:13:28.2 (dialog shown), Stay 09:13:36.7
+2026-11-05 09:13:25.917 14724 14724 D MiniDrama Log: [DECISION] pre-approved 'storyboard': {IMAGE=12, VOICE=5}
+2026-11-05 09:13:25.922 14724 14724 D MiniDramaPerf: t9 +0ms                          host   turn          user_prompt
+2026-11-05 09:13:25.931 14724 14766 D MiniDrama Log: [USER] AnswerCreateStoryboard
+2026-11-05 09:13:28.336 14724 14724 I WindowManager: WindowManagerGlobal#addView, ty=2, view=com.android.internal.policy.DecorView{4cbddf3 V.E...... R.....I. 0,0-0,0}[MiniDramaActivity], 
+2026-11-05 09:13:34.734 14724 14766 D MiniDrama Log: [EVENT] {"call_id":"261104_180818_88476dee_t3_i1_d1_ai-mini-drama","ok":true,"session_id":"261104_180818_88476dee","skill":"beat-generate","step":"prompt_8","step_call_id":"261104_180818_88476dee_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_rout
+2026-11-05 09:13:36.750 14724 14724 I WindowManager: WindowManagerGlobal#removeView, ty=2, view=com.android.internal.policy.DecorView{4cbddf3 V.E...... R....... 0,0-759,653 aid=1073741836}[MiniDramaActivity], 
+2026-11-05 09:13:36.751 14724 14724 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda15@db8d047
+2026-11-05 09:13:42.468 14724 14766 D MiniDrama Log: [DECISION] allowing 'TextToImage' x1 (already approved)
+2026-11-05 09:13:42.503 14724 14766 D MiniDrama Log: [DECISION] resolve_decision(1) -> 0
+2026-11-05 09:13:42.551 14724 14834 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261104_180818_88476dee/host_inputs/blueprint.json","failures":[],"module":"prompts_done","prompt_results":[false,false,false,false,f
+2026-11-05 09:13:42.576 14724 14834 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261104_180818_88476dee/host_inputs/blueprint.json","failures":[],"module":"prompts_done","prompt_results":[false,false,false,false,f
+2026-11-05 09:13:43.556 14724 14764 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28246)
