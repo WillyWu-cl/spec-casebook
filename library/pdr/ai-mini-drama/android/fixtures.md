@@ -7,7 +7,7 @@ phone (the QA Sony Xperia 10 III, adb serial HQ61563393, Android 12).
 ## App, build and account
 
 - The PowerDirector build under test, from its Testing Request: the TR's OneDrive folder holds
-  `CL_Deluxe.<build>_<SR>_R9.zip` with the APK and `Cyberlink.MD5`. The user approves each download; check the MD5,
+  `CL_Deluxe.<build>_<SR>_R9.zip` with the APK and `Cyberlink.MD5`. The agent downloads it without asking (user, 2026-11-05: "always download"); check the MD5,
   then `adb install -r` over the installed app (keeps its data). Uninstall and fresh install are allowed on Android
   (user, 2026-10-28, REQ-047): fresh-install cases uninstall and reinstall the APK themselves; the app's data and the
   sign-in are wiped, so the user signs in again afterwards (the agent never types the password).

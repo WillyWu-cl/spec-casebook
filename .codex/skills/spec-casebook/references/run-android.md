@@ -41,8 +41,14 @@ adb serial HQ61563393, Android 12, 1080 × 2520; setup in README › Android pho
   region): never tap the consume or purchase rows. Fault rows stay Blocked `--as observability` until fault switches
   ship (planned for a later build, user 2026-10-28; recheck each new build and update this paragraph); failure cases
   otherwise need real failures (network loss). The tier comes from the signed-in account. Builds come from the TR's
-  OneDrive folder (`CL_Deluxe.<build>_<SR>_R9.zip`, APK + `Cyberlink.MD5`), installed with `adb install -r` after the
-  user approves the download (`fixtures.md`).
+  OneDrive folder (`CL_Deluxe.<build>_<SR>_R9.zip`, APK + `Cyberlink.MD5`), installed with `adb install -r`; the agent
+  downloads the TR's build without asking (user, 2026-11-05; `fixtures.md`).
+  Fully automated, no popup (user, 2026-11-05): never click Download in OneDrive inside the browser pane (the app asks
+  the user to approve every pane download, and the transfer stalled). Open the TR's 「OneDrive Shared Link」 in the
+  pane (the user signs in once), then in the page run `fetch('/personal/sr_auto_cyberlink_com/_api/v2.0/shares/u!' +
+  base64url(link) + '/driveItem/children?select=name,size,file,@content.downloadUrl')` and `curl -L` the zip's
+  short-lived `@content.downloadUrl` into `~/.casebook/android/apks/<build>/` (outside the repo; the URL carries a
+  temporary token, never commit or paste it). Check the size against `size`, then the APK's MD5.
 - **Debug info and session export (user, 2026-11-03, REQ-068).** AI Mini Drama has a Pink-like switch: on the 「Hi I'm
   your AI Drama Assistant」 page, keep tapping the top row with two fingers between Back and the credit icon until the
   toast 「Tap for debug info: ON」; the Create Your Drama page's top bar then turns yellow (like Stage). Tapping the top

@@ -1,0 +1,68 @@
+DRA262610P0420 recheck, try 2 — PowerDirector 16.8.0.2611041 (Stage), Sony XQ-BT52 Android 12, 2026-11-05
+Session 261105_134441_e3669d07 · template The New Guy's Secret › Make my version · Jenna Morales = Mine grey-bob chef look (custom_18825a6c)
+Excerpt of logcat (MiniDrama Log); paths shortened, no keys or tokens. Full session: exports/261105_134441_e3669d07_20261105_141848.zip.
+
+Summary: every Jenna reference image is character_char_jenna_morales_custom_18825a6c…_image.png (the Mine chef sheet). ACTIVE REFERENCES
+state her age (75) only in clips 3 and 4; clips 1, 2 (preview), 5 (Jenna not on screen) and 6 (full) omit it. Blueprint
+asset char_jenna_morales age="75". Every Jenna WARDROBE line is the template Jenna's canvas utility vest, not the chef jacket.
+
+== Preview 1st try failed, no charge ==
+    2026-11-05 13:54:29.325  Log: [EVENT] {"call_id":"261105_134441_e3669d07_t4_i1_d1_ai-mini-drama","error":"HTTP POST Add Media failed: Could not establish connection","ok":false,"session_id":"261105_134441_e3669d07","skill":"video-generation-batch","step":"prompt_1","step_call_id":"261105_134441_e3669d07_t4_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompt_1","type":"workflow_step_done","workflow":"ai-mini-drama/plan/routed/asset_routed"}
+    (UI stuck on 「I'll create a video — give me a moment...」; 14:00:47 sent 「Create the video」 → Video length card → Preview - 30 sec ◆60 › Generate 14:01:08)
+
+== RefToVideo dispatches (model, Jenna's ACTIVE REFERENCES line, Jenna wardrobe/locks, reference images) ==
+2026-11-05 14:03:14.100  scene 1 = clip 1 (preview t6 vid_1) · model=dreamina-seedance-2-0-mini-260615 · Jenna: [NO AGE]
+    @Image 1: JENNA, capable adult warehouse manager, average height, athletic build, structured jawline, sharp dark eyes, expressive eyebrows, grey chin-length bob hair with a side parting. 100% matches the reference.
+    CUT 1 — JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots; NOAH wears a clean navy blue polo shirt, khaki work pants, and sturdy leather boots.
+    JENNA's CLIPBOARD stays in her left hand in all cuts. NOAH's standing outfit remains fixed across the cuts. Screen direction holds Jenna frame left, Noah frame right in the first three cuts.
+    [TOOL] RefToVideo image[0] tag=(positional) character_char_jenna_morales_custom_18825a6c-e8fb-46b6-8bba-c4e6078f2764_image.png
+    [TOOL] RefToVideo image[1] tag=(positional) character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] tag=(positional) out_261105_134441_e3669d07_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_1.png
+
+2026-11-05 14:03:14.111  scene 2 = clip 2 (preview t6 vid_2) · model=dreamina-seedance-2-0-mini-260615 · Jenna: [NO AGE]
+    @Image 1: JENNA, capable adult warehouse manager, average height, athletic build, structured jawline, sharp dark eyes, expressive eyebrows, grey chin-length bob hair with a side parting. 100% matches the reference.
+    CUT 1 — JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots; CALEB wears a faded denim work shirt over a black t-shirt, and dark utility trousers.
+    CUT 3 — JENNA wears her utility vest outfit.
+    The RADIO stays clipped to NOAH's belt after he lowers it in CUT 2. JENNA and NOAH's outfits remain fixed across their respective cuts.
+    [TOOL] RefToVideo image[0] tag=(positional) character_char_jenna_morales_custom_18825a6c-e8fb-46b6-8bba-c4e6078f2764_image.png
+    [TOOL] RefToVideo image[1] tag=(positional) character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] tag=(positional) character_char_caleb_Style_Mini-Drama-Character_male_hispanic_30_Coworker-2_c388aa73_image.jpg
+    [TOOL] RefToVideo image[3] tag=(positional) out_261105_134441_e3669d07_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_2.png
+
+2026-11-05 14:10:31.498  scene 3 = clip 3 (full t7 vid_1) · model=dreamina-seedance-2-0-mini-260615 · Jenna: [STATES AGE]
+    @Image 1: JENNA, 75-year-old female, athletic build, grey chin-length bob hair, sharp dark eyes. 100% matches the reference.
+    CUT 1 — JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots.
+    CUT 2 — JENNA wears her utility vest, grey shirt, jeans, and boots. NOAH wears a clean navy blue polo shirt, khaki work pants, and sturdy leather boots.
+    CUT 3 — JENNA wears her utility vest, grey shirt, jeans, and boots. NOAH wears his polo shirt, khaki pants, and boots.
+    CUT 4 — NOAH wears his polo shirt, khaki pants, and boots. JENNA wears her utility vest, grey shirt, jeans, and boots.
+    JENNA and NOAH maintain consistent facial features, hair, and identical resolved outfits across all cuts. The PAPER CUP stays on the corner of the desk after CUT 2. Clean frame, the image carries no subtitles, captions, speech bubbles or watermark.
+    [TOOL] RefToVideo image[0] tag=(positional) character_char_jenna_morales_custom_18825a6c-e8fb-46b6-8bba-c4e6078f2764_image.png
+    [TOOL] RefToVideo image[1] tag=(positional) character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] tag=(positional) out_261105_134441_e3669d07_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_3.png
+
+2026-11-05 14:10:31.521  scene 4 = clip 4 (full t7 vid_2) · model=dreamina-seedance-2-0-mini-260615 · Jenna: [STATES AGE]
+    @Image 1: JENNA, 75 years old, athletic and practical build, structured jawline, sharp dark eyes, grey chin-length bob hair with a side parting. 100% matches the reference.
+    CUT 1 — JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots.
+    CUT 3 — JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots.
+    [TOOL] RefToVideo image[0] tag=(positional) character_char_jenna_morales_custom_18825a6c-e8fb-46b6-8bba-c4e6078f2764_image.png
+    [TOOL] RefToVideo image[1] tag=(positional) character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] tag=(positional) out_261105_134441_e3669d07_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_4.png
+
+2026-11-05 14:10:31.525  scene 6 = clip 6 (full t7 vid_4) · model=dreamina-seedance-2-0-mini-260615 · Jenna: [NO AGE]
+    @Image 1: JENNA, capable adult warehouse manager, average height, athletic and practical build, structured jawline, sharp and observant dark eyes, expressive eyebrows, grey chin-length bob hair with a side parting. 100% matches the reference.
+    CUT 1: JENNA wears a durable dark canvas utility vest over a grey long-sleeve shirt, fitted jeans, and steel-toed boots. NOAH wears a clean navy blue polo shirt, khaki work pants, and sturdy leather boots.
+    CUT 3: JENNA wears her utility vest over a grey long-sleeve shirt, fitted jeans. NOAH wears his navy blue polo shirt, khaki work pants.
+    CUT 4: JENNA wears her utility vest over a grey long-sleeve shirt, fitted jeans. NOAH wears his navy blue polo shirt, khaki work pants.
+    Clean frame, the image carries no subtitles, captions, speech bubbles or watermark. JENNA's utility vest outfit, NOAH's polo shirt outfit, and RICHARD's tailored suit remain identical across their respective cuts. The brushed aluminum clipboard stays in JENNA's hand. Identity faces and hair match the references exactly in every cut.
+    [TOOL] RefToVideo image[0] tag=(positional) character_char_jenna_morales_custom_18825a6c-e8fb-46b6-8bba-c4e6078f2764_image.png
+    [TOOL] RefToVideo image[1] tag=(positional) character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] tag=(positional) character_char_richard_sterling_Style_Mini-Drama-Character_male_white_75_Whitmore-Relatives_7893abe9_image.jpg
+    [TOOL] RefToVideo image[3] tag=(positional) out_261105_134441_e3669d07_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_6.png
+
+2026-11-05 14:10:31.531  scene 5 = clip 5 (full t7 vid_3) · model=dreamina-seedance-2-0-mini-260615 · Jenna: [NO AGE]
+    @Image 1: JENNA, capable adult warehouse manager, average height, athletic build, structured jawline, sharp dark eyes, expressive eyebrows, grey chin-length bob hair with a side parting. 100% matches the reference.
+    [TOOL] RefToVideo image[0] tag=(positional) character_char_jenna_morales_custom_18825a6c-e8fb-46b6-8bba-c4e6078f2764_image.png
+    [TOOL] RefToVideo image[1] tag=(positional) character_char_noah_sterling_Style_Mini-Drama-Character_male_white_30_Alexander-s-Cousin_b9c1ac1f_image.jpg
+    [TOOL] RefToVideo image[2] tag=(positional) character_char_caleb_Style_Mini-Drama-Character_male_hispanic_30_Coworker-2_c388aa73_image.jpg
+    [TOOL] RefToVideo image[3] tag=(positional) out_261105_134441_e3669d07_t3_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_5.png
+

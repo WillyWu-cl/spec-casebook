@@ -111,3 +111,6 @@ library/*/*/*/runs/*/.design-texts.json
 
 # Local dev-server configs the desktop app writes per machine (preview_start), not shared
 .claude/launch.json
+
+# Debug-info session exports: hold app credit tokens (2026-11-05)
+library/**/runs/*/exports/
