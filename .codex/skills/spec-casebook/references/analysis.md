@@ -38,9 +38,6 @@ and return, waits), which apply to every job.
 4. **Numbers.** Every number the spec states (credits, durations, counts, sizes, percentages, line limits) gets a
    requirement that quotes it. A pick "at random from a pool of N" gets a row that draws several times and checks the
    picks vary within the pool, not one that taps twice (2026-10-27, 「Surprise me」 from 10 strings). Credit numbers are binding (see requirements.md format).
-   A limit whose unit has two readings (「10 MB」: 10,000,000 or 10,485,760 bytes) gets a `Q-n` on the unit and
-   boundary rows outside the gap (just under the smaller reading, just over the larger), never one row at a number
-   inside it (2026-11-03, PHD Creative Reel Q-22 / TC-048, TC-126).
 5. **Persistence and sessions.** For everything the feature saves (task, title, thumbnail, chat position, episode),
    check reopen, rename, same and new session, reinstall and next episode, as far as the spec states them.
 6. **MX flows.** Tiers, daily chats, charge cards, first-use credits, free trial, discount. The MX file is part of
@@ -95,9 +92,6 @@ and return, waits), which apply to every job.
    does not cover them (TC-218 stood for three tiers). Fill `### Variants`: one line per requirement × variant with
    its rows. `check.ts` fails a requirement naming two or more tiers, or "each tier / model / language", that lacks a
    line per variant.
-   A rule stated for the whole feature that has several sub-features (output 9:16 for Creative, Cinematic Styles and
-   AI Transition) is a variant rule too: one line per sub-feature (2026-11-03, PHD Creative Reel R-023: only
-   Creative's file was measured).
    **A setting's values are variants too (2026-11-04, Video Enhance).** Every value the user can choose for a
    setting that changes what the feature makes (Mode, style, fps, resolution, quality, length, voice) gets a row that
    *uses* it: chosen, carried through the action it changes (generate, export, save) and checked in the result (the
@@ -172,11 +166,6 @@ Read these on every new or updated draft, even when the spec set has not changed
      domain-knowledge skill to be marked `disputed`.
    `check.ts` fails a draft that leaves an applicable rule out and warns when the knowledge changed after the draft
    read it.
-7. **Product domain knowledge (user, 2026-11-03)** `library/<product>/domain/`, when the product has one (PHD does;
-   start at its `README.md`). `confirmed-rules.md` rules the spec does not contradict become requirements citing
-   `[Domain: K<nn>]`; `regression-risks.md` adds the variations (entry, first use, lifecycle, size, locale) the
-   feature shares with past bugs; `decisions.md` keeps replaced expectations and version-bound values out of rows
-   (value check); `open-questions.md` items the spec touches become `Q-n`. The spec wins over every K entry.
 
 ## Spec agent comparison (only when the user asks; user, 2026-10-27, REQ-036 / REQ-037; replaces REQ-031)
 

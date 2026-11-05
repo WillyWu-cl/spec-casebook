@@ -10,10 +10,7 @@ verdict rules.
 when a new row needs a new photo or account state, add it there in the same draft. What the scripts need to know about
 the feature (its log files and tags for `log-slice.ts` and `pull-logs`, its Pink menu and the switches `fresh` turns
 on) is in `library/<product>/<feature>/feature.json`; a new feature adds its own before the first run. What is known
-about driving the app (debug menus, tier and server switches, log lines, quirks) is the domain knowledge. A product
-with `library/<product>/domain/test-setup.md` (PHD: free user and 0 credits, reset through the debug dialog) does
-that setup once at the start of each round, before the first case; its `triage.md` is where a finding's cause is
-looked for first.
+about driving the app (debug menus, tier and server switches, log lines, quirks) is the domain knowledge.
 
 **Knowledge during a run (user, 2026-11-03).** A run spends no tokens on taking knowledge in:
 - Each segment reads `node scripts/knowledge.ts <feature> <platform> --for run [--tags <area>]` once at its start:

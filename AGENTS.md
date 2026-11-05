@@ -83,9 +83,6 @@ lines; put the full rule in the skill or reference file that applies it and poin
   controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only (never PM or MX):
   one `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
   per-instance MCP reads (`figma/references/source.md`).
-- **Product domain knowledge (user, 2026-11-03).** `library/phd/domain/` (imported from the PHD spec contract
-  runner's `docs/domain/phd`, 260 eBugs + user rules, K01–K74) is read on every `phd/*` draft and run: confirmed
-  rules become `[Domain: K<nn>]` requirements, the spec still wins (`analysis.md` standing input 7, `run.md`).
 - **What is drawn over a board (user, 2026-11-04, REQ-078).** Arrows, connectors and notes drawn over a Figma board
   are part of it: reads, the change check and board images include them, and a changed board's words are compared
   with its spec notes (`figma-text.ts`) so its rows follow the redraw; `board-lint.ts` (REQ-079) checks every mark

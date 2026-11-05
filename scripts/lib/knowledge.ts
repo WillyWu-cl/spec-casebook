@@ -42,7 +42,8 @@ const topicFiles = (dir: string) => existsSync(dir)
 
 export function parseFile(path: string, scope: Scope): { entries: Entry[]; problems: string[] } {
   const entries: Entry[] = [], problems: string[] = [];
-  const lines = readFileSync(path, 'utf8').split('\n');
+  // \r?\n: a Windows checkout (core.autocrlf) has CRLF files, and a trailing \r breaks every heading and key match
+  const lines = readFileSync(path, 'utf8').split(/\r?\n/);
   const where = (n: number) => `${relative(ROOT, path)}:${n + 1}`;
   let cur: Entry | null = null, inMeta = false;
   const close = () => { if (cur) { cur.body = cur.body.trim(); entries.push(cur); } cur = null; };
@@ -210,7 +211,7 @@ const INBOX_HEAD = '# Knowledge inbox\n\nParked knowledge, processed by the doma
 export function readInbox(id: string): InboxItem[] {
   const p = inboxPath(id);
   if (!existsSync(p)) return [];
-  return readFileSync(p, 'utf8').split('\n').flatMap((line, n) => {
+  return readFileSync(p, 'utf8').split(/\r?\n/).flatMap((line, n) => {
     const m = line.match(/^- \[( |x)\] (I-\d{3,}) (\S+) · (.*?) · (\S+) · (now · )?(.*?)(?: → (.*))?$/);
     return m ? [{ done: m[1] === 'x', id: m[2], date: m[3], from: m[4], about: m[5], now: !!m[6], text: m[7], result: m[8], line: n }] : [];
   });
@@ -227,7 +228,7 @@ export function addInbox(id: string, text: string, from: string, now: boolean, t
 export function closeInbox(id: string, item: string, result: string): boolean {
   const p = inboxPath(id), it = readInbox(id).find(i => i.id === item && !i.done);
   if (!it) return false;
-  const lines = readFileSync(p, 'utf8').split('\n');
+  const lines = readFileSync(p, 'utf8').split(/\r?\n/);
   lines[it.line] = `${lines[it.line].replace('- [ ]', '- [x]')} → ${result}`;
   writeFileSync(p, lines.join('\n'));
   return true;

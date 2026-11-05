@@ -7,7 +7,7 @@ iPhone frames; Android differences are in "System back". Red note lines are pend
 questions unless they state a rule. **PDF-only analysis** (`extracted/figma-pending.json`): Figma steps 8 and 10 are
 owed. Product: PhotoDirector (the language note says 「PhD 支援的所有語言」; credit pill, AI Creative Studio).
 "Creative" = the Opus 5.5 reel templates (Year-End Recap, Christmas Time …); "AI Transition" = Cool Transitions;
-"CineStory" = Cinematic Styles. Request ledger: REQ-001 (this table), REQ-003 (K75 / K76). PHD domain knowledge (`library/phd/domain/`, standing input 6) is applied (REQ-003 K75 / K76, REQ-004 K01–K74): rules that fit the feature are R-101 – R-113 citing `[Domain: K<nn>]`; the rest are listed in update-plan.md › Not added.
+"CineStory" = Cinematic Styles. Request ledger: REQ-001 (this table), REQ-003 (K75 / K76). PHD domain knowledge (`library/phd/knowledge/`, standing input 6; imported K ids kept as `aka`) is applied (REQ-003 K75 / K76, REQ-004 K01–K74): rules that fit the feature are R-101 – R-113 citing `[KB: KP-…]`; the rest are listed in update-plan.md › Not added.
 
 ## Room
 - R-001 [PM:room] The room formerly called 「Cinematic Reel Creator」 is titled 「Reel Creator」.
@@ -17,8 +17,8 @@ owed. Product: PhotoDirector (the language note says 「PhD 支援的所有語�
 - R-005 [PM:room] The AI Video Page entry for the room is labelled 「Reel Creator」.
 - R-006 [PM:room] The room has no tabs: one page of sections from top to bottom, the three features mixed: 「Cinematic Styles 🎬」 = CineStory, 「Year-End Recap 📅」 and 「Christmas Time 🎄」 … = Creative (Opus 5.5), 「Cool Transitions 🤳🏻」 = AI Transition.
 - R-007 [PM:room] Each section is a category (CMS category = section) showing its template cards in a horizontal row (as drawn).
-- R-008 [PM:room; Domain: K75] The room's top bar shows 「‹」, the blue credit button and the History button (as drawn). The credit button shows the account's current credit balance and a 「+」; tapping it opens the Buy Credit page.
-- R-101 [PM:room; Domain: K76] The History button (a sheet of paper with a clock at its bottom right) opens My AI Artwork with the feature's own tab, 「Reel Creator」, selected.
+- R-008 [PM:room; KB: KP-020] The room's top bar shows 「‹」, the blue credit button and the History button (as drawn). The credit button shows the account's current credit balance and a 「+」; tapping it opens the Buy Credit page.
+- R-101 [PM:room; KB: KP-026] The History button (a sheet of paper with a clock at its bottom right) opens My AI Artwork with the feature's own tab, 「Reel Creator」, selected.
 - R-009 [PM:room] Section order is pending (Meg / CMS, Q-1); the room shows every section whatever the order.
 
 ## Entry from Edit Room
@@ -128,18 +128,37 @@ owed. Product: PhotoDirector (the language note says 「PhD 支援的所有語�
 - R-089 [Rule: Android system Back, REQ-051] System Back on every screen and sheet of the feature behaves as its own 「‹」 / 「×」 / 「Got it」, closes the keyboard or dropdown first, or (where the spec gives no exit) is recorded (Q-8).
 
 ## PHD domain knowledge (standing input 6, REQ-004)
-- R-102 [Domain: K36a] After a Generate of each feature (Creative, Cinematic Styles, AI Transition) ends, Buy Credit › 「Detail」 lists the use with the right feature name and the credits actually deducted, and any refund with its amount.
-- R-103 [Domain: K30] Once the first Generate tap is accepted, further taps are blocked: a burst of taps charges once and makes one result.
-- R-104 [Domain: K48] A finished reel job (a long video job, as Cinematic Reel Creator) sends a completion notification with a title and message whose tap opens the right page (the result in My AI Artwork). The spec is silent (Q-12).
-- R-105 [Domain: K70] Localised strings that carry numbers (tray 「Select {min}–{max} photos」 and 「({n} more)」, the Import prompt N, the toast 「Please upload at least %d photos」) show the right numbers in every app language and never crash the screen.
-- R-106 [Domain: K66, K68] In an RTL app language (Arabic) the room, Preview, picker, confirm page and Text language list mirror their layout and stay in bounds; Western digits are acceptable.
-- R-107 [Domain: K69] Long translations (e.g. German, Portuguese) on the picker tray, Import prompt and confirm page stay readable and every button stays reachable.
-- R-108 [Domain: K01] Every entry to the room (Effects button, Launcher Shortcut, Launcher Template row, AI Video page, My AI Artwork 「Create More」) opens it, and its 「‹」 returns to the page of that entry.
-- R-109 [PM:room; Domain: K02] The photo saved automatically on the Edit Room jump is the current edited image, not the original file.
-- R-110 [Domain: K05] A template deeplink opened while the app is already running (warm start) opens the same Preview as from a cold start, without a crash before the template data has loaded.
-- R-111 [Domain: K52] The Preview's mute state stays when swiping to another template.
-- R-112 [Domain: K62] After Activity re-creation (Don't keep activities) the confirm page keeps its photos, order, count and Text language.
-- R-113 [Domain: K28] After 「Create More」 from My AI Artwork, a new generation from the room runs normally and Back from the room works (no stale resource).
+- R-102 [KB: KP-017] After a Generate of each feature (Creative, Cinematic Styles, AI Transition) ends, Buy Credit › 「Detail」 lists the use with the right feature name and the credits actually deducted, and any refund with its amount.
+- R-103 [KB: KP-019] Once the first Generate tap is accepted, further taps are blocked: a burst of taps charges once and makes one result.
+- R-104 [KB: KP-029] A finished reel job (a long video job, as Cinematic Reel Creator) sends a completion notification with a title and message whose tap opens the right page (the result in My AI Artwork). The spec is silent (Q-12).
+- R-105 [KB: KP-049] Localised strings that carry numbers (tray 「Select {min}–{max} photos」 and 「({n} more)」, the Import prompt N, the toast 「Please upload at least %d photos」) show the right numbers in every app language and never crash the screen.
+- R-106 [KB: KP-050, KP-048] In an RTL app language (Arabic) the room, Preview, picker, confirm page and Text language list mirror their layout and stay in bounds; Western digits are acceptable.
+- R-107 [KB: KP-101] Long translations (e.g. German, Portuguese) on the picker tray, Import prompt and confirm page stay readable and every button stays reachable.
+- R-108 [KB: KP-072] Every entry to the room (Effects button, Launcher Shortcut, Launcher Template row, AI Video page, My AI Artwork 「Create More」) opens it, and its 「‹」 returns to the page of that entry.
+- R-109 [PM:room; KB: KP-032] The photo saved automatically on the Edit Room jump is the current edited image, not the original file.
+- R-110 [KB: KP-074] A template deeplink opened while the app is already running (warm start) opens the same Preview as from a cold start, without a crash before the template data has loaded.
+- R-111 [KB: KP-091] The Preview's mute state stays when swiping to another template.
+- R-112 [KB: KP-097] After Activity re-creation (Don't keep activities) the confirm page keeps its photos, order, count and Text language.
+- R-113 [KB: KP-083] After 「Create More」 from My AI Artwork, a new generation from the room runs normally and Back from the room works (no stale resource).
+
+### Domain rules
+Cited above: KP-020, KP-026, KP-017, KP-019, KP-029, KP-049, KP-050, KP-048, KP-101, KP-072, KP-032, KP-074, KP-091,
+KP-097, KP-083. The rest, carried over from update-plan.md › Not added (REQ-004; K ids are the entries' `aka`, moved
+from `library/phd/domain/` to `library/phd/knowledge/` on 2026-11-05):
+- KP-012 (K36b) → n/a as a row (noted on TC-073).
+- KP-014 (K36c), KP-025 (K47b) → n/a (the feature has no AI Exposure).
+- KP-016 (K31) → n/a (no free trial in this flow).
+- KP-021 (K44), KP-039 (K42) → n/a (no AI Agent in this flow).
+- KP-024 (K47a) → n/a (images only; Reel Creator outputs are videos, R-079 covers Artwork).
+- KP-028 (K46) → n/a (a filter rule; the Reel Creator tab is a feature tab, not a filter).
+- KP-030 (K50) → n/a (no editing in this flow).
+- KP-033 (K04) → n/a as a row (noted on TC-015).
+- KP-034 (K05) → n/a (the Discover tip bubble is not in this flow; K05's warm-start risk is KP-074, R-110).
+- KP-035 (K08), KP-036 (K11), KP-037 (K12), KP-038 (K14) → n/a (no prompt or reference inputs in this flow).
+- KP-040 (K20), KP-041 (K21), KP-042 (K22), KP-046 (K27), KP-047 (K29) → n/a (no edit tools in this flow).
+- KP-043 (K24), KP-044 (K25), KP-045 (K26) → n/a (no Video Editing in this flow).
+- KP-015 (K36e), KP-018 (K36d), KP-027 (K47c) → not reviewed in REQ-004 (missing from its lists); the next draft
+  decides them. KP-027 (new features' works reach Recent) likely applies to Reel Creator.
 
 ## Flow arrows
 - R-090 [PM:room flow arrow room-a1 ] Room template card → Preview. Walked by: TC-023.

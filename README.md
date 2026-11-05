@@ -575,7 +575,6 @@ limits the page to one run, to see whether that run pressed everything.
     └── <product>/            # One folder per product (pdr = PowerDirector Mobile, phd = PhotoDirector Mobile)
         ├── product.json      # App ids per platform, TestFlight name, eBug (ECL) product names
         ├── knowledge/        # Domain knowledge true of every feature of the product (KP-…)
-        ├── domain/           # Product domain knowledge, when there is one (phd: rules, risks, setup, triage)
         └── <feature>/        # One folder per feature (see below)
 ```
 
