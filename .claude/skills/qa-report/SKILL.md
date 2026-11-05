@@ -86,11 +86,13 @@ through `ebug-tr-filer` only if the user asks).
    `library/pdr/ai-mini-drama/android/runs/2026-11-03-tr261102-0018-verify/qr-draft.json`). One row per bug in
    scope, including Hold rows. `summary` is the one-line Details entry; Fail rows take `observed` and `expected`
    from the eBug's own Result / Expect Result, rewritten for what this build does. Use the decisive screenshots
-   only (2–4 per bug), with the log excerpt for timing or charge claims. Never put account e-mails, tokens or local
-   paths in any text.
+   only (2–4 per bug), with the log excerpt for timing or charge claims. Never put tokens or local paths in any text,
+   and no e-mail except the tested account on the Account line (*Wording*). Set `"attachToBugs": true` (*Evidence on each eBug* below): every file of a row is named
+   `<version.build>_<BugCode>_…` (a frame two bugs share gets a copy under each bug's name) and stays under 5 MB.
 2. **Check and pack.** `node scripts/qa-report.ts check <draft>` (must pass), then `pack` (one ZIP, folders
    `OK/` and `Fail/` with an `index.html` and a SHA-256 manifest), then `render` (`qr-review.html`) and
-   `text` (every field exactly as it will be typed).
+   `text` (every field exactly as it will be typed). Then `upload <draft>` (dry run): it lists, per bug, the
+   files that will be added and those already on the page.
 3. **Review.** Open `qr-review.html` in the browser pane and look at every image yourself before showing it. The
    user changes verdicts or Reasons there and pastes **Copy decisions** back, or approves in chat. Apply the
    changes to the draft, re-run step 2 and get the changed rows approved again. Nothing goes to ECL before a clear
@@ -98,8 +100,10 @@ through `ebug-tr-filer` only if the user asks).
 4. **File (IF3).** Open the Create form (*Form notes* has the URL and field names). Fill from `text`: Short
    Description, Test Result, Testing Date, Test Result Details, Product Version, Build Day, Build No., Operation
    System and OS Language. In the bug list set State and Reason only for the approved rows; leave every other row on
-   「Not Yet Verified」. Upload the evidence ZIP in the form's upload section first and put its link in the draft
-   (*Form notes* › Attachments), regenerate `text`, then fill. Read the whole form back against `text`, then press the submit button (**Create**) once; never twice —
+   「Not Yet Verified」. First `node scripts/qa-report.ts upload <draft> --send`: each row's files go on its own
+   eBug and `uploaded` records what each page lists; `text` warns while any row is missing. Then upload the evidence
+   ZIP in the form's upload section and put its link in the draft (*Form notes* › Attachments; with `attachToBugs`
+   it is a convenience bundle on the QR, named once in Details), regenerate `text`, then fill. Read the whole form back against `text`, then press the submit button (**Create**) once; never twice —
    if unsure whether it saved, reload the TR and look for a new QR in its list.
 5. **Read back.** Open the new `https://ecl.cyberlink.com/IF3/qr/BPM/FormView/<QR>` and compare every field, State
    and Reason with `text`, and the attachment name and size with the ZIP. Reload the TR: its Pass / Fail / Not yet
@@ -112,11 +116,28 @@ The first time the form is filled on a new template, record the field names you 
 ## Wording
 
 - Short Description: `<version.build> - Bug verify report (<TESTER>)`. Test Result: `PDR-A - Bug verification [OK=n, Fail=n]` (`PDR-i` for iOS).
-- Details are a lettered list like the team's QRs: device, build and how it was installed, server, account (tier,
-  never the e-mail), who tested (name the AI model when an agent drove the phone), scope, then OK and FAIL lists
+- Details are a lettered list like the team's QRs: device, build and how it was installed, server, account, who tested (name the AI model when an agent drove the phone), scope, then OK and FAIL lists
   with one line per bug, other observations, and where the evidence is. Held bugs are not mentioned.
+- Account (user, 2026-11-05, REQ-100): the account the phone is signed in to, as the app's menu shows it (Launcher ☰,
+  the account at the top), with its tier: `Account: cltqauiap2@gmail.com (Premium)`. Read it from the menu at the start
+  of the verify run (it changes when someone signs in another account) and write it in the run's `result.md`; never
+  copy it from an earlier run.
 - Reasons in English, short, no test IDs, tool names, timestamps or retry history; the detail lives in the run
-  folder. Never write a `.zip` file name in a Reason (ECL links it as a web address); point to the ZIP folder instead.
+  folder. Never write a `.zip` file name in a Reason (ECL links it as a web address). With `attachToBugs` the last
+  line is `Evidence: {file.png} {file_log.txt}`, the names of the files on that eBug, like a description (OK rows
+  too); without it, the ZIP link and folder.
+
+## Evidence on each eBug (user, 2026-11-05, REQ-099)
+
+A QR's Reason reaches every linked bug, so each bug's evidence goes on that bug instead of only in a ZIP on the QR:
+`qa-report.ts upload` runs `ebug-tr-filer`'s `ecl_if3.py upload` per row (public code endpoint, `formDataPath=
+$.UploadFiles`), which skips names already on the page and reads the page's list back. Tested 2026-11-05 on
+DRA262610P0388 in Fail status: six files added, credited to the tester, no Activity Log line, status and handler
+unchanged; the same on the seven Close bugs of QR261105-0035 the same day (files listed, no Activity Log line, still
+Close). Upload before Create all the same, so RD reads a Reason whose files are already there. **Uploads cannot be
+removed** (API or page), so they go only after the tester approved the review page for this revision, and a wrong
+file stays on the ticket. This is part of the QR exception to overlay rule 6: files only, on the bugs in the QR,
+never a comment.
 
 ## Form notes (first filing, QR261103-0039, 2026-11-03)
 

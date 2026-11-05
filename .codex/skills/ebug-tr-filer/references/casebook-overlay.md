@@ -40,7 +40,8 @@ skill's body. Rule numbers are cited elsewhere (AGENTS.md: "rule 5 of the eBug o
    `.codex` copies), restore the 2026-10-20 wording of *eBug owner and type* in `AGENTS.md` (kept there under
    "Revert"), drop the UX line in the casebook skill's *eBug drafts and review page* step 1, and run
    `check_ebug_format.py --allow-agent-ux` and `ALLOW_AGENT_UX=1 verify_ebug_drafts.py`.
-6. **No comments on existing tickets (user, 2026-10-21, until the user lifts it).** Never post a comment on, reopen
+6. **No comments on existing tickets (user, 2026-10-21, until the user lifts it; a QR's own evidence files may be
+   added to the bugs in that QR, `qa-report/SKILL.md` › *Evidence on each eBug*, REQ-099).** Never post a comment on, reopen
    or reject the fix of an existing eBug — not for rechecks, not for "still reproduces", not for fixed tickets. Only
    new tickets the user decided to file are created.
 7. **Dedupe per OS (user, 2026-10-28).** iOS and Android bugs are deduped separately: search only the tested OS's

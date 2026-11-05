@@ -112,6 +112,13 @@ lines; put the full rule in the skill or reference file that applies it and poin
   build first when they have no verdicts; the checks are ordered along the flow in `verify-plan.md` so one drama
   carries as many bugs as it passes, shared steps and long waits are reused, never a fresh start per bug
   (`qa-report/SKILL.md` › *Verify first*).
+- **Evidence on each eBug (user, 2026-11-05, REQ-099).** A QR's screenshots and logs are uploaded to each bug in it
+  (`qa-report.ts upload … --send`, before Create) and its Reason names them like a description (`{file.png}`), not
+  the ZIP link; uploads can't be removed, so only after the tester approves (`qa-report/SKILL.md` › *Evidence on
+  each eBug*). The one exception to *No comments on existing eBugs*: files only, never a comment.
+- **QR account line (user, 2026-11-05, REQ-100).** A QR's Details name the phone's signed-in account as the app's menu
+  shows it, with its tier (`Account: cltqauiap2@gmail.com (Premium)`), read from the menu at each verify run
+  (`qa-report/SKILL.md` › *Wording*).
 - **Bug verify against today's spec (user, 2026-11-05, REQ-091).** Before verifying a bug, check its Expect Result
   against the current spec in the repo (ticket comments, row, `requirements.md` changes and open questions, newer
   frames in `extracted/`), then judge the build's current behaviour against that. An open question means Hold

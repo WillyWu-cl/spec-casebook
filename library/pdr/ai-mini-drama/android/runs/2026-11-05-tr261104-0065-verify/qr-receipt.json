@@ -11,8 +11,21 @@
   "osLanguage": "English",
   "readBack": "every field, State and Reason matched qr-text.txt; only the 11 ETHAN_HSU rows set, the 16 other rows left Not Yet Verified; ZIP listed once under Attachment",
   "ticketsAfter": {
-    "Close": ["DRA262610P0324", "DRA262610P0326", "DRA262610P0328", "DRA262610P0332", "DRA262610P0350", "DRA262610P0354", "DRA262610P0381"],
-    "Fail": ["DRA262610P0388", "DRA262610P0415", "DRA262610P0416", "DRA262610P0424"]
+    "Close": [
+      "DRA262610P0324",
+      "DRA262610P0326",
+      "DRA262610P0328",
+      "DRA262610P0332",
+      "DRA262610P0350",
+      "DRA262610P0354",
+      "DRA262610P0381"
+    ],
+    "Fail": [
+      "DRA262610P0388",
+      "DRA262610P0415",
+      "DRA262610P0416",
+      "DRA262610P0424"
+    ]
   },
   "evidence": {
     "file": "TR261104-0065_16.8.0.2611041_evidence.zip",
@@ -23,5 +36,71 @@
     "downloadCheck": "downloaded from ECL, SHA-256 matches the local ZIP"
   },
   "notes": "An earlier upload of the ZIP (before P0350 moved from Hold to OK at the user's request) was removed from the form before Create.",
-  "mismatches": []
+  "mismatches": [],
+  "bugUploads": {
+    "time": "2026-11-05 17:0x (after the QR, REQ-099)",
+    "files": {
+      "DRA262610P0324": [
+        "16.8.0.2611041_DRA262610P0324_tap1.png",
+        "16.8.0.2611041_DRA262610P0324_tap3.png",
+        "16.8.0.2611041_DRA262610P0324_tap5.png"
+      ],
+      "DRA262610P0326": [
+        "16.8.0.2611041_DRA262610P0326_01_filter.png",
+        "16.8.0.2611041_DRA262610P0326_02_gender_swiped.png"
+      ],
+      "DRA262610P0328": [
+        "16.8.0.2611041_DRA262610P0328_01_card.png"
+      ],
+      "DRA262610P0332": [
+        "16.8.0.2611041_DRA262610P0332_s3_01_question.png",
+        "16.8.0.2611041_DRA262610P0332_s3_02_after_name.png",
+        "16.8.0.2611041_DRA262610P0332_s3_log.txt"
+      ],
+      "DRA262610P0350": [
+        "16.8.0.2611041_DRA262610P0350_s3_21_storyboard_generate_top.png",
+        "16.8.0.2611041_DRA262610P0350_s3_23_storyboard_reply_arrow.png"
+      ],
+      "DRA262610P0354": [
+        "16.8.0.2611041_DRA262610P0354_02_storyboard_card.png",
+        "16.8.0.2611041_DRA262610P0354_01_video_card.png"
+      ],
+      "DRA262610P0381": [
+        "16.8.0.2611041_DRA262610P0381_01_thinking.png",
+        "16.8.0.2611041_DRA262610P0381_02_after_pill.png",
+        "16.8.0.2611041_DRA262610P0381_s3_03_after_leave.png",
+        "16.8.0.2611041_DRA262610P0381_s3_05_history_end.png",
+        "16.8.0.2611041_DRA262610P0381_log.txt"
+      ],
+      "DRA262610P0388": [
+        "16.8.0.2611041_DRA262610P0388_05_reply.png",
+        "16.8.0.2611041_DRA262610P0388_07_scene4_detail.png",
+        "16.8.0.2611041_DRA262610P0388_s4_08_details_1536_to_1508.png",
+        "16.8.0.2611041_DRA262610P0388_s4_09_my_credits_after.png",
+        "16.8.0.2611041_DRA262610P0388_log.txt",
+        "16.8.0.2611041_DRA262610P0388_s4_log.txt"
+      ],
+      "DRA262610P0415": [
+        "16.8.0.2611041_DRA262610P0415_s4_03_wifi_off.png",
+        "16.8.0.2611041_DRA262610P0415_s4_05_scene2_view.png",
+        "16.8.0.2611041_DRA262610P0415_s4_04_end.png",
+        "16.8.0.2611041_DRA262610P0415_s4_details_p1.png",
+        "16.8.0.2611041_DRA262610P0415_s4_log.txt"
+      ],
+      "DRA262610P0416": [
+        "16.8.0.2611041_DRA262610P0416_Preview_Best.png",
+        "16.8.0.2611041_DRA262610P0416_Preview_Standard.png",
+        "16.8.0.2611041_DRA262610P0416_Preview_Fast.png",
+        "16.8.0.2611041_DRA262610P0416_Full_Standard.png"
+      ],
+      "DRA262610P0424": [
+        "16.8.0.2611041_DRA262610P0424_s4_06_format_card.png",
+        "16.8.0.2611041_DRA262610P0424_s4_07_storyboard_card.png"
+      ]
+    },
+    "count": 35,
+    "readBack": "every file in UploadFiles (ecl_if3.py upload read-back); P0381 (Close) and P0388 (Fail) pages checked: files listed, no Activity Log line, statuses unchanged (7 Close, 4 Fail)",
+    "log": "upload-bugs.log, upload-test-P0388.log",
+    "note": "the filed Reasons still link the ZIP; P0415 got its own copy of the shared Credit Details frame"
+  }
 }

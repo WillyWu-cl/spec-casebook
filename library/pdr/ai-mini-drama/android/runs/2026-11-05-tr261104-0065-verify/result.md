@@ -1,7 +1,7 @@
 # TR261104-0065 verify — ETHAN_HSU's tickets, 2026-11-05 (REQ-093)
 
 Build 16.8.0.2611041 (TR build, debuggable re-sign of the official APK, installed with data kept, REQ-089), Stage,
-Samsung Galaxy A53 (R5CTB22S05Y, Android 15), Pro account (signed in by the user). One ordered journey (`verify-plan.md`):
+Samsung Galaxy A53 (R5CTB22S05Y, Android 15), account cltqauiap2@gmail.com (Premium, signed in by the user; REQ-100). One ordered journey (`verify-plan.md`):
 drama 1 「Stormbound」 (segments 1–2), drama 2 「Salt Broth」 + a throwaway chat (segments 3–4), French by per-app
 locale (restored). Expected results checked against today's spec (`spec-check.md`). Credits 28,197 → 28,119; about 27
 chat turns; no video generated. No ticket was commented on or changed. Details: `result-s1.md` … `result-s4.md`.
@@ -23,3 +23,4 @@ are still unread.
 | DRA262610P0424 | STILL REPRODUCES (half) | 「Langage de la vidéo」 remains; 「Des crédits seront consommés…」 fixed |
 
 QA Report: [QR261105-0035](https://ecl.cyberlink.com/IF3/qr/BPM/FormView/QR261105-0035) filed 2026-11-05 with the evidence ZIP, OK 7 / Fail 4 (tickets: 7 Close, 4 Fail); receipt `qr-receipt.json`.
+Each bug's verify screenshots and logs were then uploaded to the bug itself (40 files on 11 eBugs, REQ-099; `upload-bugs.log`).
