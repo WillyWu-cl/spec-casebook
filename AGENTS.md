@@ -144,6 +144,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   a table's Open questions sit on Cases above the table with answer boxes, applied as rulings (`SKILL.md` step 4,
   Question answers). Open pages update only when what they show changed (user, 2026-11-05): Progress, Results, Coverage and
   Design redraw in place, patching only what differs; Cases offers a Reload button (`scripts/pages.ts` header).
+- **One-off HTML pages (user, 2026-11-05).** A page asked for as HTML is a local file, not an artifact, and never goes
+  on the Desktop: it goes in `library/<product>/<feature>/comparisons/` (git-ignored, local only), named
+  `<date>_<topic>.html`. The committed spec agent comparisons stay in `<platform>/comparisons/`.
 - **Never uninstall PowerDirector on the QA iPhone (user, 2026-10-29, until lifted).** The build cannot be installed
   again for now, so no command may uninstall or reinstall it: `app-setup.ts reinstall` / `fresh` and every
   fresh-install case are off; those cases are recorded Blocked `--as test-data` ("PowerDirector cannot be reinstalled

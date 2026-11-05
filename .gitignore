@@ -114,3 +114,6 @@ library/*/*/*/runs/*/.design-texts.json
 
 # Debug-info session exports: hold app credit tokens (2026-11-05)
 library/**/runs/*/exports/
+
+# One-off HTML pages asked for in chat stay local (user, 2026-11-05); platform comparisons/ stay committed.
+library/*/*/comparisons/
