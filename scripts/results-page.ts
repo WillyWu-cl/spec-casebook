@@ -5,7 +5,8 @@
 //        node scripts/results-page.ts <product>/<feature> <platform> --serve [port] [--lan]
 // Reads runs/*/results.csv (the latest record per case in each run folder), each folder's run-state.md (phase, build)
 // and blocked-reasons.json, and the table's cases.csv (Precondition, Priority). --serve (default port 4492) rebuilds on
-// every request and sends the screenshots as files/<path under the repo>; scripts/pages.ts serves it as /results/.
+// every request and sends the screenshots as files/<path under the repo> (with ?thumb a small JPEG copy for the list,
+// lib/thumbs.ts; the viewer opens the original); scripts/pages.ts serves it as /results/.
 // Without --serve: runs/results.html, with the screenshots linked relative to it (open it from the runs folder).
 // eBugs (user, 2026-11-04): each Fail case links the eBugs it belongs to, from the table's ebugs/<batch>/ folders: the
 // batch filed from a run (the run folder its drafts and notes name most) gives `filed` (a draft entry whose Report step
@@ -17,6 +18,7 @@ import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join, relative } from 'node:path';
 import { readRecords } from './lib/csv.ts';
+import { thumbnail } from './lib/thumbs.ts';
 import { ROOT, arg, assertIds, readManifest, readTable, tableDir } from './lib/library.ts';
 
 const [feature, platform] = process.argv.slice(2);
@@ -120,12 +122,21 @@ if (serve) {
         const html = page(buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`));
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(html); return;
       }
+      // the same data alone, for the in-place update (scripts/pages.ts __check)
+      if (url.startsWith('/data.json')) {
+        res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });
+        res.end(JSON.stringify(buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`))); return;
+      }
       // screenshots: images under this table's runs folder only
       const f = url.match(/^\/files\/([^?#]+)/);
       if (f) {
         const p = join(ROOT, decodeURIComponent(f[1]));
         if (IMG.test(p) && relative(runsDir, p).split(/[\\/]/)[0] !== '..' && existsSync(p)) {
-          res.writeHead(200, { 'content-type': /png$/i.test(p) ? 'image/png' : 'image/jpeg', 'cache-control': 'max-age=300' }); res.end(readFileSync(p)); return; }
+          const send = (file: string, type: string) => { res.writeHead(200, { 'content-type': type, 'cache-control': 'max-age=300' }); res.end(readFileSync(file)); };
+          const original = () => send(p, /png$/i.test(p) ? 'image/png' : 'image/jpeg');
+          if (/[?&]thumb\b/.test(url)) thumbnail(p).then(t => t ? send(t, 'image/jpeg') : original()).catch(() => { if (!res.headersSent) original(); });
+          else original();
+          return; }
       }
       res.writeHead(404); res.end('Not found');
     } catch (e: any) { res.writeHead(500, { 'content-type': 'text/plain' }); res.end(String(e?.message ?? e)); }

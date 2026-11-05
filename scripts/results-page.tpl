@@ -125,7 +125,7 @@ a.tk:hover, a.tk:focus-visible { border-color: var(--fail); background: color-mi
 </div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot"><div class="bar2"><button type="button" id="lbprev">←</button><button type="button" id="lbnext">→</button><span class="cap" id="lbcap"></span><button type="button" id="lbclose">✕</button></div><div class="stage"><img id="lbimg" alt=""></div></div>
 <script>
-const D = __DATA__;
+let D = __DATA__;
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 // Language: English or 中文 for what the page writes itself; the run's own text (actions, results) stays as recorded.
@@ -156,6 +156,8 @@ const RES_ZH = { Pass: '通過', Fail: '失敗', Blocked: '受阻', Inconclusive
 const resName = r => L === 'zh' ? RES_ZH[r] ?? r : r;
 const COLOR = r => `var(--${({ Pass: 'pass', Fail: 'fail', Blocked: 'blocked', Inconclusive: 'inc' })[r] ?? 'notrun'})`;
 const PAGES = window.CASEBOOK?.pages ?? {};
+// served (not a results.html file): the list asks for small copies; the viewer always opens the original
+const THUMB = location.protocol === 'file:' ? '' : '?thumb';
 const fmt = s => s ? new Date(s).toLocaleString(L === 'zh' ? 'zh-TW' : undefined, { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
 // eBug codes in a result (DRI261898P0001, DRI261893-0124) stand out and open the ticket in eCL (the address the
 // ebug-tr-filer skill prescribes)
@@ -211,7 +213,7 @@ function card(c) {
     <div><h4>${t('expected')}</h4><p>${esc(c.expected)}</p></div>
     <div class="found ${esc(c.result.replace(' ', ''))}"><h4>${t('actual')}</h4><p>${bugs(c.actual) || '—'}</p>${c.why ? `<div class="why"><b>${t('why')}:</b> ${esc(c.why)}${c.group ? ` <span class="disp">${esc(c.group)}</span>` : ''}</div>` : ''}${c.files.length ? `<div class="small" style="margin-top:6px">${t('files')}: ${c.files.map(esc).join(' ')}</div>` : ''}</div>
   </div>
-  ${c.shots.length ? `<div class="shots">${c.shots.map((s, i) => `<button type="button" data-c="${esc(c.id)}" data-i="${i}" title="${esc(s.name)}"><img loading="lazy" src="${esc(s.src)}" alt="${esc(c.id)} ${esc(s.name)}"><span>${esc(s.name)}</span></button>`).join('')}</div>` : ''}
+  ${c.shots.length ? `<div class="shots">${c.shots.map((s, i) => `<button type="button" data-c="${esc(c.id)}" data-i="${i}" title="${esc(s.name)}"><img loading="lazy" src="${esc(s.src)}${THUMB}" alt="${esc(c.id)} ${esc(s.name)}"><span>${esc(s.name)}</span></button>`).join('')}</div>` : ''}
   <div class="xl">${links}<span class="disp" style="margin-left:auto">${esc(c.seg)} · ${t('at')} ${fmt(c.at)}</span></div>
 </article>`;
 }
@@ -223,6 +225,26 @@ function list() {
   for (const c of cs) { if (c.seg !== last) { html += `<h3 class="seg-h">${esc(c.seg || '—')}</h3>`; last = c.seg; } html += card(c); }
   $('list').innerHTML = html || `<p class="empty">${t('none')}</p>`;
   $('list').querySelectorAll('.shots button').forEach(b => b.onclick = () => open(run.cases.find(c => c.id === b.dataset.c).shots, +b.dataset.i, b.dataset.c));
+  saveView();
+}
+// The view (run, filters, search) is kept in the address, so a reload or a shared link opens it again, and for this
+// browser tab, so leaving Results for another page and coming back keeps it too.
+const VIEW = `results-view:${D.feature}:${D.platform}`;
+function saveView() {
+  const u = new URLSearchParams();
+  if (run && run !== D.runs[0]) u.set('run', run.id);
+  for (const [k, v] of [['res', res], ['seg', seg], ['disp', disp], ['q', $('q').value.trim()]]) if (v) u.set(k, v);
+  if (only) u.set('shots', '1'); if (onlyBug) u.set('bugs', '1');
+  const s = u.toString();
+  try { history.replaceState(history.state, '', location.pathname + (s ? `?${s}` : '') + location.hash); sessionStorage.setItem(VIEW, s); } catch (e) {}
+}
+function loadView() {
+  let s = location.search.slice(1); if (!s && !location.hash) try { s = sessionStorage.getItem(VIEW) ?? ''; } catch (e) {}
+  const u = new URLSearchParams(s);
+  run = D.runs.find(r => r.id === u.get('run')) ?? D.runs[0];
+  res = u.get('res') ?? ''; seg = u.get('seg') ?? ''; disp = u.get('disp') ?? '';
+  $('q').value = u.get('q') ?? ''; q = $('q').value.trim().toLowerCase();
+  only = $('only').checked = u.has('shots'); onlyBug = $('onlybug').checked = u.has('bugs');
 }
 function render() { header(); tools(); list(); }
 // screenshot viewer: arrows step through the case's screenshots, Esc closes
@@ -251,7 +273,9 @@ const setLang = l => { L = l; try { localStorage.setItem('casebook-lang', l); } 
 document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.l));
 if (window.CASEBOOK) { document.querySelector('.lang')?.remove(); addEventListener('casebook-lang', e => { L = e.detail; render(); }); }
 addEventListener('hashchange', showCase);
-render(); showCase();
+// served by scripts/pages.ts: new results are drawn in place, on the same run and filters
+if (window.CASEBOOK) CASEBOOK.onData = d => { D = d; run = D.runs.find(r => r.id === run?.id) ?? D.runs[0]; if (shots.length && $('lb').classList.contains('on')) shots = run?.cases.find(c => c.id === cap)?.shots ?? shots; render(); };
+loadView(); render(); showCase();
 </script>
 </body>
 </html>

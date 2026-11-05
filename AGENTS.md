@@ -142,7 +142,8 @@ lines; put the full rule in the skill or reference file that applies it and poin
   shared tab bar holding the only language switch. `+ Add case` takes free text; the agent turns open notes into rows
   (`SKILL.md` step 4, New-case notes). No new tabs without asking (user, 2026-11-04: keep the pages few and readable);
   a table's Open questions sit on Cases above the table with answer boxes, applied as rulings (`SKILL.md` step 4,
-  Question answers).
+  Question answers). Open pages update only when what they show changed (user, 2026-11-05): Progress, Results, Coverage and
+  Design redraw in place, patching only what differs; Cases offers a Reload button (`scripts/pages.ts` header).
 - **Never uninstall PowerDirector on the QA iPhone (user, 2026-10-29, until lifted).** The build cannot be installed
   again for now, so no command may uninstall or reinstall it: `app-setup.ts reinstall` / `fresh` and every
   fresh-install case are off; those cases are recorded Blocked `--as test-data` ("PowerDirector cannot be reinstalled

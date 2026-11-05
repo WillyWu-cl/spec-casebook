@@ -4,8 +4,11 @@
 // prints input, cache-write, cache-read and output tokens per model and in total. Sessions handed off to a fresh
 // context have their own transcripts: pass every transcript the run used.
 // Also a module: plan-page.ts imports transcriptMessages()/projectTranscripts(), which read each transcript
-// incrementally (only the bytes appended since the last call), so a 10 s poll stays cheap.
-import { closeSync, existsSync, openSync, readdirSync, readSync, statSync, writeFileSync } from 'node:fs';
+// incrementally (only the bytes appended since the last call), so a 10 s poll stays cheap. What has been read is also
+// kept on disk (node_modules/.cache/casebook-transcripts/, one file per transcript), so a page server that starts or
+// restarts does not read every transcript again (a project's can pass 1 GB: about 6 s on the first Progress load).
+import { createHash } from 'node:crypto';
+import { closeSync, existsSync, mkdirSync, openSync, readdirSync, readFileSync, readSync, statSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join, resolve } from 'node:path';
 
@@ -14,12 +17,41 @@ export type U = { input: number; cacheWrite: number; cacheRead: number; output: 
 export const zero = (): U => ({ input: 0, cacheWrite: 0, cacheRead: 0, output: 0, messages: 0 });
 export const addMsg = (u: U, m: Msg) => { u.input += m.input; u.cacheWrite += m.cacheWrite; u.cacheRead += m.cacheRead; u.output += m.output; u.messages++; };
 
-const cache = new Map<string, { offset: number; mtime: number; rest: Buffer; msgs: Map<string, Msg>; runs: Set<string> }>();
+type Entry = { offset: number; mtime: number; rest: Buffer; msgs: Map<string, Msg>; runs: Set<string> };
+const cache = new Map<string, Entry>();
+// The disk copy holds everything up to the last whole line; it is written a few seconds after a read moved on (a
+// copy lost to a restart only means those bytes are read again).
+const diskDir = join(import.meta.dirname, '..', 'node_modules', '.cache', 'casebook-transcripts');
+const diskFile = (file: string) => join(diskDir, createHash('sha1').update(file).digest('hex').slice(0, 16) + '.json');
+function fromDisk(file: string): Entry | undefined {
+  try {
+    const o = JSON.parse(readFileSync(diskFile(file), 'utf8'));
+    if (o.file !== file) return undefined;
+    const msgs = new Map<string, Msg>((o.msgs as [string, string, string, number, number, number, number][]).map(([id, ts, model, input, cacheWrite, cacheRead, output]) =>
+      [id, { id, t: Date.parse(ts), ts, model, input, cacheWrite, cacheRead, output }]));
+    return { offset: o.offset, mtime: o.mtime, rest: Buffer.alloc(0), msgs, runs: new Set(o.runs) };
+  } catch { return undefined; }
+}
+const dirty = new Set<string>();
+let flushTimer: NodeJS.Timeout | undefined;
+function flush() {
+  flushTimer = undefined;
+  try { mkdirSync(diskDir, { recursive: true }); } catch { return; }
+  for (const file of dirty) {
+    const c = cache.get(file); if (!c) continue;
+    const msgs = [...c.msgs.values()].map(m => [m.id, m.ts, m.model, m.input, m.cacheWrite, m.cacheRead, m.output]);
+    try { writeFileSync(diskFile(file), JSON.stringify({ file, offset: c.offset - c.rest.length, mtime: c.mtime, runs: [...c.runs], msgs })); } catch {}
+  }
+  dirty.clear();
+}
+const markDirty = (file: string) => { dirty.add(file); flushTimer ??= setTimeout(flush, 3000).unref(); };
+process.on('exit', () => { if (dirty.size) flush(); });
 // Run folder names (runs/<YYYY-MM-DD-name>/) a transcript mentions: plan-page.ts counts a session toward those runs.
 const RUN_RE = /\b(20\d\d-\d\d-\d\d-[A-Za-z0-9][A-Za-z0-9_-]*)/g;
 function readNew(file: string) {
   const st = statSync(file);
   let c = cache.get(file);
+  if (!c && (c = fromDisk(file))) cache.set(file, c);
   if (!c || st.size < c.offset) { c = { offset: 0, mtime: 0, rest: Buffer.alloc(0), msgs: new Map(), runs: new Set() }; cache.set(file, c); }
   if (st.size === c.offset && st.mtimeMs === c.mtime) return c;
   const fd = openSync(file, 'r');
@@ -39,6 +71,7 @@ function readNew(file: string) {
         cacheWrite: u.cache_creation_input_tokens ?? 0, cacheRead: u.cache_read_input_tokens ?? 0, output: u.output_tokens ?? 0 });
     }
     c.rest = Buffer.from(all.subarray(cut)); c.offset += got; c.mtime = st.mtimeMs;
+    markDirty(file);
   } finally { closeSync(fd); }
   return c;
 }

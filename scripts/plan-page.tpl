@@ -418,12 +418,25 @@ function showCase() {
   document.getElementById(`${p.id}--${s.id}`)?.querySelector(`tr[data-case="${CSS.escape(focusCase)}"]`)?.scrollIntoView({ block: 'center' });
 }
 addEventListener('hashchange', showCase);
+// The open segments are kept in the address (?open=…), so a reload or a shared link opens them again, and for this
+// browser tab, so leaving Progress for another page and coming back keeps them too.
+const VIEW = `plan-view:${DATA.feature}`;
+function saveView() {
+  const ids = [...document.querySelectorAll('details.seg[open], details.hist[open]')].map(d => d.id), s = ids.length ? `open=${ids.map(encodeURIComponent).join(',')}` : '';
+  try { history.replaceState(history.state, '', location.pathname + (s ? `?${s}` : '') + location.hash); sessionStorage.setItem(VIEW, s); } catch (e) {}
+}
+document.addEventListener('toggle', e => { if (e.target.matches?.('details.seg, details.hist')) saveView(); }, true);
 applyStatic();
 render();
+{ let s = location.search.slice(1); if (!s && !location.hash) try { s = sessionStorage.getItem(VIEW) ?? ''; } catch (e) {}
+  for (const id of (new URLSearchParams(s).get('open') ?? '').split(',').filter(Boolean)) { const d = document.getElementById(id); if (d) d.open = true; } }
 showCase();
 /*LIVE*/
-// Served by `plan-page.ts --serve`: pick up each recorded case without a reload.
-if (LIVE) setInterval(async () => {
+// Served by `plan-page.ts --serve`: pick up each recorded case without a reload. Under scripts/pages.ts the tab bar
+// redraws only when the data changed and patches only what differs; the 10 s check stays for the usage figures, which
+// come from transcripts outside the library.
+if (LIVE && window.CASEBOOK?.check) { CASEBOOK.onData = d => { DATA = d; render(); }; setInterval(() => CASEBOOK.check(true), 10000); }
+else if (LIVE) setInterval(async () => {
   try { const r = await fetch('data.json', { cache: 'no-store' }); if (r.ok) { DATA = await r.json(); render(); } } catch {}
 }, 10000);
 /*/LIVE*/

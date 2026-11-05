@@ -154,10 +154,10 @@ if (serve) {
   const server = createServer((req, res) => {
     try {
       const url = req.url ?? '/';
-      if (url === '/' || url.startsWith('/?')) {
-        const html = page({ ...buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`), usage: usageData(), live: true });
-        res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(html); return;
-      }
+      const liveData = () => ({ ...buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`), usage: usageData(), live: true });
+      if (url === '/' || url.startsWith('/?')) { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(page(liveData())); return; }
+      // the same data alone, for the in-place update (scripts/pages.ts __check)
+      if (url.startsWith('/data.json')) { res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(liveData())); return; }
       const ap = url.match(/^\/apply\/(scope|decide)$/);
       if (ap && req.method === 'POST') {
         const local = isLocal(req.socket.remoteAddress);

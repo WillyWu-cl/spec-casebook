@@ -60,6 +60,13 @@ async function serveMode(): Promise<never> {
   const server = createServer((req, res) => {
     try {
       if (req.url === '/' || req.url?.startsWith('/?')) { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(build(String(req.headers['x-casebook-stamp'] ?? builtFor))); return; }
+      // the page's data alone, for the in-place update (scripts/pages.ts __check): its `let D = …;` line (the
+      // template's first), which JSON.stringify keeps on one line
+      if (req.url?.startsWith('/data.json')) {
+        const page = build(String(req.headers['x-casebook-stamp'] ?? builtFor)), at = page.indexOf('\nlet D = ') + 9;
+        if (at < 9) throw new Error('No data line in the built page.');
+        res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(page.slice(at, page.indexOf('\n', at)).replace(/;\s*$/, '')); return;
+      }
       // board renders and tap screenshots (--files): images under library/ only
       const f = req.url?.match(/^\/files\/([^?#]+)/);
       if (f) {

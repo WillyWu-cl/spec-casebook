@@ -234,6 +234,8 @@ if (serve) {
   server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < portArg + 60) { port++; server.listen(port, host); } else throw e; });
   server.on('listening', () => {
     console.log(`Run plan (live): http://127.0.0.1:${port}/  — Ctrl+C to stop`);
+    // build once now, so the transcript scan (seconds when nothing is cached yet) is done before the first visit
+    setTimeout(() => { try { buildData(); } catch {} }, 0);
     if (!lan) return;
     for (const ifs of Object.values(networkInterfaces())) for (const i of ifs ?? []) if (i.family === 'IPv4' && !i.internal) console.log(`  LAN: http://${i.address}:${port}/`);
     console.log('  Warning: --lan has no auth; anyone on this network can read the page.');

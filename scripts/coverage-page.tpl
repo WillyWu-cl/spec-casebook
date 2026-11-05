@@ -177,7 +177,7 @@ tbody tr.go { cursor: pointer } tbody tr.go:hover { background: var(--chip-bg) }
   <table id="umtable"><thead><tr><th data-t="thRunCase"></th><th data-t="thElement"></th><th data-t="thBest"></th><th data-t="thScreen"></th></tr></thead><tbody id="umtb"></tbody></table>
 </section>
 <script>
-const D = __DATA__;
+let D = __DATA__;
 // Interface strings in English and Traditional Chinese. Design labels, board names and row text stay as written.
 const I18N = {
   en: {
@@ -743,6 +743,14 @@ function render() { header(); strip(); legend(); unmatchedList(); specFilter(); 
 for (const b of document.querySelectorAll('.lang button')) b.onclick = () => { L = b.dataset.lang; try { localStorage.setItem('coverage-lang', L); } catch {} render(); };
 // served by scripts/pages.ts: the tab bar holds the one language switch for every page
 if (window.CASEBOOK) { document.querySelector('.lang')?.remove(); addEventListener('casebook-lang', e => { L = e.detail; render(); }); }
+// served by scripts/pages.ts: changed data is drawn in place on the same board, view, filters, case and selection (a
+// selected item or case that is gone is dropped)
+if (window.CASEBOOK) CASEBOOK.onData = d => {
+  D = d; board = D.boards.find(b => b.name === board?.name) ?? D.boards.find(b => b.img) ?? D.boards[0];
+  if (kase && !D.rows[kase]) kase = caseIt = null; else if (kase) caseIt = caseItems(kase);
+  if (sel && !(sel.group ? D.groups.some(x => x.group === sel.group) : sel.note ? D.notes.some(x => x.id === sel.note) : D.arrows.some(x => x.id === sel.arrow))) sel = null;
+  $('noimg').hidden = !!board?.img; render();
+};
 board = D.boards.find(b => b.img) || D.boards[0]; openBoard(board); render(); hashCase();
 </script>
 </body>

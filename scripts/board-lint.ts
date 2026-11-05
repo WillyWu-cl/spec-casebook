@@ -38,8 +38,9 @@ const data: any = arg('data') ? read(arg('data')!) : (() => {
   const cov = spawnSync(process.execPath, [join(ROOT, 'scripts', 'coverage-page.ts'), feature, platform, ...(draft ? ['--draft', draft] : []), '--out', tmp], { encoding: 'utf8' });
   if (cov.status !== 0) { console.error(cov.stderr || cov.stdout); process.exit(2); }
   const html = readFileSync(tmp, 'utf8'); rmSync(tmp, { force: true });
-  // the page template holds the data on one line: `const D = {…};`
-  return JSON.parse(html.split('\n').find(l => l.startsWith('const D = '))!.slice('const D = '.length).replace(/;\s*$/, ''));
+  // the page template holds the data on one line: `let D = {…};` (`const` before the in-place updates, 2026-11-05)
+  const line = html.split('\n').find(l => /^(const|let) D = /.test(l))!;
+  return JSON.parse(line.slice(line.indexOf('=') + 2).replace(/;\s*$/, ''));
 })();
 const ex = join(featureDir(feature), 'specs', String(data.spec_folder).replace(/^specs\//, ''), 'extracted');
 const acksPath = join(ex, 'board-lint-acks.json');

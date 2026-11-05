@@ -236,7 +236,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 </div>
 <dialog id="dlg"></dialog>
 <script>
-const D = __DATA__;
+let D = __DATA__;
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 // Language: English or 中文 for what the page writes itself; Figma and app text stay as they are.
@@ -498,7 +498,7 @@ function planList() {
       if (x) $('pl').querySelector(`.dc[data-k="${CSS.escape(k)}"] input`)?.focus(); });
     // the reason is kept as it is typed, without drawing the list again: a redraw on blur (`change`) replaced the
     // button the user was pressing next, so that click was lost (user, 2026-11-04)
-    d.querySelector('input')?.addEventListener('input', e => { SC[k] = { ...SC[k], x: true, why: e.target.value }; if (!SC[k].d && SC[k].why === was(k).why && was(k).x) delete SC[k]; saveSc(); pbtn();
+    d.querySelector('input') && (d.querySelector('input').oninput = e => { SC[k] = { ...SC[k], x: true, why: e.target.value }; if (!SC[k].d && SC[k].why === was(k).why && was(k).x) delete SC[k]; saveSc(); pbtn();
       d.closest('.pr')?.classList.toggle('chg', changedIds().includes(k)); }); });
 }
 // Time and plan usage of the design check (design-page.ts usageData): the Progress page's table, one row per run with
@@ -553,10 +553,10 @@ function renderUsage() {
   el.innerHTML = `<h2 id="usage-h">${tx('Time and plan usage · design check', '時間與方案用量 · 設計比對')}${live ? `<span class="live"><i></i>${tx('live', '即時')}</span>` : ''}</h2>`
     + `<div class="tbl"><table>${head}<tbody>${runs.length ? body + outside + total : `<tr><td colspan="10" class="none">${tx('No design work recorded yet: the figures start with the first capture or design.ts command on a run folder.', '尚未記錄設計比對的工作：數字從執行資料夾的第一張擷取圖或第一個 design.ts 指令開始。')}</td></tr>`}</tbody></table></div>`
     + `<details class="how"${usageHow ? ' open' : ''}><summary>${tx('How these figures are computed', '這些數字怎麼算')}</summary><div class="notes">${notes.join('')}</div></details>`;
-  el.querySelector('details.how').addEventListener('toggle', e => { usageHow = e.target.open; });
+  el.querySelector('details.how').ontoggle = e => { usageHow = e.target.open; };
 }
 let usageHow = false;
-if (D.live) setInterval(async () => { try { const r = await fetch('usage.json', { cache: 'no-store' }); if (r.ok) { D.usage = await r.json(); renderUsage(); } } catch (e) {} }, 10000);
+if (D.live) setInterval(async () => { try { const r = await fetch('usage.json', { cache: 'no-store' }); if (r.ok) { D.usage = await r.json(); (window.CASEBOOK?.quiet ?? (f => f()))(renderUsage); } } catch (e) {} }, 10000);
 function render() {
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.l === L)));
   $('eyebrow').textContent = t('eyebrow'); $('h1').textContent = t('title')(D.title); $('q').placeholder = t('search');
@@ -779,6 +779,14 @@ const setLang = l => { L = l; try { localStorage.setItem('casebook-lang', l); } 
 document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.l));
 if (window.CASEBOOK) { document.querySelector('.lang')?.remove(); addEventListener('casebook-lang', e => { L = e.detail; render(); }); }
 addEventListener('hashchange', fromHash);
+// served by scripts/pages.ts: changed data is drawn in place; the open comparison is drawn again only when its screen
+// changed and nothing in it is being typed in (decisions are kept in DEC either way)
+if (window.CASEBOOK) CASEBOOK.onData = d => {
+  const was = open && JSON.stringify(D.screens?.find(s => s.id === open));
+  D = d; render();
+  if (open && $('dlg').open && JSON.stringify(D.screens?.find(s => s.id === open)) !== was && !$('dlg').contains(document.activeElement))
+    setTimeout(() => open && detail(open));   // after CASEBOOK.quiet: detail() adds listeners, so it is drawn whole
+};
 render(); fromHash();
 </script>
 </body>

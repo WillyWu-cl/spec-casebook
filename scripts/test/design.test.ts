@@ -443,7 +443,7 @@ test('page: statuses, the newest capture per screen, and the app image', () => {
   const out = join(tmpdir(), `design-test-${process.pid}.html`);
   const r = run('design-page.ts', [F, 'ios', '--out', out]);
   assert.equal(r.status, 0, r.out);
-  const data = JSON.parse(readFileSync(out, 'utf8').match(/const D = (\{.*\});\n/)![1]);
+  const data = JSON.parse(readFileSync(out, 'utf8').match(/(?:const|let) D = (\{.*\});\n/)![1]);
   const by = (id: string) => data.screens.find((s: any) => s.id === id);
   assert.equal(by('1:10').run, 'r2', 'the newest run that captured it');
   assert.equal(by('1:10').status, 'unreviewed');
@@ -485,7 +485,7 @@ test('watch: `case` arms the row\'s screens, a matching page source is captured,
   assert.ok(readFileSync(join(dir, 'design', 'activity.log'), 'utf8').includes(' status'), 'design.ts logs its work on the run');
   const out = join(tmpdir(), `design-usage-${process.pid}.html`);
   assert.equal(run('design-page.ts', [F, 'ios', '--out', out]).status, 0);
-  const u = JSON.parse(readFileSync(out, 'utf8').match(/const D = (\{.*\});\n/)![1]).usage, r9 = u.runs.find((r: any) => r.id === 'r9');
+  const u = JSON.parse(readFileSync(out, 'utf8').match(/(?:const|let) D = (\{.*\});\n/)![1]).usage, r9 = u.runs.find((r: any) => r.id === 'r9');
   assert.deepEqual([r9.kind, r9.auto, r9.hand, r9.run], ['pass', 1, 0, null]);
   assert.equal(r9.design.tokens.messages, 0);
   rmSync(out); rmSync(dir, { recursive: true, force: true });
