@@ -145,7 +145,12 @@ data: the full dump locally (`<id>.viewdump.json`, git-ignored) and the texts an
 (`<id>.views.json`, shared with the capture). The check then takes each matched text's colour (ΔE over 6), size in sp
 against Figma's points (6 % and 0.5 sp), weight (100 apart) and line count, and each fill's colour and corner radius
 (over 2 dp) from it, marked `src: app` (「app data」 on the Design tab); OCR and pixels only where the view data has no
-match. Sizes are compared in sp, before the phone's font scale; a phone not at font scale 1.0 (the SM-A5360 is at 1.1)
+match. **Set and drawn (user, 2026-11-05):** every colour the check compares is also sampled as drawn, on the capture
+and on the Figma image, and a colour item lists both on each side: Figma's fill with its token (`Text/PimaryHigh`) and
+the colour on Figma's image; the app's value with its resource (`@color/textPrimary`, a view's combined alpha when
+below 1) and the colour on the screenshot (`figma.drawn`, `app.drawn`, `delta.dE_drawn`). An app value the screen does
+not show (alpha, a layer over the view, another view matched) is named on the item, and `check` prints how many set
+values it checked and which were drawn differently: a sanity check on the view data's matching. Sizes are compared in sp, before the phone's font scale; a phone not at font scale 1.0 (the SM-A5360 is at 1.1)
 wraps differently, which the `lines` note says.
 `node scripts/android-viewdump.ts` gets what no outside dump holds, from inside the app: each view's text colour,
 size (px and sp), weight (100–900) and typeface, line count, alpha and visibility, background and outline, elevation,

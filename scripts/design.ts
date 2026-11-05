@@ -30,7 +30,8 @@
 // weight and lines and each fill's colour and corner radius from the app's own view data taken with the capture
 // (lib/android-views.ts, `src: app` on the candidate; REQ-086); otherwise the screenshot gives colours as drawn and, by OCR (macOS Vision,
 // scripts/ocr-images.swift, cached in committed files), only what no dump holds: glyph bounds for lines, size and
-// position, and a cross-check of the layers (details at measure() and ocrPass()).
+// position, and a cross-check of the layers (details at measure() and ocrPass()). Every colour compared is also
+// sampled as drawn on both images and listed beside the value set (`drawn`; user, 2026-11-05).
 //   state     under 40 % of the frame's short texts were found (another state), the keyboard is up where the frame has
 //             it down (or the other way), or the screen kept moving while it was captured                  major
 //   appearance the frame is dark and the capture light (or the other way)                                     major
@@ -355,18 +356,24 @@ function measure() {
         && Math.abs(e.box[0] + e.box[2] / 2 - c[0]) <= tol && Math.abs(e.box[1] + e.box[3] / 2 - c[1]) <= tol)
         .sort((a, b) => Math.hypot(a.box[0] + a.box[2] / 2 - c[0], a.box[1] + a.box[3] / 2 - c[1]) - Math.hypot(b.box[0] + b.box[2] / 2 - c[0], b.box[1] + b.box[3] / 2 - c[1]))[0];
       return e ? e.box : w; };
+    // every colour compared is also sampled as drawn on both images (the Figma crop and the capture), so a candidate
+    // lists the value set (Figma's fill and token, the app's own view data) beside the colour on screen (user, 2026-11-05)
+    const fc = figmaCrop(scr, out), figImg = fc ? { png: fc.png, w: fc.box ? fc.board_w : scr.abs[2], dx: fc.box?.[0] ?? 0, dy: fc.box?.[1] ?? 0 } : null;
     for (const f of fig.fills) {
       const at = snap(placed(f.box)), vf = V ? viewFillOf(V, at, 40 / k) : null;
       // the app's own fill and corner radius where a view's background covers the shape's place
-      if (vf) { cands.push(...exactFill(f, vf, V!)); continue; }
-      samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, figBox: f.box, box: at });
+      if (vf) { cands.push(...exactFill(f, vf, V!));
+        samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, variable: f.variable, figBox: f.box, box: vf.box, set: vf.color, fig: figImg }); continue; }
+      samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, variable: f.variable, figBox: f.box, box: at, fig: figImg });
     }
     // a text's colour on its glyphs when read (a button's view box holds the button's fill too), else its view box
     for (const p of base.filter(p => p.how === 'exact' && p.t.color) as any[]) {
       // the app's own text colour when the view data has it
+      const smp = { kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, variable: p.t.variable, figBox: p.t.box, box: p.ga ? union(p.ga).map((v: number) => v / k) : p.a.box, fig: figImg };
       if (p.vt?.color) { const d = deltaE(p.t.color, rgb(p.vt.color)); if (d > 6) cands.push({ id: `colour:${p.t.node}`, kind: 'colour', severity: 'minor', src: 'app', note: "text colour, the app's own value",
-        figma: { node: p.t.node, name: p.t.text, color: p.t.color, box: r1(p.t.box) }, app: { color: p.vt.color }, delta: { dE: Math.round(d) } }); continue; }
-      samples.push({ kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, figBox: p.t.box, box: p.ga ? union(p.ga).map((v: number) => v / k) : p.a.box });
+        figma: { node: p.t.node, name: p.t.text, color: p.t.color, box: r1(p.t.box) }, app: { color: p.vt.color, ...(p.vt.res ? { res: p.vt.res } : {}), ...(p.vt.alpha ? { alpha: p.vt.alpha } : {}) }, delta: { dE: Math.round(d) } });
+        samples.push({ ...smp, set: p.vt.color }); continue; }
+      samples.push(smp);
     }
     // recheck: the bugs settled on an earlier build, still measured here or gone
     let recheck: any = null;
@@ -388,14 +395,32 @@ function measure() {
   }
   // one python call samples every shape (the most common colour inside it) and every text (the pixels farthest
   // from its background), and draws the sheets
-  const py = python({ shares, samples: samples.map(s => ({ ...s, png: imageOf(caps.get(s.screen).png), win: caps.get(s.screen).win })), sheets: sheets.map(s => ({ ...s, cands: results.find(r => r.id === s.screen).candidates })) });
+  // each sample twice: on the capture (as the app draws it) and on the Figma crop (as Figma draws it)
+  const py = python({ shares, samples: samples.flatMap(s => [{ kind: s.kind, box: s.box, png: imageOf(caps.get(s.screen).png), win: caps.get(s.screen).win },
+    s.fig ? { kind: s.kind, box: [s.figBox[0] + s.fig.dx, s.figBox[1] + s.fig.dy, s.figBox[2], s.figBox[3]], png: s.fig.png, win: { w: s.fig.w } } : { kind: 'none' }]),
+    sheets: sheets.map(s => ({ ...s, cands: results.find(r => r.id === s.screen).candidates })) });
+  const drift: string[] = []; let setChecked = 0;
   for (const [i, s] of samples.entries()) {
-    const got = py.colours?.[i]; if (!got) continue;
-    const d = deltaE(s.color, got), r = results.find(r => r.id === s.screen);
+    const got = py.colours?.[2 * i], figDrawn = py.colours?.[2 * i + 1], r = results.find(r => r.id === s.screen);
     // anti-aliased glyphs never reach the full colour, so texts get more room
-    if (d > (s.kind === 'text' ? 18 : 12) && !r.candidates.some((c: Cand) => c.id === `colour:${s.node}`))
-      r.candidates.push({ id: `colour:${s.node}`, kind: 'colour', severity: 'minor', note: s.kind === 'text' ? 'text colour' : undefined, figma: { node: s.node, name: s.name, color: s.color, box: r1(s.figBox) }, app: { color: got }, delta: { dE: Math.round(d) } });
+    const room = s.kind === 'text' ? 18 : 12, c = r.candidates.find((c: Cand) => c.id === `colour:${s.node}`);
+    const figma = { node: s.node, name: s.name, color: s.color, ...(s.variable ? { variable: s.variable } : {}), ...(figDrawn ? { drawn: figDrawn } : {}), box: r1(s.figBox) };
+    if (s.set) {
+      // the app's own value: the drawn colour is listed beside it, and a set value the screen does not show (alpha, a
+      // layer over the view, or the wrong view matched) is named on the candidate and in the summary
+      if (!got) continue; setChecked++;
+      const off = deltaE(rgb(s.set), got) > room;
+      if (off) drift.push(`${s.screen} ${JSON.stringify(s.name.replace(/\s+/g, ' ').slice(0, 30))} set ${s.set} drawn ${got}`);
+      if (c) { c.figma = { ...figma, box: c.figma.box }; c.app = { ...c.app, drawn: got }; c.delta = { ...c.delta, dE_drawn: Math.round(deltaE(figDrawn ?? s.color, got)) };
+        if (off) c.note = `${c.note}; drawn ${got} is not the value set (alpha, a layer over it, or another view)`; }
+      continue;
+    }
+    if (!got) continue;
+    const d = deltaE(s.color, got);
+    if (d > room && !c)
+      r.candidates.push({ id: `colour:${s.node}`, kind: 'colour', severity: 'minor', note: s.kind === 'text' ? 'text colour' : undefined, figma, app: { color: got }, delta: { dE: Math.round(d) } });
   }
+  if (setChecked) console.log(`app colours: ${setChecked} set values checked against the screen, ${drift.length} drawn differently${drift.length ? `:\n  ${drift.join('\n  ')}` : ''}`);
   const all = [...prev, ...results].sort((a, b) => plan.screens.findIndex((s: any) => s.id === a.id) - plan.screens.findIndex((s: any) => s.id === b.id));
   const fontWidth = sizeCands(all, results);
   // one screen per line (writeJsonRows): the file is rewritten on every check and committed with the run
@@ -446,8 +471,8 @@ function exactText(t: any, vt: ViewText, V: Views, tb: number[], ab: number[]): 
 }
 // fill colour (ΔE over 6) and corner radius (over 2 dp; a fully round shape's radius only as round) from the app's view
 function exactFill(f: any, vf: ViewFill, V: Views): Cand[] {
-  const out: Cand[] = [], d = deltaE(f.color, rgb(vf.color)), box = r1(f.box), appBox = r1(vf.box.map(v => v / V.density));
-  if (d > 6) out.push({ id: `colour:${f.node}`, kind: 'colour', severity: 'minor', src: 'app', note: "fill, the app's own value", figma: { node: f.node, name: f.name, color: f.color, box }, app: { color: vf.color, box: appBox }, delta: { dE: Math.round(d) } } as Cand);
+  const out: Cand[] = [], d = deltaE(f.color, rgb(vf.color)), box = r1(f.box), appBox = r1(vf.box); // view boxes are screen pixels, like every Android box here (not dp)
+  if (d > 6) out.push({ id: `colour:${f.node}`, kind: 'colour', severity: 'minor', src: 'app', note: "fill, the app's own value", figma: { node: f.node, name: f.name, color: f.color, box }, app: { color: vf.color, ...(vf.res ? { res: vf.res } : {}), ...(vf.alpha ? { alpha: vf.alpha } : {}), box: appBox }, delta: { dE: Math.round(d) } } as Cand);
   if (typeof f.radius === 'number' && vf.radius !== null) { const r = vf.radius / V.density, round = (x: number, h: number) => x >= h / 2 - 0.5;
     if (Math.abs(r - f.radius) > 2 && !(round(r, vf.box[3] / V.density) && round(f.radius, f.box[3])))
       out.push({ id: `radius:${f.node}`, kind: 'radius', severity: 'minor', src: 'app', note: `corner radius ${Math.round(r * 10) / 10} dp in the app, ${f.radius} in Figma`, figma: { node: f.node, name: f.name, box }, app: { box: appBox }, delta: { app: Math.round(r * 10) / 10, figma: f.radius } } as Cand); }
@@ -572,6 +597,7 @@ def img(p):
     return imgs[p]
 def dist(a, b): return sum((a[i] - b[i]) ** 2 for i in range(3))
 for s in job["samples"]:
+    if s["kind"] == "none": res["colours"].append(None); continue
     try:
         im = img(s["png"]); r = im.width / s["win"]["w"]; x, y, w, h = [v * r for v in s["box"]]
         if s["kind"] == "text":

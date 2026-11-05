@@ -73,6 +73,8 @@ library/*/*/*/ebugs/*/full_logs/
 # Unpacked eBug log extracts (generators write them, may hold full session logs); the reviewed ZIP beside them is shared
 library/*/*/*/ebugs/*/blueprint-extract/
 
+# The Design tab's static page (design-page.ts without --serve) embeds every capture: rebuilt on demand, stays local
+library/*/*/*/design/design.html
 # Coverage pages embed spec renders and run screenshots (local only, like the images themselves)
 library/*/*/*/coverage.html
 

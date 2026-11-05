@@ -110,6 +110,10 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .it q { quotes: "「" "」"; overflow-wrap: anywhere }
 .it .note { color: var(--muted) }
 .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--line); vertical-align: -1px }
+.ct { border-collapse: collapse; margin: 4px 0; font-size: 12px }
+.ct th { text-align: left; font-weight: 500; color: var(--muted, inherit); opacity: .75; padding: 2px 12px 2px 0 }
+.ct td { padding: 2px 12px 2px 0; vertical-align: top; white-space: nowrap }
+.ct td code { display: block; font-size: 11px; opacity: .75; white-space: normal }
 .more { font-size: 0.82rem; color: var(--muted) }
 .dec { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; margin-top: 2px }
 .dec button { font: 600 0.74rem var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 5px; padding: 2px 8px; cursor: pointer }
@@ -253,7 +257,7 @@ const T = {
     fitNote: (t, b) => `Fit offset: top ${t} pt, bottom ${b} pt`, allKinds: 'All differences', copy: n => `Copy decisions (${n})`, copied: 'Copied',
     bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', boxes: 'Boxes',
     doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click to see it full size', dwhy: 'Why it is not a problem (required)', dwhyOpt: 'Note (optional)',
-    needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`, srcApp: 'app data', srcAppT: "Read from the app's own view data (exact), not from the screenshot",
+    needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`, colSet: 'Set to', colDrawn: 'On screen', colDrawnT: 'The colour as drawn on the image, sampled from the pixels', colDiff: (a, b) => `Difference ΔE ${a} as set${b != null ? `, ${b} on screen` : ''}`, srcApp: 'app data', srcAppT: "Read from the app's own view data (exact), not from the screenshot",
     viewsNote: (m, n, sc) => `App view data: ${m} of the matched texts read exactly (${n} texts in the dump)${sc !== 1 ? `; the phone's font scale is ${sc}` : ''}.`,
     hiddenNote: n => `${n} text(s) of the page source are not on the screen (under another layer, or a button's accessibility name) and were left out.`,
     noOcr: 'The screenshot was not read (OCR runs on macOS): lines, text size and hidden texts come from the view boxes.',
@@ -296,7 +300,7 @@ const T = {
     fitNote: (t, b) => `對齊位移：上 ${t} pt，下 ${b} pt`, allKinds: '全部差異', copy: n => `複製決定（${n}）`, copied: '已複製',
     bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', boxes: '框線',
     doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點一下看原尺寸', dwhy: '為什麼不是問題（必填）', dwhyOpt: '備註（選填）',
-    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, srcApp: 'App 資料', srcAppT: '取自 App 自身的 view 資料（精確值），不是截圖',
+    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, colSet: '設定值', colDrawn: '畫面上', colDrawnT: '圖上實際畫出的顏色，取自像素', colDiff: (a, b) => `差異 ΔE：設定值 ${a}${b != null ? `，畫面上 ${b}` : ''}`, srcApp: 'App 資料', srcAppT: '取自 App 自身的 view 資料（精確值），不是截圖',
     viewsNote: (m, n, sc) => `App view 資料：配對的文字中 ${m} 段取得精確值（dump 共 ${n} 段文字）${sc !== 1 ? `；手機字型縮放為 ${sc}` : ''}。`,
     hiddenNote: n => `頁面原始碼中有 ${n} 段文字不在畫面上（在其他圖層下，或是按鈕的無障礙名稱），已排除。`,
     noOcr: '擷取圖未經文字辨識（OCR 只在 macOS 執行）：行數、文字大小與隱藏文字改用元件框判斷。',
@@ -668,7 +672,15 @@ function detail(id) {
   const boxes = (side, w, h, out = []) => `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${out.map(o => `<rect class="outa" x="${o.box[0]}" y="${o.box[1]}" width="${o.box[2]}" height="${o.box[3]}"><title>${esc(t('outT'))}: ${esc(o.name)}</title></rect>`).join('')}${shown.map((it, n) => [it[side]?.box, n, it]).filter(x => x[0])
     .sort((a, c) => c[0][2] * c[0][3] - a[0][2] * a[0][3]).map(([b, n, it]) =>
       `<rect class="box" data-n="${n}" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}" style="stroke:${VC(it.verdict)}"><title>${n + 1} · ${esc(KN[L][it.kind] ?? it.kind)}</title></rect>`).join('')}</svg>`;
-  const txt = (o) => o?.text ? `<q>${esc(o.text.length > 120 ? o.text.slice(0, 120) + '…' : o.text)}</q>` : o?.color ? `<span class="sw" style="background:${esc(o.color)}"></span> ${esc(o.color)}` : o?.name ? `<code>${esc(o.name)}</code>` : '';
+  // a colour as set (Figma's fill and its token, or the app's own value) and as drawn on the image, when sampled
+  const hex = (c) => (c.length === 9 ? '#' + c.slice(3) : c).toUpperCase(), alphaOf = (c) => c.length === 9 && !/^#ff/i.test(c) ? ` α ${Math.round(parseInt(c.slice(1, 3), 16) / 2.55)}%` : '';
+  const sw = (c) => `<span class="sw" style="background:${esc(hex(c))}"></span> ${esc(hex(c))}${alphaOf(c)}`;
+  // a colour item with both values: one row per side, the value set (with its token or resource) and the colour on screen
+  const colourTable = (it) => `<table class="ct"><tr><th></th><th>${esc(t('colSet'))}</th><th title="${esc(t('colDrawnT'))}">${esc(t('colDrawn'))}</th></tr>${[['figma', it.figma], ['app', it.app]].filter(([, o]) => o?.color).map(([k, o]) =>
+    `<tr><th>${esc(t(k))}</th><td>${sw(o.color)}${o.variable || o.res ? `<code>${esc((o.variable || o.res).replace(/^Variable\//, ''))}</code>` : ''}${o.alpha ? `<code>α ${o.alpha}</code>` : ''}</td><td>${o.drawn ? sw(o.drawn) : '—'}</td></tr>`).join('')}</table>`;
+  const name = (o) => `${o.variable || o.res ? ` <code>${esc((o.variable || o.res).replace(/^Variable\//, ''))}</code>` : ''}${o.alpha ? ` α ${o.alpha}` : ''}`;
+  const swatches = (o) => o.drawn ? `${esc(t('colSet'))} ${sw(o.color)}${name(o)} · <span title="${esc(t('colDrawnT'))}">${esc(t('colDrawn'))}</span> ${sw(o.drawn)}` : `${sw(o.color)}${name(o)}`;
+  const txt = (o) => o?.text ? `<q>${esc(o.text.length > 120 ? o.text.slice(0, 120) + '…' : o.text)}</q>` : o?.color ? swatches(o) : o?.name ? `<code>${esc(o.name)}</code>` : '';
   const r = s.route, link = (p, h, l) => PAGES[p] ? `<a href="${PAGES[p]}#${h}">${esc(l)}</a>` : '';
   const keep = open === id && $('dlg').open ? ($('dlg').querySelector('.rp')?.scrollTop ?? 0) : 0;
   const figmaUrl = D.file ? `https://www.figma.com/design/${D.file}?node-id=${encodeURIComponent(s.id.replace(':', '-'))}` : '';
@@ -697,8 +709,9 @@ function detail(id) {
     <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" data-v="${esc(v)}"${folded.has(v) ? '' : ' open'}><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)};--vc:${VC(it.verdict)}">
       <div class="h"><span class="num" style="background:${VC(it.verdict)}">${n + 1}</span><span class="k">${esc(KN[L][it.kind] ?? it.kind)}</span>
       ${it.src === 'app' ? `<span class="srcapp" title="${esc(t('srcAppT'))}">${esc(t('srcApp'))}</span>` : ''}${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
-      ${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
-      ${it.delta ? `<div class="more">${esc(Object.entries(it.delta).map(([a, b]) => `${a} ${b}`).join(' · '))}</div>` : ''}
+      ${it.kind === 'colour' && (it.figma?.drawn || it.app?.drawn) ? colourTable(it) + (it.delta?.dE != null ? `<div class="more">${esc(t('colDiff')(it.delta.dE, it.delta.dE_drawn))}</div>` : '')
+      : `${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
+      ${it.delta ? `<div class="more">${esc(Object.entries(it.delta).map(([a, b]) => `${a} ${b}`).join(' · '))}</div>` : ''}`}
       ${it.split ? `<div class="note">${esc(splitL(it.split))}</div>` : ''}${it.decided ? `<div class="note">${esc(decidedL(it.decided))}</div>` : ''}
       ${s.run ? decRow(s, it) : ''}${lang(it, 'note') ? `<div class="note">${esc(lang(it, 'note'))}</div>` : ''}${lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note">${esc(lang(it, 'reviewer'))}</div>` : ''}</div>`).join('')}</details>`).join('')}
     ${info.length ? `<button type="button" class="chip" id="info">${esc(showInfo ? t('hideInfo') : t('showInfo'))} · ${esc(t('info')(info.length))}</button>` : ''}</div>

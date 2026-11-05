@@ -465,3 +465,143 @@ R-051, R-071, R-158, R-249, R-262, R-264 changed, R-052 replaced, R-332 – R-34
   another page; Full Edit, Export and download disabled at 40 %; scene thumbnails switch the preview.
 - New: export failure toast 「Couldn't save your video. Try again.」 with buttons restored; iOS photo access denied →
   toast 「Allow Photos access in Settings to save your video.」
+
+## PM / Design — Figma changes found 2026-11-05 (change check; read through Figma MCP, PM as qa1, Design as qa-dm)
+
+How it was read: the change check flagged 18 PM groups, 2 Design boards and 7 new boards. Full inventory re-reads went
+through for ec, mf11, mf13, mf21, mf22, mf34, p4k (PM) and d3 (Design video, split from d3; d3b keeps the 10/28 read of
+Recent Task, MX, 1005_Chat, 1016_Chat navigation) and d4 (new); the rest dropped mid-call (figma-pm / figma-design
+transport) and are owed. Their words were read with small text-only calls instead, so the rules below are complete;
+their controls, arrows and screenshots are not (see the update plan, "Left undone"). MX: unchanged since 10/29.
+
+### 10/29 + 10/30 Regenerate Clip / Image one at a time (new board 4784:70878, §13.25; PDR-A 16.8.0 AI Agent bug)
+- The LLM runs one clip at a time. While a clip regenerates, every other scene's 「Regenerate Clip」 shows at 40 %
+  opacity but stays tappable (not disabled, so the user learns why). Tap → toast 「Another clip is regenerating. Try
+  again when it's done.」; nothing is sent, nothing charged, the edited prompt is kept. When the running clip ends
+  (success or failure) the buttons return to normal. Applies to every single-clip regeneration entry (Fix Scene → Edit,
+  scene edit page).
+- 10/30, storyboard images, same rule: while one image regenerates, other scenes' 「Regenerate Image」 (scene edit page)
+  and the ↻ on storyboard card thumbnails show at 40 % but stay tappable; tap → toast 「Another image is regenerating.
+  Try again when it's done.」, not sent, not charged, edited description kept. 「Edit」 on an error card is NOT disabled
+  and opens the edit page as usual (the current build disables it and must change). Normal again once the running
+  image ends.
+
+### 11/3 「Fix these issues」 card copy (new board 4982:27069)
+- Title (all cases): 「Fix {n} scenes to export your drama.」 (one: 「Fix 1 scene to export your drama.」); the title
+  gives only the count, no scene numbers. Button stays 「Fix scenes」.
+- Body by cause: A moderation only (4xxx): 「Their descriptions may not meet our terms of service, such as violence,
+  NSFW content, or content involving minors.」 (one: 「Its description may not meet…」). B server busy only (5xxx):
+  「Our servers were busy. Try generating them again.」 (one: 「…Try generating it again.」). C mixed: two lines with
+  their own counts, 「{a} scenes may not meet our terms of service, such as violence, NSFW content, or content involving
+  minors. Edit their descriptions.」 / 「{b} scenes failed because our servers were busy. Try them again.」 ({n} = {a} +
+  {b}; scene / its description / it when a count is 1).
+- 「terms of service」 is underlined and opens the terms page (as the 4xxx dialog). After 「Fix scenes」 the scene list
+  marks each failure's cause (moderation → edit the description; server busy → Retry).
+- RD to confirm: can v1 tell 4xxx from 5xxx? If not, the card uses the generic 「Some scenes couldn't be generated.
+  Edit the description or try again.」
+- The chat line above stays 「{n} scenes couldn't be generated. Your credits have been refunded. Tap Edit to
+  regenerate, or tell me what to change.」. Design `video` board (redrawn, read 11/5) draws the same new title and the
+  moderation body, so Design and PM agree.
+
+### 11/3 Character Library filter with no result (new board 5014:26418, §13.27)
+- With filters that match no character: 「Create my character」 stays the first tile (not filtered); below it the empty
+  state 「No characters match this filter」 / 「Try a different filter, or create your own character.」 / button
+  「Clear filters」.
+- 「Clear filters」 clears every filter chip, the full list returns and the filter icon goes back to its unapplied
+  state. Removing the chips one by one with × also works; as soon as there is a result the list shows as usual.
+- Applies to every Character Library tab, Mine included.
+
+### 11/4 Chat scrolling, four cases (new board 5128:8 + `pm-1002-update` §13.2 rewritten 11/4, comment #247)
+- ① Entering a chat, or coming back to it from Character Library, Full Edit, History or the scene edit page → always
+  at the bottom (newest message). Opening a drama from recent tasks (History) also lands at the bottom.
+- ② Sending a message → that user message scrolls to the top of the screen (blank space below when the content is
+  short); Iris's reply grows below it and the view does not follow; past the screen, ↓ shows at the bottom.
+  Tapping Generate counts as sending: it sends the card's Answer text (DramaQuestionsAndAnswers entries that have an
+  Answer, e.g. 「Create storyboard」, 「Create characters」, 「Update characters」) as a user message, pinned to the top
+  the same way (`pm-1002-update` C2: the card disappears, 「Create storyboard」 is sent and pinned, then the AI reply +
+  skeleton; credits update once charged). This answers the 10/22 user-bubble question (iOS Q-23 / Android Q-A8) for
+  the action cards.
+- ③ User has not touched the view: a result replaces its skeleton in place with no scroll; a following new message
+  scrolls so its start comes into view, not straight to the bottom.
+- ④ User dragged / scrolled → no auto-scroll at all; new content off screen shows ↓; tapping ↓, scrolling back to the
+  bottom, or sending / tapping Generate again restores ① – ③.
+- ⑤ New AI results (regenerated storyboard or character cards included) always come as a new message after the user's
+  request, never written into the older message above. ↓ carries no unread count; its style follows the design spec.
+
+### 11/4 Multiple failed scenes: fix the first one first (new board 5212:27212, §13.28)
+- A scene counts as failed when its storyboard image or its location reference image failed.
+- When it shows: entering the edit page of a failed scene, or moving to a failed scene with ◀ ▶, while an earlier
+  failed scene exists. Dialog 「Fix Scene {n} first?」 / 「{count} scenes couldn't be created. Start with Scene {n},
+  since later scenes may use its images.」 / 「Not now」 and 「Go to Scene {n}」 (blue).
+- 「Go to Scene {n}」 switches to the earliest failed scene. 「Not now」 stays on the current scene, which can be edited
+  and regenerated as usual; the dialog does not show again during this edit session, only the next time the edit page
+  is entered.
+- No dialog when: the current scene is the earliest failed one / only one scene failed / the earliest failed scene is
+  regenerating. Once the earliest is fixed, the next failed scene becomes the earliest. Entering from the chat error's
+  「Edit」 already lands on the first failed scene (§13.7), so no dialog.
+
+### 11/4 Uncharged AI replies can be paused (`pm-1022-leave` 4422:2, §13.24 addition, comment #246)
+- AI replies that cost nothing — Iris's normal replies, outline generation, storyboard pricing — may be paused with ■;
+  stopping ends this reply and keeps what was already shown. Rule: charged cannot pause, uncharged can.
+- Unchanged on the board: the Generate-started jobs (storyboard, video, storyboard update in chat, video regeneration)
+  show no ■; the §13.24 two-stage list still does not name the chat character update (Android Q-A3 stays open; TC-351
+  keeps 「Stop and lose your credits?」).
+
+### 11/3 Download: full-screen loading (`pm-update-5` 3325:18429, §8)
+- Tapping download shows a full-screen loading: the whole screen under a black 60 % mask with a spinner in the middle,
+  no dialog (11/3 change; before, the download button itself turned into a spinner). Done → toast 「Saved to your
+  device.」. With captions on, the video carries them.
+
+### 10/30 Character generation time hint (`pm-update-9` 4012:21397)
+- The generating screen's hint (chips below) is now 「This may take a moment. Keep this screen open.」 with no time
+  given (10/30: the time is hard to estimate); it replaces 「This usually takes about 1 minute.」. Same subtitle on
+  Finish your characters (「Creating {n} characters…」 + 「This may take a moment. Keep this screen open.」).
+
+### Other changed boards (11/5): nothing new to test
+- `pm-update-11` (4294:25661): an X → 「Discard this character?」 arrow drawn over the board (4325:27346) was missing
+  from the read; now in arrows.json (R-248). Its mockup texts differ from the PDF OCR only as noted 11/04 (REQ-077).
+- `pm-main-flow-11` (mf11), `-13`, `-21`, `-22`, `-34`, `pm-error-handling-c`: re-read; changes are arrows drawn over the
+  boards that the 10/28 reads missed and layout; their notes say what board-notes already has (Surprise me, 1000-char
+  limit, error handling).
+- Design `main flow` (2778:127318): its texts (status lines 「Drafting the storyline...」, 「Building the cast...」,
+  「Creating your scene...」, 「show skeleton loader」, Video model & Length frames) are the ones the PDF OCR already
+  had; the change is layout only as far as the text read shows (full re-read owed).
+- Design `video` (2820:113981): adds the 11/3 「Fix {n} scenes to export your drama.」 card (above).
+- Design, two new frames named 「Template」 (5756:33097, 5756:33322, section UI_26.10GM, no date): the all-categories
+  page drawn two ways — 3 covers per row (100 × 165, categories Office Romance, Fantasy World, Urban Romance, Family &
+  Life) and 4 per row (92 wide; every heading still the placeholder 「Office Romance」). No note says which one ships;
+  inventoried as d4 「Template categories 3 per row」 / 「… 4 per row」. Open question (R-006).
+
+## PM — 11/5 board 「角色名人圖被擋」 and the 11/3 – 11/4 arrows (read 2026-11-05 through Figma MCP as qa1, REQ-095; rows REQ-096)
+
+Read by the REQ-095 re-reads: q12 (`5014:26418`), q13 (`5212:27212`) and q14, a board PM added on 11/5
+(`5318:2605` 「11/5 update — 角色生成後被判定是名人：不自動退點，引導 Send Feedback 找 CS（spec §13.26）」, board name
+`pm-1105-celebrity-blocked`). PM-only: no Design frame yet. No board screenshots yet (board-lint: not checked).
+
+### 11/5 Character blocked as a real public figure after generation (new board 5318:2605, §13.26)
+- Two screens: A 「Create my character_celebrity blocked」 (the Character Library with the creating sheet, 「This may
+  take a moment. Keep this screen open.」, 「Generating」, 「Cancel」, under the dialog) and B 「Send Feedback_AI Issues
+  (celebrity, pre-filled)」. Arrow 5318:2806 「Send Feedback」 → B.
+- Only for character generation: Make your character, Finish your characters and changing a character in chat.
+- After generation the server judges the character a real public figure: no automatic refund; the user is guided to
+  CS. The character is not shown and not saved to Mine (A: 「角色不顯示、不存進 Mine」).
+- Dialog: title 「This image can't be used」, body 「It looks like a real public figure. Send us feedback and our
+  support team will check your credits.」, buttons 「Close」 / 「Send Feedback」 (blue).
+- Close: back to the Make your character form, input kept; the description can be changed and generated again; the
+  character is not saved to Mine. The board does not say what Close does in Finish your characters or in chat
+  (no form there): iOS Q-37 / Android Q-A23.
+- Send Feedback: opens the AI Issues tab pre-filled — AI Feature Name 「AI Mini Drama · Character generation」;
+  What is the issue? 「My character was blocked because it looked like a real public figure, but my credits were used.
+  Please help me check. Time: {date & time}」; What Prompt did you use? = the character description the user entered
+  (mockup 「{The character description I entered}」); e-mail pre-filled when signed in; the task ID sent hidden with
+  the report.
+- Not the same as the reference-photo check before generating (main flow, 「This photo can't be used」 / 「It looks
+  like a real public figure. Please try another photo.」, R-046): this one judges the generated image, after the
+  charge. The 10/16 timeout dialog (R-246, R-303) is the same Send Feedback pattern with its own issue text.
+
+### Flow arrows of the 11/3 – 11/4 boards (read 11/5)
+- 5014:27027 (`pm-1103-library-filter-empty`): 「Clear filters」 on the empty result → 「Character Library_filters
+  cleared」, the full list (R-491).
+- 5212:27475 (`pm-1104-multi-scene-fail`): 「Go to Scene 2」 in 「Fix Scene 2 first?」 on Scene 4 → 「Scene edit_Go to
+  Scene 2」 (R-492).
+- 5212:27476 (same board): 「Not now」 → 「Scene edit_Not now → stay on Scene 4」 (R-492).

@@ -37,6 +37,11 @@
 //   of board and overlays and the smallest section or frame holding that box ('' = only the page), and the boards on
 //   the page that no entry covers, so a whole file is checked in one small call.
 const PAGE = __PAGE__, BOARDS = __BOARDS__;
+// Time budget (2026-11-05): a call that runs past the MCP connection's limit loses its whole reply ("transport dropped
+// mid-call"), and loading a large page alone takes ~5 s. Past BUDGET ms the read stops with an error that does come
+// back, naming the stage, so the group is split (figma-check.ts --split) instead of retried as it is.
+const T0 = Date.now(), BUDGET = 40000;
+const late = stage => { if (Date.now() - T0 > BUDGET) throw new Error(`INCOMPLETE after ${stage}: ${Date.now() - T0} ms; split this group into smaller reads`); };
 const page = await figma.getNodeByIdAsync(PAGE);
 await figma.setCurrentPageAsync(page);
 const R = n => Math.round(n);
@@ -59,27 +64,41 @@ const phoneSized = n => (n.type === 'FRAME' || n.type === 'INSTANCE' || n.type =
 const isPhone = n => phoneSized(n) && (n.height <= 1000 || (n.height <= 6000 && !('findOne' in n && n.findOne(c => phoneSized(c) && c.height <= 1000))));
 // how much of a node the design actually draws (0–1): hidden, transparent or layer-blurred ancestors draw nothing;
 // clipping frames and masks above it cut its box (a screen parked outside its board, scroll content past the frame)
+// Every ancestor's part is computed once and kept by node id (2026-11-05: walking every ancestor and searching each
+// parent's child list per call took 4 s per 1,100 nodes, and the full read calls it several times per node, so reads
+// of real boards ran past the MCP connection's time limit and their replies were lost).
+const hiddenSelf = q => q.visible === false || ('opacity' in q && q.opacity < 0.05)
+  || ('effects' in q && q.effects.some(e => e.visible !== false && e.type === 'LAYER_BLUR' && e.radius >= 4));
+const meet = (r, c) => !c ? r : !r ? [c.x, c.y, c.x + c.width, c.y + c.height]
+  : [Math.max(r[0], c.x), Math.max(r[1], c.y), Math.min(r[2], c.x + c.width), Math.min(r[3], c.y + c.height)];
+const maskMemo = new Map(), inhMemo = new Map();
+// the masks drawn before each child of p, as one cut per child id
+const masksBefore = q => {
+  const p = q.parent; if (!p || !('children' in p)) return null;
+  let m = maskMemo.get(p.id);
+  if (!m) { m = new Map(); let r = null; for (const c of p.children) { m.set(c.id, r); if ('isMask' in c && c.isMask && c.visible !== false) r = meet(r, c.absoluteBoundingBox); } maskMemo.set(p.id, m); }
+  return m.get(q.id) ?? null;
+};
+// what q passes on to everything inside it: hidden, and the cut of its own clip, its ancestors' clips and masks
+const inherit = q => {
+  if (!q || q.type === 'PAGE') return { dead: false, rect: null };
+  let v = inhMemo.get(q.id); if (v) return v;
+  const up = inherit(q.parent), mb = masksBefore(q);
+  let rect = up.rect; if (mb) rect = meet(rect, { x: mb[0], y: mb[1], width: mb[2] - mb[0], height: mb[3] - mb[1] });
+  if (q.clipsContent) rect = meet(rect, q.absoluteBoundingBox);
+  v = { dead: up.dead || hiddenSelf(q), rect }; inhMemo.set(q.id, v); return v;
+};
 const shown = n => {
   const b = n.absoluteBoundingBox; if (!b || !b.width || !b.height) return 0;
-  let x0 = b.x, y0 = b.y, x1 = b.x + b.width, y1 = b.y + b.height;
-  const cut = c => { if (!c) return; x0 = Math.max(x0, c.x); y0 = Math.max(y0, c.y); x1 = Math.min(x1, c.x + c.width); y1 = Math.min(y1, c.y + c.height); };
-  for (let q = n; q && q.type !== 'PAGE'; q = q.parent) {
-    if (q.visible === false || ('opacity' in q && q.opacity < 0.05)) return 0;
-    if ('effects' in q && q.effects.some(e => e.visible !== false && e.type === 'LAYER_BLUR' && e.radius >= 4)) return 0;
-    if (q !== n && q.clipsContent) cut(q.absoluteBoundingBox);
-    const p = q.parent;
-    if (p && 'children' in p) { const i = p.children.indexOf(q); for (let k = 0; k < i; k++) if ('isMask' in p.children[k] && p.children[k].isMask && p.children[k].visible !== false) cut(p.children[k].absoluteBoundingBox); }
-  }
-  return Math.max(0, x1 - x0) * Math.max(0, y1 - y0) / (b.width * b.height);
+  if (hiddenSelf(n)) return 0;
+  const up = inherit(n.parent); if (up.dead) return 0;
+  let r = meet(up.rect, b); const mb = masksBefore(n);
+  if (mb) r = [Math.max(r[0], mb[0]), Math.max(r[1], mb[1]), Math.min(r[2], mb[2]), Math.min(r[3], mb[3])];
+  return Math.max(0, r[2] - r[0]) * Math.max(0, r[3] - r[1]) / (b.width * b.height);
 };
 // buttons drawn as plain frames rather than component instances
 const TAPFRAME = /^(button|btn|cta|chip|tab|toggle|link|close|back)\b|button$/i;
 const inside = (b, x, y, pad) => b && x >= b.x - pad && x <= b.x + b.width + pad && y >= b.y - pad && y <= b.y + b.height + pad;
-const out = { section: [sec.id, sec.name, ...secBox(sec)], boards: [], names: [], screens: [], controls: [], arrows: [], hidden: { screens: 0, controls: 0 },
-  entries: BOARDS, hash: {}, hashed_at: new Date().toISOString() };
-const nameIdx = new Map(), ctlIdx = new Map(), inst = [];
-const nameOf = s => { if (!nameIdx.has(s)) { nameIdx.set(s, out.names.length); out.names.push(s); } return nameIdx.get(s); };
-const boardNodes = [];
 // a region board stands in for a frame: its members are searched as a frame's children would be
 const region = async e => {
   const [x, y, w, h] = e.box, nodes = [];
@@ -213,6 +232,15 @@ if (BOARDS.hash) {
   }
   return res;
 }
+// one group's read (several groups can share a call: { groups } below)
+const readGroup = async BOARDS => {
+const first = await figma.getNodeByIdAsync(idOf(BOARDS[0]));
+const sec = first ? (typeof BOARDS[0] === 'object' && BOARDS[0].box ? first : first.parent) : page;
+const out = { section: [sec.id, sec.name, ...secBox(sec)], boards: [], names: [], screens: [], controls: [], arrows: [], hidden: { screens: 0, controls: 0 },
+  entries: BOARDS, hash: {}, hashed_at: new Date().toISOString() };
+const nameIdx = new Map(), ctlIdx = new Map(), inst = [];
+const nameOf = s => { if (!nameIdx.has(s)) { nameIdx.set(s, out.names.length); out.names.push(s); } return nameIdx.get(s); };
+const boardNodes = [];
 out.overlay = {}; out.overlay_box = {}; out.texts = [];
 const overlays = [];
 for (const e of BOARDS) {
@@ -229,6 +257,7 @@ for (const [bi, board] of boardNodes.entries()) {
   for (const v of board.findAllWithCriteria({ types: ARROWISH })) { const pts = await arrowPts(v); if (pts && !taken.has(v.id)) { taken.add(v.id); vectors.push({ v, board, pts }); } }
   for (const { v, pts } of await overlayArrows(board, overlays[bi])) if (!taken.has(v.id)) { taken.add(v.id); vectors.push({ v, board, pts }); }
 }
+late('arrows');
 const screenNodes = [];
 boardNodes.forEach((b, bi) => {
   const walk = n => { if (n.visible === false) return;
@@ -238,9 +267,14 @@ boardNodes.forEach((b, bi) => {
 });
 // panels: dialogs, sheets, popups and menus drawn beside the phones (not inside one). A frame of dialog size counts
 // (frame, instance or group) when its name says so or an arrow starts or ends within 40 pt of it; the outermost wins. Kept as screens with 'panel' set.
+late('screens');
 const PANEL = /dialog|popup|pop-up|sheet|toast|alert|modal|tooltip|menu|snackbar|leave|confirm/i;
 const phones = new Set(screenNodes.map(n => n.id));
-const inPhone = n => { for (let q = n.parent; q && q.type !== 'PAGE'; q = q.parent) if (phones.has(q.id)) return true; return false; };
+// inside a phone screen, kept by node id like shown()
+const phoneMemo = new Map();
+const underPhone = q => { if (!q || q.type === 'PAGE') return false; let v = phoneMemo.get(q.id);
+  if (v === undefined) { v = phones.has(q.id) || underPhone(q.parent); phoneMemo.set(q.id, v); } return v; };
+const inPhone = n => underPhone(n.parent);
 const ends = vectors.flatMap(({ pts }) => [pts[0], pts[pts.length - 1]]);
 const panelIds = new Set();
 boardNodes.forEach((b, bi) => {
@@ -254,6 +288,7 @@ boardNodes.forEach((b, bi) => {
     panelIds.add(n.id); screenNodes.push(n); out.screens.push([n.id, bi, n.name.slice(0, 40), ...box(n), 'panel']);
   }
 });
+late('panels');
 screenNodes.forEach((s, si) => {
   const panel = panelIds.has(s.id);
   const sb = s.absoluteBoundingBox, bi = out.screens[si][1];
@@ -286,6 +321,8 @@ screenNodes.forEach((s, si) => {
   };
   for (const c of s.children) visit(c, -1);
 });
+late('controls');
+const heads = new Map();
 const screenAt = (x, y, pad) => { let best = -1, area = Infinity; screenNodes.forEach((s, i) => { const b = s.absoluteBoundingBox; if (inside(b, x, y, pad) && b.width * b.height < area) { best = i; area = b.width * b.height; } }); return best; };
 for (const { v, board, pts } of vectors) {
   const [tx, ty] = pts[0], [hx, hy] = pts[pts.length - 1];
@@ -294,13 +331,15 @@ for (const { v, board, pts } of vectors) {
   for (const it of inst) if ((from < 0 || it.si === from) && inside(it.b, tx, ty, 6) && it.b.width * it.b.height < area) { src = it.ci; area = it.b.width * it.b.height; }
   let toNode = '', toName = '';
   if (to < 0) {
-    const hits = board.findAll(n => n.visible !== false && n.type !== 'VECTOR' && n.type !== 'LINE' && n.type !== 'TEXT' && inside(n.absoluteBoundingBox, hx, hy, 12));
-    hits.sort((a, b) => a.width * a.height - b.width * b.height);
-    const h = hits.find(n => n.width > 40 && n.height > 30);
+    // the nodes an arrow head can land on, listed once per board (a search of the whole board per arrow was slow)
+    if (!heads.has(board)) heads.set(board, board.findAll(n => n.visible !== false && n.type !== 'VECTOR' && n.type !== 'LINE' && n.type !== 'TEXT'
+      && n.width > 40 && n.height > 30 && n.absoluteBoundingBox).map(n => ({ n, b: n.absoluteBoundingBox, a: n.width * n.height })).sort((p, q) => p.a - q.a));
+    const h = heads.get(board).find(c => inside(c.b, hx, hy, 12))?.n;
     if (h) { toNode = h.id; const t = 'findOne' in h ? h.findOne(x => x.type === 'TEXT' && x.visible !== false) : null; toName = `${h.name}${t ? ` 「${t.characters.replace(/\s+/g, ' ').slice(0, 30)}」` : ''}`.slice(0, 60); }
   }
   out.arrows.push([v.id, v.name.slice(0, 60), pts.flat(), from, src, to, toNode, toName]);
 }
+late('arrow targets');
 // every visible text of a board and its overlays, for comparing a changed board's words with the spec notes
 boardNodes.forEach((b, bi) => {
   const seen = new Set();
@@ -308,9 +347,30 @@ boardNodes.forEach((b, bi) => {
     if (!t.characters.trim() || shown(t) < 0.5) continue;
     const bx = box(t), k = `${t.characters}|${bx}`;
     if (seen.has(k)) continue; seen.add(k);
-    let ph = 0; for (let q = t.parent; q && q.type !== 'PAGE'; q = q.parent) if (phones.has(q.id)) ph = 1;
-    out.texts.push([bi, ...bx, t.characters.slice(0, 4000), ph]);
+    out.texts.push([bi, ...bx, t.characters.slice(0, 4000), inPhone(t) ? 1 : 0]);
   }
 });
+out.ms = Date.now() - T0;
 out.size = JSON.stringify(out).length;
 return out;
+};
+// Several groups in one call (figma-check.ts --plan, 2026-11-05): BOARDS = { groups: { <name>: [entries] } } reads
+// them in order and returns { mode: 'groups', groups: { <name>: read }, pending: [names], ms }. A group that would push
+// the reply past MAXREPLY characters (the MCP reply limit is ~48 KB) or that runs out of BUDGET is left for the next
+// call instead of losing the whole reply; the groups already read are kept.
+const MAXREPLY = 40000;
+if (BOARDS.groups) {
+  const res = { mode: 'groups', groups: {}, pending: [], ms: 0 };
+  let size = 0;
+  for (const [name, entries] of Object.entries(BOARDS.groups)) {
+    if (res.pending.length) { res.pending.push(name); continue; }
+    try {
+      const g = await readGroup(entries);
+      if (size && size + g.size > MAXREPLY) { res.pending.push(name); continue; }
+      res.groups[name] = g; size += g.size;
+    } catch (e) { if (!String(e.message).startsWith('INCOMPLETE')) throw e; res.pending.push(name); res.stopped = `${name}: ${e.message}`; }
+  }
+  res.ms = Date.now() - T0;
+  return res;
+}
+return await readGroup(BOARDS);

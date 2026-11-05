@@ -54,14 +54,15 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
           font: run.font_family ? `${run.font_family} ${run.font_style ?? ''} ${run.font_size ?? '?'} pt`.replace(/\s+/g, ' ') : undefined, weight: run.font_weight,
           // the glyphs as Figma draws them (absoluteRenderBounds from the source read, in the board's frame like `box`)
           render: n.render && n.box ? [n.render[0] - n.box[0] + box[0], n.render[1] - n.box[1] + box[1], n.render[2], n.render[3]] : undefined,
-          line_height: typeof run.line_height === 'number' ? run.line_height : 0, color: solid?.length === 1 && /ff$/i.test(solid[0].color) ? solid[0].color.slice(0, 7) : null });
+          line_height: typeof run.line_height === 'number' ? run.line_height : 0, color: solid?.length === 1 && /ff$/i.test(solid[0].color) ? solid[0].color.slice(0, 7) : null,
+          ...(solid?.length === 1 && solid[0].variable ? { variable: solid[0].variable } : {}) });
       // filled shapes: buttons, chips and cards, and small badges and tags (「NEW」, 「HOT」: 12 × 8 pt and up; user, 2026-11-04)
       } else if (/^(FRAME|INSTANCE|RECTANGLE|COMPONENT)$/.test(n.type) && box[2] * box[3] < 0.4 * scr.abs[2] * scr.abs[3]
         && ((box[2] >= 40 && box[3] >= 24 && (n.radius || /btn|button|cta|chip|tag|card/i.test(n.name)))
           || (box[2] >= 12 && box[2] <= 120 && box[3] >= 8 && box[3] < 24 && (/tag|badge|label|new|hot|pill/i.test(n.name) || (n.radius && kids.get(n.id)?.some((k: any) => k.type === 'TEXT')))))) {
         // a shape holding an image (a portrait card, a poster) shows the image, not its fill
         const f = (n.fills ?? []).filter((x: any) => x.type === 'SOLID' && x.color && !x.color.endsWith('00')).at(-1);
-        if (f && /ff$/i.test(f.color) && !holdsImage(n.id)) fills.push({ node: n.id, name: n.name, color: f.color.slice(0, 7), box,
+        if (f && /ff$/i.test(f.color) && !holdsImage(n.id)) fills.push({ node: n.id, name: n.name, color: f.color.slice(0, 7), ...(f.variable ? { variable: f.variable } : {}), box,
           radius: typeof n.radius === 'number' ? n.radius : Array.isArray(n.radius) ? Math.max(...n.radius.filter((r: unknown) => typeof r === 'number')) : null });
       }
       walk(n.id);

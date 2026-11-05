@@ -1,0 +1,23 @@
+# DRA262610P0332 segment 3: drama 2 Salt Broth (session 261105_152156_d18b1caf). Typed name -> Update characters card.
+2026-11-05 15:30:01.809 14750 20590 D MiniDramaPerf: t19 +250s                         iris   event         turn_complete
+2026-11-05 15:30:01.810 14750 20590 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 15:30:13.313 14750 24505 D MiniDrama Log: [USER] Can you change one of the characters to look older?
+2026-11-05 15:30:22.453 14750 26722 D MiniDramaPerf: t20 +9.15s                        iris   event         turn_complete
+2026-11-05 15:30:22.454 14750 26722 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 15:31:02.860 14750 26722 D MiniDrama Log: [USER] Julian Vance
+2026-11-05 15:31:46.462 14750 26722 D MiniDramaPerf: t21 +43.6s                        iris   event         turn_complete
+2026-11-05 15:31:46.463 14750 26722 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+
+# Side: first cast confirm (✓ 15:26:06) ended in 「Something went wrong on my end. Let's try that again.」; Try again (15:29:20) succeeded.
+2026-11-05 15:26:41.783 14750 20590 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t2_i1_d1_ai-mini-drama","error":"token_request fired outside a turn worker thread; cc session mint must happen on the turn's main loop","ok":false,"session_id":"261105_152156_d18b1caf","skill":"storyboard-reviewer","step":"review","st
+2026-11-05 15:26:41.784 14750 20590 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_152156_d18b1caf/host_inputs/blueprint.json","changed_titles":["Dust on the Grill","A Clashing Kitchen","The First Customer","Passing the Ladle","Shared Tab
+2026-11-05 15:26:41.786 14750 26722 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_152156_d18b1caf/host_inputs/blueprint.json","changed_titles":["Dust on the Grill","A Clashing Kitchen","The First Customer","Passing the Ladle","Shared Tab
+2026-11-05 15:26:41.867 14750 14884 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t2_i1_d1_ai-mini-drama","error":"token_request fired outside a turn worker thread; cc session mint must happen on the turn's main loop","ok":false,"session_id":"261105_152156_d18b1caf","skill":"outline-sync","step":"sync","step_call_i
+2026-11-05 15:26:41.867 14750 14884 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_152156_d18b1caf/host_inputs/blueprint.json","changed_titles":["Dust on the Grill","A Clashing Kitchen","The First Customer","Passing the Ladle","Shared Tab
+2026-11-05 15:26:41.868 14750 14884 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_152156_d18b1caf/host_inputs/blueprint.json","changed_titles":["Dust on the Grill","A Clashing Kitchen","The First Customer","Passing the Ladle","Shared Tab
+2026-11-05 15:26:41.869 14750 14884 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t2_i1_d1_ai-mini-drama","error":"token_request fired outside a turn worker thread; cc session mint must happen on the turn's main loop","ok":false,"session_id":"261105_152156_d18b1caf","skill":"environment-executor","step":"describe_e
+2026-11-05 15:26:41.869 14750 14884 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_152156_d18b1caf/host_inputs/blueprint.json","edited_beat_id":"","environment_edits":[],"environment_result":{"error":"token_request fired outside a turn wo
+2026-11-05 15:26:41.871 14750 14884 D MiniDrama Log: [EVENT] {"args":{"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_152156_d18b1caf/host_inputs/blueprint.json","edited_beat_id":"","environment_edits":[],"environment_result":{"error":"token_request fired outside a turn wo
+2026-11-05 15:26:41.884 14750 20590 E MiniDramaFail: [engine] target=outline | tool=outline-sync | token_request fired outside a turn worker thread; cc session mint must happen on the turn's main loop
+2026-11-05 15:26:41.895 14750 20590 E MiniDramaFail: [engine] target=storyboard | tool=environment-executor | token_request fired outside a turn worker thread; cc session mint must happen on the turn's main loop
+2026-11-05 15:26:41.896 14750 20590 D MiniDrama Log: [TURN] failure: token_request fired outside a turn worker thread; cc session mint must happen on the turn's main loop

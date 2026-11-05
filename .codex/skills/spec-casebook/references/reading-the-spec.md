@@ -106,8 +106,16 @@ and look at the tile images where layout, arrows or states matter.**
      `__BOARDS__ = []` lists the boards, then **one call per board group** (about 4 boards or 40 KB of output) returns
      every phone frame, every tappable instance (deduplicated by board + layer + label + position) and every flow
      arrow with its tail control and head screen from the vector geometry (arrow layer names are stale; the geometry
-     is not). Run the groups as parallel subagents that each save their return verbatim to
-     `extracted/figma-inventory-<group>.json` and check its `size`. The extractor also takes **panels** (dialogs,
+     is not). **Plan, call, save (2026-11-05)**: `figma-check.ts <feature> --plan [--add <group>=<id>[@name],…]`
+     packs the groups to read (the compare's re-reads, new boards as new groups) into a few `call-<n>.js` files of
+     several groups each, sized by their last reply (under ~35 KB; the MCP reply limit is ~48 KB). Run each call with
+     the exact `description` it prints, **one call at a time per server** (Design and PM servers may run side by
+     side), never retyping a reply: `figma-check.ts <feature> --save` copies every reply from the session transcripts
+     into `figma-inventory-<group>.json`, and packs what is left (groups a call returned as `pending`, calls whose reply
+     never came) into new calls; repeat call → `--save` until it prints *Nothing left to read*. A read stops itself at
+     its time budget (40 s, `inventory.js`) and returns the groups it finished, so a slow call loses nothing; a group
+     that runs out of time on its own is split into one group per board. Each group read takes 5–12 s; a call that
+     drops anyway is just run again. The extractor also takes **panels** (dialogs,
      sheets, popups beside the phones; their buttons are often plain frames), frames named `btn` / `back` / `cta`, and
      long scrolling pages, and skips what Figma does not draw (hidden, opacity 0, layer blur, clipped).
    - **PM and MX too (REQ-052).** Every Figma file of the spec set is read. Their phones and arrows lie loose on one
@@ -115,9 +123,11 @@ and look at the tile images where layout, arrows or states matter.**
      `pm-main-flow`, `mx-a-left`) or dated update frames (`{ id, name }`). Superseded MX versions are read too and
      every control and arrow on them is traced `n/a: superseded MX version …`. Each file's PDF offset is its page
      bounds' top-left, negated (OCR lines read about 22 pt low, so check one sheet against the drawing), kept in
-     `figma-frames.json` `files.<role>` (`pdf`, `pdf_offset`). The PM file is heavy: run its groups **one call at a
-     time** and cut frames over about 300 component instances into smaller region boxes (calls otherwise drop with
-     「MCP server connection lost」); `inventory.ts` joins arrows across cuts. On every analysis list the PM and MX
+     `figma-frames.json` `files.<role>` (`pdf`, `pdf_offset`). The PM file is heavy: run its calls **one at a time**.
+     Calls that dropped with 「MCP server connection lost」 / "transport dropped mid-call" (13 groups on 2026-11-05) ran
+     past the connection's time limit: the visibility test walked every ancestor of every node again (4 s per 1,100
+     nodes) and each arrow searched its whole board. Both are now computed once per node, so cutting frames into
+     smaller region boxes is only for a group the planner splits; `inventory.ts` joins arrows across cuts. On every analysis list the PM and MX
      Figma pages too: a dated frame past the PDF is spec content.
    - **Fingerprints (user, 2026-10-29).** Each group read records one hash per board (`hash`, `hashed_at`, `entries`).
      `scripts/figma-check.ts` checks a whole file in one call against the committed `extracted/figma-hashes.json` and

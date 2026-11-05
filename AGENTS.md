@@ -79,6 +79,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   README Setup 5. Figma is not a gate (user, 2026-10-30): without the sign-ins an analysis runs **PDF-only**
   (`extracted/figma-pending.json`) and a machine with them catches up later (`reading-the-spec.md`, *No Figma access*). Quota is small: bulk reads per board group, changes found by fingerprint (`figma-check.ts`), every
   read committed (`reading-the-spec.md` step 10).
+- **Figma reads by plan, call, save (user, 2026-11-05).** Inventory re-reads go `figma-check.ts --plan` → the printed
+  calls, one at a time per server, with their exact description → `--save` (replies copied from the transcripts,
+  never retyped; leftovers re-packed) until nothing is left; a read stops at its time budget and keeps what it read
+  (`reading-the-spec.md` step 10, *Plan, call, save*).
 - **Full Figma data by script (user, 2026-10-30).** When every node's geometry and styling is needed (not just
   controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only (never PM or MX):
   one `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
@@ -104,6 +108,14 @@ lines; put the full rule in the skill or reference file that applies it and poin
   entries, `source.json` and extracted text are committed. Intake and upkeep are the `domain-knowledge` skill; during a
   run knowledge is only parked (`knowledge.ts … inbox add`) and processed by a fresh subagent at the phase wrap-up.
 - **QA Reports (user, 2026-11-03, REQ-072 / REQ-073).** A TR's QR is written with the `qa-report` skill (`scripts/qa-report.ts`): only OK and Fail rows; a bug not fully verified is left off the QR and left alone (still "Not yet verified"), never filed as NotVerified. A scenario that can no longer be completed or triggered by any means counts as fixed (OK, with a Note saying why). Lettered Details like the team's QRs, one evidence ZIP, `qr-review.html` approved by the tester before the IF3 Standard Report is filled and saved once. Replaces the Spec agent's `verify-tr-ebugs` report format here.
+- **Verify in one journey (user, 2026-11-05, REQ-093).** `/qa-report <TR>` verifies the tester's bugs on the TR's
+  build first when they have no verdicts; the checks are ordered along the flow in `verify-plan.md` so one drama
+  carries as many bugs as it passes, shared steps and long waits are reused, never a fresh start per bug
+  (`qa-report/SKILL.md` › *Verify first*).
+- **Bug verify against today's spec (user, 2026-11-05, REQ-091).** Before verifying a bug, check its Expect Result
+  against the current spec in the repo (ticket comments, row, `requirements.md` changes and open questions, newer
+  frames in `extracted/`), then judge the build's current behaviour against that. An open question means Hold
+  (`qa-report/SKILL.md` › *Expected = today's spec*).
 - **AI Mini Drama credits (user, 2026-11-03, REQ-073, until lifted).** For runs and rechecks, use whatever credits a check needs for anything except a full video generation (characters, outlines, storyboards, regenerations, updates); a full video generation still needs the user's go-ahead or an existing video. Check every path a bug names rather than stopping at one to save credits.
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
@@ -128,6 +140,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   exact text colour, size, weight, lines and drawables; the first install replaces the app with an uninstall (data
   cleared) only with `--yes-uninstall` once agreed. With that build, Android design captures save the view data and
   the check reads it before OCR and pixels (REQ-086; `figma/references/conformance.md` §3).
+- **Colours set and drawn (user, 2026-11-05).** A design check colour item lists the value set (Figma fill and token,
+  the app's value and resource) beside the colour drawn on each image; `check` reports app values the screen does not
+  show (`figma/references/conformance.md` §3).
 - **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
   the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
 - **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names

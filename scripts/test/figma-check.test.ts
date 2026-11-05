@@ -117,7 +117,12 @@ test('compare flags a board whose read lacks an arrow drawn over it and asks for
   const rep = read(join(EX, 'figma-check.json'));
   assert.deepEqual(rep.missed_arrows.map((m: any) => m.arrows), [['9:9']]);
   assert.deepEqual(rep.changed.map((c: any) => [c.id, c.why]), [['1:2', ['missed arrows']]]);
-  assert.ok(existsSync(join(EX, 'figma-check', 'reread-g1.js')), 'the group is re-read');
+  assert.deepEqual(rep.reread.map((r: any) => r.group), ['g1'], 'the group is re-read');
+  // --plan packs it into a call with a description --save finds it by (2026-11-05)
+  const p = run('figma-check.ts', [F, '--plan']);
+  assert.match(p.out, /call-1: use_figma on figma-pm .*description "casebook figma-check [^"]+ call-1".*groups g1/);
+  assert.ok(existsSync(join(EX, 'figma-check', 'call-1.js')));
+  assert.deepEqual(Object.keys(read(join(EX, 'figma-check', 'todo.json')).calls[0].groups), ['g1']);
   assert.deepEqual(rep.shots, [{ png: 'pm-board.png', board: '1:2', box: [0, 0, 1200, 1000], holder: '5:5' }]);
   assert.match(r.out, /get_screenshot of 5:5, cut to --box 0,0,1200,1000/);
   const store = read(join(EX, 'figma-hashes.json'));
@@ -152,4 +157,23 @@ test('figma-text compares a board with its PDF OCR, then with its accepted Figma
   assert.ok(existsSync(join(EX, 'figma-text', 'pm-board.json')));
   r = run('figma-text.ts', [F, '--all']);
   assert.equal(r.status, 0, r.out);
+});
+
+// several groups in one call, and the check call cut from the same file (2026-11-05: the restructure for packed calls
+// once left the check call cut inside the group reader, a syntax error)
+test('one call reads several groups and returns each by name', async () => {
+  const out = await inventory({ groups: { a: ['1:2'], b: ['1:2'] } });
+  assert.equal(out.mode, 'groups');
+  assert.deepEqual(Object.keys(out.groups), ['a', 'b']);
+  assert.deepEqual(out.pending, []);
+  assert.ok(out.groups.a.arrows.length && typeof out.groups.a.ms === 'number');
+});
+
+test('the check call is cut before the group reader and still runs', async () => {
+  const src = readFileSync(join(ROOT, 'scripts', 'figma', 'inventory.js'), 'utf8');
+  const cut = src.slice(0, src.indexOf('\nconst readGroup = ')).replace('const PAGE = __PAGE__, BOARDS = __BOARDS__;', `const PAGE = '0:1', BOARDS = ${JSON.stringify({ hash: ['1:2'] })};`);
+  const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor;
+  const out = await new AsyncFunction('figma', cut)(figma);
+  assert.equal(out.mode, 'hash');
+  assert.equal(out.boards[0][0], '1:2');
 });

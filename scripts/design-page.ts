@@ -107,7 +107,8 @@ function buildData(link: (abs: string) => string) {
 // the run) and the first sight of its result files (compare, builder, reviewer, findings), plus, for a design pass on
 // its own (a run folder with no results.csv), the run's own activity (captures, taps). A casebook run's automatic
 // captures cost no call of their own, so for such a run the Design tab also shows that run's own figure (the same as
-// Progress) as the run the captures rode on. Built on every request of /usage.json, which the page polls every 10 s.
+// Progress) as the run the captures rode on. A folder with neither (a bug recheck's stray captures) is left out.
+// Built on every request of /usage.json, which the page polls every 10 s.
 function usageData() {
   const dirs = existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design'))).sort() : [];
   const rowsOf = (d: string) => existsSync(join(runsDir, d, 'results.csv')) ? readRecords(readFileSync(join(runsDir, d, 'results.csv'), 'utf8')) : null;
@@ -128,6 +129,9 @@ function usageData() {
   const design: Group[] = [], rode: Group[] = [], meta: any[] = [];
   for (const d of dirs) {
     const dir = join(runsDir, d), dd = join(dir, 'design'), rows = rowsOf(d);
+    // a folder with neither a casebook run (results.csv) nor a design.ts command (design/activity.log) only holds
+    // captures that rode on other work (a bug recheck): not design work, and its own activity is not the check's
+    if (!rows && !existsSync(join(dd, 'activity.log'))) continue;
     const caps = existsSync(join(dd, 'captures.jsonl')) ? readFileSync(join(dd, 'captures.jsonl'), 'utf8').split('\n').filter(Boolean).flatMap(l => { try { return [JSON.parse(l)]; } catch { return []; } }) : [];
     const pts = activityPoints(dd, ['compare', 'builder', 'reviewer', 'findings'].map(n => join(dd, `${n}.json`)));
     if (!rows) pts.push(...activityPoints(dir), ...caps.map(c => Date.parse(c.t)).filter(Boolean));

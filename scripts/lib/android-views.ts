@@ -76,8 +76,9 @@ export async function dumpViews(a: Adb, timeoutMs = 30_000): Promise<any> {
   throw new Error(`no dump within ${timeoutMs / 1000} s${said ? ` (attach-agent: ${said})` : ''}: ${adbRun(a, ['logcat', '-d', '-t', '20', '-s', 'ViewDumpAgent', 'ViewDumper', 'AndroidRuntime']).out.split('\n').slice(-4).join(' / ')}`);
 }
 
-export type ViewText = { text: string; box: [number, number, number, number]; color: string | null; px: number | null; sp: number | null; weight: number | null; style: string | null; family: string | null; lines: number | null; id: string | null; window: number };
-export type ViewFill = { box: [number, number, number, number]; color: string; radius: number | null; id: string | null; window: number };
+export type ViewText = { text: string; box: [number, number, number, number]; color: string | null; px: number | null; sp: number | null; weight: number | null; style: string | null; family: string | null; lines: number | null; id: string | null; window: number;
+  /** the layout's colour resource (`@color/textPrimary`) and the views' combined alpha when below 1 */ res?: string; alpha?: number };
+export type ViewFill = { box: [number, number, number, number]; color: string; radius: number | null; id: string | null; window: number; res?: string; alpha?: number };
 export type Views = { density: number; scaledDensity: number; fontScale: number; texts: ViewText[]; fills: ViewFill[]; windows: { title: string; type: number }[] };
 
 const argb = (c: unknown) => typeof c === 'string' && /^#[0-9a-f]{8}$/i.test(c) ? c : null;
@@ -98,16 +99,17 @@ export function compactViews(doc: any): Views {
   const walk = (v: any, alpha: number, w: number) => {
     if (!v || typeof v !== 'object' || v.visibility === 'GONE' || v.visibility === 'INVISIBLE') return;
     const a = alpha * (typeof v.alpha === 'number' ? v.alpha : 1); if (a < 0.01) return;
+    const extra = (res: unknown) => ({ ...(typeof res === 'string' && res.startsWith('@') ? { res } : {}), ...(a < 0.999 ? { alpha: Math.round(a * 100) / 100 } : {}) });
     const s = Array.isArray(v.screen) ? v.screen : null, box = s ? [s[0], s[1], s[2] - s[0], s[3] - s[1]] as [number, number, number, number] : null;
     if (box && box[2] > 0 && box[3] > 0) {
       const t = v.text;
       if (t && typeof t.text === 'string' && t.text.trim()) {
         const m = String(t.size ?? '').match(/([\d.]+)px \(([\d.]+)sp\)/);
         texts.push({ text: t.text, box, color: argb(t.color), px: m ? +m[1] : null, sp: m ? +m[2] : null, weight: t.typeface?.weight ?? null, style: t.typeface?.style ?? null,
-          family: t.typeface?.family ?? null, lines: t.lineCount ?? null, id: v.id ?? null, window: w });
+          family: t.typeface?.family ?? null, lines: t.lineCount ?? null, id: v.id ?? null, window: w, ...extra(v.xmlAttrs?.textColor) });
       }
       const f = fillOf(v.background);
-      if (f) fills.push({ box, color: f.color, radius: f.radius, id: v.id ?? null, window: w });
+      if (f) fills.push({ box, color: f.color, radius: f.radius, id: v.id ?? null, window: w, ...extra(v.xmlAttrs?.background) });
     }
     for (const c of v.children ?? []) walk(c, a, w);
   };

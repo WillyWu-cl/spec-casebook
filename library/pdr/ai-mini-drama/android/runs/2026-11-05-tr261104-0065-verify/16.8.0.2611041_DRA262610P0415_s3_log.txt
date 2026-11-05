@@ -1,0 +1,64 @@
+# DRA262610P0415 segment 3: Salt Broth Create storyboard (◆31, pill 28139 -> 28126). Wi-Fi off 15:36:45.688, on 15:37:15.808 (adb svc wifi).
+2026-11-05 15:35:43.749 14750 24618 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28139, 
+2026-11-05 15:35:44.236 14750 22009 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…_env_img_1 consumeTaskId=91680746 files=1
+2026-11-05 15:35:44.514 14750 20590 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28136, 
+2026-11-05 15:35:44.908 14750 24618 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28136, 
+2026-11-05 15:36:05.246 14750 20590 D MiniDrama Log: [TOOL] MyCreation receipt done call=…_env_img_1
+2026-11-05 15:36:05.633 14750 20590 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28136, 
+2026-11-05 15:36:06.893 14750 29143 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28136, 
+2026-11-05 15:36:06.902 14750 29039 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28136, 
+2026-11-05 15:36:07.087 14750 22009 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28136, 
+2026-11-05 15:36:08.853 14750 29143 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…_env_img_2 consumeTaskId=91680748 files=1
+2026-11-05 15:36:09.126 14750 22043 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28133, 
+2026-11-05 15:36:09.304 14750 22043 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…_env_img_3 consumeTaskId=91680749 files=1
+2026-11-05 15:36:09.533 14750 29146 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28130, 
+2026-11-05 15:36:09.598 14750 29143 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28130, 
+2026-11-05 15:36:09.863 14750 29143 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…_env_img_4 consumeTaskId=91680750 files=1
+2026-11-05 15:36:09.953 14750 22043 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:10.133 14750 29146 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:10.525 14750 29143 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:32.869 14750 29146 D MiniDrama Log: [TOOL] MyCreation receipt done call=…_env_img_4
+2026-11-05 15:36:33.347 14750 29146 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:33.803 14750 29146 D MiniDrama Log: [TOOL] MyCreation receipt done call=…_env_img_2
+2026-11-05 15:36:34.298 14750 29146 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:38.354 14750 29146 D MiniDrama Log: [TOOL] MyCreation receipt done call=…_env_img_3
+2026-11-05 15:36:38.523 14750 29315 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_1","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_1","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed
+2026-11-05 15:36:38.526 14750 29315 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_2","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_2","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed
+2026-11-05 15:36:38.526 14750 29315 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_3","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_3","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed
+2026-11-05 15:36:38.527 14750 29315 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_4","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_4","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed
+2026-11-05 15:36:38.527 14750 29315 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_5","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_5","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed
+2026-11-05 15:36:38.527 14750 29315 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_6","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_6","type":"workflow_step_start","workflow":"ai-mini-drama/plan/routed
+2026-11-05 15:36:38.620 14750 29143 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:38.905 14750 24505 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:39.057 14750 29314 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:39.062 14750 29145 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:39.068 14750 20590 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:39.330 14750 29316 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:39.501 14750 29147 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:39.523 14750 26722 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28127, 
+2026-11-05 15:36:45.208 14750 29038 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…_environments_done_s_preview_tts consumeTaskId=91680754 files=1
+2026-11-05 15:36:45.618 14750 29316 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:36:45.636 14750 29147 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","error":"agent_tool_dispatch('TextToImage') failed: generation_failed - Network","ok":false,"session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_1","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_e
+2026-11-05 15:36:45.639 14750 29147 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:36:45.657 14750 29038 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:36:45.674 14750 29316 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:36:45.685 14750 29038 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:36:45.709 14750 26722 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:36:45.717 14750 29316 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:36:45.738 14750 29316 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","error":"agent_tool_dispatch('TextToImage') failed: generation_failed - Network","ok":false,"session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_2","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_e
+2026-11-05 15:36:45.739 14750 29316 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","error":"agent_tool_dispatch('TextToImage') failed: generation_failed - Network","ok":false,"session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_4","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_e
+2026-11-05 15:36:45.740 14750 29316 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","error":"agent_tool_dispatch('TextToImage') failed: generation_failed - Network","ok":false,"session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_3","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_e
+2026-11-05 15:36:45.741 14750 29316 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","error":"agent_tool_dispatch('TextToImage') failed: generation_failed - Network","ok":false,"session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_5","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_e
+2026-11-05 15:36:45.742 14750 29316 D MiniDrama Log: [EVENT] {"call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama","error":"agent_tool_dispatch('TextToImage') failed: generation_failed - Network","ok":false,"session_id":"261105_152156_d18b1caf","skill":"text-to-image","step":"img_6","step_call_id":"261105_152156_d18b1caf_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_e
+2026-11-05 15:37:49.719 14750 29316 D MiniDrama Log: [TOOL] MyCreation receipt done call=…_environments_done_s_preview_tts
+2026-11-05 15:37:49.790 14750 26722 D MiniDramaPerf: t24 +144s                         iris   event         turn_complete
+2026-11-05 15:37:49.791 14750 26722 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 15:37:49.796 14750 26722 E MiniDramaFail: [engine] target=beat_a0c9e508 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Network
+2026-11-05 15:37:49.796 14750 26722 E MiniDramaFail: [engine] target=beat_fb2ea141 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Network
+2026-11-05 15:37:49.796 14750 26722 E MiniDramaFail: [engine] target=beat_253fffe3 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Network
+2026-11-05 15:37:49.796 14750 26722 E MiniDramaFail: [engine] target=beat_11546243 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Network
+2026-11-05 15:37:49.796 14750 26722 E MiniDramaFail: [engine] target=beat_ca190692 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Network
+2026-11-05 15:37:49.796 14750 26722 E MiniDramaFail: [engine] target=beat_d99aab75 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Network
+2026-11-05 15:37:50.746 14750 29147 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28126, 
+2026-11-05 15:38:52.723 14750 26722 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28126, 
+2026-11-05 15:39:03.723 14750 29038 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28126, 

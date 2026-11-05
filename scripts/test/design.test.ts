@@ -284,7 +284,8 @@ test("check: the app's own view data (Android) gives size, weight, colour, lines
     vt('Recently created dramas', [20, 220, 200, 20]), vt('Two line text here', [20, 260, 200, 20], { lines: 2 }), vt('Templates', [20, 700, 100, 20], { color: '#FFFF0000' }), vt('Start', [150, 602, 80, 20])],
     fills: [{ box: px([120, 590, 140, 44]), color: '#FF3366FF', radius: 60, id: 'id/start', window: 0 }] };
   mkdirSync(join(RUNS, 'a-views', 'design'), { recursive: true });
-  png(join(RUNS, 'a-views', 'screenshots', 'design', '1-10.png'), 1080, 2338, []);
+  // the button is drawn in its own colour; no text is drawn, so every text's set colour differs from the screen
+  png(join(RUNS, 'a-views', 'screenshots', 'design', '1-10.png'), 1080, 2338, [[[346, 1699, 749, 1826], '#3366ff']]);
   put(join(RUNS, 'a-views', 'screenshots', 'design', '1-10.views.json'), views);
   capture('a-views', '1:10', '1-10', xml, { w: 1080, h: 2338 }, { views: 'screenshots/design/1-10.views.json' });
   const r = design('check', 'a-views');
@@ -298,6 +299,11 @@ test("check: the app's own view data (Android) gives size, weight, colour, lines
   assert.equal(by('lines:1:1c')?.app?.lines, 2);
   assert.equal(by('radius:1:15')?.delta?.figma, 12, 'the button\'s radius: 60 px / 2.88 = 20.8 dp');
   assert.ok(!by('colour:1:15'), 'the same fill colour is not a difference');
+  assert.deepEqual(by('radius:1:15')?.app?.box, px([120, 590, 140, 44]), 'a view fill\'s box is in screen pixels like every Android box, not dp');
+  assert.ok(by('colour:1:12')?.app?.drawn, 'the colour as drawn is listed beside the value set'); // (no Figma image for this synthetic screen)
+  assert.match(by('colour:1:12')?.note, /is not the value set/, 'a set colour the screen does not show is named');
+  assert.match(r.out, /set values checked against the screen/);
+  assert.ok(!/set #FF3366FF/.test(r.out), 'the button drawn in its set colour is not listed as drawn differently');
   assert.ok(!c.some((x: any) => x.kind === 'size' && x.id !== 'size:1:11'), 'no other size item');
   assert.ok(existsSync(join(RUNS, 'a-views', 'design', 'captures', '1-10.views.json')), 'the view data is shared with the capture');
   const s = read(join(RUNS, 'a-views', 'design', 'compare.json')).screens.find((x: any) => x.id === '1:10');

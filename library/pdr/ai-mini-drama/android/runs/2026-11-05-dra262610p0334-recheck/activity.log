@@ -1,0 +1,157 @@
+2026-11-05T04:44:59.000Z setup pm clear com.cyberlink.powerdirector.DRA140225_01 (user-authorised daily chat limit reset)
+2026-11-05T04:44:59.900Z restart 
+2026-11-05T04:45:09.264Z logcat start
+2026-11-05T04:45:09.521Z launch 
+2026-11-05T04:45:11.847Z texts 
+2026-11-05T04:45:28.612Z lbl Get Started
+2026-11-05T04:45:33.022Z texts 
+2026-11-05T04:45:38.182Z lbl Allow
+2026-11-05T04:45:43.086Z texts 
+2026-11-05T04:45:48.315Z texts 
+2026-11-05T04:45:48.516Z shot setup1
+2026-11-05T04:45:56.331Z tap 540 1968
+2026-11-05T04:45:59.615Z texts 
+2026-11-05T04:46:13.944Z lbl [AID]IAP_Back
+2026-11-05T04:47:18.846Z texts 
+2026-11-05T04:47:19.474Z els 
+2026-11-05T04:47:27.969Z lbl Mine
+2026-11-05T04:47:32.139Z texts 
+2026-11-05T04:47:32.510Z lbl User Sign in
+2026-11-05T04:47:37.999Z texts 
+2026-11-05T04:47:45.574Z shot setup2
+2026-11-05T04:47:46.161Z els 
+2026-11-05T04:47:51.527Z tap 414 1358
+2026-11-05T04:47:59.812Z texts 
+2026-11-05T04:48:07.375Z texts 
+2026-11-05T04:48:10.633Z activate 
+2026-11-05T04:48:15.105Z texts 
+2026-11-05T04:48:18.499Z lbl Got it
+2026-11-05T04:48:22.884Z texts 
+2026-11-05T04:48:23.251Z shot setup3_mine_signed_in
+2026-11-05T04:48:28.000Z lbl Home
+2026-11-05T04:48:31.439Z shot setup4_launcher_stage
+2026-11-05T04:48:32.180Z lbl AI Mini Drama
+2026-11-05T04:48:36.963Z texts 
+2026-11-05T04:48:41.354Z lbl Try It Now
+2026-11-05T04:48:47.891Z texts 
+2026-11-05T04:48:48.239Z els 
+2026-11-05T04:48:52.677Z lbl Create Your Drama
+2026-11-05T04:48:57.089Z texts 
+2026-11-05T04:48:57.326Z els 
+2026-11-05T04:49:01.177Z id edit_mini_drama_input
+2026-11-05T04:49:02.278Z type Two coworkers, Mia and Leo, compete for the same promotion and fall in love.
+2026-11-05T04:49:04.815Z id button_mini_drama_send
+2026-11-05T04:49:07.119Z waitfor Generate|format|Format|Vertical|Horizontal --timeout 180
+2026-11-05T04:49:10.437Z texts 
+2026-11-05T04:49:14.039Z shot fmt
+2026-11-05T04:49:14.797Z els 
+2026-11-05T04:49:18.142Z id button_mini_drama_format_continue
+2026-11-05T04:49:23.539Z waitfor Generate|Confirm|outline|Outline --timeout 240
+2026-11-05T04:49:26.836Z texts 
+2026-11-05T04:50:00.703Z waitfor Generate --timeout 240
+2026-11-05T04:51:38.137Z texts 
+2026-11-05T04:51:42.759Z shot outline
+2026-11-05T04:51:43.436Z els 
+2026-11-05T04:51:47.032Z id button_mini_drama_scroll_bottom
+2026-11-05T04:51:50.259Z texts 
+2026-11-05T04:51:50.516Z shot outline2
+2026-11-05T04:51:56.089Z tap 214 1790
+2026-11-05T04:52:00.377Z texts 
+2026-11-05T04:52:00.768Z shot charsheet
+2026-11-05T04:52:08.279Z tap 860 860
+2026-11-05T04:52:10.538Z tap 383 357
+2026-11-05T04:52:12.830Z tap 520 1560
+2026-11-05T04:52:15.118Z shot charsheet2
+2026-11-05T04:52:22.105Z lbl OK
+2026-11-05T04:52:28.328Z texts 
+2026-11-05T04:52:32.877Z waitfor storyboard|Storyboard --timeout 100
+2026-11-05T04:54:03.490Z texts 
+2026-11-05T04:54:09.047Z texts 
+2026-11-05T04:54:17.167Z id edit_mini_drama_input
+2026-11-05T04:54:18.567Z type Make Mia a woman in her 40s
+2026-11-05T04:54:20.706Z id button_mini_drama_send
+2026-11-05T04:54:22.849Z waitfor Ready to update --timeout 110
+2026-11-05T04:55:09.644Z texts 
+2026-11-05T04:55:14.342Z els 
+2026-11-05T04:55:14.607Z shot 16.8.0.2611041_DRA262610P0334_check1_card_before_generate
+2026-11-05T04:55:25.000Z adb tap Generate 842,919 (device 12:55:25.097) [check1_stage1_sysback]
+2026-11-05T04:55:28.000Z adb back (device 12:55:27.960) [check1_stage1_sysback]
+2026-11-05T04:56:03.041Z id button_mini_drama_home_history
+2026-11-05T04:56:06.548Z texts 
+2026-11-05T04:56:12.823Z texts 
+2026-11-05T04:56:13.008Z shot 16.8.0.2611041_DRA262610P0334_check1_history
+2026-11-05T04:56:19.210Z tap 540 1200
+2026-11-05T04:56:20.517Z tap 200 440
+2026-11-05T04:56:25.809Z id button_mini_drama_scroll_bottom
+2026-11-05T04:56:28.137Z texts 
+2026-11-05T04:56:28.400Z shot 16.8.0.2611041_DRA262610P0334_check1_reopened
+2026-11-05T04:56:47.219Z tap 200 1320
+2026-11-05T04:56:50.490Z shot 16.8.0.2611041_DRA262610P0334_check1_mia_look
+2026-11-05T04:56:51.513Z texts 
+2026-11-05T04:56:59.299Z lbl Cancel
+2026-11-05T04:57:02.357Z texts 
+2026-11-05T04:57:02.627Z id edit_mini_drama_input
+2026-11-05T04:57:03.996Z type Make Leo a man in his 50s
+2026-11-05T04:57:05.997Z id button_mini_drama_send
+2026-11-05T04:57:08.110Z waitfor Ready to update --timeout 110
+2026-11-05T04:57:50.589Z els 
+2026-11-05T04:57:54.320Z shot 16.8.0.2611041_DRA262610P0334_check2_card_before_generate
+2026-11-05T04:57:55.000Z adb tap Generate 842,919 (device 12:57:54.649) [check2_stage1_arrow]
+2026-11-05T04:57:57.000Z adb arrow (device 12:57:56.997) [check2_stage1_arrow]
+2026-11-05T04:58:29.908Z id button_mini_drama_home_history
+2026-11-05T04:58:33.347Z tap 200 440
+2026-11-05T04:58:38.644Z id button_mini_drama_scroll_bottom
+2026-11-05T04:58:40.944Z shot 16.8.0.2611041_DRA262610P0334_check2_reopened
+2026-11-05T04:58:41.633Z tap 500 1320
+2026-11-05T04:58:44.915Z shot 16.8.0.2611041_DRA262610P0334_check2_leo_look
+2026-11-05T04:59:01.311Z lbl Cancel
+2026-11-05T04:59:03.799Z id edit_mini_drama_input
+2026-11-05T04:59:05.186Z type Make Mia wear a red dress
+2026-11-05T04:59:07.092Z id button_mini_drama_send
+2026-11-05T04:59:08.348Z waitfor Ready to update --timeout 110
+2026-11-05T04:59:52.478Z els 
+2026-11-05T04:59:56.884Z shot 16.8.0.2611041_DRA262610P0334_check3_card_before_generate
+2026-11-05T04:59:58.000Z adb tap Generate 842,919 (device 12:59:57.794) [check3_stage2_sysback]
+2026-11-05T05:00:18.000Z adb back (device 13:00:18.400) [check3_stage2_sysback]
+2026-11-05T05:00:48.412Z id button_mini_drama_home_history
+2026-11-05T05:00:51.874Z tap 200 440
+2026-11-05T05:00:57.188Z id button_mini_drama_scroll_bottom
+2026-11-05T05:00:59.498Z shot 16.8.0.2611041_DRA262610P0334_check3_reopened
+2026-11-05T05:01:00.185Z tap 200 1320
+2026-11-05T05:01:03.446Z shot 16.8.0.2611041_DRA262610P0334_check3_mia_look
+2026-11-05T05:01:08.689Z lbl Cancel
+2026-11-05T05:01:11.723Z id edit_mini_drama_input
+2026-11-05T05:01:13.184Z type Give Leo a grey beard
+2026-11-05T05:01:15.115Z id button_mini_drama_send
+2026-11-05T05:01:16.361Z waitfor Ready to update --timeout 110
+2026-11-05T05:02:29.448Z els 
+2026-11-05T05:02:33.515Z shot 16.8.0.2611041_DRA262610P0334_check4_card_before_generate
+2026-11-05T05:02:34.000Z adb tap Generate 842,919 (device 13:02:33.853) [check4_stage2_arrow]
+2026-11-05T05:03:09.000Z adb arrow (device 13:03:08.636) [check4_stage2_arrow]
+2026-11-05T05:03:36.493Z id button_mini_drama_home_history
+2026-11-05T05:03:39.934Z tap 200 440
+2026-11-05T05:03:45.261Z id button_mini_drama_scroll_bottom
+2026-11-05T05:03:47.591Z shot 16.8.0.2611041_DRA262610P0334_check4_reopened
+2026-11-05T05:03:48.318Z tap 500 1320
+2026-11-05T05:03:51.590Z shot 16.8.0.2611041_DRA262610P0334_check4_leo_look
+2026-11-05T05:03:57.281Z lbl Cancel
+2026-11-05T05:04:00.333Z id edit_mini_drama_input
+2026-11-05T05:04:01.720Z type Give Mia glasses
+2026-11-05T05:04:03.791Z id button_mini_drama_send
+2026-11-05T05:04:05.887Z waitfor Ready to update|Daily Free Chat Limit --timeout 110
+2026-11-05T05:04:54.843Z els 
+2026-11-05T05:04:58.542Z shot 16.8.0.2611041_DRA262610P0334_check1b_card_before_generate
+2026-11-05T05:04:59.000Z adb tap Generate 842,976 (device 13:04:59.008) [check1b_stage1_sysback]
+2026-11-05T05:05:01.000Z adb back (device 13:05:01.328) [check1b_stage1_sysback]
+2026-11-05T05:05:52.893Z id button_mini_drama_home_history
+2026-11-05T05:05:56.336Z tap 200 440
+2026-11-05T05:06:01.621Z id button_mini_drama_scroll_bottom
+2026-11-05T05:06:03.956Z shot 16.8.0.2611041_DRA262610P0334_check1b_reopened
+2026-11-05T05:06:04.647Z tap 200 1320
+2026-11-05T05:06:07.928Z shot 16.8.0.2611041_DRA262610P0334_check1b_mia_look
+2026-11-05T05:06:08.944Z lbl Cancel
+2026-11-05T05:06:12.034Z els 
+2026-11-05T05:06:17.282Z pull-logs recheck
+2026-11-05T05:06:43.419Z id button_mini_drama_history
+2026-11-05T05:06:47.529Z texts 
+2026-11-05T05:06:47.870Z shot 16.8.0.2611041_DRA262610P0334_history_end

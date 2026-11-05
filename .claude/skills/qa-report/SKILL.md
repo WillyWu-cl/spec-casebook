@@ -1,6 +1,6 @@
 ---
 name: qa-report
-description: Write and file the QA Report (QR) for a CyberLink Testing Request after verifying its eBugs — OK / Fail per bug (anything not fully verified is left off), readable Test Result Details, one evidence ZIP, a review page the tester approves, then the IF3 「Create QA Report」 form (Standard Report) filled, saved once and read back. Use when the user asks to create, write, draft or file a QR / QA Report for a TR, or to report verification results on a TR. Verifying the bugs on the phone is the run's job; this skill starts from verdicts that already have evidence.
+description: Write and file the QA Report (QR) for a CyberLink Testing Request after verifying its eBugs — OK / Fail per bug (anything not fully verified is left off), readable Test Result Details, one evidence ZIP, a review page the tester approves, then the IF3 「Create QA Report」 form (Standard Report) filled, saved once and read back. Use when the user asks to create, write, draft or file a QR / QA Report for a TR, or to report verification results on a TR. Includes verifying the tester's bugs on the TR's build first when no verdicts exist yet: one ordered journey that checks every bug where the flow reaches it, not a fresh start per bug.
 ---
 
 # QA Report for a Testing Request
@@ -21,6 +21,43 @@ existing eBugs, and only when the user asks for it in chat. Never add eBug comme
   `result*.md`). Every verdict must have been seen on the TR's build; a bug never checked is not on the report.
 - The QRs other testers already filed on the TR (links in the TR's 「QA Report」 list): read one or two for the
   team's current wording before drafting.
+
+## Verify first (user, 2026-11-05, REQ-093)
+
+`/qa-report <TR>` covers the whole job: when the tester's bugs on the TR have no verdicts on its build yet, verify them
+first (run folder `runs/<date>-<tr>-verify/`, `bugs.md` with each bug's filed description), then report.
+
+**One journey, fewest steps.** Never start fresh for each bug. Before touching the phone, write `verify-plan.md`:
+1. List what each bug needs: the stage it starts from (new chat, a stage of an existing drama, a setting, a language)
+   and what it costs (chat turns, credits, Wi-Fi off, waits).
+2. Order the checks along the feature's own flow so one drama (or one session) carries as many bugs as it passes
+   through: e.g. a new chat checks the empty-chat and outline bugs, then the character stage, then storyboard, then
+   video settings. Reuse a drama already in History at the right stage before making a new one.
+3. Share steps: one sent message or one Generate can check several bugs at once; start long waits (a refund that
+   takes 30 min) early and check them at the end; put settings changes (system language, account) last and restore
+   them once.
+4. Count the plan's chat turns and credits against the account's limits (daily free chats) before starting; a step
+   the limit would block goes where it still fits, or the user decides.
+Then run it in that order, one segment per context (AGENTS.md › One section per context), noting every bug's
+evidence as it is passed. A bug whose stage the journey could not reach is Hold.
+
+## Expected = today's spec (user, 2026-11-05, REQ-091)
+
+A bug's Expect Result is what the spec said when it was filed. Before verifying, check it against what the repo
+holds now. First bring the repo up to date: the Figma change check of `spec-casebook` step 0 (one small call per
+Figma file, `figma-check.ts`; 2026-11-05: no run between 10/29 and 11/05 did it, and PM had redrawn 18 boards and
+added 5). A changed board that touches a bug's flow is read before its verdict; the full analysis pass can follow
+later. Beyond that, no Figma or PDF call is needed when the repo already has it:
+- the eBug page's newest comments and Resolve note (RD often cites a spec change there);
+- the table row the bug came from (`cases.csv`, its Notes) and its R- rules in `requirements.md`: `Changed` notes
+  and Open questions;
+- the newest spec set's `extracted/` (`board-notes.md`, Figma frames dated after the filing, `figma/` board images).
+
+Then judge the build's current behaviour against the current spec:
+- The spec changed and the build does what it now says → OK, with a `Note:` naming the newer frame.
+- The build differs from the current spec too → Fail. Write `Expected Result:` from the current spec (name the frame
+  or rule), not from the bug's original text, and test every stage the newer spec splits the flow into.
+- An open question decides it (RD's reading is not a PM ruling) → Hold. Tell the user which question it is.
 
 ## Verdicts (user, 2026-11-03, REQ-073)
 

@@ -1,0 +1,8 @@
+# P0381 outline: Generate 14:26:31, credit pill 14:26:33 → 「Leave this chat?」 (Dialog line 14:26:32.9), Stay; New chat → same dialog; Stay. Outline turn completes while staying.
+2026-11-05 14:26:30.749 14750 18281 D MiniDrama Log: [USER] A lonely lighthouse keeper and a stranded mail pilot. Two characters.
+2026-11-05 14:26:32.924 14750 14750 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false
+2026-11-05 14:26:43.013 14750 14750 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false
+2026-11-05 14:27:04.638 14750 19006 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:32:12.971 14750 14750 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false
+2026-11-05 14:33:39.827 14750 18281 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:33:51.756 14750 19009 D MiniDrama Log: [USER] Make Elias Rowe a woman in her 40s
