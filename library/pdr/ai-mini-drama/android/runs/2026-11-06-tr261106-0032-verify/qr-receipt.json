@@ -1,0 +1,18 @@
+{
+  "qr": "QR261106-0024",
+  "url": "https://ecl.cyberlink.com/IF3/qr/BPM/FormView/QR261106-0024",
+  "tr": "TR261106-0032",
+  "created": "2026-11-06",
+  "counts": { "OK": 1, "Fail": 0 },
+  "rows": { "DRA262610P0424": "OK" },
+  "readBack": "every field, State and Reason match qr-text.txt; no other row set",
+  "ticketsAfter": { "DRA262610P0424": "Close (verified)" },
+  "filesOnBugs": {
+    "DRA262610P0424": [
+      "16.8.0.2611061_DRA262610P0424_01_format_card.png",
+      "16.8.0.2611061_DRA262610P0424_02_storyboard_card.png",
+      "16.8.0.2611061_DRA262610P0424_log.txt"
+    ]
+  },
+  "mismatches": []
+}
