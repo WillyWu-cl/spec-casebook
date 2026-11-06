@@ -1,0 +1,15 @@
+{
+  "png": "pm-header.png",
+  "box": [
+    -4070,
+    -5362,
+    4775,
+    560
+  ],
+  "lines": [
+    ["與 Save & Share 頁 Prompt Reuse / My Prompts Reuse 的差異：它們只帶回一段文字；這個功能帶回整組生成設定 （model + Duration + Quality + Sol",-3972,-5028,1500,29],
+    ["［D0-04］",-3969,-4993,48,12],
+    ["Demo + Spec",-1937,-5196,463,88],
+    ["+ Quality + Sound 〔+ prompt）），讓用戶不用在10個 model 裡重找、重設，就能用同一組設定換照片再做一支。",-2629,-5027,1137,27]
+  ]
+}

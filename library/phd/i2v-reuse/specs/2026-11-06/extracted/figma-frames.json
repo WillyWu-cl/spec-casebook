@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-06",
+  "how": "Figma-only spec set (user, 2026-11-04: a Figma link is read directly, no PDF). PM page 6336:3478 「26'11/E support to reuse model settings in My artwork」 listed with get_metadata (figma-pm, qa1): one section 「Spec」 (6336:3479) holding Spec - Flow, Spec - UI, 【Tracking Event】, Draft / TBD and Error Handling; read whole in one inventory call (group p1). No dated frames or labels. Flow arrows are frames named 「<from> --> <to>」 (drawn lines inside), which the extractor does not take; listed by hand in arrows.json. Design spec not yet shared (expected 2026-11-05). Updated 2026-11-06: Design page 4701:15518 「261105_support to reuse model settings」 listed with get_metadata (figma-design, qa-dm): four loose frames, My AI Artwork and Save & Share in light and dark, no arrows, no notes; read in one inventory call (group d-reuse). The other pages of the Design file are older features and were not read. PM re-read (group p1): only 「Reuse」 moved up beside the summary line, no text changed.",
+  "pm_checked_at": "2026-11-06",
+  "files": {
+    "pm": {
+      "fileKey": "lSk4JUgbXG3DjauMLS9Et7",
+      "page": "6336:3478",
+      "url": "https://www.figma.com/design/lSk4JUgbXG3DjauMLS9Et7/Image-to-Video?node-id=6336-3478",
+      "account": "qa1@cyberlink.com (Dev seat, PM Workspace)"
+    },
+    "design": {
+      "fileKey": "VU8bgYiFHTWhYddg7ciqtL",
+      "page": "4701:15518",
+      "url": "https://www.figma.com/design/VU8bgYiFHTWhYddg7ciqtL/Image-to-video---Character-motion-swap?node-id=4701-15518",
+      "account": "qa-dm@cyberlink.com (Dev seat, CyberLink DC)"
+    }
+  },
+  "frames": [
+    {
+      "label": "261105_support to reuse model settings",
+      "node": "4701:15518",
+      "in_pdf": false,
+      "read": "d-artwork-light, d-save-share-light, d-artwork-dark, d-save-share-dark"
+    }
+  ]
+}

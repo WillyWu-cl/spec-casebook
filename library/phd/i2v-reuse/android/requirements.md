@@ -1,10 +1,12 @@
 # Image to Video Reuse — requirements (android)
 Spec: Image to Video Reuse - PM Figma 6336-3478.md (text of the PM Figma page
-https://www.figma.com/design/lSk4JUgbXG3DjauMLS9Et7/Image-to-Video?node-id=6336-3478, read 2026-11-04; Figma-only spec set, no PDF)
+https://www.figma.com/design/lSk4JUgbXG3DjauMLS9Et7/Image-to-Video?node-id=6336-3478, re-read 2026-11-06) and
+Image to Video Reuse - Design Figma 4701-15518.md (text of the Design page 「261105_support to reuse model settings」
+https://www.figma.com/design/VU8bgYiFHTWhYddg7ciqtL/Image-to-video---Character-motion-swap?node-id=4701-15518, read 2026-11-06). Figma-only spec set, no PDF.
 
-PM-only: the Design spec is not shared yet (expected 2026-11-05). Every requirement comes from the PM page (pass 7);
-UI strings are quoted from the PM mockups and notes and are checked again when the Design draws them. Bracketed
-decision ids ([D1-04]) are the PM's own.
+The Design draws only Save & Share and My AI Artwork, in light and dark, with no arrows or notes. Everything else
+(the reused room, the toasts, the removed model, errors, tracking) stays PM-only (pass 7) and its strings are checked
+again if the Design draws them. Bracketed decision ids ([D1-04]) are the PM's own.
 
 ## Scope and entry
 - R-001 [PM:pm-header D0-04] Reuse on a video's Save & Share page brings back the whole generation setting set (model, Duration, Video Quality, Generate Sound by AI and the prompt), not only the prompt text as the old Prompt Reuse did.
@@ -15,14 +17,16 @@ decision ids ([D1-04]) are the PM's own.
 
 ## My AI Artwork — Image to Video tab
 - R-006 [PM:pm-ui My AI Artwork D0-07] The Image to Video tab is the same as today: 「Create more」 is its only creation button.
-- R-007 [PM:pm-ui Save & Share D1-07] The list tiles get no Reuse or other new button.
+- R-007 [DS:d-artwork-light; PM:pm-ui Save & Share D1-07] The list tiles get no Reuse or other new button.
 - R-008 [PM:pm-ui Save & Share D1-01; PM:pm-ui My AI Artwork D1-01] Tapping a finished Custom video in the Image to Video tab opens its Save & Share page with 「Prompts & Settings」 and 「Reuse」.
 - R-009 [PM:pm-ui Save & Share D0-05, D1-01] Tapping a finished Custom video in Recent (Video) opens the same Save & Share page with 「Prompts & Settings」 and 「Reuse」.
 
 ## Save & Share — Prompts & Settings
-- R-010 [PM:pm-ui Save & Share D0-04b, D1-10] The Prompts area's title is 「Prompts & Settings」.
-- R-011 [PM:pm-ui Save & Share D0-04b] The page has exactly one 「Reuse」: the old Prompt Reuse row is replaced by it, not shown beside it.
-- R-012 [PM:pm-ui Save & Share D2-01] The section shows a summary line of model · Duration · Quality · Sound (mockup: 「Kling 2.6 · 10s · Pro · Sound On」) and the video's prompt below it.
+- R-010 [DS:d-save-share-light; PM:pm-ui Save & Share D0-04b, D1-10] The Prompts area's title is 「Prompts & Settings」.
+- R-011 [DS:d-save-share-light; PM:pm-ui Save & Share D0-04b] The page has exactly one 「Reuse」: the old Prompt Reuse row is replaced by it, not shown beside it.
+- R-012 [DS:d-save-share-light; PM:pm-ui Save & Share D2-01] The section is a card: the model's icon and name with 「Reuse」 at the right of the same row, under them one chip each for Duration, Quality and Sound (sample 「10s」 「Pro」 「Sound on」, Q-13), and under the chips the video's prompt.
+- R-067 [DS:d-save-share-light] On a Custom video's page the order is 「Save」, 「More Video Editing Tools」, 「Add Text」 「Add Sticker」 「Add Music」, 「Prompts & Settings」, 「Share to」.
+- R-068 [DS:d-save-share-dark] In dark mode the 「Prompts & Settings」 card follows the dark frame: the title, model name, chips, prompt and 「Reuse」 are readable on the dark background (Q-16).
 - R-013 [PM:pm-ui Save & Share D2-03] Only Custom videos that generated successfully show 「Prompts & Settings」 and 「Reuse」; processing and failed jobs do not.
 - R-014 [PM:pm-ui Save & Share D2-03b; PM:pm-draft-tbd Q1] Custom videos generated before 4/E show no 「Reuse」 on day 1 (RD to confirm).
 - R-015 [PM:pm-draft-tbd Q2 D2-07] A Custom video whose full settings cannot be read (made on the other platform, or after a reinstall) shows no 「Reuse」 on day 1 (RD to confirm).
@@ -92,7 +96,7 @@ decision ids ([D1-04]) are the PM's own.
 - R-061 [Rule pass 8: system Back] System Back on the Android explanation sheet shown after Reuse: the spec does not say what it does (Q-9); the row records it.
 
 ## Open questions
-- Q-1 No Design yet. Every row is written from the PM page, whose mockup strings (「Prompts & Settings」, 「Settings applied」, the summary 「Kling 2.6 · 10s · Pro · Sound On」, the removal toast) may change when the Design draws them. Assumption: the PM strings are expected until the Design spec arrives (2026-11-05). R-010, R-012, R-025, R-044; TC-006, TC-010, TC-029.
+- Q-1 The Design does not draw the reused room or its toasts, so 「Settings applied」 and the removal toast still come from the PM mockups only. 「Prompts & Settings」 and 「Reuse」 are now confirmed by the Design. Assumption: the PM strings are expected until the Design draws them. R-025, R-044; TC-010, TC-029.
 - Q-2 Which videos count as made 「before 4/E」? The PM's own draft question Q1 waits for RD (meeting 2026-10-28) and no build or date is given. Assumption: a Custom video generated on a build older than 4/E shows no 「Reuse」. R-014; TC-041.
 - Q-3 Videos whose settings cannot be read. The PM draft Q2 suggests 「do not bring in the default model setting」 but its day-1 line says 「no Reuse」. Assumption: day 1 shows no 「Reuse」 for such a video (made on iOS, or before a reinstall). R-015; TC-042.
 - Q-4 「toast 優先於 panel」: which panel, and what does priority mean? Assumption: when a panel is open or opens as the room appears, 「Settings applied」 still shows on top of it and is not hidden by it. R-027; TC-016.
@@ -101,9 +105,13 @@ decision ids ([D1-04]) are the PM's own.
 - Q-7 「Android 上限 500」 names no model. Assumption: the over-limit case is reached by reusing a video with a prompt over 500 characters and switching to (or landing on, after a removal) a model whose limit is 500. R-046; TC-032.
 - Q-8 How are tracking events observed on Android? Assumption: rows wait for an event log (Mixpanel debug view or a log pull) and are parked until one is set up. R-051 to R-054; TC-037 to TC-040.
 - Q-9 What system Back does on the Android explanation sheet is not stated. Assumption: it closes the sheet like its own close and leaves the reused room with the settings applied and the toast shown. R-061; TC-046.
-- Q-10 The summary line for a model without a Quality or Sound option is not drawn. Assumption: it lists only the settings the model has, in the order model · Duration · Quality · Sound. R-012; TC-012.
+- Q-10 The chips for a model without a Quality or Sound option are not drawn. Assumption: the card shows chips only for the settings the model has, in the order Duration, Quality, Sound. R-012; TC-012.
 - Q-11 A video made from an inspiration: is the prompt text kept while only the inspiration selection is dropped? Assumption: yes, the prompt text comes back and no inspiration is selected. R-024; TC-014.
 - Q-12 Which model does not support real people, and which are the 10 models? Not listed. Assumption: the tester finds the model from the app's current behaviour (the message shows today) and records its name. R-048; TC-034.
+- Q-13 The Sound chip reads 「Soound on」 in the Design, a likely typo, and the PM wrote 「Sound On」. Assumption: the app shows 「Sound on」, with a lower-case 「on」 as the Design has it. R-012; TC-006.
+- Q-14 The Design's My AI Artwork frames look copied from an older page: the selected tab is 「Character Motion Swap」 with no 「Image to Video」 tab, and the failed tile has 「Resume to Upload」, while the PM draws an 「Image to Video」 tab and failed tiles with 「Retry」, 「Report」 and 「View Details」. The PM says this page stays as today. Assumption: the PM holds, and the first run confirms it on the device. R-006, R-008, R-013; TC-001, TC-002, TC-004.
+- Q-15 The PM's Save & Share mockup has a home button at the top right; the Design shows only ‹. Assumption: the page keeps whatever it has today, so no row presses it. No row depends on this. R-067; TC-049.
+- Q-16 Does PhotoDirector Android have a dark mode for this page, and how is it turned on? The Design draws dark frames but no spec says how they are reached. Assumption: it follows the phone's dark theme; if the app has no dark mode the row is retired. R-068; TC-050.
 
 ## Added 2026-11-04 — coverage passes and standing inputs
 
@@ -153,6 +161,8 @@ Every cell names the rows that check it, or n/a when the spec defines nothing fo
 ### Variants
 | Requirement | Variant | Rows |
 |---|---|---|
+| R-068 | theme=dark | TC-050 |
+| R-012 | theme=light | TC-006 |
 | R-017 | model=Kling 2.6 (the mockup video) | TC-010 |
 | R-017 | model=another model that is not the default | TC-012 |
 | R-018 | Duration=10s | TC-011 |

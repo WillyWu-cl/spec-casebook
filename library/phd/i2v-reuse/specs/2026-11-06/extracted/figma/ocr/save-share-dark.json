@@ -1,0 +1,27 @@
+{
+  "png": "save-share-dark.png",
+  "box": [
+    1912,
+    -30,
+    375,
+    812
+  ],
+  "lines": [
+    ["9:41",1943,-11,37,15],
+    ["Save & Share",2053,31,91,15],
+    ["Save",2077,400,39,17],
+    ["More Video Editing Tools",1989,452,183,19],
+    ["T Add Text",1949,513,69,18],
+    ["Add Sticker",2081,517,63,9],
+    ["近 Add Music",2176,512,82,18],
+    ["Prompts & Settings",1925,570,139,17],
+    ["Gemini Omini Flash 1.1",1967,615,161,16],
+    ["Reuse",2209,615,39,14],
+    ["10s",1945,650,23,10],
+    ["Pro",1985,650,19,10],
+    ["Soound on",2023,649,59,10],
+    ["A girl turning around in the snow, hair flowing in",1939,673,309,18],
+    ["the wina",1939,695,57,11],
+    ["Share to",1925,730,66,19]
+  ]
+}

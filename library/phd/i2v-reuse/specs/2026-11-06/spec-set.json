@@ -1,0 +1,28 @@
+{
+  "feature": "phd/i2v-reuse",
+  "folder": "2026-11-06",
+  "received_at": "2026-11-06T03:57:58.319Z",
+  "spec_set_sha256": "da05200c88f28e9444ade6de751ec213402485680d558b043a89f67ed2a83286",
+  "files": [
+    {
+      "name": "Image to Video Reuse - PM Figma 6336-3478.md",
+      "sha256": "70fa7c3476d3d27dfe44ef4d82a47dd6ffad19b35c97aaf1fcb142b3cd99c7e4",
+      "bytes": 15216
+    },
+    {
+      "name": "Image to Video Reuse - Design Figma 4701-15518.md",
+      "sha256": "7b5509a2b5d69f2fdc9d88a99e92ab5e049a9bc05394b5702a36990e7d806f9b",
+      "bytes": 3805
+    }
+  ],
+  "source_priority": [
+    "design",
+    "pm"
+  ],
+  "figma": {
+    "design": "https://www.figma.com/design/VU8bgYiFHTWhYddg7ciqtL/Image-to-video---Character-motion-swap?node-id=4701-15518",
+    "pm": "https://www.figma.com/design/lSk4JUgbXG3DjauMLS9Et7/Image-to-Video?node-id=6336-3478"
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-04): the spec files are text snapshots of the PM page and of the Design page 261105_support to reuse model settings, written from the inventory reads; no PDF export."
+}
