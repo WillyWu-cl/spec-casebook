@@ -1,0 +1,14 @@
+{
+  "png": "pm-header.png",
+  "box": [
+    3261,
+    -2087,
+    8100,
+    330
+  ],
+  "lines": [
+    ["與 Collage 的差異：Collage 是單張圖片挖空、給用戶上傳圖；Scrollable Collage 是一個 canvas，給用戶自由增減 frame ［D0-03］",3261,-1855,1290,28],
+    ["Demo + Spec—Scrollable Collage",6522,-2024,1216,83],
+    ["lage （26 11E）",7580,-2022,481,77]
+  ]
+}

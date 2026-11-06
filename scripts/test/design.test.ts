@@ -583,6 +583,22 @@ test('source gaps: a Design board the casebook inventories but the read lacks st
   rmSync(join(OUT, 'summary.json'));
 });
 
+test('source gaps: a region board is read once every board inside its box merged', () => {
+  writeOut(); rmSync(join(OUT, 'summary.json'), { force: true });
+  const inv = join(EX, 'figma-inventory-dr.json');
+  put(inv, { file: 'KEY123', group: 'dr', boards: [['0:1/region-a', 'region-a', -10, -10, 2000, 2000], ['0:1/region-b', 'region-b', 5000, 0, 500, 500]] });
+  put(join(OUT, '7-7.json'), { board: { id: '7:7', name: 'Inside', box: [0, 0, 375, 812] }, nodes: [] });
+  put(join(OUT, 'summary.json'), { boards: [{ id: '7:7', name: 'Inside' }], incomplete: [] });
+  const st = design('status').out;
+  assert.doesNotMatch(st, /region-a/, 'every board inside region-a merged');
+  assert.match(st, /board 0:1\/region-b 「region-b」 is not in the Design source read/, 'nothing merged inside region-b');
+  // an incomplete board inside keeps the region unread
+  put(join(OUT, 'summary.json'), { boards: [{ id: '7:7', name: 'Inside' }], incomplete: [{ board: '8:8', name: 'Half', missing: ['chunk-8-8_0'], box: [400, 0, 375, 812] }] });
+  assert.match(design('status').out, /board 0:1\/region-a 「region-a」 is not in the Design source read/);
+  rmSync(inv); rmSync(join(OUT, '7-7.json')); rmSync(join(OUT, 'summary.json'));
+  writeOut();
+});
+
 test('figma-source merge: an incomplete board leaves no stale board file, and a casebook board not planned is named', () => {
   writeOut();
   const resp = join(EX, 'figma-source', 'design', 'responses');
@@ -665,6 +681,47 @@ test('figma-source: board images live in the shared folder, are size-checked and
   put(join(EX, 'figma-source', 'design', 'hashes.json'), { '1:1': { hash: 'old', read_at: '2026-01-01T00:00:00Z', name: 'Board', nodes: 1 } });
   assert.match(run('figma-source.ts', [F, 'calls', 'chunks', 'design']).out, /1 screenshot\(s\)/);
   rmSync(join(EX, 'figma-source', 'design', 'hashes.json'));
+});
+
+test('figma-source chunks: small boards share batch calls, instance-free boards need no hidden call, twins get their own image, a covering image is reused', () => {
+  const src = join(EX, 'figma-source', 'design'), resp = join(src, 'responses'), calls = join(src, 'calls'), shared = join(EX, 'figma');
+  rmSync(resp, { recursive: true, force: true }); rmSync(join(src, 'hashes.json'), { force: true });
+  const shotsBefore = existsSync(join(shared, 'shots.json')) ? readFileSync(join(shared, 'shots.json'), 'utf8') : null;
+  const hashesBefore = existsSync(join(EX, 'figma-hashes.json')) ? readFileSync(join(EX, 'figma-hashes.json'), 'utf8') : null;
+  put(join(resp, 'list.json'), JSON.stringify({ mode: 'list', page: ['0:1', 'UI'], root: ['0:1', 'UI', 'PAGE'], sections: [],
+    nodes: [['4:1', 'label a', 'TEXT', 0, 900, 100, 20, 0, 1], ['4:2', 'label b', 'TEXT', 0, 950, 100, 20, 0, 1], ['5:1', 'Same', 'FRAME', 0, 0, 375, 812, 0, 1], ['5:2', 'Same', 'FRAME', 400, 0, 375, 812, 3, 1]] }));
+  put(join(resp, 'plan-0-1.json'), JSON.stringify({ mode: 'plan', page: ['0:1', 'UI'], read_at: '2026-01-03T00:00:00Z', missing: [],
+    boards: [{ id: '4:1', name: 'label a', type: 'TEXT', hash: 'a', box: [0, 900, 100, 20], nodes: 1 }, { id: '4:2', name: 'label b', type: 'TEXT', hash: 'b', box: [0, 950, 100, 20], nodes: 1 },
+      { id: '5:1', name: 'Same', type: 'FRAME', hash: 'c', box: [0, 0, 375, 812], nodes: 40 }, { id: '5:2', name: 'Same', type: 'FRAME', hash: 'd', box: [400, 0, 375, 812], nodes: 40 }],
+    chunks: [['4:1', 0, 1, 300, '4:1', '4:1'], ['4:2', 0, 1, 300, '4:2', '4:2'], ['5:1', 0, 40, 30000, '5:1', '5:9'], ['5:2', 0, 40, 30000, '5:2', '5:9']] }));
+  put(join(shared, 'shots.json'), { 'region.png': { board: '0:1/r', group: 'd', hash: 'rh', box: [0, 0, 800, 812], captured_at: '2026-01-01T00:00:00Z' } });
+  png(join(shared, 'region.png'), 800, 812, []);
+  put(join(EX, 'figma-hashes.json'), { boards: { '0:1/r': { hash: 'rh' } }, files: {} });
+  const r = run('figma-source.ts', [F, 'calls', 'chunks', 'design']);
+  const todo = read(join(calls, 'todo.json')), names = todo.chunk_calls.map((c: any) => c.call.split('/').pop());
+  assert.ok(names.includes('chunk-batch-1.js'), r.out); assert.ok(!names.some((n: string) => /chunk-4-/.test(n)), 'labels go in the batch');
+  assert.deepEqual(names.filter((n: string) => n.startsWith('hidden-')), ['hidden-5-2_0.js'], 'only the board with instances needs a hidden call');
+  assert.match(readFileSync(join(calls, 'chunk-batch-1.js'), 'utf8'), /\[\["4:1",0,1,"4:1","4:1"\],\["4:2",0,1,"4:2","4:2"\]\]/);
+  assert.deepEqual(todo.covered_shots, ['5:1', '5:2']);
+  assert.deepEqual(todo.screenshots.map((x: any) => x.nodeId), ['4:1', '4:2']);
+  // the region image no longer current: the two frames named alike are taken into two files
+  put(join(EX, 'figma-hashes.json'), { boards: { '0:1/r': { hash: 'new' } }, files: {} });
+  run('figma-source.ts', [F, 'calls', 'chunks', 'design']);
+  const saves = read(join(calls, 'todo.json')).screenshots.filter((x: any) => x.nodeId.startsWith('5:')).map((x: any) => x.save_to.split('/').pop());
+  assert.deepEqual(saves, ['same.png', 'same-5-2.png']);
+  // a batch return is read as its boards' chunks
+  const node = (i: string, p: number) => ({ i, t: 'TEXT', n: 'L', b: [0, 0, 100, 20], p });
+  const part = (id: string) => ({ mode: 'chunk', board: id, read_at: '2026-01-03T00:01:00Z', from: 0, to: 1, first: 0, count: 1, bytes: 10, tables: { V: [], S: [], P: [] }, nodes: [node(id, -1)] });
+  put(join(resp, 'chunk-batch-1.json'), JSON.stringify({ mode: 'batch', parts: [part('4:1'), part('4:2')] }));
+  const m = run('figma-source.ts', [F, 'merge', 'design']);
+  assert.doesNotMatch(m.out, /INCOMPLETE 4:/, m.out);
+  assert.ok(existsSync(join(OUT, '4-1.json')) && existsSync(join(OUT, '4-2.json')));
+  rmSync(resp, { recursive: true, force: true }); rmSync(calls, { recursive: true, force: true }); rmSync(join(src, 'hashes.json'), { force: true });
+  rmSync(join(shared, 'region.png'), { force: true });
+  for (const [f, v] of [[join(shared, 'shots.json'), shotsBefore], [join(EX, 'figma-hashes.json'), hashesBefore]] as const) v === null ? rmSync(f, { force: true }) : writeFileSync(f, v);
+  for (const f of ['4-1', '4-2']) { rmSync(join(OUT, `${f}.json`), { force: true }); rmSync(join(OUT, `${f}.metadata.xml`), { force: true }); }
+  rmSync(join(OUT, 'summary.json'), { force: true });
+  writeOut();
 });
 
 test('figma-source: save refuses a return older than its call', () => {

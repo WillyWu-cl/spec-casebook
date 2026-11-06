@@ -1,0 +1,2386 @@
+{
+  "built_at": "2026-11-05T11:27:13.700Z",
+  "spec_set": "2026-11-05",
+  "file": {
+    "fileKey": "iUy5kOrVNG7IjcyxGGnp9t",
+    "page": "0:1",
+    "url": "https://www.figma.com/design/iUy5kOrVNG7IjcyxGGnp9t/Swipe_collage?node-id=0-1",
+    "account": "qa-dm@cyberlink.com (Dev seat, CyberLink DC)"
+  },
+  "phases": null,
+  "skip": [],
+  "skip_reason": null,
+  "skip_reasons": {},
+  "scope_review": null,
+  "scope_included": [],
+  "source_gaps": {
+    "unread": [],
+    "incomplete": [],
+    "listed": [],
+    "page_listed": true
+  },
+  "casebook": true,
+  "counts": {
+    "screens": 56,
+    "routed": 54,
+    "figma_paths": 0,
+    "gaps": 0,
+    "no_route": 2,
+    "excluded": 0
+  },
+  "by_case": {
+    "TC-079": [
+      "49:1511",
+      "111:7291"
+    ],
+    "TC-037": [
+      "54:520",
+      "111:6745",
+      "23:531",
+      "111:6645"
+    ],
+    "TC-031": [
+      "23:989",
+      "111:6824",
+      "69:6711",
+      "111:6952"
+    ],
+    "TC-082": [
+      "54:1487",
+      "111:8511"
+    ],
+    "TC-035": [
+      "54:1835",
+      "111:8637",
+      "54:2110",
+      "111:8809",
+      "69:6938",
+      "111:9880",
+      "72:1505",
+      "111:9172"
+    ],
+    "TC-086": [
+      "54:2359",
+      "111:9057"
+    ],
+    "TC-056": [
+      "103:6032",
+      "103:6121",
+      "111:10489",
+      "111:10570"
+    ],
+    "TC-042": [
+      "33:2230",
+      "111:7917"
+    ],
+    "TC-043": [
+      "66:5255",
+      "82:4349",
+      "111:7605",
+      "111:7761"
+    ],
+    "TC-047": [
+      "28:1621",
+      "111:7455"
+    ],
+    "TC-017": [
+      "1:238",
+      "111:6261"
+    ],
+    "TC-057": [
+      "67:6424",
+      "111:9730"
+    ],
+    "TC-022": [
+      "18:386",
+      "111:6596"
+    ],
+    "TC-053": [
+      "61:4517",
+      "111:9400"
+    ],
+    "TC-040": [
+      "73:2199",
+      "111:10134"
+    ],
+    "TC-108": [
+      "74:3076",
+      "112:3247"
+    ],
+    "TC-102": [
+      "74:2830",
+      "111:7080"
+    ],
+    "TC-130": [
+      "45:723",
+      "111:8106"
+    ],
+    "TC-134": [
+      "103:5778",
+      "111:8308"
+    ],
+    "TC-010": [
+      "3:336",
+      "111:6441"
+    ]
+  },
+  "screens": [
+    {
+      "id": "49:1511",
+      "name": "[+] 開 Add Layer：五個 function  ",
+      "board": "49:1511",
+      "board_name": "[+] 開 Add Layer：五個 function",
+      "abs": [
+        0,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "49:1511",
+      "status": "routed",
+      "route": {
+        "case": "TC-079",
+        "how": "on",
+        "via": "K-0f06d0",
+        "fit": "high",
+        "edge": "round/ic_image",
+        "segment": "",
+        "section": "Add Layer",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+        "action": "1. Tap 「Image」\n2. Pick one photo",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-083",
+        "TC-085",
+        "TC-031",
+        "TC-087"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:7291",
+      "name": "[+] 開 Add Layer：五個 function  ",
+      "board": "111:7291",
+      "board_name": "[+] 開 Add Layer：五個 function",
+      "abs": [
+        8396,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        8396,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:7291",
+      "status": "routed",
+      "route": {
+        "case": "TC-079",
+        "how": "on",
+        "via": "K-0f06d0",
+        "fit": "high",
+        "edge": "round/ic_image",
+        "segment": "",
+        "section": "Add Layer",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+        "action": "1. Tap 「Image」\n2. Pick one photo",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-083",
+        "TC-085",
+        "TC-031",
+        "TC-087"
+      ],
+      "flags": []
+    },
+    {
+      "id": "54:520",
+      "name": "1_add_img",
+      "board": "54:520",
+      "board_name": "1_add_img",
+      "abs": [
+        401,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        401,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "54:520",
+      "status": "routed",
+      "route": {
+        "case": "TC-037",
+        "how": "on",
+        "via": "K-09c4a7",
+        "fit": "mid",
+        "edge": "top/ic_back_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "action": "1. Tap + in an empty frame\n2. Pick one photo\n3. Tap ‹",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-047",
+        "TC-063",
+        "TC-064",
+        "TC-066"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:6745",
+      "name": "1_add_img",
+      "board": "111:6745",
+      "board_name": "1_add_img",
+      "abs": [
+        8797,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        8797,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:6745",
+      "status": "routed",
+      "route": {
+        "case": "TC-037",
+        "how": "on",
+        "via": "K-09c4a7",
+        "fit": "mid",
+        "edge": "top/ic_back_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "action": "1. Tap + in an empty frame\n2. Pick one photo\n3. Tap ‹",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-047",
+        "TC-063",
+        "TC-064",
+        "TC-066"
+      ],
+      "flags": []
+    },
+    {
+      "id": "23:989",
+      "name": "1_entry",
+      "board": "23:989",
+      "board_name": "1_entry",
+      "abs": [
+        1203,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        1203,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "23:989",
+      "status": "routed",
+      "route": {
+        "case": "TC-031",
+        "how": "on",
+        "via": "C-bf6aa9",
+        "fit": "mid",
+        "edge": "tab",
+        "segment": "",
+        "section": "Canvas",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+        "action": "1. Open 「Pages」\n2. Drag page 2 to the last position\n3. Tap ✓",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-087",
+        "TC-096",
+        "TC-102",
+        "TC-103"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:6824",
+      "name": "1_entry",
+      "board": "111:6824",
+      "board_name": "1_entry",
+      "abs": [
+        9599,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        9599,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:6824",
+      "status": "routed",
+      "route": {
+        "case": "TC-031",
+        "how": "on",
+        "via": "C-bf6aa9",
+        "fit": "mid",
+        "edge": "tab",
+        "segment": "",
+        "section": "Canvas",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+        "action": "1. Open 「Pages」\n2. Drag page 2 to the last position\n3. Tap ✓",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-087",
+        "TC-096",
+        "TC-102",
+        "TC-103"
+      ],
+      "flags": []
+    },
+    {
+      "id": "54:1487",
+      "name": "2_add_text",
+      "board": "54:1487",
+      "board_name": "2_add_text",
+      "abs": [
+        802,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        802,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "54:1487",
+      "status": "routed",
+      "route": {
+        "case": "TC-082",
+        "how": "on",
+        "via": "K-b2e956",
+        "fit": "high",
+        "edge": "ic_text_bold",
+        "segment": "",
+        "section": "Add Layer",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer › 「Text」 open with 「Strong」 typed",
+        "action": "1. Tap bold\n2. Tap italic\n3. Tap align left\n4. Tap align center\n5. Tap align right\n6. Tap Done",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-035",
+        "TC-053",
+        "TC-054",
+        "TC-058"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:8511",
+      "name": "2_add_text",
+      "board": "111:8511",
+      "board_name": "2_add_text",
+      "abs": [
+        9198,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        9198,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:8511",
+      "status": "routed",
+      "route": {
+        "case": "TC-082",
+        "how": "on",
+        "via": "K-b2e956",
+        "fit": "high",
+        "edge": "ic_text_bold",
+        "segment": "",
+        "section": "Add Layer",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer › 「Text」 open with 「Strong」 typed",
+        "action": "1. Tap bold\n2. Tap italic\n3. Tap align left\n4. Tap align center\n5. Tap align right\n6. Tap Done",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-035",
+        "TC-053",
+        "TC-054",
+        "TC-058"
+      ],
+      "flags": []
+    },
+    {
+      "id": "54:1835",
+      "name": "3_Add_Sticker",
+      "board": "54:1835",
+      "board_name": "3_Add_Sticker",
+      "abs": [
+        1203,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        1203,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "54:1835",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "K-e5842e",
+        "fit": "low",
+        "edge": "DownSheet_caption/btn_ok_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-058",
+        "TC-059"
+      ],
+      "flags": [
+        "area"
+      ]
+    },
+    {
+      "id": "111:8637",
+      "name": "3_Add_Sticker",
+      "board": "111:8637",
+      "board_name": "3_Add_Sticker",
+      "abs": [
+        9599,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        9599,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:8637",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "K-e5842e",
+        "fit": "low",
+        "edge": "DownSheet_caption/btn_ok_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-058",
+        "TC-059"
+      ],
+      "flags": [
+        "area"
+      ]
+    },
+    {
+      "id": "54:2110",
+      "name": "4_frame",
+      "board": "54:2110",
+      "board_name": "4_frame",
+      "abs": [
+        1604,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        1604,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "54:2110",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "K-e5842e",
+        "fit": "low",
+        "edge": "DownSheet_caption/btn_ok_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-058",
+        "TC-059"
+      ],
+      "flags": [
+        "area"
+      ]
+    },
+    {
+      "id": "111:8809",
+      "name": "4_frame",
+      "board": "111:8809",
+      "board_name": "4_frame",
+      "abs": [
+        10000,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        10000,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:8809",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "K-e5842e",
+        "fit": "low",
+        "edge": "DownSheet_caption/btn_ok_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-058",
+        "TC-059"
+      ],
+      "flags": [
+        "area"
+      ]
+    },
+    {
+      "id": "54:2359",
+      "name": "5_Text_bubble",
+      "board": "54:2359",
+      "board_name": "5_Text_bubble",
+      "abs": [
+        2005,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        2005,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "54:2359",
+      "status": "routed",
+      "route": {
+        "case": "TC-086",
+        "how": "on",
+        "via": "K-cb20fc",
+        "fit": "high",
+        "edge": "ic_none",
+        "segment": "",
+        "section": "Add Layer",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; a text bubble added and focused, the Text Bubble panel open",
+        "action": "Tap the 「none」 (no bubble) choice",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-035",
+        "TC-053",
+        "TC-054",
+        "TC-058"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:9057",
+      "name": "5_Text_bubble",
+      "board": "111:9057",
+      "board_name": "5_Text_bubble",
+      "abs": [
+        10401,
+        1110,
+        375,
+        812
+      ],
+      "board_box": [
+        10401,
+        1110,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:9057",
+      "status": "routed",
+      "route": {
+        "case": "TC-086",
+        "how": "on",
+        "via": "K-cb20fc",
+        "fit": "high",
+        "edge": "ic_none",
+        "segment": "",
+        "section": "Add Layer",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; a text bubble added and focused, the Text Bubble panel open",
+        "action": "Tap the 「none」 (no bubble) choice",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-035",
+        "TC-053",
+        "TC-054",
+        "TC-058"
+      ],
+      "flags": []
+    },
+    {
+      "id": "103:6032",
+      "name": "B (mimic VVG/ Beauty plus)",
+      "board": "103:6032",
+      "board_name": "B (mimic VVG/ Beauty plus)",
+      "abs": [
+        802,
+        2214,
+        375,
+        811.81
+      ],
+      "board_box": [
+        802,
+        2214,
+        375,
+        811.81
+      ],
+      "board_png": null,
+      "inventory_screen": "103:6032",
+      "status": "routed",
+      "route": {
+        "case": "TC-056",
+        "how": "on",
+        "via": "K-133033",
+        "fit": "mid",
+        "edge": "btn_close_outline",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+        "action": "Tap the IAP page's ✕",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-061",
+        "TC-146"
+      ],
+      "flags": []
+    },
+    {
+      "id": "103:6121",
+      "name": "B (mimic VVG/ Beauty plus)",
+      "board": "103:6121",
+      "board_name": "B (mimic VVG/ Beauty plus)",
+      "abs": [
+        802,
+        3317,
+        375,
+        811.81
+      ],
+      "board_box": [
+        802,
+        3317,
+        375,
+        811.81
+      ],
+      "board_png": null,
+      "inventory_screen": "103:6121",
+      "status": "routed",
+      "route": {
+        "case": "TC-056",
+        "how": "on",
+        "via": "K-133033",
+        "fit": "mid",
+        "edge": "btn_close_outline",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+        "action": "Tap the IAP page's ✕",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-061",
+        "TC-146"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:10489",
+      "name": "B (mimic VVG/ Beauty plus)",
+      "board": "111:10489",
+      "board_name": "B (mimic VVG/ Beauty plus)",
+      "abs": [
+        9198,
+        2214,
+        375,
+        811.81
+      ],
+      "board_box": [
+        9198,
+        2214,
+        375,
+        811.81
+      ],
+      "board_png": null,
+      "inventory_screen": "111:10489",
+      "status": "routed",
+      "route": {
+        "case": "TC-056",
+        "how": "on",
+        "via": "K-133033",
+        "fit": "mid",
+        "edge": "btn_close_outline",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+        "action": "Tap the IAP page's ✕",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-061",
+        "TC-146"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:10570",
+      "name": "B (mimic VVG/ Beauty plus)",
+      "board": "111:10570",
+      "board_name": "B (mimic VVG/ Beauty plus)",
+      "abs": [
+        9198,
+        3317,
+        375,
+        811.81
+      ],
+      "board_box": [
+        9198,
+        3317,
+        375,
+        811.81
+      ],
+      "board_png": null,
+      "inventory_screen": "111:10570",
+      "status": "routed",
+      "route": {
+        "case": "TC-056",
+        "how": "on",
+        "via": "K-133033",
+        "fit": "mid",
+        "edge": "btn_close_outline",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+        "action": "Tap the IAP page's ✕",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-061",
+        "TC-146"
+      ],
+      "flags": []
+    },
+    {
+      "id": "69:6938",
+      "name": "background_panel_solid",
+      "board": "69:6938",
+      "board_name": "background_panel_solid",
+      "abs": [
+        4345,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        4345,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "69:6938",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "K-e5842e",
+        "fit": "low",
+        "edge": "DownSheet_caption/btn_ok_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-058",
+        "TC-059"
+      ],
+      "flags": [
+        "area"
+      ]
+    },
+    {
+      "id": "72:1786",
+      "name": "background_panel_solid",
+      "board": "72:1786",
+      "board_name": "background_panel_solid",
+      "abs": [
+        4757,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        4757,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "72:1786",
+      "status": "no-route",
+      "why": "no row presses a control on it or walks an arrow into it, and no Design arrow leads to it",
+      "flags": []
+    },
+    {
+      "id": "111:9880",
+      "name": "background_panel_solid",
+      "board": "111:9880",
+      "board_name": "background_panel_solid",
+      "abs": [
+        12741,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        12741,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:9880",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "K-e5842e",
+        "fit": "low",
+        "edge": "DownSheet_caption/btn_ok_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-058",
+        "TC-059"
+      ],
+      "flags": [
+        "area"
+      ]
+    },
+    {
+      "id": "111:10344",
+      "name": "background_panel_solid",
+      "board": "111:10344",
+      "board_name": "background_panel_solid",
+      "abs": [
+        13153,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        13153,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:10344",
+      "status": "no-route",
+      "why": "no row presses a control on it or walks an arrow into it, and no Design arrow leads to it",
+      "flags": []
+    },
+    {
+      "id": "72:1505",
+      "name": "background_panel_texture",
+      "board": "72:1505",
+      "board_name": "background_panel_texture",
+      "abs": [
+        5169,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        5169,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "72:1505",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "K-e5842e",
+        "fit": "low",
+        "edge": "DownSheet_caption/btn_ok_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-058",
+        "TC-059"
+      ],
+      "flags": [
+        "area"
+      ]
+    },
+    {
+      "id": "111:9172",
+      "name": "background_panel_texture",
+      "board": "111:9172",
+      "board_name": "background_panel_texture",
+      "abs": [
+        13565,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        13565,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:9172",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "K-e5842e",
+        "fit": "low",
+        "edge": "DownSheet_caption/btn_ok_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-058",
+        "TC-059"
+      ],
+      "flags": [
+        "area"
+      ]
+    },
+    {
+      "id": "69:6711",
+      "name": "canvas_default",
+      "board": "69:6711",
+      "board_name": "canvas_default",
+      "abs": [
+        3933,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        3933,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "69:6711",
+      "status": "routed",
+      "route": {
+        "case": "TC-031",
+        "how": "on",
+        "via": "C-bf6aa9",
+        "fit": "mid",
+        "edge": "tab",
+        "segment": "",
+        "section": "Canvas",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+        "action": "1. Open 「Pages」\n2. Drag page 2 to the last position\n3. Tap ✓",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-087",
+        "TC-096",
+        "TC-102",
+        "TC-103"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:6952",
+      "name": "canvas_default",
+      "board": "111:6952",
+      "board_name": "canvas_default",
+      "abs": [
+        12329,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        12329,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:6952",
+      "status": "routed",
+      "route": {
+        "case": "TC-031",
+        "how": "on",
+        "via": "C-bf6aa9",
+        "fit": "mid",
+        "edge": "tab",
+        "segment": "",
+        "section": "Canvas",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+        "action": "1. Open 「Pages」\n2. Drag page 2 to the last position\n3. Tap ✓",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-087",
+        "TC-096",
+        "TC-102",
+        "TC-103"
+      ],
+      "flags": []
+    },
+    {
+      "id": "33:2230",
+      "name": "canvas_frame_focus",
+      "board": "33:2230",
+      "board_name": "canvas_frame_focus",
+      "abs": [
+        2409,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        2409,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "33:2230",
+      "status": "routed",
+      "route": {
+        "case": "TC-042",
+        "how": "on",
+        "via": "K-2569c7",
+        "fit": "high",
+        "edge": "round/ic_duplicate",
+        "segment": "",
+        "section": "Frame focus",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "action": "Tap the floating Duplicate",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-044",
+        "TC-045",
+        "TC-073",
+        "TC-076"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:7917",
+      "name": "canvas_frame_focus",
+      "board": "111:7917",
+      "board_name": "canvas_frame_focus",
+      "abs": [
+        10805,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        10805,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:7917",
+      "status": "routed",
+      "route": {
+        "case": "TC-042",
+        "how": "on",
+        "via": "K-2569c7",
+        "fit": "high",
+        "edge": "round/ic_duplicate",
+        "segment": "",
+        "section": "Frame focus",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "action": "Tap the floating Duplicate",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-044",
+        "TC-045",
+        "TC-097",
+        "TC-043"
+      ],
+      "flags": []
+    },
+    {
+      "id": "66:5255",
+      "name": "canvas_img_focus",
+      "board": "66:5255",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        0,
+        2220,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        2220,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "66:5255",
+      "status": "routed",
+      "route": {
+        "case": "TC-043",
+        "how": "on",
+        "via": "K-6bc24d",
+        "fit": "mid",
+        "edge": "round/ic_horizontal_flip",
+        "segment": "",
+        "section": "Frame focus",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "action": "1. Tap 「Flip H」\n2. Tap 「Flip V」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-048",
+        "TC-049",
+        "TC-050",
+        "TC-052"
+      ],
+      "flags": []
+    },
+    {
+      "id": "82:4349",
+      "name": "canvas_img_focus",
+      "board": "82:4349",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        0,
+        3317,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        3317,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "82:4349",
+      "status": "routed",
+      "route": {
+        "case": "TC-043",
+        "how": "on",
+        "via": "K-6bc24d",
+        "fit": "mid",
+        "edge": "round/ic_horizontal_flip",
+        "segment": "",
+        "section": "Frame focus",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "action": "1. Tap 「Flip H」\n2. Tap 「Flip V」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-048",
+        "TC-049",
+        "TC-050",
+        "TC-052"
+      ],
+      "flags": []
+    },
+    {
+      "id": "28:1621",
+      "name": "canvas_img_focus",
+      "board": "28:1621",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        2011,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        2011,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "28:1621",
+      "status": "routed",
+      "route": {
+        "case": "TC-047",
+        "how": "on",
+        "via": "K-99c78b",
+        "fit": "high",
+        "edge": "round/ic_replace_image",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+        "action": "1. Tap 「Replace」\n2. Pick another photo",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-043",
+        "TC-048",
+        "TC-049",
+        "TC-050"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:7605",
+      "name": "canvas_img_focus",
+      "board": "111:7605",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        8396,
+        2220,
+        375,
+        812
+      ],
+      "board_box": [
+        8396,
+        2220,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:7605",
+      "status": "routed",
+      "route": {
+        "case": "TC-043",
+        "how": "on",
+        "via": "K-6bc24d",
+        "fit": "mid",
+        "edge": "round/ic_horizontal_flip",
+        "segment": "",
+        "section": "Frame focus",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "action": "1. Tap 「Flip H」\n2. Tap 「Flip V」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-048",
+        "TC-049",
+        "TC-050",
+        "TC-052"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:7761",
+      "name": "canvas_img_focus",
+      "board": "111:7761",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        8396,
+        3317,
+        375,
+        812
+      ],
+      "board_box": [
+        8396,
+        3317,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:7761",
+      "status": "routed",
+      "route": {
+        "case": "TC-043",
+        "how": "on",
+        "via": "K-6bc24d",
+        "fit": "mid",
+        "edge": "round/ic_horizontal_flip",
+        "segment": "",
+        "section": "Frame focus",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "action": "1. Tap 「Flip H」\n2. Tap 「Flip V」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-048",
+        "TC-049",
+        "TC-050",
+        "TC-052"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:7455",
+      "name": "canvas_img_focus",
+      "board": "111:7455",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        10407,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        10407,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:7455",
+      "status": "routed",
+      "route": {
+        "case": "TC-047",
+        "how": "on",
+        "via": "K-99c78b",
+        "fit": "high",
+        "edge": "round/ic_replace_image",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+        "action": "1. Tap 「Replace」\n2. Pick another photo",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-043",
+        "TC-048",
+        "TC-049",
+        "TC-050"
+      ],
+      "flags": []
+    },
+    {
+      "id": "1:238",
+      "name": "Collage Room · banner (NEW)",
+      "board": "1:238",
+      "board_name": "Collage Room · banner (NEW)",
+      "abs": [
+        0,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "1:238",
+      "status": "routed",
+      "route": {
+        "case": "TC-017",
+        "how": "on",
+        "via": "K-a0d999",
+        "fit": "mid",
+        "edge": "top/ic_back",
+        "segment": "",
+        "section": "Template Page",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Page open from the Collage banner",
+        "action": "Tap ‹",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-024",
+        "TC-136"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:6261",
+      "name": "Collage Room · banner (NEW)",
+      "board": "111:6261",
+      "board_name": "Collage Room · banner (NEW)",
+      "abs": [
+        8396,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        8396,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:6261",
+      "status": "routed",
+      "route": {
+        "case": "TC-017",
+        "how": "on",
+        "via": "K-a0d999",
+        "fit": "mid",
+        "edge": "top/ic_back",
+        "segment": "",
+        "section": "Template Page",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Page open from the Collage banner",
+        "action": "Tap ‹",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-024",
+        "TC-136"
+      ],
+      "flags": []
+    },
+    {
+      "id": "67:6424",
+      "name": "Enhance_2",
+      "board": "67:6424",
+      "board_name": "Enhance_2",
+      "abs": [
+        401,
+        3317,
+        375,
+        812
+      ],
+      "board_box": [
+        401,
+        3317,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "67:6424",
+      "status": "routed",
+      "route": {
+        "case": "TC-057",
+        "how": "on",
+        "via": "K-dbbb47",
+        "fit": "high",
+        "edge": "Enhance",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+        "action": "Tap 「Enhance」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-058",
+        "TC-060",
+        "TC-035",
+        "TC-053"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:9730",
+      "name": "Enhance_2",
+      "board": "111:9730",
+      "board_name": "Enhance_2",
+      "abs": [
+        8797,
+        3317,
+        375,
+        812
+      ],
+      "board_box": [
+        8797,
+        3317,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:9730",
+      "status": "routed",
+      "route": {
+        "case": "TC-057",
+        "how": "on",
+        "via": "K-dbbb47",
+        "fit": "high",
+        "edge": "Enhance",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+        "action": "Tap 「Enhance」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-058",
+        "TC-060",
+        "TC-035",
+        "TC-053"
+      ],
+      "flags": []
+    },
+    {
+      "id": "18:386",
+      "name": "entry_launcher2",
+      "board": "18:386",
+      "board_name": "entry_launcher2",
+      "abs": [
+        802,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        802,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "18:386",
+      "status": "routed",
+      "route": {
+        "case": "TC-022",
+        "how": "on",
+        "via": "K-f16a29",
+        "fit": "high",
+        "edge": "Use Template",
+        "segment": "",
+        "section": "Template Preview",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Preview of a free template open",
+        "action": "Tap 「Use Template」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-023",
+        "TC-017",
+        "TC-024",
+        "TC-136"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:6596",
+      "name": "entry_launcher2",
+      "board": "111:6596",
+      "board_name": "entry_launcher2",
+      "abs": [
+        9198,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        9198,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:6596",
+      "status": "routed",
+      "route": {
+        "case": "TC-022",
+        "how": "on",
+        "via": "K-f16a29",
+        "fit": "high",
+        "edge": "Use Template",
+        "segment": "",
+        "section": "Template Preview",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Preview of a free template open",
+        "action": "Tap 「Use Template」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-023",
+        "TC-017",
+        "TC-024",
+        "TC-136"
+      ],
+      "flags": []
+    },
+    {
+      "id": "61:4517",
+      "name": "GAI_removal",
+      "board": "61:4517",
+      "board_name": "GAI_removal",
+      "abs": [
+        401,
+        2220,
+        375,
+        812
+      ],
+      "board_box": [
+        401,
+        2220,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "61:4517",
+      "status": "routed",
+      "route": {
+        "case": "TC-053",
+        "how": "on",
+        "via": "K-af03c6",
+        "fit": "high",
+        "edge": "Remove",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Object Removal opened from image focus",
+        "action": "1. Mark an object and tap 「Remove」\n2. Tap ✓",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-054",
+        "TC-055",
+        "TC-062",
+        "TC-035"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:9400",
+      "name": "GAI_removal",
+      "board": "111:9400",
+      "board_name": "GAI_removal",
+      "abs": [
+        8797,
+        2220,
+        375,
+        812
+      ],
+      "board_box": [
+        8797,
+        2220,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:9400",
+      "status": "routed",
+      "route": {
+        "case": "TC-053",
+        "how": "on",
+        "via": "K-af03c6",
+        "fit": "high",
+        "edge": "Remove",
+        "segment": "",
+        "section": "Image focus and tools",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Object Removal opened from image focus",
+        "action": "1. Mark an object and tap 「Remove」\n2. Tap ✓",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-054",
+        "TC-055",
+        "TC-062",
+        "TC-035"
+      ],
+      "flags": []
+    },
+    {
+      "id": "73:2199",
+      "name": "Layers",
+      "board": "73:2199",
+      "board_name": "Layers",
+      "abs": [
+        5581,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        5581,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "73:2199",
+      "status": "routed",
+      "route": {
+        "case": "TC-040",
+        "how": "on",
+        "via": "C-7429e9",
+        "fit": "high",
+        "edge": "Delete",
+        "segment": "",
+        "section": "Frame focus",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "action": "Tap the floating Delete",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-041",
+        "TC-045",
+        "TC-051",
+        "TC-073"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:10134",
+      "name": "Layers",
+      "board": "111:10134",
+      "board_name": "Layers",
+      "abs": [
+        13977,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        13977,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:10134",
+      "status": "routed",
+      "route": {
+        "case": "TC-040",
+        "how": "on",
+        "via": "C-7429e9",
+        "fit": "high",
+        "edge": "Delete",
+        "segment": "",
+        "section": "Frame focus",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "action": "Tap the floating Delete",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-041",
+        "TC-045",
+        "TC-051",
+        "TC-073"
+      ],
+      "flags": []
+    },
+    {
+      "id": "74:3076",
+      "name": "page",
+      "board": "74:3076",
+      "board_name": "page",
+      "abs": [
+        6405,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        6405,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "74:3076",
+      "status": "routed",
+      "route": {
+        "case": "TC-108",
+        "how": "on",
+        "via": "K-6f409e",
+        "fit": "high",
+        "edge": "btn_add_page",
+        "segment": "",
+        "section": "Pages",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Pages open with 5 pages",
+        "action": "1. Tap the + in the thumbnail row\n2. Tap the bottom +\n3. Tap the bottom −",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-110",
+        "TC-111",
+        "TC-112"
+      ],
+      "flags": []
+    },
+    {
+      "id": "112:3247",
+      "name": "page",
+      "board": "112:3247",
+      "board_name": "page",
+      "abs": [
+        14801,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        14801,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "112:3247",
+      "status": "routed",
+      "route": {
+        "case": "TC-108",
+        "how": "on",
+        "via": "K-23f0ae",
+        "fit": "high",
+        "edge": "btn_add_page/dark",
+        "segment": "",
+        "section": "Pages",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Pages open with 5 pages",
+        "action": "1. Tap the + in the thumbnail row\n2. Tap the bottom +\n3. Tap the bottom −",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-110",
+        "TC-111",
+        "TC-112",
+        "TC-114"
+      ],
+      "flags": []
+    },
+    {
+      "id": "23:531",
+      "name": "photo_picker",
+      "board": "23:531",
+      "board_name": "photo_picker",
+      "abs": [
+        1604,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        1604,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "23:531",
+      "status": "routed",
+      "route": {
+        "case": "TC-037",
+        "how": "on",
+        "via": "K-09c4a7",
+        "fit": "mid",
+        "edge": "top/ic_back_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "action": "1. Tap + in an empty frame\n2. Pick one photo\n3. Tap ‹",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-047",
+        "TC-063",
+        "TC-064",
+        "TC-066"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:6645",
+      "name": "photo_picker",
+      "board": "111:6645",
+      "board_name": "photo_picker",
+      "abs": [
+        10000,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        10000,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:6645",
+      "status": "routed",
+      "route": {
+        "case": "TC-037",
+        "how": "on",
+        "via": "K-09c4a7",
+        "fit": "mid",
+        "edge": "top/ic_back_n",
+        "segment": "",
+        "section": "Photo import",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "action": "1. Tap + in an empty frame\n2. Pick one photo\n3. Tap ‹",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-047",
+        "TC-063",
+        "TC-064",
+        "TC-066"
+      ],
+      "flags": []
+    },
+    {
+      "id": "74:2830",
+      "name": "Ratio",
+      "board": "74:2830",
+      "board_name": "Ratio",
+      "abs": [
+        5993,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        5993,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "74:2830",
+      "status": "routed",
+      "route": {
+        "case": "TC-102",
+        "how": "on",
+        "via": "C-357928",
+        "fit": "high",
+        "edge": "ic_1v1",
+        "segment": "",
+        "section": "Ratio",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "action": "Tap 「Ratio」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-104"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:7080",
+      "name": "Ratio",
+      "board": "111:7080",
+      "board_name": "Ratio",
+      "abs": [
+        14389,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        14389,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:7080",
+      "status": "routed",
+      "route": {
+        "case": "TC-102",
+        "how": "on",
+        "via": "C-357928",
+        "fit": "high",
+        "edge": "ic_1v1",
+        "segment": "",
+        "section": "Ratio",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "action": "Tap 「Ratio」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-104"
+      ],
+      "flags": []
+    },
+    {
+      "id": "45:723",
+      "name": "Save",
+      "board": "45:723",
+      "board_name": "Save",
+      "abs": [
+        2807,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        2807,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "45:723",
+      "status": "routed",
+      "route": {
+        "case": "TC-130",
+        "how": "on",
+        "via": "K-bbca7c",
+        "fit": "high",
+        "edge": "1/5",
+        "segment": "",
+        "section": "Export and Save & Share",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages)",
+        "action": "Swipe the preview left 4 times",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-132",
+        "TC-017",
+        "TC-024",
+        "TC-131"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:8106",
+      "name": "Save",
+      "board": "111:8106",
+      "board_name": "Save",
+      "abs": [
+        11203,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        11203,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:8106",
+      "status": "routed",
+      "route": {
+        "case": "TC-130",
+        "how": "on",
+        "via": "K-bbca7c",
+        "fit": "high",
+        "edge": "1/5",
+        "segment": "",
+        "section": "Export and Save & Share",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages)",
+        "action": "Swipe the preview left 4 times",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-132",
+        "TC-017",
+        "TC-024",
+        "TC-131"
+      ],
+      "flags": []
+    },
+    {
+      "id": "103:5778",
+      "name": "Save: Only 1 img",
+      "board": "103:5778",
+      "board_name": "Save: Only 1 img",
+      "abs": [
+        3205,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        3205,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "103:5778",
+      "status": "routed",
+      "route": {
+        "case": "TC-134",
+        "how": "on",
+        "via": "K-277f13",
+        "fit": "high",
+        "edge": "round/ic_ig",
+        "segment": "",
+        "section": "Export and Save & Share",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages); Instagram, Facebook, Twitter, Line and Tiktok installed",
+        "action": "1. Tap Instagram\n2. Go back to PhotoDirector\n3. Tap Facebook\n4. Go back to PhotoDirector\n5. Tap Twitter\n6. Go back to PhotoDirector\n7. Tap Line\n8. Go back to PhotoDirector\n9. Tap Tiktok",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-017",
+        "TC-024",
+        "TC-131",
+        "TC-132"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:8308",
+      "name": "Save: Only 1 img",
+      "board": "111:8308",
+      "board_name": "Save: Only 1 img",
+      "abs": [
+        11601,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        11601,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:8308",
+      "status": "routed",
+      "route": {
+        "case": "TC-134",
+        "how": "on",
+        "via": "K-277f13",
+        "fit": "high",
+        "edge": "round/ic_ig",
+        "segment": "",
+        "section": "Export and Save & Share",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages); Instagram, Facebook, Twitter, Line and Tiktok installed",
+        "action": "1. Tap Instagram\n2. Go back to PhotoDirector\n3. Tap Facebook\n4. Go back to PhotoDirector\n5. Tap Twitter\n6. Go back to PhotoDirector\n7. Tap Line\n8. Go back to PhotoDirector\n9. Tap Tiktok",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-017",
+        "TC-024",
+        "TC-131",
+        "TC-132"
+      ],
+      "flags": []
+    },
+    {
+      "id": "3:336",
+      "name": "Template Page · default (NEW)",
+      "board": "3:336",
+      "board_name": "Template Page · default (NEW)",
+      "abs": [
+        401,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        401,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "3:336",
+      "status": "routed",
+      "route": {
+        "case": "TC-010",
+        "how": "on",
+        "via": "K-711f70",
+        "fit": "high",
+        "edge": "Year End",
+        "segment": "",
+        "section": "Template Page",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Page open (banner tapped)",
+        "action": "Look at the top of the page and the tabs",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-013",
+        "TC-017",
+        "TC-024",
+        "TC-136"
+      ],
+      "flags": []
+    },
+    {
+      "id": "111:6441",
+      "name": "Template Page · default (NEW)",
+      "board": "111:6441",
+      "board_name": "Template Page · default (NEW)",
+      "abs": [
+        8797,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        8797,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "111:6441",
+      "status": "routed",
+      "route": {
+        "case": "TC-010",
+        "how": "on",
+        "via": "K-711f70",
+        "fit": "high",
+        "edge": "Year End",
+        "segment": "",
+        "section": "Template Page",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Page open (banner tapped)",
+        "action": "Look at the top of the page and the tabs",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-013",
+        "TC-017",
+        "TC-024",
+        "TC-136"
+      ],
+      "flags": []
+    }
+  ]
+}

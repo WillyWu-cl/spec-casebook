@@ -1,0 +1,21 @@
+{
+  "png": "pm-tracking.png",
+  "box": [
+    8891,
+    -1747,
+    1000,
+    416
+  ],
+  "lines": [
+    ["• 成功指標：匯出完成率=Export_Done 人數- Canvas_Appear 人數［D0-02］",8949,-1685,679,25],
+    ["• 新開專用 event（參數與以往不同＋獨立房間）",8949,-1647,429,25],
+    ["［D0-05］",9400,-1636,45,12],
+    ["• ScrollableCollage_Canvas_Appear ［D1-15］",8946,-1605,393,21],
+    ["• from:Collage_Banner / Deeplink ［01-15）",8970,-1566,384,24],
+    ["。 template_guid",8970,-1528,152,21],
+    ["［D1-15］",9127,-1523,52,12],
+    ["• ScrollableCollage_Export_Done ［01-15）",8949,-1491,366,24],
+    ["。 template_guid、page_count、photo_count、ratio ［01-15］",8971,-1453,537,24],
+    ["• 名稱與參數暫定 ［D1-15］",8947,-1415,215,22]
+  ]
+}

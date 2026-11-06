@@ -1,0 +1,24 @@
+{
+  "png": "design-icons-dark.png",
+  "box": [
+    15936,
+    -135,
+    952,
+    1082
+  ],
+  "lines": [
+    ["Canvas icon buttons•Dark mode",15981,-80,406,23],
+    ["Move / More / Add page / Page stepper / Import photo slot - same size as light version, dark surface + light icon.",15982,-45,746,16],
+    ["States: normal• press•selected•disable",15981,-26,274,14],
+    ["btn_page_move/dark•36x36•normal /press/selected/ disable",15982,26,426,14],
+    ["btn_page_more/dark•36x36• normal /press/selected/disable",15981,159,424,14],
+    ["btn_add_page/dark• 40x40• normal / press / disable",15981,291,350,14],
+    ["＋",16070,340,21,19],
+    ["page_stepper•107x42• default / minus_press / plus_press / minus_disable / plus_disable",15982,426,580,13],
+    ["-+",16008,468,84,32],
+    ["--+）—一+",16392,468,210,38],
+    ["import_img• 109x109• empty photo slot （tap to import）",15981,565,366,14],
+    ["ic_square_plus_filled •64x64•normal / press",15982,768,306,13],
+    ["十",16100,828,30,30]
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "pm-flow.png": {
+    "board": "2214:5",
+    "group": "pm-flow",
+    "hash": "6ed5029b",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:54:34.210Z",
+    "box": [
+      3261,
+      -1747,
+      3330,
+      7458
+    ]
+  },
+  "pm-button-next-step.png": {
+    "board": "2316:20",
+    "group": "pm-buttons",
+    "hash": "8f3c68e8",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:54:56.936Z",
+    "box": [
+      6691,
+      475,
+      2240,
+      2680
+    ]
+  },
+  "design-light-entry.png": {
+    "board": "0:1/design-light-entry",
+    "group": "d-entry",
+    "hash": "cd1b06fd",
+    "overlay": "34c14a73",
+    "captured_at": "2026-11-05T08:54:58.918Z",
+    "box": [
+      -10,
+      -1400,
+      3600,
+      2350
+    ]
+  },
+  "design-dark-entry.png": {
+    "board": "0:1/design-dark-entry",
+    "group": "d-entry",
+    "hash": "bd9197e8",
+    "overlay": "34c14a73",
+    "captured_at": "2026-11-05T08:55:01.232Z",
+    "box": [
+      8386,
+      -1400,
+      3600,
+      2350
+    ]
+  },
+  "design-light-canvas.png": {
+    "board": "0:1/design-light-canvas",
+    "group": "d-canvas",
+    "hash": "6a9c518d",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:02.783Z",
+    "box": [
+      3900,
+      -200,
+      2900,
+      1100
+    ]
+  },
+  "design-dark-canvas.png": {
+    "board": "0:1/design-dark-canvas",
+    "group": "d-canvas",
+    "hash": "e13419ba",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:04.288Z",
+    "box": [
+      12296,
+      -200,
+      2900,
+      1100
+    ]
+  },
+  "design-light-add-layer.png": {
+    "board": "0:1/design-light-add-layer",
+    "group": "d-layers",
+    "hash": "a67b4c98",
+    "overlay": "d27e8ce3",
+    "captured_at": "2026-11-05T08:55:05.752Z",
+    "box": [
+      -10,
+      970,
+      2400,
+      1000
+    ]
+  },
+  "design-dark-add-layer.png": {
+    "board": "0:1/design-dark-add-layer",
+    "group": "d-layers",
+    "hash": "04b493a6",
+    "overlay": "d27e8ce3",
+    "captured_at": "2026-11-05T08:55:07.288Z",
+    "box": [
+      8386,
+      970,
+      2400,
+      1000
+    ]
+  },
+  "design-light-removal.png": {
+    "board": "0:1/design-light-removal",
+    "group": "d-layers",
+    "hash": "491588e9",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:08.676Z",
+    "box": [
+      -10,
+      2050,
+      1200,
+      1000
+    ]
+  },
+  "design-dark-removal.png": {
+    "board": "0:1/design-dark-removal",
+    "group": "d-layers",
+    "hash": "9a10616f",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:10.049Z",
+    "box": [
+      8386,
+      2050,
+      1200,
+      1000
+    ]
+  },
+  "design-light-enhance.png": {
+    "board": "0:1/design-light-enhance",
+    "group": "d-layers",
+    "hash": "3250bfba",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:11.385Z",
+    "box": [
+      -10,
+      3160,
+      1200,
+      1000
+    ]
+  },
+  "design-dark-enhance.png": {
+    "board": "0:1/design-dark-enhance",
+    "group": "d-layers",
+    "hash": "48291cc3",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:12.824Z",
+    "box": [
+      8386,
+      3160,
+      1200,
+      1000
+    ]
+  },
+  "design-icons-dark.png": {
+    "board": "116:3010",
+    "group": "d-icons",
+    "hash": "98302915",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:22.586Z"
+  },
+  "design-icons-light.png": {
+    "board": "130:3237",
+    "group": "d-icons",
+    "hash": "6bdcd84d",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:23.914Z"
+  },
+  "design-icons-cut.png": {
+    "board": "122:3043",
+    "group": "d-icons",
+    "hash": "08fede48",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:25.662Z"
+  },
+  "pm-leave-resume.png": {
+    "board": "2214:7",
+    "group": "pm-notes",
+    "hash": "227ec9c1",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:35.569Z",
+    "box": [
+      6691,
+      -1747,
+      1000,
+      469
+    ]
+  },
+  "pm-save-iap.png": {
+    "board": "2214:8",
+    "group": "pm-notes",
+    "hash": "0d64ad92",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:43.438Z",
+    "box": [
+      7791,
+      -1747,
+      1000,
+      378
+    ]
+  },
+  "pm-tracking.png": {
+    "board": "2214:9",
+    "group": "pm-notes",
+    "hash": "935cc58b",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:55:56.132Z",
+    "box": [
+      8891,
+      -1747,
+      1000,
+      416
+    ]
+  },
+  "pm-competitor.png": {
+    "board": "2214:10",
+    "group": "pm-notes",
+    "hash": "3486d4e8",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:56:07.859Z",
+    "box": [
+      9991,
+      -1747,
+      1370,
+      1202
+    ]
+  },
+  "pm-draft-tbd.png": {
+    "board": "2316:533",
+    "group": "pm-notes",
+    "hash": "f10c72f6",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:56:16.858Z",
+    "box": [
+      9031,
+      475,
+      1000,
+      1261
+    ]
+  },
+  "pm-save-page.png": {
+    "board": "2509:971",
+    "group": "pm-notes",
+    "hash": "f85a4686",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:56:30.123Z",
+    "box": [
+      6691,
+      4639,
+      1908,
+      1072
+    ]
+  },
+  "pm-scrl.png": {
+    "board": "2196:21",
+    "group": "pm-scrl",
+    "hash": "6c1cd23a",
+    "overlay": "942661b0",
+    "captured_at": "2026-11-05T08:57:12.048Z",
+    "box": [
+      -17925,
+      -2187,
+      19607,
+      6365
+    ]
+  },
+  "pm-ui-1.png": {
+    "board": "2214:6/pm-ui-1",
+    "group": "pm-ui-1",
+    "hash": "0187b7e7",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:57:48.230Z",
+    "box": [
+      3261,
+      5811,
+      10170,
+      3180
+    ]
+  },
+  "pm-ui-2.png": {
+    "board": "2214:6/pm-ui-2",
+    "group": "pm-ui-2",
+    "hash": "ef075db2",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:57:50.107Z",
+    "box": [
+      3261,
+      8991,
+      10170,
+      2100
+    ]
+  },
+  "pm-ui-3.png": {
+    "board": "2214:6/pm-ui-3",
+    "group": "pm-ui-3",
+    "hash": "ea22c3b5",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:57:52.323Z",
+    "box": [
+      3261,
+      11091,
+      10170,
+      3150
+    ]
+  },
+  "pm-ui-4.png": {
+    "board": "2214:6/pm-ui-4",
+    "group": "pm-ui-4",
+    "hash": "bd7c54c0",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:57:54.397Z",
+    "box": [
+      3261,
+      14241,
+      10170,
+      3054
+    ]
+  },
+  "pm-header.png": {
+    "board": "2226:8/pm-header",
+    "group": "pm-header",
+    "hash": "f6ab3ba4",
+    "overlay": "",
+    "captured_at": "2026-11-05T08:58:48.627Z",
+    "box": [
+      3261,
+      -2087,
+      8100,
+      330
+    ]
+  }
+}

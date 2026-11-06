@@ -1,0 +1,31 @@
+{
+  "png": "design-icons-light.png",
+  "box": [
+    16968,
+    -135,
+    952,
+    1082
+  ],
+  "lines": [
+    ["Canvas icon buttons• Light mode",17013,-84,410,33],
+    ["Move / More / Add page / Page stepper /Import photo slot - same size as dark version, light surface + dark icon.",17016,-43,744,14],
+    ["States: normal •press• selected •disable",17016,-27,272,13],
+    ["btn_page_move/light• 36x36• normal / press / selected / disable",17014,26,426,14],
+    ["otn_page_more/light• 36x36• normal/ press/ selected / disable",17016,158,422,13],
+    ["otn_add_page/light•40×40• normal/ press / disable",17016,290,348,13],
+    ["+",17034,335,36,33],
+    ["＋",17102,340,22,22],
+    ["+",17158,337,28,32],
+    ["page_stepper• 107x42• default/ minus_press / plus_press / minus_disable / plus_disable",17014,426,580,13],
+    ["一+",17045,477,77,26],
+    ["一",17178,483,22,12],
+    ["+",17221,473,33,32],
+    ["一",17303,483,22,12],
+    ["一一十〕",17424,478,112,20],
+    ["-—+）",17550,475,121,31],
+    ["import_img• 109x109• empty photo slot （tap to import）",17013,565,366,13],
+    ["十",17074,649,24,23],
+    ["ic_square_plus_filled•64x64• normal / press",17013,769,306,15],
+    ["十",17135,830,24,23]
+  ]
+}

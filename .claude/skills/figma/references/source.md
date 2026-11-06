@@ -60,7 +60,12 @@ All commands are `node scripts/figma-source.ts <product>/<feature> [<set>] …`;
    = 1 Figma pt at scale 1), saved over the board's shared image. No screenshot for a board whose shared image is
    current: `shots.json` gives it this fingerprint, or the casebook keeps it (its `hash` is the board's hash in
    `figma-hashes.json`) and the board's fingerprint did not change since this read last saw it (a changed board gets a
-   new image unless one was taken at its new fingerprint). Up to 4 calls at once. With more than 4 chunk calls, hand them to parallel subagents, 4
+   new image unless one was taken at its new fingerprint). **Fewer calls (2026-11-05, phd/scrollable-collage: a page of
+   loose frames and labels asked for 302 calls):** boards whose whole read fits in half a chunk (loose labels, small
+   frames) share `chunk-batch-<n>` calls (`--batch <bytes>`, default 36000); a board with no component instance inside
+   (the list call's count) gets no hidden call; a board inside a current 1:1 image the casebook cut from a larger
+   render (a page region in `shots.json` with a `box`) takes no screenshot and is cropped from that image
+   (`covered_shots`); boards with the same name (light and dark copies) get their own image file. Up to 4 calls at once. With more than 4 chunk calls, hand them to parallel subagents, 4
    calls each, with this brief: "For each entry: read the `call` file, call `use_figma` on <server> with fileKey
    <key>, sessionId <id>, skillNames resource:figma-use, description = the entry's `description`, code = the file
    content; write the whole tool result verbatim to `save_to`. Report only the files written and any error."

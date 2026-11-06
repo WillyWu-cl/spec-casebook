@@ -1,0 +1,313 @@
+{
+  "arrows": [
+    {
+      "arrow": "2218:374",
+      "node": "2218:374",
+      "edge": "Collage Room banner → Template Page",
+      "expected": "Tapping the banner opens the Template Page",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:398",
+      "node": "2218:398",
+      "edge": "Template Page ‹ → Collage Room",
+      "expected": "‹ on the Template Page returns to the Collage room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:378",
+      "node": "2218:378",
+      "edge": "Template Page card → Template Preview",
+      "expected": "Tapping a template card opens its Template Preview",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:422",
+      "node": "2218:422",
+      "edge": "Template Page (opened by deeplink) card → Template Preview",
+      "expected": "A card on the deeplinked Template Page opens its Template Preview the same way",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:382",
+      "node": "2218:382",
+      "edge": "Template Preview 「Use Template」 → Canvas · default",
+      "expected": "「Use Template」 opens the canvas with the template",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:402",
+      "node": "2218:402",
+      "edge": "Template Preview ‹ → Template Page",
+      "expected": "‹ returns to the Template Page",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:426",
+      "node": "2218:426",
+      "edge": "Template Preview (opened by deeplink) ‹ → Template Page",
+      "expected": "‹ returns to the Template Page",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:386",
+      "node": "2218:386",
+      "edge": "Canvas frame + → Photo Picker",
+      "expected": "The frame's + opens the photo picker",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:390",
+      "node": "2218:390",
+      "edge": "Photo Picker Done → Canvas · image_focus",
+      "expected": "Done returns to the canvas with the photos placed",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:410",
+      "node": "2218:410",
+      "edge": "Photo Picker ‹ → Canvas · default",
+      "expected": "‹ in the picker returns to the canvas with nothing imported",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:505",
+      "node": "2315:505",
+      "edge": "Canvas · image_focus 「Removal」 → Object Removal",
+      "expected": "「Removal」 opens the Object Removal room with the focused photo",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:509",
+      "node": "2315:509",
+      "edge": "Object Removal ✓ (Free) → IAP page",
+      "expected": "A Free user's apply opens the IAP page",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:513",
+      "node": "2315:513",
+      "edge": "Object Removal ✓ (Pro) → Canvas · image_focus",
+      "expected": "The removal result replaces the photo on the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:517",
+      "node": "2315:517",
+      "edge": "Object Removal ✕ → Canvas · image_focus",
+      "expected": "Nothing applied, back to the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:521",
+      "node": "2315:521",
+      "edge": "IAP page ✕ → Object Removal",
+      "expected": "Closing the IAP page returns to the Object Removal room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:660",
+      "node": "2315:660",
+      "edge": "Canvas · image_focus 「Enhance」 → AI Enhance",
+      "expected": "「Enhance」 opens the AI Enhance room with the focused photo",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:664",
+      "node": "2315:664",
+      "edge": "AI Enhance ✓ (Free) → IAP page",
+      "expected": "A Free user's apply opens the IAP page",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:668",
+      "node": "2315:668",
+      "edge": "AI Enhance ✓ (Pro) → Canvas · image_focus",
+      "expected": "The enhanced photo replaces the photo on the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:672",
+      "node": "2315:672",
+      "edge": "AI Enhance ✕ → Canvas · image_focus",
+      "expected": "Nothing applied, back to the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:676",
+      "node": "2315:676",
+      "edge": "IAP page ✕ → AI Enhance",
+      "expected": "Closing the IAP page returns to the AI Enhance room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:303",
+      "node": "2315:303",
+      "edge": "Add Layer 「Image」 → Photo Picker",
+      "expected": "Opens the photo picker",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:307",
+      "node": "2315:307",
+      "edge": "Add Layer 「Text」 → Text input",
+      "expected": "Opens the Collage text input",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:311",
+      "node": "2315:311",
+      "edge": "Add Layer 「Sticker」 → Sticker panel",
+      "expected": "Opens the Edit Room sticker panel",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:315",
+      "node": "2315:315",
+      "edge": "Add Layer 「Frame」 → Frame Panel",
+      "expected": "Opens the Frame panel",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:319",
+      "node": "2315:319",
+      "edge": "Add Layer 「Text Bubble」 → Text Bubble panel",
+      "expected": "Opens the Edit Room Text Bubble panel",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:323",
+      "node": "2315:323",
+      "edge": "Photo Picker photo → Canvas · default",
+      "expected": "The picked photo appears on the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:345",
+      "node": "2315:345",
+      "edge": "Text input Done → Canvas · default",
+      "expected": "The new text appears on the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:349",
+      "node": "2315:349",
+      "edge": "Sticker panel item → Canvas · default",
+      "expected": "The sticker appears on the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:353",
+      "node": "2315:353",
+      "edge": "Frame panel item → Canvas · default",
+      "expected": "The frame appears on the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2315:357",
+      "node": "2315:357",
+      "edge": "Text Bubble panel item → Canvas · default",
+      "expected": "The text bubble appears on the canvas",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:406",
+      "node": "2218:406",
+      "edge": "Canvas ‹ → Template Preview (after Discard)",
+      "expected": "After 「Discard」 the Template Preview of the same template shows",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:414",
+      "node": "2218:414",
+      "edge": "Canvas · image_focus ‹ → Template Preview (after Discard)",
+      "expected": "‹ in image focus asks the same dialog and Discard returns to Template Preview",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:394",
+      "node": "2218:394",
+      "edge": "Canvas 「Export」 → Save & Share",
+      "expected": "Export opens the Save & Share page",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2218:418",
+      "node": "2218:418",
+      "edge": "Save & Share ‹ → Canvas · image_focus",
+      "expected": "‹ returns to the canvas with every edit kept",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = ‹ return); listed by hand (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "2171:24",
+      "node": "2171-24",
+      "edge": "pm-scrl Line 247 → 2171:4 S__98066435_0 1",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2171:52",
+      "node": "2171-52",
+      "edge": "pm-scrl Line 250 → 2171:18 S__98066441_0 1",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2171:53",
+      "node": "2171-53",
+      "edge": "pm-scrl Line 251 → 2171:16 S__98066439_0 1",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2171:26",
+      "node": "2171-26",
+      "edge": "pm-scrl Line 248 → note",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2171:27",
+      "node": "2171-27",
+      "edge": "pm-scrl Line 249 → note",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2185:76",
+      "node": "2185-76",
+      "edge": "pm-scrl Arrow 1 → note",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2185:77",
+      "node": "2185-77",
+      "edge": "pm-scrl Arrow 2 → note",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2185:81",
+      "node": "2185-81",
+      "edge": "pm-scrl Arrow 3 → 2184:59 S__98107398_0 1",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2185:84",
+      "node": "2185-84",
+      "edge": "pm-scrl Arrow 4 → 2184:61 S__98107400_0 1",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    },
+    {
+      "arrow": "2185:91",
+      "node": "2185-91",
+      "edge": "pm-scrl Arrow 5 → note",
+      "expected": "Annotation pointer on the SCRL competitor board: links a PM note to a competitor screenshot",
+      "not_flow": "annotation pointer on the SCRL competitor screenshots (pm-scrl), not an app flow"
+    }
+  ],
+  "count": 44
+}

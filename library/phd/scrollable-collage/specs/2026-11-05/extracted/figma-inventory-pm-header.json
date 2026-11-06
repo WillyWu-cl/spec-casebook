@@ -1,0 +1,81 @@
+{
+  "file": "zrl1BBEyqTvdLfjtaT8g6I",
+  "page": "2171:2",
+  "group": "pm-header",
+  "extracted_at": "2026-11-05",
+  "section": [
+    "2226:8",
+    "PhDM Spec",
+    3161,
+    -2187,
+    10370,
+    19676
+  ],
+  "boards": [
+    [
+      "2226:8/pm-header",
+      "pm-header",
+      3261,
+      -2087,
+      8100,
+      330
+    ]
+  ],
+  "names": [],
+  "screens": [],
+  "controls": [],
+  "arrows": [],
+  "hidden": {
+    "screens": 0,
+    "controls": 0
+  },
+  "entries": [
+    {
+      "name": "pm-header",
+      "parent": "2226:8",
+      "box": [
+        3261,
+        -2087,
+        8100,
+        330
+      ]
+    }
+  ],
+  "hash": {
+    "2226:8/pm-header": "f6ab3ba4"
+  },
+  "hashed_at": "2026-11-05T08:50:44.206Z",
+  "overlay": {
+    "2226:8/pm-header": ""
+  },
+  "overlay_box": {
+    "2226:8/pm-header": [
+      3261,
+      -2087,
+      8100,
+      330
+    ]
+  },
+  "texts": [
+    [
+      0,
+      3261,
+      -2031,
+      8100,
+      87,
+      "Demo + Spec — Scrollable Collage（26 11E）",
+      0
+    ],
+    [
+      0,
+      3261,
+      -1857,
+      1291,
+      27,
+      "與 Collage 的差異：Collage 是單張圖片挖空、給用戶上傳圖；Scrollable Collage 是一個 canvas，給用戶自由增減 frame  [D0-03]",
+      0
+    ]
+  ],
+  "ms": 695,
+  "size": 659
+}

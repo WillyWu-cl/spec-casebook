@@ -1,0 +1,1388 @@
+{
+  "spec_folder": "specs/2026-11-05",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "design-dark-add-layer@10407,911",
+      "board": "design-dark-add-layer",
+      "x": 10407,
+      "y": 911,
+      "low": false,
+      "text": "Image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）",
+      "trace": "R-056"
+    },
+    {
+      "id": "design-dark-add-layer@8396,981",
+      "board": "design-dark-add-layer",
+      "x": 8396,
+      "y": 981,
+      "low": false,
+      "text": "Next: Canvas [+] → Add Layer 五個 function",
+      "trace": "R-091"
+    },
+    {
+      "id": "design-dark-canvas@12354,15",
+      "board": "design-dark-canvas",
+      "x": 12354,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-dark-canvas@12766,15",
+      "board": "design-dark-canvas",
+      "x": 12766,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-dark-canvas@13178,15",
+      "board": "design-dark-canvas",
+      "x": 13178,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-dark-canvas@13590,15",
+      "board": "design-dark-canvas",
+      "x": 13590,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-dark-canvas@14002,15",
+      "board": "design-dark-canvas",
+      "x": 14002,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-dark-canvas@14414,15",
+      "board": "design-dark-canvas",
+      "x": 14414,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-dark-canvas@14826,15",
+      "board": "design-dark-canvas",
+      "x": 14826,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-dark-canvas@13169,448",
+      "board": "design-dark-canvas",
+      "x": 13169,
+      "y": 448,
+      "low": false,
+      "text": "[phone] Cancel",
+      "trace": "R-113"
+    },
+    {
+      "id": "design-dark-canvas@13478,448",
+      "board": "design-dark-canvas",
+      "x": 13478,
+      "y": 448,
+      "low": false,
+      "text": "[phone] Done",
+      "trace": "R-113"
+    },
+    {
+      "id": "design-dark-canvas@14072,453",
+      "board": "design-dark-canvas",
+      "x": 14072,
+      "y": 453,
+      "low": false,
+      "text": "[phone] Delete / [phone] Duplicate / [phone] Lock",
+      "trace": "R-118"
+    },
+    {
+      "id": "design-dark-canvas@12877,474",
+      "board": "design-dark-canvas",
+      "x": 12877,
+      "y": 474,
+      "low": false,
+      "text": "[phone] Solid / [phone] Texture",
+      "trace": "R-109"
+    },
+    {
+      "id": "design-dark-canvas@13701,476",
+      "board": "design-dark-canvas",
+      "x": 13701,
+      "y": 476,
+      "low": false,
+      "text": "[phone] Solid / [phone] Texture",
+      "trace": "R-109"
+    },
+    {
+      "id": "design-dark-canvas@14958,647",
+      "board": "design-dark-canvas",
+      "x": 14958,
+      "y": 647,
+      "low": false,
+      "text": "[phone] Page 5 / 5",
+      "trace": "R-126"
+    },
+    {
+      "id": "design-dark-canvas@12329,701",
+      "board": "design-dark-canvas",
+      "x": 12329,
+      "y": 701,
+      "low": false,
+      "text": "[phone] Background / [phone] Layers",
+      "trace": "R-034"
+    },
+    {
+      "id": "design-dark-canvas@12581,701",
+      "board": "design-dark-canvas",
+      "x": 12581,
+      "y": 701,
+      "low": false,
+      "text": "[phone] Ratio / [phone] Pages",
+      "trace": "R-034"
+    },
+    {
+      "id": "design-dark-canvas@14404,701",
+      "board": "design-dark-canvas",
+      "x": 14404,
+      "y": 701,
+      "low": false,
+      "text": "[phone] Custom / [phone] Original",
+      "trace": "R-120, Q-2"
+    },
+    {
+      "id": "design-dark-canvas@14544,701",
+      "board": "design-dark-canvas",
+      "x": 14544,
+      "y": 701,
+      "low": false,
+      "text": "[phone] Squre / [phone] 2:3",
+      "trace": "R-120, Q-2"
+    },
+    {
+      "id": "design-dark-canvas@14686,701",
+      "board": "design-dark-canvas",
+      "x": 14686,
+      "y": 701,
+      "low": false,
+      "text": "[phone] 3:2 / [phone] 3:4",
+      "trace": "R-120, Q-2"
+    },
+    {
+      "id": "design-dark-enhance@8396,3244",
+      "board": "design-dark-enhance",
+      "x": 8396,
+      "y": 3244,
+      "low": false,
+      "text": "Enhance 掛 premium tag，點擊進房間  [D3-01]",
+      "trace": "R-061, R-071"
+    },
+    {
+      "id": "design-dark-enhance@8797,3244",
+      "board": "design-dark-enhance",
+      "x": 8797,
+      "y": 3244,
+      "low": false,
+      "text": "同 AI Enhance；Free user apply 時跳 IAP",
+      "trace": "R-071, R-064"
+    },
+    {
+      "id": "design-dark-entry@10407,829",
+      "board": "design-dark-entry",
+      "x": 10407,
+      "y": 829,
+      "low": false,
+      "text": "Focus frame 時 click → focus image；focus image 時 click → focus frame / Image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）",
+      "trace": "R-048, R-056"
+    },
+    {
+      "id": "design-dark-entry@10805,829",
+      "board": "design-dark-entry",
+      "x": 10805,
+      "y": 829,
+      "low": false,
+      "text": "Frame 工具：opacity / shadow / 水平 flip / 垂直 flip / duplicate / lock / delete（整個 frame 刪除）",
+      "trace": "R-049, R-051, R-052, R-053"
+    },
+    {
+      "id": "design-dark-removal@8396,2134",
+      "board": "design-dark-removal",
+      "x": 8396,
+      "y": 2134,
+      "low": false,
+      "text": "Removal 掛 premium tag，點擊進房間  [D3-01]",
+      "trace": "R-061, R-066"
+    },
+    {
+      "id": "design-dark-removal@8797,2134",
+      "board": "design-dark-removal",
+      "x": 8797,
+      "y": 2134,
+      "low": false,
+      "text": "同 Object Removal；Free user apply 時跳 IAP",
+      "trace": "R-066, R-064"
+    },
+    {
+      "id": "design-icons-cut@17999,-101",
+      "board": "design-icons-cut",
+      "x": 17999,
+      "y": -101,
+      "low": false,
+      "text": "Try Swipe Collage! / Create the perfect year-end recap post.",
+      "trace": "R-002"
+    },
+    {
+      "id": "design-icons-dark@15984,-87",
+      "board": "design-icons-dark",
+      "x": 15984,
+      "y": -87,
+      "low": false,
+      "text": "Canvas icon buttons · Dark mode / Move / More / Add page / Page stepper / Import photo slot — same size as light version, dark surface + light icon. / States: normal · press · selected · disable / btn_page_move/dark  ·  36×36  ·  normal / press / selected / disable / btn_page_more/dark  ·  36×36  ·  normal / press / selected / disable / btn_add_page/dark  ·  40×40  ·  normal / press / disable / page_stepper  ·  107×42  ·  default / minus_press / plus_press / minus_disable / plus_disable / import_img  ·  109×109  ·  empty photo slot (tap to import)",
+      "trace": "R-137, R-162"
+    },
+    {
+      "id": "design-icons-dark@15984,767",
+      "board": "design-icons-dark",
+      "x": 15984,
+      "y": 767,
+      "low": false,
+      "text": "ic_square_plus_filled  ·  64×64  ·  normal / press",
+      "trace": "R-137, R-035"
+    },
+    {
+      "id": "design-icons-light@17016,-87",
+      "board": "design-icons-light",
+      "x": 17016,
+      "y": -87,
+      "low": false,
+      "text": "Canvas icon buttons · Light mode / Move / More / Add page / Page stepper / Import photo slot — same size as dark version, light surface + dark icon. / States: normal · press · selected · disable / btn_page_move/light  ·  36×36  ·  normal / press / selected / disable / btn_page_more/light  ·  36×36  ·  normal / press / selected / disable / btn_add_page/light  ·  40×40  ·  normal / press / disable / page_stepper  ·  107×42  ·  default / minus_press / plus_press / minus_disable / plus_disable / import_img  ·  109×109  ·  empty photo slot (tap to import)",
+      "trace": "R-137, R-162"
+    },
+    {
+      "id": "design-icons-light@17016,767",
+      "board": "design-icons-light",
+      "x": 17016,
+      "y": 767,
+      "low": false,
+      "text": "ic_square_plus_filled  ·  64×64  ·  normal / press",
+      "trace": "R-137, R-035"
+    },
+    {
+      "id": "design-light-add-layer@2011,911",
+      "board": "design-light-add-layer",
+      "x": 2011,
+      "y": 911,
+      "low": false,
+      "text": "Image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）",
+      "trace": "R-056"
+    },
+    {
+      "id": "design-light-add-layer@0,981",
+      "board": "design-light-add-layer",
+      "x": 0,
+      "y": 981,
+      "low": false,
+      "text": "Next: Canvas [+] → Add Layer 五個 function",
+      "trace": "R-091"
+    },
+    {
+      "id": "design-light-canvas@3958,15",
+      "board": "design-light-canvas",
+      "x": 3958,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-light-canvas@4370,15",
+      "board": "design-light-canvas",
+      "x": 4370,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-light-canvas@4782,15",
+      "board": "design-light-canvas",
+      "x": 4782,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-light-canvas@5194,15",
+      "board": "design-light-canvas",
+      "x": 5194,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-light-canvas@5606,15",
+      "board": "design-light-canvas",
+      "x": 5606,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-light-canvas@6018,15",
+      "board": "design-light-canvas",
+      "x": 6018,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-light-canvas@6430,15",
+      "board": "design-light-canvas",
+      "x": 6430,
+      "y": 15,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: status bar time in a phone mockup"
+    },
+    {
+      "id": "design-light-canvas@4773,448",
+      "board": "design-light-canvas",
+      "x": 4773,
+      "y": 448,
+      "low": false,
+      "text": "[phone] Cancel",
+      "trace": "R-113"
+    },
+    {
+      "id": "design-light-canvas@5082,448",
+      "board": "design-light-canvas",
+      "x": 5082,
+      "y": 448,
+      "low": false,
+      "text": "[phone] Done",
+      "trace": "R-113"
+    },
+    {
+      "id": "design-light-canvas@5676,453",
+      "board": "design-light-canvas",
+      "x": 5676,
+      "y": 453,
+      "low": false,
+      "text": "[phone] Delete / [phone] Duplicate / [phone] Lock",
+      "trace": "R-118"
+    },
+    {
+      "id": "design-light-canvas@4481,474",
+      "board": "design-light-canvas",
+      "x": 4481,
+      "y": 474,
+      "low": false,
+      "text": "[phone] Solid / [phone] Texture",
+      "trace": "R-109"
+    },
+    {
+      "id": "design-light-canvas@5305,476",
+      "board": "design-light-canvas",
+      "x": 5305,
+      "y": 476,
+      "low": false,
+      "text": "[phone] Solid / [phone] Texture",
+      "trace": "R-109"
+    },
+    {
+      "id": "design-light-canvas@6562,647",
+      "board": "design-light-canvas",
+      "x": 6562,
+      "y": 647,
+      "low": false,
+      "text": "[phone] Page 5 / 5",
+      "trace": "R-126"
+    },
+    {
+      "id": "design-light-canvas@3933,701",
+      "board": "design-light-canvas",
+      "x": 3933,
+      "y": 701,
+      "low": false,
+      "text": "[phone] Background / [phone] Layers",
+      "trace": "R-034"
+    },
+    {
+      "id": "design-light-canvas@4185,701",
+      "board": "design-light-canvas",
+      "x": 4185,
+      "y": 701,
+      "low": false,
+      "text": "[phone] Ratio / [phone] Pages",
+      "trace": "R-034"
+    },
+    {
+      "id": "design-light-canvas@6008,701",
+      "board": "design-light-canvas",
+      "x": 6008,
+      "y": 701,
+      "low": false,
+      "text": "[phone] Custom / [phone] Original",
+      "trace": "R-120, Q-2"
+    },
+    {
+      "id": "design-light-canvas@6148,701",
+      "board": "design-light-canvas",
+      "x": 6148,
+      "y": 701,
+      "low": false,
+      "text": "[phone] Squre / [phone] 2:3",
+      "trace": "R-120, Q-2"
+    },
+    {
+      "id": "design-light-canvas@6290,701",
+      "board": "design-light-canvas",
+      "x": 6290,
+      "y": 701,
+      "low": false,
+      "text": "[phone] 3:2 / [phone] 3:4",
+      "trace": "R-120, Q-2"
+    },
+    {
+      "id": "design-light-enhance@0,3244",
+      "board": "design-light-enhance",
+      "x": 0,
+      "y": 3244,
+      "low": false,
+      "text": "Enhance 掛 premium tag，點擊進房間  [D3-01]",
+      "trace": "R-061, R-071"
+    },
+    {
+      "id": "design-light-enhance@401,3244",
+      "board": "design-light-enhance",
+      "x": 401,
+      "y": 3244,
+      "low": false,
+      "text": "同 AI Enhance；Free user apply 時跳 IAP",
+      "trace": "R-071, R-064"
+    },
+    {
+      "id": "design-light-entry@4,-432",
+      "board": "design-light-entry",
+      "x": 4,
+      "y": -432,
+      "low": false,
+      "text": "• Feature：Scrollable Collage — 一個多頁 canvas，用戶自由增減 frame，匯出時自動切成多張  [D0-03] / • 對象：IG / TikTok 輪播、photo dump 用戶；搭 Year End Recap 上線（26 11E）  [D0-01] / • 成功指標：匯出完成率＝進畫布的人裡有多少人匯出  [D0-02] / • 入口：Collage 房間 banner（獨立新房間）、Deeplink scrollable_collage；Launcher Shortcut 不在本 spec；不進 My AI Artwork  [D0-04] / ◦ Launcher Shortcut 不跟 build，後續討論  [D0-06][D1-08] / • 非 generative：不收 credit、不開新 SKU  [D4-01]",
+      "trace": "R-001, R-145, R-165, R-004, R-007, R-008, R-009"
+    },
+    {
+      "id": "design-light-entry@2011,829",
+      "board": "design-light-entry",
+      "x": 2011,
+      "y": 829,
+      "low": false,
+      "text": "Focus frame 時 click → focus image；focus image 時 click → focus frame / Image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）",
+      "trace": "R-048, R-056"
+    },
+    {
+      "id": "design-light-entry@2409,829",
+      "board": "design-light-entry",
+      "x": 2409,
+      "y": 829,
+      "low": false,
+      "text": "Frame 工具：opacity / shadow / 水平 flip / 垂直 flip / duplicate / lock / delete（整個 frame 刪除）",
+      "trace": "R-049, R-051, R-052, R-053"
+    },
+    {
+      "id": "design-light-removal@0,2134",
+      "board": "design-light-removal",
+      "x": 0,
+      "y": 2134,
+      "low": false,
+      "text": "Removal 掛 premium tag，點擊進房間  [D3-01]",
+      "trace": "R-061, R-066"
+    },
+    {
+      "id": "design-light-removal@401,2134",
+      "board": "design-light-removal",
+      "x": 401,
+      "y": 2134,
+      "low": false,
+      "text": "同 Object Removal；Free user apply 時跳 IAP",
+      "trace": "R-066, R-064"
+    },
+    {
+      "id": "pm-button-next-step@7423,625",
+      "board": "pm-button-next-step",
+      "x": 7423,
+      "y": 625,
+      "low": false,
+      "text": "回 Collage Room / 切換分類 / 看該 template 的下一頁 / 回 Template Page / 逐頁預覽 / Discard dialog → 回 Template Preview / 上一步 / 下一步 / Save page；用了 PRO 內容的 free user 先跳 IAP",
+      "trace": "R-022, R-013, R-017, R-031, R-026, R-142, R-036, R-155, R-157"
+    },
+    {
+      "id": "pm-button-next-step@7123,745",
+      "board": "pm-button-next-step",
+      "x": 7123,
+      "y": 745,
+      "low": false,
+      "text": "縮圖往右滑",
+      "trace": "R-017"
+    },
+    {
+      "id": "pm-button-next-step@7123,1025",
+      "board": "pm-button-next-step",
+      "x": 7123,
+      "y": 1025,
+      "low": false,
+      "text": "frame 的 + / 點 frame / 點 image / 長按 image",
+      "trace": "R-045, R-048, R-076"
+    },
+    {
+      "id": "pm-button-next-step@7423,1145",
+      "board": "pm-button-next-step",
+      "x": 7423,
+      "y": 1145,
+      "low": false,
+      "text": "拖曳互換（frame 間 / frame 內）",
+      "trace": "R-076, R-077"
+    },
+    {
+      "id": "pm-button-next-step@7123,1385",
+      "board": "pm-button-next-step",
+      "x": 7123,
+      "y": 1385,
+      "low": false,
+      "text": "懸浮 Delete / 懸浮 Duplicate / 懸浮 Lock / 切換 frame 樣式",
+      "trace": "R-050, R-051, R-052, R-079, Q-8"
+    },
+    {
+      "id": "pm-button-next-step@7423,1385",
+      "board": "pm-button-next-step",
+      "x": 7423,
+      "y": 1385,
+      "low": false,
+      "text": "刪除整個 frame / 複製 frame / 立即翻轉 / Frame panel（入口 TBD-2） / 立即翻轉 / 同 Collage 房間 / Object Removal 房間（apply 時 IAP） / AI Enhance 房間（apply 時 IAP） / 變回空 frame / 解鎖，回一般 focus / 同未鎖定 / 切換分頁 / 套用背景 / 從畫布取色 / 不套用 / 套用 / Delete / Duplicate / Lock 選單 / Photo Picker（同 Collage）；新增內容 TBD-5 / Text 輸入（同 Collage） / Sticker panel（同 Edit Room） / Frame panel（NEW，方形縮圖） / Text Bubble panel（同 Edit Room） / 在畫布新增該 frame / 套用，只改長邊 / 放棄調整；有變動先跳 Discard / 套用回 Canvas，定位到選取頁 / 選取該頁 / 拖曳排序 / 增減頁數（從最後一頁） / 依序填入空 frame，回 Canvas / 分享；不能帶多張就只開 app / 同既有 IAP page",
+      "trace": "R-051, R-052, R-053, R-079, R-059, R-066, R-071, R-060, R-089, R-085, R-109, R-114, R-112, R-113, R-118, R-092, R-093, R-094, R-095, R-097, R-107, R-122, R-116, R-128, R-131, R-132, R-133, R-135, R-136, R-044, R-150, R-160, Q-6, Q-9, Q-10, Q-11"
+    },
+    {
+      "id": "pm-button-next-step@7123,1905",
+      "board": "pm-button-next-step",
+      "x": 7123,
+      "y": 1905,
+      "low": false,
+      "text": "懸浮 / 工具列 Unlock / 其他工具 / 色票 / texture / 調色盤 Cancel / Done",
+      "trace": "R-089, R-085, R-088, R-110, R-114, R-113"
+    },
+    {
+      "id": "pm-button-next-step@7123,2945",
+      "board": "pm-button-next-step",
+      "x": 7123,
+      "y": 2945,
+      "low": false,
+      "text": "縮圖列 + / 底部 − + / 選照片 → Done",
+      "trace": "R-128, R-044"
+    },
+    {
+      "id": "pm-competitor@10051,-802",
+      "board": "pm-competitor",
+      "x": 10051,
+      "y": -802,
+      "low": false,
+      "text": "• SCRL：瀑布流 → 模板詳情（方向 / 照片數 / 頁數）→ 畫布 → 匯出輪播 / 影片；7 天免費試用 Premium，影片填框、影片匯出、繪圖付費  [D5-01] / • 我們不標方向（直式 / 橫式）  [D1-01] / • 我們不做影片、漸層、網格、形狀、繪圖  [F11] / • 範本連結、TikTok 分享、影片匯出、專案、類似模板、收藏：Day-1 都不做（我們也沒有這麼多款）  [D5-01] / • 比例：SCRL 直向 / 故事 / 正方；我們開放 7 種  [F12]",
+      "trace": "R-015, R-091, R-109, R-120, Q-14"
+    },
+    {
+      "id": "pm-draft-tbd@9111,551",
+      "board": "pm-draft-tbd",
+      "x": 9111,
+      "y": 551,
+      "low": false,
+      "text": "TBD-1  frame 的 Opacity / Shadow 點了開什麼？ / ➡️ 同 Collage 房間既有的 Opacity / Shadow slider（Collage Image 頁「Img - Opacity Entry」已有） / 主：Meg（PM）· 待回覆 / TBD-2  「切換 frame 樣式」入口放哪？ / ➡️ frame 工具列第一顆加「Frame」（同 SCRL 框架） / 主：Meg（PM）· 待回覆 / TBD-3  Layers 的 ≡ 做什麼？ / ➡️ 按住拖曳調整圖層前後順序 / 主：Meg（PM）· 待回覆 / TBD-4  各 bottom sheet 的 ✕：關閉並保留已套用的變更？ / ➡️ 是，同 Edit Room panel / 主：Meg（PM）· 待回覆 / TBD-5  Add Layer → Image 新增的是單圖 frame 還是自由圖層？ / ➡️ 新增一個單圖 frame 並放入照片（畫布元件皆為 frame） / 主：Meg（PM）· 待回覆 / TBD-6  刪頁時跨頁元件：碰到就刪，還是照中心點？ / ➡️ 碰到被刪頁就整個刪（與「刪頁刪掉該頁上所有東西」一致） / 主：Meg（PM）· 待回覆 / TBD-7  匯出尺寸：固定短邊 1200 px，還是照 Image Quality？ / ➡️ 照畫布尺寸（短邊 1200 px）輸出 / 主：Meg（PM）· 待回覆 / TBD-8  Pages 小字「Page n / ?」分母是總頁數還是 10？ / ➡️ 總頁數 / 主：Meg（PM）· 待回覆 / TBD-9  Feature 名稱 / ➡️ Carousel Collage（輪播拼貼） / 主：Meg（PM）· 待回覆",
+      "trace": "Q-6, Q-8, Q-9, Q-10, Q-11, Q-12, Q-13, Q-1"
+    },
+    {
+      "id": "pm-flow@3321,-1627",
+      "board": "pm-flow",
+      "x": 3321,
+      "y": -1627,
+      "low": false,
+      "text": "• Feature：Scrollable Collage — 一個多頁 canvas，用戶自由增減 frame，匯出時自動切成多張  [D0-03] / • 對象：IG / TikTok 輪播、photo dump 用戶；搭 Year End Recap 上線（26 11E）  [D0-01] / • 成功指標：匯出完成率＝進畫布的人裡有多少人匯出  [D0-02] / • 入口：Collage 房間 banner（獨立新房間）、Deeplink scrollable_collage；Launcher Shortcut 不在本 spec；不進 My AI Artwork  [D0-04] / ◦ Launcher Shortcut 不跟 build，後續討論  [D0-06][D1-08] / • 非 generative：不收 credit、不開新 SKU  [D4-01]",
+      "trace": "R-001, R-145, R-165, R-004, R-007, R-008, R-009"
+    },
+    {
+      "id": "pm-flow@3321,-1247",
+      "board": "pm-flow",
+      "x": 3321,
+      "y": -1247,
+      "low": false,
+      "text": "點 banner 進 Scrollable Collage  [D1-07]",
+      "trace": "R-010"
+    },
+    {
+      "id": "pm-flow@3791,-1247",
+      "board": "pm-flow",
+      "x": 3791,
+      "y": -1247,
+      "low": false,
+      "text": "瀑布流，只標張數 / 頁數  [D1-01]",
+      "trace": "R-014, R-015"
+    },
+    {
+      "id": "pm-flow@4261,-1247",
+      "board": "pm-flow",
+      "x": 4261,
+      "y": -1247,
+      "low": false,
+      "text": "顯示張數 / 頁數，可逐頁滑  [D1-02]",
+      "trace": "R-025, R-026"
+    },
+    {
+      "id": "pm-flow@4731,-1247",
+      "board": "pm-flow",
+      "x": 4731,
+      "y": -1247,
+      "low": false,
+      "text": "點 frame 的 + 匯入照片  [F4]",
+      "trace": "R-040"
+    },
+    {
+      "id": "pm-flow@5201,-1247",
+      "board": "pm-flow",
+      "x": 5201,
+      "y": -1247,
+      "low": false,
+      "text": "上限＝空 frame 數  [D2-06]",
+      "trace": "R-042"
+    },
+    {
+      "id": "pm-flow@5671,-1247",
+      "board": "pm-flow",
+      "x": 5671,
+      "y": -1247,
+      "low": false,
+      "text": "編輯元件後按 Export  [D1-04]",
+      "trace": "R-155, R-144"
+    },
+    {
+      "id": "pm-flow@6141,-1247",
+      "board": "pm-flow",
+      "x": 6141,
+      "y": -1247,
+      "low": false,
+      "text": "N 張存相簿 + 分享  [D2-05]",
+      "trace": "R-149, R-150"
+    },
+    {
+      "id": "pm-flow@4731,-79",
+      "board": "pm-flow",
+      "x": 4731,
+      "y": -79,
+      "low": false,
+      "text": "Canvas ‹ 返回會先跳 Discard dialog（同 Edit Room），確認後回 Template Preview  [D1-10]",
+      "trace": "R-138, R-142"
+    },
+    {
+      "id": "pm-flow@3321,233",
+      "board": "pm-flow",
+      "x": 3321,
+      "y": 233,
+      "low": false,
+      "text": "Deeplink 落在瀑布流；category_guid 定位分類  [D1-09]",
+      "trace": "R-004, R-005"
+    },
+    {
+      "id": "pm-flow@3791,233",
+      "board": "pm-flow",
+      "x": 3791,
+      "y": 233,
+      "low": false,
+      "text": "template_guid 直接開 preview  [D1-09]",
+      "trace": "R-006"
+    },
+    {
+      "id": "pm-flow@3321,1553",
+      "board": "pm-flow",
+      "x": 3321,
+      "y": 1553,
+      "low": false,
+      "text": "Next: Canvas [+] → Add Layer 五個 function / [+] 開 Add Layer：五個 function  [F11]",
+      "trace": "R-091"
+    },
+    {
+      "id": "pm-flow@3791,1623",
+      "board": "pm-flow",
+      "x": 3791,
+      "y": 1623,
+      "low": false,
+      "text": "Image → 同 Collage photo picker  [D1-42]",
+      "trace": "R-092, R-099"
+    },
+    {
+      "id": "pm-flow@4261,1623",
+      "board": "pm-flow",
+      "x": 4261,
+      "y": 1623,
+      "low": false,
+      "text": "Text → 同 Collage Text 輸入  [D1-14][D1-42]",
+      "trace": "R-093, R-100, R-098"
+    },
+    {
+      "id": "pm-flow@4731,1623",
+      "board": "pm-flow",
+      "x": 4731,
+      "y": 1623,
+      "low": false,
+      "text": "Sticker → 同 Edit Room Sticker panel  [D1-14][D1-42]",
+      "trace": "R-094, R-101, R-098"
+    },
+    {
+      "id": "pm-flow@5201,1623",
+      "board": "pm-flow",
+      "x": 5201,
+      "y": 1623,
+      "low": false,
+      "text": "Frame → NEW Frame panel（方形縮圖）  [D1-42]",
+      "trace": "R-095, R-102"
+    },
+    {
+      "id": "pm-flow@5671,1623",
+      "board": "pm-flow",
+      "x": 5671,
+      "y": 1623,
+      "low": false,
+      "text": "Text Bubble → 同 Edit Room Text Bubble  [D1-14][D1-42]",
+      "trace": "R-097, R-103, R-098"
+    },
+    {
+      "id": "pm-flow@6141,1623",
+      "board": "pm-flow",
+      "x": 6141,
+      "y": 1623,
+      "low": false,
+      "text": "完成後回 Canvas，新元件出現在畫布  [D1-42]",
+      "trace": "R-104, R-105, R-106, R-107, R-108"
+    },
+    {
+      "id": "pm-flow@3321,3023",
+      "board": "pm-flow",
+      "x": 3321,
+      "y": 3023,
+      "low": false,
+      "text": "Removal 掛 premium tag，點擊進房間  [D3-01]",
+      "trace": "R-061, R-066"
+    },
+    {
+      "id": "pm-flow@3791,3023",
+      "board": "pm-flow",
+      "x": 3791,
+      "y": 3023,
+      "low": false,
+      "text": "同 Object Removal；Free user apply 時跳 IAP  [D3-01][D1-43]",
+      "trace": "R-064, R-067"
+    },
+    {
+      "id": "pm-flow@4261,3023",
+      "board": "pm-flow",
+      "x": 4261,
+      "y": 3023,
+      "low": false,
+      "text": "IAP page 同既有  [D3-01]",
+      "trace": "R-160"
+    },
+    {
+      "id": "pm-flow@4731,3293",
+      "board": "pm-flow",
+      "x": 4731,
+      "y": 3293,
+      "low": false,
+      "text": "Removal / Enhance：付費用戶按 ✓ → 結果取代該 frame 的照片、回畫布、可 undo、不另存相簿；✕ → 不套用回畫布  [D1-11]",
+      "trace": "R-062, R-063, R-068, R-069, R-073, R-074"
+    },
+    {
+      "id": "pm-flow@4261,3553",
+      "board": "pm-flow",
+      "x": 4261,
+      "y": 3553,
+      "low": false,
+      "text": "[phone] IAP page（同既有，不改版）",
+      "trace": "R-160"
+    },
+    {
+      "id": "pm-flow@3321,4373",
+      "board": "pm-flow",
+      "x": 3321,
+      "y": 4373,
+      "low": false,
+      "text": "Enhance 掛 premium tag，點擊進房間  [D3-01]",
+      "trace": "R-061, R-071"
+    },
+    {
+      "id": "pm-flow@3791,4373",
+      "board": "pm-flow",
+      "x": 3791,
+      "y": 4373,
+      "low": false,
+      "text": "同 AI Enhance；Free user apply 時跳 IAP  [D3-01][D1-43]",
+      "trace": "R-064, R-072"
+    },
+    {
+      "id": "pm-flow@4261,4373",
+      "board": "pm-flow",
+      "x": 4261,
+      "y": 4373,
+      "low": false,
+      "text": "IAP page 同既有  [D3-01]",
+      "trace": "R-160"
+    },
+    {
+      "id": "pm-flow@4261,4903",
+      "board": "pm-flow",
+      "x": 4261,
+      "y": 4903,
+      "low": false,
+      "text": "[phone] IAP page（同既有，不改版）",
+      "trace": "R-160"
+    },
+    {
+      "id": "pm-flow@3321,5627",
+      "board": "pm-flow",
+      "x": 3321,
+      "y": 5627,
+      "low": false,
+      "text": "— 藍線＝去程（點擊觸發）　— 紅線＝回程（‹ 返回）",
+      "trace": "label: legend of the flow arrows (blue forward, red return); the arrows are in arrows.json"
+    },
+    {
+      "id": "pm-header@3261,-1857",
+      "board": "pm-header",
+      "x": 3261,
+      "y": -1857,
+      "low": false,
+      "text": "與 Collage 的差異：Collage 是單張圖片挖空、給用戶上傳圖；Scrollable Collage 是一個 canvas，給用戶自由增減 frame  [D0-03]",
+      "trace": "R-001"
+    },
+    {
+      "id": "pm-leave-resume@6751,-1687",
+      "board": "pm-leave-resume",
+      "x": 6751,
+      "y": -1687,
+      "low": false,
+      "text": "• 用戶自己按 ‹ 返回 → Discard dialog（同 Edit Room \"Discard changes?\" Discard / Keep）  [D1-10] / • App 被殺掉 → 下次出現 continue editing? dialog（同 Edit Room）  [D1-10] / • 只恢復最新一筆編輯紀錄（用戶同時只能做一件事）  [D1-18]",
+      "trace": "R-138, R-139, R-140, R-141"
+    },
+    {
+      "id": "pm-leave-resume@6771,-1448",
+      "board": "pm-leave-resume",
+      "x": 6771,
+      "y": -1448,
+      "low": false,
+      "text": "按鈕：Discard / Keep（同 Edit Room）",
+      "trace": "R-138"
+    },
+    {
+      "id": "pm-leave-resume@7141,-1448",
+      "board": "pm-leave-resume",
+      "x": 7141,
+      "y": -1448,
+      "low": false,
+      "text": "文案與按鈕同 Edit Room",
+      "trace": "R-140"
+    },
+    {
+      "id": "pm-save-iap@7851,-1687",
+      "board": "pm-save-iap",
+      "x": 7851,
+      "y": -1687,
+      "low": false,
+      "text": "• Removal / Enhance：工具列掛 premium tag，apply 時 IAP page 擋（沿用既有房間）  [D3-01] / • 部分 content（template / frame / texture）由 CMS 設為 PRO  [D3-02] / • PRO 內容可先用，匯出時才跳 IAP（同 AI 功能「Paid style applied」）  [D3-04] / • 不加 watermark  [D3-03] / • Free user 每 save 3 次跳 IAP page；算匯出次數，不算張數  [D3-05] / • 無評分 dialog（9 月起已全面移除）  [D3-05] / • 不收 credit、不開新 SKU  [D4-01]",
+      "trace": "R-061, R-065, R-159, R-157, R-152, R-158, R-153, R-009"
+    },
+    {
+      "id": "pm-save-page@6791,4739",
+      "board": "pm-save-page",
+      "x": 6791,
+      "y": 4739,
+      "low": false,
+      "text": "多頁 case",
+      "trace": "R-147"
+    },
+    {
+      "id": "pm-save-page@7189,4739",
+      "board": "pm-save-page",
+      "x": 7189,
+      "y": 4739,
+      "low": false,
+      "text": "單頁 case",
+      "trace": "R-148"
+    },
+    {
+      "id": "pm-save-page@7587,4799",
+      "board": "pm-save-page",
+      "x": 7587,
+      "y": 4799,
+      "low": false,
+      "text": "11/3 更新 save page / 無小圖 preview, 橘色 btn 會 save 所有圖片 / 有 > 1 pages 的情況, 橘色 btn 下方多一顆只儲存單張的選項, click → preview 中的圖片會被存 / btn 字串 / 多張時橘色: Save all X images / 多張時透明: Save this image / 單張時橘色: Save",
+      "trace": "R-146, R-147, R-148"
+    },
+    {
+      "id": "pm-scrl@-1676,-2087",
+      "board": "pm-scrl",
+      "x": -1676,
+      "y": -2087,
+      "low": false,
+      "text": "Content ready 上 CMS (10/XX ready) / AP RD 串好 CMS, 提供 tool (11/XX ready) / Design 下海刻模板 / save as template → 製作 20 顆 default canvas / 背景顏色/ Frame 位置 & 樣式/ text/ image 張數 / 製作東西方 thumbnails (每一頁都會顯示於 UI) / Design 需要先備妥的 content: / Background - texture (需可 loop) / 支援單張/多張 image",
+      "trace": "R-021, R-029, R-018, R-114, R-096; production notes (CMS ready 10/XX, tools 11/XX, Design builds the templates) are label: schedule"
+    },
+    {
+      "id": "pm-scrl@-11046,-1656",
+      "board": "pm-scrl",
+      "x": -11046,
+      "y": -1656,
+      "low": false,
+      "text": "長按可以拖曳 input image / (章魚哥可以跟四格 Meg 對調)",
+      "trace": "R-076"
+    },
+    {
+      "id": "pm-scrl@-13547,-1568",
+      "board": "pm-scrl",
+      "x": -13547,
+      "y": -1568,
+      "low": false,
+      "text": "每個看似挖空, 都是 add image 的 frame",
+      "trace": "R-035"
+    },
+    {
+      "id": "pm-scrl@-12532,-1488",
+      "board": "pm-scrl",
+      "x": -12532,
+      "y": -1488,
+      "low": false,
+      "text": "frame 可縮放",
+      "trace": "R-038"
+    },
+    {
+      "id": "pm-scrl@-3770,-1247",
+      "board": "pm-scrl",
+      "x": -3770,
+      "y": -1247,
+      "low": false,
+      "text": "畫布比例變動時, 元件不動 / 畫布會往下長/往上縮來調整比例",
+      "trace": "R-123"
+    },
+    {
+      "id": "pm-scrl@-11745,-995",
+      "board": "pm-scrl",
+      "x": -11745,
+      "y": -995,
+      "low": false,
+      "text": "input photo (多張) / 上限判定: 目前有多少 add image frame 為空",
+      "trace": "R-043, R-042"
+    },
+    {
+      "id": "pm-scrl@-16676,-641",
+      "board": "pm-scrl",
+      "x": -16676,
+      "y": -641,
+      "low": false,
+      "text": "Thumbnail/ default 配置",
+      "trace": "R-029"
+    },
+    {
+      "id": "pm-scrl@-12289,-605",
+      "board": "pm-scrl",
+      "x": -12289,
+      "y": -605,
+      "low": false,
+      "text": "input photo (一張)",
+      "trace": "R-043"
+    },
+    {
+      "id": "pm-scrl@-3656,-525",
+      "board": "pm-scrl",
+      "x": -3656,
+      "y": -525,
+      "low": false,
+      "text": "每單張的尺寸",
+      "trace": "R-120"
+    },
+    {
+      "id": "pm-scrl@-4453,1293",
+      "board": "pm-scrl",
+      "x": -4453,
+      "y": 1293,
+      "low": false,
+      "text": "= 可以拉動頁面 / 根據每個元件的中心點位置在哪一張 image 決定如何被拖曳 (跟著誰走) / 有跨頁的元件, 拖曳之後也會跨頁",
+      "trace": "R-039"
+    },
+    {
+      "id": "pm-scrl@-10722,2582",
+      "board": "pm-scrl",
+      "x": -10722,
+      "y": 2582,
+      "low": false,
+      "text": "focus frame 的狀態 click → focus image / focus image 狀態 click -> focus frame / frame focus 狀態有懸浮 btn: delete/duplicate/lock / frame 跟 image 可調整參數不一樣: / image 應具備 / 替換/ 水平 flip/ 垂直 flip/ adjustment/ filter (same as current Collage room) / removal (可變現) / enhance (可變現) / lock (image 鎖定位置, 不可再被拖曳/zoom) / delete (變回空的 frame, + add image icon 出現) / frame 應具備 / 水平 flip / 垂直 flip / lock (frame 鎖定位置, 不可再被拖曳/zoom) / delete (整個 frame 刪除)",
+      "trace": "R-048, R-050, R-056, R-061, R-087, R-060, R-049, R-084, R-051, R-053, R-052"
+    },
+    {
+      "id": "pm-scrl@-12621,2626",
+      "board": "pm-scrl",
+      "x": -12621,
+      "y": 2626,
+      "low": false,
+      "text": "frame focus 狀態有懸浮 btn",
+      "trace": "R-050"
+    },
+    {
+      "id": "pm-tracking@8951,-1687",
+      "board": "pm-tracking",
+      "x": 8951,
+      "y": -1687,
+      "low": false,
+      "text": "• 成功指標：匯出完成率＝Export_Done 人數 ÷ Canvas_Appear 人數  [D0-02] / • 新開專用 event（參數與以往不同 + 獨立房間）  [D0-05] / • ScrollableCollage_Canvas_Appear  [D1-15] / • ScrollableCollage_Export_Done  [D1-15] / • 名稱與參數暫定  [D1-15]",
+      "trace": "R-165, R-163, R-164"
+    },
+    {
+      "id": "pm-ui-1@4271,5928",
+      "board": "pm-ui-1",
+      "x": 4271,
+      "y": 5928,
+      "low": false,
+      "text": "• Collage 房間一進去即顯示 banner「Try Scrollable Collage!」，點擊進 Scrollable Collage  [D1-07] / • Scrollable Collage 是獨立新房間，不是 Collage 的新分類  [D0-04] / • 每次進 Collage 都看得到，預設不拿掉 banner  [D1-07] / • Collage 今天沒有 AI / Traditional 分類，banner 放在 Collage 房間頂部  [D1-16] / • 其餘畫面同 Collage  [D0-04]",
+      "trace": "R-002, R-010, R-001, R-003"
+    },
+    {
+      "id": "pm-ui-1@6561,5967",
+      "board": "pm-ui-1",
+      "x": 6561,
+      "y": 5967,
+      "low": false,
+      "text": "CMS type: MOCK_CMS_TYPE（未定）",
+      "trace": "R-166, Q-17"
+    },
+    {
+      "id": "pm-ui-1@6913,6080",
+      "board": "pm-ui-1",
+      "x": 6913,
+      "y": 6080,
+      "low": false,
+      "text": "template id；deeplink template_guid 直接開 preview / 3–4 個，順序由 CMS，Year End 第一；deeplink category_guid / free / purchase → PRO icon，匯出時擋 / default 支援張數（瀑布流 / preview 顯示） / canvas 頁數（1–10） / 每一頁一張；瀑布流顯示第一頁",
+      "trace": "R-006, R-012, R-005, R-020, R-157, R-015, R-127, R-016"
+    },
+    {
+      "id": "pm-ui-1@6573,6368",
+      "board": "pm-ui-1",
+      "x": 6573,
+      "y": 6368,
+      "low": false,
+      "text": "thumbnails（東 / 西） / • Day 1：20 顆 template  [F16] / • 新內容：frame（mask 支援單張 / 多張 image）  [F17] / • 新內容：背景 texture（需可 loop）  [D1-17] / • 文字 / 字體 / 文字樣式 / text bubble / 貼紙沿用既有 CMS  [D1-14] / • ⚠️ HANDOFF BLOCKER：CMS type string / contentVer 未定（MOCK_CMS_TYPE）；CMS sheet 連結未提供（MOCK_CMS_SHEET）  [D2-07]",
+      "trace": "R-018, R-021, R-096, R-114, R-098, R-166, Q-17, Q-3"
+    },
+    {
+      "id": "pm-ui-1@4271,6978",
+      "board": "pm-ui-1",
+      "x": 4271,
+      "y": 6978,
+      "low": false,
+      "text": "• Template 列表為瀑布流  [D1-01] / • 每顆只標 default 支援張數 & canvas 頁數，不標直式 / 橫式  [D1-01] / • 縮圖顯示第一頁  [D2-08] / • 3–4 個 category，順序由 CMS，Year End 第一；NEW 用 CMS tag  [D2-03][D2-07] / • CMS 設為 PRO 的 template 右上掛 PRO icon  [D3-02] / • Day 1 共 20 顆 template  [F16]",
+      "trace": "R-014, R-015, R-016, R-012, R-019, R-020, R-021"
+    },
+    {
+      "id": "pm-ui-1@5721,6978",
+      "board": "pm-ui-1",
+      "x": 5721,
+      "y": 6978,
+      "low": false,
+      "text": "• 每顆縮圖可向右滑動看後面的頁（同 SCRL）  [D2-08] / • 東西方 thumbnails，每一頁都顯示於 UI  [F16] / • Deeplink scrollable_collage 落點在此頁；category_guid 定位分類  [D1-09]",
+      "trace": "R-017, R-018, R-004, R-005, Q-3"
+    },
+    {
+      "id": "pm-ui-1@4271,8028",
+      "board": "pm-ui-1",
+      "x": 4271,
+      "y": 8028,
+      "low": false,
+      "text": "• 點 template 進 preview，顯示支援張數 / 頁數  [D1-02] / • 可左右逐頁滑（同 SCRL）  [D2-09] / • Thumbnail = template 的 default 配置  [F1] / • Use Template → 進 Canvas  [D1-02] / • Deeplink 帶 template_guid 直接開此頁  [D1-09]",
+      "trace": "R-025, R-023, R-026, R-029, R-030, R-006"
+    },
+    {
+      "id": "pm-ui-1@5721,8028",
+      "board": "pm-ui-1",
+      "x": 5721,
+      "y": 8028,
+      "low": false,
+      "text": "• CMS 設為 PRO 的 template 右上掛 PRO icon  [D3-02] / • Free user 可先使用，匯出時才跳 IAP（同 AI 功能「Paid style applied」）  [D3-04]",
+      "trace": "R-027, R-028, R-157"
+    },
+    {
+      "id": "pm-ui-2@4271,9078",
+      "board": "pm-ui-2",
+      "x": 4271,
+      "y": 9078,
+      "low": false,
+      "text": "• 多頁 canvas，可自由縮放 view、左右捲動  [D1-03] / • 每個看似挖空的地方都是 add image 的 frame（+）  [F2] / • 點 + 匯入照片：一張或多張，上限＝目前空 frame 數  [F4] / • 頂部 undo / redo，涵蓋畫布上所有操作  [D1-13] / • 底部：Background / Layers / + / Ratio / Pages  [D1-04] / • 元件皆可調整：文字顏色 / 內容 / 字體、圖片位置  [D1-04]",
+      "trace": "R-033, R-035, R-040, R-043, R-042, R-036, R-034, R-037"
+    },
+    {
+      "id": "pm-ui-2@5721,9078",
+      "board": "pm-ui-2",
+      "x": 5721,
+      "y": 9078,
+      "low": false,
+      "text": "• focus frame 時 click → focus image；focus image 時 click → focus frame  [F6] / • frame focus 懸浮鈕：delete / duplicate / lock（icon）  [F7][D1-32] / • frame 工具：opacity / shadow / 水平 flip / 垂直 flip / duplicate / lock / delete（整個 frame 刪除）  [F9] / • frame 可縮放  [F3] / • lock 後行為見 Canvas · frame_locked  [D1-33] / • 選取狀態可刪除 / duplicate / lock  [D1-05]",
+      "trace": "R-048, R-050, R-049, R-038, R-084, R-055"
+    },
+    {
+      "id": "pm-ui-2@7171,9078",
+      "board": "pm-ui-2",
+      "x": 7171,
+      "y": 9078,
+      "low": false,
+      "text": "• image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）  [F8][D1-35] / • Removal / Enhance 在工具列掛 premium tag  [D3-01] / • 進 Removal / Enhance 房間，apply 時 IAP page 擋  [D3-01] / • 結果取代該 frame 的照片、回畫布、可 undo、不另存相簿  [D1-11] / • delete：變回空 frame，+ add image icon 出現  [F8] / • lock 後行為見 Canvas · image_locked  [D1-34]",
+      "trace": "R-056, R-061, R-065, R-062, R-060, R-087"
+    },
+    {
+      "id": "pm-ui-2@8621,9078",
+      "board": "pm-ui-2",
+      "x": 8621,
+      "y": 9078,
+      "low": false,
+      "text": "• 長按可拖曳 input image，放到另一個 frame 即兩張對調  [F5] / • 元件依中心點所在頁決定跟誰走；跨頁元件拖曳後仍跨頁  [F13] / • 也可在多圖 frame 內部格子之間長按互換  [D1-20]",
+      "trace": "R-076, R-039, R-077"
+    },
+    {
+      "id": "pm-ui-2@10071,9078",
+      "board": "pm-ui-2",
+      "x": 10071,
+      "y": 9078,
+      "low": false,
+      "text": "• frame 分單圖（例：拍立得）與多圖（例：底片）  [D1-19] / • 在 frame 工具列切換 frame 樣式（不是拖曳）  [D1-21] / • 單圖 → 多圖：原圖自動帶到多圖 frame 左→右、上→下的第一格  [D1-21] / • 多圖 frame 的其餘格子顯示 + add image  [D1-21]",
+      "trace": "R-078, R-079, R-080"
+    },
+    {
+      "id": "pm-ui-2@11521,9078",
+      "board": "pm-ui-2",
+      "x": 11521,
+      "y": 9078,
+      "low": false,
+      "text": "• 多圖 → 單圖：保留第一張，其餘自動刪除  [D1-22] / • 多圖 → 較少格（N 格）：保留左→右、上→下順序的前 N 張，其餘自動刪除  [D1-22] / • 刪掉的圖再切回多圖 frame 也叫不回來，只能 undo / redo  [D1-22]",
+      "trace": "R-081, R-082, R-083"
+    },
+    {
+      "id": "pm-ui-2@12971,9078",
+      "board": "pm-ui-2",
+      "x": 12971,
+      "y": 9078,
+      "low": false,
+      "text": "• 多圖 frame 內部：長按 image 拖到同 frame 另一格即對調  [D1-20] / • frame 之間長按互換同 photo_swap  [F5]",
+      "trace": "R-077, R-076"
+    },
+    {
+      "id": "pm-ui-2@4271,10128",
+      "board": "pm-ui-2",
+      "x": 4271,
+      "y": 10128,
+      "low": false,
+      "text": "• 背景：純色；不做漸層  [F10] / • 色卡 8×4＝32 色，由 content team 定義  [D1-23] / • 自訂顏色：調色盤 + 色相條 + 滴管（同 Text color picker）  [D1-23]",
+      "trace": "R-109, R-110, R-111"
+    },
+    {
+      "id": "pm-ui-2@5721,10128",
+      "board": "pm-ui-2",
+      "x": 5721,
+      "y": 10128,
+      "low": false,
+      "text": "• 質地 texture 為新內容，需可 loop  [D1-17] / • 部分 texture 可由 CMS 設為 PRO  [D3-02]",
+      "trace": "R-114, R-115"
+    },
+    {
+      "id": "pm-ui-2@7171,10128",
+      "board": "pm-ui-2",
+      "x": 7171,
+      "y": 10128,
+      "low": false,
+      "text": "• 點 Custom color 開調色盤：飽和度 / 明度方塊 + 色相條  [D1-23] / • 滴管可從畫布取色  [D1-23] / • Cancel 不套用；Done 套用為背景色  [D1-23] / • 同 Text color picker  [D1-23]",
+      "trace": "R-111, R-112, R-113"
+    },
+    {
+      "id": "pm-ui-3@4271,11178",
+      "board": "pm-ui-3",
+      "x": 4271,
+      "y": 11178,
+      "low": false,
+      "text": "• 新增圖層：圖片 / 文字 / 貼紙 / 框架 / 小工具（text bubble）  [F11] / • 不做影片、檔案、網格、形狀、繪圖  [F11] / • 框架（frame）為新內容；mask 支援單張 / 多張 image  [F17] / • 新內容只有 frame 與背景 texture  [D1-14] / • 文字 / 字體 / 文字樣式 / text bubble / 貼紙沿用 Edit Room panel 與 CMS  [D1-14]",
+      "trace": "R-091, R-096, R-098"
+    },
+    {
+      "id": "pm-ui-3@5721,11178",
+      "board": "pm-ui-3",
+      "x": 5721,
+      "y": 11178,
+      "low": false,
+      "text": "• 底部 Layers 開圖層列表（同 SCRL）：每層縮圖在透明格底上  [D1-31] / • 左側 ⋯：Delete / Duplicate / Lock（已 lock 的顯示 Unlock）  [D1-31][D1-32] / • 右側 ≡  [D1-31]",
+      "trace": "R-117, R-118, R-119"
+    },
+    {
+      "id": "pm-ui-3@7171,11178",
+      "board": "pm-ui-3",
+      "x": 7171,
+      "y": 11178,
+      "low": false,
+      "text": "• 點 ⋯ 開選單：Delete / Duplicate / Lock，皆有 icon  [D1-31][D1-32] / • Lock 後該元件行為見 Canvas · frame_locked / image_locked  [D1-33][D1-34]",
+      "trace": "R-118, R-084, R-087"
+    },
+    {
+      "id": "pm-ui-3@8621,11178",
+      "board": "pm-ui-3",
+      "x": 8621,
+      "y": 11178,
+      "low": false,
+      "text": "• Add Layer → Frame 開 Frame panel；frame 是唯一新內容  [D1-14][D1-42] / • 縮圖為方形  [D1-42] / • 每顆標可放幾張照片（單圖 / 多圖）  [D1-19] / • 點縮圖 → 在畫布新增該 frame  [F2] / • NEW 用 CMS tag；部分由 CMS 設為 PRO  [D2-07][D3-02]",
+      "trace": "R-095, R-096, R-107"
+    },
+    {
+      "id": "pm-ui-3@4271,12228",
+      "board": "pm-ui-3",
+      "x": 4271,
+      "y": 12228,
+      "low": false,
+      "text": "• 比例開放用戶選：1:1 / 4:5 / 5:4 / 3:4 / 4:3 / 9:16 / 16:9  [D2-02][F12] / • 切換 UI 用 PhD Crop / AI Expand 的 icon ＋ 數字  [D1-37] / • 畫布預設短邊 1080 px；改比例只改長邊  [D1-36] / • 比例變動時元件不動，畫布往下長 / 往上縮  [F12] / • 不做 AI Expand 導流  [D1-06]",
+      "trace": "R-120, R-121, R-122, R-123, R-124"
+    },
+    {
+      "id": "pm-ui-3@4271,13278",
+      "board": "pm-ui-3",
+      "x": 4271,
+      "y": 13278,
+      "low": false,
+      "text": "• 用意：預覽拼起來的樣子，頁與頁之間只有細線  [D1-38] / • 進來預設定位在進 Pages 前所在的頁；小字顯示目前選取的頁數  [D1-41] / • 點縮圖＝選取該頁；此畫面不能編輯元件  [D1-26][D1-30] / • 按住 ≡ 才能拖曳排序；點 ≡ 無反應  [D1-25] / • 縮圖列 + 與底部 − / +：增減頁數（加在最後，畫面捲到最後）  [D1-28][D1-29] / • 不提供 undo / redo；✓ 套用、✕ 放棄  [D1-40][D1-24]",
+      "trace": "R-125, R-126, R-133, R-132, R-128, R-135, R-136"
+    },
+    {
+      "id": "pm-ui-3@5721,13278",
+      "board": "pm-ui-3",
+      "x": 5721,
+      "y": 13278,
+      "low": false,
+      "text": "• 最少 1 頁、最多 10 頁  [D1-12] / • 已 10 頁：縮圖列 + add page、底部 +、Duplicate page 不可用  [D1-12][D1-27]",
+      "trace": "R-127, R-129"
+    },
+    {
+      "id": "pm-ui-3@7171,13278",
+      "board": "pm-ui-3",
+      "x": 7171,
+      "y": 13278,
+      "low": false,
+      "text": "• ••• 選單：Duplicate page（接在原頁後）/ Delete page（不跳確認）  [D1-27] / • 刪頁＝直接刪掉該頁上所有東西，lock 元件也一起刪  [D1-39][D1-33] / • 只剩 1 頁：Delete page 與底部 − 不可用  [D1-12][D1-29]",
+      "trace": "R-131, R-134, R-130"
+    },
+    {
+      "id": "pm-ui-3@8621,13278",
+      "board": "pm-ui-3",
+      "x": 8621,
+      "y": 13278,
+      "low": false,
+      "text": "• 按住 ≡ 拖曳：縮圖放大半透明，其他頁讓位，放開即排序  [D1-25] / • 頁面可拉動排序  [F13]",
+      "trace": "R-132, R-039"
+    },
+    {
+      "id": "pm-ui-3@10071,13278",
+      "board": "pm-ui-3",
+      "x": 10071,
+      "y": 13278,
+      "low": false,
+      "text": "• ✕ 放棄這次所有頁面調整並回畫布  [D1-24] / • 有變動時先跳 Discard dialog（同 Edit Room）  [D1-24]",
+      "trace": "R-136"
+    },
+    {
+      "id": "pm-ui-4@4271,14328",
+      "board": "pm-ui-4",
+      "x": 4271,
+      "y": 14328,
+      "low": false,
+      "text": "• 同 Collage photo picker  [D2-06] / • 一次匯入上限＝目前空 frame 數，兩平台封頂 20（Android 不受預設 6 限制）  [D2-06] / • Done → 依序填入空 frame  [F4]",
+      "trace": "R-040, R-042, R-044"
+    },
+    {
+      "id": "pm-ui-4@4271,15378",
+      "board": "pm-ui-4",
+      "x": 4271,
+      "y": 15378,
+      "low": false,
+      "text": "• Export：每頁裁成一張  [D2-01] / • N 張一次全存「PhotoDirector」相簿，Save page 顯示 N 張  [D2-05] / • 解析度沿用 Image Quality 設定，以每張長邊套用  [D2-04] / • 分享沿用 IG / FB / More；能一次帶 N 張就帶，不行就只打開該 app  [D2-05] / • 不加 watermark  [D3-03] / • 不存 My AI Artwork  [D0-06]",
+      "trace": "R-145, R-149, R-151, R-150, R-152, R-008, Q-13"
+    },
+    {
+      "id": "pm-ui-4@5721,15378",
+      "board": "pm-ui-4",
+      "x": 5721,
+      "y": 15378,
+      "low": false,
+      "text": "• Free user 每 save 3 次跳 IAP page  [D3-03] / • 以匯出「次數」計，不算張數  [D3-05] / • 無評分 dialog（9 月起 iOS / Android 已全面移除）  [D3-05]",
+      "trace": "R-158"
+    },
+    {
+      "id": "pm-ui-4@7171,15378",
+      "board": "pm-ui-4",
+      "x": 7171,
+      "y": 15378,
+      "low": false,
+      "text": "• 用了 PRO 內容，free user 按 Export 時跳 IAP（同 AI 功能「Paid style applied」）  [D3-04] / • Removal / Enhance 在其房間 apply 時已擋，不在匯出擋  [D3-01]",
+      "trace": "R-157, R-065"
+    },
+    {
+      "id": "pm-ui-4@5311,15801",
+      "board": "pm-ui-4",
+      "x": 5311,
+      "y": 15801,
+      "low": false,
+      "text": "[phone] IAP page（同既有，不改版）",
+      "trace": "R-160"
+    },
+    {
+      "id": "pm-ui-4@6761,15801",
+      "board": "pm-ui-4",
+      "x": 6761,
+      "y": 15801,
+      "low": false,
+      "text": "[phone] IAP page（同既有，不改版）",
+      "trace": "R-160"
+    },
+    {
+      "id": "pm-ui-4@4271,16428",
+      "board": "pm-ui-4",
+      "x": 4271,
+      "y": 16428,
+      "low": false,
+      "text": "• frame lock 後：不能在畫布上拖曳 / 旋轉等  [D1-33] / • focus 時仍出現 feature bar，除 Duplicate / Unlock / Delete 外皆 disable  [D1-33] / • 懸浮鈕：Delete / Duplicate / Unlock  [D1-33][D1-32] / • 在 Pages 刪頁 / 減頁時，lock 的 frame 仍會被刪掉  [D1-33]",
+      "trace": "R-084, R-085, R-086, R-090"
+    },
+    {
+      "id": "pm-ui-4@5721,16428",
+      "board": "pm-ui-4",
+      "x": 5721,
+      "y": 16428,
+      "low": false,
+      "text": "• image lock 後：不能拖曳 / 縮放  [D1-34] / • focus 時仍出現 feature bar（一條），除 Unlock / Delete 外皆 disable  [D1-34][D1-35] / • 懸浮鈕：Delete / Duplicate / Unlock  [D1-34] / • Unlock 後恢復可編輯  [D1-32]",
+      "trace": "R-087, R-088, R-089"
+    }
+  ]
+}
