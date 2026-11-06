@@ -112,6 +112,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   build first when they have no verdicts; the checks are ordered along the flow in `verify-plan.md` so one drama
   carries as many bugs as it passes, shared steps and long waits are reused, never a fresh start per bug
   (`qa-report/SKILL.md` › *Verify first*).
+- **Side effects of a fix (user, 2026-11-06, REQ-102).** A bug judged fixed is also checked as it looks: everything
+  the fix added or changed, everywhere it shows, from the screenshot (legibility and contrast, clipping, layout, the
+  Design), not only the page source; findings go under Other observations (`qa-report/SKILL.md` › *Side effects of
+  the fix*; P0354's fix missed P0038).
 - **Evidence on each eBug (user, 2026-11-05, REQ-099).** A QR's screenshots and logs are uploaded to each bug in it
   (`qa-report.ts upload … --send`, before Create) and its Reason names them like a description (`{file.png}`); no
   ZIP goes on the QR (REQ-101), readers check the bug and its files; uploads can't be removed, so only after the tester approves (`qa-report/SKILL.md` › *Evidence on

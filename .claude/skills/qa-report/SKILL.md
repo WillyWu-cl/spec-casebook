@@ -41,6 +41,24 @@ first (run folder `runs/<date>-<tr>-verify/`, `bugs.md` with each bug's filed de
 Then run it in that order, one segment per context (AGENTS.md › One section per context), noting every bug's
 evidence as it is passed. A bug whose stage the journey could not reach is Hold.
 
+**Side effects of the fix (user, 2026-11-06, REQ-102).** A fix is checked as it looks, not only as the page source
+reads: DRA262610P0354 passed because the new 「You'll have N left」 line was in the page source, but its screenshot
+showed the line grey on the blue Create storyboard card (1.6:1), filed by another tester as DRA262611P0038. For every
+bug judged FIXED, before the verdict:
+1. Name what the fix added or changed on screen (a new line, control, colour, message, wait) and every place it shows
+   (each card or screen the bug names, plus the others that share the component: storyboard, update and video cards).
+2. Look at each place's screenshot (open the image, not just the text) for: legibility against what is behind it
+   (measure text against background where it looks faint; under 4.5:1 for body text, or clearly fainter than the
+   card's other text of the same role, is a finding), clipping or truncation, overlap, wrapping that pushes a control
+   off, wrong colour for the card's theme, and the old layout around it broken.
+3. Compare with the Design frame for that place where one exists; where the Design does not draw it, compare with the
+   card's own neighbouring text (the in-product basis).
+4. Check one step past the fix: the action the new element leads to still works (Generate still charges what the line
+   said).
+Write it in the segment result as `Side effects: none seen (places checked: …)` or the finding. A finding does not
+fail the original bug (*Verdicts*); it goes under *Other observations* on the review page with its evidence, deduped
+against the pool (another tester may have filed it), and is filed only if the user asks.
+
 ## Expected = today's spec (user, 2026-11-05, REQ-091)
 
 A bug's Expect Result is what the spec said when it was filed. Before verifying, check it against what the repo
