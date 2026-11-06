@@ -1,0 +1,42 @@
+{
+  "links": [
+    {
+      "board": "pm-toolbar-link",
+      "at": [
+        -1158,
+        826
+      ],
+      "text": "Toolbar re-org reference https://docs.google.com/spreadsheets/d/1OvToKsZ6tTkROzuznVnVfUfU3oRCY8SQHrMk0xGuIes/edit?usp=sharing",
+      "target": "Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)",
+      "label": "Toolbar re-org sheet",
+      "file": "toolbar-reorg-sheet.md",
+      "read": "2026-11-06",
+      "items": [
+        {
+          "label": "Photo › Enhance › 1 Photo Enhance",
+          "text": "Photo Toolbar (master): the second layer of 「Enhance」 lists 1. Photo Enhance"
+        },
+        {
+          "label": "Photo › Enhance › 2 AI Color",
+          "text": "Photo Toolbar (master): the second layer of 「Enhance」 lists 2. AI Color"
+        },
+        {
+          "label": "PiP Photo › Enhance › 1 Photo Enhance",
+          "text": "PIP Photo Toolbar: the second layer of 「Enhance」 lists 1. Photo Enhance"
+        },
+        {
+          "label": "PiP Photo › Enhance › 2 AI Color",
+          "text": "PIP Photo Toolbar: the second layer of 「Enhance」 lists 2. AI Color"
+        },
+        {
+          "label": "Photo top layer order",
+          "text": "Photo Toolbar first layer: Split, Duration, Transform, Effects, Adjust, Opacity, Background, Enhance, Transition, Tools, Duplicate, Mask, Portrait (differs from the PM mockup order)"
+        },
+        {
+          "label": "PiP Photo top layer order",
+          "text": "PIP Photo Toolbar first layer: Split, Duration, Transform, Effects, Motion, Adjust, Opacity, Background, Enhance, Tools, Duplicate, Mask, Blending, Portrait (differs from the PM mockup order)"
+        }
+      ]
+    }
+  ]
+}

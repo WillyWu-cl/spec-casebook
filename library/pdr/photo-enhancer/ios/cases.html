@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Photo Enhancer Test Cases · iOS</title>
+<!-- tab icon (review: a checklist), different on each page so the browser tabs are easy to tell apart -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%233d5bd9'/><path d='M7 10.5l2.5 2.5L14 8.5M7 20.5l2.5 2.5 4.5-4.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/><path d='M17.5 11h8M17.5 21h8' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/></svg>">
+<style>
+/* Layout: a spreadsheet-like review sheet — header facts, filter bar, rows grouped by section, sticky action bar. */
+:root{
+  --bg:#f4f5f7; --surface:#fff; --fg:#1b2430; --muted:#5f6b7a; --line:#dde1e7; --head:#2f3b52;
+  --new:#1f7a4d; --new-soft:#dff3e8; --mod:#9a5b00; --mod-soft:#fbecd2; --rem:#b3261e; --rem-soft:#fadcd9; --edit:#3d5bd9; --edit-soft:#e2e7fb;
+  --body:system-ui,-apple-system,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif; --mono:ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12161c; --surface:#1a2029; --fg:#e5e9ef; --muted:#9aa5b3; --line:#2c3541; --head:#0d1117;
+  --new:#5cc58e; --new-soft:#173a29; --mod:#e7a94a; --mod-soft:#3b2c12; --rem:#f07a70; --rem-soft:#3e1d1a; --edit:#93a6ff; --edit-soft:#232c55; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--body)}
+header{background:var(--head);color:#fff;padding:18px 20px;display:grid;gap:8px}
+header h1{margin:0;font-size:1.35rem}
+header .facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem;opacity:.9}
+header .facts code{font-family:var(--mono);font-size:.8rem}
+main{padding:16px 20px 110px;display:grid;gap:14px;max-width:1500px;margin:0 auto}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+details.panel>summary{cursor:pointer;padding:10px 14px;font-weight:600}
+details.panel .md{padding:0 14px 14px;max-height:460px;overflow:auto;font-size:13px}
+.md h2,.md h3,.md h4{margin:12px 0 4px;font-size:.95rem}
+.md ul{margin:4px 0;padding-left:18px}
+.md table{min-width:0;width:auto;border-collapse:collapse;margin:6px 0}
+.md td,.md th{border:1px solid var(--line);padding:4px 8px;position:static;text-transform:none;letter-spacing:0;font:13px var(--body);color:var(--fg)}
+.md code{font-family:var(--mono);font-size:.85em}
+details.panel pre{margin:0;padding:0 14px 14px;white-space:pre-wrap;font:13px/1.55 var(--body);max-height:420px;overflow:auto}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:4px 10px;font:500 .82rem var(--body);cursor:pointer}
+.chip b{font-family:var(--mono);color:var(--muted);margin-left:3px}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip[aria-pressed="true"] b{color:var(--bg)}
+input[type=search],select{font:inherit;padding:5px 9px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+input[type=search]{flex:1 1 220px;min-width:0}
+.sep{width:1px;height:22px;background:var(--line)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:1150px;background:var(--surface)}
+th{position:sticky;top:0;background:var(--surface);z-index:1;text-align:left;font:600 .72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:8px;border-bottom:2px solid var(--line)}
+td{border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:top}
+tr.section td{background:var(--bg);font-weight:700;padding:10px 8px}
+tr.section td .add{margin-left:10px}
+td.id{font-family:var(--mono);font-size:.8rem;white-space:nowrap}
+textarea{width:100%;min-height:2.2em;resize:vertical;border:1px solid transparent;background:transparent;color:var(--fg);font:13px/1.45 var(--body);padding:4px;border-radius:4px;field-sizing:content}
+textarea:hover{border-color:var(--line)} textarea:focus{border-color:var(--edit);outline:none;background:var(--surface)}
+.was{font-size:.76rem;color:var(--muted);text-decoration:line-through;padding:0 4px;white-space:pre-wrap}
+.badge{display:inline-block;font:600 .68rem var(--mono);padding:2px 6px;border-radius:4px;text-transform:uppercase;margin-top:4px}
+.b-new{background:var(--new-soft);color:var(--new)} .b-modified{background:var(--mod-soft);color:var(--mod)} .b-removed{background:var(--rem-soft);color:var(--rem)} .b-edited{background:var(--edit-soft);color:var(--edit)} .b-added{background:var(--new-soft);color:var(--new)}
+.reason{font-size:.74rem;color:var(--muted);margin-top:3px;max-width:14em}
+tr.deleted td:not(.dec){opacity:.45} tr.deleted textarea{text-decoration:line-through}
+td.dec{white-space:nowrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{border:0;background:var(--surface);color:var(--muted);font:600 .76rem var(--body);padding:4px 8px;cursor:pointer}
+.seg button[aria-pressed="true"].k{background:var(--new);color:#fff} .seg button[aria-pressed="true"].d{background:var(--rem);color:#fff}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--edit);outline-offset:2px}
+.add{border:1px dashed var(--line);background:transparent;color:var(--muted);border-radius:6px;padding:3px 8px;font:500 .78rem var(--body);cursor:pointer}
+tr.newcase td{background:var(--new-soft);padding:10px 12px}
+tr.newcase textarea.big{min-height:9em;border:1px solid var(--new);background:var(--surface);font-size:14px;padding:8px 10px;field-sizing:content}
+tr.newcase .nh{display:flex;gap:10px;align-items:center;margin-bottom:6px;font-size:.84rem;color:var(--muted)}
+tr.newcase .nh b{color:var(--new)} tr.newcase .nh button{margin-left:auto}
+/* the table scrolls sideways: keep the note box within the window */
+tr.newcase td>*{position:sticky;left:12px;max-width:calc(100vw - 72px)}
+footer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;z-index:5}
+footer .counts{font-size:.84rem;color:var(--muted)} footer .counts b{color:var(--fg)}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:8px 14px;border-radius:6px;font:600 .86rem var(--body);cursor:pointer}
+.btn.primary{background:var(--edit);color:#fff;border-color:var(--edit)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+#toast{position:fixed;right:20px;bottom:70px;background:var(--fg);color:var(--bg);padding:10px 14px;border-radius:6px;font-size:.86rem;max-width:520px;display:none;z-index:6}
+.note{font-size:.8rem;color:var(--muted)}
+a.spec{display:inline-block;margin-top:4px;font:600 .7rem var(--mono);color:var(--edit);text-decoration:none;border:1px solid var(--edit-soft);border-radius:4px;padding:1px 5px}
+a.spec:hover{background:var(--edit-soft)}
+.xl{display:flex;flex-wrap:wrap;gap:4px}
+/* Open questions (user, 2026-11-04): one plain panel above the table, and a marker on each row a question touches */
+details.qs>summary{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+details.qs>summary .qhint{font-weight:400;font-size:.84rem;color:var(--muted)}
+.qwrap{padding:0 14px 14px;display:grid;gap:10px}
+.qname{display:flex;gap:8px;align-items:center;font-size:.84rem;color:var(--muted)}
+.qname input{font:inherit;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+.qitem{border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:grid;gap:6px}
+.qitem.hit{box-shadow:0 0 0 2px var(--edit)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-weight:600}
+.qstate{font:600 .7rem var(--body);border-radius:999px;padding:2px 8px;background:var(--bg);color:var(--muted)}
+.qstate.answered{background:var(--mod-soft);color:var(--mod)} .qstate.done{background:var(--new-soft);color:var(--new)}
+.qtext{font-size:13px;white-space:pre-wrap}
+.qassume{font-size:13px;color:var(--muted)} .qassume b{color:var(--fg);font-weight:600}
+.qrows{font-size:.8rem;color:var(--muted)} .qrows a{font-family:var(--mono);color:var(--edit);margin-right:6px}
+.qitem textarea{border:1px solid var(--line);background:var(--surface);min-height:3.2em;font-size:13.5px}
+.qmeta{font-size:.76rem;color:var(--muted)} .qres{font-size:.8rem;color:var(--new)}
+.qfoot{display:flex;gap:10px;align-items:center;justify-content:flex-end}
+a.qmark{display:inline-block;margin-top:4px;font:600 .7rem var(--body);color:var(--mod);background:var(--mod-soft);border-radius:4px;padding:1px 6px;text-decoration:none}
+a.qmark.answered{color:var(--edit);background:var(--edit-soft)} a.qmark.done{color:var(--new);background:var(--new-soft)}
+tr.focus td{background:var(--edit-soft)} tr.focus td.id{box-shadow:inset 3px 0 0 var(--edit)}
+</style>
+</head>
+<body>
+<header>
+  <h1 id="h"></h1>
+  <div class="facts" id="facts"></div>
+</header>
+<main>
+  <details class="panel qs" id="qBox" hidden><summary id="qSum"></summary><div class="qwrap" id="qList"></div></details>
+  <details class="panel" id="planBox" hidden><summary>Update plan</summary><div class="md" id="plan"></div></details>
+  <details class="panel" id="reqBox" hidden><summary>Requirements extracted from the spec</summary><div class="md" id="req"></div></details>
+  <div class="panel bar" id="filters"></div>
+  <div class="panel tablewrap"><table id="tbl"><thead><tr><th>ID</th><th>Precondition</th><th>Action</th><th>Expected Result</th><th>Priority</th><th>Spec Ref</th><th>Notes</th><th id="decHead">Decision</th></tr></thead><tbody></tbody></table></div>
+  <p class="note" id="foot"></p>
+</main>
+<footer>
+  <span class="counts" id="counts"></span>
+  <span style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn" id="copyCsv">Copy final CSV</button>
+    <button class="btn" id="copyDec">Copy decisions</button>
+    <button class="btn primary" id="save">Save as approved table</button>
+  </span>
+</footer>
+<div id="toast" role="status"></div>
+<script>
+const D={"mode":"view","save":false,"feature":"pdr/photo-enhancer","platform":"ios","title":"Support Photo Enhancer","draft":"20261106-105312","based_on_version":null,"version":1,"approved_at":"2026-11-06T03:41:29.624Z","spec_files":[{"name":"Support Photo Enhancer - PM and Design Figma.md","sha256":"b72a55219aaaf38bce58af25af08fb0bc3d5f9d2d3f43ad6ebaa1a5576e5f062","bytes":6846}],"rows":[{"ID":"TC-001","Section":"Enhance in the photo toolbars","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to its end","Expected Result":"The photo toolbar shows an 「Enhance」 button (between 「Effects」 and 「Tools」 in the PM mockup; the sheet puts it after 「Background」: Q-1)","Priority":"P1","Spec Ref":"R-001","Notes":"Position not asserted until Q-1 is answered"},{"ID":"TC-002","Section":"Enhance in the photo toolbars","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」","Expected Result":"A second layer opens over the toolbar with 「Photo Enhance」 first and 「AI Color」 second; 「Photo Enhance」 has the photo-with-sparkle icon","Priority":"P1","Spec Ref":"R-003, R-004, R-005, R-050","Notes":"Design 24.10E draws no Enhance second layer (AI Color under Effects): the PM and the sheet are newer (Q-1)"},{"ID":"TC-003","Section":"Enhance in the photo toolbars","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track","Action":"1. Tap the photo clip on the PiP track\n2. Scroll the toolbar to its end","Expected Result":"The PiP photo toolbar shows an 「Enhance」 button","Priority":"P1","Spec Ref":"R-002","Notes":""},{"ID":"TC-004","Section":"Enhance in the photo toolbars","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track","Action":"1. Tap the photo clip on the PiP track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」","Expected Result":"The same second layer opens: 「Photo Enhance」 first, 「AI Color」 second","Priority":"P1","Spec Ref":"R-003, R-004, R-051","Notes":""},{"ID":"TC-005","Section":"Enhance in the photo toolbars","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「AI Color」","Expected Result":"AI Color opens for the selected photo clip","Priority":"P2","Spec Ref":"R-006","Notes":"AI Color itself is another feature; only the entry is checked here"},{"ID":"TC-006","Section":"Apply Photo Enhance","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」","Expected Result":"The dialog 「Ready to Enhance?」 appears with 「Your image will look even better in just a few seconds.」 and the buttons 「Cancel」 and 「Continue」","Priority":"P1","Spec Ref":"R-010, R-052","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-007","Section":"Apply Photo Enhance","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」\n5. Tap 「Cancel」","Expected Result":"The dialog closes; the photo is unchanged, no toast appears and 「Enhance」 has no white dot","Priority":"P2","Spec Ref":"R-011","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-008","Section":"Apply Photo Enhance","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」\n5. Tap 「Continue」","Expected Result":"The editor dims and shows a spinner, 「Enhancing...」 and a 「Cancel」 button","Priority":"P1","Spec Ref":"R-012, R-053","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). The shortcut room finishes a photo in about 3–5 s: record the screen before tapping 「Continue」"},{"ID":"TC-009","Section":"Apply Photo Enhance","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」\n5. Tap 「Continue」\n6. Wait until 「Enhancing...」 closes","Expected Result":"The preview shows the enhanced photo (sharper, compare with a screenshot taken before) and the toast 「Applied Photo Enhance」 appears","Priority":"P1","Spec Ref":"R-014, R-017, R-054","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-010","Section":"Apply Photo Enhance","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)","Action":"1. Look at the toolbar 「Enhance」 button\n2. Tap 「Enhance」","Expected Result":"1. A small white dot sits on 「Enhance」\n2. The second layer opens with a white dot over 「Photo Enhance」","Priority":"P2","Spec Ref":"R-015, R-016, R-055","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-011","Section":"Apply Photo Enhance","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」\n5. Tap 「Continue」\n6. Tap 「Cancel」 while 「Enhancing...」 shows","Expected Result":"The enhancement stops; the editor shows the original photo, no 「Applied Photo Enhance」 toast and no white dot (Q-2)","Priority":"P2","Spec Ref":"R-013","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Assumption until Q-2 is answered"},{"ID":"TC-012","Section":"Apply Photo Enhance","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track","Action":"1. Tap the photo clip on the PiP track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」\n5. Tap 「Continue」\n6. Wait until 「Enhancing...」 closes","Expected Result":"The PiP photo shows enhanced and 「Applied Photo Enhance」 appears; the master-track video is unchanged","Priority":"P1","Spec Ref":"R-014, R-017","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-023","Section":"Apply Photo Enhance","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds two photo clips; Photo Enhance applied to the first clip only (TC-009)","Action":"1. Tap the second photo clip on the master track\n2. Look at the toolbar 「Enhance」 button\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」\n5. Tap 「Cancel」\n6. Tap the first photo clip","Expected Result":"1. The second clip is selected\n2. 「Enhance」 has no white dot\n3. 「Photo Enhance」 in the second layer has no white dot\n4. 「Ready to Enhance?」 appears, not the panel\n5. The dialog closes\n6. The first clip still shows enhanced and 「Enhance」 has its white dot","Priority":"P2","Spec Ref":"R-015, R-016, R-017, R-010","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). The dot and the dialog follow the selected clip, not the project"},{"ID":"TC-013","Section":"Photo Enhance panel","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」","Expected Result":"No dialog: the Photo Enhance panel opens with the photo preview, ✕ at the top left, an icon at the top right, 「Reset」, the title 「Photo Enhance」 and the options 「Original」 and 「Result」, with 「Result」 selected","Priority":"P1","Spec Ref":"R-020, R-056","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-014","Section":"Photo Enhance panel","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013); screen recording on","Action":"1. Tap 「Original」\n2. Tap 「Result」","Expected Result":"1. 「Original」 is outlined and the preview shows the photo without the enhancement\n2. 「Result」 is outlined and the enhanced photo returns at once, with no 「Enhancing...」 progress","Priority":"P1","Spec Ref":"R-021, R-022","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-015","Section":"Photo Enhance panel","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)","Action":"Tap ✕","Expected Result":"The panel closes; the editor shows the enhanced photo and 「Enhance」 keeps its white dot","Priority":"P2","Spec Ref":"R-023, R-057","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-016","Section":"Photo Enhance panel","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)","Action":"Tap 「Reset」","Expected Result":"The panel closes; the editor shows the original photo and the toast 「Removed Photo Enhance」 appears","Priority":"P1","Spec Ref":"R-024, R-058","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-017","Section":"Photo Enhance panel","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied and removed again (TC-016)","Action":"1. Look at the toolbar 「Enhance」 button\n2. Tap 「Enhance」","Expected Result":"1. 「Enhance」 has no white dot\n2. 「Photo Enhance」 in the second layer has no white dot","Priority":"P2","Spec Ref":"R-025","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-018","Section":"Photo Enhance panel","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied and removed again (TC-016); screen recording on","Action":"1. Tap the photo clip on the master track\n2. Scroll the toolbar to 「Enhance」\n3. Tap 「Enhance」\n4. Tap 「Photo Enhance」\n5. Tap 「Continue」 if 「Ready to Enhance?」 appears (Q-5)\n6. Send the app log","Expected Result":"1. No 「Enhancing...」 progress appears; the enhanced photo and 「Applied Photo Enhance」 come at once\n2. The log shows no new enhance request for this clip","Priority":"P1","Spec Ref":"R-026, R-022","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Whether the dialog shows again: Q-5"},{"ID":"TC-019","Section":"Photo Enhance panel","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)","Action":"Tap and hold the icon at the top right of the panel","Expected Result":"It compares the original and the enhanced photo, as the Photo Enhance room's compare control does (Q-6)","Priority":"P3","Spec Ref":"R-027","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Function not stated; assumption until Q-6 is answered"},{"ID":"TC-020","Section":"Full-screen preview","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)","Action":"Tap the full-screen button under the preview","Expected Result":"The full-screen preview opens and shows the enhanced photo","Priority":"P1","Spec Ref":"R-030, R-059","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)"},{"ID":"TC-021","Section":"Full-screen preview","Precondition":"iPhone, PowerDirector signed in, Free tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the full-screen preview open (TC-020)","Action":"Take a screenshot (side button + volume up)","Expected Result":"The screenshot IAP dialog appears, the same dialog (look and buttons) as the shortcut Photo Enhance room shows on a screenshot","Priority":"P1","Spec Ref":"R-031, R-032, R-060","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Compare with a screenshot in Launcher › Photo Enhance on the same tier"},{"ID":"TC-022","Section":"Full-screen preview","Precondition":"iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the full-screen preview open (TC-020)","Action":"Take a screenshot (side button + volume up)","Expected Result":"The screenshot is handled as in the shortcut Photo Enhance room on a Pro account (assumed: saved, no IAP dialog; Q-7)","Priority":"P2","Spec Ref":"R-032","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). 「一律」 may mean every tier: check on device and decide with the user (Q-7)"},{"ID":"TC-024","Section":"Full-screen preview","Precondition":"iPhone, PowerDirector signed in, Free tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance not applied to the photo clip; the full-screen preview open","Action":"Take a screenshot (side button + volume up)","Expected Result":"The screenshot is blocked as on an enhanced photo: 「一律」 (always) taken literally (Q-7)","Priority":"P3","Spec Ref":"R-031","Notes":"PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). The note does not limit the block to enhanced photos: check on device and decide with the user (Q-7)"}],"previous":{},"requirements":"# Support Photo Enhancer — requirements (ios)\nSpec: Support Photo Enhancer - PM and Design Figma.md (Figma-only spec set 2026-11-06: PM page 65:3761 「✅SPEC」, Design page 212:2045 「temp_UJ_ toolbar regroup_24.10E」, Master / PiP Photo Toolbar and icon slice)\n\nSource order: the PM page and its linked toolbar sheet (newest tab 「2026/11 Auto Reframe」) over the Design page, which is the older 24.10E toolbar regroup and draws none of the Photo Enhance screens (analysis.md pass 7: a Design frame older than the newest PM file loses where they conflict). Every Photo Enhance screen row is PM-only (Q-11).\n\n## Enhance in the photo toolbars\n- R-001 [PM:pm-master-photo; DS:d-master-photo-toolbar] Selecting a photo clip on the master track shows the photo toolbar with an 「Enhance」 button (the toolbar scrolls sideways; where Enhance sits: Q-1)\n- R-002 [PM:pm-pip-photo; DS:d-pip-photo-toolbar] Selecting a photo clip on a PiP track shows the PiP photo toolbar with an 「Enhance」 button (position: Q-1)\n- R-003 [PM:pm-enhance-flow 「打開second layer」 Frame 8786; Link: toolbar-reorg-sheet.md] Tapping 「Enhance」 on a photo clip opens a second layer holding 「Photo Enhance」 and 「AI Color」 (Design 24.10E draws Enhance with no second layer and AI Color under Effects; the PM and the sheet are newer: Q-1)\n- R-004 [Link: toolbar-reorg-sheet.md (Enhance column); PM:pm-enhance-flow Frame 8786] In the Enhance second layer 「Photo Enhance」 comes first and 「AI Color」 second, on the master and the PiP photo toolbar\n- R-005 [DS:figma 12.23 1528:43699; PM:pm-enhance-flow round/ic_ai_enhancement] 「Photo Enhance」 uses the new photo-with-sparkle icon (round/ic_ai_enhancement, Design icon slice 「12.23」)\n- R-006 [PM:pm-enhance-flow Frame 8786 round/ic_ai_color] 「AI Color」 in the Enhance second layer opens AI Color for the selected photo clip\n\n## Apply Photo Enhance\n- R-010 [PM:pm-enhance-flow 65:4092] Tapping 「Photo Enhance」 on a photo clip that is not enhanced opens the dialog 「Ready to Enhance?」 / 「Your image will look even better in just a few seconds.」 with 「Cancel」 and 「Continue」\n- R-011 [PM:pm-enhance-flow 65:4092] 「Cancel」 in 「Ready to Enhance?」 closes the dialog and applies nothing (the PM draws no arrow from it)\n- R-012 [PM:pm-enhance-flow 65:6095] 「Continue」 dims the editor and shows a spinner, 「Enhancing...」 and a 「Cancel」 button\n- R-013 [PM:pm-enhance-flow 65:6095] 「Cancel」 during 「Enhancing...」 stops the enhancement and applies nothing (no arrow drawn: Q-2)\n- R-014 [PM:pm-enhance-flow 65:4427] When the enhancement finishes, the preview shows the enhanced photo and the toast 「Applied Photo Enhance」 appears\n- R-015 [PM:pm-enhance-flow 65:4427 Vector 2597; PM:pm-full-screen Ellipse 230] A small white dot on the toolbar 「Enhance」 button marks a photo clip that has Photo Enhance applied\n- R-016 [PM:pm-enhance-flow 65:9990] With Photo Enhance applied, the Enhance second layer shows a white dot over 「Photo Enhance」\n- R-017 [PM:pm-master-photo; PM:pm-pip-photo; PM:pm-enhance-flow] Photo Enhance can be applied to a photo clip on the master track and to one on a PiP track; it changes only the selected clip\n\n## Photo Enhance panel\n- R-020 [PM:pm-enhance-flow 「再次點擊Image Enhance(已套用狀態)」; panel at 3389,497] Tapping 「Photo Enhance」 on a clip that has it applied opens the Photo Enhance panel directly (no dialog): the photo preview, ✕ at the top left, an icon at the top right, 「Reset」, the title 「Photo Enhance」 and the options 「Original」 and 「Result」, with 「Result」 selected\n- R-021 [PM:pm-enhance-flow panel; PM:pm-refs (Video Enhance and Photo Enhance room references)] 「Original」 shows the clip without the enhancement and 「Result」 shows it enhanced; the selected option is outlined\n- R-022 [PM:pm-enhance-flow 「再次點擊Image Enhance(已套用>未套用狀態), 需要記住上次的result, 因此第二次套用不會有progressing」] The last enhancement result is kept: going back from not applied to applied reuses it, so no 「Enhancing...」 progress is shown and the photo is not processed again\n- R-023 [PM:pm-enhance-flow arrow 91-8366] ✕ closes the panel and returns to the editor with the enhancement and the white dot kept\n- R-024 [PM:pm-enhance-flow arrow 91-8359; 91:7764] 「Reset」 removes the enhancement and returns to the editor, where the preview shows the original photo and the toast 「Removed Photo Enhance」 appears\n- R-025 [PM:pm-enhance-flow 「小白點消失」] After 「Reset」 the white dot is gone from the toolbar 「Enhance」 button and from 「Photo Enhance」\n- R-026 [PM:pm-enhance-flow 「…因此第二次套用不會有progressing」] After 「Reset」, applying Photo Enhance again on the same clip uses the kept result: no 「Enhancing...」, the enhanced photo and 「Applied Photo Enhance」 come at once (whether 「Ready to Enhance?」 shows again: Q-5)\n- R-027 [PM:pm-enhance-flow panel top-right icon; PM:pm-refs] The icon at the top right of the Photo Enhance panel does what the Photo Enhance room's compare control does (its function is not stated: Q-6)\n\n## Full-screen preview\n- R-030 [PM:pm-full-screen arrow 65-6786] The editor's full-screen button opens the full-screen preview, which shows the photo clip with its enhancement\n- R-031 [PM:pm-full-screen 「***Timeline Mode, Full Screen一律做擋截圖, 樣式跟rule都跟原shortcut image enhancer一樣」; arrow 65-6787] In the timeline's full-screen preview, taking a screenshot is always blocked (「一律」; whether that includes a photo without the enhancement: Q-7) with the 「screenshot IAP dialog」, looking and behaving as in the shortcut Photo Enhance (image enhancer) room\n- R-032 [PM:pm-full-screen note (「rule都跟原shortcut image enhancer一樣」)] The screenshot block follows the shortcut room's tier rule: a Free user gets the IAP dialog; a subscriber (Pro) is treated as in the shortcut room (assumed: no dialog; Q-7)\n\n## Not testable\n- R-045 [PM:pm-refs] The two reference shots (Video Enhance panel in the timeline, the Photo Enhance shortcut room) only show what the panel is modelled on — NOT TESTABLE: no rule of their own; R-020–R-027 cover the panel\n- R-046 [PM:pm-header] The 「SPEC」 title bar — NOT TESTABLE: a heading\n\n## Open questions\n- Q-1 Where is 「Enhance」 in the photo toolbars, and what does its second layer hold? The PM mockups put it after 「Effects」 (master: …Background, Effects, Enhance, Tools…); the linked sheet's newest tab 「2026/11 Auto Reframe」 puts it after 「Background」 and before 「Transition」; the Design (24.10E) has 「Enhance」 with no second layer and 「AI Color」 under 「Effects」. Assumption: Enhance is present with the second layer 「Photo Enhance」, 「AI Color」 (PM + sheet); its position is not checked. R-001, R-002, R-003, R-004; TC-001, TC-002, TC-003, TC-004.\n- Q-2 What does 「Cancel」 during 「Enhancing...」 do? The PM draws the button with no arrow. Assumption: it stops, returns to the editor and applies nothing (no toast, no dot). R-013; TC-011.\n- Q-3 Is Photo Enhance in the timeline limited by tier or credits? The spec says nothing; the shortcut Photo Enhance room was seen free on VIP with no credits charged (exploration KB, 2026-08-13). Assumption: any tier can apply it; rows run on Pro. R-010, R-014; TC-006, TC-009.\n- Q-4 In the Photo Enhance panel, if 「Original」 is selected and the panel is closed with ✕, does the clip stay enhanced or lose the enhancement? Not drawn. Assumption: none; no row until answered. R-021, R-023.\n- Q-5 After 「Reset」, does tapping 「Photo Enhance」 show 「Ready to Enhance?」 again before the kept result is re-applied? The note says only that the second apply shows no progress. Assumption: the dialog may show; Continue then applies at once. R-026; TC-018.\n- Q-6 What does the icon at the top right of the Photo Enhance panel do? No arrow or note; the references show a history icon (Video Enhance) and a compare icon (Photo Enhance room). Assumption: compare (press and hold shows the original). R-027; TC-019.\n- Q-7 Which tiers does the full-screen screenshot block apply to, and only to enhanced photos? 「一律做擋截圖」 (always blocks) with 「rule 跟原 shortcut image enhancer 一樣」 (same rule as the shortcut room). Assumption: a Free user gets the IAP dialog, on any photo (「一律」 taken literally); a Pro user is treated as in the shortcut room (no dialog). R-031, R-032; TC-021, TC-022, TC-024.\n- Q-9 Is the enhancement kept in the project (leave and reopen, undo / redo) and in the exported video? The spec does not say. Assumption: none; no row until answered. R-014, R-024.\n- Q-10 What happens when the enhancement fails (no network, server error)? Not drawn. Assumption: none; no row until answered. R-012, R-014.\n- Q-11 The Design link is the 24.10E toolbar regroup page: it draws no 「Ready to Enhance?」 dialog, 「Enhancing...」, Photo Enhance panel or toasts. Is a Design for these screens coming? Assumption: the PM mockups are the expected look; rows are PM-only. R-010–R-031.\n\n## Added 2026-11-06 — coverage passes and standing inputs\n\n### Job states\n\n| Job | Start / loading | Success | Failure | Retry | Second failure | Partial | Stop | Leave and return | Longest wait | Done notice |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Photo Enhance (first apply) | TC-008 | TC-009, TC-012 | n/a (spec silent; Q-10) | n/a (spec silent) | n/a (spec silent) | n/a (one photo per apply) | TC-011 | n/a (spec silent) | n/a (spec says only 「a few seconds」) | TC-009 |\n| Photo Enhance (re-apply, kept result) | n/a (no progress by spec: TC-018) | TC-018, TC-014 | n/a (spec silent) | n/a (spec silent) | n/a (spec silent) | n/a (one photo) | n/a (nothing to stop) | n/a (spec silent) | n/a (instant by spec) | TC-018 |\n\n### Error classes\n\n| Job | Error classes |\n|---|---|\n| Photo Enhance | n/a (spec names no error classes; Q-10) |\n\n### Exit × stage\n\n| Stage | Cancel / ✕ | Reset |\n|---|---|---|\n| 「Ready to Enhance?」 dialog | TC-007 | n/a (no Reset here) |\n| 「Enhancing...」 | TC-011 | n/a (no Reset here) |\n| Photo Enhance panel | TC-015 | TC-016 |\n| Full-screen preview | n/a (the existing full-screen exit; spec draws none) | n/a (no Reset here) |\n\n### Hidden clauses\n\n| Requirement | Hidden clause | Observed through | Rows |\n|---|---|---|---|\n| R-022 | the kept result is reused, the photo is not processed again | no 「Enhancing...」 in a screen recording, and no new enhance request in the app log (log pull) | TC-014, TC-018 |\n| R-026 | the kept result is reused after Reset | no 「Enhancing...」 in a screen recording, and no new enhance request in the app log | TC-018 |\n| R-017 | only the selected clip changes | the other track's clip looks unchanged in the preview | TC-012 |\n| R-015 | the dot belongs to the clip, not the project | a second, un-enhanced clip shows no dot and gets the dialog | TC-023 |\n\n### Variants\n\n| Requirement | Variant | Rows |\n|---|---|---|\n| R-003 | track=master | TC-002 |\n| R-003 | track=PiP | TC-004 |\n| R-017 | track=master | TC-009 |\n| R-017 | track=PiP | TC-012 |\n| R-031 | photo enhanced | TC-021 |\n| R-031 | photo not enhanced | TC-024 |\n| R-032 | tier=Free | TC-021 |\n| R-032 | tier=Pro | TC-022 |\n\n### Flow arrows walked by existing rows\n\n- R-050 [DS: flow arrow 65-6779 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-6779] Master photo toolbar 「Enhance」 → Enhance second layer. Walked by: TC-002.\n- R-051 [DS: flow arrow 65-6780 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-6780] PiP photo toolbar 「Enhance」 → Enhance second layer. Walked by: TC-004.\n- R-052 [DS: flow arrow 65-9989 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-9989] Enhance second layer 「Photo Enhance」 (not applied) → 「Ready to Enhance?」. Walked by: TC-006.\n- R-053 [DS: flow arrow 65-6781 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-6781] 「Ready to Enhance?」 「Continue」 → 「Enhancing...」. Walked by: TC-008.\n- R-054 [DS: flow arrow 65-6782 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-6782] 「Enhancing...」 done (automatic) → editor with 「Applied Photo Enhance」. Walked by: TC-009.\n- R-055 [DS: flow arrow 65-6783 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-6783] Editor (applied) 「Enhance」 → second layer with the white dot on 「Photo Enhance」. Walked by: TC-010.\n- R-056 [DS: flow arrow 91-8364 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=91-8364] Second layer 「Photo Enhance」 (applied) → Photo Enhance panel. Walked by: TC-013.\n- R-057 [DS: flow arrow 91-8366 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=91-8366] Photo Enhance panel ✕ → editor (applied). Walked by: TC-015.\n- R-058 [DS: flow arrow 91-8359 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=91-8359] Photo Enhance panel 「Reset」 → editor with 「Removed Photo Enhance」. Walked by: TC-016.\n- R-059 [DS: flow arrow 65-6786 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-6786] Editor full-screen button → full-screen preview. Walked by: TC-020.\n- R-060 [DS: flow arrow 65-6787 https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-6787] Full-screen preview, screenshot → 「screenshot IAP dialog」. Walked by: TC-021.\n\n### Domain rules\n\n| Entry | Requirements |\n|---|---|\n| KP-007 A failed generation refunds its credits | n/a (the spec charges no credits for Photo Enhance; Q-3) |\n\n### Request ledger coverage\n\n| Ledger entry | Requirements |\n|---|---|\n| REQ-001 (analysis: new feature, both platforms) | all (this table) |\n","update_plan":""};
+const FIELDS=['Section','Precondition','Action','Expected Result','Priority','Spec Ref','Notes'];
+const EDIT=['Precondition','Action','Expected Result','Spec Ref','Notes'];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const REVIEW=D.mode==='review';
+// the other pages: scripts/pages.ts names them (window.CASEBOOK); a static cases.html links to coverage.html beside it
+const PAGES=window.CASEBOOK?.pages??(location.protocol==='file:'?{coverage:'coverage.html'}:{});
+const KEY='casebook:'+D.feature+':'+D.platform+':'+D.draft;
+// state: each row keeps its original values, current values, and the decision (keep/delete)
+let rows=D.rows.map((r,i)=>({orig:{...r},cur:{...r},dec:r.Change==='removed'?'delete':'keep',added:false,i}));
+// new-case notes (user, 2026-10-28): + Add case opens a free-text box under the section header instead of a blank row;
+// Save and Copy decisions hand the text to the agent, which writes the rows (section, precondition, spec ref) in a new draft
+let notes=[];
+try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(REVIEW&&s&&s.rows){rows=s.rows;notes=s.notes||[];}}catch(e){}
+const F={q:'',section:'',change:'',state:''};
+const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify({rows,notes}))}catch(e){}};
+const liveNotes=()=>notes.filter(n=>n.text.trim());
+const edited=r=>!r.added&&FIELDS.some(f=>(r.cur[f]??'')!==(r.orig[f]??''));
+const state=r=>r.dec==='delete'?'deleted':r.added?'added':edited(r)?'edited':'kept';
+const sections=()=>[...new Set(rows.map(r=>r.cur.Section||'(no section)'))];
+function nextId(){const nums=rows.map(r=>+(String(r.cur.ID).match(/(\d+)$/)||[0,0])[1]);const pre=(String(rows[0]?.cur.ID||'TC-000').match(/^(.*?)(\d+)$/)||[0,'TC-'])[1];return pre+String(Math.max(0,...nums)+1).padStart(3,'0')}
+function toast(t){const el=$('#toast');el.textContent=t;el.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>el.style.display='none',6000)}
+function md(src){
+  const inline=s=>esc(s).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
+  const out=[];let list=false,table=null;
+  const flush=()=>{if(list){out.push('</ul>');list=false}if(table){out.push('<table>'+table.map((r,i)=>'<tr>'+r.map(c=>i?`<td>${inline(c)}</td>`:`<th>${inline(c)}</th>`).join('')+'</tr>').join('')+'</table>');table=null}};
+  for(const line of src.split(/\r?\n/)){
+    const l=line.trim();
+    if(/^\|/.test(l)){if(/^\|[\s:|-]+\|?$/.test(l))continue;if(list){out.push('</ul>');list=false}(table??=[]).push(l.replace(/^\||\|$/g,'').split('|').map(c=>c.trim()));continue}
+    if(table)flush();
+    const h=l.match(/^(#{1,4})\s+(.*)/);
+    if(h){flush();out.push(`<h${Math.min(4,h[1].length+1)}>${inline(h[2])}</h${Math.min(4,h[1].length+1)}>`);continue}
+    if(/^[-*]\s+/.test(l)){if(!list){out.push('<ul>');list=true}out.push(`<li>${inline(l.replace(/^[-*]\s+/,''))}</li>`);continue}
+    flush();if(l)out.push(`<p>${inline(l)}</p>`);
+  }
+  flush();return out.join('');
+}
+// Open questions (user, 2026-11-04): each question of requirements.md with the assumption its rows use and a box for
+// anyone who knows the answer. Answers are saved on their own (POST answers, shared by iOS and Android) and the agent
+// applies them; they do not need the table to be saved, and typing one is kept in this browser until it is saved.
+const QKEY=KEY+':answers';let qEdits={};try{qEdits=JSON.parse(localStorage.getItem(QKEY)||'{}')}catch(e){}
+const qSaved=id=>(D.answers||{})[id];
+const qState=id=>{const a=qSaved(id);return !a?'open':a.status==='done'?'done':'answered'};
+function qSplit(t){const i=t.search(/Assumption:/i);let q=i<0?t:t.slice(0,i),a=i<0?'':t.slice(i).replace(/^Assumption:\s*/i,'');
+  // the requirement and row ids at the end are shown as row links instead
+  a=a.replace(/\s*(?:\(?\bR-\d+[^.]*\)?\.?\s*)+$/,'').replace(/[.;]\s*$/,'');return [q.trim().replace(/[.;]\s*$/,''),a.trim()]}
+function questions(){
+  const qs=D.questions||[];if(!qs.length)return;
+  const open=qs.filter(q=>qState(q.id)==='open').length,ans=qs.length-open;
+  $('#qBox').hidden=false;
+  $('#qSum').innerHTML=`Questions for the team <span class="note">(${open} open${ans?` · ${ans} answered`:''})</span><span class="qhint">Where the spec is unclear the rows follow an assumption. Answer any question you know; leave the rest.</span>`;
+  const unsaved=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;
+  let by='';try{by=localStorage.getItem('casebook-q-by')||''}catch(e){}
+  $('#qList').innerHTML=`<label class="qname">Your name <input id="qBy" value="${esc(by)}" placeholder="optional"></label>`+qs.map(q=>{
+    const [text,assume]=qSplit(q.text),a=qSaved(q.id),st=qState(q.id),v=qEdits[q.id]!==undefined?qEdits[q.id]:(a?a.answer:'');
+    const rowsHtml=q.rows.length?`<div class="qrows">Rows: ${q.rows.map(id=>`<a href="#${esc(id)}">${esc(id)}</a>`).join('')}</div>`:'';
+    return `<div class="qitem" id="q-${esc(q.id)}"><div class="qhead">${esc(q.id)} <span class="qstate ${st}">${st==='open'?'Open':st==='done'?'Applied':'Answered · waiting for the agent'}</span></div>
+      <div class="qtext">${esc(text)}</div>${assume?`<div class="qassume"><b>For now the rows assume:</b> ${esc(assume)}</div>`:''}${rowsHtml}
+      <textarea data-qa="${esc(q.id)}" placeholder="Your answer, if you know it">${esc(v)}</textarea>
+      ${a?`<div class="qmeta">Answered ${esc(a.at.slice(0,16).replace('T',' '))}${a.by?' by '+esc(a.by):''} (${esc(a.platform==='ios'?'iOS':'Android')} page)${a.question!==q.text?' · the question has changed since':''}</div>`:''}${a&&a.resolution?`<div class="qres">${esc(a.resolution)}</div>`:''}</div>`}).join('')+
+    `<div class="qfoot"><span class="note" id="qSt">${unsaved?unsaved+' unsaved':''}</span><button class="btn primary" id="qSave"${unsaved&&D.save?'':' disabled'}${D.save?'':' title="Answers can be saved only on the computer running the pages."'}>Save answers</button></div>`;
+  $('#qBy').oninput=e=>{try{localStorage.setItem('casebook-q-by',e.target.value)}catch(x){}};
+  $('#qList').querySelectorAll('textarea[data-qa]').forEach(t=>t.oninput=()=>{qEdits[t.dataset.qa]=t.value;try{localStorage.setItem(QKEY,JSON.stringify(qEdits))}catch(e){}
+    const n=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;$('#qSt').textContent=n?n+' unsaved':'';$('#qSave').disabled=!n||!D.save});
+  $('#qSave').onclick=async()=>{
+    const items=Object.keys(qEdits).map(id=>({id,answer:(qEdits[id]||'').trim(),question:(qs.find(q=>q.id===id)||{}).text||''})).filter(x=>x.answer!==((qSaved(x.id)||{}).answer||''));
+    $('#qSt').textContent='Saving…';
+    try{const res=await fetch('answers',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({by:$('#qBy').value.trim(),items})});const j=await res.json();if(!res.ok)throw new Error(j.error||res.status);
+      D.answers=j.answers;qEdits={};try{localStorage.removeItem(QKEY)}catch(e){}questions();body();toast('Answers saved. Tell the agent they are in; it updates the rows.')}
+    catch(e){$('#qSt').textContent='Not saved: '+e.message}};
+}
+function openQuestion(id){const el=document.getElementById('q-'+id);if(!el)return;$('#qBox').open=true;
+  document.querySelectorAll('.qitem.hit').forEach(x=>x.classList.remove('hit'));el.classList.add('hit');el.scrollIntoView({block:'center'});el.querySelector('textarea')?.focus({preventScroll:true})}
+function header(){
+  const plat=D.platform==='ios'?'iOS':'Android';
+  $('#h').textContent=`${D.title} · ${plat} · ${REVIEW?'Cases':'Approved test cases'}`;
+  const f=[];
+  if(REVIEW){f.push(`Draft <code>${esc(D.draft)}</code>`);f.push(D.based_on_version?`Updates approved version ${D.based_on_version}`:'No approved table yet');}
+  else f.push(`Version ${D.version} · approved ${esc((D.approved_at||'').slice(0,10))}`);
+  f.push(`Spec: ${D.spec_files.map(s=>esc(s.name)).join(', ')}`);
+  $('#facts').innerHTML=f.map(x=>`<span>${x}</span>`).join('');
+  if(D.update_plan){$('#planBox').hidden=false;$('#planBox').open=true;$('#plan').innerHTML=md(D.update_plan)}
+  if(D.requirements){$('#reqBox').hidden=false;$('#req').innerHTML=md(D.requirements)}
+  if(!REVIEW){document.body.classList.add('view');$('#decHead').hidden=true;$('#copyDec').hidden=true;$('#save').hidden=true}
+  if(REVIEW&&!D.save){$('#save').disabled=true;$('#save').title='Open this page through scripts/review.ts to save.'}
+  $('#foot').textContent=REVIEW?'Edits and new-case notes are kept in this browser until you save. Save writes the approved CSV, keeps the previous version in history/, regenerates the Excel and HTML views, and hands new-case notes to the agent for the next draft.':'Read-only view generated from cases.csv.';
+}
+function filters(){
+  const cnt=(k,v)=>rows.filter(r=>k==='change'?(r.cur.Change||'')===v:state(r)===v).length;
+  const changes=['new','modified','removed','unchanged'].filter(v=>cnt('change',v));
+  const states=['kept','edited','added','deleted'];
+  let h=`<input type="search" id="q" placeholder="Search ID or text" value="${esc(F.q)}"><select id="sec"><option value="">All sections (${rows.length})</option>${sections().map(s=>`<option${F.section===s?' selected':''}>${esc(s)}</option>`).join('')}</select>`;
+  if(changes.length){h+=`<span class="sep"></span>`+[['','All changes'],...changes.map(c=>[c,c])].map(([v,l])=>`<button class="chip" data-k="change" data-v="${v}" aria-pressed="${F.change===v}">${l}${v?` <b>${cnt('change',v)}</b>`:''}</button>`).join('')}
+  if(REVIEW)h+=`<span class="sep"></span>`+[['','Any decision'],...states.map(s=>[s,s])].map(([v,l])=>`<button class="chip" data-k="state" data-v="${v}" aria-pressed="${F.state===v}">${l}${v?` <b>${cnt('state',v)}</b>`:''}</button>`).join('');
+  $('#filters').innerHTML=h;
+  $('#q').oninput=e=>{F.q=e.target.value;body()};
+  $('#sec').onchange=e=>{F.section=e.target.value;body()};
+  $('#filters').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{F[b.dataset.k]=b.dataset.v;filters();body()});
+}
+function visible(r){
+  const t=(r.cur.ID+' '+FIELDS.map(f=>r.cur[f]).join(' ')).toLowerCase();
+  return (!F.q||t.includes(F.q.toLowerCase()))&&(!F.section||(r.cur.Section||'(no section)')===F.section)&&(!F.change||(r.cur.Change||'')===F.change)&&(!F.state||state(r)===F.state);
+}
+function cell(r,f){
+  const prev=D.previous[r.cur.ID];
+  const was=prev&&r.cur.Change==='modified'&&(prev[f]??'')!==(r.orig[f]??'')?`<div class="was">${esc(prev[f])}</div>`:'';
+  return `<td><textarea data-id="${esc(r.cur.ID)}" data-f="${f}" rows="2">${esc(r.cur[f])}</textarea>${was}</td>`;
+}
+function idCell(r){
+  const st=state(r),ch=r.cur.Change;
+  const badges=[ch&&ch!=='unchanged'?`<span class="badge b-${ch}">${ch}</span>`:'',REVIEW&&st!=='kept'?`<span class="badge b-${st==='deleted'?'removed':st}">${st}</span>`:''].join(' ');
+  // opens the coverage page on this case: its requirements, the spec boards they come from, the controls it presses
+  // and the run plan on it: the segment that runs it and its latest result
+  const links=r.added?[]:[PAGES.coverage&&`<a class="spec" href="${esc(PAGES.coverage)}#case=${encodeURIComponent(r.cur.ID)}" title="Coverage: where in the spec this case comes from and the controls it presses">Coverage →</a>`,
+    PAGES.plan&&`<a class="spec" href="${esc(PAGES.plan)}#case=${encodeURIComponent(r.cur.ID)}" title="Progress: the segment that runs this case and its latest result">Progress →</a>`,
+    PAGES.results&&`<a class="spec" href="${esc(PAGES.results)}#case=${encodeURIComponent(r.cur.ID)}" title="Results: what each run found, with screenshots">Results →</a>`].filter(Boolean);
+  const spec=links.length?`<div class="xl">${links.join('')}</div>`:'';
+  // the open questions this row's assumption depends on: a marker that opens the question above the table
+  const qm=(D.questions||[]).filter(q=>q.rows.includes(r.cur.ID)).map(q=>{const st=qState(q.id);
+    return `<a class="qmark ${st}" href="#q-${esc(q.id)}" data-q="${esc(q.id)}" title="${esc(st==='open'?'This row assumes an answer to an open question: read it or answer it':st==='done'?'Answered and applied':'Answered, waiting for the agent')}">${esc(q.id)}${st==='open'?' ?':' ✓'}</a>`}).join(' ');
+  return `${esc(r.cur.ID)}<div>${badges}</div>${qm?`<div>${qm}</div>`:''}${spec}${r.cur['Change Reason']?`<div class="reason">${esc(r.cur['Change Reason'])}</div>`:''}`;
+}
+function body(){
+  const tb=$('#tbl tbody');let h='';
+  for(const s of sections()){
+    const rs=rows.filter(r=>(r.cur.Section||'(no section)')===s&&visible(r));
+    if(!rs.length)continue;
+    h+=`<tr class="section"><td colspan="8">${esc(s)} <span class="note">(${rs.length})</span>${REVIEW?`<button class="add" data-sec="${esc(s)}" title="Describe new cases in your own words; they become rows in the next draft">+ Add case</button>`:''}</td></tr>`;
+    for(const n of notes.filter(n=>n.section===s))h+=`<tr class="newcase"><td colspan="8"><div class="nh"><b>New case notes</b><span>Write what to test in your own words, one case or several. After Save or Copy decisions, the agent places each case in the right section, fills in the columns and proposes the next draft.</span><button class="add" data-del="${esc(n.id)}">Remove</button></div><textarea class="big" data-note="${esc(n.id)}" placeholder="e.g. Tap the credit pill while the outline is generating: a leave dialog should appear, and leaving keeps the chat">${esc(n.text)}</textarea></td></tr>`;
+    for(const r of rs){
+      const st=state(r);
+      h+=`<tr data-row="${esc(r.cur.ID)}" class="${st==='deleted'?'deleted':''}${r.cur.ID===focusId?' focus':''}"><td class="id">${idCell(r)}</td>
+      ${cell(r,'Precondition')}${cell(r,'Action')}${cell(r,'Expected Result')}
+      <td><select data-id="${esc(r.cur.ID)}" data-f="Priority" ${REVIEW?'':'disabled'}>${['','P1','P2','P3'].map(p=>`<option${(r.cur.Priority||'')===p?' selected':''}>${p}</option>`).join('')}</select></td>
+      ${cell(r,'Spec Ref')}${cell(r,'Notes')}
+      ${REVIEW?`<td class="dec"><span class="seg"><button class="k" data-id="${esc(r.cur.ID)}" data-d="keep" aria-pressed="${r.dec==='keep'}">Keep</button><button class="d" data-id="${esc(r.cur.ID)}" data-d="delete" aria-pressed="${r.dec==='delete'}">Delete</button></span></td>`:''}</tr>`;
+    }
+  }
+  tb.innerHTML=h||`<tr><td colspan="8" class="note">No cases match these filters.</td></tr>`;
+  const find=id=>rows.find(r=>r.cur.ID===id);
+  tb.querySelectorAll('textarea[data-note]').forEach(el=>el.oninput=()=>{notes.find(n=>n.id===el.dataset.note).text=el.value;persist();counts()});
+  tb.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{const n=notes.find(n=>n.id===b.dataset.del);if(n.text.trim()&&!confirm('Remove this note and its text?'))return;notes=notes.filter(x=>x!==n);persist();body();counts()});
+  tb.querySelectorAll('textarea[data-id],select').forEach(el=>{if(!REVIEW){el.readOnly=true;return}el.onchange=el.oninput=()=>{const r=find(el.dataset.id);r.cur[el.dataset.f]=el.value;persist();counts();const tr=el.closest('tr');tr.querySelector('td.id').innerHTML=idCell(r);};el.onblur=()=>filters()});
+  tb.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{find(b.dataset.id).dec=b.dataset.d;persist();filters();body();counts()});
+  // + Add case: focus the section's empty note, else open a new one
+  tb.querySelectorAll('.add[data-sec]').forEach(b=>b.onclick=()=>{const sec=b.dataset.sec;let n=notes.find(n=>n.section===sec&&!n.text.trim());
+    if(!n){n={id:'N'+Date.now().toString(36),section:sec,text:'',at:new Date().toISOString()};notes.push(n);persist();body();}
+    setTimeout(()=>tb.querySelector(`textarea[data-note="${n.id}"]`)?.focus(),0)});
+}
+function counts(){
+  const c=s=>rows.filter(r=>state(r)===s).length;
+  const fin=rows.filter(r=>r.dec!=='delete').length;
+  const nn=liveNotes().length;
+  $('#counts').innerHTML=REVIEW?`<b>${fin}</b> cases in the final table · kept ${c('kept')} · edited ${c('edited')} · added ${c('added')} · deleted ${c('deleted')}${nn?` · <b>${nn}</b> new-case note${nn>1?'s':''} for the next draft`:''}`:`<b>${rows.length}</b> cases`;
+}
+const COLS=['ID','Section','Precondition','Action','Expected Result','Priority','Spec Ref','Notes'];
+const q=v=>/[",\r\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;
+const finalRows=()=>rows.filter(r=>r.dec!=='delete').map(r=>Object.fromEntries(COLS.map(c=>[c,(r.cur[c]??'').trim()])));
+const csv=()=>[COLS,...finalRows().map(r=>COLS.map(c=>r[c]))].map(r=>r.map(q).join(',')).join('\n');
+function decisions(){
+  const out=[];
+  for(const r of rows){const s=state(r);if(s==='kept')continue;
+    if(s==='deleted')out.push({type:'delete',id:r.cur.ID,was_change:r.cur.Change||''});
+    else if(s==='added')out.push({type:'add',id:r.cur.ID,row:Object.fromEntries(COLS.map(c=>[c,r.cur[c]??'']))});
+    else out.push({type:'edit',id:r.cur.ID,fields:Object.fromEntries(FIELDS.filter(f=>(r.cur[f]??'')!==(r.orig[f]??'')).map(f=>[f,{from:r.orig[f]??'',to:r.cur[f]??''}]))});}
+  return out;
+}
+function decisionText(){
+  const d=decisions(),c=s=>rows.filter(r=>state(r)===s).length;
+  const L=[`Review: ${D.feature} / ${D.platform} · draft ${D.draft}`,`Final table: ${finalRows().length} cases · kept ${c('kept')} · edited ${c('edited')} · added ${c('added')} · deleted ${c('deleted')}`,''];
+  for(const x of d){
+    if(x.type==='delete')L.push(`DELETE ${x.id}`);
+    if(x.type==='add')L.push(`ADD ${x.id} [${x.row.Section}] Action: ${x.row.Action} | Expected: ${x.row['Expected Result']} | Spec Ref: ${x.row['Spec Ref']}`);
+    if(x.type==='edit')L.push(`EDIT ${x.id} `+Object.entries(x.fields).map(([f,v])=>`${f}: "${v.to}"`).join(' | '));
+  }
+  const ns=liveNotes();
+  if(ns.length){L.push('',`NEW CASE NOTES (${ns.length}): turn each into rows in the right section, then propose the next draft`);
+    for(const n of ns)L.push(`NOTE ${n.id} [typed under: ${n.section}]`,...n.text.trim().split(/\r?\n/).map(l=>'  '+l));}
+  return L.join('\n');
+}
+async function copy(text,label){try{await navigator.clipboard.writeText(text);toast(label+' copied.')}catch(e){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast(label+' copied.')}catch(_){toast('Copy failed; select the text manually.')}ta.remove()}}
+$('#copyCsv').onclick=()=>{copy(csv(),'Final CSV');if(liveNotes().length)setTimeout(()=>toast('Final CSV copied. New-case notes are not rows yet: use Copy decisions or Save to hand them over.'),50)};
+$('#copyDec').onclick=()=>copy(decisionText(),'Decisions');
+$('#save').onclick=async()=>{
+  const empty=finalRows().filter(r=>!r.Action||!r['Expected Result']);
+  if(empty.length){toast(`Fill in Action and Expected Result for ${empty.map(r=>r.ID).join(', ')} before saving.`);return}
+  $('#save').disabled=true;
+  try{const res=await fetch('save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({rows:finalRows(),decisions:decisions(),summary:decisionText(),notes:liveNotes()})});
+    const j=await res.json();if(!res.ok)throw new Error(j.error||res.statusText);
+    try{localStorage.removeItem(KEY)}catch(e){}
+    const nn=liveNotes().length;notes=[];body();counts();
+    toast(`Saved as approved version ${j.version}: ${j.cases} cases. ${j.csv}`+(nn?` · ${nn} new-case note${nn>1?'s':''} saved to ${j.notes_file}: ask the agent to turn them into the next draft.`:''));
+  }catch(e){toast('Save failed: '+e.message)}finally{$('#save').disabled=false}
+};
+// #TC-012 (a link from the coverage page): show that row, clearing filters that hide it
+let focusId='';
+function focusRow(){
+  const id=decodeURIComponent(location.hash.slice(1));const r=rows.find(x=>x.cur.ID===id);if(!r)return;
+  focusId=id;if(!visible(r)){F.q='';F.section='';F.change='';F.state='';filters()}body();
+  document.querySelector(`tr[data-row="${CSS.escape(id)}"]`)?.scrollIntoView({block:'center'});
+}
+addEventListener('hashchange',focusRow);
+// a row's question marker (and a #q-Q-3 link) opens that question above the table, also when clicked twice
+addEventListener('hashchange',()=>{if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3))});
+document.addEventListener('click',e=>{const m=e.target.closest?.('a.qmark');if(!m)return;e.preventDefault();openQuestion(m.dataset.q)});
+header();questions();filters();body();counts();focusRow();if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3));
+</script>
+</body>
+</html>

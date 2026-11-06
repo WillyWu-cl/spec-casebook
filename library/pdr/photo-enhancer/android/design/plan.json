@@ -1,0 +1,214 @@
+{
+  "built_at": "2026-11-06T03:39:52.982Z",
+  "spec_set": "2026-11-06",
+  "file": {
+    "fileKey": "4ZIfFu5NTnCEi1Nqo04k2S",
+    "page": "212:2045",
+    "url": "https://www.figma.com/design/4ZIfFu5NTnCEi1Nqo04k2S/Toolbars?node-id=212-2045&m=dev",
+    "account": "qa-dm@cyberlink.com (Dev seat, CyberLink DC)"
+  },
+  "phases": null,
+  "skip": [],
+  "skip_reason": null,
+  "skip_reasons": {},
+  "scope_review": null,
+  "scope_included": [],
+  "source_gaps": {
+    "unread": [],
+    "incomplete": [],
+    "listed": [
+      {
+        "id": "215:5932",
+        "name": ">5"
+      },
+      {
+        "id": "215:5961",
+        "name": "2-d panel UI for toolbar regrouping"
+      },
+      {
+        "id": "215:5933",
+        "name": "<5"
+      },
+      {
+        "id": "215:5935",
+        "name": "二維 default 為 5 個一排 if 二維 5 個一排時, 第二排會留空 > = 3 自動調整二維變成 4 個為一"
+      },
+      {
+        "id": "632:18031",
+        "name": "Timeline_defualt"
+      },
+      {
+        "id": "632:27082",
+        "name": ">5"
+      },
+      {
+        "id": "632:29095",
+        "name": ">5"
+      },
+      {
+        "id": "632:27100",
+        "name": "<5"
+      },
+      {
+        "id": "632:28223",
+        "name": "4"
+      },
+      {
+        "id": "215:5954",
+        "name": "二維面板在 mobile width 左右置中 MARGIN上下左右 8px 距下面 MAIN TOOL BAR 4p "
+      },
+      {
+        "id": "632:29940",
+        "name": "Rectangle 3467705"
+      },
+      {
+        "id": "632:29939",
+        "name": "Rectangle 3467706"
+      },
+      {
+        "id": "215:5945",
+        "name": "8"
+      },
+      {
+        "id": "632:29941",
+        "name": "8"
+      },
+      {
+        "id": "632:29944",
+        "name": "4"
+      },
+      {
+        "id": "632:29946",
+        "name": "Track bg color #021B2F"
+      },
+      {
+        "id": "632:29942",
+        "name": "Vector 2603"
+      },
+      {
+        "id": "632:29943",
+        "name": "Vector 2604"
+      },
+      {
+        "id": "632:30129",
+        "name": "Rectangle 3467707"
+      },
+      {
+        "id": "705:36464",
+        "name": "bg color ＃002645"
+      },
+      {
+        "id": "705:36472",
+        "name": "＃FFFFFF 透明度 40%"
+      },
+      {
+        "id": "705:36467",
+        "name": "Vector 2606"
+      },
+      {
+        "id": "705:36471",
+        "name": "Vector 2607"
+      },
+      {
+        "id": "585:19828",
+        "name": "home-sticker"
+      },
+      {
+        "id": "585:19986",
+        "name": "二維default為5個一排 if 二維5個一排時, 第二排會留空>=3 自動調整二維變成4個為一排"
+      },
+      {
+        "id": "585:19987",
+        "name": "*For “Portrait” : Body Effect/ People Background 直接開feature "
+      },
+      {
+        "id": "585:19988",
+        "name": "home-sticker"
+      },
+      {
+        "id": "585:20145",
+        "name": "Line 417"
+      },
+      {
+        "id": "585:20146",
+        "name": "Line 418"
+      },
+      {
+        "id": "585:20147",
+        "name": "Line 419"
+      },
+      {
+        "id": "585:20148",
+        "name": "Line 420"
+      },
+      {
+        "id": "585:20149",
+        "name": "1"
+      },
+      {
+        "id": "585:20546",
+        "name": "2"
+      },
+      {
+        "id": "585:20802",
+        "name": "Line 225"
+      },
+      {
+        "id": "585:20803",
+        "name": "Line 423"
+      },
+      {
+        "id": "585:20804",
+        "name": "Android tab 留Google Drive/ Google Photo"
+      },
+      {
+        "id": "585:20805",
+        "name": "延用image enhancer media picker的UI"
+      },
+      {
+        "id": "585:20806",
+        "name": "不需要秀數字"
+      },
+      {
+        "id": "585:20807",
+        "name": "U-2024-10-17 1"
+      },
+      {
+        "id": "585:20808",
+        "name": "Line 421"
+      },
+      {
+        "id": "585:20809",
+        "name": "CTA字串改”Extract Audio”"
+      },
+      {
+        "id": "585:20810",
+        "name": "直接extract video sound並且select在該audio clip上"
+      },
+      {
+        "id": "585:20811",
+        "name": "Line 422"
+      },
+      {
+        "id": "585:20812",
+        "name": "Rectangle 3467704"
+      },
+      {
+        "id": "585:20813",
+        "name": "Extract Audio"
+      }
+    ],
+    "page_listed": true
+  },
+  "casebook": false,
+  "counts": {
+    "screens": 0,
+    "routed": 0,
+    "figma_paths": 0,
+    "gaps": 0,
+    "no_route": 0,
+    "excluded": 0
+  },
+  "by_case": {},
+  "screens": []
+}

@@ -1,0 +1,476 @@
+{
+  "spec_folder": "specs/2026-11-06",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "d-icon-slice@13432,-588",
+      "board": "d-icon-slice",
+      "x": 13432,
+      "y": -588,
+      "low": false,
+      "text": "Icon / 12.23",
+      "trace": "R-005"
+    },
+    {
+      "id": "d-master-photo-toolbar@9335,-477",
+      "board": "d-master-photo-toolbar",
+      "x": 9335,
+      "y": -477,
+      "low": false,
+      "text": "➡️  Master Photo Toolbar",
+      "trace": "label: Design board title"
+    },
+    {
+      "id": "d-master-photo-toolbar@9367,400",
+      "board": "d-master-photo-toolbar",
+      "x": 9367,
+      "y": 400,
+      "low": false,
+      "text": "New icon / Split",
+      "trace": "R-005"
+    },
+    {
+      "id": "d-master-photo-toolbar@9495,498",
+      "board": "d-master-photo-toolbar",
+      "x": 9495,
+      "y": 498,
+      "low": false,
+      "text": "Duration / Transform",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-master-photo-toolbar@9639,498",
+      "board": "d-master-photo-toolbar",
+      "x": 9639,
+      "y": 498,
+      "low": false,
+      "text": "Adjust / Transition / Crop & Rotate / Pan & Zoom",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-master-photo-toolbar@9783,498",
+      "board": "d-master-photo-toolbar",
+      "x": 9783,
+      "y": 498,
+      "low": false,
+      "text": "Background / Effects / Cutout / Change BG / Chroma Key / Add Background",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-master-photo-toolbar@9927,498",
+      "board": "d-master-photo-toolbar",
+      "x": 9927,
+      "y": 498,
+      "low": false,
+      "text": "Enhance / Tools / Tempo Effects / Effect / Filter / AI Color / AI Scene",
+      "trace": "Q-1"
+    },
+    {
+      "id": "d-master-photo-toolbar@10071,498",
+      "board": "d-master-photo-toolbar",
+      "x": 10071,
+      "y": 498,
+      "low": false,
+      "text": "Duplicate / Mask / Replace / Cutout / Auto Mosaic",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-master-photo-toolbar@10215,498",
+      "board": "d-master-photo-toolbar",
+      "x": 10215,
+      "y": 498,
+      "low": false,
+      "text": "Portrait / AI Art / AI Cartoon / AI Sketch / Body Effect / People Background / Face Smoother",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-master-photo-toolbar@9563,804",
+      "board": "d-master-photo-toolbar",
+      "x": 9563,
+      "y": 804,
+      "low": false,
+      "text": "Fill / TF Keyframe / Flip",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-pip-photo-toolbar@11146,-477",
+      "board": "d-pip-photo-toolbar",
+      "x": 11146,
+      "y": -477,
+      "low": false,
+      "text": "➡️  PiP Photo Toolbar",
+      "trace": "label: Design board title"
+    },
+    {
+      "id": "d-pip-photo-toolbar@11336,498",
+      "board": "d-pip-photo-toolbar",
+      "x": 11336,
+      "y": 498,
+      "low": false,
+      "text": "Split / Duration",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-pip-photo-toolbar@11480,498",
+      "board": "d-pip-photo-toolbar",
+      "x": 11480,
+      "y": 498,
+      "low": false,
+      "text": "Transform / Opacity / Crop & Rotate / Border & Shadow / Pan & Zoom / TF Keyframe / Flip",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-pip-photo-toolbar@11624,498",
+      "board": "d-pip-photo-toolbar",
+      "x": 11624,
+      "y": 498,
+      "low": false,
+      "text": "Motion / Adjust",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-pip-photo-toolbar@11768,498",
+      "board": "d-pip-photo-toolbar",
+      "x": 11768,
+      "y": 498,
+      "low": false,
+      "text": "Background / Effects / Cutout / Change BG / Chroma Key",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-pip-photo-toolbar@11912,498",
+      "board": "d-pip-photo-toolbar",
+      "x": 11912,
+      "y": 498,
+      "low": false,
+      "text": "Enhance / Tools / Body Effect / Tempo Effects / Filter / Effect / AI Color / AI Scene",
+      "trace": "Q-1"
+    },
+    {
+      "id": "d-pip-photo-toolbar@12056,498",
+      "board": "d-pip-photo-toolbar",
+      "x": 12056,
+      "y": 498,
+      "low": false,
+      "text": "Duplicate / Mask / AI Text to Image / Replace / Cutout / Motion Tracking / Auto Mosaic",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "d-pip-photo-toolbar@12200,498",
+      "board": "d-pip-photo-toolbar",
+      "x": 12200,
+      "y": 498,
+      "low": false,
+      "text": "Blending / Portrait / AI Art / AI Cartoon / AI Sketch / Body Effect / People Background / Face Smoother",
+      "trace": "label: other features' toolbar buttons (Design 24.10E toolbar regroup)"
+    },
+    {
+      "id": "pm-enhance-flow@1217,1083",
+      "board": "pm-enhance-flow",
+      "x": 1217,
+      "y": 1083,
+      "low": false,
+      "text": "打開second layer",
+      "trace": "R-003"
+    },
+    {
+      "id": "pm-enhance-flow@2917,1337",
+      "board": "pm-enhance-flow",
+      "x": 2917,
+      "y": 1337,
+      "low": false,
+      "text": "打開second layer / 再次點擊Image Enhance(已套用狀態)",
+      "trace": "R-003, R-016, R-020"
+    },
+    {
+      "id": "pm-enhance-flow@3902,1337",
+      "board": "pm-enhance-flow",
+      "x": 3902,
+      "y": 1337,
+      "low": false,
+      "text": "小白點消失",
+      "trace": "R-025"
+    },
+    {
+      "id": "pm-enhance-flow@3389,1350",
+      "board": "pm-enhance-flow",
+      "x": 3389,
+      "y": 1350,
+      "low": false,
+      "text": "再次點擊Image Enhance(已套用>未套用狀態), 需要記住上次的result, 因此第二次套用不會有progressing",
+      "trace": "R-022, R-026"
+    },
+    {
+      "id": "pm-full-screen@807,1980",
+      "board": "pm-full-screen",
+      "x": 807,
+      "y": 1980,
+      "low": false,
+      "text": "***Timeline Mode, Full Screen一律做擋截圖, 樣式跟rule都跟原shortcut image enhancer一樣",
+      "trace": "R-031, R-032"
+    },
+    {
+      "id": "pm-header@-126,-309",
+      "board": "pm-header",
+      "x": -126,
+      "y": -309,
+      "low": false,
+      "text": "SPEC",
+      "trace": "R-046"
+    },
+    {
+      "id": "pm-master-photo@31,-79",
+      "board": "pm-master-photo",
+      "x": 31,
+      "y": -79,
+      "low": false,
+      "text": "Master Photo",
+      "trace": "label: board title"
+    },
+    {
+      "id": "pm-master-photo@17,487",
+      "board": "pm-master-photo",
+      "x": 17,
+      "y": 487,
+      "low": false,
+      "text": "00:03/02:28  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-master-photo@175,516",
+      "board": "pm-master-photo",
+      "x": 175,
+      "y": 516,
+      "low": false,
+      "text": "00:00  [phone] / 00:01  [phone] / Intro  [phone] / 1  [phone] / 1  [phone] / Split  [phone] / Duration  [phone] / Transform  [phone] / Adjust  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-master-photo@328,516",
+      "board": "pm-master-photo",
+      "x": 328,
+      "y": 516,
+      "low": false,
+      "text": "00:02  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-master-photo@349,765",
+      "board": "pm-master-photo",
+      "x": 349,
+      "y": 765,
+      "low": false,
+      "text": "Transition  [phone] / Background  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-master-photo@493,765",
+      "board": "pm-master-photo",
+      "x": 493,
+      "y": 765,
+      "low": false,
+      "text": "Effects  [phone] / Enhance  [phone]",
+      "trace": "R-001"
+    },
+    {
+      "id": "pm-master-photo@637,765",
+      "board": "pm-master-photo",
+      "x": 637,
+      "y": 765,
+      "low": false,
+      "text": "Tools  [phone] / Duplicate  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-master-photo@781,765",
+      "board": "pm-master-photo",
+      "x": 781,
+      "y": 765,
+      "low": false,
+      "text": "Mask  [phone] / Portrait  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-master-photo@1278,1004",
+      "board": "pm-master-photo",
+      "x": 1278,
+      "y": 1004,
+      "low": false,
+      "text": "Enhance  [phone]",
+      "trace": "R-001"
+    },
+    {
+      "id": "pm-pip-photo@31,875",
+      "board": "pm-pip-photo",
+      "x": 31,
+      "y": 875,
+      "low": false,
+      "text": "PiP Photo",
+      "trace": "label: board title"
+    },
+    {
+      "id": "pm-pip-photo@17,1418",
+      "board": "pm-pip-photo",
+      "x": 17,
+      "y": 1418,
+      "low": false,
+      "text": "00:03/02:28  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-pip-photo@175,1447",
+      "board": "pm-pip-photo",
+      "x": 175,
+      "y": 1447,
+      "low": false,
+      "text": "00:00  [phone] / 00:01  [phone] / Intro  [phone] / PiP Photo  [phone] / 1  [phone] / 1  [phone] / Split  [phone] / Duration  [phone] / Transform  [phone] / Opacity  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-pip-photo@328,1447",
+      "board": "pm-pip-photo",
+      "x": 328,
+      "y": 1447,
+      "low": false,
+      "text": "00:02  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-pip-photo@352,1696",
+      "board": "pm-pip-photo",
+      "x": 352,
+      "y": 1696,
+      "low": false,
+      "text": "Motion  [phone] / Adjust  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-pip-photo@496,1696",
+      "board": "pm-pip-photo",
+      "x": 496,
+      "y": 1696,
+      "low": false,
+      "text": "Background  [phone] / Effects  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-pip-photo@640,1696",
+      "board": "pm-pip-photo",
+      "x": 640,
+      "y": 1696,
+      "low": false,
+      "text": "Enhance  [phone] / Tools  [phone]",
+      "trace": "R-002"
+    },
+    {
+      "id": "pm-pip-photo@784,1696",
+      "board": "pm-pip-photo",
+      "x": 784,
+      "y": 1696,
+      "low": false,
+      "text": "Duplicate  [phone] / Mask  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-pip-photo@928,1696",
+      "board": "pm-pip-photo",
+      "x": 928,
+      "y": 1696,
+      "low": false,
+      "text": "Blending  [phone] / Portrait  [phone]",
+      "trace": "ui: editor mockup labels (time, Intro, other toolbar buttons)"
+    },
+    {
+      "id": "pm-refs@4532,-554",
+      "board": "pm-refs",
+      "x": 4532,
+      "y": -554,
+      "low": false,
+      "text": "ref. 在 timeline 點擊 video enhance (已經套用過)",
+      "trace": "R-045"
+    },
+    {
+      "id": "pm-refs@4999,-554",
+      "board": "pm-refs",
+      "x": 4999,
+      "y": -554,
+      "low": false,
+      "text": "ref. 在 shortcut 使用 photo enhance room",
+      "trace": "R-045"
+    },
+    {
+      "id": "pm-toolbar-link@-1158,794",
+      "board": "pm-toolbar-link",
+      "x": -1158,
+      "y": 794,
+      "low": false,
+      "text": "Toolbar re-org reference / https://docs.google.com/spreadsheets/d/1OvToKsZ6tTkROzuznVnVfUfU3oRCY8SQHrMk0xGuIes/edit?usp=sharing",
+      "trace": "label: link title (its items are traced below)"
+    },
+    {
+      "id": "pm-toolbar-link@-1158,886",
+      "board": "pm-toolbar-link",
+      "x": -1158,
+      "y": 886,
+      "low": false,
+      "text": "[link Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)] Photo Toolbar (master): the second layer of 「Enhance」 lists 1. Photo Enhance",
+      "trace": "R-004, R-003",
+      "link": "Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)"
+    },
+    {
+      "id": "pm-toolbar-link@-1158,946",
+      "board": "pm-toolbar-link",
+      "x": -1158,
+      "y": 946,
+      "low": false,
+      "text": "[link Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)] Photo Toolbar (master): the second layer of 「Enhance」 lists 2. AI Color",
+      "trace": "R-004, R-003",
+      "link": "Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)"
+    },
+    {
+      "id": "pm-toolbar-link@-1158,1006",
+      "board": "pm-toolbar-link",
+      "x": -1158,
+      "y": 1006,
+      "low": false,
+      "text": "[link Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)] PIP Photo Toolbar: the second layer of 「Enhance」 lists 1. Photo Enhance",
+      "trace": "R-004, R-003",
+      "link": "Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)"
+    },
+    {
+      "id": "pm-toolbar-link@-1158,1066",
+      "board": "pm-toolbar-link",
+      "x": -1158,
+      "y": 1066,
+      "low": false,
+      "text": "[link Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)] PIP Photo Toolbar: the second layer of 「Enhance」 lists 2. AI Color",
+      "trace": "R-004, R-003",
+      "link": "Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)"
+    },
+    {
+      "id": "pm-toolbar-link@-1158,1126",
+      "board": "pm-toolbar-link",
+      "x": -1158,
+      "y": 1126,
+      "low": false,
+      "text": "[link Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)] Photo Toolbar first layer: Split, Duration, Transform, Effects, Adjust, Opacity, Background, Enhance, Transition, Tools, Duplicate, Mask, Portrait (differs from the PM mockup order)",
+      "trace": "Q-1",
+      "link": "Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)"
+    },
+    {
+      "id": "pm-toolbar-link@-1158,1186",
+      "board": "pm-toolbar-link",
+      "x": -1158,
+      "y": 1186,
+      "low": false,
+      "text": "[link Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)] PIP Photo Toolbar first layer: Split, Duration, Transform, Effects, Motion, Adjust, Opacity, Background, Enhance, Tools, Duplicate, Mask, Blending, Portrait (differs from the PM mockup order)",
+      "trace": "Q-1",
+      "link": "Google Sheet 「PDRM Toolbar re-org」 › tab 「2026/11 Auto Reframe」 (gid 366131507, the newest tab)"
+    }
+  ]
+}

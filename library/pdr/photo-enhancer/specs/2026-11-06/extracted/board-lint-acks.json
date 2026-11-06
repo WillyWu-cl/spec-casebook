@@ -1,0 +1,7 @@
+{
+  "pm-enhance-flow|note-moved|pm-enhance-flow@3902,1337": "Centred text: the Figma text box starts left of its letters; the note is where it is drawn",
+  "pm-header|note-moved|pm-header@-126,-309": "Centred text: the Figma text box starts left of its letters; the note is where it is drawn",
+  "pm-enhance-flow|note-gone|pm-enhance-flow@3389,1350": "Mixed Chinese/English note wrapped over lines: Vision OCR reads it in pieces; the note is drawn on the board image (checked by eye 2026-11-06)",
+  "pm-full-screen|note-gone|pm-full-screen@807,1980": "Mixed Chinese/English note wrapped over lines: Vision OCR reads it in pieces; the note is drawn on the board image (checked by eye 2026-11-06)",
+  "pm-master-photo|note-off|pm-master-photo@1278,1004": "The collapsed 「Enhance」 tile under the second-layer popup (1265,962) belongs to pm-enhance-flow's popup; read with the master photo phone's toolbar instance"
+}

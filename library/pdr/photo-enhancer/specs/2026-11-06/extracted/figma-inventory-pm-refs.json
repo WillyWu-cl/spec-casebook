@@ -1,0 +1,81 @@
+{
+ "file": "mzJYPdS0vyHdprWGYdzDAp",
+ "page": "65:3761",
+ "group": "pm-refs",
+ "extracted_at": "2026-11-06",
+ "section": [
+  "65:3761",
+  "✅SPEC",
+  -1158,
+  -554,
+  6533,
+  3461
+ ],
+ "boards": [
+  [
+   "65:3761/pm-refs",
+   "pm-refs",
+   4500,
+   -570,
+   900,
+   900
+  ]
+ ],
+ "names": [],
+ "screens": [],
+ "controls": [],
+ "arrows": [],
+ "hidden": {
+  "screens": 0,
+  "controls": 0
+ },
+ "entries": [
+  {
+   "name": "pm-refs",
+   "parent": "65:3761",
+   "box": [
+    4500,
+    -570,
+    900,
+    900
+   ]
+  }
+ ],
+ "hash": {
+  "65:3761/pm-refs": "200ac984"
+ },
+ "hashed_at": "2026-11-06T02:52:49.459Z",
+ "overlay": {
+  "65:3761/pm-refs": ""
+ },
+ "overlay_box": {
+  "65:3761/pm-refs": [
+   4500,
+   -570,
+   900,
+   900
+  ]
+ },
+ "texts": [
+  [
+   0,
+   4532,
+   -554,
+   389,
+   20,
+   "ref. 在 timeline 點擊 video enhance (已經套用過)",
+   0
+  ],
+  [
+   0,
+   4999,
+   -554,
+   340,
+   20,
+   "ref. 在 shortcut 使用 photo enhance room",
+   0
+  ]
+ ],
+ "ms": 2939,
+ "size": 586
+}
