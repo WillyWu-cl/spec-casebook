@@ -32,6 +32,7 @@ import { readRecords } from './lib/csv.ts';
 import { localRunMessages, syncTokens } from './lib/run-ledger.ts';
 import { H5, WEEK, W, activity, estimator, series, upper, wsum, type Series, increments, readCalibration, readSnaps, weeklyRatio, weight, type Span } from './lib/usage-estimate.ts';
 import { addMsg, projectTranscripts, zero, type Msg, type U } from './token-usage.ts';
+import { withShared } from './lib/page-shared.ts';
 
 const args = process.argv.slice(2);
 const oi = args.indexOf('--out'); const outArg = oi >= 0 ? args.splice(oi, 2)[1] : undefined;
@@ -187,7 +188,7 @@ function buildData() {
   const log = (plan.split(/^## Log\s*$/m)[1] ?? '').split('\n').filter(l => l.startsWith('- ')).map(l => l.slice(2).replace(/\*\*/g, ''));
   const short = (s: string, n = 120) => s.length > n ? s.slice(0, n - 1) + '…' : s;
   const data = {
-    feature: manifest.title ?? feature, version: manifest.version ?? '?', totalCases: Object.keys(cases).length,
+    feature: manifest.title ?? feature, version: manifest.version ?? '?', totalCases: readRecords(readFileSync(join(base, 'cases.csv'), 'utf8')).length,
     build: build || '?', unavailable: phasesFile.unavailable ?? {}, generated: new Date().toISOString().replace('T', ' ').slice(0, 16) + ' UTC',
     phases: phases.map((p: any) => ({
       id: p.id, name: p.name, current: currentIds.has(p.id), note: p.note ?? '', skip: p.skip ?? '', hold: p.hold ?? '', runDir: phaseRun[p.id] ?? '', stats: pub(stat[p.id]),
@@ -215,7 +216,7 @@ function buildData() {
 
 const page = (data: unknown, live: boolean) => {
   const d = data as { feature: string };
-  const tpl = readFileSync(join(import.meta.dirname, 'plan-page.tpl'), 'utf8');
+  const tpl = withShared(readFileSync(join(import.meta.dirname, 'plan-page.tpl'), 'utf8'));
   // The static page carries its data inline and has no polling code (no fetch), so it renders with no server.
   return (live ? tpl : tpl.replace(/\/\*LIVE\*\/[\s\S]*?\/\*\/LIVE\*\//, '')).replaceAll('__TITLE__', `${d.feature} Progress`)
     .replace('__LIVE__', String(live)).replace('__DATA__', () => JSON.stringify(data).replace(/</g, '\\u003c').replace(/\uFFFD/g, '\\ufffd'));

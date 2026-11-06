@@ -500,14 +500,33 @@ difference planted, run through every command, with no phone and no Figma call.
 
 ### Live pages
 
-One command serves all four pages on one address, with tabs to switch between them:
+One command serves every table's pages on one address:
 
 ```bash
-node scripts/pages.ts pdr/ai-mini-drama ios --lan
+node scripts/pages.ts --lan
 ```
 
-It opens `http://127.0.0.1:4386/` with five tabs, **Cases** (the review page, `/cases/`), **Progress** (the run plan,
-`/progress/`), **Results** (`/results/`), **Coverage** (`/coverage/`) and **Design** (the design check, `/design/`); old `/review/` and `/plan/` links still
+`http://127.0.0.1:4386/` opens the navigation page: choose a product, feature and platform (or an open draft) and you land on
+that table, with five tabs, **Cases** (the review page), **Progress** (the run plan), **Results**, **Coverage** and
+**Design** (the design check), under `/<product>/<feature>/<platform>/<page>/` (a draft: `/<product>/<feature>/<platform>/draft/<id>/<page>/`).
+「All features」 in the tab bar goes back, and the iOS | Android switch beside the language opens the same page on the other platform. Naming a
+table (`node scripts/pages.ts pdr/ai-mini-drama ios`) still works and prints its address; old `/cases/`-style links go there.
+
+Only what is open runs: the server holds no table, a page's process starts on its first visit (about a second) and stops
+after 10 idle minutes (`--idle <minutes>`; a hidden tab does not keep it alive). One server is enough: a second start prints the address of
+the running one and exits. Old temp files and thumbnails unused for 30 days are cleared at start and daily.
+
+The navigation page shows each table's latest run with its pass / fail / blocked counts and what waits on someone (open
+questions, answers to apply, new-case notes). 「Recent」 lists what this browser opened last, and a table's name opens on the
+tab you left it on. Design cards use small copies; comparisons, crops and Coverage boards are always the full image,
+loaded in the background behind a small copy, with the neighbours fetched ahead. A pair of crops on the Design tab opens
+large on a click.
+
+With `--lan`, other computers enter a passcode once. It is made at each start and printed in the terminal, or set it with
+`--passcode <code>` (a set one also keeps people signed in across restarts). This computer never needs it. It keeps
+the network out but the pages are not encrypted, and only `pages.ts` asks for it: the single-page servers below have no
+passcode, so share through `pages.ts`.
+
 work. With `--lan` it prints the LAN address to share. `--draft <id>` reviews a draft (and shows it on the coverage page); the run plan defaults to the newest
 `runs/RUN-PLAN-*.md` and the newest draft with a `phases.json` (`--plan`, `--plan-draft` pick others). Save on the
 review page works only on the computer running the server; colleagues on the network can read, edit in their
@@ -530,17 +549,17 @@ requirements, the spec boards they come from (Design boards from Figma; PM and M
 own), and the controls and flow arrows it presses, highlighted on the board. **Progress →** opens the segment that
 runs the case, with its latest result; **Results →** opens its run records and screenshots. Every page links a case
 the same way: **cases →**, **progress →**, **results →**, **coverage →**. On Coverage, a case ID opens that case's
-view; type a case ID (or just `12`) in the Case box, or open `/coverage/#case=TC-012`.
+view; type a case ID (or just `12`) in the Case box, or open `…/coverage/#case=TC-012`.
 
 Each page can also run on its own, a small server started from the repository root. They read the files on every request (the
 coverage page at most every 30 s), so they show new results without a restart. Add `--lan` to open one from other
 computers on the same network; it prints the LAN address (for example `http://192.168.x.x:4391/`). There is no
-login: anyone on that network with the address can read the page. The first time, macOS may ask to allow incoming
+login on these single-page servers: anyone on that network with the address can read the page. The first time, macOS may ask to allow incoming
 connections for `node`.
 
 | Page | Command | Address |
 | --- | --- | --- |
-| All five, with tabs | `node scripts/pages.ts pdr/ai-mini-drama ios [--draft <id>] [--lan]` | `http://127.0.0.1:4386/` |
+| Every table, with a navigation page and tabs | `node scripts/pages.ts [--lan]` (or `pdr/ai-mini-drama ios [--draft <id>]` to print that table's address) | `http://127.0.0.1:4386/` |
 | Review a draft or the approved table | `node scripts/review.ts pdr/ai-mini-drama ios [--draft <id>] [--lan]` | `http://127.0.0.1:4387/` |
 | Run plan (phases, cases, time, tokens) | `node scripts/plan-page.ts pdr/ai-mini-drama ios <draft> <run plan .md> --serve [port] [--lan]` | `http://127.0.0.1:4390/` |
 | Results (every run's cases, reasons and screenshots) | `node scripts/results-page.ts pdr/ai-mini-drama ios --serve [port] [--lan]` | `http://127.0.0.1:4492/` |
@@ -697,7 +716,8 @@ All scripts run from the repository root with `node scripts/<name>.ts`. In the u
 | `controls.ts <feature> <platform> [--draft <id>]` | Writes `control-trace.json`: every control group and the rows that press it |
 | `coverage-page.ts <feature> <platform> [--draft <id>] [--serve [port] [--lan]]` | The coverage page: boards with controls and arrows marked, tap proof, what is planned or blocked |
 | `results-page.ts <feature> <platform> [--serve [port] [--lan]]` | The results page: every run's cases with the reason and the screenshots (static: `runs/results.html`) |
-| `pages.ts <feature> <platform> [--draft <id>] [--plan <md>] [--plan-draft <id>] [--lan]` | Serves Cases (review), Progress (run plan), Results, Coverage and Design on one address with tabs and links between them |
+| `runs-storage.ts [logs\|dedupe [--apply]\|unpack <run>] [<feature> [<platform>]]` | Measures what the run folders use; removes `logs/*/unzipped/` copies the zips can restore and turns identical files into APFS clones. Nothing changes without `--apply`; screenshots are never touched |
+| `pages.ts [<feature> <platform> [--draft <id>] [--plan <md>] [--plan-draft <id>]] [--lan [--passcode <code>]] [--idle <minutes>]` | Serves a navigation page and every table's Cases (review), Progress (run plan), Results, Coverage and Design on one address with tabs and links between them |
 | `design.ts <feature> <platform> plan \| screens <TC> \| check <run> \| settle <run> \| decide \| ebugs <run> \| status` | The design check (figma skill): the row reaching each Design screen, the screens a row reaches, measuring captures against Figma, settling the two review passes, applying the Design tab's decisions, the bugs to file, and the next step |
 | `figma-source.ts <feature> init <link> \| calls list\|plan\|chunks design \| save design \| merge design \| crop design` | The figma skill's source read of the Design file: writes the `use_figma` calls, saves the returns, merges them into every node's data, crops the shared board images |
 | `figma/source.js` | Read-only Figma plugin script behind `figma-source.ts` (run through `use_figma`) |

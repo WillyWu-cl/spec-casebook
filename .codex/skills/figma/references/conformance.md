@@ -35,8 +35,8 @@ Figma output from the committed responses and board images, and every later step
 **The source read comes first (REQ-080, 2026-11-04).** A Design board the casebook inventories
 (`figma-inventory-*.json` on the Design file) with no merged board file, or one `merge` left incomplete, is a
 *source gap*: `status` names it and stops there (the next step is reading it, `source.md`), `check` warns, `plan`
-prints it and the Plan view lists it under the boards read with a warning. It clears when the board is read whole or
-excluded on the Plan view with a reason. Boards only the page `list` names are shown, not blocking. Never walk a
+prints it and the Capture plan view lists it under the boards read with a warning. It clears when the board is read whole or
+excluded on the Capture plan view with a reason. Boards only the page `list` names are shown, not blocking. Never walk a
 board's rows as a design pass before its read is whole: their captures match other boards' frames
 (1016_Chat navigation was walked unread and its captures landed on main flow frames).
 

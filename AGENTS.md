@@ -183,8 +183,25 @@ lines; put the full rule in the skill or reference file that applies it and poin
   a table's Open questions sit on Cases above the table with answer boxes, applied as rulings (`SKILL.md` step 4,
   Question answers). Open pages update only when what they show changed (user, 2026-11-05): Progress, Results, Coverage and
   Design redraw in place, patching only what differs; Cases offers a Reload button (`scripts/pages.ts` header).
+- **One pages server, only what is open (user, 2026-11-06).** `node scripts/pages.ts [--lan]` opens a navigation page
+  for every table; a page's process starts on its first visit and stops when idle, and what the pages leave on disk
+  is cleared (`scripts/pages.ts` header, `lib/housekeeping.ts`). A second start reuses the running server.
+- **`--lan` passcode (user, 2026-11-06).** Other computers enter a passcode, made at each start and printed for copying,
+  or set with `--passcode`; this computer needs none (`lib/passcode.ts`).
+- **Full images where things are compared (user, 2026-11-06).** Coverage boards and Design comparisons stay full quality and
+  load in the background behind a small copy; only Design's screen cards use the small copy itself.
+- **Run folders on disk (user, 2026-11-06).** `scripts/runs-storage.ts` measures them and clears what changes no
+  evidence: unzipped log copies (restorable with `unpack`) and identical files (APFS clones). Screenshots are never
+  removed or converted without the user's decision, and the agent leaves `--apply` to the user.
 - **Page servers after Save (user, 2026-11-06).** Once the user says they saved a table's page, stop the review or
-  page servers started for it, without asking; other features' servers stay (`SKILL.md` step 4).
+  page servers started for it, without asking; other features' servers stay, and so does a pages server the user
+  started or one serving other tables: its idle pages stop by themselves (`SKILL.md` step 4).
+- **Usage table stays on top (user, 2026-11-06).** Progress and Design open with the time and plan usage, clear and
+  visible on entering the page: make it more compact, never collapse it or move it below the content.
+- **Run screenshots stay local (user, 2026-11-06).** Never commit or push a run's screenshots, not even small copies:
+  runs are too frequent and the repo would bloat. Pages say when a run's images are not on this computer.
+- **Page layout (user, 2026-11-06).** Every tab has the same page width and side gutter (`--gutter` in
+  `scripts/page-shared.css.tpl`); Results shows each case in full by default, with Compact list as the option.
 - **One-off HTML pages (user, 2026-11-05).** A page asked for as HTML is a local file, not an artifact, and never goes
   on the Desktop: it goes in `library/<product>/<feature>/comparisons/` (git-ignored, local only), named
   `<date>_<topic>.html`. The committed spec agent comparisons stay in `<platform>/comparisons/`.

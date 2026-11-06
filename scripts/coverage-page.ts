@@ -32,11 +32,13 @@
 import { spawnSync } from 'node:child_process';
 import { createServer } from 'node:http';
 import { networkInterfaces, tmpdir } from 'node:os';
-import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { ROOT, arg, assertIds, draftsDir, featureDir, readManifest, readTable, tableDir } from './lib/library.ts';
+import { thumbnail } from './lib/thumbs.ts';
 import { LINK_STEP, linkBlocks } from './lib/links.ts';
 import { arrowRequirement, matchTaps, requirementRows, tcList, type MatchGroup, type TapMatch } from './lib/coverage.ts';
+import { withShared } from './lib/page-shared.ts';
 
 const [feature, platform] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -54,7 +56,8 @@ async function serveMode(): Promise<never> {
     builtFor = stamp;
     const r = spawnSync(process.execPath, [join(ROOT, 'scripts', 'coverage-page.ts'), ...child, '--out', cache], { encoding: 'utf8' });
     if (r.status !== 0) throw new Error(r.stderr || r.stdout);
-    builtAt = Date.now(); html = readFileSync(cache, 'utf8'); return html;
+    // the page lives in memory from here: the file goes, or every start leaves ~1 MB in the temp folder
+    builtAt = Date.now(); html = readFileSync(cache, 'utf8'); rmSync(cache, { force: true }); return html;
   };
   build();
   const server = createServer((req, res) => {
@@ -75,6 +78,8 @@ async function serveMode(): Promise<never> {
           // revalidated on every load: a board is re-rendered (or a new Figma shot pulled) under the same name
           const mod = new Date(Math.floor(statSync(p).mtimeMs / 1000) * 1000).toUTCString();
           if (req.headers['if-modified-since'] === mod) { res.writeHead(304); res.end(); return; }
+          // ?thumb: the small copy shown until the full board has arrived
+          if (/[?&]thumb\b/.test(req.url!)) { thumbnail(p).then(t => { res.writeHead(200, { 'content-type': t ? 'image/jpeg' : type, 'cache-control': 'no-cache', 'last-modified': mod }); res.end(readFileSync(t ?? p)); }).catch(() => { if (!res.headersSent) { res.writeHead(404); res.end(); } }); return; }
           res.writeHead(200, { 'content-type': type, 'cache-control': 'no-cache', 'last-modified': mod }); res.end(readFileSync(p)); return; }
       }
       res.writeHead(404); res.end('Not found');
@@ -419,7 +424,7 @@ const data = {
   boards, screens: inv.screens.map((s: any) => ({ id: s.id, board: s.board, box: s.box, name: s.name, panel: !!s.panel, other: s.platform !== platform && s.platform !== 'any' })),
   groups, arrows, notes, rows: rowInfo, reqs,
 };
-const tpl = readFileSync(join(import.meta.dirname, 'coverage-page.tpl'), 'utf8');
+const tpl = withShared(readFileSync(join(import.meta.dirname, 'coverage-page.tpl'), 'utf8'));
 writeFileSync(out, tpl.replaceAll('__TITLE__', `${data.title} Coverage`).replace('__DATA__', () => JSON.stringify(data).replace(/</g, '\\u003c')));
 const count = (xs: any[]) => xs.reduce((m, x) => (m[x.status] = (m[x.status] ?? 0) + 1, m), {} as Record<string, number>);
 console.log(JSON.stringify({ out, kb: Math.round(statSync(out).size / 1024), runs: runNames.length, taps: taps.length, images: boards.filter(b => b.img).length + '/' + boards.length,
