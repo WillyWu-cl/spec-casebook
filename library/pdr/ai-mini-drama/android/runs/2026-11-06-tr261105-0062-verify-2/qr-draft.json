@@ -1,0 +1,124 @@
+{
+  "tr": "TR261106-0032",
+  "product": "PowerDirector Mobile for Android",
+  "tester": "ETHAN_HSU",
+  "template": "Standard Report",
+  "testingDate": "2026/11/06",
+  "version": "16.8.0",
+  "build": "2611052",
+  "buildDay": "1105",
+  "os": "Android 15",
+  "osLanguage": "English",
+  "env": {
+    "device": "Samsung Galaxy A53 (SM-A5360) / Android 15",
+    "server": "Stage",
+    "account": "cltqauiap2@gmail.com (Free; Pro for the video checks)",
+    "testedBy": "AI agent (Claude Opus 5.5) driving the phone over Appium; verdicts and evidence reviewed by ETHAN_HSU",
+    "install": "tested on the previous round's build (TR261105-0062), not on this TR's 16.8.0.2611061; APK from that TR's OneDrive folder (MD5 checked), clean install (uninstall, then install) on 2026/11/06",
+    "scope": "the four eBugs created by ETHAN_HSU on this TR's verify list that the 2611052 run covered (P0343, P0348, P0358, P0363)"
+  },
+  "observations": [
+    "A storyboard in its second stage stops a few seconds after the app goes to the background (Home or Recents); the drama keeps a failed storyboard and History shows no failure mark.",
+    "After a storyboard image failed to download, its 3 credits were not refunded within a few minutes.",
+    "After the storyboard on one drama, no 「Choose your video settings」 card appeared and there was no other way to create the video; a character voice sample had failed on the server just before.",
+    "The 「Good news!」 toast showed while the drama's chat was open, about 15 seconds before the video card under it finished loading.",
+    "A scene update is offered as 「Create the rest of the video (15 sec)」, the wording of the full-video step.",
+    "After a rename, the Storyboard Preview card in the chat still shows the old title."
+  ],
+  "rows": [
+    {
+      "bug": "DRA262610P0343",
+      "result": "OK",
+      "summary": "the back arrow in the storyboard's second stage shows no dialog, only the toast 「We'll keep making your storyboard. Find it in History.」, and the storyboard finishes, charged once (the first stage still asks 「Leave while we're preparing?」, as specified)",
+      "images": [
+        "16.8.0.2611052_DRA262610P0343_02_stage1_dialog.png",
+        "16.8.0.2611052_DRA262610P0343_03_stage2_before_back.png",
+        "16.8.0.2611052_DRA262610P0343_04_stage2_back_toast.png"
+      ],
+      "logs": [
+        "16.8.0.2611052_DRA262610P0343_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Storyboard stage ②: Back still asks 「Stop and lose your credits?」",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0348",
+      "result": "OK",
+      "summary": "leaving with the back arrow and reopening from History, after Stop, and after a resumed storyboard, the chat keeps every earlier message and card; the video card comes back after a reopen and after the app is restarted",
+      "note": "After the app is closed and reopened, the chat keeps only the generated cards (outline, characters, storyboard, video), which RD describes as the current Android design and History notes.",
+      "images": [
+        "16.8.0.2611052_DRA262610P0348_02_outline_after_reopen.png",
+        "16.8.0.2611052_DRA262610P0348_03_after_stop_card_stays.png",
+        "16.8.0.2611052_DRA262610P0348_04_after_resume_characters_reply.png",
+        "16.8.0.2611052_DRA262610P0348_12_video_card_after_app_restart.png"
+      ],
+      "logs": [
+        "16.8.0.2611052_DRA262610P0348_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Chat loses earlier messages and cards after a reopen, a Stop or a resume",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0358",
+      "result": "OK",
+      "summary": "a drama renamed in History while its video is processing gets the push and the 「Good news!」 toast with the new name",
+      "note": "Checked on a Fast Preview 30 sec video job; a scene update on this build went straight to done, with no in-progress stage to rename in.",
+      "images": [
+        "16.8.0.2611052_DRA262610P0358_02_history_renamed_processing.png",
+        "16.8.0.2611052_DRA262610P0358_03_toast_new_name.png"
+      ],
+      "logs": [
+        "16.8.0.2611052_DRA262610P0358_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Renaming a drama during a video job: the push uses the old name and no toast shows",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    },
+    {
+      "bug": "DRA262610P0363",
+      "result": "OK",
+      "summary": "after leaving a video job, the drama opened from History four times within two minutes, each time at its video stage with the video still in progress, never an empty new chat",
+      "images": [
+        "16.8.0.2611052_DRA262610P0363_01_stage2_before_leave.png",
+        "16.8.0.2611052_DRA262610P0363_02_history_processing.png",
+        "16.8.0.2611052_DRA262610P0363_03_first_open_video_stage.png",
+        "16.8.0.2611052_DRA262610P0363_04_fourth_open_video_stage.png"
+      ],
+      "logs": [
+        "16.8.0.2611052_DRA262610P0363_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: History opens an empty new chat for about 2 minutes after leaving a video job",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    }
+  ],
+  "uploaded": {
+    "DRA262610P0343": [
+      "16.8.0.2611052_DRA262610P0343_02_stage1_dialog.png",
+      "16.8.0.2611052_DRA262610P0343_03_stage2_before_back.png",
+      "16.8.0.2611052_DRA262610P0343_04_stage2_back_toast.png",
+      "16.8.0.2611052_DRA262610P0343_log.txt"
+    ],
+    "DRA262610P0348": [
+      "16.8.0.2611052_DRA262610P0348_02_outline_after_reopen.png",
+      "16.8.0.2611052_DRA262610P0348_03_after_stop_card_stays.png",
+      "16.8.0.2611052_DRA262610P0348_04_after_resume_characters_reply.png",
+      "16.8.0.2611052_DRA262610P0348_12_video_card_after_app_restart.png",
+      "16.8.0.2611052_DRA262610P0348_log.txt"
+    ],
+    "DRA262610P0358": [
+      "16.8.0.2611052_DRA262610P0358_02_history_renamed_processing.png",
+      "16.8.0.2611052_DRA262610P0358_03_toast_new_name.png",
+      "16.8.0.2611052_DRA262610P0358_log.txt"
+    ],
+    "DRA262610P0363": [
+      "16.8.0.2611052_DRA262610P0363_01_stage2_before_leave.png",
+      "16.8.0.2611052_DRA262610P0363_02_history_processing.png",
+      "16.8.0.2611052_DRA262610P0363_03_first_open_video_stage.png",
+      "16.8.0.2611052_DRA262610P0363_04_fourth_open_video_stage.png",
+      "16.8.0.2611052_DRA262610P0363_log.txt"
+    ]
+  }
+}

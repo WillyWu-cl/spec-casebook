@@ -1,0 +1,26 @@
+Excerpt, build 16.8.0.2611052. Fast Preview 30 s job; left stage 2 with the back arrow 14:39:38, opened the drama from History 14:40:10 and 14:40:38 (another drama 14:40:32 in between); video done 14:44:25.
+
+11-06 14:39:38.229 23297 23297 I Toast   : show: caller = t0l.a:27 
+11-06 14:39:58.257 23297 23297 D MiniDrama Log: [SYS] screen closing; releasing agent with turns in flight: [261106_142816_c9722a78]
+11-06 14:39:58.258 23297 23743 D MiniDrama Log: [SYS] agent_destroy started
+11-06 14:39:58.415 23297 23743 D MiniDrama Log: [SYS] agent_destroy: queueWait=0ms lockWait=0ms native=153ms callback=4ms total=157ms
+11-06 14:39:59.154 23297 23633 D MiniDrama Log: [SYS] agent_create requested
+11-06 14:39:59.405 23297 23633 D MiniDrama Log: [SYS] agent created after 251ms
+11-06 14:39:59.427 23297 27695 D MiniDrama Log: [SYS] session_created: 261106_143959_a0b4ec35
+11-06 14:40:10.145 23297 27529 D MiniDrama Log: [SYS] opening 261106_142816_c9722a78: agent ready after 0ms
+11-06 14:40:10.161 23297 27529 D MiniDrama Log: [SYS] restored session 261106_142816_c9722a78 (chars=5, shots=6)
+11-06 14:40:10.185 23297 23675 D MiniDrama Log: [DECISION] restored approval for interrupted turn: {VIDEO=2}
+11-06 14:40:10.241 23297 23297 D MiniDrama Log: [CARD] video card: live=null arriving=6 confirm=false awaiting=true liveComplete=null opensNew=false
+11-06 14:40:10.241 23297 23297 D MiniDrama Log: [CARD] video card moved to latest: card_video_r1
+11-06 14:40:10.244 23297 27529 D MiniDrama Log: [SYS] pending_resume detected, resuming turn for session 261106_142816_c9722a78
+11-06 14:40:10.245 23297 27529 D MiniDrama Log: [SYS] session_resume -> 0 for 261106_142816_c9722a78
+11-06 14:40:18.321 23297 23297 I Toast   : show: caller = t0l.a:27 
+11-06 14:40:29.695 23297 23297 I Toast   : show: caller = t0l.a:27 
+11-06 14:40:32.936 23297 23675 D MiniDrama Log: [SYS] opening 261106_141313_0fdc5b84: agent ready after 0ms
+11-06 14:40:32.948 23297 23675 D MiniDrama Log: [SYS] restored session 261106_141313_0fdc5b84 (chars=4, shots=6)
+11-06 14:40:38.224 23297 27695 D MiniDrama Log: [SYS] opening 261106_142816_c9722a78: agent ready after 0ms
+11-06 14:40:38.234 23297 27695 D MiniDrama Log: [SYS] restored session 261106_142816_c9722a78 (chars=5, shots=6)
+11-06 14:40:38.270 23297 23297 D MiniDrama Log: [CARD] video card: live=null arriving=6 confirm=false awaiting=true liveComplete=null opensNew=false
+11-06 14:40:38.270 23297 23297 D MiniDrama Log: [CARD] video card moved to latest: card_video_r1
+11-06 14:40:46.995 23297 23297 I Toast   : show: caller = t0l.a:27 
+11-06 14:44:25.809 23297 27695 D MiniDrama Log: [TURN] turn_complete: final_state=complete

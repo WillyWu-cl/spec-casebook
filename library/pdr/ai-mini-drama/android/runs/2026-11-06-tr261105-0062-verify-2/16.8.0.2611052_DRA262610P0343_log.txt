@@ -1,0 +1,49 @@
+Excerpt, build 16.8.0.2611052. Generate 14:00:28; stage 1 dialogs 14:00:30 and 14:00:46; stage 2 back 14:00:56.
+
+2026-11-06 14:00:28.481 18028 18028 D MiniDramaPerf: t4 +267s                         host   turn          turn_end                       superseded
+2026-11-06 14:00:30.934 18028 18028 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false
+2026-11-06 14:00:30.946 18028 18028 I WindowManager: WindowManagerGlobal#addView, ty=2, view=com.android.internal.policy.DecorView{80c49d5 V.E...... R.....I. 0,0-0,0}[MiniDramaActivity], caller=android.view.WindowManagerImpl.addView:158 and
+2026-11-06 14:00:39.104 18028 18028 I WindowManager: WindowManagerGlobal#removeView, ty=2, view=com.android.internal.policy.DecorView{80c49d5 V.E...... R....... 0,0-759,653 aid=1073741852}[MiniDramaActivity], caller=android.view.WindowManag
+2026-11-06 14:00:46.197 18028 18028 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false
+2026-11-06 14:00:46.207 18028 18028 I WindowManager: WindowManagerGlobal#addView, ty=2, view=com.android.internal.policy.DecorView{a284c05 V.E...... R.....I. 0,0-0,0}[MiniDramaActivity], caller=android.view.WindowManagerImpl.addView:158 and
+2026-11-06 14:00:53.393 18028 18151 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…env_img_1 consumeTaskId=91683891 files=1
+2026-11-06 14:00:55.086 18028 18028 I WindowManager: WindowManagerGlobal#removeView, ty=2, view=com.android.internal.policy.DecorView{a284c05 V.E...... R....... 0,0-759,653 aid=1073741854}[MiniDramaActivity], caller=android.view.WindowManag
+2026-11-06 14:00:56.752 18028 18028 I Toast   : show: caller = t0l.a:27 
+2026-11-06 14:01:16.346 18028 18164 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…env_img_2 consumeTaskId=91683892 files=1
+2026-11-06 14:01:47.843 18028 18153 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…env_img_3 consumeTaskId=91683895 files=1
+2026-11-06 14:02:17.227 18028 19009 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…env_img_4 consumeTaskId=91683897 files=1
+2026-11-06 14:02:57.278 18028 19009 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…env_img_5 consumeTaskId=91683906 files=1
+2026-11-06 14:03:36.055 18028 21383 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…preview_tts consumeTaskId=91683910 files=1
+2026-11-06 14:03:36.575 18028 21385 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…tts_7 consumeTaskId=91683911 files=1
+2026-11-06 14:03:38.786 18028 18164 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…tts_8 consumeTaskId=91683912 files=1
+2026-11-06 14:03:44.316 18028 21383 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…img_1 consumeTaskId=91683913 files=1
+2026-11-06 14:03:47.714 18028 21384 D MiniDrama Log: [TOOL] MyCreation receipt failed call=261106_134503_6dda5827_t4_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_tts_8
+2026-11-06 14:03:50.544 18028 21392 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…img_2 consumeTaskId=91683914 files=1
+2026-11-06 14:03:51.026 18028 21392 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…img_3 consumeTaskId=91683915 files=1
+2026-11-06 14:03:51.527 18028 18151 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…img_5 consumeTaskId=91683916 files=1
+2026-11-06 14:03:52.155 18028 21383 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…img_4 consumeTaskId=91683917 files=1
+2026-11-06 14:03:52.806 18028 21392 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=…img_6 consumeTaskId=91683918 files=1
+2026-11-06 14:04:33.070 18028 21392 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-06 14:04:33.075 18028 21392 E MiniDramaFail: [engine] target=char_480e605f | tool=VoiceReference | agent_tool_dispatch('TextToSpeech') failed: generation_failed - Others: result:Error 4000 External Error
+2026-11-06 14:04:33.085 18028 18028 I Toast   : show: caller = t0l.a:27 
+2026-11-06 14:04:33.092 18028 21392 E MiniDramaFail: [storyboard] {"error_message":"","status_code":0} | agent_tool_dispatch('TextToSpeech') failed: generation_failed - Others: result:Error 4000 External Error
+2026-11-06 14:04:33.100 18028 18028 I Toast   : show: caller = t0l.a:27 
+2026-11-06 14:04:38.627 18028 18028 D MiniDramaPerf: t5 +250s                         host   turn          turn_end                       complete stage=storyboard→storyboard
+2026-11-06 14:07:02.410 18028 18028 D MiniDramaPerf: t6 +136s                         host   turn          turn_end                       superseded
+2026-11-06 14:07:23.688 18028 21383 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-06 14:07:23.726 18028 18028 D MiniDramaPerf: t7 +21.3s                        host   turn          turn_end                       complete stage=storyboard→storyboard
+
+Balance changes
+2026-11-06 13:51:27.891 totalRemain=28019
+2026-11-06 14:00:53.752 totalRemain=28016
+2026-11-06 14:01:16.652 totalRemain=28013
+2026-11-06 14:01:48.354 totalRemain=28010
+2026-11-06 14:02:17.567 totalRemain=28007
+2026-11-06 14:02:57.588 totalRemain=28004
+2026-11-06 14:03:36.830 totalRemain=28002
+2026-11-06 14:03:39.183 totalRemain=28001
+2026-11-06 14:03:44.855 totalRemain=27999
+2026-11-06 14:03:51.021 totalRemain=27993
+2026-11-06 14:03:51.553 totalRemain=27990
+2026-11-06 14:03:52.170 totalRemain=27987
+2026-11-06 14:03:53.266 totalRemain=27984

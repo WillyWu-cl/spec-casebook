@@ -1,0 +1,6 @@
+                android.text=String ("Rose Test Renamed" is done. Tap to watch it.)
+                android.bigText=String ("Rose Test Renamed" is done. Tap to watch it.)
+11-06 14:43:57.720 D/FcmInstanceIDService(23297): key = Nid, value = 112
+11-06 14:43:57.720 D/FcmInstanceIDService(23297): key = IsSilent, value = false
+11-06 14:43:57.720 D/FcmInstanceIDService(23297): key = Title, value = Your drama is ready
+11-06 14:43:57.720 D/FcmInstanceIDService(23297): key = Link, value = pdr://click_mini_drama?oid=261106_142816_c9722a78&run=64b139b3-1ab7-4804-baa2-da53b4cc1c08

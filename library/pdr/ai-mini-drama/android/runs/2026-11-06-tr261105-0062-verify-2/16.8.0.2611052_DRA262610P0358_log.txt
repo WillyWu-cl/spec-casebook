@@ -1,0 +1,14 @@
+Excerpt, build 16.8.0.2611052. Renamed 「Love, Unscripted」 to 「Rose Test Renamed」 in History 14:41:04 while the video was processing, then waited on the AI Mini Drama landing page. The server's FCM payload still carries the old name; the notification the app posts and its 「Good news!」 toast use the new one.
+
+11-06 14:43:27.814 23297 28303 D FcmInstanceIDService: key = Msg, value = "Love, Unscripted" is done. Tap to watch it.
+11-06 14:43:27.814 23297 28303 D FcmInstanceIDService: key = Title, value = Your drama is ready
+11-06 14:43:53.242 23297 23633 D MiniDrama Log: [R2V] task 1 DONE: local=/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261106_142816_c9722a78/media/reftovideo_261106_
+11-06 14:43:57.720 23297 28303 D FcmInstanceIDService: key = Msg, value = "Love, Unscripted" is done. Tap to watch it.
+11-06 14:43:57.720 23297 28303 D FcmInstanceIDService: key = Title, value = Your drama is ready
+11-06 14:44:25.722 23297 27695 D MiniDrama Log: [R2V] task 1 DONE: local=/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261106_142816_c9722a78/media/reftovideo_261106_
+11-06 14:44:25.762 23297 28386 D MiniDramaPerf: t1 +266s                         iris   event         turn_complete
+11-06 14:44:25.809 23297 27695 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+
+Notification posted on the phone (dumpsys notification, 14:44):
+  android.title=Your drama is ready
+  android.text="Rose Test Renamed" is done. Tap to watch it.
