@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-04T07:56:23.208Z",
+  "built_at": "2026-11-06T01:38:44.351Z",
   "spec_set": "2026-10-21-2",
   "file": {
     "fileKey": "dZk5HLzZTdcZwWwvN9aZfZ",
@@ -292,7 +292,16 @@
     "3153:103983"
   ],
   "source_gaps": {
-    "unread": [],
+    "unread": [
+      {
+        "id": "5756:33097",
+        "name": "Template categories 3 per row"
+      },
+      {
+        "id": "5756:33322",
+        "name": "Template categories 4 per row"
+      }
+    ],
     "incomplete": [],
     "listed": [
       {

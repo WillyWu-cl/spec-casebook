@@ -12,7 +12,7 @@
 | R-050 | changed | 6 per scene image + TTS (sheet) | 3 per image, Location and scene, + TTS 1 per 1000 characters (◆37 for 6 scenes) |
 | R-059 | changed | Regenerate Image ◆6 / ◆12 (Design) | ◆3 / ◆6 (3 per image) |
 | R-061 | changed | 6 per image (sheet) | 3 per image + 1 TTS when the preview is remade |
-| R-069 | changed | 6 / 13 / 4 per second; Preview 180 / 390 / 120, Full 540 / 1170 / 360 | 6 / 4 / 2 per second at 480p; Preview 180 / 120 / 60, Full 540 / 360 / 180 (+4 seen: Q-38); iOS ids Q-39 |
+| R-069 | changed | 6 / 13 / 4 per second; Preview 180 / 390 / 120, Full 540 / 1170 / 360 | 6 / 4 / 2 per second at 480p; Preview 180 / 120 / 60, Full 540 / 360 / 180 + 4 reference audio = 544 / 364 / 184 (RD's explanation, relayed by the user, 2026-11-06, Q-38); iOS ids Q-39 |
 | R-081 | changed | 15 s scene ◆195 / ◆60 / ◆90 | ◆90 / ◆60 / ◆30 |
 | R-147 | changed | full price = sheet | full price = Credit System forms; discount still held |
 | R-254 | changed | one character ◆6 | ◆4 |
@@ -22,7 +22,7 @@
 | R-465 | changed | `…_aiminidrama_normal` / `_discount` sheet ids | Credit System form ids, no suffix (images gptimage2.5sunburst 1k, TTS gemini3.8flash, Seedance 2.5 / 2.0 480p aiminidrama, Mini 480p Text to Video id); iOS ids of 2.5 / 2.0 / TTS: Q-39 |
 | Q-32 | changed | answered by REQ-059 (sheet prices) | superseded by REQ-103 |
 | Q-33 | changed | no Seedance 2.5 row in the sheet | answered: 6 per second (form 22937582357) |
-| Q-38 | new | – | new: Full Video quoted 4 above 90 × the rate on Android 16.8.0.2611041 |
+| Q-38 | new, answered | – | Full Video quoted 4 above 90 × the rate on Android 16.8.0.2611041; RD's explanation, relayed by the user, 2026-11-06: the 4 is the reference audio (「4點應該是生reference audio的點數」); answered |
 | Q-39 | new | – | new: iOS action ids for Seedance 2.5 / 2.0 and TTS are not in the forms (Android only) |
 | Q-40 | new | – | new: which id / price books the Storyboard Preview narration (TTS form says voice samples only) |
 
@@ -64,7 +64,7 @@
 - Annotation and control traces: carried over unchanged (no new board).
 
 ## Not added (value check)
-- A separate row for the Full Video +4: TC-080 already reads every Full quote; the difference waits on Q-38.
+- A separate row for the Full Video reference-audio +4: TC-080 already reads every Full quote (RD's explanation, relayed by the user, 2026-11-06, Q-38 answered).
 - A row for the Mini 720p price (4/s): the app offers no resolution choice; Fast is quoted at the 480p rate.
 
 ## PM-only rows
@@ -74,6 +74,6 @@
 - No device run (prices were read from the forms and the 2026-11-05 Android run). The Full Video charge itself was not generated (needs the user's go-ahead, REQ-073).
 
 ## Questions for you
-- Q-38: Full Video 90 s is quoted ◆544 / ◆364 / ◆184 on Android 16.8.0.2611041, 4 above 90 × 6 / 4 / 2; no form explains the 4. Rows expect ◆540 / ◆360 / ◆180 and record the quote.
+- Q-38: RD's explanation, relayed by the user, 2026-11-06 (「4點應該是生reference audio的點數」); answered (no Credit System form names it yet): Full Video 90 s = video + 4 for the reference audio = ◆544 / ◆364 / ◆184; Preview 30 s has no such charge because its reference audio was generated at the character / scene step (「30s的應該前面生角色場景的地方生過了，所以不用重生」); R-069 and TC-080 updated.
 - Q-39: the Seedance 2.5 / 2.0 AI Mini Drama and TTS forms list Android only; rows apply the same prices on iOS and record the iOS ids.
 - Q-40: the TTS form is for character voice samples only, yet the Storyboard Preview narration is charged as Text to Speech (◆1); which id does it use?

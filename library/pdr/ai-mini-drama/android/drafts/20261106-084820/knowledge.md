@@ -8,6 +8,11 @@ AI Mini Drama prices follow these forms, not the MX ③ charging sheet (REQ-059)
 scene, regenerate) 3; Text to Speech 1 per 1000 characters. A character is ◆4 (image + voice sample); a storyboard is
 3 per image + 1. Discounts: none in the forms (held).
 
+### KF-058 Full Video adds 4 credits for the reference audio (authority observed)
+A Full Video quote is 90 s × the per-second rate (KF-056) plus 4 credits for generating the reference audio: Best /
+Standard / Fast ◆544 / ◆364 / ◆184. Preview • 30 sec has no such charge (◆180 / ◆120 / ◆60): its reference audio was already
+generated at the character / scene step, so it is not generated again.
+
 ### KP-007 A failed generation refunds its credits (authority team, unverified)
 A failed item costs nothing net; a partial failure costs only the items that succeeded. A missing or wrong refund is
 a defect with its own eBug, even when the failure itself is already filed.
@@ -70,4 +75,4 @@ say 「Meme Dance Generator」; use the build's name and don't file the differen
 ### KP-038 Advanced Cutout and AI Smart Cutout
 One capability: the Mine Free card calls it 「Advanced Cutout」, the paywall's Compare plans 「AI Smart Cutout」.
 
-<!-- knowledge hash: 725b269fa83493a1 -->
+<!-- knowledge hash: cce8f6e89a5c808d -->
