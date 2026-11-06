@@ -275,8 +275,8 @@ test('check: every planted difference is found, and nothing else', () => {
   // not checked (user, 2026-11-06): the words (「Choose the template」) and where a text sits (「Pick a style…」 12 pt right)
   assert.ok(!c.some((x: any) => ['copy', 'position'].includes(x.kind) || x.id === 'extra:choose the template'), 'other words are neither copy, missing nor extra');
   const by = (id: string) => c.find((x: any) => x.id === id);
-  assert.deepEqual(by('padding:1:1i').delta, { left: -6 }, 'the label moved inside a tag of the right width: its left padding, the total is the same');
-  assert.deepEqual(by('align:1:14').delta, { x: 7.5 });
+  assert.deepEqual(by('padding:1:1i').delta, { left: -4.7 }, 'the label moved inside a tag of the right width: its left padding, the total is the same');
+  assert.deepEqual(by('align:1:14').delta, { x: 7.7 });
   assert.deepEqual(by('spacing:1:1j-1:1d').delta, { gap: 4 });
   assert.match(by('border:1:15').note, /Figma draws a 1 pt border, the app none/);
   assert.ok(c.some((x: any) => x.id === 'sample:1:17' && x.severity === 'info'), 'long sample text is info');

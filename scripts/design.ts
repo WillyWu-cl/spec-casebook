@@ -45,8 +45,8 @@
 //             (same characters), or taller or shorter, than this platform draws Figma's font (sizeCands)      minor
 //   weight    the app's font weight 100 or more from Figma's (view data)                                   minor
 //   radius    a fill's corner radius over 2 dp from Figma's (view data)                                     minor
-//   padding   a text's inset to the edge of its box (button, chip, card, tag) off Figma's (layoutCands)  minor
-//   align     a text Figma centres in its box off centre (layoutCands)                                    minor
+//   padding   a text's letters' inset to the edge of its box (button, chip, card, tag) off Figma's (layoutJudge) minor
+//   align     a text Figma centres in its box off centre (layoutJudge)                                    minor
 //   border    the box's border drawn differently (borderCands)                                            minor
 //   spacing   the gap between neighbouring buttons off Figma's (layoutCands)                              minor
 //   colour    a filled shape (button, chip, card, badge) ΔE > 12 from its Figma fill, or a text ΔE > 18   minor
@@ -171,7 +171,7 @@ function measure() {
       boards.set(board, read(f).nodes); }
     return boards.get(board)!;
   };
-  const results: any[] = [], samples: any[] = [], sheets: any[] = [], shares: any[] = [], borders: any[] = [];
+  const results: any[] = [], samples: any[] = [], sheets: any[] = [], shares: any[] = [], borders: any[] = [], pends: any[] = [];
   const ocrDark = new Map<string, boolean | null>();
   const ocr = ocrPass(ocrDark, [...caps.values()].flatMap(cap => { const scr = plan.screens.find((s: any) => s.id === cap.screen);
     return scr && existsSync(imageOf(cap.png)) ? [{ cap, scr, figma: figmaCrop(scr, out), figCache: join(ex, 'figma', 'design-ocr', `${scr.id.replace(/[:;]/g, '-')}.json`) }] : []; }));
@@ -388,6 +388,7 @@ function measure() {
     const lay = layoutCands({ fig, base, els, V, k, Wf, cands, placed });
     cands.push(...lay.cands);
     for (const b of lay.borders) borders.push({ ...b, screen: scr.id, png: imageOf(cap.png), win: cap.win, k });
+    for (const m of lay.pend) pends.push({ ...m, screen: scr.id, png: imageOf(cap.png), win: cap.win, k, Wf });
     // recheck: the bugs settled on an earlier build, still measured here or gone
     let recheck: any = null;
     if (oldFindings?.[scr.id]) {
@@ -399,6 +400,7 @@ function measure() {
       parts: parts.get(cap.screen)!.map(p => p.png), note: cap.note || '', build, win: cap.win, k: r3(k), fw: Wf, arrival, fit,
       ...(fig.out.length ? { out: fig.out.map(o => ({ name: o.name, box: r1(o.box) })) } : {}), ...(cap.unsettled ? { unsettled: true } : {}),
       ...(lay.unmatched ? { layout_unmatched: lay.unmatched } : {}),
+
       ...(hidden.length ? { hidden } : {}), ...(disagree.length ? { layers_disagree: disagree } : {}),
       ...(V ? { views: { texts: V.texts.length, fills: V.fills.length, font_scale: V.fontScale, matched: base.filter((p: any) => p.vt).length } } : {}), ...(sizes.length ? { sizes } : {}), ocr: { app: !!oA, figma: !!oF }, layers: layered,
       // every text of both sides as read, for the reviewers to quote (conformance.md §4: never read text off the image)
@@ -410,7 +412,13 @@ function measure() {
   // one python call samples every shape (the most common colour inside it) and every text (the pixels farthest
   // from its background), and draws the sheets
   // each sample twice: on the capture (as the app draws it) and on the Figma crop (as Figma draws it)
-  const py = python({ shares, borders: borders.map(b => ({ box: b.app, png: b.png, win: b.win, k: b.k })), samples: samples.flatMap(s => [{ kind: s.kind, box: s.box, png: imageOf(caps.get(s.screen).png), win: caps.get(s.screen).win },
+  // the letters and borders on the screenshots first, so their items are numbered on the sheets
+  const pre = python({ sheets: [], samples: [], inks: pends.map(m => ({ ...m.ink, png: m.png, win: m.win })), borders: borders.map(b => ({ box: b.app, png: b.png, win: b.win, k: b.k })) });
+  for (const [i, m] of pends.entries()) { const r = results.find(r => r.id === m.screen); if (!r) continue;
+    const j = layoutJudge(m, pre.inks?.[i] ?? null, m.k, m.Wf);
+    if (j.unmatched) r.layout_unmatched = (r.layout_unmatched ?? 0) + 1; else if (j.cand) r.candidates.push(j.cand); }
+  borderCands(borders, pre.borders ?? [], results);
+  const py = python({ shares, samples: samples.flatMap(s => [{ kind: s.kind, box: s.box, png: imageOf(caps.get(s.screen).png), win: caps.get(s.screen).win },
     s.fig ? { kind: s.kind, box: [s.figBox[0] + s.fig.dx, s.figBox[1] + s.fig.dy, s.figBox[2], s.figBox[3]], png: s.fig.png, win: { w: s.fig.w } } : { kind: 'none' }]),
     sheets: sheets.map(s => ({ ...s, cands: results.find(r => r.id === s.screen).candidates })) });
   const drift: string[] = []; let setChecked = 0;
@@ -434,10 +442,13 @@ function measure() {
     if (d > room && !c)
       r.candidates.push({ id: `colour:${s.node}`, kind: 'colour', severity: 'minor', note: s.kind === 'text' ? 'text colour' : undefined, figma, app: { color: got }, delta: { dE: Math.round(d) } });
   }
-  borderCands(borders, py.borders ?? [], results);
   if (setChecked) console.log(`app colours: ${setChecked} set values checked against the screen, ${drift.length} drawn differently${drift.length ? `:\n  ${drift.join('\n  ')}` : ''}`);
   const all = [...prev, ...results].sort((a, b) => plan.screens.findIndex((s: any) => s.id === a.id) - plan.screens.findIndex((s: any) => s.id === b.id));
   const fontWidth = sizeCands(all, results);
+  // the recheck once every item of each screen is in: padding, centring and border (the pass before the sheets),
+  // colour (sampled with the sheets) and size (judged over the whole run) come after the screen's own loop
+  for (const r of results) if (r.recheck) { const now = new Set(r.candidates.map((c: Cand) => c.id));
+    for (const it of r.recheck.items) if (!it.id.startsWith('visual:')) it.now = now.has(it.id) ? 'still' : 'fixed'; }
   // one screen per line (writeJsonRows): the file is rewritten on every check and committed with the run
   writeJsonRows(join(designDir, 'compare.json'), { built_at: new Date().toISOString(), spec_set: plan.spec_set, platform, build, recheck_of: old ? basename(oldDir!) : undefined,
     ...(fontWidth ? { font_width: fontWidth } : {}), screens: all });
@@ -529,16 +540,16 @@ function union(g: { box: Box }[]): Box { const x = Math.min(...g.map(o => o.box[
 // ---- layout (user, 2026-11-06) --------------------------------------------------------------------------------------
 // What the check holds the app to beside sizes and colours: a text's padding inside its box (button, chip, card, tag)
 // and its centring there, the box's border, and the gaps between buttons. Not where a text sits on the screen, and not
-// its words. All in Figma points (app boxes through k). Glyph boxes when both sides were read (Figma's render bounds,
-// the screenshot's OCR: ±2 pt), else the text boxes, with a point more of room.
-//   padding  a side's inset from the text to its box edge more than 3 pt (4 pt on text boxes) off Figma's: the left
+// its words. All in Figma points (app boxes through k). The app's letters are found on the screenshot (layoutJudge),
+// Figma's are its render bounds; without letters, OCR boxes (±2 pt) or text boxes, with more room.
+//   padding  a side's inset from the text to its box edge more than 2 pt (3 on OCR boxes, 4 on text boxes) off Figma's: the left
 //            (right for a right-aligned text) and the top; where the box hugs its content (auto layout, a chip) and the
 //            words are the same, left and right together (and top and bottom), their sum off, centred or not; top and
 //            bottom only for a single line on both sides. Down, the
 //            inset is taken to the middle of the text's line: the platform font draws its letters higher or lower in
 //            the same line. A box from edge to edge of the screen (a tab bar) is not measured across: there an inset
 //            is only where the text sits on the screen
-//   align    a text Figma centres in its box (centre alignment or equal insets) more than 3 pt (4) off centre
+//   align    a text Figma centres in its box (centre alignment or equal insets) more than 2 pt (3, 4) off centre
 //   spacing  the gap (up to 32 pt in Figma) between two neighbouring buttons on a row or in a column more than 2 pt off
 //            Figma's edge to edge, or 3 pt centre to centre when an app box is not the drawn size (a touch area);
 //            buttons far apart are placed by the content between them (sample texts), not by a gap
@@ -548,7 +559,7 @@ function union(g: { box: Box }[]): Box { const x = Math.min(...g.map(o => o.box[
 //            box: one drawn and not the other, its colour ΔE > 18, or its width more than 1 pt off
 type Lay = { fig: any; base: any[]; els: { text: string; box: Box; actionable: boolean }[]; V: Views | null; k: number; Wf: number; cands: Cand[]; placed: (b: number[]) => Box };
 function layoutCands({ fig, base, els, V, k, Wf, cands, placed }: Lay) {
-  const out: Cand[] = [], borders: any[] = []; let unmatched = 0;
+  const out: Cand[] = [], borders: any[] = [], pend: any[] = []; let unmatched = 0;
   const toFig = (b: Box): Box => [b[0] * k, b[1] * k, b[2] * k, b[3] * k];
   const inside = (o: Box, i: Box, pad = 1) => i[0] >= o[0] - pad && i[1] >= o[1] - pad && i[0] + i[2] <= o[0] + o[2] + pad && i[1] + i[3] <= o[1] + o[3] + pad;
   const sameBox = (a: Box, b: Box, d = 1) => a.every((v, i) => Math.abs(v - b[i]) <= d);
@@ -569,40 +580,14 @@ function layoutCands({ fig, base, els, V, k, Wf, cands, placed }: Lay) {
   const appOf = new Map<string, Box>();
   for (const p of base) {
     const b = boxOf.get(p.t.container); if (!b || p.a.part !== 1) continue;
-    const glyph = !!(p.ga && p.gf), tol = glyph ? 3 : 4, tb: Box = glyph ? p.tb : p.t.box, ab: Box = glyph ? p.ab : p.a.f;
+    const glyph = !!(p.ga && p.gf), tb: Box = p.gf ? union(p.gf) : p.t.box, ab: Box = glyph ? p.ab : p.a.f;
     const ob = appOf.get(b.node) ?? appBoxAround(ab, glyph ? null : p.a.f, b.box); if (!ob) continue;
     appOf.set(b.node, ob);
-    // down: to the middle of the line on both sides (a line's own height is Figma's on both)
-    const mid = (x: Box, h: number): Box => [x[0], x[1] + x[3] / 2 - h / 2, x[2], h];
-    const [fl, ft, fr, fb] = ins(b.box, tb), [al, at, ar, abm] = ins(ob, mid(ab, tb[3]));
-    // one line on both sides (glyph lines read, else the box over the line height), and the same words
-    const lh = p.t.line_height || p.t.size * 1.2 || 20, one = (g: any[] | null, h: number) => (g ? g.length : Math.max(1, Math.round(h / lh))) === 1;
-    const single = one(p.gf, p.t.box[3]) && one(p.ga, p.a.f[3]) && !cands.some(c => c.id === `lines:${p.t.node}`), same = p.how === 'exact';
-    const across = b.box[2] < Wf * 0.98;
-    const cx = across && (p.t.align === 'CENTER' || Math.abs(fl - fr) <= 1.5), cy = single && Math.abs(ft - fb) <= 1.5;
-    const ax = cx ? ((al - ar) - (fl - fr)) / 2 : 0, ay = cy ? ((at - abm) - (ft - fb)) / 2 : 0;
-    const figma = { node: p.t.node, text: p.t.text, box: rb(tb), in: { node: b.node, name: b.name, box: rb(b.box) } }, app = { text: p.a.text, box: rb(ab), in: { box: rb(ob) } };
-    if (Math.abs(ax) > tol || Math.abs(ay) > tol)
-      if (Math.abs(ax) <= 24 && Math.abs(ay) <= 24) out.push({ id: `align:${p.t.node}`, kind: 'align', severity: 'minor', note: `not centred in its box as Figma draws it${glyph ? '' : ' (text boxes)'}`, figma, app,
-        delta: { ...(Math.abs(ax) > tol ? { x: r1(ax) } : {}), ...(Math.abs(ay) > tol ? { y: r1(ay) } : {}) } });
-    // insets compared. A box that hugs its text (a chip, a tag; same words, one line): the two sides together, centred
-    // text or not, since a chip a few points narrower on each side moves every chip after it along the row (「Spanish」,
-    // 「German」, 「Korean」 6 pt left in the old check: 13 pt a side in Figma, 10–12 in the app; user, 2026-11-06).
-    // A text not centred is also held to its aligned edge (a label moved inside a box of the right size); down, the top.
-    const sides: [string, number, number][] = [], pairs: [string, string, number, number, number, number][] = [];
-    const hugX = across && b.hugW && same && single, hugY = b.hugH && same && single;
-    if (hugX) pairs.push(['left', 'right', fl, fr, al, ar]);
-    if (across && !cx) sides.push(p.t.align === 'RIGHT' ? ['right', fr, ar] : ['left', fl, al]);
-    if (hugY) pairs.push(['top', 'bottom', ft, fb, at, abm]);
-    else if (single && !cy) sides.push(['top', ft, at]);
-    // over 24 pt off is another box taken for this one (a card around a question, a list row): counted, not an item
-    if (sides.some(([, f, a]) => Math.abs(a - f) > 24) || Math.abs(ax) > 24 || Math.abs(ay) > 24) { unmatched++; continue; }
-    const off = sides.filter(([, f, a]) => Math.abs(a - f) > tol);
-    // a pair off together: the sum of its two insets more than `tol` from Figma's
-    for (const [s1, s2, f1, f2, a1, a2] of pairs) if (Math.abs(a1 + a2 - f1 - f2) > tol) for (const x of [[s1, f1, a1], [s2, f2, a2]] as [string, number, number][]) if (!off.some(o => o[0] === x[0])) off.push(x);
-    if (off.length) out.push({ id: `padding:${p.t.node}`, kind: 'padding', severity: 'minor', note: `${off.map(([s]) => s).join(', ')} padding differs${glyph ? '' : ' (text boxes)'}`,
-      figma: { ...figma, padding: Object.fromEntries(off.map(([s, f]) => [s, r1(f)])) }, app: { ...app, padding: Object.fromEntries(off.map(([s, , a]) => [s, r1(a)])) },
-      delta: Object.fromEntries(off.map(([s, f, a]) => [s, r1(a - f)])) });
+    // the letters themselves are found on the screenshot (python `inks`): the app text's box widened by 4 pt across and
+    // 2 pt down, inside the box less its edge; judged once they are back (layoutJudge)
+    const band: Box = [Math.max(ob[0] + 1.5, ab[0] - 4), Math.max(ob[1] + 1.5, ab[1] - 2), 0, 0];
+    band[2] = Math.min(ob[0] + ob[2] - 1.5, ab[0] + ab[2] + 4) - band[0]; band[3] = Math.min(ob[1] + ob[3] - 1.5, ab[1] + ab[3] + 2) - band[1];
+    pend.push({ p, b, ob, tb, ab, glyph, wraps: cands.some(c => c.id === `lines:${p.t.node}`), ink: { box: ob.map(v => v / k), band: band.map(v => v / k) } });
   }
   // borders: every box placed on the app, read on the screenshot (window units for python)
   // the app's own stroke when the box is a view background of the view data (exact: its width in dp and colour)
@@ -638,7 +623,44 @@ function layoutCands({ fig, base, els, V, k, Wf, cands, placed }: Lay) {
       note: `${axis ? 'vertical' : 'horizontal'} gap from 「${a.name}」 to 「${next.name}」${drawn ? '' : ' (centre to centre: an app box is not the drawn size)'}`,
       figma: { node: a.node, name: a.name, to: next.node, box: rb(between(a.box, next.box)), gap: r1(gf) }, app: { box: rb(between(a.app, next.app)), gap: r1(ga) }, delta: { gap: r1(ga - gf) } });
   }
-  return { cands: out, borders, unmatched };
+  return { cands: out, borders, pend, unmatched };
+}
+// Padding and centring of each text in its box, once its letters were found on the screenshot (`ink`, window units:
+// the pixels of the text's own colour inside the box; user, 2026-11-06: OCR boxes run about 2 pt wide a side, which
+// made the language chips 3–5 pt short of padding in all where their letters sit 12–13 pt in from each edge, as in
+// Figma). Figma's side is its render bounds. Without ink: the glyph or text boxes, with more room.
+function layoutJudge(m: any, ink: Box | null, k: number, Wf: number): { cand?: Cand; unmatched?: boolean } {
+  const { p, b, ob, tb, wraps } = m, ab: Box = ink ? ink.map(v => v * k) as Box : m.ab, how = ink ? 'ink' : m.glyph ? 'glyph' : 'box';
+  const tol = how === 'ink' ? 2 : how === 'glyph' ? 3 : 4, r1 = (v: number) => Math.round(v * 10) / 10, rb = (x: Box) => x.map(r1) as Box;
+  const ins = (o: Box, i: Box) => [i[0] - o[0], i[1] - o[1], o[0] + o[2] - i[0] - i[2], o[1] + o[3] - i[1] - i[3]];
+  // down: to the middle of the line on both sides (a line's own height is Figma's on both)
+  const mid = (x: Box, h: number): Box => [x[0], x[1] + x[3] / 2 - h / 2, x[2], h];
+  const [fl, ft, fr, fb] = ins(b.box, tb), [al, at, ar, abm] = ins(ob, mid(ab, tb[3]));
+  // one line on both sides (glyph lines read, else the box over the line height), and the same words
+  const lh = p.t.line_height || p.t.size * 1.2 || 20, one = (g: any[] | null, h: number) => (g ? g.length : Math.max(1, Math.round(h / lh))) === 1;
+  const single = one(p.gf, p.t.box[3]) && one(p.ga, p.a.f[3]) && !wraps, same = p.how === 'exact';
+  const across = b.box[2] < Wf * 0.98;
+  const cx = across && (p.t.align === 'CENTER' || Math.abs(fl - fr) <= 1.5), cy = single && Math.abs(ft - fb) <= 1.5;
+  const ax = cx ? ((al - ar) - (fl - fr)) / 2 : 0, ay = cy ? ((at - abm) - (ft - fb)) / 2 : 0;
+  const by = how === 'ink' ? '' : how === 'glyph' ? ' (read letters)' : ' (text boxes)';
+  const figma = { node: p.t.node, text: p.t.text, box: rb(tb), in: { node: b.node, name: b.name, box: rb(b.box) } }, app = { text: p.a.text, box: rb(ab), in: { box: rb(ob) }, measured: how };
+  // insets compared: a box that hugs its text (a chip, a tag; same words, one line) on both sides together, the sum
+  // of the two; a text not centred also on its aligned edge; down, the top
+  const sides: [string, number, number][] = [], pairs: [string, string, number, number, number, number][] = [];
+  if (across && b.hugW && same && single) pairs.push(['left', 'right', fl, fr, al, ar]);
+  if (across && !cx) sides.push(p.t.align === 'RIGHT' ? ['right', fr, ar] : ['left', fl, al]);
+  if (b.hugH && same && single) pairs.push(['top', 'bottom', ft, fb, at, abm]);
+  else if (single && !cy) sides.push(['top', ft, at]);
+  // over 24 pt off is another box taken for this one (a card around a question, a list row): counted, not an item
+  if (sides.some(([, f, a]) => Math.abs(a - f) > 24) || Math.abs(ax) > 24 || Math.abs(ay) > 24) return { unmatched: true };
+  if (Math.abs(ax) > tol || Math.abs(ay) > tol) return { cand: { id: `align:${p.t.node}`, kind: 'align', severity: 'minor', note: `not centred in its box as Figma draws it${by}`, figma, app,
+    delta: { ...(Math.abs(ax) > tol ? { x: r1(ax) } : {}), ...(Math.abs(ay) > tol ? { y: r1(ay) } : {}) } } };
+  const off = sides.filter(([, f, a]) => Math.abs(a - f) > tol);
+  for (const [s1, s2, f1, f2, a1, a2] of pairs) if (Math.abs(a1 + a2 - f1 - f2) > tol + 1) for (const x of [[s1, f1, a1], [s2, f2, a2]] as [string, number, number][]) if (!off.some(o => o[0] === x[0])) off.push(x);
+  if (!off.length) return {};
+  return { cand: { id: `padding:${p.t.node}`, kind: 'padding', severity: 'minor', note: `${off.map(([x]) => x).join(', ')} padding differs${by}`,
+    figma: { ...figma, padding: Object.fromEntries(off.map(([x, f]) => [x, r1(f)])) }, app: { ...app, padding: Object.fromEntries(off.map(([x, , a]) => [x, r1(a)])) },
+    delta: Object.fromEntries(off.map(([x, f, a]) => [x, r1(a - f)])) } };
 }
 // borders against Figma's stroke: the app's own stroke (view data) where its box is a view background with one, else
 // as read on the screenshot (python `borders`: width in window units and colour, none, or null when unclear: a shadow
@@ -769,6 +791,25 @@ for s in job["samples"]:
         top = max(q.values(), key=len)
         res["colours"].append("#%02x%02x%02x" % tuple(int(median(c[i] for c in top)) for i in range(3)))
     except Exception: res["colours"].append(None)
+# a text's letters inside its box: the box's own colour (its most common inner one), the text colour (the 3 % of the
+# band's pixels farthest from it), then the bounds of the pixels near the text colour; none when too few or no contrast
+res["inks"] = []
+for t in job.get("inks", []):
+    try:
+        im = img(t["png"]); r = im.width / t["win"]["w"]; x, y, w, h = [v * r for v in t["box"]]; bx, by, bw, bh = [v * r for v in t["band"]]
+        inner = im.crop((int(x + w * 0.15), int(y + h * 0.2), int(x + w * 0.85), int(y + h * 0.8))); q = {}
+        for c in inner.getdata(): q.setdefault(tuple(v // 24 for v in c), []).append(c)
+        top = max(q.values(), key=len); I = tuple(median(c[i] for c in top) for i in range(3))
+        X0, Y0, X1, Y1 = max(0, int(bx)), max(0, int(by)), min(im.width, int(bx + bw)), min(im.height, int(by + bh))
+        px = [(X, Y, im.getpixel((X, Y))) for Y in range(Y0, Y1) for X in range(X0, X1)]
+        if len(px) < 30: res["inks"].append(None); continue
+        far = sorted(px, key=lambda p: -dist(p[2], I))[:max(8, len(px) * 3 // 100)]; T = tuple(median(p[2][i] for p in far) for i in range(3))
+        if dist(T, I) < 2500: res["inks"].append(None); continue
+        lim = dist(T, I) * 0.25; ink = [(X, Y) for X, Y, c in px if dist(c, T) < lim]
+        if len(ink) < 6: res["inks"].append(None); continue
+        xs = [p[0] for p in ink]; ys = [p[1] for p in ink]
+        res["inks"].append([min(xs) / r, min(ys) / r, (max(xs) + 1 - min(xs)) / r, (max(ys) + 1 - min(ys)) / r])
+    except Exception: res["inks"].append(None)
 # a box's border, read at the middle of each side from 4 px outside inward: past the outside colour, a run of pixels
 # unlike the box's own colour (its most common inner one) that starts within 4 pt of the edge, is 0.8 pt (2 px at least)
 # to 3 pt wide and

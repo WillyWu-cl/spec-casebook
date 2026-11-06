@@ -202,8 +202,8 @@ what is left is a candidate:
 | `truncated` | the app text ends in an ellipsis Figma does not have, or runs past the screen edge | major |
 | `lines` | the app text wraps into more or fewer lines (the app's lines counted on the screenshot) | minor |
 | `size`, `weight` | font size (6 % in sp from view data, else 12 % in width against the platform's font) and weight (view data). Figma is drawn for iOS in SF Pro; on Android the weight is held to the PDRM guideline's Roboto equivalent (Regular 400 → 400, Medium 500 → 500, Semibold 600 → Medium 500; KP-066), and the item names both | minor |
-| `padding` | the inset from a text to the edge of its box more than 3 pt off Figma's (4 pt on text boxes): the aligned side and the top; where the box hugs its content (a chip, a tag) and the words are the same, also left and right together (and top and bottom), their sum off, centred text or not: chips 2–3 pt narrower a side move every chip after them along the row, which the old check reported as each later chip's position; top and bottom only for one line on both sides, measured to the middle of the line | minor |
-| `align` | a text Figma centres in its box more than 3 pt (4) off centre, across or down | minor |
+| `padding` | the inset from a text's letters to the edge of its box more than 2 pt off Figma's (the letters found on the screenshot in the text's own colour inside the box, Figma's render bounds on the other side; 3 pt on OCR boxes, 4 pt on text boxes where no letters were found): the aligned side and the top; where the box hugs its content (a chip, a tag) and the words are the same, also left and right together (and top and bottom), their sum more than 3 pt off, centred text or not;  top and bottom only for one line on both sides, measured to the middle of the line | minor |
+| `align` | a text Figma centres in its box more than 2 pt off centre (its letters; 3 on OCR boxes, 4 on text boxes), across or down | minor |
 | `border` | the box's border: Figma's stroke (a see-through one blended over the fill) against the app's own stroke (view data) or the border read on the screenshot; one drawn and not the other, ΔE > 18, or over 1 pt wider or narrower | minor |
 | `spacing` | the gap (up to 32 pt in Figma) between neighbouring buttons on a row or in a column, more than 2 pt off edge to edge (3 pt centre to centre where an app box is a touch area larger than the drawing) | minor |
 | `radius` | a fill's corner radius over 2 dp from Figma's (view data) | minor |
@@ -211,6 +211,11 @@ what is left is a candidate:
 | `control` | an icon control of the inventory (no label) with no tappable app element where Figma draws it | major |
 | `extra` | short app text Figma does not draw, on no line where Figma draws a text | info |
 
+Letters, not OCR boxes (user, 2026-11-06): OCR boxes run about 2 pt wide on each side, which put the language chips
+3–5 pt short of padding in all where their letters sit 12–13 pt in from each edge, as in Figma; both review passes
+measured the pixels and called them OK. A chip narrower around the same padding (Roboto sets the word narrower) is
+not a padding item, and neither is the next chip sitting further left. Padding, centring and border items are measured
+before the sheets are drawn, so they are numbered on them, and a recheck judges every item of a screen.
 A text's box is the smallest Figma shape around it with a fill or a stroke (no image); on the app it is the view
 background (view data) or page-source element around the paired text of that size within a quarter, the closest. A
 box from edge to edge of the screen (a tab bar) is not measured across: an inset there is only the text's place. A

@@ -1,0 +1,300 @@
+{
+ "screens": {
+  "2778:127350": {
+   "padding:I2778:127377;145:7579;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:138549": {
+   "padding:I2778:138576;145:7579;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:128904": {
+   "padding:I2778:128959;2773:119522": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, 「Surprise me」 starts about 27.4 pt from the chip's left edge (Design 28.7 pt, sparkle icon included) and ends about 11.8 pt from the right edge (Design 12.8 pt). The chip is narrower only because the words are set narrower in Roboto.",
+    "note_zh": "沒問題。手機上量到「Surprise me」距晶片左緣約 27.4 pt（Design 28.7 pt，含星形圖示），距右緣約 11.8 pt（Design 12.8 pt）。晶片較窄只是因為 Roboto 字較窄。"
+   },
+   "padding:I2778:128965;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:128966": {
+   "padding:I2778:129021;2773:119522": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, 「Surprise me」 starts about 27.4 pt from the chip's left edge (Design 28.7 pt, sparkle icon included) and ends about 11.8 pt from the right edge (Design 12.8 pt). The chip is narrower only because the words are set narrower in Roboto.",
+    "note_zh": "沒問題。手機上量到「Surprise me」距晶片左緣約 27.4 pt（Design 28.7 pt，含星形圖示），距右緣約 11.8 pt（Design 12.8 pt）。晶片較窄只是因為 Roboto 字較窄。"
+   },
+   "padding:I2778:129027;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:127414": {
+   "padding:I2778:127425;1423:94739": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127426;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127427;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127428;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127429;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127430;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127431;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127440;1423:94739": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127441;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127449;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "3142:68271": {
+   "padding:I3142:68295;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:139432": {
+   "padding:I2778:139485;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:144364": {
+   "padding:I2778:144419;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   },
+   "padding:I2778:144412;2750:64270": {
+    "verdict": "n/a",
+    "note": "Wrong box: this measured 「Create storyboard」 against the outer message card, which in the Design also holds the question above it. Its own box is the blue confirmation card, and there the title sits about 12 pt from the top on both (Design 12 pt).",
+    "note_zh": "框配錯：這裡把「Create storyboard」對到外層訊息卡，Design 中那張卡還包含上方的問句。它自己的框是藍色確認卡，在那張卡裡標題距上緣兩邊都約 12 pt（Design 12 pt）。"
+   },
+   "padding:I2778:144412;2750:64276": {
+    "verdict": "n/a",
+    "note": "Wrong box: the credit cost was measured against the outer message card, not the blue confirmation card it sits in; the number itself (「28」 against 「15」) is sample content. Inside the blue card the app centres the cost on 「Generate」 where the Design lines it up with the button's bottom, so it sits about 5 pt higher; that is the cost's place, not a box padding.",
+    "note_zh": "框配錯：積分花費是對外層訊息卡量的，不是它所在的藍色確認卡；數字本身（「28」對「15」）是範例內容。在藍色卡內，App 讓花費與「Generate」垂直置中，Design 則與按鈕底部對齊，所以高約 5 pt；這是花費的位置，不是框的內距。"
+   },
+   "padding:I2778:144412;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, 「Generate」 sits about 16.5 pt from each side of the button (Design 17 pt). The button is narrower only because the word is set narrower in Roboto (its weight is a separate item).",
+    "note_zh": "沒問題。手機上量到「Generate」距按鈕左右各約 16.5 pt（Design 17 pt）。按鈕較窄只是因為 Roboto 字較窄（字重另列一項）。"
+   },
+   "border:2778:144412": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The Design puts the question 「The characters look great! Ready to create the storyboard?」 and the blue confirmation card together in a pale card with a 1 pt light blue gradient outline. The app draws no outlined card: the question sits on the page background, and only a very faint flat panel without an outline surrounds the blue card. The step loses the bubble that groups the question with its action.",
+    "note_zh": "Design 把問句「The characters look great! Ready to create the storyboard?」和藍色確認卡一起放在一張淺色卡中，外框為 1 pt 淺藍漸層描邊。App 沒有畫這張有描邊的卡：問句直接在頁面背景上，只有藍色卡外圍有一層很淡、沒有描邊的平面底。這一步少了把問句和動作包在一起的對話框。"
+   }
+  },
+  "2778:144420": {
+   "padding:I2778:144485;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   },
+   "padding:2778:144472": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, 「Creating your scene…」 sits about 18 pt below the card's top edge and 16.3 pt from its left (Design about 21 pt and 16.8 pt), within what the Design allows. The bottom figure is not a text inset: the placeholder bars fill the card below the text, so it reflects their layout, not this label's padding.",
+    "note_zh": "沒問題。手機上量到「Creating your scene…」距卡片上緣約 18 pt、左緣 16.3 pt（Design 約 21 pt、16.8 pt），在允許範圍內。下方的數值不是文字內距：文字下方是佔位條，反映的是佔位條的排版，不是這個標籤的內距。"
+   }
+  },
+  "2778:138725": {
+   "padding:I2778:138792;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:127378": {
+   "padding:I3142:68215;1423:94739": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68216;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68217;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68218;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68219;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68220;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68221;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68225;1423:94739": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68226;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I2778:127413;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "3142:68240": {
+   "padding:I3142:68251;1423:94739": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68252;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68253;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68254;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68255;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68256;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68257;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68261;1423:94739": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68262;1423:94737": {
+    "verdict": "ok",
+    "note": "Fine. Measured on the phone, the text sits about 12.5–13 pt from each side of the chip, the same as the Design's 13 pt. The chip is narrower only because the word is set narrower in Roboto than in SF Pro. The same holds for every language chip and both caption chips on this card.",
+    "note_zh": "沒問題。手機上量到文字距晶片左右各約 12.5–13 pt，與 Design 的 13 pt 相同；晶片變窄只是因為 Roboto 字比 SF Pro 窄。這張卡上所有語言晶片與兩個字幕晶片都一樣。"
+   },
+   "padding:I3142:68270;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:127450": {
+   "padding:I2778:127474;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:128850": {
+   "padding:I2778:128903;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit balance pill is tighter than the Design on every screen that shows it. Measured on the phone: the coin icon is drawn about 11 pt wide and starts about 10 pt from the pill's left edge (Design: 13.3 pt, 13 pt in), and the number ends about 11 pt from the right edge (Design: about 14 pt). The balance itself (「28787」 against the Design's 「400」) is sample content and is not the issue; the insets and the smaller coin are, and they make the pill look cramped. One fix in the shared pill covers every screen.",
+    "note_zh": "積分餘額膠囊在每個出現的畫面都比 Design 緊。手機上量到：金幣圖示約 11 pt 寬、距膠囊左緣約 10 pt（Design 為 13.3 pt、內縮 13 pt），數字距右緣約 11 pt（Design 約 14 pt）。餘額數字本身（「28787」對 Design 的「400」）是範例內容，不是問題；問題在內距與縮小的金幣，讓膠囊顯得擠。改共用的膠囊元件即可修正所有畫面。"
+   }
+  },
+  "2778:129028": {
+   "spacing:2778:129032-2778:129036": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The character grid starts about 12 pt below the filter button on the phone, against 16 pt in the Design, so the header row 「Choose for …」 sits about 4 pt closer to the first row of thumbnails. Small, but it is the panel's own spacing and the same in every column.",
+    "note_zh": "手機上角色格狀清單在篩選按鈕下方約 12 pt 開始，Design 為 16 pt，所以標題列「Choose for …」離第一排縮圖近了約 4 pt。差異小，但這是面板本身的間距，每一欄都一樣。"
+   },
+   "border:2778:129034": {
+    "verdict": "ok",
+    "note": "Fine: the border is there. The 「Create my character」 tile on the phone has a 1 pt dark grey outline (#373B42) on all four sides, matching the Design's 1 pt #363B43; it was not picked up by the measure.",
+    "note_zh": "沒問題：描邊有畫。手機上「Create my character」圖塊四邊都有 1 pt 深灰描邊（#373B42），與 Design 的 1 pt #363B43 相符，只是量測沒抓到。"
+   }
+  }
+ }
+}

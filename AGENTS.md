@@ -157,8 +157,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   (`copy` and `position` are gone; texts pair by place when the words differ) (`figma/references/conformance.md` §3).
 - **Android text against the Android font (user, 2026-11-06).** Figma is drawn for iOS (SF Pro); on Android the design
   check holds weights to the PDRM guideline's Roboto equivalents (Semibold 600 → Medium 500), KP-066
-  (`library/pdr/knowledge/design-guideline.md`). A chip whose padding differs is a `padding` item, never the next
-  chip's position (`figma/references/conformance.md` §3).
+  (`library/pdr/knowledge/design-guideline.md`). Padding is measured from the letters' pixels, so a chip narrower only
+  because Roboto is narrower is fine, and a chip whose padding differs is a `padding` item, never the next chip's
+  position (`figma/references/conformance.md` §3).
 - **Design tab items for Design and RD (user, 2026-11-06).** Each item opens with a plain sentence (what differs,
   Design's value, the app's); raw values sit under 「How it was measured」; review notes avoid ΔE and tool terms
   (`figma/references/conformance.md` §4).

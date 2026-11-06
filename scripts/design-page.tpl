@@ -779,6 +779,7 @@ function detail(id) {
       ${plain(it, s.h) ? `<div class="plain">${esc(plain(it, s.h))}</div>` : ''}
       ${it.kind === 'colour' && (it.figma?.drawn || it.app?.drawn) ? colourTable(it) : ''}
       ${it.kind === 'visual' || !lang(it, 'note') || lang(it, 'note') === plain(it, s.h) ? '' : `<div class="note"><b>${esc(t('revNote'))}</b> ${esc(lang(it, 'note'))}</div>`}
+      ${it.split && lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note"><b>${esc(t('secondRev'))}</b> ${esc(lang(it, 'reviewer'))}</div>` : ''}
       ${it.split ? `<div class="note">${esc(splitL(it.split))}</div>` : ''}${it.decided ? `<div class="note">${esc(decidedL(it.decided))}</div>` : ''}
       ${s.run ? decRow(s, it) : ''}
       <details class="how"><summary>${esc(t('howMeasured'))}</summary>
@@ -786,7 +787,7 @@ function detail(id) {
       ${it.kind === 'colour' && (it.figma?.drawn || it.app?.drawn) ? (it.delta?.dE != null ? `<div class="more">${esc(t('colDiff')(it.delta.dE, it.delta.dE_drawn))}</div>` : '')
       : `${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
       ${it.delta ? `<div class="more">${esc(Object.entries(it.delta).map(([a, b]) => `${a} ${b}`).join(' · '))}</div>` : ''}`}
-      ${lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note"><b>${esc(t('secondRev'))}</b> ${esc(lang(it, 'reviewer'))}</div>` : ''}</details></div>`).join('')}</details>`).join('')}
+      ${!it.split && lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note"><b>${esc(t('secondRev'))}</b> ${esc(lang(it, 'reviewer'))}</div>` : ''}</details></div>`).join('')}</details>`).join('')}
     ${info.length ? `<button type="button" class="chip" id="info">${esc(showInfo ? t('hideInfo') : t('showInfo'))} · ${esc(t('info')(info.length))}</button>` : ''}</div>
   </div></div>`;
   $('x').onclick = () => { history.replaceState(null, '', location.pathname + location.search); $('dlg').close(); open = null; };

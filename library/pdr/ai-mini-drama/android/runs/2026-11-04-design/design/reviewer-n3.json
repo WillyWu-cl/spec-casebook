@@ -1,0 +1,25 @@
+{
+ "screens": {
+  "2778:127414": {
+   "padding:I3172:101306;2750:25393": {
+    "verdict": "ok",
+    "note": "The drawn blue 「Generate」 button is 92.6 x 33.3 pt on the phone against Figma's 96 x 34 pt, and the word sits centred in it (19.4 pt left, 19.1 pt right; 11.5 pt top, 12.1 pt bottom). The extra 2 pt a side comes from the word itself: Android's Roboto sets 「Generate」 54.1 pt wide where Figma's SF Pro draws it 61.7 pt, while the button stays close to Figma's size. The button looks as designed, so this is not a padding problem.",
+    "note_zh": "手機上實際畫出的藍色「Generate」按鈕為 92.6 x 33.3 pt，Figma 為 96 x 34 pt，文字在按鈕中置中（左 19.4 pt、右 19.1 pt；上 11.5 pt、下 12.1 pt）。每側多出的約 2 pt 來自文字本身：Android 的 Roboto 字型把「Generate」排成 54.1 pt 寬，Figma 的 SF Pro 則為 61.7 pt，而按鈕大小仍接近 Figma。按鈕外觀與設計一致，不屬於內距問題。"
+   }
+  },
+  "2778:127378": {
+   "padding:I3172:101313;2750:25393": {
+    "verdict": "ok",
+    "note": "The drawn blue 「Generate」 button is 92.6 x 33.3 pt on the phone against Figma's 96 x 34 pt, and the word sits centred in it (19.4 pt left, 19.1 pt right; 11.5 pt top, 12.1 pt bottom). The extra 2 pt a side comes from the word itself: Android's Roboto sets 「Generate」 54.1 pt wide where Figma's SF Pro draws it 61.7 pt, while the button stays close to Figma's size. The button looks as designed, so this is not a padding problem.",
+    "note_zh": "手機上實際畫出的藍色「Generate」按鈕為 92.6 x 33.3 pt，Figma 為 96 x 34 pt，文字在按鈕中置中（左 19.4 pt、右 19.1 pt；上 11.5 pt、下 12.1 pt）。每側多出的約 2 pt 來自文字本身：Android 的 Roboto 字型把「Generate」排成 54.1 pt 寬，Figma 的 SF Pro 則為 61.7 pt，而按鈕大小仍接近 Figma。按鈕外觀與設計一致，不屬於內距問題。"
+   }
+  },
+  "3142:68240": {
+   "padding:I3172:101316;2750:25393": {
+    "verdict": "ok",
+    "note": "The drawn blue 「Generate」 button is 92.6 x 33.3 pt on the phone against Figma's 96 x 34 pt, and the word sits centred in it (19.4 pt left, 19.1 pt right; 11.5 pt top, 12.1 pt bottom). The extra 2 pt a side comes from the word itself: Android's Roboto sets 「Generate」 54.1 pt wide where Figma's SF Pro draws it 61.7 pt, while the button stays close to Figma's size. The button looks as designed, so this is not a padding problem.",
+    "note_zh": "手機上實際畫出的藍色「Generate」按鈕為 92.6 x 33.3 pt，Figma 為 96 x 34 pt，文字在按鈕中置中（左 19.4 pt、右 19.1 pt；上 11.5 pt、下 12.1 pt）。每側多出的約 2 pt 來自文字本身：Android 的 Roboto 字型把「Generate」排成 54.1 pt 寬，Figma 的 SF Pro 則為 61.7 pt，而按鈕大小仍接近 Figma。按鈕外觀與設計一致，不屬於內距問題。"
+   }
+  }
+ }
+}
