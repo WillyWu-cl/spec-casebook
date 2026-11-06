@@ -198,6 +198,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   sign-in stays the user's when the agent cannot log in (the agent never types passwords); where a phone signs in with
   its Google account button and no password (the SM-A5360, `fixtures.md`), the agent does it. Every permission the app
   asks for (notifications, photos, microphone…) is allowed (user, 2026-11-04).
+- **Chat waits go to the bottom (user, 2026-11-06, REQ-107).** The AI Mini Drama chat pins the sent message to the
+  top (R-250), so a wait or check for a new card taps ↓ first (`waitfor … --bottom`, `expect … --bottom`, `bottom`),
+  except in the rows that test the scrolling itself (`run-android.md`).
 - **On the phone (2026-10-21/27).** Wi-Fi may be toggled for offline cases once the phone is on USB (other system
   settings need the user's go-ahead); rows are reached only with `scrollto` / `pink`; Auto-Lock Never, `device.ts
   restart` at every segment, never uninstall WDA; exit 75 = BLOCKER, pushed to the user (`run.md` steps 1, 3, 4).

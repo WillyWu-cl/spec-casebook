@@ -17,6 +17,12 @@ adb serial HQ61563393, Android 12, 1080 × 2520; setup in README › Android pho
   (adb `input motionevent` DOWN, moves ~100 ms apart, UP) for text that scrolls inside its own box, and before
   filing a 「drag does X」 bug retry it with `fingerdrag`. `setval` is setText, not a paste: it skips the field's
   paste limit, so an over-limit paste is checked by hand.
+- **New messages below the screen (user, 2026-11-06, REQ-107).** The AI Mini Drama chat pins the sent message to the
+  top and lets the reply and its cards grow below it without following (R-250, R-485; ↓ R-088, R-274), so a new card
+  or its lower lines can be off screen and missing from the page source. Every wait or check for something new in a
+  chat taps ↓ first: `waitfor "…" --bottom` (taps ↓ each round it shows), `expect "…" --bottom`, or `bottom` on its
+  own (seen on 2611061: `button_mini_drama_scroll_bottom`, no content-desc). Leave `--bottom` off only in the rows
+  that test the scrolling itself (R-088, R-250, R-274, R-279, R-457, R-485), where tapping ↓ is a step of the case.
 - **iOS rule → Android command.** Segment start: `restart` (fresh UiAutomator2 server, PowerDirector in front). Keep
   the phone awake: the user turns on Developer options › Stay awake (or the longest Screen timeout) and uses no PIN
   lock. Rows in a list: `scrollto` (it also prints a row's switch state, `| row Switch on at X,Y`). Pages opened as
