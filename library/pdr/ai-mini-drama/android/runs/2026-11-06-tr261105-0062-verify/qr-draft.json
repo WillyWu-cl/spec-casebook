@@ -1,0 +1,49 @@
+{
+  "tr": "TR261105-0062",
+  "product": "PowerDirector Mobile for Android",
+  "tester": "ETHAN_HSU",
+  "template": "Standard Report",
+  "testingDate": "2026/11/06",
+  "version": "16.8.0",
+  "build": "2611052",
+  "buildDay": "1105",
+  "os": "Android 15",
+  "env": {
+    "device": "Samsung Galaxy A53 (SM-A5360) / Android 15",
+    "server": "Stage",
+    "account": "cltqauiap2@gmail.com (Free)",
+    "testedBy": "AI agent (Claude Opus 5.5) driving the phone over Appium; verdicts and evidence reviewed by ETHAN_HSU",
+    "install": "APK from the TR's OneDrive folder (MD5 checked), clean install (uninstall, then install)",
+    "scope": "the eBugs created by ETHAN_HSU in this TR's verify list"
+  },
+  "observations": [
+    "The AI Mini Drama intro has no volume icon on the demo video, which the PM frame 「Demo page_Straight video」 draws at its bottom right (the Design does not draw the intro)."
+  ],
+  "rows": [
+    {
+      "bug": "DRA262610P0422",
+      "result": "OK",
+      "summary": "a clean install opens the AI Mini Drama intro (demo video, Don't show again, Try It Now) before the landing page",
+      "images": [
+        "16.8.0.2611052_DRA262610P0422_01_intro_first_open.png",
+        "16.8.0.2611052_DRA262610P0422_02_try_it_now_landing.png",
+        "16.8.0.2611052_DRA262610P0422_03_dont_show_again.png"
+      ],
+      "logs": [
+        "16.8.0.2611052_DRA262610P0422_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent] AI Mini Drama: A clean install opens the landing page with no intro page",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    }
+  ],
+  "osLanguage": "English",
+  "uploaded": {
+    "DRA262610P0422": [
+      "16.8.0.2611052_DRA262610P0422_01_intro_first_open.png",
+      "16.8.0.2611052_DRA262610P0422_02_try_it_now_landing.png",
+      "16.8.0.2611052_DRA262610P0422_03_dont_show_again.png",
+      "16.8.0.2611052_DRA262610P0422_log.txt"
+    ]
+  }
+}
