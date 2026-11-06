@@ -371,16 +371,18 @@ function measure() {
     for (const f of fig.fills) {
       const at = snap(placed(f.box)), vf = V ? viewFillOf(V, at, 40 / k) : null;
       // the app's own fill and corner radius where a view's background covers the shape's place
-      if (vf) { cands.push(...exactFill(f, vf, V!));
-        samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, variable: f.variable, figBox: f.box, box: vf.box, set: vf.color, fig: figImg }); continue; }
-      samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, variable: f.variable, figBox: f.box, box: at, fig: figImg });
+      if (vf) { cands.push(...exactFill(f, vf, V!, k));
+        samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, variable: f.variable, figBox: f.box, box: vf.box, appBox: r1(toFig(vf.box)), set: vf.color, fig: figImg }); continue; }
+      samples.push({ kind: 'fill', screen: scr.id, node: f.node, name: f.name, color: f.color, variable: f.variable, figBox: f.box, box: at, appBox: r1(toFig(at)), fig: figImg });
     }
     // a text's colour on its glyphs when read (a button's view box holds the button's fill too), else its view box
     for (const p of base.filter(p => p.how === 'exact' && p.t.color) as any[]) {
       // the app's own text colour when the view data has it
-      const smp = { kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, variable: p.t.variable, figBox: p.t.box, box: p.ga ? union(p.ga).map((v: number) => v / k) : p.a.box, fig: figImg };
+      // appBox: where the text sits on the capture, in Figma's scale like every candidate's box, so the Design tab can crop it
+      const appBox = r1(p.ab);
+      const smp = { kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, variable: p.t.variable, figBox: p.t.box, box: p.ga ? union(p.ga).map((v: number) => v / k) : p.a.box, appBox, fig: figImg };
       if (p.vt?.color) { const d = deltaE(p.t.color, rgb(p.vt.color)); if (d > 6) cands.push({ id: `colour:${p.t.node}`, kind: 'colour', severity: 'minor', src: 'app', note: "text colour, the app's own value",
-        figma: { node: p.t.node, name: p.t.text, role: 'text', color: p.t.color, box: r1(p.t.box) }, app: { color: p.vt.color, ...(p.vt.res ? { res: p.vt.res } : {}), ...(p.vt.alpha ? { alpha: p.vt.alpha } : {}) }, delta: { dE: Math.round(d) } });
+        figma: { node: p.t.node, name: p.t.text, role: 'text', color: p.t.color, box: r1(p.t.box) }, app: { color: p.vt.color, ...(p.vt.res ? { res: p.vt.res } : {}), ...(p.vt.alpha ? { alpha: p.vt.alpha } : {}), box: appBox }, delta: { dE: Math.round(d) } });
         samples.push({ ...smp, set: p.vt.color }); continue; }
       samples.push(smp);
     }
@@ -440,7 +442,7 @@ function measure() {
     if (!got) continue;
     const d = deltaE(s.color, got);
     if (d > room && !c)
-      r.candidates.push({ id: `colour:${s.node}`, kind: 'colour', severity: 'minor', note: s.kind === 'text' ? 'text colour' : undefined, figma, app: { color: got }, delta: { dE: Math.round(d) } });
+      r.candidates.push({ id: `colour:${s.node}`, kind: 'colour', severity: 'minor', note: s.kind === 'text' ? 'text colour' : undefined, figma, app: { color: got, box: s.appBox }, delta: { dE: Math.round(d) } });
   }
   if (setChecked) console.log(`app colours: ${setChecked} set values checked against the screen, ${drift.length} drawn differently${drift.length ? `:\n  ${drift.join('\n  ')}` : ''}`);
   const all = [...prev, ...results].sort((a, b) => plan.screens.findIndex((s: any) => s.id === a.id) - plan.screens.findIndex((s: any) => s.id === b.id));
@@ -502,8 +504,9 @@ function exactText(t: any, vt: ViewText, V: Views, tb: number[], ab: number[]): 
   return out;
 }
 // fill colour (ΔE over 6) and corner radius (over 2 dp; a fully round shape's radius only as round) from the app's view
-function exactFill(f: any, vf: ViewFill, V: Views): Cand[] {
-  const out: Cand[] = [], d = deltaE(f.color, rgb(vf.color)), box = r1(f.box), appBox = r1(vf.box); // view boxes are screen pixels, like every Android box here (not dp)
+function exactFill(f: any, vf: ViewFill, V: Views, k: number): Cand[] {
+  // view boxes are screen pixels, like every Android box here (not dp); a candidate's box is in Figma's scale
+  const out: Cand[] = [], d = deltaE(f.color, rgb(vf.color)), box = r1(f.box), appBox = r1(vf.box.map(v => v * k) as Box);
   if (d > 6) out.push({ id: `colour:${f.node}`, kind: 'colour', severity: 'minor', src: 'app', note: "fill, the app's own value", figma: { node: f.node, name: f.name, color: f.color, box }, app: { color: vf.color, ...(vf.res ? { res: vf.res } : {}), ...(vf.alpha ? { alpha: vf.alpha } : {}), box: appBox }, delta: { dE: Math.round(d) } } as Cand);
   if (typeof f.radius === 'number' && vf.radius !== null) { const r = vf.radius / V.density, round = (x: number, h: number) => x >= h / 2 - 0.5;
     if (Math.abs(r - f.radius) > 2 && !(round(r, vf.box[3] / V.density) && round(f.radius, f.box[3])))

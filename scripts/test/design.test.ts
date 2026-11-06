@@ -319,7 +319,8 @@ test("check: the app's own view data (Android) gives size, weight, colour, lines
   assert.equal(by('lines:1:1c')?.app?.lines, 2);
   assert.equal(by('radius:1:15')?.delta?.figma, 12, 'the button\'s radius: 60 px / 2.88 = 20.8 dp');
   assert.ok(!by('colour:1:15'), 'the same fill colour is not a difference');
-  assert.deepEqual(by('radius:1:15')?.app?.box, px([120, 590, 140, 44]), 'a view fill\'s box is in screen pixels like every Android box, not dp');
+  assert.deepEqual(by('radius:1:15')?.app?.box, [120.1, 589.9, 139.9, 44.1], 'a view fill\'s box comes out in Figma\'s scale like every candidate\'s, not screen pixels');
+  assert.ok(by('colour:1:12')?.app?.box, 'a colour item says where the text sits on the capture, for the Design tab\'s crop');
   assert.ok(by('colour:1:12')?.app?.drawn, 'the colour as drawn is listed beside the value set'); // (no Figma image for this synthetic screen)
   assert.match(by('colour:1:12')?.note, /is not the value set/, 'a set colour the screen does not show is named');
   assert.match(r.out, /set values checked against the screen/);
