@@ -78,16 +78,20 @@ export async function dumpViews(a: Adb, timeoutMs = 30_000): Promise<any> {
 
 export type ViewText = { text: string; box: [number, number, number, number]; color: string | null; px: number | null; sp: number | null; weight: number | null; style: string | null; family: string | null; lines: number | null; id: string | null; window: number;
   /** the layout's colour resource (`@color/textPrimary`) and the views' combined alpha when below 1 */ res?: string; alpha?: number };
-export type ViewFill = { box: [number, number, number, number]; color: string; radius: number | null; id: string | null; window: number; res?: string; alpha?: number };
+export type ViewFill = { box: [number, number, number, number]; color: string; radius: number | null; id: string | null; window: number; res?: string; alpha?: number;
+  stroke?: { px: number; color: string | null; dashed?: boolean } };
 export type Views = { density: number; scaledDensity: number; fontScale: number; texts: ViewText[]; fills: ViewFill[]; windows: { title: string; type: number }[] };
 
 const argb = (c: unknown) => typeof c === 'string' && /^#[0-9a-f]{8}$/i.test(c) ? c : null;
 // a drawable's solid fill as drawn: a ColorDrawable or a GradientDrawable with one colour, else the first layer that has one
-function fillOf(d: any): { color: string; radius: number | null } | null {
+// and its border: a GradientDrawable's stroke (width in px, colour, dashed or not; user, 2026-11-06)
+function fillOf(d: any): { color: string; radius: number | null; stroke?: ViewFill['stroke'] } | null {
   if (!d || typeof d !== 'object') return null;
   if (/ColorDrawable$|GradientDrawable$|MaterialShapeDrawable$/.test(d.class ?? '') && argb(d.color) && !/^#00/i.test(d.color)) {
     const r = typeof d.cornerRadius === 'string' ? parseFloat(d.cornerRadius) : Array.isArray(d.cornerRadii) ? Math.max(...d.cornerRadii) : null;
-    return { color: d.color, radius: Number.isFinite(r as number) ? r : null };
+    const w = parseFloat(String(d.stroke?.width ?? '')), sc = argb(d.stroke?.color);
+    return { color: d.color, radius: Number.isFinite(r as number) ? r : null,
+      ...(w > 0 && !/^#00/i.test(sc ?? '') ? { stroke: { px: w, color: sc, ...(d.stroke.dashWidth ? { dashed: true } : {}) } } : {}) };
   }
   for (const l of d.layers ?? []) { const f = fillOf(l.drawable ?? l); if (f) return f; }
   return fillOf(d.drawable ?? d.current ?? null);
@@ -109,7 +113,7 @@ export function compactViews(doc: any): Views {
           family: t.typeface?.family ?? null, lines: t.lineCount ?? null, id: v.id ?? null, window: w, ...extra(v.xmlAttrs?.textColor) });
       }
       const f = fillOf(v.background);
-      if (f) fills.push({ box, color: f.color, radius: f.radius, id: v.id ?? null, window: w, ...extra(v.xmlAttrs?.background) });
+      if (f) fills.push({ box, color: f.color, radius: f.radius, id: v.id ?? null, window: w, ...(f.stroke ? { stroke: f.stroke } : {}), ...extra(v.xmlAttrs?.background) });
     }
     for (const c of v.children ?? []) walk(c, a, w);
   };

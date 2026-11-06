@@ -152,6 +152,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   exact text colour, size, weight, lines and drawables; the first install replaces the app with an uninstall (data
   cleared) only with `--yes-uninstall` once agreed. With that build, Android design captures save the view data and
   the check reads it before OCR and pixels (REQ-086; `figma/references/conformance.md` §3).
+- **What the design check holds the app to (user, 2026-11-06).** A text box's padding and border, font size and the
+  text's centring in its box, and the gaps between buttons; never a text's words or its own place on the screen
+  (`copy` and `position` are gone; texts pair by place when the words differ) (`figma/references/conformance.md` §3).
 - **Colours set and drawn (user, 2026-11-05).** A design check colour item lists the value set (Figma fill and token,
   the app's value and resource) beside the colour drawn on each image; `check` reports app values the screen does not
   show (`figma/references/conformance.md` §3).

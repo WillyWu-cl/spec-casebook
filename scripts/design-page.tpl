@@ -342,8 +342,8 @@ const COL = s => `var(--${({ differs: 'differs', question: 'question', unreviewe
 const VN = { en: { bug: 'Bug', question: 'Question', ok: 'OK', 'n/a': 'N/A', unreviewed: 'Unreviewed', info: 'Info' }, zh: { bug: '問題', question: '待確認', ok: '一致', 'n/a': '無法判定', unreviewed: '未審查', info: '資訊' } };
 // Info and N/A in readable colours, not the faint grey (user, 2026-11-04)
 const VC = v => `var(--${({ bug: 'differs', question: 'question', unreviewed: 'unreviewed', ok: 'matches', info: 'info', 'n/a': 'muted' })[v] ?? 'none'})`;
-const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', weight: 'Font weight', radius: 'Corner radius', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
-  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', weight: '字重', radius: '圓角', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
+const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', weight: 'Font weight', radius: 'Corner radius', padding: 'Padding', align: 'Centring', border: 'Border', spacing: 'Spacing', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
+  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', weight: '字重', radius: '圓角', padding: '內距', align: '置中', border: '邊框', spacing: '按鍵間距', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
 const PAGES = window.CASEBOOK?.pages ?? {};
 let st = '', board = '', kind = '', q = '', open = null, showInfo = true, noBoxes = false;
 const folded = new Set();   // verdict groups folded on the open comparison: kept when it is drawn again
