@@ -94,12 +94,12 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .items { display: grid; gap: 8px; align-content: start; padding: 6px }
 .it { border: 1px solid var(--line); border-left: 4px solid var(--none); border-radius: 6px; padding: 8px 10px; font-size: 0.86rem; display: grid; gap: 3px }
 /* hover: a thin dashed outline; selected (a box or its item clicked): the Coverage page's mark, a white ring between
-   two black ones just outside, the item's border in its verdict colour (user, 2026-11-05) */
+   two black ones just outside, the item's border in its verdict colour (user, 2026-11-05). On the images the marks are
+   the Coverage page's own: a dashed white ring for hover, a white ring on a black one for the selection (user, 2026-11-06) */
 .it.hl { outline: 2px dashed var(--muted); outline-offset: 2px }
 .it.pick { outline: 0; border-color: var(--vc); box-shadow: 0 0 0 1.5px #000, 0 0 0 4px #fff, 0 0 0 5.5px #000 }
 .it.flash { animation: pick 1.2s ease-out }
 @keyframes pick { from { background: color-mix(in srgb, var(--accent) 30%, transparent) } to { background: transparent } }
-.box.hl { stroke-width: 3 }
 .ring { fill: none; pointer-events: none }
 .it .plain { font-size: 0.95rem; line-height: 1.45 }
 .it .note b { font-weight: 600 }
@@ -812,7 +812,10 @@ function detail(id) {
       e.target.classList.toggle('need', it.verdict === 'bug' && ['ok', 'n/a'].includes(effV(s, it)) && !e.target.value.trim()); });
   });
   // hovering a difference highlights its boxes on both images, and hovering a box its difference; clicking a box scrolls to it
-  const hl = (n, on) => $('dlg').querySelectorAll(`rect[data-n="${n}"], .it[data-n="${n}"]`).forEach(r => r.classList.toggle('hl', on));
+  // (as on the Coverage page, the selected one shows no hover mark)
+  const hl = (n, on) => { $('dlg').querySelectorAll(`.it[data-n="${n}"]`).forEach(r => r.classList.toggle('hl', on));
+    $('dlg').querySelectorAll('.hring').forEach(e => e.remove());
+    if (on && !(picked?.id === open && String(picked.n) === String(n))) $('dlg').querySelectorAll(`rect.box[data-n="${n}"]`).forEach(b => ringAt(b, false)); };
   $('dlg').querySelectorAll('.it').forEach(e => { e.onmouseenter = () => hl(e.dataset.n, true); e.onmouseleave = () => hl(e.dataset.n, false); });
   $('dlg').querySelectorAll('rect.box').forEach(r => { const n = r.dataset.n;
     r.onmouseenter = () => hl(n, true); r.onmouseleave = () => hl(n, false);
@@ -820,7 +823,7 @@ function detail(id) {
   // an item clicked (not its buttons or reason) is selected like its box (user, 2026-11-04)
   $('dlg').querySelectorAll('.it').forEach(e => e.addEventListener('click', ev => { if (!ev.target.closest('button, input, label, a')) pick(e.dataset.n, false); }));
   // an image clicked: full size over the page with its boxes (user, 2026-11-04: not a new tab); a click or Esc closes it
-  $('dlg').querySelectorAll('.frame .zm').forEach(b => b.onclick = () => { const fr = b.closest('.frame').cloneNode(true);
+  $('dlg').querySelectorAll('.frame .zm').forEach(b => b.onclick = () => { const fr = b.closest('.frame').cloneNode(true); fr.querySelectorAll('.hring').forEach(e => e.remove());
     fr.querySelector('.zm').replaceWith(...fr.querySelector('.zm').childNodes); lightbox(fr); });
   $('dlg').querySelectorAll('[data-part]').forEach(b => b.onclick = () => { const fr = document.createElement('div'); fr.className = 'frame plain';
     fr.innerHTML = `<img src="${esc(b.dataset.part)}" alt="">`; lightbox(fr); });
@@ -830,9 +833,19 @@ function detail(id) {
   if (picked?.id === id) pick(picked.n, false, true);
 }
 // a box or an item clicked: both marked until another click (the same one again clears it); from a box, its item
-// scrolls into view in the right panel. The box is marked as on the Coverage page: a black / white / black ring just
+// scrolls into view in the right panel. The box is marked as on the Coverage page: a white ring on a black one just
 // clear of it (so it never covers what the box holds), then the box itself redrawn on top in its verdict colour.
 let picked = null;
+// The Coverage page's marks around a box, in screen pixels: selected (strong) a 2.5 px white ring on a 5 px black one,
+// hovered a 2 px dashed white ring. Both stay clear of the box: these boxes hug a line of text, and a thicker box or a
+// ring on its edge covered the glyphs (user, 2026-11-05), so the box keeps its width.
+function ringAt(b, strong) {
+  const svg = b.ownerSVGElement, k = svg.viewBox.baseVal.width / (svg.clientWidth || svg.viewBox.baseVal.width), o = (strong ? 4.5 : 3.5) * k;
+  const [x, y, w, h] = ['x', 'y', 'width', 'height'].map(a => +b.getAttribute(a));
+  const r = (cls, c, sw, extra = '') => `<rect class="${cls}" x="${x - o}" y="${y - o}" width="${w + 2 * o}" height="${h + 2 * o}" rx="${4 * k}" stroke="${c}" stroke-width="${sw * k}"${extra}/>`;
+  svg.insertAdjacentHTML('beforeend', strong ? r('ring', 'rgba(0,0,0,0.85)', 5) + r('ring', '#fff', 2.5)
+    : r('ring hring', '#fff', 2, ` stroke-dasharray="${5 * k} ${3 * k}"`));
+}
 function pick(n, scroll, again = false) {
   $('dlg').querySelectorAll('.pick, .flash').forEach(e => e.classList.remove('pick', 'flash'));
   $('dlg').querySelectorAll('.ring, .box.top').forEach(e => e.remove());
@@ -841,13 +854,8 @@ function pick(n, scroll, again = false) {
   picked = { id: open, n };
   it.closest('details')?.setAttribute('open', '');
   $('dlg').querySelectorAll(`rect.box[data-n="${n}"]`).forEach(b => {
-    // the ring stays clear of the box (its inner edge 2 px outside the box's stroke) and the box keeps its width: these
-    // boxes hug a line of text, and a thicker box or a ring on its edge covered the glyphs (user, 2026-11-05)
-    const svg = b.ownerSVGElement, k = svg.viewBox.baseVal.width / (svg.clientWidth || svg.viewBox.baseVal.width), o = 5.5 * k;
-    const [x, y, w, h] = ['x', 'y', 'width', 'height'].map(a => +b.getAttribute(a));
-    const ring = (c, sw) => `<rect class="ring" x="${x - o}" y="${y - o}" width="${w + 2 * o}" height="${h + 2 * o}" rx="${3 * k}" stroke="${c}" stroke-width="${sw * k}"/>`;
     const top = b.cloneNode(true); top.classList.add('top'); top.style.pointerEvents = 'none'; top.querySelector('title')?.remove();
-    b.classList.add('pick'); svg.insertAdjacentHTML('beforeend', ring('rgba(0,0,0,0.85)', 3.5) + ring('#fff', 1.5)); svg.append(top); });
+    b.classList.add('pick'); ringAt(b, true); b.ownerSVGElement.append(top); });
   void it.offsetWidth; it.classList.add('pick'); if (!again) it.classList.add('flash');
   if (!scroll) return;
   const rp = it.closest('.rp'), y = it.getBoundingClientRect().top - rp.getBoundingClientRect().top + rp.scrollTop - (rp.clientHeight - it.offsetHeight) / 2;
