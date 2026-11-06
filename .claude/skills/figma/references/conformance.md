@@ -201,8 +201,8 @@ what is left is a candidate:
 | `missing` | a Figma text with no app text with its words, nor any on its line where Figma draws it (`sample` when over 60 characters) | major |
 | `truncated` | the app text ends in an ellipsis Figma does not have, or runs past the screen edge | major |
 | `lines` | the app text wraps into more or fewer lines (the app's lines counted on the screenshot) | minor |
-| `size`, `weight` | font size (6 % in sp from view data, else 12 % in width against the platform's font) and weight (view data) | minor |
-| `padding` | the inset from a text to the edge of its box more than 3 pt off Figma's (4 pt on text boxes): the aligned side and the top, all four where the box hugs its content (auto layout) and the words are the same; top and bottom only for one line on both sides, measured to the middle of the line | minor |
+| `size`, `weight` | font size (6 % in sp from view data, else 12 % in width against the platform's font) and weight (view data). Figma is drawn for iOS in SF Pro; on Android the weight is held to the PDRM guideline's Roboto equivalent (Regular 400 → 400, Medium 500 → 500, Semibold 600 → Medium 500; KP-066), and the item names both | minor |
+| `padding` | the inset from a text to the edge of its box more than 3 pt off Figma's (4 pt on text boxes): the aligned side and the top; where the box hugs its content (a chip, a tag) and the words are the same, also left and right together (and top and bottom), their sum off, centred text or not: chips 2–3 pt narrower a side move every chip after them along the row, which the old check reported as each later chip's position; top and bottom only for one line on both sides, measured to the middle of the line | minor |
 | `align` | a text Figma centres in its box more than 3 pt (4) off centre, across or down | minor |
 | `border` | the box's border: Figma's stroke (a see-through one blended over the fill) against the app's own stroke (view data) or the border read on the screenshot; one drawn and not the other, ΔE > 18, or over 1 pt wider or narrower | minor |
 | `spacing` | the gap (up to 32 pt in Figma) between neighbouring buttons on a row or in a column, more than 2 pt off edge to edge (3 pt centre to centre where an app box is a touch area larger than the drawing) | minor |
@@ -251,6 +251,13 @@ the Design tab's token use).
 - **Builder.** For each screen, its `compare.json` entry and its sheet: a verdict for every candidate except `extra`
   / `sample` (those only when they matter), plus `visual:<n>` items for what the measure cannot see, each with `kind`,
   `figma.box` (screen points) and a note. Writes `design/builder.json`.
+- **Notes Design and RD can read (user, 2026-11-06).** The Design tab opens each item with a plain sentence the page
+  writes itself (「「AI Mini Drama」 的字重：Design 為 Medium (510)，App 為 Regular (400)。」); the raw values, the colour
+  table and ΔE are folded under 「量測細節 / How it was measured」, and the second pass's note shows only when it differs.
+  So a note says what that sentence cannot: why it matters or why it is fine, and where else it repeats (「Launcher 上
+  所有圖塊標籤都一樣」). Write it for a designer or an RD engineer: no ΔE, no 「app data」 or 「view data」, no
+  candidate ids; name a weight (Medium, Regular), a colour by how it looks with its value (淺灰 #CCD5E1), a size in
+  pt or sp.
 - **Notes in both languages (user, 2026-11-04).** Every note is written twice, `note` in English and `note_zh` in
   Traditional Chinese (the same content, 「」 around quoted UI text in both); the Design tab shows the one for its
   language switch, and the eBug drafts use the English.

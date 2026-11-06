@@ -268,14 +268,14 @@ test('check: every planted difference is found, and nothing else', () => {
     'control:1:16',     // close icon with nothing tappable there
     'lines:1:1c',       // two lines where Figma has one
     'missing:1:1e',     // "Upgrade now" not on the phone
-    'padding:1:1i',     // the tag's label 4 pt from its left edge, Figma 10 (and the right edge, the tag hugging it)
+    'padding:1:1i',     // the tag's label 4 pt from its left edge, Figma 10
     'spacing:1:1j-1:1d', // share 20 pt from more, Figma 16
     'truncated:1:1b',   // ends in an ellipsis
   ]);
   // not checked (user, 2026-11-06): the words (「Choose the template」) and where a text sits (「Pick a style…」 12 pt right)
   assert.ok(!c.some((x: any) => ['copy', 'position'].includes(x.kind) || x.id === 'extra:choose the template'), 'other words are neither copy, missing nor extra');
   const by = (id: string) => c.find((x: any) => x.id === id);
-  assert.deepEqual(by('padding:1:1i').delta, { left: -6, right: 6 });
+  assert.deepEqual(by('padding:1:1i').delta, { left: -6 }, 'the label moved inside a tag of the right width: its left padding, the total is the same');
   assert.deepEqual(by('align:1:14').delta, { x: 7.5 });
   assert.deepEqual(by('spacing:1:1j-1:1d').delta, { gap: 4 });
   assert.match(by('border:1:15').note, /Figma draws a 1 pt border, the app none/);
@@ -314,6 +314,7 @@ test("check: the app's own view data (Android) gives size, weight, colour, lines
   assert.deepEqual(by('size:1:11')?.delta, { sp: 18, pt: 16 });
   assert.match(by('size:1:11')?.note, /font scale 1\.1 is not in this/, 'sizes are compared before the phone\'s font scale');
   assert.equal(by('weight:1:13')?.delta?.app, 700);
+  assert.equal(by('weight:1:13')?.delta?.android, 400, 'held to the Android standard of Figma\'s weight');
   assert.equal(by('colour:1:12')?.src, 'app', 'the red text from the app\'s own colour');
   assert.equal(by('lines:1:1c')?.app?.lines, 2);
   assert.equal(by('radius:1:15')?.delta?.figma, 12, 'the button\'s radius: 60 px / 2.88 = 20.8 dp');

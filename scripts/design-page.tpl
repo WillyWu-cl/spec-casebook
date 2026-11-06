@@ -101,6 +101,10 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 @keyframes pick { from { background: color-mix(in srgb, var(--accent) 30%, transparent) } to { background: transparent } }
 .box.hl { stroke-width: 3 }
 .ring { fill: none; pointer-events: none }
+.it .plain { font-size: 0.95rem; line-height: 1.45 }
+.it .note b { font-weight: 600 }
+.it details.how > summary { cursor: pointer; color: var(--muted); font-size: 0.8rem }
+.it details.how[open] { display: grid; gap: 3px }
 .it .h { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap }
 .it .num { font: 700 0.8rem var(--mono); color: #fff; border-radius: 4px; padding: 0 6px }
 .it .k { font: 600 0.78rem var(--mono) }
@@ -258,6 +262,7 @@ const T = {
     bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', boxes: 'Boxes',
     doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click to see it full size', dwhy: 'Why it is not a problem (required)', dwhyOpt: 'Note (optional)',
     needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`, colSet: 'Set to', colDrawn: 'On screen', colDrawnT: 'The colour as drawn on the image, sampled from the pixels', colDiff: (a, b) => `Difference ΔE ${a} as set${b != null ? `, ${b} on screen` : ''}`, srcApp: 'app data', srcAppT: "Read from the app's own view data (exact), not from the screenshot",
+    revNote: 'Review:', howMeasured: 'How it was measured', secondRev: 'Second review:',
     viewsNote: (m, n, sc) => `App view data: ${m} of the matched texts read exactly (${n} texts in the dump)${sc !== 1 ? `; the phone's font scale is ${sc}` : ''}.`,
     hiddenNote: n => `${n} text(s) of the page source are not on the screen (under another layer, or a button's accessibility name) and were left out.`,
     noOcr: 'The screenshot was not read (OCR runs on macOS): lines, text size and hidden texts come from the view boxes.',
@@ -300,7 +305,8 @@ const T = {
     fitNote: (t, b) => `對齊位移：上 ${t} pt，下 ${b} pt`, allKinds: '全部差異', copy: n => `複製決定（${n}）`, copied: '已複製',
     bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', boxes: '框線',
     doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點一下看原尺寸', dwhy: '為什麼不是問題（必填）', dwhyOpt: '備註（選填）',
-    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, colSet: '設定值', colDrawn: '畫面上', colDrawnT: '圖上實際畫出的顏色，取自像素', colDiff: (a, b) => `差異 ΔE：設定值 ${a}${b != null ? `，畫面上 ${b}` : ''}`, srcApp: 'App 資料', srcAppT: '取自 App 自身的 view 資料（精確值），不是截圖',
+    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, colSet: '設定值', colDrawn: '畫面上', colDrawnT: '圖上實際畫出的顏色，取自像素', colDiff: (a, b) => `差異 ΔE：設定值 ${a}${b != null ? `，畫面上 ${b}` : ''}`, srcApp: 'App 資料', srcAppT: '數值取自 App 本身的版面資料（精確值），不是從截圖量的',
+    revNote: '審查說明：', howMeasured: '量測細節', secondRev: '第二位審查：',
     viewsNote: (m, n, sc) => `App view 資料：配對的文字中 ${m} 段取得精確值（dump 共 ${n} 段文字）${sc !== 1 ? `；手機字型縮放為 ${sc}` : ''}。`,
     hiddenNote: n => `頁面原始碼中有 ${n} 段文字不在畫面上（在其他圖層下，或是按鈕的無障礙名稱），已排除。`,
     noOcr: '擷取圖未經文字辨識（OCR 只在 macOS 執行）：行數、文字大小與隱藏文字改用元件框判斷。',
@@ -656,6 +662,67 @@ const lang = (o, k) => L === 'zh' ? o[`${k}_zh`] || (o[k] && (MN[o[k]] ?? mnx(o[
 const PASS = { builder: '建構者', reviewer: '審查者', skipped: '略過' };
 const splitL = x => L === 'zh' ? x.replace(/\b(builder|reviewer|skipped)\b/g, m => PASS[m]).replace(/\b(bug|ok|n\/a|question|unreviewed)\b/g, m => VN.zh[m] ?? m) : x;
 const decidedL = x => L === 'zh' ? x.replace(/^user /, '使用者 ') : x;
+// The item in one plain sentence, in words Design and RD use (user, 2026-11-06: the leads could not read the raw
+// values, 「app 400 · figma 510」, a set/on-screen colour table, ΔE, 「App 資料」): what differs, Design's value, then
+// the app's. The numbers behind it are folded under "How it was measured".
+const WEIGHT = { 100: 'Thin', 200: 'ExtraLight', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold', 900: 'Black' };
+const wName = w => `${WEIGHT[Math.min(900, Math.max(100, Math.round(w / 100) * 100))]} (${w})`;
+const SIDE = { en: { left: 'left', right: 'right', top: 'top', bottom: 'bottom' }, zh: { left: '左', right: '右', top: '上', bottom: '下' } };
+const SEV = { en: { major: 'major', minor: 'minor', cosmetic: 'cosmetic' }, zh: { major: '嚴重', minor: '輕微', cosmetic: '外觀' } };
+// how far apart two colours look: ΔE as words (under 3 the eye cannot tell them apart)
+const looks = dE => dE == null ? '' : L === 'zh' ? (dE < 3 ? '肉眼幾乎看不出差別' : dE < 6 ? '仔細看才看得出差別' : dE < 12 ? '看得出不同' : '明顯不同')
+  : (dE < 3 ? 'the eye can hardly tell them apart' : dE < 6 ? 'a slight difference' : dE < 12 ? 'a visible difference' : 'clearly different');
+function plain(it, H) {
+  const zh = L === 'zh', f = it.figma ?? {}, a = it.app ?? {}, d = it.delta ?? {};
+  const q = s => s ? `「${String(s).replace(/\s+/g, ' ').slice(0, 40)}${String(s).length > 40 ? '…' : ''}」` : '';
+  const what = q(f.text ?? a.text ?? f.name);   // a text's words, else the layer's name
+  const col = (o, tok) => o?.color ? `${(o.color.length === 9 ? '#' + o.color.slice(3) : o.color).toUpperCase()}${tok ? `（${tok}）` : ''}` : '';
+  const pt = v => `${Math.round(v * 10) / 10} pt`;
+  switch (it.kind) {
+    // on Android the standard is the guideline's Roboto equivalent (KP-066), named beside Design's iOS weight
+    case 'weight': return d.android != null ? (zh ? `${what} 的字重：Design 為 SF Pro ${wName(d.figma)}，Android 標準為 Roboto ${wName(d.android)}，App 為 ${wName(d.app)}。`
+        : `${what} font weight: Design SF Pro ${wName(d.figma)}, Android standard Roboto ${wName(d.android)}, app ${wName(d.app)}.`)
+      : zh ? `${what} 的字重：Design 為 ${wName(d.figma)}，App 為 ${wName(d.app)}。` : `${what} font weight: Design ${wName(d.figma)}, app ${wName(d.app)}.`;
+    case 'size': return d.sp != null ? (zh ? `${what} 的字級：Design 為 ${d.pt} pt，App 為 ${d.sp} sp。` : `${what} font size: Design ${d.pt} pt, app ${d.sp} sp.`)
+      : (zh ? `${what} 的字看起來比 Design 大或小（字級、粗細或字型不同）。` : `${what} looks larger or smaller than in the Design (size, weight or font differs).`);
+    // a text's colour (the check marks it `role: 'text'` since 2026-11-06; earlier runs: its review note says so)
+    case 'colour': { const dE = d.dE_drawn ?? d.dE, isText = f.role === 'text' || f.text || /\b(text|label)\b|文字|標籤/i.test(`${it.note ?? ''} ${it.note_zh ?? ''}`);
+      const fv = col(f, f.variable?.replace(/^Variable\//, '')), av = col(a, a.res);
+      return zh ? `${what || '此區塊'} 的${isText ? '文字顏色' : '底色'}：Design 為 ${fv}，App 為 ${av}；${looks(dE)}。` : `${what || 'This shape'} ${isText ? 'text colour' : 'fill colour'}: Design ${fv}, app ${av}; ${looks(dE)}.`; }
+    // a displacement says the same in both languages: which way, how far, from what (user, 2026-11-06)
+    // both sides of a chip at once (its padding narrower or wider all round)
+    case 'padding': if (d.left != null && d.right != null && Math.sign(d.left) === Math.sign(d.right)) { const w = d.left > 0, tot = pt(Math.abs(d.left + d.right));
+      return zh ? `${what} 在「${f.in?.name ?? ''}」裡：左右內距比 Design ${w ? '寬' : '窄'}，合計${w ? '多' : '少'} ${tot}（左 ${pt(f.padding.left)} → ${pt(a.padding.left)}，右 ${pt(f.padding.right)} → ${pt(a.padding.right)}，Design → App）。`
+        : `${what} inside 「${f.in?.name ?? ''}」: ${w ? 'wider' : 'narrower'} padding on both sides than in the Design, ${tot} ${w ? 'more' : 'less'} in all (left ${pt(f.padding.left)} → ${pt(a.padding.left)}, right ${pt(f.padding.right)} → ${pt(a.padding.right)}, Design → app).`; }
+      return Object.keys(d).map(sd => { const fp = f.padding?.[sd], ap = a.padding?.[sd], far = ap > fp, by = pt(Math.abs(ap - fp));
+      return zh ? `${what} 在「${f.in?.name ?? ''}」裡：比 Design ${far ? `離${SIDE.zh[sd]}邊緣遠 ${by}` : `更靠近${SIDE.zh[sd]}邊緣 ${by}`}（${SIDE.zh[sd]}內距：Design ${pt(fp)}，App ${pt(ap)}）。`
+        : `${what} inside 「${f.in?.name ?? ''}」: ${by} ${far ? 'farther from' : 'closer to'} the ${sd} edge than in the Design (${sd} padding: Design ${pt(fp)}, app ${pt(ap)}).`; }).join(' ');
+    case 'align': { const p = [];
+      if (d.x != null) p.push(zh ? `偏${d.x > 0 ? '右' : '左'} ${pt(Math.abs(d.x))}` : `${pt(Math.abs(d.x))} ${d.x > 0 ? 'right' : 'left'} of centre`);
+      if (d.y != null) p.push(zh ? `偏${d.y > 0 ? '下' : '上'} ${pt(Math.abs(d.y))}` : `${pt(Math.abs(d.y))} ${d.y > 0 ? 'below' : 'above'} centre`);
+      return zh ? `${what} 在「${f.in?.name ?? ''}」裡沒有置中：App 上比中心${p.join('、')}（Design 為置中）。`
+        : `${what} is not centred in 「${f.in?.name ?? ''}」: in the app it sits ${p.join(' and ')} (the Design centres it).`; }
+    case 'border': { const fb = f.border, ab = a.border, bd = b => b ? `${pt(b.width)} ${b.color ?? ''}`.trim() : (zh ? '無邊框' : 'no border');
+      return zh ? `「${f.name ?? ''}」的邊框：Design ${bd(fb)}，App ${bd(ab)}。` : `「${f.name ?? ''}」 border: Design ${bd(fb)}, app ${bd(ab)}.`; }
+    case 'spacing': { const m = (it.note ?? '').match(/^(horizontal|vertical) gap from 「(.*?)」 to 「(.*?)」/), down = m?.[1] === 'vertical';
+      const A = m?.[2] ?? f.name ?? '', B = m?.[3] ?? (zh ? '下一個按鍵' : 'the next button'), wide = a.gap > f.gap, by = pt(Math.abs(a.gap - f.gap));
+      return zh ? `「${A}」與${down ? '下方' : '右邊'}「${B}」的間距：Design ${pt(f.gap)}，App ${pt(a.gap)}（${wide ? '寬' : '窄'}了 ${by}）。`
+        : `Gap between 「${A}」 and 「${B}」 ${down ? 'below' : 'to its right'}: Design ${pt(f.gap)}, app ${pt(a.gap)} (${by} ${wide ? 'wider' : 'narrower'}).`; }
+    case 'radius': return zh ? `「${f.name ?? ''}」的圓角：Design ${d.figma}，App ${d.app} dp。` : `「${f.name ?? ''}」 corner radius: Design ${d.figma}, app ${d.app} dp.`;
+    case 'lines': return zh ? `${what} 的行數：Design ${f.lines} 行，App ${a.lines} 行。` : `${what} line count: Design ${f.lines}, app ${a.lines}.`;
+    case 'truncated': return zh ? `${what} 在 App 上被截斷：${q(a.text)}。` : `${what} is cut short in the app: ${q(a.text)}.`;
+    case 'missing': case 'sample': return zh ? `Design 有 ${what}，App 上找不到。` : `The Design shows ${what}; the app does not.`;
+    case 'extra': return zh ? `App 有 ${q(a.text)}，Design 沒有。` : `The app shows ${q(a.text)}; the Design does not.`;
+    case 'control': return zh ? `Design 在此有按鍵「${f.name ?? ''}」，App 這裡沒有可點的按鍵。` : `The Design has the button 「${f.name ?? ''}」 here; the app has nothing to tap there.`;
+    case 'copy': return zh ? `文字不同：Design ${q(f.text)}，App ${q(a.text)}。` : `Different words: Design ${q(f.text)}, app ${q(a.text)}.`;
+    // (checks before 2026-11-06) y is measured from the bottom in the screen's lower half: larger is higher there
+    case 'position': { const low = H && f.box && f.box[1] + f.box[3] / 2 >= H / 2, y = low ? -d.y : d.y, p = [];
+      if (d.x) p.push(zh ? `偏${d.x > 0 ? '右' : '左'} ${pt(Math.abs(d.x))}` : `${pt(Math.abs(d.x))} further ${d.x > 0 ? 'right' : 'left'}`);
+      if (y) p.push(zh ? `偏${y > 0 ? '下' : '上'} ${pt(Math.abs(y))}` : `${pt(Math.abs(y))} ${y > 0 ? 'lower' : 'higher'}`);
+      return zh ? `${what} 在 App 上比 Design ${p.join('、')}。` : `${what} sits ${p.join(' and ')} in the app than in the Design.`; }
+    default: return lang(it, 'note') || '';
+  }
+}
 // one difference: number, kind, verdict, Figma vs app
 const ORDER = { bug: 0, question: 1, unreviewed: 2, 'n/a': 3, ok: 4, info: 5 };
 // the items of a comparison under one heading per verdict (Bug, Question, …, OK), each foldable; an item keeps its
@@ -708,12 +775,18 @@ function detail(id) {
       ${s.fit ? `<div class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</div>` : ''}</div>` : s.why ? `<p class="more">${esc(s.why)}</p>` : ''}
     <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" data-v="${esc(v)}"${folded.has(v) ? '' : ' open'}><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)};--vc:${VC(it.verdict)}">
       <div class="h"><span class="num" style="background:${VC(it.verdict)}">${n + 1}</span><span class="k">${esc(KN[L][it.kind] ?? it.kind)}</span>
-      ${it.src === 'app' ? `<span class="srcapp" title="${esc(t('srcAppT'))}">${esc(t('srcApp'))}</span>` : ''}${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
-      ${it.kind === 'colour' && (it.figma?.drawn || it.app?.drawn) ? colourTable(it) + (it.delta?.dE != null ? `<div class="more">${esc(t('colDiff')(it.delta.dE, it.delta.dE_drawn))}</div>` : '')
+      ${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(SEV[L][it.severity] ?? it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
+      ${plain(it, s.h) ? `<div class="plain">${esc(plain(it, s.h))}</div>` : ''}
+      ${it.kind === 'colour' && (it.figma?.drawn || it.app?.drawn) ? colourTable(it) : ''}
+      ${it.kind === 'visual' || !lang(it, 'note') || lang(it, 'note') === plain(it, s.h) ? '' : `<div class="note"><b>${esc(t('revNote'))}</b> ${esc(lang(it, 'note'))}</div>`}
+      ${it.split ? `<div class="note">${esc(splitL(it.split))}</div>` : ''}${it.decided ? `<div class="note">${esc(decidedL(it.decided))}</div>` : ''}
+      ${s.run ? decRow(s, it) : ''}
+      <details class="how"><summary>${esc(t('howMeasured'))}</summary>
+      ${it.src === 'app' ? `<div class="more">${esc(t('srcAppT'))}</div>` : ''}
+      ${it.kind === 'colour' && (it.figma?.drawn || it.app?.drawn) ? (it.delta?.dE != null ? `<div class="more">${esc(t('colDiff')(it.delta.dE, it.delta.dE_drawn))}</div>` : '')
       : `${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
       ${it.delta ? `<div class="more">${esc(Object.entries(it.delta).map(([a, b]) => `${a} ${b}`).join(' · '))}</div>` : ''}`}
-      ${it.split ? `<div class="note">${esc(splitL(it.split))}</div>` : ''}${it.decided ? `<div class="note">${esc(decidedL(it.decided))}</div>` : ''}
-      ${s.run ? decRow(s, it) : ''}${lang(it, 'note') ? `<div class="note">${esc(lang(it, 'note'))}</div>` : ''}${lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note">${esc(lang(it, 'reviewer'))}</div>` : ''}</div>`).join('')}</details>`).join('')}
+      ${lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note"><b>${esc(t('secondRev'))}</b> ${esc(lang(it, 'reviewer'))}</div>` : ''}</details></div>`).join('')}</details>`).join('')}
     ${info.length ? `<button type="button" class="chip" id="info">${esc(showInfo ? t('hideInfo') : t('showInfo'))} · ${esc(t('info')(info.length))}</button>` : ''}</div>
   </div></div>`;
   $('x').onclick = () => { history.replaceState(null, '', location.pathname + location.search); $('dlg').close(); open = null; };

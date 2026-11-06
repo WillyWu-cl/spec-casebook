@@ -380,7 +380,7 @@ function measure() {
       // the app's own text colour when the view data has it
       const smp = { kind: 'text', screen: scr.id, node: p.t.node, name: p.t.text, color: p.t.color, variable: p.t.variable, figBox: p.t.box, box: p.ga ? union(p.ga).map((v: number) => v / k) : p.a.box, fig: figImg };
       if (p.vt?.color) { const d = deltaE(p.t.color, rgb(p.vt.color)); if (d > 6) cands.push({ id: `colour:${p.t.node}`, kind: 'colour', severity: 'minor', src: 'app', note: "text colour, the app's own value",
-        figma: { node: p.t.node, name: p.t.text, color: p.t.color, box: r1(p.t.box) }, app: { color: p.vt.color, ...(p.vt.res ? { res: p.vt.res } : {}), ...(p.vt.alpha ? { alpha: p.vt.alpha } : {}) }, delta: { dE: Math.round(d) } });
+        figma: { node: p.t.node, name: p.t.text, role: 'text', color: p.t.color, box: r1(p.t.box) }, app: { color: p.vt.color, ...(p.vt.res ? { res: p.vt.res } : {}), ...(p.vt.alpha ? { alpha: p.vt.alpha } : {}) }, delta: { dE: Math.round(d) } });
         samples.push({ ...smp, set: p.vt.color }); continue; }
       samples.push(smp);
     }
@@ -418,7 +418,7 @@ function measure() {
     const got = py.colours?.[2 * i], figDrawn = py.colours?.[2 * i + 1], r = results.find(r => r.id === s.screen);
     // anti-aliased glyphs never reach the full colour, so texts get more room
     const room = s.kind === 'text' ? 18 : 12, c = r.candidates.find((c: Cand) => c.id === `colour:${s.node}`);
-    const figma = { node: s.node, name: s.name, color: s.color, ...(s.variable ? { variable: s.variable } : {}), ...(figDrawn ? { drawn: figDrawn } : {}), box: r1(s.figBox) };
+    const figma = { node: s.node, name: s.name, ...(s.kind === 'text' ? { role: 'text' } : {}), color: s.color, ...(s.variable ? { variable: s.variable } : {}), ...(figDrawn ? { drawn: figDrawn } : {}), box: r1(s.figBox) };
     if (s.set) {
       // the app's own value: the drawn colour is listed beside it, and a set value the screen does not show (alpha, a
       // layer over the view, or the wrong view matched) is named on the candidate and in the summary
@@ -474,14 +474,20 @@ function rgb(argb: string) { return `#${argb.slice(3, 9)}`; }
 // the phone's font scale changes every size and wrap: sizes are compared in sp (before it), lines say so
 function scaleNote(V: Views) { return V.fontScale !== 1 ? `the phone's font scale is ${V.fontScale}: wrapping at 1.0 may differ` : undefined; }
 // size in sp against Figma's points (6 % and 0.5 sp, twice that is major) and weight (100 apart), from the app's view
+// Figma is drawn for iOS in SF Pro; Android's standard is Roboto (PDRM design guideline, Typography, Figma
+// qSdtJ1wbHddNm6ebWvF4ia 3883:8926; KP-066): Regular 400 → 400, Medium 500 → 500, Semibold 600 → Medium 500. A variable
+// weight between (SF Pro Medium 510) takes the nearest named one; Bold and heavier keep theirs.
+function ANDROID_WEIGHT(w: number) { const n = Math.round(w / 100) * 100; return n === 600 ? 500 : Math.min(900, Math.max(100, n)); }
 function exactText(t: any, vt: ViewText, V: Views, tb: number[], ab: number[]): Cand[] {
   const out: Cand[] = [], fam = `${vt.family ?? 'system font'} ${vt.weight ?? ''}`.trim();
   if (vt.sp && t.size) { const d = vt.sp / t.size - 1;
     if (Math.abs(d) > 0.06 && Math.abs(vt.sp - t.size) >= 0.5) out.push({ id: `size:${t.node}`, kind: 'size', severity: Math.abs(d) > 0.15 ? 'major' : 'minor', src: 'app',
       note: `the app sets ${vt.sp} sp (${fam}), Figma ${t.font ?? `${t.size} pt`}${V.fontScale !== 1 ? `; the phone's font scale ${V.fontScale} is not in this` : ''}`,
       figma: { node: t.node, text: t.text, box: tb }, app: { text: vt.text, box: ab }, delta: { sp: vt.sp, pt: t.size } } as Cand); }
-  if (vt.weight && t.weight && Math.abs(vt.weight - t.weight) >= 100) out.push({ id: `weight:${t.node}`, kind: 'weight', severity: 'minor', src: 'app',
-    note: `the app draws weight ${vt.weight} (${vt.family ?? 'system font'}), Figma ${t.weight} (${t.font ?? ''})`, figma: { node: t.node, text: t.text, box: tb }, app: { text: vt.text, box: ab }, delta: { app: vt.weight, figma: t.weight } } as Cand);
+  // the Android standard for Figma's iOS weight (PDRM design guideline, KP-066): the app is held to that, not to SF Pro's
+  const want = ANDROID_WEIGHT(t.weight);
+  if (vt.weight && t.weight && vt.weight !== want) out.push({ id: `weight:${t.node}`, kind: 'weight', severity: 'minor', src: 'app',
+    note: `the app draws weight ${vt.weight} (${vt.family ?? 'system font'}), Figma ${t.weight} (${t.font ?? ''}): Android standard ${want}`, figma: { node: t.node, text: t.text, box: tb }, app: { text: vt.text, box: ab }, delta: { app: vt.weight, figma: t.weight, android: want } } as Cand);
   return out;
 }
 // fill colour (ΔE over 6) and corner radius (over 2 dp; a fully round shape's radius only as round) from the app's view
@@ -526,8 +532,9 @@ function union(g: { box: Box }[]): Box { const x = Math.min(...g.map(o => o.box[
 // its words. All in Figma points (app boxes through k). Glyph boxes when both sides were read (Figma's render bounds,
 // the screenshot's OCR: ±2 pt), else the text boxes, with a point more of room.
 //   padding  a side's inset from the text to its box edge more than 3 pt (4 pt on text boxes) off Figma's: the left
-//            (right for a right-aligned text) and the top; the other two too where the box hugs its content (auto
-//            layout) when the words are the same; top and bottom only for a single line on both sides. Down, the
+//            (right for a right-aligned text) and the top; where the box hugs its content (auto layout, a chip) and the
+//            words are the same, left and right together (and top and bottom), their sum off, centred or not; top and
+//            bottom only for a single line on both sides. Down, the
 //            inset is taken to the middle of the text's line: the platform font draws its letters higher or lower in
 //            the same line. A box from edge to edge of the screen (a tab bar) is not measured across: there an inset
 //            is only where the text sits on the screen
@@ -578,14 +585,21 @@ function layoutCands({ fig, base, els, V, k, Wf, cands, placed }: Lay) {
     if (Math.abs(ax) > tol || Math.abs(ay) > tol)
       if (Math.abs(ax) <= 24 && Math.abs(ay) <= 24) out.push({ id: `align:${p.t.node}`, kind: 'align', severity: 'minor', note: `not centred in its box as Figma draws it${glyph ? '' : ' (text boxes)'}`, figma, app,
         delta: { ...(Math.abs(ax) > tol ? { x: r1(ax) } : {}), ...(Math.abs(ay) > tol ? { y: r1(ay) } : {}) } });
-    // insets compared: across, the aligned edge (both where the box hugs the text); down, the top (both when hugging)
-    const sides: [string, number, number][] = [];
-    if (across && !cx) { if (p.t.align === 'RIGHT') sides.push(['right', fr, ar]); else sides.push(['left', fl, al]);
-      if (b.hugW && same && single) sides.push(p.t.align === 'RIGHT' ? ['left', fl, al] : ['right', fr, ar]); }
-    if (single && !cy) { sides.push(['top', ft, at]); if (b.hugH && same) sides.push(['bottom', fb, abm]); }
+    // insets compared. A box that hugs its text (a chip, a tag; same words, one line): the two sides together, centred
+    // text or not, since a chip a few points narrower on each side moves every chip after it along the row (「Spanish」,
+    // 「German」, 「Korean」 6 pt left in the old check: 13 pt a side in Figma, 10–12 in the app; user, 2026-11-06).
+    // A text not centred is also held to its aligned edge (a label moved inside a box of the right size); down, the top.
+    const sides: [string, number, number][] = [], pairs: [string, string, number, number, number, number][] = [];
+    const hugX = across && b.hugW && same && single, hugY = b.hugH && same && single;
+    if (hugX) pairs.push(['left', 'right', fl, fr, al, ar]);
+    if (across && !cx) sides.push(p.t.align === 'RIGHT' ? ['right', fr, ar] : ['left', fl, al]);
+    if (hugY) pairs.push(['top', 'bottom', ft, fb, at, abm]);
+    else if (single && !cy) sides.push(['top', ft, at]);
     // over 24 pt off is another box taken for this one (a card around a question, a list row): counted, not an item
     if (sides.some(([, f, a]) => Math.abs(a - f) > 24) || Math.abs(ax) > 24 || Math.abs(ay) > 24) { unmatched++; continue; }
     const off = sides.filter(([, f, a]) => Math.abs(a - f) > tol);
+    // a pair off together: the sum of its two insets more than `tol` from Figma's
+    for (const [s1, s2, f1, f2, a1, a2] of pairs) if (Math.abs(a1 + a2 - f1 - f2) > tol) for (const x of [[s1, f1, a1], [s2, f2, a2]] as [string, number, number][]) if (!off.some(o => o[0] === x[0])) off.push(x);
     if (off.length) out.push({ id: `padding:${p.t.node}`, kind: 'padding', severity: 'minor', note: `${off.map(([s]) => s).join(', ')} padding differs${glyph ? '' : ' (text boxes)'}`,
       figma: { ...figma, padding: Object.fromEntries(off.map(([s, f]) => [s, r1(f)])) }, app: { ...app, padding: Object.fromEntries(off.map(([s, , a]) => [s, r1(a)])) },
       delta: Object.fromEntries(off.map(([s, f, a]) => [s, r1(a - f)])) });

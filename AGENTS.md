@@ -155,6 +155,13 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **What the design check holds the app to (user, 2026-11-06).** A text box's padding and border, font size and the
   text's centring in its box, and the gaps between buttons; never a text's words or its own place on the screen
   (`copy` and `position` are gone; texts pair by place when the words differ) (`figma/references/conformance.md` §3).
+- **Android text against the Android font (user, 2026-11-06).** Figma is drawn for iOS (SF Pro); on Android the design
+  check holds weights to the PDRM guideline's Roboto equivalents (Semibold 600 → Medium 500), KP-066
+  (`library/pdr/knowledge/design-guideline.md`). A chip whose padding differs is a `padding` item, never the next
+  chip's position (`figma/references/conformance.md` §3).
+- **Design tab items for Design and RD (user, 2026-11-06).** Each item opens with a plain sentence (what differs,
+  Design's value, the app's); raw values sit under 「How it was measured」; review notes avoid ΔE and tool terms
+  (`figma/references/conformance.md` §4).
 - **Colours set and drawn (user, 2026-11-05).** A design check colour item lists the value set (Figma fill and token,
   the app's value and resource) beside the colour drawn on each image; `check` reports app values the screen does not
   show (`figma/references/conformance.md` §3).
