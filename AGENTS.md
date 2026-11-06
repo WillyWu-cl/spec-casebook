@@ -23,7 +23,8 @@ two differ).
   from the old layout* says (`rsync` into `library/<product>/<feature>/`, then remove the old folder), and have them
   restart any review or pages server with the new ID.
 - The review server (`scripts/review.ts`) and the page server (`scripts/pages.ts`: review, plan and coverage on one
-  address) are local processes the user may be using; do not stop them unless asked.
+  address) are local processes the user may be using; do not stop them unless asked, or until the user says they
+  saved (*Page servers after Save*, below).
 
 ## Team preferences
 
@@ -182,6 +183,8 @@ lines; put the full rule in the skill or reference file that applies it and poin
   a table's Open questions sit on Cases above the table with answer boxes, applied as rulings (`SKILL.md` step 4,
   Question answers). Open pages update only when what they show changed (user, 2026-11-05): Progress, Results, Coverage and
   Design redraw in place, patching only what differs; Cases offers a Reload button (`scripts/pages.ts` header).
+- **Page servers after Save (user, 2026-11-06).** Once the user says they saved a table's page, stop the review or
+  page servers started for it, without asking; other features' servers stay (`SKILL.md` step 4).
 - **One-off HTML pages (user, 2026-11-05).** A page asked for as HTML is a local file, not an artifact, and never goes
   on the Desktop: it goes in `library/<product>/<feature>/comparisons/` (git-ignored, local only), named
   `<date>_<topic>.html`. The committed spec agent comparisons stay in `<platform>/comparisons/`.

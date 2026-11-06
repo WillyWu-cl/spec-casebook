@@ -186,7 +186,9 @@ and the pass / fail / block reason, and Save works only on this computer:
 After the user says they saved, read `manifest.json` and `cases.csv` to confirm the version and case count, and
 report them. If the user pastes copied decisions instead of saving, apply them to the draft's rows, write the
 result with the same columns, and re-open the review (or save on their explicit request by editing `cases.csv`
-and re-running `node scripts/export.ts`). Leave the review server running unless the user asks you to stop it.
+and re-running `node scripts/export.ts`). Once the user has said they saved, and the save is confirmed, stop the servers started for that table without asking
+(user, 2026-11-06); until then leave them running unless the user asks. Saved open notes that reopen the review (below)
+keep them running.
 
 **New-case notes (user, 2026-10-28).** Save appends the notes to `library/<product>/<feature>/<platform>/new-case-notes.json`
 (`status: "open"`, the version saved with them); Copy decisions ends with a `NEW CASE NOTES` block. Whenever either
