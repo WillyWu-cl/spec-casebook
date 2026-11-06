@@ -1044,6 +1044,7 @@ name its frame's node id, which routes the design check to it.
 | KP-007 A failed generation refunds its credits | R-035, R-036, R-056, R-057, R-067, R-080, R-084; exception R-496 (§13.26: no automatic refund for a celebrity block) |
 | KF-056 Credit prices come from the Credit System forms | R-033, R-040, R-050, R-059, R-061, R-069, R-081, R-147, R-254, R-259, R-260 |
 | KF-058 Full Video adds 4 credits for the reference audio | R-069 |
+| KP-066 Android text is held to the Android equivalent of the iOS font | n/a (design check only, not a table rule) |
 
 ## Added 2026-11-05 — PM / Design Figma changes 10/29 – 11/4 (REQ-094)
 

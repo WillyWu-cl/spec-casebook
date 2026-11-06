@@ -17,6 +17,13 @@ generated at the character / scene step, so it is not generated again.
 A failed item costs nothing net; a partial failure costs only the items that succeeded. A missing or wrong refund is
 a defect with its own eBug, even when the failure itself is already filed.
 
+### KP-066 Android text is held to the Android equivalent of the iOS font (android, unverified)
+The Design Figma is drawn for iOS in SF Pro. On Android the standard is Roboto: SF Pro Regular 400 → Roboto Regular
+400, Medium 500 → Roboto Medium 500, Semibold 600 → Roboto Medium 500 (the board labels it 「Semibold/500」). Figma's
+variable SF Pro weights between these (Medium 510) count as the nearest named weight. The board gives no size mapping,
+so a size in pt is the same number in sp. The design check (`scripts/design.ts`, `ANDROID_WEIGHT`) judges Android
+weights this way.
+
 ## question
 
 ### KP-028 No Design for the notification centre
@@ -75,4 +82,4 @@ say 「Meme Dance Generator」; use the build's name and don't file the differen
 ### KP-038 Advanced Cutout and AI Smart Cutout
 One capability: the Mine Free card calls it 「Advanced Cutout」, the paywall's Compare plans 「AI Smart Cutout」.
 
-<!-- knowledge hash: cce8f6e89a5c808d -->
+<!-- knowledge hash: 4b3ad0537067967d -->
