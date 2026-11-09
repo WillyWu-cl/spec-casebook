@@ -88,7 +88,10 @@ a.spec{display:inline-block;margin-top:4px;font:600 .7rem var(--mono);color:var(
 a.spec:hover{background:var(--edit-soft)}
 .xl{display:flex;flex-wrap:wrap;gap:4px}
 /* Open questions (user, 2026-11-04): one plain panel above the table, and a marker on each row a question touches */
-details.qs>summary{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+details.qs>summary{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;list-style:none}
+details.qs>summary::-webkit-details-marker{display:none}
+details.qs>summary::before{content:"▸";display:inline-block;width:.8em;margin-right:-6px;transition:transform .15s}
+details.qs[open]>summary::before{transform:rotate(90deg)}
 details.qs>summary .qhint{font-weight:400;font-size:.84rem;color:var(--muted)}
 .qwrap{padding:0 14px 14px;display:grid;gap:10px}
 .qname{display:flex;gap:8px;align-items:center;font-size:.84rem;color:var(--muted)}
