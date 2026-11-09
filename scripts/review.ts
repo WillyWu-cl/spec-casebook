@@ -18,6 +18,7 @@ import { networkInterfaces } from 'node:os';
 import { join } from 'node:path';
 import { COLUMNS, arg, assertIds, draftsDir, readManifest, readTable, stamp, tableDir, writeJson, writeTable, type Manifest } from './lib/library.ts';
 import { renderPage } from './lib/render.ts';
+import { parseCsv } from './lib/csv.ts';
 import { exportTable } from './lib/exporter.ts';
 import { writeFeatureIndex } from './lib/feature-index.ts';
 import { parseQuestions, readAnswers, saveAnswers } from './lib/questions.ts';
@@ -34,6 +35,16 @@ let manifest = readManifest(feature, platform);
 
 let draftId: string, draftDir: string | null, rows: Record<string, string>[], spec: any, requirements = '', plan = '';
 let previous: Record<string, Record<string, string>> = {};
+// Traditional Chinese reading copy (user, 2026-10-30, REQ-002 of phd/swipe-collage): draft.zh-Hant.csv / cases.zh-Hant.csv,
+// same column order as the table with Chinese headers. The page's 中文 mode shows it above the English fields; the
+// rows stay English (AGENTS.md), so Save never writes it back.
+const ZH_COLS = ['ID', 'Section', 'Precondition', 'Action', 'Expected Result', 'Priority', 'Spec Ref', 'Notes', 'Change', 'Change Reason'];
+let zh: Record<string, Record<string, string>> = {};
+function readZh(path: string) {
+  if (!existsSync(path)) return {};
+  const [, ...body] = parseCsv(readFileSync(path, 'utf8').replace(/^﻿/, ''));
+  return Object.fromEntries(body.filter(r => r[0]).map(r => [r[0], Object.fromEntries(ZH_COLS.map((c, i) => [c, r[i] ?? '']))]));
+}
 // read on every page load, so a draft or table changed on disk shows without restarting the server
 function load() {
   manifest = readManifest(feature, platform);
@@ -54,6 +65,7 @@ function load() {
     spec = { title: manifest.title, spec_folder: manifest.spec_folder, spec_files: manifest.spec_files, spec_set_sha256: manifest.spec_set_sha256 };
     if (existsSync(join(table, 'requirements.md'))) requirements = readFileSync(join(table, 'requirements.md'), 'utf8');
   }
+  zh = readZh(draftDir ? join(draftDir, 'draft.zh-Hant.csv') : join(table, 'cases.zh-Hant.csv'));
   previous = {};
   if (manifest && existsSync(join(table, 'cases.csv'))) for (const r of readTable(join(table, 'cases.csv'))) previous[r.ID] = r;
 }
@@ -62,7 +74,7 @@ load();
 const page = (local: boolean) => renderPage({
   mode: 'review', save: local, feature, platform, title: spec.title ?? feature, draft: draftId,
   based_on_version: manifest?.version ?? null, version: manifest?.version ?? null, approved_at: manifest?.approved_at ?? null,
-  spec_files: spec.spec_files, rows, previous: draftArg ? previous : {}, requirements, update_plan: plan,
+  spec_files: spec.spec_files, rows, previous: draftArg ? previous : {}, requirements, update_plan: plan, zh,
   questions: parseQuestions(requirements), answers: readAnswers(feature),
 });
 
@@ -82,6 +94,8 @@ async function save(body: { rows: Record<string, string>[]; decisions: unknown[]
   if (draftDir && existsSync(join(draftDir, 'requirements.md'))) copyFileSync(join(draftDir, 'requirements.md'), join(table, 'requirements.md'));
   // the control trace (REQ-038) goes with the table, so coverage-page.ts reads the approved one
   if (draftDir && existsSync(join(draftDir, 'control-trace.json'))) copyFileSync(join(draftDir, 'control-trace.json'), join(table, 'control-trace.json'));
+  // the Chinese reading copy goes along too; rows edited on the page show their English as newer in 中文 mode
+  if (draftDir && existsSync(join(draftDir, 'draft.zh-Hant.csv'))) copyFileSync(join(draftDir, 'draft.zh-Hant.csv'), join(table, 'cases.zh-Hant.csv'));
   const now = new Date().toISOString();
   const entry = { version, approved_at: now, spec_set_sha256: spec.spec_set_sha256, draft: draftId, cases: clean.length, csv: 'cases.csv', requirements: 'requirements.md' };
   const hist = history.filter(h => h.version !== version).map(h => ({ ...h, csv: `history/v${h.version}.csv`, requirements: `history/v${h.version}-requirements.md` }));
