@@ -27,10 +27,10 @@
 // accepted from this computer.
 import { spawn, type ChildProcess } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync, watch } from 'node:fs';
+import { existsSync, readFileSync, statSync, watch } from 'node:fs';
 import { createServer, request } from 'node:http';
 import { networkInterfaces } from 'node:os';
-import { join } from 'node:path';
+import { join, sep } from 'node:path';
 import { createGzip, gzipSync } from 'node:zlib';
 import { hasDraft, listBoards, newestPlan, openDrafts } from './lib/boards.ts';
 import { housekeeping } from './lib/housekeeping.ts';
@@ -91,14 +91,20 @@ function start(c: Child) {
   return new Promise<void>(done => {
     const proc = spawn(process.execPath, args, { stdio: ['ignore', 'pipe', 'pipe'] });
     c.proc = proc;
-    let err = '';
-    proc.stdout!.on('data', b => { const m = String(b).match(/http:\/\/127\.0\.0\.1:(\d+)\//); if (m && c.proc === proc && !c.port) { c.port = +m[1]; done(); } });
+    let err = '', out = '';
+    // the address line can arrive split over two reads (Windows pipes): read it from what has come so far
+    proc.stdout!.on('data', b => { if (c.port) return; out += b; const m = out.match(/http:\/\/127\.0\.0\.1:(\d+)\//); if (m && c.proc === proc) { c.port = +m[1]; out = ''; done(); } });
     proc.stderr!.on('data', b => { err += b; process.stderr.write(`[${c.key}] ${b}`); });
     // stopped on purpose (idle, code change) or replaced: nothing to report, the next request starts it again
     proc.on('exit', code => { if (c.proc !== proc) { done(); return; } c.proc = undefined; const was = c.port; c.port = undefined; c.error = `${c.def.label} ${was ? 'stopped' : 'did not start'} (exit ${code}): ${err.trim().split('\n').slice(-3).join(' ')}`; done(); });
   });
 }
-const ensure = (c: Child) => { c.used = Date.now(); return c.port ? Promise.resolve() : c.starting ??= start(c).finally(() => { c.starting = undefined; }); };
+// a start stopped on purpose before it was up (a scripts change, the oldest of too many) leaves no port and no error:
+// start it again once, so the visit that asked for it still gets its page instead of 「Not available.」
+const ensure = (c: Child) => { c.used = Date.now(); return c.port ? Promise.resolve() : c.starting ??= (async () => {
+  c.error = undefined;
+  for (let i = 0; i < 2 && !c.port && !c.error; i++) await start(c);
+})().finally(() => { c.starting = undefined; }); };
 setInterval(() => { const now = Date.now(); for (const c of live()) if (now - c.used > IDLE_MS) { console.log(`idle: stopped ${c.key}`); stopChild(c); } }, Math.min(60_000, IDLE_MS / 2)).unref();
 const stop = () => { for (const c of live()) stopChild(c); };
 
@@ -147,9 +153,26 @@ const listeners = new Set<import('node:http').ServerResponse>();
 const stamps = () => JSON.stringify({ code: codeStamp, stamps: Object.fromEntries(touched) });
 const tell = () => { for (const r of listeners) r.write(`data: ${stamps()}\n\n`); };
 setInterval(() => { for (const r of listeners) r.write(': ping\n\n'); }, 30_000).unref();
-const debounce = (ms: number, f: (names: string[]) => void) => { let t: NodeJS.Timeout | undefined, names: string[] = [];
-  return (_: string, name: string | null) => { if (name) names.push(name); clearTimeout(t); t = setTimeout(() => { const n = names; names = []; f(n); }, ms); }; };
-watch(import.meta.dirname, { recursive: true }, debounce(400, names => {
+// Windows (user, 2026-11-09: pages needed a second visit, or backing out and entering again): fs.watch there also fires
+// when a file is only read (its last-access time), so a page starting up and reading its own scripts looked like a code
+// change and was stopped mid-start, and open pages were told to reload; it also names paths with \. So a name counts
+// only when its file was written since this server last saw it (modified or created time moved past the last one
+// seen, or past the start), or was removed, and paths are given with /.
+const seenAt = new Map<string, number>();
+const written = (dir: string) => (name: string) => {
+  // creation time too: a file copied in with its old date kept (rsync -a, unzip, cp -p) is new here all the same
+  const p = join(dir, name); let m = -1;
+  try { const st = statSync(p); m = Math.max(st.mtimeMs, st.birthtimeMs || 0); } catch { /* removed */ }
+  const was = seenAt.get(p) ?? started; seenAt.set(p, m);
+  return m === -1 ? was !== -1 : m > was;
+};
+const debounce = (ms: number, dir: string, f: (names: string[]) => void) => { let t: NodeJS.Timeout | undefined, names: string[] = [];
+  return (_: string, name: string | Buffer | null) => { if (name) names.push(String(name)); clearTimeout(t); t = setTimeout(() => {
+    const n = [...new Set(names)]; names = [];
+    const real = n.filter(written(dir)).map(x => x.split(sep).join('/'));
+    if (real.length) f(real);
+  }, ms); }; };
+watch(import.meta.dirname, { recursive: true }, debounce(400, import.meta.dirname, names => {
   if (names.every(n => /^(pages\.ts|lib\/boards\.ts)$/.test(n))) { console.log(`${names[0]} changed: Ctrl+C and start it again to use the new version.`); return; }
   console.log(`scripts changed (${[...new Set(names)].slice(0, 3).join(', ')}): stopping the running pages, they start again when asked for`);
   stop();
@@ -157,7 +180,7 @@ watch(import.meta.dirname, { recursive: true }, debounce(400, names => {
 }));
 // One watch on the whole library, whichever tables are open. tokens.jsonl is topped up by the Progress page's own
 // builds: Progress re-checks every 10 s anyway, and counting it here would make every page re-check after each of them
-if (existsSync(LIBRARY)) watch(LIBRARY, { recursive: true }, debounce(1500, names => {
+if (existsSync(LIBRARY)) watch(LIBRARY, { recursive: true }, debounce(1500, LIBRARY, names => {
   const features = new Set(names.filter(n => !n.endsWith('tokens.jsonl') && !n.endsWith('.DS_Store')).map(n => n.split('/').slice(0, 2).join('/')).filter(f => f.includes('/') && !f.endsWith('/knowledge')));
   if (!features.size) return;
   const now = Date.now();
@@ -251,11 +274,18 @@ C.check=async fresh=>{if(document.hidden){later=1;return}if(busy){again=1;return
   if(r.status!==200)return;const j=await r.json();v=j.v;if(C.onData)C.quiet(()=>C.onData(j.data));else u.hidden=false}catch(e){}finally{busy=0;if(again){again=0;C.check()}}};
 const got=s=>{if(s.code>c0){if(document.hidden&&cur!=='review'){stale=1;return}u.hidden=false;return}
   const d=s.stamps[F];if(d>d0){d0=d;C.check()}};
-addEventListener('visibilitychange',()=>{if(document.hidden)return;if(stale)return location.reload();if(later){later=0;C.check()}});
+addEventListener('visibilitychange',async()=>{if(document.hidden)return;if(stale)return location.reload();if(later){later=0;C.check()}try{got(await(await fetch('/__stamp',{cache:'no-store'})).json())}catch(e){}});
 // one tab per browser holds /__events (a Web Lock) and passes each stamp to the others (BroadcastChannel); the next
 // tab takes over when it closes. Locks need a secure context (localhost, not a LAN address): there, poll instead.
-if(navigator.locks&&window.BroadcastChannel){const bc=new BroadcastChannel('casebook-stamps');bc.onmessage=e=>got(e.data);
-  navigator.locks.request('casebook-events',()=>new Promise(()=>{const es=new EventSource('/__events');addEventListener('pagehide',()=>es.close());es.onmessage=e=>{const s=JSON.parse(e.data);bc.postMessage(s);got(s)}}))}
+// The holder lets go when its tab is put to sleep (Edge's sleeping tabs on Windows), frozen or left for the back/forward
+// cache, so another open tab takes the connection over, and asks again when it is back; a tab that comes back into view
+// also reads /__stamp once, for what it missed meanwhile (user, 2026-11-09: pages had to be left and entered again).
+// A tab put to sleep while still waiting for the lock leaves the queue too (abort), so the lock never goes to a tab
+// that cannot open the connection; freeze and resume are fired at document.
+if(navigator.locks&&window.BroadcastChannel){const bc=new BroadcastChannel('casebook-stamps');bc.onmessage=e=>got(e.data);let es=null,free=null,wait=null;
+  const hold=()=>{if(free||wait)return;const ac=new AbortController();wait=ac;navigator.locks.request('casebook-events',{signal:ac.signal},()=>new Promise(r=>{wait=null;free=()=>{free=null;es&&es.close();es=null;r()};es=new EventSource('/__events');es.onmessage=e=>{const s=JSON.parse(e.data);bc.postMessage(s);got(s)}})).catch(()=>{if(wait===ac)wait=null})};
+  const drop=()=>{if(wait){wait.abort();wait=null}free&&free()};
+  addEventListener('pagehide',drop);document.addEventListener('freeze',drop);addEventListener('pageshow',e=>{if(e.persisted)hold()});document.addEventListener('resume',hold);hold()}
 else setInterval(async()=>{let s;try{s=await(await fetch('/__stamp',{cache:'no-store'})).json()}catch(e){return}got(s)},3000);
 n.querySelectorAll('.cb-lang button').forEach(x=>x.onclick=()=>{const v=x.dataset.l;if(v===CASEBOOK.lang)return;CASEBOOK.lang=v;try{localStorage.setItem('casebook-lang',v)}catch(e){}show(v);dispatchEvent(new CustomEvent('casebook-lang',{detail:v}))});})();</script>`;
 };
@@ -375,6 +405,10 @@ async function handle(req: import('node:http').IncomingMessage, res: import('nod
   }
   await ensure(c);
   if (!c.port) { html200(res, 200); res.end(notAvailable(c, ref)); return; }
+  // A page load (GET) that reaches a page process just as it is stopped (a scripts change, idle) is sent once more to
+  // the restarted one instead of failing with 502 (Windows, user, 2026-11-09); a Save is never sent twice.
+  const forward = (again: boolean): void => {
+  const used = c.proc;
   const fwd = request({ host: '127.0.0.1', port: c.port, path: m[5], method: req.method, headers: { ...req.headers, host: `127.0.0.1:${c.port}`, 'x-casebook-stamp': String(stampOf(ref.feature)) } }, up => {
     const html = /text\/html/.test(String(up.headers['content-type']));
     if (!html) {
@@ -394,8 +428,24 @@ async function handle(req: import('node:http').IncomingMessage, res: import('nod
       sendText(req, res, up.statusCode ?? 200, up.headers, body);
     } catch (e) { failed(res, e); } });
   });
-  fwd.on('error', e => { res.writeHead(502, { 'content-type': 'text/plain' }); res.end(`${def.label}: ${e.message}`); });
-  req.pipe(fwd);
+  fwd.on('error', e => {
+    // the page broke off after it began: nothing can be resent, so the browser sees a dropped load, not text tacked on
+    if (res.headersSent) { res.destroy(); return; }
+    // Resend a page load once. Stop the process first only when it is gone: it exited before that was seen, or nothing
+    // listens on its port (ECONNREFUSED). A live page that dropped one connection (a reused keep-alive socket closing
+    // as it is reused) is asked again as it is, so a Save running on it is never cut off. By process, not port: a
+    // restarted page usually gets the same port back, and its other requests failing at that moment must not stop it.
+    if (again && req.method === 'GET') {
+      const dead = !used || used.exitCode !== null || used.signalCode !== null || (e as NodeJS.ErrnoException).code === 'ECONNREFUSED';
+      if (dead && c.proc === used) stopChild(c);
+      ensure(c).then(() => { if (c.port) forward(false); else { html200(res, 200); res.end(notAvailable(c, ref)); } }).catch(err => failed(res, err));
+      return;
+    }
+    res.writeHead(502, { 'content-type': 'text/plain' }); res.end(`${def.label}: ${e.message}`);
+  });
+  if (req.method === 'GET' || req.method === 'HEAD') fwd.end(); else req.pipe(fwd);
+  };
+  forward(true);
 }
 const host = lan ? '0.0.0.0' : '127.0.0.1';
 server.on('error', (e: any) => { if (e.code === 'EADDRINUSE' && port < LAST_PORT) { port++; server.listen(port, host); } else throw e; });
