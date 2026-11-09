@@ -1,0 +1,572 @@
+{
+  "1:238": {
+    "hash": "eef08790",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Collage Room · banner (NEW)",
+    "nodes": 263
+  },
+  "111:6261": {
+    "hash": "365fd767",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Collage Room · banner (NEW)",
+    "nodes": 263
+  },
+  "3:336": {
+    "hash": "bcc6ad53",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Template Page · default (NEW)",
+    "nodes": 252
+  },
+  "111:6441": {
+    "hash": "ec6ad8d3",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Template Page · default (NEW)",
+    "nodes": 252
+  },
+  "18:386": {
+    "hash": "8fd1377b",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "entry_launcher2",
+    "nodes": 119
+  },
+  "111:6596": {
+    "hash": "8f2a8b35",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "entry_launcher2",
+    "nodes": 119
+  },
+  "82:4597": {
+    "hash": "a4f25769",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "暖色旅行生活拼貼心情版 2",
+    "nodes": 1
+  },
+  "23:531": {
+    "hash": "db32118d",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "photo_picker",
+    "nodes": 266
+  },
+  "111:6645": {
+    "hash": "52531672",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "photo_picker",
+    "nodes": 266
+  },
+  "54:520": {
+    "hash": "91eae11a",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "1_add_img",
+    "nodes": 241
+  },
+  "111:6745": {
+    "hash": "9686a9d6",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "1_add_img",
+    "nodes": 241
+  },
+  "23:989": {
+    "hash": "5205da84",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "1_entry",
+    "nodes": 165
+  },
+  "111:6824": {
+    "hash": "89265d11",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "1_entry",
+    "nodes": 165
+  },
+  "69:6711": {
+    "hash": "1e967d50",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_default",
+    "nodes": 165
+  },
+  "111:6952": {
+    "hash": "1b57ec62",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_default",
+    "nodes": 165
+  },
+  "74:2830": {
+    "hash": "c202bf45",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Ratio",
+    "nodes": 158
+  },
+  "111:7080": {
+    "hash": "47b40992",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Ratio",
+    "nodes": 158
+  },
+  "74:3076": {
+    "hash": "a45de196",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "page",
+    "nodes": 147
+  },
+  "49:1511": {
+    "hash": "9e9e7987",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "[+] 開 Add Layer：五個 function",
+    "nodes": 218
+  },
+  "111:7291": {
+    "hash": "e5ec12a0",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "[+] 開 Add Layer：五個 function",
+    "nodes": 218
+  },
+  "28:1621": {
+    "hash": "29db4b54",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_img_focus",
+    "nodes": 211
+  },
+  "111:7455": {
+    "hash": "dbcb904c",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_img_focus",
+    "nodes": 211
+  },
+  "66:5255": {
+    "hash": "0c3640ae",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_img_focus",
+    "nodes": 213
+  },
+  "111:7605": {
+    "hash": "e1034e32",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_img_focus",
+    "nodes": 213
+  },
+  "82:4349": {
+    "hash": "345d543f",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_img_focus",
+    "nodes": 213
+  },
+  "111:7761": {
+    "hash": "dfc5c63e",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_img_focus",
+    "nodes": 213
+  },
+  "33:2230": {
+    "hash": "ca61c04c",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_frame_focus",
+    "nodes": 256
+  },
+  "111:7917": {
+    "hash": "17aa48d3",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "canvas_frame_focus",
+    "nodes": 250
+  },
+  "45:723": {
+    "hash": "dfcf0de1",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Save",
+    "nodes": 230
+  },
+  "111:8106": {
+    "hash": "910cc55f",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Save",
+    "nodes": 230
+  },
+  "103:5778": {
+    "hash": "96ccaad0",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Save: Only 1 img",
+    "nodes": 227
+  },
+  "111:8308": {
+    "hash": "c0a4b9b0",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Save: Only 1 img",
+    "nodes": 227
+  },
+  "54:752": {
+    "hash": "d3ed0623",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "row label 3",
+    "nodes": 1
+  },
+  "111:8509": {
+    "hash": "12131386",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "row label 6",
+    "nodes": 1
+  },
+  "54:754": {
+    "hash": "1dd890e7",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "row label 1",
+    "nodes": 1
+  },
+  "111:8510": {
+    "hash": "5923dfd5",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "row label 7",
+    "nodes": 1
+  },
+  "54:1487": {
+    "hash": "ed334af7",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "2_add_text",
+    "nodes": 258
+  },
+  "111:8511": {
+    "hash": "9887b18b",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "2_add_text",
+    "nodes": 258
+  },
+  "54:1835": {
+    "hash": "e50ff2b9",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "3_Add_Sticker",
+    "nodes": 223
+  },
+  "111:8637": {
+    "hash": "5a0f96ea",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "3_Add_Sticker",
+    "nodes": 223
+  },
+  "54:2110": {
+    "hash": "da338578",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "4_frame",
+    "nodes": 308
+  },
+  "111:8809": {
+    "hash": "9ec3ae0d",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "4_frame",
+    "nodes": 308
+  },
+  "54:2359": {
+    "hash": "e9695d2b",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "5_Text_bubble",
+    "nodes": 153
+  },
+  "111:9057": {
+    "hash": "1f25acf0",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "5_Text_bubble",
+    "nodes": 153
+  },
+  "72:1505": {
+    "hash": "433243d9",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "background_panel_texture",
+    "nodes": 281
+  },
+  "111:9172": {
+    "hash": "ff78da9c",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "background_panel_texture",
+    "nodes": 281
+  },
+  "61:4517": {
+    "hash": "f654810f",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "GAI_removal",
+    "nodes": 390
+  },
+  "111:9400": {
+    "hash": "4d0d8712",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "GAI_removal",
+    "nodes": 390
+  },
+  "64:5195": {
+    "hash": "0810db78",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "row label 4",
+    "nodes": 1
+  },
+  "111:9722": {
+    "hash": "e99180d9",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "row label 8",
+    "nodes": 1
+  },
+  "66:5845": {
+    "hash": "4f541f17",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "row label 5",
+    "nodes": 1
+  },
+  "111:9723": {
+    "hash": "e99c194b",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "row label 9",
+    "nodes": 1
+  },
+  "64:5196": {
+    "hash": "9731157b",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01",
+    "nodes": 1
+  },
+  "111:9724": {
+    "hash": "c6505c8f",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01",
+    "nodes": 1
+  },
+  "66:5846": {
+    "hash": "b5763c29",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01",
+    "nodes": 1
+  },
+  "111:9725": {
+    "hash": "5a9d58da",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01",
+    "nodes": 1
+  },
+  "64:5197": {
+    "hash": "d7e9d41f",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01][D1-43",
+    "nodes": 1
+  },
+  "111:9726": {
+    "hash": "b2c933a2",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01][D1-43",
+    "nodes": 1
+  },
+  "66:5847": {
+    "hash": "b46ddb7e",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01][D1-43",
+    "nodes": 1
+  },
+  "111:9727": {
+    "hash": "567c0920",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01][D1-43",
+    "nodes": 1
+  },
+  "64:5198": {
+    "hash": "db98e658",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01",
+    "nodes": 1
+  },
+  "111:9728": {
+    "hash": "1d904d6a",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01",
+    "nodes": 1
+  },
+  "66:5848": {
+    "hash": "2819d038",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01",
+    "nodes": 1
+  },
+  "111:9729": {
+    "hash": "9d8ea2d1",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "callout D3-01",
+    "nodes": 1
+  },
+  "67:6424": {
+    "hash": "ed179f85",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Enhance_2",
+    "nodes": 379
+  },
+  "111:9730": {
+    "hash": "61c8720e",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Enhance_2",
+    "nodes": 379
+  },
+  "69:6938": {
+    "hash": "4908c88e",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "background_panel_solid",
+    "nodes": 322
+  },
+  "111:9880": {
+    "hash": "64c9ab3b",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "background_panel_solid",
+    "nodes": 322
+  },
+  "73:2199": {
+    "hash": "d25b8a8f",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Layers",
+    "nodes": 314
+  },
+  "111:10134": {
+    "hash": "affc5b9e",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Layers",
+    "nodes": 314
+  },
+  "72:1786": {
+    "hash": "d26bf526",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "background_panel_solid",
+    "nodes": 159
+  },
+  "111:10344": {
+    "hash": "d9141570",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "background_panel_solid",
+    "nodes": 159
+  },
+  "82:3615": {
+    "hash": "2f7bd88e",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Frame 工具：opacity / shadow / 水平 flip / 垂直 flip / duplicate / lock / delete（整個 frame 刪除）",
+    "nodes": 1
+  },
+  "111:10486": {
+    "hash": "80755f0d",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Frame 工具：opacity / shadow / 水平 flip / 垂直 flip / duplicate / lock / delete（整個 frame 刪除）",
+    "nodes": 1
+  },
+  "82:3616": {
+    "hash": "cbc59740",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）",
+    "nodes": 1
+  },
+  "111:10487": {
+    "hash": "9f99f003",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）",
+    "nodes": 1
+  },
+  "82:3617": {
+    "hash": "beecc459",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Focus frame 時 click → focus image；focus image 時 click → focus frame",
+    "nodes": 1
+  },
+  "111:10488": {
+    "hash": "4b36d750",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Focus frame 時 click → focus image；focus image 時 click → focus frame",
+    "nodes": 1
+  },
+  "82:4599": {
+    "hash": "5bcce9bc",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Overview title",
+    "nodes": 1
+  },
+  "82:4600": {
+    "hash": "7f37d98a",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "ov D0-03",
+    "nodes": 1
+  },
+  "82:4601": {
+    "hash": "9049abe8",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "ov D0-01",
+    "nodes": 1
+  },
+  "82:4602": {
+    "hash": "441b0bff",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "ov D0-02",
+    "nodes": 1
+  },
+  "82:4603": {
+    "hash": "38e940c8",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "ov D0-04",
+    "nodes": 1
+  },
+  "82:4604": {
+    "hash": "9bf94ef5",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "ov D0-06",
+    "nodes": 1
+  },
+  "82:4605": {
+    "hash": "fd105c80",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "ov D4-01",
+    "nodes": 1
+  },
+  "103:6032": {
+    "hash": "1123c802",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "B (mimic VVG/ Beauty plus)",
+    "nodes": 88
+  },
+  "111:10489": {
+    "hash": "08f3f0e9",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "B (mimic VVG/ Beauty plus)",
+    "nodes": 88
+  },
+  "103:6121": {
+    "hash": "2b2bca4d",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "B (mimic VVG/ Beauty plus)",
+    "nodes": 88
+  },
+  "111:10570": {
+    "hash": "683db68a",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "B (mimic VVG/ Beauty plus)",
+    "nodes": 88
+  },
+  "116:3010": {
+    "hash": "bbc1e09f",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Dark mode · Canvas icon buttons",
+    "nodes": 177
+  },
+  "112:3247": {
+    "hash": "b5c1ee10",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "page",
+    "nodes": 143
+  },
+  "116:3014": {
+    "hash": "551d84a0",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "icons (dark-mode source)",
+    "nodes": 1
+  },
+  "122:3043": {
+    "hash": "c3543ba3",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "cut",
+    "nodes": 140
+  },
+  "146:3717": {
+    "hash": "6ebdfee0",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "image 182",
+    "nodes": 1
+  },
+  "130:3237": {
+    "hash": "3ed37f51",
+    "read_at": "2026-11-05T08:59:53.836Z",
+    "name": "Light mode · Canvas icon buttons",
+    "nodes": 177
+  }
+}

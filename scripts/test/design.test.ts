@@ -40,9 +40,16 @@ const S1 = [
   text('1:1c', '1:10', 'Two line text here', [20, 260, 200, 20]),
   text('1:1e', '1:10', 'Upgrade now', [20, 330, 120, 20]),
   text('1:17', '1:10', 'A lighthouse keeper finds a message in a bottle that was written by her own grandmother', [20, 360, 330, 40]),
-  { id: '1:15', parent: '1:10', type: 'FRAME', name: 'btn_start', abs: [120, 590, 140, 44], radius: 12, fills: [{ type: 'SOLID', color: '#3366ffff' }] },
+  // the button has a 1 pt white border in Figma, none on the phone (planted border)
+  { id: '1:15', parent: '1:10', type: 'FRAME', name: 'btn_start', abs: [120, 590, 140, 44], radius: 12, fills: [{ type: 'SOLID', color: '#3366ffff' }], strokes: [{ type: 'SOLID', color: '#ffffffff' }], stroke_weight: 1 },
   text('1:14', '1:15', 'Start', [150, 602, 80, 20], { align: 'CENTER' }),
   text('1:12', '1:10', 'Templates', [20, 700, 100, 20]),
+  // a tag hugging its label (auto layout): 10 pt padding left in Figma, 4 on the phone (planted padding)
+  { id: '1:1h', parent: '1:10', type: 'FRAME', name: 'tag_new', abs: [20, 420, 90, 24], radius: 4, fills: [{ type: 'SOLID', color: '#884400ff' }],
+    layout: { mode: 'HORIZONTAL', padding: [6, 50, 6, 10], primary_sizing: 'AUTO', cross_sizing: 'AUTO' } },
+  text('1:1i', '1:1h', 'NEW', [30, 426, 30, 12]),
+  // three icons in a row 16 pt apart; on the phone share sits 4 pt further from more (planted spacing)
+  { id: '1:1j', parent: '1:10', type: 'INSTANCE', name: 'ic_share', abs: [250, 50, 24, 24] },
   { id: '1:16', parent: '1:10', type: 'INSTANCE', name: 'ic_close', abs: [330, 50, 24, 24] },
   { id: '1:1d', parent: '1:10', type: 'INSTANCE', name: 'ic_more', abs: [290, 50, 24, 24] },
   { id: '1:18', parent: '1:10', type: 'INSTANCE', name: 'Status Bar', abs: [0, 0, 375, 44] },
@@ -64,11 +71,14 @@ const ARROWS = [{ board: '1:1', id: '1:98', path: [[200, 610], [420, 100]], from
 // app page sources: iOS (points) for 1:10, UiAutomator2 (pixels, bounds) for 1:20
 const st = (label: string, x: number, y: number, w: number, h: number, type = 'XCUIElementTypeStaticText', name = '') =>
   `<${type} type="${type}" name="${name}" label="${label}" visible="true" x="${x}" y="${y}" width="${w}" height="${h}"/>`;
-const iosHome = (choose: string) => `<AppiumAUT><XCUIElementTypeApplication type="XCUIElementTypeApplication" name="PDR" label="" visible="true" x="0" y="0" width="375" height="812">
-${st('Create Your Drama', 20, 110, 180, 24)}${st('Pick a style for your story', 32, 150, 250, 20)}${st(choose, 20, 190, 180, 20)}
-${st('Recently creat…', 20, 230, 150, 20)}${st('Two line text here', 20, 270, 150, 40)}${st('Beta', 200, 100, 40, 20)}
-${st('Start', 120, 590, 140, 44, 'XCUIElementTypeButton')}${st('Start', 165, 602, 45, 20)}${st('Templates', 20, 700, 100, 20)}
-${st('', 288, 48, 28, 28, 'XCUIElementTypeButton', 'more')}</XCUIElementTypeApplication></AppiumAUT>`;
+// planted: 「Choose the template」 (other words: not checked), 「Recently creat…」 cut short, 「Start」 7.5 pt right of the
+// button's centre, the tag's label 6 pt off its padding, share 4 pt further from more
+const iosHome = (recent = 'Recently creat…') => `<AppiumAUT><XCUIElementTypeApplication type="XCUIElementTypeApplication" name="PDR" label="" visible="true" x="0" y="0" width="375" height="812">
+${st('Create Your Drama', 20, 110, 180, 24)}${st('Pick a style for your story', 32, 150, 250, 20)}${st('Choose the template', 20, 190, 180, 20)}
+${st(recent, 20, 230, 150, 20)}${st('Two line text here', 20, 270, 150, 40)}${st('Beta', 200, 100, 40, 20)}
+${st('Start', 120, 590, 140, 44, 'XCUIElementTypeButton')}${st('Start', 175, 602, 45, 20)}${st('Templates', 20, 700, 100, 20)}
+${st('', 20, 430, 90, 24, 'XCUIElementTypeOther')}${st('NEW', 24, 436, 30, 12)}
+${st('', 240, 48, 28, 28, 'XCUIElementTypeButton', 'share')}${st('', 288, 48, 28, 28, 'XCUIElementTypeButton', 'more')}</XCUIElementTypeApplication></AppiumAUT>`;
 const androidOffline = `<hierarchy><android.widget.FrameLayout class="android.widget.FrameLayout" bounds="[0,0][1080,2338]" displayed="true">
 <android.widget.TextView class="android.widget.TextView" text="You're offline" bounds="[58,317][634,386]" displayed="true"/>
 <android.widget.TextView class="android.widget.TextView" text="Something else entirely" bounds="[58,500][900,560]" displayed="true"/>
@@ -90,8 +100,8 @@ const s3 = (b: number[], inset = 4) => [b[0] * 3 + inset, b[1] * 3 + inset, (b[0
 // texts as white blocks, one per line (the check counts an app text's lines on the screenshot)
 function homeShot(path: string) {
   png(path, 1125, 2436, [
-    [s3([120, 590, 140, 44], 0), '#33cc66'],
-    ...[[20, 110, 180, 24], [20, 190, 180, 20], [20, 230, 150, 20], [20, 271, 150, 16], [20, 291, 150, 16], [165, 602, 45, 20], [20, 700, 100, 20]].map(b => [s3(b), '#ffffff'] as [number[], string]),
+    [s3([120, 590, 140, 44], 0), '#33cc66'], [s3([20, 430, 90, 24], 0), '#884400'],
+    ...[[20, 110, 180, 24], [20, 190, 180, 20], [20, 230, 150, 20], [20, 271, 150, 16], [20, 291, 150, 16], [175, 602, 45, 20], [20, 700, 100, 20], [24, 436, 30, 12]].map(b => [s3(b), '#ffffff'] as [number[], string]),
     [s3([32, 150, 250, 20]), '#ff2020'],
   ]);
 }
@@ -121,6 +131,7 @@ before(() => {
       { id: 'K-1', group: 'G-close', kind: 'button', name: 'ic_close', label: '', node: '1:16', screens: ['1:10'] },
       { id: 'K-2', group: 'G-start', kind: 'button', name: 'btn_start', label: 'Start', node: '1:15', screens: ['1:10'] },
       { id: 'K-3', group: 'G-more', kind: 'button', name: 'ic_more', label: '', node: '1:1d', screens: ['1:10'] },
+      { id: 'K-4', group: 'G-share', kind: 'button', name: 'ic_share', label: '', node: '1:1j', screens: ['1:10'] },
     ],
     arrows: [{ id: '1-99', to: '1:20', kind: 'flow' }],
   });
@@ -128,13 +139,13 @@ before(() => {
   put(join(T, 'cases.csv'), 'ID,Section,Precondition,Action,Expected Result,Priority,Spec Ref,Notes\n' +
     'TC-001,Home,Signed in,Tap Start,The drama composer opens,High,R-002,\nTC-002,Errors,Wi-Fi off,Tap Start,The offline screen shows,High,R-001,\n');
   put(join(T, 'requirements.md'), '- R-001 (DS: flow arrow 1-99 Home Start → offline) Start while offline shows the offline screen. Walked by: TC-002.\n- R-002 Start opens the composer.\n');
-  put(join(T, 'control-trace.json'), { entries: [{ group: 'G-close', press: 'TC-001' }, { group: 'G-start', press: 'TC-001' }, { group: 'G-more', press: 'TC-001' }] });
+  put(join(T, 'control-trace.json'), { entries: [{ group: 'G-close', press: 'TC-001' }, { group: 'G-start', press: 'TC-001' }, { group: 'G-more', press: 'TC-001' }, { group: 'G-share', press: 'TC-001' }] });
   put(join(T, 'drafts', 'd1', 'phases.json'), { phases: [{ id: 'P1', segments: [{ id: 'P1-a', cases: ['TC-001', 'TC-002'] }] }] });
   // run r1: Home (iOS, with a scrolled part holding "See all") and the offline screen (Android-style source)
   put(join(RUNS, 'r1', 'run-state.md'), '# Run state — P1\nBuild: PowerDirector iOS 15.2.0 (190001)\n');
   mkdirSync(join(RUNS, 'r1', 'design'), { recursive: true });
   homeShot(join(RUNS, 'r1', 'screenshots', 'design', '1-10.png'));
-  capture('r1', '1:10', '1-10', iosHome('Choose the template'), { w: 375, h: 812 });
+  capture('r1', '1:10', '1-10', iosHome(), { w: 375, h: 812 });
   png(join(RUNS, 'r1', 'screenshots', 'design', '1-10.p2.png'), 1125, 2436, []);
   capture('r1', '1:10', '1-10.p2', `<A>${st('See all', 300, 100, 60, 20)}</A>`, { w: 375, h: 812 }, { part: 2 });
   png(join(RUNS, 'r1', 'screenshots', 'design', '1-20.png'), 1080, 2338, []);
@@ -250,19 +261,27 @@ test('check: every planted difference is found, and nothing else', () => {
   assert.equal(r.status, 0, r.out);
   const c = cands('r1', '1:10');
   assert.deepEqual(ids(c.filter((x: any) => x.severity !== 'info')), [
+    'align:1:14',       // "Start" 7.5 pt right of the button's centre
+    'border:1:15',      // Figma's 1 pt white border not drawn
     'colour:1:13',      // text drawn red, Figma white
     'colour:1:15',      // button green, Figma blue
     'control:1:16',     // close icon with nothing tappable there
-    'copy:1:1a',        // "Choose the template"
-    'copy:1:1b',        // "Recently creat…" contained in the Figma text
     'lines:1:1c',       // two lines where Figma has one
     'missing:1:1e',     // "Upgrade now" not on the phone
-    'position:1:13',    // 12 pt right of the fit
+    'padding:1:1i',     // the tag's label 4 pt from its left edge, Figma 10
+    'spacing:1:1j-1:1d', // share 20 pt from more, Figma 16
     'truncated:1:1b',   // ends in an ellipsis
   ]);
+  // not checked (user, 2026-11-06): the words (「Choose the template」) and where a text sits (「Pick a style…」 12 pt right)
+  assert.ok(!c.some((x: any) => ['copy', 'position'].includes(x.kind) || x.id === 'extra:choose the template'), 'other words are neither copy, missing nor extra');
+  const by = (id: string) => c.find((x: any) => x.id === id);
+  assert.deepEqual(by('padding:1:1i').delta, { left: -4.7 }, 'the label moved inside a tag of the right width: its left padding, the total is the same');
+  assert.deepEqual(by('align:1:14').delta, { x: 7.7 });
+  assert.deepEqual(by('spacing:1:1j-1:1d').delta, { gap: 4 });
+  assert.match(by('border:1:15').note, /Figma draws a 1 pt border, the app none/);
   assert.ok(c.some((x: any) => x.id === 'sample:1:17' && x.severity === 'info'), 'long sample text is info');
   assert.ok(c.some((x: any) => x.id === 'extra:beta'), 'app text not in Figma is info');
-  assert.ok(!c.some((x: any) => /1:1d|1:19|1:1g|1:11|1:14|1:12/.test(x.id)), 'present icon, status bar, part-2 text and matched texts give nothing');
+  assert.ok(!c.some((x: any) => !['align:1:14', 'spacing:1:1j-1:1d'].includes(x.id) && /1:1d|1:19|1:1g|1:11|1:14|1:12/.test(x.id)), 'present icon, status bar, part-2 text and matched texts give nothing');
   const s = read(join(RUNS, 'r1', 'design', 'compare.json')).screens.find((x: any) => x.id === '1:10');
   assert.equal(s.fit.top.dy, 10); assert.equal(s.fit.top.ok, true); assert.equal(s.fit.bottom.ok, true);
   assert.equal(s.build, '15.2.0 (190001)');
@@ -284,7 +303,8 @@ test("check: the app's own view data (Android) gives size, weight, colour, lines
     vt('Recently created dramas', [20, 220, 200, 20]), vt('Two line text here', [20, 260, 200, 20], { lines: 2 }), vt('Templates', [20, 700, 100, 20], { color: '#FFFF0000' }), vt('Start', [150, 602, 80, 20])],
     fills: [{ box: px([120, 590, 140, 44]), color: '#FF3366FF', radius: 60, id: 'id/start', window: 0 }] };
   mkdirSync(join(RUNS, 'a-views', 'design'), { recursive: true });
-  png(join(RUNS, 'a-views', 'screenshots', 'design', '1-10.png'), 1080, 2338, []);
+  // the button is drawn in its own colour; no text is drawn, so every text's set colour differs from the screen
+  png(join(RUNS, 'a-views', 'screenshots', 'design', '1-10.png'), 1080, 2338, [[[346, 1699, 749, 1826], '#3366ff']]);
   put(join(RUNS, 'a-views', 'screenshots', 'design', '1-10.views.json'), views);
   capture('a-views', '1:10', '1-10', xml, { w: 1080, h: 2338 }, { views: 'screenshots/design/1-10.views.json' });
   const r = design('check', 'a-views');
@@ -294,10 +314,17 @@ test("check: the app's own view data (Android) gives size, weight, colour, lines
   assert.deepEqual(by('size:1:11')?.delta, { sp: 18, pt: 16 });
   assert.match(by('size:1:11')?.note, /font scale 1\.1 is not in this/, 'sizes are compared before the phone\'s font scale');
   assert.equal(by('weight:1:13')?.delta?.app, 700);
+  assert.equal(by('weight:1:13')?.delta?.android, 400, 'held to the Android standard of Figma\'s weight');
   assert.equal(by('colour:1:12')?.src, 'app', 'the red text from the app\'s own colour');
   assert.equal(by('lines:1:1c')?.app?.lines, 2);
   assert.equal(by('radius:1:15')?.delta?.figma, 12, 'the button\'s radius: 60 px / 2.88 = 20.8 dp');
   assert.ok(!by('colour:1:15'), 'the same fill colour is not a difference');
+  assert.deepEqual(by('radius:1:15')?.app?.box, [120.1, 589.9, 139.9, 44.1], 'a view fill\'s box comes out in Figma\'s scale like every candidate\'s, not screen pixels');
+  assert.ok(by('colour:1:12')?.app?.box, 'a colour item says where the text sits on the capture, for the Design tab\'s crop');
+  assert.ok(by('colour:1:12')?.app?.drawn, 'the colour as drawn is listed beside the value set'); // (no Figma image for this synthetic screen)
+  assert.match(by('colour:1:12')?.note, /is not the value set/, 'a set colour the screen does not show is named');
+  assert.match(r.out, /set values checked against the screen/);
+  assert.ok(!/set #FF3366FF/.test(r.out), 'the button drawn in its set colour is not listed as drawn differently');
   assert.ok(!c.some((x: any) => x.kind === 'size' && x.id !== 'size:1:11'), 'no other size item');
   assert.ok(existsSync(join(RUNS, 'a-views', 'design', 'captures', '1-10.views.json')), 'the view data is shared with the capture');
   const s = read(join(RUNS, 'a-views', 'design', 'compare.json')).screens.find((x: any) => x.id === '1:10');
@@ -308,10 +335,12 @@ test('check: an Android capture of another state is flagged on arrival', () => {
   const c = cands('r1', '1:20');
   assert.equal(c[0].id, 'state:1:20');
   assert.ok(!c.some((x: any) => x.id === 'missing:1:21'), "the one matching text (You're offline) pairs across pixel bounds");
-  assert.equal(c.filter((x: any) => x.kind === 'missing').length, 4);
+  // 「Something else entirely」 sits where Figma draws 「Try again」: other words in its place, not missing
+  assert.deepEqual(ids(c.filter((x: any) => x.kind === 'missing')), ['missing:1:22', 'missing:1:24', 'missing:1:25']);
+  assert.ok(!c.some((x: any) => x.kind === 'extra'));
 });
 
-test('check: a half with too few anchors measures no positions', () => {
+test('check: a half with too few anchors has no fit, and a text\'s own place is never an item', () => {
   // r0: the same Home screen with only one exact text in the top half and that one far off
   put(join(RUNS, 'r0', 'design', '.keep'), '');
   homeShot(join(RUNS, 'r0', 'screenshots', 'design', '1-10.png'));
@@ -319,49 +348,49 @@ test('check: a half with too few anchors measures no positions', () => {
   assert.equal(design('check', 'r0').status, 0);
   const s = read(join(RUNS, 'r0', 'design', 'compare.json')).screens[0];
   assert.equal(s.fit.top.ok, false);
-  assert.ok(!s.candidates.some((x: any) => x.id === 'position:1:11'));
+  assert.ok(!s.candidates.some((x: any) => x.kind === 'position'));
 });
 
 // ---- review, decisions, eBugs ----------------------------------------------------------------------------------------
 test('settle: agreement stands, a split or an unjudged candidate is a question', () => {
   put(join(RUNS, 'r1', 'design', 'builder.json'), { screens: { '1:10': {
-    'copy:1:1a': { verdict: 'bug', severity: 'major', note: 'wrong article', note_zh: '冠詞錯誤' },
-    'position:1:13': { verdict: 'ok', note: 'inside padding' },
+    'truncated:1:1b': { verdict: 'bug', severity: 'major', note: 'title cut short', note_zh: '標題被截斷' },
+    'align:1:14': { verdict: 'ok', note: 'within the button' },
     'visual:1': { kind: 'visual', verdict: 'bug', severity: 'cosmetic', figma: { box: [330, 50, 24, 24] }, note: 'icon differs' } } } });
   put(join(RUNS, 'r1', 'design', 'reviewer.json'), { screens: { '1:10': {
-    'copy:1:1a': { verdict: 'bug', note: 'article', note_zh: '冠詞' }, 'position:1:13': { verdict: 'bug', note: '12 pt' }, 'visual:1': { verdict: 'bug', note: 'icon' } } } });
+    'truncated:1:1b': { verdict: 'bug', note: 'cut', note_zh: '截斷' }, 'align:1:14': { verdict: 'bug', note: '7.5 pt' }, 'visual:1': { verdict: 'bug', note: 'icon' } } } });
   const r = design('settle', 'r1');
   assert.equal(r.status, 0, r.out);
   const f = read(join(RUNS, 'r1', 'design', 'findings.json')).screens;
-  assert.deepEqual([f['1:10']['copy:1:1a'].note, f['1:10']['copy:1:1a'].note_zh, f['1:10']['copy:1:1a'].reviewer_zh], ['wrong article', '冠詞錯誤', '冠詞'], 'both languages of both passes are kept');
-  assert.equal(f['1:10']['copy:1:1a'].verdict, 'bug');
+  assert.deepEqual([f['1:10']['truncated:1:1b'].note, f['1:10']['truncated:1:1b'].note_zh, f['1:10']['truncated:1:1b'].reviewer_zh], ['title cut short', '標題被截斷', '截斷'], 'both languages of both passes are kept');
+  assert.equal(f['1:10']['truncated:1:1b'].verdict, 'bug');
   assert.equal(f['1:10']['visual:1'].verdict, 'bug');
   assert.deepEqual(f['1:10']['visual:1'].figma, { box: [330, 50, 24, 24] }, 'a visual item keeps its box for the page');
-  assert.equal(f['1:10']['position:1:13'].verdict, 'question');
+  assert.equal(f['1:10']['align:1:14'].verdict, 'question');
   assert.equal(f['1:10']['missing:1:1e'].verdict, 'question', 'a candidate neither pass judged is not dropped');
   assert.equal(f['1:20']['state:1:20'].split, 'builder skipped · reviewer skipped');
 });
 
 test('decide: the Design tab block is applied, and settle keeps it', () => {
-  const block = `DESIGN DECISIONS ${F} ios\nr1 1:10 position:1:13: bug\nr1 1:10 position:1:13: eBug\nr1 1:20 state:1:20: n/a\nr1 1:10 copy:1:1a: eBug\nnonsense line\n`;
+  const block = `DESIGN DECISIONS ${F} ios\nr1 1:10 align:1:14: bug\nr1 1:10 align:1:14: eBug\nr1 1:20 state:1:20: n/a\nr1 1:10 truncated:1:1b: eBug\nnonsense line\n`;
   assert.notEqual(run('design.ts', [F, 'ios', 'decide'], { input: '' }).status, 0, 'no block, no change');
   const ok = run('design.ts', [F, 'ios', 'decide'], { input: block });
   assert.equal(ok.status, 0, ok.out);
   assert.match(ok.out, /skipped: nonsense line/);
   let f = read(join(RUNS, 'r1', 'design', 'findings.json')).screens;
-  assert.equal(f['1:10']['position:1:13'].verdict, 'bug'); assert.equal(f['1:10']['position:1:13'].ebug, true);
+  assert.equal(f['1:10']['align:1:14'].verdict, 'bug'); assert.equal(f['1:10']['align:1:14'].ebug, true);
   assert.equal(f['1:20']['state:1:20'].verdict, 'n/a'); assert.match(f['1:20']['state:1:20'].decided, /^user /);
   assert.equal(design('settle', 'r1').status, 0);
   f = read(join(RUNS, 'r1', 'design', 'findings.json')).screens;
-  assert.equal(f['1:10']['position:1:13'].verdict, 'bug', 'settling again keeps the user decision');
+  assert.equal(f['1:10']['align:1:14'].verdict, 'bug', 'settling again keeps the user decision');
   assert.notEqual(run('design.ts', [F, 'ios', 'decide'], { input: 'DESIGN DECISIONS other/feature ios\n' }).status, 0, 'a block for another feature is refused');
   // a bug moved to OK with the user's reason, and an eBug tick taken back (user, 2026-11-04)
-  const why = run('design.ts', [F, 'ios', 'decide'], { input: `DESIGN DECISIONS ${F} ios\nr1 1:10 copy:1:1a: no eBug\nr1 1:20 state:1:20: ok: CMS banner, not fixed copy\n` });
+  const why = run('design.ts', [F, 'ios', 'decide'], { input: `DESIGN DECISIONS ${F} ios\nr1 1:10 truncated:1:1b: no eBug\nr1 1:20 state:1:20: ok: CMS banner, not fixed copy\n` });
   assert.equal(why.status, 0, why.out);
   f = read(join(RUNS, 'r1', 'design', 'findings.json')).screens;
   assert.equal(f['1:20']['state:1:20'].verdict, 'ok'); assert.equal(f['1:20']['state:1:20'].why, 'CMS banner, not fixed copy');
-  assert.equal(f['1:10']['copy:1:1a'].ebug, undefined);
-  run('design.ts', [F, 'ios', 'decide'], { input: `DESIGN DECISIONS ${F} ios\nr1 1:10 copy:1:1a: eBug\nr1 1:20 state:1:20: n/a\n` });
+  assert.equal(f['1:10']['truncated:1:1b'].ebug, undefined);
+  run('design.ts', [F, 'ios', 'decide'], { input: `DESIGN DECISIONS ${F} ios\nr1 1:10 truncated:1:1b: eBug\nr1 1:20 state:1:20: n/a\n` });
   assert.equal(read(join(RUNS, 'r1', 'design', 'findings.json')).screens['1:20']['state:1:20'].why, undefined, 'a verdict without a reason clears the old one');
 });
 
@@ -388,7 +417,7 @@ test('ebugs: the ticked bugs with their row, Figma link and sheet', () => {
   assert.equal(r.status, 0, r.out);
   const md = readFileSync(join(RUNS, 'r1', 'design', 'ebug-findings.md'), 'utf8');
   assert.match(md, /2 bug\(s\)|## 2\./);
-  assert.match(md, /Home — copy \(major\)/);
+  assert.match(md, /Home — truncated \(major\)/);
   assert.match(md, /Reached by: TC-001 — Precondition: Signed in; Action: Tap Start/);
   assert.match(md, /https:\/\/www\.figma\.com\/design\/KEY123\?node-id=1-10/);
   assert.match(md, /Image: screenshots\/design\/1-10-sheet\.png/);
@@ -400,12 +429,12 @@ test('ebugs: the ticked bugs with their row, Figma link and sheet', () => {
 test('check --recheck: earlier bugs fixed, still there, or to look at again', () => {
   put(join(RUNS, 'r2', 'design', '.keep'), '');
   homeShot(join(RUNS, 'r2', 'screenshots', 'design', '1-10.png'));
-  capture('r2', '1:10', '1-10', iosHome('Choose a template'), { w: 375, h: 812 });
+  capture('r2', '1:10', '1-10', iosHome('Recently created dramas'), { w: 375, h: 812 });
   const r = design('check', 'r2', '--recheck', 'r1', '--build', '15.3.0 (190100)');
   assert.equal(r.status, 0, r.out);
   const s = read(join(RUNS, 'r2', 'design', 'compare.json')).screens[0];
   const now = Object.fromEntries(s.recheck.items.map((i: any) => [i.id, i.now]));
-  assert.deepEqual(now, { 'copy:1:1a': 'fixed', 'visual:1': 'check', 'position:1:13': 'still' });
+  assert.deepEqual(now, { 'truncated:1:1b': 'fixed', 'visual:1': 'check', 'align:1:14': 'still' });
   assert.equal(s.build, '15.3.0 (190100)');
 });
 
@@ -468,10 +497,10 @@ test('watch: `case` arms the row\'s screens, a matching page source is captured,
   assert.match(armWatch(dir, 'TC-001').join('\n'), /watching 1 screen\(s\) of TC-001/);
   assert.equal(await watchSource(dir, androidOffline, shot, win), undefined, 'another screen with too few of its texts: nothing');
   assert.equal(await watchSource(dir, `<A>${st('Create Your Drama', 20, 110, 180, 24)}${st('Templates', 20, 700, 100, 20)}</A>`, shot, win), undefined, 'two texts of nine: nothing');
-  assert.match(await watchSource(dir, iosHome('Choose a template'), shot, win) ?? '', /captured 1:10 Home automatically \(7\/9 texts\)/);
+  assert.match(await watchSource(dir, iosHome('Choose a template'), shot, win) ?? '', /captured 1:10 Home automatically \(7\/10 texts\)/);
   assert.equal(await watchSource(dir, iosHome('Choose a template'), shot, win), undefined, 'captured once');
   const caps = readFileSync(join(dir, 'design', 'captures.jsonl'), 'utf8').trim().split('\n').map(l => JSON.parse(l));
-  assert.deepEqual(caps.map(c => [c.screen, c.case, c.auto, c.match]), [['1:10', 'TC-001', true, '7/9']]);
+  assert.deepEqual(caps.map(c => [c.screen, c.case, c.auto, c.match]), [['1:10', 'TC-001', true, '7/10']]);
   assert.ok(existsSync(join(dir, 'screenshots', 'design', '1-10.xml')));
   // the next row: nothing left of TC-001; leaving TC-002 without its screen names it
   assert.doesNotMatch(armWatch(dir, 'TC-002').join('\n'), /passed without/);
@@ -577,6 +606,22 @@ test('source gaps: a Design board the casebook inventories but the read lacks st
   rmSync(join(OUT, 'summary.json'));
 });
 
+test('source gaps: a region board is read once every board inside its box merged', () => {
+  writeOut(); rmSync(join(OUT, 'summary.json'), { force: true });
+  const inv = join(EX, 'figma-inventory-dr.json');
+  put(inv, { file: 'KEY123', group: 'dr', boards: [['0:1/region-a', 'region-a', -10, -10, 2000, 2000], ['0:1/region-b', 'region-b', 5000, 0, 500, 500]] });
+  put(join(OUT, '7-7.json'), { board: { id: '7:7', name: 'Inside', box: [0, 0, 375, 812] }, nodes: [] });
+  put(join(OUT, 'summary.json'), { boards: [{ id: '7:7', name: 'Inside' }], incomplete: [] });
+  const st = design('status').out;
+  assert.doesNotMatch(st, /region-a/, 'every board inside region-a merged');
+  assert.match(st, /board 0:1\/region-b 「region-b」 is not in the Design source read/, 'nothing merged inside region-b');
+  // an incomplete board inside keeps the region unread
+  put(join(OUT, 'summary.json'), { boards: [{ id: '7:7', name: 'Inside' }], incomplete: [{ board: '8:8', name: 'Half', missing: ['chunk-8-8_0'], box: [400, 0, 375, 812] }] });
+  assert.match(design('status').out, /board 0:1\/region-a 「region-a」 is not in the Design source read/);
+  rmSync(inv); rmSync(join(OUT, '7-7.json')); rmSync(join(OUT, 'summary.json'));
+  writeOut();
+});
+
 test('figma-source merge: an incomplete board leaves no stale board file, and a casebook board not planned is named', () => {
   writeOut();
   const resp = join(EX, 'figma-source', 'design', 'responses');
@@ -659,6 +704,47 @@ test('figma-source: board images live in the shared folder, are size-checked and
   put(join(EX, 'figma-source', 'design', 'hashes.json'), { '1:1': { hash: 'old', read_at: '2026-01-01T00:00:00Z', name: 'Board', nodes: 1 } });
   assert.match(run('figma-source.ts', [F, 'calls', 'chunks', 'design']).out, /1 screenshot\(s\)/);
   rmSync(join(EX, 'figma-source', 'design', 'hashes.json'));
+});
+
+test('figma-source chunks: small boards share batch calls, instance-free boards need no hidden call, twins get their own image, a covering image is reused', () => {
+  const src = join(EX, 'figma-source', 'design'), resp = join(src, 'responses'), calls = join(src, 'calls'), shared = join(EX, 'figma');
+  rmSync(resp, { recursive: true, force: true }); rmSync(join(src, 'hashes.json'), { force: true });
+  const shotsBefore = existsSync(join(shared, 'shots.json')) ? readFileSync(join(shared, 'shots.json'), 'utf8') : null;
+  const hashesBefore = existsSync(join(EX, 'figma-hashes.json')) ? readFileSync(join(EX, 'figma-hashes.json'), 'utf8') : null;
+  put(join(resp, 'list.json'), JSON.stringify({ mode: 'list', page: ['0:1', 'UI'], root: ['0:1', 'UI', 'PAGE'], sections: [],
+    nodes: [['4:1', 'label a', 'TEXT', 0, 900, 100, 20, 0, 1], ['4:2', 'label b', 'TEXT', 0, 950, 100, 20, 0, 1], ['5:1', 'Same', 'FRAME', 0, 0, 375, 812, 0, 1], ['5:2', 'Same', 'FRAME', 400, 0, 375, 812, 3, 1]] }));
+  put(join(resp, 'plan-0-1.json'), JSON.stringify({ mode: 'plan', page: ['0:1', 'UI'], read_at: '2026-01-03T00:00:00Z', missing: [],
+    boards: [{ id: '4:1', name: 'label a', type: 'TEXT', hash: 'a', box: [0, 900, 100, 20], nodes: 1 }, { id: '4:2', name: 'label b', type: 'TEXT', hash: 'b', box: [0, 950, 100, 20], nodes: 1 },
+      { id: '5:1', name: 'Same', type: 'FRAME', hash: 'c', box: [0, 0, 375, 812], nodes: 40 }, { id: '5:2', name: 'Same', type: 'FRAME', hash: 'd', box: [400, 0, 375, 812], nodes: 40 }],
+    chunks: [['4:1', 0, 1, 300, '4:1', '4:1'], ['4:2', 0, 1, 300, '4:2', '4:2'], ['5:1', 0, 40, 30000, '5:1', '5:9'], ['5:2', 0, 40, 30000, '5:2', '5:9']] }));
+  put(join(shared, 'shots.json'), { 'region.png': { board: '0:1/r', group: 'd', hash: 'rh', box: [0, 0, 800, 812], captured_at: '2026-01-01T00:00:00Z' } });
+  png(join(shared, 'region.png'), 800, 812, []);
+  put(join(EX, 'figma-hashes.json'), { boards: { '0:1/r': { hash: 'rh' } }, files: {} });
+  const r = run('figma-source.ts', [F, 'calls', 'chunks', 'design']);
+  const todo = read(join(calls, 'todo.json')), names = todo.chunk_calls.map((c: any) => c.call.split('/').pop());
+  assert.ok(names.includes('chunk-batch-1.js'), r.out); assert.ok(!names.some((n: string) => /chunk-4-/.test(n)), 'labels go in the batch');
+  assert.deepEqual(names.filter((n: string) => n.startsWith('hidden-')), ['hidden-5-2_0.js'], 'only the board with instances needs a hidden call');
+  assert.match(readFileSync(join(calls, 'chunk-batch-1.js'), 'utf8'), /\[\["4:1",0,1,"4:1","4:1"\],\["4:2",0,1,"4:2","4:2"\]\]/);
+  assert.deepEqual(todo.covered_shots, ['5:1', '5:2']);
+  assert.deepEqual(todo.screenshots.map((x: any) => x.nodeId), ['4:1', '4:2']);
+  // the region image no longer current: the two frames named alike are taken into two files
+  put(join(EX, 'figma-hashes.json'), { boards: { '0:1/r': { hash: 'new' } }, files: {} });
+  run('figma-source.ts', [F, 'calls', 'chunks', 'design']);
+  const saves = read(join(calls, 'todo.json')).screenshots.filter((x: any) => x.nodeId.startsWith('5:')).map((x: any) => x.save_to.split('/').pop());
+  assert.deepEqual(saves, ['same.png', 'same-5-2.png']);
+  // a batch return is read as its boards' chunks
+  const node = (i: string, p: number) => ({ i, t: 'TEXT', n: 'L', b: [0, 0, 100, 20], p });
+  const part = (id: string) => ({ mode: 'chunk', board: id, read_at: '2026-01-03T00:01:00Z', from: 0, to: 1, first: 0, count: 1, bytes: 10, tables: { V: [], S: [], P: [] }, nodes: [node(id, -1)] });
+  put(join(resp, 'chunk-batch-1.json'), JSON.stringify({ mode: 'batch', parts: [part('4:1'), part('4:2')] }));
+  const m = run('figma-source.ts', [F, 'merge', 'design']);
+  assert.doesNotMatch(m.out, /INCOMPLETE 4:/, m.out);
+  assert.ok(existsSync(join(OUT, '4-1.json')) && existsSync(join(OUT, '4-2.json')));
+  rmSync(resp, { recursive: true, force: true }); rmSync(calls, { recursive: true, force: true }); rmSync(join(src, 'hashes.json'), { force: true });
+  rmSync(join(shared, 'region.png'), { force: true });
+  for (const [f, v] of [[join(shared, 'shots.json'), shotsBefore], [join(EX, 'figma-hashes.json'), hashesBefore]] as const) v === null ? rmSync(f, { force: true }) : writeFileSync(f, v);
+  for (const f of ['4-1', '4-2']) { rmSync(join(OUT, `${f}.json`), { force: true }); rmSync(join(OUT, `${f}.metadata.xml`), { force: true }); }
+  rmSync(join(OUT, 'summary.json'), { force: true });
+  writeOut();
 });
 
 test('figma-source: save refuses a return older than its call', () => {

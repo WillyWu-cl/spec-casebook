@@ -1,32 +1,16 @@
 <title>__TITLE__</title>
 <!-- tab icon (run plan: phase bars), different on each page so the browser tabs are easy to tell apart -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23d9822b'/><path d='M7 9h11M11 16h14M7 23h8' stroke='%23fff' stroke-width='3.6' stroke-linecap='round'/></svg>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;750&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;600;700&display=swap">
 <style>
+/*__SHARED_CSS__*/
 /* Layout: a run sheet — summary strip, then phases as stacked ledgers whose segments are rows you can open to see their cases. */
-:root {
-  --bg: #f4f6f6; --panel: #ffffff; --ink: #172426; --muted: #5b6b6e; --line: #d8e0e1; --accent: #0f6e73;
-  --pass: #2f7d4f; --fail: #b8402f; --blocked: #a86b12; --inc: #6a55a8; --notrun: #9aa6a8;
-  --chip-bg: #eef2f2; --hold: #7a5a14; --skip: #7d878a;
-  --display: "Archivo", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
-  --body: "Source Sans 3", "Noto Sans TC", "Segoe UI", system-ui, "PingFang TC", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd;
-  --pass: #5cbf83; --fail: #ec7a66; --blocked: #e0a548; --inc: #a796e0; --notrun: #5f6f71;
-  --chip-bg: #213032; --hold: #e0b85a; --skip: #8c9a9c; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd;
-  --pass: #5cbf83; --fail: #ec7a66; --blocked: #e0a548; --inc: #a796e0; --notrun: #5f6f71;
-  --chip-bg: #213032; --hold: #e0b85a; --skip: #8c9a9c; color-scheme: dark }
-* { box-sizing: border-box }
 .actual { color: var(--muted); font-size: 0.85rem; margin-top: 4px; max-width: 46ch }
-body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px }
-.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 28px }
+body { padding-block: 28px 56px }
+.wrap { display: grid; gap: 28px }
 h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em }
 h1 { font-size: 1.9rem; font-weight: 750 }
 h2 { font-size: 1.25rem; font-weight: 650 }
@@ -95,7 +79,11 @@ tr.focus td { background: var(--chip-bg) } tr.focus td.id { box-shadow: inset 3p
 .usage tr.sub td.est { color: var(--accent); font-weight: 400 }
 .usage tr.round td { border-top: 2px solid var(--line) }
 .usage.nosegs tr.sub { display: none }
-.usage .tools { margin-top: 8px; font-size: 0.85rem }
+.usage .tools { font-size: 0.85rem }
+#usage-box.nosegs.single .tbl { display: none }
+.ufoot .how { margin: 0; flex: 1 1 260px; min-width: 0 }
+details.whyd > summary { cursor: pointer; list-style-position: inside }
+details.whyd > summary h3 { display: inline-flex }
 .usage .tools button { font: 600 0.75rem var(--mono); color: var(--accent); background: var(--chip-bg); border: 1px solid var(--line); border-radius: 3px; padding: 3px 8px; cursor: pointer }
 .usage .notes { color: var(--muted); font-size: 0.85rem; margin: 10px 0 0; display: grid; gap: 4px }
 .stats { display: block; font: 0.74rem var(--mono); color: var(--muted); margin-top: 3px }
@@ -126,7 +114,6 @@ code { font: 0.85em var(--mono); background: var(--chip-bg); padding: 1px 4px; b
 .how { margin-top: 4px } .how summary { cursor: pointer; font-size: 13.5px; color: var(--muted) } .how .notes { margin-top: 8px }
 .history { display: grid; gap: 14px; margin-top: 18px; padding-top: 18px; border-top: 2px solid var(--line) }
 .hist-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap }
-.history .phase { opacity: .92 }
 details.hist > summary { cursor: pointer; font-size: 13.5px; color: var(--muted); padding: 10px 18px }
 .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap }
 .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--panel) }
@@ -146,20 +133,21 @@ details.hist > summary { cursor: pointer; font-size: 13.5px; color: var(--muted)
     <div class="legend" id="legend"></div>
   </header>
 
-  <section class="box usage nosegs" aria-labelledby="usage-h">
-    <h2 id="usage-h"><span data-zh="時間與方案用量 · 本次執行">Time and plan usage · this run</span></h2>
-    <div class="tools"><button type="button" aria-pressed="false" onclick="toggleSegs(this)">Show segments</button></div>
+  <section class="ubox usage nosegs" id="usage-box" aria-labelledby="usage-h">
+    <div class="uh"><h2 id="usage-h"><span data-zh="時間與方案用量 · 本次執行">Time and plan usage · this run</span></h2><span class="uw" id="usage-when"></span></div>
+    <div id="usage-strip"></div>
     <div class="tbl"><table id="usage"></table></div>
-    <details class="how"><summary><span data-zh="這些數字怎麼算">How these figures are computed</span></summary><div class="notes" id="usage-notes"></div></details>
+    <div class="ufoot"><span class="tools"><button type="button" aria-pressed="false" onclick="toggleSegs(this)">Show segments</button></span>
+      <details class="how"><summary><span data-zh="這些數字怎麼算">How these figures are computed</span></summary><div class="notes" id="usage-notes"></div></details></div>
   </section>
-
-  <div id="phases" style="display:grid;gap:18px"></div>
 
   <section class="box why" id="blocked-box" aria-labelledby="blocked-h">
     <h2 id="blocked-h"></h2>
     <p class="why-lead" id="blocked-lead"></p>
     <div class="why-cats" id="blocked"></div>
   </section>
+
+  <div id="phases" style="display:grid;gap:18px"></div>
 
   <div class="two">
     <section class="box"><h2><span data-zh="最近的檢查點">Recent checkpoints</span></h2><div class="cp" id="cps"></div></section>
@@ -189,6 +177,7 @@ details.hist > summary { cursor: pointer; font-size: 13.5px; color: var(--muted)
 </div>
 
 <script>
+/*__SHARED_JS__*/
 let DATA = __DATA__;
 const LIVE = __LIVE__;
 // Language: English or 中文 for everything the page writes itself; run data (actions, notes, results text, log) stays
@@ -199,7 +188,7 @@ const tx = (en, zh) => LANG === 'zh' ? zh : en;
 const RES = ['Pass', 'Fail', 'Blocked', 'Inconclusive', 'Not run'];
 const RES_ZH = { 'Pass': '通過', 'Fail': '失敗', 'Blocked': '受阻', 'Inconclusive': '無法判定', 'Not run': '未執行' };
 const resName = r => tx(r, RES_ZH[r] ?? r);
-const STATE_ZH = { 'Skipped this round': '本輪略過', 'Deferred': '延後', 'Done': '完成', 'In progress': '進行中', 'Pending': '待執行', 'Skipped': '略過' };
+const STATE_ZH = { 'Skipped this round': '本輪略過', 'Deferred': '延後', 'Recorded': '已記錄', 'Recording complete': '記錄完成', 'In progress': '進行中', 'Pending': '待執行', 'Skipped': '略過' };
 const stateName = s => tx(s, STATE_ZH[s] ?? s);
 const COLOR = { 'Pass': 'var(--pass)', 'Fail': 'var(--fail)', 'Blocked': 'var(--blocked)', 'Inconclusive': 'var(--inc)', 'Not run': 'var(--notrun)' };
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -224,7 +213,7 @@ const seatEq = (v, s) => { const m = s && s.seats && s.seats.length === 1 && s.s
 const statLine = s => s ? `<span class="stats num">${s.wall > s.test + 60000 ? `${tx('wall', '總時長')} ${hm(s.wall)} · ` : ''}${tx('test', '測試')} ${hm(s.test)}${s.idle ? ` · ${tx('idle', '閒置')} ${hm(s.idle)}` : ''} · <span title="${esc(tokTitle(s.tokens))}">${tok(tokAll(s.tokens))} tokens</span>${s.est5 != null ? ` · ${tx('est. 5-hour', '估計 5 小時')} ${fmtP(s.est5)}${s.estW != null ? ` · ${tx('weekly', '每週')} ~${fmtP(s.estW)}` : ''} ${tx('of 1× Pro', '（1× Pro）')}` : ''}${s.fiveHour != null ? ` · ${tx('account total (shared)', '帳號合計（共用）')} ${pct(s.fiveHour, s.approx)} / ${pct(s.weekly, s.approx)}` : ''}</span>` : '';
 const segBtnText = btn => { const shown = !btn.closest('.usage').classList.contains('nosegs'); btn.textContent = shown ? tx('Hide segments', '隱藏區段') : tx('Show segments', '顯示區段'); };
 function toggleSegs(btn) { const u = btn.closest('.usage'); u.classList.toggle('nosegs'); btn.setAttribute('aria-pressed', String(!u.classList.contains('nosegs'))); segBtnText(btn); }
-const utc = s => esc(s.slice(5, 16).replace('T', ' '));
+const utc = s => esc(cbWhen(s));
 // One usage table per part of the page: the current run (with the notes) and the earlier runs.
 function renderUsage(tableId, subset, totalLabel, emptyText) {
   const U = DATA.usage, C = U.calibration, ps = subset.filter(p => p.stats);
@@ -236,7 +225,7 @@ function renderUsage(tableId, subset, totalLabel, emptyText) {
   const gaps = n => tx(`${n} gap${n > 1 ? 's' : ''}`, `${n} 段閒置`);
   const row = (label, seat, s, cls = '') => `<tr class="${cls}"><td>${label}</td><td>${esc(seat.split(', ')[0])}${seat.includes(', ') ? `<span class="eq">${esc(seat.split(', ').slice(1).join(', '))}</span>` : ''}</td><td class="n">${hm(s.wall)}</td><td class="n">${hm(s.test)}</td><td class="n">${hm(s.idle)}${s.gaps ? `<span class="eq">${gaps(s.gaps)}</span>` : ''}</td><td class="n" title="${esc(tokTitle(s.tokens))}">${tok(tokAll(s.tokens))}${s.wt != null ? `<span class="eq">${tx('wtd', '加權')} ${tok(s.wt)}</span>` : ''}</td>`;
   const sub = (label, s) => s ? row(label, '', s, 'sub') + estCells(s, false) + acctCells(s.fiveHour, s.weekly, s.approx) + '</tr>' : '';
-  const span = s => `<span class="eq">${utc(s.from)} → ${utc(s.to)} UTC</span>`;
+  const span = s => `<span class="eq">${esc(cbSpan(s.from, s.to, LANG))}</span>`;
   const ids = new Set(ps.map(p => p.id));
   const rounds = (U.rounds || []).map(r => ({ ...r, phases: r.phases.filter(id => ids.has(id)) })).filter(r => r.phases.length);
   const allRounds = U.rounds || [];
@@ -247,11 +236,16 @@ function renderUsage(tableId, subset, totalLabel, emptyText) {
     + (r.phases.length > 1 ? row(`${tx(`Round ${r.n} total`, `第 ${r.n} 輪合計`)} <span class="eq">${esc(r.phases.join(' + '))}</span>`, seatLabel(r), r, 'tot round') + estCells(r) + acctCells(r.readings ? r.fiveHour : null, r.readings ? r.weekly : null, r.approx) + '</tr>' : '')).join('');
   const outside = U.outside5 || U.outsideW ? `<tr><td>${tx('Outside any run', '執行以外')}</td><td></td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n est">—</td><td class="n est">—</td>${acctCells(U.outside5, U.outsideW, U.approx)}</tr>` : '';
   const acctTitle = tx("Snapshot increments during the run's active time, including other users of the account", '執行期間帳號用量快照的增加量，包含帳號的其他使用者');
-  if (ps.length) document.getElementById(tableId).innerHTML = `<thead><tr><th rowspan="2">${tx('Phase', '階段')}</th><th rowspan="2">${tx('Account', '帳號')}</th><th class="n" rowspan="2">${tx('Wall', '總時長')}</th><th class="n" rowspan="2">${tx('Test', '測試')}</th><th class="n" rowspan="2">${tx('Idle &gt;15 min', '閒置 &gt;15 分')}</th><th class="n" rowspan="2">${tx('Claude tokens', 'Claude token')}</th><th class="grp" colspan="2">${tx('Est. from token rate, % of 1× Pro', '依 token 率估計（1× Pro 的 %）')}</th><th class="grp acct" colspan="2">${tx('Account total (shared), % of 1× Pro', '帳號合計（共用，1× Pro 的 %）')}</th></tr>
-    <tr><th class="n" title="${tx('Weighted tokens × the calibrated rate', '加權 token × 校準後的比率')}">${tx('5-hour', '5 小時')}</th><th class="n" title="${tx('5-hour estimate × the weekly ÷ 5-hour ratio', '5 小時估計 × 每週 ÷ 5 小時比')}">${tx('Weekly (rough)', '每週（粗估）')}</th><th class="n acct" title="${acctTitle}">${tx('5-hour', '5 小時')}</th><th class="n acct" title="${acctTitle}">${tx('Weekly', '每週')}</th></tr></thead><tbody>` +
+  if (ps.length) document.getElementById(tableId).innerHTML = `<thead><tr><th>${tx('Phase', '階段')}</th><th>${tx('Seat', '席位')}</th><th class="n">${tx('Wall', '總時長')}</th><th class="n">${tx('Test', '測試')}</th><th class="n" title="${tx('Gaps over 15 minutes', '超過 15 分鐘的間隔')}">${tx('Idle', '閒置')}</th><th class="n">${tx('Tokens', 'Token')}</th><th class="n" title="${tx('Weighted tokens × the calibrated rate, % of 1× Pro', '加權 token × 校準後的比率（1× Pro 的 %）')}">${tx('Est. 5-hour', '估計 5 小時')}</th><th class="n" title="${tx('5-hour estimate × the weekly ÷ 5-hour ratio, % of 1× Pro', '5 小時估計 × 每週 ÷ 5 小時比（1× Pro 的 %）')}">${tx('Est. weekly', '估計每週')}</th><th class="n acct" title="${acctTitle}">${tx('Acct 5-hour', '帳號 5 小時')}</th><th class="n acct" title="${acctTitle}">${tx('Acct weekly', '帳號每週')}</th></tr></thead><tbody>` +
     body + outside +
     (ps.length > 1 ? row(esc(totalLabel), '', { ...z, wt: sum('wt') }, 'tot round') + estCells(ps.every(p => p.stats.noTokens) ? { est5: null, estW: null, noTokens: true, seats: [] } : { est5: sum('est5'), estW: sum('estW'), seats: [] }) + acctCells(sum('fiveHour'), sum('weekly'), ps.some(p => p.stats.approx)) + '</tr>' : '') + '</tbody>';
   if (tableId !== 'usage') return;
+  const box = document.getElementById('usage-box'), one = [...new Set(ps.flatMap(p => p.stats.seats ?? []))];
+  box.classList.toggle('single', ps.length <= 1);
+  document.getElementById('usage-when').textContent = ps.length ? `${ps.map(p => p.id).join(' + ')} · ${cbSpan(ps[0].stats.from, ps.at(-1).stats.to, LANG)}${one.length ? ` · ${one.map(m => `${m}× Pro`).join(' + ')}` : ''}` : '';
+  const anyAcct = k => ps.some(p => p.stats[k] != null) ? sum(k) : null;
+  document.getElementById('usage-strip').innerHTML = ps.length ? cbUsageTiles({ ...z, tokens: tokAll(z.tokens), tokensTitle: tokTitle(z.tokens), wt: sum('wt'), est5: sum('est5'), estW: sum('estW'), noTokens: ps.every(p => p.stats.noTokens),
+    seat: one.length === 1 ? one[0] : null, acct5: anyAcct('fiveHour'), acctW: anyAcct('weekly'), approx: ps.some(p => p.stats.approx), out5: U.outside5, outW: U.outsideW, outLabel: tx('outside any run', '執行以外') }, LANG) : `<span class="unone">${esc(emptyText)}</span>`;
   const L = U.latest, w = U.weights;
   const opm = t => t.messages ? t.output / t.messages : 0;
   const basisRound = C ? allRounds.find(r => r.phases.includes(C.basis)) : null;
@@ -270,8 +264,8 @@ function renderUsage(tableId, subset, totalLabel, emptyText) {
       `<span><b>尚未校準。</b>加入 <code>runs/usage-calibration.json</code>（<code>{ "basis": "P1", "fiveHourPct": 300, "seat": 1, "source": "…", "weekPerFiveHour": null }</code>）即可顯示依 token 率的估計。</span>`)] : [
     tx(`<span><b>Est. from token rate (the main figure).</b> Calibration (<code>runs/usage-calibration.json</code>): ${esc(C.source || '?')} = ${C.fiveHourPct * (C.seat || 1)}% of a 1× Pro 5-hour window for ${esc(C.basis)}'s ${tok(C.basisWt)} weighted tokens, so the rate is ${rateStr}% per million weighted tokens. Each row = its weighted tokens × that rate (weights: input ${w.input}, cache write ${w.cacheWrite}, cache read ${w.cacheRead}, output ${w.output}); "= N% of an N× seat" divides by the seat size of the account the row ran on.</span>`,
       `<span><b>依 token 率估計（主要數字）。</b>校準（<code>runs/usage-calibration.json</code>）：${esc(C.source || '?')} = ${esc(C.basis)} 的 ${tok(C.basisWt)} 加權 token 用掉 1× Pro 5 小時額度的 ${C.fiveHourPct * (C.seat || 1)}%，所以比率是每百萬加權 token ${rateStr}%。每一列 = 它的加權 token × 這個比率（權重：輸入 ${w.input}、快取寫入 ${w.cacheWrite}、快取讀取 ${w.cacheRead}、輸出 ${w.output}）；「= N× 席位的 N%」是再除以該列所用帳號的席位大小。</span>`),
-    tx(`<span><b>Weekly is rough.</b> ${esc(C.basis)} has no weekly reading, so weekly = the 5-hour estimate × ${ratio}${C.weekPerFiveHour != null ? ' (weekPerFiveHour in the calibration file)' : WB ? `, the weekly ÷ 5-hour ratio in the ${WB.seat}× seat's paired readings (weekly +${Math.round(WB.weekly)}% against 5-hour +${Math.round(WB.fiveHour)}% of 1× Pro, ${utc(WB.from)} → ${utc(WB.to)} UTC). Those readings include other users of the account and assume the seat's weekly limit scales like its 5-hour limit` : ' (no paired readings to take a ratio from)'}.</span>`,
-      `<span><b>每週只是粗估。</b>${esc(C.basis)} 沒有每週讀數，所以每週 = 5 小時估計 × ${ratio}${C.weekPerFiveHour != null ? '（校準檔的 weekPerFiveHour）' : WB ? `，取自 ${WB.seat}× 席位成對讀數的每週 ÷ 5 小時比（每週 +${Math.round(WB.weekly)}%，5 小時 +${Math.round(WB.fiveHour)}%，以 1× Pro 計，${utc(WB.from)} → ${utc(WB.to)} UTC）。這些讀數包含帳號其他使用者的用量，並假設席位的每週上限與 5 小時上限同比例` : '（沒有成對讀數可算比例）'}。</span>`),
+    tx(`<span><b>Weekly is rough.</b> ${esc(C.basis)} has no weekly reading, so weekly = the 5-hour estimate × ${ratio}${C.weekPerFiveHour != null ? ' (weekPerFiveHour in the calibration file)' : WB ? `, the weekly ÷ 5-hour ratio in the ${WB.seat}× seat's paired readings (weekly +${Math.round(WB.weekly)}% against 5-hour +${Math.round(WB.fiveHour)}% of 1× Pro, ${esc(cbSpan(WB.from, WB.to, LANG))}). Those readings include other users of the account and assume the seat's weekly limit scales like its 5-hour limit` : ' (no paired readings to take a ratio from)'}.</span>`,
+      `<span><b>每週只是粗估。</b>${esc(C.basis)} 沒有每週讀數，所以每週 = 5 小時估計 × ${ratio}${C.weekPerFiveHour != null ? '（校準檔的 weekPerFiveHour）' : WB ? `，取自 ${WB.seat}× 席位成對讀數的每週 ÷ 5 小時比（每週 +${Math.round(WB.weekly)}%，5 小時 +${Math.round(WB.fiveHour)}%，以 1× Pro 計，${esc(cbSpan(WB.from, WB.to, LANG))}）。這些讀數包含帳號其他使用者的用量，並假設席位的每週上限與 5 小時上限同比例` : '（沒有成對讀數可算比例）'}。</span>`),
     tx(`<span><b>Assumes the same model and limits throughout:</b> the rate from ${esc(C.basis)} holds for every round only if the same model ran (transcripts: ${allRounds.map(r => `round ${r.n} ${esc(models(r.models))}`).join('; ')}) and each seat's limits scale with its size (a 6.25× or 1.25× Team seat = that many times Pro).</span>`,
       `<span><b>假設全程使用相同模型與上限：</b>${esc(C.basis)} 的比率只有在每一輪都用同一個模型時才適用（對話紀錄：${allRounds.map(r => `第 ${r.n} 輪 ${esc(models(r.models))}`).join('；')}），並假設每個席位的上限隨席位大小等比放大（6.25× 或 1.25× Team 席位 = 那麼多倍的 Pro）。</span>`),
   ];
@@ -281,8 +275,8 @@ function renderUsage(tableId, subset, totalLabel, emptyText) {
       `<span><b>帳號合計（共用）刻意淡化顯示。</b>它是執行期間帳號用量快照的增加量（用到 100% 而停止 = 一整個額度）。第 2 輪的帳號在 P23 與 P4 期間被其他人在別台電腦大量使用（使用者，2026-10-21）；這些用量不在這裡的對話紀錄中，所以這個數字遠高於本次執行自己的用量。先前的 token 比例分攤（本次執行的 token ÷ 這台 Mac 的所有 token）也因同樣原因取消：分母看不到其他使用者。</span>`),
     tx(`<span><b>Seat size per account.</b> Each usage snapshot stores its account's seat size (<code>proMultiplier</code>, <code>usage-log.ts --seat N</code>): Pro-% = plan-% × that value, so 625% = one full 5-hour window of a 6.25× Pro Team seat. A seat change marks an account switch and starts a new round; no window spans it.${U.seatAssumed ? " Rows without a value inherit the previous row's (1 before any)." : ''} Plan % comes from ${U.snapshots} usage reading${U.snapshots === 1 ? '' : 's'}${U.markers ? ` and ${U.markers} account marker${U.markers === 1 ? '' : 's'}` : ''} (<code>runs/usage.jsonl</code>).</span>`,
       `<span><b>每個帳號的席位大小。</b>每筆用量快照都記錄該帳號的席位大小（<code>proMultiplier</code>，<code>usage-log.ts --seat N</code>）：Pro-% = 方案 % × 席位大小，所以 625% = 6.25× Pro Team 席位的一整個 5 小時額度。席位改變代表換了帳號，並開始新的一輪；額度不會跨過它。${U.seatAssumed ? '沒有記錄席位的列沿用前一列（最前面為 1）。' : ''}方案 % 來自 ${U.snapshots} 筆用量讀數${U.markers ? `與 ${U.markers} 個帳號標記` : ''}（<code>runs/usage.jsonl</code>）。</span>`),
-    L ? tx(`<span>Latest reading ${esc(L.at.slice(0, 16).replace('T', ' '))} UTC (${L.seat}× Pro seat): 5-hour ${L.fiveHourPct ?? '?'}%${L.fiveHourResetsAt ? ` (resets ${utc(L.fiveHourResetsAt)})` : ''} · weekly ${L.weeklyPct ?? '?'}%${L.weeklyResetsAt ? ` (resets ${utc(L.weeklyResetsAt)})` : ''} of the plan.</span>`,
-      `<span>最新讀數 ${esc(L.at.slice(0, 16).replace('T', ' '))} UTC（${L.seat}× Pro 席位）：5 小時 ${L.fiveHourPct ?? '?'}%${L.fiveHourResetsAt ? `（${utc(L.fiveHourResetsAt)} 重設）` : ''} · 每週 ${L.weeklyPct ?? '?'}%${L.weeklyResetsAt ? `（${utc(L.weeklyResetsAt)} 重設）` : ''}（方案用量）。</span>`) : '',
+    L ? tx(`<span>Latest reading ${esc(cbWhenZ(L.at, LANG))} (${L.seat}× Pro seat): 5-hour ${L.fiveHourPct ?? '?'}%${L.fiveHourResetsAt ? ` (resets ${utc(L.fiveHourResetsAt)})` : ''} · weekly ${L.weeklyPct ?? '?'}%${L.weeklyResetsAt ? ` (resets ${utc(L.weeklyResetsAt)})` : ''} of the plan.</span>`,
+      `<span>最新讀數 ${esc(cbWhenZ(L.at, LANG))}（${L.seat}× Pro 席位）：5 小時 ${L.fiveHourPct ?? '?'}%${L.fiveHourResetsAt ? `（${utc(L.fiveHourResetsAt)} 重設）` : ''} · 每週 ${L.weeklyPct ?? '?'}%${L.weeklyResetsAt ? `（${utc(L.weeklyResetsAt)} 重設）` : ''}（方案用量）。</span>`) : '',
     tx(`<span>Time as <code>run-log.ts time</code> (activity points per run folder; test = gaps up to 15 min). Claude tokens = input + cache write + cache read + output of the ${U.ledgerMessages ?? 0} messages in the run folders' <code>tokens.jsonl</code>, which every computer that builds this page tops up from its own transcripts (sessions and subagents that name the run folder, inside its active spans) and which is committed with the run, so every computer shows the same figures once it has pulled; "wtd" = weighted. A phase row includes its wrap-up.</span>`,
       `<span>時間同 <code>run-log.ts time</code>（各執行資料夾的活動時間點；測試 = 15 分鐘以內的間隔）。Claude token = 輸入 + 快取寫入 + 快取讀取 + 輸出，取自各執行資料夾 <code>tokens.jsonl</code> 的 ${U.ledgerMessages ?? 0} 則訊息；每台建置此頁的電腦都會從自己的對話紀錄補進去（提到該執行資料夾的工作階段與子代理，在它的活動期間內），並隨執行一起 commit，所以 pull 之後每台電腦顯示的數字相同；「加權」= 加權後。階段列包含它的收尾。</span>`)
   ].join('');
@@ -346,29 +340,39 @@ function renderBlocked(phases) {
       const idList = Object.entries(bySeg).map(([s, xs]) => `<span class="ids">${esc(s)}: ${idRuns(xs.map(c => c.id)).map(r => { const c = xs.find(x => x.id === r.split('–')[0]); return `<a href="#${esc(c.phase)}--${esc(s)}" data-open="${esc(c.phase)}--${esc(s)}">${esc(r)}</a>`; }).join(', ')}</span>`).join('<br>');
       return `<li><b>${esc(whyLabel(g, k))}</b> <span class="num">· ${cs.length}</span>${rule}${why ? `<div class="detail">${esc(why)}</div>` : ''}${idList ? `<div>${idList}</div>` : ''}${noted.map(c => `<span class="case">${link(c)} <span class="detail">${esc(c.why.note)}</span></span>`).join('')}</li>`;
     }).join('');
-    return `<div class="why-cat"><h3>${esc(catName(k))} <span class="n">${n(k)}</span></h3>${CAT[k] ? `<p class="clears">${tx(CAT[k][2], CAT[k][3])}</p>` : ''}<ul>${groups}</ul></div>`;
+    return `<details class="why-cat whyd" id="why--${esc(k)}"${openSegs.has(`why--${k}`) ? ' open' : ''}><summary><h3>${esc(catName(k))} <span class="n">${n(k)}</span></h3></summary>${CAT[k] ? `<p class="clears">${tx(CAT[k][2], CAT[k][3])}</p>` : ''}<ul>${groups}</ul></details>`;
   }).join('');
 }
 // A case link in the Blocked panel opens its segment.
-document.addEventListener('click', e => { const a = e.target.closest('a[data-open]'); if (a) { const d = document.getElementById(a.dataset.open); if (d) d.open = true; } });
+document.addEventListener('click', e => { const a = e.target.closest('a[data-open]'); if (a) { const d = document.getElementById(a.dataset.open); if (d) { d.open = true; fillDetails(d); } } });
+// a segment's case table, drawn when the segment opens: a page holding every table of every run was 29,000 elements
+function segTable(s) {
+  const rows = s.cases.map(c => `<tr data-case="${esc(c.id)}"${c.id === focusCase ? ' class="focus"' : ''}><td class="id">${esc(c.id)}${c.origin ? ` <span class="eyebrow">${esc(c.origin)}</span>` : ''}${c.needs ? `<div class="eyebrow">${tx('needs', '需要')} ${esc(c.needs)}</div>` : ''}${xlinks(c.id)}</td><td>${esc(c.section)}</td><td>${esc(c.action)}</td><td><span class="r ${esc(c.result.replace(' ', ''))}">${esc(resName(c.result))}</span>${c.disp ? ` <span class="eyebrow">${esc(c.disp)}</span>` : ''}${c.why ? `<span class="why-row">${esc(whyLabel(c.why.group, c.disp))}</span>` : ''}${c.actual ? `<div class="actual">${esc(c.actual)}${c.at ? ` <span class="eyebrow">${esc(cbWhen(c.at))}</span>` : ''}</div>` : ''}</td></tr>`).join('');
+  return `<table><thead><tr><th>${tx('Case', '案例')}</th><th>${tx('Section', '分區')}</th><th>${tx('Action', '操作')}</th><th>${tx('Result', '結果')}</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+function fillDetails(d) {
+  if (d.matches('details.seg') && !d.querySelector('table')) { const [pid, sid] = d.id.split('--'), s = DATA.phases.find(p => p.id === pid)?.segments.find(x => x.id === sid); if (s) d.querySelector('.cases').innerHTML = segTable(s); }
+  if (d.matches('details.hist') && !d.querySelector('details.seg')) { const p = DATA.phases.find(x => x.id === d.id.slice(6)); if (p) { const had = openSegs; openSegs = new Set(); d.insertAdjacentHTML('beforeend', phaseSegs(p)); openSegs = had; } }
+}
+const phaseSegs = p => p.segments.map(s => {
+  const st = tally(s.cases), left = st['Not run'];
+  const ss = p.skip ? ['skip', 'Skipped'] : left === 0 ? ['done', 'Recorded'] : left < s.cases.length ? ['active', 'In progress'] : ['pending', 'Pending'];
+  const isOpen = openSegs.has(`${p.id}--${s.id}`);
+  return `<details class="seg" id="${esc(p.id)}--${esc(s.id)}"${isOpen ? ' open' : ''}><summary><span class="seg-id">${esc(s.id)}</span><span class="seg-name">${esc(s.name)}${statLine(s.stats)}</span><span class="seg-count num">${s.cases.length - left}/${s.cases.length} ${tx('recorded', '已記錄')}</span><span class="bar">${bar(st)}</span><span class="state ${ss[0]}">${stateName(ss[1])}</span></summary>
+    <div class="cases">${isOpen ? segTable(s) : ''}</div></details>`;
+}).join('');
 function phaseHtml(p, history) {
   const cs = p.segments.flatMap(s => s.cases), t = tally(cs);
-  const state = p.skip ? ['skip', 'Skipped this round'] : p.hold ? ['hold', 'Deferred'] : t['Not run'] === 0 ? ['done', 'Done'] : t['Not run'] < cs.length ? ['active', 'In progress'] : ['pending', 'Pending'];
-  const segs = p.segments.map(s => {
-    const st = tally(s.cases), left = st['Not run'];
-    const ss = p.skip ? ['skip', 'Skipped'] : left === 0 ? ['done', 'Done'] : left < s.cases.length ? ['active', 'In progress'] : ['pending', 'Pending'];
-    const rows = s.cases.map(c => `<tr data-case="${esc(c.id)}"${c.id === focusCase ? ' class="focus"' : ''}><td class="id">${esc(c.id)}${c.origin ? ` <span class="eyebrow">${esc(c.origin)}</span>` : ''}${c.needs ? `<div class="eyebrow">${tx('needs', '需要')} ${esc(c.needs)}</div>` : ''}${xlinks(c.id)}</td><td>${esc(c.section)}</td><td>${esc(c.action)}</td><td><span class="r ${esc(c.result.replace(' ', ''))}">${esc(resName(c.result))}</span>${c.disp ? ` <span class="eyebrow">${esc(c.disp)}</span>` : ''}${c.why ? `<span class="why-row">${esc(whyLabel(c.why.group, c.disp))}</span>` : ''}${c.actual ? `<div class="actual">${esc(c.actual)}${c.at ? ` <span class="eyebrow">${esc(c.at)}</span>` : ''}</div>` : ''}</td></tr>`).join('');
-    return `<details class="seg" id="${esc(p.id)}--${esc(s.id)}"${openSegs.has(`${p.id}--${s.id}`) ? ' open' : ''}><summary><span class="seg-id">${esc(s.id)}</span><span class="seg-name">${esc(s.name)}${statLine(s.stats)}</span><span class="seg-count num">${s.cases.length - left}/${s.cases.length} ${tx('recorded', '已記錄')}</span><span class="bar">${bar(st)}</span><span class="state ${ss[0]}">${stateName(ss[1])}</span></summary>
-      <div class="cases"><table><thead><tr><th>${tx('Case', '案例')}</th><th>${tx('Section', '分區')}</th><th>${tx('Action', '操作')}</th><th>${tx('Result', '結果')}</th></tr></thead><tbody>${rows}</tbody></table></div></details>`;
-  }).join('');
-  const head = `<div class="phase-head"><span class="phase-id">${esc(p.id)}</span><h2>${esc(p.name)} <span class="eyebrow num">${tx(`${cs.length} cases · ${p.segments.length} segments`, `${cs.length} 個案例 · ${p.segments.length} 個區段`)}</span></h2><span class="state ${state[0]}">${stateName(state[1])}</span>
-    <div class="phase-note">${esc(p.skip || p.hold || p.note || '')}${p.runDir ? ` <code>${esc(p.runDir)}</code>` : ''}${statLine(p.stats)}</div><div class="bar" style="grid-column:1/-1">${bar(t)}</div></div>`;
-  const body = history ? `<details class="hist" id="hist--${esc(p.id)}"${openSegs.has(`hist--${p.id}`) ? ' open' : ''}><summary>${tx(`Show ${p.segments.length} segments and their cases`, `顯示 ${p.segments.length} 個區段與其案例`)}</summary>${segs}</details>` : segs;
+  const state = p.skip ? ['skip', 'Skipped this round'] : p.hold ? ['hold', 'Deferred'] : t['Not run'] === 0 ? ['done', 'Recording complete'] : t['Not run'] < cs.length ? ['active', 'In progress'] : ['pending', 'Pending'];
+  const head = `<div class="phase-head"><span class="phase-id">${esc(p.id)}</span><h2>${esc(p.name)} <span class="eyebrow num">${tx(`${cs.length} cases · ${p.segments.length} segments`, `${cs.length} 個案例 · ${p.segments.length} 個區段`)}</span></h2><span class="state ${state[0]}">${stateName(state[1])}${state[0] === 'done' && t.Blocked ? tx(` — ${t.Blocked} blocked`, ` — ${t.Blocked} 個受阻`) : ''}</span>
+    <div class="phase-note">${esc(p.skip || p.hold || p.note || '')}${p.runDir ? ` <code>${esc(p.runDir)}</code>` : ''}${history ? statLine(p.stats) : ''}</div><div class="bar" style="grid-column:1/-1">${bar(t)}</div></div>`;
+  const histOpen = openSegs.has(`hist--${p.id}`);
+  const body = history ? `<details class="hist" id="hist--${esc(p.id)}"${histOpen ? ' open' : ''}><summary>${tx(`Show ${p.segments.length} segments and their cases`, `顯示 ${p.segments.length} 個區段與其案例`)}</summary>${histOpen ? phaseSegs(p) : ''}</details>` : phaseSegs(p);
   return `<section class="phase" aria-label="${esc(p.id)}">${head}${body}</section>`;
 }
 let openSegs = new Set();
 function render() {
-openSegs = new Set([...document.querySelectorAll('details.seg[open], details.hist[open]')].map(d => d.id));
+openSegs = new Set([...document.querySelectorAll('details.seg[open], details.hist[open], details.whyd[open]')].map(d => d.id));
 // Both parts keep the order the phases ran in; only the current run and the earlier runs are separated.
 const cur = DATA.phases.filter(p => p.current), hist = DATA.phases.filter(p => !p.current);
 renderUsage('usage', cur, tx('This run', '本次執行'), tx('No time recorded yet: the figures start with the first segment of this run.', '尚未記錄時間：數字從本次執行的第一個區段開始。'));
@@ -377,11 +381,15 @@ const all = cur.flatMap(p => p.skip || p.hold ? [] : p.segments.flatMap(s => s.c
 const nowCase = cur.flatMap(p => p.skip || p.hold ? [] : p.segments.flatMap(s => s.cases.map(c => ({ ...c, seg: s.id })))).find(c => c.result === 'Not run');
 const T = tally(all);
 document.getElementById('runname').textContent = cur.map(p => `${p.id} · ${p.name}`).join(' · ');
+const testedV = cur.map(p => p.name.match(/\btable v(\d+)/i)?.[1]).find(Boolean), lastAct = cur.map(p => p.stats?.to).filter(Boolean).sort().at(-1);
 document.getElementById('meta').innerHTML = [
-  [tx('Table', '測試表'), `${esc(DATA.feature)} · v${DATA.version} · ${tx(`${DATA.totalCases} cases`, `${DATA.totalCases} 個案例`)}`],
-  [tx('Build', '版本'), esc(DATA.build)], [tx('In this run', '本次執行'), tx(`${all.length} cases`, `${all.length} 個案例`)],
-  [tx('Recorded', '已記錄'), `${all.length - T['Not run']} / ${all.length}`], [tx('Next', '下一個'), nowCase ? `${esc(nowCase.id)} (${esc(nowCase.seg)})` : '—'],
-  [LIVE ? tx('Live · updated', '即時 · 更新於') : tx('Generated', '產生於'), esc(DATA.generated)]
+  [tx('Approved table', '核准的測試表'), `v${DATA.version} · ${tx(`${DATA.totalCases} cases`, `${DATA.totalCases} 個案例`)}`],
+  // the table a run tested is often older than the approved one: its name says which (run plans name it)
+  [tx('This run tested', '本次執行測試'), `${testedV ? `${tx('table', '測試表')} v${esc(testedV)} · ` : ''}${tx(`${all.length} cases`, `${all.length} 個案例`)}`],
+  [tx('Build', '版本'), esc(DATA.build)],
+  [tx('Recorded', '已記錄'), `${all.length - T['Not run']} / ${all.length}`], ...(nowCase ? [[tx('Next', '下一個'), `${esc(nowCase.id)} (${esc(nowCase.seg)})`]] : []),
+  ...(lastAct ? [[tx('Last run activity', '最後執行活動'), esc(cbWhenZ(lastAct, LANG))]] : []),
+  [LIVE ? tx('Page updated', '頁面更新於') : tx('Generated', '產生於'), esc(cbWhenZ(DATA.generated, LANG))]
 ].map(([k, v]) => `<span>${k} <b class="num">${v}</b></span>`).join('');
 document.getElementById('totalbar').innerHTML = bar(T);
 document.getElementById('legend').innerHTML = RES.map(r => `<span><i style="background:${COLOR[r]}"></i>${resName(r)} <span class="num">${T[r]}</span></span>`).join('');
@@ -390,7 +398,7 @@ renderBlocked(cur);
 document.getElementById('history').hidden = !hist.length;
 document.getElementById('hist-sum').textContent = hist.length ? `${hist.map(p => p.id).join(', ')} · ${tx(`${hist.reduce((n, p) => n + p.segments.reduce((m, s) => m + s.cases.length, 0), 0)} cases`, `${hist.reduce((n, p) => n + p.segments.reduce((m, s) => m + s.cases.length, 0), 0)} 個案例`)}` : '';
 document.getElementById('hist-phases').innerHTML = hist.map(p => phaseHtml(p, true)).join('');
-document.getElementById('cps').innerHTML = DATA.checkpoints.map(c => `<div><span class="t">${esc(c.time)} · ${tx('next', '下一個')} ${esc(c.next)}</span><br>${esc(c.text)}</div>`).join('') || `<div>${tx('No checkpoints yet for this run.', '本次執行還沒有檢查點。')}</div>`;
+document.getElementById('cps').innerHTML = DATA.checkpoints.map(c => `<div><span class="t">${esc(cbWhenZ(c.time, LANG))} · ${tx('next', '下一個')} ${esc(c.next)}</span><br>${esc(c.text)}</div>`).join('') || `<div>${tx('No checkpoints yet for this run.', '本次執行還沒有檢查點。')}</div>`;
 document.getElementById('log').innerHTML = DATA.log.map(l => `<li>${esc(l)}</li>`).join('');
 }
 // Fixed text carries its Chinese in data-zh; the English is kept in data-en the first time it is swapped.
@@ -414,22 +422,22 @@ function showCase() {
   const s = p.segments.find(s => s.cases.some(c => c.id === focusCase));
   render();
   // render() keeps whatever segments are open, so the live refresh leaves this one open too
-  for (const id of [`hist--${p.id}`, `${p.id}--${s.id}`]) { const d = document.getElementById(id); if (d) d.open = true; }
+  for (const id of [`hist--${p.id}`, `${p.id}--${s.id}`]) { const d = document.getElementById(id); if (d) { d.open = true; fillDetails(d); } }
   document.getElementById(`${p.id}--${s.id}`)?.querySelector(`tr[data-case="${CSS.escape(focusCase)}"]`)?.scrollIntoView({ block: 'center' });
 }
 addEventListener('hashchange', showCase);
 // The open segments are kept in the address (?open=…), so a reload or a shared link opens them again, and for this
 // browser tab, so leaving Progress for another page and coming back keeps them too.
-const VIEW = `plan-view:${DATA.feature}`;
+const VIEW = `plan-view:${location.pathname}`;   // one address serves every table now: a view per table
 function saveView() {
   const ids = [...document.querySelectorAll('details.seg[open], details.hist[open]')].map(d => d.id), s = ids.length ? `open=${ids.map(encodeURIComponent).join(',')}` : '';
   try { history.replaceState(history.state, '', location.pathname + (s ? `?${s}` : '') + location.hash); sessionStorage.setItem(VIEW, s); } catch (e) {}
 }
-document.addEventListener('toggle', e => { if (e.target.matches?.('details.seg, details.hist')) saveView(); }, true);
+document.addEventListener('toggle', e => { if (e.target.matches?.('details.seg, details.hist')) { if (e.target.open) fillDetails(e.target); saveView(); } }, true);
 applyStatic();
 render();
 { let s = location.search.slice(1); if (!s && !location.hash) try { s = sessionStorage.getItem(VIEW) ?? ''; } catch (e) {}
-  for (const id of (new URLSearchParams(s).get('open') ?? '').split(',').filter(Boolean)) { const d = document.getElementById(id); if (d) d.open = true; } }
+  for (const id of (new URLSearchParams(s).get('open') ?? '').split(',').filter(Boolean)) { const d = document.getElementById(id); if (d) { d.open = true; fillDetails(d); } } }
 showCase();
 /*LIVE*/
 // Served by `plan-page.ts --serve`: pick up each recorded case without a reload. Under scripts/pages.ts the tab bar

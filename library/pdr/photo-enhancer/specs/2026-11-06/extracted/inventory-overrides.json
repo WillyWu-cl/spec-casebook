@@ -1,0 +1,72 @@
+{
+  "drop": [
+    {
+      "control": "K-bbd8cb",
+      "why": "The dialog's button bar 「cta」 is one instance holding both 「Cancel」 and 「Continue」; replaced by one control each (by hand, 2026-11-06)"
+    }
+  ],
+  "add": [
+    {
+      "screen": "65:4092",
+      "label": "Cancel",
+      "box": [
+        45,
+        420,
+        135,
+        46
+      ],
+      "kind": "button",
+      "why": "「Ready to Enhance?」 dialog 「Cancel」 (left half of the cta bar, by hand 2026-11-06)"
+    },
+    {
+      "screen": "65:4092",
+      "label": "Continue",
+      "box": [
+        180,
+        420,
+        135,
+        46
+      ],
+      "kind": "button",
+      "why": "「Ready to Enhance?」 dialog 「Continue」 (right half of the cta bar; the 65-6781 arrow starts here, by hand 2026-11-06)"
+    },
+    {
+      "screen": "65:6095",
+      "label": "Cancel",
+      "box": [
+        99,
+        440,
+        170,
+        32
+      ],
+      "kind": "button",
+      "why": "「Enhancing...」 「Cancel」 (Frame 33 is a plain frame, by hand 2026-11-06)"
+    },
+    {
+      "screen": "65:3762",
+      "label": "Enhance",
+      "box": [
+        557,
+        723,
+        72,
+        72
+      ],
+      "kind": "button",
+      "why": "Master photo toolbar 「Enhance」 (8th button): the toolbar is drawn past the phone's right edge (it scrolls), so the read keeps it but the merge drops it as off-screen; the 65-6779 arrow starts at it (by hand 2026-11-06)"
+    },
+    {
+      "screen": "65:6432",
+      "label": "Enhance",
+      "box": [
+        632,
+        723,
+        72,
+        72
+      ],
+      "kind": "button",
+      "why": "PiP photo toolbar 「Enhance」 (9th button), drawn past the right edge; the 65-6780 arrow starts at it (by hand 2026-11-06)"
+    }
+  ],
+  "drop_screens": [],
+  "hide": []
+}

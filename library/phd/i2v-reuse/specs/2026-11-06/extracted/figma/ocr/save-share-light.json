@@ -1,0 +1,28 @@
+{
+  "png": "save-share-light.png",
+  "box": [
+    936,
+    -30,
+    375,
+    812
+  ],
+  "lines": [
+    ["9:41",971,-12,33,13],
+    ["=今0",1205,-12,81,18],
+    ["Save & Share",1079,31,89,14],
+    ["Save",1101,399,41,16],
+    ["More Video Editing Tools",1013,451,183,17],
+    ["T Add Text",973,513,69,18],
+    ["Add Sticker",1105,517,63,9],
+    ["F.Add Music",1199,512,84,20],
+    ["Prompts & Settings",951,569,137,15],
+    ["Gemini Omini Flash 1.1",991,616,159,15],
+    ["Reuse",1232,615,40,15],
+    ["10s",969,649,23,10],
+    ["Pro",1009,650,19,10],
+    ["Soound on",1047,649,59,10],
+    ["A girl turning around in the snow, hair flowing in",963,676,309,16],
+    ["the wind",961,696,59,11],
+    ["Share to",949,731,66,17]
+  ]
+}

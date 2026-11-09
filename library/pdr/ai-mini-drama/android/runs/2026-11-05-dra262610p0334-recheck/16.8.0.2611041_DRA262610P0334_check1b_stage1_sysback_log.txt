@@ -1,0 +1,19 @@
+# Check 1 repeat (stage 1, system Back): Generate 13:04:59.1, KEYCODE_BACK 13:05:01.45 (card 'Thinking...', pill 28105), dispatch 13:05:09.2, charged to 28101 by 13:05:16.5, turn_complete 13:05:43.4; no Toast / dialog window
+2026-11-05 13:04:59.127  6809  6809 I VRI[MiniDramaActivity]@c1eb5a7: ViewPostIme pointer 0
+2026-11-05 13:04:59.131  6809  6809 I VRI[MiniDramaActivity]@c1eb5a7: ViewPostIme pointer 1
+2026-11-05 13:04:59.135  6809  6809 D MiniDrama Log: [DECISION] pre-approved 'character': {IMAGE=1, VOICE=1}
+2026-11-05 13:04:59.144  6809  9643 D MiniDrama Log: [USER] AnswerUpdateCharacter
+2026-11-05 13:05:01.450  6809  6809 D Activity: onKeyDown(KEYCODE_BACK), activity=com.cyberlink.powerdirector.iris.ui.MiniDramaActivity@8859e27
+2026-11-05 13:05:09.226  6809  9642 D MiniDrama Log: [TOOL] tool_dispatch: TextToImage args={"aspect_ratio":"16:9","output_format":"png","prompt":"Chara…
+2026-11-05 13:05:09.235  6809 10418 D MiniDrama Log: [TOOL] tool_dispatch: TextToSpeech args={"file_format":"mp3","multitexts":[{"language":"en-US","mode…
+2026-11-05 13:05:10.226  6809  9643 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28105)
+2026-11-05 13:05:14.355  6809 10418 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28105)
+2026-11-05 13:05:14.356  6809  7749 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_124842_0e46b241_t12_i1_d1_ai-mini… consumeTaskId=91680423 files=1
+2026-11-05 13:05:14.785  6809 10418 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28102)
+2026-11-05 13:05:14.937  6809  7749 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28102)
+2026-11-05 13:05:15.054  6809  7749 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_124842_0e46b241_t12_i1_d1_ai-mini… consumeTaskId=91680424 files=1
+2026-11-05 13:05:16.531  6809  7749 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28101)
+2026-11-05 13:05:35.633  6809  7747 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28101)
+2026-11-05 13:05:43.397  6809  7749 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 13:05:43.416  6809  6809 D MiniDrama Log: [CARD] new revision of OUTLINE after a chat edit
+2026-11-05 13:05:43.807  6809  7747 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28101)

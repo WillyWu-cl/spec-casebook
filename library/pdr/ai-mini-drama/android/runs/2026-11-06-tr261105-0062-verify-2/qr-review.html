@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TR261106-0032 QA Report</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--fg:#1b1f24;--muted:#5b6470;--line:#d9dde3;--ok:#17803d;--fail:#c62828;--hold:#5b6470;--accent:#1a5fd0;--pre:#f0f2f5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121417;--card:#1b1e23;--fg:#e6e8eb;--muted:#9aa3ad;--line:#2e333a;--ok:#4cc27a;--fail:#ff6b6b;--hold:#9aa3ad;--accent:#6ea2ff;--pre:#23272d}}
+:root[data-theme="dark"]{--bg:#121417;--card:#1b1e23;--fg:#e6e8eb;--muted:#9aa3ad;--line:#2e333a;--ok:#4cc27a;--fail:#ff6b6b;--nv:#e0b84a;--hold:#9aa3ad;--accent:#6ea2ff;--pre:#23272d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1100px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:0 0 4px}h2{font-size:16px;margin:0}
+.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
+.errors{border-color:var(--fail)}.errors li{color:var(--fail)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:0}dt{color:var(--muted)}dd{margin:0;word-break:break-word}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--pre);padding:10px;border-radius:8px;margin:8px 0;font:13px/1.45 ui-monospace,Menlo,monospace}
+.bar{position:sticky;top:0;z-index:2;background:var(--bg);padding:8px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--line)}
+.pill{padding:2px 8px;border-radius:99px;font-size:13px;font-weight:600;border:1px solid currentColor}
+.OK{color:var(--ok)}.Fail{color:var(--fail)}.Hold{color:var(--hold)}
+.row-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+select,button,textarea{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+button{cursor:pointer}button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+textarea{width:100%;min-height:90px;font:13px/1.45 ui-monospace,Menlo,monospace;resize:vertical}
+.edited{border-color:var(--accent)}
+.imgs{display:flex;gap:8px;overflow-x:auto;padding:4px 0}
+.imgs figure{margin:0;flex:0 0 auto}.imgs img{height:260px;border:1px solid var(--line);border-radius:6px;cursor:zoom-in}
+.imgs figcaption{font-size:12px;color:var(--muted);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#zoom{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:5;cursor:zoom-out}
+#zoom img{max-width:96vw;max-height:96vh}
+label.note{display:block;margin-top:8px}
+@media (max-width:600px){dl{grid-template-columns:1fr}.imgs img{height:200px}}
+</style>
+</head>
+<body>
+<main>
+<h1 id="h"></h1>
+<p class="muted">Review before anything goes on ECL. Change a verdict or edit a Reason here, then press <b>Copy decisions</b> and paste them back in chat. Hold keeps a bug off the report and leaves it alone on the TR (for anything not fully verified).</p>
+<div id="errors"></div>
+<div class="bar"><span id="counts"></span><span style="flex:1"></span><button id="copy" class="primary">Copy decisions</button><button id="reset">Reset edits</button></div>
+<section class="card"><h2>Report fields</h2><dl id="fields"></dl><pre id="details"></pre></section>
+<div id="rows"></div>
+</main>
+<div id="zoom"><img alt=""></div>
+<script>
+const D = {"tr":"TR261106-0032","build":"16.8.0.2611052","tester":"ETHAN_HSU","template":"Standard Report","shortDescription":"16.8.0.2611052 - Bug verify report (ETHAN_HSU)","testResult":"PDR-A - Bug verification [OK=4, Fail=0]","details":"a. Device: Samsung Galaxy A53 (SM-A5360) / Android 15\n\nb. Build: 16.8.0.2611052 (TR261106-0032), tested on the previous round's build (TR261105-0062), not on this TR's 16.8.0.2611061; APK from that TR's OneDrive folder (MD5 checked), clean install (uninstall, then install) on 2026/11/06\n\nc. Server: Stage\n\nd. Account: cltqauiap2@gmail.com (Free; Pro for the video checks)\n\ne. Tested by: AI agent (Claude Opus 5.5) driving the phone over Appium; verdicts and evidence reviewed by ETHAN_HSU\n\nf. Scope: the four eBugs created by ETHAN_HSU on this TR's verify list that the 2611052 run covered (P0343, P0348, P0358, P0363)\n\ng. OK (4)\ng1. DRA262610P0343 - the back arrow in the storyboard's second stage shows no dialog, only the toast 「We'll keep making your storyboard. Find it in History.」, and the storyboard finishes, charged once (the first stage still asks 「Leave while we're preparing?」, as specified)\ng2. DRA262610P0348 - leaving with the back arrow and reopening from History, after Stop, and after a resumed storyboard, the chat keeps every earlier message and card; the video card comes back after a reopen and after the app is restarted\ng3. DRA262610P0358 - a drama renamed in History while its video is processing gets the push and the 「Good news!」 toast with the new name\ng4. DRA262610P0363 - after leaving a video job, the drama opened from History four times within two minutes, each time at its video stage with the video still in progress, never an empty new chat\n\nh. FAIL (0)\n\ni. Other observations, not filed (6)\ni1. A storyboard in its second stage stops a few seconds after the app goes to the background (Home or Recents); the drama keeps a failed storyboard and History shows no failure mark.\ni2. After a storyboard image failed to download, its 3 credits were not refunded within a few minutes.\ni3. After the storyboard on one drama, no 「Choose your video settings」 card appeared and there was no other way to create the video; a character voice sample had failed on the server just before.\ni4. The 「Good news!」 toast showed while the drama's chat was open, about 15 seconds before the video card under it finished loading.\ni5. A scene update is offered as 「Create the rest of the video (15 sec)」, the wording of the full-video step.\ni6. After a rename, the Storyboard Preview card in the chat still shows the old title.\n\nj. Evidence: screenshots and logs are attached to each eBug and named in its Reason.","evidence":null,"perBug":true,"errors":[],"rows":[{"bug":"DRA262610P0343","result":"OK","summary":"the back arrow in the storyboard's second stage shows no dialog, only the toast 「We'll keep making your storyboard. Find it in History.」, and the storyboard finishes, charged once (the first stage still asks 「Leave while we're preparing?」, as specified)","images":["16.8.0.2611052_DRA262610P0343_02_stage1_dialog.png","16.8.0.2611052_DRA262610P0343_03_stage2_before_back.png","16.8.0.2611052_DRA262610P0343_04_stage2_back_toast.png"],"logs":["16.8.0.2611052_DRA262610P0343_log.txt"],"title":"PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Storyboard stage ②: Back still asks 「Stop and lose your credits?」","severity":"3","creator":"ETHAN_HSU","reason":"Verified OK with build (v16.8.0.2611052) on Samsung Galaxy A53 (SM-A5360) / Android 15\nEvidence: {16.8.0.2611052_DRA262610P0343_02_stage1_dialog.png} {16.8.0.2611052_DRA262610P0343_03_stage2_before_back.png} {16.8.0.2611052_DRA262610P0343_04_stage2_back_toast.png} {16.8.0.2611052_DRA262610P0343_log.txt}"},{"bug":"DRA262610P0348","result":"OK","summary":"leaving with the back arrow and reopening from History, after Stop, and after a resumed storyboard, the chat keeps every earlier message and card; the video card comes back after a reopen and after the app is restarted","note":"After the app is closed and reopened, the chat keeps only the generated cards (outline, characters, storyboard, video), which RD describes as the current Android design and History notes.","images":["16.8.0.2611052_DRA262610P0348_02_outline_after_reopen.png","16.8.0.2611052_DRA262610P0348_03_after_stop_card_stays.png","16.8.0.2611052_DRA262610P0348_04_after_resume_characters_reply.png","16.8.0.2611052_DRA262610P0348_12_video_card_after_app_restart.png"],"logs":["16.8.0.2611052_DRA262610P0348_log.txt"],"title":"PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Chat loses earlier messages and cards after a reopen, a Stop or a resume","severity":"3","creator":"ETHAN_HSU","reason":"Verified OK with build (v16.8.0.2611052) on Samsung Galaxy A53 (SM-A5360) / Android 15\nNote: After the app is closed and reopened, the chat keeps only the generated cards (outline, characters, storyboard, video), which RD describes as the current Android design and History notes.\nEvidence: {16.8.0.2611052_DRA262610P0348_02_outline_after_reopen.png} {16.8.0.2611052_DRA262610P0348_03_after_stop_card_stays.png} {16.8.0.2611052_DRA262610P0348_04_after_resume_characters_reply.png} {16.8.0.2611052_DRA262610P0348_12_video_card_after_app_restart.png} {16.8.0.2611052_DRA262610P0348_log.txt}"},{"bug":"DRA262610P0358","result":"OK","summary":"a drama renamed in History while its video is processing gets the push and the 「Good news!」 toast with the new name","note":"Checked on a Fast Preview 30 sec video job; a scene update on this build went straight to done, with no in-progress stage to rename in.","images":["16.8.0.2611052_DRA262610P0358_02_history_renamed_processing.png","16.8.0.2611052_DRA262610P0358_03_toast_new_name.png"],"logs":["16.8.0.2611052_DRA262610P0358_log.txt"],"title":"PDR-A 16.8.0 - [AIAgent] AI Mini Drama: Renaming a drama during a video job: the push uses the old name and no toast shows","severity":"3","creator":"ETHAN_HSU","reason":"Verified OK with build (v16.8.0.2611052) on Samsung Galaxy A53 (SM-A5360) / Android 15\nNote: Checked on a Fast Preview 30 sec video job; a scene update on this build went straight to done, with no in-progress stage to rename in.\nEvidence: {16.8.0.2611052_DRA262610P0358_02_history_renamed_processing.png} {16.8.0.2611052_DRA262610P0358_03_toast_new_name.png} {16.8.0.2611052_DRA262610P0358_log.txt}"},{"bug":"DRA262610P0363","result":"OK","summary":"after leaving a video job, the drama opened from History four times within two minutes, each time at its video stage with the video still in progress, never an empty new chat","images":["16.8.0.2611052_DRA262610P0363_01_stage2_before_leave.png","16.8.0.2611052_DRA262610P0363_02_history_processing.png","16.8.0.2611052_DRA262610P0363_03_first_open_video_stage.png","16.8.0.2611052_DRA262610P0363_04_fourth_open_video_stage.png"],"logs":["16.8.0.2611052_DRA262610P0363_log.txt"],"title":"PDR-A 16.8.0 - [AIAgent] AI Mini Drama: History opens an empty new chat for about 2 minutes after leaving a video job","severity":"3","creator":"ETHAN_HSU","reason":"Verified OK with build (v16.8.0.2611052) on Samsung Galaxy A53 (SM-A5360) / Android 15\nEvidence: {16.8.0.2611052_DRA262610P0363_01_stage2_before_leave.png} {16.8.0.2611052_DRA262610P0363_02_history_processing.png} {16.8.0.2611052_DRA262610P0363_03_first_open_video_stage.png} {16.8.0.2611052_DRA262610P0363_04_fourth_open_video_stage.png} {16.8.0.2611052_DRA262610P0363_log.txt}"}]};
+const KEY = 'qr-review:' + D.tr + ':' + D.build;
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+const store = () => { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} };
+const $ = s => document.querySelector(s);
+const el = (t, a = {}, ...c) => { const n = document.createElement(t); for (const k in a) k === 'class' ? n.className = a[k] : n.setAttribute(k, a[k]); n.append(...c); return n; };
+$('#h').textContent = D.tr + ' · QA Report draft · ' + D.build;
+if (D.errors.length) $('#errors').append(el('div', { class: 'card errors' }, el('b', {}, 'Check found problems'), el('ul', {}, ...D.errors.map(e => el('li', {}, e)))));
+for (const [k, v] of [['Template', D.template], ['Tester', D.tester], ['Short Description', D.shortDescription], ['Test Result', D.testResult],
+  D.perBug ? ['Evidence', 'uploaded to each eBug (' + D.rows.filter(r => r.result !== 'Hold').reduce((n, r) => n + r.images.length + (r.logs || []).length, 0) + ' files), named in its Reason']
+    : ['Evidence ZIP', D.evidence ? D.evidence.file + ' (' + D.evidence.files + ' files)' : 'not packed yet']]) $('#fields').append(el('dt', {}, k), el('dd', {}, v));
+$('#details').textContent = D.details;
+const state = r => saved[r.bug] || {};
+function counts() {
+  const c = { OK: 0, Fail: 0, Hold: 0 };
+  for (const r of D.rows) c[state(r).result || r.result]++;
+  $('#counts').replaceChildren(...Object.entries(c).map(([k, v]) => el('span', { class: 'pill ' + k }, k + ' ' + v)));
+}
+for (const r of D.rows) {
+  const s = state(r);
+  const sel = el('select', { 'aria-label': 'Verdict for ' + r.bug }, ...['OK', 'Fail', 'Hold'].map(v => { const o = el('option', { value: v }, v); if ((s.result || r.result) === v) o.selected = true; return o; }));
+  const ta = el('textarea', { 'aria-label': 'Reason for ' + r.bug });
+  ta.value = s.reason ?? r.reason;
+  const mark = () => ta.classList.toggle('edited', ta.value !== r.reason || sel.value !== r.result);
+  sel.onchange = () => { saved[r.bug] = { ...state(r), result: sel.value }; store(); counts(); mark(); };
+  ta.oninput = () => { saved[r.bug] = { ...state(r), reason: ta.value }; store(); mark(); };
+  const note = el('textarea', { 'aria-label': 'Reviewer note for ' + r.bug, placeholder: 'Reviewer note (optional)', style: 'min-height:40px' });
+  note.value = s.note || '';
+  note.oninput = () => { saved[r.bug] = { ...state(r), note: note.value }; store(); };
+  const imgs = el('div', { class: 'imgs' }, ...r.images.map(src => el('figure', {}, el('img', { src, alt: src, loading: 'lazy' }), el('figcaption', { title: src }, src.split('/').pop()))));
+  const meta = [r.creator, r.severity && 'S' + r.severity].filter(Boolean).join(' · ');
+  $('#rows').append(el('section', { class: 'card', id: r.bug },
+    el('div', { class: 'row-head' }, el('h2', {}, r.bug + ' ', el('span', { class: 'pill ' + r.result }, 'agent: ' + r.result)), sel),
+    el('p', {}, r.title + (meta ? ' ' : ''), el('span', { class: 'muted' }, meta)),
+    el('p', { class: 'muted' }, r.summary + (r.note ? ' — ' + r.note : '')),
+    ta, imgs, el('label', { class: 'note' }, note)));
+  mark();
+}
+counts();
+const fit = t => { t.style.height = 'auto'; t.style.height = t.scrollHeight + 4 + 'px'; };
+document.querySelectorAll('textarea').forEach(t => { fit(t); t.addEventListener('input', () => fit(t)); });
+document.addEventListener('click', e => { if (e.target.matches('.imgs img')) { $('#zoom img').src = e.target.src; $('#zoom').style.display = 'flex'; } });
+$('#zoom').onclick = () => { $('#zoom').style.display = 'none'; };
+$('#copy').onclick = async () => {
+  const out = D.rows.map(r => { const s = state(r); const res = s.result || r.result; const reason = s.reason ?? r.reason;
+    return { bug: r.bug, result: res, changed: res !== r.result || reason !== r.reason, ...(reason !== r.reason ? { reason } : {}), ...(s.note ? { note: s.note } : {}) }; });
+  const text = 'QR decisions ' + D.tr + ' ' + D.build + '\n' + JSON.stringify(out, null, 1);
+  try { await navigator.clipboard.writeText(text); $('#copy').textContent = 'Copied'; } catch (e) { prompt('Copy this', text); }
+  setTimeout(() => { $('#copy').textContent = 'Copy decisions'; }, 1500);
+};
+$('#reset').onclick = () => { if (confirm('Drop every edit on this page?')) { saved = {}; store(); location.reload(); } };
+</script>
+</body>
+</html>

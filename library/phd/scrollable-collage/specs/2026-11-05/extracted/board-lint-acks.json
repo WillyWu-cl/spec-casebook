@@ -1,0 +1,17 @@
+{
+  "design-light-canvas|note-gone|design-light-canvas@5082,448": "Small phone text (8–10 pt: Done, Page 5 / 5, ratio labels) that Vision OCR misses on the 1:1 image; the image shows it (checked by eye 2026-11-05)",
+  "design-light-canvas|note-gone|design-light-canvas@6562,647": "Small phone text (8–10 pt: Done, Page 5 / 5, ratio labels) that Vision OCR misses on the 1:1 image; the image shows it (checked by eye 2026-11-05)",
+  "design-light-canvas|note-gone|design-light-canvas@6148,701": "Small phone text (8–10 pt: Done, Page 5 / 5, ratio labels) that Vision OCR misses on the 1:1 image; the image shows it (checked by eye 2026-11-05)",
+  "design-light-canvas|note-gone|design-light-canvas@6290,701": "Small phone text (8–10 pt: Done, Page 5 / 5, ratio labels) that Vision OCR misses on the 1:1 image; the image shows it (checked by eye 2026-11-05)",
+  "design-dark-canvas|note-gone|design-dark-canvas@13478,448": "Small phone text (8–10 pt: Done, Page 5 / 5, ratio labels) that Vision OCR misses on the 1:1 image; the image shows it (checked by eye 2026-11-05)",
+  "design-dark-canvas|note-gone|design-dark-canvas@14958,647": "Small phone text (8–10 pt: Done, Page 5 / 5, ratio labels) that Vision OCR misses on the 1:1 image; the image shows it (checked by eye 2026-11-05)",
+  "design-dark-canvas|note-gone|design-dark-canvas@14544,701": "Small phone text (8–10 pt: Done, Page 5 / 5, ratio labels) that Vision OCR misses on the 1:1 image; the image shows it (checked by eye 2026-11-05)",
+  "design-dark-canvas|note-gone|design-dark-canvas@14686,701": "Small phone text (8–10 pt: Done, Page 5 / 5, ratio labels) that Vision OCR misses on the 1:1 image; the image shows it (checked by eye 2026-11-05)",
+  "design-light-add-layer|note-off|design-light-add-layer@2011,911": "The Image-tool note sits under canvas_img_focus on the entry row (y 911), just above the add-layer region; the same note is traced on the entry board",
+  "design-dark-add-layer|note-off|design-dark-add-layer@10407,911": "The Image-tool note sits under canvas_img_focus on the entry row (y 911), just above the add-layer region; the same note is traced on the entry board",
+  "pm-flow|note-moved|pm-flow@4261,3553": "Centred text: the text box starts at the frame edge while the glyphs are centred about 100 pt to the right; same note",
+  "pm-flow|note-moved|pm-flow@4261,4903": "Centred text: the text box starts at the frame edge while the glyphs are centred about 100 pt to the right; same note",
+  "pm-leave-resume|note-moved|pm-leave-resume@7141,-1448": "Centred text: the text box starts at the frame edge while the glyphs are centred about 100 pt to the right; same note",
+  "pm-ui-4|note-moved|pm-ui-4@5311,15801": "Centred text: the text box starts at the frame edge while the glyphs are centred about 100 pt to the right; same note",
+  "pm-ui-4|note-moved|pm-ui-4@6761,15801": "Centred text: the text box starts at the frame edge while the glyphs are centred about 100 pt to the right; same note"
+}

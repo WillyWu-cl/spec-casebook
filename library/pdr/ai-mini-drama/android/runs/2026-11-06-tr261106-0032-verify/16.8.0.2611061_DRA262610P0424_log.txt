@@ -1,0 +1,21 @@
+# DRA262610P0424 — PowerDirector Android 16.8.0.2611061, SM-A5360 (Android 15), Stage, per-app locale fr-FR
+# Excerpt from logcat (app uid). Keys and tokens removed.
+# 15:35:44 Créer votre version (format card shown 15:35:51); 15:36:00 Générer; 15:38:51 turn complete, Créer le storyboard card rendered (not generated).
+
+2026-11-06 15:34:43.108   842   842 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+2026-11-06 15:34:57.771  1672  1672 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+2026-11-06 15:35:10.155  2748  2748 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+2026-11-06 15:35:20.499  2748  3028 D MiniDramaPerf: t1 +0ms                          iris   event         session_list
+2026-11-06 15:35:20.499  2748  3028 D MiniDrama Log: [EVENT] {"sessions":[{"chat_title":"Create storyboard","first_user_message":"Selected video settings:\n- Video language: en_US\n- Captions: yes\nThe story outline and the cast are ready. Create the…","in_flight_user_message":"","last_modified_us
+2026-11-06 15:35:20.506  2748  3278 D MiniDramaPerf: t1 +6ms                          iris   event         session_created
+2026-11-06 15:35:20.507  2748  3276 D MiniDrama Log: [SYS] session_created: 261106_153520_70b67d02
+2026-11-06 15:36:02.628  2748  2748 D MiniDramaPerf: t1 +42.1s                        host   turn          turn_end                       superseded
+2026-11-06 15:36:02.628  2748  2748 D MiniDramaPerf: t2 +1ms                          host   turn          user_prompt
+2026-11-06 15:36:09.296  2748  3028 D MiniDramaPerf: t2 +6.67s                        iris   event         dispatch_planned
+2026-11-06 15:36:09.296  2748  3028 D MiniDrama Log: [EVENT] {"calls":[{"call_id":"261106_153520_70b67d02_t1_i2_d1_ai-mini-drama","name":"ai-mini-drama"}],"session_id":"261106_153520_70b67d02","type":"dispatch_planned"}
+2026-11-06 15:38:51.501  2748  3024 D MiniDramaPerf: t2 +168s                         iris   event         turn_complete
+2026-11-06 15:38:51.505  2748  3028 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-06 15:38:51.534  2748  3028 D MiniDramaPerf: t2 +168s                         host   ui            reply_published
+2026-11-06 15:38:51.567  2748  2748 D MiniDramaPerf: t2 +168s                         host   ui            ui_rendered
+2026-11-06 15:38:51.567  2748  2748 D MiniDramaPerf: t2 +168s                         host   turn          turn_end                       complete stage=-→storyboard
+2026-11-06 15:46:15.807  4227  4227 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found

@@ -6,23 +6,22 @@
 <title>__TITLE__</title>
 <!-- tab icon (review: a checklist), different on each page so the browser tabs are easy to tell apart -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%233d5bd9'/><path d='M7 10.5l2.5 2.5L14 8.5M7 20.5l2.5 2.5 4.5-4.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/><path d='M17.5 11h8M17.5 21h8' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;750&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;600;700&display=swap">
 <style>
+/*__SHARED_CSS__*/
 /* Layout: a spreadsheet-like review sheet — header facts, filter bar, rows grouped by section, sticky action bar. */
 :root{
-  --bg:#f4f5f7; --surface:#fff; --fg:#1b2430; --muted:#5f6b7a; --line:#dde1e7; --head:#2f3b52;
+  --surface:var(--panel); --fg:var(--ink);
   --new:#1f7a4d; --new-soft:#dff3e8; --mod:#9a5b00; --mod-soft:#fbecd2; --rem:#b3261e; --rem-soft:#fadcd9; --edit:#3d5bd9; --edit-soft:#e2e7fb;
-  --body:system-ui,-apple-system,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif; --mono:ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#12161c; --surface:#1a2029; --fg:#e5e9ef; --muted:#9aa5b3; --line:#2c3541; --head:#0d1117;
-  --new:#5cc58e; --new-soft:#173a29; --mod:#e7a94a; --mod-soft:#3b2c12; --rem:#f07a70; --rem-soft:#3e1d1a; --edit:#93a6ff; --edit-soft:#232c55; color-scheme:dark}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--body)}
-header{background:var(--head);color:#fff;padding:18px 20px;display:grid;gap:8px}
-header h1{margin:0;font-size:1.35rem}
-header .facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem;opacity:.9}
+  --new:#5cc58e; --new-soft:#173a29; --mod:#e7a94a; --mod-soft:#3b2c12; --rem:#f07a70; --rem-soft:#3e1d1a; --edit:#93a6ff; --edit-soft:#232c55}}
+header{padding:28px 0 4px;display:grid;gap:8px}
+header h1{margin:0;font:750 1.9rem var(--display);letter-spacing:-.01em}
+header .facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem;color:var(--muted)}
 header .facts code{font-family:var(--mono);font-size:.8rem}
-main{padding:16px 20px 110px;display:grid;gap:14px;max-width:1500px;margin:0 auto}
+main{padding:16px 0 110px;display:grid;gap:14px}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:8px}
 details.panel>summary{cursor:pointer;padding:10px 14px;font-weight:600}
 details.panel .md{padding:0 14px 14px;max-height:460px;overflow:auto;font-size:13px}
@@ -40,14 +39,26 @@ details.panel pre{margin:0;padding:0 14px 14px;white-space:pre-wrap;font:13px/1.
 input[type=search],select{font:inherit;padding:5px 9px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
 input[type=search]{flex:1 1 220px;min-width:0}
 .sep{width:1px;height:22px;background:var(--line)}
-.tablewrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:1150px;background:var(--surface)}
-th{position:sticky;top:0;background:var(--surface);z-index:1;text-align:left;font:600 .72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:8px;border-bottom:2px solid var(--line)}
+/* the sheet scrolls inside its own box, so the header row, ID and Decision stay in view both ways (user, 2026-11-06) */
+.tablewrap{overflow:auto;max-height:calc(100vh - 96px)}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:1150px;background:var(--surface)}
+table.slim{min-width:760px}
+table.slim th:nth-child(2){width:24%}table.slim th:nth-child(3){width:32%}table.slim th:nth-child(4){width:34%}
+table.slim th:nth-child(n+5):nth-child(-n+7),table.slim tr[data-row]>td:nth-child(n+5):nth-child(-n+7){display:none}
+td.id,th:first-child{position:sticky;left:0;background:var(--surface);z-index:1}
+td.dec,#decHead{position:sticky;right:0;background:var(--surface);z-index:1}
+th:first-child,#decHead{z-index:3}
+.cv{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.45;padding:4px;border-radius:4px;min-height:1.9em;border:1px solid transparent}
+body:not(.view) .cv{cursor:text} body:not(.view) .cv:hover,.cv:focus-visible{border-color:var(--line);outline:none}
+tr.deleted .cv{text-decoration:line-through}
+#tip{position:fixed;z-index:20;max-width:300px;background:var(--fg);color:var(--bg);font:.82rem/1.35 var(--body);padding:4px 8px;border-radius:5px;pointer-events:none}
+.colsw{font-size:.84rem;color:var(--muted);display:inline-flex;gap:5px;align-items:center}
+th{position:sticky;top:0;background:var(--surface);z-index:2;text-align:left;font:600 .72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:8px;border-bottom:2px solid var(--line)}
 td{border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:top}
 tr.section td{background:var(--bg);font-weight:700;padding:10px 8px}
 tr.section td .add{margin-left:10px}
 td.id{font-family:var(--mono);font-size:.8rem;white-space:nowrap}
-textarea{width:100%;min-height:2.2em;resize:vertical;border:1px solid transparent;background:transparent;color:var(--fg);font:13px/1.45 var(--body);padding:4px;border-radius:4px;field-sizing:content}
+textarea{width:100%;min-height:2.2em;resize:vertical;border:1px solid transparent;background:transparent;color:var(--fg);font:14px/1.45 var(--body);padding:4px;border-radius:4px;field-sizing:content}
 textarea:hover{border-color:var(--line)} textarea:focus{border-color:var(--edit);outline:none;background:var(--surface)}
 .was{font-size:.76rem;color:var(--muted);text-decoration:line-through;padding:0 4px;white-space:pre-wrap}
 .badge{display:inline-block;font:600 .68rem var(--mono);padding:2px 6px;border-radius:4px;text-transform:uppercase;margin-top:4px}
@@ -66,7 +77,7 @@ tr.newcase .nh{display:flex;gap:10px;align-items:center;margin-bottom:6px;font-s
 tr.newcase .nh b{color:var(--new)} tr.newcase .nh button{margin-left:auto}
 /* the table scrolls sideways: keep the note box within the window */
 tr.newcase td>*{position:sticky;left:12px;max-width:calc(100vw - 72px)}
-footer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;z-index:5}
+footer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:10px var(--gutter);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;z-index:5}
 footer .counts{font-size:.84rem;color:var(--muted)} footer .counts b{color:var(--fg)}
 .btn{border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:8px 14px;border-radius:6px;font:600 .86rem var(--body);cursor:pointer}
 .btn.primary{background:var(--edit);color:#fff;border-color:var(--edit)}
@@ -77,7 +88,10 @@ a.spec{display:inline-block;margin-top:4px;font:600 .7rem var(--mono);color:var(
 a.spec:hover{background:var(--edit-soft)}
 .xl{display:flex;flex-wrap:wrap;gap:4px}
 /* Open questions (user, 2026-11-04): one plain panel above the table, and a marker on each row a question touches */
-details.qs>summary{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+details.qs>summary{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;list-style:none}
+details.qs>summary::-webkit-details-marker{display:none}
+details.qs>summary::before{content:"▸";display:inline-block;width:.8em;margin-right:-6px;transition:transform .15s}
+details.qs[open]>summary::before{transform:rotate(90deg)}
 details.qs>summary .qhint{font-weight:400;font-size:.84rem;color:var(--muted)}
 .qwrap{padding:0 14px 14px;display:grid;gap:10px}
 .qname{display:flex;gap:8px;align-items:center;font-size:.84rem;color:var(--muted)}
@@ -101,6 +115,7 @@ tr.focus td{background:var(--edit-soft)} tr.focus td.id{box-shadow:inset 3px 0 0
 .zh.stale{color:var(--muted)} .zh.stale::after{content:attr(data-stale);display:block;font-size:.72rem;color:var(--mod)}
 body.l-zh td textarea[data-f]{font-size:11.5px;color:var(--muted);min-height:1.6em}
 body.l-zh td textarea[data-f]:focus{font-size:13px;color:var(--fg)}
+body.l-zh td .cv{font-size:11.5px;color:var(--muted);min-height:1.6em}
 header .lang{justify-self:end;display:inline-flex;border:1px solid #ffffff55;border-radius:6px;overflow:hidden;margin-top:-34px}
 header .lang button{border:0;background:transparent;color:#fff;font:600 12px var(--body);padding:5px 10px;cursor:pointer}
 header .lang button[aria-pressed="true"]{background:var(--edit)}
@@ -130,6 +145,7 @@ header .lang button[aria-pressed="true"]{background:var(--edit)}
 </footer>
 <div id="toast" role="status"></div>
 <script>
+/*__SHARED_JS__*/
 const D=/*__DATA__*/null;
 const FIELDS=['Section','Precondition','Action','Expected Result','Priority','Spec Ref','Notes'];
 const EDIT=['Precondition','Action','Expected Result','Spec Ref','Notes'];
@@ -138,7 +154,9 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const REVIEW=D.mode==='review';
 // the other pages: scripts/pages.ts names them (window.CASEBOOK); a static cases.html links to coverage.html beside it
 const PAGES=window.CASEBOOK?.pages??(location.protocol==='file:'?{coverage:'coverage.html'}:{});
-const KEY='casebook:'+D.feature+':'+D.platform+':'+D.draft;
+// an edit of the approved table gets a new id each time its server starts (pages.ts stops idle ones): edits are kept per
+// approved version, so they are still here after that
+const KEY='casebook:'+D.feature+':'+D.platform+':'+(/^edit-/.test(D.draft)?'edit-v'+D.version:D.draft);
 // English / 中文 (user, 2026-10-30): the page chrome in Traditional Chinese (Taiwan wording) and, when the table has a
 // Chinese reading copy (D.zh, review.ts), each row's Chinese text above its English fields. Rows stay English: edits,
 // Copy and Save use the English text. The choice follows pages.ts's tab bar (window.CASEBOOK.lang, 'casebook-lang'
@@ -148,7 +166,7 @@ const I18N={zh:{plan:'更新計畫',req:'從規格整理出的需求',ID:'編號
   copyCsv:'複製最終 CSV',copyDec:'複製審查決定',save:'儲存為核准版本',keep:'保留',delete:'刪除',add:'+ 新增案例',addTitle:'用自己的話描述新的案例；下一版草稿會把它們寫成正式的列',
   search:'搜尋編號或文字',allSections:'所有區塊',allChanges:'所有變更',anyDecision:'所有決定',noMatch:'沒有符合篩選條件的案例。',
   new:'新增',modified:'修改',removed:'移除',unchanged:'未變更',kept:'保留',edited:'已修改',added:'已新增',deleted:'已刪除',
-  cases:'案例',approvedCases:'核准的測試案例',draft:'草稿',noApproved:'尚無核准版本',updates:v=>`更新核准版本 ${v}`,version:(v,d)=>`版本 ${v} · 核准於 ${d}`,spec:'規格：',
+  cases:'案例',approvedCases:'核准的測試案例',draft:'草稿',noApproved:'尚無核准版本',updates:v=>`核准版本 v${v}`,workCopy:'工作副本',cols:'優先度、規格對應、備註',version:(v,d)=>`版本 ${v} · 核准於 ${d}`,spec:'規格：',
   foot:'修改與新案例說明會暫存在這個瀏覽器，直到儲存為止。儲存會寫入核准的 CSV、把前一版保留在 history/、重新產生 Excel 與 HTML，並把新案例說明交給 agent 寫進下一版草稿。中文是對照用的翻譯，表格內容以英文為準，請在英文欄位修改。',
   footView:'由 cases.csv 產生的唯讀檢視。',noZh:'這份表格還沒有中文翻譯（draft.zh-Hant.csv），只有介面是中文。',
   stale:'（英文已修改，中文尚未更新）',noteHead:'新案例說明',noteHelp:'用自己的話寫要測什麼，一個或多個案例都可以。儲存或複製審查決定後，agent 會把每個案例放到正確的區塊、補齊各欄，並提出下一版草稿。',
@@ -237,7 +255,7 @@ function header(){
   const plat=D.platform==='ios'?'iOS':'Android';
   $('#h').textContent=`${D.title} · ${plat} · ${REVIEW?T('cases')??'Cases':T('approvedCases')??'Approved test cases'}`;
   const f=[];
-  if(REVIEW){f.push(`${T('draft')??'Draft'} <code>${esc(D.draft)}</code>`);f.push(D.based_on_version?T('updates',D.based_on_version)??`Updates approved version ${D.based_on_version}`:T('noApproved')??'No approved table yet');}
+  if(REVIEW){f.push(D.based_on_version?T('updates',D.based_on_version)??`Approved table v${D.based_on_version}`:T('noApproved')??'No approved table yet');f.push(`${/^edit-/.test(D.draft)?T('workCopy')??'Working copy':T('draft')??'Draft'} <code>${esc(D.draft)}</code>`);}
   else f.push(T('version',D.version,esc((D.approved_at||'').slice(0,10)))??`Version ${D.version} · approved ${esc((D.approved_at||'').slice(0,10))}`);
   f.push(`${T('spec')??'Spec: '}${D.spec_files.map(s=>esc(s.name)).join(', ')}`);
   $('#facts').innerHTML=f.map(x=>`<span>${x}</span>`).join('');
@@ -247,14 +265,18 @@ function header(){
   if(REVIEW&&!D.save){$('#save').disabled=true;$('#save').title=T('noSave')??'Open this page through scripts/review.ts to save.'}
   $('#foot').textContent=(REVIEW?T('foot')??'Edits and new-case notes are kept in this browser until you save. Save writes the approved CSV, keeps the previous version in history/, regenerates the Excel and HTML views, and hands new-case notes to the agent for the next draft.':T('footView')??'Read-only view generated from cases.csv.')+(L==='zh'&&!Object.keys(ZH).length?' '+T('noZh'):'');
 }
+let wide=false;try{wide=!!localStorage.getItem('cases-wide')}catch(e){}
 function filters(){
+  $('#tbl').classList.toggle('slim',!wide);
   const cnt=(k,v)=>rows.filter(r=>k==='change'?(r.cur.Change||'')===v:state(r)===v).length;
   const changes=['new','modified','removed','unchanged'].filter(v=>cnt('change',v));
   const states=['kept','edited','added','deleted'];
   let h=`<input type="search" id="q" placeholder="${esc(T('search')??'Search ID or text')}" value="${esc(F.q)}"><select id="sec"><option value="">${T('allSections')??'All sections'} (${rows.length})</option>${sections().map(s=>`<option value="${esc(s)}"${F.section===s?' selected':''}>${esc(secZh(s))}</option>`).join('')}</select>`;
   if(changes.length){h+=`<span class="sep"></span>`+[['',T('allChanges')??'All changes'],...changes.map(c=>[c,T(c)??c])].map(([v,l])=>`<button class="chip" data-k="change" data-v="${v}" aria-pressed="${F.change===v}">${l}${v?` <b>${cnt('change',v)}</b>`:''}</button>`).join('')}
   if(REVIEW)h+=`<span class="sep"></span>`+[['',T('anyDecision')??'Any decision'],...states.map(s=>[s,T(s)??s])].map(([v,l])=>`<button class="chip" data-k="state" data-v="${v}" aria-pressed="${F.state===v}">${l}${v?` <b>${cnt('state',v)}</b>`:''}</button>`).join('');
+  h+=`<label class="colsw"><input type="checkbox" id="cols"${wide?' checked':''}> ${T('cols')??'Priority, Spec Ref, Notes'}</label>`;
   $('#filters').innerHTML=h;
+  $('#cols').onchange=e=>{wide=e.target.checked;try{localStorage.setItem('cases-wide',wide?'1':'')}catch(x){}$('#tbl').classList.toggle('slim',!wide)};
   $('#q').oninput=e=>{F.q=e.target.value;body()};
   $('#sec').onchange=e=>{F.section=e.target.value;body()};
   $('#filters').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{F[b.dataset.k]=b.dataset.v;filters();body()});
@@ -269,22 +291,30 @@ function cell(r,f){
   const was=prev&&r.cur.Change==='modified'&&(prev[f]??'')!==(r.orig[f]??'')?`<div class="was">${esc(prev[f])}</div>`:'';
   const z=L==='zh'&&f!=='Spec Ref'?ZH[r.cur.ID]?.[f]:'';
   const zh=z?`<div class="zh${(r.cur[f]??'')!==(r.orig[f]??'')?' stale':''}" data-stale="${esc(T('stale'))}">${esc(z)}</div>`:'';
-  return `<td>${zh}<textarea data-id="${esc(r.cur.ID)}" data-f="${f}" rows="2">${esc(r.cur[f])}</textarea>${was}</td>`;
+  // plain text until clicked (or Enter): one editor at a time, not 3,000 boxes on the page
+  return `<td>${zh}<div class="cv"${REVIEW?` tabindex="0" data-id="${esc(r.cur.ID)}" data-f="${f}"`:''}>${esc(r.cur[f])}</div>${was}</td>`;
 }
 function idCell(r){
   const st=state(r),ch=r.cur.Change;
   const badges=[ch&&ch!=='unchanged'?`<span class="badge b-${ch}">${T(ch)??ch}</span>`:'',REVIEW&&st!=='kept'?`<span class="badge b-${st==='deleted'?'removed':st}">${T(st)??st}</span>`:''].join(' ');
   // opens the coverage page on this case: its requirements, the spec boards they come from, the controls it presses
   // and the run plan on it: the segment that runs it and its latest result
-  const links=r.added?[]:[PAGES.coverage&&`<a class="spec" href="${esc(PAGES.coverage)}#case=${encodeURIComponent(r.cur.ID)}" title="Coverage: where in the spec this case comes from and the controls it presses">Coverage →</a>`,
-    PAGES.plan&&`<a class="spec" href="${esc(PAGES.plan)}#case=${encodeURIComponent(r.cur.ID)}" title="Progress: the segment that runs this case and its latest result">Progress →</a>`,
-    PAGES.results&&`<a class="spec" href="${esc(PAGES.results)}#case=${encodeURIComponent(r.cur.ID)}" title="Results: what each run found, with screenshots">Results →</a>`].filter(Boolean);
+  const links=r.added?[]:[PAGES.coverage&&`<a class="spec" href="${esc(PAGES.coverage)}#case=${encodeURIComponent(r.cur.ID)}" aria-label="Coverage: where in the spec this case comes from and the controls it presses" data-tip="Coverage: where in the spec this case comes from and the controls it presses">Cov</a>`,
+    PAGES.plan&&`<a class="spec" href="${esc(PAGES.plan)}#case=${encodeURIComponent(r.cur.ID)}" aria-label="Progress: the segment that runs this case and its latest result" data-tip="Progress: the segment that runs this case and its latest result">Prog</a>`,
+    PAGES.results&&`<a class="spec" href="${esc(PAGES.results)}#case=${encodeURIComponent(r.cur.ID)}" aria-label="Results: what each run found, with screenshots" data-tip="Results: what each run found, with screenshots">Res</a>`].filter(Boolean);
   const spec=links.length?`<div class="xl">${links.join('')}</div>`:'';
   // the open questions this row's assumption depends on: a marker that opens the question above the table
   const qm=(D.questions||[]).filter(q=>q.rows.includes(r.cur.ID)).map(q=>{const st=qState(q.id);
     return `<a class="qmark ${st}" href="#q-${esc(q.id)}" data-q="${esc(q.id)}" title="${esc(st==='open'?'This row assumes an answer to an open question: read it or answer it':st==='done'?'Answered and applied':'Answered, waiting for the agent')}">${esc(q.id)}${st==='open'?' ?':' ✓'}</a>`}).join(' ');
   const why=(L==='zh'&&ZH[r.cur.ID]?.['Change Reason'])||r.cur['Change Reason'];
   return `${esc(r.cur.ID)}<div>${badges}</div>${qm?`<div>${qm}</div>`:''}${spec}${why?`<div class="reason">${esc(why)}</div>`:''}`;
+}
+const find=id=>rows.find(r=>r.cur.ID===id);
+function bindField(el){el.onchange=el.oninput=()=>{const r=find(el.dataset.id);r.cur[el.dataset.f]=el.value;persist();counts();const tr=el.closest('tr');tr.querySelector('td.id').innerHTML=idCell(r);};el.onblur=()=>filters()}
+function editCell(d){
+  const ta=document.createElement('textarea');ta.dataset.id=d.dataset.id;ta.dataset.f=d.dataset.f;ta.rows=2;ta.value=find(d.dataset.id).cur[d.dataset.f]??'';
+  d.replaceWith(ta);bindField(ta);ta.focus();
+  ta.onblur=()=>{filters();const v=document.createElement('div');v.className='cv';v.tabIndex=0;v.dataset.id=ta.dataset.id;v.dataset.f=ta.dataset.f;v.textContent=ta.value;ta.replaceWith(v)};
 }
 function body(){
   const tb=$('#tbl tbody');let h='';
@@ -303,17 +333,23 @@ function body(){
     }
   }
   tb.innerHTML=h||`<tr><td colspan="8" class="note">${T('noMatch')??'No cases match these filters.'}</td></tr>`;
-  const find=id=>rows.find(r=>r.cur.ID===id);
   tb.querySelectorAll('textarea[data-note]').forEach(el=>el.oninput=()=>{notes.find(n=>n.id===el.dataset.note).text=el.value;persist();counts()});
   tb.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{const n=notes.find(n=>n.id===b.dataset.del);if(n.text.trim()&&!confirm(T('removeConfirm')??'Remove this note and its text?'))return;notes=notes.filter(x=>x!==n);persist();body();counts()});
-  tb.querySelectorAll('textarea[data-id],select').forEach(el=>{if(!REVIEW){el.readOnly=true;return}el.onchange=el.oninput=()=>{const r=find(el.dataset.id);r.cur[el.dataset.f]=el.value;persist();counts();const tr=el.closest('tr');tr.querySelector('td.id').innerHTML=idCell(r);};el.onblur=()=>filters()});
+  tb.querySelectorAll('select').forEach(el=>{if(REVIEW)bindField(el)});
   tb.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{find(b.dataset.id).dec=b.dataset.d;persist();filters();body();counts()});
   // + Add case: focus the section's empty note, else open a new one
   tb.querySelectorAll('.add[data-sec]').forEach(b=>b.onclick=()=>{const sec=b.dataset.sec;let n=notes.find(n=>n.section===sec&&!n.text.trim());
     if(!n){n={id:'N'+Date.now().toString(36),section:sec,text:'',at:new Date().toISOString()};notes.push(n);persist();body();}
     setTimeout(()=>tb.querySelector(`textarea[data-note="${n.id}"]`)?.focus(),0)});
 }
+function saveState(){
+  if(!REVIEW||!D.save)return;
+  // a working copy of the approved table: nothing to save until something changed (a real draft can be approved as it is)
+  const none=/^edit-/.test(D.draft)&&rows.every(r=>state(r)==='kept')&&!liveNotes().length;
+  $('#save').disabled=none;$('#save').title=none?'Nothing has changed yet':'';
+}
 function counts(){
+  saveState();
   const c=s=>rows.filter(r=>state(r)===s).length;
   const fin=rows.filter(r=>r.dec!=='delete').length;
   const nn=liveNotes().length;
@@ -357,7 +393,7 @@ $('#save').onclick=async()=>{
     try{localStorage.removeItem(KEY)}catch(e){}
     const nn=liveNotes().length;notes=[];body();counts();
     toast((T('saved',j.version,j.cases,j.csv)??`Saved as approved version ${j.version}: ${j.cases} cases. ${j.csv}`)+(nn?T('savedNotes',nn,j.notes_file)??` · ${nn} new-case note${nn>1?'s':''} saved to ${j.notes_file}: ask the agent to turn them into the next draft.`:''));
-  }catch(e){toast((T('saveFail')??'Save failed: ')+e.message)}finally{$('#save').disabled=false}
+  }catch(e){toast((T('saveFail')??'Save failed: ')+e.message)}finally{$('#save').disabled=false;saveState()}
 };
 // #TC-012 (a link from the coverage page): show that row, clearing filters that hide it
 let focusId='';
@@ -369,6 +405,12 @@ function focusRow(){
 addEventListener('hashchange',focusRow);
 // a row's question marker (and a #q-Q-3 link) opens that question above the table, also when clicked twice
 addEventListener('hashchange',()=>{if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3))});
+document.addEventListener('click',e=>{const d=e.target.closest?.('.cv[data-id]');if(d&&!String(getSelection()))editCell(d)});
+// the short Cov / Prog / Res links name themselves at once on hover or focus (a native title is slow, or never shows)
+const tip=document.createElement('div');tip.id='tip';tip.hidden=true;document.body.append(tip);
+for(const ev of ['mouseover','focusin'])document.addEventListener(ev,e=>{const a=e.target.closest?.('a[data-tip]');if(!a){tip.hidden=true;return}
+  tip.textContent=a.dataset.tip;tip.hidden=false;const r=a.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(r.left,innerWidth-tip.offsetWidth-8))+'px';tip.style.top=(r.bottom+6)+'px'});
+document.addEventListener('keydown',e=>{const d=e.target.closest?.('.cv[data-id]');if(d&&e.key==='Enter'){e.preventDefault();editCell(d)}});
 document.addEventListener('click',e=>{const m=e.target.closest?.('a.qmark');if(!m)return;e.preventDefault();openQuestion(m.dataset.q)});
 applyLang();header();questions();filters();body();counts();focusRow();if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3));
 </script>

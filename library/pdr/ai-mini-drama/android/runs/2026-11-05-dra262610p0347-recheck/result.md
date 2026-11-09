@@ -188,3 +188,98 @@ character question.
 - Credits: 28,166 → 28,146 (−20: ◆4 Julian look, ◆8 B1 looks, ◆8 B2 looks). No storyboard or video; Create storyboard
   was never tapped; nothing bought.
 - No ticket was commented on or changed.
+
+## Blueprints for RD (path A, debug export) (13:49–14:03)
+
+- Phone / build as above (SM-A5360, official 16.8.0 build 2611041, Stage, Free, qau2 CLT). Debug info ON (13:49:22) for the
+  whole section, OFF again at 14:08. History before: only 「Ambition and Trust」 (another session's, untouched).
+- Drama: new, idea "A short story about two friends opening a cafe. Two characters." (English, captions), History
+  「Shared Brew」, **session `261105_134924_2c3db6c8`**, cast Maya (`char_b2d6dc12`) / Leo (`char_7841e130`).
+- Path A, as in *Minimal repro*: outline Generate 13:49:49 › Maya slot › library look › ✓ 13:57:21 › 「1 character isn't set
+  yet」 › Generate ◆4 13:57:34 › 「Your characters are ready」 13:59:38 › sheet X › Choose Character X › 「Leave」 13:59:56 ›
+  chat shows 「Created the complete six-beat storyboard for Shared Brew featuring Maya and Leo.」 + 「The characters look
+  great! Ready to create the storyboard?」 + Create storyboard ◆32 (not tapped) (`…_bp_10_chat_after_leave`).
+- ← › `am force-stop` 14:01:34 (pid 6809 → 14750) › relaunch › AI Mini Drama › History › 「Shared Brew」 14:02:21: chat ends
+  at the Story Outline card and 「Ready to create your characters?」 with **both slots empty, no Create storyboard card**
+  (`…_bp_12_reopen_after_forcestop`); log `[SYS] restored session 261105_134924_2c3db6c8 (chars=2, shots=0)`,
+  `reopened 1 question(s) from the blueprint`. **Reproduced.**
+- Exports (no media; screenshots prefix `16.8.0.2611041_DRA262610P0347_bp_`):
+  - EXPORT 1, before the force-stop (14:01:23): `exports/before-forcestop/261105_134924_2c3db6c8_20261105_140123.zip` (63,502 B)
+  - EXPORT 2, after the reopen (14:02:44): `exports/after-reopen/261105_134924_2c3db6c8_20261105_140244.zip` (64,378 B)
+- Credits: 28,101 → 28,097 (◆4, Leo's look; not refunded). Turns: idea/session, outline Generate, ✓, Generate ◆4.
+
+### What the two exports show
+**The force-stop does not lose anything: the loss is already on disk before it.** `blueprint.json`,
+`blueprint_versions/V1–V7`, `chat_history.json`, `host_inputs/blueprint.json` and `metadata.json` are byte-identical in
+both zips; EXPORT 2 only adds `engine_events/turn_1.jsonl` / `perf/turn_1.jsonl` (the relaunch's `session_list`). The
+rollback happens at 「Leave」: `metadata.json updated_at_ms` = 13:59:56.3, the Leave tap, and it writes **V7 = an exact
+byte copy of V3** (the version from before the character step), discarding V4–V6 that the Generate turn produced. The UI
+kept showing the in-memory V6 until the process died; the restore reads V7.
+
+| Version | When / turn | `chat_status.current_stage` | `assets` (front_image_url / image_version) | `storyboard.beats` | `chat_status.questions[0]` |
+|---|---|---|---|---|---|
+| V3 | outline turn t15 (13:50:17) | character | Maya none, Leo none | 0 | QuestionCreateCharacter |
+| V4 | ✓ turn t16 (13:57:21, setCharacter) | character | Maya ✓ `261105_135721_700646`, Leo none | 0 | QuestionCreateCharacter |
+| V5 | t16 end | storyboard | Maya ✓, Leo none; `at_room=char_7841e130`, `at_room_action=leave` | 0 | QuestionCharacterNotReady1 |
+| V6 | Generate ◆4 turn t17 (complete 13:59:37, `stage=storyboard→storyboard`) | storyboard | Maya ✓, Leo ✓ `261105_135816_271055`, + 3 env assets | 6 | QuestionCreateStoryboard |
+| **V7 (current)** | written at 「Leave」 13:59:56 | **character** | **Maya none, Leo none** | **0** | **QuestionCreateCharacter** |
+
+Before → after the Leave (V6 → V7 = `blueprint.json` in both zips):
+- `chat_status.current_stage`: `storyboard` → `character`
+- `assets[0].front_image_url` / `image_version` (Maya): set / `261105_135721_700646` → `null` / `null`
+- `assets[1].front_image_url` / `image_version` (Leo): set / `261105_135816_271055` → `null` / `null`
+- `assets[2..4]` (env_f4b64f3f, env_491adbf2, env_2ca8918b): present → removed
+- `storyboard.beats`: 6 → 0
+- `chat_status.questions[0].question`: `QuestionCreateStoryboard` (`storyboard_image`) → `QuestionCreateCharacter` (`character_image`)
+- `chat_status.agent_response_text`: 「Created the complete six-beat storyboard …」 → 「I have created the character profiles for Maya and Leo.」
+- `metadata.current_blueprint_version`: 7.
+- `chat_history.json` is **not** rolled back: its last message is still 「Created the complete six-beat storyboard for Shared
+  Brew featuring Maya and Leo.」 (`turn_id …_t3`, `blueprint_version: 6`), yet the reopened chat does not show it.
+- No `MiniDrama Log` line at the Leave (13:59:56) in logcat; the V7 write is silent.
+
+So for RD: 「Leave」 on Choose Character after a Generate that already completed (and already moved the session to
+storyboard) restores the pre-picker snapshot (V3) as a new version, which deletes the generated looks, the storyboard and
+the storyboard question from the blueprint; the in-memory chat hides it until the process is restarted.
+
+Credentials: none in either zip (checked for token / authorization / bearer / purchase / password / api key / secret and
+for long opaque strings; the only hits are story text 「secret debts」 and the engine event names `token_request` /
+`token_gate`, with no values).
+
+## Blueprints for RD: daily limit (14:04–14:08)
+
+Same drama and session (`261105_134924_2c3db6c8`), debug info ON, plain questions typed into the chat (no generation, no
+credits). The app's turn counter (`MiniDramaPerf tN`) is kept across the force-stop (t18 follows t17 in the new process).
+
+| # (host turn) | Time | Action | Turn ran / dialog | Credits |
+|---|---|---|---|---|
+| t1–t13 | 12:48–13:05 | other session (`2026-11-05-dra262610p0334-recheck`): idea / session, outline, cast ✓, 5 update requests, 5 Generates | all ran | 28,121 → 28,101 |
+| t14 | 13:49:24 | Create Your Drama / idea send (session created; `turn_end superseded`) | ran (superseded) | 28,101 |
+| t15 | 13:49:49 | format card Generate (outline) | ran, complete | 28,101 |
+| t16 | 13:57:21 | ✓ on Choose Character (setCharacter) | ran (superseded by t17) | 28,101 |
+| t17 | 13:57:41 | Generate ◆4 on 「Finish your characters」 | ran, complete | 28,097 |
+| t18 | 14:04:44 | "What is the title of this story?" | ran, complete (`conversation turn: blueprint unchanged`) | 28,097 |
+| t19 | 14:05:20 | "Who are the two main characters?" | ran, complete | 28,097 |
+| t20 | 14:05:48 | "Where does the story take place?" | stuck on 「Thinking…」; cancelled 14:06:24 by the next send tap (`cancel_turn`, `final_state=cancelled`) | 28,097 |
+| t21 | 14:06:46 | "How long will the video be?" | ran, complete | 28,097 |
+| — | 14:07:26 | "What genre is this drama?" | **「Daily Free Chat Limit Reached」**, no turn | 28,097 (pill unchanged) |
+
+- The dialog came on the send after host turn t21, i.e. the 22nd counted turn since the 12:45 `pm clear` (21 turns ran,
+  one of them cancelled, two superseded). Earlier today (after the 11:02 reinstall) it came on the 19th; the spec says the
+  11th for Free. Which turns the app counts is still unknown. Screenshot `16.8.0.2611041_daily_limit_dialog.png` (title,
+  body, Upgrade to Premium, ✕ at top right; the blocked text stays in the input box). Closed with its ✕
+  (`button_mini_drama_chat_quota_close`) 14:07:39: back to the chat, text still in the box (`…_dl_t22_after_x`).
+- Exports (no media):
+  - just before the blocked send (14:07:21, after t21 completed): `exports/daily-limit-before/261105_134924_2c3db6c8_20261105_140721.zip` (68,093 B)
+  - after the dialog was closed (14:07:56): `exports/daily-limit/261105_134924_2c3db6c8_20261105_140756.zip` (68,093 B)
+- **The limit is not recorded in the export.** The two zips unpack to identical files (`diff -r` empty): no new
+  `chat_history.json` message (the blocked "What genre is this drama?" is absent; last entries are t21's question and
+  answer), no `engine_events/` or `perf/` file for a t22, `blueprint.json` unchanged (V7), no field containing quota /
+  limit / daily / premium / upgrade anywhere. `approved_budget.json` is `{"schema_version":1,"counts":{},"request_ids":[]}`
+  throughout. `chat_quota_exempt.json` (`{"schema_version":1}`, no counts) was in the 14:01 and 14:02 exports but is
+  missing from every export from 14:05 (after t18) on; why is unknown.
+- Logcat (`16.8.0.2611041_daily_limit_logcat.txt`, 14:06:44–14:07:45, noise removed): t21 `user_prompt` →
+  `turn_end complete`, then at 14:07:27.126 only a generic `Dialog` inflate (the limit dialog) with a ResourcesCompat
+  warning; no `MiniDramaPerf t22`, no `[USER]`, no `MiniDrama Log` line, nothing about quota. The check is app-side and
+  logs nothing. (The `Dialog` / `Toast` lines at 14:07:17–21 are the debug export.)
+- Credentials: none in either zip or the logcat excerpt (same check as above).
+- Credits: unchanged at 28,097 for the whole section. No storyboard, video, Upgrade or purchase was tapped.

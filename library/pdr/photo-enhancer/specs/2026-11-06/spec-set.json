@@ -1,0 +1,23 @@
+{
+  "feature": "pdr/photo-enhancer",
+  "folder": "2026-11-06",
+  "received_at": "2026-11-06T02:53:12.469Z",
+  "spec_set_sha256": "ebaf80fc63d02d3d30d0f959c2f352686a61edf386dc46764fc327aacb84112b",
+  "files": [
+    {
+      "name": "Support Photo Enhancer - PM and Design Figma.md",
+      "sha256": "b72a55219aaaf38bce58af25af08fb0bc3d5f9d2d3f43ad6ebaa1a5576e5f062",
+      "bytes": 6846
+    }
+  ],
+  "source_priority": [
+    "pm",
+    "design"
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-3761",
+    "design": "https://www.figma.com/design/4ZIfFu5NTnCEi1Nqo04k2S/Toolbars?node-id=212-2045&m=dev"
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-06): the spec file is the text snapshot of the PM page 65:3761 and the Design page 212:2045 (photo toolbars and icon slice only), written from the inventory reads; no PDF export."
+}

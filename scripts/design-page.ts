@@ -35,10 +35,12 @@ import { networkInterfaces } from 'node:os';
 import { join, relative } from 'node:path';
 import { readRecords } from './lib/csv.ts';
 import { isLocal } from './lib/local.ts';
+import { thumbnail } from './lib/thumbs.ts';
 import { ROOT, arg, assertIds, featureDir, readManifest, readTable, tableDir } from './lib/library.ts';
 import { activityPoints, localRunMessages, syncTokens } from './lib/run-ledger.ts';
 import { IDLE, W, activity, estimator, readCalibration, readSnaps, spanStats, weeklyRatio, weight, type Group } from './lib/usage-estimate.ts';
 import { addMsg, projectTranscripts, zero, type Msg } from './token-usage.ts';
+import { withShared } from './lib/page-shared.ts';
 
 const [feature, platform] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -107,7 +109,8 @@ function buildData(link: (abs: string) => string) {
 // the run) and the first sight of its result files (compare, builder, reviewer, findings), plus, for a design pass on
 // its own (a run folder with no results.csv), the run's own activity (captures, taps). A casebook run's automatic
 // captures cost no call of their own, so for such a run the Design tab also shows that run's own figure (the same as
-// Progress) as the run the captures rode on. Built on every request of /usage.json, which the page polls every 10 s.
+// Progress) as the run the captures rode on. A folder with neither (a bug recheck's stray captures) is left out.
+// Built on every request of /usage.json, which the page polls every 10 s.
 function usageData() {
   const dirs = existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design'))).sort() : [];
   const rowsOf = (d: string) => existsSync(join(runsDir, d, 'results.csv')) ? readRecords(readFileSync(join(runsDir, d, 'results.csv'), 'utf8')) : null;
@@ -128,6 +131,9 @@ function usageData() {
   const design: Group[] = [], rode: Group[] = [], meta: any[] = [];
   for (const d of dirs) {
     const dir = join(runsDir, d), dd = join(dir, 'design'), rows = rowsOf(d);
+    // a folder with neither a casebook run (results.csv) nor a design.ts command (design/activity.log) only holds
+    // captures that rode on other work (a bug recheck): not design work, and its own activity is not the check's
+    if (!rows && !existsSync(join(dd, 'activity.log'))) continue;
     const caps = existsSync(join(dd, 'captures.jsonl')) ? readFileSync(join(dd, 'captures.jsonl'), 'utf8').split('\n').filter(Boolean).flatMap(l => { try { return [JSON.parse(l)]; } catch { return []; } }) : [];
     const pts = activityPoints(dd, ['compare', 'builder', 'reviewer', 'findings'].map(n => join(dd, `${n}.json`)));
     if (!rows) pts.push(...activityPoints(dir), ...caps.map(c => Date.parse(c.t)).filter(Boolean));
@@ -146,7 +152,7 @@ function usageData() {
     latest: last ? { at: last.at, seat: last.proMultiplier, fiveHourPct: last.fiveHourPct, weeklyPct: last.weeklyPct } : null, runs };
 }
 
-const page = (data: unknown) => readFileSync(join(import.meta.dirname, 'design-page.tpl'), 'utf8')
+const page = (data: unknown) => withShared(readFileSync(join(import.meta.dirname, 'design-page.tpl'), 'utf8'))
   .replaceAll('__TITLE__', `${title} Design check`).replace('__DATA__', () => JSON.stringify(data).replace(/</g, '\\u003c'));
 
 if (serve) {
@@ -154,7 +160,8 @@ if (serve) {
   const server = createServer((req, res) => {
     try {
       const url = req.url ?? '/';
-      const liveData = () => ({ ...buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`), usage: usageData(), live: true });
+      // save: whether this viewer's Save would be accepted; pages.ts turns it off for other computers on the network
+      const liveData = () => ({ ...buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`), usage: usageData(), live: true, save: isLocal(req.socket.remoteAddress) });
       if (url === '/' || url.startsWith('/?')) { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(page(liveData())); return; }
       // the same data alone, for the in-place update (scripts/pages.ts __check)
       if (url.startsWith('/data.json')) { res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(liveData())); return; }
@@ -179,7 +186,11 @@ if (serve) {
       if (f) {
         const p = join(ROOT, decodeURIComponent(f[1]));
         if (/\.(png|webp)$/i.test(p) && relative(fdir, p).split(/[\\/]/)[0] !== '..' && existsSync(p)) {
-          res.writeHead(200, { 'content-type': /webp$/i.test(p) ? 'image/webp' : 'image/png', 'cache-control': 'max-age=300' }); res.end(readFileSync(p)); return; }
+          const original = () => { res.writeHead(200, { 'content-type': /webp$/i.test(p) ? 'image/webp' : 'image/png', 'cache-control': 'max-age=300' }); res.end(readFileSync(p)); };
+          // ?thumb: a small copy for the screen cards and for the moment before the full image arrives; the comparison is always the original
+          if (/[?&]thumb\b/.test(url)) thumbnail(p).then(t => { if (!t) return original(); res.writeHead(200, { 'content-type': 'image/jpeg', 'cache-control': 'max-age=300' }); res.end(readFileSync(t)); }).catch(() => { if (!res.headersSent) original(); });
+          else original();
+          return; }
       }
       res.writeHead(404); res.end('Not found');
     } catch (e: any) { res.writeHead(500, { 'content-type': 'text/plain' }); res.end(String(e?.message ?? e)); }

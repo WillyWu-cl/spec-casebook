@@ -9,26 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;750&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;600;700&display=swap">
 <style>
+/*__SHARED_CSS__*/
 /* Layout: proof sheet — counts strip, then the Figma board with every control and arrow marked, a detail panel with the
    rows and tap screenshots, and the gap list underneath. Same palette as the run plan page. */
-:root {
-  --bg: #f4f6f6; --panel: #ffffff; --ink: #172426; --muted: #5b6b6e; --line: #d8e0e1; --accent: #0f6e73;
-  --proof: #2f7d4f; --ran: #3f9a94; --fail: #b8402f; --blocked: #a86b12; --notrun: #5458c4; --none: #c2332a; --na: #b13f9c;
-  --chip-bg: #eef2f2; --canvas: #20292b; --hl: #ffd60a;
-  --display: "Archivo", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
-  --body: "Source Sans 3", "Noto Sans TC", "Segoe UI", system-ui, "PingFang TC", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd;
-  --proof: #5cbf83; --ran: #5fc4bd; --fail: #ec7a66; --blocked: #e0a548; --notrun: #9196f5; --none: #f0675c; --na: #e08bd4;
-  --chip-bg: #213032; --canvas: #0b1112; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd;
-  --proof: #5cbf83; --ran: #5fc4bd; --fail: #ec7a66; --blocked: #e0a548; --notrun: #9196f5; --none: #f0675c; --na: #e08bd4;
-  --chip-bg: #213032; --canvas: #0b1112; color-scheme: dark }
-* { box-sizing: border-box }
-body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0; padding: 24px max(16px, 2vw) 56px }
+:root { --proof: #2f7d4f; --ran: #3f9a94; --notrun: #5458c4; --none: #c2332a; --na: #b13f9c; --canvas: #20292b; --hl: #ffd60a }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --proof: #5cbf83; --ran: #5fc4bd; --notrun: #9196f5; --none: #f0675c; --na: #e08bd4; --canvas: #0b1112 } }
+:root[data-theme="dark"] { --proof: #5cbf83; --ran: #5fc4bd; --notrun: #9196f5; --none: #f0675c; --na: #e08bd4; --canvas: #0b1112 }
+body { padding-block: 28px 56px }
 h1, h2 { font-family: var(--display); margin: 0; letter-spacing: -0.01em }
 h1 { font-size: 1.7rem; font-weight: 750 }
 h2 { font-size: 1.15rem; font-weight: 650; margin-bottom: 10px }
@@ -177,6 +164,7 @@ tbody tr.go { cursor: pointer } tbody tr.go:hover { background: var(--chip-bg) }
   <table id="umtable"><thead><tr><th data-t="thRunCase"></th><th data-t="thElement"></th><th data-t="thBest"></th><th data-t="thScreen"></th></tr></thead><tbody id="umtb"></tbody></table>
 </section>
 <script>
+/*__SHARED_JS__*/
 let D = __DATA__;
 // Interface strings in English and Traditional Chinese. Design labels, board names and row text stay as written.
 const I18N = {
@@ -187,8 +175,8 @@ const I18N = {
     st: { proof: 'Pressed (tap proof)', ran: 'Pressed (row ran)', blocked: 'Blocked on device', notrun: 'Planned, not run yet', none: 'No row (missing)', na: 'Excluded' },
     rowFailed: 'pressing row failed', legendHint: 'Click a state to show or hide it on the board.',
     verdictMissing: (m, c, a) => `<b>${m} missing:</b> ${c} controls and ${a} arrows have no row yet (listed below as 「No row (missing)」).`,
-    verdictOk: '<b>Nothing is missing:</b> every control and flow arrow has a row in the table.',
-    verdictLeft: (p, b) => ` ${p} are <b>planned</b> (their rows are in the table but no device run has used them yet) and ${b} are <b>blocked on the device</b> (their rows ran but could not reach them; reasons below).`,
+    verdictOk: '<b>Every control and flow arrow has a row in the table.</b>',
+    verdictLeft: (p, b) => ` ${b} are <b>blocked on the device</b> (their rows ran but could not reach them; reasons below) and ${p} have <b>not run yet</b> (no device run has used their rows).`,
     cControls: 'Controls pressed', cInputs: 'Inputs dismissed', cArrows: 'Flow arrows walked', cTaps: 'Taps matched', cFailed: 'Pressed, but the row failed',
     missing0: '0 missing', excluded: n => `${n} excluded (another feature's control, decorative or a duplicate)`,
     copies: n => `Counted once per button or choice list (${n} copies on the boards).`,
@@ -239,8 +227,8 @@ const I18N = {
     st: { proof: '已按（有點擊證據）', ran: '已按（案例已執行）', blocked: '裝置上受阻', notrun: '已規劃，尚未執行', none: '無案例（缺漏）', na: '排除' },
     rowFailed: '按下的案例失敗', legendHint: '點選狀態可在畫板上顯示或隱藏。',
     verdictMissing: (m, c, a) => `<b>缺漏 ${m} 項：</b>${c} 個控制項與 ${a} 個箭頭尚無案例（下方標為「無案例（缺漏）」）。`,
-    verdictOk: '<b>沒有缺漏：</b>每個控制項與流程箭頭在表格中都有案例。',
-    verdictLeft: (p, b) => `其中 ${p} 項<b>已規劃</b>（案例在表格中，但尚未在裝置上執行），${b} 項<b>在裝置上受阻</b>（案例已執行但無法到達；原因見下方）。`,
+    verdictOk: '<b>每個控制項與流程箭頭在表格中都有案例。</b>',
+    verdictLeft: (p, b) => `其中 ${b} 項<b>在裝置上受阻</b>（案例已執行但無法到達；原因見下方），${p} 項<b>尚未執行</b>（還沒有裝置執行用到它們的案例）。`,
     cControls: '已按的控制項', cInputs: '已關閉的輸入框', cArrows: '已走過的流程箭頭', cTaps: '已比對的點擊', cFailed: '已按，但案例失敗',
     missing0: '缺漏 0', excluded: n => `排除 ${n} 項（其他功能的控制項、裝飾或重複）`,
     copies: n => `每個按鈕或選項清單只算一次（畫板上共 ${n} 個副本）。`,
@@ -306,6 +294,12 @@ const $ = id => document.getElementById(id);
 const show = new Set(['proof', 'ran', 'blocked', 'notrun', 'none', 'na']);
 let board = null, sel = null, vb = null, reasonFilter = '';
 // the other pages: scripts/pages.ts names them (window.CASEBOOK); a static coverage.html links to cases.html beside it
+// Boards load in the background (user, 2026-11-06): served, a board shows its small copy at once and the full image, what
+// the marks are read on, replaces it the moment it has arrived; the boards either side follow, so stepping is instant
+const sharp = new Set();
+const boardSrc = b => !window.CASEBOOK || sharp.has(b.img) ? b.img : `${b.img}?thumb`;
+const sharpen = b => { if (!window.CASEBOOK || !b?.img || sharp.has(b.img)) return; const i = new Image();
+  i.onload = () => { sharp.add(b.img); if (board === b) document.getElementById('bgimg')?.setAttribute('href', b.img); }; i.src = b.img; };
 const PAGES = window.CASEBOOK?.pages ?? (location.protocol === 'file:' ? { review: 'cases.html' } : {});
 // case view (#case=TC-012): the case shown, and its requirements' boards, controls, arrows and named screens
 let kase = null, caseIt = null;
@@ -315,7 +309,7 @@ function header() {
   document.documentElement.lang = L === 'zh' ? 'zh-Hant' : 'en';
   $('h').textContent = t('title')(D.title, D.platform === 'ios' ? 'iOS' : 'Android');
   $('lead').textContent = t('lead');
-  $('sub').innerHTML = t('sub')(D.version, esc(D.spec_folder), D.runs.length, fmtDay(D.runs[0] ?? ''), fmtDay(D.runs.at(-1) ?? ''), D.taps, new Date(D.built_at).toLocaleString(L === 'zh' ? 'zh-TW' : undefined));
+  $('sub').innerHTML = t('sub')(D.version, esc(D.spec_folder), D.runs.length, fmtDay(D.runs[0] ?? ''), fmtDay(D.runs.at(-1) ?? ''), D.taps, cbWhenZ(D.built_at, L));
   $('sub').title = D.runs.join('\n');
   for (const b of document.querySelectorAll('.lang button')) b.setAttribute('aria-pressed', String(b.dataset.lang === L));
   for (const el of document.querySelectorAll('[data-t]')) el[el.hasAttribute('data-html') ? 'innerHTML' : 'textContent'] = t(el.dataset.t);
@@ -349,7 +343,7 @@ function strip() {
       return stat(t('cNotes'), cn.ran || 0, nr.length, order.map(s => [s, cn[s] || 0]), [...split(cn), `${dot('na')} ${t('excluded')(D.notes.length - nr.length)}`, `<span class="muted">${t('notesNote')}</span>`]); })() +
     stat(t('cInputs'), dis, inputs.length, [['ran', dis]], [D.taps ? t('inputsByTap') : t('inputsByRow')]) +
     (D.taps ? stat(t('cTaps'), D.taps - D.unmatched.length, D.taps, [['proof', D.taps - D.unmatched.length], ['none', D.unmatched.length]], [t('tapsNote')(D.unmatched.length, D.groups.reduce((n, g) => n + g.proof.filter(p => p.ambiguous).length, 0))])
-      : `<div class="stat"><div class="k">${t('cTaps')}</div><div class="v muted">—</div><ul class="d"><li>${t('tapsNone')}</li></ul></div>`) +
+      : '') +
     stat(t('cFailed'), failed, req.length, [['fail', failed]], [t('failedNote')]);
 }
 function legend() {
@@ -402,6 +396,7 @@ function openBoard(b, focus) {
   board = b; const [x, y, w, h] = b.box; vb = [x - 40, y - 40, w + 80, h + 80];
   if (focus) vb = [focus[0] - 300, focus[1] - 300, focus[2] + 600, focus[3] + 600];
   $('noimg').hidden = !!b.img; if (!b.img) $('noimg').textContent = b.note || t('noImg'); boardsNav(); draw();
+  sharpen(b); const near = D.boards.indexOf(b); (window.requestIdleCallback ?? setTimeout)(() => { sharpen(D.boards[near + 1]); sharpen(D.boards[near - 1]); });
 }
 function draw() {
   const svg = $('svg'); if (!board) return;
@@ -412,7 +407,7 @@ function draw() {
   // the image sits on the box it was rendered for (img_box), which can be smaller than a board grown to hold its screens
   const [ix, iy, iw, ih] = board.img_box || board.box;
   s += `<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" fill="#2b3537"/>`
-    + (board.img ? `<image id="bgimg" href="${esc(board.img)}" x="${ix}" y="${iy}" width="${iw}" height="${ih}" preserveAspectRatio="none"/>` : '');
+    + (board.img ? `<image id="bgimg" href="${esc(boardSrc(board))}" x="${ix}" y="${iy}" width="${iw}" height="${ih}" preserveAspectRatio="none"/>` : '');
   for (const sc of D.screens.filter(sc => sc.board === board.name)) {
     s += `<rect x="${sc.box[0]}" y="${sc.box[1]}" width="${sc.box[2]}" height="${sc.box[3]}" fill="${sc.other ? '#000a' : 'none'}" stroke="#fff3" stroke-width="${k}"><title>${esc(sc.name)}${sc.other ? ` (${t('otherPlatform')})` : ''}</title></rect>`;
   }
@@ -564,7 +559,7 @@ function renderPanel() {
       ${g.app.length ? `<dt>${t('appIds')}</dt><dd class="mono">${g.app.map(esc).join(', ')}</dd>` : ''}${how ? `<dt>${t('tracedBy')}</dt><dd>${how}</dd>` : ''}
       ${g.kind === 'input' ? `<dt>${t('dismissed')}</dt><dd>${g.dismissed ? t('yes') : t('notYet')}</dd>` : ''}${g.na ? `<dt>${t('exclReason')}</dt><dd>${esc(g.na.replace(/^n\/a:\s*/, ''))}</dd>` : ''}</dl>${link}
       <h2 style="margin-top:14px">${t('tapProof')}</h2>${g.proof.length ? `<div class="proof">${g.proof.map(x => { const [ww, wh] = (x.win || '1x1').split('x').map(Number);
-        return `<figure class="shot" style="margin:0">${x.shot ? `<a href="${esc(x.shot)}" target="_blank"><img src="${esc(x.shot)}" alt=""></a><i style="left:${x.x / ww * 100}%;top:${x.y / wh * 100}%"></i>` : ''}<figcaption>${esc(x.case)} · ${esc(x.run)}<br>${esc(x.el)}<br><b>${x.score}</b> ${esc((x.why || []).join(' · '))}${x.outside_rows ? `<br>${t('outside')}` : ''}${x.ambiguous ? `<br>⚠ ${t('closeTo')} ${esc(x.ambiguous)}` : ''}</figcaption></figure>`; }).join('')}</div>${g.taps > g.proof.length ? `<p class="empty">${t('allTaps')(g.taps)}</p>` : ''}`
+        return `<figure class="shot" style="margin:0">${x.shot ? `<a href="${esc(x.shot)}" target="_blank"><img src="${esc(x.shot)}" alt="" loading="lazy" decoding="async"></a><i style="left:${x.x / ww * 100}%;top:${x.y / wh * 100}%"></i>` : ''}<figcaption>${esc(x.case)} · ${esc(x.run)}<br>${esc(x.el)}<br><b>${x.score}</b> ${esc((x.why || []).join(' · '))}${x.outside_rows ? `<br>${t('outside')}` : ''}${x.ambiguous ? `<br>⚠ ${t('closeTo')} ${esc(x.ambiguous)}` : ''}</figcaption></figure>`; }).join('')}</div>${g.taps > g.proof.length ? `<p class="empty">${t('allTaps')(g.taps)}</p>` : ''}`
         : `<p class="empty">${g.status === 'ran' ? t('proofRan') : t('proofNone')}</p>`}
       <h2 style="margin-top:14px">${t('pressingRows')}</h2>${g.press.length ? g.press.map(rowHtml).join('') : `<p class="empty">${t('noRows')}</p>`}
       ${g.kind === 'input' ? `<h2 style="margin-top:14px">${t('dismissingRows')}</h2>${g.dismiss.length ? g.dismiss.map(rowHtml).join('') : `<p class="empty">${t('noneYet')}</p>`}` : ''}

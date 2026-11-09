@@ -20,6 +20,7 @@ import { join, relative } from 'node:path';
 import { readRecords } from './lib/csv.ts';
 import { thumbnail } from './lib/thumbs.ts';
 import { ROOT, arg, assertIds, readManifest, readTable, tableDir } from './lib/library.ts';
+import { withShared } from './lib/page-shared.ts';
 
 const [feature, platform] = process.argv.slice(2);
 assertIds(feature, platform);
@@ -105,27 +106,46 @@ function buildData(link: (abs: string) => string) {
     const times = list.map(c => c.t).filter(Boolean);
     runs.push({ id: d, phase: state.match(/^# Run state — (P\d+)/m)?.[1] ?? '', build: state.match(/\b[A-Z][A-Za-z]+(?: iOS)? (\d+\.\d+\.\d+ \(\d+\))/)?.[1] ?? '',
       report: existsSync(join(dir, 'report.md')), first: times.length ? new Date(Math.min(...times)).toISOString() : '', last: times.length ? new Date(Math.max(...times)).toISOString() : '',
-      cases: list.map(({ t, ...c }) => c) });
+      n: list.length, tally: Object.fromEntries([...new Set(list.map(c => c.result))].map(r => [r, list.filter(c => c.result === r).length])),
+      ids: list.map(c => c.id), cases: list.map(({ t, ...c }) => c) });
   }
   return { feature, title, platform, built_at: new Date().toISOString(), runs: runs.reverse() };
 }
 
-const page = (data: unknown) => readFileSync(join(import.meta.dirname, 'results-page.tpl'), 'utf8')
+// served, the page carries the newest run's cases and fetches another run's when it is opened (run.json): all of them
+// together were 2 MB, for one shown
+const newestOnly = (d: ReturnType<typeof buildData>) => ({ ...d, runs: d.runs.map((r, i) => i ? { ...r, cases: null } : r) });
+const page = (data: unknown) => withShared(readFileSync(join(import.meta.dirname, 'results-page.tpl'), 'utf8'))
   .replaceAll('__TITLE__', `${title} Results`).replace('__DATA__', () => JSON.stringify(data).replace(/</g, '\\u003c'));
 
 if (serve) {
   const portArg = /^\d+$/.test(process.argv[si + 1] ?? '') ? Number(process.argv[si + 1]) : 4492;
+  // built once per change of the feature's files (the stamp scripts/pages.ts sends): every view, in-place check and
+  // run opened until then reads the same data
+  const link = (abs: string) => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`;
+  let built: { stamp: string; data: ReturnType<typeof buildData> } | null = null;
+  const dataFor = (req: import('node:http').IncomingMessage) => {
+    const stamp = String(req.headers['x-casebook-stamp'] ?? '');
+    if (stamp && built?.stamp === stamp) return built.data;
+    const data = buildData(link);
+    if (stamp) built = { stamp, data };
+    return data;
+  };
   const server = createServer((req, res) => {
     try {
       const url = req.url ?? '/';
       if (url === '/' || url.startsWith('/?')) {
-        const html = page(buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`));
+        const html = page(newestOnly(dataFor(req)));
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(html); return;
       }
       // the same data alone, for the in-place update (scripts/pages.ts __check)
       if (url.startsWith('/data.json')) {
         res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' });
-        res.end(JSON.stringify(buildData(abs => `files/${encodeURI(relative(ROOT, abs).split('\\').join('/'))}`))); return;
+        res.end(JSON.stringify(newestOnly(dataFor(req)))); return;
+      }
+      if (url.startsWith('/run.json')) {
+        const id = new URL(url, 'http://x').searchParams.get('id'), r = dataFor(req).runs.find(x => x.id === id);
+        res.writeHead(r ? 200 : 404, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(r?.cases ?? [])); return;
       }
       // screenshots: images under this table's runs folder only
       const f = url.match(/^\/files\/([^?#]+)/);

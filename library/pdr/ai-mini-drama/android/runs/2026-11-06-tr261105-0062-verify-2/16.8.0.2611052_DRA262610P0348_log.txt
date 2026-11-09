@@ -1,0 +1,16 @@
+Excerpt, build 16.8.0.2611052: Stop on the revision (13:55:03) and turn ends.
+
+2026-11-06 13:51:58.393 18028 18028 D MiniDramaPerf: t1 +415s                         host   turn          turn_end                       superseded
+2026-11-06 13:52:30.745 18028 18479 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-06 13:52:30.810 18028 18028 D MiniDramaPerf: t2 +32.4s                        host   turn          turn_end                       complete stage=-→character
+2026-11-06 13:55:03.429 18028 18028 D MiniDrama Log: [TURN] cancel_turn -> 0
+2026-11-06 13:55:03.450 18028 19009 D MiniDrama Log: [TURN] turn_complete: final_state=cancelled
+2026-11-06 13:55:03.457 18028 19009 D MiniDrama Log: [SYS] reopened 1 question(s) from the blueprint
+2026-11-06 13:55:03.462 18028 18028 D MiniDramaPerf: t3 +9.38s                        host   turn          turn_end                       cancelled stage=character→character
+2026-11-06 13:58:45.636 18028 18151 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-06 14:00:28.481 18028 18028 D MiniDramaPerf: t4 +267s                         host   turn          turn_end                       superseded
+2026-11-06 14:04:33.070 18028 21392 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-06 14:04:38.627 18028 18028 D MiniDramaPerf: t5 +250s                         host   turn          turn_end                       complete stage=storyboard→storyboard
+2026-11-06 14:07:02.410 18028 18028 D MiniDramaPerf: t6 +136s                         host   turn          turn_end                       superseded
+2026-11-06 14:07:23.688 18028 21383 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-06 14:07:23.726 18028 18028 D MiniDramaPerf: t7 +21.3s                        host   turn          turn_end                       complete stage=storyboard→storyboard

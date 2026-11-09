@@ -142,7 +142,9 @@ export function armWatch(runDir: string, caseId: string | null): string[] {
       unlinkSync(watchFile(runDir));
     }
     const feature = featureOfRunDir(runDir);
-    if (!caseId || !feature || !existsSync(planFile(runDir))) return lines;
+    // only a table row arms it: a bug recheck's own labels (`case bp`) are not casebook rows, and its folder must not
+    // turn into a design pass (user, 2026-11-05: the DRA262610P0347 recheck showed on the Design tab)
+    if (!caseId || !/^TC-\d+$/.test(caseId) || !feature || !existsSync(planFile(runDir))) return lines;
     const plan = read(planFile(runDir));
     const out = join(featureDir(feature), 'specs', plan.spec_set, 'extracted', 'figma-source', 'design', 'out');
     if (!existsSync(join(out, 'screens.json'))) {

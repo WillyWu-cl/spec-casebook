@@ -1,0 +1,216 @@
+{
+ "drop": [
+  {
+   "control": "K-df2c47",
+   "why": "icon inside an 「Add …」 chip, the chip is the control"
+  },
+  {
+   "control": "K-a95ea4",
+   "why": "icon inside an 「Add …」 chip, the chip is the control"
+  },
+  {
+   "control": "K-e4ae33",
+   "why": "icon inside an 「Add …」 chip, the chip is the control"
+  },
+  {
+   "control": "K-dbe607",
+   "why": "icon inside an 「Add …」 chip, the chip is the control"
+  }
+ ],
+ "add": [
+  {
+   "screen": "4702:20032",
+   "label": "More Video Editing Tools",
+   "box": [
+    16,
+    467,
+    343,
+    44
+   ],
+   "kind": "button",
+   "why": "plain frame the extractor skipped (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4702:20032",
+   "label": "Add Text",
+   "box": [
+    16,
+    531,
+    109,
+    44
+   ],
+   "kind": "button",
+   "why": "chip, only its icon was read (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4702:20032",
+   "label": "Add Sticker",
+   "box": [
+    133,
+    531,
+    109,
+    44
+   ],
+   "kind": "button",
+   "why": "chip, not read (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4702:20032",
+   "label": "Add Music",
+   "box": [
+    250,
+    531,
+    109,
+    44
+   ],
+   "kind": "button",
+   "why": "chip, only its icon was read (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4720:469",
+   "label": "More Video Editing Tools",
+   "box": [
+    16,
+    467,
+    343,
+    44
+   ],
+   "kind": "button",
+   "why": "plain frame the extractor skipped (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4720:469",
+   "label": "Add Text",
+   "box": [
+    16,
+    531,
+    109,
+    44
+   ],
+   "kind": "button",
+   "why": "chip, only its icon was read (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4720:469",
+   "label": "Add Sticker",
+   "box": [
+    133,
+    531,
+    109,
+    44
+   ],
+   "kind": "button",
+   "why": "chip, not read (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4720:469",
+   "label": "Add Music",
+   "box": [
+    250,
+    531,
+    109,
+    44
+   ],
+   "kind": "button",
+   "why": "chip, only its icon was read (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4701:19335",
+   "label": "Select",
+   "box": [
+    313,
+    152,
+    50,
+    28
+   ],
+   "kind": "button",
+   "why": "plain text button (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4701:19335",
+   "label": "Character Motion Swap",
+   "box": [
+    16,
+    105,
+    162,
+    34
+   ],
+   "kind": "tab",
+   "why": "tab bar text (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4701:19335",
+   "label": "AI Art",
+   "box": [
+    198,
+    105,
+    39,
+    34
+   ],
+   "kind": "tab",
+   "why": "tab bar text (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4701:19335",
+   "label": "AI Face Swap",
+   "box": [
+    257,
+    105,
+    93,
+    34
+   ],
+   "kind": "tab",
+   "why": "tab bar text (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4720:267",
+   "label": "Select",
+   "box": [
+    313,
+    152,
+    50,
+    28
+   ],
+   "kind": "button",
+   "why": "plain text button (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4720:267",
+   "label": "Character Motion Swap",
+   "box": [
+    16,
+    105,
+    162,
+    34
+   ],
+   "kind": "tab",
+   "why": "tab bar text (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4720:267",
+   "label": "AI Art",
+   "box": [
+    198,
+    105,
+    39,
+    34
+   ],
+   "kind": "tab",
+   "why": "tab bar text (by hand 2026-11-06)"
+  },
+  {
+   "screen": "4720:267",
+   "label": "AI Face Swap",
+   "box": [
+    257,
+    105,
+    93,
+    34
+   ],
+   "kind": "tab",
+   "why": "tab bar text (by hand 2026-11-06)"
+  }
+ ],
+ "drop_screens": [],
+ "hide": []
+}

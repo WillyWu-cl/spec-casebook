@@ -94,7 +94,7 @@ const writeCall = (name: string, mode: string, targets: unknown, budget = 0) => 
 
 // ---- responses ----------------------------------------------------------------------------------------------------------
 // a saved return is the extractor's JSON, possibly inside the host's text blocks or with a line of text around it
-const MODES = new Set(['list', 'plan', 'chunk', 'fix', 'hidden']);
+const MODES = new Set(['list', 'plan', 'chunk', 'batch', 'fix', 'hidden']);
 const findResult = (x: any): any => {
   if (!x || typeof x !== 'object') return null;
   if (MODES.has(x.mode)) return x;
@@ -136,6 +136,14 @@ const plans = () => {
   return { boards, chunks };
 };
 const hashes: Record<string, any> = existsSync(hashesPath) ? read(hashesPath) : {};
+// boards with no component instance inside (2026-11-05): nothing can be hidden inside an instance, so they need no
+// hidden call. Known from the list call's instance count (a top-level node's `findAllWithCriteria` INSTANCE count).
+const instanceCount = (() => { const l = responses('list')[0]?.r; const m = new Map<string, number>();
+  for (const n of [...(l?.nodes ?? []), ...(l?.sections ?? []).flatMap((x: any) => x[x.length - 1])]) m.set(n[0], n[7]);
+  return m; })();
+const noInstances = (b: any) => b.type !== 'INSTANCE' && instanceCount.get(b.id) === 0;
+// a batch call (2026-11-05) returns several boards' chunks in one response: { mode: 'batch', parts: [chunk returns] }
+const chunkResponses = () => responses('chunk-').flatMap(({ f, r }) => r.mode === 'batch' ? r.parts.map((x: any) => ({ f, r: x })) : [{ f, r }]);
 
 // ---- shared board images (user, 2026-11-03) ---------------------------------------------------------------------------
 // One full-size image per board, committed in extracted/figma/ and listed in shots.json: the same folder and file the
@@ -150,7 +158,22 @@ const sharedShot = (id: string) => Object.entries(shots).find(([, v]) => v.board
 const shotCurrent = (id: string, fingerprint: string) => { const e = sharedShot(id)?.[1];
   return !!e && existsSync(join(shotDir, sharedShot(id)![0])) && (e.source_hash ? e.source_hash === fingerprint : !!e.hash && cbHashes[id]?.hash === e.hash); };
 const slug = (name: string) => name.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'board';
-const shotName = (id: string, name: string) => sharedShot(id)?.[0] ?? (n => shots[n] ? `${slug(name)}-${dash(id)}.png` : n)(`${slug(name)}.png`);
+// a name no other board's image has: shots.json, or another board named the same in this run (light and dark copies of a
+// frame share their name; 2026-11-05 two boards were given one file)
+const shotName = (id: string, name: string, taken = new Set<string>()) => sharedShot(id)?.[0] ??
+  (n => shots[n] && shots[n].board !== id || taken.has(n) ? `${slug(name)}-${dash(id)}.png` : n)(`${slug(name)}.png`);
+const pngSize = (p: string) => { const hd = readFileSync(p).subarray(16, 24); return [hd.readUInt32BE(0), hd.readUInt32BE(4)]; };
+// a shared image the casebook cut from a larger 1:1 render (a page region, a section) that holds the whole board and is
+// current (its hash is the region's latest in figma-hashes.json): the board is cropped from it, no screenshot is taken
+// (2026-11-05: a Design page of loose frames, already captured whole at 1:1, asked for 92 new screenshots)
+const coveringShot = (b: any) => { const [x, y, w, h] = b.box;
+  for (const [name, e] of Object.entries<any>(shots)) {
+    if (!e.box || e.tiles || !e.hash || cbHashes[e.board]?.hash !== e.hash) continue;
+    const [bx, by, bw, bh] = e.box, p = join(shotDir, name);
+    if (x < bx - 0.5 || y < by - 0.5 || x + w > bx + bw + 0.5 || y + h > by + bh + 0.5 || !existsSync(p) || Math.abs(pngSize(p)[0] - bw) > 1) continue;
+    return { name, box: e.box as number[] };
+  }
+  return null; };
 // 256 colours and no dithering, as figma-check.ts --shot does: about a fifth of the size, still 1 px = 1 pt
 const shrink = (png: string) => spawnSync('python3', ['-c', `import sys; from PIL import Image
 im = Image.open(sys.argv[1]); a = im.getchannel('A').getextrema()[0] if im.mode in ('RGBA', 'LA') else 255
@@ -167,25 +190,39 @@ if (cmd === 'calls' && sub === 'list') {
   const { boards, chunks } = plans();
   if (!boards.size) { console.error(`No plan responses in ${rel(respDir)}; run \`calls plan\` first`); process.exit(2); }
   const scale = Number(arg('scale') ?? 1), all = process.argv.includes('--all');
-  const calls = [], shotCalls = [], unchanged = [], reused = [];
+  const calls = [], shotCalls = [], unchanged = [], reused = [], covered = [], taken = new Set<string>();
+  // small whole boards (one chunk, a loose label, a small frame) share batch calls up to one chunk's budget
+  // (2026-11-05: 36 one-node labels on a page of loose frames asked for 72 calls)
+  const BATCH = Number(arg('batch') ?? 36000), small: any[][] = [];
   for (const [id, b] of boards) {
     if (!all && hashes[id]?.hash === b.hash) { unchanged.push(id); continue; }
-    for (const row of chunks.get(id) ?? []) calls.push(writeCall(`chunk-${dash(id)}_${row[1]}`, 'chunk', [row[0], row[1], row[2], row[4], row[5]]));
-    calls.push(writeCall(`hidden-${dash(id)}_0`, 'hidden', [id, 0]));
+    const rows = chunks.get(id) ?? [];
+    if (rows.length === 1 && rows[0][3] < BATCH / 2) small.push(rows[0]);
+    else for (const row of rows) calls.push(writeCall(`chunk-${dash(id)}_${row[1]}`, 'chunk', [row[0], row[1], row[2], row[4], row[5]]));
+    if (!noInstances(b)) calls.push(writeCall(`hidden-${dash(id)}_0`, 'hidden', [id, 0]));
     const [w, h] = (b.render ?? b.box).slice(2);
     const max = Math.ceil(Math.max(w, h) * scale);
     // a board this read saw before under another fingerprint has changed since: the casebook's image (fingerprinted by
     // its own, possibly older check) is only trusted when it was taken at this fingerprint (`source_hash`)
     const changed = !!hashes[id] && hashes[id].hash !== b.hash, e = sharedShot(id)?.[1];
     if (scale === 1 && shotCurrent(id, b.hash) && (!changed || e?.source_hash === b.hash)) { reused.push(id); continue; }
+    if (scale === 1 && coveringShot(b)) { covered.push(id); continue; }
+    const name = scale === 1 ? shotName(id, b.name, taken) : `${dash(id)}@${scale}.png`; taken.add(name);
     shotCalls.push(max <= 65536
-      ? { nodeId: id, maxDimension: max, fingerprint: b.hash, save_to: rel(join(shotDir, scale === 1 ? shotName(id, b.name) : `${dash(id)}@${scale}.png`)) }
+      ? { nodeId: id, maxDimension: max, fingerprint: b.hash, save_to: rel(join(shotDir, name)) }
       : { nodeId: id, note: `${Math.round(w)}×${Math.round(h)} is over get_screenshot's 65536 limit at scale ${scale}: take each screen from out/screens.json after merge` });
   }
-  const todo = { server, fileKey: file.fileKey, scale, unchanged, reused_shots: reused, chunk_calls: calls, screenshots: shotCalls };
+  for (let i = 0, n = 1; i < small.length; n++) {
+    const part: any[][] = []; let size = 0;
+    while (i < small.length && (!part.length || size + small[i][3] <= BATCH)) { size += small[i][3]; part.push(small[i++]); }
+    calls.push(part.length === 1 ? writeCall(`chunk-${dash(part[0][0])}_${part[0][1]}`, 'chunk', [part[0][0], part[0][1], part[0][2], part[0][4], part[0][5]])
+      : writeCall(`chunk-batch-${n}`, 'chunk', part.map(r => [r[0], r[1], r[2], r[4], r[5]])));
+  }
+  const todo = { server, fileKey: file.fileKey, scale, unchanged, reused_shots: reused, covered_shots: covered, chunk_calls: calls, screenshots: shotCalls };
   writeJson(join(callsDir, 'todo.json'), todo);
   console.log(`${calls.length} chunk call(s) and ${shotCalls.length} screenshot(s) for ${boards.size - unchanged.length} changed board(s); ${unchanged.length} unchanged` +
-    `${reused.length ? `; ${reused.length} board image(s) already current in ${rel(shotDir)}` : ''}.\nList: ${rel(join(callsDir, 'todo.json'))}`);
+    `${reused.length ? `; ${reused.length} board image(s) already current in ${rel(shotDir)}` : ''}` +
+    `${covered.length ? `; ${covered.length} board(s) cropped from a larger current image` : ''}.\nList: ${rel(join(callsDir, 'todo.json'))}`);
 } else if (cmd === 'save') save();
 else if (cmd === 'merge') merge();
 else if (cmd === 'crop') crop();
@@ -269,7 +306,7 @@ function merge() {
   const { boards, chunks } = plans();
   scope(boards);
   const got = new Map<string, any[]>();
-  for (const { f, r } of responses('chunk-')) {
+  for (const { f, r } of chunkResponses()) {
     if (r.mode !== 'chunk') continue;
     if (!got.has(r.board)) got.set(r.board, []);
     got.get(r.board)!.push({ ...r, f });
@@ -347,6 +384,7 @@ function merge() {
         const P = (iid[0] === 'I' ? iid : 'I' + iid) + ';', abs = (v: string | null) => v === null ? null : v === '' ? iid : P + v;
         return r.it[k].map((o: any) => ({ i: P + o.s, t: o.t, n: o.n, b: [r2(x + o.d[0]), r2(y + o.d[1]), o.d[2], o.d[3]], pi: abs(o.p), af: abs(o.a), src: o.src, tp: o.tp, ax: o.ax, sid: o.sid }));
       });
+      if (noInstances(b)) at = null;
       for (let r; at !== null && (r = got.get(at)); at = r.next) for (const h of [...r.nodes, ...fromIns(r)]) {
         hid.push(h);
         // a template row list: the layer's subtree, ids after the layer's instance prefix, boxes relative to the layer, siblings in order
@@ -411,6 +449,8 @@ function merge() {
     styles: [...lib.styles.values()].map(s => valued(s, `style:${s.type}:${s.name}`)),
     components: [...lib.components.values()],
   });
+  // each incomplete board's canvas box, so a region holding it stays unread for the design check (design-plan.ts)
+  for (const i of summary.incomplete) if (boards.get(i.board)?.box) i.box = boards.get(i.board).box;
   writeJson(join(outDir, 'summary.json'), summary);
   writeJson(hashesPath, hashes);
   console.log(`${summary.boards.length} board(s) merged (${summary.boards.reduce((s: number, b: any) => s + b.nodes, 0)} nodes, ${screens.length} screens, ${arrows.length} arrows) from ${summary.calls.plan} plan and ${summary.calls.chunk} chunk call(s); out: ${rel(outDir)}`);
@@ -418,8 +458,13 @@ function merge() {
   // a Design board the casebook inventories but no plan covers was never read (REQ-080): name it, so a design check
   // never starts without it (design.ts stops on it too)
   if (role === 'design') {
+    // a region board ("<parent>/<name>" with a box) is read when every planned board whose centre lies in it merged
+    // (2026-11-05: a page of loose frames the casebook cut into regions)
+    const inBox = (r: number[], x: number[]) => { const cx = x[0] + x[2] / 2, cy = x[1] + x[3] / 2; return cx >= r[0] && cx <= r[0] + r[2] && cy >= r[1] && cy <= r[1] + r[3]; };
+    const inside = (r: number[]) => [...boards.values()].filter(x => x.box && inBox(r, x.box));
+    const regionRead = (row: any[]) => String(row[0]).includes('/') && row.length >= 6 && (k => k.length > 0 && k.every(x => !summary.incomplete.some((i: any) => i.board === x.id)))(inside(row.slice(2, 6)));
     const unread = readdirSync(ex).filter(f => /^figma-inventory-.*\.json$/.test(f)).map(f => read(join(ex, f))).filter(d => d.file === file.fileKey)
-      .flatMap(d => (d.boards ?? []).filter((b: any[]) => !boards.has(b[0])).map((b: any[]) => `${b[0]} ${b[1]}`));
+      .flatMap(d => (d.boards ?? []).filter((b: any[]) => !boards.has(b[0]) && !regionRead(b)).map((b: any[]) => `${b[0]} ${b[1]}`));
     for (const b of new Set(unread)) console.log(`NOT READ ${b}: the casebook inventories this Design board; plan it (calls plan design ${b.split(' ')[0]}), run its calls, merge again`);
     if (unread.length && !summary.incomplete.length) process.exit(11);
   }
@@ -573,10 +618,12 @@ function crop() {
     // the image: the one this read's call saved, else the shared one, else an older local copy (out/shots, before 2026-11-03)
     const own = call && existsSync(join(ROOT, call.save_to)) && (!sharedShot(id)?.[1]?.source_hash || sharedShot(id)![1].source_hash !== call.fingerprint || join(ROOT, call.save_to) !== join(shotDir, sharedShot(id)![0]));
     const cands = [own && join(ROOT, call.save_to), sharedShot(id) && join(shotDir, sharedShot(id)![0]), join(outDir, 'shots', `${dash(id)}.png`)].filter(Boolean) as string[];
-    const png = cands.find(existsSync);
+    // else a larger current image holding the board (coveringShot): cropped with that image's box as its origin
+    const cov = cands.some(existsSync) ? null : coveringShot(b0);
+    const png = cov ? join(shotDir, cov.name) : cands.find(existsSync);
     if (!png) { report.push({ board: id, missing: rel(cands[0]), error: 'no board image' }); continue; }
-    const hd = readFileSync(png).subarray(16, 24), size = [hd.readUInt32BE(0), hd.readUInt32BE(4)];
-    const asked = own && png === join(ROOT, call.save_to) ? call.maxDimension : Math.ceil(Math.max(...(b0.render ?? b0.box).slice(2)));
+    const size = pngSize(png);
+    const asked = cov ? Math.max(cov.box[2], cov.box[3]) : own && png === join(ROOT, call.save_to) ? call.maxDimension : Math.ceil(Math.max(...(b0.render ?? b0.box).slice(2)));
     if (Math.abs(Math.max(...size) - asked) > 1) { report.push({ board: id, size, asked, error: 'screenshot is not the size asked for: take it again' }); continue; }
     // a new image (this read's call, or an older local copy) goes into the shared folder for every other computer
     if (own ? png === join(ROOT, call.save_to) : !png.startsWith(shotDir + '/')) {
@@ -586,7 +633,7 @@ function crop() {
       shots[name] = { board: id, group: null, hash: cbHashes[id]?.hash ?? null, source_hash: call?.fingerprint ?? hashes[id]?.hash ?? b0.hash, captured_at: new Date().toISOString() };
       shared++;
     }
-    const b = b0, cover = b.render ?? b.box, [ox, oy] = b.box, out = join(outDir, 'crops', dash(id));
+    const b = b0, cover = cov ? cov.box : b.render ?? b.box, [ox, oy] = b.box, out = join(outDir, 'crops', dash(id));
     const arrowCrops = arrows.filter(a => a.board === id).map(a => {
       const [x, w] = span(a.path.map((q: number[]) => q[0])), [y, h] = span(a.path.map((q: number[]) => q[1]));
       a.crop = rel(join(out, `arrow-${dash(a.id)}.png`));

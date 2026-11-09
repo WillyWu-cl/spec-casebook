@@ -1,0 +1,28 @@
+{
+ "screens": {
+  "2778:127414": {
+   "padding:I3172:101306;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The 「Generate」 button has more space around its word than the Design calls for: about 19 pt from the letters to each side against the Design's 17 pt. The Design draws a button that hugs its word with 16 pt padding left and right (96 × 34 pt on iOS). On Android the word is set in Roboto, which is narrower (letters 54 pt wide against 62 pt), so a button keeping 16 pt padding would be about 88–89 pt wide; the app's button is 92.6 × 33 pt, about 4 pt wider than that, i.e. about 2 pt of extra padding each side. The button still reads close to the Design (3.4 pt narrower than the iOS drawing), so this is cosmetic: RD may set the side padding to 16 pt (or drop a minimum width, if one is set) to match.",
+    "note_zh": "「Generate」按鈕文字兩側的留白比設計稿多：字到左右邊緣約 19 pt，設計稿約 17 pt。設計稿的按鈕寬度隨文字調整，左右內距 16 pt（iOS 上為 96 × 34 pt）。Android 使用 Roboto 字型，同一個字較窄（字寬 54 pt，設計稿 62 pt），若維持 16 pt 內距，按鈕應約 88–89 pt 寬；App 的按鈕為 92.6 × 33 pt，比此寬約 4 pt，即每側多約 2 pt 內距。按鈕整體看起來仍接近設計稿（比 iOS 圖窄 3.4 pt），屬外觀細節：RD 可將左右內距改為 16 pt（若有設定最小寬度則移除）以符合設計稿。"
+   }
+  },
+  "2778:127378": {
+   "padding:I3172:101313;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The 「Generate」 button has more space around its word than the Design calls for: about 19 pt from the letters to each side against the Design's 17 pt. The Design draws a button that hugs its word with 16 pt padding left and right (96 × 34 pt on iOS). On Android the word is set in Roboto, which is narrower (letters 54 pt wide against 62 pt), so a button keeping 16 pt padding would be about 88–89 pt wide; the app's button is 92.6 × 33 pt, about 4 pt wider than that, i.e. about 2 pt of extra padding each side. The button still reads close to the Design (3.4 pt narrower than the iOS drawing), so this is cosmetic: RD may set the side padding to 16 pt (or drop a minimum width, if one is set) to match.",
+    "note_zh": "「Generate」按鈕文字兩側的留白比設計稿多：字到左右邊緣約 19 pt，設計稿約 17 pt。設計稿的按鈕寬度隨文字調整，左右內距 16 pt（iOS 上為 96 × 34 pt）。Android 使用 Roboto 字型，同一個字較窄（字寬 54 pt，設計稿 62 pt），若維持 16 pt 內距，按鈕應約 88–89 pt 寬；App 的按鈕為 92.6 × 33 pt，比此寬約 4 pt，即每側多約 2 pt 內距。按鈕整體看起來仍接近設計稿（比 iOS 圖窄 3.4 pt），屬外觀細節：RD 可將左右內距改為 16 pt（若有設定最小寬度則移除）以符合設計稿。"
+   }
+  },
+  "3142:68240": {
+   "padding:I3172:101316;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The 「Generate」 button has more space around its word than the Design calls for: about 19 pt from the letters to each side against the Design's 17 pt. The Design draws a button that hugs its word with 16 pt padding left and right (96 × 34 pt on iOS). On Android the word is set in Roboto, which is narrower (letters 54 pt wide against 62 pt), so a button keeping 16 pt padding would be about 88–89 pt wide; the app's button is 92.6 × 33 pt, about 4 pt wider than that, i.e. about 2 pt of extra padding each side. The button still reads close to the Design (3.4 pt narrower than the iOS drawing), so this is cosmetic: RD may set the side padding to 16 pt (or drop a minimum width, if one is set) to match.",
+    "note_zh": "「Generate」按鈕文字兩側的留白比設計稿多：字到左右邊緣約 19 pt，設計稿約 17 pt。設計稿的按鈕寬度隨文字調整，左右內距 16 pt（iOS 上為 96 × 34 pt）。Android 使用 Roboto 字型，同一個字較窄（字寬 54 pt，設計稿 62 pt），若維持 16 pt 內距，按鈕應約 88–89 pt 寬；App 的按鈕為 92.6 × 33 pt，比此寬約 4 pt，即每側多約 2 pt 內距。按鈕整體看起來仍接近設計稿（比 iOS 圖窄 3.4 pt），屬外觀細節：RD 可將左右內距改為 16 pt（若有設定最小寬度則移除）以符合設計稿。"
+   }
+  }
+ }
+}

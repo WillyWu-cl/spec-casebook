@@ -1,0 +1,1 @@
+{"mode":"hidden","board":"585:14870","from":0,"next":null,"instances":1,"count":8,"read_at":"2026-11-06T03:31:56.922Z","nodes":[],"tpl":[],"it":[[{"s":"~530:5935","t":"VECTOR","n":"Rectangle","d":[3,3,18,18],"p":"","a":null,"src":"530:5935","sid":1}]],"ins":[["585:14870",0,0,0]],"unsure":[],"bytes":139,"took_ms":14}

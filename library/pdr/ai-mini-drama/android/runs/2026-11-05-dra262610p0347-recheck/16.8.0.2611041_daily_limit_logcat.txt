@@ -1,0 +1,33 @@
+# Daily Free Chat Limit, blocked send 14:07:26 (SM-A5360, 16.8.0.2611041 official, Stage, Free). App pid 14750. Window 14:06:44-14:07:45; ResourcesCompat stack traces and view/inset noise removed.
+2026-11-05 14:06:46.921 14750 14750 D MiniDramaPerf: t21 +0ms                          host   turn          user_prompt
+2026-11-05 14:06:46.924 14750 14785 D MiniDrama Log: [USER] How long will the video be?
+2026-11-05 14:06:46.925 14750 14785 D MiniDrama Log: [BLUEPRINT] sent (chars=2, shots=0, files=0, 0KB)
+2026-11-05 14:06:46.925 14750 14785 D MiniDrama Log: [BLUEPRINT] shot fill: no shots
+2026-11-05 14:06:46.934 14750 14785 D MiniDramaPerf: t21 +11ms–+14ms              3ms  host   send          blueprint_prepare              files=1  key=blueprint_prepare
+2026-11-05 14:06:46.938 14750 14785 D MiniDramaPerf: t21 +14ms–+17ms              3ms  host   send          native_send  key=native_send
+2026-11-05 14:06:53.288 14750 14785 D MiniDramaPerf: t21 +6.37s                        iris   event         turn_complete
+2026-11-05 14:06:53.290 14750 14785 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:06:53.290 14750 14785 D MiniDrama Log: [TURN] conversation turn: blueprint unchanged
+2026-11-05 14:06:53.299 14750 14785 D MiniDrama Log: [AI] The video consists of six scenes, running for a total of approximately 90 seconds.
+2026-11-05 14:06:53.302 14750 14785 D MiniDramaPerf: t21 +6.38s                        host   ui            reply_published
+2026-11-05 14:06:53.313 14750 14785 D MiniDrama Log: [SYS] reopened 1 question(s) from the blueprint
+2026-11-05 14:06:53.317 14750 14785 D MiniDramaPerf: t21 +6.37s–+6.40s           27ms  host   apply         apply_response  key=apply_response
+2026-11-05 14:06:53.331 14750 14750 D MiniDramaPerf: t21 +6.41s                        host   ui            ui_rendered
+2026-11-05 14:06:53.331 14750 14750 D MiniDramaPerf: t21 +6.41s                        host   turn          turn_end                       complete stage=-→-
+2026-11-05 14:07:17.900 14750 14750 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false
+2026-11-05 14:07:17.901 14750 14750 I AppCompatDelegate: The Activity's LayoutInflater already has a Factory installed so we can not install AppCompat's
+2026-11-05 14:07:17.904 14750 14750 I DecorView: setWindowBackground: isPopOver=false color=ff010102 d=android.graphics.drawable.InsetDrawable@1baf8f5
+2026-11-05 14:07:17.910 14750 14750 D ScrollView: initGoToTop
+2026-11-05 14:07:17.934 14750 14750 I DecorView: setWindowBackground: isPopOver=false color=ff1a1f25 d=android.graphics.drawable.GradientDrawable@4c258cf
+2026-11-05 14:07:20.160 14750 14750 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false
+2026-11-05 14:07:20.163 14750 14750 I AppCompatDelegate: The Activity's LayoutInflater already has a Factory installed so we can not install AppCompat's
+2026-11-05 14:07:20.167 14750 14750 I DecorView: setWindowBackground: isPopOver=false color=ff010102 d=android.graphics.drawable.InsetDrawable@3a9ec5b
+2026-11-05 14:07:20.175 14750 14750 D ScrollView: initGoToTop
+2026-11-05 14:07:20.222 14750 14750 D AbsListView:  in onLayout changed 
+2026-11-05 14:07:20.223 14750 14750 D ScrollView:  onsize change changed 
+2026-11-05 14:07:21.900 14750 14750 I Toast   : show: caller = ezk.a:27 
+2026-11-05 14:07:21.900 14750 14750 I Toast   : show: contextDispId = 0 mCustomDisplayId = -1 focusedDisplayId = 0 isActivityContext = false
+2026-11-05 14:07:27.126 14750 14750 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false
+2026-11-05 14:07:27.131 14750 14750 W ResourcesCompat: Failed to inflate ColorStateList, leaving it to the framework
+2026-11-05 14:07:27.131 14750 14750 W ResourcesCompat: java.lang.UnsupportedOperationException: Failed to resolve attribute at index 0: TypedValue{t=0x2/d=0x7f040137 a=-1}, theme={InheritanceMap=[id=0x7f1302bdcom.cyberlink.powerdirector.DRA140225_01:style/Theme.BaseDialog, id=0x103000bandroid:style/Theme.Dialog, id=0x1030005android:style/Theme], Themes=[com.cyberlink.powerdirector.DRA140225_01:style/Theme.BaseDialog, forced, com.cyberlink.powerdirector.DRA140225_01:style/AppTheme, forced, com.cyberlink.powerdirector.DRA140225_01:style/Theme.AppCompat.Empty, forced, android:style/Theme.DeviceDefault.Light.DarkActionBar, forced]}
+2026-11-05 14:07:27.136 14750 14750 I DecorView: setWindowBackground: isPopOver=false color=0 d=android.graphics.drawable.ColorDrawable@470bb8f

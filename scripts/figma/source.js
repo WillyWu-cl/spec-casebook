@@ -8,20 +8,22 @@
 //                        and the chunk table that splits every board's node list into calls of about __BUDGET__ bytes
 //                'chunk' returns the nodes [from, to) of one board, in the same walk order the plan used
 //   __TARGETS__  'list' / 'plan': JSON array of node ids on ONE page: a page, a section (its children are the boards)
-//                or a board. 'chunk': [boardId, from, to, firstId, lastId], a row of the plan's `chunks`
+//                or a board. 'chunk': [boardId, from, to, firstId, lastId], a row of the plan's `chunks`, or a list of
+//                such rows (2026-11-05, a batch: small whole boards such as loose labels read together in one call;
+//                returns { mode: 'batch', parts: [chunk returns] })
 //   __BUDGET__   bytes per chunk return (plan only; default 36000 leaves room under a 40 KB tool result)
 //   A chunk row with a sixth entry 'full' reads its range without shrinking. 'fix' mode: [boardId, [walk index…]] of
 //   copies whose check failed; returns only the inside nodes that differ from the first instance. 'hidden' mode:
 //   [boardId, first instance ordinal]; the layers hidden inside instances (see the hidden section).
 // Output tables are local to one return: records refer to paints (P), effects (E), text runs (T), auto layout (L),
 // prototype reactions (X), main components (M), variables (V) and styles (S) by index; figma-source.ts merge expands them.
-const MODE = __MODE__, TARGETS = __TARGETS__, BUDGET = __BUDGET__ || 36000, NOSHRINK = MODE === 'chunk' && TARGETS[5] === 'full';
+const MODE = __MODE__, TARGETS = __TARGETS__, BUDGET = __BUDGET__ || 36000, BATCH = MODE === 'chunk' && Array.isArray(TARGETS[0]), NOSHRINK = MODE === 'chunk' && !BATCH && TARGETS[5] === 'full';
 const t0 = Date.now();
 const MIXED = figma.mixed;
 const r2 = n => Math.round(n * 100) / 100;
 const hex = (c, a) => '#' + [c.r, c.g, c.b, a === undefined ? (c.a === undefined ? 1 : c.a) : a]
   .map(v => Math.round(v * 255).toString(16).padStart(2, '0')).join('');
-const firstId = TARGETS[0];
+const firstId = BATCH ? TARGETS[0][0] : TARGETS[0];
 const start = await figma.getNodeByIdAsync(firstId);
 if (!start) throw new Error(`node ${firstId} not found`);
 let page = start; while (page.type !== 'PAGE' && page.type !== 'DOCUMENT') page = page.parent;
@@ -405,9 +407,8 @@ if (MODE === 'fix') {
 }
 
 // ---- chunk --------------------------------------------------------------------------------------------------------------
-if (MODE === 'chunk') {
-  const [boardId, from, to, firstExpected, lastExpected] = TARGETS;
-  const bd = start;
+const chunkOf = async (row, bd) => {
+  const [boardId, from, to, firstExpected, lastExpected] = row;
   const origin = bd.absoluteBoundingBox ? [bd.absoluteBoundingBox.x, bd.absoluteBoundingBox.y] : [0, 0];
   const all = []; const count = walk(bd, (n, i, p, h) => all.push([n, p, h]));
   const drift = !all[from] || !all[to - 1] || all[from][0].id !== firstExpected || all[to - 1][0].id !== lastExpected;
@@ -426,6 +427,16 @@ if (MODE === 'chunk') {
   }
   return { mode: 'chunk', board: boardId, from, to, first, count, drift, full: NOSHRINK ? 1 : 0, origin: [r2(origin[0]), r2(origin[1])], read_at: new Date().toISOString(),
     tables: enc.T, nodes, bytes: enc.bytes.n, took_ms: Date.now() - t0 };
+};
+if (MODE === 'chunk' && !BATCH) return await chunkOf(TARGETS, start);
+if (MODE === 'chunk') {
+  const parts = [];
+  for (const row of TARGETS) {
+    const bd = await figma.getNodeByIdAsync(row[0]);
+    if (!bd) throw new Error(`node ${row[0]} not found`);
+    parts.push(await chunkOf(row, bd));
+  }
+  return { mode: 'batch', parts, took_ms: Date.now() - t0 };
 }
 
 // ---- hidden -------------------------------------------------------------------------------------------------------------

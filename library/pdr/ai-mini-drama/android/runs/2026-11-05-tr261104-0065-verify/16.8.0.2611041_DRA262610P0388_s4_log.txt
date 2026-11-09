@@ -1,0 +1,18 @@
+# Refund check, segment 4, 2026-11-05 (phone clock CST = UTC+8). Credit pill › Details opened 16:18:51-16:21:11.
+# P0388 (Stormbound): Scene 4 image s_img_2 charged (record 07:08:15Z = 15:08:15) and failed 15:08:14.913; preview TTS charged (07:08:11Z) and receipt failed 15:09:15.715. P0415 s4 (Salt Broth): img_2 charged (07:47:26Z) and failed 15:47:26.290.
+# The app's credit-history response (first page, 16:19:04) below, records newest first; no 'refund' or 'returned' category record after 14:54. The logcat line is cut after 13 records.
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama category=consume createTime=2026-11-05T07:47:26+00:00 detail=Text to Image
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama category=consume createTime=2026-11-05T07:47:25+00:00 detail=Text to Image
+creditUsage=-1 feature=TextToSpeech action=genaudio_1000_char_google_gemini3.8flash category=consume createTime=2026-11-05T07:47:19+00:00 detail=Text to Speech
+creditUsage=-1 feature=TextToSpeech action=genaudio_1000_char_google_gemini3.8flash category=consume createTime=2026-11-05T07:36:45+00:00 detail=Text to Speech
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama category=consume createTime=2026-11-05T07:36:09+00:00 detail=Text to Image
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama category=consume createTime=2026-11-05T07:36:09+00:00 detail=Text to Image
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama category=consume createTime=2026-11-05T07:36:08+00:00 detail=Text to Image
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_none_1k_aiminidrama category=consume createTime=2026-11-05T07:35:44+00:00 detail=Text to Image
+creditUsage=-1 feature=TextToSpeech action=genaudio_1000_char_google_gemini3.8flash category=consume createTime=2026-11-05T07:11:37+00:00 detail=Text to Speech
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama category=consume createTime=2026-11-05T07:08:15+00:00 detail=Text to Image
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama category=consume createTime=2026-11-05T07:08:14+00:00 detail=Text to Image
+creditUsage=-1 feature=TextToSpeech action=genaudio_1000_char_google_gemini3.8flash category=consume createTime=2026-11-05T07:08:11+00:00 detail=Text to Speech
+creditUsage=-3 feature=TextToImage action=genimage_1_img_openai_gptimage2.5sunburst_enable_1k_aiminidrama category=consume createTime=2026-11-05T07:07:41+00:00 detail=Text to Image
+# Balance (getMemberCreditRemain) after the check:
+2026-11-05 16:21:13.151   380   951 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28119, …

@@ -1,0 +1,47 @@
+{
+  "tr": "TR261106-0032",
+  "product": "PowerDirector Mobile for Android",
+  "tester": "ETHAN_HSU",
+  "template": "Standard Report",
+  "testingDate": "2026/11/06",
+  "version": "16.8.0",
+  "build": "2611061",
+  "buildDay": "1106",
+  "os": "Android 15",
+  "env": {
+    "device": "Samsung Galaxy A53 (SM-A5360) / Android 15",
+    "server": "Stage",
+    "account": "cltqauiap2@gmail.com (Pro)",
+    "testedBy": "AI agent (Claude Opus 5.5) driving the phone over Appium; verdicts and evidence reviewed by ETHAN_HSU",
+    "install": "APK from the TR's OneDrive folder (MD5 checked), installed over the previous build",
+    "scope": "the eBug created by ETHAN_HSU in this TR's verify list that is not reported in another QR (French copy)"
+  },
+  "observations": [
+    "With the app in French, one assistant line before the Create storyboard card is still English (「I have created the six-beat storyboard for Julian Cross and Lauren Hale in French.」)."
+  ],
+  "rows": [
+    {
+      "bug": "DRA262610P0424",
+      "result": "OK",
+      "summary": "the French format card reads 「1. Langue de la vidéo」 and the Create storyboard card reads 「Des crédits seront consommés pour cette tâche.」",
+      "images": [
+        "16.8.0.2611061_DRA262610P0424_01_format_card.png",
+        "16.8.0.2611061_DRA262610P0424_02_storyboard_card.png"
+      ],
+      "logs": [
+        "16.8.0.2611061_DRA262610P0424_log.txt"
+      ],
+      "title": "PDR-A 16.8.0 - [AIAgent][UI] AI Mini Drama: French copy: 「Crédits seront consommés」 lacks an article; 「Langage de la vidéo」",
+      "severity": "3",
+      "creator": "ETHAN_HSU"
+    }
+  ],
+  "osLanguage": "English",
+  "uploaded": {
+    "DRA262610P0424": [
+      "16.8.0.2611061_DRA262610P0424_01_format_card.png",
+      "16.8.0.2611061_DRA262610P0424_02_storyboard_card.png",
+      "16.8.0.2611061_DRA262610P0424_log.txt"
+    ]
+  }
+}

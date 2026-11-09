@@ -1,0 +1,244 @@
+{
+ "screens": {
+  "2778:129078": {
+   "border:2778:129084": {
+    "verdict": "ok",
+    "note": "The app draws the tile's 1 dp outline in dark grey #373B42, the same as the Design's #363B43 (Outline 03); the measurement missed it. Nothing to fix.",
+    "note_zh": "App 有畫縮圖卡的 1 dp 外框，深灰 #373B42，與 Design 的 #363B43（Outline 03）相同；量測時沒抓到。無需修正。"
+   }
+  },
+  "2778:128662": {
+   "padding:I2778:128710;2750:64270": {
+    "verdict": "ok",
+    "note": "「Create storyboard」 keeps about the same inset inside the blue card as the Design; the 3–4 pt measured comes from the group around it, where the app places the question 「The characters look great! Ready to create the storyboard?」 as plain chat text above the card instead of inside it. That layout difference is raised on the 「Looking good! Ready for the full video?」 card items.",
+    "note_zh": "「Create storyboard」在藍色卡片內的內距與 Design 大致相同；量到的 3–4 pt 來自外層群組：App 把問句「The characters look great! Ready to create the storyboard?」放在卡片上方當一般對話文字，而不是放在卡片內。這個版面差異在「Looking good! Ready for the full video?」卡片的項目中提出。"
+   },
+   "padding:I2778:128710;2750:64276": {
+    "verdict": "ok",
+    "note": "The cost number sits lower in the card only because the app's card has an extra line under its title (「Credits will be consumed for this task.」, the copy from the MX file); its inset from the card's bottom edge is within 3 pt of the Design. Not a padding difference. Same on every pay card.",
+    "note_zh": "費用數字在卡片中位置較低，只是因為 App 的卡片標題下多一行文字（「Credits will be consumed for this task.」，來自 MX 檔的文案）；它與卡片下緣的距離和 Design 相差不到 3 pt，不是內距問題。每張付費卡片都一樣。"
+   },
+   "padding:I2778:128710;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The 「Generate」 pill button is about 9 pt narrower than the Design (87 pt against 96 pt): about 2–3 pt less space each side of the label (Design about 17 pt a side, app about 15). The label still reads comfortably, so this is barely visible. Same button on every pay card (storyboard and full-video offers).",
+    "note_zh": "「Generate」膠囊按鈕比 Design 窄約 9 pt（87 pt 對 96 pt），文字兩側各少約 2–3 pt（Design 每側約 17 pt，App 約 15 pt）。文字仍清楚易讀，差異幾乎看不出。所有付費卡片（storyboard 與完整影片的提示）上的同一顆按鈕都一樣。"
+   },
+   "padding:I2778:128717;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:128718": {
+   "padding:I2778:128783;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:127550": {
+   "padding:I3142:67911;2750:118360": {
+    "verdict": "ok",
+    "note": "The app's settings card follows the newer MX layout (heading 「Choose your video settings」 and a three-way 「Best / Standard / Fast」 choice where this frame has 「Model」 with two options), so the length label sits lower in the card because of what is above it, not because of the card's padding. Same on all three settings-card screens.",
+    "note_zh": "App 的設定卡片採用較新的 MX 版面（標題「Choose your video settings」及「Best / Standard / Fast」三選一，此 frame 則是「Model」兩個選項），所以長度標籤在卡片中位置較低是因為上方內容不同，不是卡片內距。三個設定卡片畫面皆同。"
+   },
+   "padding:I2778:127611;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   },
+   "border:3142:67911": {
+    "verdict": "ok",
+    "note": "The app does draw the outline: a faint lighter 1 dp edge (about #253141) around the dark settings card, like the Design's faint gradient outline; the measurement missed it because it fades into the fill. Nothing to fix.",
+    "note_zh": "App 有畫外框：深色設定卡片周圍有一圈很淡、較亮的 1 dp 邊（約 #253141），與 Design 淡淡的漸層外框相同；量測時因它與底色相近而沒抓到。無需修正。"
+   }
+  },
+  "2778:127612": {
+   "padding:I3139:64913;4845:2156": {
+    "verdict": "ok",
+    "note": "The app's settings card follows the newer MX layout (heading 「Choose your video settings」 and a three-way 「Best / Standard / Fast」 choice where this frame has 「Model」 with two options), so the length label sits lower in the card because of what is above it, not because of the card's padding. Same on all three settings-card screens.",
+    "note_zh": "App 的設定卡片採用較新的 MX 版面（標題「Choose your video settings」及「Best / Standard / Fast」三選一，此 frame 則是「Model」兩個選項），所以長度標籤在卡片中位置較低是因為上方內容不同，不是卡片內距。三個設定卡片畫面皆同。"
+   },
+   "padding:I2778:127673;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   },
+   "border:3139:64913": {
+    "verdict": "ok",
+    "note": "The app does draw the outline: a faint lighter 1 dp edge (about #253141) around the dark settings card, like the Design's faint gradient outline; the measurement missed it because it fades into the fill. Nothing to fix.",
+    "note_zh": "App 有畫外框：深色設定卡片周圍有一圈很淡、較亮的 1 dp 邊（約 #253141），與 Design 淡淡的漸層外框相同；量測時因它與底色相近而沒抓到。無需修正。"
+   }
+  },
+  "2824:130900": {
+   "padding:I2824:130972;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:138663": {
+   "padding:I3142:68177;2750:118360": {
+    "verdict": "ok",
+    "note": "The app's settings card follows the newer MX layout (heading 「Choose your video settings」 and a three-way 「Best / Standard / Fast」 choice where this frame has 「Model」 with two options), so the length label sits lower in the card because of what is above it, not because of the card's padding. Same on all three settings-card screens.",
+    "note_zh": "App 的設定卡片採用較新的 MX 版面（標題「Choose your video settings」及「Best / Standard / Fast」三選一，此 frame 則是「Model」兩個選項），所以長度標籤在卡片中位置較低是因為上方內容不同，不是卡片內距。三個設定卡片畫面皆同。"
+   },
+   "padding:I2778:138724;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:127674": {
+   "padding:I2778:127741;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:127956": {
+   "padding:I2778:128018;2750:64266": {
+    "verdict": "question",
+    "note": "The Design draws 「Looking good! Ready for the full video?」 inside the outlined pay card, about 13 pt from its left edge; the app sets it as plain chat text above the card, flush with the other chat lines, and the card wraps only the blue offer. The app's card content follows the MX file (「Create the rest of the video (60 sec)」, 「Credits will be consumed for this task.」), so this may be the newer layout. Design or PM to rule which layout is meant; the same applies to the storyboard offer card (「The characters look great! Ready to create the storyboard?」).",
+    "note_zh": "Design 把「Looking good! Ready for the full video?」畫在有外框的付費卡片內，距左緣約 13 pt；App 則把它當一般對話文字放在卡片上方，與其他對話行對齊，卡片只包住藍色的提示區。App 的卡片內容依照 MX 檔（「Create the rest of the video (60 sec)」、「Credits will be consumed for this task.」），可能是較新的版面。請 Design 或 PM 判定應採哪種版面；storyboard 提示卡片（「The characters look great! Ready to create the storyboard?」）也是同樣情形。"
+   },
+   "padding:I2778:128018;2750:64276": {
+    "verdict": "ok",
+    "note": "The cost number sits lower in the card only because the app's card has an extra line under its title (「Credits will be consumed for this task.」, the copy from the MX file); its inset from the card's bottom edge is within 3 pt of the Design. Not a padding difference. Same on every pay card.",
+    "note_zh": "費用數字在卡片中位置較低，只是因為 App 的卡片標題下多一行文字（「Credits will be consumed for this task.」，來自 MX 檔的文案）；它與卡片下緣的距離和 Design 相差不到 3 pt，不是內距問題。每張付費卡片都一樣。"
+   },
+   "padding:I2778:128018;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The 「Generate」 pill button is about 9 pt narrower than the Design (87 pt against 96 pt): about 2–3 pt less space each side of the label (Design about 17 pt a side, app about 15). The label still reads comfortably, so this is barely visible. Same button on every pay card (storyboard and full-video offers).",
+    "note_zh": "「Generate」膠囊按鈕比 Design 窄約 9 pt（87 pt 對 96 pt），文字兩側各少約 2–3 pt（Design 每側約 17 pt，App 約 15 pt）。文字仍清楚易讀，差異幾乎看不出。所有付費卡片（storyboard 與完整影片的提示）上的同一顆按鈕都一樣。"
+   },
+   "padding:I2778:128024;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:127742": {
+   "padding:I2778:127804;2750:64266": {
+    "verdict": "question",
+    "note": "The Design draws 「Looking good! Ready for the full video?」 inside the outlined pay card, about 13 pt from its left edge; the app sets it as plain chat text above the card, flush with the other chat lines, and the card wraps only the blue offer. The app's card content follows the MX file (「Create the rest of the video (60 sec)」, 「Credits will be consumed for this task.」), so this may be the newer layout. Design or PM to rule which layout is meant; the same applies to the storyboard offer card (「The characters look great! Ready to create the storyboard?」).",
+    "note_zh": "Design 把「Looking good! Ready for the full video?」畫在有外框的付費卡片內，距左緣約 13 pt；App 則把它當一般對話文字放在卡片上方，與其他對話行對齊，卡片只包住藍色的提示區。App 的卡片內容依照 MX 檔（「Create the rest of the video (60 sec)」、「Credits will be consumed for this task.」），可能是較新的版面。請 Design 或 PM 判定應採哪種版面；storyboard 提示卡片（「The characters look great! Ready to create the storyboard?」）也是同樣情形。"
+   },
+   "padding:I2778:127804;2750:64276": {
+    "verdict": "ok",
+    "note": "The cost number sits lower in the card only because the app's card has an extra line under its title (「Credits will be consumed for this task.」, the copy from the MX file); its inset from the card's bottom edge is within 3 pt of the Design. Not a padding difference. Same on every pay card.",
+    "note_zh": "費用數字在卡片中位置較低，只是因為 App 的卡片標題下多一行文字（「Credits will be consumed for this task.」，來自 MX 檔的文案）；它與卡片下緣的距離和 Design 相差不到 3 pt，不是內距問題。每張付費卡片都一樣。"
+   },
+   "padding:I2778:127804;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The 「Generate」 pill button is about 9 pt narrower than the Design (87 pt against 96 pt): about 2–3 pt less space each side of the label (Design about 17 pt a side, app about 15). The label still reads comfortably, so this is barely visible. Same button on every pay card (storyboard and full-video offers).",
+    "note_zh": "「Generate」膠囊按鈕比 Design 窄約 9 pt（87 pt 對 96 pt），文字兩側各少約 2–3 pt（Design 每側約 17 pt，App 約 15 pt）。文字仍清楚易讀，差異幾乎看不出。所有付費卡片（storyboard 與完整影片的提示）上的同一顆按鈕都一樣。"
+   },
+   "padding:I2778:127810;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   },
+   "spacing:2778:127803-2778:127804": {
+    "verdict": "n/a",
+    "note": "Not a gap between buttons: the Design's 「video」 here is a 12 pt spacer under the video thumbnail, and the app element found is a 1 pt line. The space between the video and the next chat line looks about the same on both.",
+    "note_zh": "這不是按鈕之間的間距：Design 的「video」是影片縮圖下方 12 pt 的間隔元件，App 對到的是一條 1 pt 的線。影片與下一行對話之間的距離兩邊看起來差不多。"
+   }
+  },
+  "2778:127500": {
+   "padding:I2778:127524;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:128784": {
+   "padding:2778:128836": {
+    "verdict": "n/a",
+    "note": "The app box measured is a container about 9 pt above the drawn loading card. Against the card that is drawn, 「Creating your scene…」 sits about 17 pt below its top edge against the Design's 21 pt, about 4 pt less, at the limit and hard to see on a loading placeholder; the bottom inset differs only because the placeholder bars are laid out a little differently.",
+    "note_zh": "量到的 App 外框是比畫出來的載入卡片高約 9 pt 的容器。以實際畫出的卡片來看，「Creating your scene…」距卡片上緣約 17 pt，Design 為 21 pt，少約 4 pt，剛好在容許邊緣，在載入佔位畫面上很難察覺；下方內距不同只是因為佔位條的排列略有差異。"
+   },
+   "padding:I2778:128849;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:128300": {
+   "padding:I2778:128355;393:31121": {
+    "verdict": "ok",
+    "note": "The 「Create video」 reply bubble is about 3 pt narrower in all (left inset 14 pt against 17, right about the same); not visible on the screen.",
+    "note_zh": "「Create video」回覆氣泡整體窄約 3 pt（左側內距 14 pt 對 17 pt，右側相近），畫面上看不出差異。"
+   },
+   "padding:I2778:128367;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  },
+  "2778:138793": {
+   "padding:I2778:138855;2750:64276": {
+    "verdict": "ok",
+    "note": "The cost number sits lower in the card only because the app's card has an extra line under its title (「Credits will be consumed for this task.」, the copy from the MX file); its inset from the card's bottom edge is within 3 pt of the Design. Not a padding difference. Same on every pay card.",
+    "note_zh": "費用數字在卡片中位置較低，只是因為 App 的卡片標題下多一行文字（「Credits will be consumed for this task.」，來自 MX 檔的文案）；它與卡片下緣的距離和 Design 相差不到 3 pt，不是內距問題。每張付費卡片都一樣。"
+   },
+   "padding:I2778:138855;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The 「Generate」 pill button is about 9 pt narrower than the Design (87 pt against 96 pt): about 2–3 pt less space each side of the label (Design about 17 pt a side, app about 15). The label still reads comfortably, so this is barely visible. Same button on every pay card (storyboard and full-video offers).",
+    "note_zh": "「Generate」膠囊按鈕比 Design 窄約 9 pt（87 pt 對 96 pt），文字兩側各少約 2–3 pt（Design 每側約 17 pt，App 約 15 pt）。文字仍清楚易讀，差異幾乎看不出。所有付費卡片（storyboard 與完整影片的提示）上的同一顆按鈕都一樣。"
+   },
+   "padding:I2778:138861;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   },
+   "border:2778:138855": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "In light mode the Design outlines the pay card with a thin pale-blue line; the app's card behind the blue offer has no outline, only a very light grey fill. Barely visible on the light background. In dark mode the app's cards do draw their faint outline.",
+    "note_zh": "淺色模式下 Design 的付費卡片有一圈細的淡藍外框；App 藍色提示區後方的卡片沒有外框，只有很淺的灰色底。在淺色背景上幾乎看不出。深色模式下 App 的卡片有畫淡淡的外框。"
+   }
+  },
+  "2778:128606": {
+   "padding:I2778:128654;2750:64270": {
+    "verdict": "ok",
+    "note": "「Create storyboard」 keeps about the same inset inside the blue card as the Design; the 3–4 pt measured comes from the group around it, where the app places the question 「The characters look great! Ready to create the storyboard?」 as plain chat text above the card instead of inside it. That layout difference is raised on the 「Looking good! Ready for the full video?」 card items.",
+    "note_zh": "「Create storyboard」在藍色卡片內的內距與 Design 大致相同；量到的 3–4 pt 來自外層群組：App 把問句「The characters look great! Ready to create the storyboard?」放在卡片上方當一般對話文字，而不是放在卡片內。這個版面差異在「Looking good! Ready for the full video?」卡片的項目中提出。"
+   },
+   "padding:I2778:128654;2750:64276": {
+    "verdict": "ok",
+    "note": "The cost number sits lower in the card only because the app's card has an extra line under its title (「Credits will be consumed for this task.」, the copy from the MX file); its inset from the card's bottom edge is within 3 pt of the Design. Not a padding difference. Same on every pay card.",
+    "note_zh": "費用數字在卡片中位置較低，只是因為 App 的卡片標題下多一行文字（「Credits will be consumed for this task.」，來自 MX 檔的文案）；它與卡片下緣的距離和 Design 相差不到 3 pt，不是內距問題。每張付費卡片都一樣。"
+   },
+   "padding:I2778:128654;2750:64323;2750:25393": {
+    "verdict": "bug",
+    "severity": "cosmetic",
+    "note": "The 「Generate」 pill button is about 9 pt narrower than the Design (87 pt against 96 pt): about 2–3 pt less space each side of the label (Design about 17 pt a side, app about 15). The label still reads comfortably, so this is barely visible. Same button on every pay card (storyboard and full-video offers).",
+    "note_zh": "「Generate」膠囊按鈕比 Design 窄約 9 pt（87 pt 對 96 pt），文字兩側各少約 2–3 pt（Design 每側約 17 pt，App 約 15 pt）。文字仍清楚易讀，差異幾乎看不出。所有付費卡片（storyboard 與完整影片的提示）上的同一顆按鈕都一樣。"
+   },
+   "padding:I2778:128661;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The balance number in the 「credit」 pill sits about 6 pt nearer the coin icon and about 2 pt nearer the right edge than the Design draws (Design: 32 pt from the pill's left edge to the number, 12 pt on the right; app: 26 pt and about 10 pt). The gap between the coin and the number shrinks to about 5 pt, so a five-digit balance looks cramped; the larger sample balance does not explain it, since the pill hugs its number and the insets should stay the same. Same pill on every chat screen of the feature: one fix covers them all.",
+    "note_zh": "「credit」膠囊裡的餘額數字比 Design 更靠近金幣圖示約 6 pt、靠右邊緣約 2 pt（Design：膠囊左緣到數字 32 pt、右側 12 pt；App：26 pt 與約 10 pt）。金幣與數字的間距縮到約 5 pt，五位數餘額看起來很擠；這不是樣本數字較長造成的，膠囊包住數字，內距應維持不變。功能內每個對話畫面的同一顆膠囊都一樣，修一處即全部修正。"
+   }
+  }
+ }
+}

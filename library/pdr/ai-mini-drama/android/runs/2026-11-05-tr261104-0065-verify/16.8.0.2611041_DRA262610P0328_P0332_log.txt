@@ -1,0 +1,21 @@
+# P0328 / P0332 update turns 14:33-14:50
+2026-11-05 14:33:39.827 14750 18281 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:36:02.153 14750 19005 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:36:12.481 14750 18281 D MiniDrama Log: [USER] AnswerUpdateCharacter
+2026-11-05 14:36:14.857 14750 18286 D MiniDrama Log: [EVENT] {"args":{"asset_targets":["char_2552d016"],"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_142543_4f043971/host_inputs/blueprint.json","failures":[],"module":"asset_routed","route":{"confirm_answer":1,"from_char_leave":false,"global_config":{},"intent":"character_image","is_answer"
+2026-11-05 14:36:25.054 14750 18285 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_142543_4f043971_t4_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1 consumeTaskId=91680574 files=1
+2026-11-05 14:36:25.785 14750 18285 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_142543_4f043971_t4_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_tts_2 consumeTaskId=91680575 files=1
+2026-11-05 14:36:46.231 14750 18286 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_142543_4f043971_t4_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1
+2026-11-05 14:36:55.187 14750 18286 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_142543_4f043971_t4_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_tts_2
+2026-11-05 14:36:55.245 14750 18286 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:41:40.186 14750 18286 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:41:40.186 14750 18286 D MiniDrama Log: [TURN] conversation turn: blueprint unchanged
+2026-11-05 14:42:01.897 14750 14785 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:43:16.801 14750 18285 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 14:43:36.998 14750 20023 D MiniDrama Log: [USER] AnswerUpdateCharacter
+2026-11-05 14:43:40.833 14750 20023 D MiniDrama Log: [EVENT] {"args":{"asset_targets":["char_a789cfa9"],"blueprint_path":"/data/user/0/com.cyberlink.powerdirector.DRA140225_01/files/mini_drama/sessions/261105_142543_4f043971/host_inputs/blueprint.json","failures":[],"module":"asset_routed","route":{"confirm_answer":1,"from_char_leave":false,"global_config":{},"intent":"character_image","is_answer"
+2026-11-05 14:43:50.642 14750 14884 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_142543_4f043971_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_tts_2 consumeTaskId=91680593 files=1
+2026-11-05 14:43:51.305 14750 19006 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_142543_4f043971_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1 consumeTaskId=91680594 files=1
+2026-11-05 14:44:08.963 14750 14884 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_142543_4f043971_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_tts_2
+2026-11-05 14:44:15.410 14750 14884 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_142543_4f043971_t8_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1
+2026-11-05 14:44:15.459 14750 20023 D MiniDrama Log: [TURN] turn_complete: final_state=complete

@@ -9,26 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;750&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;600;700&display=swap">
 <style>
+/*__SHARED_CSS__*/
 /* Layout: status chips and two filters, then a grid of screen cards; a card opens the comparison (Figma | app, the
    differences boxed and listed). Same palette as Results. */
-:root {
-  --bg: #f4f6f6; --panel: #ffffff; --ink: #172426; --muted: #5b6b6e; --line: #d8e0e1; --accent: #0f6e73; --chip-bg: #eef2f2;
-  --differs: #b8402f; --question: #a86b12; --unreviewed: #6a55a8; --matches: #2f7d4f; --none: #9aa6a8; --info: #2c6fa8;
-  --display: "Archivo", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
-  --body: "Source Sans 3", "Noto Sans TC", "Segoe UI", system-ui, "PingFang TC", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd; --chip-bg: #213032;
-  --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; --info: #74b3ea; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd; --chip-bg: #213032;
-  --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; --info: #74b3ea; color-scheme: dark }
-* { box-sizing: border-box }
-[hidden] { display: none !important }
-body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px }
-.wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 18px }
+body { padding-block: 28px 56px }
+.wrap { display: grid; gap: 18px }
 h1 { font: 750 1.9rem var(--display); margin: 0; letter-spacing: -0.01em }
 .eyebrow { font: 600 0.72rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted) }
 .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap }
@@ -43,7 +28,7 @@ h1 { font: 750 1.9rem var(--display); margin: 0; letter-spacing: -0.01em }
    when a count or the Save label changes (user, 2026-11-04) */
 .tools.two { flex-direction: column; align-items: stretch }
 .tools.two .trow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
-.chip:disabled { opacity: 0.45; cursor: default }
+.chip:disabled { opacity: 0.6; cursor: default }
 #pcopy, #copy { min-width: 17rem; justify-content: center }
 .chip { font: 600 0.82rem var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 5px 12px; cursor: pointer; display: inline-flex; gap: 6px; align-items: center }
 .chip i { width: 9px; height: 9px; border-radius: 2px; display: inline-block }
@@ -94,13 +79,17 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .items { display: grid; gap: 8px; align-content: start; padding: 6px }
 .it { border: 1px solid var(--line); border-left: 4px solid var(--none); border-radius: 6px; padding: 8px 10px; font-size: 0.86rem; display: grid; gap: 3px }
 /* hover: a thin dashed outline; selected (a box or its item clicked): the Coverage page's mark, a white ring between
-   two black ones just outside, the item's border in its verdict colour (user, 2026-11-05) */
+   two black ones just outside, the item's border in its verdict colour (user, 2026-11-05). On the images the marks are
+   the Coverage page's own: a dashed white ring for hover, a white ring on a black one for the selection (user, 2026-11-06) */
 .it.hl { outline: 2px dashed var(--muted); outline-offset: 2px }
 .it.pick { outline: 0; border-color: var(--vc); box-shadow: 0 0 0 1.5px #000, 0 0 0 4px #fff, 0 0 0 5.5px #000 }
 .it.flash { animation: pick 1.2s ease-out }
 @keyframes pick { from { background: color-mix(in srgb, var(--accent) 30%, transparent) } to { background: transparent } }
-.box.hl { stroke-width: 3 }
 .ring { fill: none; pointer-events: none }
+.it .plain { font-size: 0.95rem; line-height: 1.45 }
+.it .note b { font-weight: 600 }
+.it details.how > summary { cursor: pointer; color: var(--muted); font-size: 0.8rem }
+.it details.how[open] { display: grid; gap: 3px }
 .it .h { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap }
 .it .num { font: 700 0.8rem var(--mono); color: #fff; border-radius: 4px; padding: 0 6px }
 .it .k { font: 600 0.78rem var(--mono) }
@@ -109,7 +98,22 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .grp > summary { font: 600 0.78rem var(--body); text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; padding: 2px 0 }
 .it q { quotes: "「" "」"; overflow-wrap: anywhere }
 .it .note { color: var(--muted) }
+.card .cnt { font-size: 0.78rem; font-weight: 600 } .card .cnt b { font-weight: 600 }
+.ncb { grid-column: 1 / -1; justify-self: center; margin-top: 6px }
+.df { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding: 8px 16px; border-top: 1px solid var(--line); background: var(--panel) }
+#dsave { margin-left: auto }
+.sn { margin-top: 10px } .sn > summary { cursor: pointer; color: var(--muted); font-size: 0.82rem } .sn p { margin: 6px 0 0 }
+.route { margin-top: 10px }
+.crs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 4px 0 2px }
+.cr { margin: 0; min-width: 0 } .cr figcaption { font: 600 0.68rem var(--mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted) }
+.cw { position: relative; overflow: hidden; border-radius: 4px; background: var(--chip-bg) }
+.cz { position: absolute; overflow: hidden } .cz img { display: block; width: 100% } .cz img.cut { position: absolute; width: auto }
+.cw > i { position: absolute; border: 2px solid; border-radius: 2px; pointer-events: none }
 .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--line); vertical-align: -1px }
+.ct { border-collapse: collapse; margin: 4px 0; font-size: 12px }
+.ct th { text-align: left; font-weight: 500; color: var(--muted, inherit); padding: 2px 12px 2px 0 }
+.ct td { padding: 2px 12px 2px 0; vertical-align: top; white-space: nowrap }
+.ct td code { display: block; font-size: 11px; color: var(--muted); white-space: normal }
 .more { font-size: 0.82rem; color: var(--muted) }
 .dec { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; margin-top: 2px }
 .dec button { font: 600 0.74rem var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 5px; padding: 2px 8px; cursor: pointer }
@@ -129,6 +133,11 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .frame .zm { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in }
 .lb { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; background: rgba(10, 16, 18, 0.85); cursor: zoom-out }
 .lb .frame { height: calc(100dvh - 32px); width: auto; max-width: calc(100vw - 32px) }
+.crs { cursor: zoom-in; border-radius: 4px }
+.crs:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.lb .crs { cursor: zoom-out; margin: 0; gap: 16px; width: min(calc(100vw - 32px), calc((100dvh - 72px) * var(--r) * 2 + 16px)) }
+.lb .crs.one { grid-template-columns: minmax(0, 1fr); width: min(calc(100vw - 32px), calc((100dvh - 72px) * var(--r))) }
+.lb .cr figcaption { color: #e3ecec; font-size: 0.8rem; margin-bottom: 4px }
 .lb .frame.plain { height: auto; max-height: calc(100dvh - 32px); overflow: auto }
 /* Plan view: the scope, then one line per screen grouped by board, each with Include / Exclude and a reason */
 .views { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel) }
@@ -149,7 +158,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .pbh { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 6px }
 .pr { display: grid; grid-template-columns: 88px minmax(0, 1.2fr) minmax(0, 1.6fr) minmax(220px, 1fr); gap: 10px; align-items: center;
   background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--matches); border-radius: 6px; padding: 6px 10px; font-size: 0.86rem }
-.pr.x { border-left-color: var(--none); opacity: 0.72 } .pr.flag { border-left-color: var(--question) } .pr.chg { box-shadow: 0 0 0 2px var(--unreviewed) }
+.pr.x { border-left-color: var(--none); opacity: 0.82 } .pr.flag { border-left-color: var(--question) } .pr.chg { box-shadow: 0 0 0 2px var(--unreviewed) }
 .pr.todo { border-left-color: var(--differs); background: color-mix(in srgb, var(--differs) 7%, var(--panel)) }
 .pr .ask { grid-column: 2 / -1; font-size: 0.82rem; color: var(--ink) } .pr .ask b { color: var(--differs) }
 .pr.todo .dc button { border-color: var(--differs) }
@@ -202,7 +211,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
   <h1 id="h1"></h1>
   <div class="meta" id="meta"></div>
   <div class="bar" id="bar"></div>
-  <section class="usage" id="usage" aria-labelledby="usage-h" hidden></section>
+  <section class="ubox usage" id="usage" aria-labelledby="usage-h" hidden></section>
   <div id="planv" hidden>
     <section class="scope" id="scope"></section>
     <div class="tools two">
@@ -236,6 +245,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 </div>
 <dialog id="dlg"></dialog>
 <script>
+/*__SHARED_JS__*/
 let D = __DATA__;
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -253,14 +263,17 @@ const T = {
     fitNote: (t, b) => `Fit offset: top ${t} pt, bottom ${b} pt`, allKinds: 'All differences', copy: n => `Copy decisions (${n})`, copied: 'Copied',
     bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', boxes: 'Boxes',
     doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click to see it full size', dwhy: 'Why it is not a problem (required)', dwhyOpt: 'Note (optional)',
-    needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`, srcApp: 'app data', srcAppT: "Read from the app's own view data (exact), not from the screenshot",
+    needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`, colSet: 'Set to', colDrawn: 'On screen', colDrawnT: 'The colour as drawn on the image, sampled from the pixels', colDiff: (a, b) => `Difference ΔE ${a} as set${b != null ? `, ${b} on screen` : ''}`, srcApp: 'app data', srcAppT: "Read from the app's own view data (exact), not from the screenshot",
+    revNote: 'Review:', howMeasured: 'How it was measured', secondRev: 'Second review:',
     viewsNote: (m, n, sc) => `App view data: ${m} of the matched texts read exactly (${n} texts in the dump)${sc !== 1 ? `; the phone's font scale is ${sc}` : ''}.`,
+    screenNotes: 'How this screen was measured', prev: 'Previous', next: 'Next', posn: (i, n) => `${i} of ${n} screens`, showNC: n => `Show ${n} screens not captured yet`, hideNC: 'Hide screens not captured yet',
+    tally: (b, q) => `${b} bugs · ${q} questions`, bugsN: n => `${n} bug${n > 1 ? 's' : ''}`, qsN: n => `${n} question${n > 1 ? 's' : ''}`,
     hiddenNote: n => `${n} text(s) of the page source are not on the screen (under another layer, or a button's accessibility name) and were left out.`,
     noOcr: 'The screenshot was not read (OCR runs on macOS): lines, text size and hidden texts come from the view boxes.',
     fontNote: (w, n) => `This platform draws Figma's font ${Math.round(Math.abs(1 - w) * 100)} % ${w < 1 ? 'narrower' : 'wider'} on average (${n} texts read on both sides): text size is judged against that.`, outNote: n => `${n} area(s) of other features left out of the check (dashed on the Figma side).`, outT: 'Another feature: not checked',
     now: { fixed: 'fixed', still: 'still there', check: 'look again' }, designPath: 'Design path', byArrows: 'Reached by the Design arrows',
     gap: 'No casebook row reaches this screen: a gap for the analysis.', pfit: { path: 'arrow path', variant: 'state beside a reached screen', entry: 'first screen of a flow' },
-    views: { plan: 'Plan', results: 'Results' }, scope: 'Scope', reviewed: (d, n) => `Reviewed ${d}${n ? ` · ${n} new since` : ''}`, notReviewed: 'Not reviewed yet',
+    views: { plan: 'Capture plan', results: 'Findings' }, scope: 'Scope', reviewed: (d, n) => `Reviewed ${d}${n ? ` · ${n} new since` : ''}`, notReviewed: 'Not reviewed yet',
     sFigma: 'Figma read', sScreens: 'Screens', sMeasured: 'Measured on every capture', sLooked: 'Looked at by the two review passes', sNot: 'Not covered',
     boardsRead: (n, d) => `${n} boards read${d ? `, ${d}` : ''}`, specSet: s => `spec set ${s}`,
     unread: 'Not read yet: its screens are not in this plan. Read it before the check, or exclude it with a reason.', partial: 'Read incompletely: its screens are left out until the read finishes.', unreadS: 'not read yet', partialS: 'read incomplete',
@@ -296,14 +309,17 @@ const T = {
     fitNote: (t, b) => `對齊位移：上 ${t} pt，下 ${b} pt`, allKinds: '全部差異', copy: n => `複製決定（${n}）`, copied: '已複製',
     bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', boxes: '框線',
     doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點一下看原尺寸', dwhy: '為什麼不是問題（必填）', dwhyOpt: '備註（選填）',
-    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, srcApp: 'App 資料', srcAppT: '取自 App 自身的 view 資料（精確值），不是截圖',
+    needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, colSet: '設定值', colDrawn: '畫面上', colDrawnT: '圖上實際畫出的顏色，取自像素', colDiff: (a, b) => `差異 ΔE：設定值 ${a}${b != null ? `，畫面上 ${b}` : ''}`, srcApp: 'App 資料', srcAppT: '數值取自 App 本身的版面資料（精確值），不是從截圖量的',
+    revNote: '審查說明：', howMeasured: '量測細節', secondRev: '第二位審查：',
     viewsNote: (m, n, sc) => `App view 資料：配對的文字中 ${m} 段取得精確值（dump 共 ${n} 段文字）${sc !== 1 ? `；手機字型縮放為 ${sc}` : ''}。`,
+    screenNotes: '此畫面的量測說明', prev: '上一個', next: '下一個', posn: (i, n) => `第 ${i} / ${n} 個畫面`, showNC: n => `顯示 ${n} 個尚未擷取的畫面`, hideNC: '隱藏尚未擷取的畫面',
+    tally: (b, q) => `${b} 個問題 · ${q} 個待確認`, bugsN: n => `${n} 個問題`, qsN: n => `${n} 個待確認`,
     hiddenNote: n => `頁面原始碼中有 ${n} 段文字不在畫面上（在其他圖層下，或是按鈕的無障礙名稱），已排除。`,
     noOcr: '擷取圖未經文字辨識（OCR 只在 macOS 執行）：行數、文字大小與隱藏文字改用元件框判斷。',
     fontNote: (w, n) => `此平台呈現 Figma 字型平均${w < 1 ? '窄' : '寬'} ${Math.round(Math.abs(1 - w) * 100)}%（兩邊都辨識到的 ${n} 段文字）：文字大小以此為基準判斷。`, outNote: n => `${n} 個其他功能的區域不比對（Figma 圖上的虛線框）。`, outT: '其他功能：不比對',
     now: { fixed: '已修正', still: '仍存在', check: '需再看' }, designPath: 'Design 路徑', byArrows: '依 Design 箭頭到達',
     gap: '沒有任何測試表案例到達此畫面：分析需補上。', pfit: { path: '箭頭路徑', variant: '已到達畫面旁的狀態', entry: '流程的第一個畫面' },
-    views: { plan: '計畫', results: '結果' }, scope: '範圍', reviewed: (d, n) => `已審查 ${d}${n ? ` · 之後新增 ${n} 個` : ''}`, notReviewed: '尚未審查',
+    views: { plan: '擷取計畫', results: '比對結果' }, scope: '範圍', reviewed: (d, n) => `已審查 ${d}${n ? ` · 之後新增 ${n} 個` : ''}`, notReviewed: '尚未審查',
     sFigma: 'Figma 讀取', sScreens: '畫面', sMeasured: '每張擷取圖自動量測', sLooked: '由兩輪審查人工檢視', sNot: '不在範圍內',
     boardsRead: (n, d) => `已讀取 ${n} 個畫板${d ? `，${d}` : ''}`, specSet: s => `規格 ${s}`,
     unread: '尚未讀取：此畫板的畫面不在計畫中。請先讀取再檢查，或註明原因排除。', partial: '讀取未完成：讀取完成前不含此畫板的畫面。', unreadS: '尚未讀取', partialS: '讀取未完成',
@@ -338,9 +354,11 @@ const COL = s => `var(--${({ differs: 'differs', question: 'question', unreviewe
 const VN = { en: { bug: 'Bug', question: 'Question', ok: 'OK', 'n/a': 'N/A', unreviewed: 'Unreviewed', info: 'Info' }, zh: { bug: '問題', question: '待確認', ok: '一致', 'n/a': '無法判定', unreviewed: '未審查', info: '資訊' } };
 // Info and N/A in readable colours, not the faint grey (user, 2026-11-04)
 const VC = v => `var(--${({ bug: 'differs', question: 'question', unreviewed: 'unreviewed', ok: 'matches', info: 'info', 'n/a': 'muted' })[v] ?? 'none'})`;
-const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', weight: 'Font weight', radius: 'Corner radius', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
-  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', weight: '字重', radius: '圓角', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
+const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', weight: 'Font weight', radius: 'Corner radius', padding: 'Padding', align: 'Centring', border: 'Border', spacing: 'Spacing', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
+  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', weight: '字重', radius: '圓角', padding: '內距', align: '置中', border: '邊框', spacing: '按鍵間距', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
 const PAGES = window.CASEBOOK?.pages ?? {};
+// Save goes to this computer only; a viewer on another computer gets Copy instead (decided once, at load)
+const canSave = D.live && D.save !== false;
 let st = '', board = '', kind = '', q = '', open = null, showInfo = true, noBoxes = false;
 const folded = new Set();   // verdict groups folded on the open comparison: kept when it is drawn again
 // the user's decisions: run|screen|id → { v: bug | ok | n/a, ebug: true | false, why, b: the passes' verdict, w0: the
@@ -352,7 +370,8 @@ const dkey = (s, it) => `${s.run}|${s.id}|${it.id}`;
 function copyBtn() {
   const n = Object.keys(DEC).length, b = $('copy');
   // always there, greyed out with nothing to save, so the bar does not shift (user, 2026-11-04)
-  b.disabled = !n; b.textContent = D.live ? t('save')(n) : t('copy')(n);
+  b.disabled = !n; b.textContent = canSave ? t('save')(n) : t('copy')(n);
+  const d = $('dsave'); if (d) { d.disabled = b.disabled; d.textContent = b.textContent; }
 }
 $('copy').onclick = async () => {
   const lines = [`DESIGN DECISIONS ${D.feature} ${D.platform}`];
@@ -362,7 +381,7 @@ $('copy').onclick = async () => {
   for (const [k, d] of Object.entries(DEC)) { const [run, scr, id] = k.split('|'), v = d.v ?? d.b;
     if (v && (d.v || d.why !== undefined)) lines.push(`${run} ${scr} ${id}: ${v}${whyOf(d) ? `: ${whyOf(d)}` : ''}`);
     if (d.ebug === true) lines.push(`${run} ${scr} ${id}: eBug`); else if (d.ebug === false) lines.push(`${run} ${scr} ${id}: no eBug`); }
-  if (D.live) {
+  if (canSave) {
     $('copy').disabled = true; $('copy').textContent = t('saving');
     try { await post('decide', lines.join('\n')); DEC = {}; saveDec(); location.reload(); } catch (e) { alert(`${t('saveFail')}\n${e.message}`); $('copy').disabled = false; copyBtn(); }
     return;
@@ -375,10 +394,14 @@ $('board').onchange = e => { board = e.target.value; grid(); };
 
 // a Figma image: the crop as is, or the board screenshot cut to the screen (width, left and margin-top in % of the
 // frame's width, so the cut holds whatever height the frame has)
-function fig(f, lazy = true) {
+// Images load in the background (user, 2026-11-06): a screen card shows a small copy, a comparison the full image with
+// that small copy behind it until it arrives (r: the width / height to hold the place). Full quality wherever things are compared.
+const small = src => `${src}?thumb`;
+const behind = (src, r) => D.live && r ? ` style="aspect-ratio:auto ${r};background:url('${esc(small(src))}') center/100% 100% no-repeat"` : '';
+function fig(f, lazy = true, r = 0) {
   if (!f) return '';
-  const ld = lazy ? ' loading="lazy"' : '';
-  if (!f.crop) return `<img src="${esc(f.src)}" alt=""${ld}>`;
+  const ld = lazy ? ' loading="lazy" decoding="async"' : ' decoding="async"';
+  if (!f.crop) return `<img src="${esc(lazy && D.live ? small(f.src) : f.src)}" alt=""${ld}${lazy ? '' : behind(f.src, r)}>`;
   const [x, y, w] = f.crop, k = 100 / w;
   return `<img class="cut" src="${esc(f.src)}" alt=""${ld} style="width:${f.iw * k}%;left:${-x * k}%;top:0;margin-top:${-y * k}%">`;
 }
@@ -413,7 +436,7 @@ $('pq').oninput = e => { pq = e.target.value.trim().toLowerCase(); planList(); }
 // Save (served live): the choices go to design.ts scope, which writes plan.json; the scope counts as reviewed once no
 // screen still needs a decision. Opened as a file, the same block is copied for the chat instead.
 const pbtn = () => { const n = changedIds().length, left = D.screens.filter(lookOf).length, b = $('pcopy');
-  b.textContent = D.live ? t('psave')(n, left) : t('pcopy')(n); b.disabled = D.live && !n && (left || D.review); b.classList.toggle('go', !!n && !left); };
+  b.textContent = canSave ? t('psave')(n, left) : t('pcopy')(n); b.disabled = canSave && !n && (left || D.review); b.classList.toggle('go', !!n && !left); };
 // a saved choice is gone from this browser; the page then shows what plan.json holds
 const post = async (cmd, block) => { const r = await fetch(`apply/${cmd}`, { method: 'POST', headers: { 'content-type': 'text/plain' }, body: block });
   const j = await r.json().catch(() => ({ error: r.statusText })); if (!r.ok || j.error) throw new Error(j.error || r.statusText); return j; };
@@ -513,7 +536,7 @@ const tokTitle = u => tx(`${u.messages} msgs · input ${num(u.input)} · cache w
   `${u.messages} 則訊息 · 輸入 ${num(u.input)} · 快取寫入 ${num(u.cacheWrite)} · 快取讀取 ${num(u.cacheRead)} · 輸出 ${num(u.output)}`);
 const fmtP = v => v < 9.95 ? `${v.toFixed(1)}%` : `${Math.round(v)}%`;
 const pct = (v, approx, none) => v == null ? `<span class="none">${none}</span>` : `${approx ? '≈' : ''}${Math.round(v)}%`;
-const utc = s => esc(String(s).slice(5, 16).replace('T', ' '));
+const utc = s => esc(cbWhen(s));
 const seatLabel = s => !s ? '' : (s.seats?.length ? s.seats.map(m => m === 1 ? 'Pro 1×' : `${m}× Pro`).join(' + ') : tx('seat unknown', '席位不明')) + (s.readings ? '' : `, ${tx('no readings', '無讀數')}`);
 const seatEq = (v, s) => { const m = s?.seats?.length === 1 && s.seats[0] !== 1 ? s.seats[0] : null; return m && v != null ? `<span class="eq">${tx(`= ${fmtP(v / m)} of ${m}× seat`, `= ${m}× 席位的 ${fmtP(v / m)}`)}</span>` : ''; };
 function renderUsage() {
@@ -529,17 +552,16 @@ function renderUsage() {
   const kind = r => r.kind === 'pass' ? tx('design pass', '設計比對專跑') : tx(`casebook run${r.phase ? ` ${r.phase}` : ''}`, `測試表執行${r.phase ? ` ${r.phase}` : ''}`);
   const caps = r => r.auto || r.hand ? tx(` · captures: ${r.auto} automatic, ${r.hand} by hand`, ` · 擷取：自動 ${r.auto}、手動 ${r.hand}`) : '';
   const dot = on => on ? ' <span class="live"><i></i></span>' : '';
-  const body = runs.map(r => (r.design ? full(`<b>${esc(r.id)}</b>${dot(r.live)}<span class="eq">${esc(kind(r) + caps(r))}</span><span class="eq">${utc(r.design.from)} → ${utc(r.design.to)} UTC</span>`, r.design)
+  const body = runs.map(r => (r.design ? full(`<b>${esc(r.id)}</b>${dot(r.live)}<span class="eq">${esc(kind(r) + caps(r))}</span><span class="eq">${esc(cbSpan(r.design.from, r.design.to, L))}</span>`, r.design)
       : `<tr><td><b>${esc(r.id)}</b><span class="eq">${esc(kind(r) + caps(r))}</span></td><td colspan="9" class="none">${tx('no design work timed yet', '尚未記錄設計比對的作業時間')}</td></tr>`)
-    + (r.run ? full(`${tx('Run the captures rode on (same as Progress, not added)', '擷取圖附帶的這次執行（與「進度」頁相同，不相加）')}${dot(r.runLive)}<span class="eq">${utc(r.run.from)} → ${utc(r.run.to)} UTC · ${esc(seatLabel(r.run))}</span>`, r.run, 'sub', false) : '')).join('');
+    + (r.run ? full(`${tx('Run the captures rode on (same as Progress, not added)', '擷取圖附帶的這次執行（與「進度」頁相同，不相加）')}${dot(r.runLive)}<span class="eq">${esc(cbSpan(r.run.from, r.run.to, L))} · ${esc(seatLabel(r.run))}</span>`, r.run, 'sub', false) : '')).join('');
   const sum = k => ps.some(p => p.design[k] != null) ? ps.reduce((a, p) => a + (p.design[k] ?? 0), 0) : null;
   const z = { wall: 0, test: 0, idle: 0, gaps: 0, tokens: { input: 0, cacheWrite: 0, cacheRead: 0, output: 0, messages: 0 } };
   for (const p of ps) { for (const k of ['wall', 'test', 'idle', 'gaps']) z[k] += p.design[k]; for (const k in z.tokens) z.tokens[k] += p.design.tokens[k]; }
   const outside = U.outside5 || U.outsideW ? `<tr><td>${tx('Outside the design check', '設計比對以外')}</td><td></td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n est">—</td><td class="n est">—</td>${acctCells(U.outside5, U.outsideW, U.approx)}</tr>` : '';
   const total = ps.length > 1 ? row(tx('Design check total', '設計比對合計'), '', { ...z, wt: sum('wt') }, 'tot round') + estCells(ps.every(p => p.design.noTokens) ? { est5: null, estW: null, noTokens: true } : { est5: sum('est5'), estW: sum('estW') }) + acctCells(sum('fiveHour'), sum('weekly'), ps.some(p => p.design.approx)) + '</tr>' : '';
   const acctTitle = tx("Snapshot increments during the design check's active time, including other users of the account", '設計比對期間帳號用量快照的增加量，包含帳號的其他使用者');
-  const head = `<thead><tr><th rowspan="2">${tx('Run', '執行')}</th><th rowspan="2">${tx('Account', '帳號')}</th><th class="n" rowspan="2">${tx('Wall', '總時長')}</th><th class="n" rowspan="2">${tx('Test', '測試')}</th><th class="n" rowspan="2">${tx('Idle &gt;15 min', '閒置 &gt;15 分')}</th><th class="n" rowspan="2">${tx('Claude tokens', 'Claude token')}</th><th class="grp" colspan="2">${tx('Est. from token rate, % of 1× Pro', '依 token 率估計（1× Pro 的 %）')}</th><th class="grp acct" colspan="2">${tx('Account total (shared), % of 1× Pro', '帳號合計（共用，1× Pro 的 %）')}</th></tr>
-    <tr><th class="n">${tx('5-hour', '5 小時')}</th><th class="n">${tx('Weekly (rough)', '每週（粗估）')}</th><th class="n acct" title="${acctTitle}">${tx('5-hour', '5 小時')}</th><th class="n acct" title="${acctTitle}">${tx('Weekly', '每週')}</th></tr></thead>`;
+  const head = `<thead><tr><th>${tx('Run', '執行')}</th><th>${tx('Seat', '席位')}</th><th class="n">${tx('Wall', '總時長')}</th><th class="n">${tx('Test', '測試')}</th><th class="n" title="${tx('Gaps over 15 minutes', '超過 15 分鐘的間隔')}">${tx('Idle', '閒置')}</th><th class="n">${tx('Tokens', 'Token')}</th><th class="n" title="${tx('Weighted tokens × the calibrated rate, % of 1× Pro', '加權 token × 校準後的比率（1× Pro 的 %）')}">${tx('Est. 5-hour', '估計 5 小時')}</th><th class="n" title="${tx('5-hour estimate × the weekly ÷ 5-hour ratio, % of 1× Pro', '5 小時估計 × 每週 ÷ 5 小時比（1× Pro 的 %）')}">${tx('Est. weekly', '估計每週')}</th><th class="n acct" title="${acctTitle}">${tx('Acct 5-hour', '帳號 5 小時')}</th><th class="n acct" title="${acctTitle}">${tx('Acct weekly', '帳號每週')}</th></tr></thead>`;
   const rateStr = C && C.rate != null ? (C.rate * 1e6).toFixed(2) : '?', w = U.weights;
   const notes = [
     tx(`<span><b>Same figures as Progress.</b> A design row is the Claude messages of the sessions that name the run folder, inside the design check's active time: <code>design/activity.log</code> (every design.ts command on the run) and its result files; a design pass on its own also counts its captures and taps. Tokens come from the run folder's <code>tokens.jsonl</code> like Progress. Automatic captures in a casebook run cost no call of their own; that run's own row under it is the Progress figure and is not added to the total.</span>`,
@@ -550,13 +572,19 @@ function renderUsage() {
     tx(`<span><b>Account total (shared) is muted on purpose:</b> the account's snapshot increments (<code>runs/usage.jsonl</code>, ${U.snapshots} readings) during the active time, split between rows by weighted tokens; other users of the account are in it too.</span>`,
       `<span><b>帳號合計（共用）刻意淡化顯示：</b>作業期間帳號用量快照（<code>runs/usage.jsonl</code>，${U.snapshots} 筆讀數）的增加量，依加權 token 分給各列；帳號其他使用者的用量也在其中。</span>`),
   ];
-  el.innerHTML = `<h2 id="usage-h">${tx('Time and plan usage · design check', '時間與方案用量 · 設計比對')}${live ? `<span class="live"><i></i>${tx('live', '即時')}</span>` : ''}</h2>`
-    + `<div class="tbl"><table>${head}<tbody>${runs.length ? body + outside + total : `<tr><td colspan="10" class="none">${tx('No design work recorded yet: the figures start with the first capture or design.ts command on a run folder.', '尚未記錄設計比對的工作：數字從執行資料夾的第一張擷取圖或第一個 design.ts 指令開始。')}</td></tr>`}</tbody></table></div>`
+  // the figures at a glance; the table only when there is more than one row to compare
+  const seatsOf = [...new Set(ps.flatMap(p => p.design.seats ?? []))], any = k => ps.some(p => p.design[k] != null) ? sum(k) : null;
+  const strip = ps.length ? cbUsageTiles({ ...z, tokens: z.tokens.input + z.tokens.cacheWrite + z.tokens.cacheRead + z.tokens.output, wt: sum('wt'), est5: sum('est5'), estW: sum('estW'), noTokens: ps.every(p => p.design.noTokens),
+    seat: seatsOf.length === 1 ? seatsOf[0] : null, acct5: any('fiveHour'), acctW: any('weekly'), approx: ps.some(p => p.design.approx), out5: U.outside5, outW: U.outsideW, outLabel: tx('outside the design check', '設計比對以外') }, L)
+    : `<span class="unone">${tx('No design work recorded yet: the figures start with the first capture or design.ts command on a run folder.', '尚未記錄設計比對的工作：數字從執行資料夾的第一張擷取圖或第一個 design.ts 指令開始。')}</span>`;
+  const when = ps.length ? `${ps.map(p => p.id).join(' + ')} · ${cbSpan(ps[0].design.from, ps.at(-1).design.to, L)}${seatsOf.length ? ` · ${seatsOf.map(m => `${m}× Pro`).join(' + ')}` : ''}${ps.some(p => p.auto || p.hand) ? ` · ${ps.map(p => caps(p).replace(/^ · /, '')).join(' · ')}` : ''}` : '';
+  el.innerHTML = `<div class="uh"><h2 id="usage-h">${tx('Time and plan usage · design check', '時間與方案用量 · 設計比對')}</h2>${live ? `<span class="ulive"><i></i>${tx('live', '即時')}</span>` : ''}<span class="uw">${esc(when)}</span></div>${strip}`
+    + (runs.length > 1 || runs.some(r => r.run) ? `<div class="tbl"><table>${head}<tbody>${body + outside + total}</tbody></table></div>` : '')
     + `<details class="how"${usageHow ? ' open' : ''}><summary>${tx('How these figures are computed', '這些數字怎麼算')}</summary><div class="notes">${notes.join('')}</div></details>`;
   el.querySelector('details.how').ontoggle = e => { usageHow = e.target.open; };
 }
 let usageHow = false;
-if (D.live) setInterval(async () => { try { const r = await fetch('usage.json', { cache: 'no-store' }); if (r.ok) { D.usage = await r.json(); (window.CASEBOOK?.quiet ?? (f => f()))(renderUsage); } } catch (e) {} }, 10000);
+if (D.live) setInterval(async () => { if (document.hidden) return; try { const r = await fetch('usage.json', { cache: 'no-store' }); if (r.ok) { D.usage = await r.json(); (window.CASEBOOK?.quiet ?? (f => f()))(renderUsage); } } catch (e) {} }, 10000);
 function render() {
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.l === L)));
   $('eyebrow').textContent = t('eyebrow'); $('h1').textContent = t('title')(D.title); $('q').placeholder = t('search');
@@ -567,11 +595,12 @@ function render() {
   $('planv').hidden = view !== 'plan'; $('resv').hidden = view !== 'results';
   if (view === 'plan') planView();
   const n = s => D.screens.filter(x => x.status === s).length;
-  $('meta').textContent = t('meta')(D.screens.length, D.screens.filter(s => s.run).length, D.spec_set);
+  const items = D.screens.flatMap(s => s.items.map(i => effV(s, i)));
+  $('meta').textContent = `${t('meta')(D.screens.length, D.screens.filter(s => s.run).length, D.spec_set)} · ${t('tally')(items.filter(v => v === 'bug').length, items.filter(v => v === 'question' || v === 'unreviewed').length)}`;
   $('bar').innerHTML = ST.map(s => n(s) ? `<span style="width:${100 * n(s) / D.screens.length}%;background:${COL(s)}" title="${esc(STN[L][s])} ${n(s)}"></span>` : '').join('');
   // every status chip always shown (greyed out at 0), like the Plan view, so the bar does not shift
   // Captured: every screen run on the phone, whatever its result, beside Not captured (user, 2026-11-05)
-  $('chips').innerHTML = [['', t('all'), D.screens.length], ['captured', t('captured'), D.screens.filter(s => s.run).length], ...ST.map(s => [s, STN[L][s], n(s)])].map(([k, l, c]) =>
+  $('chips').innerHTML = [['', t('all'), D.screens.length], ['captured', t('captured'), D.screens.filter(s => s.run).length], ...ST.map(s => [s, STN[L][s], s === 'question' ? D.screens.filter(hasQ).length : n(s)])].map(([k, l, c]) =>
     `<button type="button" class="chip" data-s="${k}" aria-pressed="${st === k}"${k && !c && st !== k ? ' disabled' : ''}>${k ? `<i style="background:${COL(k)}"></i>` : ''}${esc(l)} <span class="n">${c}</span></button>`).join('');
   $('chips').querySelectorAll('.chip').forEach(b => b.onclick = () => { st = b.dataset.s; render(); });
   const boards = [...new Set(D.screens.map(s => s.board))];
@@ -600,23 +629,34 @@ function resultOrder() {
   const ks = [...key, flowOf];
   return S.map((s, i) => [s, i]).sort((a, c) => { for (const k of ks) { const d = k(a[0]) - k(c[0]); if (d) return d; } return a[1] - c[1]; }).map(x => x[0]);
 }
+// a screen with a question counts as one even when it also has bugs: most questions sit on screens marked Differs
+const hasQ = s => s.status === 'question' || s.items.some(i => ['question', 'unreviewed'].includes(effV(s, i)));
+// the name on a card: what the row reaching the screen does, as hundreds of frames share a few Figma names
+const labelOf = s => { const e = String(s.route?.edge ?? '').split('→').at(-1).trim(); return e ? `${s.route.section ? `${s.route.section} · ` : ''}${e[0].toUpperCase()}${e.slice(1)}` : s.name; };
+let showNC = false, navIds = [];
 function grid() {
-  const list = resultOrder()
-    .filter(s => (!st || (st === 'captured' ? !!s.run : s.status === st)) && (!board || s.board === board)
+  const all = resultOrder()
+    .filter(s => (!st || (st === 'captured' ? !!s.run : st === 'question' ? hasQ(s) : s.status === st)) && (!board || s.board === board)
     && (!kind || s.items.some(i => i.kind === kind && i.verdict !== 'ok' && i.verdict !== 'info'))
-    && (!q || `${s.name} ${s.board} ${s.id} ${s.route?.case ?? ''}`.toLowerCase().includes(q)));
-  $('count').textContent = t('shown')(list.length, D.screens.length);
+    && (!q || `${labelOf(s)} ${s.name} ${s.board} ${s.id} ${s.route?.case ?? ''}`.toLowerCase().includes(q)));
+  // the walk through findings follows this order, on the screens that have a capture
+  navIds = (all.some(s => s.run) ? all.filter(s => s.run) : all).map(s => s.id);
+  // on the plain list the uncaptured screens wait behind one button, so the findings are not lost among them
+  const nc = !st && !q && !board && !kind ? all.filter(s => s.status === 'not-captured').length : 0;
+  const list = nc && !showNC ? all.filter(s => s.status !== 'not-captured') : all;
+  $('count').textContent = t('shown')(all.length, D.screens.length);
   // by board: a heading over each board's cards
   const head = (s, i) => rsort === 'board' && (i === 0 || list[i - 1].board_id !== s.board_id)
     ? `<h3 class="gh">${esc(s.board)} <span class="more">${list.filter(x => x.board_id === s.board_id).length}</span></h3>` : '';
   $('grid').innerHTML = list.length ? list.map((s, i) => {
-    const bugs = s.items.filter(i => i.verdict === 'bug').length, qs = s.items.filter(i => i.verdict === 'question' || i.verdict === 'unreviewed').length;
+    const bugs = s.items.filter(i => effV(s, i) === 'bug').length, qs = s.items.filter(i => ['question', 'unreviewed'].includes(effV(s, i))).length;
     return `${head(s, i)}<button type="button" class="card" data-id="${esc(s.id)}" style="border-top-color:${COL(s.status)}">
       <div class="thumb">${fig(s.figma)}</div>
-      <span class="st"><i style="background:${COL(s.status)}"></i>${esc(STN[L][s.status])}${bugs ? ` · ${bugs}` : qs ? ` · ${qs}` : ''}</span>
-      <span class="nm">${esc(s.name)}</span><span class="sub">${esc(s.board)}${s.route ? ` · ${esc(s.route.case || t('designPath'))}` : ''}</span></button>`;
-  }).join('') : `<p class="empty">${esc(t('none'))}</p>`;
+      <span class="st"><i style="background:${COL(s.status)}"></i>${esc(STN[L][s.status])}</span>${bugs || qs ? `<span class="cnt">${[bugs && `<b style="color:var(--differs)">${esc(t('bugsN')(bugs))}</b>`, qs && `<b style="color:var(--question)">${esc(t('qsN')(qs))}</b>`].filter(Boolean).join(' · ')}</span>` : ''}
+      <span class="nm">${esc(labelOf(s))}</span><span class="sub">${labelOf(s) !== s.name ? `${esc(s.name)} · ` : ''}${esc(s.board)}${s.route ? ` · ${esc(s.route.case || t('designPath'))}` : ''}</span></button>`;
+  }).join('') + (nc ? `<button type="button" class="chip ncb" id="nc">${esc(showNC ? t('hideNC') : t('showNC')(nc))}</button>` : '') : `<p class="empty">${esc(t('none'))}</p>`;
   $('grid').querySelectorAll('.card').forEach(c => c.onclick = () => { location.hash = `screen=${encodeURIComponent(c.dataset.id)}`; });
+  if ($('nc')) $('nc').onclick = () => { showNC = !showNC; grid(); };
 }
 // an item's decision row: Bug / OK / N/A (the current verdict pressed), the eBug tick on a bug, and the reason once it
 // is OK or N/A (required when it overturns a bug)
@@ -649,9 +689,72 @@ const MNX = [[/^the app sets ([\d.]+) sp \((.*?)\), Figma (.*?)(; the phone's fo
 const mnx = t => { for (const [re, f] of MNX) { const m = t.match(re); if (m) return f(...m); } return null; };
 const lang = (o, k) => L === 'zh' ? o[`${k}_zh`] || (o[k] && (MN[o[k]] ?? mnx(o[k]) ?? o[k].replace(/^only (\d+) of (\d+) Figma texts found: the capture may not be this frame's state$/, '只找到 $1 / $2 個 Figma 文字：擷取圖可能不是此畫面的狀態'))) || ''
   : o[k] || o[`${k}_zh`] || '';
+// review notes are read by Design and RD: the colour distance stays under "How it was measured" (user, 2026-11-06)
+const noTool = s => String(s ?? '').replace(/\s*[（(]\s*ΔE[^)）]*[)）]/g, '').replace(/,?\s*ΔE\s*[≈~]?\s*[\d.]+/g, '');
 const PASS = { builder: '建構者', reviewer: '審查者', skipped: '略過' };
 const splitL = x => L === 'zh' ? x.replace(/\b(builder|reviewer|skipped)\b/g, m => PASS[m]).replace(/\b(bug|ok|n\/a|question|unreviewed)\b/g, m => VN.zh[m] ?? m) : x;
 const decidedL = x => L === 'zh' ? x.replace(/^user /, '使用者 ') : x;
+// The item in one plain sentence, in words Design and RD use (user, 2026-11-06: the leads could not read the raw
+// values, 「app 400 · figma 510」, a set/on-screen colour table, ΔE, 「App 資料」): what differs, Design's value, then
+// the app's. The numbers behind it are folded under "How it was measured".
+const WEIGHT = { 100: 'Thin', 200: 'ExtraLight', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold', 900: 'Black' };
+const wName = w => `${WEIGHT[Math.min(900, Math.max(100, Math.round(w / 100) * 100))]} (${w})`;
+const SIDE = { en: { left: 'left', right: 'right', top: 'top', bottom: 'bottom' }, zh: { left: '左', right: '右', top: '上', bottom: '下' } };
+const SEV = { en: { major: 'major', minor: 'minor', cosmetic: 'cosmetic' }, zh: { major: '嚴重', minor: '輕微', cosmetic: '外觀' } };
+// how far apart two colours look: ΔE as words (under 3 the eye cannot tell them apart)
+const looks = dE => dE == null ? '' : L === 'zh' ? (dE < 3 ? '肉眼幾乎看不出差別' : dE < 6 ? '仔細看才看得出差別' : dE < 12 ? '看得出不同' : '明顯不同')
+  : (dE < 3 ? 'the eye can hardly tell them apart' : dE < 6 ? 'a slight difference' : dE < 12 ? 'a visible difference' : 'clearly different');
+function plain(it, H) {
+  const zh = L === 'zh', f = it.figma ?? {}, a = it.app ?? {}, d = it.delta ?? {};
+  const q = s => s ? `「${String(s).replace(/\s+/g, ' ').slice(0, 40)}${String(s).length > 40 ? '…' : ''}」` : '';
+  const what = q(f.text ?? a.text ?? f.name);   // a text's words, else the layer's name
+  const col = (o, tok) => o?.color ? `${(o.color.length === 9 ? '#' + o.color.slice(3) : o.color).toUpperCase()}${tok ? `（${tok}）` : ''}` : '';
+  const pt = v => `${Math.round(v * 10) / 10} pt`;
+  switch (it.kind) {
+    // on Android the standard is the guideline's Roboto equivalent (KP-066), named beside Design's iOS weight
+    case 'weight': return d.android != null ? (zh ? `${what} 的字重：Design 為 SF Pro ${wName(d.figma)}，Android 標準為 Roboto ${wName(d.android)}，App 為 ${wName(d.app)}。`
+        : `${what} font weight: Design SF Pro ${wName(d.figma)}, Android standard Roboto ${wName(d.android)}, app ${wName(d.app)}.`)
+      : zh ? `${what} 的字重：Design 為 ${wName(d.figma)}，App 為 ${wName(d.app)}。` : `${what} font weight: Design ${wName(d.figma)}, app ${wName(d.app)}.`;
+    case 'size': return d.sp != null ? (zh ? `${what} 的字級：Design 為 ${d.pt} pt，App 為 ${d.sp} sp。` : `${what} font size: Design ${d.pt} pt, app ${d.sp} sp.`)
+      : (zh ? `${what} 的字看起來比 Design 大或小（字級、粗細或字型不同）。` : `${what} looks larger or smaller than in the Design (size, weight or font differs).`);
+    // a text's colour (the check marks it `role: 'text'` since 2026-11-06; earlier runs: its review note says so)
+    case 'colour': { const dE = d.dE_drawn ?? d.dE, isText = f.role === 'text' || f.text || /\b(text|label)\b|文字|標籤/i.test(`${it.note ?? ''} ${it.note_zh ?? ''}`);
+      const fv = col(f, f.variable?.replace(/^Variable\//, '')), av = col(a, a.res);
+      return zh ? `${what || '此區塊'} 的${isText ? '文字顏色' : '底色'}：Design 為 ${fv}，App 為 ${av}；${looks(dE)}。` : `${what || 'This shape'} ${isText ? 'text colour' : 'fill colour'}: Design ${fv}, app ${av}; ${looks(dE)}.`; }
+    // a displacement says the same in both languages: which way, how far, from what (user, 2026-11-06)
+    // both sides of a chip at once (its padding narrower or wider all round)
+    case 'padding': if (d.left != null && d.right != null && Math.sign(d.left) === Math.sign(d.right)) { const w = d.left > 0, tot = pt(Math.abs(d.left + d.right));
+      return zh ? `${what} 在「${f.in?.name ?? ''}」裡：左右內距比 Design ${w ? '寬' : '窄'}，合計${w ? '多' : '少'} ${tot}（左 ${pt(f.padding.left)} → ${pt(a.padding.left)}，右 ${pt(f.padding.right)} → ${pt(a.padding.right)}，Design → App）。`
+        : `${what} inside 「${f.in?.name ?? ''}」: ${w ? 'wider' : 'narrower'} padding on both sides than in the Design, ${tot} ${w ? 'more' : 'less'} in all (left ${pt(f.padding.left)} → ${pt(a.padding.left)}, right ${pt(f.padding.right)} → ${pt(a.padding.right)}, Design → app).`; }
+      return Object.keys(d).map(sd => { const fp = f.padding?.[sd], ap = a.padding?.[sd], far = ap > fp, by = pt(Math.abs(ap - fp));
+      return zh ? `${what} 在「${f.in?.name ?? ''}」裡：比 Design ${far ? `離${SIDE.zh[sd]}邊緣遠 ${by}` : `更靠近${SIDE.zh[sd]}邊緣 ${by}`}（${SIDE.zh[sd]}內距：Design ${pt(fp)}，App ${pt(ap)}）。`
+        : `${what} inside 「${f.in?.name ?? ''}」: ${by} ${far ? 'farther from' : 'closer to'} the ${sd} edge than in the Design (${sd} padding: Design ${pt(fp)}, app ${pt(ap)}).`; }).join(' ');
+    case 'align': { const p = [];
+      if (d.x != null) p.push(zh ? `偏${d.x > 0 ? '右' : '左'} ${pt(Math.abs(d.x))}` : `${pt(Math.abs(d.x))} ${d.x > 0 ? 'right' : 'left'} of centre`);
+      if (d.y != null) p.push(zh ? `偏${d.y > 0 ? '下' : '上'} ${pt(Math.abs(d.y))}` : `${pt(Math.abs(d.y))} ${d.y > 0 ? 'below' : 'above'} centre`);
+      return zh ? `${what} 在「${f.in?.name ?? ''}」裡沒有置中：App 上比中心${p.join('、')}（Design 為置中）。`
+        : `${what} is not centred in 「${f.in?.name ?? ''}」: in the app it sits ${p.join(' and ')} (the Design centres it).`; }
+    case 'border': { const fb = f.border, ab = a.border, bd = b => b ? `${pt(b.width)} ${b.color ?? ''}`.trim() : (zh ? '無邊框' : 'no border');
+      return zh ? `「${f.name ?? ''}」的邊框：Design ${bd(fb)}，App ${bd(ab)}。` : `「${f.name ?? ''}」 border: Design ${bd(fb)}, app ${bd(ab)}.`; }
+    case 'spacing': { const m = (it.note ?? '').match(/^(horizontal|vertical) gap from 「(.*?)」 to 「(.*?)」/), down = m?.[1] === 'vertical';
+      const A = m?.[2] ?? f.name ?? '', B = m?.[3] ?? (zh ? '下一個按鍵' : 'the next button'), wide = a.gap > f.gap, by = pt(Math.abs(a.gap - f.gap));
+      return zh ? `「${A}」與${down ? '下方' : '右邊'}「${B}」的間距：Design ${pt(f.gap)}，App ${pt(a.gap)}（${wide ? '寬' : '窄'}了 ${by}）。`
+        : `Gap between 「${A}」 and 「${B}」 ${down ? 'below' : 'to its right'}: Design ${pt(f.gap)}, app ${pt(a.gap)} (${by} ${wide ? 'wider' : 'narrower'}).`; }
+    case 'radius': return zh ? `「${f.name ?? ''}」的圓角：Design ${d.figma}，App ${d.app} dp。` : `「${f.name ?? ''}」 corner radius: Design ${d.figma}, app ${d.app} dp.`;
+    case 'lines': return zh ? `${what} 的行數：Design ${f.lines} 行，App ${a.lines} 行。` : `${what} line count: Design ${f.lines}, app ${a.lines}.`;
+    case 'truncated': return zh ? `${what} 在 App 上被截斷：${q(a.text)}。` : `${what} is cut short in the app: ${q(a.text)}.`;
+    case 'missing': case 'sample': return zh ? `Design 有 ${what}，App 上找不到。` : `The Design shows ${what}; the app does not.`;
+    case 'extra': return zh ? `App 有 ${q(a.text)}，Design 沒有。` : `The app shows ${q(a.text)}; the Design does not.`;
+    case 'control': return zh ? `Design 在此有按鍵「${f.name ?? ''}」，App 這裡沒有可點的按鍵。` : `The Design has the button 「${f.name ?? ''}」 here; the app has nothing to tap there.`;
+    case 'copy': return zh ? `文字不同：Design ${q(f.text)}，App ${q(a.text)}。` : `Different words: Design ${q(f.text)}, app ${q(a.text)}.`;
+    // (checks before 2026-11-06) y is measured from the bottom in the screen's lower half: larger is higher there
+    case 'position': { const low = H && f.box && f.box[1] + f.box[3] / 2 >= H / 2, y = low ? -d.y : d.y, p = [];
+      if (d.x) p.push(zh ? `偏${d.x > 0 ? '右' : '左'} ${pt(Math.abs(d.x))}` : `${pt(Math.abs(d.x))} further ${d.x > 0 ? 'right' : 'left'}`);
+      if (y) p.push(zh ? `偏${y > 0 ? '下' : '上'} ${pt(Math.abs(y))}` : `${pt(Math.abs(y))} ${y > 0 ? 'lower' : 'higher'}`);
+      return zh ? `${what} 在 App 上比 Design ${p.join('、')}。` : `${what} sits ${p.join(' and ')} in the app than in the Design.`; }
+    default: return lang(it, 'note') || '';
+  }
+}
 // one difference: number, kind, verdict, Figma vs app
 const ORDER = { bug: 0, question: 1, unreviewed: 2, 'n/a': 3, ok: 4, info: 5 };
 // the items of a comparison under one heading per verdict (Bug, Question, …, OK), each foldable; an item keeps its
@@ -668,41 +771,72 @@ function detail(id) {
   const boxes = (side, w, h, out = []) => `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">${out.map(o => `<rect class="outa" x="${o.box[0]}" y="${o.box[1]}" width="${o.box[2]}" height="${o.box[3]}"><title>${esc(t('outT'))}: ${esc(o.name)}</title></rect>`).join('')}${shown.map((it, n) => [it[side]?.box, n, it]).filter(x => x[0])
     .sort((a, c) => c[0][2] * c[0][3] - a[0][2] * a[0][3]).map(([b, n, it]) =>
       `<rect class="box" data-n="${n}" x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}" style="stroke:${VC(it.verdict)}"><title>${n + 1} · ${esc(KN[L][it.kind] ?? it.kind)}</title></rect>`).join('')}</svg>`;
-  const txt = (o) => o?.text ? `<q>${esc(o.text.length > 120 ? o.text.slice(0, 120) + '…' : o.text)}</q>` : o?.color ? `<span class="sw" style="background:${esc(o.color)}"></span> ${esc(o.color)}` : o?.name ? `<code>${esc(o.name)}</code>` : '';
+  // a colour as set (Figma's fill and its token, or the app's own value) and as drawn on the image, when sampled
+  const hex = (c) => (c.length === 9 ? '#' + c.slice(3) : c).toUpperCase(), alphaOf = (c) => c.length === 9 && !/^#ff/i.test(c) ? ` α ${Math.round(parseInt(c.slice(1, 3), 16) / 2.55)}%` : '';
+  const sw = (c) => `<span class="sw" style="background:${esc(hex(c))}"></span> ${esc(hex(c))}${alphaOf(c)}`;
+  // a colour item with both values: one row per side, the value set (with its token or resource) and the colour on screen
+  const colourTable = (it) => `<table class="ct"><tr><th></th><th>${esc(t('colSet'))}</th><th title="${esc(t('colDrawnT'))}">${esc(t('colDrawn'))}</th></tr>${[['figma', it.figma], ['app', it.app]].filter(([, o]) => o?.color).map(([k, o]) =>
+    `<tr><th>${esc(t(k))}</th><td>${sw(o.color)}${o.variable || o.res ? `<code>${esc((o.variable || o.res).replace(/^Variable\//, ''))}</code>` : ''}${o.alpha ? `<code>α ${o.alpha}</code>` : ''}</td><td>${o.drawn ? sw(o.drawn) : '—'}</td></tr>`).join('')}</table>`;
+  const name = (o) => `${o.variable || o.res ? ` <code>${esc((o.variable || o.res).replace(/^Variable\//, ''))}</code>` : ''}${o.alpha ? ` α ${o.alpha}` : ''}`;
+  const swatches = (o) => o.drawn ? `${esc(t('colSet'))} ${sw(o.color)}${name(o)} · <span title="${esc(t('colDrawnT'))}">${esc(t('colDrawn'))}</span> ${sw(o.drawn)}` : `${sw(o.color)}${name(o)}`;
+  const txt = (o) => o?.text ? `<q>${esc(o.text.length > 120 ? o.text.slice(0, 120) + '…' : o.text)}</q>` : o?.color ? swatches(o) : o?.name ? `<code>${esc(o.name)}</code>` : '';
   const r = s.route, link = (p, h, l) => PAGES[p] ? `<a href="${PAGES[p]}#${h}">${esc(l)}</a>` : '';
   const keep = open === id && $('dlg').open ? ($('dlg').querySelector('.rp')?.scrollTop ?? 0) : 0;
   const figmaUrl = D.file ? `https://www.figma.com/design/${D.file}?node-id=${encodeURIComponent(s.id.replace(':', '-'))}` : '';
-  $('dlg').innerHTML = `<div class="dh"><h2>${esc(s.name)}</h2><span class="st"><i style="background:${COL(s.status)}"></i>${esc(STN[L][s.status])}</span>
-    <span class="more">${esc(s.board)} · ${esc(s.id)}${s.run ? ` · ${t('run')} ${esc(s.run)}` : ''}${s.build ? ` · ${t('build')} ${esc(s.build)}` : ''}</span>
+  // the affected spot on both images, large enough to read, beside the finding (a full phone makes a label tiny)
+  // both crops cover the same size of area, so they come out the same size and at the same scale (user, 2026-11-06)
+  const crop = (box, W, H, w, h, img, label, colour) => { if (!box) return '';
+    const fit = (p, s, n, m) => Math.max(0, Math.min(p + s / 2 - n / 2, m - n)), x = fit(box[0], box[2], w, W), y = fit(box[1], box[3], h, H);
+    return `<figure class="cr"><figcaption>${esc(label)}</figcaption><div class="cw" style="aspect-ratio:${w}/${h}"><div class="cz" style="width:${W / w * 100}%;aspect-ratio:${W}/${H};left:${-x / w * 100}%;top:${-y / h * 100}%">${img}</div><i style="left:${(box[0] - x) / w * 100}%;top:${(box[1] - y) / h * 100}%;width:${box[2] / w * 100}%;height:${box[3] / h * 100}%;border-color:${colour}"></i></div></figure>`; };
+  const cropPair = it => { const c = VC(it.verdict), fb = s.figma ? it.figma?.box : null, ab = s.app ? it.app?.box : null, pad = 14;
+    const w = Math.min(Math.max(fb?.[2] ?? 0, ab?.[2] ?? 0) + 2 * pad, s.w, aw), h = Math.min(Math.max(fb?.[3] ?? 0, ab?.[3] ?? 0) + 2 * pad, s.h, ah);
+    if ((!fb && !ab) || w * h > s.w * s.h * 0.4) return '';
+    return `<div class="crs${fb && ab ? '' : ' one'}" role="button" tabindex="0" title="${esc(t('zoom'))}" style="--r:${w / h}">${crop(fb, s.w, s.h, w, h, fig(s.figma, false), t('figma'), c)}${crop(ab, aw, ah, w, h, `<img src="${esc(s.app)}" alt="" decoding="async">`, t('app'), c)}</div>`; };
+  const measured = `    ${s.out.length ? `<p class="more">${esc(t('outNote')(s.out.length))}</p>` : ''}
+    ${s.hidden.length ? `<p class="more" title="${esc(s.hidden.map(h => h.text.replace(/\s+/g, ' ').slice(0, 60)).join('\n'))}">${esc(t('hiddenNote')(s.hidden.length))}</p>` : ''}
+    ${s.run && s.ocr && !s.ocr.app ? `<p class="more">${esc(t('noOcr'))}</p>` : ''}
+    ${s.views ? `<p class="more">${esc(t('viewsNote')(s.views.matched, s.views.texts, s.views.font_scale))}</p>` : s.font_width ? `<p class="more">${esc(t('fontNote')(s.font_width.width, s.font_width.texts))}</p>` : ''}
+    ${s.fit ? `<p class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</p>` : ''}`.trim();
+  $('dlg').innerHTML = `<div class="dh"><h2>${esc(labelOf(s))}</h2><span class="st"><i style="background:${COL(s.status)}"></i>${esc(STN[L][s.status])}</span>
+    <span class="more">${labelOf(s) !== s.name ? `${esc(s.name)} · ` : ''}${esc(s.board)} · ${esc(s.id)}${s.run ? ` · ${t('run')} ${esc(s.run)}` : ''}${s.build ? ` · ${t('build')} ${esc(s.build)}` : ''}</span>
     <label class="more"><input type="checkbox" id="bx"${noBoxes ? '' : ' checked'}> ${esc(t('boxes'))}</label>
     ${figmaUrl ? `<a class="more" href="${figmaUrl}" target="_blank" rel="noopener">${esc(t('open'))} ↗</a>` : ''}<button type="button" class="x" id="x" aria-label="${esc(t('close'))}">✕</button></div>
   <div class="db"><div class="pair">
-    <div class="side"><b>${esc(t('figma'))}</b><div class="frame" style="aspect-ratio:${s.w}/${s.h};--r:${s.w / s.h}">${s.figma ? `<button type="button" class="zm" title="${esc(t('zoom'))}">${fig(s.figma, false)}</button>` + boxes('figma', s.w, s.h, s.out) : `<div class="no">${esc(t('noFig'))}</div>`}</div></div>
-    <div class="side"><b>${esc(t('app'))}</b><div class="frame" style="aspect-ratio:${aw}/${ah};--r:${aw / ah}">${s.app ? `<button type="button" class="zm" title="${esc(t('zoom'))}"><img src="${esc(s.app)}" alt=""></button>${boxes('app', aw, ah)}` : `<div class="no">${esc(s.run ? t('noApp') : s.status === 'not-captured' ? t('notCaptured') : STN[L][s.status])}</div>`}</div></div>
+    <div class="side"><b>${esc(t('figma'))}</b><div class="frame" style="aspect-ratio:${s.w}/${s.h};--r:${s.w / s.h}">${s.figma ? `<button type="button" class="zm" title="${esc(t('zoom'))}">${fig(s.figma, false, s.w / s.h)}</button>` + boxes('figma', s.w, s.h, s.out) : `<div class="no">${esc(t('noFig'))}</div>`}</div></div>
+    <div class="side"><b>${esc(t('app'))}</b><div class="frame" style="aspect-ratio:${aw}/${ah};--r:${aw / ah}">${s.app ? `<button type="button" class="zm" title="${esc(t('zoom'))}"><img src="${esc(s.app)}" alt="" decoding="async"${behind(s.app, aw / ah)}></button>${boxes('app', aw, ah)}` : `<div class="no">${esc(s.run ? t('noApp') : s.status === 'not-captured' ? t('notCaptured') : STN[L][s.status])}</div>`}</div></div>
   ${s.parts.length ? `<div class="parts">${s.parts.map((p, i) => `<button type="button" class="chip" data-part="${esc(p)}">${esc(t('part')(i + 2))}</button>`).join('')}</div>` : ''}
   </div><div class="rp">
     ${s.arrival && !s.arrival.ok ? `<div class="warn">${esc(t('doubt')(s.arrival.matched, s.arrival.of))}</div>` : ''}
     ${s.recheck ? `<div class="rc"><b>${esc(t('recheck')(s.recheck.run))}</b>${s.recheck.items.map(i => `<div><b class="${i.now}">${esc(t('now')[i.now])}</b> ${esc(KN[L][i.id.split(':')[0]] ?? i.id)} <span class="more">${esc(lang(i, 'note'))}</span></div>`).join('')}</div>` : ''}
     ${s.gap ? `<div class="warn">${esc(t('gap'))}</div>` : ''}
-    ${s.out.length ? `<p class="more">${esc(t('outNote')(s.out.length))}</p>` : ''}
-    ${s.hidden.length ? `<p class="more" title="${esc(s.hidden.map(h => h.text.replace(/\s+/g, ' ').slice(0, 60)).join('\n'))}">${esc(t('hiddenNote')(s.hidden.length))}</p>` : ''}
-    ${s.run && s.ocr && !s.ocr.app ? `<p class="more">${esc(t('noOcr'))}</p>` : ''}
-    ${s.views ? `<p class="more">${esc(t('viewsNote')(s.views.matched, s.views.texts, s.views.font_scale))}</p>` : s.font_width ? `<p class="more">${esc(t('fontNote')(s.font_width.width, s.font_width.texts))}</p>` : ''}
+    <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" data-v="${esc(v)}"${folded.has(v) ? '' : ' open'}><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)};--vc:${VC(it.verdict)}">
+      <div class="h"><span class="num" style="background:${VC(it.verdict)}">${n + 1}</span><span class="k">${esc(KN[L][it.kind] ?? it.kind)}</span>
+      ${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(SEV[L][it.severity] ?? it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
+      ${plain(it, s.h) ? `<div class="plain">${esc(plain(it, s.h))}</div>` : ''}
+      ${['bug', 'question', 'unreviewed'].includes(effV(s, it)) ? cropPair(it) : ''}
+      ${it.kind === 'colour' && (it.figma?.drawn || it.app?.drawn) ? colourTable(it) : ''}
+      ${it.kind === 'visual' || !lang(it, 'note') || lang(it, 'note') === plain(it, s.h) ? '' : `<div class="note"><b>${esc(t('revNote'))}</b> ${esc(noTool(lang(it, 'note')))}</div>`}
+      ${it.decided ? `<div class="note">${esc(decidedL(it.decided))}</div>` : ''}
+      ${s.run ? decRow(s, it) : ''}
+      <details class="how"><summary>${esc(t('howMeasured'))}</summary>
+      ${it.src === 'app' ? `<div class="more">${esc(t('srcAppT'))}</div>` : ''}
+      ${it.kind === 'colour' && (it.figma?.drawn || it.app?.drawn) ? (it.delta?.dE != null ? `<div class="more">${esc(t('colDiff')(it.delta.dE, it.delta.dE_drawn))}</div>` : '')
+      : `${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
+      ${it.delta ? `<div class="more">${esc(Object.entries(it.delta).map(([a, b]) => `${a} ${b}`).join(' · '))}</div>` : ''}`}
+      ${lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note"><b>${esc(t('secondRev'))}</b> ${esc(noTool(lang(it, 'reviewer')))}</div>` : ''}${it.split ? `<div class="note">${esc(splitL(it.split))}</div>` : ''}</details></div>`).join('')}</details>`).join('')}
+    ${info.length ? `<button type="button" class="chip" id="info">${esc(showInfo ? t('hideInfo') : t('showInfo'))} · ${esc(t('info')(info.length))}</button>` : ''}</div>
     ${r && r.how === 'figma' ? `<div class="route"><div><b>${esc(t('byArrows'))}</b> <span class="more">(${esc(t('pfit')[r.fit] ?? r.fit)})</span></div><div class="more">${esc(r.action)}</div></div>`
     : r ? `<div class="route"><div><b>${esc(t('reached'))}</b> ${esc(r.case)} <span class="more">(${esc(t('fit')[r.fit] ?? r.fit)}, ${esc(t('via'))} ${esc(r.edge || r.via)})</span>
       ${link('review', esc(r.case), t('cases'))} ${link('coverage', `case=${esc(r.case)}`, t('cov'))} ${link('results', `case=${esc(r.case)}`, t('res'))}</div>
       ${r.precondition ? `<div class="more"><b>${esc(t('pre'))}</b> ${esc(r.precondition)}</div>` : ''}<div class="more"><b>${esc(t('action'))}</b> ${esc(r.action)}</div>
       ${s.alternatives.length ? `<div class="more">${esc(t('also'))}: ${s.alternatives.map(esc).join(', ')}</div>` : ''}
-      ${s.fit ? `<div class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</div>` : ''}</div>` : s.why ? `<p class="more">${esc(s.why)}</p>` : ''}
-    <div class="items">${s.run && !main.length ? `<p class="more">${esc(t('nothing'))}</p>` : ''}${groupsOf(shown).map(([v, list]) => `<details class="grp" data-v="${esc(v)}"${folded.has(v) ? '' : ' open'}><summary style="color:${VC(v)}">${esc(VN[L][v] ?? v)} · ${list.length}</summary>${list.map(([it, n]) => `<div class="it" data-n="${n}" style="border-left-color:${VC(it.verdict)};--vc:${VC(it.verdict)}">
-      <div class="h"><span class="num" style="background:${VC(it.verdict)}">${n + 1}</span><span class="k">${esc(KN[L][it.kind] ?? it.kind)}</span>
-      ${it.src === 'app' ? `<span class="srcapp" title="${esc(t('srcAppT'))}">${esc(t('srcApp'))}</span>` : ''}${it.severity && it.verdict === 'bug' ? `<span class="more">${esc(it.severity)}</span>` : ''}<span class="v" style="color:${VC(it.verdict)}">${esc(VN[L][it.verdict] ?? it.verdict)}</span></div>
-      ${it.figma ? `<div>${esc(t('figma'))} ${txt(it.figma)}</div>` : ''}${it.app && (it.app.text || it.app.color) ? `<div>${esc(t('app'))} ${txt(it.app)}</div>` : ''}
-      ${it.delta ? `<div class="more">${esc(Object.entries(it.delta).map(([a, b]) => `${a} ${b}`).join(' · '))}</div>` : ''}
-      ${it.split ? `<div class="note">${esc(splitL(it.split))}</div>` : ''}${it.decided ? `<div class="note">${esc(decidedL(it.decided))}</div>` : ''}
-      ${s.run ? decRow(s, it) : ''}${lang(it, 'note') ? `<div class="note">${esc(lang(it, 'note'))}</div>` : ''}${lang(it, 'reviewer') && lang(it, 'reviewer') !== lang(it, 'note') ? `<div class="note">${esc(lang(it, 'reviewer'))}</div>` : ''}</div>`).join('')}</details>`).join('')}
-    ${info.length ? `<button type="button" class="chip" id="info">${esc(showInfo ? t('hideInfo') : t('showInfo'))} · ${esc(t('info')(info.length))}</button>` : ''}</div>
-  </div></div>`;
+      </div>` : s.why ? `<p class="more">${esc(s.why)}</p>` : ''}
+    ${measured ? `<details class="how sn"><summary>${esc(t('screenNotes'))}</summary>${measured}</details>` : ''}
+  </div></div>
+  <div class="df"><button type="button" class="chip" id="pv"${navIds.length > 1 ? '' : ' disabled'}>← ${esc(t('prev'))}</button><span class="more">${navIds.includes(id) ? esc(t('posn')(navIds.indexOf(id) + 1, navIds.length)) : ''}</span><button type="button" class="chip" id="nx"${navIds.length > 1 ? '' : ' disabled'}>${esc(t('next'))} →</button>${s.run ? '<button type="button" class="chip" id="dsave"></button>' : ''}</div>`;
+  $('pv').onclick = () => go(-1); $('nx').onclick = () => go(1);
+  if ($('dsave')) $('dsave').onclick = () => $('copy').click();
+  copyBtn();
   $('x').onclick = () => { history.replaceState(null, '', location.pathname + location.search); $('dlg').close(); open = null; };
   $('info')?.addEventListener('click', () => { showInfo = !showInfo; detail(id); });
   $('dlg').querySelectorAll('details.grp').forEach(g => g.addEventListener('toggle', () => g.open ? folded.delete(g.dataset.v) : folded.add(g.dataset.v)));
@@ -725,7 +859,10 @@ function detail(id) {
       e.target.classList.toggle('need', it.verdict === 'bug' && ['ok', 'n/a'].includes(effV(s, it)) && !e.target.value.trim()); });
   });
   // hovering a difference highlights its boxes on both images, and hovering a box its difference; clicking a box scrolls to it
-  const hl = (n, on) => $('dlg').querySelectorAll(`rect[data-n="${n}"], .it[data-n="${n}"]`).forEach(r => r.classList.toggle('hl', on));
+  // (as on the Coverage page, the selected one shows no hover mark)
+  const hl = (n, on) => { $('dlg').querySelectorAll(`.it[data-n="${n}"]`).forEach(r => r.classList.toggle('hl', on));
+    $('dlg').querySelectorAll('.hring').forEach(e => e.remove());
+    if (on && !(picked?.id === open && String(picked.n) === String(n))) $('dlg').querySelectorAll(`rect.box[data-n="${n}"]`).forEach(b => ringAt(b, false)); };
   $('dlg').querySelectorAll('.it').forEach(e => { e.onmouseenter = () => hl(e.dataset.n, true); e.onmouseleave = () => hl(e.dataset.n, false); });
   $('dlg').querySelectorAll('rect.box').forEach(r => { const n = r.dataset.n;
     r.onmouseenter = () => hl(n, true); r.onmouseleave = () => hl(n, false);
@@ -733,19 +870,44 @@ function detail(id) {
   // an item clicked (not its buttons or reason) is selected like its box (user, 2026-11-04)
   $('dlg').querySelectorAll('.it').forEach(e => e.addEventListener('click', ev => { if (!ev.target.closest('button, input, label, a')) pick(e.dataset.n, false); }));
   // an image clicked: full size over the page with its boxes (user, 2026-11-04: not a new tab); a click or Esc closes it
-  $('dlg').querySelectorAll('.frame .zm').forEach(b => b.onclick = () => { const fr = b.closest('.frame').cloneNode(true);
+  $('dlg').querySelectorAll('.frame .zm').forEach(b => b.onclick = () => { const fr = b.closest('.frame').cloneNode(true); fr.querySelectorAll('.hring').forEach(e => e.remove());
     fr.querySelector('.zm').replaceWith(...fr.querySelector('.zm').childNodes); lightbox(fr); });
+  // a pair of crops clicked: both, as large as the window takes (user, 2026-11-06); a click or Esc closes it
+  $('dlg').querySelectorAll('.crs').forEach(c => { const big = e => { e.stopPropagation(); const k = c.cloneNode(true); k.removeAttribute('role'); k.removeAttribute('tabindex'); k.removeAttribute('title'); lightbox(k); };
+    c.onclick = big; c.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); big(e); } }; });
   $('dlg').querySelectorAll('[data-part]').forEach(b => b.onclick = () => { const fr = document.createElement('div'); fr.className = 'frame plain';
     fr.innerHTML = `<img src="${esc(b.dataset.part)}" alt="">`; lightbox(fr); });
   if (!$('dlg').open) $('dlg').showModal();
+  // the screens either side, in the background, so Previous and Next open at once
+  if (D.live && navIds.length > 1) (window.requestIdleCallback ?? setTimeout)(() => { const i = navIds.indexOf(id);
+    for (const d of [1, -1]) { const n = D.screens.find(x => x.id === navIds[(i + d + navIds.length) % navIds.length]); for (const u of [n?.figma?.src, n?.app]) if (u) new Image().src = u; } });
   const rp = $('dlg').querySelector('.rp'); if (rp) rp.scrollTop = keep;
   // the selection survives a redraw (a decision pressed, info shown or hidden)
   if (picked?.id === id) pick(picked.n, false, true);
 }
 // a box or an item clicked: both marked until another click (the same one again clears it); from a box, its item
-// scrolls into view in the right panel. The box is marked as on the Coverage page: a black / white / black ring just
+// scrolls into view in the right panel. The box is marked as on the Coverage page: a white ring on a black one just
 // clear of it (so it never covers what the box holds), then the box itself redrawn on top in its verdict colour.
 let picked = null;
+// Previous / Next and the arrow keys walk the screens in the list behind the comparison (its filters and order)
+function go(d) {
+  if (navIds.length < 2) return;
+  const i = navIds.indexOf(open), id = navIds[(i + d + navIds.length) % navIds.length];
+  history.replaceState(null, '', `${location.pathname}${location.search}#screen=${encodeURIComponent(id)}`);
+  detail(id); const rp = $('dlg').querySelector('.rp'); if (rp) rp.scrollTop = 0;
+}
+addEventListener('keydown', e => { if (!$('dlg').open || e.altKey || e.metaKey || e.ctrlKey || e.target.matches?.('input:not([type=checkbox]), textarea, select')) return;
+  if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); } if (e.key === 'ArrowRight') { e.preventDefault(); go(1); } });
+// The Coverage page's marks around a box, in screen pixels: selected (strong) a 2.5 px white ring on a 5 px black one,
+// hovered a 2 px dashed white ring. Both stay clear of the box: these boxes hug a line of text, and a thicker box or a
+// ring on its edge covered the glyphs (user, 2026-11-05), so the box keeps its width.
+function ringAt(b, strong) {
+  const svg = b.ownerSVGElement, k = svg.viewBox.baseVal.width / (svg.clientWidth || svg.viewBox.baseVal.width), o = (strong ? 4.5 : 3.5) * k;
+  const [x, y, w, h] = ['x', 'y', 'width', 'height'].map(a => +b.getAttribute(a));
+  const r = (cls, c, sw, extra = '') => `<rect class="${cls}" x="${x - o}" y="${y - o}" width="${w + 2 * o}" height="${h + 2 * o}" rx="${4 * k}" stroke="${c}" stroke-width="${sw * k}"${extra}/>`;
+  svg.insertAdjacentHTML('beforeend', strong ? r('ring', 'rgba(0,0,0,0.85)', 5) + r('ring', '#fff', 2.5)
+    : r('ring hring', '#fff', 2, ` stroke-dasharray="${5 * k} ${3 * k}"`));
+}
 function pick(n, scroll, again = false) {
   $('dlg').querySelectorAll('.pick, .flash').forEach(e => e.classList.remove('pick', 'flash'));
   $('dlg').querySelectorAll('.ring, .box.top').forEach(e => e.remove());
@@ -754,13 +916,8 @@ function pick(n, scroll, again = false) {
   picked = { id: open, n };
   it.closest('details')?.setAttribute('open', '');
   $('dlg').querySelectorAll(`rect.box[data-n="${n}"]`).forEach(b => {
-    // the ring stays clear of the box (its inner edge 2 px outside the box's stroke) and the box keeps its width: these
-    // boxes hug a line of text, and a thicker box or a ring on its edge covered the glyphs (user, 2026-11-05)
-    const svg = b.ownerSVGElement, k = svg.viewBox.baseVal.width / (svg.clientWidth || svg.viewBox.baseVal.width), o = 5.5 * k;
-    const [x, y, w, h] = ['x', 'y', 'width', 'height'].map(a => +b.getAttribute(a));
-    const ring = (c, sw) => `<rect class="ring" x="${x - o}" y="${y - o}" width="${w + 2 * o}" height="${h + 2 * o}" rx="${3 * k}" stroke="${c}" stroke-width="${sw * k}"/>`;
     const top = b.cloneNode(true); top.classList.add('top'); top.style.pointerEvents = 'none'; top.querySelector('title')?.remove();
-    b.classList.add('pick'); svg.insertAdjacentHTML('beforeend', ring('rgba(0,0,0,0.85)', 3.5) + ring('#fff', 1.5)); svg.append(top); });
+    b.classList.add('pick'); ringAt(b, true); b.ownerSVGElement.append(top); });
   void it.offsetWidth; it.classList.add('pick'); if (!again) it.classList.add('flash');
   if (!scroll) return;
   const rp = it.closest('.rp'), y = it.getBoundingClientRect().top - rp.getBoundingClientRect().top + rp.scrollTop - (rp.clientHeight - it.offsetHeight) / 2;

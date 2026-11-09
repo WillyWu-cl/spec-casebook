@@ -1,0 +1,72 @@
+{
+ "file": "mzJYPdS0vyHdprWGYdzDAp",
+ "page": "65:3761",
+ "group": "pm-toolbar-link",
+ "extracted_at": "2026-11-06",
+ "section": [
+  "65:3761",
+  "✅SPEC",
+  -1158,
+  -554,
+  6533,
+  3461
+ ],
+ "boards": [
+  [
+   "65:3761/pm-toolbar-link",
+   "pm-toolbar-link",
+   -1180,
+   780,
+   800,
+   480
+  ]
+ ],
+ "names": [],
+ "screens": [],
+ "controls": [],
+ "arrows": [],
+ "hidden": {
+  "screens": 0,
+  "controls": 0
+ },
+ "entries": [
+  {
+   "name": "pm-toolbar-link",
+   "parent": "65:3761",
+   "box": [
+    -1180,
+    780,
+    800,
+    480
+   ]
+  }
+ ],
+ "hash": {
+  "65:3761/pm-toolbar-link": "4d93970c"
+ },
+ "hashed_at": "2026-11-06T03:03:42.806Z",
+ "overlay": {
+  "65:3761/pm-toolbar-link": ""
+ },
+ "overlay_box": {
+  "65:3761/pm-toolbar-link": [
+   -1180,
+   780,
+   800,
+   480
+  ]
+ },
+ "texts": [
+  [
+   0,
+   -1158,
+   794,
+   742,
+   245,
+   "Toolbar re-org reference\n\nhttps://docs.google.com/spreadsheets/d/1OvToKsZ6tTkROzuznVnVfUfU3oRCY8SQHrMk0xGuIes/edit?usp=sharing",
+   0
+  ]
+ ],
+ "ms": 1785,
+ "size": 660
+}

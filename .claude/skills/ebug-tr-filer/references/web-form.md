@@ -153,7 +153,9 @@ Version column (now skipped — confirm with `ecl_query.py bug`); `export-filing
 retries); the Activity Log names the API service account 「ECYBERLINK」 as actor while Creator is the filer.
 
 **Correcting a filed IF3 ticket (verified 2026-10-08, DRI261894P0017).** Text: FormView → **Edit** → set
-`textarea[name=DescribeIssue]` → **Save**, then read the FormView back. New evidence: upload with `ecl_if3.py upload`
+`textarea[name=DescribeIssue]` → **Save**, then read the FormView back. Bugs created over the API have no OS Language,
+which the Edit form requires (red 「OS Language field must have at least 1 items」, Save does nothing): ask the user which
+to tick (2026-11-06, DRA262610P0416: 「9 Languages」), and read the form back so only the approved fields differ. New evidence: upload with `ecl_if3.py upload`
 and point the Description's `{filename}` refs at it. **Already-saved attachments cannot be removed**: the trash icon on
 the 「Upload Files」 page only drops the file from the page's local list; Save sends no delete and both the FormView and
 `/IF3/ebug/api/Attachments/Code/{BugCode}` still list it. So get the evidence right before the first upload — a wrong frame

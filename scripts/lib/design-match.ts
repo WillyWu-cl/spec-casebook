@@ -12,10 +12,14 @@ export type Ctl = { node: string; name: string; box: Box };
 // with what surrounds it: the largest node around it that holds none of this feature's controls and less than 60 % of
 // the screen (a shortcut tile with its label, the 「What's Trending」 section with its heading, a top bar of other
 // features' buttons). Their texts, fills and icons are not measured; `out` lists those areas and `outTexts` their texts.
-export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, scope?: { other: Ctl[]; mine: Ctl[] }) {
+// buttonNodes: every control of this feature on the screen (labelled or not), returned as `buttons` for the gaps
+// between them. `boxes` are the shapes texts sit in (a fill or a border, no image; buttons, chips, cards, tags), each
+// with its border (stroke), corner radius and whether it hugs its content (auto layout), for padding and centring.
+export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, scope?: { other: Ctl[]; mine: Ctl[] }, buttonNodes?: Set<string>) {
   const kids = new Map<string, any[]>(), byId = new Map<string, any>();
   for (const n of nodes) { if (!kids.has(n.parent)) kids.set(n.parent, []); kids.get(n.parent)!.push(n); byId.set(n.id, n); }
   const texts: any[] = [], fills: any[] = [], controls: any[] = [], out: { node: string; name: string; box: Box }[] = [];
+  const shapes: any[] = [], buttons: Ctl[] = [];
   const CHROME = /status ?bar|home ?indicator|keyboard|iphone x|^notch$/i;
   let keyboard = false;   // the frame draws the keyboard up (the check compares it with the capture)
   const rel = (n: any): Box => [n.abs[0] - scr.abs[0], n.abs[1] - scr.abs[1], n.abs[2], n.abs[3]];
@@ -48,20 +52,35 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
       if (box[0] >= scr.abs[2] || box[1] >= scr.abs[3] || box[0] + box[2] <= 0 || box[1] + box[3] <= 0) continue;
       if (outIds.has(n.id)) { out.push({ node: n.id, name: n.name, box }); outText(n.id); continue; }
       if (controlNodes.has(n.id)) controls.push({ node: n.id, name: n.name, box });
+      if (buttonNodes?.has(n.id)) buttons.push({ node: n.id, name: n.name, box });
+      if (/^(FRAME|INSTANCE|RECTANGLE|COMPONENT)$/.test(n.type) && box[2] >= 12 && box[3] >= 8 && box[2] * box[3] < 0.4 * scr.abs[2] * scr.abs[3] && !holdsImage(n.id)) {
+        const fill = (n.fills ?? []).some((x: any) => x.type === 'SOLID' && x.visible !== false && x.color && !/00$/i.test(x.color));
+        // a border of any paint (a gradient ring counts); its colour only when solid
+        const st = (n.strokes ?? []).filter((x: any) => x.visible !== false && (x.type !== 'SOLID' || (x.color && !/00$/i.test(x.color)))).at(-1);
+        const weight = typeof n.stroke_weight === 'number' ? n.stroke_weight : 0, L = n.layout ?? {}, C = n.child ?? {};
+        // hugs its content across or down: auto layout sized AUTO on that axis, or a child set to HUG
+        const hugW = (L.mode === 'HORIZONTAL' && L.primary_sizing === 'AUTO') || (L.mode === 'VERTICAL' && L.cross_sizing === 'AUTO') || C.horizontal === 'HUG';
+        const hugH = (L.mode === 'VERTICAL' && L.primary_sizing === 'AUTO') || (L.mode === 'HORIZONTAL' && L.cross_sizing === 'AUTO') || C.vertical === 'HUG';
+        const solid = (n.fills ?? []).filter((x: any) => x.type === 'SOLID' && x.visible !== false && x.color && /ff$/i.test(x.color)).at(-1);
+        if (fill || (st && weight > 0)) shapes.push({ node: n.id, name: n.name, box, hugW, hugH, fill: solid ? solid.color.slice(0, 7) : null,
+          stroke: st && weight > 0 ? { color: st.type === 'SOLID' ? st.color.slice(0, 7) : null, alpha: st.type === 'SOLID' ? parseInt(st.color.slice(7, 9) || 'ff', 16) / 255 : 1, paint: st.type, weight, align: n.stroke_align ?? 'INSIDE', ...(st.variable ? { variable: st.variable } : {}) } : null,
+          radius: typeof n.radius === 'number' ? n.radius : Array.isArray(n.radius) ? Math.max(...n.radius.filter((r: unknown) => typeof r === 'number')) : null });
+      }
       if (n.type === 'TEXT' && n.text?.characters?.trim()) {
         const run = n.text.runs?.[0] ?? {}, solid = n.text.runs?.length === 1 ? run.fills?.filter((f: any) => f.type === 'SOLID') : null;
         texts.push({ node: n.id, text: n.text.characters.trim(), box, align: n.text.align?.[0] ?? 'LEFT', auto_resize: n.text.auto_resize, size: run.font_size,
           font: run.font_family ? `${run.font_family} ${run.font_style ?? ''} ${run.font_size ?? '?'} pt`.replace(/\s+/g, ' ') : undefined, weight: run.font_weight,
           // the glyphs as Figma draws them (absoluteRenderBounds from the source read, in the board's frame like `box`)
           render: n.render && n.box ? [n.render[0] - n.box[0] + box[0], n.render[1] - n.box[1] + box[1], n.render[2], n.render[3]] : undefined,
-          line_height: typeof run.line_height === 'number' ? run.line_height : 0, color: solid?.length === 1 && /ff$/i.test(solid[0].color) ? solid[0].color.slice(0, 7) : null });
+          line_height: typeof run.line_height === 'number' ? run.line_height : 0, color: solid?.length === 1 && /ff$/i.test(solid[0].color) ? solid[0].color.slice(0, 7) : null,
+          ...(solid?.length === 1 && solid[0].variable ? { variable: solid[0].variable } : {}) });
       // filled shapes: buttons, chips and cards, and small badges and tags (「NEW」, 「HOT」: 12 × 8 pt and up; user, 2026-11-04)
       } else if (/^(FRAME|INSTANCE|RECTANGLE|COMPONENT)$/.test(n.type) && box[2] * box[3] < 0.4 * scr.abs[2] * scr.abs[3]
         && ((box[2] >= 40 && box[3] >= 24 && (n.radius || /btn|button|cta|chip|tag|card/i.test(n.name)))
           || (box[2] >= 12 && box[2] <= 120 && box[3] >= 8 && box[3] < 24 && (/tag|badge|label|new|hot|pill/i.test(n.name) || (n.radius && kids.get(n.id)?.some((k: any) => k.type === 'TEXT')))))) {
         // a shape holding an image (a portrait card, a poster) shows the image, not its fill
         const f = (n.fills ?? []).filter((x: any) => x.type === 'SOLID' && x.color && !x.color.endsWith('00')).at(-1);
-        if (f && /ff$/i.test(f.color) && !holdsImage(n.id)) fills.push({ node: n.id, name: n.name, color: f.color.slice(0, 7), box,
+        if (f && /ff$/i.test(f.color) && !holdsImage(n.id)) fills.push({ node: n.id, name: n.name, color: f.color.slice(0, 7), ...(f.variable ? { variable: f.variable } : {}), box,
           radius: typeof n.radius === 'number' ? n.radius : Array.isArray(n.radius) ? Math.max(...n.radius.filter((r: unknown) => typeof r === 'number')) : null });
       }
       walk(n.id);
@@ -71,7 +90,16 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
   // a wrapper and the shape inside it on the same box (a white 「Tag」 instance around a pink 「Tag_new」): the inner one is what shows
   const same = (a: Box, b: Box) => a.every((v, i) => Math.abs(v - b[i]) <= 1);
   const shown = fills.filter((f, i) => !fills.some((g, j) => j > i && same(f.box, g.box)));
-  return { texts, fills: shown.slice(0, 40), controls, out, outTexts, keyboard };
+  // each text's box: the smallest shape around it (1 pt slack), the inner one of a wrapper on the same box
+  const within = (o: Box, i: Box) => i[0] >= o[0] - 1 && i[1] >= o[1] - 1 && i[0] + i[2] <= o[0] + o[2] + 1 && i[1] + i[3] <= o[1] + o[3] + 1;
+  const boxes: any[] = [];
+  for (const t of texts) {
+    const b = shapes.filter(s => within(s.box, t.box) && s.box[2] * s.box[3] > t.box[2] * t.box[3] * 1.2).sort((a, c) => a.box[2] * a.box[3] - c.box[2] * c.box[3] || shapes.indexOf(c) - shapes.indexOf(a))[0];
+    if (!b) continue;
+    if (!boxes.includes(b)) boxes.push(b);
+    t.container = b.node;
+  }
+  return { texts, fills: shown.slice(0, 40), controls, out, outTexts, keyboard, boxes, buttons };
 }
 
 // Elements of an XCUITest or UiAutomator2 page source in window units: their text (if any) and whether they can be

@@ -55,7 +55,8 @@ const el = (t, a = {}, ...c) => { const n = document.createElement(t); for (cons
 $('#h').textContent = D.tr + ' · QA Report draft · ' + D.build;
 if (D.errors.length) $('#errors').append(el('div', { class: 'card errors' }, el('b', {}, 'Check found problems'), el('ul', {}, ...D.errors.map(e => el('li', {}, e)))));
 for (const [k, v] of [['Template', D.template], ['Tester', D.tester], ['Short Description', D.shortDescription], ['Test Result', D.testResult],
-  ['Evidence ZIP', D.evidence ? D.evidence.file + ' (' + D.evidence.files + ' files)' : 'not packed yet']]) $('#fields').append(el('dt', {}, k), el('dd', {}, v));
+  D.perBug ? ['Evidence', 'uploaded to each eBug (' + D.rows.filter(r => r.result !== 'Hold').reduce((n, r) => n + r.images.length + (r.logs || []).length, 0) + ' files), named in its Reason']
+    : ['Evidence ZIP', D.evidence ? D.evidence.file + ' (' + D.evidence.files + ' files)' : 'not packed yet']]) $('#fields').append(el('dt', {}, k), el('dd', {}, v));
 $('#details').textContent = D.details;
 const state = r => saved[r.bug] || {};
 function counts() {

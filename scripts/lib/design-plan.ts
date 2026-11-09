@@ -91,11 +91,24 @@ export function planFresh(feature: string, platform: string, quiet = false) {
 export function sourceGaps(feature: string, set: string, skip: Set<string> = new Set()) {
   const ex = join(featureDir(feature), 'specs', set, 'extracted'), dir = join(ex, 'figma-source', 'design');
   const fileKey = existsSync(join(ex, 'figma-frames.json')) ? read(join(ex, 'figma-frames.json')).files?.design?.fileKey : undefined;
-  const merged = (id: string) => existsSync(join(dir, 'out', `${id.replace(/[:;]/g, '-')}.json`));
+  const summary = existsSync(join(dir, 'out', 'summary.json')) ? read(join(dir, 'out', 'summary.json')) : null;
+  // a region board ("<parent>/<name>" with a box: loose frames on a page or in a frame) is read when the source read
+  // merged every top-level board whose centre lies in its box (2026-11-05, phd/scrollable-collage: a Design page of
+  // loose frames, cut into regions by the casebook, was reported unread although every frame was merged)
+  const boxes = new Map<string, number[]>((summary?.boards ?? []).map((b: any) => {
+    const p = join(dir, 'out', `${b.id.replace(/[:;]/g, '-')}.json`); return [b.id, existsSync(p) ? read(p).board?.box : null] as [string, number[]];
+  }).filter(([, b]: [string, any]) => b));
+  const inBox = (r: number[], b: number[]) => { const cx = b[0] + b[2] / 2, cy = b[1] + b[3] / 2; return cx >= r[0] && cx <= r[0] + r[2] && cy >= r[1] && cy <= r[1] + r[3]; };
+  const regions = new Map<string, number[]>();
+  const merged = (id: string) => existsSync(join(dir, 'out', `${id.replace(/[:;]/g, '-')}.json`)) || (regions.has(id) &&
+    [...boxes.values()].some(b => inBox(regions.get(id)!, b)) && !(summary?.incomplete ?? []).some((i: any) => i.box && inBox(regions.get(id)!, i.box)));
   const known = new Map<string, string>();
   for (const f of existsSync(ex) ? readdirSync(ex).filter(f => /^figma-inventory-.*\.json$/.test(f)).sort() : []) {
     const d = read(join(ex, f));
-    if (fileKey && d.file === fileKey) for (const [id, name] of d.boards ?? []) if (!known.has(id)) known.set(id, name);
+    if (fileKey && d.file === fileKey) for (const [id, name, ...box] of d.boards ?? []) {
+      if (!known.has(id)) known.set(id, name);
+      if (String(id).includes('/') && box.length === 4) regions.set(id, box);
+    }
   }
   const incomplete = (existsSync(join(dir, 'out', 'summary.json')) ? read(join(dir, 'out', 'summary.json')).incomplete ?? [] : [])
     .filter((i: any) => !skip.has(i.board)).map((i: any) => ({ id: i.board, name: i.name, missing: i.missing }));

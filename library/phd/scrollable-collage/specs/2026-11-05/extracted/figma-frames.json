@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-11-05",
+  "how": "Figma-only spec set (user, 2026-11-05). PM page 2171:2 「26 11E Scrollable Collage (year end)」 (figma-pm, qa1): section 「PhDM Spec」 (2226:8: Spec - Flow, Spec - UI, Leave & Resume, Save & IAP, Tracking, Competitor Reference - SCRL, Button → Next Step, Draft / TBD, Save page) and section 「SCRL」 (2196:21, competitor screenshots with the original PM notes). Design page 0:1 「20261029_Swipe Collage」 (figma-design, qa-dm): every screen drawn in light (x < 8000) and dark (x ≥ 8396), plus the Canvas icon-button sheets. The Design file's page 3:587 「PM SPEC」 is an older copy of the PM section (no 「Save page」 section): not read, the PM file is the source.",
+  "pm_checked_at": "2026-11-05",
+  "files": {
+    "pm": { "fileKey": "zrl1BBEyqTvdLfjtaT8g6I", "page": "2171:2", "url": "https://www.figma.com/design/zrl1BBEyqTvdLfjtaT8g6I/Collage?node-id=2171-2", "account": "qa1@cyberlink.com (Dev seat, PM Workspace)" },
+    "design": { "fileKey": "iUy5kOrVNG7IjcyxGGnp9t", "page": "0:1", "url": "https://www.figma.com/design/iUy5kOrVNG7IjcyxGGnp9t/Swipe_collage?node-id=0-1", "account": "qa-dm@cyberlink.com (Dev seat, CyberLink DC)" }
+  },
+  "frames": []
+}

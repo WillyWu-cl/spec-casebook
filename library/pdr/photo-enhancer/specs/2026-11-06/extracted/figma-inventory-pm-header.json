@@ -1,0 +1,72 @@
+{
+ "file": "mzJYPdS0vyHdprWGYdzDAp",
+ "page": "65:3761",
+ "group": "pm-header",
+ "extracted_at": "2026-11-06",
+ "section": [
+  "65:3761",
+  "✅SPEC",
+  -1158,
+  -554,
+  6533,
+  3461
+ ],
+ "boards": [
+  [
+   "65:3761/pm-header",
+   "pm-header",
+   -140,
+   -330,
+   4420,
+   110
+  ]
+ ],
+ "names": [],
+ "screens": [],
+ "controls": [],
+ "arrows": [],
+ "hidden": {
+  "screens": 0,
+  "controls": 0
+ },
+ "entries": [
+  {
+   "name": "pm-header",
+   "parent": "65:3761",
+   "box": [
+    -140,
+    -330,
+    4420,
+    110
+   ]
+  }
+ ],
+ "hash": {
+  "65:3761/pm-header": "7bf0808a"
+ },
+ "hashed_at": "2026-11-06T02:52:47.278Z",
+ "overlay": {
+  "65:3761/pm-header": ""
+ },
+ "overlay_box": {
+  "65:3761/pm-header": [
+   -140,
+   -330,
+   4420,
+   110
+  ]
+ },
+ "texts": [
+  [
+   0,
+   -126,
+   -309,
+   4373,
+   73,
+   "SPEC",
+   0
+  ]
+ ],
+ "ms": 784,
+ "size": 502
+}

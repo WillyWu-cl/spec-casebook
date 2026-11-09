@@ -1,0 +1,29 @@
+# P0388 chat update, 2026-11-05 (phone clock CST). Send 「Make Scene 2 and Scene 4 heavy rain」 15:04:40; update card Create storyboard ◆13; Generate 15:07:28.
+# Wi-Fi off 15:08:14.99 (adb svc wifi disable, fired by the s_img_1 receipt line), on 15:09:15.14. Pill 28153 before; 28140 after (13 charged, nothing back by 15:18). 15:11:36 = Storyboard Preview Retry ◆1 (separate).
+2026-11-05 15:05:27.215 14750 22037 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 15:05:27.240 14750 22037 D MiniDrama Log: [AI] I added heavy rain to Scene 2 and Scene 4.
+2026-11-05 15:07:04.135 14750 20590 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28153, …
+2026-11-05 15:07:41.011 14750 19006 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_1 consumeTaskId=91680637 files=1
+2026-11-05 15:07:41.438 14750 24506 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28150, …
+2026-11-05 15:07:41.565 14750 24505 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_2 consumeTaskId=91680638 files=1
+2026-11-05 15:07:41.988 14750 19006 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28147, …
+2026-11-05 15:08:01.863 14750 19006 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_1
+2026-11-05 15:08:06.477 14750 19006 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_env_img_2
+2026-11-05 15:08:06.531 14750 20590 D MiniDrama Log: [NARRATION] voice remembered (narrator, en-US)
+2026-11-05 15:08:11.652 14750 22043 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_preview_tts consumeTaskId=91680639 files=1
+2026-11-05 15:08:11.925 14750 22043 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28146, …
+2026-11-05 15:08:14.503 14750 20590 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_1 consumeTaskId=91680640 files=1
+2026-11-05 15:08:14.913 14750 24618 E MiniDramaFail: [TextToImage] generation_failed: Others | detail=tti=apply_failed type=Others sid=28050106 code=-1 body=java.net.ConnectException: Failed to connect to demo.myedit.online/54.192.248.89:443
+2026-11-05 15:08:14.933 14750 24618 D MiniDrama Log: [TOOL] MyCreation receipt failed call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_2
+2026-11-05 15:09:15.715 14750 24505 D MiniDrama Log: [TOOL] MyCreation receipt failed call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_preview_tts
+2026-11-05 15:09:50.376 14750 24505 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_142543_4f043971_t11_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_environments_done_s_img_1
+2026-11-05 15:09:50.442 14750 24618 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 15:09:50.448 14750 24618 E MiniDramaFail: [engine] target=beat_32b630b9 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Others
+2026-11-05 15:09:50.448 14750 24618 E MiniDramaFail: [engine] target=storyboard | tool=VoiceReference | agent_tool_dispatch('TextToSpeech') failed: generation_failed - Network: poll:-1 java.net.UnknownHostException: Unable to resolve host "demo.myedit.online": No address associated with hostname
+2026-11-05 15:09:50.448 14750 24618 D MiniDrama Log: [TURN] failure: agent_tool_dispatch('TextToSpeech') failed: generation_failed - Network: poll:-1 java.net.UnknownHostException: Unable to resolve host "demo.myedit.online": No address associated with hostname
+2026-11-05 15:09:50.463 14750 24618 E MiniDramaFail: [storyboard] {"error_message":"","status_code":0} | agent_tool_dispatch('TextToSpeech') failed: generation_failed - Network: poll:-1 java.net.UnknownHostException: Unable to resolve host "demo.myedit.online": No address associated with hostname
+2026-11-05 15:09:51.365 14750 24505 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28140, …
+2026-11-05 15:11:35.998 14750 14750 D MiniDrama Log: [NARRATION] retry pressed: localBuildFailure=false, credits=1, engineBusy=false, hasVoice=true
+2026-11-05 15:11:36.005 14750 14750 D MiniDrama Log: [NARRATION] synthesis started (retry): chars=803, voice=narrator, language=en-US, session=261105_142543_4f043971
+2026-11-05 15:11:38.229 14750 24504 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28139, …
+2026-11-05 15:12:10.996 14750 14750 D MiniDrama Log: [NARRATION] spoken again (retry) in 34960ms: out_narration_1793862696006_0.mp3

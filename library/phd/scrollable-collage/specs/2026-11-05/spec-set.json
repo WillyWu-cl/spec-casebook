@@ -1,0 +1,23 @@
+{
+  "feature": "phd/scrollable-collage",
+  "folder": "2026-11-05",
+  "received_at": "2026-11-05T08:52:22.508Z",
+  "spec_set_sha256": "d79381921641a13fa1166c24165801557d185cf4b1b56bef688bd89a17372bff",
+  "files": [
+    {
+      "name": "Scrollable Collage - PM and Design Figma.md",
+      "sha256": "d22269caeddeed27a80d6a16d6a0a62b5bb503a5419adeb73d5a5dcf8d331955",
+      "bytes": 42683
+    }
+  ],
+  "source_priority": [
+    "design",
+    "pm"
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/zrl1BBEyqTvdLfjtaT8g6I/Collage?node-id=2171-2",
+    "design": "https://www.figma.com/design/iUy5kOrVNG7IjcyxGGnp9t/Swipe_collage?node-id=0-1"
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-05): the spec file is the text snapshot of the PM page 2171:2 and the Design page 0:1, written from the inventory reads; no PDF export."
+}

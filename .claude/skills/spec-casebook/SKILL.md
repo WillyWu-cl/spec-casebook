@@ -72,11 +72,13 @@ that showed it). No comparison runs during an analysis or before a proposal.
 2. **Links already there:** check Figma for changes without asking, at the cost of one small call per Figma file
    (never a re-read of every group): `whoami` on `figma-design` and `figma-pm` (on a wrong or signed-out account,
    offer the sign-in of `references/reading-the-spec.md` step 10 or PDF-only, as in 1), then `node scripts/figma-check.ts <feature>`. It writes one check
-   call per file (`extracted/figma-check/<role>.js`). Pass each as `code` to `use_figma` on the server it names and
-   save the reply verbatim as `figma-check/<role>.json`. Then run `node scripts/figma-check.ts <feature> --compare`.
+   call per file (`extracted/figma-check/<role>.js`). Pass each as `code` to `use_figma` on the server it names, with
+   the `description` it prints; `node scripts/figma-check.ts <feature> --save` copies the replies from the transcripts.
+   Then run `node scripts/figma-check.ts <feature> --compare`.
    Also ask whether new PDF exports arrived since the newest spec set (a PDF cannot be checked from here).
-   - `FIGMA: CHANGED`: run the printed `reread-<group>.js` calls (one per changed group, saved over
-     `figma-inventory-<group>.json`), add each new board to a group (or `--ack` it when it is not spec), re-capture the
+   - `FIGMA: CHANGED`: `figma-check.ts <feature> --plan` (new boards as groups with `--add <group>=<id>[@name],…`, or
+     `--ack` a board that is not spec), run the printed calls one at a time per server, `--save`, and repeat until
+     *Nothing left to read* (`reading-the-spec.md` step 10, *Plan, call, save*). Then re-capture the
      listed screenshots (a board with something drawn over it is cut from its holder's shot to the printed box), then
      `inventory.ts --sync-arrows` and `figma-check.ts` again (it takes the new hashes from the re-read groups). A
      board also counts as changed when what is drawn over it changed or an arrow over it is missing from its read
@@ -166,8 +168,9 @@ node scripts/review.ts <feature> <platform>                  # edit the approved
 
 Run it in the background (it is a local server on 127.0.0.1, port 4387 or the next free one), give the user the
 printed URL, and tell them what to do. When the user wants the pages shared or together, run
-`node scripts/pages.ts <feature> <platform> [--draft <id>] [--lan]` instead: five tabs on one address, **Cases** (this review
-page, `/cases/`), **Progress** (the run plan, `/progress/`), **Results** and **Coverage** (user, 2026-10-28), and **Design**
+`node scripts/pages.ts <feature> <platform> [--draft <id>] [--lan]` instead (it prints the table's address; when a pages server
+already runs it prints that one's and exits, and `/` lists every table): five tabs on one address, **Cases** (this review
+page, `…/cases/`), **Progress** (the run plan, `…/progress/`), **Results** and **Coverage** (user, 2026-10-28), and **Design**
 (the design check, figma skill), with one
 shared tab bar holding the only English / 中文 switch; each row's **Coverage →** opens the coverage page on that case
 (its requirements, their spec boards and the controls it presses), **Results →** its run records with the screenshots
@@ -189,7 +192,10 @@ and the pass / fail / block reason, and Save works only on this computer:
 After the user says they saved, read `manifest.json` and `cases.csv` to confirm the version and case count, and
 report them. If the user pastes copied decisions instead of saving, apply them to the draft's rows, write the
 result with the same columns, and re-open the review (or save on their explicit request by editing `cases.csv`
-and re-running `node scripts/export.ts`). Leave the review server running unless the user asks you to stop it.
+and re-running `node scripts/export.ts`). Once the user has said they saved, and the save is confirmed, stop the servers started for that table without asking
+(user, 2026-11-06); until then leave them running unless the user asks. A `pages.ts` server the user started, or one
+serving other tables (`/__hub` lists what runs), stays: its idle pages stop by themselves. Saved open notes that reopen the review (below)
+keep them running.
 
 **New-case notes (user, 2026-10-28).** Save appends the notes to `library/<product>/<feature>/<platform>/new-case-notes.json`
 (`status: "open"`, the version saved with them); Copy decisions ends with a `NEW CASE NOTES` block. Whenever either

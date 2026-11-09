@@ -1,0 +1,29 @@
+{
+  "feature": "pdr/photo-enhancer",
+  "platform": "android",
+  "title": "Support Photo Enhancer",
+  "version": 1,
+  "approved_at": "2026-11-06T03:41:33.327Z",
+  "draft": "20261106-105312",
+  "spec_folder": "specs/2026-11-06",
+  "spec_files": [
+    {
+      "name": "Support Photo Enhancer - PM and Design Figma.md",
+      "sha256": "b72a55219aaaf38bce58af25af08fb0bc3d5f9d2d3f43ad6ebaa1a5576e5f062",
+      "bytes": 6846
+    }
+  ],
+  "spec_set_sha256": "ebaf80fc63d02d3d30d0f959c2f352686a61edf386dc46764fc327aacb84112b",
+  "cases": 29,
+  "history": [
+    {
+      "version": 1,
+      "approved_at": "2026-11-06T03:41:33.327Z",
+      "spec_set_sha256": "ebaf80fc63d02d3d30d0f959c2f352686a61edf386dc46764fc327aacb84112b",
+      "draft": "20261106-105312",
+      "cases": 29,
+      "csv": "cases.csv",
+      "requirements": "requirements.md"
+    }
+  ]
+}

@@ -145,6 +145,12 @@
     "severity": "cosmetic",
     "note": "「More」 sits about 4.5 pt higher, on the same line as 「Start from a template」 (same cause).",
     "note_zh": "「More」高約 4.5 pt，與「Start from a template」同列（同一原因）。"
+   },
+   "padding:I2778:127377;145:7579;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:138549": {
@@ -184,6 +190,12 @@
     "severity": "cosmetic",
     "note": "「More」 sits about 4.5 pt higher, on the same line as 「Start from a template」 (same cause).",
     "note_zh": "「More」高約 4.5 pt，與「Start from a template」同列（同一原因）。"
+   },
+   "padding:I2778:138576;145:7579;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:128904": {
@@ -238,6 +250,17 @@
     },
     "note": "The new-chat button in the header is greyed out on the empty start screen; the Design draws it in its normal (enabled) style there.",
     "note_zh": "開始畫面（空白）時，標頭的新聊天按鈕呈灰色停用；Design 在此畫面畫的是正常（可用）樣式。"
+   },
+   "padding:I2778:128959;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」 sits where Design puts it: the sparkle starts about 10 pt from the chip's left edge and the text ends about 12 pt from its right edge, the same as Design (8 pt padding plus the icon's own margin, and 12 pt). The chip is about 10 pt narrower only because Roboto sets the words narrower than SF Pro. The measured left gap was taken from the text field's bounds, which start before the visible letters.",
+    "note_zh": "「Surprise me」與 Design 一致：星形圖示距標籤左緣約 10 pt，文字距右緣約 12 pt，與 Design（8 pt 內距加圖示本身留白，以及 12 pt）相同。標籤窄約 10 pt 只是 Roboto 字寬比 SF Pro 窄。量到的左側差異取自文字欄位邊界，它比看得到的字更早開始。"
+   },
+   "padding:I2778:128965;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:128966": {
@@ -277,6 +300,17 @@
     },
     "note": "The idea chips run the full width and cut the idea off with an ellipsis (for example 「A strict teacher wakes up trapped inside the body of their worst stude…」). The Design's chips hug a short complete line (「Company policy strictly bans office romance」) and are never truncated.",
     "note_zh": "點子膠囊撐滿整個寬度並以刪節號截斷（如「A strict teacher wakes up trapped inside the body of their worst stude…」）；Design 的膠囊依短句寬度（「Company policy strictly bans office romance」）且不截斷。"
+   },
+   "padding:I2778:129021;2773:119522": {
+    "verdict": "ok",
+    "note": "「Surprise me」 sits where Design puts it: the sparkle starts about 10 pt from the chip's left edge and the text ends about 12 pt from its right edge, the same as Design (8 pt padding plus the icon's own margin, and 12 pt). The chip is about 10 pt narrower only because Roboto sets the words narrower than SF Pro. The measured left gap was taken from the text field's bounds, which start before the visible letters.",
+    "note_zh": "「Surprise me」與 Design 一致：星形圖示距標籤左緣約 10 pt，文字距右緣約 12 pt，與 Design（8 pt 內距加圖示本身留白，以及 12 pt）相同。標籤窄約 10 pt 只是 Roboto 字寬比 SF Pro 窄。量到的左側差異取自文字欄位邊界，它比看得到的字更早開始。"
+   },
+   "padding:I2778:129027;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:139486": {
@@ -488,6 +522,62 @@
     },
     "note": "The app shows a round scroll-to-bottom (down-arrow) button above the input bar, which the Design does not draw, although the conversation already ends on screen.",
     "note_zh": "App 在輸入框上方顯示圓形「捲到底部」向下箭頭按鈕，Design 沒有此按鈕，且對話已完整顯示在畫面上。"
+   },
+   "padding:I2778:127425;1423:94739": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「English」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「English」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127426;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Spanish」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Spanish」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127427;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「French」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「French」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127428;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「German」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「German」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127429;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Japanese」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Japanese」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127430;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Korean」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Korean」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127431;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Chinese」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Chinese」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127440;1423:94739": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Yes, include captions」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Yes, include captions」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127441;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「No captions」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「No captions」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127449;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
+   },
+   "padding:I3172:101306;2750:25393": {
+    "verdict": "ok",
+    "note": "The drawn blue 「Generate」 button is 92.6 x 33.3 pt on the phone against Figma's 96 x 34 pt, and the word sits centred in it (19.4 pt left, 19.1 pt right; 11.5 pt top, 12.1 pt bottom). The extra 2 pt a side comes from the word itself: Android's Roboto sets 「Generate」 54.1 pt wide where Figma's SF Pro draws it 61.7 pt, while the button stays close to Figma's size. The button looks as designed, so this is not a padding problem.",
+    "note_zh": "手機上實際畫出的藍色「Generate」按鈕為 92.6 x 33.3 pt，Figma 為 96 x 34 pt，文字在按鈕中置中（左 19.4 pt、右 19.1 pt；上 11.5 pt、下 12.1 pt）。每側多出的約 2 pt 來自文字本身：Android 的 Roboto 字型把「Generate」排成 54.1 pt 寬，Figma 的 SF Pro 則為 61.7 pt，而按鈕大小仍接近 Figma。按鈕外觀與設計一致，不屬於內距問題。"
    }
   },
   "3142:68271": {
@@ -512,6 +602,12 @@
     "verdict": "ok",
     "note": "The template poster is shown at the top right as in the Design; the frame draws it partly scrolled under the header, the capture shows it in full. The poster differs because another template was used.",
     "note_zh": "範本海報位於右上方，與 Design 相同；Design 畫的是部分捲到標頭下方，截圖則完整顯示；海報不同是因使用了另一個範本。"
+   },
+   "padding:I3142:68295;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:139432": {
@@ -561,6 +657,12 @@
     "verdict": "question",
     "note": "Before the slots, the app adds the message 「I have created the characters for Borrowed Boyfriend, introducing Claire, Liam, and Marcus.」 while the slots are still empty placeholders. The Design has no such line. It may be generated text; PM should confirm the wording is wanted at this step.",
     "note_zh": "欄位上方 App 多了訊息「I have created the characters for Borrowed Boyfriend, introducing Claire, Liam, and Marcus.」，但欄位仍是空白預留；Design 沒有這句。可能是生成文字，需 PM 確認此步驟是否要此文案。"
+   },
+   "padding:I2778:139485;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:144364": {
@@ -628,6 +730,33 @@
     "verdict": "question",
     "note": "The 「Create storyboard」 card adds the line 「Credits will be consumed for this task.」, which the Design card does not have. PM should confirm whether this notice is wanted.",
     "note_zh": "「Create storyboard」卡片多了一行「Credits will be consumed for this task.」，Design 卡片沒有；需 PM 確認是否要此提示。"
+   },
+   "padding:I2778:144412;2750:64270": {
+    "verdict": "n/a",
+    "note": "Not the same box on both sides. Design's box is the whole message card, which holds the question 「The characters look great! Ready to create the storyboard?」 above the blue storyboard card; the app shows that question as plain chat text outside the card, so the distance from the card top to 「Create storyboard」 measures the question's height, not padding. Inside the blue card the title sits about 14 pt from the top and 12 pt from the left, as in Design (12 pt padding). The missing outline of the outer card is judged on its border item.",
+    "note_zh": "兩邊量的不是同一個框。Design 的框是整張訊息卡，裡面在藍色分鏡卡上方還有問句「The characters look great! Ready to create the storyboard?」；App 把這句問句當作卡片外的一般聊天文字，所以從卡頂到「Create storyboard」的距離量到的是問句高度，不是內距。在藍色卡片內，標題距頂約 14 pt、距左約 12 pt，與 Design（12 pt 內距）相同。外框缺少的外框線在其邊框項目判定。"
+   },
+   "padding:I2778:144412;2750:64276": {
+    "verdict": "n/a",
+    "note": "Not a padding comparison: the box measured is the whole message (question included on Design's side), and the number is the storyboard price, 15 on Design and 28 in this build. Inside the blue card the price in the app sits level with the middle of 「Generate」, about 25 pt above the card's bottom edge, where Design lines it up with the button's bottom (about 15 pt); that is the number's place in the row and the extra 「Credits will be consumed for this task.」 line, which this check does not judge.",
+    "note_zh": "這不是內距比較：量到的框是整則訊息（Design 那邊含問句），數字是分鏡價格，Design 為 15、此版本為 28。在藍色卡片內，App 的價格與「Generate」垂直置中，距卡片底約 25 pt，Design 則與按鈕底部對齊（約 15 pt）；那是數字在列中的位置以及多出的「Credits will be consumed for this task.」一行，不在本檢查範圍。"
+   },
+   "padding:I2778:144412;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "The 「Generate」 button keeps about 16.5 pt from the edges to its text on both sides, against Design's 16 pt padding (about 17 pt to the drawn letters). It is narrower only because Roboto draws 「Generate」 narrower than SF Pro.",
+    "note_zh": "「Generate」按鈕兩側從邊緣到文字約 16.5 pt，Design 內距 16 pt（到字形約 17 pt）。按鈕較窄只是 Roboto 的「Generate」比 SF Pro 窄。"
+   },
+   "padding:I2778:144419;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
+   },
+   "border:2778:144412": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "Design wraps the question and the blue storyboard card in a translucent white card with a 1 pt pale-blue outline (#AEE3FF at 40–60 %, 12 pt corners). In the app the question is plain chat text and the card behind the blue offer is barely visible, with no outline on any side, so the offer no longer reads as one card with its question. The other credit offer cards built from the same component should be checked for the same outline.",
+    "note_zh": "Design 用一張半透明白色卡片包住問句與藍色分鏡卡，外框為 1 pt 淺藍線（#AEE3FF，40–60 % 透明度，12 pt 圓角）。App 中問句是一般聊天文字，藍色方案後方的卡片幾乎看不見，四邊都沒有外框線，因此問句與方案不再像同一張卡片。使用同一元件的其他點數方案卡也應檢查是否有同樣的外框。"
    }
   },
   "2778:144420": {
@@ -675,6 +804,17 @@
       88
      ]
     }
+   },
+   "padding:2778:144472": {
+    "verdict": "ok",
+    "note": "From the card's visible top edge to 「Creating your scene…」 the app leaves about 18 pt against Design's about 21 pt, within the 4 pt tolerance; the measured app box starts a few points above the drawn card. The bottom gap is set by the loading bars below the title, not by padding, so it is not comparable.",
+    "note_zh": "從卡片可見的上緣到「Creating your scene…」，App 約 18 pt，Design 約 21 pt，在 4 pt 容許範圍內；量到的 App 框比畫出的卡片高出幾點。下方距離由標題下方的載入條決定，不是內距，無法比較。"
+   },
+   "padding:I2778:144485;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:138725": {
@@ -709,6 +849,12 @@
       319
      ]
     }
+   },
+   "padding:I2778:138792;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:127378": {
@@ -816,6 +962,62 @@
       40
      ]
     }
+   },
+   "padding:I3142:68215;1423:94739": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「English」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「English」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68216;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Spanish」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Spanish」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68217;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「French」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「French」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68218;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「German」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「German」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68219;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Japanese」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Japanese」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68220;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Korean」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Korean」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68221;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Chinese」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Chinese」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68225;1423:94739": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Yes, include captions」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Yes, include captions」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68226;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「No captions」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「No captions」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I2778:127413;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
+   },
+   "padding:I3172:101313;2750:25393": {
+    "verdict": "ok",
+    "note": "The drawn blue 「Generate」 button is 92.6 x 33.3 pt on the phone against Figma's 96 x 34 pt, and the word sits centred in it (19.4 pt left, 19.1 pt right; 11.5 pt top, 12.1 pt bottom). The extra 2 pt a side comes from the word itself: Android's Roboto sets 「Generate」 54.1 pt wide where Figma's SF Pro draws it 61.7 pt, while the button stays close to Figma's size. The button looks as designed, so this is not a padding problem.",
+    "note_zh": "手機上實際畫出的藍色「Generate」按鈕為 92.6 x 33.3 pt，Figma 為 96 x 34 pt，文字在按鈕中置中（左 19.4 pt、右 19.1 pt；上 11.5 pt、下 12.1 pt）。每側多出的約 2 pt 來自文字本身：Android 的 Roboto 字型把「Generate」排成 54.1 pt 寬，Figma 的 SF Pro 則為 61.7 pt，而按鈕大小仍接近 Figma。按鈕外觀與設計一致，不屬於內距問題。"
    }
   },
   "3142:68240": {
@@ -914,6 +1116,62 @@
       160
      ]
     }
+   },
+   "padding:I3142:68251;1423:94739": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「English」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「English」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68252;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Spanish」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Spanish」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68253;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「French」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「French」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68254;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「German」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「German」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68255;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Japanese」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Japanese」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68256;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Korean」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Korean」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68257;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Chinese」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Chinese」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68261;1423:94739": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「Yes, include captions」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「Yes, include captions」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68262;1423:94737": {
+    "verdict": "ok",
+    "note": "On the screenshot the 「No captions」 chip keeps about 12–13 pt of space on each side of its text, the same as Design's 12 pt padding (about 13 pt to the drawn letters). The chip is narrower only because Roboto draws the words narrower than SF Pro; the measured gap came from the text field's own bounds, not the visible letters. All language and caption chips on these screens match the same way, in dark and light mode.",
+    "note_zh": "截圖上「No captions」標籤文字兩側各留約 12–13 pt，與 Design 的 12 pt 內距（到字形約 13 pt）相同。標籤較窄只是因為 Roboto 的字比 SF Pro 窄；量到的差異來自文字欄位本身的邊界，而非看得到的字。這些畫面上所有語言與字幕標籤在深色與淺色模式下都一樣相符。"
+   },
+   "padding:I3142:68270;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
+   },
+   "padding:I3172:101316;2750:25393": {
+    "verdict": "ok",
+    "note": "The drawn blue 「Generate」 button is 92.6 x 33.3 pt on the phone against Figma's 96 x 34 pt, and the word sits centred in it (19.4 pt left, 19.1 pt right; 11.5 pt top, 12.1 pt bottom). The extra 2 pt a side comes from the word itself: Android's Roboto sets 「Generate」 54.1 pt wide where Figma's SF Pro draws it 61.7 pt, while the button stays close to Figma's size. The button looks as designed, so this is not a padding problem.",
+    "note_zh": "手機上實際畫出的藍色「Generate」按鈕為 92.6 x 33.3 pt，Figma 為 96 x 34 pt，文字在按鈕中置中（左 19.4 pt、右 19.1 pt；上 11.5 pt、下 12.1 pt）。每側多出的約 2 pt 來自文字本身：Android 的 Roboto 字型把「Generate」排成 54.1 pt 寬，Figma 的 SF Pro 則為 61.7 pt，而按鈕大小仍接近 Figma。按鈕外觀與設計一致，不屬於內距問題。"
    }
   },
   "2778:127450": {
@@ -943,6 +1201,12 @@
       56
      ]
     }
+   },
+   "padding:I2778:127474;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:128850": {
@@ -1020,6 +1284,12 @@
       108
      ]
     }
+   },
+   "padding:I2778:128903;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is drawn tighter than Design on both ends: the coin starts about 10 pt from the pill's left edge (Design 13 pt) and the number ends about 10 pt from the right edge (Design 14 pt), and the coin itself is about 11 pt across instead of 13 pt. The balance number is account data, but the pill hugs its content, so the insets are comparable whatever the number is. The same pill shows on every AI Mini Drama screen with this difference, so one fix covers all of them.",
+    "note_zh": "點數膠囊兩端都比 Design 緊：硬幣圖示距膠囊左緣約 10 pt（Design 為 13 pt），數字距右緣約 10 pt（Design 為 14 pt），硬幣本身約 11 pt 寬（Design 為 13 pt）。餘額數字是帳號資料，但膠囊會隨內容縮放，所以不論數字為何內距都可比較。AI Mini Drama 每個畫面上的同一顆膠囊都有這個差異，修一次即可全部修正。"
    }
   },
   "2778:129028": {
@@ -1084,6 +1354,16 @@
     "verdict": "ok",
     "note": "The selected empty cast tile is near-black on dark as drawn; ΔE 12 is at the limit and the tile reads the same as the Design.",
     "note_zh": "選中的空角色格在深色模式下為近黑色，與設計相同；ΔE 12 在門檻上，外觀與 Design 一致。"
+   },
+   "spacing:2778:129032-2778:129036": {
+    "verdict": "n/a",
+    "note": "The filter icon and the first character tile are not neighbouring buttons in one row or column: the icon belongs to the 「Choose for …」 header and the tile to the grid below, so this is the header-to-grid distance, which is the grid's place on the screen. On the screenshot the grid starts about 3–4 pt closer to the header than in Design, which is barely visible; the 12 pt gaps between tiles match.",
+    "note_zh": "篩選圖示與第一個角色格不是同一列或同一欄的相鄰按鈕：圖示屬於「Choose for …」標題列，格子屬於下方網格，所以這是標題到網格的距離，也就是網格在畫面上的位置。截圖上網格比 Design 靠近標題約 3–4 pt，幾乎看不出；格子之間的 12 pt 間距相符。"
+   },
+   "border:2778:129034": {
+    "verdict": "ok",
+    "note": "The 「Create my character」 tile does have its outline: a 1 pt dark grey line (#373B42) on all four sides, matching Design's 1 pt #363B43. The outline is very close to the page colour, which is why it was not picked up; it is as subtle in Design.",
+    "note_zh": "「Create my character」格其實有外框：四邊都有 1 pt 深灰線（#373B42），與 Design 的 1 pt #363B43 相符。外框顏色與頁面底色非常接近，所以沒被偵測到；Design 中也一樣不明顯。"
    }
   },
   "2778:129078": {
@@ -1142,6 +1422,11 @@
       72
      ]
     }
+   },
+   "border:2778:129084": {
+    "verdict": "ok",
+    "note": "Fine: the 「Create my character」 tile does have a 1 pt edge in grey #373B42 around it, the same as Design's #363B43 outline; it is easy to miss on the dark tile but matches.",
+    "note_zh": "沒問題：「Create my character」圖塊周圍確實有 1 pt 灰色 #373B42 邊框，與 Design 的 #363B43 外框相同；在深色圖塊上不明顯但一致。"
    }
   },
   "2778:139610": {
@@ -1393,6 +1678,27 @@
       88
      ]
     }
+   },
+   "padding:I2778:128710;2750:64270": {
+    "verdict": "ok",
+    "note": "Fine: the box measured here is the whole message card, not a box around this text. Inside the blue card the title keeps Design's inset (about 13 pt from the left and top edges); the extra distance comes from the app's added line 「Credits will be consumed for this task.」 and the question sitting above the card, which change the card's height, not its padding.",
+    "note_zh": "沒問題：此處量的是整張訊息卡，不是包住這段文字的框。藍色卡片內標題與邊緣的距離與 Design 相同（左、上約 13 pt）；多出的距離來自 App 多一行「Credits will be consumed for this task.」且問句放在卡片上方，改變的是卡片高度，不是內距。"
+   },
+   "padding:I2778:128710;2750:64276": {
+    "verdict": "ok",
+    "note": "Fine: the credit cost sits at the bottom of the blue card with about the same bottom inset as Design (within 3 pt); its larger distance from the card top comes from the app's added line 「Credits will be consumed for this task.」, not from a padding change. The number itself is sample content.",
+    "note_zh": "沒問題：扣點數字位於藍色卡片底部，與底緣距離和 Design 相近（差 3 pt 內）；與卡片頂端距離較大是因為 App 多一行「Credits will be consumed for this task.」，不是內距改變。數字本身是範例內容。"
+   },
+   "padding:I2778:128710;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "Not a padding problem: the 「Generate」 button uses the same 16 pt side padding as Design; it is narrower only because Roboto Bold draws 「Generate」 about 5 pt narrower than SF Pro. Same button on every credit card.",
+    "note_zh": "不是內距問題：「Generate」按鈕左右內距與 Design 同為 16 pt，只因 Roboto Bold 畫出的「Generate」比 SF Pro 窄約 5 pt，按鈕才較窄。所有扣點卡片上的按鈕都一樣。"
+   },
+   "padding:I2778:128717;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:128718": {
@@ -1441,6 +1747,12 @@
       88
      ]
     }
+   },
+   "padding:I2778:128783;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:127550": {
@@ -1532,6 +1844,22 @@
     "verdict": "n/a",
     "note": "Fill of the 「More ideas」 chip, which the app does not show (judged under the missing chip).",
     "note_zh": "「More ideas」標籤的填色；App 沒有這個標籤（已在缺少標籤一項判定）。"
+   },
+   "padding:I3142:67911;2750:118360": {
+    "verdict": "ok",
+    "note": "Fine: 「Video length」 is a label in the middle of the settings card, so its distance from the card top follows the rows above it (the app adds the heading 「Choose your video settings」 and shows a different picker above), not the card's padding. The card keeps Design's 16 pt side padding.",
+    "note_zh": "沒問題：「Video length」是設定卡中段的標籤，它與卡片頂端的距離取決於上方各列（App 多了標題「Choose your video settings」且上方的選擇器不同），不是卡片內距。卡片左右內距與 Design 同為 16 pt。"
+   },
+   "padding:I2778:127611;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
+   },
+   "border:3142:67911": {
+    "verdict": "ok",
+    "note": "Fine: the app does draw a faint 1 pt blue-grey outline around the settings card (about #25374F on the dark background), matching Design's faint blue-to-white gradient outline at 10 % opacity; the two look the same on the screen.",
+    "note_zh": "沒問題：App 在設定卡周圍有畫一圈淡淡的 1 pt 藍灰色外框（深色背景上約 #25374F），與 Design 10 % 透明度的藍到白漸層外框相符，畫面上看起來一樣。"
    }
   },
   "2778:127612": {
@@ -1644,6 +1972,22 @@
       28
      ]
     }
+   },
+   "padding:I3139:64913;4845:2156": {
+    "verdict": "ok",
+    "note": "Fine: 「Video length」 is a label in the middle of the settings card, so its distance from the card top follows the rows above it (the app adds the heading 「Choose your video settings」 and shows a different picker above), not the card's padding. The card keeps Design's 16 pt side padding.",
+    "note_zh": "沒問題：「Video length」是設定卡中段的標籤，它與卡片頂端的距離取決於上方各列（App 多了標題「Choose your video settings」且上方的選擇器不同），不是卡片內距。卡片左右內距與 Design 同為 16 pt。"
+   },
+   "padding:I2778:127673;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
+   },
+   "border:3139:64913": {
+    "verdict": "ok",
+    "note": "Fine: the app does draw a faint 1 pt blue-grey outline around the settings card (about #25374F on the dark background), matching Design's faint blue-to-white gradient outline at 10 % opacity; the two look the same on the screen.",
+    "note_zh": "沒問題：App 在設定卡周圍有畫一圈淡淡的 1 pt 藍灰色外框（深色背景上約 #25374F），與 Design 10 % 透明度的藍到白漸層外框相符，畫面上看起來一樣。"
    }
   },
   "2824:130900": {
@@ -1691,6 +2035,12 @@
     "verdict": "n/a",
     "note": "The control is the scene-2 thumbnail scrolled under the status bar in the frame; the capture's scroll puts it under the header too, so it cannot be checked here.",
     "note_zh": "該控制項是框架中捲到狀態列下方的場景 2 縮圖；擷取畫面同樣捲到標題列下，無法在此檢查。"
+   },
+   "padding:I2824:130972;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:138663": {
@@ -1762,6 +2112,17 @@
     "verdict": "ok",
     "note": "Sampled the wrong area: the app's Generate button is the same blue pill as the Design's; the measured colour is not the button.",
     "note_zh": "取樣位置錯誤：App 的 Generate 按鈕與 Design 同為藍色膠囊；量到的顏色不是按鈕。"
+   },
+   "padding:I3142:68177;2750:118360": {
+    "verdict": "ok",
+    "note": "Fine: 「Video length」 is a label in the middle of the settings card, so its distance from the card top follows the rows above it (the app adds the heading 「Choose your video settings」 and shows a different picker above), not the card's padding. The card keeps Design's 16 pt side padding.",
+    "note_zh": "沒問題：「Video length」是設定卡中段的標籤，它與卡片頂端的距離取決於上方各列（App 多了標題「Choose your video settings」且上方的選擇器不同），不是卡片內距。卡片左右內距與 Design 同為 16 pt。"
+   },
+   "padding:I2778:138724;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:127674": {
@@ -1795,6 +2156,12 @@
       318
      ]
     }
+   },
+   "padding:I2778:127741;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:127956": {
@@ -1844,6 +2211,28 @@
       14
      ]
     }
+   },
+   "padding:I2778:128018;2750:64266": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "In Design the question 「Looking good! Ready for the full video?」 sits inside the outlined card with 12 pt padding, above the blue credit card. The app draws it outside the card, flush with the card's left edge (0 pt inset), and the card wraps only the blue credit card. Same in the light version of this screen.",
+    "note_zh": "Design 中問句「Looking good! Ready for the full video?」位於有外框的卡片內、藍色扣點卡上方，內距 12 pt。App 把它畫在卡片外、與卡片左緣切齊（內距 0 pt），卡片只包住藍色扣點卡。此畫面的淺色版本也一樣。"
+   },
+   "padding:I2778:128018;2750:64276": {
+    "verdict": "ok",
+    "note": "Fine: the credit cost sits at the bottom of the blue card with about the same bottom inset as Design (within 3 pt); its larger distance from the card top comes from the app's added line 「Credits will be consumed for this task.」, not from a padding change. The number itself is sample content.",
+    "note_zh": "沒問題：扣點數字位於藍色卡片底部，與底緣距離和 Design 相近（差 3 pt 內）；與卡片頂端距離較大是因為 App 多一行「Credits will be consumed for this task.」，不是內距改變。數字本身是範例內容。"
+   },
+   "padding:I2778:128018;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "Not a padding problem: the 「Generate」 button uses the same 16 pt side padding as Design; it is narrower only because Roboto Bold draws 「Generate」 about 5 pt narrower than SF Pro. Same button on every credit card.",
+    "note_zh": "不是內距問題：「Generate」按鈕左右內距與 Design 同為 16 pt，只因 Roboto Bold 畫出的「Generate」比 SF Pro 窄約 5 pt，按鈕才較窄。所有扣點卡片上的按鈕都一樣。"
+   },
+   "padding:I2778:128024;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:127742": {
@@ -1899,6 +2288,33 @@
     "note": "The user bubble after Generate reads 「Standard · Preview - 30 sec」; the Design's bubble has 「Generate Video」 with labelled lines (Model, Length). Quality instead of Model follows PM 10/16, but the 「Generate Video」 line and the labels are dropped.",
     "note_zh": "按 Generate 後的使用者泡泡為「Standard · Preview - 30 sec」；Design 的泡泡有「Generate Video」與標示的各行（Model、Length）。以 Quality 取代 Model 符合 PM 10/16，但少了「Generate Video」一行與標籤。",
     "severity": "minor"
+   },
+   "padding:I2778:127804;2750:64266": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "In Design the question 「Looking good! Ready for the full video?」 sits inside the outlined card with 12 pt padding, above the blue credit card. The app draws it outside the card, flush with the card's left edge (0 pt inset), and the card wraps only the blue credit card. Same in the light version of this screen.",
+    "note_zh": "Design 中問句「Looking good! Ready for the full video?」位於有外框的卡片內、藍色扣點卡上方，內距 12 pt。App 把它畫在卡片外、與卡片左緣切齊（內距 0 pt），卡片只包住藍色扣點卡。此畫面的淺色版本也一樣。"
+   },
+   "padding:I2778:127804;2750:64276": {
+    "verdict": "ok",
+    "note": "Fine: the credit cost sits at the bottom of the blue card with about the same bottom inset as Design (within 3 pt); its larger distance from the card top comes from the app's added line 「Credits will be consumed for this task.」, not from a padding change. The number itself is sample content.",
+    "note_zh": "沒問題：扣點數字位於藍色卡片底部，與底緣距離和 Design 相近（差 3 pt 內）；與卡片頂端距離較大是因為 App 多一行「Credits will be consumed for this task.」，不是內距改變。數字本身是範例內容。"
+   },
+   "padding:I2778:127804;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "Not a padding problem: the 「Generate」 button uses the same 16 pt side padding as Design; it is narrower only because Roboto Bold draws 「Generate」 about 5 pt narrower than SF Pro. Same button on every credit card.",
+    "note_zh": "不是內距問題：「Generate」按鈕左右內距與 Design 同為 16 pt，只因 Roboto Bold 畫出的「Generate」比 SF Pro 窄約 5 pt，按鈕才較窄。所有扣點卡片上的按鈕都一樣。"
+   },
+   "padding:I2778:127810;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
+   },
+   "spacing:2778:127803-2778:127804": {
+    "verdict": "n/a",
+    "note": "Not comparable: these are the video preview and the message card, not two buttons, and the app box taken here is a 1 pt strip, not the video. On the screen the gap from the video to the next line is about 20 pt, wider than Design's 12 pt, but that is a layout choice outside this check.",
+    "note_zh": "無法比較：這是影片預覽與訊息卡，不是兩個按鈕，且此處取到的 App 框是一條 1 pt 細條而非影片。畫面上影片到下一行的距離約 20 pt，比 Design 的 12 pt 寬，但這屬版面安排，不在此項檢查範圍。"
    }
   },
   "2778:138793": {
@@ -1954,6 +2370,28 @@
     "note": "The user bubble after Generate reads 「Standard · Preview - 30 sec」; the Design's bubble has 「Generate Video」 with labelled lines (Model, Length). Quality instead of Model follows PM 10/16, but the 「Generate Video」 line and the labels are dropped.",
     "note_zh": "按 Generate 後的使用者泡泡為「Standard · Preview - 30 sec」；Design 的泡泡有「Generate Video」與標示的各行（Model、Length）。以 Quality 取代 Model 符合 PM 10/16，但少了「Generate Video」一行與標籤。",
     "severity": "minor"
+   },
+   "padding:I2778:138855;2750:64276": {
+    "verdict": "ok",
+    "note": "Fine: the credit cost sits at the bottom of the blue card with about the same bottom inset as Design (within 3 pt); its larger distance from the card top comes from the app's added line 「Credits will be consumed for this task.」, not from a padding change. The number itself is sample content.",
+    "note_zh": "沒問題：扣點數字位於藍色卡片底部，與底緣距離和 Design 相近（差 3 pt 內）；與卡片頂端距離較大是因為 App 多一行「Credits will be consumed for this task.」，不是內距改變。數字本身是範例內容。"
+   },
+   "padding:I2778:138855;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "Not a padding problem: the 「Generate」 button uses the same 16 pt side padding as Design; it is narrower only because Roboto Bold draws 「Generate」 about 5 pt narrower than SF Pro. Same button on every credit card.",
+    "note_zh": "不是內距問題：「Generate」按鈕左右內距與 Design 同為 16 pt，只因 Roboto Bold 畫出的「Generate」比 SF Pro 窄約 5 pt，按鈕才較窄。所有扣點卡片上的按鈕都一樣。"
+   },
+   "padding:I2778:138861;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
+   },
+   "border:2778:138855": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "In light mode Design draws the message card white with a light-blue 1 pt outline (about #DBF1FB as drawn) around the question and the credit card; the app's card behind the blue credit card is a pale grey-blue fill with no outline, so the card edge is hard to see. Goes with the question sitting outside the card.",
+    "note_zh": "淺色模式下 Design 的訊息卡為白色，外圍有 1 pt 淺藍色外框（畫面上約 #DBF1FB），包住問句與扣點卡；App 藍色扣點卡後方的卡片只是淡灰藍底色、沒有外框，卡片邊緣幾乎看不出來。與問句放在卡片外的問題相關。"
    }
   },
   "2778:127500": {
@@ -1983,6 +2421,12 @@
       40
      ]
     }
+   },
+   "padding:I2778:127524;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:128784": {
@@ -2020,6 +2464,17 @@
     "verdict": "ok",
     "note": "「Creating your scene…」 uses a single ellipsis character for 「...」; same text.",
     "note_zh": "「Creating your scene…」以單一刪節號字元代替「...」；文字相同。"
+   },
+   "padding:2778:128836": {
+    "verdict": "ok",
+    "note": "Fine: the app pads the loading card 16 pt like Design; 「Creating your scene…」 sits about 17 pt below the card's visible top against Design's 21 pt, only because the app's line is shorter (12 sp text in a 14 dp line). The bottom difference comes from the placeholder bars, not padding.",
+    "note_zh": "沒問題：App 載入卡片內距與 Design 同為 16 pt；「Creating your scene…」距卡片上緣約 17 pt（Design 21 pt），只是 App 行高較小（12 sp 字、14 dp 行高）。底部差距來自佔位條，不是內距。"
+   },
+   "padding:I2778:128849;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:128300": {
@@ -2043,6 +2498,17 @@
       318
      ]
     }
+   },
+   "padding:I2778:128355;393:31121": {
+    "verdict": "ok",
+    "note": "Fine: the 「Create video」 reply bubble uses 16 pt padding on every side like Design; it is narrower only because Roboto draws the words about 6 pt narrower than SF Pro.",
+    "note_zh": "沒問題：「Create video」回覆泡泡四邊內距與 Design 同為 16 pt；只因 Roboto 畫出的文字比 SF Pro 窄約 6 pt，泡泡才較窄。"
+   },
+   "padding:I2778:128367;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   },
   "2778:128606": {
@@ -2154,6 +2620,27 @@
       155
      ]
     }
+   },
+   "padding:I2778:128654;2750:64270": {
+    "verdict": "ok",
+    "note": "Fine: the box measured here is the whole message card, not a box around this text. Inside the blue card the title keeps Design's inset (about 13 pt from the left and top edges); the extra distance comes from the app's added line 「Credits will be consumed for this task.」 and the question sitting above the card, which change the card's height, not its padding.",
+    "note_zh": "沒問題：此處量的是整張訊息卡，不是包住這段文字的框。藍色卡片內標題與邊緣的距離與 Design 相同（左、上約 13 pt）；多出的距離來自 App 多一行「Credits will be consumed for this task.」且問句放在卡片上方，改變的是卡片高度，不是內距。"
+   },
+   "padding:I2778:128654;2750:64276": {
+    "verdict": "ok",
+    "note": "Fine: the credit cost sits at the bottom of the blue card with about the same bottom inset as Design (within 3 pt); its larger distance from the card top comes from the app's added line 「Credits will be consumed for this task.」, not from a padding change. The number itself is sample content.",
+    "note_zh": "沒問題：扣點數字位於藍色卡片底部，與底緣距離和 Design 相近（差 3 pt 內）；與卡片頂端距離較大是因為 App 多一行「Credits will be consumed for this task.」，不是內距改變。數字本身是範例內容。"
+   },
+   "padding:I2778:128654;2750:64323;2750:25393": {
+    "verdict": "ok",
+    "note": "Not a padding problem: the 「Generate」 button uses the same 16 pt side padding as Design; it is narrower only because Roboto Bold draws 「Generate」 about 5 pt narrower than SF Pro. Same button on every credit card.",
+    "note_zh": "不是內距問題：「Generate」按鈕左右內距與 Design 同為 16 pt，只因 Roboto Bold 畫出的「Generate」比 SF Pro 窄約 5 pt，按鈕才較窄。所有扣點卡片上的按鈕都一樣。"
+   },
+   "padding:I2778:128661;1037:48645;245:2027": {
+    "verdict": "bug",
+    "severity": "minor",
+    "note": "The credit pill is tighter than Design: Design pads it 12 pt on both sides with a 16 pt credit icon and a 4 pt gap, so the number starts 32 pt from the left edge and ends 12 pt from the right; the app uses 9 pt start and 10 pt end padding and a 14 pt icon, so the number sits about 6 pt nearer the left edge and 2 pt nearer the right. The balance number itself is sample content; the padding and icon size are not. Same pill on every chat screen, dark and light.",
+    "note_zh": "點數膠囊比 Design 緊：Design 左右內距各 12 pt、點數圖示 16 pt、間距 4 pt，所以數字距左緣 32 pt、距右緣 12 pt；App 起始內距 9 pt、結尾 10 pt、圖示 14 pt，數字離左緣近約 6 pt、離右緣近約 2 pt。餘額數字本身是範例內容，內距與圖示大小不是。所有聊天畫面（深色與淺色）的點數膠囊都一樣。"
    }
   }
  }

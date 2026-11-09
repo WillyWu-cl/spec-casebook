@@ -122,9 +122,9 @@ refuses them), and it runs in one folder, e.g. `runs/<date>-p23-regression-flows
   The check and the review run at the phase wrap-up (`figma/references/conformance.md` steps 3–4).
 - **Live run plan (user, 2026-10-20/29).** A run starts the full pages server:
   `node scripts/pages.ts <feature> <platform> --plan <RUN-PLAN.md> --plan-draft <draft id> [--lan]` serves
-  http://127.0.0.1:4386/ with **Progress** (this run plan) beside Cases, Results and Coverage. Reuse a running pages
-  server for the table (`ps`); restart it only when it points at another plan or a new draft takes over. Never stop it
-  unless asked. Progress is `plan-page.ts --serve`, rebuilt from phases.json, each run folder's results.csv and
+  the table's address on http://127.0.0.1:4386/ with **Progress** (this run plan) beside Cases, Results and Coverage. The
+  same command reuses a running pages server (it hands over the plan and prints the address); a new run plan or draft
+  is picked up by itself. Never stop it unless asked. Progress is `plan-page.ts --serve`, rebuilt from phases.json, each run folder's results.csv and
   run-state.md and the plan's Log; it polls every 10 s, so each `run-log.ts set` shows up live. It leads with the
   current run (`phases.json` → `"current": [ids]`, else the newest `"round": true` phase onward); earlier runs follow
   under 「Earlier runs」, collapsed. Its English / 中文 toggle covers what the page writes itself; a new label in

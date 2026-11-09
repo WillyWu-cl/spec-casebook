@@ -1,0 +1,18 @@
+PowerDirector 16.8.0.2611052, Samsung Galaxy A53 (Android 15), clean install 10:55 (uninstall + install), Stage.
+Launcher 'AI Mini Drama' taps: each opens DemoShortcutActivity (the intro page); Try It Now opens MiniDramaActivity (landing);
+after 'Don't show again' + Try It Now, the next tap opens MiniDramaActivity directly.
+
+11-06 10:57:51.101  1639  1947 I ActivityTaskManager: START u0 {cmp=com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.shortcut.ui.DemoShortcutActivity}
+11-06 10:57:51.324  1639  1683 I ActivityTaskManager: Displayed com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.shortcut.ui.DemoShortcutActivity for user 0: +219ms
+11-06 10:58:16.056  1639  4511 I ActivityTaskManager: START u0 {cmp=com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.shortcut.ui.DemoShortcutActivity}
+11-06 10:58:16.217  1639  1683 I ActivityTaskManager: Displayed com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.shortcut.ui.DemoShortcutActivity for user 0: +155ms
+11-06 10:58:27.396  1639  3016 I ActivityTaskManager: START u0 {cmp=com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.shortcut.ui.DemoShortcutActivity}
+11-06 10:58:27.559  1639  1683 I ActivityTaskManager: Displayed com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.shortcut.ui.DemoShortcutActivity for user 0: +165ms
+11-06 10:58:30.752  1639  1947 I ActivityTaskManager: START u0 {cmp=com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.iris.ui.MiniDramaActivity}
+11-06 10:58:31.154  1639  1683 I ActivityTaskManager: Displayed com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.iris.ui.MiniDramaActivity for user 0: +395ms
+11-06 10:58:44.538  1639  2305 I ActivityTaskManager: START u0 {cmp=com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.shortcut.ui.DemoShortcutActivity}
+11-06 10:58:44.697  1639  1683 I ActivityTaskManager: Displayed com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.shortcut.ui.DemoShortcutActivity for user 0: +152ms
+11-06 10:58:51.310  1639  3441 I ActivityTaskManager: START u0 {cmp=com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.iris.ui.MiniDramaActivity}
+11-06 10:58:51.659  1639  1683 I ActivityTaskManager: Displayed com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.iris.ui.MiniDramaActivity for user 0: +342ms
+11-06 10:58:57.318  1639  1947 I ActivityTaskManager: START u0 {cmp=com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.iris.ui.MiniDramaActivity}
+11-06 10:58:57.494  1639  1683 I ActivityTaskManager: Displayed com.cyberlink.powerdirector.DRA140225_01/com.cyberlink.powerdirector.iris.ui.MiniDramaActivity for user 0: +173ms

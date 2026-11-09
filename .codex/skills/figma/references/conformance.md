@@ -35,8 +35,8 @@ Figma output from the committed responses and board images, and every later step
 **The source read comes first (REQ-080, 2026-11-04).** A Design board the casebook inventories
 (`figma-inventory-*.json` on the Design file) with no merged board file, or one `merge` left incomplete, is a
 *source gap*: `status` names it and stops there (the next step is reading it, `source.md`), `check` warns, `plan`
-prints it and the Plan view lists it under the boards read with a warning. It clears when the board is read whole or
-excluded on the Plan view with a reason. Boards only the page `list` names are shown, not blocking. Never walk a
+prints it and the Capture plan view lists it under the boards read with a warning. It clears when the board is read whole or
+excluded on the Capture plan view with a reason. Boards only the page `list` names are shown, not blocking. Never walk a
 board's rows as a design pass before its read is whole: their captures match other boards' frames
 (1016_Chat navigation was walked unread and its captures landed on main flow frames).
 
@@ -145,7 +145,12 @@ data: the full dump locally (`<id>.viewdump.json`, git-ignored) and the texts an
 (`<id>.views.json`, shared with the capture). The check then takes each matched text's colour (ΔE over 6), size in sp
 against Figma's points (6 % and 0.5 sp), weight (100 apart) and line count, and each fill's colour and corner radius
 (over 2 dp) from it, marked `src: app` (「app data」 on the Design tab); OCR and pixels only where the view data has no
-match. Sizes are compared in sp, before the phone's font scale; a phone not at font scale 1.0 (the SM-A5360 is at 1.1)
+match. **Set and drawn (user, 2026-11-05):** every colour the check compares is also sampled as drawn, on the capture
+and on the Figma image, and a colour item lists both on each side: Figma's fill with its token (`Text/PimaryHigh`) and
+the colour on Figma's image; the app's value with its resource (`@color/textPrimary`, a view's combined alpha when
+below 1) and the colour on the screenshot (`figma.drawn`, `app.drawn`, `delta.dE_drawn`). An app value the screen does
+not show (alpha, a layer over the view, another view matched) is named on the item, and `check` prints how many set
+values it checked and which were drawn differently: a sanity check on the view data's matching. Sizes are compared in sp, before the phone's font scale; a phone not at font scale 1.0 (the SM-A5360 is at 1.1)
 wraps differently, which the `lines` note says.
 `node scripts/android-viewdump.ts` gets what no outside dump holds, from inside the app: each view's text colour,
 size (px and sp), weight (100–900) and typeface, line count, alpha and visibility, background and outline, elevation,
@@ -178,29 +183,57 @@ text size against the platform's own rendering of Figma's font (Android draws SF
 reports `font_width` once and flags a text 12 % off it); a date's digit counts (`copy`, number format). Shapes holding
 an image are not colour-checked, and a shape's colour is the most common colour inside it.
 
+**What the check holds the app to (user, 2026-11-06).** Not a text's words, and not where a text sits on the screen
+(a small offset of its own place is never an item). It does hold: (1) the padding and border of a text's box (button,
+chip, card, tag) the same as Figma's, (2) font size and the text's centring in its box, (3) the gaps between buttons.
+A text is paired by its words when they match, else by its place (the app text on the same line where Figma draws one),
+so other wording is neither `missing` nor `extra` and its box is still measured.
+
 `node scripts/design.ts … check <run dir> [--screen <ids>] [--recheck <earlier run>]` measures every new capture
 against the Figma screen and draws its review sheet (`screenshots/design/<id>-sheet.png`: Figma and app side by side
 at one width, every candidate numbered on both). The script header has the rules; in short, Figma's width maps to the
-window width, each half of the screen is aligned on its matched texts, and what is left is a candidate:
+window width, each half of the screen is aligned on its matched texts (that fit only places shapes and icons), and
+what is left is a candidate:
 
 | Kind | Candidate | Default |
 |---|---|---|
 | `state` | under 40 % of the frame's short texts found: probably another state (every candidate of the screen is in doubt) | major |
-| `copy` | a Figma text whose closest app text differs (case, quotes, spacing and numbers ignored) | major (minor when one contains the other) |
-| `missing` | a Figma text with no app text near it (`sample` when over 60 characters) | major |
+| `missing` | a Figma text with no app text with its words, nor any on its line where Figma draws it (`sample` when over 60 characters) | major |
 | `truncated` | the app text ends in an ellipsis Figma does not have, or runs past the screen edge | major |
 | `lines` | the app text wraps into more or fewer lines (the app's lines counted on the screenshot) | minor |
-| `position` | a matched text more than 4 pt off after the alignment (only where 2+ anchors agree within 6 pt) | minor |
+| `size`, `weight` | font size (6 % in sp from view data, else 12 % in width against the platform's font) and weight (view data). Figma is drawn for iOS in SF Pro; on Android the weight is held to the PDRM guideline's Roboto equivalent (Regular 400 → 400, Medium 500 → 500, Semibold 600 → Medium 500; KP-066), and the item names both | minor |
+| `padding` | the inset from a text's letters to the edge of its box more than 2 pt off Figma's (the letters found on the screenshot in the text's own colour inside the box, Figma's render bounds on the other side; 3 pt on OCR boxes, 4 pt on text boxes where no letters were found): the aligned side and the top; where the box hugs its content (a chip, a tag) and the words are the same, also left and right together (and top and bottom), their sum more than 3 pt off, centred text or not;  top and bottom only for one line on both sides, measured to the middle of the line | minor |
+| `align` | a text Figma centres in its box more than 2 pt off centre (its letters; 3 on OCR boxes, 4 on text boxes), across or down | minor |
+| `border` | the box's border: Figma's stroke (a see-through one blended over the fill) against the app's own stroke (view data) or the border read on the screenshot; one drawn and not the other, ΔE > 18, or over 1 pt wider or narrower | minor |
+| `spacing` | the gap (up to 32 pt in Figma) between neighbouring buttons on a row or in a column, more than 2 pt off edge to edge (3 pt centre to centre where an app box is a touch area larger than the drawing) | minor |
+| `radius` | a fill's corner radius over 2 dp from Figma's (view data) | minor |
 | `colour` | a filled shape (buttons, chips, cards, and badges and tags from 12 × 8 pt) ΔE > 12 from its Figma fill, or a text ΔE > 18 from its Figma colour | minor |
 | `control` | an icon control of the inventory (no label) with no tappable app element where Figma draws it | major |
-| `extra` | short app text Figma does not draw | info |
+| `extra` | short app text Figma does not draw, on no line where Figma draws a text | info |
+
+Letters, not OCR boxes (user, 2026-11-06): OCR boxes run about 2 pt wide on each side, which put the language chips
+3–5 pt short of padding in all where their letters sit 12–13 pt in from each edge, as in Figma; both review passes
+measured the pixels and called them OK. A chip narrower around the same padding (Roboto sets the word narrower) is
+not a padding item, and neither is the next chip sitting further left. Padding, centring and border items are measured
+before the sheets are drawn, so they are numbered on them, and a recheck judges every item of a screen.
+A text's box is the smallest Figma shape around it with a fill or a stroke (no image); on the app it is the view
+background (view data) or page-source element around the paired text of that size within a quarter, the closest. A
+box from edge to edge of the screen (a tab bar) is not measured across: an inset there is only the text's place. A
+padding, centring or gap over 24 pt off is another box taken for this one: no item, counted as `layout_unmatched`. The
+border on the screenshot is read at the middle of each side; a mix of the outside and inside colours (anti-aliasing,
+the webp copy) is not a border, and a side blurred by a shadow or gradient is unclear: a border needs 3 sides, no
+border 3 clean ones, else no item. Tried on the AI Mini Drama Android design run (36 screens): 49 padding, 6 border,
+2 spacing items, most of them one difference repeated (the credit pill's number 6 pt nearer its left edge).
 
 A shape is found on the app by the nearest matched text's offset, then the app element of about its size there (a
 badge's own image view); a badge is sampled by its most common inner colour, not its edge (user, 2026-11-04). A
 candidate made after the passes settled (the check run again) shows as Unreviewed until they judge it.
 
-Not measured: how icons and images are drawn, font weight and size, radius, shadow, borders, spacing between non-text
-shapes. The reviewers judge those on the sheet as `visual` items.
+Not measured: how icons and images are drawn, shadow, and spacing between shapes that are not buttons; the reviewers
+judge those on the sheet as `visual` items. Not checked at all (user, 2026-11-06): a text's words and its own place on
+the screen; reviewers raise neither, as a candidate or a `visual` item. A run checked before 2026-11-06 may still hold
+`copy` and `position` items: run `check` on it again and they go (a verdict on a candidate the check no longer makes
+is not shown, settled or drafted).
 
 **Only this feature's part of a shared screen (user, 2026-11-04).** On a screen other features share (the Launcher),
 the controls the control trace marks `n/a: other feature: <why>` (spec-casebook `scripts/controls.ts`; a group's
@@ -223,6 +256,13 @@ the Design tab's token use).
 - **Builder.** For each screen, its `compare.json` entry and its sheet: a verdict for every candidate except `extra`
   / `sample` (those only when they matter), plus `visual:<n>` items for what the measure cannot see, each with `kind`,
   `figma.box` (screen points) and a note. Writes `design/builder.json`.
+- **Notes Design and RD can read (user, 2026-11-06).** The Design tab opens each item with a plain sentence the page
+  writes itself (「「AI Mini Drama」 的字重：Design 為 Medium (510)，App 為 Regular (400)。」); the raw values, the colour
+  table and ΔE are folded under 「量測細節 / How it was measured」, and the second pass's note shows only when it differs.
+  So a note says what that sentence cannot: why it matters or why it is fine, and where else it repeats (「Launcher 上
+  所有圖塊標籤都一樣」). Write it for a designer or an RD engineer: no ΔE, no 「app data」 or 「view data」, no
+  candidate ids; name a weight (Medium, Regular), a colour by how it looks with its value (淺灰 #CCD5E1), a size in
+  pt or sp.
 - **Notes in both languages (user, 2026-11-04).** Every note is written twice, `note` in English and `note_zh` in
   Traditional Chinese (the same content, 「」 around quoted UI text in both); the Design tab shows the one for its
   language switch, and the eBug drafts use the English.
@@ -239,8 +279,8 @@ the Design tab's token use).
 
 Verdicts: `bug` (the app departs from the frame), `ok` (sample content such as names, credits or generated text; a
 wider phone's reflow that keeps the same lines), `n/a` (the capture is not the frame's state), `question`. A bug's
-severity: `major` (wrong or missing copy, a missing control, truncation), `minor` (position, colour, wrapping),
-`cosmetic`. The frame is the spec under the casebook's rules: a dated frame older than the newest PM file loses to it,
+severity: `major` (missing text, a missing control, truncation), `minor` (padding, centring, border, spacing, size,
+colour, wrapping), `cosmetic`. Wording and a text's own place are not bugs here (user, 2026-11-06). The frame is the spec under the casebook's rules: a dated frame older than the newest PM file loses to it,
 a superseded frame is not the spec, and a conflict is a question (AGENTS.md *Design vs PM*).
 
 ## 5. Decisions and eBugs
@@ -295,8 +335,9 @@ Everything the Figma Agent's QA covers is covered here, by a different route:
 - **Per-state plan and arrows**: the plan above; arrow crops and pointer arrows in the source read; arrow traces and
   walked arrows on the casebook's coverage page.
 - **Capture and arrival**: captures in runs or a design pass, scrolled parts, the `state` check.
-- **Measurement**: text content, presence (texts and icon controls), colour, position after an anchor fit that refuses
-  a loose alignment, wrapping, truncation, unspecified text; the rest visual, on the sheet.
+- **Measurement**: presence (texts and icon controls), padding and centring in each box, borders, gaps between
+  buttons, font size and weight, colour, radius, wrapping, truncation, unspecified text; the rest visual, on the sheet.
+  Text content and a text's own position are left out on purpose (user, 2026-11-06).
 - **Independent review**: builder and reviewer passes, every candidate answered, splits to the user.
 - **Report and decisions**: the Design tab with filters, zoom, boxes and per-item decisions.
 - **eBugs and fix verification**: `ebugs` into the casebook's eBug flow; `--recheck` on the next build.

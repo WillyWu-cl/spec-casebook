@@ -1,0 +1,130 @@
+=== Template
+Standard Report
+
+=== Short Description
+16.8.0.2611041 - Bug verify report (ETHAN_HSU)
+
+=== Test Result
+PDR-A - Bug verification [OK=7, Fail=4]
+
+=== Testing Date
+2026/11/05
+
+=== Product Version
+16.8.0
+
+=== Build Day
+1104
+
+=== Build No.
+2611041
+
+=== Operation System
+Android 15
+
+=== Test Result Details
+a. Device: Samsung Galaxy A53 (SM-A5360) / Android 15
+
+b. Build: 16.8.0.2611041 (TR261104-0065), APK from the TR's OneDrive folder (MD5 checked), installed over the previous build with data kept
+
+c. Server: Stage
+
+d. Account: signed in to the tester's CyberLink test account (Premium)
+
+e. Tested by: AI agent (Claude Opus 5.5) driving the phone over Appium; verdicts and evidence reviewed by ETHAN_HSU
+
+f. Scope: the eBugs created by ETHAN_HSU in this TR's verify list
+
+g. OK (7)
+g1. DRA262610P0324 - five Surprise me taps add five different inspirations
+g2. DRA262610P0326 - the Gender filter lists Female, Male and Other once each
+g3. DRA262610P0328 - the Update characters card shows 「1 character」
+g4. DRA262610P0332 - a typed character name brings the Update characters card for that character
+g5. DRA262610P0350 - the sent message moves to the top, the view stays put while the reply grows, and ↓ appears when it overflows
+g6. DRA262610P0354 - 「You'll have N left」 shows under Generate on the storyboard and video cards
+g7. DRA262610P0381 - the credit pill during outline generation asks 「Leave this chat?」; Stay keeps the chat, Leave anyway saves nothing
+
+h. FAIL (4)
+h1. DRA262610P0388 - a failed scene image in a chat update is still not refunded after 70 minutes, and the chat does not mention the failure
+h2. DRA262610P0415 - a storyboard scene image charged and then failed is still not refunded after 30 minutes
+h3. DRA262610P0416 - video prices still differ from the charging table (Standard Preview 30 s is 120, not 390)
+h4. DRA262610P0424 - 「Langage de la vidéo」 is still on the French format card; the storyboard line is fixed
+
+i. Other observations, not filed (4)
+i1. Each storyboard image is charged 3 credits and the Update characters card ◆4, below today's charging table (6 each).
+i2. French: 「You'll have N left」 stays in English on the Create storyboard card; the Launcher label is 「Mini Fiction AI」 while the feature title is 「Mini Drama IA」.
+i3. Credit Details shows one Text to Image row at 15:07 where two location images were charged (the rows add up to 3 credits less than the balance dropped).
+i4. The first cast confirmation once ended in 「Something went wrong on my end. Let's try that again.」; Try again worked.
+
+j. Evidence: https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/05/28bf1987-0c5c-472f-8fa5-9a775f068a2c.zip
+One folder per eBug under OK/ and Fail/; unzip and open index.html.
+
+=== DRA262610P0324  [OK]
+Verified OK with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+=== DRA262610P0326  [OK]
+Verified OK with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+=== DRA262610P0328  [OK]
+Verified OK with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+=== DRA262610P0332  [OK]
+Verified OK with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+=== DRA262610P0350  [OK]
+Verified OK with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+=== DRA262610P0354  [OK]
+Verified OK with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+=== DRA262610P0381  [OK]
+Verified OK with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+=== DRA262610P0388  [Fail]
+Verify Fail with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+Result:
+Scene 4 was charged 3 credits and failed offline; its view says 「Your credits have been refunded」, but after 70 min none came back (no refund line in Credit Details). The chat says only 「Here's your storyboard」.
+
+Expected Result:
+The failed image's 3 credits are returned (「Generation failed, credits returned」) and the chat says the image couldn't be updated and was refunded, with Edit.
+
+Evidence: https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/05/28bf1987-0c5c-472f-8fa5-9a775f068a2c.zip
+Folder: Fail/DRA262610P0388/ (unzip and open index.html)
+
+=== DRA262610P0415  [Fail]
+Verify Fail with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+Result:
+One scene image was charged 3 credits and then failed. Its view says 「Your credits have been refunded」, but after 31 minutes the balance has not risen and Credit Details has no refund line.
+
+Expected Result:
+Each failed image's credits are returned and Credit Details shows 「Generation failed, credits returned」.
+
+Evidence: https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/05/28bf1987-0c5c-472f-8fa5-9a775f068a2c.zip
+Folder: Fail/DRA262610P0415/ (unzip and open index.html)
+
+=== DRA262610P0416  [Fail]
+Verify Fail with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+Result:
+Preview 30 sec: Best 180, Standard 120, Fast 60. Full Video 90 sec: Best 544, Standard 364, Fast 184. Best now matches; Standard and Fast are still below the table.
+
+Expected Result:
+Standard 13/s (390 / 1170), Fast 4/s (120 / 360), Best 6/s (180 / 540), per the MX credit charging table.
+
+Evidence: https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/05/28bf1987-0c5c-472f-8fa5-9a775f068a2c.zip
+Folder: Fail/DRA262610P0416/ (unzip and open index.html)
+
+=== DRA262610P0424  [Fail]
+Verify Fail with build (v16.8.0.2611041) on Samsung Galaxy A53 (SM-A5360) / Android 15
+
+Result:
+The format card still reads 「1. Langage de la vidéo」. The Create storyboard card now reads 「Des crédits seront consommés pour cette tâche.」 (fixed).
+
+Expected Result:
+「1. Langue de la vidéo」.
+
+Evidence: https://ecl.cyberlink.com/IF3/Data/Download?o=iForm/2026/11/05/28bf1987-0c5c-472f-8fa5-9a775f068a2c.zip
+Folder: Fail/DRA262610P0424/ (unzip and open index.html)
+

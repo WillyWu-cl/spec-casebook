@@ -1,9 +1,19 @@
 {
-  "checked_at": "2026-11-04T01:58:15.378Z",
+  "checked_at": "2026-11-05T08:05:24.026Z",
   "feature": "pdr/ai-mini-drama",
   "platform": "android",
   "set": "specs/2026-10-21-2",
   "warnings": [
+    {
+      "id": "main flow|note-moved|ds-main-flow@6648,3797",
+      "board": "main flow",
+      "kind": "note-moved",
+      "text": "spec note 「當 user 滑到上面資訊 / 右下角顯示 icon」 is drawn at -12456,-898; its text is at -12825,-1014",
+      "reqs": [
+        "R-088",
+        "R-274"
+      ]
+    },
     {
       "id": "MX|note-moved|ds-mx-link@5140,33846",
       "board": "MX",
@@ -22,13 +32,6 @@
       "reqs": [
         "R-101"
       ]
-    },
-    {
-      "id": "pm-update-11|no-arrow|board",
-      "board": "pm-update-11",
-      "title": "PM · Update board 11 (new 10/21)",
-      "kind": "no-arrow",
-      "text": "2 screens and no flow arrow read, but the text describes a step: 「10/21 update —角色結果頁按X：跳確認、不存進 Mine（DRI261896P0037）」"
     },
     {
       "id": "pm-1022-export|no-arrow|board",
@@ -55,5 +58,14 @@
       ]
     }
   ],
-  "skipped": []
+  "skipped": [
+    "Template categories 3 per row (no Figma screenshot)",
+    "Template categories 4 per row (no Figma screenshot)",
+    "pm-1029-regenerate-one (no Figma screenshot)",
+    "pm-1103-fix-issues-copy (no Figma screenshot)",
+    "pm-1103-library-filter-empty (no Figma screenshot)",
+    "pm-1104-chat-scroll (no Figma screenshot)",
+    "pm-1104-multi-scene-fail (no Figma screenshot)",
+    "pm-1105-celebrity-blocked (no Figma screenshot)"
+  ]
 }

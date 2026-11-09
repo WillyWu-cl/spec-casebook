@@ -1,0 +1,40 @@
+# DRA262610P0348, segment 2: stage 2 job ended after the app left the foreground, 2026-11-06, build 16.8.0.2611052 (excerpt)
+# App log
+2026-11-06 14:15:34.287 18028 21383 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=27984
+2026-11-06 14:15:34.767 18028 18151 D MiniDrama Log: [TOOL] MyCreation receipt submitted consumeTaskId=91683986 files=1
+2026-11-06 14:15:35.235 18028 21383 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=27981
+2026-11-06 14:15:35.273 18028 18151 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=27981
+2026-11-06 14:15:53.802 18028 18151 E MiniDramaFail: [TextToImage] generation_failed: Others | detail=tti=download_failed sid=28072727 name=gen_media_1_1_0.png
+2026-11-06 14:15:53.808 18028 18151 D MiniDrama Log: [TOOL] MyCreation receipt failed
+2026-11-06 14:15:53.817 18028 22937 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.969 18028 22937 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.976 18028 21383 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.980 18028 22937 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.989 18028 21383 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.990 18028 22938 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.990 18028 21380 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.993 18028 22939 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.997 18028 21380 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:53.998 18028 22937 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:54.000 18028 22939 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:54.006 18028 22937 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:54.009 18028 21380 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with ho
+2026-11-06 14:15:54.101 18028 21380 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-06 14:15:54.119 18028 21380 E MiniDramaFail: [engine] target=env_a1f08d94_night | tool=GPTImage2 | generation_failed - Others
+2026-11-06 14:15:54.120 18028 21380 E MiniDramaFail: [engine] target=char_ps01smpo | tool=VoiceReference | agent_tool_dispatch('TextToSpeech') failed: credit_check_failed - CreditRemainExpired
+2026-11-06 14:15:54.120 18028 21380 E MiniDramaFail: [engine] target=char_uwbrbdy6 | tool=VoiceReference | agent_tool_dispatch('TextToSpeech') failed: credit_check_failed - CreditRemainExpired
+2026-11-06 14:15:54.120 18028 21380 E MiniDramaFail: [engine] target=char_896oegrn | tool=VoiceReference | agent_tool_dispatch('TextToSpeech') failed: credit_check_failed - CreditRemainExpired
+2026-11-06 14:15:54.120 18028 21380 E MiniDramaFail: [engine] target=char_tbz88vxr | tool=VoiceReference | agent_tool_dispatch('TextToSpeech') failed: credit_check_failed - CreditRemainExpired
+2026-11-06 14:15:54.180 18028 21380 E MiniDramaFail: [storyboard] {"error_message":"","status_code":0} | generation_failed - Others
+2026-11-06 14:17:37.760 23297 23674 D MiniDrama Log: [SYS] session_created: 261106_141737_cd221317
+2026-11-06 14:17:38.032 23297 23676 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=27981
+2026-11-06 14:17:38.187 23297 23634 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=27981
+2026-11-06 14:17:52.138 23297 23676 D MiniDrama Log: [SYS] opening 261106_141313_0fdc5b84: agent ready after 0ms
+2026-11-06 14:17:52.160 23297 23676 D MiniDrama Log: [SYS] restored session 261106_141313_0fdc5b84 (chars=4, shots=6)
+2026-11-06 14:20:29.496 23297 23676 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=27981
+# System log (app uid only)
+11-06 14:15:48.750 I/ActivityManager( 1639): Changes in 11632 2 to 15, 127 to 0
+11-06 14:15:53.812 D/NetdEventListenerService( 1639): DNS Requested by 107, 11632(com.cyberlink.powerdirector.DRA140225_01), 4(FAIL), isBlocked=true, 
+11-06 14:15:53.818 D/NetdEventListenerService( 1639): DNS Requested by 107, 11632(com.cyberlink.powerdirector.DRA140225_01), 4(FAIL), isBlocked=true, 
+11-06 14:16:17.327 I/ActivityManager( 1639): Killing 18028:com.cyberlink.powerdirector.DRA140225_01/u0a1632 (adj 905): remove task
+11-06 14:17:22.985 I/ActivityManager( 1639): Changes in 11632 20 to 2, 0 to 127

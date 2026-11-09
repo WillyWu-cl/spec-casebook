@@ -1,0 +1,17 @@
+{
+  "feature": "phd/scrollable-collage",
+  "platform": "ios",
+  "title": "Scrollable Collage",
+  "draft": "20261105-165222",
+  "created_at": "2026-11-05T08:52:22.509Z",
+  "based_on_version": null,
+  "spec_folder": "specs/2026-11-05",
+  "spec_files": [
+    {
+      "name": "Scrollable Collage - PM and Design Figma.md",
+      "sha256": "d22269caeddeed27a80d6a16d6a0a62b5bb503a5419adeb73d5a5dcf8d331955",
+      "bytes": 42683
+    }
+  ],
+  "spec_set_sha256": "d79381921641a13fa1166c24165801557d185cf4b1b56bef688bd89a17372bff"
+}

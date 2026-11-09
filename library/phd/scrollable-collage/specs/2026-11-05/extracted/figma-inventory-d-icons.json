@@ -1,0 +1,259 @@
+{
+  "file": "iUy5kOrVNG7IjcyxGGnp9t",
+  "page": "0:1",
+  "group": "d-icons",
+  "extracted_at": "2026-11-05",
+  "section": [
+    "0:1",
+    "20261029_Swipe Collage",
+    -1,
+    -1367,
+    18365,
+    5496
+  ],
+  "boards": [
+    [
+      "116:3010",
+      "design-icons-dark",
+      15936,
+      -135,
+      952,
+      1082
+    ],
+    [
+      "130:3237",
+      "design-icons-light",
+      16968,
+      -135,
+      952,
+      1082
+    ],
+    [
+      "122:3043",
+      "design-icons-cut",
+      17957,
+      -135,
+      407,
+      470
+    ]
+  ],
+  "names": [],
+  "screens": [],
+  "controls": [],
+  "arrows": [],
+  "hidden": {
+    "screens": 0,
+    "controls": 0
+  },
+  "entries": [
+    {
+      "id": "116:3010",
+      "name": "design-icons-dark"
+    },
+    {
+      "id": "130:3237",
+      "name": "design-icons-light"
+    },
+    {
+      "id": "122:3043",
+      "name": "design-icons-cut"
+    }
+  ],
+  "hash": {
+    "116:3010": "98302915",
+    "130:3237": "6bdcd84d",
+    "122:3043": "08fede48"
+  },
+  "hashed_at": "2026-11-05T08:48:19.749Z",
+  "overlay": {
+    "116:3010": "",
+    "130:3237": "",
+    "122:3043": ""
+  },
+  "overlay_box": {
+    "116:3010": [
+      15936,
+      -135,
+      952,
+      1082
+    ],
+    "130:3237": [
+      16968,
+      -135,
+      952,
+      1082
+    ],
+    "122:3043": [
+      17957,
+      -135,
+      407,
+      470
+    ]
+  },
+  "texts": [
+    [
+      0,
+      15984,
+      -87,
+      405,
+      33,
+      "Canvas icon buttons · Dark mode",
+      0
+    ],
+    [
+      0,
+      15984,
+      -46,
+      856,
+      34,
+      "Move / More / Add page / Page stepper / Import photo slot — same size as light version, dark surface + light icon.\nStates: normal · press · selected · disable",
+      0
+    ],
+    [
+      0,
+      15984,
+      24,
+      423,
+      16,
+      "btn_page_move/dark  ·  36×36  ·  normal / press / selected / disable",
+      0
+    ],
+    [
+      0,
+      15984,
+      156,
+      421,
+      16,
+      "btn_page_more/dark  ·  36×36  ·  normal / press / selected / disable",
+      0
+    ],
+    [
+      0,
+      15984,
+      288,
+      349,
+      16,
+      "btn_add_page/dark  ·  40×40  ·  normal / press / disable",
+      0
+    ],
+    [
+      0,
+      15984,
+      424,
+      578,
+      16,
+      "page_stepper  ·  107×42  ·  default / minus_press / plus_press / minus_disable / plus_disable",
+      0
+    ],
+    [
+      0,
+      15984,
+      562,
+      366,
+      16,
+      "import_img  ·  109×109  ·  empty photo slot (tap to import)",
+      0
+    ],
+    [
+      0,
+      15984,
+      767,
+      303,
+      16,
+      "ic_square_plus_filled  ·  64×64  ·  normal / press",
+      0
+    ],
+    [
+      1,
+      17016,
+      -87,
+      410,
+      33,
+      "Canvas icon buttons · Light mode",
+      0
+    ],
+    [
+      1,
+      17016,
+      -46,
+      856,
+      34,
+      "Move / More / Add page / Page stepper / Import photo slot — same size as dark version, light surface + dark icon.\nStates: normal · press · selected · disable",
+      0
+    ],
+    [
+      1,
+      17016,
+      24,
+      423,
+      16,
+      "btn_page_move/light  ·  36×36  ·  normal / press / selected / disable",
+      0
+    ],
+    [
+      1,
+      17016,
+      156,
+      421,
+      16,
+      "btn_page_more/light  ·  36×36  ·  normal / press / selected / disable",
+      0
+    ],
+    [
+      1,
+      17016,
+      288,
+      348,
+      16,
+      "btn_add_page/light  ·  40×40  ·  normal / press / disable",
+      0
+    ],
+    [
+      1,
+      17016,
+      424,
+      578,
+      16,
+      "page_stepper  ·  107×42  ·  default / minus_press / plus_press / minus_disable / plus_disable",
+      0
+    ],
+    [
+      1,
+      17016,
+      562,
+      366,
+      16,
+      "import_img  ·  109×109  ·  empty photo slot (tap to import)",
+      0
+    ],
+    [
+      1,
+      17016,
+      767,
+      303,
+      16,
+      "ic_square_plus_filled  ·  64×64  ·  normal / press",
+      0
+    ],
+    [
+      2,
+      17999,
+      -101,
+      139,
+      19,
+      "Try Swipe Collage!",
+      0
+    ],
+    [
+      2,
+      17999,
+      -80,
+      164,
+      28,
+      "Create the perfect year-end recap post.",
+      0
+    ]
+  ],
+  "ms": 4353,
+  "size": 2463
+}

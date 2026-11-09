@@ -67,12 +67,15 @@
 //                             capture keeps running), a dump of the ring buffer, and the app's log files on shared
 //                             storage when it wrote any; prints a summary (failures, toasts, crash lines)
 //   wait SECONDS              sleep (keeps the session alive with a status call)
-//   waitfor "A|B" [--gone] [--timeout S] [--every S]
+//   waitfor "A|B" [--gone] [--bottom] [--timeout S] [--every S]
 //                             poll quietly until any text is visible (text, content-desc or resource-id contains it), or
 //                             with --gone until none is; prints the elapsed seconds once. Exits 1 with a screenshot on
-//                             timeout. List the failure texts too, so a failure ends the wait.
+//                             timeout. List the failure texts too, so a failure ends the wait. --bottom taps a chat's ↓
+//                             (jump to latest) each round it shows, for a reply or card that grows below the screen
+//                             (AI Mini Drama pins the sent message to the top, R-250); never in a case that tests scrolling
+//   bottom                    tap the chat's ↓ if shown (else says it is already at the bottom)
 //   tapif TEXT                tap the element whose text/content-desc is exactly TEXT (else contains it) if visible
-//   expect "A|B" | expect-not "A|B"   fail unless one is visible / if any is
+//   expect "A|B" [--bottom] | expect-not "A|B" [--bottom]   fail unless one is visible / if any is (--bottom: ↓ first)
 //   do <file.steps> [args…] | do "cmd ;; cmd ;; …"
 //                             many commands as one call (recipes: library/<product>/<feature>/android/recipes/*.steps, "$1".."$9"
 //                             from args, "?" before a line = may fail); stops at the first failure with a screenshot
@@ -266,6 +269,16 @@ function findText(els: El[], t: string, exactOnly = false) {
   const vis = els.filter(shown);
   return vis.find(e => e.text === t || e.desc === t) ?? vis.find(e => e.id === t)
     ?? (exactOnly ? undefined : vis.find(e => e.text.includes(t) || e.desc.includes(t) || (e.id && e.id.includes(t))));
+}
+// A chat's jump-to-latest ↓ button (AI Mini Drama: button_mini_drama_scroll_bottom, 16.8.0.2611061). The chat pins the
+// sent message to the top and lets the reply grow below it (R-250, R-485), so a new card can be off screen and absent
+// from the page source until ↓ is tapped.
+const BOTTOM_RE = /scroll_?(to_?)?bottom|jump_?to_?(latest|bottom)/i;
+const bottomButton = (els: El[]) => els.filter(shown).find(e => BOTTOM_RE.test(e.id) || BOTTOM_RE.test(e.desc));
+// Tap ↓ when it is shown; true when it was (the caller reads the page source again).
+async function jumpToBottom(xml?: string) {
+  const b = bottomButton(parse(xml ?? await source())); if (!b) return false;
+  const c = center(b); await tapAt(c.x, c.y); await sleep(1); return true;
 }
 const toastText = (xml: string) => dec(/<android\.widget\.Toast\b[^>]*\btext="([^"]*)"/.exec(xml)?.[1] ?? '');
 const winSize = async () => (await s('GET', '/window/rect')).value as { width: number; height: number };
@@ -617,13 +630,16 @@ switch (cmd) {
   case 'waitfor': {
     // waitfor "A|B|C" [--gone] [--timeout S] [--every S]: one page source per round, every text checked against it.
     const a = [...rest]; const take = (n: string) => { const i = a.indexOf(n); return i < 0 ? undefined : a.splice(i, 2)[1]; };
-    const gi = a.indexOf('--gone'); const gone = gi >= 0; if (gone) a.splice(gi, 1);
+    const flag = (n: string) => { const i = a.indexOf(n); if (i >= 0) a.splice(i, 1); return i >= 0; };
+    const gone = flag('--gone'), toBottom = flag('--bottom');
     const timeout = Number(take('--timeout') ?? 600), every = Number(take('--every') ?? 2);
     const alts = a.join(' ').split('|').map(t => t.trim()).filter(Boolean);
-    if (!alts.length) throw new Error('waitfor "TEXT[|TEXT…]" [--gone] [--timeout S] [--every S]');
+    if (!alts.length) throw new Error('waitfor "TEXT[|TEXT…]" [--gone] [--bottom] [--timeout S] [--every S]');
     const t0 = Date.now(); const secs = () => Math.round((Date.now() - t0) / 1000);
     for (;;) {
-      const els = parse(await source()); let hit = '';
+      let xml = await source();
+      if (toBottom && await jumpToBottom(xml)) xml = await source();
+      const els = parse(xml); let hit = '';
       for (const t of alts) { const e = findText(els, t); if (e) { hit = `${t} | ${e.text || e.desc || e.id} | ${e.x},${e.y},${e.w},${e.h}`; break; } }
       if (!gone && hit) { const l = `found after ${secs()} s: ${hit}`; console.log(l); return l; }
       if (gone && !hit) { const l = `gone after ${secs()} s: ${alts.join(' | ')}`; console.log(l); return l; }
@@ -634,8 +650,12 @@ switch (cmd) {
       await sleep(every);
     }
   }
+  case 'bottom': {
+    console.log(await jumpToBottom() ? 'tapped ↓ (jumped to the latest message)' : 'no ↓ button shown (already at the bottom)'); return;
+  }
   case 'expect': case 'expect-not': {
-    const alts = rest.join(' ').split('|').map(t => t.trim()).filter(Boolean); const els = parse(await source());
+    const a = [...rest]; const bi = a.indexOf('--bottom'); if (bi >= 0) { a.splice(bi, 1); await jumpToBottom(); }
+    const alts = a.join(' ').split('|').map(t => t.trim()).filter(Boolean); const els = parse(await source());
     const hit = alts.find(t => findText(els, t)) ?? '';
     if (cmd === 'expect' && !hit) throw new Error(`expect: none of "${alts.join('|')}" is visible`);
     if (cmd === 'expect-not' && hit) throw new Error(`expect-not: "${hit}" is visible`);

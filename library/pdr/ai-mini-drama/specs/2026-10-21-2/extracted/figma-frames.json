@@ -1,7 +1,7 @@
 {
   "checked_at": "2026-10-27",
   "how": "Figma MCP get_metadata on the Design page UI_26.10GM (116:7873); every text or frame whose name starts with a date (MMDD_) or carries a dated update note, compared with the labels in the Design PDF OCR (boards/ds-*.md, boards/mx-*.md); 2026-10-27: Design page re-listed, PM page 🆕 Spec with jau proposal (2016:2) listed and compared with boards/pm-*.md",
-  "pm_checked_at": "2026-10-28",
+  "pm_checked_at": "2026-11-05",
   "files": {
     "design": { "fileKey": "dZk5HLzZTdcZwWwvN9aZfZ", "page": "116:7873", "url": "https://www.figma.com/design/dZk5HLzZTdcZwWwvN9aZfZ/AI-Mini-Drama" },
     "pm": { "fileKey": "44RyrcOcWi2MvhGci9bO5F", "page": "2016:2", "url": "https://www.figma.com/design/44RyrcOcWi2MvhGci9bO5F/AI-Mini-Drama?node-id=2016-2", "account": "qa1@cyberlink.com (Dev seat, PM Workspace)", "pdf": "AI Mini Drama - PM Spec 20261021.pdf", "pdf_offset": [-15738,11117], "offset_how": "page bounds top-left (15738, -11117), like MX; OCR anchors read 22 pt lower (text lines, not boxes) (2026-10-28)" },
@@ -21,6 +21,16 @@
     { "label": "1016_add seedance 2.5", "node": "4847:34140", "frame": "2824:130034", "in_pdf": false, "read": "figma: board-notes 「Design — Figma only」 (PM 10/21 governs the labels, REQ-029; R-253 unchanged)" },
     { "label": "1016_Chat navigation", "node": "4858:34930", "in_pdf": false, "read": "figma: board-notes 「Design — Figma only」 (R-261 – R-264)" },
     { "label": "10/22 update — Export Full Video 匯出中狀態", "node": "4418:2", "flag": "4418:30", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「PM — Figma only」 (changes R-249; iOS v9: R-249 changed, R-337 – R-340)" },
-    { "label": "10/22 update — Generate Video 後、影片送出前離開 (§13.24 Storyboard／Video 兩階段)", "node": "4422:2", "flag": "4422:16", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「PM — Figma only」 (replaces R-051/R-158/R-262/R-307 storyboard parts; adds stage-① dialog before R-264/R-071/R-308; R-279 charge moment; iOS v9: R-051, R-071, R-158, R-262, R-264 changed, R-052 replaced, R-332 – R-336)" }
+    { "label": "10/22 update — Generate Video 後、影片送出前離開 (§13.24 Storyboard／Video 兩階段)", "node": "4422:2", "flag": "4422:16", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「PM — Figma only」 (replaces R-051/R-158/R-262/R-307 storyboard parts; adds stage-① dialog before R-264/R-071/R-308; R-279 charge moment; iOS v9: R-051, R-071, R-158, R-262, R-264 changed, R-052 replaced, R-332 – R-336)" },
+    { "label": "10/29 update — Regenerate Clip 一次只能跑一個 (§13.25; 10/30 storyboard image rule)", "node": "4784:70878", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-489, R-490; REQ-094)" },
+    { "label": "11/3 update — Fix these issues 卡片文案", "node": "4982:27069", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-080 changed, R-487, R-488; REQ-094)" },
+    { "label": "11/3 update — 角色庫 filter 沒有結果 (§13.27)", "node": "5014:26418", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-491; REQ-094)" },
+    { "label": "11/4 update — Chat 捲動：四種情境 (§13.2)", "node": "5128:8", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-088, R-089, R-279 changed, R-485; REQ-094)" },
+    { "label": "11/4 update — 多個 scene 失敗：先修第一個 (§13.28)", "node": "5212:27212", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-492, R-493; REQ-094)" },
+    { "label": "11/4 update — 不扣點的 AI 回應可以按 ■ 暫停 (on 4422:2)", "node": "4422:2", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-138 changed, R-486; REQ-094)" },
+    { "label": "11/3 update — 下載中改成全屏 loading＋mask (on 3325:18429)", "node": "3325:18429", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-078 changed; REQ-094)" },
+    { "label": "10/30 update — 時間提示改成 This may take a moment. Keep this screen open. (on 4012:21397)", "node": "4012:21397", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-245, R-247 changed; REQ-094)" },
+    { "label": "11/4 update — 捲動改成 ChatGPT 式 / 按 Generate 送出 Create storyboard 並置頂 (on 3130:14228)", "node": "3130:14228", "file": "pm", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (R-088, R-089, R-279 changed; REQ-094)" },
+    { "label": "Template (Design, undated, 3 per row / 4 per row)", "node": "5756:33097, 5756:33322", "file": "design", "in_pdf": false, "read": "figma: board-notes 「Figma changes found 2026-11-05」 (Q-34 / Q-A22 layout question; R-006)" }
   ]
 }

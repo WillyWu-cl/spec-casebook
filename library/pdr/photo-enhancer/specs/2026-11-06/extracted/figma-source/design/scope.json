@@ -1,0 +1,784 @@
+{
+  "written_at": "2026-11-06T03:39:52.532Z",
+  "file": "4ZIfFu5NTnCEi1Nqo04k2S",
+  "page": [
+    "212:2045",
+    "temp_UJ_ toolbar regroup_24.10E"
+  ],
+  "listed": [
+    [
+      "215:5937",
+      "Experiment for RD",
+      "SECTION"
+    ],
+    [
+      "215:5932",
+      ">5",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "215:5961",
+      "2-d panel UI for toolbar regrouping",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "215:5933",
+      "<5",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "215:5935",
+      "二維 default 為 5 個一排 if 二維 5 個一排時, 第二排會留空 > = 3 自動調整二維變成 4 個為一",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "632:18031",
+      "Timeline_defualt",
+      "INSTANCE",
+      "215:5937"
+    ],
+    [
+      "632:27082",
+      ">5",
+      "FRAME",
+      "215:5937"
+    ],
+    [
+      "632:29095",
+      ">5",
+      "FRAME",
+      "215:5937"
+    ],
+    [
+      "632:27100",
+      "<5",
+      "FRAME",
+      "215:5937"
+    ],
+    [
+      "632:28223",
+      "4",
+      "FRAME",
+      "215:5937"
+    ],
+    [
+      "215:5954",
+      "二維面板在 mobile width 左右置中 MARGIN上下左右 8px 距下面 MAIN TOOL BAR 4p ",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "632:29940",
+      "Rectangle 3467705",
+      "RECTANGLE",
+      "215:5937"
+    ],
+    [
+      "632:29939",
+      "Rectangle 3467706",
+      "RECTANGLE",
+      "215:5937"
+    ],
+    [
+      "215:5945",
+      "8",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "632:29941",
+      "8",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "632:29944",
+      "4",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "632:29946",
+      "Track bg color #021B2F",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "632:29942",
+      "Vector 2603",
+      "VECTOR",
+      "215:5937"
+    ],
+    [
+      "632:29943",
+      "Vector 2604",
+      "VECTOR",
+      "215:5937"
+    ],
+    [
+      "632:30129",
+      "Rectangle 3467707",
+      "RECTANGLE",
+      "215:5937"
+    ],
+    [
+      "705:36464",
+      "bg color ＃002645",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "705:36472",
+      "＃FFFFFF 透明度 40%",
+      "TEXT",
+      "215:5937"
+    ],
+    [
+      "705:36467",
+      "Vector 2606",
+      "VECTOR",
+      "215:5937"
+    ],
+    [
+      "705:36471",
+      "Vector 2607",
+      "VECTOR",
+      "215:5937"
+    ],
+    [
+      "585:19827",
+      "",
+      "SECTION"
+    ],
+    [
+      "585:19828",
+      "home-sticker",
+      "FRAME",
+      "585:19827"
+    ],
+    [
+      "585:19986",
+      "二維default為5個一排 if 二維5個一排時, 第二排會留空>=3 自動調整二維變成4個為一排",
+      "TEXT",
+      "585:19827"
+    ],
+    [
+      "585:19987",
+      "*For “Portrait” : Body Effect/ People Background 直接開feature ",
+      "TEXT",
+      "585:19827"
+    ],
+    [
+      "585:19988",
+      "home-sticker",
+      "FRAME",
+      "585:19827"
+    ],
+    [
+      "585:20145",
+      "Line 417",
+      "LINE",
+      "585:19827"
+    ],
+    [
+      "585:20146",
+      "Line 418",
+      "VECTOR",
+      "585:19827"
+    ],
+    [
+      "585:20147",
+      "Line 419",
+      "LINE",
+      "585:19827"
+    ],
+    [
+      "585:20148",
+      "Line 420",
+      "LINE",
+      "585:19827"
+    ],
+    [
+      "585:20149",
+      "1",
+      "FRAME",
+      "585:19827"
+    ],
+    [
+      "585:20546",
+      "2",
+      "FRAME",
+      "585:19827"
+    ],
+    [
+      "585:20802",
+      "Line 225",
+      "VECTOR",
+      "585:19827"
+    ],
+    [
+      "585:20803",
+      "Line 423",
+      "VECTOR",
+      "585:19827"
+    ],
+    [
+      "585:20804",
+      "Android tab 留Google Drive/ Google Photo",
+      "TEXT",
+      "585:19827"
+    ],
+    [
+      "585:20805",
+      "延用image enhancer media picker的UI",
+      "TEXT",
+      "585:19827"
+    ],
+    [
+      "585:20806",
+      "不需要秀數字",
+      "TEXT",
+      "585:19827"
+    ],
+    [
+      "585:20807",
+      "U-2024-10-17 1",
+      "RECTANGLE",
+      "585:19827"
+    ],
+    [
+      "585:20808",
+      "Line 421",
+      "LINE",
+      "585:19827"
+    ],
+    [
+      "585:20809",
+      "CTA字串改”Extract Audio”",
+      "TEXT",
+      "585:19827"
+    ],
+    [
+      "585:20810",
+      "直接extract video sound並且select在該audio clip上",
+      "TEXT",
+      "585:19827"
+    ],
+    [
+      "585:20811",
+      "Line 422",
+      "LINE",
+      "585:19827"
+    ],
+    [
+      "585:20812",
+      "Rectangle 3467704",
+      "RECTANGLE",
+      "585:19827"
+    ],
+    [
+      "585:20813",
+      "Extract Audio",
+      "TEXT",
+      "585:19827"
+    ],
+    [
+      "585:14634",
+      "toolbar icon",
+      "FRAME"
+    ],
+    [
+      "605:16722",
+      "PM Spec",
+      "TEXT"
+    ],
+    [
+      "585:19720",
+      "PM Spec",
+      "TEXT"
+    ],
+    [
+      "608:16846",
+      "image 2",
+      "RECTANGLE"
+    ],
+    [
+      "608:16876",
+      "image 1",
+      "RECTANGLE"
+    ],
+    [
+      "608:17124",
+      "image 5",
+      "RECTANGLE"
+    ],
+    [
+      "643:56286",
+      "2-d panel UI - iPad",
+      "FRAME"
+    ],
+    [
+      "702:26238",
+      "Landscape Mode",
+      "FRAME"
+    ],
+    [
+      "1528:43587",
+      "Group 5250",
+      "GROUP"
+    ],
+    [
+      "1528:43699",
+      "Slice",
+      "FRAME"
+    ]
+  ],
+  "read": [
+    {
+      "id": "585:14750",
+      "name": "Frame 758532358",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "58ca0c36",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14760",
+      "name": "PiP Video Toolbar",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "5a8d0bfc",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14767",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "e72e1bf3",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14770",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "1d1ee2d1",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14771",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "c143e557",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14775",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "3eeb65b6",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14776",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "6dda28af",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14777",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "dc13d0fd",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14778",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "87842f83",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14782",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "d35eb4f1",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14785",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "14d7641a",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14797",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "95aa7d37",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14798",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "02a859bc",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14799",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "4f5c9a5a",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14801",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "cfdbb391",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14813",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "ce07030c",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14816",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "7f36cc4f",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14819",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "e8adcd27",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14823",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "be5be357",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14839",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "1e66919c",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14847",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "c7c5e85c",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14850",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "0093eb25",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14854",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "c2e04337",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14855",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "e6f20b28",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14856",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "416e1235",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14857",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "3f3c9f14",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14869",
+      "name": "round/ic_building_sparkles",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "f1381d4e",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14870",
+      "name": "round/ic_anime_art",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "b1709f31",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14871",
+      "name": "round/ic_anime_face_sparkle",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "45ad8ed8",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:15040",
+      "name": "round/ic_face_anime",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "a421e71e",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "608:16726",
+      "name": "image 3",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "7dbbafdb",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "1528:43353",
+      "name": "toolbar",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "70e9be8a",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "1528:43656",
+      "name": "round/ic_img_tools",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "c57e4e38",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "1528:43638",
+      "name": "round/ic_ai_enhancement",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "68b9153f",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14762",
+      "name": "PiP Video Toolbar",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "a40f386e",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14768",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "83c33a91",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14779",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "be290eb6",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14780",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "ee84cfbb",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14781",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "e3a73d87",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14783",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "bdc42ba3",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14790",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "35f803b3",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14802",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "944e740b",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14803",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "bbf43d63",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14805",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "afe219d5",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14806",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "a6ac11ec",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14807",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "3acce310",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "608:16730",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "80cd11da",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14830",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "cf735792",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14831",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "17cd6f90",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14832",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "d4d82fef",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14833",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "95404f4e",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "608:16731",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "88df36af",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14848",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "f42724eb",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14852",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "4fb371db",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "608:16732",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "41a7e612",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "608:16733",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "2c807a3f",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "608:16734",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "f94c3bbe",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "608:16735",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "dcbab8b5",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14873",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "76ff705a",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "585:14874",
+      "name": "tool-button",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "c1fe93d1",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "1528:42309",
+      "name": "toolbar",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "36109b05",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "1528:43587",
+      "name": "Group 5250",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "af191fba",
+      "plan": "plan-585-14750-63.json"
+    },
+    {
+      "id": "1528:43699",
+      "name": "Slice",
+      "read_at": "2026-11-06T03:10:11.352Z",
+      "hash": "e2e660b5",
+      "plan": "plan-585-14750-63.json"
+    }
+  ],
+  "missing": []
+}

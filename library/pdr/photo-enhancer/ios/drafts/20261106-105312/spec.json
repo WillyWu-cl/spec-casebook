@@ -1,0 +1,17 @@
+{
+  "feature": "pdr/photo-enhancer",
+  "platform": "ios",
+  "title": "Support Photo Enhancer",
+  "draft": "20261106-105312",
+  "created_at": "2026-11-06T02:53:12.473Z",
+  "based_on_version": null,
+  "spec_folder": "specs/2026-11-06",
+  "spec_files": [
+    {
+      "name": "Support Photo Enhancer - PM and Design Figma.md",
+      "sha256": "b72a55219aaaf38bce58af25af08fb0bc3d5f9d2d3f43ad6ebaa1a5576e5f062",
+      "bytes": 6846
+    }
+  ],
+  "spec_set_sha256": "ebaf80fc63d02d3d30d0f959c2f352686a61edf386dc46764fc327aacb84112b"
+}

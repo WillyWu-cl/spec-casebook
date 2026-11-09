@@ -1,0 +1,126 @@
+{
+  "d-icon-slice.png": {
+    "board": "1528:43699",
+    "group": "d-icon-slice",
+    "hash": "5300322d",
+    "overlay": "",
+    "captured_at": "2026-11-06T02:54:05.709Z"
+  },
+  "d-master-photo-toolbar.png": {
+    "board": "585:14634/d-master-photo-toolbar",
+    "group": "d-master-photo-toolbar",
+    "hash": "dc4368f8",
+    "overlay": "",
+    "captured_at": "2026-11-06T02:54:06.448Z",
+    "box": [
+      9250,
+      -625,
+      1830,
+      2171
+    ]
+  },
+  "d-pip-photo-toolbar.png": {
+    "board": "585:14634/d-pip-photo-toolbar",
+    "group": "d-pip-photo-toolbar",
+    "hash": "a1a529ac",
+    "overlay": "",
+    "captured_at": "2026-11-06T02:54:07.274Z",
+    "box": [
+      11080,
+      -625,
+      2184,
+      2171
+    ]
+  },
+  "pm-header.png": {
+    "board": "65:3761/pm-header",
+    "group": "pm-header",
+    "hash": "7bf0808a",
+    "overlay": "",
+    "captured_at": "2026-11-06T02:54:08.148Z",
+    "box": [
+      -140,
+      -330,
+      4420,
+      110
+    ]
+  },
+  "pm-master-photo.png": {
+    "board": "65:3761/pm-master-photo",
+    "group": "pm-master-photo",
+    "hash": "5ab0679e",
+    "overlay": "",
+    "captured_at": "2026-11-06T03:03:58.810Z",
+    "box": [
+      -20,
+      -100,
+      960,
+      950
+    ]
+  },
+  "pm-pip-photo.png": {
+    "board": "65:3761/pm-pip-photo",
+    "group": "pm-pip-photo",
+    "hash": "2bdde6a4",
+    "overlay": "10961d0b",
+    "captured_at": "2026-11-06T03:03:59.395Z",
+    "box": [
+      -20,
+      755,
+      1237,
+      1006
+    ]
+  },
+  "pm-enhance-flow.png": {
+    "board": "65:3761/pm-enhance-flow",
+    "group": "pm-enhance-flow",
+    "hash": "636753a2",
+    "overlay": "251327f5",
+    "captured_at": "2026-11-06T02:54:10.985Z",
+    "box": [
+      625,
+      480,
+      3676,
+      1060
+    ]
+  },
+  "pm-full-screen.png": {
+    "board": "65:3761/pm-full-screen",
+    "group": "pm-full-screen",
+    "hash": "abf9a76d",
+    "overlay": "",
+    "captured_at": "2026-11-06T02:54:11.895Z",
+    "box": [
+      -20,
+      1960,
+      1320,
+      960
+    ]
+  },
+  "pm-refs.png": {
+    "board": "65:3761/pm-refs",
+    "group": "pm-refs",
+    "hash": "200ac984",
+    "overlay": "",
+    "captured_at": "2026-11-06T02:54:12.610Z",
+    "box": [
+      4500,
+      -570,
+      900,
+      900
+    ]
+  },
+  "pm-toolbar-link.png": {
+    "board": "65:3761/pm-toolbar-link",
+    "group": "pm-toolbar-link",
+    "hash": "4d93970c",
+    "overlay": "",
+    "captured_at": "2026-11-06T03:03:59.946Z",
+    "box": [
+      -1180,
+      780,
+      800,
+      480
+    ]
+  }
+}

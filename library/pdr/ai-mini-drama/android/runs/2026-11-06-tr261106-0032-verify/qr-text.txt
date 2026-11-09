@@ -1,0 +1,54 @@
+=== Template
+Standard Report
+
+=== Short Description
+16.8.0.2611061 - Bug verify report (ETHAN_HSU)
+
+=== Test Result
+PDR-A - Bug verification [OK=1, Fail=0]
+
+=== Testing Date
+2026/11/06
+
+=== Product Version
+16.8.0
+
+=== Build Day
+1106
+
+=== Build No.
+2611061
+
+=== Operation System
+Android 15
+
+=== OS Language
+English
+
+=== Test Result Details
+a. Device: Samsung Galaxy A53 (SM-A5360) / Android 15
+
+b. Build: 16.8.0.2611061 (TR261106-0032), APK from the TR's OneDrive folder (MD5 checked), installed over the previous build
+
+c. Server: Stage
+
+d. Account: cltqauiap2@gmail.com (Pro)
+
+e. Tested by: AI agent (Claude Opus 5.5) driving the phone over Appium; verdicts and evidence reviewed by ETHAN_HSU
+
+f. Scope: the eBug created by ETHAN_HSU in this TR's verify list that is not reported in another QR (French copy)
+
+g. OK (1)
+g1. DRA262610P0424 - the French format card reads 「1. Langue de la vidéo」 and the Create storyboard card reads 「Des crédits seront consommés pour cette tâche.」
+
+h. FAIL (0)
+
+i. Other observations, not filed (1)
+i1. With the app in French, one assistant line before the Create storyboard card is still English (「I have created the six-beat storyboard for Julian Cross and Lauren Hale in French.」).
+
+j. Evidence: screenshots and logs are attached to each eBug and named in its Reason.
+
+=== DRA262610P0424  [OK]
+Verified OK with build (v16.8.0.2611061) on Samsung Galaxy A53 (SM-A5360) / Android 15
+Evidence: {16.8.0.2611061_DRA262610P0424_01_format_card.png} {16.8.0.2611061_DRA262610P0424_02_storyboard_card.png} {16.8.0.2611061_DRA262610P0424_log.txt}
+

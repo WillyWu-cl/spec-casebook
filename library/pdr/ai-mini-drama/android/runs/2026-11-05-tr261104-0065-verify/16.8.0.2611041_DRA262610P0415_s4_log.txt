@@ -1,0 +1,35 @@
+# P0415 segment 4, 2026-11-05 (phone clock CST). Salt Broth. Sent 「Please regenerate the storyboard」 15:42:24 -> Create storyboard card ◆19 (TTS 1 + 6 scene images x3). Generate 15:47:01.
+# Wi-Fi off 15:47:26.04 (adb svc wifi disable, fired by the s_img_1 'receipt submitted' line), on 15:47:56.27 (phone clock). Pill 28126 before; 28125 after TTS; 28119 after Wi-Fi back (15:48:27).
+2026-11-05 15:42:55.737 14750 29038 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 15:42:55.762 14750 29038 D MiniDrama Log: [AI] I have regenerated all six scenes of the storyboard with streamlined cuts and dialogue.
+2026-11-05 15:47:19.888 14750 30960 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_preview_tts consumeTaskId=91680795 files=1
+2026-11-05 15:47:20.363 14750 26722 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28125, …
+2026-11-05 15:47:25.672 14750 26722 D MiniDrama Log: [TOOL] MyCreation receipt submitted call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1 consumeTaskId=91680796 files=1
+2026-11-05 15:47:26.277 14750 26722 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:47:26.280 14750 30948 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:47:26.289 14750 30948 E MiniDramaFail: [TextToImage] generation_failed: Others | detail=tti=apply_failed type=Others sid=28051109 code=-1 body=java.net.ConnectException: Failed to connect to demo.myedit.online/54.192.248.89:443
+2026-11-05 15:47:26.290 14750 30948 D MiniDrama Log: [TOOL] MyCreation receipt failed call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_2
+2026-11-05 15:47:26.299 14750 26722 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:47:26.322 14750 30948 E MiniDramaFail: [TextToImage] generation_failed: Others | detail=tti=apply_failed type=Others sid=28051110 code=-1 body=java.net.ConnectException: Failed to connect to demo.myedit.online/54.192.248.89:443
+2026-11-05 15:47:26.323 14750 30948 D MiniDrama Log: [TOOL] MyCreation receipt failed call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_3
+2026-11-05 15:47:26.325 14750 29147 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:47:26.335 14750 30948 E MiniDramaFail: [TextToImage] generation_failed: Others | detail=tti=apply_failed type=Others sid=28051111 code=-1 body=java.net.ConnectException: Failed to connect to demo.myedit.online/54.192.248.89:443
+2026-11-05 15:47:26.338 14750 30948 D MiniDrama Log: [TOOL] MyCreation receipt failed call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_4
+2026-11-05 15:47:26.341 14750 30948 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:47:26.360 14750 22043 E MiniDramaFail: [TextToImage] generation_failed: Others | detail=tti=apply_failed type=Others sid=28051112 code=-1 body=java.net.ConnectException: Failed to connect to demo.myedit.online/54.192.248.89:443
+2026-11-05 15:47:26.362 14750 22043 D MiniDrama Log: [TOOL] MyCreation receipt failed call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_5
+2026-11-05 15:47:26.366 14750 30948 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:47:26.384 14750 22043 E MiniDramaFail: [TextToImage] generation_failed: Others | detail=tti=apply_failed type=Others sid=28051113 code=-1 body=java.net.ConnectException: Failed to connect to demo.myedit.online/54.192.248.89:443
+2026-11-05 15:47:26.387 14750 22043 D MiniDrama Log: [TOOL] MyCreation receipt failed call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_6
+2026-11-05 15:47:26.403 14750 30960 D CreditSystemManager: getCreditRemain, Exception: java.net.UnknownHostException: Unable to resolve host "credit-stage.cyberlink.com": No address associated with hostname
+2026-11-05 15:48:26.917 14750 26722 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_preview_tts
+2026-11-05 15:48:27.818 14750 30948 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28119, …
+2026-11-05 15:48:32.049 14750 30948 D MiniDrama Log: [TOOL] MyCreation receipt done call=261105_152156_d18b1caf_t10_i1_d1_ai-mini-drama_s_plan_s_routed_s_asset_routed_s_prompts_done_s_img_1
+2026-11-05 15:48:32.117 14750 29147 D MiniDrama Log: [TURN] turn_complete: final_state=complete
+2026-11-05 15:48:32.126 14750 29147 E MiniDramaFail: [engine] target=beat_fb2ea141 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Others
+2026-11-05 15:48:32.132 14750 29147 E MiniDramaFail: [engine] target=beat_253fffe3 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Others
+2026-11-05 15:48:32.132 14750 29147 E MiniDramaFail: [engine] target=beat_11546243 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Others
+2026-11-05 15:48:32.132 14750 29147 E MiniDramaFail: [engine] target=beat_ca190692 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Others
+2026-11-05 15:48:32.132 14750 29147 E MiniDramaFail: [engine] target=beat_d99aab75 | tool=EditImageGPT2 | agent_tool_dispatch('TextToImage') failed: generation_failed - Others
+2026-11-05 15:48:32.628 14750 30948 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28119, …
+2026-11-05 15:48:56.639 14750 30960 D CreditSystemManager: getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=28119, …

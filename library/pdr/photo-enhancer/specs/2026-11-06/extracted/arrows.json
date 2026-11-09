@@ -1,0 +1,82 @@
+{
+  "arrows": [
+    {
+      "arrow": "65-6779",
+      "node": "65-6779",
+      "edge": "Master photo toolbar 「Enhance」 → Enhance second layer (「Photo Enhance」, 「AI Color」)",
+      "expected": "Tapping 「Enhance」 on a master-track photo clip opens the second layer with 「Photo Enhance」 and 「AI Color」",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "65-6780",
+      "node": "65-6780",
+      "edge": "PiP photo toolbar 「Enhance」 → Enhance second layer (「Photo Enhance」, 「AI Color」)",
+      "expected": "Tapping 「Enhance」 on a PiP-track photo clip opens the same second layer",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "65-9989",
+      "node": "65-9989",
+      "edge": "Enhance second layer 「Photo Enhance」 (not applied) → 「Ready to Enhance?」 dialog",
+      "expected": "Tapping 「Photo Enhance」 on a photo without the enhancement opens the 「Ready to Enhance?」 dialog",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "65-6781",
+      "node": "65-6781",
+      "edge": "「Ready to Enhance?」 「Continue」 → 「Enhancing...」",
+      "expected": "「Continue」 starts the enhancement: the editor dims and shows 「Enhancing...」 with a spinner and 「Cancel」",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "65-6782",
+      "node": "65-6782",
+      "edge": "「Enhancing...」 (automatic, done) → editor with the toast 「Applied Photo Enhance」",
+      "expected": "When the enhancement finishes the editor shows the enhanced photo and the toast 「Applied Photo Enhance」",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "65-6783",
+      "node": "65-6783",
+      "edge": "Editor (applied) toolbar 「Enhance」 → Enhance second layer with the applied dot",
+      "expected": "Tapping 「Enhance」 again shows the second layer with a white dot on 「Photo Enhance」",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "91-8364",
+      "node": "91-8364",
+      "edge": "Enhance second layer 「Photo Enhance」 (applied) → Photo Enhance panel",
+      "expected": "Tapping 「Photo Enhance」 again on an enhanced photo opens the Photo Enhance panel (✕, 「Reset」, 「Original」, 「Result」), no dialog",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "91-8366",
+      "node": "91-8366",
+      "edge": "Photo Enhance panel ✕ → editor (applied)",
+      "expected": "✕ closes the panel and returns to the editor with the enhancement kept",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "91-8359",
+      "node": "91-8359",
+      "edge": "Photo Enhance panel 「Reset」 → editor with the toast 「Removed Photo Enhance」",
+      "expected": "「Reset」 removes the enhancement and returns to the editor with the toast 「Removed Photo Enhance」 and no white dot",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "65-6786",
+      "node": "65-6786",
+      "edge": "Editor full-screen button → full-screen preview",
+      "expected": "The full-screen button opens the full-screen preview of the (enhanced) photo",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    },
+    {
+      "arrow": "65-6787",
+      "node": "65-6787",
+      "edge": "Full-screen preview, screenshot taken → 「screenshot IAP dialog」",
+      "expected": "Taking a screenshot in the full-screen preview shows the screenshot IAP dialog of the shortcut Photo Enhance (image enhancer)",
+      "how": "PM page 65:3761 arrow (vector named 「<from> --> <to>」, layer names stale); edge checked against the geometry by hand 2026-11-06"
+    }
+  ],
+  "count": 11
+}

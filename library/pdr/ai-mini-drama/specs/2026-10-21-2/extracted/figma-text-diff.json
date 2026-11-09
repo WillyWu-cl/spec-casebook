@@ -1,0 +1,214 @@
+{
+  "checked_at": "2026-11-05T07:19:59.518Z",
+  "set": "2026-10-21-2",
+  "boards": [
+    {
+      "board": "video",
+      "id": "2820:113981",
+      "group": "d3",
+      "baseline": "none"
+    },
+    {
+      "board": "pm-error-handling-c",
+      "id": "2419:20605/pm-error-handling-c",
+      "group": "ec",
+      "baseline": "none"
+    },
+    {
+      "board": "pm-main-flow-11",
+      "id": "2419:20605/pm-main-flow-11",
+      "group": "mf11",
+      "baseline": "none"
+    },
+    {
+      "board": "pm-main-flow-13",
+      "id": "2419:20605/pm-main-flow-13",
+      "group": "mf13",
+      "baseline": "none"
+    },
+    {
+      "board": "pm-main-flow-21",
+      "id": "2419:20605/pm-main-flow-21",
+      "group": "mf21",
+      "baseline": "none"
+    },
+    {
+      "board": "pm-main-flow-22",
+      "id": "2419:20605/pm-main-flow-22",
+      "group": "mf22",
+      "baseline": "none"
+    },
+    {
+      "board": "pm-main-flow-34",
+      "id": "2419:20605/pm-main-flow-34",
+      "group": "mf34",
+      "baseline": "none"
+    },
+    {
+      "board": "pm-update-11",
+      "id": "4294:25661",
+      "group": "p4k",
+      "baseline": "pdf-ocr",
+      "added": [
+        {
+          "text": "Choose for Sophie",
+          "inPhone": true,
+          "reqs": []
+        },
+        {
+          "text": "Create",
+          "inPhone": true,
+          "reqs": []
+        },
+        {
+          "text": "my character",
+          "inPhone": true,
+          "reqs": [
+            "R-248"
+          ]
+        },
+        {
+          "text": "Choose Character",
+          "inPhone": true,
+          "reqs": []
+        },
+        {
+          "text": "Sophie",
+          "inPhone": true,
+          "reqs": []
+        },
+        {
+          "text": "The Manager",
+          "inPhone": true,
+          "reqs": []
+        },
+        {
+          "text": "Chloe",
+          "inPhone": true,
+          "reqs": []
+        },
+        {
+          "text": "Create my character",
+          "inPhone": true,
+          "reqs": []
+        },
+        {
+          "text": "Age: 24",
+          "inPhone": true,
+          "reqs": []
+        }
+      ],
+      "removed": [
+        {
+          "text": "Make your character",
+          "reqs": []
+        },
+        {
+          "text": "Make your character",
+          "reqs": []
+        },
+        {
+          "text": "Fel",
+          "reqs": []
+        },
+        {
+          "text": "Caucasian",
+          "reqs": []
+        },
+        {
+          "text": "African",
+          "reqs": []
+        },
+        {
+          "text": "Hispanic",
+          "reqs": []
+        },
+        {
+          "text": "Caucasian",
+          "reqs": []
+        },
+        {
+          "text": "African",
+          "reqs": []
+        },
+        {
+          "text": "Hispanic",
+          "reqs": []
+        },
+        {
+          "text": "Others",
+          "reqs": []
+        },
+        {
+          "text": "Others",
+          "reqs": []
+        },
+        {
+          "text": "Others",
+          "reqs": []
+        },
+        {
+          "text": "Others",
+          "reqs": []
+        },
+        {
+          "text": "Others",
+          "reqs": []
+        },
+        {
+          "text": "Others",
+          "reqs": []
+        },
+        {
+          "text": "Others",
+          "reqs": []
+        },
+        {
+          "text": "Others",
+          "reqs": []
+        }
+      ],
+      "reqs": [
+        "R-248",
+        "R-118",
+        "R-293"
+      ]
+    }
+  ],
+  "no_texts": [
+    "d1",
+    "d1b",
+    "d2",
+    "d3b",
+    "ea",
+    "eb",
+    "m1",
+    "m2",
+    "mf12",
+    "mf14",
+    "mf23",
+    "mf24",
+    "mf31",
+    "mf32",
+    "mf33",
+    "mxb",
+    "mxc",
+    "q1",
+    "q11",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q7",
+    "q8",
+    "u1a",
+    "u1b",
+    "u1c",
+    "u3a",
+    "u3b",
+    "u3c",
+    "u9a1",
+    "u9a2",
+    "u9b"
+  ]
+}

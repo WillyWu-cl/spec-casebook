@@ -9,25 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;750&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;600;700&display=swap">
 <style>
+/*__SHARED_CSS__*/
 /* Layout: a run picker and filters, then one card per case — what was done, what should happen, what happened and the
    screenshots that show it. Same palette as the run plan. */
-:root {
-  --bg: #f4f6f6; --panel: #ffffff; --ink: #172426; --muted: #5b6b6e; --line: #d8e0e1; --accent: #0f6e73;
-  --pass: #2f7d4f; --fail: #b8402f; --blocked: #a86b12; --inc: #6a55a8; --notrun: #9aa6a8; --chip-bg: #eef2f2;
-  --display: "Archivo", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
-  --body: "Source Sans 3", "Noto Sans TC", "Segoe UI", system-ui, "PingFang TC", sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd;
-  --pass: #5cbf83; --fail: #ec7a66; --blocked: #e0a548; --inc: #a796e0; --notrun: #5f6f71; --chip-bg: #213032; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd;
-  --pass: #5cbf83; --fail: #ec7a66; --blocked: #e0a548; --inc: #a796e0; --notrun: #5f6f71; --chip-bg: #213032; color-scheme: dark }
-* { box-sizing: border-box }
-body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px }
-.wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 20px }
+body { padding-block: 28px 56px }
+.wrap { display: grid; gap: 20px }
 h1 { font: 750 1.9rem var(--display); margin: 0; letter-spacing: -0.01em; text-wrap: balance }
 .eyebrow { font: 600 0.72rem/1 var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted) }
 .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap }
@@ -51,9 +37,18 @@ select, input[type="search"] { font: 0.88rem var(--body); color: var(--ink); bac
 input[type="search"] { flex: 1 1 200px }
 label.only { font-size: 0.85rem; color: var(--muted); display: inline-flex; gap: 6px; align-items: center }
 .count { font: 0.82rem var(--mono); color: var(--muted); margin-left: auto }
-.list { display: grid; gap: 12px }
+.list { display: grid; gap: 10px }
 .seg-h { font: 650 1rem var(--display); margin: 14px 0 0; color: var(--muted) }
-.case { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--notrun); border-radius: 6px; padding: 14px 16px; display: grid; gap: 10px; scroll-margin-top: 70px }
+.case { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--notrun); border-radius: 6px; scroll-margin-top: 70px }
+.case > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 5.2rem 5.6rem minmax(0, 1fr) auto auto; gap: 10px; align-items: baseline; padding: 9px 16px }
+.case > summary::-webkit-details-marker { display: none }
+.case > summary:hover { background: var(--chip-bg) }
+.case .one { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.92rem }
+.case .facts { display: none; min-width: 0; gap: 4px 12px; flex-wrap: wrap; align-items: baseline }
+.case[open] .one, .case[open] > summary .bug, .case[open] > summary > .disp { display: none }
+.case[open] .facts { display: flex }
+.case > summary .res { margin-left: 0; justify-self: start }
+.cbody { display: grid; gap: 10px; padding: 0 16px 14px } .cbody:empty { display: none }
 .case.Pass { border-left-color: var(--pass) } .case.Fail { border-left-color: var(--fail) } .case.Blocked { border-left-color: var(--blocked) } .case.Inconclusive { border-left-color: var(--inc) }
 .case.focus { box-shadow: 0 0 0 2px var(--accent) }
 .head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline }
@@ -100,7 +95,7 @@ a.tk:hover, a.tk:focus-visible { border-color: var(--fail); background: color-mi
 .lb .bar2 .cap { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
 .lb .stage { display: grid; place-items: center; min-height: 0; padding: 0 16px 16px }
 .lb img { max-width: 100%; max-height: calc(100vh - 72px); object-fit: contain }
-@media (max-width: 760px) { .grid { grid-template-columns: 1fr } .shots img { height: 180px } .res { margin-left: 0 } }
+@media (max-width: 760px) { .case > summary { grid-template-columns: auto minmax(0, 1fr) } .case .one { grid-column: 1 / -1; white-space: normal } .grid { grid-template-columns: 1fr } .shots img { height: 180px } .res { margin-left: 0 } }
 </style>
 </head>
 <body>
@@ -110,6 +105,7 @@ a.tk:hover, a.tk:focus-visible { border-color: var(--fail); background: color-mi
     <h1 id="h"></h1>
     <div class="runs" id="runs" role="group" aria-label="Run"></div>
     <div class="meta" id="meta"></div>
+    <p class="small" id="note" style="margin:0" hidden></p>
     <div class="bar" id="bar"></div>
   </header>
   <div class="tools" id="tools">
@@ -119,12 +115,15 @@ a.tk:hover, a.tk:focus-visible { border-color: var(--fail); background: color-mi
     <input type="search" id="q" autocomplete="off">
     <label class="only"><input type="checkbox" id="only"> <span id="onlyl"></span></label>
     <label class="only"><input type="checkbox" id="onlybug"> <span id="onlybugl"></span></label>
+    <label class="only"><input type="checkbox" id="nobug"> <span id="nobugl"></span></label>
+    <label class="only"><input type="checkbox" id="compact"> <span id="compactl"></span></label>
     <span class="count" id="count"></span>
   </div>
   <div class="list" id="list"></div>
 </div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot"><div class="bar2"><button type="button" id="lbprev">←</button><button type="button" id="lbnext">→</button><span class="cap" id="lbcap"></span><button type="button" id="lbclose">✕</button></div><div class="stage"><img id="lbimg" alt=""></div></div>
 <script>
+/*__SHARED_JS__*/
 let D = __DATA__;
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -135,6 +134,7 @@ if (window.CASEBOOK) L = window.CASEBOOK.lang; else try { if (localStorage.getIt
 const T = {
   en: { eyebrow: 'Casebook results', title: f => `${f} · Results`, run: 'Run', build: 'Build', cases: 'cases', recorded: 'Recorded', all: 'All',
     allSeg: 'All segments', allDisp: 'All dispositions', search: 'Search ID, section, action, result or eBug', only: 'With screenshots only',
+    compact: 'Compact list', attention: 'Needs attention', noBugF: 'Fail with no eBug', gone: n => `Screenshots for ${n} cases stay on the computer that ran the test, so they are not shown here.`, notHere: 'not on this computer',
     shown: (n, m) => `${n} of ${m}`, pre: 'Precondition', action: 'Action', expected: 'Expected result', actual: 'What happened', why: 'Blocked because',
     files: 'Other evidence', none: 'No case matches these filters.', noRuns: 'No run has recorded results yet (runs/*/results.csv).',
     review: 'cases', plan: 'progress', spec: 'coverage', report: 'report.md in the run folder', at: 'recorded', prio: 'priority', needs: 'needs', shot: 'screenshots',
@@ -143,6 +143,7 @@ const T = {
     noBugT: 'No filed batch names this case and its result names no eBug code.' },
   zh: { eyebrow: '測試表執行結果', title: f => `${f} · 結果`, run: '執行', build: '版本', cases: '個案例', recorded: '記錄時間', all: '全部',
     allSeg: '全部段落', allDisp: '全部歸類', search: '搜尋 ID、區段、操作、結果或 eBug', only: '只看有截圖的',
+    compact: '精簡清單', attention: '需要處理', noBugF: '失敗但沒有 eBug', gone: n => `${n} 個案例的截圖留在執行測試的電腦上，這裡不會顯示。`, notHere: '不在這台電腦上',
     shown: (n, m) => `${n} / ${m}`, pre: '前置條件', action: '操作', expected: '預期結果', actual: '實際情況', why: '受阻原因',
     files: '其他證據', none: '沒有符合篩選條件的案例。', noRuns: '還沒有任何執行記錄結果（runs/*/results.csv）。',
     review: '案例', plan: '進度', spec: '覆蓋率', report: '執行資料夾內的 report.md', at: '記錄於', prio: '優先度', needs: '需要', shot: '張截圖',
@@ -151,14 +152,15 @@ const T = {
     noBugT: '沒有任何已開立的批次列出此案例，結果中也沒有 eBug 編號。' },
 };
 const t = k => T[L][k] ?? T.en[k];
-const RES = ['Fail', 'Blocked', 'Inconclusive', 'Pass', 'Not run'];
+const RES = ['Pass', 'Fail', 'Blocked', 'Inconclusive', 'Not run'];   // the order of Progress's bar and legend too
+const ATTN = ['Fail', 'Blocked', 'Inconclusive'], IMG = /\.(png|jpe?g|webp)$/i;
 const RES_ZH = { Pass: '通過', Fail: '失敗', Blocked: '受阻', Inconclusive: '無法判定', 'Not run': '未執行' };
 const resName = r => L === 'zh' ? RES_ZH[r] ?? r : r;
 const COLOR = r => `var(--${({ Pass: 'pass', Fail: 'fail', Blocked: 'blocked', Inconclusive: 'inc' })[r] ?? 'notrun'})`;
 const PAGES = window.CASEBOOK?.pages ?? {};
 // served (not a results.html file): the list asks for small copies; the viewer always opens the original
 const THUMB = location.protocol === 'file:' ? '' : '?thumb';
-const fmt = s => s ? new Date(s).toLocaleString(L === 'zh' ? 'zh-TW' : undefined, { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+const fmt = s => s ? cbWhen(s) : '';
 // eBug codes in a result (DRI261898P0001, DRI261893-0124) stand out and open the ticket in eCL (the address the
 // ebug-tr-filer skill prescribes)
 const ECL = code => `https://ecl.cyberlink.com/Ebug/eBugHandle/HandleMainEbug.asp?BugCode=${encodeURIComponent(code)}`;
@@ -171,51 +173,67 @@ function ebugBand(c) {
   return `<div class="ebugs"><span class="lbl">${BUG_ICON}${t('ebug')}</span>${tks.join('')}</div>`;
 }
 
-let run = D.runs[0], res = '', seg = '', disp = '', q = '', only = false, onlyBug = false, focus = '', shots = [], at = 0;
+let run = D.runs[0], res = 'attention', seg = '', disp = '', q = '', only = false, onlyBug = false, noBug = false, focus = '', shots = [], at = 0;
+// every case shows its whole record (user, 2026-11-06); Compact list folds them to one line each. flip: the cases opened
+// or closed by hand against that, kept across redraws
+let compact = false; try { compact = !!localStorage.getItem('results-compact'); } catch (e) {}
+const flip = new Set(), isOpen = id => compact ? flip.has(id) : !flip.has(id);
+// another run's cases are fetched when it is opened, and kept (a static results.html has them all)
+const loaded = {};
+async function ensure(r) { if (!r || r.cases) return; if (!loaded[r.id]) { const x = await fetch(`run.json?id=${encodeURIComponent(r.id)}`, { cache: 'no-store' }); loaded[r.id] = await x.json(); } r.cases = loaded[r.id]; }
+const runName = r => r.phase || r.id.replace(/^\d{4}-\d{2}-\d{2}-/, '').toUpperCase();
 
 function header() {
   document.documentElement.lang = L === 'zh' ? 'zh-Hant' : 'en';
   $('eyebrow').textContent = t('eyebrow');
   $('h').textContent = t('title')(D.title);
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.l === L)));
-  $('runs').innerHTML = D.runs.map((r, i) => `<button type="button" data-i="${i}" aria-pressed="${r === run}">${esc(r.phase || r.id)}<small>${esc(r.id)} · ${r.cases.length} ${t('cases')}</small></button>`).join('');
-  $('runs').querySelectorAll('button').forEach(b => b.onclick = () => { run = D.runs[+b.dataset.i]; seg = disp = ''; render(); });
+  $('runs').innerHTML = D.runs.map((r, i) => `<button type="button" data-i="${i}" aria-pressed="${r === run}" title="${esc(r.id)}">${esc(runName(r))} · ${esc(cbWhen(r.first).slice(0, 5))}<small>${r.n} ${t('cases')} · ${RES.filter(x => r.tally[x]).map(x => `${esc(resName(x))} ${r.tally[x]}`).join(' · ')}</small></button>`).join('');
+  $('runs').querySelectorAll('button').forEach(b => b.onclick = async () => { const r = D.runs[+b.dataset.i]; await ensure(r); run = r; seg = disp = ''; flip.clear(); render(); });
   if (!run) { $('meta').textContent = ''; $('bar').innerHTML = ''; return; }
   $('meta').innerHTML = [`<span>${t('run')} <b>${esc(run.id)}</b></span>`, run.build && `<span>${t('build')} <b>${esc(run.build)}</b></span>`,
-    `<span>${t('recorded')} <b>${fmt(run.first)} – ${fmt(run.last)}</b></span>`, run.report && `<span>${t('report')}</span>`].filter(Boolean).join('');
+    `<span>${t('recorded')} <b>${esc(cbSpan(run.first, run.last, L))}</b></span>`, run.report && `<span>${t('report')}</span>`].filter(Boolean).join('');
+  const gone = run.cases.filter(c => !c.shots.length && c.files.some(f => IMG.test(f))).length;
+  $('note').hidden = !gone; $('note').textContent = gone ? t('gone')(gone) : '';
   const n = run.cases.length || 1, c = tally(run.cases);
   $('bar').innerHTML = RES.filter(r => c[r]).map(r => `<span style="width:${c[r] / n * 100}%;background:${COLOR(r)}" title="${resName(r)} ${c[r]}"></span>`).join('');
 }
 const tally = cs => cs.reduce((m, c) => (m[c.result] = (m[c.result] ?? 0) + 1, m), {});
 function tools() {
   const cs = run?.cases ?? [], c = tally(cs);
-  $('rchips').innerHTML = `<button type="button" class="chip" data-r="" aria-pressed="${!res}">${t('all')} <span class="n">${cs.length}</span></button>`
+  const attn = ATTN.reduce((n, r) => n + (c[r] ?? 0), 0);
+  $('rchips').innerHTML = `<button type="button" class="chip" data-r="attention" aria-pressed="${res === 'attention'}">${t('attention')} <span class="n">${attn}</span></button><button type="button" class="chip" data-r="all" aria-pressed="${res === 'all'}">${t('all')} <span class="n">${cs.length}</span></button>`
     + RES.filter(r => c[r]).map(r => `<button type="button" class="chip" data-r="${r}" aria-pressed="${res === r}"><i style="background:${COLOR(r)}"></i>${resName(r)} <span class="n">${c[r]}</span></button>`).join('');
   $('rchips').querySelectorAll('button').forEach(b => b.onclick = () => { res = b.dataset.r; render(); });
   const segs = [...new Set(cs.map(c => c.seg).filter(Boolean))], disps = [...new Set(cs.map(c => c.disp).filter(Boolean))].sort();
   $('seg').innerHTML = `<option value="">${t('allSeg')}</option>` + segs.map(s => `<option${s === seg ? ' selected' : ''}>${esc(s)}</option>`).join('');
   $('disp').innerHTML = `<option value="">${t('allDisp')}</option>` + disps.map(s => `<option${s === disp ? ' selected' : ''}>${esc(s)}</option>`).join('');
-  $('q').placeholder = t('search'); $('onlyl').textContent = t('only'); $('onlybugl').textContent = t('withBug');
+  $('q').placeholder = t('search'); $('onlyl').textContent = t('only'); $('onlybugl').textContent = t('withBug'); $('nobugl').textContent = t('noBugF'); $('compactl').textContent = t('compact');
+  // nothing to filter on where no screenshot is on this computer
+  $('only').closest('label').hidden = !cs.some(c => c.shots.length);
 }
-const match = c => (!res || c.result === res) && (!seg || c.seg === seg) && (!disp || c.disp === disp) && (!only || c.shots.length)
-  && (!onlyBug || c.ebugs.length)
+const match = c => (res === 'all' || (res === 'attention' ? ATTN.includes(c.result) : c.result === res)) && (!seg || c.seg === seg) && (!disp || c.disp === disp) && (!only || c.shots.length)
+  && (!onlyBug || c.ebugs.length) && (!noBug || (c.result === 'Fail' && !c.ebugs.length))
   && (!q || [c.id, c.section, c.action, c.expected, c.actual, c.why, c.disp, ...c.ebugs.flatMap(b => [b.code, b.title])].join(' ').toLowerCase().includes(q));
-function card(c) {
+function cardBody(c) {
   const links = [PAGES.review && `<a href="${esc(PAGES.review)}#${encodeURIComponent(c.id)}">${t('review')} →</a>`,
     PAGES.plan && `<a href="${esc(PAGES.plan)}#case=${encodeURIComponent(c.id)}">${t('plan')} →</a>`,
     PAGES.coverage && `<a href="${esc(PAGES.coverage)}#case=${encodeURIComponent(c.id)}">${t('spec')} →</a>`].filter(Boolean).join('');
-  return `<article class="case ${esc(c.result.replace(' ', ''))}${c.id === focus ? ' focus' : ''}" id="c-${esc(c.id)}">
-  <div class="head"><span class="cid">${esc(c.id)}</span><span class="sec">${esc(c.section)}</span>${c.prio ? `<span class="disp">${t('prio')} ${esc(c.prio)}</span>` : ''}${c.needs ? `<span class="disp">${t('needs')} ${esc(c.needs)}</span>` : ''}
-    <span class="res ${esc(c.result.replace(' ', ''))}">${esc(resName(c.result))}</span>${c.disp ? `<span class="disp">${esc(c.disp)}</span>` : ''}</div>
-  ${ebugBand(c)}
+  return `${ebugBand(c)}
   <div class="grid">
     <div>${c.pre ? `<h4>${t('pre')}</h4><p class="small">${esc(c.pre)}</p>` : ''}<h4>${t('action')}</h4><p>${esc(c.action)}</p></div>
     <div><h4>${t('expected')}</h4><p>${esc(c.expected)}</p></div>
-    <div class="found ${esc(c.result.replace(' ', ''))}"><h4>${t('actual')}</h4><p>${bugs(c.actual) || '—'}</p>${c.why ? `<div class="why"><b>${t('why')}:</b> ${esc(c.why)}${c.group ? ` <span class="disp">${esc(c.group)}</span>` : ''}</div>` : ''}${c.files.length ? `<div class="small" style="margin-top:6px">${t('files')}: ${c.files.map(esc).join(' ')}</div>` : ''}</div>
+    <div class="found ${esc(c.result.replace(' ', ''))}"><h4>${t('actual')}</h4><p>${bugs(c.actual) || '—'}</p>${c.why ? `<div class="why"><b>${t('why')}:</b> ${esc(c.why)}${c.group ? ` <span class="disp">${esc(c.group)}</span>` : ''}</div>` : ''}${c.files.length ? `<div class="small" style="margin-top:6px">${t('files')}: ${c.files.map(esc).join(' ')}${!c.shots.length && c.files.some(f => IMG.test(f)) ? ` (${t('notHere')})` : ''}</div>` : ''}</div>
   </div>
   ${c.shots.length ? `<div class="shots">${c.shots.map((s, i) => `<button type="button" data-c="${esc(c.id)}" data-i="${i}" title="${esc(s.name)}"><img loading="lazy" src="${esc(s.src)}${THUMB}" alt="${esc(c.id)} ${esc(s.name)}"><span>${esc(s.name)}</span></button>`).join('')}</div>` : ''}
-  <div class="xl">${links}<span class="disp" style="margin-left:auto">${esc(c.seg)} · ${t('at')} ${fmt(c.at)}</span></div>
-</article>`;
+  <div class="xl">${links}<span class="disp" style="margin-left:auto">${esc(c.seg)} · ${t('at')} ${fmt(c.at)}</span></div>`;
+}
+// one line per case, the whole record when it is opened: the finding and its eBug can be scanned down the page
+const oneLine = c => { const s = String((c.result === 'Blocked' && c.why) || c.actual || c.why || '').replace(/\s+/g, ' ').trim(), m = s.match(/^.{40,}?[.。](?=\s|$)/);
+  const x = m ? m[0] : s; return x.length > 170 ? `${x.slice(0, 169)}…` : x; };
+function card(c) {
+  const k = esc(c.result.replace(' ', '')), on = isOpen(c.id), bug = c.ebugs[0];
+  return `<details class="case ${k}${c.id === focus ? ' focus' : ''}" id="c-${esc(c.id)}" data-id="${esc(c.id)}"${on ? ' open' : ''}><summary><span class="cid">${esc(c.id)}</span><span class="res ${k}">${esc(resName(c.result))}</span><span class="one">${esc(oneLine(c))}</span><span class="facts"><span class="sec">${esc(c.section)}</span>${c.prio ? `<span class="disp">${t('prio')} ${esc(c.prio)}</span>` : ''}${c.needs ? `<span class="disp">${t('needs')} ${esc(c.needs)}</span>` : ''}${c.disp ? `<span class="disp">${esc(c.disp)}</span>` : ''}</span>${bug ? `<a class="bug" href="${ECL(bug.code)}" target="_blank" rel="noopener noreferrer">${esc(bug.code)}</a>${c.ebugs.length > 1 ? `<span class="disp">+${c.ebugs.length - 1}</span>` : ''}` : ''}</summary><div class="cbody">${on ? cardBody(c) : ''}</div></details>`;
 }
 function list() {
   if (!run) { $('list').innerHTML = `<p class="empty">${t('noRuns')}</p>`; $('count').textContent = ''; return; }
@@ -224,7 +242,6 @@ function list() {
   let html = '', last = null;
   for (const c of cs) { if (c.seg !== last) { html += `<h3 class="seg-h">${esc(c.seg || '—')}</h3>`; last = c.seg; } html += card(c); }
   $('list').innerHTML = html || `<p class="empty">${t('none')}</p>`;
-  $('list').querySelectorAll('.shots button').forEach(b => b.onclick = () => open(run.cases.find(c => c.id === b.dataset.c).shots, +b.dataset.i, b.dataset.c));
   saveView();
 }
 // The view (run, filters, search) is kept in the address, so a reload or a shared link opens it again, and for this
@@ -233,18 +250,18 @@ const VIEW = `results-view:${D.feature}:${D.platform}`;
 function saveView() {
   const u = new URLSearchParams();
   if (run && run !== D.runs[0]) u.set('run', run.id);
-  for (const [k, v] of [['res', res], ['seg', seg], ['disp', disp], ['q', $('q').value.trim()]]) if (v) u.set(k, v);
-  if (only) u.set('shots', '1'); if (onlyBug) u.set('bugs', '1');
+  for (const [k, v] of [['res', res === 'attention' ? '' : res], ['seg', seg], ['disp', disp], ['q', $('q').value.trim()]]) if (v) u.set(k, v);
+  if (only) u.set('shots', '1'); if (onlyBug) u.set('bugs', '1'); if (noBug) u.set('nobug', '1');
   const s = u.toString();
   try { history.replaceState(history.state, '', location.pathname + (s ? `?${s}` : '') + location.hash); sessionStorage.setItem(VIEW, s); } catch (e) {}
 }
-function loadView() {
+async function loadView() {
   let s = location.search.slice(1); if (!s && !location.hash) try { s = sessionStorage.getItem(VIEW) ?? ''; } catch (e) {}
   const u = new URLSearchParams(s);
-  run = D.runs.find(r => r.id === u.get('run')) ?? D.runs[0];
-  res = u.get('res') ?? ''; seg = u.get('seg') ?? ''; disp = u.get('disp') ?? '';
+  run = D.runs.find(r => r.id === u.get('run')) ?? D.runs[0]; await ensure(run);
+  res = u.get('res') || 'attention'; seg = u.get('seg') ?? ''; disp = u.get('disp') ?? '';
   $('q').value = u.get('q') ?? ''; q = $('q').value.trim().toLowerCase();
-  only = $('only').checked = u.has('shots'); onlyBug = $('onlybug').checked = u.has('bugs');
+  only = $('only').checked = u.has('shots'); onlyBug = $('onlybug').checked = u.has('bugs'); noBug = $('nobug').checked = u.has('nobug');
 }
 function render() { header(); tools(); list(); }
 // screenshot viewer: arrows step through the case's screenshots, Esc closes
@@ -261,12 +278,20 @@ $('disp').onchange = e => { disp = e.target.value; list(); };
 $('q').oninput = e => { q = e.target.value.trim().toLowerCase(); list(); };
 $('only').onchange = e => { only = e.target.checked; list(); };
 $('onlybug').onchange = e => { onlyBug = e.target.checked; list(); };
+$('nobug').onchange = e => { noBug = e.target.checked; list(); };
+$('list').addEventListener('toggle', e => { const d = e.target; if (!d.matches?.('details.case')) return; const id = d.dataset.id;
+  if (d.open === compact) flip.add(id); else flip.delete(id);
+  if (d.open) { const c = run.cases.find(x => x.id === id), b = d.querySelector('.cbody'); if (c && !b.firstChild) b.innerHTML = cardBody(c); } }, true);
+$('compact').checked = compact;
+$('compact').onchange = e => { compact = e.target.checked; flip.clear(); try { localStorage.setItem('results-compact', compact ? '1' : ''); } catch (x) {} list(); };
+$('list').addEventListener('click', e => { const b = e.target.closest('.shots button'); if (b) open(run.cases.find(c => c.id === b.dataset.c).shots, +b.dataset.i, b.dataset.c); });
 // #case=TC-012 (a link from the other pages): the newest run that recorded the case, filters cleared, scrolled to it
-function showCase() {
+async function showCase() {
   const m = location.hash.match(/^#case=(.+)$/); if (!m) return;
   focus = decodeURIComponent(m[1]);
-  const r = D.runs.find(r => r.cases.some(c => c.id === focus)); if (!r) return;
-  run = r; res = seg = disp = q = ''; only = onlyBug = false; $('q').value = ''; $('only').checked = $('onlybug').checked = false;
+  const r = D.runs.find(r => r.ids.includes(focus)); if (!r) return;
+  await ensure(r); if (compact) flip.add(focus); else flip.delete(focus);
+  run = r; res = 'all'; seg = disp = q = ''; only = onlyBug = noBug = false; $('q').value = ''; $('only').checked = $('onlybug').checked = $('nobug').checked = false;
   render(); document.getElementById(`c-${focus}`)?.scrollIntoView({ block: 'start' });
 }
 const setLang = l => { L = l; try { localStorage.setItem('casebook-lang', l); } catch (e) {} render(); };
@@ -274,8 +299,8 @@ document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang
 if (window.CASEBOOK) { document.querySelector('.lang')?.remove(); addEventListener('casebook-lang', e => { L = e.detail; render(); }); }
 addEventListener('hashchange', showCase);
 // served by scripts/pages.ts: new results are drawn in place, on the same run and filters
-if (window.CASEBOOK) CASEBOOK.onData = d => { D = d; run = D.runs.find(r => r.id === run?.id) ?? D.runs[0]; if (shots.length && $('lb').classList.contains('on')) shots = run?.cases.find(c => c.id === cap)?.shots ?? shots; render(); };
-loadView(); render(); showCase();
+if (window.CASEBOOK) CASEBOOK.onData = d => { if (run?.cases) loaded[run.id] = run.cases; D = d; for (const r of D.runs) if (!r.cases && loaded[r.id]) r.cases = loaded[r.id]; run = D.runs.find(r => r.id === run?.id) ?? D.runs[0]; run.cases ??= []; if (shots.length && $('lb').classList.contains('on')) shots = run?.cases.find(c => c.id === cap)?.shots ?? shots; render(); };
+loadView().then(() => { render(); showCase(); });
 </script>
 </body>
 </html>

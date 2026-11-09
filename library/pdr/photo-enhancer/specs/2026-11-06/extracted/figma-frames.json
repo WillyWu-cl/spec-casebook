@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-06",
+  "how": "Figma-only spec set (user, 2026-11-06). PM page 65:3761 「✅SPEC」 (figma-pm, qa1): loose phones and arrows read as regions pm-header, pm-master-photo, pm-pip-photo, pm-enhance-flow, pm-full-screen, pm-refs, pm-toolbar-link. Design page 212:2045 「temp_UJ_ toolbar regroup_24.10E」 (figma-design, qa-dm): the whole 24.10E toolbar-regroup page; only the Master Photo Toolbar and PiP Photo Toolbar regions of frame 585:14634 「toolbar icon」 and the dated icon slice 1528:43699 (「12.23」, round/ic_ai_enhancement) are this feature. The video toolbars, 「Experiment for RD」, iPad, Landscape and the section 585:19827 (other features' PM spec) are other features: not read.",
+  "pm_checked_at": "2026-11-06",
+  "files": {
+    "pm": {
+      "fileKey": "mzJYPdS0vyHdprWGYdzDAp",
+      "page": "65:3761",
+      "url": "https://www.figma.com/design/mzJYPdS0vyHdprWGYdzDAp/Support-Photo-Enhancer?node-id=65-3761",
+      "account": "qa1@cyberlink.com (Dev seat, PM Workspace)"
+    },
+    "design": {
+      "fileKey": "4ZIfFu5NTnCEi1Nqo04k2S",
+      "page": "212:2045",
+      "url": "https://www.figma.com/design/4ZIfFu5NTnCEi1Nqo04k2S/Toolbars?node-id=212-2045&m=dev",
+      "account": "qa-dm@cyberlink.com (Dev seat, CyberLink DC)"
+    }
+  },
+  "frames": [
+    {
+      "label": "12.23",
+      "node": "1528:43699",
+      "in_pdf": false,
+      "read": "d-icon-slice"
+    }
+  ]
+}

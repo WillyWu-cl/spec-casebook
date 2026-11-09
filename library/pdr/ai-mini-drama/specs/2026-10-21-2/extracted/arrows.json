@@ -1,7 +1,7 @@
 {
   "source": "Design flow arrows of the 2026-10-19 Design spec (Figma file dZk5HLzZTdcZwWwvN9aZfZ). One-time import 2026-10-21 of the arrow inventory the spec agent recorded with node IDs (user approved); later spec sets build this list in the analysis (Coverage pass 1).",
   "figma": "https://www.figma.com/design/dZk5HLzZTdcZwWwvN9aZfZ/AI-Mini-Drama?node-id=",
-  "count": 213,
+  "count": 218,
   "arrows": [
     {
       "arrow": "2778-129128",
@@ -1759,6 +1759,41 @@
       "expected": "",
       "source": "figma-inventory",
       "not_flow": "superseded MX version (v3, section Old); version A (mx-a-*) is current"
+    },
+    {
+      "arrow": "4325-27346",
+      "node": "4325-27346",
+      "edge": "pm-update-11: Character Library · round/ic_xmark → Dialog_text_02-3",
+      "expected": "X on the character result opens 「Discard this character?」 (Keep / red Discard)",
+      "source": "figma-inventory"
+    },
+    {
+      "arrow": "5014-27027",
+      "node": "5014-27027",
+      "edge": "pm-1103-library-filter-empty: Character Library_filter no results · 「Clear filters」 → Character Library_filters cleared",
+      "expected": "「Clear filters」 on the empty filter result clears every chip and the full Character Library list returns (R-491, R-500)",
+      "source": "figma-inventory"
+    },
+    {
+      "arrow": "5212-27475",
+      "node": "5212-27475",
+      "edge": "pm-1104-multi-scene-fail: Scene edit_Scene 4 failed → Fix Scene 2  · 「Not now」 → Scene edit_Go to Scene 2",
+      "expected": "「Go to Scene 2」 in 「Fix Scene 2 first?」 switches the edit page to Scene 2, the earliest failed scene (R-492, R-501)",
+      "source": "figma-inventory"
+    },
+    {
+      "arrow": "5212-27476",
+      "node": "5212-27476",
+      "edge": "pm-1104-multi-scene-fail: Scene edit_Scene 4 failed → Fix Scene 2  (automatic) → Scene edit_Not now → stay on Scene 4",
+      "expected": "「Not now」 in 「Fix Scene 2 first?」 closes the dialog and stays on Scene 4, editable as usual (R-492, R-502)",
+      "source": "figma-inventory"
+    },
+    {
+      "arrow": "5318-2806",
+      "node": "5318-2806",
+      "edge": "pm-1105-celebrity-blocked: Create my character_celebrity blocked →  · thumb_media → Send Feedback_AI Issues (celebrity, pre-",
+      "expected": "「Send Feedback」 in 「This image can't be used」 opens Send Feedback on 「AI Issues」, pre-filled for character generation (R-498, R-499)",
+      "source": "figma-inventory"
     }
   ]
 }

@@ -23,7 +23,8 @@ two differ).
   from the old layout* says (`rsync` into `library/<product>/<feature>/`, then remove the old folder), and have them
   restart any review or pages server with the new ID.
 - The review server (`scripts/review.ts`) and the page server (`scripts/pages.ts`: review, plan and coverage on one
-  address) are local processes the user may be using; do not stop them unless asked.
+  address) are local processes the user may be using; do not stop them unless asked, or until the user says they
+  saved (*Page servers after Save*, below).
 
 ## Team preferences
 
@@ -79,6 +80,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   README Setup 5. Figma is not a gate (user, 2026-10-30): without the sign-ins an analysis runs **PDF-only**
   (`extracted/figma-pending.json`) and a machine with them catches up later (`reading-the-spec.md`, *No Figma access*). Quota is small: bulk reads per board group, changes found by fingerprint (`figma-check.ts`), every
   read committed (`reading-the-spec.md` step 10).
+- **Figma reads by plan, call, save (user, 2026-11-05).** Inventory re-reads go `figma-check.ts --plan` → the printed
+  calls, one at a time per server, with their exact description → `--save` (replies copied from the transcripts,
+  never retyped; leftovers re-packed) until nothing is left; a read stops at its time budget and keeps what it read
+  (`reading-the-spec.md` step 10, *Plan, call, save*).
 - **Full Figma data by script (user, 2026-10-30).** When every node's geometry and styling is needed (not just
   controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only (never PM or MX):
   one `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
@@ -103,7 +108,27 @@ lines; put the full rule in the skill or reference file that applies it and poin
   (Standing inputs 6) and run segments. Generated or second-hand ones go in as `observed`; originals stay local, only
   entries, `source.json` and extracted text are committed. Intake and upkeep are the `domain-knowledge` skill; during a
   run knowledge is only parked (`knowledge.ts … inbox add`) and processed by a fresh subagent at the phase wrap-up.
-- **QA Reports (user, 2026-11-03, REQ-072 / REQ-073).** A TR's QR is written with the `qa-report` skill (`scripts/qa-report.ts`): only OK and Fail rows; a bug not fully verified is left off the QR and left alone (still "Not yet verified"), never filed as NotVerified. A scenario that can no longer be completed or triggered by any means counts as fixed (OK, with a Note saying why). Lettered Details like the team's QRs, one evidence ZIP, `qr-review.html` approved by the tester before the IF3 Standard Report is filled and saved once. Replaces the Spec agent's `verify-tr-ebugs` report format here.
+- **QA Reports (user, 2026-11-03, REQ-072 / REQ-073).** A TR's QR is written with the `qa-report` skill (`scripts/qa-report.ts`): only OK and Fail rows; a bug not fully verified is left off the QR and left alone (still "Not yet verified"), never filed as NotVerified. A scenario that can no longer be completed or triggered by any means counts as fixed (OK, with a Note saying why). Lettered Details like the team's QRs, `qr-review.html` approved by the tester before the IF3 Standard Report is filled and saved once. Replaces the Spec agent's `verify-tr-ebugs` report format here.
+- **Verify in one journey (user, 2026-11-05, REQ-093).** `/qa-report <TR>` verifies the tester's bugs on the TR's
+  build first when they have no verdicts; the checks are ordered along the flow in `verify-plan.md` so one drama
+  carries as many bugs as it passes, shared steps and long waits are reused, never a fresh start per bug
+  (`qa-report/SKILL.md` › *Verify first*).
+- **Side effects of a fix (user, 2026-11-06, REQ-102).** A bug judged fixed is also checked as it looks: everything
+  the fix added or changed, everywhere it shows, from the screenshot (legibility and contrast, clipping, layout, the
+  Design), not only the page source; findings go under Other observations (`qa-report/SKILL.md` › *Side effects of
+  the fix*; P0354's fix missed P0038).
+- **Evidence on each eBug (user, 2026-11-05, REQ-099).** A QR's screenshots and logs are uploaded to each bug in it
+  (`qa-report.ts upload … --send`, before Create) and its Reason names them like a description (`{file.png}`); no
+  ZIP goes on the QR (REQ-101), readers check the bug and its files; uploads can't be removed, so only after the tester approves (`qa-report/SKILL.md` › *Evidence on
+  each eBug*). The one exception to *No comments on existing eBugs*: files only, never a comment.
+- **QR account line (user, 2026-11-05, REQ-100).** A QR's Details name the phone's signed-in account as the app's menu
+  shows it, with its tier (`Account: cltqauiap2@gmail.com (Premium)`), read from the menu at each verify run
+  (`qa-report/SKILL.md` › *Wording*).
+- **Bug verify against today's spec (user, 2026-11-05, REQ-091).** Before verifying a bug, check its Expect Result
+  against the current spec in the repo (ticket comments, row, `requirements.md` changes and open questions, newer
+  frames in `extracted/`), then judge the build's current behaviour against that. An open question means Hold
+  (`qa-report/SKILL.md` › *Expected = today's spec*). But a build that does what the bug expected is OK even
+  with a board unread or a question open (user, 2026-11-05, REQ-098).
 - **AI Mini Drama credits (user, 2026-11-03, REQ-073, until lifted).** For runs and rechecks, use whatever credits a check needs for anything except a full video generation (characters, outlines, storyboards, regenerations, updates); a full video generation still needs the user's go-ahead or an existing video. Check every path a bug names rather than stopping at one to save credits.
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
@@ -128,6 +153,20 @@ lines; put the full rule in the skill or reference file that applies it and poin
   exact text colour, size, weight, lines and drawables; the first install replaces the app with an uninstall (data
   cleared) only with `--yes-uninstall` once agreed. With that build, Android design captures save the view data and
   the check reads it before OCR and pixels (REQ-086; `figma/references/conformance.md` §3).
+- **What the design check holds the app to (user, 2026-11-06).** A text box's padding and border, font size and the
+  text's centring in its box, and the gaps between buttons; never a text's words or its own place on the screen
+  (`copy` and `position` are gone; texts pair by place when the words differ) (`figma/references/conformance.md` §3).
+- **Android text against the Android font (user, 2026-11-06).** Figma is drawn for iOS (SF Pro); on Android the design
+  check holds weights to the PDRM guideline's Roboto equivalents (Semibold 600 → Medium 500), KP-066
+  (`library/pdr/knowledge/design-guideline.md`). Padding is measured from the letters' pixels, so a chip narrower only
+  because Roboto is narrower is fine, and a chip whose padding differs is a `padding` item, never the next chip's
+  position (`figma/references/conformance.md` §3).
+- **Design tab items for Design and RD (user, 2026-11-06).** Each item opens with a plain sentence (what differs,
+  Design's value, the app's); raw values sit under 「How it was measured」; review notes avoid ΔE and tool terms
+  (`figma/references/conformance.md` §4).
+- **Colours set and drawn (user, 2026-11-05).** A design check colour item lists the value set (Figma fill and token,
+  the app's value and resource) beside the colour drawn on each image; `check` reports app values the screen does not
+  show (`figma/references/conformance.md` §3).
 - **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
   the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
 - **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names
@@ -144,6 +183,28 @@ lines; put the full rule in the skill or reference file that applies it and poin
   a table's Open questions sit on Cases above the table with answer boxes, applied as rulings (`SKILL.md` step 4,
   Question answers). Open pages update only when what they show changed (user, 2026-11-05): Progress, Results, Coverage and
   Design redraw in place, patching only what differs; Cases offers a Reload button (`scripts/pages.ts` header).
+- **One pages server, only what is open (user, 2026-11-06).** `node scripts/pages.ts [--lan]` opens a navigation page
+  for every table; a page's process starts on its first visit and stops when idle, and what the pages leave on disk
+  is cleared (`scripts/pages.ts` header, `lib/housekeeping.ts`). A second start reuses the running server.
+- **`--lan` passcode (user, 2026-11-06).** Other computers enter a passcode, made at each start and printed for copying,
+  or set with `--passcode`; this computer needs none (`lib/passcode.ts`).
+- **Full images where things are compared (user, 2026-11-06).** Coverage boards and Design comparisons stay full quality and
+  load in the background behind a small copy; only Design's screen cards use the small copy itself.
+- **Run folders on disk (user, 2026-11-06).** `scripts/runs-storage.ts` measures them and clears what changes no
+  evidence: unzipped log copies (restorable with `unpack`) and identical files (APFS clones). Screenshots are never
+  removed or converted without the user's decision, and the agent leaves `--apply` to the user.
+- **Page servers after Save (user, 2026-11-06).** Once the user says they saved a table's page, stop the review or
+  page servers started for it, without asking; other features' servers stay, and so does a pages server the user
+  started or one serving other tables: its idle pages stop by themselves (`SKILL.md` step 4).
+- **Usage table stays on top (user, 2026-11-06).** Progress and Design open with the time and plan usage, clear and
+  visible on entering the page: make it more compact, never collapse it or move it below the content.
+- **Run screenshots stay local (user, 2026-11-06).** Never commit or push a run's screenshots, not even small copies:
+  runs are too frequent and the repo would bloat. Pages say when a run's images are not on this computer.
+- **Page layout (user, 2026-11-06).** Every tab has the same page width and side gutter (`--gutter` in
+  `scripts/page-shared.css.tpl`); Results shows each case in full by default, with Compact list as the option.
+- **One-off HTML pages (user, 2026-11-05).** A page asked for as HTML is a local file, not an artifact, and never goes
+  on the Desktop: it goes in `library/<product>/<feature>/comparisons/` (git-ignored, local only), named
+  `<date>_<topic>.html`. The committed spec agent comparisons stay in `<platform>/comparisons/`.
 - **Never uninstall PowerDirector on the QA iPhone (user, 2026-10-29, until lifted).** The build cannot be installed
   again for now, so no command may uninstall or reinstall it: `app-setup.ts reinstall` / `fresh` and every
   fresh-install case are off; those cases are recorded Blocked `--as test-data` ("PowerDirector cannot be reinstalled
@@ -154,6 +215,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   sign-in stays the user's when the agent cannot log in (the agent never types passwords); where a phone signs in with
   its Google account button and no password (the SM-A5360, `fixtures.md`), the agent does it. Every permission the app
   asks for (notifications, photos, microphone…) is allowed (user, 2026-11-04).
+- **Chat waits go to the bottom (user, 2026-11-06, REQ-107).** The AI Mini Drama chat pins the sent message to the
+  top (R-250), so a wait or check for a new card taps ↓ first (`waitfor … --bottom`, `expect … --bottom`, `bottom`),
+  except in the rows that test the scrolling itself (`run-android.md`).
 - **On the phone (2026-10-21/27).** Wi-Fi may be toggled for offline cases once the phone is on USB (other system
   settings need the user's go-ahead); rows are reached only with `scrollto` / `pink`; Auto-Lock Never, `device.ts
   restart` at every segment, never uninstall WDA; exit 75 = BLOCKER, pushed to the user (`run.md` steps 1, 3, 4).

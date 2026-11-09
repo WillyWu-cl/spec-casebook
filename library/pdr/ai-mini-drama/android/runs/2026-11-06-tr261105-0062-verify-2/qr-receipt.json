@@ -1,0 +1,42 @@
+{
+  "qr": "QR261106-0022",
+  "url": "https://ecl.cyberlink.com/IF3/qr/BPM/FormView/QR261106-0022",
+  "tr": "TR261106-0032",
+  "created": "2026-11-06",
+  "rows": {
+    "DRA262610P0343": "OK",
+    "DRA262610P0348": "OK",
+    "DRA262610P0358": "OK",
+    "DRA262610P0363": "OK"
+  },
+  "readBack": "all fields, the four States and Reasons match `qa-report.ts text`; other 19 rows left Not Yet Verified",
+  "trAfter": "P0343, P0348, P0358, P0363: Close, verified on TR261106-0032",
+  "filesOnBugs": {
+    "DRA262610P0343": [
+      "16.8.0.2611052_DRA262610P0343_02_stage1_dialog.png",
+      "16.8.0.2611052_DRA262610P0343_03_stage2_before_back.png",
+      "16.8.0.2611052_DRA262610P0343_04_stage2_back_toast.png",
+      "16.8.0.2611052_DRA262610P0343_log.txt"
+    ],
+    "DRA262610P0348": [
+      "16.8.0.2611052_DRA262610P0348_02_outline_after_reopen.png",
+      "16.8.0.2611052_DRA262610P0348_03_after_stop_card_stays.png",
+      "16.8.0.2611052_DRA262610P0348_04_after_resume_characters_reply.png",
+      "16.8.0.2611052_DRA262610P0348_12_video_card_after_app_restart.png",
+      "16.8.0.2611052_DRA262610P0348_log.txt"
+    ],
+    "DRA262610P0358": [
+      "16.8.0.2611052_DRA262610P0358_02_history_renamed_processing.png",
+      "16.8.0.2611052_DRA262610P0358_03_toast_new_name.png",
+      "16.8.0.2611052_DRA262610P0358_log.txt"
+    ],
+    "DRA262610P0363": [
+      "16.8.0.2611052_DRA262610P0363_01_stage2_before_leave.png",
+      "16.8.0.2611052_DRA262610P0363_02_history_processing.png",
+      "16.8.0.2611052_DRA262610P0363_03_first_open_video_stage.png",
+      "16.8.0.2611052_DRA262610P0363_04_fourth_open_video_stage.png",
+      "16.8.0.2611052_DRA262610P0363_log.txt"
+    ]
+  },
+  "note": "Verified on 16.8.0.2611052 (TR261105-0062's build); the bugs were moved to TR261106-0032 (16.8.0.2611061) and filed there at the tester's request, with the tested build named in the fields, Details b and every Reason. P0424 (French copy) is handled in another session and was not touched."
+}

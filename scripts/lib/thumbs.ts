@@ -4,10 +4,11 @@
 // screenshot gets a new copy. Where sips is missing or fails, thumbnail() gives null and the caller sends the original.
 import { execFile } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, statSync } from 'node:fs';
+import { existsSync, mkdirSync, statSync, utimesSync } from 'node:fs';
 import { join } from 'node:path';
 
-const dir = join(import.meta.dirname, '..', '..', 'node_modules', '.cache', 'casebook-thumbs');
+export const THUMB_DIR = join(import.meta.dirname, '..', '..', 'node_modules', '.cache', 'casebook-thumbs');
+const dir = THUMB_DIR;
 const MAX = 480;   // longest side in px: a 220 px high image on a 2× screen
 const running = new Map<string, Promise<string | null>>(), queue: (() => void)[] = [];
 let active = 0;
@@ -17,7 +18,8 @@ const done = () => { active--; queue.shift()?.(); };
 export function thumbnail(src: string): Promise<string | null> {
   let st; try { st = statSync(src); } catch { return Promise.resolve(null); }
   const out = join(dir, createHash('sha1').update(`${src}|${st.size}|${st.mtimeMs}|${MAX}`).digest('hex').slice(0, 20) + '.jpg');
-  if (existsSync(out)) return Promise.resolve(out);
+  // the time marks the last use: lib/housekeeping.ts clears the ones no page has asked for in a month
+  if (existsSync(out)) { try { const now = new Date(); utimesSync(out, now, now); } catch {} return Promise.resolve(out); }
   const was = running.get(out); if (was) return was;
   const job = slot().then(() => new Promise<string | null>(ok => {
     try { mkdirSync(dir, { recursive: true }); } catch {}
