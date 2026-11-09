@@ -215,7 +215,10 @@ const I18N = {
     casePresses: 'Controls it presses', caseWalks: 'Flow arrows it walks', caseScreens: 'Screens it names', caseClear: 'Clear', selControl: 'selected control', selArrow: 'selected arrow',
     caseNoItems: 'No control or arrow on the boards is tied to this case; the boards its requirements come from are listed above.',
     caseNoRefs: 'This case names no requirement in its Spec Ref.', caseBack: id => `← Back to ${id}`, openReview: 'Open in Cases', reviewLink: 'cases →', resultsLink: 'results →', openResults: 'Open in Results (screenshots)', openPlan: 'Open in Progress', planLink: 'progress →',
-    caseBar: (g, a, b) => `${g} controls · ${a} arrows · on ${b} board${b === 1 ? '' : 's'}`, caseSrcOnly: 'spec board',
+    caseBar: (g, a, b) => `${g} controls · ${a} arrows · on ${b} board${b === 1 ? '' : 's'}`,
+    caseBarSrc: b => `nothing pressed or walked (a check of what a screen shows) · from ${b} spec board${b === 1 ? '' : 's'}`,
+    caseBarText: x => `nothing pressed or walked · from spec text with no board here: ${x}`,
+    caseBarRule: 'nothing pressed or walked · from a rule of the analysis, not drawn on a board', caseSrcOnly: 'spec board',
     action: 'Action', expected: 'Expected result', notOnBoards: 'no board for this source', regionOnly: 'Spec region (no controls traced)',
     caseOnBoard: 'case items here', caseSrc: 'a requirement of the case comes from this board',
     noSource: 'No spec board: a rule across the feature (tickets, roster, ledger request), not one drawing',
@@ -277,7 +280,10 @@ const I18N = {
     casePresses: '它按的控制項', caseWalks: '它走過的流程箭頭', caseScreens: '它提到的畫面', caseClear: '清除', selControl: '已選控制項', selArrow: '已選流程箭頭',
     caseNoItems: '畫板上沒有控制項或箭頭對應到此案例；其需求來自的畫板列在上方。',
     caseNoRefs: '此案例的 Spec Ref 沒有列出需求。', caseBack: id => `← 回到 ${id}`, openReview: '在案例頁開啟', reviewLink: '案例 →', resultsLink: '結果 →', openResults: '在結果頁開啟（截圖）', openPlan: '在進度頁開啟', planLink: '進度 →',
-    caseBar: (g, a, b) => `${g} 個控制項 · ${a} 個箭頭 · 分布於 ${b} 個畫板`, caseSrcOnly: '規格畫板',
+    caseBar: (g, a, b) => `${g} 個控制項 · ${a} 個箭頭 · 分布於 ${b} 個畫板`,
+    caseBarSrc: b => `不按控制項、不走箭頭（檢查畫面顯示內容）· 來自 ${b} 個規格畫板`,
+    caseBarText: x => `不按控制項、不走箭頭 · 來自此頁沒有畫板的規格文字：${x}`,
+    caseBarRule: '不按控制項、不走箭頭 · 來自分析規則，不在任何畫板上', caseSrcOnly: '規格畫板',
     action: '動作', expected: '預期結果', notOnBoards: '此來源沒有畫板', regionOnly: '規格區域（未追蹤控制項）',
     caseOnBoard: '此案例的項目', caseSrc: '此案例的某項需求來自這個畫板',
     noSource: '沒有規格畫板：這是跨整個功能的規則（票單、範本清單、需求紀錄），不是單一畫面',
@@ -591,6 +597,8 @@ function caseItems(id) {
     screens: [...new Set(rq.flatMap(r => r.screens))].map(sid => D.screens.find(s => s.id === sid)).filter(Boolean),
     pointers: rq.flatMap(r => r.pointers ?? []),
     boards: [...new Set(rq.flatMap(r => r.src.flatMap(s => s.boards)))],
+    // spec regions with no board on this page (a PM draft page's notes): named in the bar instead
+    texts: [...new Set(rq.flatMap(r => r.src.filter(s => !s.boards.length && s.title).map(s => `${s.spec === 'design' ? 'Design' : s.spec.toUpperCase()} · ${s.title}`)))],
   };
 }
 // how many of the case's items lie on a board (copies of a control, arrows, named screens)
@@ -625,7 +633,8 @@ function caseBar() {
   const el = $('casebar'); el.hidden = !kase && !sel; if (el.hidden) return;
   if (kase) {
     const nb = D.boards.filter(b => caseOnBoard(b)).length;
-    el.innerHTML = `<b>${esc(kase)}</b><span>${esc(t('caseBar')(caseIt.groups.length, caseIt.arrows.length, nb))}</span><button id="caseclr">${t('caseClear')} ✕</button>`;
+    el.innerHTML = `<b>${esc(kase)}</b><span>${esc(nb || caseIt.groups.length || caseIt.arrows.length ? t('caseBar')(caseIt.groups.length, caseIt.arrows.length, nb)
+      : caseIt.boards.length ? t('caseBarSrc')(caseIt.boards.length) : caseIt.texts.length ? t('caseBarText')(caseIt.texts.join(' · ')) : t('caseBarRule'))}</span><button id="caseclr">${t('caseClear')} ✕</button>`;
     $('caseclr').onclick = clearCase; return;
   }
   const g = sel.group && D.groups.find(x => x.group === sel.group), a = sel.arrow && D.arrows.find(x => x.id === sel.arrow), n = sel.note && D.notes.find(x => x.id === sel.note);

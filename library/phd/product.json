@@ -1,8 +1,6 @@
 {
   "name": "PhotoDirector",
   "ios": {
-    "bundle_id": "TO-CONFIRM",
-    "testflight_name": "PhotoDirector",
     "ecl_product": "PhotoDirector Mobile for iOS"
   },
   "android": {

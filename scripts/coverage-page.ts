@@ -59,7 +59,8 @@ async function serveMode(): Promise<never> {
     // the page lives in memory from here: the file goes, or every start leaves ~1 MB in the temp folder
     builtAt = Date.now(); html = readFileSync(cache, 'utf8'); rmSync(cache, { force: true }); return html;
   };
-  build();
+  // a first build that fails ends here with its own message (the Coverage tab shows the last lines), not a stack trace
+  try { build(); } catch (e: any) { console.error(String(e?.message ?? e).trim()); process.exit(1); }
   const server = createServer((req, res) => {
     try {
       if (req.url === '/' || req.url?.startsWith('/?')) { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' }); res.end(build(String(req.headers['x-casebook-stamp'] ?? builtFor))); return; }
@@ -105,6 +106,14 @@ const src = draftId ? join(draftsDir(feature, platform), draftId) : table;
 const specFolder: string = draftId ? JSON.parse(readFileSync(join(src, 'spec.json'), 'utf8')).spec_folder : manifest!.spec_folder;
 const specDir = join(featureDir(feature), specFolder);
 const ex = join(specDir, 'extracted');
+// a PDF-only analysis (no Figma sign-ins yet, reading-the-spec.md › No Figma access) has no control inventory to cover:
+// say so instead of failing with a stack trace (the Coverage tab shows this line)
+if (!existsSync(join(ex, 'inventory.json'))) {
+  console.error(existsSync(join(ex, 'figma-pending.json'))
+    ? `No Coverage yet: this table was analysed from the PDF only (${relative(ROOT, join(ex, 'figma-pending.json'))}). It fills in once a computer with the Figma sign-ins reads the boards (inventory step 10).`
+    : `No Coverage yet: ${relative(ROOT, join(ex, 'inventory.json'))} is missing (inventory step 10 not run for this spec set).`);
+  process.exit(1);
+}
 const inv = JSON.parse(readFileSync(join(ex, 'inventory.json'), 'utf8'));
 const tracePath = join(src, 'control-trace.json');
 if (!existsSync(tracePath)) { console.error(`No ${tracePath}: run node scripts/controls.ts ${feature} ${platform}${draftId ? ` --draft ${draftId}` : ''}`); process.exit(1); }
@@ -208,6 +217,21 @@ for (const [pdf, list] of Object.entries(regionsByPdf)) {
     }
     regionOf.set(r.id, { id: r.id, title: r.title, spec, boards: inside });
   }
+}
+// A Figma-only spec set (no PDF, so no boards.json) names its regions in extracted/boards/<id>.md: 「# <title>」, then
+// 「board `<id>` · node|section|text <node>」. Tags cite those ids ([DS:ds-main-flow …], [PM:pm-draft-logic A1]), so
+// each is tied to the page board read from the same node, name or title. A region with no board on the page (a PM
+// draft page the inventory does not read) still resolves, by title, with no board (2026-11-09).
+const boardsMd = join(ex, 'boards');
+if (existsSync(boardsMd)) for (const f of readdirSync(boardsMd).filter(f => /^(ds|pm|mx)-[a-z0-9-]+\.md$/.test(f))) {
+  const id = f.slice(0, -3);
+  if (regionOf.has(id)) continue;
+  const head = readFileSync(join(boardsMd, f), 'utf8').split('\n').slice(0, 4).join('\n');
+  const title = head.match(/^# (.+)$/m)?.[1].trim() ?? id;
+  const nodes = [...head.matchAll(/\b(?:node|section|text) (\d+:\d+)/g)].map(m => m[1]);
+  const spec = id.startsWith('ds-') ? 'design' : id.startsWith('mx-') ? 'mx' : 'pm';
+  const on = boards.filter(b => b.spec === spec && (b.name === id || nodes.includes(String(b.id).split('/')[0]) || String(b.id).endsWith(`/${id}`) || b.name === title));
+  regionOf.set(id, { id, title, spec, boards: on.map(b => b.name) });
 }
 for (const [pdf, list] of jobs) {
   mkdirSync(imgDir, { recursive: true });
@@ -384,6 +408,34 @@ const blockReason = (x: { actual: string; disp: string }) => {
 // Where each case comes from (case view): the requirements its Spec Ref names, each with its source tags
 // ([DS:ds-home-custom-chat], [PM:pm-main-flow §5], [MX:mx-b-mid]) resolved to the spec region and its boards (above).
 const screenByNode = new Map<string, any>(inv.screens.map((s: any) => [s.id, s]));
+// A requirement that names no node still says which screen it is about: by a screen name in its tag
+// ([DS:ds-main-flow Demo page_Straight video]) or by a Design text it quotes (「AI reframe your video …」), found in
+// the Design source read (figma-source/design/out) and placed by its canvas position. A screen named in the tag wins; a
+// short label (under 30 characters)
+// counts only when one screen draws it, a sentence on up to three, else it is left out; a screen of the other platform
+// only when this platform has none there.
+const norm = (s: string) => s.replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim().toLowerCase();
+const srcOut = join(ex, 'figma-source', 'design', 'out');
+const designTexts: { text: string; at: number[] }[] = existsSync(srcOut) ? readdirSync(srcOut).filter(f => f.endsWith('.json')).flatMap(f => {
+  try { return (JSON.parse(readFileSync(join(srcOut, f), 'utf8')).nodes ?? []).filter((n: any) => n.type === 'TEXT' && n.abs)
+    .map((n: any) => ({ text: norm(n.text?.characters ?? n.name ?? ''), at: [n.abs[0] + n.abs[2] / 2, n.abs[1] + n.abs[3] / 2] })); } catch { return []; }
+}) : [];
+const onPlatform = (s: any) => !s.platform || s.platform === 'any' || s.platform === platform;
+// the Design is often drawn for one platform only (iOS): the other platform's table then takes those screens
+const mine = (ss: any[]) => ss.some(onPlatform) ? ss.filter(onPlatform) : ss;
+// Design texts sit on the Design file's canvas: only its screens are looked up by position (PM and MX have their own)
+const screensAt = ([x, y]: number[]) => mine(inv.screens.filter((s: any) => specOf(s.file) === 'design' && x >= s.box[0] && x <= s.box[0] + s.box[2] && y >= s.box[1] && y <= s.box[1] + s.box[3]));
+const screensOfLine = (line: string, tagBodies: string[]) => {
+  const ids = new Set<string>();
+  const body = norm(tagBodies.join(' '));
+  for (const s of mine(inv.screens.filter((s: any) => s.name && s.name.length >= 6 && body.includes(norm(s.name))))) ids.add(s.id);
+  if (ids.size) return [...ids];
+  for (const [, q] of line.matchAll(/「([^」]{12,})」/g)) {
+    const nq = norm(q), hit = new Set(designTexts.filter(t => t.text === nq || (nq.length >= 20 && t.text.includes(nq))).flatMap(t => screensAt(t.at).map((s: any) => s.id as string)));
+    if (hit.size === 1 || (nq.length >= 30 && hit.size <= 3)) for (const id of hit) ids.add(id);
+  }
+  return [...ids];
+};
 // every arrow, including the annotation pointers and duplicates the counts leave out, so a requirement written for one
 // still points at its board
 const arrowById = new Map<string, any>(inv.arrows.map((a: any) => [a.id, a]));
@@ -407,7 +459,7 @@ const reqView = (rid: string) => {
     text: line.replace(/^(\[[^\]]*\])+\s*/, '').slice(0, 320), src,
     // a control or screen the tag names outright: [DS: control K-ab333a …], [DS:figma 1016_support free trial 4847:34277]
     groups: [...new Set([...line.matchAll(/\b([KC]-[0-9a-f]{6})\b/g)].map(m => groupOfCtlId.get(m[1]) ?? (trace.some(e => e.group === m[1]) ? m[1] : '')).filter(Boolean))],
-    screens: [...new Set([...line.matchAll(/\b(\d+:\d+)\b/g)].map(m => m[1]).filter(id => screenByNode.has(id)))],
+    screens: [...new Set([...[...line.matchAll(/\b(\d+:\d+)\b/g)].map(m => m[1]).filter(id => screenByNode.has(id)), ...screensOfLine(line, tags.map(m => m[2]))])],
     // other Figma nodes it names (a frame the inventory does not hold): linked to the Design file
     nodes: [...new Set([...line.matchAll(/\b(\d+:\d+)\b/g)].map(m => m[1]).filter(id => !screenByNode.has(id)))],
     // annotation pointers and duplicate arrows it is written for (not counted above, drawn in the case view)
