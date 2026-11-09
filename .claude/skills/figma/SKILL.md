@@ -1,6 +1,6 @@
 ---
 name: figma
-description: Figma work for a product feature, on its own or beside spec-casebook, in two branches. Source reads the full data of a feature's Design Figma boards (every node's geometry, styling, text runs and fonts, components, variables and styles, flow arrows, and a cropped image per screen) in a few read-only use_figma calls, Design files only. Conformance (the design check) compares the app with the Design screen by screen: it reaches each screen through the casebook rows that already do (else the Design's own arrows), captures it on the phone, checks arrival, missing text, truncation, wrapping, padding and centring in each box, borders, gaps between buttons, font size, fill and text colour and icon controls against Figma (not the words, nor where a text sits), settles a builder and an independent reviewer pass, shows the result on the Design tab with per-item decisions, drafts the eBug list and rechecks earlier bugs on a new build. Everything another computer needs is committed. Use when someone asks to pull everything from Figma for a feature, needs pixel-level Figma data, or asks whether the app matches the Design / Figma (UI conformance, design check, what the Figma Agent does). Not for the casebook's control and arrow inventory (spec-casebook).
+description: Figma work for a product feature, on its own or beside spec-casebook, in two branches. Source reads the full data of a feature's Design Figma boards (every node's geometry, styling, text runs and fonts, components, variables and styles, flow arrows, and a cropped image per screen) in a few read-only use_figma calls, Design files only. Conformance (the design check) compares the app with the Design screen by screen: it reaches each screen through the casebook rows that already do (else the Design's own arrows), captures it on the phone, checks arrival, missing text, truncation, wrapping, padding and centring in each box, borders, gaps between buttons, font size, fill and text colour and icon controls against Figma (not the words, nor where a text sits, unless the user asks for the full check), settles a builder and an independent reviewer pass, shows the result on the Design tab with per-item decisions, drafts the eBug list and rechecks earlier bugs on a new build. Everything another computer needs is committed. Use when someone asks to pull everything from Figma for a feature, needs pixel-level Figma data, or asks whether the app matches the Design / Figma (UI conformance, design check, what the Figma Agent does). Not for the casebook's control and arrow inventory (spec-casebook).
 ---
 
 # Figma
@@ -66,6 +66,12 @@ in the inbox (spec-casebook `run.md`, *Knowledge during a run*).
    committed read.
 3. Quota is small: plan calls first, chunk calls and screenshots only for boards whose fingerprint changed and whose
    shared image is not current, and stop (do not retry in a loop) when the quota runs out.
+
+## Standard or full check
+
+The design check is the **standard** one by default: it tolerates other words and a text's own absolute place (user,
+2026-11-06). When the user asks for the old format, the full check with no such limits, run `design.ts … check <run>
+--full`; the run then stays full until `--standard` (conformance.md › *Full check, on request*).
 
 ## Pages
 

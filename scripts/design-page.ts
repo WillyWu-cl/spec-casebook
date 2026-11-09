@@ -91,7 +91,7 @@ function buildData(link: (abs: string) => string) {
       return existsSync(full) ? link(full) : existsSync(shared) ? link(shared) : null; };
     const app = m ? img(m.png) : null;
     return { id: s.id, name: s.name, board: s.board_name, board_id: s.board, flags: s.flags ?? [], flow: pos.get(s.route?.case) ?? null, status, why: s.why ?? '', gap: !!s.gap, route: s.route ?? null, alternatives: s.alternatives ?? [], figma, app,
-      run: m?.run ?? '', captured_at: m?.captured_at ?? '', build: m?.build ?? '', note: m?.note ?? '', arrival: m?.arrival ?? null, recheck: m?.recheck ?? null,
+      run: m?.run ?? '', captured_at: m?.captured_at ?? '', build: m?.build ?? '', rules: m?.rules ?? '', note: m?.note ?? '', arrival: m?.arrival ?? null, recheck: m?.recheck ?? null,
       parts: (m?.parts ?? []).map((p: string) => img(p)).filter(Boolean),
       settled: !!m?.settled, win: m?.win ?? null, k: m?.k ?? null, fit: m?.fit ?? null, out: m?.out ?? [], hidden: m?.hidden ?? [], ocr: m?.ocr ?? null, font_width: m?.font_width ?? null, views: m?.views ?? null,
       w: s.abs[2], h: s.abs[3], items };

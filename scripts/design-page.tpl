@@ -261,7 +261,7 @@ const T = {
     run: 'Run', open: 'Open in Figma', cases: 'Cases', cov: 'Coverage', res: 'Results', info: n => `${n} info items (sample text, app text not in Figma)`,
     showInfo: 'Show', hideInfo: 'Hide', nothing: 'No differences measured.', notCaptured: 'Not captured yet: reach it as shown and capture it (device.ts … design <id>).', close: 'Close',
     fitNote: (t, b) => `Fit offset: top ${t} pt, bottom ${b} pt`, allKinds: 'All differences', copy: n => `Copy decisions (${n})`, copied: 'Copied',
-    bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', boxes: 'Boxes',
+    bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', fullCheck: 'Full check (words and positions too)', boxes: 'Boxes',
     doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click to see it full size', dwhy: 'Why it is not a problem (required)', dwhyOpt: 'Note (optional)',
     needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`, colSet: 'Set to', colDrawn: 'On screen', colDrawnT: 'The colour as drawn on the image, sampled from the pixels', colDiff: (a, b) => `Difference ΔE ${a} as set${b != null ? `, ${b} on screen` : ''}`, srcApp: 'app data', srcAppT: "Read from the app's own view data (exact), not from the screenshot",
     revNote: 'Review:', howMeasured: 'How it was measured', secondRev: 'Second review:',
@@ -307,7 +307,7 @@ const T = {
     run: '執行', open: '在 Figma 開啟', cases: '案例', cov: '覆蓋率', res: '結果', info: n => `${n} 個資訊項目（範例文字、Figma 沒有的 App 文字）`,
     showInfo: '顯示', hideInfo: '隱藏', nothing: '沒有量到差異。', notCaptured: '尚未擷取：依右側方式到達後擷取（device.ts … design <id>）。', close: '關閉',
     fitNote: (t, b) => `對齊位移：上 ${t} pt，下 ${b} pt`, allKinds: '全部差異', copy: n => `複製決定（${n}）`, copied: '已複製',
-    bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', boxes: '框線',
+    bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', fullCheck: '完整檢查（含文案與位置）', boxes: '框線',
     doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點一下看原尺寸', dwhy: '為什麼不是問題（必填）', dwhyOpt: '備註（選填）',
     needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, colSet: '設定值', colDrawn: '畫面上', colDrawnT: '圖上實際畫出的顏色，取自像素', colDiff: (a, b) => `差異 ΔE：設定值 ${a}${b != null ? `，畫面上 ${b}` : ''}`, srcApp: 'App 資料', srcAppT: '數值取自 App 本身的版面資料（精確值），不是從截圖量的',
     revNote: '審查說明：', howMeasured: '量測細節', secondRev: '第二位審查：',
@@ -798,7 +798,7 @@ function detail(id) {
     ${s.views ? `<p class="more">${esc(t('viewsNote')(s.views.matched, s.views.texts, s.views.font_scale))}</p>` : s.font_width ? `<p class="more">${esc(t('fontNote')(s.font_width.width, s.font_width.texts))}</p>` : ''}
     ${s.fit ? `<p class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</p>` : ''}`.trim();
   $('dlg').innerHTML = `<div class="dh"><h2>${esc(labelOf(s))}</h2><span class="st"><i style="background:${COL(s.status)}"></i>${esc(STN[L][s.status])}</span>
-    <span class="more">${labelOf(s) !== s.name ? `${esc(s.name)} · ` : ''}${esc(s.board)} · ${esc(s.id)}${s.run ? ` · ${t('run')} ${esc(s.run)}` : ''}${s.build ? ` · ${t('build')} ${esc(s.build)}` : ''}</span>
+    <span class="more">${labelOf(s) !== s.name ? `${esc(s.name)} · ` : ''}${esc(s.board)} · ${esc(s.id)}${s.run ? ` · ${t('run')} ${esc(s.run)}` : ''}${s.build ? ` · ${t('build')} ${esc(s.build)}` : ''}${s.rules === 'full' ? ` · ${t('fullCheck')}` : ''}</span>
     <label class="more"><input type="checkbox" id="bx"${noBoxes ? '' : ' checked'}> ${esc(t('boxes'))}</label>
     ${figmaUrl ? `<a class="more" href="${figmaUrl}" target="_blank" rel="noopener">${esc(t('open'))} ↗</a>` : ''}<button type="button" class="x" id="x" aria-label="${esc(t('close'))}">✕</button></div>
   <div class="db"><div class="pair">

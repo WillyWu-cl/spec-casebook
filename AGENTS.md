@@ -156,6 +156,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **What the design check holds the app to (user, 2026-11-06).** A text box's padding and border, font size and the
   text's centring in its box, and the gaps between buttons; never a text's words or its own place on the screen
   (`copy` and `position` are gone; texts pair by place when the words differ) (`figma/references/conformance.md` §3).
+- **Full design check on request (user, 2026-11-09).** The standard check above stays the default; when the user asks
+  for the old format with no limits, `design.ts … check <run> --full` brings back `copy` and `position` items, kept
+  for that run until `--standard` (`figma/references/conformance.md` › *Full check, on request*).
 - **Android text against the Android font (user, 2026-11-06).** Figma is drawn for iOS (SF Pro); on Android the design
   check holds weights to the PDRM guideline's Roboto equivalents (Semibold 600 → Medium 500), KP-066
   (`library/pdr/knowledge/design-guideline.md`). Padding is measured from the letters' pixels, so a chip narrower only
