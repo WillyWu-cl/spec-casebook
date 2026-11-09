@@ -1,0 +1,13 @@
+{
+  "feature": "phd/swipe-collage",
+  "folder": "2026-11-05",
+  "received_at": "2026-11-05T07:12:53.258Z",
+  "spec_set_sha256": "39ec8cd506d551c19b6602fab628954fc02ace53cbbaf456fa5b7acd7a91cea2",
+  "files": [
+    {
+      "name": "Swipe Collage PhDM Spec.pdf",
+      "sha256": "c70707697dc4d87b665cd6e8eb4891ebe9d0577785bcf26c5fe5c1d8160f422b",
+      "bytes": 14661610
+    }
+  ]
+}
