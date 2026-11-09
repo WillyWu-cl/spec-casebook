@@ -1,0 +1,245 @@
+{
+  "note": "No Figma links in the spec set (PDF-only analysis): arrows are read from the drawn flows of UI UX flow.pdf (blue = forward tap, red = back: ✓ / ‹ / Cancel / Discard); node = <board>-<n>.",
+  "arrows": [
+    {
+      "arrow": "entry-edit-a1",
+      "node": "entry-edit-a1",
+      "board": "entry-edit",
+      "edge": "Launcher 「Edit」",
+      "expected": "Photo Picker (Single tab by default)",
+      "requirement": "R-200"
+    },
+    {
+      "arrow": "entry-edit-a2",
+      "node": "entry-edit-a2",
+      "board": "entry-edit",
+      "edge": "Photo Picker Batch tab 「Done」 (3 selected)",
+      "expected": "Batch Edit Room main screen",
+      "requirement": "R-201"
+    },
+    {
+      "arrow": "entry-edit-a3",
+      "node": "entry-edit-a3",
+      "board": "entry-edit",
+      "edge": "Batch Edit Room 「Crop & Rotate」",
+      "expected": "Crop & Rotate room",
+      "requirement": "R-202"
+    },
+    {
+      "arrow": "entry-edit-a4",
+      "node": "entry-edit-a4",
+      "board": "entry-edit",
+      "edge": "Photo Picker ‹",
+      "expected": "Launcher",
+      "requirement": "R-203"
+    },
+    {
+      "arrow": "entry-edit-a5",
+      "node": "entry-edit-a5",
+      "board": "entry-edit",
+      "edge": "Crop & Rotate room ✓",
+      "expected": "Batch Edit Room main screen",
+      "requirement": "R-204"
+    },
+    {
+      "arrow": "flow-adjustment-a1",
+      "node": "flow-adjustment-a1",
+      "board": "flow-adjustment",
+      "edge": "Batch Edit Room 「Adjustment」",
+      "expected": "Adjustment room",
+      "requirement": "R-205"
+    },
+    {
+      "arrow": "flow-adjustment-a2",
+      "node": "flow-adjustment-a2",
+      "board": "flow-adjustment",
+      "edge": "Adjustment room 「All」 (Apply to all)",
+      "expected": "Adjustment room with toast 「Applied to 11 photos」",
+      "requirement": "R-206"
+    },
+    {
+      "arrow": "flow-adjustment-a3",
+      "node": "flow-adjustment-a3",
+      "board": "flow-adjustment",
+      "edge": "Adjustment room ✓",
+      "expected": "Batch Edit Room main screen",
+      "requirement": "R-207"
+    },
+    {
+      "arrow": "flow-ai-enhance-a1",
+      "node": "flow-ai-enhance-a1",
+      "board": "flow-ai-enhance",
+      "edge": "Batch Edit Room 「AI Enhance」",
+      "expected": "AI Enhance page",
+      "requirement": "R-208"
+    },
+    {
+      "arrow": "flow-ai-enhance-a2",
+      "node": "flow-ai-enhance-a2",
+      "board": "flow-ai-enhance",
+      "edge": "AI Enhance 「Enhance」",
+      "expected": "AI Enhance Confirm Dialog",
+      "requirement": "R-209"
+    },
+    {
+      "arrow": "flow-ai-enhance-a3",
+      "node": "flow-ai-enhance-a3",
+      "board": "flow-ai-enhance",
+      "edge": "Confirm Dialog 「Start」",
+      "expected": "Processing 「Enhancing k / N」",
+      "requirement": "R-210"
+    },
+    {
+      "arrow": "flow-ai-enhance-a4",
+      "node": "flow-ai-enhance-a4",
+      "board": "flow-ai-enhance",
+      "edge": "Processing (auto, when every photo has finished)",
+      "expected": "Result summary 「X completed, Y failed」",
+      "requirement": "R-211"
+    },
+    {
+      "arrow": "flow-ai-enhance-a5",
+      "node": "flow-ai-enhance-a5",
+      "board": "flow-ai-enhance",
+      "edge": "Confirm Dialog 「Cancel」",
+      "expected": "AI Enhance page",
+      "requirement": "R-212"
+    },
+    {
+      "arrow": "flow-ai-enhance-a6",
+      "node": "flow-ai-enhance-a6",
+      "board": "flow-ai-enhance",
+      "edge": "AI Enhance page (result) ✕",
+      "expected": "Batch Edit Room main screen",
+      "requirement": "R-213"
+    },
+    {
+      "arrow": "entry-enhance-shortcut-a1",
+      "node": "entry-enhance-shortcut-a1",
+      "board": "entry-enhance-shortcut",
+      "edge": "Launcher 「AI Enhance」 shortcut",
+      "expected": "Photo Picker",
+      "requirement": "R-214"
+    },
+    {
+      "arrow": "entry-enhance-shortcut-a2",
+      "node": "entry-enhance-shortcut-a2",
+      "board": "entry-enhance-shortcut",
+      "edge": "Photo Picker Batch tab 「Done」 (3 selected)",
+      "expected": "Batch Edit Room AI Enhance page",
+      "requirement": "R-215"
+    },
+    {
+      "arrow": "entry-enhance-shortcut-a3",
+      "node": "entry-enhance-shortcut-a3",
+      "board": "entry-enhance-shortcut",
+      "edge": "Photo Picker ‹",
+      "expected": "Launcher",
+      "requirement": "R-216"
+    },
+    {
+      "arrow": "free-user-iap-a1",
+      "node": "free-user-iap-a1",
+      "board": "free-user-iap",
+      "edge": "AI Enhance 「Enhance」 (Free user)",
+      "expected": "Premium IAP page",
+      "requirement": "R-217"
+    },
+    {
+      "arrow": "batch-one-a1",
+      "node": "batch-one-a1",
+      "board": "batch-one",
+      "edge": "Photo Picker Batch tab 「Done」 (1 selected)",
+      "expected": "Single-photo Edit Room",
+      "requirement": "R-218"
+    },
+    {
+      "arrow": "batch-one-a2",
+      "node": "batch-one-a2",
+      "board": "batch-one",
+      "edge": "Single-photo Edit Room Replace photo",
+      "expected": "Photo Picker (Batch tab can be chosen)",
+      "requirement": "R-219"
+    },
+    {
+      "arrow": "save-flow-a1",
+      "node": "save-flow-a1",
+      "board": "save-flow",
+      "edge": "Batch Edit Room Save (download icon)",
+      "expected": "Saving 「Saving k / N」",
+      "requirement": "R-220"
+    },
+    {
+      "arrow": "save-flow-a2",
+      "node": "save-flow-a2",
+      "board": "save-flow",
+      "edge": "Saving (auto, when done)",
+      "expected": "Batch Save page 「Saved N photos」",
+      "requirement": "R-221"
+    },
+    {
+      "arrow": "save-flow-a3",
+      "node": "save-flow-a3",
+      "board": "save-flow",
+      "edge": "Batch Save page ‹",
+      "expected": "Batch Edit Room",
+      "requirement": "R-222"
+    },
+    {
+      "arrow": "save-flow-a4",
+      "node": "save-flow-a4",
+      "board": "save-flow",
+      "edge": "Batch Save page Home",
+      "expected": "Launcher",
+      "requirement": "R-223"
+    },
+    {
+      "arrow": "save-flow-a5",
+      "node": "save-flow-a5",
+      "board": "save-flow",
+      "edge": "Batch Save page 「Edit Next Batch」",
+      "expected": "Photo Picker Batch tab, nothing selected",
+      "requirement": "R-224"
+    },
+    {
+      "arrow": "leave-flow-a1",
+      "node": "leave-flow-a1",
+      "board": "leave-flow",
+      "edge": "Photo Picker Batch tab 「Done」",
+      "expected": "Batch Edit Room main screen",
+      "requirement": "R-225"
+    },
+    {
+      "arrow": "leave-flow-a2",
+      "node": "leave-flow-a2",
+      "board": "leave-flow",
+      "edge": "Batch Edit Room Home / Replace photo (after an edit)",
+      "expected": "Discard Dialog",
+      "requirement": "R-226"
+    },
+    {
+      "arrow": "leave-flow-a3",
+      "node": "leave-flow-a3",
+      "board": "leave-flow",
+      "edge": "Discard Dialog 「Discard」 (from Replace photo)",
+      "expected": "Photo Picker Batch tab, earlier photos still selected",
+      "requirement": "R-227"
+    },
+    {
+      "arrow": "leave-flow-a4",
+      "node": "leave-flow-a4",
+      "board": "leave-flow",
+      "edge": "Discard Dialog 「Keep Editing」",
+      "expected": "Batch Edit Room",
+      "requirement": "R-228"
+    },
+    {
+      "arrow": "leave-flow-a5",
+      "node": "leave-flow-a5",
+      "board": "leave-flow",
+      "edge": "Photo Picker ‹ (opened by 「Edit Next Batch」) → Batch Edit Room main",
+      "expected": "Batch Edit Room main screen with the edits as they were (UI UX flow 2, red arrow added 2026-11-09)",
+      "requirement": "R-235"
+    }
+  ]
+}
