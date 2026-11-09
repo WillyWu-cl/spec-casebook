@@ -296,7 +296,7 @@ function sendText(req: import('node:http').IncomingMessage, res: import('node:ht
 const html200 = (res: import('node:http').ServerResponse, status: number) => res.writeHead(status, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' });
 const notFound = (req: import('node:http').IncomingMessage, res: import('node:http').ServerResponse, what: string) => sendText(req, res, 404, { 'content-type': 'text/html; charset=utf-8' },
   `<!doctype html><meta charset="utf-8"><title>Not found</title><body style="font:15px system-ui;padding:24px"><p>${esc(what)}</p><p><a href="/">All features</a></p></body>`);
-const BOARD = /^\/([a-z0-9-]+\/[a-z0-9-]+)\/(ios|android)(?:\/draft\/([\w.-]+))?(?:\/([a-z]+)(\/.*)?)?$/;
+const BOARD = /^\/([a-z0-9-]+\/[a-z0-9-]+)\/(ios|android)(?:\/draft\/([\w.-]+))?(?:\/([a-z]+)(\/.*)?|\/)?$/;
 // Other computers sign in with the passcode; everything but the sign-in itself waits behind it. Local requests skip it.
 async function signIn(req: import('node:http').IncomingMessage, res: import('node:http').ServerResponse) {
   const who = String(req.socket.remoteAddress);
