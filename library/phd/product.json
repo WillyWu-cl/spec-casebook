@@ -1,0 +1,10 @@
+{
+  "name": "PhotoDirector",
+  "ios": {
+    "ecl_product": "PhotoDirector Mobile for iOS"
+  },
+  "android": {
+    "package": "com.cyberlink.photodirector",
+    "ecl_product": "PhotoDirector Mobile for Android"
+  }
+}

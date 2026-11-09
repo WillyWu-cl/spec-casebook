@@ -1,0 +1,134 @@
+{
+  "draft": "20261106-115758",
+  "current": [
+    "R1"
+  ],
+  "needs": {
+    "TC-041": [
+      "pre-feature-video"
+    ],
+    "TC-042": [
+      "unreadable-settings"
+    ],
+    "TC-029": [
+      "removed-model"
+    ],
+    "TC-030": [
+      "removed-model"
+    ],
+    "TC-031": [
+      "removed-model"
+    ],
+    "TC-036": [
+      "vip-low-balance"
+    ],
+    "TC-019": [
+      "free-trial"
+    ],
+    "TC-037": [
+      "analytics"
+    ],
+    "TC-038": [
+      "analytics"
+    ],
+    "TC-039": [
+      "analytics"
+    ],
+    "TC-040": [
+      "analytics"
+    ],
+    "TC-050": [
+      "system-setting"
+    ]
+  },
+  "unavailable": {
+    "pre-feature-video": "test-data: My AI Artwork had no Image to Video work before 20.19, so no pre-feature video exists",
+    "unreadable-settings": "test-data: no Custom video made on iOS with this account or before a reinstall",
+    "removed-model": "test-data: no model has been removed from Image to Video; the run cannot remove one",
+    "vip-low-balance": "test-data: no VIP account with a balance below the price is available",
+    "free-trial": "test-data: the account has no Image to Video free trial",
+    "analytics": "observability: no analytics event log is available on the Android build",
+    "system-setting": "test-data: dark theme is a system setting change that needs the user's go-ahead"
+  },
+  "phases": [
+    {
+      "id": "R1",
+      "name": "Round 1: full run of table v2 on 20.19.0.v202611061839",
+      "round": true,
+      "note": "Setup first (run plan › Setup): install the TR build, check credits, make the fixture videos on this build.",
+      "segments": [
+        {
+          "id": "R1-a",
+          "name": "My AI Artwork tile and Save & Share",
+          "note": "Fixture videos A, B, C, D, template, failed, processing, F, G made by the setup step. Nothing is charged in this segment.",
+          "cases": [
+            "TC-001",
+            "TC-002",
+            "TC-003",
+            "TC-004",
+            "TC-005",
+            "TC-006",
+            "TC-049",
+            "TC-050",
+            "TC-007",
+            "TC-008",
+            "TC-041",
+            "TC-042",
+            "TC-009",
+            "TC-044",
+            "TC-010",
+            "TC-047",
+            "TC-048"
+          ]
+        },
+        {
+          "id": "R1-b",
+          "name": "Reuse into the Custom room",
+          "note": "Video A unless the row names another. No Generate in this segment except TC-034 (expected refusal, no charge). TC-033 turns Wi-Fi off and back on.",
+          "cases": [
+            "TC-011",
+            "TC-043",
+            "TC-045",
+            "TC-012",
+            "TC-013",
+            "TC-014",
+            "TC-015",
+            "TC-046",
+            "TC-016",
+            "TC-017",
+            "TC-018",
+            "TC-020",
+            "TC-021",
+            "TC-022",
+            "TC-028",
+            "TC-032",
+            "TC-033",
+            "TC-034",
+            "TC-019",
+            "TC-036"
+          ]
+        },
+        {
+          "id": "R1-c",
+          "name": "Generate from Reuse",
+          "note": "One Kling 2.6 generation from video A's reuse (TC-023) carries TC-024 – TC-026; TC-027 is the burst. TC-035 runs last, only when the balance is below 「Generate」's price (else Blocked test-data with both numbers).",
+          "cases": [
+            "TC-023",
+            "TC-024",
+            "TC-025",
+            "TC-026",
+            "TC-027",
+            "TC-029",
+            "TC-030",
+            "TC-031",
+            "TC-037",
+            "TC-038",
+            "TC-039",
+            "TC-040",
+            "TC-035"
+          ]
+        }
+      ]
+    }
+  ]
+}
