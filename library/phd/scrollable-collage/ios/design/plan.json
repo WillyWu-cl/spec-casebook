@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-05T11:27:13.700Z",
+  "built_at": "2026-11-09T08:09:08.717Z",
   "spec_set": "2026-11-05",
   "file": {
     "fileKey": "iUy5kOrVNG7IjcyxGGnp9t",
@@ -21,11 +21,11 @@
   },
   "casebook": true,
   "counts": {
-    "screens": 56,
+    "screens": 57,
     "routed": 54,
     "figma_paths": 0,
     "gaps": 0,
-    "no_route": 2,
+    "no_route": 3,
     "excluded": 0
   },
   "by_case": {
@@ -1649,6 +1649,29 @@
         "TC-035",
         "TC-053"
       ],
+      "flags": []
+    },
+    {
+      "id": "199:3566",
+      "name": "entry",
+      "board": "199:3566",
+      "board_name": "entry",
+      "abs": [
+        -401,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        -401,
+        0,
+        375,
+        812
+      ],
+      "board_png": "specs/2026-11-05/extracted/figma/design-launcher.png",
+      "inventory_screen": "199:3566",
+      "status": "no-route",
+      "why": "no row presses a control on it or walks an arrow into it, and no Design arrow leads to it",
       "flags": []
     },
     {

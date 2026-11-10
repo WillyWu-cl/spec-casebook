@@ -28,14 +28,14 @@
   "design-light-entry.png": {
     "board": "0:1/design-light-entry",
     "group": "d-entry",
-    "hash": "cd1b06fd",
+    "hash": "a59afe2d",
     "overlay": "34c14a73",
-    "captured_at": "2026-11-05T08:54:58.918Z",
+    "captured_at": "2026-11-09T07:49:55.882Z",
     "box": [
       -10,
       -1400,
       3600,
-      2350
+      2412
     ]
   },
   "design-dark-entry.png": {
@@ -93,14 +93,14 @@
   "design-dark-add-layer.png": {
     "board": "0:1/design-dark-add-layer",
     "group": "d-layers",
-    "hash": "04b493a6",
+    "hash": "c2c15b4d",
     "overlay": "d27e8ce3",
-    "captured_at": "2026-11-05T08:55:07.288Z",
+    "captured_at": "2026-11-09T07:49:56.155Z",
     "box": [
       8386,
-      970,
+      911,
       2400,
-      1000
+      1059
     ]
   },
   "design-light-removal.png": {
@@ -158,9 +158,9 @@
   "design-icons-dark.png": {
     "board": "116:3010",
     "group": "d-icons",
-    "hash": "98302915",
+    "hash": "03bebfd0",
     "overlay": "",
-    "captured_at": "2026-11-05T08:55:22.586Z"
+    "captured_at": "2026-11-09T07:49:07.669Z"
   },
   "design-icons-light.png": {
     "board": "130:3237",
@@ -172,9 +172,9 @@
   "design-icons-cut.png": {
     "board": "122:3043",
     "group": "d-icons",
-    "hash": "08fede48",
+    "hash": "f38ab87f",
     "overlay": "",
-    "captured_at": "2026-11-05T08:55:25.662Z"
+    "captured_at": "2026-11-09T07:49:19.538Z"
   },
   "pm-leave-resume.png": {
     "board": "2214:7",
@@ -331,5 +331,12 @@
       8100,
       330
     ]
+  },
+  "design-launcher.png": {
+    "board": "199:3566",
+    "group": "d-launcher",
+    "hash": "6b05534e",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:39.739Z"
   }
 }

@@ -2,9 +2,9 @@
   "feature": "phd/scrollable-collage",
   "platform": "android",
   "title": "Scrollable Collage",
-  "version": 1,
-  "approved_at": "2026-11-05T09:57:36.582Z",
-  "draft": "20261105-165222",
+  "version": 2,
+  "approved_at": "2026-11-10T01:13:19.243Z",
+  "draft": "20261109-160641",
   "spec_folder": "specs/2026-11-05",
   "spec_files": [
     {
@@ -14,7 +14,7 @@
     }
   ],
   "spec_set_sha256": "d79381921641a13fa1166c24165801557d185cf4b1b56bef688bd89a17372bff",
-  "cases": 163,
+  "cases": 164,
   "history": [
     {
       "version": 1,
@@ -22,6 +22,15 @@
       "spec_set_sha256": "d79381921641a13fa1166c24165801557d185cf4b1b56bef688bd89a17372bff",
       "draft": "20261105-165222",
       "cases": 163,
+      "csv": "history/v1.csv",
+      "requirements": "history/v1-requirements.md"
+    },
+    {
+      "version": 2,
+      "approved_at": "2026-11-10T01:13:19.243Z",
+      "spec_set_sha256": "d79381921641a13fa1166c24165801557d185cf4b1b56bef688bd89a17372bff",
+      "draft": "20261109-160641",
+      "cases": 164,
       "csv": "cases.csv",
       "requirements": "requirements.md"
     }

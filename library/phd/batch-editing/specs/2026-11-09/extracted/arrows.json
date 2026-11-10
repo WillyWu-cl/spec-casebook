@@ -1,0 +1,221 @@
+{
+  "arrows": [
+    {
+      "arrow": "16:10599",
+      "node": "16:10599",
+      "edge": "Launcher 「Edit」 → Photo Picker (Batch tab)",
+      "expected": "Tapping 「Edit」 on the Launcher opens the Photo Picker, where the 「Batch」 tab allows several photos",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:10603",
+      "node": "16:10603",
+      "edge": "Photo Picker (Batch, several photos) Next → Batch Edit Room",
+      "expected": "Next with 2 or more photos opens the Batch Edit Room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:10611",
+      "node": "16:10611",
+      "edge": "Photo Picker ‹ → Launcher",
+      "expected": "‹ on the Photo Picker returns to the Launcher",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:10607",
+      "node": "16:10607",
+      "edge": "Batch Edit Room 「Crop & Rotate」 → Crop & Rotate room",
+      "expected": "「Crop & Rotate」 opens the batch Crop & Rotate room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:10615",
+      "node": "16:10615",
+      "edge": "Crop & Rotate ✓ → Batch Edit Room",
+      "expected": "✓ applies the room and returns to the Batch Edit Room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:11038",
+      "node": "16:11038",
+      "edge": "Batch Edit Room 「Adjustment」 → Adjustment room",
+      "expected": "「Adjustment」 opens the batch Adjustment room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:11042",
+      "node": "16:11042",
+      "edge": "Adjustment ✓ → Batch Edit Room",
+      "expected": "✓ applies the room and returns to the Batch Edit Room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "297:3116",
+      "node": "297:3116",
+      "edge": "Adjustment 「All」 → Adjustment applied",
+      "expected": "「All」 applies the current photo's setting to the others and shows 「Applied to x photos」",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:11813",
+      "node": "16:11813",
+      "edge": "Batch Edit Room 「AI Enhance」 → AI Enhance room",
+      "expected": "「AI Enhance」 opens the batch AI Enhance room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "31:1858",
+      "node": "31:1858",
+      "edge": "AI Enhance 「Enhance」 → AI Enhance Confirm Dialog",
+      "expected": "「Enhance」 (paid user) asks 「Enhance {xx} photos?」",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:11821",
+      "node": "16:11821",
+      "edge": "Confirm Dialog 「Start」 → processing",
+      "expected": "「Start」 starts the batch and shows 「Enhancing k / N」",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:11829",
+      "node": "16:11829",
+      "edge": "Confirm Dialog 「Cancel」 → AI Enhance room",
+      "expected": "「Cancel」 closes the dialog; nothing is processed",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "31:1863",
+      "node": "31:1863",
+      "edge": "Processing → result summary",
+      "expected": "When every photo is done the room shows 「X completed, Y failed」 (or no message when all succeed)",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:13763",
+      "node": "16:13763",
+      "edge": "AI Enhance ✓ → Batch Edit Room",
+      "expected": "✓ returns to the Batch Edit Room with the enhanced photos",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:12859",
+      "node": "16:12859",
+      "edge": "Launcher AI Enhance shortcut → Photo Picker (Batch tab)",
+      "expected": "The AI Enhance shortcut opens the Photo Picker with the same Single / Batch tabs",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:12863",
+      "node": "16:12863",
+      "edge": "AI Enhance shortcut Photo Picker (Batch) → AI Enhance room",
+      "expected": "Picking several photos lands directly in the batch AI Enhance room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:12867",
+      "node": "16:12867",
+      "edge": "AI Enhance shortcut Photo Picker ‹ → Launcher",
+      "expected": "‹ returns to the Launcher",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "151:2352",
+      "node": "151:2352",
+      "edge": "AI Enhance 「Enhance」 (Free user) → Premium IAP",
+      "expected": "A Free user's 「Enhance」 opens the existing Premium IAP page",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:13109",
+      "node": "16:13109",
+      "edge": "Photo Picker (Batch, one photo) → single Edit Room",
+      "expected": "One photo in the Batch tab opens the existing single-photo Edit Room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "137:4368",
+      "node": "137:4368",
+      "edge": "Single Edit Room Replace photo → Photo Picker",
+      "expected": "Replace photo in the single Edit Room opens the Photo Picker, where the Batch tab leads to Batch Edit",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:13426",
+      "node": "16:13426",
+      "edge": "Batch Edit Room Save → Saving",
+      "expected": "Save shows 「Saving k / N」",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:13430",
+      "node": "16:13430",
+      "edge": "Saving → Batch Save page",
+      "expected": "When every photo is saved the Batch Save page shows",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "141:2038",
+      "node": "141:2038",
+      "edge": "Batch Save page ‹ → Batch Edit Room",
+      "expected": "‹ returns to the Batch Edit Room",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "141:2042",
+      "node": "141:2042",
+      "edge": "Batch Save page Home → Launcher",
+      "expected": "Home returns to the Launcher",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "141:2046",
+      "node": "141:2046",
+      "edge": "Batch Save page 「Edit Next Batch」 → Photo Picker (Batch tab)",
+      "expected": "「Edit Next Batch」 opens the Photo Picker on the Batch tab with nothing ticked",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "357:2620",
+      "node": "357:2620",
+      "edge": "Photo Picker (from Edit Next Batch) ‹ → Batch Edit Room",
+      "expected": "‹ returns to the Batch Edit Room with its edits",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:13746",
+      "node": "16:13746",
+      "edge": "Photo Picker (Batch) Next → Batch Edit Room (leave flow)",
+      "expected": "Next opens the Batch Edit Room (start of the leave flow)",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:13750",
+      "node": "16:13750",
+      "edge": "Batch Edit Room Home (with edits) → Discard Dialog",
+      "expected": "Home after an edit asks 「Discard changes?」",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "37:2034",
+      "node": "37:2034",
+      "edge": "Batch Edit Room Replace photo (with edits) → Discard Dialog",
+      "expected": "Replace photo after an edit asks 「Discard changes?」",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:13754",
+      "node": "16:13754",
+      "edge": "Discard Dialog 「Discard」 → Photo Picker (Batch tab)",
+      "expected": "「Discard」 (from Replace photo) opens the Photo Picker Batch tab with the earlier photos still ticked",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    },
+    {
+      "arrow": "16:13758",
+      "node": "16:13758",
+      "edge": "Discard Dialog 「Keep Editing」 → Batch Edit Room",
+      "expected": "「Keep Editing」 closes the dialog; the edits stay",
+      "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
+    }
+  ]
+}

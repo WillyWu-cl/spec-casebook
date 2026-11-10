@@ -1,5 +1,5 @@
 {
-  "written_at": "2026-11-05T11:27:12.399Z",
+  "written_at": "2026-11-09T08:05:15.506Z",
   "file": "iUy5kOrVNG7IjcyxGGnp9t",
   "page": [
     "0:1",
@@ -487,6 +487,7 @@
       "id": "1:238",
       "name": "Collage Room · banner (NEW)",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "eef08790",
       "plan": "plan-0-1.json"
     },
@@ -494,6 +495,7 @@
       "id": "111:6261",
       "name": "Collage Room · banner (NEW)",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "365fd767",
       "plan": "plan-0-1.json"
     },
@@ -501,6 +503,7 @@
       "id": "3:336",
       "name": "Template Page · default (NEW)",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "bcc6ad53",
       "plan": "plan-0-1.json"
     },
@@ -508,6 +511,7 @@
       "id": "111:6441",
       "name": "Template Page · default (NEW)",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "ec6ad8d3",
       "plan": "plan-0-1.json"
     },
@@ -515,6 +519,7 @@
       "id": "18:386",
       "name": "entry_launcher2",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "8fd1377b",
       "plan": "plan-0-1.json"
     },
@@ -522,6 +527,7 @@
       "id": "111:6596",
       "name": "entry_launcher2",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "8f2a8b35",
       "plan": "plan-0-1.json"
     },
@@ -529,6 +535,7 @@
       "id": "82:4597",
       "name": "暖色旅行生活拼貼心情版 2",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "a4f25769",
       "plan": "plan-0-1.json"
     },
@@ -536,6 +543,7 @@
       "id": "23:531",
       "name": "photo_picker",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "db32118d",
       "plan": "plan-0-1.json"
     },
@@ -543,6 +551,7 @@
       "id": "111:6645",
       "name": "photo_picker",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "52531672",
       "plan": "plan-0-1.json"
     },
@@ -550,6 +559,7 @@
       "id": "54:520",
       "name": "1_add_img",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "91eae11a",
       "plan": "plan-0-1.json"
     },
@@ -557,6 +567,7 @@
       "id": "111:6745",
       "name": "1_add_img",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9686a9d6",
       "plan": "plan-0-1.json"
     },
@@ -564,6 +575,7 @@
       "id": "23:989",
       "name": "1_entry",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "5205da84",
       "plan": "plan-0-1.json"
     },
@@ -571,6 +583,7 @@
       "id": "111:6824",
       "name": "1_entry",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "89265d11",
       "plan": "plan-0-1.json"
     },
@@ -578,6 +591,7 @@
       "id": "69:6711",
       "name": "canvas_default",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "1e967d50",
       "plan": "plan-0-1.json"
     },
@@ -585,6 +599,7 @@
       "id": "111:6952",
       "name": "canvas_default",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "1b57ec62",
       "plan": "plan-0-1.json"
     },
@@ -592,6 +607,7 @@
       "id": "74:2830",
       "name": "Ratio",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "c202bf45",
       "plan": "plan-0-1.json"
     },
@@ -599,6 +615,7 @@
       "id": "111:7080",
       "name": "Ratio",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "47b40992",
       "plan": "plan-0-1.json"
     },
@@ -606,6 +623,7 @@
       "id": "74:3076",
       "name": "page",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "a45de196",
       "plan": "plan-0-1.json"
     },
@@ -613,20 +631,22 @@
       "id": "49:1511",
       "name": "[+] 開 Add Layer：五個 function",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9e9e7987",
       "plan": "plan-0-1.json"
     },
     {
       "id": "111:7291",
       "name": "[+] 開 Add Layer：五個 function",
-      "read_at": "2026-11-05T08:59:53.836Z",
-      "hash": "e5ec12a0",
-      "plan": "plan-0-1.json"
+      "read_at": "2026-11-09T07:54:21.697Z",
+      "hash": "1a24cac5",
+      "plan": "plan-0-1-20261109075421.json"
     },
     {
       "id": "28:1621",
       "name": "canvas_img_focus",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "29db4b54",
       "plan": "plan-0-1.json"
     },
@@ -634,6 +654,7 @@
       "id": "111:7455",
       "name": "canvas_img_focus",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "dbcb904c",
       "plan": "plan-0-1.json"
     },
@@ -641,6 +662,7 @@
       "id": "66:5255",
       "name": "canvas_img_focus",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "0c3640ae",
       "plan": "plan-0-1.json"
     },
@@ -648,6 +670,7 @@
       "id": "111:7605",
       "name": "canvas_img_focus",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "e1034e32",
       "plan": "plan-0-1.json"
     },
@@ -655,6 +678,7 @@
       "id": "82:4349",
       "name": "canvas_img_focus",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "345d543f",
       "plan": "plan-0-1.json"
     },
@@ -662,6 +686,7 @@
       "id": "111:7761",
       "name": "canvas_img_focus",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "dfc5c63e",
       "plan": "plan-0-1.json"
     },
@@ -669,6 +694,7 @@
       "id": "33:2230",
       "name": "canvas_frame_focus",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "ca61c04c",
       "plan": "plan-0-1.json"
     },
@@ -676,6 +702,7 @@
       "id": "111:7917",
       "name": "canvas_frame_focus",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "17aa48d3",
       "plan": "plan-0-1.json"
     },
@@ -683,6 +710,7 @@
       "id": "45:723",
       "name": "Save",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "dfcf0de1",
       "plan": "plan-0-1.json"
     },
@@ -690,6 +718,7 @@
       "id": "111:8106",
       "name": "Save",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "910cc55f",
       "plan": "plan-0-1.json"
     },
@@ -697,6 +726,7 @@
       "id": "103:5778",
       "name": "Save: Only 1 img",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "96ccaad0",
       "plan": "plan-0-1.json"
     },
@@ -704,6 +734,7 @@
       "id": "111:8308",
       "name": "Save: Only 1 img",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "c0a4b9b0",
       "plan": "plan-0-1.json"
     },
@@ -711,6 +742,7 @@
       "id": "54:752",
       "name": "row label 3",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "d3ed0623",
       "plan": "plan-0-1.json"
     },
@@ -718,6 +750,7 @@
       "id": "111:8509",
       "name": "row label 6",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "12131386",
       "plan": "plan-0-1.json"
     },
@@ -725,6 +758,7 @@
       "id": "54:754",
       "name": "row label 1",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "1dd890e7",
       "plan": "plan-0-1.json"
     },
@@ -732,6 +766,7 @@
       "id": "111:8510",
       "name": "row label 7",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "5923dfd5",
       "plan": "plan-0-1.json"
     },
@@ -739,6 +774,7 @@
       "id": "54:1487",
       "name": "2_add_text",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "ed334af7",
       "plan": "plan-0-1.json"
     },
@@ -746,6 +782,7 @@
       "id": "111:8511",
       "name": "2_add_text",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9887b18b",
       "plan": "plan-0-1.json"
     },
@@ -753,6 +790,7 @@
       "id": "54:1835",
       "name": "3_Add_Sticker",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "e50ff2b9",
       "plan": "plan-0-1.json"
     },
@@ -760,6 +798,7 @@
       "id": "111:8637",
       "name": "3_Add_Sticker",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "5a0f96ea",
       "plan": "plan-0-1.json"
     },
@@ -767,6 +806,7 @@
       "id": "54:2110",
       "name": "4_frame",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "da338578",
       "plan": "plan-0-1.json"
     },
@@ -774,6 +814,7 @@
       "id": "111:8809",
       "name": "4_frame",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9ec3ae0d",
       "plan": "plan-0-1.json"
     },
@@ -781,6 +822,7 @@
       "id": "54:2359",
       "name": "5_Text_bubble",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "e9695d2b",
       "plan": "plan-0-1.json"
     },
@@ -788,6 +830,7 @@
       "id": "111:9057",
       "name": "5_Text_bubble",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "1f25acf0",
       "plan": "plan-0-1.json"
     },
@@ -795,6 +838,7 @@
       "id": "72:1505",
       "name": "background_panel_texture",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "433243d9",
       "plan": "plan-0-1.json"
     },
@@ -802,6 +846,7 @@
       "id": "111:9172",
       "name": "background_panel_texture",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "ff78da9c",
       "plan": "plan-0-1.json"
     },
@@ -809,6 +854,7 @@
       "id": "61:4517",
       "name": "GAI_removal",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "f654810f",
       "plan": "plan-0-1.json"
     },
@@ -816,6 +862,7 @@
       "id": "111:9400",
       "name": "GAI_removal",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "4d0d8712",
       "plan": "plan-0-1.json"
     },
@@ -823,6 +870,7 @@
       "id": "64:5195",
       "name": "row label 4",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "0810db78",
       "plan": "plan-0-1.json"
     },
@@ -830,6 +878,7 @@
       "id": "111:9722",
       "name": "row label 8",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "e99180d9",
       "plan": "plan-0-1.json"
     },
@@ -837,6 +886,7 @@
       "id": "66:5845",
       "name": "row label 5",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "4f541f17",
       "plan": "plan-0-1.json"
     },
@@ -844,6 +894,7 @@
       "id": "111:9723",
       "name": "row label 9",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "e99c194b",
       "plan": "plan-0-1.json"
     },
@@ -851,6 +902,7 @@
       "id": "64:5196",
       "name": "callout D3-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9731157b",
       "plan": "plan-0-1.json"
     },
@@ -858,6 +910,7 @@
       "id": "111:9724",
       "name": "callout D3-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "c6505c8f",
       "plan": "plan-0-1.json"
     },
@@ -865,6 +918,7 @@
       "id": "66:5846",
       "name": "callout D3-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "b5763c29",
       "plan": "plan-0-1.json"
     },
@@ -872,6 +926,7 @@
       "id": "111:9725",
       "name": "callout D3-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "5a9d58da",
       "plan": "plan-0-1.json"
     },
@@ -879,6 +934,7 @@
       "id": "64:5197",
       "name": "callout D3-01][D1-43",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "d7e9d41f",
       "plan": "plan-0-1.json"
     },
@@ -886,6 +942,7 @@
       "id": "111:9726",
       "name": "callout D3-01][D1-43",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "b2c933a2",
       "plan": "plan-0-1.json"
     },
@@ -893,6 +950,7 @@
       "id": "66:5847",
       "name": "callout D3-01][D1-43",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "b46ddb7e",
       "plan": "plan-0-1.json"
     },
@@ -900,6 +958,7 @@
       "id": "111:9727",
       "name": "callout D3-01][D1-43",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "567c0920",
       "plan": "plan-0-1.json"
     },
@@ -907,6 +966,7 @@
       "id": "64:5198",
       "name": "callout D3-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "db98e658",
       "plan": "plan-0-1.json"
     },
@@ -914,6 +974,7 @@
       "id": "111:9728",
       "name": "callout D3-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "1d904d6a",
       "plan": "plan-0-1.json"
     },
@@ -921,6 +982,7 @@
       "id": "66:5848",
       "name": "callout D3-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "2819d038",
       "plan": "plan-0-1.json"
     },
@@ -928,6 +990,7 @@
       "id": "111:9729",
       "name": "callout D3-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9d8ea2d1",
       "plan": "plan-0-1.json"
     },
@@ -935,6 +998,7 @@
       "id": "67:6424",
       "name": "Enhance_2",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "ed179f85",
       "plan": "plan-0-1.json"
     },
@@ -942,6 +1006,7 @@
       "id": "111:9730",
       "name": "Enhance_2",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "61c8720e",
       "plan": "plan-0-1.json"
     },
@@ -949,6 +1014,7 @@
       "id": "69:6938",
       "name": "background_panel_solid",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "4908c88e",
       "plan": "plan-0-1.json"
     },
@@ -956,6 +1022,7 @@
       "id": "111:9880",
       "name": "background_panel_solid",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "64c9ab3b",
       "plan": "plan-0-1.json"
     },
@@ -963,6 +1030,7 @@
       "id": "73:2199",
       "name": "Layers",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "d25b8a8f",
       "plan": "plan-0-1.json"
     },
@@ -970,6 +1038,7 @@
       "id": "111:10134",
       "name": "Layers",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "affc5b9e",
       "plan": "plan-0-1.json"
     },
@@ -977,6 +1046,7 @@
       "id": "72:1786",
       "name": "background_panel_solid",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "d26bf526",
       "plan": "plan-0-1.json"
     },
@@ -984,6 +1054,7 @@
       "id": "111:10344",
       "name": "background_panel_solid",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "d9141570",
       "plan": "plan-0-1.json"
     },
@@ -991,6 +1062,7 @@
       "id": "82:3615",
       "name": "Frame 工具：opacity / shadow / 水平 flip / 垂直 flip / duplicate / lock / delete（整個 frame 刪除）",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "2f7bd88e",
       "plan": "plan-0-1.json"
     },
@@ -998,6 +1070,7 @@
       "id": "111:10486",
       "name": "Frame 工具：opacity / shadow / 水平 flip / 垂直 flip / duplicate / lock / delete（整個 frame 刪除）",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "80755f0d",
       "plan": "plan-0-1.json"
     },
@@ -1005,6 +1078,7 @@
       "id": "82:3616",
       "name": "Image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "cbc59740",
       "plan": "plan-0-1.json"
     },
@@ -1012,6 +1086,7 @@
       "id": "111:10487",
       "name": "Image 工具（feature bar 一條橫向捲動）：替換 / 水平 flip / 垂直 flip / adjustment / filter（同 Collage）",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9f99f003",
       "plan": "plan-0-1.json"
     },
@@ -1019,6 +1094,7 @@
       "id": "82:3617",
       "name": "Focus frame 時 click → focus image；focus image 時 click → focus frame",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "beecc459",
       "plan": "plan-0-1.json"
     },
@@ -1026,6 +1102,7 @@
       "id": "111:10488",
       "name": "Focus frame 時 click → focus image；focus image 時 click → focus frame",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "4b36d750",
       "plan": "plan-0-1.json"
     },
@@ -1033,6 +1110,7 @@
       "id": "82:4599",
       "name": "Overview title",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "5bcce9bc",
       "plan": "plan-0-1.json"
     },
@@ -1040,6 +1118,7 @@
       "id": "82:4600",
       "name": "ov D0-03",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "7f37d98a",
       "plan": "plan-0-1.json"
     },
@@ -1047,6 +1126,7 @@
       "id": "82:4601",
       "name": "ov D0-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9049abe8",
       "plan": "plan-0-1.json"
     },
@@ -1054,6 +1134,7 @@
       "id": "82:4602",
       "name": "ov D0-02",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "441b0bff",
       "plan": "plan-0-1.json"
     },
@@ -1061,6 +1142,7 @@
       "id": "82:4603",
       "name": "ov D0-04",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "38e940c8",
       "plan": "plan-0-1.json"
     },
@@ -1068,6 +1150,7 @@
       "id": "82:4604",
       "name": "ov D0-06",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "9bf94ef5",
       "plan": "plan-0-1.json"
     },
@@ -1075,6 +1158,7 @@
       "id": "82:4605",
       "name": "ov D4-01",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "fd105c80",
       "plan": "plan-0-1.json"
     },
@@ -1082,6 +1166,7 @@
       "id": "103:6032",
       "name": "B (mimic VVG/ Beauty plus)",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "1123c802",
       "plan": "plan-0-1.json"
     },
@@ -1089,6 +1174,7 @@
       "id": "111:10489",
       "name": "B (mimic VVG/ Beauty plus)",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "08f3f0e9",
       "plan": "plan-0-1.json"
     },
@@ -1096,6 +1182,7 @@
       "id": "103:6121",
       "name": "B (mimic VVG/ Beauty plus)",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "2b2bca4d",
       "plan": "plan-0-1.json"
     },
@@ -1103,20 +1190,22 @@
       "id": "111:10570",
       "name": "B (mimic VVG/ Beauty plus)",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "683db68a",
       "plan": "plan-0-1.json"
     },
     {
       "id": "116:3010",
       "name": "Dark mode · Canvas icon buttons",
-      "read_at": "2026-11-05T08:59:53.836Z",
-      "hash": "bbc1e09f",
-      "plan": "plan-0-1.json"
+      "read_at": "2026-11-09T07:54:21.697Z",
+      "hash": "48de45ee",
+      "plan": "plan-0-1-20261109075421.json"
     },
     {
       "id": "112:3247",
       "name": "page",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "b5c1ee10",
       "plan": "plan-0-1.json"
     },
@@ -1130,14 +1219,15 @@
     {
       "id": "122:3043",
       "name": "cut",
-      "read_at": "2026-11-05T08:59:53.836Z",
-      "hash": "c3543ba3",
-      "plan": "plan-0-1.json"
+      "read_at": "2026-11-09T07:54:21.697Z",
+      "hash": "6f0fe2e8",
+      "plan": "plan-0-1-20261109075421.json"
     },
     {
       "id": "130:3237",
       "name": "Light mode · Canvas icon buttons",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "3ed37f51",
       "plan": "plan-0-1.json"
     },
@@ -1145,8 +1235,37 @@
       "id": "146:3717",
       "name": "image 182",
       "read_at": "2026-11-05T08:59:53.836Z",
+      "checked_at": "2026-11-09T07:54:21.697Z",
       "hash": "6ebdfee0",
       "plan": "plan-0-1.json"
+    },
+    {
+      "id": "199:3307",
+      "name": "Frame",
+      "read_at": "2026-11-09T07:54:21.697Z",
+      "hash": "2e48177f",
+      "plan": "plan-0-1-20261109075421.json"
+    },
+    {
+      "id": "199:3315",
+      "name": "Frame",
+      "read_at": "2026-11-09T07:54:21.697Z",
+      "hash": "b30e7e9c",
+      "plan": "plan-0-1-20261109075421.json"
+    },
+    {
+      "id": "199:3566",
+      "name": "entry",
+      "read_at": "2026-11-09T07:54:21.697Z",
+      "hash": "033d07d4",
+      "plan": "plan-0-1-20261109075421.json"
+    },
+    {
+      "id": "201:4615",
+      "name": "cut",
+      "read_at": "2026-11-09T07:54:21.697Z",
+      "hash": "1ef018f4",
+      "plan": "plan-0-1-20261109075421.json"
     }
   ],
   "missing": []

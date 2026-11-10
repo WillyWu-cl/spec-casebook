@@ -1,0 +1,407 @@
+{
+  "design-light-entry.png": {
+    "board": "12:2321/design-light-entry",
+    "group": "d-entry",
+    "hash": "171dc98a",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:24.775Z",
+    "box": [
+      -10,
+      -150,
+      1610,
+      1090
+    ]
+  },
+  "design-dark-entry.png": {
+    "board": "12:2321/design-dark-entry",
+    "group": "d-entry",
+    "hash": "698219d6",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:25.484Z",
+    "box": [
+      3302,
+      -150,
+      1610,
+      1090
+    ]
+  },
+  "design-light-adjust.png": {
+    "board": "12:2321/design-light-adjust",
+    "group": "d-adjust",
+    "hash": "d86ac178",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:26.173Z",
+    "box": [
+      -10,
+      970,
+      2440,
+      1000
+    ]
+  },
+  "design-dark-adjust.png": {
+    "board": "12:2321/design-dark-adjust",
+    "group": "d-adjust",
+    "hash": "cdb1b2a3",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:26.875Z",
+    "box": [
+      3302,
+      970,
+      2440,
+      1000
+    ]
+  },
+  "design-light-enhance.png": {
+    "board": "12:2321/design-light-enhance",
+    "group": "d-enhance",
+    "hash": "960d4089",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:27.650Z",
+    "box": [
+      -10,
+      2080,
+      2000,
+      1000
+    ]
+  },
+  "design-dark-enhance.png": {
+    "board": "12:2321/design-dark-enhance",
+    "group": "d-enhance",
+    "hash": "f1c4b3cb",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:28.356Z",
+    "box": [
+      3302,
+      2080,
+      2000,
+      1000
+    ]
+  },
+  "design-light-save.png": {
+    "board": "12:2321/design-light-save",
+    "group": "d-save",
+    "hash": "c533bf3e",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:29.081Z",
+    "box": [
+      -10,
+      3200,
+      2000,
+      980
+    ]
+  },
+  "design-dark-save.png": {
+    "board": "12:2321/design-dark-save",
+    "group": "d-save",
+    "hash": "05a9eb4c",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:29.812Z",
+    "box": [
+      3302,
+      3200,
+      2000,
+      980
+    ]
+  },
+  "pm-flow-1.png": {
+    "board": "16:9281/pm-flow-1",
+    "group": "pm-flow-a",
+    "hash": "e4d71391",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:51.405Z",
+    "box": [
+      6366,
+      622,
+      4540,
+      1360
+    ]
+  },
+  "pm-flow-2.png": {
+    "board": "16:9281/pm-flow-2",
+    "group": "pm-flow-a",
+    "hash": "b43dacb6",
+    "overlay": "47feef2a",
+    "captured_at": "2026-11-09T07:55:52.310Z",
+    "box": [
+      6366,
+      1982,
+      4540,
+      1318
+    ]
+  },
+  "pm-flow-3.png": {
+    "board": "16:9281/pm-flow-3",
+    "group": "pm-flow-a",
+    "hash": "f5d00d40",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:53.251Z",
+    "box": [
+      6366,
+      3300,
+      4540,
+      1164
+    ]
+  },
+  "pm-flow-4.png": {
+    "board": "16:9281/pm-flow-4",
+    "group": "pm-flow-b",
+    "hash": "0518c4ec",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:54.197Z",
+    "box": [
+      6366,
+      4464,
+      4540,
+      1164
+    ]
+  },
+  "pm-flow-5.png": {
+    "board": "16:9281/pm-flow-5",
+    "group": "pm-flow-b",
+    "hash": "ed57328c",
+    "overlay": "17bebd3f",
+    "captured_at": "2026-11-09T07:55:55.092Z",
+    "box": [
+      6366,
+      5628,
+      4540,
+      1164
+    ]
+  },
+  "pm-flow-6.png": {
+    "board": "16:9281/pm-flow-6",
+    "group": "pm-flow-b",
+    "hash": "9d46e867",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:56.000Z",
+    "box": [
+      6366,
+      6792,
+      4540,
+      1164
+    ]
+  },
+  "pm-flow-7.png": {
+    "board": "16:9281/pm-flow-7",
+    "group": "pm-flow-b",
+    "hash": "9e80cfae",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:55:56.922Z",
+    "box": [
+      6366,
+      7956,
+      4540,
+      1268
+    ]
+  },
+  "pm-ui-1.png": {
+    "board": "16:13767/pm-ui-1",
+    "group": "pm-ui-a",
+    "hash": "aaccfb79",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:39.220Z",
+    "box": [
+      6366,
+      9424,
+      9681,
+      1180
+    ]
+  },
+  "pm-ui-2.png": {
+    "board": "16:13767/pm-ui-2",
+    "group": "pm-ui-a",
+    "hash": "2a73ec28",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:40.958Z",
+    "box": [
+      6366,
+      10604,
+      9681,
+      1196
+    ]
+  },
+  "pm-ui-3.png": {
+    "board": "16:13767/pm-ui-3",
+    "group": "pm-ui-a",
+    "hash": "762c664c",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:42.700Z",
+    "box": [
+      6366,
+      11800,
+      9681,
+      1600
+    ]
+  },
+  "pm-ui-4.png": {
+    "board": "16:13767/pm-ui-4",
+    "group": "pm-ui-a",
+    "hash": "e8a6769a",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:44.408Z",
+    "box": [
+      6366,
+      13400,
+      9681,
+      1480
+    ]
+  },
+  "pm-ui-5.png": {
+    "board": "16:13767/pm-ui-5",
+    "group": "pm-ui-b",
+    "hash": "c0b6edf8",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:46.115Z",
+    "box": [
+      6366,
+      14880,
+      9681,
+      1150
+    ]
+  },
+  "pm-ui-6.png": {
+    "board": "16:13767/pm-ui-6",
+    "group": "pm-ui-b",
+    "hash": "5a32fe95",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:47.633Z",
+    "box": [
+      6366,
+      16030,
+      9681,
+      1150
+    ]
+  },
+  "pm-ui-7.png": {
+    "board": "16:13767/pm-ui-7",
+    "group": "pm-ui-b",
+    "hash": "817d3c58",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:49.697Z",
+    "box": [
+      6366,
+      17180,
+      9681,
+      1200
+    ]
+  },
+  "pm-ui-8.png": {
+    "board": "16:13767/pm-ui-8",
+    "group": "pm-ui-b",
+    "hash": "129ddb79",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:56:51.972Z",
+    "box": [
+      6366,
+      18380,
+      9681,
+      1220
+    ]
+  },
+  "pm-header.png": {
+    "board": "42:3016/pm-header",
+    "group": "pm-notes",
+    "hash": "bbc7a51c",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:57:49.312Z",
+    "box": [
+      6366,
+      222,
+      9690,
+      300
+    ]
+  },
+  "pm-credit.png": {
+    "board": "16:15541",
+    "group": "pm-notes",
+    "hash": "17118567",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:57:50.083Z",
+    "box": [
+      11006,
+      622,
+      1000,
+      256
+    ]
+  },
+  "pm-error-handle.png": {
+    "board": "16:15545",
+    "group": "pm-notes",
+    "hash": "b48a6878",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:57:50.935Z",
+    "box": [
+      12106,
+      622,
+      1000,
+      294
+    ]
+  },
+  "pm-tracking.png": {
+    "board": "16:15550",
+    "group": "pm-notes",
+    "hash": "c7cfd2b4",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:57:51.709Z",
+    "box": [
+      13206,
+      622,
+      1500,
+      572
+    ]
+  },
+  "pm-tbd.png": {
+    "board": "42:3016/pm-tbd",
+    "group": "pm-notes",
+    "hash": "8c8c9a1e",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:57:52.585Z",
+    "box": [
+      13150,
+      1600,
+      2620,
+      1150
+    ]
+  },
+  "pm-background.png": {
+    "board": "1:2",
+    "group": "pm-notes",
+    "hash": "3c8faef9",
+    "overlay": "3c8faef9",
+    "captured_at": "2026-11-09T07:58:08.619Z"
+  },
+  "pm-reference.png": {
+    "board": "3:2",
+    "group": "pm-reference",
+    "hash": "ae3a2909",
+    "overlay": "c7df1e8c",
+    "captured_at": "2026-11-09T07:58:28.398Z",
+    "box": [
+      -1330,
+      122,
+      7242,
+      10703
+    ]
+  },
+  "pm-apply-all-options.png": {
+    "board": "145:2810",
+    "group": "pm-drafts",
+    "hash": "424f81ce",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:58:40.315Z"
+  },
+  "pm-crop-apply-rule.png": {
+    "board": "293:2246",
+    "group": "pm-drafts",
+    "hash": "95835f3a",
+    "overlay": "",
+    "captured_at": "2026-11-09T07:58:57.484Z"
+  },
+  "pm-adjust-strip-proposal.png": {
+    "board": "382:2617",
+    "group": "pm-drafts",
+    "hash": "70fd9d31",
+    "overlay": "10ca0671",
+    "captured_at": "2026-11-09T07:59:09.506Z"
+  }
+}

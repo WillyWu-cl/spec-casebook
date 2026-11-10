@@ -1,0 +1,29 @@
+{
+  "feature": "phd/batch-editing",
+  "platform": "ios",
+  "title": "Batch Editing",
+  "version": 1,
+  "approved_at": "2026-11-10T01:08:51.870Z",
+  "draft": "20261109-155427",
+  "spec_folder": "specs/2026-11-09",
+  "spec_files": [
+    {
+      "name": "Batch Editing - PM and Design Figma.md",
+      "sha256": "92e49a0d0cfdca50abf3f23d99c0aa1f3eee138f6e1de26281611fbd58528d36",
+      "bytes": 45876
+    }
+  ],
+  "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
+  "cases": 123,
+  "history": [
+    {
+      "version": 1,
+      "approved_at": "2026-11-10T01:08:51.870Z",
+      "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
+      "draft": "20261109-155427",
+      "cases": 123,
+      "csv": "cases.csv",
+      "requirements": "requirements.md"
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "checked_at": "2026-11-09T07:43:21.237Z",
+  "set": "2026-11-05",
+  "unchanged": [
+    {
+      "id": "0:1/design-light-canvas",
+      "group": "d-canvas",
+      "box": [
+        3900,
+        -200,
+        2900,
+        1100
+      ],
+      "holder": ""
+    },
+    {
+      "id": "0:1/design-dark-canvas",
+      "group": "d-canvas",
+      "box": [
+        12296,
+        -200,
+        2900,
+        1100
+      ],
+      "holder": ""
+    },
+    {
+      "id": "0:1/design-light-entry",
+      "group": "d-entry",
+      "box": [
+        -10,
+        -1400,
+        3600,
+        2412
+      ],
+      "holder": ""
+    },
+    {
+      "id": "0:1/design-dark-entry",
+      "group": "d-entry",
+      "box": [
+        8386,
+        -1400,
+        3600,
+        2412
+      ],
+      "holder": ""
+    },
+    {
+      "id": "116:3010",
+      "group": "d-icons",
+      "box": [
+        15936,
+        -135,
+        952,
+        1082
+      ],
+      "holder": "116:3010"
+    },
+    {
+      "id": "130:3237",
+      "group": "d-icons",
+      "box": [
+        16968,
+        -135,
+        952,
+        1082
+      ],
+      "holder": "130:3237"
+    },
+    {
+      "id": "122:3043",
+      "group": "d-icons",
+      "box": [
+        17957,
+        -135,
+        407,
+        470
+      ],
+      "holder": "122:3043"
+    },
+    {
+      "id": "0:1/design-light-add-layer",
+      "group": "d-layers",
+      "box": [
+        -10,
+        911,
+        2400,
+        1059
+      ],
+      "holder": ""
+    },
+    {
+      "id": "0:1/design-dark-add-layer",
+      "group": "d-layers",
+      "box": [
+        8386,
+        911,
+        2400,
+        1059
+      ],
+      "holder": ""
+    },
+    {
+      "id": "0:1/design-light-removal",
+      "group": "d-layers",
+      "box": [
+        -10,
+        2050,
+        1200,
+        1000
+      ],
+      "holder": ""
+    },
+    {
+      "id": "0:1/design-dark-removal",
+      "group": "d-layers",
+      "box": [
+        8386,
+        2050,
+        1200,
+        1000
+      ],
+      "holder": ""
+    },
+    {
+      "id": "0:1/design-light-enhance",
+      "group": "d-layers",
+      "box": [
+        -10,
+        3160,
+        1200,
+        1000
+      ],
+      "holder": ""
+    },
+    {
+      "id": "0:1/design-dark-enhance",
+      "group": "d-layers",
+      "box": [
+        8386,
+        3160,
+        1200,
+        1000
+      ],
+      "holder": ""
+    },
+    {
+      "id": "2316:20",
+      "group": "pm-buttons",
+      "box": [
+        6691,
+        475,
+        2240,
+        2680
+      ],
+      "holder": "2316:20"
+    },
+    {
+      "id": "2214:5",
+      "group": "pm-flow",
+      "box": [
+        3261,
+        -1747,
+        3330,
+        7458
+      ],
+      "holder": "2214:5"
+    },
+    {
+      "id": "2226:8/pm-header",
+      "group": "pm-header",
+      "box": [
+        3261,
+        -2087,
+        8100,
+        330
+      ],
+      "holder": "2226:8"
+    },
+    {
+      "id": "2214:7",
+      "group": "pm-notes",
+      "box": [
+        6691,
+        -1747,
+        1000,
+        469
+      ],
+      "holder": "2214:7"
+    },
+    {
+      "id": "2214:8",
+      "group": "pm-notes",
+      "box": [
+        7791,
+        -1747,
+        1000,
+        378
+      ],
+      "holder": "2214:8"
+    },
+    {
+      "id": "2214:9",
+      "group": "pm-notes",
+      "box": [
+        8891,
+        -1747,
+        1000,
+        416
+      ],
+      "holder": "2214:9"
+    },
+    {
+      "id": "2214:10",
+      "group": "pm-notes",
+      "box": [
+        9991,
+        -1747,
+        1370,
+        1202
+      ],
+      "holder": "2214:10"
+    },
+    {
+      "id": "2316:533",
+      "group": "pm-notes",
+      "box": [
+        9031,
+        475,
+        1000,
+        1261
+      ],
+      "holder": "2316:533"
+    },
+    {
+      "id": "2509:971",
+      "group": "pm-notes",
+      "box": [
+        6691,
+        4639,
+        1908,
+        1072
+      ],
+      "holder": "2509:971"
+    },
+    {
+      "id": "2196:21",
+      "group": "pm-scrl",
+      "box": [
+        -17925,
+        -2187,
+        19607,
+        6365
+      ],
+      "holder": ""
+    },
+    {
+      "id": "2214:6/pm-ui-1",
+      "group": "pm-ui-1",
+      "box": [
+        3261,
+        5811,
+        10170,
+        3180
+      ],
+      "holder": "2214:6"
+    },
+    {
+      "id": "2214:6/pm-ui-2",
+      "group": "pm-ui-2",
+      "box": [
+        3261,
+        8991,
+        10170,
+        2100
+      ],
+      "holder": "2214:6"
+    },
+    {
+      "id": "2214:6/pm-ui-3",
+      "group": "pm-ui-3",
+      "box": [
+        3261,
+        11091,
+        10170,
+        3150
+      ],
+      "holder": "2214:6"
+    },
+    {
+      "id": "2214:6/pm-ui-4",
+      "group": "pm-ui-4",
+      "box": [
+        3261,
+        14241,
+        10170,
+        3054
+      ],
+      "holder": "2214:6"
+    }
+  ],
+  "changed": [],
+  "removed": [],
+  "baseline": [],
+  "new_boards": [],
+  "missed_arrows": [],
+  "reread": [],
+  "shots": []
+}

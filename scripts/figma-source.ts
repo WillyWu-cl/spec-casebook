@@ -86,6 +86,11 @@ const code = (mode: string, targets: unknown, budget = 0) => {
   if (c.length > 50000) throw new Error(`call is ${c.length} characters; use_figma takes at most 50000`);
   return c;
 };
+// a plan or batch call of a re-read must not take the name of an earlier read's saved return: merge keeps an unchanged
+// board's earlier plan and its chunks (batches included), so overwriting them loses boards (2026-11-09: plan-0-1 and
+// chunk-batch-1 of the re-read replaced the 2026-11-05 ones and left 92 boards incomplete)
+const stamp = new Date().toISOString().replace(/\D/g, '').slice(0, 14);
+const keepEarlier = (name: string) => existsSync(join(respDir, `${name}.json`)) ? `${name}-${stamp}` : name;
 const writeCall = (name: string, mode: string, targets: unknown, budget = 0) => {
   mkdirSync(callsDir, { recursive: true });
   writeFileSync(join(callsDir, `${name}.js`), code(mode, targets, budget));
@@ -184,7 +189,7 @@ if (cmd === 'calls' && sub === 'list') {
 } else if (cmd === 'calls' && sub === 'plan') {
   if (!ids.length) { console.error('calls plan <role> <board, section or page ids…> (run `calls list` to see them)'); process.exit(2); }
   const per = Number(arg('per') ?? 4), budget = Number(arg('budget') ?? 36000), calls = [];
-  for (let i = 0; i < ids.length; i += per) calls.push(writeCall(`plan-${dash(ids[i])}${per > 1 && ids.length > i + 1 ? `-${Math.min(per, ids.length - i)}` : ""}`, 'plan', ids.slice(i, i + per), budget));
+  for (let i = 0; i < ids.length; i += per) calls.push(writeCall(keepEarlier(`plan-${dash(ids[i])}${per > 1 && ids.length > i + 1 ? `-${Math.min(per, ids.length - i)}` : ""}`), 'plan', ids.slice(i, i + per), budget));
   console.log(JSON.stringify({ server, fileKey: file.fileKey, parallel: true, calls }, null, 1));
 } else if (cmd === 'calls' && sub === 'chunks') {
   const { boards, chunks } = plans();
@@ -216,7 +221,7 @@ if (cmd === 'calls' && sub === 'list') {
     const part: any[][] = []; let size = 0;
     while (i < small.length && (!part.length || size + small[i][3] <= BATCH)) { size += small[i][3]; part.push(small[i++]); }
     calls.push(part.length === 1 ? writeCall(`chunk-${dash(part[0][0])}_${part[0][1]}`, 'chunk', [part[0][0], part[0][1], part[0][2], part[0][4], part[0][5]])
-      : writeCall(`chunk-batch-${n}`, 'chunk', part.map(r => [r[0], r[1], r[2], r[4], r[5]])));
+      : writeCall(keepEarlier(`chunk-batch-${n}`), 'chunk', part.map(r => [r[0], r[1], r[2], r[4], r[5]])));
   }
   const todo = { server, fileKey: file.fileKey, scale, unchanged, reused_shots: reused, covered_shots: covered, chunk_calls: calls, screenshots: shotCalls };
   writeJson(join(callsDir, 'todo.json'), todo);

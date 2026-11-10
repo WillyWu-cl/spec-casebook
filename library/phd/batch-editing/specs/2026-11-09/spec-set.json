@@ -1,0 +1,23 @@
+{
+  "feature": "phd/batch-editing",
+  "folder": "2026-11-09",
+  "received_at": "2026-11-09T07:54:27.297Z",
+  "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
+  "files": [
+    {
+      "name": "Batch Editing - PM and Design Figma.md",
+      "sha256": "92e49a0d0cfdca50abf3f23d99c0aa1f3eee138f6e1de26281611fbd58528d36",
+      "bytes": 45876
+    }
+  ],
+  "source_priority": [
+    "design",
+    "pm"
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/iWlQTjlmfykHfmlNvg9J4p/Batch-Editing?node-id=0-1",
+    "design": "https://www.figma.com/design/qZXJfrM5gb5g4tFoCIS1YU/Batch-Edit?node-id=12-2321"
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-09, REQ-001): the spec file is the text snapshot of the PM page 0:1 and the Design page 12:2321, written from the inventory reads; no PDF export."
+}

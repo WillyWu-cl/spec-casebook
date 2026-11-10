@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-11-09",
+  "how": "Figma-only spec set (user, 2026-11-09, REQ-001). PM page 0:1 「26'11/E Batch editing: AI enhance, crop & rotate, adjustments」 (figma-pm, qa1): section 「UI UX flow」 (42:3016: Spec - Flow 16:9281, the screen-state section 16:13767, Credit not enough, Error Handle, 【Tracking Event】, TBD cards), 「Background」 (1:2), 「Reference」 (3:2, competitors), and the draft boards 「Apply to all · icon options」 (145:2810), 「Crop & rotate_apply to all_美圖 及 Phdm 11/E 作法」 (293:2246) and 「提案 · Adjustment 縮圖列」 (382:2617). Design page 12:2321 「261104_design」 (figma-design, qa-dm): loose frames, light (x < 3300) and dark (x ≥ 3312), four rows (Entry, Adjustment, AI Enhance, Save). The Design file's page 5:6 「PM SPEC」 is a copy of the PM file: not read, the PM file is the source.",
+  "pm_checked_at": "2026-11-09",
+  "files": {
+    "pm": { "fileKey": "iWlQTjlmfykHfmlNvg9J4p", "page": "0:1", "url": "https://www.figma.com/design/iWlQTjlmfykHfmlNvg9J4p/Batch-Editing?node-id=0-1", "account": "qa1@cyberlink.com" },
+    "design": { "fileKey": "qZXJfrM5gb5g4tFoCIS1YU", "page": "12:2321", "url": "https://www.figma.com/design/qZXJfrM5gb5g4tFoCIS1YU/Batch-Edit?node-id=12-2321", "account": "qa-dm@cyberlink.com" }
+  },
+  "frames": []
+}

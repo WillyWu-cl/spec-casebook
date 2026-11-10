@@ -1,0 +1,1770 @@
+{
+  "spec_folder": "specs/2026-11-09",
+  "skip": [
+    "pm-reference",
+    "pm-apply-all-options",
+    "pm-adjust-strip-proposal"
+  ],
+  "skip_reason": "PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "design-dark-adjust@3312,977",
+      "board": "design-dark-adjust",
+      "x": 3312,
+      "y": 977,
+      "low": false,
+      "text": "Batch Edit Room › Adjustment / [phone] 9:41",
+      "trace": "label: row title"
+    },
+    {
+      "id": "design-dark-adjust@3730,1115",
+      "board": "design-dark-adjust",
+      "x": 3730,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@4135,1115",
+      "board": "design-dark-adjust",
+      "x": 4135,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@4532,1115",
+      "board": "design-dark-adjust",
+      "x": 4532,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@4982,1115",
+      "board": "design-dark-adjust",
+      "x": 4982,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@5385,1115",
+      "board": "design-dark-adjust",
+      "x": 5385,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@4840,1161",
+      "board": "design-dark-adjust",
+      "x": 4840,
+      "y": 1161,
+      "low": false,
+      "text": "[phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@5693,1161",
+      "board": "design-dark-adjust",
+      "x": 5693,
+      "y": 1161,
+      "low": false,
+      "text": "[phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@4969,1541",
+      "board": "design-dark-adjust",
+      "x": 4969,
+      "y": 1541,
+      "low": false,
+      "text": "[phone] Hue / [phone] Saturation / [phone] Lightness / [phone] Light / [phone] Auto",
+      "trace": "R-070"
+    },
+    {
+      "id": "design-dark-adjust@5299,1541",
+      "board": "design-dark-adjust",
+      "x": 5299,
+      "y": 1541,
+      "low": false,
+      "text": "[phone] 20 / [phone] 20 / [phone] 20",
+      "trace": "R-070"
+    },
+    {
+      "id": "design-dark-adjust@3833,1586",
+      "board": "design-dark-adjust",
+      "x": 3833,
+      "y": 1586,
+      "low": false,
+      "text": "[phone] Applied to 11 photos / [phone] Light / [phone] Color / [phone] Auto / [phone] Exposure / [phone] AI Exposure",
+      "trace": "R-042, R-065"
+    },
+    {
+      "id": "design-dark-adjust@4032,1673",
+      "board": "design-dark-adjust",
+      "x": 4032,
+      "y": 1673,
+      "low": false,
+      "text": "[phone] 33 / [phone] Details / [phone] Contrast / [phone] Hightlight",
+      "trace": "R-065"
+    },
+    {
+      "id": "design-dark-adjust@4210,1720",
+      "board": "design-dark-adjust",
+      "x": 4210,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Light / [phone] Color / [phone] Auto / [phone] Exposure",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@4339,1720",
+      "board": "design-dark-adjust",
+      "x": 4339,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Details / [phone] AI Exposure / [phone] Contrast / [phone] Hightlight",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@4607,1720",
+      "board": "design-dark-adjust",
+      "x": 4607,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Light / [phone] Color / [phone] Auto / [phone] Exposure",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@4736,1720",
+      "board": "design-dark-adjust",
+      "x": 4736,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Details / [phone] AI Exposure / [phone] Contrast / [phone] Hightlight",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@5121,1720",
+      "board": "design-dark-adjust",
+      "x": 5121,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Color / [phone] Details / [phone] Exposure / [phone] AI Exposure / [phone] Contrast",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@5460,1720",
+      "board": "design-dark-adjust",
+      "x": 5460,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Light / [phone] Color / [phone] Auto / [phone] Exposure",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@5589,1720",
+      "board": "design-dark-adjust",
+      "x": 5589,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Details / [phone] AI Exposure / [phone] Contrast / [phone] Hightlight",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@5243,1801",
+      "board": "design-dark-adjust",
+      "x": 5243,
+      "y": 1801,
+      "low": false,
+      "text": "[phone] Hightlight",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@3353,1845",
+      "board": "design-dark-adjust",
+      "x": 3353,
+      "y": 1845,
+      "low": false,
+      "text": "[phone] Crop & Rotate",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-adjust@3474,1845",
+      "board": "design-dark-adjust",
+      "x": 3474,
+      "y": 1845,
+      "low": false,
+      "text": "[phone] Adjustment / [phone] AI Enhance",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-dark-enhance@3312,2091",
+      "board": "design-dark-enhance",
+      "x": 3312,
+      "y": 2091,
+      "low": false,
+      "text": "Batch Edit Room › AI Enhance（批次）",
+      "trace": "label: row title"
+    },
+    {
+      "id": "design-dark-entry@3312,-94",
+      "board": "design-dark-entry",
+      "x": 3312,
+      "y": -94,
+      "low": false,
+      "text": "Entry: Launcher › Edit（批次 Tab）",
+      "trace": "label: row title"
+    },
+    {
+      "id": "design-dark-save@3337,3363",
+      "board": "design-dark-save",
+      "x": 3337,
+      "y": 3363,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-dark-save@3736,3363",
+      "board": "design-dark-save",
+      "x": 3736,
+      "y": 3363,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-dark-save@4135,3363",
+      "board": "design-dark-save",
+      "x": 4135,
+      "y": 3363,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] Save 12 photos",
+      "trace": "R-111"
+    },
+    {
+      "id": "design-dark-save@4933,3363",
+      "board": "design-dark-save",
+      "x": 4933,
+      "y": 3363,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-dark-save@5183,3408",
+      "board": "design-dark-save",
+      "x": 5183,
+      "y": 3408,
+      "low": false,
+      "text": "[phone] 100",
+      "trace": "Q-17"
+    },
+    {
+      "id": "design-dark-save@3854,3659",
+      "board": "design-dark-save",
+      "x": 3854,
+      "y": 3659,
+      "low": false,
+      "text": "[phone] Saving 3/20 / [phone] Please do not leave this page or quit / [phone] the app.",
+      "trace": "R-108"
+    },
+    {
+      "id": "design-dark-save@4948,3729",
+      "board": "design-dark-save",
+      "x": 4948,
+      "y": 3729,
+      "low": false,
+      "text": "[phone] Discard changes? / [phone] Your edits to these photos will be lost. / [phone] Discard",
+      "trace": "R-125"
+    },
+    {
+      "id": "design-dark-save@5128,3817",
+      "board": "design-dark-save",
+      "x": 5128,
+      "y": 3817,
+      "low": false,
+      "text": "[phone] Keep Editing",
+      "trace": "R-125"
+    },
+    {
+      "id": "design-dark-save@5064,4017",
+      "board": "design-dark-save",
+      "x": 5064,
+      "y": 4017,
+      "low": false,
+      "text": "[phone] Enhance / [phone] Maximize detaill and clarity with advanced AI.",
+      "trace": "R-075"
+    },
+    {
+      "id": "design-dark-save@4241,4089",
+      "board": "design-dark-save",
+      "x": 4241,
+      "y": 4089,
+      "low": false,
+      "text": "[phone] Edit Next Batch",
+      "trace": "R-111"
+    },
+    {
+      "id": "design-dark-save@3353,4093",
+      "board": "design-dark-save",
+      "x": 3353,
+      "y": 4093,
+      "low": false,
+      "text": "[phone] Crop & Rotate",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-dark-save@3474,4093",
+      "board": "design-dark-save",
+      "x": 3474,
+      "y": 4093,
+      "low": false,
+      "text": "[phone] Adjustment / [phone] AI Enhance",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-dark-save@3752,4093",
+      "board": "design-dark-save",
+      "x": 3752,
+      "y": 4093,
+      "low": false,
+      "text": "[phone] Crop & Rotate",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-dark-save@3873,4093",
+      "board": "design-dark-save",
+      "x": 3873,
+      "y": 4093,
+      "low": false,
+      "text": "[phone] Adjustment / [phone] AI Enhance",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-light-adjust@0,977",
+      "board": "design-light-adjust",
+      "x": 0,
+      "y": 977,
+      "low": false,
+      "text": "Batch Edit Room › Adjustment / [phone] 9:41",
+      "trace": "label: row title"
+    },
+    {
+      "id": "design-light-adjust@418,1115",
+      "board": "design-light-adjust",
+      "x": 418,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@815,1115",
+      "board": "design-light-adjust",
+      "x": 815,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1212,1115",
+      "board": "design-light-adjust",
+      "x": 1212,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1662,1115",
+      "board": "design-light-adjust",
+      "x": 1662,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@2065,1115",
+      "board": "design-light-adjust",
+      "x": 2065,
+      "y": 1115,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1520,1161",
+      "board": "design-light-adjust",
+      "x": 1520,
+      "y": 1161,
+      "low": false,
+      "text": "[phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@2373,1161",
+      "board": "design-light-adjust",
+      "x": 2373,
+      "y": 1161,
+      "low": false,
+      "text": "[phone] All",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1649,1541",
+      "board": "design-light-adjust",
+      "x": 1649,
+      "y": 1541,
+      "low": false,
+      "text": "[phone] Hue / [phone] Saturation / [phone] Lightness / [phone] Light / [phone] Auto",
+      "trace": "R-070"
+    },
+    {
+      "id": "design-light-adjust@1979,1541",
+      "board": "design-light-adjust",
+      "x": 1979,
+      "y": 1541,
+      "low": false,
+      "text": "[phone] 20 / [phone] 20 / [phone] 20",
+      "trace": "R-070"
+    },
+    {
+      "id": "design-light-adjust@521,1586",
+      "board": "design-light-adjust",
+      "x": 521,
+      "y": 1586,
+      "low": false,
+      "text": "[phone] Applied to 11 photos / [phone] Light / [phone] Color / [phone] Auto / [phone] Exposure / [phone] AI Exposure",
+      "trace": "R-042, R-065"
+    },
+    {
+      "id": "design-light-adjust@720,1673",
+      "board": "design-light-adjust",
+      "x": 720,
+      "y": 1673,
+      "low": false,
+      "text": "[phone] 33 / [phone] Details / [phone] Contrast / [phone] Hightlight",
+      "trace": "R-065"
+    },
+    {
+      "id": "design-light-adjust@890,1720",
+      "board": "design-light-adjust",
+      "x": 890,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Light / [phone] Color / [phone] Auto / [phone] Exposure",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1019,1720",
+      "board": "design-light-adjust",
+      "x": 1019,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Details / [phone] AI Exposure / [phone] Contrast / [phone] Hightlight",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1287,1720",
+      "board": "design-light-adjust",
+      "x": 1287,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Light / [phone] Color / [phone] Auto / [phone] Exposure",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1416,1720",
+      "board": "design-light-adjust",
+      "x": 1416,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Details / [phone] AI Exposure / [phone] Contrast / [phone] Hightlight",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1801,1720",
+      "board": "design-light-adjust",
+      "x": 1801,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Color / [phone] Details / [phone] Exposure / [phone] AI Exposure / [phone] Contrast",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@2140,1720",
+      "board": "design-light-adjust",
+      "x": 2140,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Light / [phone] Color / [phone] Auto / [phone] Exposure",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@2269,1720",
+      "board": "design-light-adjust",
+      "x": 2269,
+      "y": 1720,
+      "low": false,
+      "text": "[phone] Details / [phone] AI Exposure / [phone] Contrast / [phone] Hightlight",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@1923,1801",
+      "board": "design-light-adjust",
+      "x": 1923,
+      "y": 1801,
+      "low": false,
+      "text": "[phone] Hightlight",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@41,1845",
+      "board": "design-light-adjust",
+      "x": 41,
+      "y": 1845,
+      "low": false,
+      "text": "[phone] Crop & Rotate",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-adjust@162,1845",
+      "board": "design-light-adjust",
+      "x": 162,
+      "y": 1845,
+      "low": false,
+      "text": "[phone] Adjustment / [phone] AI Enhance",
+      "trace": "Q-8"
+    },
+    {
+      "id": "design-light-enhance@0,2091",
+      "board": "design-light-enhance",
+      "x": 0,
+      "y": 2091,
+      "low": false,
+      "text": "Batch Edit Room › AI Enhance（批次）",
+      "trace": "label: row title"
+    },
+    {
+      "id": "design-light-entry@0,-94",
+      "board": "design-light-entry",
+      "x": 0,
+      "y": -94,
+      "low": false,
+      "text": "Entry: Launcher › Edit（批次 Tab）",
+      "trace": "label: row title"
+    },
+    {
+      "id": "design-light-save@25,3363",
+      "board": "design-light-save",
+      "x": 25,
+      "y": 3363,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-light-save@424,3363",
+      "board": "design-light-save",
+      "x": 424,
+      "y": 3363,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-light-save@823,3363",
+      "board": "design-light-save",
+      "x": 823,
+      "y": 3363,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] Save 12 photos",
+      "trace": "R-111"
+    },
+    {
+      "id": "design-light-save@1621,3363",
+      "board": "design-light-save",
+      "x": 1621,
+      "y": 3363,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-light-save@1871,3408",
+      "board": "design-light-save",
+      "x": 1871,
+      "y": 3408,
+      "low": false,
+      "text": "[phone] 100",
+      "trace": "Q-17"
+    },
+    {
+      "id": "design-light-save@542,3659",
+      "board": "design-light-save",
+      "x": 542,
+      "y": 3659,
+      "low": false,
+      "text": "[phone] Saving 3/20 / [phone] Please do not leave this page or quit / [phone] the app.",
+      "trace": "R-108"
+    },
+    {
+      "id": "design-light-save@1636,3729",
+      "board": "design-light-save",
+      "x": 1636,
+      "y": 3729,
+      "low": false,
+      "text": "[phone] Discard changes? / [phone] Your edits to these photos will be lost. / [phone] Discard",
+      "trace": "R-125"
+    },
+    {
+      "id": "design-light-save@1816,3817",
+      "board": "design-light-save",
+      "x": 1816,
+      "y": 3817,
+      "low": false,
+      "text": "[phone] Keep Editing",
+      "trace": "R-125"
+    },
+    {
+      "id": "design-light-save@1752,4017",
+      "board": "design-light-save",
+      "x": 1752,
+      "y": 4017,
+      "low": false,
+      "text": "[phone] Enhance / [phone] Maximize detaill and clarity with advanced AI.",
+      "trace": "R-075"
+    },
+    {
+      "id": "design-light-save@929,4089",
+      "board": "design-light-save",
+      "x": 929,
+      "y": 4089,
+      "low": false,
+      "text": "[phone] Edit Next Batch",
+      "trace": "R-111"
+    },
+    {
+      "id": "design-light-save@41,4093",
+      "board": "design-light-save",
+      "x": 41,
+      "y": 4093,
+      "low": false,
+      "text": "[phone] Crop & Rotate",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-light-save@162,4093",
+      "board": "design-light-save",
+      "x": 162,
+      "y": 4093,
+      "low": false,
+      "text": "[phone] Adjustment / [phone] AI Enhance",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-light-save@440,4093",
+      "board": "design-light-save",
+      "x": 440,
+      "y": 4093,
+      "low": false,
+      "text": "[phone] Crop & Rotate / [phone] Adjustment",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "design-light-save@677,4093",
+      "board": "design-light-save",
+      "x": 677,
+      "y": 4093,
+      "low": false,
+      "text": "[phone] AI Enhance",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@16711,9911",
+      "board": "pm-adjust-strip-proposal",
+      "x": 16711,
+      "y": 9911,
+      "low": false,
+      "text": "提案一、Color › HSL / Curve：現況 + 縮圖列 vs 提案 A vs 提案 B；草稿，尚未寫進 spec",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@18517,9922",
+      "board": "pm-adjust-strip-proposal",
+      "x": 18517,
+      "y": 9922,
+      "low": false,
+      "text": "RD 實作提案一 / 收合時多一條空白： ︿ 自己獨佔一條灰色橫條（大約 35px），夾在縮圖列和 Light / Color / Details 之間，什麼都沒放，等於白白吃掉照片的高度。 / ︿ 卡在中間： 它不貼著 panel，也不屬於縮圖列，看不出是在收誰，位置也像是被擠在兩塊中間。 / 現況（RD 實作方式）",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@20212,9926",
+      "board": "pm-adjust-strip-proposal",
+      "x": 20212,
+      "y": 9926,
+      "low": false,
+      "text": "提案二、Color › HSL / Curve：收合 ^ button UI 併入縮圖列；草稿，尚未寫進 spec",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@20212,10198",
+      "board": "pm-adjust-strip-proposal",
+      "x": 20212,
+      "y": 10198,
+      "low": false,
+      "text": "提案二 · ﹀ 收進縮圖列右側",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@16711,10228",
+      "board": "pm-adjust-strip-proposal",
+      "x": 16711,
+      "y": 10228,
+      "low": false,
+      "text": "現況 + 縮圖列",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17220,10228",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17220,
+      "y": 10228,
+      "low": false,
+      "text": "提案 A · 縮小縮圖列",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17729,10228",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17729,
+      "y": 10228,
+      "low": false,
+      "text": "提案 B · 拖曳時隱藏縮圖列",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@18529,10737",
+      "board": "pm-adjust-strip-proposal",
+      "x": 18529,
+      "y": 10737,
+      "low": false,
+      "text": "[phone] 空白＋﹀ 卡在中間",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17909,10742",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17909,
+      "y": 10742,
+      "low": false,
+      "text": "[phone] 拖曳中：縮圖列隱藏",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@20212,11117",
+      "board": "pm-adjust-strip-proposal",
+      "x": 20212,
+      "y": 11117,
+      "low": false,
+      "text": "拿掉那條空白，縮圖列直接貼在 panel 上緣，﹀ 放在縮圖列最右邊，跟著 panel 一起移動，是 panel 的把手；照片下緣只被蓋住約 20px（現況約 62px）。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@18517,11143",
+      "board": "pm-adjust-strip-proposal",
+      "x": 18517,
+      "y": 11143,
+      "low": false,
+      "text": "縮圖列和 panel 之間多一條空白，﹀ 卡在中間，看不出是在收合縮圖列還是 panel。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@16711,11147",
+      "board": "pm-adjust-strip-proposal",
+      "x": 16711,
+      "y": 11147,
+      "low": false,
+      "text": "縮圖列（62px）疊在照片下緣：照片可見高度約 232 → 170px，少了約 27%。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17220,11147",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17220,
+      "y": 11147,
+      "low": false,
+      "text": "縮圖 40px、縮圖列 48px：照片可見約 184px（少約 21%）。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17729,11147",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17729,
+      "y": 11147,
+      "low": false,
+      "text": "拖滑桿／曲線點時縮圖列淡出，照片回到原本約 232px；放開後淡入。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@20212,11335",
+      "board": "pm-adjust-strip-proposal",
+      "x": 20212,
+      "y": 11335,
+      "low": false,
+      "text": "提案二 · ﹀ 收進縮圖列右側",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@18517,11361",
+      "board": "pm-adjust-strip-proposal",
+      "x": 18517,
+      "y": 11361,
+      "low": false,
+      "text": "現況（RD 實作方式）",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@16711,11365",
+      "board": "pm-adjust-strip-proposal",
+      "x": 16711,
+      "y": 11365,
+      "low": false,
+      "text": "現況 + 縮圖列",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17220,11365",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17220,
+      "y": 11365,
+      "low": false,
+      "text": "提案 A · 縮小縮圖列",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17729,11365",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17729,
+      "y": 11365,
+      "low": false,
+      "text": "提案 B · 拖曳時隱藏縮圖列",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@19275,11869",
+      "board": "pm-adjust-strip-proposal",
+      "x": 19275,
+      "y": 11869,
+      "low": false,
+      "text": "空白＋﹀ 卡在中間",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17945,11967",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17945,
+      "y": 11967,
+      "low": false,
+      "text": "[phone] 拖曳中：縮圖列隱藏",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@20212,12254",
+      "board": "pm-adjust-strip-proposal",
+      "x": 20212,
+      "y": 12254,
+      "low": false,
+      "text": "拿掉那條空白，縮圖列直接貼在 panel 上緣，﹀ 放在縮圖列最右邊，跟著 panel 一起移動，是 panel 的把手；照片下緣只被蓋住約 20px（現況約 62px）。 / 收合狀態同理：拿掉 ︿ 那條空白，︿ 放在縮圖列最右邊，縮圖列直接貼著 Light / Color / Details。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@18517,12280",
+      "board": "pm-adjust-strip-proposal",
+      "x": 18517,
+      "y": 12280,
+      "low": false,
+      "text": "縮圖列和 panel 之間多一條空白，﹀ 卡在中間，看不出是在收合縮圖列還是 panel。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@16711,12284",
+      "board": "pm-adjust-strip-proposal",
+      "x": 16711,
+      "y": 12284,
+      "low": false,
+      "text": "縮圖列（62px）疊在照片下緣：照片可見高度約 232 → 170px，少了約 27%。 / 補充：畫面上已有收合 panel 的「﹀」按鈕，用戶想看大圖時可先收合 panel；這是現行行為，不需新設計。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17220,12284",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17220,
+      "y": 12284,
+      "low": false,
+      "text": "縮圖 40px、縮圖列 48px：照片可見約 184px（少約 21%）。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-adjust-strip-proposal@17729,12284",
+      "board": "pm-adjust-strip-proposal",
+      "x": 17729,
+      "y": 12284,
+      "low": false,
+      "text": "拖滑桿／曲線點時縮圖列淡出，照片回到原本約 232px；放開後淡入。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-apply-all-options@-1270,11557",
+      "board": "pm-apply-all-options",
+      "x": -1270,
+      "y": 11557,
+      "low": false,
+      "text": "Apply to all — 一次性按鈕的視覺方案（草稿，給 PM 選） / 共通：按一下 = 以目前照片為來源，把這個 feature 的設定套到其他照片；套用後跳 toast「已套用到 11 張」。 / A. Icon 圓鈕（右上） / 原本的 pill 換成 36px 圓形 icon 按鈕，跟左上 ⓘ 成對。最省空間；第一次進 room 顯示一次 tooltip「Apply to all」說明。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-apply-all-options@-820,11667",
+      "board": "pm-apply-all-options",
+      "x": -820,
+      "y": 11667,
+      "low": false,
+      "text": "B. Icon + 文字（右上，半透明） / 保留文字，改成半透明深色 pill＋白色 icon，不搶照片。新用戶看得懂，視覺比實心橘色輕。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-apply-all-options@-370,11667",
+      "board": "pm-apply-all-options",
+      "x": -370,
+      "y": 11667,
+      "low": false,
+      "text": "C. 放進縮圖列最前面 / 縮圖列最左放一格 icon tile。語意最直接：把這張的設定套到這一排照片。右上只留 ⓘ，畫面最乾淨。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-apply-all-options@80,11667",
+      "board": "pm-apply-all-options",
+      "x": 80,
+      "y": 11667,
+      "low": false,
+      "text": "D. 套用後的回饋（A/B/C 共用） / 按下後跳 toast「已套用到 11 張」，同步的縮圖右下出現小勾。之後微調某張，那張的勾消失，表示和來源不同步。",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-apply-all-options@229,12287",
+      "board": "pm-apply-all-options",
+      "x": 229,
+      "y": 12287,
+      "low": false,
+      "text": "[phone] 已套用到 11 張",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-apply-all-options@80,12667",
+      "board": "pm-apply-all-options",
+      "x": 80,
+      "y": 12667,
+      "low": false,
+      "text": "例：第 4 張微調過 → 沒有勾",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-background@-1297,-521",
+      "board": "pm-background",
+      "x": -1297,
+      "y": -521,
+      "low": false,
+      "text": "目的：批次編輯讓用戶從「單張修圖」升級到『建立修圖快捷處理』，AI Enhance 包在 bath editing 中增加用戶訂閱意願。競品如 Meitu、Fotor 都有支援。",
+      "trace": "label: the feature's purpose (why batch editing and AI Enhance in it); no behaviour"
+    },
+    {
+      "id": "pm-credit@11066,682",
+      "board": "pm-credit",
+      "x": 11066,
+      "y": 682,
+      "low": false,
+      "text": "• 不適用：AI Enhance 沒有扣點機制，批次不會遇到點數不足 [DR-11][DR-11b]",
+      "trace": "R-078"
+    },
+    {
+      "id": "pm-crop-apply-rule@16739,193",
+      "board": "pm-crop-apply-rule",
+      "x": 16739,
+      "y": 193,
+      "low": false,
+      "text": "美圖 crop · Apply to all 實測",
+      "trace": "label: board title (Meitu test)"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,385",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 385,
+      "low": false,
+      "text": "美圖行為摘要：同步「比例 + 相對大小 + 相對位置」，Free 也一樣 / • 比例：其他張用同比例；Free 拉出的框也視為一個自訂比例同步。 / • 相對大小：框佔該張最大框的比例同步（C8 約 56%、C10 約 72%），不是同步 px。 / • 相對位置：只有「有移動空間的方向」會吃到位置；沒空間的方向置中。 / • 手動輸入 px：範圍 238 px ～ 該張原圖尺寸，超出跳 toast。 / ※ 相對大小為截圖目測推算，誤差約 ±5%。 / 👉 PhD 決定：同步「比例 + 相對位置」，不同步大小（其他張一律用最大框）。",
+      "trace": "label: Meitu's behaviour (competitor test summary); PhD's rule is the 「✅ 結論」 block, traced on its own"
+    },
+    {
+      "id": "pm-crop-apply-rule@16805,1061",
+      "board": "pm-crop-apply-rule",
+      "x": 16805,
+      "y": 1061,
+      "low": false,
+      "text": "PhD crop · Apply to all：同步「比例 + 相對位置」，不同步框的大小",
+      "trace": "R-047, R-048"
+    },
+    {
+      "id": "pm-crop-apply-rule@16805,1247",
+      "board": "pm-crop-apply-rule",
+      "x": 16805,
+      "y": 1247,
+      "low": false,
+      "text": "• 目前這張：保留使用者調整後的框（大小、位置都不變）。 / • 其他張：一律使用該比例的「最大框」，再依目前這張的相對位置擺放。 / • 最大框 = 在選定比例下，該張照片能裁出的最大範圍；寬或高其中一邊貼齊原圖，只切掉比例不合的那一塊。 / • 輸出尺寸依各張原圖計算，各張 px 不同屬預期行為。 / • 套用時覆蓋其他張原本的裁剪結果，一律從原圖重算。 / 二、相對位置 / • 水平位置 = 框左邊距 ÷（原圖寬 − 框寬）；垂直位置 = 框上邊距 ÷（原圖高 − 框高）。0 = 貼左／上，0.5 = 置中，1 = 貼右／下。 / • 只有「有移動空間的方向」會吃到位置值；沒有移動空間的方向置中。 / • 來源某方向沒有移動空間（分母為 0）時，該方向視為 0.5（置中）。 / 三、各比例選項 / • 一般比例（Square、2:3、3:2…、Social Media）：依上述規則。 / • Free：拉出的框視為自訂比例，同步「比例 + 相對位置」，其他張用該比例的最大框。 / • Original：每張回到自己的原始比例，不裁切。 / • 比例與原圖相同：最大框等於整張，不裁切。 / • 手動輸入 px：可輸入範圍 238 px ～ 該張原圖寬／高，超出跳 toast；Apply to all 時只取其比例，不同步 px 數值。 / 四、範例（C8：在海景把 1:1 框縮到 865×865 放右下） / • 海景（來源）：維持 865×865，右下。 / • 手扶梯 2:3（1706×2559）：1706×1706 最大框，貼底。（美圖：縮成約 56% 小框） / • 101 4:5（1576×1970）：1576×1576 最大框，貼底。（美圖：縮成約 56% 小框） / • 茶杯 1:1：整張，不裁切。（美圖：縮成約 56%，畫面放大變糊） / 👉 與美圖差異：美圖會連「相對大小」一起同步，小圖容易被裁成局部或放大變糊；PhD 不同步大小，其他張只切掉比例不合的部分，主體大多保留。 / 五、Rotate 與 Undo / • Rotate：Apply to all 時同步。90° 旋轉、水平／垂直翻轉直接套用到每張；角度微調同步相同角度，為避免黑邊而自動縮小的框由各張依自身尺寸計算，再套用上述裁切規則（比例 + 相對位置）。 / • Undo（Apply to all 後回到編輯頁按 Undo）：比照已決的小 room undo / redo 做法，一次 Undo 撤銷「全部照片」的該次套用；Redo 同理一次還原全部。",
+      "trace": "R-047, R-048, R-049, R-050, R-051, R-052, R-053, R-034, R-035, R-054, R-055"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,2995",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 2995,
+      "low": false,
+      "text": "C1｜單張預設框 / 操作：關閉 Apply to all，在 ④ 海景選 3:4。 / 美圖結果：最大框 1151×1535，高度貼滿、置中。 / 👉 PhD 相同。",
+      "trace": "R-046"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,3744",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 3744,
+      "low": false,
+      "text": "C5｜只選比例，不動框 / 操作：開 Apply to all，在 ① 手扶梯選 3:2 → 套用。 / 美圖結果：四張都是各自的 3:2 最大框，置中。 / 👉 PhD 相同。",
+      "trace": "R-046"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,4493",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 4493,
+      "low": false,
+      "text": "C6｜橫圖拖到最左 / 操作：在 ④ 海景選 Square，拖到最左 → 套用。 / 美圖結果：其他三張置中。但 ①②③ 套 1:1 時都沒有左右移動空間，所以這個 case 驗證不出位置是否同步。 / 👉 PhD 相同（沒空間的方向置中）。",
+      "trace": "R-048"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,5242",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 5242,
+      "low": false,
+      "text": "C7｜直圖拖到最下 / 操作：在 ② 101 選 Square，拖到最下 → 套用。 / 美圖結果：① 手扶梯框偏下（比 C6 下移）→ 垂直位置有同步；④ 海景沒有上下空間 → 置中。 / 👉 PhD 相同。",
+      "trace": "R-048"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,5991",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 5991,
+      "low": false,
+      "text": "C8｜縮小框 + 移到右下 / 操作：在 ④ 海景選 Square，縮到 865×865（約最大框 56%）放右下 → 套用。 / 美圖結果：其他張都放大成局部、偏右下；框約為各自最大框的 56%（茶杯字樣放大約 1.7 倍）。→ 同步相對大小，不是 px。 / 👉 PhD 不同：其他張用最大框，只同步位置（偏右下）。",
+      "trace": "R-047, R-048"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,6740",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 6740,
+      "low": false,
+      "text": "C9｜比例相同的照片 / 操作：在 ④ 海景選 Square → 套用，看 ③ 茶杯。 / 美圖結果：茶杯維持原圖，不裁切。（肉眼確認，無截圖） / 👉 PhD 相同。",
+      "trace": "R-053"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,7151",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 7151,
+      "low": false,
+      "text": "C10｜Free + 移到左上 / 操作：在 ① 手扶梯選 Free，拉成 1236×611（約寬度 72%）放左上 → 套用。 / 美圖結果：其他張都變成約 2:1、貼左上，寬度約各自原圖 72%（海景右下角剛好露出大樓）。→ Free 也同步比例 + 相對大小 + 位置。 / 👉 PhD：Free 視為自訂比例同步比例 + 位置，其他張用最大框。",
+      "trace": "R-051"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,7982",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 7982,
+      "low": false,
+      "text": "操作：全部 3:2 後，在任一張選 Original → 套用。 / 美圖結果：四張各自回到原始比例。（肉眼確認，無截圖） / 👉 PhD 相同。",
+      "trace": "R-052"
+    },
+    {
+      "id": "pm-crop-apply-rule@16799,8311",
+      "board": "pm-crop-apply-rule",
+      "x": 16799,
+      "y": 8311,
+      "low": false,
+      "text": "C12｜手動輸入超出範圍的 px / 操作：在 ④ 海景點鉛筆，輸入 3000×3000。 / 美圖結果：跳 toast「Width and height exceed the range」；欄位下方顯示範圍 238～2730 / 238～1535 px（= 該張原圖尺寸）。 / 👉 PhD 比照：限制範圍 + toast；套用到其他張時只取比例。",
+      "trace": "R-034, R-035 (toast copy: Q-5)"
+    },
+    {
+      "id": "pm-error-handle@12166,682",
+      "board": "pm-error-handle",
+      "x": 12166,
+      "y": 682,
+      "low": false,
+      "text": "• 部分失敗：跑完全部才一次總結，不逐張跳 Dialog；失敗的圖片可重試 [D1-04] / • 沒有取消，要等全部做完（同今天所有 server task） [D1-03] / • App 被殺：Batch Edit Room 不見（同今天 sync 任務），已做的 AI Enhance 結果也不會留下（Standard 不存到 My AI Artwork） [D1-05][D1-10] / • 斷網：視同失敗，用 Retry Failed 重跑；切背景：暫停，回來後繼續 [D1-05]",
+      "trace": "R-098, R-083, R-106, R-107, R-103, R-105"
+    },
+    {
+      "id": "pm-flow-1@6404,743",
+      "board": "pm-flow-1",
+      "x": 6404,
+      "y": 743,
+      "low": false,
+      "text": "• 幫誰：旅遊／活動一組照片、賣家商品照、社群 carousel；競品 Meitu、Fotor 都有 [D0-01] / • 名稱 Batch Edit／Batch Edit Room；只出現在 Launcher「Edit」Picker 與 AI Enhance Shortcut Picker，Edit Room 內不出現 [D0-04][D0-04b] / • iOS + Android 同步，26'11/E [D0-05] / • 今天 app 沒有任何批次編輯；本版只做 AI Enhance／Crop & Rotate／Adjustment，Filter／Preset 看用量再加 [D0-07][D0-06][DR-03] / • 差異化：Meitu、Fotor 批次都沒有 AI Enhance；批次本身免費，AI Enhance 也不扣點 [D0-08][D5-01b]",
+      "trace": "R-001, R-002, R-003; the audience line and 「iOS + Android 同步」 are labels"
+    },
+    {
+      "id": "pm-flow-1@6646,1002",
+      "board": "pm-flow-1",
+      "x": 6646,
+      "y": 1002,
+      "low": false,
+      "text": "Entry: Launcher › Edit（批次 Tab）",
+      "trace": "label: row title"
+    },
+    {
+      "id": "pm-flow-1@9140,1167",
+      "board": "pm-flow-1",
+      "x": 9140,
+      "y": 1167,
+      "low": false,
+      "text": "icon 設計方向可參考 Meitu",
+      "trace": "R-014 (icon direction and deeplink; Q-3)"
+    },
+    {
+      "id": "pm-flow-2@6646,2166",
+      "board": "pm-flow-2",
+      "x": 6646,
+      "y": 2166,
+      "low": false,
+      "text": "Batch Edit Room › Adjustment / [phone] 9:41",
+      "trace": "label: row title"
+    },
+    {
+      "id": "pm-flow-2@7102,2242",
+      "board": "pm-flow-2",
+      "x": 7102,
+      "y": 2242,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-2@7532,2242",
+      "board": "pm-flow-2",
+      "x": 7532,
+      "y": 2242,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] All",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-2@7848,2290",
+      "board": "pm-flow-2",
+      "x": 7848,
+      "y": 2290,
+      "low": false,
+      "text": "[phone] All",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-2@7634,2702",
+      "board": "pm-flow-2",
+      "x": 7634,
+      "y": 2702,
+      "low": false,
+      "text": "[phone] Applied to 11 photos",
+      "trace": "R-042"
+    },
+    {
+      "id": "pm-flow-2@7416,2823",
+      "board": "pm-flow-2",
+      "x": 7416,
+      "y": 2823,
+      "low": false,
+      "text": "[phone] 33 / [phone] Bright / [phone] MidTone",
+      "trace": "R-065"
+    },
+    {
+      "id": "pm-flow-2@7846,2823",
+      "board": "pm-flow-2",
+      "x": 7846,
+      "y": 2823,
+      "low": false,
+      "text": "[phone] 33 / [phone] Bright / [phone] MidTone",
+      "trace": "R-065"
+    },
+    {
+      "id": "pm-flow-2@7194,2869",
+      "board": "pm-flow-2",
+      "x": 7194,
+      "y": 2869,
+      "low": false,
+      "text": "[phone] Light / [phone] Color / [phone] Details / [phone] Auto / [phone] Exposure / [phone] Contrast / [phone] Hightlight",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-2@7624,2869",
+      "board": "pm-flow-2",
+      "x": 7624,
+      "y": 2869,
+      "low": false,
+      "text": "[phone] Light / [phone] Color / [phone] Details / [phone] Auto / [phone] Exposure / [phone] Contrast / [phone] Hightlight",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-2@6689,3030",
+      "board": "pm-flow-2",
+      "x": 6689,
+      "y": 3030,
+      "low": false,
+      "text": "[phone] Crop & Rotate / [phone] Adjustment",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-2@6905,3030",
+      "board": "pm-flow-2",
+      "x": 6905,
+      "y": 3030,
+      "low": false,
+      "text": "[phone] AI Enhance",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-3@6646,3330",
+      "board": "pm-flow-3",
+      "x": 6646,
+      "y": 3330,
+      "low": false,
+      "text": "Batch Edit Room › AI Enhance（批次）",
+      "trace": "label: row title"
+    },
+    {
+      "id": "pm-flow-4@6646,4494",
+      "board": "pm-flow-4",
+      "x": 6646,
+      "y": 4494,
+      "low": false,
+      "text": "Entry: Launcher Shortcut › AI Enhance（批次 Tab）",
+      "trace": "label: row title"
+    },
+    {
+      "id": "pm-flow-4@8862,4974",
+      "board": "pm-flow-4",
+      "x": 8862,
+      "y": 4974,
+      "low": false,
+      "text": "[phone] 沿用既有 Premium IAP 頁（本檔無畫面）",
+      "trace": "R-086"
+    },
+    {
+      "id": "pm-flow-5@6646,5658",
+      "board": "pm-flow-5",
+      "x": 6646,
+      "y": 5658,
+      "low": false,
+      "text": "批次 Tab 只選 1 張 → 單張 Edit Room",
+      "trace": "label: row title"
+    },
+    {
+      "id": "pm-flow-5@7506,5762",
+      "board": "pm-flow-5",
+      "x": 7506,
+      "y": 5762,
+      "low": false,
+      "text": "單張 Edit Room 按 Replace photo → Photo Picker，可切到批次 Tab 改走 Batch Edit [D1-08c]",
+      "trace": "R-013"
+    },
+    {
+      "id": "pm-flow-6@6673,6897",
+      "board": "pm-flow-6",
+      "x": 6673,
+      "y": 6897,
+      "low": false,
+      "text": "[phone] 9:41",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-6@7533,6897",
+      "board": "pm-flow-6",
+      "x": 7533,
+      "y": 6897,
+      "low": false,
+      "text": "[phone] 9:41 / [phone] Saved 12 photos",
+      "trace": "R-111"
+    },
+    {
+      "id": "pm-flow-6@7141,7257",
+      "board": "pm-flow-6",
+      "x": 7141,
+      "y": 7257,
+      "low": false,
+      "text": "[phone] Saving 3 / 20 / [phone] Please do not leave this page or quit / [phone] the app.",
+      "trace": "R-108"
+    },
+    {
+      "id": "pm-flow-6@7643,7647",
+      "board": "pm-flow-6",
+      "x": 7643,
+      "y": 7647,
+      "low": false,
+      "text": "[phone] Edit Next Batch",
+      "trace": "R-114"
+    },
+    {
+      "id": "pm-flow-6@6689,7686",
+      "board": "pm-flow-6",
+      "x": 6689,
+      "y": 7686,
+      "low": false,
+      "text": "[phone] Crop & Rotate / [phone] Adjustment",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-6@6905,7686",
+      "board": "pm-flow-6",
+      "x": 6905,
+      "y": 7686,
+      "low": false,
+      "text": "[phone] AI Enhance",
+      "trace": "ui: phone mockup text (status bar time, tab and tool labels, sample counts) checked by the rows of its screen"
+    },
+    {
+      "id": "pm-flow-7@6646,7986",
+      "board": "pm-flow-7",
+      "x": 6646,
+      "y": 7986,
+      "low": false,
+      "text": "返回：離開 Batch Edit",
+      "trace": "label: row title"
+    },
+    {
+      "id": "pm-flow-7@7936,8222",
+      "board": "pm-flow-7",
+      "x": 7936,
+      "y": 8222,
+      "low": false,
+      "text": "只有做過編輯才跳 Discard Dialog；還沒做任何編輯時，Home 直接回 Launcher、Replace photo 直接回 Photo Picker 批次 Tab [D1-08] / Discard 之後去哪，看是從哪個按鈕來： / • Replace photo → 回 Photo Picker 批次 Tab（保留之前選過的照片，編輯全部丟掉） [D1-08b] / • Home → 回 Launcher [D1-08] / 從 Save page 按 Edit Next Batch 進 Picker 時，按 ‹ 返回 → 回 Batch Edit Room，顯示原本的編輯狀態（day-1 照 Android 單張做法；iOS 單張今天是回 Launcher） [D1-07]",
+      "trace": "R-123, R-124, R-114"
+    },
+    {
+      "id": "pm-flow-7@6646,9140",
+      "board": "pm-flow-7",
+      "x": 6646,
+      "y": 9140,
+      "low": false,
+      "text": "— 藍線＝去程（點擊觸發）　— 紅線＝回程（✓ / ‹ / 取消 / Discard 返回）",
+      "trace": "label: row title"
+    },
+    {
+      "id": "pm-header@6366,462",
+      "board": "pm-header",
+      "x": 6366,
+      "y": 462,
+      "low": false,
+      "text": "與 Edit Room 的差異：Edit Room 一次修一張、什麼工具都能用；Batch Edit 一次修 N 張，只提供能『同一個設定套到每張』的三種調整，用一次設定換 N 張結果，再個別微調。 [D0-03]",
+      "trace": "R-002"
+    },
+    {
+      "id": "pm-reference@4248,813",
+      "board": "pm-reference",
+      "x": 4248,
+      "y": 813,
+      "low": false,
+      "text": "Picker 可選 image or batch；Apply to All 預設勾選並記住；Crop Free 比例可 Apply to All / Meitu 沒有支援 gen AI feature in batch editing / Meitu 沒有 gen ai feature 沒這個問題 / Meitu 沒有 gen ai feature 沒這個問題 / batch editing adjust 完後，直接原地存檔，一次存所有張數，會有像 1/10 儲存的進度；儲存的時候 Meitu 會 show 儲存 dialog 1/2..；4 張只存有 batch edit 的 2 張，4 張都沒 edit 仍可 save 並顯示 4 photo / 跟進：Picker Tab、Apply to All、Crop、存檔進度「Saving k / N」；差異化：批次 AI Enhance（Meitu 批次無 Gen AI）",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-reference@3688,865",
+      "board": "pm-reference",
+      "x": 3688,
+      "y": 865,
+      "low": false,
+      "text": "批次 AI 畫質增強怎麼收費 [D5-01] / 批次時要等多久、能不能離開 [D5-01] / 部分失敗怎麼處理 [D5-01] / 存檔方式 [D5-01][D1-06] / 我們的立場 [D5-01b][D0-08]",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-reference@5008,865",
+      "board": "pm-reference",
+      "x": 5008,
+      "y": 865,
+      "low": false,
+      "text": "Fotor 沒有 AI Enhance batch editing, only batch upscaler & batch bg remover, 鎖 premium / Fotor 無法得知沒有買方案 / Fotor 無法得知沒有買方案 / Fotor 無法得知沒有買方案 / 差異化：批次本身免費，AI Enhance 也不扣點（Fotor 鎖 Premium）",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-reference@4356,2385",
+      "board": "pm-reference",
+      "x": 4356,
+      "y": 2385,
+      "low": false,
+      "text": "沒有 v apply all, 除了該張 phto，其他會維持原本的 aspect ratio",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-reference@3772,3831",
+      "board": "pm-reference",
+      "x": 3772,
+      "y": 3831,
+      "low": false,
+      "text": "Partial 狀態下只會 adjust 1 photo (會跳 toast 告知 user)",
+      "trace": "older: PM draft proposals the PM marks 草稿 / 尚未寫進 spec / 給 PM 選 (Apply to all icon options; Adjustment strip proposals, Q-16) and the competitor Reference section"
+    },
+    {
+      "id": "pm-tbd@13230,1687",
+      "board": "pm-tbd",
+      "x": 13230,
+      "y": 1687,
+      "low": false,
+      "text": "Q1 ✅ 已決：AI Enhance 批次 day-1 不新增扣點 [DR-11] / ➡️ day-1 不做：維持不扣點，不 sync PhD PC 的批次扣點作法 / 主：Judy（與 Samuel 確認，10/30） / 原因：與 Samuel 討論，AI Enhance model 未來有機會換成 Nano Banana，成本可能降低，margin 再觀察",
+      "trace": "R-078"
+    },
+    {
+      "id": "pm-tbd@14320,1687",
+      "board": "pm-tbd",
+      "x": 14320,
+      "y": 1687,
+      "low": false,
+      "text": "Q2 ✅ 已決：批次 day-1 不鎖 Premium [D5-01b] / ➡️ day-1 不做：不參考 Meitu 選到第 13 張跳 IAP 的作法，批次照片上限維持 20 張、免費使用 / 主：Judy（與 Samuel 確認，10/30） / 原因：目前 Batch Editing 可用的 feature 還不夠多，等 feature 累積到一定量再評估要不要鎖 Premium",
+      "trace": "R-003"
+    },
+    {
+      "id": "pm-tbd@13669,1970",
+      "board": "pm-tbd",
+      "x": 13669,
+      "y": 1970,
+      "low": false,
+      "text": "If AI Enhance 收 credit / 左上角加 info / 比照 PhD PC 作法每 10 張 1 credit (不滿 10 張也同樣 consume 1 credit)",
+      "trace": "older: superseded options of TBD Q1 / Q2 (decided 10/30: no credits, no Premium lock, 20 photos free)"
+    },
+    {
+      "id": "pm-tbd@15161,1970",
+      "board": "pm-tbd",
+      "x": 15161,
+      "y": 1970,
+      "low": false,
+      "text": "batch editing 鎖 premium",
+      "trace": "older: superseded options of TBD Q1 / Q2 (decided 10/30: no credits, no Premium lock, 20 photos free)"
+    },
+    {
+      "id": "pm-tbd@15161,2114",
+      "board": "pm-tbd",
+      "x": 15161,
+      "y": 2114,
+      "low": false,
+      "text": "13+ 跳 IAP",
+      "trace": "older: superseded options of TBD Q1 / Q2 (decided 10/30: no credits, no Premium lock, 20 photos free)"
+    },
+    {
+      "id": "pm-tbd@15161,2258",
+      "board": "pm-tbd",
+      "x": 15161,
+      "y": 2258,
+      "low": false,
+      "text": "7+ 跳 IAP",
+      "trace": "older: superseded options of TBD Q1 / Q2 (decided 10/30: no credits, no Premium lock, 20 photos free)"
+    },
+    {
+      "id": "pm-tbd@13669,2290",
+      "board": "pm-tbd",
+      "x": 13669,
+      "y": 2290,
+      "low": false,
+      "text": "L4: 0.0015/image - cost down完",
+      "trace": "older: superseded options of TBD Q1 / Q2 (decided 10/30: no credits, no Premium lock, 20 photos free)"
+    },
+    {
+      "id": "pm-tracking@13266,682",
+      "board": "pm-tracking",
+      "x": 13266,
+      "y": 682,
+      "low": false,
+      "text": "• 主指標：進入比例＝批次進入 event ÷ 進 Picker [D0-02] / • 次指標：Batch session 存檔比例＝Photo_Result_Save [D0-02] / • 命名規則：event 三段 PascalCase（Xxx_Yyy_Zzz）、參數 snake_case，不符合會被兩平台丟掉 [D0-02] / 名稱待定（例 Batch_Edit_Enter）",
+      "trace": "R-133, R-135, R-137"
+    },
+    {
+      "id": "pm-tracking@13811,817",
+      "board": "pm-tracking",
+      "x": 13811,
+      "y": 817,
+      "low": false,
+      "text": "觸發時機 / Picker 切批次 Tab 並進 Batch Edit Room / 批次 AI Enhance，每張各送一次 / Batch session 存檔 / Batch Save page 點「Edit Next Batch」",
+      "trace": "R-133, R-134, R-135, R-136"
+    },
+    {
+      "id": "pm-tracking@14151,817",
+      "board": "pm-tracking",
+      "x": 14151,
+      "y": 817,
+      "low": false,
+      "text": "參數 / 值 / —（主指標分子）",
+      "trace": "R-133, R-134, R-135, R-136"
+    },
+    {
+      "id": "pm-tracking@14531,817",
+      "board": "pm-tracking",
+      "x": 14531,
+      "y": 817,
+      "low": false,
+      "text": "決策來源",
+      "trace": "R-133, R-134, R-135, R-136"
+    },
+    {
+      "id": "pm-tracking@13611,944",
+      "board": "pm-tracking",
+      "x": 13611,
+      "y": 944,
+      "low": false,
+      "text": "既有，新增 from 值＋參數 / 既有，不變",
+      "trace": "R-133, R-134, R-135, R-136"
+    },
+    {
+      "id": "pm-tracking@13281,1071",
+      "board": "pm-tracking",
+      "x": 13281,
+      "y": 1071,
+      "low": false,
+      "text": "名稱待定",
+      "trace": "R-133, R-134, R-135, R-136"
+    },
+    {
+      "id": "pm-tracking@14151,1071",
+      "board": "pm-tracking",
+      "x": 14151,
+      "y": 1071,
+      "low": false,
+      "text": "記點擊次數",
+      "trace": "R-133, R-134, R-135, R-136"
+    },
+    {
+      "id": "pm-ui-1@6841,9638",
+      "board": "pm-ui-1",
+      "x": 6841,
+      "y": 9638,
+      "low": false,
+      "text": "• Picker 上方新增 Tab「Single / Batch」，每次打開預設「Single」 [DR-01b] / • 單張 Tab 選 1 張 → 現有 Edit Room，流程不變 [DR-13] / • Launcher「Edit」與 AI Enhance Shortcut 兩個 Picker 用同一套 Tab [DR-01b][D0-04b] / • 比照 Meitu：Picker 可選 single or batch [DR-01]",
+      "trace": "R-004, R-005, R-006"
+    },
+    {
+      "id": "pm-ui-1@8301,9638",
+      "board": "pm-ui-1",
+      "x": 8301,
+      "y": 9638,
+      "low": false,
+      "text": "• 切到「Batch」Tab 才能多選，最多 20 張（兩平台一致） [DR-01] / • 縮圖顯示點選順序 1、2、3…，Batch Edit Room 照此順序排列 [D2-01] / • 底部新增：已選張數＋Next [DR-01] / • 埋點見【Tracking Event】 [D0-02]",
+      "trace": "R-007, R-008, R-009, R-133"
+    },
+    {
+      "id": "pm-ui-1@9761,9638",
+      "board": "pm-ui-1",
+      "x": 9761,
+      "y": 9638,
+      "low": false,
+      "text": "• 批次 Tab 只選 1 張按 Done → 自動走單張 Edit Room [DR-01b] / • 單張 Edit Room 流程同今天 [DR-13] / • 單張 Edit Room 按 Replace photo → Picker 可切到批次 Tab，改走 Batch Edit [D1-08c]",
+      "trace": "R-012, R-005, R-013"
+    },
+    {
+      "id": "pm-ui-1@11221,9638",
+      "board": "pm-ui-1",
+      "x": 11221,
+      "y": 9638,
+      "low": false,
+      "text": "• 選第 21 張：擋下並顯示 toast「Please pick at most 20 photos.」 [DR-01]",
+      "trace": "R-011"
+    },
+    {
+      "id": "pm-ui-2@6856,10790",
+      "board": "pm-ui-2",
+      "x": 6856,
+      "y": 10790,
+      "low": false,
+      "text": "•長得像現在的 Edit Room，底部只有三個 button：Crop & Rotate / Adjustment / AI Enhance；點進去比照現在各 feature room [D1-11] / •Top bar: Save 不變，最右是 Setting 按鈕 [D1-11] / •photo Picker 進來先落在這個主畫面；button 順序：Crop & Rotate → Adjustment → AI Enhance [D1-01] / • 縮圖列放主畫面，點縮圖切換照片；照片不能移除、也不能新增（縮圖沒有 ×） [D1-12][D1-09] / • 右上存檔 → Saving k / N → Batch Save page [D5-01b] / • 左上 Home：還沒做任何編輯 → 直接回 Launcher；有編輯 → Discard Dialog → Discard 後回 Launcher [D1-08] / • 左上 Replace photo：還沒做任何編輯 → 直接回 Photo Picker 批次 Tab；有編輯 → Discard Dialog → Discard 後回 Photo Picker 批次 Tab。兩種都保留之前選過的照片，有編輯時丟掉這次 Batch Edit 的所有編輯 [D1-08][D1-08b] / • 外層 Undo / Redo 也是每張照片各自一條：只作用在目前這張；從 room 按 ✓ 回來後，那次 room 對每張的修改在各自的歷史算一步 [DR-05][DR-05d] / • AI Enhance 的 Undo / Redo：在單張照片按 Undo 可退回 Enhance 前，只退那一張；想拿回結果按 Redo。退回後若又對那張做了其他修改，Redo 會被清掉，Enhance 結果拿不回來（可再進 AI Enhance room 重新 Enhance） [DR-10b][DR-12e]",
+      "trace": "R-024, R-025, R-026, R-027, R-108, R-123, R-124, R-028, R-029"
+    },
+    {
+      "id": "pm-ui-3@6856,11984",
+      "board": "pm-ui-3",
+      "x": 6856,
+      "y": 11984,
+      "low": false,
+      "text": "• 畫面比照現在的 Crop & Rotate room，panel 不含上方 title bar [D1-11][DR-03] / • 頂部同單張 Crop & Rotate：‹ ＋ 目前照片的輸出尺寸「W x H ✎」；切換照片時顯示該張的尺寸，點 ✎ 可手動輸入 px（範圍＝該張原圖尺寸，超出跳 toast）；按 Apply to all 時其他照片只同步比例，不同步 px [D1-11] / • 右上「Apply to all」按鈕：icon＋「All」，半透明深底膠囊；一次性按鈕（sync PDRM apply to all 作法）：點擊後以目前選取的照片為來源，把這個 feature 的設定套到所有其他照片 [DR-04] / • 套用後可點縮圖切換照片檢查或個別微調，微調只影響那一張 [DR-04] / • 修改後再按一次，以目前照片的最新設定重新套用到其他照片，批次縮圖列圖片需同步動態更新 [DR-04] / • 下方顯示批次縮圖列，點縮圖切換目前照片 [D1-12] / • 最外層 Batch Edit Room 有自己的 Undo / Redo [DR-05] / • 【NEW】Apply to all 按鈕新增 normal / disabled 兩種狀態，看「目前這張照片」決定 [DR-04] / ◦ 進 room、目前這張還沒有任何修改 → disabled / ◦ 目前這張有參數變動（且尚未套用）→ normal / ◦ 按下 Apply to all、套用完成 → disabled / ◦ 切換照片 → 依切過去的那張照片自己有沒有尚未套用的修改決定 / ◦ Undo 退回 Apply to all 那一步 → normal；Redo 重新套用 → disabled / • Crop 特例：手動輸入解析度（點 W x H ✎）時，Apply to all 只同步比例、不同步 px [DR-04] / ◦ 寬高有連接（鎖住比例）：只改尺寸、比例不變 → 沒有可同步的內容，維持 disabled / ◦ 寬高沒有連接：比例改變並切到 Free（自訂比例）→ normal，可把這個 Free 比例套到其他照片",
+      "trace": "R-032, R-033, R-034, R-035, R-036, R-037, R-038, R-036, R-040, R-041, R-043, R-044, R-045, R-061, R-028"
+    },
+    {
+      "id": "pm-ui-3@8316,11984",
+      "board": "pm-ui-3",
+      "x": 8316,
+      "y": 11984,
+      "low": false,
+      "text": "• 按 Apply to all 後：以目前這張為來源，把這個 room 的設定整組套到其他照片，畫面留在 room 裡 [DR-04][DR-04c] / • 跳 toast「Applied to x photos」，數字＝目前這張以外的照片數 [DR-04] / • 縮圖列顯示套用後的結果 [DR-04] / • Apply to all 在 room 的 Undo / Redo 歷史中算一步，按 Undo 一起退回所有照片 [DR-05b] / • 套用完成後「All」按鈕變 disabled，直到目前這張照片再有參數變動才變回 normal [DR-04]",
+      "trace": "R-042, R-043, R-055, R-036"
+    },
+    {
+      "id": "pm-ui-3@6856,12854",
+      "board": "pm-ui-3",
+      "x": 6856,
+      "y": 12854,
+      "low": false,
+      "text": "• Apply to all 只套比例＋旋轉角度＋翻轉，裁切框預設在每張置中；Free 比例也可套 [DR-07] / • Room 內只有一組 Undo / Redo（一條共用歷史），依操作順序記錄兩種步驟：① Apply to all（一次調整多張）② 單張單個參數編輯 [DR-05][DR-05b] / • Undo / Redo 依序退回／重做最近一步：Apply to all → 所有照片一起；單張編輯 → 只影響被編輯的那一張（不論目前選取哪張） [DR-05b] / • 切換照片不會清掉歷史 [DR-05e] / • Undo / Redo 的單張編輯不是目前選取的照片時，自動切到那張照片（縮圖列同步選取），讓用戶看到變化 [DR-05h] / • ✕：丟掉這次進 room 後所有照片的修改（含 Apply to all） [DR-05c] / • ✓：回 Batch Edit Room，這次 room 對每張的修改在該張的外層歷史算一步 [DR-05d]",
+      "trace": "R-048, R-054, R-051, R-056, R-057, R-058, R-059, R-060 (「centred」: Q-6)"
+    },
+    {
+      "id": "pm-ui-4@9346,13468",
+      "board": "pm-ui-4",
+      "x": 9346,
+      "y": 13468,
+      "low": false,
+      "text": "curve_hsl（展開 Curve / HSL 時縮圖列隱藏）",
+      "trace": "R-068"
+    },
+    {
+      "id": "pm-ui-4@10240,13575",
+      "board": "pm-ui-4",
+      "x": 10240,
+      "y": 13575,
+      "low": false,
+      "text": "• 展開 Color › Curve / HSL panel 時，批次縮圖列淡出且不能點（panel 為透明、疊在照片上，避免與曲線控制點／滑桿誤觸） [D1-12] / • 收合 panel，或切回一般滑桿工具（例如 Exposure）時，縮圖列再出現 [D1-12] / • 要換照片：先收合 panel，再點縮圖 [D1-12] / • 左圖 HSL、右圖 Curve 為現行畫面，示意縮圖列隱藏時的樣子；右上「All」照常顯示 [D1-12]",
+      "trace": "R-068, R-069"
+    },
+    {
+      "id": "pm-ui-4@6856,13582",
+      "board": "pm-ui-4",
+      "x": 6856,
+      "y": 13582,
+      "low": false,
+      "text": "• 比照 26'10/E Adjustment room，但不顯示 Subject Detection、不出現 AI Exposure [D1-11][DR-03][DR-06] / • 右上「Apply to all」按鈕：icon＋「All」，半透明深底膠囊；一次性按鈕（同 PDR），不是勾選框：點擊後以目前選取的照片為來源，把這個 feature 的設定套到其他照片 [DR-04] / • 套用後可點縮圖切換照片檢查或個別微調，微調只影響那一張 [DR-04] / • 修改後再按一次，以目前照片的最新設定重新套用到其他照片 [DR-04] / • 下方顯示批次縮圖列，點縮圖切換目前照片 [D1-12] / • 最外層 Batch Edit Room 有自己的 Undo / Redo [DR-05] / • 【NEW】Apply to all 按鈕新增 normal / disabled 兩種狀態，看「目前這張照片」決定 [DR-04] / ◦ 進 room、目前這張還沒有任何修改 → disabled / ◦ 目前這張有參數變動（且尚未套用）→ normal / ◦ 按下 Apply to all、套用完成 → disabled / ◦ 切換照片 → 依切過去的那張照片自己有沒有尚未套用的修改決定 / ◦ Undo 退回 Apply to all 那一步 → normal；Redo 重新套用 → disabled / • 展開 Color › Curve / HSL 時縮圖列淡出、不能點；收合 panel 或切回一般滑桿工具時再出現（見 curve_hsl） [D1-12]",
+      "trace": "R-065, R-037, R-044, R-045, R-061, R-038, R-036, R-040, R-041, R-068, R-028 (AI Exposure: Q-8)"
+    },
+    {
+      "id": "pm-ui-4@8316,13582",
+      "board": "pm-ui-4",
+      "x": 8316,
+      "y": 13582,
+      "low": false,
+      "text": "• 按 Apply to all 後：以目前這張為來源，把這個 room 的設定整組套到其他照片，畫面留在 room 裡 [DR-04][DR-04c] / • 跳 toast「Applied to x photos」，數字＝目前這張以外的照片數 [DR-04] / • 縮圖列顯示套用後的結果 [DR-04] / • Apply to all 在 room 的 Undo / Redo 歷史中算一步，按 Undo 一起退回所有照片 [DR-05b] / • 套用完成後「All」按鈕變 disabled，直到目前這張照片再有參數變動才變回 normal [DR-04]",
+      "trace": "R-042, R-043, R-055, R-036"
+    },
+    {
+      "id": "pm-ui-4@6856,14242",
+      "board": "pm-ui-4",
+      "x": 6856,
+      "y": 14242,
+      "low": false,
+      "text": "◦ 例：第 1 張 Exposure +20 → 按 Apply to all → 12 張都 +20 → 切到第 3 張微調 Contrast +10（只有第 3 張）→ 回第 1 張改 Exposure +30 再按 → 其他張整組變成跟第 1 張一樣，第 3 張的 Contrast +10 不保留 [DR-04][DR-04c] / • Room 內只有一組 Undo / Redo（一條共用歷史），依操作順序記錄兩種步驟：① Apply to all（一次調整多張）② 單張單個參數編輯 [DR-05][DR-05b] / • Undo / Redo 依序退回／重做最近一步：Apply to all → 所有照片一起；單張編輯 → 只影響被編輯的那一張（不論目前選取哪張） [DR-05b] / • 切換照片不會清掉歷史 [DR-05e] / • Undo / Redo 的單張編輯不是目前選取的照片時，自動切到那張照片（縮圖列同步選取），讓用戶看到變化 [DR-05h] / • ✕：丟掉這次進 room 後所有照片的修改（含 Apply to all） [DR-05c] / • ✓：回 Batch Edit Room，這次 room 對每張的修改在該張的外層歷史算一步 [DR-05d] / • Undo / Redo 不會自動切換 tab（Light / Color / Details），同今天單張 Adjustment room [DR-05g]",
+      "trace": "R-066, R-056, R-057, R-058, R-059, R-060, R-067"
+    },
+    {
+      "id": "pm-ui-5@6841,15062",
+      "board": "pm-ui-5",
+      "x": 6841,
+      "y": 15062,
+      "low": false,
+      "text": "• 批次 AI Enhance 只支援 Standard：不顯示 Standard / Advanced tab、不顯示 scenario，畫面只剩一顆 generate（沿用 10/E room 的 Enhance 按鈕） [DR-09][DR-12a][D1-11] / • 這顆 Enhance 按鈕對應 10/E Standard · Portrait [DR-09d] / • 按下套用到批次全部照片，先跳 AI Enhance Confirm Dialog [DR-12h][DR-12] / • 不扣點：AI Enhance 沒有扣點機制，Enhance 按鈕不顯示點數；Crop / Adjustment 也免費 [DR-11][D5-01b] / • 「全圖」＝批次內全部照片；做完即套用，不用逐張 ✓ [DR-10] / • 從 AI Enhance Shortcut 多選直接落在這頁 [DR-02] / • Enhance 按鈕上方顯示批次縮圖列，點縮圖切換目前照片 [D1-12]",
+      "trace": "R-075, R-076, R-080, R-078, R-079, R-023, R-089"
+    },
+    {
+      "id": "pm-ui-5@8301,15062",
+      "board": "pm-ui-5",
+      "x": 8301,
+      "y": 15062,
+      "low": false,
+      "text": "• 每次進 AI Enhance room 可 apply 一次 Enhance，套用到批次全部照片；按完按鈕變「Enhanced」灰掉 [DR-12e][DR-12h] / • 離開 room 再進來可以再 apply 一次，處理的是目前的圖（已 Enhance 過的結果），同單張 Edit Room [DR-12e] / • Advanced 相關規則不適用（批次只支援 Standard） [DR-12b][DR-12f][DR-12g] / • 10/E Advanced 的 7 個 Scene Presets（General / Portrait / Scenery / Pets / Concert / Product / Anime）批次不支援 [DR-09b][DR-09]",
+      "trace": "R-084, R-085, R-077"
+    },
+    {
+      "id": "pm-ui-5@9761,15062",
+      "board": "pm-ui-5",
+      "x": 9761,
+      "y": 15062,
+      "low": false,
+      "text": "• Free user 按 generate → Premium IAP [DR-12d] / • 不提供試做 1 張：流程上沒辦法只試做一張再跳 IAP，Free user 按 Enhance 直接跳 Premium IAP [D3-01][D3-02]",
+      "trace": "R-086"
+    },
+    {
+      "id": "pm-ui-5@11221,15062",
+      "board": "pm-ui-5",
+      "x": 11221,
+      "y": 15062,
+      "low": false,
+      "text": "• 沿用現行 loading 畫面，將 string 替換為「Enhancing k / N」，k=已完成 enhance 數量，N=enhance request 總數；遮罩蓋住整個畫面，縮圖列在遮罩下方 [D1-02] / • Enhance 過程中不能跳出去編輯其他東西（不能切 Crop / Adjustment、不能點縮圖切換），要等全部做完（RD 確認） [D1-02] / • 沒有取消，要等全部做完；跑完前不能存檔 [D1-03][D1-02]",
+      "trace": "R-082, R-083"
+    },
+    {
+      "id": "pm-ui-5@12681,15062",
+      "board": "pm-ui-5",
+      "x": 12681,
+      "y": 15062,
+      "low": false,
+      "text": "• 跑完全部才一次總結：「X completed, Y failed」「Failed photos are marked on the thumbnails.」；Y 張失敗的照片在縮圖右上角標紅色 !（X 張成功的不標），點失敗縮圖可切過去看 [D1-04] / • button 為「Retry Failed (x)」，只重做失敗的照片，(x) 為enhance 失敗張數；Retry 後 ! 消失，成功的照片不重做；失敗不算做過 [D1-04][DR-12e] / • Retry 後的總結以整批照片累計計算，不是只算這次重試：例 15 張先「12 completed, 3 failed」→ Retry 3 張、2 張成功 →「14 completed, 1 failed」，按鈕變「Retry Failed (1)」；全部成功時不再顯示失敗訊息與 Retry 按鈕 [D1-04]",
+      "trace": "R-098, R-099, R-101, R-102 (second line wording: Q-12)"
+    },
+    {
+      "id": "pm-ui-5@14141,15062",
+      "board": "pm-ui-5",
+      "x": 14141,
+      "y": 15062,
+      "low": false,
+      "text": "• 斷網視同失敗，畫面同 result_summary：已完成的保留；沒做完的照片標紅色 !；訊息「X completed, Y failed」「Connection lost. Check your connection and retry.」；同時有失敗與斷網時合併計算，第二行優先顯示斷網提示 [D1-05][D1-04] / • 按鈕「Retry Failed (7)」重跑沒做完的照片；還沒連上網就按 → toast「No internet connection」，不開始處理 [D1-05] / • App 被殺：Batch Edit Room 不見，已做的 AI Enhance 結果也不會留下（Standard 結果不存到 My AI Artwork） [D1-05][D1-10]",
+      "trace": "R-103, R-104, R-106, R-107"
+    },
+    {
+      "id": "pm-ui-6@6841,16214",
+      "board": "pm-ui-6",
+      "x": 6841,
+      "y": 16214,
+      "low": false,
+      "text": "• 每次按 Enhance 都跳；套用到批次全部照片；不扣點、不顯示 Credits [DR-12][DR-12h][DR-11] / • 文案以畫面為準（已與 RD 確認）：Enhance {xx} photos? / Processing takes a moment and cannot be canceled once started. / [Cancel] [Start] [D1-02][D1-03] / • Cancel  → 回 AI Enhance；Start  → 開始批次處理 [DR-12]",
+      "trace": "R-080, R-081, R-078, R-079"
+    },
+    {
+      "id": "pm-ui-7@6856,17366",
+      "board": "pm-ui-7",
+      "x": 6856,
+      "y": 17366,
+      "low": false,
+      "text": "• 只有做過編輯才跳這個 Dialog；還沒做任何編輯時按 Home / Replace photo 直接離開 [D1-08] / • 從 Replace photo 來 → Discard：回 Photo Picker 批次 Tab，原本選過的照片保持勾選，這次 Batch Edit 的所有編輯都丟掉 [D1-08][D1-08b] / • 從 Home 來 → Discard：回 Launcher [D1-08] / • Keep Editing：留在 Batch Edit Room [D1-08] / • 文案：「Discard changes?」「Your edits to these photos will be lost.」[D1-08b] / • Standard AI Enhance 的結果目前不會存到 My AI Artwork [D1-10]",
+      "trace": "R-123, R-124, R-125, R-126, R-107"
+    },
+    {
+      "id": "pm-ui-8@6856,18560",
+      "board": "pm-ui-8",
+      "x": 6856,
+      "y": 18560,
+      "low": false,
+      "text": "• 存檔中顯示「Saving k / N」「Please do not leave this page or quit the app.」，存完才進 Batch Save page（跟進 Meitu） [D5-01b] / • 存成新檔，不覆蓋原圖 [D1-06] / • 存全部輸入照片（含沒編輯過的），每張都存成新檔 [D1-06]",
+      "trace": "R-108, R-109, R-110"
+    },
+    {
+      "id": "pm-ui-8@8316,18560",
+      "board": "pm-ui-8",
+      "x": 8316,
+      "y": 18560,
+      "low": false,
+      "text": "• 新的 Batch Save page：縮圖格狀＋「Saved N photos」 [D1-07] / • 左上 ‹ = 回 Batch Edit Room；右上 Home = 回 Launcher [D1-07] / • 底部固定「Edit Next Batch」：進 Photo Picker 批次 Tab、不勾任何照片；在 Picker 按返回 → 回 Batch Edit Room，顯示原本的編輯狀態（day-1 照 Android 單張 Edit Room 現行做法） [D1-07] / • 註：iOS 單張 Edit Room 今天的行為不同（Save page → Next edit → Picker → 返回 → Launcher），批次 day-1 以 Android 為準 [D1-07] / • 縮圖不能點開放大 [D1-07] / • Rating dialog 一次批次算 1 次存檔；IAP flyer / 廣告照常 [D1-07]",
+      "trace": "R-111, R-113, R-114, R-112, R-116, R-115"
+    }
+  ]
+}
