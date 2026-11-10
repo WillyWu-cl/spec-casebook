@@ -278,7 +278,7 @@ const T = {
     boardsRead: (n, d) => `${n} boards read${d ? `, ${d}` : ''}`, specSet: s => `spec set ${s}`,
     unread: 'Not read yet: its screens are not in this plan. Read it before the check, or exclude it with a reason.', partial: 'Read incompletely: its screens are left out until the read finishes.', unreadS: 'not read yet', partialS: 'read incomplete',
     included: 'Included', excluded: 'Excluded', noRoute: 'No route', toLook: 'Needs your decision', lookT: r => r ? 'Added since the scope review: pick Include or Exclude.' : 'Flagged screens: read the note on each, then pick Include or Exclude.', decided: 'Decided', changed: 'Your changes',
-    measured: ['Copy: each Figma text against the app text', 'Missing text and icon controls', 'Truncation (「…」 or past the edge)', 'Wrapping (number of lines)', 'Position, after aligning top and bottom', 'Fill and text colour', 'Arrival: the capture is the frame\'s state'],
+    measured: ['Missing text and icon controls', 'Truncation (「…」 or past the edge)', 'Wrapping (number of lines)', 'Text box padding and border, and the text centred in its box', 'Font size', 'Gaps between buttons', 'Fill and text colour', 'Arrival: the capture is the frame\'s state', 'Not the words or where a text sits (only in a full check on request)'],
     looked: ['Icon drawings and images', 'Font weight and size', 'Corner radius, shadows and borders', 'Anything else the sheet shows'],
     notCov: ['Excluded screens and boards (reason on each line)', 'Animation, motion and timing', 'Languages and appearances other than the frame\'s', 'Screens whose state cannot be brought about (named in the run)'],
     flagN: { area: 'Approximate route', variant: 'State to bring about', drawing: 'Not a phone screen', gap: 'Gap in the table' },
@@ -289,7 +289,7 @@ const T = {
       gap: 'No test case reaches this screen yet. Include to keep it (the analysis adds a case); Exclude if it is not in this release.',
       noroute: 'No way to reach this screen was found. Exclude it, or Include and say in the chat how to get there.',
       fresh: 'Added to Figma after the last scope review.' },
-    psave: (n, left) => left ? `Save${n ? ` (${n})` : ''} · ${left} still to decide` : n ? `Save and finish the review (${n})` : 'Saved',
+    psave: (n, left, rev) => left ? `Save${n ? ` (${n})` : ''} · ${left} still to decide` : n ? `Save and finish the review (${n})` : rev ? 'Saved' : 'Mark the scope reviewed',
     save: n => `Save decisions (${n})`, saving: 'Saving…', saveFail: 'Could not save:',
     flagT: { area: 'The row only reaches the area (a shared control); the runner brings about the state the frame shows.', variant: 'Drawn beside a reached screen: brought about there.',
       drawing: 'Narrower than a phone: a card or detail drawn on its own. Its texts are still compared where the card appears.', gap: 'No casebook row reaches it: the analysis adds one.' },
@@ -324,7 +324,7 @@ const T = {
     boardsRead: (n, d) => `已讀取 ${n} 個畫板${d ? `，${d}` : ''}`, specSet: s => `規格 ${s}`,
     unread: '尚未讀取：此畫板的畫面不在計畫中。請先讀取再檢查，或註明原因排除。', partial: '讀取未完成：讀取完成前不含此畫板的畫面。', unreadS: '尚未讀取', partialS: '讀取未完成',
     included: '納入', excluded: '排除', noRoute: '無路徑', toLook: '需要你決定', lookT: r => r ? '範圍審查後新增：請選納入或排除。' : '有標記的畫面：看完每行的說明後選納入或排除。', decided: '已決定', changed: '你的變更',
-    measured: ['文案：每個 Figma 文字對照 App 文字', '缺少的文字與圖示控制項', '截斷（「…」或超出邊界）', '換行（行數）', '位置（上下對齊後）', '填色與文字顏色', '到達：擷取圖是否為該畫面的狀態'],
+    measured: ['缺少的文字與圖示控制項', '截斷（「…」或超出邊界）', '換行（行數）', '文字框的內距與邊框，文字在框內置中', '字級', '按鈕之間的間距', '填色與文字顏色', '到達：擷取圖是否為該畫面的狀態', '不比對文字內容與文字位置（僅在依要求的完整檢查中比對）'],
     looked: ['圖示繪製與圖片', '字重與字級', '圓角、陰影與框線', '比對圖上其他可見差異'],
     notCov: ['已排除的畫面與畫板（每行附原因）', '動畫、動態與時間', '畫面以外的語言與外觀模式', '無法製造出狀態的畫面（執行時註明）'],
     flagN: { area: '路徑不精確', variant: '需製造狀態', drawing: '非完整畫面', gap: '測試表缺口' },
@@ -335,7 +335,7 @@ const T = {
       gap: '還沒有測試案例到達此畫面。選「納入」保留（分析會補案例）；不在本次版本就選「排除」。',
       noroute: '找不到到達此畫面的方式。選「排除」，或選「納入」並在對話中說明怎麼到。',
       fresh: '上次範圍審查之後才加到 Figma。' },
-    psave: (n, left) => left ? `儲存${n ? `（${n}）` : ''} · 還有 ${left} 個待決定` : n ? `儲存並完成審查（${n}）` : '已儲存',
+    psave: (n, left, rev) => left ? `儲存${n ? `（${n}）` : ''} · 還有 ${left} 個待決定` : n ? `儲存並完成審查（${n}）` : rev ? '已儲存' : '標記範圍已審查',
     save: n => `儲存決定（${n}）`, saving: '儲存中…', saveFail: '無法儲存：',
     flagT: { area: '案例只到達該區域（共用控制項）；執行者需製造出畫面所示的狀態。', variant: '畫在已到達畫面旁：在那裡製造出此狀態。',
       drawing: '比手機窄：單獨畫出的卡片或細節。其文字仍會在卡片出現處比對。', gap: '沒有測試表案例到達：分析需補上。' },
@@ -436,7 +436,9 @@ $('pq').oninput = e => { pq = e.target.value.trim().toLowerCase(); planList(); }
 // Save (served live): the choices go to design.ts scope, which writes plan.json; the scope counts as reviewed once no
 // screen still needs a decision. Opened as a file, the same block is copied for the chat instead.
 const pbtn = () => { const n = changedIds().length, left = D.screens.filter(lookOf).length, b = $('pcopy');
-  b.textContent = canSave ? t('psave')(n, left) : t('pcopy')(n); b.disabled = canSave && !n && (left || D.review); b.classList.toggle('go', !!n && !left); };
+  b.textContent = canSave ? t('psave')(n, left, !!D.review) : t('pcopy')(n); b.disabled = canSave && !n && (left || D.review);
+  // nothing to decide and nothing changed, but never reviewed: the button marks it reviewed, so it must not read "Saved"
+  b.classList.toggle('go', !left && (!!n || !D.review)); };
 // a saved choice is gone from this browser; the page then shows what plan.json holds
 const post = async (cmd, block) => { const r = await fetch(`apply/${cmd}`, { method: 'POST', headers: { 'content-type': 'text/plain' }, body: block });
   const j = await r.json().catch(() => ({ error: r.statusText })); if (!r.ok || j.error) throw new Error(j.error || r.statusText); return j; };
