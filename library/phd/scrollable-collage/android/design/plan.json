@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-09T08:09:08.942Z",
+  "built_at": "2026-11-10T06:35:50.334Z",
   "spec_set": "2026-11-05",
   "file": {
     "fileKey": "iUy5kOrVNG7IjcyxGGnp9t",
@@ -11,8 +11,82 @@
   "skip": [],
   "skip_reason": null,
   "skip_reasons": {},
-  "scope_review": null,
-  "scope_included": [],
+  "scope_review": {
+    "at": "2026-11-10",
+    "by": "user",
+    "ids": [
+      "49:1511",
+      "111:7291",
+      "54:520",
+      "111:6745",
+      "23:989",
+      "111:6824",
+      "54:1487",
+      "111:8511",
+      "54:1835",
+      "111:8637",
+      "54:2110",
+      "111:8809",
+      "54:2359",
+      "111:9057",
+      "103:6032",
+      "103:6121",
+      "111:10489",
+      "111:10570",
+      "69:6938",
+      "72:1786",
+      "111:9880",
+      "111:10344",
+      "72:1505",
+      "111:9172",
+      "69:6711",
+      "111:6952",
+      "33:2230",
+      "111:7917",
+      "66:5255",
+      "82:4349",
+      "28:1621",
+      "111:7605",
+      "111:7761",
+      "111:7455",
+      "1:238",
+      "111:6261",
+      "67:6424",
+      "111:9730",
+      "199:3566",
+      "18:386",
+      "111:6596",
+      "61:4517",
+      "111:9400",
+      "73:2199",
+      "111:10134",
+      "74:3076",
+      "112:3247",
+      "23:531",
+      "111:6645",
+      "74:2830",
+      "111:7080",
+      "45:723",
+      "111:8106",
+      "103:5778",
+      "111:8308",
+      "3:336",
+      "111:6441"
+    ]
+  },
+  "scope_included": [
+    "54:1835",
+    "111:8637",
+    "54:2110",
+    "111:8809",
+    "72:1505",
+    "111:9172",
+    "69:6938",
+    "111:9880",
+    "72:1786",
+    "111:10344",
+    "199:3566"
+  ],
   "source_gaps": {
     "unread": [],
     "incomplete": [],
@@ -22,10 +96,10 @@
   "casebook": true,
   "counts": {
     "screens": 57,
-    "routed": 54,
+    "routed": 55,
     "figma_paths": 0,
     "gaps": 0,
-    "no_route": 3,
+    "no_route": 2,
     "excluded": 0
   },
   "by_case": {
@@ -90,6 +164,9 @@
     "TC-058": [
       "67:6424",
       "111:9730"
+    ],
+    "TC-001": [
+      "199:3566"
     ],
     "TC-022": [
       "18:386",
@@ -1670,8 +1747,25 @@
       ],
       "board_png": "specs/2026-11-05/extracted/figma/design-launcher.png",
       "inventory_screen": "199:3566",
-      "status": "no-route",
-      "why": "no row presses a control on it or walks an arrow into it, and no Design arrow leads to it",
+      "status": "routed",
+      "route": {
+        "case": "TC-001",
+        "how": "on",
+        "via": "K-cb2275",
+        "fit": "high",
+        "edge": "round/ic_collage",
+        "segment": "",
+        "section": "Entry",
+        "precondition": "Android phone, PhotoDirector signed in, Free tier",
+        "action": "Open Launcher › Collage",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-002",
+        "TC-009",
+        "TC-164"
+      ],
       "flags": []
     },
     {

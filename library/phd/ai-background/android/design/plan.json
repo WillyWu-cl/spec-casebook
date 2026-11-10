@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-04T06:18:31.577Z",
+  "built_at": "2026-11-10T06:37:58.200Z",
   "spec_set": "2026-11-03",
   "file": {
     "fileKey": "ULY56f3Q9tl6PceuNNoHBD",
@@ -11,7 +11,15 @@
   "skip": [],
   "skip_reason": null,
   "skip_reasons": {},
-  "scope_review": null,
+  "scope_review": {
+    "at": "2026-11-10",
+    "by": "user",
+    "ids": [
+      "1:451",
+      "11:248"
+    ]
+  },
+  "scope_included": [],
   "source_gaps": {
     "unread": [],
     "incomplete": [],
