@@ -5,7 +5,7 @@ Source tags: `[PM:<board>; <spec ID>]`, board IDs from `specs/2026-10-29/extract
 prints them (`D1-07`, `F4` …). The file is a single PM-owned Figma export that also carries the UI; there is no separate
 Design file, so its mockups give the UI strings and its 【Requirement】 blocks the rules. Mockups are iPhone frames;
 Android differences are stated where the spec names them (photo picker cap, D2-06) and in "System back".
-Request ledger: REQ-001 (this table).
+Request ledger: REQ-001 (this table), REQ-004 (TC-018 languages).
 
 ## Entry
 - R-001 [PM:states Collage Room · banner; D1-07, D1-16] On entering the Collage room a Swipe Collage banner is shown at the top of the room (Collage has no AI / Traditional categories).
@@ -27,7 +27,7 @@ Request ledger: REQ-001 (this table).
 - R-015 [PM:states Template Page · default, cms; D2-03, D2-07] NEW tags come from the CMS tag.
 - R-016 [PM:states Template Page · default, cms; D3-02] A CMS-PRO template shows a 「PRO」 icon at the card's top right.
 - R-017 [PM:states Template Page · thumb_swipe, flow-table; D2-08, F16] Swiping a card thumbnail right shows that template's next pages (as SCRL); every page is shown.
-- R-018 [PM:states Template Page · thumb_swipe, cms, plan-notes; F16] Thumbnails come in East and West sets; every page of the set is shown in the UI. Which set a user sees is not stated (Q-12).
+- R-018 [PM:states Template Page · thumb_swipe, cms, plan-notes; F16] Thumbnails come in East and West sets; every page of the set is shown in the UI. Which set a user sees is not stated (Q-12); per REQ-004, East is tested with the app in Traditional Chinese and Japanese, West in English and German.
 - R-019 [PM:states Template Page · default, cms; F16] Day 1 has 20 templates.
 - R-020 [PM:flow-table; D1-07] Template Page 「‹」 returns to the Collage room.
 - R-021 [PM:flow-table; D1-02] Tapping a thumbnail opens the Template Preview.
@@ -348,3 +348,4 @@ the drawn flows (`dr-…`).
 | Ledger entry | Requirements |
 |---|---|
 | REQ-001 | R-001 – R-204 (the whole table) |
+| REQ-004 | R-018 (TC-018: East in Traditional Chinese and Japanese, West in English and German) |
