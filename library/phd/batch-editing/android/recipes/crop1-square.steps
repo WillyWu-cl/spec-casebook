@@ -1,0 +1,8 @@
+# From Batch Edit Room main screen with photo 1 current: Crop & Rotate › Square › ✓. Ends on the main screen.
+lbl "Crop & Rotate"
+waitfor "Original" --timeout 10
+fingerdrag 900 1985 400 1985
+lbl Square
+expect Square
+id applyBtn
+waitfor "AI Enhance" --timeout 10

@@ -62,7 +62,7 @@ Replace mask residue ≈ 3 % (Postponed). File only with evidence on the tested 
 
 ## KP-060 AI Enhance waiting time is a limit
 - kind: decision · platform: android · use: analysis, run, ebug · tags: ai-enhance, wait
-- source: PHD domain decisions.md K61 (PHA262026-0294) · aka: K61
+- source: PHD domain decisions.md K61 (PHA262026-0294) · aka: K61 · verified: 20.19.0 (90201900) (2026-11-10)
 
 ≈ 48 s average was accepted; the fix improved the waiting cursor (iOS mentions ≈ 1 min). Judge the waiting UI, not
 a duration.

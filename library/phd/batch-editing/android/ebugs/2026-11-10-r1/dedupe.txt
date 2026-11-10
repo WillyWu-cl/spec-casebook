@@ -1,0 +1,16 @@
+Dedupe — Batch Edit Android, run 2026-11-09-r1, PhotoDirector 20.19.0 (90201900). Read-only; Android pool only
+(product "PhotoDirector Mobile for Android"; dedupe per OS, user 2026-10-28). 2026-11-10.
+
+1. ecl_query.py dedupe upload/bodies.json --product "PhotoDirector Mobile for Android" --limit 600
+   → 0 of 11 entries have a possible duplicate (feature 'Batch Edit': 0 candidates; raw output in dedupe-raw.txt).
+2. Text searches in the same pool (ecl_query.py bugs --text …): "Batch", "batch edit", "Batch_Edit",
+   "Apply to all", "Discard changes", "Keep Editing", "20 photos", "No Internet connection", "system back",
+   "feedback button" → 0 bugs each. "background", "Adjustments", "Undo", "square", "multiple photos" → only other
+   features' tickets (AI_Background, AI_Exposure, Crop, Quick_Actions, AI_Removal …), none about Batch Edit.
+   Closest in spirit to ISS-BEA-01: PHA262026P0022 (Assigned, AI_Removal: false Network Error after backgrounding
+   during Generate), PHA262026P0017 (Close, AI_Background) and PHA262026-0422 (Assigned, AI_Agent) — other features,
+   so not duplicates; listed as related only.
+
+Same-OS matches left off the drafts: none. Every entry stays a new card.
+Pool note: PHD-A Short Descriptions name features with underscores (AI_Enhance, AI_Background); the drafts use the
+on-screen name 「Batch Edit」 — the reviewer may prefer 「Batch_Edit」.

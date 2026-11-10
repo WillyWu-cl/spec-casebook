@@ -586,7 +586,9 @@ switch (cmd) {
     if (!['on', 'off'].includes(want)) throw new Error('wifi on|off|status');
     // Only over the USB cable: with Wi-Fi off a wireless adb link would drop and nothing could turn it back on.
     const d = adbDevices().find(x => x.serial === serial());
-    if (!d || !/\busb:/.test(d.line)) throw new Error(`wifi: adb does not see ${serial()} over USB (${d?.line ?? 'absent'}); refusing`);
+    // adb on Windows prints no `usb:` field; a serial with no host:port and no mDNS `adb-…` name is a USB link.
+    const wired = !!d && (/\busb:/.test(d.line) || (!/:/.test(d.serial) && !/^adb-/.test(d.serial) && !/_adb-tls/.test(d.line)));
+    if (!d || !wired) throw new Error(`wifi: adb does not see ${serial()} over USB (${d?.line ?? 'absent'}); refusing`);
     sh(`cmd wifi set-wifi-enabled ${want === 'on' ? 'enabled' : 'disabled'}`);
     for (let i = 0; i < 10 && state() !== want; i++) await sleep(1);
     const now = state(); console.log(`Wi-Fi ${now}${now === want ? '' : `  (WANTED ${want})`}`);
