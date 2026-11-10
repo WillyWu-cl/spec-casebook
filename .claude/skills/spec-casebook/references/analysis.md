@@ -96,10 +96,21 @@ and return, waits), which apply to every job.
    setting that changes what the feature makes (Mode, style, fps, resolution, quality, length, voice) gets a row that
    *uses* it: chosen, carried through the action it changes (generate, export, save) and checked in the result (the
    saved file's fps and resolution, the look the style names, the price the value sets). Rows that only tap the chip
-   and look at the panel do not cover the value; the default value does not stand for the others. One row per value
-   is enough (not every combination), unless the spec gives a rule for a combination. List them in `### Variants`
-   as `R-… × <setting>=<value>`. Shown by the spec agent comparison of 2026-11-04 (TC-VE2-171, 172, 185–220): no row
-   generated with Professional, Sharp, 60 / 120 fps, 720p or 4K, and none checked the saved file.
+   and look at the panel do not cover the value; the default value does not stand for the others. List them in
+   `### Variants` as `R-… × <setting>=<value>`. Shown by the spec agent comparison of 2026-11-04 (TC-VE2-171, 172,
+   185–220): no row generated with Professional, Sharp, 60 / 120 fps, 720p or 4K, and none checked the saved file.
+   **Every combination (user, 2026-11-10, REQ-008; replaces 「one row per value is enough」).** When two or more such
+   settings are chosen together, every combination of their values is a row of its own: the full cross product
+   (Video Enhance: 2 Modes × 2 styles × 3 fps × 3 resolutions = 36 rows), each chosen, priced, generated and checked
+   in the result (the price shown and charged for that combination, the saved file's values). Write the
+   `### Combinations` grid in `requirements.md`: one `- Setting <name>: a, b, c` line per setting, then
+   `| Combination | Rows |` with one line per combination (`Mode=Standard · Style=Natural · fps=30 · Resolution=720p`)
+   naming its row, or `n/a (<why>)` only where the spec says the combination cannot be chosen (a disabled chip).
+   `check.ts` builds the cross product from the setting lines and fails a draft with a combination missing or naming
+   no active row, and a draft whose Variants grid names two or more settings without the grid. When a price depends
+   on the combination, the row states its exact price (seconds × that combination's rate); a rate the spec set does
+   not give is a Q-n, never "the price changes". Shown on 2026-11-10: the spec agent's 36 combination cases
+   (TC-VE2-185–220) and 36 price cases (TC-VE2-114–149) had only 6 value rows against them.
 
 11. **Every control (user, 2026-10-28, REQ-038).** A PDF-only analysis has no `inventory.json`: trace the 「Controls
    (PDF-read)」 lists of `board-notes.md` to rows by hand and leave this pass owed (`reading-the-spec.md`, *No Figma

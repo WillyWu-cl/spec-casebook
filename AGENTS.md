@@ -64,6 +64,13 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **What the repo is for (user, 2026-10-27, REQ-036 / REQ-037).** A thorough spec analysis, then a run that does not
   drain tokens. Missed rules are fixed in the reading step or pass that skipped them, never by copying another
   tool's cases; the spec agent comparison is a report on request only (`SKILL.md`, `analysis.md`).
+- **Spec agent cases as an input, Video Enhance (user, 2026-11-10, REQ-008).** For `pdr/video-enhance` the spec agent's
+  colleague-checked cases are a source: the table covers all of them; their rules win where our spec is silent or
+  older (ECL pricing, Android tier, 2K+ block), our newer Figma wins where theirs follows an older spec. Other features
+  keep REQ-037 unless the user says otherwise.
+- **Every combination (user, 2026-11-10, REQ-008).** Settings chosen together get a row per combination of their
+  values (the full cross product), each priced and checked in the result; `### Combinations` grid, `check.ts`
+  (`analysis.md` pass 10).
 - **The analysis finds spec rules itself (user, 2026-10-22, REQ-030 / REQ-032).** Dated Figma frames newer than the
   PDF are read, every annotation block and linked page is traced, hidden clauses get an observing row, and each
   variant gets its own row (`reading-the-spec.md` steps 8–9, `analysis.md` passes 9–10).

@@ -1,0 +1,11 @@
+{
+  "feature": "pdr/video-enhance",
+  "platform": "android",
+  "title": "Video Enhance",
+  "draft": "20261110-160000",
+  "created_at": "2026-11-10T08:00:00.000Z",
+  "based_on_version": 3,
+  "spec_folder": "specs/2026-11-03",
+  "spec_files": [],
+  "spec_set_sha256": "c1d60aed2d699df6196069d8a0db670b4ca14529f0d3efaa4923aec852188bfe"
+}

@@ -21,6 +21,14 @@ variants: each value used in a generation and checked in the saved file) and 11 
 the new Design arrow 3393-18071 [Req: REQ-004]. Changed: R-020, R-031, R-033, R-035, R-054; new: R-191 – R-195,
 Q-21, Q-22.
 
+Draft 20261110-160000 (Android) takes the spec agent's 271 colleague-checked Video Enhance cases (TC-VE2-*, snapshot
+`spec-agent/android.json`, YAMLs read 2026-11-10) as a source [Req: REQ-008]: their rules win where our spec set is
+silent or older (the ECL rate table, form 22061491221; the Android tier, colleague feedback 2026-10-07; the 2K+ import
+block, user requirement 2026-10-16; the strip scale, pending PM), our newer Figma wins where theirs follows an older
+spec (toast and bubble copy; Mode is Standard on every entry). Every combination of Mode × Enhancement style × fps ×
+Resolution is a row (`### Combinations`, analysis pass 10). Changed: R-015, R-034, R-044, R-060, R-062, R-063, R-065,
+R-070, R-071, R-087, R-088, R-122, R-194; new: R-196 – R-204, Q-23 – Q-25; answered: Q-3, Q-4.
+
 ## Entry points
 - R-001 [DS:ds-main-flow Launcher_2026_08; DS:ds-routing 「Launcher / AI Magic → Demo page」] The Launcher big shortcut 「AI Video Enhance」 opens the Demo page (until 「Don’t show again」 was confirmed, R-009).
 - R-002 [DS:ds-entry-points Launcher_AI Magic; DS:ds-routing] The AI Magic tab's 「AI Enhance」 section has an 「AI Video Enhance」 card that opens the Demo page (same rule as R-001).
@@ -40,7 +48,9 @@ Q-21, Q-22.
 - R-012 [DS:ds-main-flow Add Media; PM:pm-draft-logic A2 [Design]] Add Media (title 「Add Media」) shows only the 「Video」 tab and takes one video (v1 single pick).
 - R-013 [DS:ds-main-flow arrow 3293-13715; PM:pm-draft-logic A2 [建議]] Tapping a video thumbnail opens the panel with that video (no Next button).
 - R-014 [DS:ds-main-flow Add Media ‹] The back ‹ on Add Media returns to the page Add Media was opened from (Q-9).
-- R-015 [PM:pm-draft-logic A2 / E1 [建議]] A video the feature cannot take (over 4K, under 1 s, not MP4 / MOV) is greyed in Add Media and tapping it shows the toast 「This video isn't supported. Try one up to 4K.」 (Q-13).
+- R-015 [PM:pm-draft-logic A2 / E1 [建議]; Req: REQ-008] A video the feature cannot take (under 1 s, not MP4 / MOV) is greyed in Add Media and tapping it shows the toast 「This video isn't supported. Try one up to 4K.」 (Q-13). Sources of 2K and up (PM E1's 「over 4K」 included) follow R-196.
+- R-196 [Req: REQ-008; spec agent TC-VE2-097, TC-VE2-098 (user requirement 2026-10-16, newer than the Design lookup and PM E1)] A source of 2K or higher (1440p and up: 2560 × 1440, 3840 × 2160, 7680 × 4320; either orientation) is rejected before the panel opens: the panel does not open, the source is not loaded and no task starts. The message shown is not in any spec (Q-23).
+- R-202 [Req: REQ-008; spec agent TC-VE2-153, TC-VE2-154, TC-VE2-155, TC-VE2-156, TC-VE2-225 (colleague's build, not in the Design)] Add Media (the 「Video」 tab of R-012) offers every video source of PowerDirector's media picker: the local albums (All / Recents and named albums or folders) and the stock video libraries in its provider tab row (Pexels, Pixabay among them); a supported video picked from any of them opens the panel with that video in the Preview.
 - R-016 [PM:pm-draft-logic A2 [建議]] With no videos on the device Add Media shows the empty state 「No videos yet」.
 
 ## Panel layout and first-run bubble
@@ -52,6 +62,8 @@ Q-21, Q-22.
 - R-025 [DS:ds-ai-video-enhance Settings › Mode] The ⓘ next to 「Mode」 shows the bubble 「Standard: Great quality · up to 8 min」 / 「Professional: Maximum detail · up to 2:30」 (PM 1002 「Standard: Great quality, quick results」 and PM 9/29 「Standard: up to 8 minutes. Professional: up to 2m 30s.」 are older).
 - R-026 [DS:ds-ai-video-enhance Settings › Enhancement style; PM:pm-defaults] The ⓘ next to 「Enhancement style」 shows the bubble 「Natural: Lighter enhancement with fewer artifacts, for a more realistic look」 / 「Sharp: Moderate enhancement for a sharp, clear image」.
 - R-027 [DS:ds-main-flow VE · 02] The Preview's play button plays the video from the selection and the full-screen icon opens a full-screen preview.
+- R-200 [Req: REQ-008; spec agent TC-VE2-163 (generic player rule, not in the Design)] While the Preview plays, the same button pauses it: the time and the frame stop where they are until play is tapped again.
+- R-199 [Req: REQ-008; spec agent TC-VE2-276 (user requirement 2026-10-21; the Design draws 「00:00/12:30」 with no rounding rule)] The total after the slash in the Preview time is the source length rounded up to whole seconds: a 150.01 s video reads 「00:00/02:31」, never 「00:00/02:30」.
 - R-028 [DS:ds-main-flow arrow 3293-13716] The panel's back ‹ returns to Add Media (from the Timeline entry: R-133).
 
 ## Trim and selected length
@@ -61,7 +73,7 @@ Q-21, Q-22.
 - R-033 [PM:pm-main-flow 9/29 UI; PM:pm-draft-logic UI 規格] At the Mode limit the dragged handle (left or right) stops, the phone gives a light haptic and a bubble says 「Up to 8 minutes in Standard mode」 (Standard) or 「Up to 2m 30s in Professional mode」 (Professional).
 - R-192 [DS:ds-main-flow VE · 01 strip 「00:00」; DS:ds-ai-video-enhance Default / Length (bubbles 「00:00」, 「02:30」, 「01:00」, 「00:14」)] The strip carries a playhead: a line across the strip with a time bubble above it (「00:00」 on entry) and a ◀▶ drag knob (round/ic_btn_drag) under the strip. The bubble shows the same time as the Preview's 「mm:ss/<video length>」 (「00:14」 with 「00:14/01:30」, 「01:00」 with 「01:00/12:30」). The knob is the playhead's, not a trim handle (role read from the board images, analysis pass 11).
 - R-193 [DS:ds-ai-video-enhance Length; DS:ds-main-flow VE · 01 knob round/ic_btn_drag] Dragging the playhead knob moves the playhead: the Preview shows the frame under it and the bubble and the Preview time follow; the trim handles, Selected Length and the price do not change (how far it may go: Q-21).
-- R-034 [PM:pm-main-flow 9/29 ⑥; PM:pm-draft-logic B1-1 ⑥] The thumbnail strip's scale depends only on the video length: a video ≤ 8:00 fills the strip's width; a longer one scrolls sideways with 8:00 = one strip width; switching Mode does not re-lay the strip.
+- R-034 [PM:pm-main-flow 9/29 ⑥; PM:pm-draft-logic B1-1 ⑥; Req: REQ-008; spec agent TC-VE2-026, TC-VE2-264 – TC-VE2-267] One strip width stands for the active Mode's limit: in Standard a video ≤ 8:00 fills the strip's width and a longer one scrolls sideways with 8:00 = one strip width; in Professional a video ≤ 2:30 fills the width and a longer one scrolls with 2:30 = one strip width. Switching Mode re-lays the strip to the new limit; the thumbnails stay in time order and the selection keeps its start, end and length. (Follows the spec agent's reading of ⑥, pending PM: Q-24.)
 - R-035 [PM:pm-draft-logic B1 [建議]] The shortest selection is 1 s, whichever handle is dragged toward the other.
 
 ## Default settings
@@ -69,7 +81,7 @@ Q-21, Q-22.
 - R-041 [DS:ds-ai-video-enhance 預設值規則; PM:pm-defaults 1002] Enhancement style is 「Natural」, fixed (deliberately not the API default hd).
 - R-042 [DS:ds-ai-video-enhance 預設值規則 「進入功能時自動帶入」] The defaults are set on every entry: a Mode or style changed on one visit is back to Standard / Natural on the next (PM §4.3 「記住上次」 and PM B3's proposal to remember are older than the Design and the 1002 rule).
 - R-043 [DS:ds-ai-video-enhance 預設值規則 + 對照表] fps defaults to the smallest option not below the source fps, the highest when the source is above it: source 1–30 → 「30fps」, 31–60 → 「60fps」, 61 and above → 「120fps」. (PM 1002 「nearest, tie lower」 and PM B3 1–45 / 46–90 / 91+ are older.)
-- R-044 [DS:ds-ai-video-enhance 預設值規則 + 對照表] Resolution defaults to the smallest option not below the source resolution, the highest when above it: 0–720p → 「720p」, 721–1080p → 「1080p」, 1081p and above → 「4K」 (Q-5: which side of a portrait video counts).
+- R-044 [DS:ds-ai-video-enhance 預設值規則 + 對照表; Req: REQ-008; spec agent TC-VE2-030, TC-VE2-096 – TC-VE2-098] Resolution defaults to the smallest option not below the source resolution: 0–720p → 「720p」, 721–1080p → 「1080p」, 1081p up to below 2K (1439p) → 「4K」. A 1440p (2K) or larger source never reaches the panel (R-196); the 4K output option stays (R-045). (Q-5: which side of a portrait video counts.)
 - R-045 [PM:pm-main-flow §5.2] Resolution offers 720p, 1080p and 4K only; there is no 2K option in v1.
 
 ## Settings chips
@@ -84,21 +96,22 @@ Q-21, Q-22.
 - R-054 [PM:pm-main-flow 9/29 ⑤] In Professional either handle stops at 2:30 (R-033).
 - R-055 [PM:pm-main-flow 9/29 ⑤; PM:pm-draft-logic B1-1 ③] Switching from Professional back to Standard keeps the selection and raises the limit to 8:00; the user can drag it longer. (Draft B1-1 ④ 「restore the earlier selection」 belongs to the auto-shortening the Design rejected.)
 - R-056 [PM:pm-main-flow 9/29 limit rule] The selection is rounded up to whole seconds before it is compared with the limit: 2:30.4 counts as 151 s, over 2:30.
+- R-197 [Req: REQ-008; spec agent TC-VE2-245 – TC-VE2-250 (PM 9/29 ① 「Professional at entry」, older than the Design 預設值規則 R-040); R-030, R-051, R-052, R-056] The panel never opens in Professional. For sources of 1 s, 30 s, 149.99 s, 150 s, 150.01 s and 12:30 (750 s) the panel opens in Standard with 00:00 – min(length, 8:00) selected; a tap on 「Professional」 then switches for the 1 s, 30 s, 149.99 s (150 s rounded up) and 150 s selections with the selection unchanged, and is refused with the R-052 toast for the 150.01 s (151 s rounded up) and 8:00 selections.
 - R-057 [PM:pm-main-flow 9/29 ⑦] On a clip from the Timeline the same rules apply: a selection over 2:30 and a tap on Professional shows the same toast. (Draft B1-1 ⑦ disables the chip with 「Professional mode supports clips up to 2m 30s. Split the clip to use it.」; the Design rule 「Professional 外觀正常，可點」 decides, Q-10.)
 - R-058 [PM:pm-draft-logic B1-1 ⑦ + D4 [建議]] A Timeline clip longer than 8:00 does not open the panel; a toast 「Split clips longer than 8 minutes first」 explains it (Q-10).
 
 ## Credit price
-- R-060 [DS:ds-routing 「價格 = 選取秒數 × 每秒費率」; PM:pm-main-flow §6.1] The price is the selected seconds rounded up to whole seconds × the per-second rate of the Mode, Resolution and fps; the CTA shows the total (「Enhance ◆ <credits>」).
+- R-060 [DS:ds-routing 「價格 = 選取秒數 × 每秒費率」; PM:pm-main-flow §6.1; Req: REQ-008; spec agent TC-VE2-114 – TC-VE2-149, ECL form 22061491221] The price is the selected seconds rounded up to whole seconds × the per-second rate of the chosen Mode, Resolution and output fps (the ECL rate table, R-063); the CTA shows the total (「Enhance ◆ <credits>」).
 - R-061 [DS:ds-routing 「長度改變，價格跟著改變」] Changing the selected length updates the CTA price at once.
-- R-062 [PM:pm-main-flow §6.1] Enhancement style does not change the price.
-- R-063 [PM:pm-main-flow §5 / §6.4 example] A 3.96 s selection in 1080p Standard at 30 fps costs 4 s × 2 credits = 8 credits (credit numbers are binding; other rates: Q-4).
+- R-062 [PM:pm-main-flow §6.1; Req: REQ-008 (ECL: the natural and hd actions carry the same rates)] Enhancement style does not change the price.
+- R-063 [PM:pm-main-flow §5 / §6.4 example; Req: REQ-008; spec agent TC-VE2-114 – TC-VE2-149 and TC-VE2-185 – TC-VE2-220, ECL form 22061491221, actions genvideo_1_sec_byteplus_{std|pro}_{natural|hd}_{720p|1080p|4k}_{30|60|120}fps] Per-second rates in credits (Natural and Sharp alike), for 30fps / 60fps / 120fps: Standard 720p 1 / 1 / 1, 1080p 2 / 2 / 2, 4K 3 / 6 / 8; Professional 720p 2 / 4 / 8, 1080p 4 / 8 / 16, 4K 12 / 24 / 48. A 3.96 s selection in 1080p Standard at 30 fps costs 4 s × 2 credits = 8 credits; a 3.2 s selection costs 4 s × the rate. Credit numbers are binding.
 - R-064 [DS:ds-main-flow 「Charge X credits per second」; PM:pm-draft-logic C1 [衝突]] Under the CTA the line 「Charge X credits per second」 shows the per-second rate of the current settings (the Design shows both the total and the rate).
-- R-065 [PM:pm-main-flow §6.1; PM:pm-draft-logic B4 [衝突]] Mode and Resolution change the price; the fps that prices it is the source fps (Q-3).
+- R-065 [PM:pm-main-flow §6.1; PM:pm-draft-logic B4 [衝突]; Req: REQ-008; spec agent TC-VE2-117 – TC-VE2-149 (ECL form 22061491221)] Mode, Resolution and the chosen output fps chip change the price by the R-063 table (PM B4's output fps, not the source fps of the PM main page; Q-3 answered): in Standard 720p and 1080p the fps chip leaves the rate unchanged (1 and 2 for every fps); in Standard 4K and in Professional a higher fps raises it.
 - R-066 [PM:pm-main-flow §6.3] Billing uses the SKU genvideo_1_sec_byteplus_{mode}_{style}_{resolution}_{fps} (e.g. std_hd_1080p_30fps) — NOT TESTABLE: server-side billing id, not shown in the app.
 
 ## Eligibility and purchase
-- R-070 [DS:ds-main-flow VE · 01 「Free user 需要訂閱才能使用」; PM:pm-access-credit §7 / 9/24] The feature is Pro+ only: for a Free or Pro (not Pro+) user the CTA reads 「Unlock Pro+ to Enhance」 (PM's 「Upgrade to Pro+」 is older) and tapping it opens the IAP page; a Pro+ user gets 「Enhance ◆ <credits>」.
-- R-071 [PM:pm-draft-logic C2 [建議]] For a Pro user the IAP page opens on the Pro+ tab.
+- R-070 [DS:ds-main-flow VE · 01 「Free user 需要訂閱才能使用」; PM:pm-access-credit §7 / 9/24; Req: REQ-008; spec agent TC-VE2-040, TC-VE2-041, TC-VE2-241 (colleague feedback 2026-10-07 items 8–9, newer than Design and PM 9/24)] On Android the feature unlocks with Pro: a Free user's CTA is an unlock action for Pro (no price; Android wording not drawn, Q-25) and tapping it opens the IAP page; a Pro or Pro+ user gets the enabled 「Enhance ◆ <credits>」. (The Design's 「Unlock Pro+ to Enhance」 and the Pro+-only rule are the iOS rule; PM's 「Upgrade to Pro+」 is older.)
+- R-071 [PM:pm-draft-logic C2 [建議]; Req: REQ-008; spec agent TC-VE2-041] On Android the unlock action opens the IAP page on the 「Pro」 tab (Pro IAP). The PM C2 rule that sends a Pro user to the 「Pro+」 tab is the iOS rule: an Android Pro user never sees the unlock action (R-070).
 - R-072 [DS:ds-main-flow IAP_US] The IAP page shows the Pro / Pro+ tabs, the plans 「Yearly」 (「Best Value」, 「65% OFF」) and 「Monthly」, 「Continue」, 「Tap to compare」 and the footer 「Terms of Service」 「Privacy Policy」 「Restore purchase」. The trial line 「Receive 35 credits during free trial」 conflicts with PM §7 「no free trial in v1」 (Q-7).
 - R-073 [PM:pm-draft-logic C2 [建議]] Closing the IAP page or the Credit page without buying returns to the panel unchanged (selection and settings kept).
 - R-074 [DS:ds-main-flow arrows 3293-13677, 3293-13678] 「Continue」 opens the store purchase sheet (Google Play on Android); after the purchase the app shows 「You're all set」 / 「Your purchase was successful.」 with 「OK」.
@@ -113,8 +126,8 @@ Q-21, Q-22.
 ## Generating and cancel
 - R-085 [DS:ds-main-flow VE · 03 Generating; DS:ds-cancel] After 「Enhance」 a processing dialog covers the panel: a progress ring (「25%」), 「Video uploading...」, 「Please keep the app open」 and 「Cancel」.
 - R-086 [DS:ds-cancel arrow 3393-18476; DS:ds-routing 「取消確認」] 「Cancel」 opens the dialog 「Sure You Want to Leave?」 / 「Your video is still uploading. Leaving this page will cancel the process, and the credits will not be restored.」 with 「Leave」 and 「Keep Uploading」.
-- R-087 [DS:ds-cancel] 「Keep Uploading」 closes the dialog and the upload goes on.
-- R-088 [DS:ds-cancel arrow 3393-18607; DS:ds-routing 「Leave → 回設定面板 / Leave → credit 不退還 / 使用者主動取消則不退還」] 「Leave」 cancels the process and returns to the panel; the credits are not restored (PM §8 「Cancel while uploading charges nothing, creates no task」 and PM C4's 「Leave = keep running」 lose to the Design, Q-2).
+- R-087 [DS:ds-cancel; Req: REQ-008; spec agent TC-VE2-234 (colleague feedback item 11)] 「Keep Uploading」 closes the dialog and the upload goes on; the 「Enhance」 CTA behind the dialogs stays disabled until the upload ends, so no second task can start.
+- R-088 [DS:ds-cancel arrow 3393-18607; DS:ds-routing 「Leave → 回設定面板 / Leave → credit 不退還 / 使用者主動取消則不退還」] 「Leave」 cancels the process and returns to the panel with 「Enhance」 enabled again [Req: REQ-008; spec agent TC-VE2-235]; the credits are not restored (PM §8 「Cancel while uploading charges nothing, creates no task」 and PM C4's 「Leave = keep running」 lose to the Design, Q-2).
 - R-089 [DS:ds-main-flow arrow 3293-13681; PM:pm-main-flow §8 「成功上傳＝commit 點・扣 credit」] When the upload finishes the task moves to Recent task as processing and the balance drops by the CTA price.
 - R-090 [PM:pm-draft-logic C3 [建議]] Closing or backgrounding the app while uploading counts as a cancel and charges nothing (Q-18).
 - R-091 [PM:pm-main-flow §4.3 「v1 無 cancel，使用者可離開 App」; PM:pm-draft-logic C4 [建議]] After the upload the generation runs on the server in the background: the user may leave the app and it still finishes; a processing task cannot be cancelled in v1.
@@ -122,6 +135,8 @@ Q-21, Q-22.
 - R-093 [PM:pm-main-flow §4.2 step 6 / §9 / §10.4, arrow 397-1241] When the first background task is created after a successful upload, the dialog 「Turn on notifications」 / 「We'll let you know when it's done.」 with 「Turn On」 and 「Later」 appears. PM-only: no Design frame yet.
 - R-094 [PM:pm-draft-logic D1 [建議]] The prompt is shown only when the system notification permission was never asked; 「Turn On」 opens the system permission dialog, or the system notification settings when it was denied (on Android 12 the permission is a setting, granted by default); afterwards the user stays on the Generating screen.
 - R-095 [PM:pm-draft-logic D1 [建議]] After 「Later」 the app does not ask again.
+- R-203 [Req: REQ-008; spec agent TC-VE2-174 (PM naming decision relayed by their colleague; our spec does not draw the ledger), TC-VE2-185 – TC-VE2-220] Each task's charge appears in the credit history (Credit page › 「Details」) as one debit named 「AI Video Enhance」 for exactly the CTA price.
+- R-204 [Req: REQ-008; spec agent TC-VE2-221 – TC-VE2-223 (company performance standard adopted by user instruction, not in the spec)] From the first remaining-time display on the task's Recent task card to its completion (the card turning completed, the completion banner or notification, whichever comes first) takes 1.5 – 2.5 × the selected length: 1.5 – 2.5 s for a 1 s selection, 4.8 – 8 s for 3.2 s, 45 – 75 s for 30 s.
 
 ## Background task and notifications
 - R-100 [DS:ds-alt-exception 生成完成跳通知; PM:pm-draft-logic D1 [Design]] When a task completes while the user is elsewhere in the app, an in-app banner shows 「Good news! Your AI Video Enhance task has been completed. Tap here to view your results.」 with 「Close」 and 「View」 (PM's push copy is the background case, R-103).
@@ -139,16 +154,18 @@ Q-21, Q-22.
 - R-115 [DS:ds-alt-exception arrow 3293-15874] ⌂ on Recent task opens the Launcher.
 - R-116 [DS:ds-main-flow 「Manage」] 「Manage」 opens the management of the stored tasks (Q-8).
 - R-117 [DS:ds-main-flow 「Tasks are stored on the cloud for 1 Year」] Tasks are kept on the cloud for one year — NOT TESTABLE: needs a year.
+- R-198 [DS:ds-main-flow 「Tasks are stored on the cloud for 1 Year」; Req: REQ-008; spec agent TC-VE2-077] The part of the one-year retention a run can see: a completed task stays on Recent task after the app is closed and reopened, and its 「View」 still opens its Result after the longest wait the run allows (days later, not only minutes); the one-year limit itself is confirmed with RD (R-117).
 
 ## Result
 - R-120 [DS:ds-main-flow result; DS:ds-alt-exception result] The Result page shows back ‹, the tabs 「Original」 / 「Result」 (Result selected), the video with play, a progress slider and the time (「04:48/08:00」), and the buttons 「Save Result」, 「Add to Timeline」 and 「Enhance More」 (PM 「Edit More」 is older; PM D3 [衝突] settles it).
 - R-121 [DS:ds-main-flow result] 「Original」 shows the source video and 「Result」 the enhanced one.
-- R-122 [DS:ds-routing 「Save Result → 存到手機」; PM:pm-draft-logic D3 [建議]] 「Save Result」 saves the video to the phone, with the toast 「Saved to your device」 (「Couldn't save. Try again.」 on failure).
+- R-201 [Req: REQ-008; spec agent TC-VE2-168 (generic player rule, not in the Design)] While the Result video plays, the same button pauses it: the time and the frame stop where they are until play is tapped again.
+- R-122 [DS:ds-routing 「Save Result → 存到手機」; PM:pm-draft-logic D3 [建議]; Req: REQ-008; spec agent TC-VE2-236 (colleague feedback item 14)] 「Save Result」 saves the video to the phone as a new file, with the toast 「Saved to your device」 (「Couldn't save. Try again.」 on failure); the saved file is listed under 「All」 in PowerDirector's media picker and can be used on a timeline.
 - R-123 [DS:ds-routing 「Add to Timeline → 開新 timeline」 + 「Add to Timeline 是開一條新的 timeline，不取代原 clip」] 「Add to Timeline」 opens a new project with the result on its timeline; it does not replace a clip in an existing project.
 - R-124 [DS:ds-main-flow arrow 3293-13720; DS:ds-routing 「Edit More → 回 Media Room」] 「Enhance More」 opens Add Media for the next video.
 - R-125 [DS:ds-main-flow result ‹] Back ‹ on the Result page returns to the page it was opened from (Q-9).
 - R-126 [DS:ds-routing 「所有 Enhance 功能皆耗 credit，一律雲端生成後另存新片」] The result is a new video: the source video in the album is kept unchanged.
-- R-194 [DS:ds-routing 設定面板 「Trim + Mode / Enhancement style / fps / Resolution」 and 「一律雲端生成後另存新片」; PM:pm-main-flow §6.3 SKU {mode}_{style}_{resolution}_{fps}; Rule: analysis pass 10, a setting's values are variants (2026-11-04); Req: REQ-004] The task is made with the values chosen on the panel when 「Enhance」 is tapped: the saved result has the chosen Resolution (720p = 1280 × 720, 1080p = 1920 × 1080, 4K = 3840 × 2160 for a landscape source), the chosen fps (30 / 60 / 120) and the selected length, and the charge is the CTA price those values set (R-060, R-062, R-065, R-089). Each value of Mode, Enhancement style, fps and Resolution is used in one generation (`### Variants`).
+- R-194 [DS:ds-routing 設定面板 「Trim + Mode / Enhancement style / fps / Resolution」 and 「一律雲端生成後另存新片」; PM:pm-main-flow §6.3 SKU {mode}_{style}_{resolution}_{fps}; Rule: analysis pass 10, a setting's values are variants (2026-11-04); Req: REQ-004] The task is made with the values chosen on the panel when 「Enhance」 is tapped: the saved result has the chosen Resolution (720p = 1280 × 720, 1080p = 1920 × 1080, 4K = 3840 × 2160 for a landscape source), the chosen fps (30 / 60 / 120) and the selected length, and the charge is the CTA price those values set (R-060, R-062, R-065, R-089). Each value of Mode, Enhancement style, fps and Resolution is used in a generation (`### Variants`), and every combination of the four is priced, generated and checked once (`### Combinations`, 36 rows) [Req: REQ-008; spec agent TC-VE2-171, TC-VE2-172, TC-VE2-185 – TC-VE2-220].
 - R-195 [DS:ds-ai-video-enhance Settings › Mode and Enhancement style bubbles; Req: REQ-004] The Mode and style values show in the result as their bubbles say: Professional 「Maximum detail」 (more detail than Standard's 「Great quality」); Sharp 「Moderate enhancement for a sharp, clear image」 (sharper than Natural's 「Lighter enhancement with fewer artifacts, for a more realistic look」).
 
 ## Timeline entry
@@ -170,17 +187,15 @@ Q-21, Q-22.
 ## Open questions
 - Q-1 Demo page description: the Design draws AI Reframe's text 「AI reframe your video for any aspect ratio, then fine-tune the crop in real time.」; PM A1 [衝突] proposes 「Make blurry, noisy or dark videos look sharp and clear.」. Assumption: the description must not be AI Reframe's; the PM proposal is the expected text until the Design changes. R-007 (TC-011).
 - Q-2 Cancel during upload: Design 「Leaving this page will cancel the process, and the credits will not be restored.」 vs PM §8 (Cancel before the upload reaches the server charges nothing and creates no task) and PM C4 (Leave = keep running in the background). Assumption: the Design (newer, outranks): Leave cancels, back to the panel, credits not restored. R-088 (TC-113).
-- Q-3 Which fps prices a task: PM main page says the source fps, PM B4 [衝突] proposes the output fps now that fps is a choice. Assumption: source fps (the changed fps chip does not change the price); check on device. The fps value rows assert only that the charge equals the price shown. R-065 (TC-087, TC-221, TC-222).
-- Q-4 Per-second rate table: only 1080p Standard 30 fps = 2 credits/s is stated. Assumption: other combinations are checked only for the price changing with Mode / Resolution and the charge equalling the price shown; ask PM for the table. R-063, R-065 (TC-083, TC-219, TC-224).
 - Q-5 Resolution of a portrait video: which side decides (PM B3 proposes the short side, 1080×1920 = 1080p). Assumption: short side. R-044 (TC-059).
-- Q-6 Disabled chips: which fps / Resolution combinations each Mode supports (BytePlus table [待確認]); the Design says a disabled chip cannot be tapped, PM B5 says a tap shows a toast. Assumption: a tap on a disabled chip changes nothing and shows no toast; a setting-value row whose chip is disabled on the build is recorded Blocked as a question. R-047 (TC-064, TC-221, TC-222, TC-224).
+- Q-6 Disabled chips: which fps / Resolution combinations each Mode supports (BytePlus table [待確認]); the Design says a disabled chip cannot be tapped, PM B5 says a tap shows a toast. Assumption: a tap on a disabled chip changes nothing and shows no toast; the ECL table prices all 36 combinations, so every combination row expects its chips enabled, and a combination row whose chip is disabled on the build is recorded Blocked as a question. R-047 (TC-064, the combination rows TC-219 – TC-224, TC-225 – TC-254).
 - Q-7 Pro+ trial: the IAP page offers 「Try Pro+ 7 days for free」 and 「Receive 35 credits during free trial」 while PM §7 says no free trial in v1 (PM C2 [衝突]). Assumption: no row asserts the trial; the IAP page is checked as the Design draws it. R-072 (TC-093).
 - Q-8 「Manage」 on Recent task: the spec does not say what it opens. Assumption: a page to manage (download / delete) stored tasks. R-116 (TC-144).
 - Q-9 Back from Add Media and from the Result page: the spec draws ‹ but no arrow. Assumption: the previous page. R-014, R-125 (TC-021, TC-155).
 - Q-10 Timeline clip limits: PM 9/29 ⑦ (same trim rules, toast) vs draft B1-1 ⑦ / D4 (whole clip locked, Professional chip disabled for 2:30–8:00 clips, clip > 8:00 does not open). Assumption: the Design rule 「Professional 外觀正常，可點」 and ⑦ (toast) for 2:30–8:00; clip > 8:00 does not open (both PM drafts). R-057, R-058 (TC-160, TC-161).
 - Q-11 Timeline result: PM pastes the result back over the clip (「Applied Video Enhance」, form TBD), the Design routing note says every Enhance result is saved as a new video and 「不取代原 clip」. Assumption: PM paste-back for the Timeline entry (the Design note is about Add to Timeline); check on device. R-131 (TC-162).
 - Q-12 Concurrent tasks [待確認] (PM proposes up to 3). Assumption: a second task can start while one is processing. R-092 (TC-121).
-- Q-13 Supported sources [待確認]: length ≥ 1 s, MP4 / MOV (H.264 / HEVC), ≤ 4K; whether a 4K source can be used (draft notes, Gap 1). Assumption: PM E1 proposal. R-015 (TC-022).
+- Q-13 Supported sources [待確認]: length ≥ 1 s, MP4 / MOV (H.264 / HEVC), ≤ 4K; whether a 4K source can be used (draft notes, Gap 1). Partly settled by REQ-008: the user requirement of 2026-10-16 (spec agent TC-VE2-097 / 098) rejects every source of 2K and up, so no 4K source is used (R-196). Assumption for the rest: PM E1 proposal (under 1 s and not MP4 / MOV are greyed with the toast). R-015, R-196 (TC-022).
 - Q-14 Disclosure: whether the existing GenAI consent dialog (covering the ByteDance cloud) is shown before the first upload (PM Open question 3, Legal). No row asserts it; a consent dialog on first use is recorded, not filed.
 - Q-15 The panel's credit pill: the spec does not say what tapping it opens. Its control is n/a until PM answers.
 - Q-16 Notifications: failure push (PM Gap 8, D1 [建議]) and the push copy for success are PM-only; the Design draws only the in-app banner. Assumption: Design copy in the app, PM copy for the system notification. R-100, R-103, R-143.
@@ -190,6 +205,13 @@ Q-21, Q-22.
 - Q-20 (Android) System Back on screens the spec gives no Back rule: the bubbles, the processing dialog, the leave dialog and the notification prompt. Assumption: a bubble closes; the processing dialog asks first like its 「Cancel」; the leave dialog and the prompt take the safe answer (「Keep Uploading」, 「Later」). R-190 (TC-203, TC-204, TC-205, TC-211).
 - Q-21 Playhead: the Design draws a playhead on the strip (a line, a time bubble and a ◀▶ knob) but no note says how far it may be dragged (only inside the selection, or the whole video) or whether play starts from it. Assumption: dragging it scrubs the Preview inside the selection and changes neither the selection nor the price. R-192, R-193 (TC-215).
 - Q-22 Completed task card: PM D2 says a completed card opens the Result when tapped (「Completed (tap → Result)」); the Design draws only the 「View」 button. Assumption: tapping the card's thumbnail opens the same Result as 「View」. R-112 (TC-143).
+- Q-23 2K+ rejection (REQ-008): the user requirement of 2026-10-16 rejects 「2K or higher」 sources before the panel but gives no message and no exact threshold; PM E1's toast 「This video isn't supported. Try one up to 4K.」 no longer fits a 4K source. Assumption: 2K = 1440p (2560 × 1440) and up, judged like R-044 (Q-5 for portrait); the row records the message shown and asserts only that the panel does not open and no task starts. R-196 (TC-022).
+- Q-24 Strip scale (REQ-008): PM 9/29 ⑥ says the strip's scale depends only on the video length and a Mode switch does not re-lay it (our v3 reading); the spec agent reads the same note as one strip width = the active Mode's limit (8:00 Standard, 2:30 Professional), re-laid on a Mode switch. Neither source is newer. Assumption: the spec agent's reading, pending PM confirmation of PM 9/29 ⑥; a difference on the build is a PM question, not a defect, until PM confirms. R-034 (TC-045, TC-264).
+- Q-25 Android unlock wording (REQ-008): the colleague feedback of 2026-10-07 makes Pro the Android tier, but no Design frame draws the Android CTA (the iPhone frame reads 「Unlock Pro+ to Enhance」), and the clip toolbar badge 「Pro+」 (R-005) is drawn for iOS too. Assumption: the CTA names Pro (e.g. 「Unlock Pro to Enhance」) and opens the IAP on the Pro tab; its exact words and the badge are recorded, not asserted. R-070, R-071, R-005 (TC-090, TC-004).
+
+## Answered questions
+- Q-3 Which fps prices a task: PM main page said the source fps, PM B4 [衝突] proposed the output fps. Answer (2026-11-10, REQ-008; spec agent TC-VE2-117 – TC-VE2-149, ECL form 22061491221): the chosen output fps chip prices the task, by the ECL table. R-065 (TC-087, the combination rows).
+- Q-4 Per-second rate table: only 1080p Standard 30 fps = 2 credits/s was stated. Answer (2026-11-10, REQ-008; spec agent TC-VE2-185 – TC-VE2-220 fixtures, ECL form 22061491221): the full table is R-063 (Standard 720p 1/1/1, 1080p 2/2/2, 4K 3/6/8; Professional 720p 2/4/8, 1080p 4/8/16, 4K 12/24/48 for 30/60/120fps; Natural = Sharp). R-063, R-065 (TC-083, TC-087, the combination rows TC-219 – TC-224, TC-225 – TC-254).
 
 ## Added 2026-11-04 — coverage passes and standing inputs
 
@@ -258,6 +280,9 @@ Clauses the screen does not show and how a tester observes them (pass 9).
 | R-110 | tasks are stored on the cloud (one year) | the notice only; the year is NOT TESTABLE (R-117) | TC-140 |
 | R-130 | after Enhance the clip is uploaded as in the main flow | the processing dialog and the Recent task card | TC-162 |
 | R-126 | the source video is kept unchanged | the source video in the album after the task | TC-153 |
+| R-196 | a 2K+ source is not loaded and no task starts | the panel does not open; Recent task gets no card; the balance is unchanged | TC-022 |
+| R-203 | the charge is booked as one debit named 「AI Video Enhance」 | the credit history after each combination generation | TC-219, TC-223 |
+| R-198 | the task is kept on the cloud (one year) | the completed card and its Result after closing and reopening the app days later; the year itself is NOT TESTABLE (R-117) | TC-268 |
 | R-142 | the refund is automatic | the balance before the task, after the charge and after the failure | TC-173 |
 
 ### Variants
@@ -265,11 +290,12 @@ One line per requirement × variant (pass 10).
 
 | Requirement | Variant | Rows |
 |---|---|---|
-| R-070 | Free | TC-090 |
-| R-070 | Pro | TC-091 |
-| R-070 | Pro+ | TC-033, TC-110 |
-| R-071 | Pro (IAP opens on the Pro+ tab) | TC-091 |
-| R-071 | Free | n/a (the rule is for Pro users; Free is R-070, TC-090) |
+| R-070 | Free (Pro unlock action, IAP) | TC-090 |
+| R-070 | Pro (enabled Enhance on Android) | TC-091 |
+| R-070 | Pro+ (enabled Enhance) | TC-033, TC-110 |
+| R-071 | Free (IAP opens on the Pro tab) | TC-090 |
+| R-071 | Pro (IAP on the Pro+ tab: the iOS rule) | n/a (an Android Pro user never sees the unlock action, R-070; TC-091 checks the enabled Enhance) |
+| R-071 | Pro+ | n/a (already unlocked, R-070) |
 | R-072 | Pro tab | TC-093 |
 | R-072 | Pro+ tab | TC-091, TC-093 |
 | R-043 | source 1–30 fps → 30fps | TC-052 |
@@ -304,6 +330,69 @@ One line per requirement × variant (pass 10).
 | R-195 | Mode=Professional (look) | TC-219 |
 | R-195 | Enhancement style=Sharp (look) | TC-220 |
 | R-195 | Standard / Natural (look) | TC-151 |
+| R-034 | Standard (8:00 per strip width) | TC-045, TC-264 |
+| R-034 | Professional (2:30 per strip width) | TC-045, TC-264 |
+| R-197 | sources 1 s, 30 s | TC-260 |
+| R-197 | sources 149.99 s, 150 s | TC-261 |
+| R-197 | sources 150.01 s, 750 s | TC-262 |
+| R-202 | local albums (All / Recents) | TC-020, TC-255 |
+| R-202 | named local album | TC-258 |
+| R-202 | Pexels | TC-256 |
+| R-202 | Pixabay | TC-257 |
+| R-204 | 1 s, card completion | TC-265 |
+| R-204 | 3.2 s, completion banner | TC-266 |
+| R-204 | 30 s, whichever comes first | TC-267 |
+
+### Combinations
+Every combination of the four settings the panel lets the user choose together (analysis pass 10, user 2026-11-10,
+REQ-008). Each row opens the 3.2 s 720p 30 fps fixture, sets the combination, checks the rate line and the CTA price
+at 1 s and at 3.2 s (4 billable seconds × the ECL rate, R-063), generates, checks the charge (balance and the credit
+history debit 「AI Video Enhance」, R-203), the Result look (R-195) and the saved file's resolution and fps (R-194).
+The ECL table prices every combination, so none is n/a.
+
+- Setting Mode: Standard, Professional
+- Setting Enhancement style: Natural, Sharp
+- Setting fps: 30fps, 60fps, 120fps
+- Setting Resolution: 720p, 1080p, 4K
+
+| Combination | Rows |
+|---|---|
+| Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=720p | TC-223 (1/s, 3.2 s → 「Enhance ◆ 4」) |
+| Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=1080p | TC-225 (2/s, 3.2 s → 「Enhance ◆ 8」) |
+| Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=4K | TC-224 (3/s, 3.2 s → 「Enhance ◆ 12」) |
+| Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=720p | TC-226 (1/s, 3.2 s → 「Enhance ◆ 4」) |
+| Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=1080p | TC-221 (2/s, 3.2 s → 「Enhance ◆ 8」) |
+| Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=4K | TC-227 (6/s, 3.2 s → 「Enhance ◆ 24」) |
+| Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=720p | TC-228 (1/s, 3.2 s → 「Enhance ◆ 4」) |
+| Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=1080p | TC-222 (2/s, 3.2 s → 「Enhance ◆ 8」) |
+| Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=4K | TC-229 (8/s, 3.2 s → 「Enhance ◆ 32」) |
+| Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=720p | TC-230 (1/s, 3.2 s → 「Enhance ◆ 4」) |
+| Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=1080p | TC-220 (2/s, 3.2 s → 「Enhance ◆ 8」) |
+| Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=4K | TC-231 (3/s, 3.2 s → 「Enhance ◆ 12」) |
+| Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=720p | TC-232 (1/s, 3.2 s → 「Enhance ◆ 4」) |
+| Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=1080p | TC-233 (2/s, 3.2 s → 「Enhance ◆ 8」) |
+| Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=4K | TC-234 (6/s, 3.2 s → 「Enhance ◆ 24」) |
+| Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=720p | TC-235 (1/s, 3.2 s → 「Enhance ◆ 4」) |
+| Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=1080p | TC-236 (2/s, 3.2 s → 「Enhance ◆ 8」) |
+| Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=4K | TC-237 (8/s, 3.2 s → 「Enhance ◆ 32」) |
+| Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=720p | TC-238 (2/s, 3.2 s → 「Enhance ◆ 8」) |
+| Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=1080p | TC-219 (4/s, 3.2 s → 「Enhance ◆ 16」) |
+| Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=4K | TC-239 (12/s, 3.2 s → 「Enhance ◆ 48」) |
+| Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=720p | TC-240 (4/s, 3.2 s → 「Enhance ◆ 16」) |
+| Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=1080p | TC-241 (8/s, 3.2 s → 「Enhance ◆ 32」) |
+| Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=4K | TC-242 (24/s, 3.2 s → 「Enhance ◆ 96」) |
+| Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=720p | TC-243 (8/s, 3.2 s → 「Enhance ◆ 32」) |
+| Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=1080p | TC-244 (16/s, 3.2 s → 「Enhance ◆ 64」) |
+| Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=4K | TC-245 (48/s, 3.2 s → 「Enhance ◆ 192」) |
+| Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=720p | TC-246 (2/s, 3.2 s → 「Enhance ◆ 8」) |
+| Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=1080p | TC-247 (4/s, 3.2 s → 「Enhance ◆ 16」) |
+| Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=4K | TC-248 (12/s, 3.2 s → 「Enhance ◆ 48」) |
+| Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=720p | TC-249 (4/s, 3.2 s → 「Enhance ◆ 16」) |
+| Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=1080p | TC-250 (8/s, 3.2 s → 「Enhance ◆ 32」) |
+| Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=4K | TC-251 (24/s, 3.2 s → 「Enhance ◆ 96」) |
+| Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=720p | TC-252 (8/s, 3.2 s → 「Enhance ◆ 32」) |
+| Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=1080p | TC-253 (16/s, 3.2 s → 「Enhance ◆ 64」) |
+| Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=4K | TC-254 (48/s, 3.2 s → 「Enhance ◆ 192」) |
 
 ### Flow arrows walked by existing rows
 - R-150 [DS: flow arrow 3294-24049 https://www.figma.com/design/HceGLJVaxnKsv7gXSXzKWh/Video-Enhance?node-id=3294-24049] Launcher 「AI Video Enhance」 shortcut → Demo page. Walked by: TC-001.
@@ -335,7 +424,7 @@ One line per requirement × variant (pass 10).
 - R-176 [PM: flow arrow 377-452 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=377-452] Notification → Result. Walked by: TC-131, TC-133.
 - R-177 [PM: flow arrow 383-2678 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=383-2678] Recent task back ‹ → panel. Walked by: TC-141.
 - R-178 [PM: flow arrow 397-1241 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=397-1241] First successful upload → 「Turn on notifications」 prompt. Walked by: TC-118.
-- R-179 [PM: flow arrow 377-1116 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=377-1116] Panel 「Upgrade to Pro+」 → IAP Pro+ (the Design's 「Unlock Pro+ to Enhance」, R-070). Walked by: TC-090, TC-091.
+- R-179 [PM: flow arrow 377-1116 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=377-1116] Panel 「Upgrade to Pro+」 → IAP Pro+ (on Android the Pro unlock action, R-070; an Android Pro user gets Enhance, TC-091). Walked by: TC-090.
 - R-180 [PM: flow arrow 377-1117 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=377-1117] Panel 「Enhance」 with balance < price → Credit page. Walked by: TC-096.
 - R-181 [PM: flow arrow 397-1887 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=397-1887] Timeline clip tool → panel with the clip. Walked by: TC-003.
 - R-182 [PM: flow arrow 397-1921 https://www.figma.com/design/mppB4GYkuVMVvHrdBeSAAU/AI-Video-Enhance?node-id=397-1921] Timeline task succeeded → clip replaced, 「Applied Video Enhance」. Walked by: TC-162.
@@ -349,6 +438,7 @@ None: no Testing Request build is named for this feature yet.
 | Entry | Requirements |
 |---|---|
 | KP-007 A failed generation refunds its credits | R-142 |
+| KP-066 Android text is held to the Android equivalent of the iOS font | n/a (a design-check rule for font weights against the Design; no casebook row checks a font weight, `figma` conformance applies it) |
 
 ### Request ledger coverage
 | Ledger entry | Requirements |
@@ -356,3 +446,4 @@ None: no Testing Request build is named for this feature yet.
 | REQ-001 (analysis: build the tables from the Design and PM Figma) | every requirement above (R-001 – R-195) |
 | REQ-002 (analysis: PM scope 309:643 + 405:1108; 0:1 superseded) | the PM-sourced requirements (e.g. R-033, R-093, R-131); page 0:1 is not read (update-plan.md › Not added) |
 | REQ-004 (analysis: rerun under passes 10 and 11 — left trim handle, setting values end to end, playhead) | R-031, R-033, R-035, R-054 (both handles), R-192, R-193 (playhead), R-194, R-195 (setting values); the ECL rate table (Q-3, Q-4), the 2K+ import block (Q-13) and Android Pro unlocking are left as REQ-004 says |
+| REQ-008 (table, Android: cover all 271 spec agent cases; every Mode × Enhancement style × fps × Resolution combination priced, generated and checked) | R-015, R-034, R-044, R-060, R-062, R-063, R-065, R-070, R-071, R-087, R-088, R-122, R-194 (changed); R-196 – R-204 (new); Q-3, Q-4 (answered); Q-23 – Q-25; `### Combinations` (36 rows); mapping `comparisons/20261110b_casebook-vs-spec-agent.mapping.json` |

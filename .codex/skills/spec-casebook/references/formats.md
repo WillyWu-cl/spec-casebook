@@ -21,6 +21,8 @@ Spec: <file names>
 ### Exit × stage          one grid, rows = stages, columns = exits; same cell rules
 ### Hidden clauses        | Requirement | Hidden clause | Observed through | Rows |   (pass 9)
 ### Variants              | Requirement | Variant | Rows |   one line per variant (pass 10)
+### Combinations          - Setting <name>: a, b, c (one line per setting), then | Combination | Rows |: every
+                          combination of the settings' values, `Name=value · Name=value …`, its row or n/a (<why>) (pass 10)
 ### Flow arrows walked by existing rows
 - R-150 [DS: flow arrow <node> <Figma URL>] <from → to>: <expected>. Walked by: TC-033.
 ### Build checks

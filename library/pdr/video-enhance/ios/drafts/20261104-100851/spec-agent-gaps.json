@@ -1,0 +1,1359 @@
+{
+  "spec_agent": {
+    "repo": "~/Desktop/Spec Agent",
+    "ref": "origin/main",
+    "commit": "uncommitted-20261104",
+    "feature": "video-enhance",
+    "platform": "ios",
+    "cases": 271,
+    "from": "snapshot"
+  },
+  "mapping": "comparisons/20261104b_casebook-vs-spec-agent.mapping.json",
+  "generated_at": "2026-11-10T06:05:31.162Z",
+  "gaps": [
+    {
+      "id": "TC-VE2-276",
+      "file": "test-cases/generated/video-enhance/TC-VE2-276.yaml",
+      "title": "Source-player total duration rounds 150.01 seconds up to 02:31",
+      "claim": "The AI Video Enhance source-player time readout displays the ceiling of the imported video's total duration after the slash; 150.01 seconds displays 00:00/02:31 rather than 00:00/02:30 at the initial position.",
+      "source": {
+        "kind": "request",
+        "ref": "User requirement"
+      },
+      "ios_review": true,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Total duration after the slash is rounded up (150.01 s → 02:31): user requirement 2026-10-21; our spec draws 「00:00/12:30」 with no rounding rule.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-026",
+      "file": "test-cases/generated/video-enhance/TC-VE2-026.yaml",
+      "title": "Source within active Mode cap fills one filmstrip viewport",
+      "claim": "When source duration is no longer than the active Mode maximum, the entire bottom filmstrip fills one",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-038",
+      "file": "test-cases/generated/video-enhance/TC-VE2-038.yaml",
+      "title": "Mode info displays Standard: Great quality · up to 8 min and",
+      "claim": "Mode info displays: Standard: up to 8 minutes. Professional: up to 2m 30s.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: Their pass text uses PM 9/29 「Standard: up to 8 minutes. Professional: up to 2m 30s.」 (their own title quotes the Design); the Design bubble 「Standard: Great quality · up to 8 min」 / 「Professional: Maximum detail · up to 2:30」 is newer (TC-035).",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-077",
+      "file": "test-cases/generated/video-enhance/TC-VE2-077.yaml",
+      "title": "Task objects are retained in cloud storage for one year.",
+      "claim": "Task objects are retained in cloud storage for one year.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "gap",
+      "decision": "not covered: Not covered on purpose: the one-year cloud retention is stated (Recent notice) but we marked it NOT TESTABLE (R-117, needs a year); TC-140 checks only the notice.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-097",
+      "file": "test-cases/generated/video-enhance/TC-VE2-097.yaml",
+      "title": "Import source 2160p: verify 2K+ source is rejected before settings",
+      "claim": "AI Video Enhance rejects importing every source classified by the active specification as 2K or higher before opening the settings flow, regardless of orientation, container or codec, fps, or duration; the source is not loaded and no Enhance task starts.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": true,
+      "mapped": "diff",
+      "decision": "stated differently: Theirs (user requirement 2026-10-16) rejects any 2K-or-higher source before the panel opens; our spec (Design lookup 1081p+ → 4K, PM E1 「≤ 4K」) lets 1440p and 4K sources open with 4K selected (TC-058) and rejects only sources over 4K (TC-022). Their rule is newer but not in our spec set: confirm with PM (our Q-13).",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-098",
+      "file": "test-cases/generated/video-enhance/TC-VE2-098.yaml",
+      "title": "Import source 4320p: verify 2K+ source is rejected before settings",
+      "claim": "AI Video Enhance rejects importing every source classified by the active specification as 2K or higher before opening the settings flow, regardless of orientation, container or codec, fps, or duration; the source is not loaded and no Enhance task starts.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": true,
+      "mapped": "diff",
+      "decision": "stated differently: Theirs (user requirement 2026-10-16) rejects any 2K-or-higher source before the panel opens; our spec (Design lookup 1081p+ → 4K, PM E1 「≤ 4K」) lets 1440p and 4K sources open with 4K selected (TC-058) and rejects only sources over 4K (TC-022). Their rule is newer but not in our spec set: confirm with PM (our Q-13).",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-110",
+      "file": "test-cases/generated/video-enhance/TC-VE2-110.yaml",
+      "title": "During-drag endpoint preview: left handle earlier",
+      "claim": "During left-handle dragging, Preview displays the frame at the dragged endpoint.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "part",
+      "decision": "not covered: Not covered: our spec says either side handle can be dragged (PM B1 [Design], Design 「Length」 frames) and every row drags only the right handle (TC-042, TC-044, TC-074). No row drags the left handle.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-114",
+      "file": "test-cases/generated/video-enhance/TC-VE2-114.yaml",
+      "title": "Credit display: Standard / Natural / 30fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-116",
+      "file": "test-cases/generated/video-enhance/TC-VE2-116.yaml",
+      "title": "Credit display: Standard / Natural / 30fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-117",
+      "file": "test-cases/generated/video-enhance/TC-VE2-117.yaml",
+      "title": "Credit display: Standard / Natural / 60fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-118",
+      "file": "test-cases/generated/video-enhance/TC-VE2-118.yaml",
+      "title": "Credit display: Standard / Natural / 60fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-119",
+      "file": "test-cases/generated/video-enhance/TC-VE2-119.yaml",
+      "title": "Credit display: Standard / Natural / 60fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-120",
+      "file": "test-cases/generated/video-enhance/TC-VE2-120.yaml",
+      "title": "Credit display: Standard / Natural / 120fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-121",
+      "file": "test-cases/generated/video-enhance/TC-VE2-121.yaml",
+      "title": "Credit display: Standard / Natural / 120fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-122",
+      "file": "test-cases/generated/video-enhance/TC-VE2-122.yaml",
+      "title": "Credit display: Standard / Natural / 120fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-123",
+      "file": "test-cases/generated/video-enhance/TC-VE2-123.yaml",
+      "title": "Credit display: Standard / Sharp / 30fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-125",
+      "file": "test-cases/generated/video-enhance/TC-VE2-125.yaml",
+      "title": "Credit display: Standard / Sharp / 30fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-126",
+      "file": "test-cases/generated/video-enhance/TC-VE2-126.yaml",
+      "title": "Credit display: Standard / Sharp / 60fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-127",
+      "file": "test-cases/generated/video-enhance/TC-VE2-127.yaml",
+      "title": "Credit display: Standard / Sharp / 60fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-128",
+      "file": "test-cases/generated/video-enhance/TC-VE2-128.yaml",
+      "title": "Credit display: Standard / Sharp / 60fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-129",
+      "file": "test-cases/generated/video-enhance/TC-VE2-129.yaml",
+      "title": "Credit display: Standard / Sharp / 120fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-130",
+      "file": "test-cases/generated/video-enhance/TC-VE2-130.yaml",
+      "title": "Credit display: Standard / Sharp / 120fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-131",
+      "file": "test-cases/generated/video-enhance/TC-VE2-131.yaml",
+      "title": "Credit display: Standard / Sharp / 120fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-132",
+      "file": "test-cases/generated/video-enhance/TC-VE2-132.yaml",
+      "title": "Credit display: Professional / Natural / 30fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-133",
+      "file": "test-cases/generated/video-enhance/TC-VE2-133.yaml",
+      "title": "Credit display: Professional / Natural / 30fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-134",
+      "file": "test-cases/generated/video-enhance/TC-VE2-134.yaml",
+      "title": "Credit display: Professional / Natural / 30fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-135",
+      "file": "test-cases/generated/video-enhance/TC-VE2-135.yaml",
+      "title": "Credit display: Professional / Natural / 60fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-136",
+      "file": "test-cases/generated/video-enhance/TC-VE2-136.yaml",
+      "title": "Credit display: Professional / Natural / 60fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-137",
+      "file": "test-cases/generated/video-enhance/TC-VE2-137.yaml",
+      "title": "Credit display: Professional / Natural / 60fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-138",
+      "file": "test-cases/generated/video-enhance/TC-VE2-138.yaml",
+      "title": "Credit display: Professional / Natural / 120fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-139",
+      "file": "test-cases/generated/video-enhance/TC-VE2-139.yaml",
+      "title": "Credit display: Professional / Natural / 120fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-140",
+      "file": "test-cases/generated/video-enhance/TC-VE2-140.yaml",
+      "title": "Credit display: Professional / Natural / 120fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-141",
+      "file": "test-cases/generated/video-enhance/TC-VE2-141.yaml",
+      "title": "Credit display: Professional / Sharp / 30fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-142",
+      "file": "test-cases/generated/video-enhance/TC-VE2-142.yaml",
+      "title": "Credit display: Professional / Sharp / 30fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-143",
+      "file": "test-cases/generated/video-enhance/TC-VE2-143.yaml",
+      "title": "Credit display: Professional / Sharp / 30fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The exact rate comes from the ECL billing table their colleague supplied, which our Figma spec does not hold (we know only 1080p Standard 30 fps = 2/s, Q-4). Our rows check only that Mode and Resolution change the price.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-144",
+      "file": "test-cases/generated/video-enhance/TC-VE2-144.yaml",
+      "title": "Credit display: Professional / Sharp / 60fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-145",
+      "file": "test-cases/generated/video-enhance/TC-VE2-145.yaml",
+      "title": "Credit display: Professional / Sharp / 60fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-146",
+      "file": "test-cases/generated/video-enhance/TC-VE2-146.yaml",
+      "title": "Credit display: Professional / Sharp / 60fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-147",
+      "file": "test-cases/generated/video-enhance/TC-VE2-147.yaml",
+      "title": "Credit display: Professional / Sharp / 120fps / 720p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-148",
+      "file": "test-cases/generated/video-enhance/TC-VE2-148.yaml",
+      "title": "Credit display: Professional / Sharp / 120fps / 1080p",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-149",
+      "file": "test-cases/generated/video-enhance/TC-VE2-149.yaml",
+      "title": "Credit display: Professional / Sharp / 120fps / 4K",
+      "claim": "The displayed enhancement price equals ceil(selected duration in seconds) multiplied by the applicable platform-specific per-second credit rate, subject to any separately confirmed minimum-charge rule. · Changing the selected duration updates the displayed price for the same configuration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Their ECL billing table prices by the chosen output fps (e.g. Professional 1080p: 30 → 4, 60 → 8, 120 → 16 credits/s); our TC-087 expects another fps chip to leave the price unchanged (PM main page: the source fps prices the task, Q-3). The ECL table is newer and is the live billing config: TC-087 likely needs to change.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-153",
+      "file": "test-cases/generated/video-enhance/TC-VE2-153.yaml",
+      "title": "Try It Now to Media picker: all source tabs and local albums",
+      "claim": "Try It Now opens Add Media for video selection. · Each available video-capable Media Room source entry, including local albums/folders and third-party library tabs, can import a supported video into AI Video Enhance settings.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Every Media Room source tab and album, including stock libraries, comes from the colleague’s build; the Design’s Add Media draws one 「Video」 tab with Recents (TC-020).",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-155",
+      "file": "test-cases/generated/video-enhance/TC-VE2-155.yaml",
+      "title": "Import route: Pexels stock video",
+      "claim": "Each available video-capable Media Room source entry, including local albums/folders and third-party library tabs, can import a supported video into AI Video Enhance settings.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Pexels / Pixabay stock tabs are not in the Design’s Add Media (one 「Video」 tab); from the colleague’s build.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-156",
+      "file": "test-cases/generated/video-enhance/TC-VE2-156.yaml",
+      "title": "Import route: Pixabay stock video",
+      "claim": "Each available video-capable Media Room source entry, including local albums/folders and third-party library tabs, can import a supported video into AI Video Enhance settings.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Pexels / Pixabay stock tabs are not in the Design’s Add Media (one 「Video」 tab); from the colleague’s build.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-159",
+      "file": "test-cases/generated/video-enhance/TC-VE2-159.yaml",
+      "title": "Double-arrow seek: earlier",
+      "claim": "Holding and dragging the double-arrow seek handle updates Preview and its current-time display continuously with the scrub position.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "part",
+      "decision": "not covered: Not covered (check the Design): they scrub a separate double-arrow playhead on the strip and expect the Preview and time to follow. The Design draws a drag control on the strip (round/ic_btn_drag) that our control trace took for the trim handle (TC-042); no row scrubs a playhead.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-161",
+      "file": "test-cases/generated/video-enhance/TC-VE2-161.yaml",
+      "title": "Double-arrow seek: back and forth",
+      "claim": "Holding and dragging the double-arrow seek handle updates Preview and its current-time display continuously with the scrub position.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "part",
+      "decision": "not covered: Not covered (check the Design): they scrub a separate double-arrow playhead on the strip and expect the Preview and time to follow. The Design draws a drag control on the strip (round/ic_btn_drag) that our control trace took for the trim handle (TC-042); no row scrubs a playhead.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-163",
+      "file": "test-cases/generated/video-enhance/TC-VE2-163.yaml",
+      "title": "Pause stops visible advancement of the source preview at the current playback position.",
+      "claim": "Pause stops visible advancement of the source preview at the current playback position.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Pause on a player: the Design draws a play control only and states no pause rule; a generic player check.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-168",
+      "file": "test-cases/generated/video-enhance/TC-VE2-168.yaml",
+      "title": "Pause on Result stops visible playback at the current result position.",
+      "claim": "Pause on Result stops visible playback at the current result position.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Pause on a player: the Design draws a play control only and states no pause rule; a generic player check.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-174",
+      "file": "test-cases/generated/video-enhance/TC-VE2-174.yaml",
+      "title": "Generation debit attribution in Credit Detail",
+      "claim": "An eligible user with sufficient credits can start enhancement directly. · The credit debit for the submitted enhancement is labeled AI Video Enhance in Credit Detail.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: The Credit Detail debit is named 「AI Video Enhance」: from the PM naming decision their colleague relayed; our spec does not draw the ledger.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-188",
+      "file": "test-cases/generated/video-enhance/TC-VE2-188.yaml",
+      "title": "Generate combination: Standard / Natural / 60fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-190",
+      "file": "test-cases/generated/video-enhance/TC-VE2-190.yaml",
+      "title": "Generate combination: Standard / Natural / 60fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-191",
+      "file": "test-cases/generated/video-enhance/TC-VE2-191.yaml",
+      "title": "Generate combination: Standard / Natural / 120fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-193",
+      "file": "test-cases/generated/video-enhance/TC-VE2-193.yaml",
+      "title": "Generate combination: Standard / Natural / 120fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-194",
+      "file": "test-cases/generated/video-enhance/TC-VE2-194.yaml",
+      "title": "Generate combination: Standard / Sharp / 30fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-196",
+      "file": "test-cases/generated/video-enhance/TC-VE2-196.yaml",
+      "title": "Generate combination: Standard / Sharp / 30fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-197",
+      "file": "test-cases/generated/video-enhance/TC-VE2-197.yaml",
+      "title": "Generate combination: Standard / Sharp / 60fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-198",
+      "file": "test-cases/generated/video-enhance/TC-VE2-198.yaml",
+      "title": "Generate combination: Standard / Sharp / 60fps / 1080p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-199",
+      "file": "test-cases/generated/video-enhance/TC-VE2-199.yaml",
+      "title": "Generate combination: Standard / Sharp / 60fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-200",
+      "file": "test-cases/generated/video-enhance/TC-VE2-200.yaml",
+      "title": "Generate combination: Standard / Sharp / 120fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-201",
+      "file": "test-cases/generated/video-enhance/TC-VE2-201.yaml",
+      "title": "Generate combination: Standard / Sharp / 120fps / 1080p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-202",
+      "file": "test-cases/generated/video-enhance/TC-VE2-202.yaml",
+      "title": "Generate combination: Standard / Sharp / 120fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-203",
+      "file": "test-cases/generated/video-enhance/TC-VE2-203.yaml",
+      "title": "Generate combination: Professional / Natural / 30fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-205",
+      "file": "test-cases/generated/video-enhance/TC-VE2-205.yaml",
+      "title": "Generate combination: Professional / Natural / 30fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-206",
+      "file": "test-cases/generated/video-enhance/TC-VE2-206.yaml",
+      "title": "Generate combination: Professional / Natural / 60fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-207",
+      "file": "test-cases/generated/video-enhance/TC-VE2-207.yaml",
+      "title": "Generate combination: Professional / Natural / 60fps / 1080p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-208",
+      "file": "test-cases/generated/video-enhance/TC-VE2-208.yaml",
+      "title": "Generate combination: Professional / Natural / 60fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-209",
+      "file": "test-cases/generated/video-enhance/TC-VE2-209.yaml",
+      "title": "Generate combination: Professional / Natural / 120fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-210",
+      "file": "test-cases/generated/video-enhance/TC-VE2-210.yaml",
+      "title": "Generate combination: Professional / Natural / 120fps / 1080p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-211",
+      "file": "test-cases/generated/video-enhance/TC-VE2-211.yaml",
+      "title": "Generate combination: Professional / Natural / 120fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-212",
+      "file": "test-cases/generated/video-enhance/TC-VE2-212.yaml",
+      "title": "Generate combination: Professional / Sharp / 30fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-213",
+      "file": "test-cases/generated/video-enhance/TC-VE2-213.yaml",
+      "title": "Generate combination: Professional / Sharp / 30fps / 1080p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-214",
+      "file": "test-cases/generated/video-enhance/TC-VE2-214.yaml",
+      "title": "Generate combination: Professional / Sharp / 30fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-215",
+      "file": "test-cases/generated/video-enhance/TC-VE2-215.yaml",
+      "title": "Generate combination: Professional / Sharp / 60fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-216",
+      "file": "test-cases/generated/video-enhance/TC-VE2-216.yaml",
+      "title": "Generate combination: Professional / Sharp / 60fps / 1080p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-217",
+      "file": "test-cases/generated/video-enhance/TC-VE2-217.yaml",
+      "title": "Generate combination: Professional / Sharp / 60fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-218",
+      "file": "test-cases/generated/video-enhance/TC-VE2-218.yaml",
+      "title": "Generate combination: Professional / Sharp / 120fps / 720p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-219",
+      "file": "test-cases/generated/video-enhance/TC-VE2-219.yaml",
+      "title": "Generate combination: Professional / Sharp / 120fps / 1080p",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-220",
+      "file": "test-cases/generated/video-enhance/TC-VE2-220.yaml",
+      "title": "Generate combination: Professional / Sharp / 120fps / 4K",
+      "claim": "Every Mode / Enhancement style / fps / Resolution combination supported by the release can complete enhancement and produce its corresponding playable result. · An eligible user with sufficient credits can start enhancement directly. · A generating task is shown in Recent Task with a processing state. · A completed task offers View. · Tapping View on a completed task opens its Result page. · Play on Result starts visible playback of the completed generated video. · Save Result stores the generated video on the phone as a separate file. · The saved generated video uses the selected supported output fps. · The saved generated video uses the selected supported output Resolution. · Every enhancement configuration consumes credits. · For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "value",
+      "decision": "not covered: Not covered: no row generates with a non-default setting. Our only generation (TC-110 → TC-143) uses the defaults; the Mode, Enhancement style, fps and Resolution chips are variants of the rule and pass 10 would give each value its own generation (about six rows: Professional, Sharp, 60fps, 120fps, 720p, 4K), not their 36-way product.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-221",
+      "file": "test-cases/generated/video-enhance/TC-VE2-221.yaml",
+      "title": "Recent Task performance ratio: 1s / task_list_completion",
+      "claim": "For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Generation time 1.5–2.5 × the video length: a company performance standard adopted by user instruction, not in the spec.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-222",
+      "file": "test-cases/generated/video-enhance/TC-VE2-222.yaml",
+      "title": "Recent Task performance ratio: 3.2s / completion_notification",
+      "claim": "For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Generation time 1.5–2.5 × the video length: a company performance standard adopted by user instruction, not in the spec.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-223",
+      "file": "test-cases/generated/video-enhance/TC-VE2-223.yaml",
+      "title": "Recent Task performance ratio: 30s / earliest_observed_of_both",
+      "claim": "For every current SPEC-supported Mode/style/fps/Resolution combination, elapsed time from the first observed remaining-time display in Recent Task to the declared same-task completion signal is1.5–2.5 times actual selected video duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Generation time 1.5–2.5 × the video length: a company performance standard adopted by user instruction, not in the spec.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-225",
+      "file": "test-cases/generated/video-enhance/TC-VE2-225.yaml",
+      "title": "Import route: named local album outside All / Recents",
+      "claim": "Each available video-capable Media Room source entry, including local albums/folders and third-party library tabs, can import a supported video into AI Video Enhance settings.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-74bcea795449e8e024bff720c14659f913b62ae0493abc92d21432b9a2b9f782.pdf"
+      },
+      "ios_review": false,
+      "mapped": "nonspec",
+      "decision": "not from the spec: Picking from a named local album: a generic picker check; the Design draws Recents only.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-228",
+      "file": "test-cases/generated/video-enhance/TC-VE2-228.yaml",
+      "title": "Professional rejects any Standard selection over 150s (151s boundary)",
+      "claim": "Professional retains its normal selectable appearance when Standard selection exceeds 2:30. · Tapping Professional with a selection longer than 2:30 displays: Professional mode supports up to 2m 30s. Shorten your selection to switch. · Tapping Professional with a selection longer than 2:30 leaves Standard selected. · A rejected Professional switch preserves the entire selected interval: start, end and length; it never automatically shortens or moves the selection.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: Behaviour is ours too (TC-071, TC-073: blocked, Mode stays, chip looks normal). Only the toast copy differs: theirs is PM 9/29 「Professional mode supports up to 2m 30s. Shorten your selection to switch.」; the newer Design frame 「Mode 長度上限」 (Design 26.09 v2, 1005; none of its copy is in their 10/07 PDF) says 「Professional supports clips up to 2:30. Shorten your selection to switch.」.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-230",
+      "file": "test-cases/generated/video-enhance/TC-VE2-230.yaml",
+      "title": "Professional recovery: 05:00 rejected, shorten to 02:20 and switch",
+      "claim": "Tapping Professional with a selection longer than 2:30 displays: Professional mode supports up to 2m 30s. Shorten your selection to switch. · Tapping Professional with a selection longer than 2:30 leaves Standard selected. · After shortening selection so its rounded-up duration is at most 150 seconds, tapping Professional selects Professional. · A rejected Professional switch preserves the entire selected interval: start, end and length; it never automatically shortens or moves the selection.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: Behaviour is ours too (TC-071, TC-073: blocked, Mode stays, chip looks normal). Only the toast copy differs: theirs is PM 9/29 「Professional mode supports up to 2m 30s. Shorten your selection to switch.」; the newer Design frame 「Mode 長度上限」 (Design 26.09 v2, 1005; none of its copy is in their 10/07 PDF) says 「Professional supports clips up to 2:30. Shorten your selection to switch.」.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-245",
+      "file": "test-cases/generated/video-enhance/TC-VE2-245.yaml",
+      "title": "Initial Professional selection: source 1s",
+      "claim": "When settings entry already has Professional as its current Mode, the initial selection starts at 00:00 and equals min(source duration, 150 seconds).",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-246",
+      "file": "test-cases/generated/video-enhance/TC-VE2-246.yaml",
+      "title": "Initial Professional selection: source 30s",
+      "claim": "When settings entry already has Professional as its current Mode, the initial selection starts at 00:00 and equals min(source duration, 150 seconds).",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-247",
+      "file": "test-cases/generated/video-enhance/TC-VE2-247.yaml",
+      "title": "Initial Professional selection: source 149.99s",
+      "claim": "When settings entry already has Professional as its current Mode, the initial selection starts at 00:00 and equals min(source duration, 150 seconds).",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-248",
+      "file": "test-cases/generated/video-enhance/TC-VE2-248.yaml",
+      "title": "Initial Professional selection: source 150s",
+      "claim": "When settings entry already has Professional as its current Mode, the initial selection starts at 00:00 and equals min(source duration, 150 seconds).",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-249",
+      "file": "test-cases/generated/video-enhance/TC-VE2-249.yaml",
+      "title": "Initial Professional selection: source 150.01s",
+      "claim": "When settings entry already has Professional as its current Mode, the initial selection starts at 00:00 and equals min(source duration, 150 seconds).",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-250",
+      "file": "test-cases/generated/video-enhance/TC-VE2-250.yaml",
+      "title": "Initial Professional selection: source 750s",
+      "claim": "When settings entry already has Professional as its current Mode, the initial selection starts at 00:00 and equals min(source duration, 150 seconds).",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: PM 9/29 ① 「Professional at entry selects at most 2:30」: the newer Design 預設值規則 sets Mode to Standard on every entry (TC-050, TC-051), so the panel never opens in Professional.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-264",
+      "file": "test-cases/generated/video-enhance/TC-VE2-264.yaml",
+      "title": "Long-source filmstrip 481s: Mode-specific 480s / 150s viewport",
+      "claim": "When source duration exceeds the active Mode maximum, the filmstrip scrolls horizontally and one viewport represents that Mode maximum: 480 seconds in Standard or 150 seconds in Professional. · Switching Standard / Professional recalculates filmstrip scale from the active Mode maximum. For a source longer than 150 seconds, the visible filmstrip proportion and handle screen positions are expected to change; chronological thumbnail order and any selection valid in both Modes keep the same start, end and duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-265",
+      "file": "test-cases/generated/video-enhance/TC-VE2-265.yaml",
+      "title": "Long-source filmstrip 750s: Mode-specific 480s / 150s viewport",
+      "claim": "When source duration exceeds the active Mode maximum, the filmstrip scrolls horizontally and one viewport represents that Mode maximum: 480 seconds in Standard or 150 seconds in Professional. · Switching Standard / Professional recalculates filmstrip scale from the active Mode maximum. For a source longer than 150 seconds, the visible filmstrip proportion and handle screen positions are expected to change; chronological thumbnail order and any selection valid in both Modes keep the same start, end and duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-266",
+      "file": "test-cases/generated/video-enhance/TC-VE2-266.yaml",
+      "title": "150.01s source: Standard full-width and Professional 150s viewport",
+      "claim": "When source duration is no longer than the active Mode maximum, the entire bottom filmstrip fills one · When source duration exceeds the active Mode maximum, the filmstrip scrolls horizontally and one viewport represents that Mode maximum: 480 seconds in Standard or 150 seconds in Professional. · Switching Standard / Professional recalculates filmstrip scale from the active Mode maximum. For a source longer than 150 seconds, the visible filmstrip proportion and handle screen positions are expected to change; chronological thumbnail order and any selection valid in both Modes keep the same start, end and duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-267",
+      "file": "test-cases/generated/video-enhance/TC-VE2-267.yaml",
+      "title": "480s source: Standard full-width and Professional 150s viewport",
+      "claim": "When source duration is no longer than the active Mode maximum, the entire bottom filmstrip fills one · When source duration exceeds the active Mode maximum, the filmstrip scrolls horizontally and one viewport represents that Mode maximum: 480 seconds in Standard or 150 seconds in Professional. · Switching Standard / Professional recalculates filmstrip scale from the active Mode maximum. For a source longer than 150 seconds, the visible filmstrip proportion and handle screen positions are expected to change; chronological thumbnail order and any selection valid in both Modes keep the same start, end and duration.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "diff",
+      "decision": "stated differently: Same source (PM 9/29 ⑥, which they quote): 「the strip scale depends only on the video length; switching Mode does not re-lay the strip」. Their case makes one viewport = the active Mode limit (150 s in Professional) and re-scales on a Mode switch; ours follows the ⑥ text (TC-045). Neither is newer: ask PM which is meant.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-268",
+      "file": "test-cases/generated/video-enhance/TC-VE2-268.yaml",
+      "title": "Media Room: 05:00 rejection, three-second toast, shorten and retry",
+      "claim": "Professional retains its normal selectable appearance when Standard selection exceeds 2:30. · Tapping Professional with a selection longer than 2:30 displays: Professional mode supports up to 2m 30s. Shorten your selection to switch. · Tapping Professional with a selection longer than 2:30 leaves Standard selected. · A rejected Professional switch preserves the entire selected interval: start, end and length; it never automatically shortens or moves the selection. · The rejected Professional-switch toast is displayed for three seconds and then disappears. · After shortening selection so its rounded-up duration is at most 150 seconds, tapping Professional selects Professional.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: Behaviour is ours too (TC-071, TC-073: blocked, Mode stays, chip looks normal). Only the toast copy differs: theirs is PM 9/29 「Professional mode supports up to 2m 30s. Shorten your selection to switch.」; the newer Design frame 「Mode 長度上限」 (Design 26.09 v2, 1005; none of its copy is in their 10/07 PDF) says 「Professional supports clips up to 2:30. Shorten your selection to switch.」.",
+      "carried_from": "20261103-174203"
+    },
+    {
+      "id": "TC-VE2-269",
+      "file": "test-cases/generated/video-enhance/TC-VE2-269.yaml",
+      "title": "Timeline: 05:00 rejection, three-second toast, shorten and retry",
+      "claim": "Professional retains its normal selectable appearance when Standard selection exceeds 2:30. · Tapping Professional with a selection longer than 2:30 displays: Professional mode supports up to 2m 30s. Shorten your selection to switch. · Tapping Professional with a selection longer than 2:30 leaves Standard selected. · A rejected Professional switch preserves the entire selected interval: start, end and length; it never automatically shortens or moves the selection. · The rejected Professional-switch toast is displayed for three seconds and then disappears. · After shortening selection so its rounded-up duration is at most 150 seconds, tapping Professional selects Professional.",
+      "source": {
+        "kind": "spec",
+        "ref": "20261007-c20ece5f893d80a01ffe33e94f20f6d3434e577fc7481636db29ad8be2bfb2dd.pdf"
+      },
+      "ios_review": false,
+      "mapped": "older",
+      "decision": "older spec: Behaviour is ours too (TC-160 on a Timeline clip: blocked, Mode stays, chip looks normal). Only the toast copy differs: theirs is PM 9/29 「Professional mode supports up to 2m 30s. Shorten your selection to switch.」; the newer Design frame 「Mode 長度上限」 (Design 26.09 v2, 1005; none of its copy is in their 10/07 PDF) says 「Professional supports clips up to 2:30. Shorten your selection to switch.」.",
+      "carried_from": "20261103-174203"
+    }
+  ]
+}

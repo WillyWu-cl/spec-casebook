@@ -20,8 +20,24 @@ TC-014,Demo page,Demo page open from the Launcher; every other Demo page row don
 5. Go back to the Launcher
 6. Open 「AI Magic」 › 「AI Video Enhance」",Steps 4 and 6 open Add Media directly; the Demo page no longer appears from the Launcher or AI Magic,P2,R-009,"Destructive for the Demo rows: run it last (the setting is local; clearing app data resets it, which also signs out and clears History)."
 TC-020,Add Media,Signed in with a Pro+ account (no tier switch on Android); Add Media open from the feature; a 12:30 1080p 60 fps video in the album,Tap that video's thumbnail,Only the 「Video」 tab is offered and one video can be picked; the tap opens the panel with that video in the Preview at once (no Next button),P1,"R-012, R-013",
+TC-255,Add Media,Signed in with a Pro+ account (no tier switch on Android); the Demo page showing; videos in All / Recents and in at least one named album or folder; network on,"1. Tap 「Try It Now」
+2. Note every video source the picker offers: the album / folder chooser and each tab of the provider tab row (swipe the tab row to reveal hidden tabs)
+3. Open each source in turn and tap a supported video in it, going back to Add Media after each panel opens",Step 1 opens Add Media; step 2: every local album or folder and every stock library tab is listed (record them); step 3: each source lists videos and each tapped video opens the panel with that video in the Preview,P3,"R-202, R-008, R-012",Not from the spec: the colleague's build via the spec agent's TC-VE2-153 [Req: REQ-008] (the Design's Add Media draws one 「Video」 tab with Recents). A source that cannot import its video is a defect.
+TC-256,Add Media,Signed in with a Pro+ account (no tier switch on Android); Add Media open from the feature; network on,"1. Swipe the provider tab row left until 「Pexels」 shows
+2. Tap 「Pexels」
+3. Tap a Pexels video",Step 2 lists Pexels videos; step 3 fetches the video if needed and opens the panel with that video in the Preview,P3,"R-202, R-012","Not from the spec: the colleague's build via the spec agent's TC-VE2-155 [Req: REQ-008] (the Design's Add Media draws one 「Video」 tab with Recents). Swipe the tab row itself, not the grid."
+TC-257,Add Media,Signed in with a Pro+ account (no tier switch on Android); Add Media open from the feature; network on,"1. Swipe the provider tab row left until 「Pixabay」 shows
+2. Tap 「Pixabay」
+3. Tap a Pixabay video",Step 2 lists Pixabay videos; step 3 fetches the video if needed and opens the panel with that video in the Preview,P3,"R-202, R-012","Not from the spec: the colleague's build via the spec agent's TC-VE2-156 [Req: REQ-008] (the Design's Add Media draws one 「Video」 tab with Recents). Swipe the tab row itself, not the grid."
+TC-258,Add Media,"Signed in with a Pro+ account (no tier switch on Android); a video that is only in a named album (e.g. 「VE test」), not among the first Recents; Add Media open from the feature","1. Open the album / folder chooser
+2. Tap the named album
+3. Tap the video",Step 2 lists the album's videos; step 3 opens the panel with that video in the Preview,P3,"R-202, R-012",Not from the spec: spec agent TC-VE2-225 [Req: REQ-008].
 TC-021,Add Media,Add Media open from the Demo page,Tap ‹ on Add Media,"The page Add Media was opened from (the Demo page, or the Launcher after 「Don’t show again」) is shown again",P3,R-014,Q-9: the spec draws ‹ but no arrow; the previous page is the assumption.
-TC-022,Add Media,"Add Media open; the album holds a video over 4K (e.g. 8K), one under 1 s and one that is not MP4 / MOV",Tap each of those thumbnails,Each is greyed; each tap shows 「This video isn't supported. Try one up to 4K.」 and opens no panel,P3,R-015,"PM E1 / A2 [建議] and [待確認] (Q-13): PM-only, a difference is a PM question. Needs the three fixtures (fixtures.md)."
+TC-022,Add Media,"Add Media open; the album holds a 1440p (2560 × 1440), a 4K (3840 × 2160) and an 8K (7680 × 4320) video, one under 1 s and one that is not MP4 / MOV","1. Tap the 1440p video
+2. Tap the 4K video
+3. Tap the 8K video
+4. Tap the video under 1 s
+5. Tap the video that is not MP4 / MOV","Steps 1–3: each 2K-or-higher video is rejected before the panel opens: no panel opens, the video is not loaded and no task starts (record the message shown, Q-23). Steps 4–5: each is greyed, the tap shows 「This video isn't supported. Try one up to 4K.」 and no panel opens",P2,"R-196, R-015","Steps 1–3: user requirement 2026-10-16 via the spec agent (TC-VE2-097, TC-VE2-098), newer than the Design lookup and PM E1 [Req: REQ-008]; message and threshold: Q-23. Steps 4–5: PM E1 / A2 [建議] and [待確認] (Q-13), a difference is a PM question. Needs the five fixtures (fixtures.md)."
 TC-023,Add Media,No video in the album (all videos hidden or a test device with photos only),Open Add Media from the feature,Add Media shows the empty state 「No videos yet」,P3,R-016,PM A2 [建議]; needs an album with no videos (parked: test-data).
 TC-030,Panel layout and first-run bubble,Signed in with a Pro+ account (no tier switch on Android); the panel was never opened on this install; a 12:30 1080p 60 fps video in the album,"1. Pick the video in Add Media
 2. Wait 4 s without touching the screen",The bubble 「Max 8 minutes. Drag to choose which part.」 appears by itself at 「Selected Length」 and closes after about 3 s,P2,R-022,First-use state: run before any other panel row (clearing app data restores it). PM B2 proposed copy 「Choose up to 8 minutes…」 loses to the Design.
@@ -30,11 +46,14 @@ TC-031,Panel layout and first-run bubble,Panel open; the first-run bubble alread
 TC-032,Panel layout and first-run bubble,TC-030 done,"1. Tap ‹ to Add Media
 2. Pick a video again",The panel opens with no automatic bubble,P2,R-023,
 TC-033,Panel layout and first-run bubble,Signed in with a Pro+ account (no tier switch on Android); panel open with a 12:30 1080p 60 fps video in the album,Look at the panel top to bottom,"Top bar ‹, 「AI Video Enhance」, the credit pill with the balance and the Recent task icon; the Preview with 「60fps · 1080p」 at its lower right, 「00:00/12:30」, play and full-screen; 「Selected Length ⓘ」 「08:00」 and the thumbnail strip with a left ‹ and a right › trim handle and the playhead (a line with the bubble 「00:00」 above the strip and a ◀▶ knob under it); 「Mode ⓘ」 Standard / Professional; 「Enhancement style ⓘ」 Natural / Sharp; 「fps」 30fps / 60fps / 120fps; 「Resolution」 720p / 1080p / 4K (no 2K); CTA 「Enhance ◆ <credits>」 with 「Charge X credits per second」 under it",P1,"R-020, R-021, R-045, R-070, R-192",
+TC-259,Panel layout and first-run bubble,"Signed in with a Pro+ account (no tier switch on Android); a 02:30.01 (150.01 s, length checked with ffprobe) video in the album (made for the test)",Open the panel with the video and read the Preview time,"The Preview time reads 「00:00/02:31」 (the total rounded up), not 「00:00/02:30」",P3,R-199,Not from the spec: user requirement 2026-10-21 via the spec agent's TC-VE2-276 [Req: REQ-008]. Same fixture as TC-262 and TC-264.
 TC-035,Panel layout and first-run bubble,Panel open,Tap ⓘ next to 「Mode」,A bubble shows 「Standard: Great quality · up to 8 min」 and 「Professional: Maximum detail · up to 2:30」,P3,R-025,"PM 1002 「Great quality, quick results」 and PM 9/29 「Standard: up to 8 minutes…」 are older."
 TC-036,Panel layout and first-run bubble,Panel open,Tap ⓘ next to 「Enhancement style」,"A bubble shows 「Natural: Lighter enhancement with fewer artifacts, for a more realistic look」 and 「Sharp: Moderate enhancement for a sharp, clear image」",P3,R-026,
 TC-037,Panel layout and first-run bubble,Panel open with a video,"1. Tap play under the Preview
-2. Tap the full-screen icon
-3. Close the full-screen preview",Step 1 plays the video and the time advances; step 2 shows it full screen; step 3 returns to the panel with the selection and settings unchanged,P3,R-027,
+2. Tap the same button again (pause)
+3. Wait 3 s
+4. Tap the full-screen icon
+5. Close the full-screen preview",Step 1 plays the video and the time advances; step 2 pauses it and the time and the frame stay the same through step 3; step 4 shows it full screen; step 5 returns to the panel with the selection and settings unchanged,P3,"R-027, R-200","Pause: spec agent TC-VE2-163 (generic player rule, not in the Design) [Req: REQ-008]."
 TC-038,Panel layout and first-run bubble,"Panel open from Add Media, nothing running",Tap ‹ in the panel's top bar,Add Media is shown again,P2,R-028,
 TC-040,Trim and selected length,Signed in with a Pro+ account (no tier switch on Android); a 12:30 1080p 30 fps video in the album,Pick the video in Add Media,The selection starts at 00:00 and 「Selected Length」 reads 「08:00」 (mm:ss); Mode is Standard,P1,R-030,PM 9/29 「5m 00s / 8m max」 and B1 「18s」 formats lose to the Design (Q-19).
 TC-041,Trim and selected length,Signed in with a Pro+ account (no tier switch on Android); a 01:30 1080p 30 fps video in the album,Pick the video in Add Media,The whole video is selected and 「Selected Length」 reads 「01:30」,P2,R-030,
@@ -42,13 +61,31 @@ TC-042,Trim and selected length,"Panel open with the 12:30 video, selection 00:0
 TC-214,Trim and selected length,"Panel open with the 12:30 video, selection 00:00–08:00; note the CTA price",Drag the left handle right to about 02:00,"While dragging the Preview shows the frame at the left handle (its time about 「02:00/12:30」); the selection is about 02:00–08:00, 「Selected Length」 follows (about 「06:00」), the right handle stays at 08:00 and the CTA price drops at once",P1,"R-031, R-061",Twin of TC-042 (analysis pass 11: either side handle is its own control).
 TC-043,Trim and selected length,"Panel open with the 12:30 video, selection about 6:00 long",Drag the middle of the selection to the right,The whole range moves with the same length (「Selected Length」 unchanged) and the Preview shows the selection's first frame,P2,R-032,
 TC-215,Trim and selected length,"Panel open with the 12:30 video, selection 00:00–08:00; note the CTA price","1. Look at the strip
-2. Drag the ◀▶ knob under the 「00:00」 bubble to the right to about 03:00","Step 1: a playhead line sits at the selection start with the bubble 「00:00」 above the strip and the ◀▶ knob under it, and the Preview reads 「00:00/12:30」. Step 2: the playhead moves, the bubble and the Preview time follow together (about 「03:00」 and 「03:00/12:30」) and the Preview shows that frame; both trim handles, 「Selected Length」 「08:00」 and the CTA price stay the same",P2,"R-192, R-193","The knob (round/ic_btn_drag) is the playhead, not a trim handle (analysis pass 11, role from the board image). Q-21: how far the playhead may go is not stated."
+2. Drag the ◀▶ knob under the 「00:00」 bubble to the right to about 03:00
+3. Drag the knob back to the left to about 01:00
+4. Drag the knob right and left several times without letting go
+5. Let go at about 02:00","Step 1: a playhead line sits at the selection start with the bubble 「00:00」 above the strip and the ◀▶ knob under it, and the Preview reads 「00:00/12:30」. Step 2: the playhead moves later, the bubble and the Preview time follow together (about 「03:00」 and 「03:00/12:30」) and the Preview shows that frame. Step 3: it moves earlier the same way (about 「01:00」 and 「01:00/12:30」). Step 4: the bubble, the Preview time and the frame follow the knob both ways. Step 5: they stop at about 「02:00」. In every step both trim handles, 「Selected Length」 「08:00」 and the CTA price stay the same",P2,"R-192, R-193","The knob (round/ic_btn_drag) is the playhead, not a trim handle (analysis pass 11, role from the board image). Q-21: how far the playhead may go is not stated."
 TC-044,Trim and selected length,"Panel open with the 12:30 video in Standard, selection 00:00–06:00",Drag the right handle as far right as it goes,The handle stops at 8:00 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」,P2,"R-033, R-050",PM-only: no Design frame yet (PM 9/29 UI).
-TC-216,Trim and selected length,Panel open with the 12:30 video in Standard; the selection moved and trimmed to 06:30–12:30 (「06:00」),Drag the left handle as far left as it goes,The left handle stops at 04:30 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」; the right handle stays at 12:30,P2,"R-033, R-050",Twin of TC-044 for the left handle. PM-only: no Design frame yet (PM 9/29 UI).
-TC-045,Trim and selected length,Signed in with a Pro+ account (no tier switch on Android); a 06:00 video and a 12:30 video in the album,"1. Open the panel with the 06:00 video
-2. Go back and open it with the 12:30 video
-3. Scroll the strip sideways
-4. Switch Mode to Professional","The 06:00 strip fills the strip width; the 12:30 strip scrolls sideways with 8:00 filling one width; switching Mode changes only the selection box, not the strip",P3,R-034,PM-only: no Design frame yet (PM 9/29 ⑥).
+TC-216,Trim and selected length,Panel open with the 12:30 video in Standard; the selection moved and trimmed to 06:30–12:30 (「06:00」),Drag the left handle as far left as it goes,While dragging the Preview shows the frame at the left handle (its time follows the handle back toward 「04:30/12:30」); the left handle stops at 04:30 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」; the right handle stays at 12:30,P2,"R-033, R-050, R-031",Twin of TC-044 for the left handle. PM-only: no Design frame yet (PM 9/29 UI).
+TC-045,Trim and selected length,Signed in with a Pro+ account (no tier switch on Android); an 08:00 (480 s) and a 12:30 (750 s) video in the album,"1. Open the panel with the 08:00 video (Standard)
+2. Drag the right handle left until 「Selected Length」 reads 「02:00」
+3. Tap 「Professional」
+4. Scroll the strip sideways
+5. Tap 「Standard」
+6. Go back and open the panel with the 12:30 video
+7. Scroll the strip sideways
+8. Drag the right handle left until 「Selected Length」 reads 「02:00」
+9. Tap 「Professional」
+10. Scroll the strip sideways","Step 1: the 08:00 strip fills the strip width with no sideways scroll. Steps 3–4: the strip is re-laid so 2:30 fills one width and it scrolls sideways; the selection keeps 00:00–02:00. Step 5: the 08:00 strip fills the width again. Steps 6–7: the 12:30 strip scrolls sideways with 8:00 filling one width. Steps 9–10: the strip is re-laid to 2:30 per width. In every step the thumbnails stay in time order and the selection keeps its start, end and length (00:00–02:00 once set)",P3,"R-034, R-051","Q-24: follows the spec agent's reading of PM 9/29 ⑥ (TC-VE2-026, TC-VE2-265, TC-VE2-267) pending PM [Req: REQ-008]; a different layout is a PM question until PM confirms. PM-only: no Design frame yet."
+TC-264,Trim and selected length,Signed in with a Pro+ account (no tier switch on Android); a 02:30.01 (150.01 s) and an 08:01 (481 s) video in the album (made for the test),"1. Open the panel with the 02:30.01 video (Standard)
+2. Drag the right handle left until 「Selected Length」 reads 「02:00」
+3. Tap 「Professional」
+4. Scroll the strip sideways
+5. Go back and open the panel with the 08:01 video
+6. Scroll the strip sideways
+7. Drag the right handle left until 「Selected Length」 reads 「02:00」
+8. Tap 「Professional」
+9. Scroll the strip sideways","Step 1: the 02:30.01 strip fills the strip width (under 8:00). Steps 3–4: in Professional the video is over 2:30, so the strip is re-laid to 2:30 per width and scrolls a little sideways. Steps 5–6: the 08:01 strip scrolls sideways with 8:00 per width. Steps 8–9: re-laid to 2:30 per width. The thumbnails stay in time order and the selection keeps 00:00–02:00 through each Mode switch",P3,"R-034, R-051","The Mode limits + 1 s (spec agent TC-VE2-264, TC-VE2-266) [Req: REQ-008]. Q-24 as in TC-045. Needs the two fixture videos."
 TC-046,Trim and selected length,Panel open with a 01:30 video,Drag the right handle toward the left handle as far as it goes,The selection cannot get shorter than 1 s,P3,R-035,PM B1 [建議] (proposal).
 TC-217,Trim and selected length,Panel open with a 01:30 video,Drag the left handle toward the right handle as far as it goes,The selection cannot get shorter than 1 s; the right handle stays where it was,P3,R-035,Twin of TC-046 for the left handle. PM B1 [建議] (proposal).
 TC-050,Default settings,Signed in with a Pro+ account (no tier switch on Android); a 01:30 1080p 60 fps video in the album,Pick the video in Add Media,Mode 「Standard」 and Enhancement style 「Natural」 are selected,P1,"R-040, R-041",
@@ -67,8 +104,8 @@ TC-056,Default settings,Signed in with a Pro+ account (no tier switch on Android
 2. Go back and open it with the 720p video",Both select 「720p」,P1,R-044,
 TC-057,Default settings,Signed in with a Pro+ account (no tier switch on Android); a 900p (e.g. 1600×900) and a 1080p video in the album,"1. Open the panel with the 900p video
 2. Go back and open it with the 1080p video",Both select 「1080p」,P1,R-044,"PM B3 「nearest, tie lower」 would give 900p → 720p (a downgrade); the Design rule (not below the source) wins."
-TC-058,Default settings,Signed in with a Pro+ account (no tier switch on Android); a 1440p and a 4K (2160p) video in the album,"1. Open the panel with the 1440p video
-2. Go back and open it with the 4K video",Both select 「4K」,P2,R-044,Whether a 4K source may be enhanced at all is Q-13 (PM E1: a 4K source can only choose 4K).
+TC-058,Default settings,"Signed in with a Pro+ account (no tier switch on Android); a 1081p (e.g. 1920 × 1081, made for the test) and a 1200p (1920 × 1200) video in the album","1. Open the panel with the 1081p video
+2. Go back and open it with the 1200p video",Both open the panel with 「4K」 selected (a source from 1081p up to below 2K defaults to 4K),P2,R-044,"1440p and 4K sources no longer reach the panel (R-196, TC-022): user requirement 2026-10-16 via the spec agent (TC-VE2-096 – TC-VE2-098) [Req: REQ-008]. Needs the two fixture videos."
 TC-059,Default settings,Signed in with a Pro+ account (no tier switch on Android); a portrait 1080×1920 video in the album,Open the panel with it,「1080p」 is selected (the short side decides),P3,R-044,Q-5: assumption from PM B3; check on device and decide with the user before filing.
 TC-061,Settings chips,"Panel open, 「Natural」 selected; note the CTA price","1. Tap 「Sharp」
 2. Tap 「Natural」",Each tap selects the tapped chip and unselects the other; the CTA price stays the same (style does not change the price),P2,"R-046, R-062",
@@ -77,7 +114,7 @@ TC-063,Settings chips,Panel open with a 1080p video (「1080p」 selected); note
 TC-064,Settings chips,Panel open in a Mode where an fps or Resolution chip is drawn disabled,Tap the disabled chip,Nothing changes: the selection stays where it was and no toast appears,P3,R-047,Q-6: which combinations are disabled is pending (BytePlus); PM B5 says a tap shows a toast. Not run when no chip is disabled on the build (record that).
 TC-070,Mode length limit,"Panel open with the 12:30 video, selection about 02:00 in Standard; note the CTA price","1. Tap 「Professional」
 2. Tap 「Standard」",Each tap switches the Mode at once; the selection and 「Selected Length」 stay the same and only the CTA price changes,P1,"R-051, R-046",
-TC-071,Mode length limit,"Panel open with the 12:30 video in Standard, selection 00:30–05:30 (「05:00」)",Tap 「Professional」,Before the tap 「Professional」 looks normal (not disabled); the tap shows the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 for about 3 s; Mode stays 「Standard」 and the selection stays 05:00,P1,R-052,Design 「Mode 長度上限」 frames. PM 9/29 ③ toast 「Professional mode supports up to 2m 30s…」 and draft B1-1 ② auto-shortening lose to the Design.
+TC-071,Mode length limit,"Panel open with the 12:30 video in Standard, selection 00:30–05:30 (「05:00」)",Tap 「Professional」,"Before the tap 「Professional」 looks normal (not disabled); the tap shows the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 for about 3 s; Mode stays 「Standard」 and the selection is neither shortened nor moved: it still starts at 00:30, ends at 05:30 and reads 「05:00」",P1,R-052,"Design 「Mode 長度上限」 frames. PM 9/29 ③ toast 「Professional mode supports up to 2m 30s…」 (quoted by the spec agent's TC-VE2-228, TC-VE2-230, TC-VE2-268) and draft B1-1 ② auto-shortening lose to the Design."
 TC-073,Mode length limit,"TC-071 done (Standard, 05:00 selected)","1. Drag the right handle until 「Selected Length」 reads 「02:20」
 2. Tap 「Professional」",The Mode switches to 「Professional」 with no toast; the selection stays 02:20,P1,R-053,
 TC-074,Mode length limit,"Professional selected, selection 02:20",Drag the right handle as far right as it goes,The handle stops at 2:30 (「02:30」) with a light haptic and the bubble 「Up to 2m 30s in Professional mode」,P2,"R-054, R-033",
@@ -86,19 +123,46 @@ TC-075,Mode length limit,"Professional selected, selection 02:30","1. Tap 「Sta
 2. Drag the right handle further right",Step 1 keeps the selection at 02:30; step 2 lengthens it past 2:30 up to 8:00,P2,R-055,
 TC-076,Mode length limit,Signed in with a Pro+ account (no tier switch on Android); a 2:30.4 long video in the album (made for the test),"1. Open the panel with it (the whole video is selected in Standard)
 2. Tap 「Professional」",The toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 appears and the Mode stays Standard (2:30.4 counts as 151 s),P3,R-056,
+TC-263,Mode length limit,"Panel open with the 12:30 video in Standard, selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「02:31」
+2. Tap 「Professional」
+3. Drag the right handle left until 「Selected Length」 reads 「02:30」
+4. Tap 「Professional」","Step 2: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows for about 3 s, the Mode stays 「Standard」 and the selection keeps 00:00–02:31; step 4: the Mode switches to 「Professional」 with no toast and the selection stays 00:00–02:30",P2,"R-052, R-053, R-050","The 151 s / 150 s boundary (spec agent TC-VE2-227, TC-VE2-228) [Req: REQ-008]; their toast copy is PM 9/29's, the Design copy is newer."
+TC-260,Mode length limit,Signed in with a Pro+ account (no tier switch on Android); a 00:01 (1 s) and a 00:30 video in the album (720p 30 fps),"1. Open the panel with the 00:01 video
+2. Tap 「Professional」
+3. Go back and open the panel with the 00:30 video
+4. Tap 「Professional」","Steps 1 and 3: the panel opens in 「Standard」 with the whole video selected (「00:01」, 「00:30」); steps 2 and 4: the Mode switches to 「Professional」 with no toast and the selection unchanged",P3,"R-197, R-040, R-030, R-051","The spec agent's TC-VE2-245 / TC-VE2-246 expect the panel to open in Professional (PM 9/29 ①); the newer Design 預設值規則 opens every entry in Standard (R-040), so the boundary is checked on the switch [Req: REQ-008]."
+TC-261,Mode length limit,Signed in with a Pro+ account (no tier switch on Android); a 02:29.99 (149.99 s) and a 02:30 (150 s) video in the album (made for the test),"1. Open the panel with the 02:29.99 video
+2. Tap 「Professional」
+3. Go back and open the panel with the 02:30 video
+4. Tap 「Professional」","Steps 1 and 3: the panel opens in 「Standard」 with the whole video selected; steps 2 and 4: the Mode switches to 「Professional」 with no toast and the selection unchanged (149.99 s rounds up to 150 s, within 2:30)",P2,"R-197, R-040, R-051, R-056",The spec agent's TC-VE2-247 / TC-VE2-248 expect the panel to open in Professional (PM 9/29 ①); the newer Design opens every entry in Standard (R-040) [Req: REQ-008].
+TC-262,Mode length limit,Signed in with a Pro+ account (no tier switch on Android); a 02:30.01 (150.01 s) and a 12:30 (750 s) video in the album,"1. Open the panel with the 02:30.01 video
+2. Tap 「Professional」
+3. Go back and open the panel with the 12:30 video
+4. Tap 「Professional」","Step 1: the panel opens in 「Standard」 with the whole video selected; step 3: in 「Standard」 with 00:00–08:00 selected; steps 2 and 4: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows, the Mode stays 「Standard」 and the selection is unchanged (150.01 s counts as 151 s)",P2,"R-197, R-040, R-052, R-056",The spec agent's TC-VE2-249 / TC-VE2-250 expect the panel to open in Professional with 2:30 selected (PM 9/29 ①); the newer Design opens every entry in Standard (R-040) and the Design toast is newer [Req: REQ-008].
 TC-080,Credit price,Signed in with a Pro+ account (no tier switch on Android); a 00:03.96 long 1080p 30 fps video in the album,"Open the panel with it (whole video, Standard, Natural, 30fps, 1080p)",The CTA reads 「Enhance ◆ 8」 (3.96 s rounds up to 4 s × 2 credits) and 「Charge 2 credits per second」,P1,"R-060, R-063",Credit numbers are binding (formats.md): another price is a defect.
-TC-083,Credit price,Panel open with the 00:03.96 video in Standard; note the price,Tap 「Professional」,The CTA price and the per-second line change to the Professional rate (the price = 4 s × the shown rate),P2,"R-065, R-064","Q-4: the Professional rate is not in the spec; check the arithmetic, ask PM for the table."
-TC-087,Credit price,Panel open with a 30 fps video; note the price,Tap another enabled fps chip,The CTA price does not change (the source fps prices the task),P3,R-065,Q-3: PM B4 proposes pricing by the output fps; check on device and decide with the user before filing.
-TC-090,Eligibility and purchase,Signed in with a Free account (Android has no tier switch: the tier comes from the account); panel open with a video,Tap 「Unlock Pro+ to Enhance」,The CTA reads 「Unlock Pro+ to Enhance」 (no price) with 「Charge X credits per second」 under it; the tap opens the IAP page,P1,R-070,PM 「Upgrade to Pro+」 is older (Design wins).
-TC-091,Eligibility and purchase,Signed in with a Pro (not Pro+) account (no tier switch on Android); panel open with a video,Tap 「Unlock Pro+ to Enhance」,Pro is not enough: the CTA reads 「Unlock Pro+ to Enhance」 and the tap opens the IAP page on the 「Pro+」 tab,P1,"R-070, R-071",
+TC-269,Credit price,"Signed in with a Pro+ account (no tier switch on Android); videos of 00:00.9, 00:01, 00:01.01, 00:02.99, 00:03, 00:03.99, 02:59.01, 02:59.99 and 03:00 (lengths checked with ffprobe), all 720p 30 fps, in the album (made for the test)","1. Tap the 00:00.9 video in Add Media
+2. Open the panel with each other video in turn (whole video, Standard / Natural / 30fps / 720p = 1 credit per second) and read the CTA","Step 1: the 0.9 s video is greyed and shows 「This video isn't supported. Try one up to 4K.」 (under 1 s, R-015); no panel opens. Step 2, the CTA reads: 1 s 「Enhance ◆ 1」; 1.01 s 「Enhance ◆ 2」; 2.99 s 「Enhance ◆ 3」; 3 s 「Enhance ◆ 3」; 3.99 s 「Enhance ◆ 4」; 179.01 s, 179.99 s and 180 s 「Enhance ◆ 180」 (seconds rounded up × 1)",P2,"R-060, R-063, R-015",Rounding boundaries of the spec agent's TC-VE2-175 – TC-VE2-184 [Req: REQ-008] (ECL rate 1 for Standard / Natural / 30fps / 720p). Their 0.9 s case prices 1 credit 「subject to a separately confirmed minimum rule」: our minimum is R-015 / R-035 (no selection under 1 s). Credit numbers are binding. Needs the nine fixture videos.
+TC-083,Credit price,"Panel open with the 00:03.96 1080p 30 fps video in Standard (「Enhance ◆ 8」, 「Charge 2 credits per second」)","1. Tap 「Professional」
+2. Tap 「Standard」","Step 1: the CTA reads 「Enhance ◆ 16」 and the line 「Charge 4 credits per second」 (4 s × 4, Professional 1080p 30fps); step 2: back to 「Enhance ◆ 8」 and 「Charge 2 credits per second」",P2,"R-065, R-064, R-063","ECL rate table (form 22061491221; spec agent TC-VE2-115, TC-VE2-133) [Req: REQ-008]; credit numbers are binding."
+TC-087,Credit price,Panel open with the 00:03.96 1080p 30 fps video in Standard (「Enhance ◆ 8」),"1. Tap 「60fps」
+2. Tap 「120fps」
+3. Tap 「4K」
+4. Tap 「60fps」
+5. Tap 「30fps」
+6. Tap 「Professional」
+7. Tap 「60fps」
+8. Tap 「120fps」","Steps 1–2: the CTA stays 「Enhance ◆ 8」 (Standard 1080p is 2 credits/s at every fps); step 3: 「Enhance ◆ 32」 (Standard 4K 120fps, 8/s); step 4: 「Enhance ◆ 24」 (6/s); step 5: 「Enhance ◆ 12」 (3/s); step 6: 「Enhance ◆ 48」 (Professional 4K 30fps, 12/s); step 7: 「Enhance ◆ 96」 (24/s); step 8: 「Enhance ◆ 192」 (48/s). After each tap 「Charge X credits per second」 shows that rate",P2,"R-065, R-063, R-064",ECL rate table (form 22061491221; spec agent TC-VE2-117 – TC-VE2-149) [Req: REQ-008]: the output fps chip prices the task (Q-3 answered). Credit numbers are binding. A chip drawn disabled (Q-6): record it and skip that step.
+TC-090,Eligibility and purchase,Signed in with a Free account (Android has no tier switch: the tier comes from the account); panel open with a video,"1. Look at the CTA
+2. Tap it","Step 1: the CTA is an unlock action for Pro with no price (e.g. 「Unlock Pro to Enhance」), not 「Unlock Pro+ to Enhance」, with 「Charge X credits per second」 under it; step 2 opens the IAP page on the 「Pro」 tab (the Pro plans)",P1,"R-070, R-071","Android tier from the colleague feedback of 2026-10-07 (spec agent TC-VE2-040, TC-VE2-041) [Req: REQ-008], newer than the Design and PM 9/24, which say Pro+ (now the iOS rule). Exact Android wording: Q-25, recorded, not asserted."
+TC-091,Eligibility and purchase,Signed in with a Pro (not Pro+) account (no tier switch on Android) with enough credits; panel open with a video,Look at the CTA,Pro is enough on Android: the CTA is the enabled 「Enhance ◆ <credits>」 with its price and 「Charge X credits per second」; no unlock action and no IAP page,P1,R-070,Spec agent TC-VE2-241 (colleague feedback 2026-10-07 items 8–9) [Req: REQ-008]. The iOS table keeps Pro+ only. Nothing is generated.
 TC-093,Eligibility and purchase,IAP page open from the panel (TC-090),"1. Tap 「Monthly」
 2. Tap 「Yearly」
 3. Tap 「Tap to compare」
 4. Close the comparison
 5. Tap the 「Pro」 tab
 6. Tap the 「Pro+」 tab","The page shows the Pro / Pro+ tabs, 「Yearly」 with 「Best Value」 and 「65% OFF」, 「Monthly」, 「Continue」 and the footer 「Terms of Service」 「Privacy Policy」 「Restore purchase」; each plan tap selects that plan; the comparison opens and closes; each tab shows its own plans and 「Pro+」 brings back the Pro+ plans",P3,R-072,Prices are store data: never assert them (KP-042). Q-7: the trial line 「Receive 35 credits during free trial」 conflicts with PM §7; not asserted.
-TC-094,Eligibility and purchase,Signed in with a Free account (Android has no tier switch: the tier comes from the account); panel open with selection 00:30–05:30 and 「Sharp」; IAP page opened from the CTA,Tap ‹ on the IAP page without buying,"The panel is back unchanged: selection 05:00, 「Sharp」, CTA 「Unlock Pro+ to Enhance」",P2,R-073,
-TC-095,Eligibility and purchase,Signed in with a Free account (Android has no tier switch: the tier comes from the account) on an account that may buy Pro+; panel open with selection 00:30–05:30 and 「Sharp」; IAP page open,"1. Tap 「Continue」
+TC-094,Eligibility and purchase,Signed in with a Free account (Android has no tier switch: the tier comes from the account); panel open with selection 00:30–05:30 and 「Sharp」; IAP page opened from the CTA,Tap ‹ on the IAP page without buying,"The panel is back unchanged: selection 05:00, 「Sharp」, the Pro unlock CTA of TC-090",P2,R-073,
+TC-095,Eligibility and purchase,Signed in with a Free account (Android has no tier switch: the tier comes from the account) on an account that may buy Pro; panel open with selection 00:30–05:30 and 「Sharp」; IAP page open on the 「Pro」 tab,"1. Tap 「Continue」
 2. Complete the Google Play purchase sheet
 3. Tap 「OK」 on 「You're all set」","Step 2 ends on 「You're all set」 / 「Your purchase was successful.」; step 3 returns to the panel with the balance updated in the credit pill, the selection and 「Sharp」 kept, the CTA 「Enhance ◆ <credits>」, and nothing sent until the CTA is tapped",P1,"R-074, R-075",Parked: needs purchase (runs make no purchases). Design arrows 3293-13677 / 13678 / 13679; 「no auto-send」 is PM C2 [建議].
 TC-096,Eligibility and purchase,Signed in with a Pro+ account (no tier switch on Android); credit balance below the CTA price (e.g. 0); panel open; note the balance,Tap 「Enhance」,"The Credit page opens (「My Credits」, 「Buy More」, 「Expiring within 7 days: … credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card); no upload dialog appears, Recent task gets no card and the balance is unchanged",P1,R-076,Parked: needs low-balance (the shared account holds many credits).
@@ -109,8 +173,9 @@ TC-098,Eligibility and purchase,Credit page open from the panel (TC-096); the da
 TC-100,Eligibility and purchase,Signed in with a Pro+ account (no tier switch on Android) with enough credits; panel open with a video; Wi-Fi off (device-android.ts wifi off) and no mobile data; note the balance,Tap 「Enhance」,"The toast 「Upload failed. Check your connection and try again.」 appears, the panel stays with its settings, Recent task gets no card and the balance is unchanged",P2,R-079,PM C2 / C3 [建議] copy: a different offline message is a PM question; an upload that starts or a charge is a defect. Turn Wi-Fi back on after the row.
 TC-110,Generating and cancel,"Signed in with a Pro+ account (no tier switch on Android) with enough credits; panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p); note the balance",Tap 「Enhance ◆ <credits>」,"No confirmation appears first; a processing dialog covers the panel with a progress ring counting up (「25%」…), 「Video uploading...」, 「Please keep the app open」 and 「Cancel」; the ring keeps moving (no frozen wait over 10 s)",P1,"R-080, R-085, R-070, R-194",
 TC-111,Generating and cancel,Processing dialog showing (TC-110),Tap 「Cancel」,"The dialog 「Sure You Want to Leave?」 / 「Your video is still uploading. Leaving this page will cancel the process, and the credits will not be restored.」 appears with 「Leave」 and 「Keep Uploading」",P1,R-086,
-TC-112,Generating and cancel,Leave dialog showing (TC-111),Tap 「Keep Uploading」,"The leave dialog closes, the processing dialog continues from where it was and the upload finishes (TC-114)",P2,R-087,
-TC-113,Generating and cancel,A new task: the leave dialog showing after 「Cancel」 on the processing dialog; balance before 「Enhance」 noted,Tap 「Leave」,"The panel is back with the selection and settings; the process stops (no completed result for it appears in Recent task); the balance is the noted balance minus the price (credits not restored, as the dialog says)",P1,"R-086, R-088","Q-2: PM §8 says a cancel before the upload reaches the server charges nothing and creates no task; the Design (newer, outranks) wins. Check on device and decide with the user before filing a charge either way."
+TC-112,Generating and cancel,Leave dialog showing (TC-111),"1. Look at the 「Enhance」 CTA behind the dialogs
+2. Tap 「Keep Uploading」","Step 1: the CTA behind the dialogs is greyed (disabled). Step 2: the leave dialog closes, the processing dialog continues from where it was and the upload finishes (TC-114); the CTA stays disabled until then and no second task can start",P2,R-087,Disabled CTA: colleague feedback item 11 via the spec agent's TC-VE2-234 [Req: REQ-008].
+TC-113,Generating and cancel,A new task: the leave dialog showing after 「Cancel」 on the processing dialog; balance before 「Enhance」 noted,Tap 「Leave」,"The panel is back with the selection and settings and its 「Enhance ◆ <credits>」 CTA enabled again; the process stops (no completed result for it appears in Recent task); the balance is the noted balance minus the price (credits not restored, as the dialog says)",P1,"R-086, R-088","Q-2: PM §8 says a cancel before the upload reaches the server charges nothing and creates no task; the Design (newer, outranks) wins. Check on device and decide with the user before filing a charge either way."
 TC-114,Generating and cancel,Processing dialog showing (TC-110); balance before 「Enhance」 noted,Wait until the upload finishes,"Recent task opens with a processing card (thumbnail, date, name, 「processing...」, 「<n> minutes left...」, progress bar); the balance is the noted balance minus the CTA price; the card offers no cancel",P1,"R-089, R-111, R-091",Design arrow 3293-13681; PM: credits are taken when the upload reaches the server.
 TC-115,Generating and cancel,A new task: processing dialog showing; balance before 「Enhance」 noted,"1. Press Home while 「Video uploading...」 shows
 2. Wait 10 s
@@ -141,77 +206,522 @@ TC-143,Recent task,Recent task open with a processing card,"1. Wait on Recent ta
 2. Tap 「View」 on its card
 3. Tap ‹ on the Result
 4. Tap the completed card's thumbnail","Step 1 turns the card completed (thumbnail, date, name, 「View」) without leaving the page; step 2 opens the Result; step 3 returns to Recent task; step 4 opens the same Result",P1,R-112,Step 4: PM D2 「Completed (tap → Result)」; the Design draws only 「View」 (Q-22).
+TC-265,Recent task,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:01 720p 30 fps video in the album; a screen recording or stopwatch with timestamps,"1. Open the panel with the 00:01 video (whole video selected, defaults kept)
+2. Tap 「Enhance ◆ <credits>」
+3. Start timing when the task's card in Recent task first shows its remaining time
+4. Stay on Recent task and stop timing when the card turns completed with 「View」",The time from step 3 to the end of the last step is 1.5 – 2.5 s (1.5 – 2.5 × the 1 s selection),P3,"R-204, R-111","Not from the spec: company performance standard adopted by user instruction, spec agent TC-VE2-221 [Req: REQ-008]. One full generation."
+TC-266,Recent task,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:03.2 720p 30 fps video in the album; a screen recording or stopwatch with timestamps,"1. Open the panel with the 00:03.2 video (whole video selected, defaults kept)
+2. Tap 「Enhance ◆ <credits>」
+3. Start timing when the task's card in Recent task first shows its remaining time
+4. Tap ⌂ to go to the Launcher
+5. Stop timing when the completion banner 「Good news! Your AI Video Enhance task has been completed. Tap here to view your results.」 appears",The time from step 3 to the end of the last step is 4.8 – 8 s (1.5 – 2.5 × the 3.2 s selection),P3,"R-204, R-111","Not from the spec: company performance standard adopted by user instruction, spec agent TC-VE2-222 [Req: REQ-008]. One full generation."
+TC-267,Recent task,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:30 720p 30 fps video in the album; a screen recording or stopwatch with timestamps,"1. Open the panel with the 00:30 video (whole video selected, defaults kept)
+2. Tap 「Enhance ◆ <credits>」
+3. Start timing when the task's card in Recent task first shows its remaining time
+4. Stop timing at whichever is seen first: the card turning completed or a completion banner or notification",The time from step 3 to the end of the last step is 45 – 75 s (1.5 – 2.5 × the 30 s selection),P3,"R-204, R-111","Not from the spec: company performance standard adopted by user instruction, spec agent TC-VE2-223 [Req: REQ-008]. One full generation."
 TC-144,Recent task,Recent task open with a completed task,Tap 「Manage」,"A page to manage the stored tasks opens (select, download or delete them)",P3,R-116,Q-8: the spec does not say what Manage opens; record what it does.
+TC-268,Recent task,A completed Video Enhance task in Recent task that finished at least 2 days ago (the longest wait the run allows); note its date and name,"1. Close PowerDirector from Recents (swipe it away)
+2. Reopen PowerDirector and open Recent task from the panel
+3. Read the notice
+4. Tap 「View」 on the noted task's card",Step 2 lists the noted task as completed with its date and name; step 3 reads 「Tasks are stored on the cloud for 1 Year. Please download any you want to keep in local storage.」; step 4 opens its Result and the video plays,P3,"R-198, R-110","Spec agent TC-VE2-077 [Req: REQ-008]. The one-year limit itself (R-117) is confirmed with RD, not in a run; record the task's age when run."
 TC-150,Result,A completed task's Result open (TC-143),"1. Tap play
-2. Drag the progress slider","The page shows ‹, 「Original」 / 「Result」 with 「Result」 selected, the video with the time (「mm:ss/mm:ss」) and 「Save Result」, 「Add to Timeline」, 「Enhance More」; play and the slider move through the result",P1,R-120,PM 「Edit More」 is older (D3 [衝突]: 「Enhance More」).
+2. Tap the same button again (pause)
+3. Wait 3 s
+4. Drag the progress slider","The page shows ‹, 「Original」 / 「Result」 with 「Result」 selected, the video with the time (「mm:ss/mm:ss」) and 「Save Result」, 「Add to Timeline」, 「Enhance More」; step 1 plays the result; step 2 pauses it and the time and the frame stay the same through step 3; step 4 moves through the result",P1,"R-120, R-201","PM 「Edit More」 is older (D3 [衝突]: 「Enhance More」). Pause: spec agent TC-VE2-168 (generic player rule, not in the Design) [Req: REQ-008]."
 TC-151,Result,Result open,"1. Tap 「Original」
 2. Tap 「Result」","「Original」 shows the source video, 「Result」 the enhanced one (visibly sharper or cleaner)",P2,R-121,
 TC-152,Result,"Result of the TC-110 task open (01:30 1080p 30 fps source; Standard, Natural, 30fps, 1080p)","1. Tap 「Save Result」
-2. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)","The toast 「Saved to your device」 appears within 10 s; the enhanced video is in the phone gallery (Google Photos / Files › Movies or DCIM), 01:30 long, 1920 × 1080 and 30 fps (the values chosen on the panel)",P1,"R-122, R-194",Toast copy is PM D3 [建議]. Covers the default values of the setting-value rows TC-219–TC-224 (analysis pass 10).
-TC-219,Result,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance,"1. Open the panel with the 00:05 video (whole video selected)
-2. Tap 「Professional」
-3. Note the CTA price and the 「Charge X credits per second」 line
-4. Tap 「Enhance ◆ <credits>」
-5. Wait in Recent task until the task completes
-6. Tap 「View」 on its card
-7. Tap 「Original」
-8. Tap 「Result」
-9. Tap 「Save Result」
-10. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)","The CTA price and the per-second line change from the Standard price when 「Professional」 is tapped; after the upload the balance is the noted balance minus that price; 「Result」 shows more detail than 「Original」 (「Maximum detail」); the saved video is 00:05, 1920 × 1080 and 30 fps",P1,"R-194, R-195, R-065, R-060, R-089","Setting value Mode=Professional used end to end (analysis pass 10). Q-4: the Professional rate is not in the spec, so only the charge = the shown price is asserted. Needs the 00:05 fixture video and one full generation."
-TC-220,Result,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance,"1. Open the panel with the 00:05 video (whole video selected)
-2. Tap 「Sharp」
-3. Note the CTA price and the 「Charge X credits per second」 line
-4. Tap 「Enhance ◆ <credits>」
-5. Wait in Recent task until the task completes
-6. Tap 「View」 on its card
-7. Tap 「Original」
-8. Tap 「Result」
-9. Tap 「Save Result」
-10. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)","The CTA price does not change when 「Sharp」 is tapped (style does not set the price) and the balance drops by exactly that price; 「Result」 looks sharper and clearer than 「Original」 (「Moderate enhancement for a sharp, clear image」); the saved video is 00:05, 1920 × 1080 and 30 fps",P2,"R-194, R-195, R-062, R-060, R-089",Setting value Enhancement style=Sharp used end to end (analysis pass 10); compare with the Natural result of TC-152. Needs the 00:05 fixture video and one full generation.
-TC-221,Result,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance,"1. Open the panel with the 00:05 video (whole video selected)
-2. Tap 「60fps」
-3. Note the CTA price and the 「Charge X credits per second」 line
-4. Tap 「Enhance ◆ <credits>」
-5. Wait in Recent task until the task completes
-6. Tap 「View」 on its card
-7. Tap 「Original」
-8. Tap 「Result」
-9. Tap 「Save Result」
-10. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)","The balance drops by exactly the CTA price shown when 「Enhance」 was tapped; the saved video is 00:05, 1920 × 1080 and 60 fps",P2,"R-194, R-060, R-089","Setting value fps=60fps used end to end (analysis pass 10). Q-3: whether the output fps changes the price is open; only the charge = the shown price is asserted. If the chip is disabled (Q-6), record it Blocked --as question. Needs the 00:05 fixture video and one full generation."
-TC-222,Result,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance,"1. Open the panel with the 00:05 video (whole video selected)
-2. Tap 「120fps」
-3. Note the CTA price and the 「Charge X credits per second」 line
-4. Tap 「Enhance ◆ <credits>」
-5. Wait in Recent task until the task completes
-6. Tap 「View」 on its card
-7. Tap 「Original」
-8. Tap 「Result」
-9. Tap 「Save Result」
-10. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)","The balance drops by exactly the CTA price shown when 「Enhance」 was tapped; the saved video is 00:05, 1920 × 1080 and 120 fps",P2,"R-194, R-060, R-089",Setting value fps=120fps used end to end (analysis pass 10). Q-3 and Q-6 as in TC-221. Needs the 00:05 fixture video and one full generation.
-TC-223,Result,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:05 720p 30 fps landscape video in the album (made for the test); note the balance,"1. Open the panel with the 00:05 video (whole video selected)
-2. Check that 「720p」 is selected (tap it if not)
-3. Note the CTA price and the 「Charge X credits per second」 line
-4. Tap 「Enhance ◆ <credits>」
-5. Wait in Recent task until the task completes
-6. Tap 「View」 on its card
-7. Tap 「Original」
-8. Tap 「Result」
-9. Tap 「Save Result」
-10. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)","「720p」 is selected; the balance drops by exactly the CTA price shown when 「Enhance」 was tapped; the saved video is 00:05, 1280 × 720 and 30 fps",P2,"R-194, R-044, R-060, R-089","Setting value Resolution=720p used end to end (analysis pass 10), from a 720p source so the value is allowed whatever Q-6 decides. Needs the 00:05 720p fixture video and one full generation."
-TC-224,Result,Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:05 1080p 30 fps landscape video in the album (made for the test); note the balance,"1. Open the panel with the 00:05 video (whole video selected)
-2. Tap 「4K」
-3. Note the CTA price and the 「Charge X credits per second」 line
-4. Tap 「Enhance ◆ <credits>」
-5. Wait in Recent task until the task completes
-6. Tap 「View」 on its card
-7. Tap 「Original」
-8. Tap 「Result」
-9. Tap 「Save Result」
-10. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)","The CTA price and the per-second line change from the 1080p price when 「4K」 is tapped; the balance drops by exactly that price; the saved video is 00:05, 3840 × 2160 and 30 fps",P2,"R-194, R-065, R-060, R-089","Setting value Resolution=4K used end to end (analysis pass 10). Q-4: the 4K rate is not in the spec. If 4K is disabled (Q-6), record it Blocked --as question. Needs the 00:05 fixture video and one full generation."
+2. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+3. Open a new project in PowerDirector and its media picker on 「All」
+4. Add the saved video to the timeline
+5. Play the timeline","The toast 「Saved to your device」 appears within 10 s; the enhanced video is a new file in the phone gallery (Google Photos / Files › Movies or DCIM), 01:30 long, 1920 × 1080 and 30 fps (the values chosen on the panel), and the source video is still there unchanged; the media picker lists it under 「All」; it is added to the timeline and plays there",P1,"R-122, R-194",Toast copy is PM D3 [建議]. Steps 3–5: colleague feedback item 14 via the spec agent's TC-VE2-236 [Req: REQ-008]. The default values of a 1080p source; every combination of the four settings is generated in the Setting combinations rows (REQ-008).
 TC-153,Result,Result of a task started from Add Media open,Tap 「Add to Timeline」,A new project opens with the enhanced video on its timeline; no existing project is changed and the source video in the album is unchanged,P1,"R-123, R-126",
 TC-154,Result,Result open,Tap 「Enhance More」,Add Media opens for the next video,P2,R-124,
 TC-155,Result,Result open from a Recent task card,Tap ‹ on the Result page,Recent task is shown again,P3,R-125,Q-9: no arrow; the previous page is the assumption.
-TC-160,Timeline entry,Signed in with a Pro+ account (no tier switch on Android); a project with a 05:00 clip; panel opened on it from the clip toolbar,Tap 「Professional」,The toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 appears and the Mode stays Standard,P2,R-057,Q-10: draft B1-1 ⑦ disables the chip with 「Professional mode supports clips up to 2m 30s. Split the clip to use it.」; check on device and decide with the user.
+TC-223,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Check the defaults: 「Standard」, 「Natural」, 「30fps」 and 「720p」 selected
+3. Drag the right handle toward the left handle as far as it goes (1 s selected)
+4. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+5. Tap 「Enhance ◆ 4」
+6. Wait in Recent task until the task completes
+7. Tap 「View」 on its card
+8. Tap 「Original」
+9. Tap 「Result」
+10. Tap 「Save Result」
+11. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+12. Open the credit history (「Details」 on the Credit page)","After step 2: 「Standard」, 「Natural」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_720p_30fps); spec agent TC-VE2-185 (generate) and TC-VE2-114 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits."
+TC-225,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「1080p」
+3. Drag the right handle toward the left handle as far as it goes (1 s selected)
+4. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+5. Tap 「Enhance ◆ 8」
+6. Wait in Recent task until the task completes
+7. Tap 「View」 on its card
+8. Tap 「Original」
+9. Tap 「Result」
+10. Tap 「Save Result」
+11. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+12. Open the credit history (「Details」 on the Credit page)","After step 2: 「Standard」, 「Natural」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 3: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 4: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_1080p_30fps); spec agent TC-VE2-186 (generate) and TC-VE2-115 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
+TC-224,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 12 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「4K」
+3. Drag the right handle toward the left handle as far as it goes (1 s selected)
+4. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+5. Tap 「Enhance ◆ 12」
+6. Wait in Recent task until the task completes
+7. Tap 「View」 on its card
+8. Tap 「Original」
+9. Tap 「Result」
+10. Tap 「Save Result」
+11. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+12. Open the credit history (「Details」 on the Credit page)","After step 2: 「Standard」, 「Natural」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 3 credits per second」. Step 3: the CTA reads 「Enhance ◆ 3」 (1 s × 3); step 4: 「Enhance ◆ 12」 (3.2 s rounds up to 4 s × 3). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 12. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 12 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 3 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_4k_30fps); spec agent TC-VE2-187 (generate) and TC-VE2-116 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 12 credits."
+TC-226,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「60fps」
+3. Drag the right handle toward the left handle as far as it goes (1 s selected)
+4. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+5. Tap 「Enhance ◆ 4」
+6. Wait in Recent task until the task completes
+7. Tap 「View」 on its card
+8. Tap 「Original」
+9. Tap 「Result」
+10. Tap 「Save Result」
+11. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+12. Open the credit history (「Details」 on the Credit page)","After step 2: 「Standard」, 「Natural」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_720p_60fps); spec agent TC-VE2-188 (generate) and TC-VE2-117 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits."
+TC-221,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「60fps」
+3. Tap 「1080p」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 8」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Standard」, 「Natural」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_1080p_60fps); spec agent TC-VE2-189 (generate) and TC-VE2-118 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
+TC-227,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 24 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「60fps」
+3. Tap 「4K」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 24」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Standard」, 「Natural」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 6 credits per second」. Step 4: the CTA reads 「Enhance ◆ 6」 (1 s × 6); step 5: 「Enhance ◆ 24」 (3.2 s rounds up to 4 s × 6). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 24. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 24 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 6 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_4k_60fps); spec agent TC-VE2-190 (generate) and TC-VE2-119 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 24 credits."
+TC-228,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「120fps」
+3. Drag the right handle toward the left handle as far as it goes (1 s selected)
+4. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+5. Tap 「Enhance ◆ 4」
+6. Wait in Recent task until the task completes
+7. Tap 「View」 on its card
+8. Tap 「Original」
+9. Tap 「Result」
+10. Tap 「Save Result」
+11. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+12. Open the credit history (「Details」 on the Credit page)","After step 2: 「Standard」, 「Natural」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_720p_120fps); spec agent TC-VE2-191 (generate) and TC-VE2-120 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits."
+TC-222,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「120fps」
+3. Tap 「1080p」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 8」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Standard」, 「Natural」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_1080p_120fps); spec agent TC-VE2-192 (generate) and TC-VE2-121 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
+TC-229,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「120fps」
+3. Tap 「4K」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 32」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Standard」, 「Natural」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 4: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 5: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_4k_120fps); spec agent TC-VE2-193 (generate) and TC-VE2-122 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
+TC-230,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Drag the right handle toward the left handle as far as it goes (1 s selected)
+4. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+5. Tap 「Enhance ◆ 4」
+6. Wait in Recent task until the task completes
+7. Tap 「View」 on its card
+8. Tap 「Original」
+9. Tap 「Result」
+10. Tap 「Save Result」
+11. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+12. Open the credit history (「Details」 on the Credit page)","After step 2: 「Standard」, 「Sharp」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_720p_30fps); spec agent TC-VE2-194 (generate) and TC-VE2-123 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits."
+TC-220,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Tap 「1080p」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 8」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Standard」, 「Sharp」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_1080p_30fps); spec agent TC-VE2-195 (generate) and TC-VE2-124 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
+TC-231,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 12 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Tap 「4K」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 12」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Standard」, 「Sharp」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 3 credits per second」. Step 4: the CTA reads 「Enhance ◆ 3」 (1 s × 3); step 5: 「Enhance ◆ 12」 (3.2 s rounds up to 4 s × 3). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 12. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 12 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 3 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_4k_30fps); spec agent TC-VE2-196 (generate) and TC-VE2-125 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 12 credits."
+TC-232,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Tap 「60fps」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 4」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Standard」, 「Sharp」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 4: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 5: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_720p_60fps); spec agent TC-VE2-197 (generate) and TC-VE2-126 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits."
+TC-233,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Tap 「60fps」
+4. Tap 「1080p」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 8」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Standard」, 「Sharp」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 5: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 6: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_1080p_60fps); spec agent TC-VE2-198 (generate) and TC-VE2-127 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
+TC-234,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 24 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Tap 「60fps」
+4. Tap 「4K」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 24」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Standard」, 「Sharp」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 6 credits per second」. Step 5: the CTA reads 「Enhance ◆ 6」 (1 s × 6); step 6: 「Enhance ◆ 24」 (3.2 s rounds up to 4 s × 6). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 24. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 24 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 6 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_4k_60fps); spec agent TC-VE2-199 (generate) and TC-VE2-128 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 24 credits."
+TC-235,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Tap 「120fps」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 4」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Standard」, 「Sharp」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 4: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 5: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_720p_120fps); spec agent TC-VE2-200 (generate) and TC-VE2-129 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits."
+TC-236,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Tap 「120fps」
+4. Tap 「1080p」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 8」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Standard」, 「Sharp」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 5: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 6: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_1080p_120fps); spec agent TC-VE2-201 (generate) and TC-VE2-130 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
+TC-237,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Sharp」
+3. Tap 「120fps」
+4. Tap 「4K」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 32」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Standard」, 「Sharp」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_4k_120fps); spec agent TC-VE2-202 (generate) and TC-VE2-131 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
+TC-238,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Drag the right handle toward the left handle as far as it goes (1 s selected)
+4. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+5. Tap 「Enhance ◆ 8」
+6. Wait in Recent task until the task completes
+7. Tap 「View」 on its card
+8. Tap 「Original」
+9. Tap 「Result」
+10. Tap 「Save Result」
+11. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+12. Open the credit history (「Details」 on the Credit page)","After step 2: 「Professional」, 「Natural」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 3: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 4: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_720p_30fps); spec agent TC-VE2-203 (generate) and TC-VE2-132 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
+TC-219,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「1080p」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 16」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Professional」, 「Natural」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」. Step 4: the CTA reads 「Enhance ◆ 4」 (1 s × 4); step 5: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 16. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 4 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_1080p_30fps); spec agent TC-VE2-204 (generate) and TC-VE2-133 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 16 credits."
+TC-239,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 48 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「4K」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 48」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Professional」, 「Natural」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 12 credits per second」. Step 4: the CTA reads 「Enhance ◆ 12」 (1 s × 12); step 5: 「Enhance ◆ 48」 (3.2 s rounds up to 4 s × 12). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 48. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 48 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 12 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_4k_30fps); spec agent TC-VE2-205 (generate) and TC-VE2-134 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 48 credits."
+TC-240,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「60fps」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 16」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Professional」, 「Natural」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」. Step 4: the CTA reads 「Enhance ◆ 4」 (1 s × 4); step 5: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 16. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 4 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_720p_60fps); spec agent TC-VE2-206 (generate) and TC-VE2-135 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 16 credits."
+TC-241,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「60fps」
+4. Tap 「1080p」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 32」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Professional」, 「Natural」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_1080p_60fps); spec agent TC-VE2-207 (generate) and TC-VE2-136 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
+TC-242,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 96 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「60fps」
+4. Tap 「4K」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 96」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Professional」, 「Natural」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 24 credits per second」. Step 5: the CTA reads 「Enhance ◆ 24」 (1 s × 24); step 6: 「Enhance ◆ 96」 (3.2 s rounds up to 4 s × 24). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 96. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 96 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 24 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_4k_60fps); spec agent TC-VE2-208 (generate) and TC-VE2-137 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 96 credits."
+TC-243,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「120fps」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 32」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Professional」, 「Natural」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 4: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 5: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_720p_120fps); spec agent TC-VE2-209 (generate) and TC-VE2-138 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
+TC-244,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 64 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「120fps」
+4. Tap 「1080p」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 64」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Professional」, 「Natural」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 16 credits per second」. Step 5: the CTA reads 「Enhance ◆ 16」 (1 s × 16); step 6: 「Enhance ◆ 64」 (3.2 s rounds up to 4 s × 16). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 64. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 64 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 16 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_1080p_120fps); spec agent TC-VE2-210 (generate) and TC-VE2-139 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 64 credits."
+TC-245,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 192 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「120fps」
+4. Tap 「4K」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 192」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Professional」, 「Natural」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 48 credits per second」. Step 5: the CTA reads 「Enhance ◆ 48」 (1 s × 48); step 6: 「Enhance ◆ 192」 (3.2 s rounds up to 4 s × 48). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 192. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 192 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 48 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_4k_120fps); spec agent TC-VE2-211 (generate) and TC-VE2-140 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 192 credits."
+TC-246,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Drag the right handle toward the left handle as far as it goes (1 s selected)
+5. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+6. Tap 「Enhance ◆ 8」
+7. Wait in Recent task until the task completes
+8. Tap 「View」 on its card
+9. Tap 「Original」
+10. Tap 「Result」
+11. Tap 「Save Result」
+12. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+13. Open the credit history (「Details」 on the Credit page)","After step 3: 「Professional」, 「Sharp」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_720p_30fps); spec agent TC-VE2-212 (generate) and TC-VE2-141 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
+TC-247,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Tap 「1080p」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 16」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Professional」, 「Sharp」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」. Step 5: the CTA reads 「Enhance ◆ 4」 (1 s × 4); step 6: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 16. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 4 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_1080p_30fps); spec agent TC-VE2-213 (generate) and TC-VE2-142 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 16 credits."
+TC-248,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 48 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Tap 「4K」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 48」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Professional」, 「Sharp」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 12 credits per second」. Step 5: the CTA reads 「Enhance ◆ 12」 (1 s × 12); step 6: 「Enhance ◆ 48」 (3.2 s rounds up to 4 s × 12). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 48. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 48 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 12 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_4k_30fps); spec agent TC-VE2-214 (generate) and TC-VE2-143 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 48 credits."
+TC-249,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Tap 「60fps」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 16」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Professional」, 「Sharp」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」. Step 5: the CTA reads 「Enhance ◆ 4」 (1 s × 4); step 6: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 16. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 4 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_720p_60fps); spec agent TC-VE2-215 (generate) and TC-VE2-144 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 16 credits."
+TC-250,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Tap 「60fps」
+5. Tap 「1080p」
+6. Drag the right handle toward the left handle as far as it goes (1 s selected)
+7. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+8. Tap 「Enhance ◆ 32」
+9. Wait in Recent task until the task completes
+10. Tap 「View」 on its card
+11. Tap 「Original」
+12. Tap 「Result」
+13. Tap 「Save Result」
+14. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+15. Open the credit history (「Details」 on the Credit page)","After step 5: 「Professional」, 「Sharp」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 6: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 7: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 8 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_1080p_60fps); spec agent TC-VE2-216 (generate) and TC-VE2-145 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
+TC-251,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 96 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Tap 「60fps」
+5. Tap 「4K」
+6. Drag the right handle toward the left handle as far as it goes (1 s selected)
+7. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+8. Tap 「Enhance ◆ 96」
+9. Wait in Recent task until the task completes
+10. Tap 「View」 on its card
+11. Tap 「Original」
+12. Tap 「Result」
+13. Tap 「Save Result」
+14. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+15. Open the credit history (「Details」 on the Credit page)","After step 5: 「Professional」, 「Sharp」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 24 credits per second」. Step 6: the CTA reads 「Enhance ◆ 24」 (1 s × 24); step 7: 「Enhance ◆ 96」 (3.2 s rounds up to 4 s × 24). Step 8 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 96. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 96 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 24 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_4k_60fps); spec agent TC-VE2-217 (generate) and TC-VE2-146 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 96 credits."
+TC-252,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Tap 「120fps」
+5. Drag the right handle toward the left handle as far as it goes (1 s selected)
+6. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+7. Tap 「Enhance ◆ 32」
+8. Wait in Recent task until the task completes
+9. Tap 「View」 on its card
+10. Tap 「Original」
+11. Tap 「Result」
+12. Tap 「Save Result」
+13. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+14. Open the credit history (「Details」 on the Credit page)","After step 4: 「Professional」, 「Sharp」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_720p_120fps); spec agent TC-VE2-218 (generate) and TC-VE2-147 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
+TC-253,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 64 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Tap 「120fps」
+5. Tap 「1080p」
+6. Drag the right handle toward the left handle as far as it goes (1 s selected)
+7. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+8. Tap 「Enhance ◆ 64」
+9. Wait in Recent task until the task completes
+10. Tap 「View」 on its card
+11. Tap 「Original」
+12. Tap 「Result」
+13. Tap 「Save Result」
+14. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+15. Open the credit history (「Details」 on the Credit page)","After step 5: 「Professional」, 「Sharp」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 16 credits per second」. Step 6: the CTA reads 「Enhance ◆ 16」 (1 s × 16); step 7: 「Enhance ◆ 64」 (3.2 s rounds up to 4 s × 16). Step 8 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 64. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 64 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 16 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_1080p_120fps); spec agent TC-VE2-219 (generate) and TC-VE2-148 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 64 credits."
+TC-254,Setting combinations,"Signed in with a Pro+ account (no tier switch on Android) with at least 192 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
+2. Tap 「Professional」
+3. Tap 「Sharp」
+4. Tap 「120fps」
+5. Tap 「4K」
+6. Drag the right handle toward the left handle as far as it goes (1 s selected)
+7. Drag the right handle back to the end of the video (the whole 3.2 s selected)
+8. Tap 「Enhance ◆ 192」
+9. Wait in Recent task until the task completes
+10. Tap 「View」 on its card
+11. Tap 「Original」
+12. Tap 「Result」
+13. Tap 「Save Result」
+14. Read the saved file's resolution and frame rate (the gallery's Details, or the file pulled with adb and read with ffprobe on the computer)
+15. Open the credit history (「Details」 on the Credit page)","After step 5: 「Professional」, 「Sharp」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 48 credits per second」. Step 6: the CTA reads 「Enhance ◆ 48」 (1 s × 48); step 7: 「Enhance ◆ 192」 (3.2 s rounds up to 4 s × 48). Step 8 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 192. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 192 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 48 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_4k_120fps); spec agent TC-VE2-220 (generate) and TC-VE2-149 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 192 credits."
+TC-160,Timeline entry,Signed in with a Pro+ account (no tier switch on Android); a project with a 05:00 clip; panel opened on it from the clip toolbar,"1. Tap 「Professional」
+2. Drag the right handle left until 「Selected Length」 reads 「02:20」
+3. Tap 「Professional」","Step 1: 「Professional」 looks normal; the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows for about 3 s, the Mode stays Standard and the selection stays 05:00; step 3 switches to 「Professional」 with no toast and the selection stays 02:20",P2,"R-057, R-052, R-053",Q-10: draft B1-1 ⑦ disables the chip with 「Professional mode supports clips up to 2m 30s. Split the clip to use it.」; check on device and decide with the user. The spec agent's TC-VE2-269 quotes PM 9/29's toast; the Design copy is newer.
 TC-161,Timeline entry,Signed in with a Pro+ account (no tier switch on Android); a project with a 10:00 clip,"1. Tap the clip
 2. Tap 「AI Video Enhance」 in the clip toolbar",The panel does not open; the toast 「Split clips longer than 8 minutes first」 appears,P3,R-058,PM D4 [建議] / B1-1 ⑦ (Q-10): PM-only.
 TC-162,Timeline entry,Signed in with a Pro+ account (no tier switch on Android); a project with a 00:30 clip; panel opened on it from the clip toolbar,"1. Tap 「Enhance ◆ <credits>」
@@ -220,7 +730,7 @@ TC-163,Timeline entry,"Panel opened from the clip toolbar, nothing running",Tap 
 TC-164,Timeline entry,A Timeline task processing (TC-162 setup),"1. Delete the clip from the timeline
 2. Wait until the task completes",Nothing is pasted into the project; the result is in Recent task,P3,R-132,PM D4 [建議] (Gap 10).
 TC-165,Timeline entry,Result of a task started from the Timeline open,Tap 「Add to Timeline」,The original project opens (no new project is made),P3,R-134,PM D4 [建議]; conflicts with the Design 「Add to Timeline → 開新 timeline」 (Q-11).
-TC-170,Failure and refund,A Video Enhance task that failed on the server,Open Recent task,The failed task's card shows an 「Error」 thumbnail and 「View Details」 (no Retry),P1,R-140,Parked: needs a failure fixture (no fault switch for Video Enhance is known; ask RD).
+TC-170,Failure and refund,A Video Enhance task that failed on the server,Open Recent task,The failed task's card shows an 「Error」 thumbnail and 「View Details」 (no Retry),P1,R-140,"Parked: needs a failure fixture (no fault switch for Video Enhance is known; ask RD). One way the spec agent uses (TC-VE2-173, [Req: REQ-008]): one task on a video that content moderation refuses (an NSFW test album), a single attempt."
 TC-171,Failure and refund,A failed card in Recent task (TC-170),"1. Tap 「View Details」
 2. Tap 「OK」",Step 1 shows 「An Error Has Occurred」 / 「Credits have been refunded.」 / 「The server may be busy. Please try again later or use a different video.」 with 「OK」; step 2 closes it and Recent task stays,P1,"R-141, R-191",Parked with TC-170. Walks the Design arrow 3393-18071 (Recent 「View Details」 → the dialog).
 TC-173,Failure and refund,Balance noted before a task that failed (TC-170),Open the credit pill or the Credit page after the failure,The balance is back to the noted value (the charge was refunded automatically); the ledger shows the refund; nothing offers Retry,P1,R-142,KP-007: a missing or wrong refund is its own defect. Parked with TC-170.
