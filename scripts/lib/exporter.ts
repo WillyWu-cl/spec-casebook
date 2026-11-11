@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import ExcelJS from 'exceljs';
 import { COLUMNS, readManifest, readTable, tableDir } from './library.ts';
 import { renderPage } from './render.ts';
+import { readZhCopy } from './zh.ts';
 
 const WIDTHS: Record<string, number> = { ID: 11, Section: 20, Precondition: 30, Action: 48, 'Expected Result': 48, Priority: 9, 'Spec Ref': 16, Notes: 30 };
 
@@ -33,6 +34,7 @@ export async function exportTable(feature: string, platform: string) {
     mode: 'view', save: false, feature, platform, title: m.title, draft: m.draft, based_on_version: null,
     version: m.version, approved_at: m.approved_at, spec_files: m.spec_files, rows, previous: {},
     requirements: existsSync(reqPath) ? readFileSync(reqPath, 'utf8') : '', update_plan: '',
+    zh: readZhCopy(join(dir, 'cases.zh-Hant.csv')),   // 中文 mode of the exported page, as on the review page
   }));
   return { xlsx: join(dir, 'cases.xlsx'), html: join(dir, 'cases.html'), cases: rows.length };
 }
