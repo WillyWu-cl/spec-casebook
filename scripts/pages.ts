@@ -203,10 +203,11 @@ const platformName = (p: string) => p === 'ios' ? 'iOS' : 'Android';
 // a tab is a link unless the page cannot open: no run plan yet, or it failed the last time it was started
 // (a "no run plan" error left from an earlier visit no longer counts once the plan is there)
 const problem = (d: Def, r: Ref) => (d.id === 'plan' && !d.argv(r) ? d.why : undefined) ?? (({ proc, error }) => proc || error === d.why ? undefined : error)(childOf(d, r));
-// one tab of the bar: a link, or a greyed-out name when the page cannot open (data-t: the bar swaps it when that changes)
+// one tab of the bar: a link, or a greyed-out name when the page cannot open (data-cb-tab: the bar swaps it when that
+// changes; not data-t, which the pages use for their own translations)
 const tabHtml = (d: Def, r: Ref, current: string) => { const why = problem(d, r); return why
-  ? `<span class="off" data-t="${d.id}" title="${esc(why)}">${tabName(d, r)}</span>`
-  : `<a data-t="${d.id}" href="${base(r)}/${d.path}/"${d.id === current ? ' aria-current="page"' : ''}>${tabName(d, r)}</a>`; };
+  ? `<span class="off" data-cb-tab="${d.id}" title="${esc(why)}">${tabName(d, r)}</span>`
+  : `<a data-cb-tab="${d.id}" href="${base(r)}/${d.path}/"${d.id === current ? ' aria-current="page"' : ''}>${tabName(d, r)}</a>`; };
 // the same page on the table's other platform: its draft of the same id if it has one, else the approved table, else its newest draft
 const otherPlatform = (r: Ref, path: string) => { const p = PLATFORMS.find(x => x !== r.platform)!;
   const draft = r.draft && hasDraft(r.feature, p, r.draft) ? r.draft : readManifest(r.feature, p) ? undefined : openDrafts(r.feature, p).at(-1);
@@ -278,7 +279,7 @@ C.check=async fresh=>{if(document.hidden){later=1;return}if(busy){again=1;return
   if(r.status!==200)return;const j=await r.json();v=j.v;if(gone)return location.reload();if(C.onData)C.quiet(()=>C.onData(j.data));else u.hidden=false}catch(e){}finally{busy=0;if(again){again=0;C.check()}}};
 // the tabs follow the files too: a run plan added (or removed) turns Progress into a link (or back) with no reload
 const tabs=async()=>{try{const r=await fetch('__tabs',{cache:'no-store'});if(!r.ok)return;const t=await r.json();
-  for(const[id,h]of Object.entries(t)){const o=n.querySelector('[data-t="'+id+'"]');if(!o||o.outerHTML===h)continue;const x=document.createElement('template');H.set.call(x,h);const e=x.content.firstElementChild;e.querySelectorAll('[data-zh]').forEach(y=>y.textContent=y.dataset[C.lang]);
+  for(const[id,h]of Object.entries(t)){const o=n.querySelector('[data-cb-tab="'+id+'"]');if(!o||o.outerHTML===h)continue;const x=document.createElement('template');H.set.call(x,h);const e=x.content.firstElementChild;e.querySelectorAll('[data-zh]').forEach(y=>y.textContent=y.dataset[C.lang]);
   // a page that just became available is outlined (like the Reload button), so the change is seen
   if(o.tagName!=='A'&&e.tagName==='A'){e.classList.add('cb-new');e.title=C.lang==='zh'?'已可開啟':'Now available'}o.replaceWith(e)}}catch(e){}};
 const got=s=>{if(s.code>c0){if(document.hidden&&cur!=='review'){stale=1;return}u.hidden=false;return}
