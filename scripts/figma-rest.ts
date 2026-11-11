@@ -27,7 +27,8 @@
 // Token (never written to the repo or a log): FIGMA_TOKEN, else the macOS keychain item
 // `com.cyberlink.figma-retrieval` (security add-generic-password -a "$USER" -s com.cyberlink.figma-retrieval -w),
 // else ~/.casebook/figma-token. Folder: specs/<set>/extracted/figma-source/design/rest/ (git-ignored, local only).
-import { existsSync, mkdirSync, readFileSync, statSync, appendFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, appendFileSync, writeFileSync, copyFileSync } from 'node:fs';
+import { gzipSync } from 'node:zlib';
 import { spawnSync } from 'node:child_process';
 import { join } from 'node:path';
 import * as nodeModule from 'node:module';
@@ -37,27 +38,33 @@ import { useFigmaReturns } from './lib/figma-returns.ts';
 
 const argv = process.argv.slice(2).filter((a, i, all) => !a.startsWith('--') && !(i > 0 && ['--scale', '--vars'].includes(all[i - 1])));
 const [feature] = argv;
-const usage = 'Usage: node scripts/figma-rest.ts <product>/<feature> [<set>] fetch [ids…] [--images] [--scale 1] [--no-geometry] | calls | save | convert [--vars <library.json>]';
+const usage = 'Usage: node scripts/figma-rest.ts <product>/<feature> [<set>] list [page id] | fetch [ids…] [--no-geometry] | calls | save | publish [--no-extras] | images | convert [--vars <library.json>]';
 if (!feature) { console.error(usage); process.exit(2); }
 assertIds(feature, 'ios');
 const specs = join(featureDir(feature), 'specs');
 const sets = listSpecSets(feature).map(s => s.folder);
 let pos = 1;
-const set = sets.includes(argv[1]) ? argv[pos++] : [...sets].reverse().find(s => existsSync(join(specs, s, 'extracted', 'figma-source', 'design', 'scope.json')));
-if (!set) { console.error('No spec set has extracted/figma-source/design/scope.json'); process.exit(2); }
+const hasDesign = (s: string) => { const f = join(specs, s, 'extracted', 'figma-frames.json'); return existsSync(f) && !!JSON.parse(readFileSync(f, 'utf8')).files?.design?.fileKey; };
+const set = sets.includes(argv[1]) ? argv[pos++] : [...sets].reverse().find(hasDesign);
+if (!set) { console.error('No spec set has extracted/figma-frames.json with files.design (figma-source.ts <feature> init <Design link> records one)'); process.exit(2); }
 const cmd = argv[pos], ids0 = argv.slice(pos + 1);
 const ex = join(specs, set, 'extracted'), src = join(ex, 'figma-source', 'design'), restDir = join(src, 'rest');
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
-const scope = read(join(src, 'scope.json'));
-const fileKey: string = scope.file;
+const frames = read(join(ex, 'figma-frames.json')), scopePath = join(src, 'scope.json');
+const scope = existsSync(scopePath) ? read(scopePath) : { file: frames.files.design.fileKey, page: null, listed: null, read: [], missing: [] };
+const fileKey: string = frames.files.design.fileKey;
+if (scope.file && scope.file !== fileKey) { console.error(`scope.json is for file ${scope.file}, figma-frames.json names ${fileKey}`); process.exit(2); }
 const rel = (p: string) => p.slice(ROOT.length + 1);
 const dash = (id: string) => id.replace(/[:;/]/g, '-');
 const r2 = (n: number) => Math.round(n * 100) / 100;
 const extrasDesc = 'casebook figma-rest design extras';
 let summary_extras: any = null;
 
-if (cmd === 'fetch') await fetchAll();
+if (cmd === 'list') await list();
+else if (cmd === 'fetch') await fetchAll();
 else if (cmd === 'calls') extrasCall();
+else if (cmd === 'publish') publish();
+else if (cmd === 'images') await images();
 else if (cmd === 'save') saveExtras();
 else if (cmd === 'convert') convert();
 else { console.error(usage); process.exit(2); }
@@ -87,21 +94,111 @@ async function get(url: string, to: string, auth = true) {
 // ---- fetch ---------------------------------------------------------------------------------------------------------------
 async function fetchAll() {
   const ids: string[] = ids0.length ? ids0 : scope.read.map((b: any) => b.id);
+  if (!ids.length) { console.error('No boards read before: pass the board ids (`list` shows the page\'s boards)'); process.exit(2); }
   mkdirSync(restDir, { recursive: true });
   const q = new URLSearchParams({ ids: ids.join(',') });
   if (!process.argv.includes('--no-geometry')) q.set('geometry', 'paths');
   const n = await get(`https://api.figma.com/v1/files/${fileKey}/nodes?${q}`, join(restDir, 'nodes.json'));
   console.log(`nodes: 1 call, ${ids.length} board(s), ${(n.bytes / 1e6).toFixed(1)} MB in ${(n.ms / 1000).toFixed(1)} s → ${rel(join(restDir, 'nodes.json'))}`);
-  if (!process.argv.includes('--images')) return;
-  const scale = Number(arg('scale') ?? 1);
-  const im = await get(`https://api.figma.com/v1/images/${fileKey}?${new URLSearchParams({ ids: ids.join(','), scale: String(scale), format: 'png' })}`, join(restDir, 'images.json'));
-  const urls: Record<string, string | null> = read(join(restDir, 'images.json')).images ?? {};
-  let dl = 0, bytes = 0;
-  for (const [id, url] of Object.entries(urls)) {
-    if (!url) { console.log(`  no image for ${id} (Figma rendered nothing: too large?)`); continue; }
-    const r = await get(url, join(restDir, 'images', `${dash(id)}.png`), false); dl++; bytes += r.bytes;
+}
+
+// ---- list: the page's sections and boards (1 REST call, depth 2) ------------------------------------------------------
+async function list() {
+  const page = ids0[0] ?? frames.files.design.page;
+  if (!page) { console.error('list [page or section id]: figma-frames.json has no files.design.page'); process.exit(2); }
+  mkdirSync(restDir, { recursive: true });
+  await get(`https://api.figma.com/v1/files/${fileKey}/nodes?${new URLSearchParams({ ids: page, depth: '2' })}`, join(restDir, 'list.json'));
+  const doc = read(join(restDir, 'list.json')).nodes?.[page]?.document;
+  if (!doc) { console.error(`node ${page} not found in ${fileKey}`); process.exit(1); }
+  const listed: any[] = [];
+  for (const n of doc.children ?? []) {
+    listed.push([n.id, String(n.name).trim().slice(0, 60), n.type]);
+    if (n.type === 'SECTION') for (const c of n.children ?? []) listed.push([c.id, String(c.name).trim().slice(0, 60), c.type, n.id]);
   }
-  console.log(`images: 1 Figma call (${(im.ms / 1000).toFixed(1)} s) + ${dl} download(s) from Figma's image store, ${(bytes / 1e6).toFixed(1)} MB → ${rel(join(restDir, 'images'))}/`);
+  writeJson(scopePath, { ...scope, written_at: new Date().toISOString(), file: fileKey, page: [doc.id, doc.name], listed });
+  console.log(`${doc.name}: ${listed.length} node(s) listed in ${rel(scopePath)}`);
+  for (const r of listed) console.log(`  ${r[3] ? '  ' : ''}${r[0]} ${r[2]} ${r[1]}`);
+}
+
+// ---- publish: the read becomes the feature's Figma source -------------------------------------------------------------
+// convert, then: out/ (what design.ts and everyone reads) replaced by the conversion; rest/boards/<file>.gz, the
+// committed copy another computer unpacks with no Figma call (design-plan.ts ensureSource); hashes.json and scope.json
+// updated with the boards' fingerprints (the same fingerprint the use_figma plan gives, so either route sees the other's
+// read as current); source.json names the route and read time.
+function publish() {
+  const nodesP = join(restDir, 'nodes.json'), callP = join(restDir, 'calls', 'extras.js'), exP = join(restDir, 'extras.json');
+  if (!existsSync(nodesP)) { console.error('No rest/nodes.json: run `fetch` first'); process.exit(2); }
+  const fresh = existsSync(callP) && existsSync(exP) && statSync(callP).mtimeMs >= statSync(nodesP).mtimeMs && statSync(exP).mtimeMs >= statSync(callP).mtimeMs;
+  if (!fresh && !process.argv.includes('--no-extras')) {
+    console.error('rest/extras.json is missing or older than this fetch: run `calls`, the use_figma call, `save` (or publish --no-extras: variable names, mixed caps, boolean radius and video fills then stay unknown)');
+    process.exit(2);
+  }
+  if (!fresh) rmSync(exP, { force: true });
+  convert();
+  const restOut = join(restDir, 'out'), outDir = join(src, 'out'), boardsDir = join(restDir, 'boards');
+  const files = readdirSync(restOut).filter(f => /\.(json|xml)$/.test(f));
+  rmSync(boardsDir, { recursive: true, force: true }); mkdirSync(boardsDir, { recursive: true });
+  for (const f of files) writeFileSync(join(boardsDir, `${f}.gz`), gzipSync(readFileSync(join(restOut, f)), { level: 9 }));
+  mkdirSync(outDir, { recursive: true });
+  for (const f of readdirSync(outDir)) if (/\.(json|xml)$/.test(f)) rmSync(join(outDir, f));
+  for (const f of files) copyFileSync(join(restOut, f), join(outDir, f));
+  const summary = read(join(restOut, 'summary.json')), raw = read(nodesP);
+  const fetched = readFileSync(join(restDir, 'calls.jsonl'), 'utf8').trim().split('\n').map(l => JSON.parse(l)).filter(c => c.file?.endsWith('/nodes.json') && c.status === 200).at(-1)?.at ?? new Date().toISOString();
+  const hashesPath = join(src, 'hashes.json'), hashes = existsSync(hashesPath) ? read(hashesPath) : {};
+  const readList = new Map<string, any>((scope.read ?? []).map((r: any) => [r.id, r]));
+  const changed = summary.boards.filter((b: any) => hashes[b.id]?.hash !== b.hash).map((b: any) => b.id);
+  for (const b of summary.boards) {
+    hashes[b.id] = { hash: b.hash, read_at: fetched, name: b.name, nodes: b.nodes };
+    readList.set(b.id, { id: b.id, name: b.name, read_at: fetched, hash: b.hash, plan: 'rest' });
+  }
+  writeJson(hashesPath, hashes);
+  writeJson(scopePath, { ...scope, written_at: new Date().toISOString(), file: fileKey, read: [...readList.values()] });
+  writeJson(join(src, 'source.json'), { route: 'rest', read_at: fetched, file_version: raw.version, file_last_modified: raw.lastModified,
+    boards: summary.boards.length, changed, calls: { rest: 1, use_figma: fresh ? 1 : 0 }, extras: fresh });
+  const kb = files.reduce((s, f) => s + statSync(join(boardsDir, `${f}.gz`)).size, 0) / 1024;
+  console.log(`${changed.length} board(s) new or changed since the last read${changed.length ? `: ${changed.join(', ')}` : ''}`);
+  console.log(`published ${summary.boards.length} board(s) to ${rel(outDir)}; committed copy ${rel(boardsDir)} (${Math.round(kb)} KB); hashes.json, scope.json, source.json updated` +
+    `\nnext: \`images\` (board images not current), then \`node scripts/figma-source.ts ${feature} ${set} crop design\``);
+}
+
+// ---- images: board images for boards whose shared image is not current ---------------------------------------------
+// The shared image rule of figma-source.ts (one 1 px = 1 pt image per board in extracted/figma/, shots.json): current
+// when shots.json gives it this fingerprint, or the casebook keeps it and the board did not change since. Others are
+// rendered with ONE REST image call; an image Figma scaled down (very large boards) is left for get_screenshot (MCP).
+// Both are listed in figma-source/design/calls/todo.json, which `figma-source.ts crop design` uses (shrink, record, crop).
+async function images() {
+  const restOut = join(restDir, 'out');
+  if (!existsSync(join(restOut, 'summary.json'))) { console.error('Nothing published: run `publish` first'); process.exit(2); }
+  const shotDir = join(ex, 'figma'), shotsP = join(shotDir, 'shots.json'), shots: Record<string, any> = existsSync(shotsP) ? read(shotsP) : {};
+  const cb = existsSync(join(ex, 'figma-hashes.json')) ? read(join(ex, 'figma-hashes.json')).boards ?? {} : {};
+  const changed = new Set<string>(existsSync(join(src, 'source.json')) ? read(join(src, 'source.json')).changed ?? [] : []);
+  const slug = (name: string) => name.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'board';
+  const shared = (id: string) => Object.entries(shots).find(([, v]) => v.board === id && !v.box && !v.tiles);
+  const want: any[] = [];
+  for (const b of read(join(restOut, 'summary.json')).boards) {
+    const e = shared(b.id), file = e && join(shotDir, e[0]);
+    const current = !!e && existsSync(file!) && (e[1].source_hash ? e[1].source_hash === b.hash : !!e[1].hash && cb[b.id]?.hash === e[1].hash && !changed.has(b.id));
+    if (current) continue;
+    const board = read(join(restOut, `${dash(b.id)}.json`)).board, max = Math.ceil(Math.max(...(board.render ?? board.box).slice(2)));
+    const name = e?.[0] ?? (shots[`${slug(b.name)}.png`] ? `${slug(b.name)}-${dash(b.id)}.png` : `${slug(b.name)}.png`);
+    want.push({ nodeId: b.id, maxDimension: max, fingerprint: b.hash, save_to: rel(join(shotDir, name)) });
+  }
+  const todoP = join(src, 'calls', 'todo.json');
+  if (!want.length) { console.log('every board image is current: nothing to render'); writeJson(todoP, { server: 'figma-design', fileKey, scale: 1, route: 'rest', chunk_calls: [], screenshots: [] }); return; }
+  const im = await get(`https://api.figma.com/v1/images/${fileKey}?${new URLSearchParams({ ids: want.map(w => w.nodeId).join(','), scale: '1', format: 'png' })}`, join(restDir, 'images.json'));
+  const urls: Record<string, string | null> = read(join(restDir, 'images.json')).images ?? {};
+  const mcp: any[] = [];
+  for (const w of want) {
+    const url = urls[w.nodeId], tmp = join(restDir, 'images', `${dash(w.nodeId)}.png`);
+    if (url) await get(url, tmp, false);
+    const size = url && existsSync(tmp) ? [readFileSync(tmp).readUInt32BE(16), readFileSync(tmp).readUInt32BE(20)] : null;
+    if (size && Math.abs(Math.max(...size) - w.maxDimension) <= 1) { mkdirSync(shotDir, { recursive: true }); copyFileSync(tmp, join(ROOT, w.save_to)); w.via = 'rest'; }
+    else { w.via = 'get_screenshot'; w.note = size ? `REST rendered ${size.join('×')}, not 1:1` : 'REST rendered nothing'; mcp.push(w); }
+  }
+  writeJson(todoP, { server: 'figma-design', fileKey, scale: 1, route: 'rest', chunk_calls: [], screenshots: want });
+  console.log(`images: 1 REST call (${(im.ms / 1000).toFixed(0)} s) for ${want.length} board(s); ${want.length - mcp.length} saved 1:1` +
+    (mcp.length ? `; ${mcp.length} need get_screenshot on figma-design (nodeId, maxDimension; download to save_to): ${mcp.map(m => `${m.nodeId} ${m.maxDimension}px → ${m.save_to}`).join(', ')}` : '') +
+    `\nthen: node scripts/figma-source.ts ${feature} ${set} crop design`);
 }
 
 // ---- extras: one use_figma call for what REST lacks ------------------------------------------------------------------

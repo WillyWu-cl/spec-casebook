@@ -111,10 +111,16 @@ lines; put the full rule in the skill or reference file that applies it and poin
   calls, one at a time per server, with their exact description → `--save` (replies copied from the transcripts,
   never retyped; leftovers re-packed) until nothing is left; a read stops at its time budget and keeps what it read
   (`reading-the-spec.md` step 10, *Plan, call, save*).
-- **Full Figma data by script (user, 2026-10-30).** When every node's geometry and styling is needed (not just
-  controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only (never PM or MX):
-  one `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
-  per-instance MCP reads (`figma/references/source.md`).
+- **Full Figma data by script (user, 2026-10-30; route changed 2026-11-11).** When every node's geometry and styling
+  is needed (not just controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only
+  (never PM or MX), never per-frame or per-instance MCP reads. **Default route (user, 2026-11-11): REST + one
+  `use_figma` call** (`scripts/figma-rest.ts`): one REST node call for every board, one read-only `use_figma` call for
+  what REST lacks (variable and mode names, vertex caps and joins, boolean radius, video fills), board images by one
+  REST image call with `get_screenshot` only for boards too large for it; on AI Mini Drama 2 REST + 1 MCP call against
+  207, with the same fingerprints, screens, arrows and design-check result. **The use_figma-only route stays available
+  when the user asks for it** (`figma-source.ts`, one script per output chunk). The REST token is qa-dm's personal
+  access token (scope File content › Read): `FIGMA_TOKEN`, else the keychain item `com.cyberlink.figma-retrieval`, else
+  `~/.casebook/figma-token`; never in the repo or a log (README Setup 5; `figma/references/source.md`).
 - **What is drawn over a board (user, 2026-11-04, REQ-078).** Arrows, connectors and notes drawn over a Figma board
   are part of it: reads, the change check and board images include them, and a changed board's words are compared
   with its spec notes (`figma-text.ts`) so its rows follow the redraw; `board-lint.ts` (REQ-079) checks every mark
