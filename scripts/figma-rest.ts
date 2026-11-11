@@ -7,6 +7,11 @@
 //                 lists as read) in ONE call, written straight to rest/nodes.json (never printed); --images also
 //                 asks GET /v1/images/:key for one PNG per board and downloads each to rest/images/<board>.png.
 //                 Every call is logged (URL without the token, status, bytes, ms) in rest/calls.jsonl.
+//   calls         writes rest/calls/extras.js: ONE read-only use_figma call (scripts/figma/rest-extras.js) for what REST
+//                 lacks: variable names, mode names, per-vertex caps and joins (arrowheads), boolean radius, video
+//                 fills. Run it on figma-design with the printed description (~20 KB of code, ~19 KB back), then
+//   save          copies its return from the session transcripts into rest/extras.json (ids put back from
+//                 rest/calls/extras-input.json); convert uses it when present
 //   convert [--vars <library.json>]
 //                 turns rest/nodes.json into rest/out/<board>.json in the node format figma-source.ts merge writes
 //                 (board + nodes: abs, box, render, drawn, fills, strokes, radius, effects, layout, child,
@@ -15,7 +20,10 @@
 //                 figma-source.ts's own functions (read from its source, not copied). Variable names: REST gives
 //                 only ids (`/variables/local` is Enterprise-only); a library variable's id holds its key, so
 //                 --vars names them from a library.json an earlier use_figma read wrote (the stand-in for one
-//                 small use_figma call); unnamed ones stay `?/<id>`.
+//                 small use_figma call); unnamed ones stay `?/<id>`. With rest/extras.json (calls / save) the names
+//                 come from the extras call instead, and nothing needs an earlier read.
+// Routes (prototype): REST + one extras call is meant to become the default if adopted, with the use_figma-only read
+// (figma-source.ts) kept as a choice the user can ask for (user, 2026-11-11).
 // Token (never written to the repo or a log): FIGMA_TOKEN, else the macOS keychain item
 // `com.cyberlink.figma-retrieval` (security add-generic-password -a "$USER" -s com.cyberlink.figma-retrieval -w),
 // else ~/.casebook/figma-token. Folder: specs/<set>/extracted/figma-source/design/rest/ (git-ignored, local only).
@@ -25,10 +33,11 @@ import { join } from 'node:path';
 import * as nodeModule from 'node:module';
 import { arg, assertIds, featureDir, ROOT, writeJson } from './lib/library.ts';
 import { listSpecSets } from './lib/specs.ts';
+import { useFigmaReturns } from './lib/figma-returns.ts';
 
 const argv = process.argv.slice(2).filter((a, i, all) => !a.startsWith('--') && !(i > 0 && ['--scale', '--vars'].includes(all[i - 1])));
 const [feature] = argv;
-const usage = 'Usage: node scripts/figma-rest.ts <product>/<feature> [<set>] fetch [ids…] [--images] [--scale 1] [--no-geometry] | convert [--vars <library.json>]';
+const usage = 'Usage: node scripts/figma-rest.ts <product>/<feature> [<set>] fetch [ids…] [--images] [--scale 1] [--no-geometry] | calls | save | convert [--vars <library.json>]';
 if (!feature) { console.error(usage); process.exit(2); }
 assertIds(feature, 'ios');
 const specs = join(featureDir(feature), 'specs');
@@ -44,8 +53,12 @@ const fileKey: string = scope.file;
 const rel = (p: string) => p.slice(ROOT.length + 1);
 const dash = (id: string) => id.replace(/[:;/]/g, '-');
 const r2 = (n: number) => Math.round(n * 100) / 100;
+const extrasDesc = 'casebook figma-rest design extras';
+let summary_extras: any = null;
 
 if (cmd === 'fetch') await fetchAll();
+else if (cmd === 'calls') extrasCall();
+else if (cmd === 'save') saveExtras();
 else if (cmd === 'convert') convert();
 else { console.error(usage); process.exit(2); }
 
@@ -91,6 +104,57 @@ async function fetchAll() {
   console.log(`images: 1 Figma call (${(im.ms / 1000).toFixed(1)} s) + ${dl} download(s) from Figma's image store, ${(bytes / 1e6).toFixed(1)} MB → ${rel(join(restDir, 'images'))}/`);
 }
 
+// ---- extras: one use_figma call for what REST lacks ------------------------------------------------------------------
+function extrasCall() {
+  const text = readFileSync(join(restDir, 'nodes.json'), 'utf8'), raw = JSON.parse(text);
+  const vars = [...new Set(text.match(/VariableID:[^"\\]+/g) ?? [])].sort();
+  const cols = new Set<string>();
+  const walk = (n: any) => { for (const [c, m] of Object.entries<any>(n.explicitVariableModes ?? {})) cols.add(JSON.stringify([c, m])); for (const k of n.children ?? []) walk(k); };
+  for (const e of Object.values<any>(raw.nodes)) if (e) walk(e.document);
+  const boards = Object.keys(raw.nodes);
+  // the plugin-walk position of each shown stroked vector REST gives no strokeJoin for (the walk
+  // fingerprint() mirrors, which matched the use_figma read), sent as base-36 gaps
+  const vectors: Record<string, string> = {};
+  for (const [bid, e] of Object.entries<any>(raw.nodes)) {
+    if (!e) continue;
+    const join: number[] = []; let i = 0;
+    const go = (n: any, hid: boolean, inInst: boolean) => {
+      if (inInst && n.visible === false) return;
+      const hidden = hid || n.visible === false, me = i++;
+      if (n.type === 'VECTOR' && !hidden && n.strokes?.length && !n.strokeJoin) join.push(me);
+      if (n.type === 'INSTANCE' && hidden) return;
+      for (const c of n.children ?? []) go(c, hidden, inInst || n.type === 'INSTANCE');
+    };
+    go(e.document, false, false);
+    const gaps = (l: number[]) => l.map((x, k) => (x - (k ? l[k - 1] : 0)).toString(36)).join(',');
+    vectors[bid] = gaps(join);
+  }
+  const code = readFileSync(join(ROOT, 'scripts', 'figma', 'rest-extras.js'), 'utf8').split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('//')).join('\n')
+    .replace('__BOARDS__', JSON.stringify(boards)).replace('__VARS__', JSON.stringify(vars)).replace('__COLLECTIONS__', JSON.stringify([...cols].map(c => JSON.parse(c)))).replace('__VECTORS__', JSON.stringify(vectors));
+  if (code.length > 50000) { console.error(`extras call is ${code.length} characters; use_figma takes at most 50000`); process.exit(1); }
+  mkdirSync(join(restDir, 'calls'), { recursive: true });
+  writeFileSync(join(restDir, 'calls', 'extras.js'), code);
+  // what was sent, in order: the return lists variables and modes by position
+  writeJson(join(restDir, 'calls', 'extras-input.json'), { vars, cols: [...cols].map(c => JSON.parse(c)) });
+  console.log(JSON.stringify({ server: 'figma-design', fileKey, description: extrasDesc, call: rel(join(restDir, 'calls', 'extras.js')), save_to: rel(join(restDir, 'extras.json')), boards: boards.length, variables: vars.length, collections: cols.size, characters: code.length }, null, 1));
+}
+function saveExtras() {
+  const call = join(restDir, 'calls', 'extras.js');
+  if (!existsSync(call)) { console.error('No calls/extras.js: run `calls` first'); process.exit(2); }
+  const got = useFigmaReturns(new Map([[extrasDesc, statSync(call).mtimeMs]])).get(extrasDesc);
+  if (!got) { console.error(`No use_figma return with description "${extrasDesc}" newer than ${rel(call)} in the last two days' transcripts`); process.exit(1); }
+  const t = got.text, a = t.indexOf('{'), b = t.lastIndexOf('}');
+  let r: any; try { r = JSON.parse(t.slice(a, b + 1)); } catch { console.error(`The return is not JSON: ${t.slice(0, 200)}`); process.exit(1); }
+  if (r.mode !== 'rest-extras' || r.error) { console.error(`Not saved: ${r.error ?? 'not a rest-extras return'}`); process.exit(1); }
+  // put the ids back (the call returns variables and modes in the order they were sent)
+  const sent = read(join(restDir, 'calls', 'extras-input.json'));
+  if (r.vars.length !== sent.vars.length || r.cols.length !== sent.cols.length) { console.error('The return does not match calls/extras-input.json: run `calls` and the call again'); process.exit(1); }
+  r.vars = r.vars.map((v: any, i: number) => v ? [sent.vars[i], ...v] : [sent.vars[i], null]);
+  r.cols = r.cols.map((c: any[], i: number) => [sent.cols[i][0], c[0], sent.cols[i][1], c[1]]);
+  writeJson(join(restDir, 'extras.json'), r);
+  console.log(`saved ${rel(join(restDir, 'extras.json'))} (${t.length} bytes): ${r.vars.length} variables, ${r.cols.length} modes, ${r.boards.reduce((s: number, x: any) => s + (x.vec?.length ?? 0), 0)} vectors, ${r.boards.reduce((s: number, x: any) => s + (x.bool?.length ?? 0), 0)} boolean radii, ${r.boards.reduce((s: number, x: any) => s + (x.video?.length ?? 0), 0)} video fills, ${r.took_ms} ms`);
+}
+
 // ---- convert ------------------------------------------------------------------------------------------------------------
 function convert() {
   const raw = read(join(restDir, 'nodes.json'));
@@ -99,6 +163,14 @@ function convert() {
   // variable names by key from an earlier read's library.json (REST ids of library variables are VariableID:<key>/<id>)
   const varsFrom = arg('vars');
   const byKey = new Map<string, any>(varsFrom ? read(varsFrom).variables.map((v: any) => [v.key, v]) : []);
+  // the use_figma extras (calls / save): variable names and values, mode names, per-vertex caps and joins, boolean
+  // radius, video fills; they win over --vars
+  const exPath = join(restDir, 'extras.json'), ex = existsSync(exPath) ? read(exPath) : null;
+  const exVar = new Map<string, any[]>((ex?.vars ?? []).filter((v: any[]) => v[1]).map((v: any[]) => [v[0], v]));
+  const exCol = new Map<string, any[]>((ex?.cols ?? []).map((c: any[]) => [`${c[0]}|${c[2]}`, c]));
+  const exVec = new Map<string, any[]>(), exBool = new Map<string, any[]>(), exVideo = new Map<string, any[]>();
+  for (const b of ex?.boards ?? []) { for (const v of b.vec ?? []) exVec.set(v[0], v); for (const x of b.bool ?? []) exBool.set(x[0], x); for (const x of b.video ?? []) exVideo.set(x[0], x[1]); }
+  if (ex) summary_extras = { read_at: ex.read_at, vars: exVar.size, cols: exCol.size, vectors: exVec.size, booleans: exBool.size, videos: exVideo.size };
   const D = derived();
   const lib = { variables: new Map<string, any>(), styles: new Map<string, any>(), components: new Map<string, any>() };
   const vals = new Map<string, Map<string, number>>();
@@ -109,6 +181,8 @@ function convert() {
     const doc = entry.document, comps = entry.components ?? {}, sets = entry.componentSets ?? {}, styleMeta = entry.styles ?? {};
     const ob = doc.absoluteBoundingBox ?? { x: 0, y: 0 }, origin = [ob.x, ob.y];
     const V = (id: string) => {
+      const e = exVar.get(id);
+      if (e) { const k = e[1] + '|' + e[2]; if (!lib.variables.has(k)) lib.variables.set(k, { name: e[1], collection: e[2], type: e[3], remote: !!e[4], key: id.match(/^VariableID:([0-9a-f]{40})\//)?.[1] ?? '' }); return `${e[2]}/${e[1]}`; }
       const key = id.match(/^VariableID:([0-9a-f]{40})\//)?.[1], v = key ? byKey.get(key) : null;
       if (!v) { unnamed.add(id); return `?/${id}`; }
       lib.variables.set(v.name + '|' + v.collection, { name: v.name, collection: v.collection, type: v.type, remote: v.remote, key: v.key });
@@ -147,7 +221,8 @@ function convert() {
       const skip = skipped || (inInst && n.visible === false);
       const b = n.absoluteBoundingBox;
       const o: any = { id: n.id, type: n.type, name: n.name };
-      o.box = b ? [r2(b.x - origin[0]), r2(b.y - origin[1]), r2(b.width), r2(b.height)] : [0, 0, r2(n.size?.x ?? 0), r2(n.size?.y ?? 0)];
+      // a node with no bounds (an empty vector): the plugin gives a zero box at the canvas origin, REST null
+      o.box = b ? [r2(b.x - origin[0]), r2(b.y - origin[1]), r2(b.width), r2(b.height)] : [r2(-origin[0]), r2(-origin[1]), 0, 0];
       const rt = n.relativeTransform as number[][] | undefined;
       const lin = rt ? mul(linParent, [[rt[0][0], rt[0][1]], [rt[1][0], rt[1][1]]]) : linParent;
       const contKids = n.type === 'GROUP' || n.type === 'BOOLEAN_OPERATION' ? linCont : lin;
@@ -221,7 +296,8 @@ function convert() {
       if (n.styles?.effects && !st.effect) st.effect = S(n.styles.effects);
       if (Object.keys(st).length) o.styles = st;
       if (n.boundVariables && Object.keys(n.boundVariables).length) o.variables = aliases(n.boundVariables);
-      if (n.explicitVariableModes && Object.keys(n.explicitVariableModes).length) o.modes = Object.fromEntries(Object.entries(n.explicitVariableModes).map(([c, m]) => [`?/${c}`, `?/${m}`]));
+      if (n.explicitVariableModes && Object.keys(n.explicitVariableModes).length) o.modes = Object.fromEntries(Object.entries<any>(n.explicitVariableModes).map(([c, m]) => {
+        const e = exCol.get(`${c}|${m}`); return e?.[1] ? [e[1], e[3] ?? m] : [`?/${c}`, `?/${m}`]; }));
       if (n.type === 'TEXT') { o.text = text(n, st); if (st.text && o.text.runs.some((r: any) => r.text_style !== st.text)) { delete st.text; if (!Object.keys(st).length) delete o.styles; } }
       if (n.type === 'INSTANCE' && n.componentId) {
         const m = comps[n.componentId];
@@ -233,6 +309,16 @@ function convert() {
       if (acts?.length) o.reactions = acts.map((r: any) => ({ trigger: r.trigger?.type ?? '', actions: (r.actions ?? (r.action ? [r.action] : [])).filter(Boolean)
         .map((a: any) => ({ type: a.type, destination: a.destinationId ?? a.url ?? '', navigation: a.navigation ?? '', transition: a.transition?.type ?? '' })) }));
       if (n.type === 'VECTOR' || n.type === 'LINE') { const pa = arrowPath(n, lin, at); if (pa) o.arrow = pa.map(([x, y]) => [r2(x - origin[0]), r2(y - origin[1])]); }
+      // what only the plugin knows (extras): the vertex caps and joins and the arrow they give, boolean radius, videos
+      const ev = exVec.get(n.id);
+      if (ev && o.strokes) {
+        if (ev[1] && ev[1] !== 'NONE') o.stroke_cap = ev[1]; else delete o.stroke_cap;
+        if (ev[2] && ev[2] !== 'MITER') o.stroke_join = ev[2]; else delete o.stroke_join;
+        if (ev[3]) o.arrow = ev[3]; else delete o.arrow;
+      } else if (ex && o.stroke_cap === 'mixed' && n.type === 'VECTOR') { delete o.stroke_cap; delete o.arrow; }
+      const eb = exBool.get(n.id);
+      if (eb) { o.radius = eb[1]; if (eb[2]) o.smoothing = eb[2]; }
+      for (const [i, hash] of exVideo.get(n.id) ?? []) if (o.fills?.[i]) { o.fills[i].type = 'VIDEO'; o.fills[i].image = hash; }
     };
     const text = (n: any, st: Record<string, string>) => {
       const s = n.style ?? {}, ov: number[] = n.characterStyleOverrides ?? [], table = n.styleOverrideTable ?? {};
@@ -315,7 +401,7 @@ function convert() {
     go(doc, null, 0, I, I, false, false, false, null);
     const rb = doc.absoluteRenderBounds;
     const board = { id: boardId, name: String(doc.name).trim(), type: doc.type, box: [r2(ob.x), r2(ob.y), r2(ob.width), r2(ob.height)],
-      render: rb ? [r2(rb.x), r2(rb.y), r2(rb.width), r2(rb.height)] : null, parent: null, hash: fingerprint(doc, origin), read_at: raw.lastModified, nodes: nodes.length };
+      render: rb ? [r2(rb.x), r2(rb.y), r2(rb.width), r2(rb.height)] : null, parent: null, hash: fingerprint(doc, origin, exVideo), read_at: raw.lastModified, nodes: nodes.length };
     writeJson(join(outDir, `${dash(boardId)}.json`), { board, nodes });
     writeFileSync(join(outDir, `${dash(boardId)}.metadata.xml`), D.metadataXml(nodes, null));
     const sc = D.findScreens(nodes);
@@ -337,6 +423,7 @@ function convert() {
   };
   writeJson(join(outDir, 'library.json'), { variables: [...lib.variables.values()].map(v => valued(v, `${v.collection}/${v.name}`)),
     styles: [...lib.styles.values()].map(s => valued(s, `style:${s.type}:${s.name}`)), components: [...lib.components.values()] });
+  if (summary_extras) summary.extras = summary_extras;
   summary.unnamed_variables = unnamed.size; summary.unnamed_variable_ids = [...unnamed];
   writeJson(join(outDir, 'summary.json'), summary);
   console.log(`${summary.boards.length} board(s) converted (${summary.boards.reduce((s: number, b: any) => s + b.nodes, 0)} nodes, ${screens.length} screens, ${arrows.length} arrows); ${unnamed.size} variable id(s) without a name; out: ${rel(outDir)}`);
@@ -344,12 +431,15 @@ function convert() {
 
 // the plan fingerprint source.js computes (figma-source.ts hashes.json), from the REST tree: the plugin walk skips layers
 // hidden inside instances and everything inside a hidden instance, so they are left out here too
-function fingerprint(doc: any, origin: number[]) {
+function fingerprint(doc: any, origin: number[], videos: Map<string, any[]> = new Map()) {
   let h = 0x811c9dc5;
   const feed = (s: string) => { for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; } };
   const hex = (c: any, a: number) => '#' + [c.r, c.g, c.b, a].map((v: number) => Math.round(v * 255).toString(16).padStart(2, '0')).join('');
   const paintKey = (ps: any) => Array.isArray(ps) ? ps.filter((f: any) => f.visible !== false).map((f: any) =>
     f.type === 'SOLID' ? hex(f.color, f.opacity === undefined ? 1 : f.opacity) : f.type === 'IMAGE' ? f.imageRef : f.type).join(';') : '';
+  // video fills (from the extras call) read as VIDEO, as the plugin sees them; REST says IMAGE
+  const videoFills = (n: any) => { const v = videos.get(n.id); if (!v || !Array.isArray(n.fills)) return n.fills;
+    const f = n.fills.map((p: any) => ({ ...p })); for (const [i] of v) if (f[i]) f[i].type = 'VIDEO'; return f; };
   // a text's fills as the plugin reads them: the fills every character has, or figma.mixed when they differ
   const textPaint = (n: any) => {
     const ov: number[] = n.characterStyleOverrides ?? [], len = (n.characters ?? '').length, keys = new Set<string>();
@@ -359,7 +449,7 @@ function fingerprint(doc: any, origin: number[]) {
   const go = (n: any, hid: boolean, inInst: boolean) => {
     if (inInst && n.visible === false) return;
     const hidden = hid || n.visible === false, a = n.absoluteBoundingBox, txt = n.type === 'TEXT' && !hidden ? n.characters : '';
-    const line = `${n.id}|${n.type}|${n.name}|${hidden ? 0 : 1}|${a ? [r2(a.x - origin[0]), r2(a.y - origin[1]), r2(a.width), r2(a.height)] : ''}|${txt}|${hidden || n.type === 'GROUP' ? '' : n.type === 'TEXT' ? textPaint(n) : paintKey(n.fills)}|${n.opacity ?? 1}\n`;
+    const line = `${n.id}|${n.type}|${n.name}|${hidden ? 0 : 1}|${a ? [r2(a.x - origin[0]), r2(a.y - origin[1]), r2(a.width), r2(a.height)] : [r2(-origin[0]), r2(-origin[1]), 0, 0]}|${txt}|${hidden || n.type === 'GROUP' ? '' : n.type === 'TEXT' ? textPaint(n) : paintKey(videoFills(n))}|${n.opacity ?? 1}\n`;
     feed(line); if (process.env.FIGMA_REST_FP_DUMP) appendFileSync(process.env.FIGMA_REST_FP_DUMP, JSON.stringify(line) + "\n");
     if (n.type === 'INSTANCE' && hidden) return; // the plugin walk does not enter a hidden instance either
     for (const c of n.children ?? []) go(c, hidden, inInst || n.type === 'INSTANCE');
