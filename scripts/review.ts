@@ -18,7 +18,7 @@ import { networkInterfaces } from 'node:os';
 import { join } from 'node:path';
 import { COLUMNS, arg, assertIds, draftsDir, readManifest, readTable, stamp, tableDir, writeJson, writeTable, type Manifest } from './lib/library.ts';
 import { renderPage } from './lib/render.ts';
-import { parseCsv } from './lib/csv.ts';
+import { readZhCopy } from './lib/zh.ts';
 import { exportTable } from './lib/exporter.ts';
 import { writeFeatureIndex } from './lib/feature-index.ts';
 import { parseQuestions, readAnswers, readQuestionsZh, saveAnswers } from './lib/questions.ts';
@@ -35,17 +35,9 @@ let manifest = readManifest(feature, platform);
 
 let draftId: string, draftDir: string | null, rows: Record<string, string>[], spec: any, requirements = '', plan = '';
 let previous: Record<string, Record<string, string>> = {};
-// Traditional Chinese reading copy (user, 2026-10-30, REQ-002 of phd/swipe-collage): draft.zh-Hant.csv / cases.zh-Hant.csv,
-// same column order as the table with Chinese headers. The page's 中文 mode shows it above the English fields; the
-// rows stay English (AGENTS.md), so Save never writes it back.
-const ZH_COLS = ['ID', 'Section', 'Precondition', 'Action', 'Expected Result', 'Priority', 'Spec Ref', 'Notes', 'Change', 'Change Reason'];
+// Chinese reading copy (lib/zh.ts) and its Open questions copy; Save copies both to the table, never back into the rows.
 let zh: Record<string, Record<string, string>> = {};
 let qzh: Record<string, string> = {};
-function readZh(path: string) {
-  if (!existsSync(path)) return {};
-  const [, ...body] = parseCsv(readFileSync(path, 'utf8').replace(/^﻿/, ''));
-  return Object.fromEntries(body.filter(r => r[0]).map(r => [r[0], Object.fromEntries(ZH_COLS.map((c, i) => [c, r[i] ?? '']))]));
-}
 // read on every page load, so a draft or table changed on disk shows without restarting the server
 function load() {
   manifest = readManifest(feature, platform);
@@ -66,7 +58,7 @@ function load() {
     spec = { title: manifest.title, spec_folder: manifest.spec_folder, spec_files: manifest.spec_files, spec_set_sha256: manifest.spec_set_sha256 };
     if (existsSync(join(table, 'requirements.md'))) requirements = readFileSync(join(table, 'requirements.md'), 'utf8');
   }
-  zh = readZh(draftDir ? join(draftDir, 'draft.zh-Hant.csv') : join(table, 'cases.zh-Hant.csv'));
+  zh = readZhCopy(draftDir ? join(draftDir, 'draft.zh-Hant.csv') : join(table, 'cases.zh-Hant.csv'));
   qzh = readQuestionsZh(draftDir ?? table);
   previous = {};
   if (manifest && existsSync(join(table, 'cases.csv'))) for (const r of readTable(join(table, 'cases.csv'))) previous[r.ID] = r;
