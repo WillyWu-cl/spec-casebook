@@ -1,0 +1,33 @@
+
+1 of 7 entries have a possible duplicate (overlap >= 34%, or a shared quoted label / rare phrase, marked !). Judge each one yourself — wording varies, so this ranks candidates, it does not decide.
+
+[Cutout-Undo-R1-01] PHD-A 20.19.0 - [AIAgent] Cutout: Undo during a template download undoes the previous step; the template still applies
+      feature='Cutout'  searched 24 candidate(s)
+      no likely duplicate
+
+[Cutout-Undo-R1-02] PHD-A 20.19.0 - [AIAgent] Cutout: System Back with the colour palette open closes the whole Cutout room, not the palette
+      feature='Cutout'  searched 24 candidate(s)
+      no likely duplicate
+
+[Cutout-Undo-R1-03] PHD-A 20.19.0 - [AIAgent] Cutout: Returning from the edit cutout page adds its own Undo step to the Cutout room
+      feature='Cutout'  searched 24 candidate(s)
+      no likely duplicate
+
+[Cutout-Undo-R1-04] PHD-A 20.19.0 - [AIAgent] Cutout: Closing the colour palette without picking a colour adds an empty Undo step
+      feature='Cutout'  searched 24 candidate(s)
+      no likely duplicate
+
+[Cutout-Undo-R1-05] PHD-A 20.19.0 - [AIAgent] Cutout: Reset stays enabled when the room's state is back to the entry state
+      feature='Cutout'  searched 24 candidate(s)
+      no likely duplicate
+
+[Cutout-Undo-R1-06] PHD-A 20.19.0 - [AIAgent] Cutout: The Cutout room has no Flip button for the cutout object
+      feature='Cutout'  searched 24 candidate(s)
+      40%  OPEN      PHA262026-0275  PHD-A 20.13.0 - [ATFound]ID_Photo: The background of cutout page is changed after tappin
+      40%  closed    PHA252025-0610  PHD-A 20.6.0 - Cutout-stroke: The APP is still in Cutout page after tapping the [Next Ed
+      40%  closed    PHA252025-0465  PHD-A 20.4.0 - [Android 11][ATFound]ID_Photo: The APP crashes after tapping the [Undo] b
+      40%  closed    PHA252025-0029  PHD-A 19.11.0 - Cutout: The APP is showing the Cutout page after tapping the [V] button 
+
+[Cutout-Undo-R1-07] PHD-A 20.19.0 - [AIAgent] Cutout: An undone imported background photo is not kept in Recent; the picker has no Recent
+      feature='Cutout'  searched 24 candidate(s)
+      no likely duplicate

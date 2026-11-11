@@ -1,0 +1,25 @@
+Filing as Creator: WILLY_WU
+  Creator verified — last filed PHA262026P0056 on 2026-11-10
+Format check: PHD-A 20.19.0
+⚠ WARN  Batch-Edit-R1-01  Short Description is 123 chars (budget 120)
+
+5 bug(s) checked — 0 error(s), 1 warning(s)
+Format OK — clear to file.
+
+[Batch-Edit-R1-01] created PHA262026P0057
+  PHA262026P0057  sev 2  RD  NewCreated  build 202611061839  by WILLY_WU
+[Batch-Edit-R1-04] created PHA262026P0058
+[Batch-Edit-R1-05] created PHA262026P0059
+[Batch-Edit-R1-06] created PHA262026P0060
+[Batch-Edit-R1-09] created PHA262026P0061
+
+created 5 · skipped 0 · failed 0
+
+Read-back (Status: OK is not proof — Version has been seen not to persist):
+  PHA262026P0057  sev 2  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0058  sev 2  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0059  sev 2  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0060  sev 3  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0061  sev 3  PC-Doc  NewCreated  build 202611061839  by WILLY_WU
+
+Attachments are NOT part of create — upload them with `ecl_if3.py upload <BugCode> <files…>` (SKILL.md → IF3 attachments over the API).

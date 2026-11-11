@@ -1,0 +1,10 @@
+{
+  "logs": {
+    "files": "(logcat)[^\\/]*\\.txt$",
+    "failure": "FATAL|Exception|Error|failed|failure",
+    "toast": "Toast|toast",
+    "credit": "CreditSystemManager|credit",
+    "timing": null
+  },
+  "pink": null
+}

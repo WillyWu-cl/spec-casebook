@@ -296,4 +296,4 @@ Source order: Design (page dated 261104) over PM, except where a PM rule is newe
 
 | Ledger entry | Requirements |
 |---|---|
-| REQ-001 | R-001, R-004 … every requirement (new feature from the PM and Design Figma) |
+| REQ-009 | R-001, R-004 … every requirement (new feature from the PM and Design Figma) |

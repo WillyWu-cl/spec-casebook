@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "board": "pm-11e-buttons",
+      "at": [579, 251],
+      "node": "162:1211",
+      "text": "參考過去 Design 2025/09 spec: link",
+      "target": "Figma Design file 「cutout」 (gFipZWdRXPw0Lf4zCCTx5O) › page 「250901_enlarge_thumbnail」 (162:1211)",
+      "label": "Design 2025/09 reference",
+      "file": "design-2025-09-reference.md",
+      "read": "2026-11-10",
+      "items": [
+        { "label": "Background room 2025/09", "text": "Frame 「3_edit_mask_room」 titled 「Background」: canvas with an info button, Background panel with chips Favorite / Trendy / Back to School / Smoke / Tennis / Nature, an add-image thumbnail first, then background thumbnails; bottom bar 「bottom_action/4icons」; the panel's undo / redo icons are hidden layers" },
+        { "label": "AI Background room 2025/09", "text": "Frame 「3_edit_mask_room」 titled 「AI Background」: chips Custom / Trendy / Back to School / Smoke / Tennis / Nature, thumbnails, credit box 「Cost 2 credit per creation」 with a credit button" },
+        { "label": "On-canvas undo / redo 2025/09", "text": "Frame 「5」 (Text to image): undo and redo drawn as on-canvas icons (editing_area/ic_undo_n, ic_redo_n) at the canvas bottom-left, a continuous slider, capsule tabs, thumbnails, X and ✓ at the bottom" }
+      ]
+    }
+  ]
+}

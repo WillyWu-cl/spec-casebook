@@ -1,0 +1,875 @@
+{
+  "spec_folder": "specs/2026-10-30",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "adjust-applied@2050,13049",
+      "board": "adjust-applied",
+      "x": 2050,
+      "y": 13049,
+      "low": false,
+      "text": "• 按 Apply to all 後：以目前這張為來源，把這個 room 的設定整組套到其他照 / 片，畫面留在 room 裡 [DR-04][DR-04c] / • 跳 toast「Applied to x photos」，數字＝目前這張以外的照片數 [DR-04] / • 縮圖列顯示套用後的結果 [DR-04] / • Apply to all 在 room 的 Undo / Redo 歷史中算一步，按 Undo 一起退回所有照 / 片 [DR-05b]",
+      "trace": "R-092, R-093, R-094, R-105"
+    },
+    {
+      "id": "adjust-default@590,13049",
+      "board": "adjust-default",
+      "x": 590,
+      "y": 13049,
+      "low": false,
+      "text": "• 比照 26'10/E Adjustment room，但不顯示 Subject Detection、不出現 AI / • 右上「Apply to all」按鈕：icon＋「All」，半透明深底膠囊；一次性按鈕（同 / PDR），不是勾選框：點擊後以目前選取的照片為來源，把這個 feature 的設定套 / 到其他照片 [DR-04] / • 套用後可點縮圖切換照片檢查或個別微調，微調只影響那一張 [DR-04] / • 修改後再按一次，以目前照片的最新設定重新套用到其他照片 [DR-04] / • 下方顯示批次縮圖列，點縮圖切換目前照片 [D1-12] / • 最外層 Batch Edit Room 有自己的 Undo / Redo [DR-05] / ◦ 例：第 1 張 Exposure +20 → 按 Apply to all → 12 張都 +20 → 切到第 3 張微調 / Contrast +10（只有第 3 張）→ 回第 1 張改 Exposure +30 再按 → 其他張整組變成 / 跟第 1 張一樣，第 3 張的 Contrast +10 不保留 [DR-04][DR-04c] / • Room 內只有一組 Undo / Redo（一條共用歷史），依操作順序記錄兩種步驟： / ① Apply to all（一次調整多張）② 單張單個參數編輯 [DR-05][DR-05b] / • Undo / Redo 依序退回／重做最近一步：Apply to all → 所有照片一起；單張編 / 輯 → 只影響被編輯的那一張（不論目前選取哪張） [DR-05b] / • 切換照片不會清掉歷史 [DR-05e] / • Undo / Redo 的單張編輯不是目前選取的照片時，自動切到那張照片（縮圖列同 / 步選取），讓用戶看到變化 [DR-05h] / • ✕：丟掉這次進 room 後所有照片的修改（含 Apply to all） [DR-05c] / • ✓：回 Batch Edit Room，這次 room 對每張的修改在該張的外層歷史算一步 / • Undo / Redo 不會自動切換 tab（Light / Color / Details），同今天單張",
+      "trace": "R-090, R-091, R-095, R-096, R-097, R-098, R-099, R-100, R-101, R-102, R-103, R-104"
+    },
+    {
+      "id": "batch-one@380,5536",
+      "board": "batch-one",
+      "x": 380,
+      "y": 5536,
+      "low": false,
+      "text": "批次 Tab 只選 1 張 → 單張 Edit Room",
+      "trace": "R-016"
+    },
+    {
+      "id": "batch-one@1240,5640",
+      "board": "batch-one",
+      "x": 1240,
+      "y": 5640,
+      "low": false,
+      "text": "單張 Edit Room 按 Replace photo → Photo Picker，可切 / 到批次 Tab 改走 Batch Edit [D1-08c]",
+      "trace": "R-017"
+    },
+    {
+      "id": "confirm-dialog@575,15385",
+      "board": "confirm-dialog",
+      "x": 575,
+      "y": 15385,
+      "low": false,
+      "text": "• 每次按 Enhance 都跳；套用到批次全部照片；不扣點、不顯示 Credits [DR-12] / • 文案以畫面為準（已與 RD 確認）：Enhance {xx} photos? / Processing takes a / • Cancel  → 回 AI Enhance；Start  → 開始批次處理 [DR-12]",
+      "trace": "R-135, R-136, R-137"
+    },
+    {
+      "id": "credit-notes@4800,563",
+      "board": "credit-notes",
+      "x": 4800,
+      "y": 563,
+      "low": false,
+      "text": "• 不適用：AI Enhance 沒有扣點機制，批次不會遇到點數不足 [DR-11][DR-11b]",
+      "trace": "R-004, R-113"
+    },
+    {
+      "id": "credit-notes@4774,913",
+      "board": "credit-notes",
+      "x": 4774,
+      "y": 913,
+      "low": false,
+      "text": "Q1 AIEnhance 是否新增扣點的決議？ / ➡️ 待決：是否 sync PHD PC 做 batch editing 作法 / 主：Judy confirming with Samuel",
+      "trace": "Q-7"
+    },
+    {
+      "id": "credit-notes@5213,1198",
+      "board": "credit-notes",
+      "x": 5213,
+      "y": 1198,
+      "low": false,
+      "text": "If AI Enhance 收 credit / 左上角加 info / 比照 PhD PC 作法每 10 張 1 credit / (不滿 10 張也同樣 consume 1",
+      "trace": "Q-7"
+    },
+    {
+      "id": "credit-notes@5213,1534",
+      "board": "credit-notes",
+      "x": 5213,
+      "y": 1534,
+      "low": false,
+      "text": "L4: 0.0015/image - cost down完",
+      "trace": "Q-7"
+    },
+    {
+      "id": "crop-applied@2050,11865",
+      "board": "crop-applied",
+      "x": 2050,
+      "y": 11865,
+      "low": false,
+      "text": "• 按 Apply to all 後：以目前這張為來源，把這個 room 的設定整組套到其他照 / 片，畫面留在 room 裡 [DR-04][DR-04c] / • 跳 toast「Applied to x photos」，數字＝目前這張以外的照片數 [DR-04] / • 縮圖列顯示套用後的結果 [DR-04] / • Apply to all 在 room 的 Undo / Redo 歷史中算一步，按 Undo 一起退回所有照 / 片 [DR-05b]",
+      "trace": "R-052, R-053, R-054, R-087"
+    },
+    {
+      "id": "crop-default@590,11865",
+      "board": "crop-default",
+      "x": 590,
+      "y": 11865,
+      "low": false,
+      "text": "• 畫面比照現在的 Crop & Rotate room，panel 不含上方 title bar [D1-11][DR-03] / • 右上「Apply to all」按鈕：icon＋「All」，半透明深底膠囊；一次性按鈕 / （sync PDRM apply to all 作法）：點擊後以目前選取的照片為來源，把這個 / feature 的設定套到所有其他照片 [DR-04] / • 套用後可點縮圖切換照片檢查或個別微調，微調只影響那一張 [DR-04] / • 修改後再按一次，以目前照片的最新設定重新套用到其他照片，批次縮圖列圖片 / 需同步動態更新 [DR-04] / • 下方顯示批次縮圖列，點縮圖切換目前照片 [D1-12] / • 最外層 Batch Edit Room 有自己的 Undo / Redo [DR-05] / • Apply to all 只套比例＋旋轉角度＋翻轉，裁切框預設在每張置中；Free 比例也 / 可套 [DR-07] / • Room 內只有一組 Undo / Redo（一條共用歷史），依操作順序記錄兩種步驟： / ① Apply to all（一次調整多張）② 單張單個參數編輯 [DR-05][DR-05b] / • Undo / Redo 依序退回／重做最近一步：Apply to all → 所有照片一起；單張編 / 輯 → 只影響被編輯的那一張（不論目前選取哪張） [DR-05b] / • 切換照片不會清掉歷史 [DR-05e] / • Undo / Redo 的單張編輯不是目前選取的照片時，自動切到那張照片（縮圖列同 / 步選取），讓用戶看到變化 [DR-05h] / • ✕：丟掉這次進 room 後所有照片的修改（含 Apply to all） [DR-05c] / • ✓：回 Batch Edit Room，這次 room 對每張的修改在該張的外層歷史算一步",
+      "trace": "R-050, R-051, R-052, R-054, R-055, R-056, R-057, R-080, R-081, R-082, R-083, R-084, R-085, R-086, Q-5"
+    },
+    {
+      "id": "discard-dialog@590,16537",
+      "board": "discard-dialog",
+      "x": 590,
+      "y": 16537,
+      "low": false,
+      "text": "• 只有做過編輯才跳這個 Dialog；還沒做任何編輯時按 Home / Replace photo 直 / 接離開 [D1-08] / • 從 Replace photo 來 → Discard：回 Photo Picker 批次 Tab，原本選過的照片 / 保持勾選，這次 Batch Edit 的所有編輯都丟掉 [D1-08][D1-08b] / • 從 Home 來 → Discard：回 Launcher [D1-08] / • Keep Editing：留在 Batch Edit Room [D1-08] / • 文案：「Discard changes?」「Your edits to these photos will be lost.」[D1-08b] / • Standard AI Enhance 的結果目前不會存到 My AI Artwork [D1-10]",
+      "trace": "R-140, R-141, R-142, R-143, R-034, R-035"
+    },
+    {
+      "id": "enhance-default@575,14233",
+      "board": "enhance-default",
+      "x": 575,
+      "y": 14233,
+      "low": false,
+      "text": "• 批次 AI Enhance 只支援 Standard：不顯示 Standard / Advanced tab、不顯示 / scenario，畫面只剩一顆 generate（沿用 10/E room 的 Enhance 按鈕） [DR-09] / • 這顆 Enhance 按鈕對應 10/E Standard · Portrait [DR-09d] / • 按下套用到批次全部照片，先跳 AI Enhance Confirm Dialog [DR-12h][DR-12] / • 不扣點：AI Enhance 沒有扣點機制，Enhance 按鈕不顯示點數；Crop / / Adjustment 也免費 [DR-11][D5-01b] / • 「全圖」＝批次內全部照片；做完即套用，不用逐張 ✓ [DR-10] / • 從 AI Enhance Shortcut 多選直接落在這頁 [DR-02] / • Enhance 按鈕上方顯示批次縮圖列，點縮圖切換目前照片 [D1-12]",
+      "trace": "R-110, R-111, R-112, R-113, R-004, R-114, R-021, R-115"
+    },
+    {
+      "id": "enhance-done@2035,14233",
+      "board": "enhance-done",
+      "x": 2035,
+      "y": 14233,
+      "low": false,
+      "text": "• 每張只能做 1 次 Standard；做過的不再算進 N，全部做過時按鈕變 / • Undo 退回 Enhance 的照片仍算做過，不能再 Enhance；Enhance 按鈕維持 / 「Enhanced」灰掉（Undo 規則見 Batch Edit Room · default） [DR-12e] / • Advanced 相關規則不適用（批次只支援 Standard） [DR-12b][DR-12f][DR-12g] / • 10/E Advanced 的 7 個 Scene Presets（General / Portrait / Scenery / Pets / / Concert / Product / Anime）批次不支援 [DR-09b][DR-09]",
+      "trace": "R-116, R-117, R-118, R-110"
+    },
+    {
+      "id": "enhance-free@3495,14233",
+      "board": "enhance-free",
+      "x": 3495,
+      "y": 14233,
+      "low": false,
+      "text": "• Free user 按 generate → Premium IAP [DR-12d] / • 不提供試做 1 張：流程上沒辦法只試做一張再跳 IAP，Free user 按 Enhance 直 / 接跳 Premium IAP [D3-01][D3-02]",
+      "trace": "R-119"
+    },
+    {
+      "id": "enhance-network@7875,14233",
+      "board": "enhance-network",
+      "x": 7875,
+      "y": 14233,
+      "low": false,
+      "text": "• 斷網視同失敗，畫面同 result_summary：已完成的保留；沒做完的照片標紅色 / !；訊息「X completed, Y failed」「Connection lost. Check your connection and / retry.」；同時有失敗與斷網時合併計算，第二行優先顯示斷網提示 [D1-05][D1-04] / • 按鈕「Retry Failed (7)」重跑沒做完的照片；還沒連上網就按 → toast「No / internet connection」，不開始處理 [D1-05] / • App 被殺：Batch Edit Room 不見，已做的 AI Enhance 結果也不會留下 / （Standard 結果不存到 My AI Artwork） [D1-05][D1-10]",
+      "trace": "R-126, R-127, R-128"
+    },
+    {
+      "id": "enhance-offline@8920,14076",
+      "board": "enhance-offline",
+      "x": 8920,
+      "y": 14076,
+      "low": false,
+      "text": "Batch Edit Room · AI Enhance / network_incomplete · offline / 9:41 / 8 completed, 7 failed / Connection lost. Check your connection and retry.",
+      "trace": "R-126"
+    },
+    {
+      "id": "enhance-offline@9031,14841",
+      "board": "enhance-offline",
+      "x": 9031,
+      "y": 14841,
+      "low": false,
+      "text": "No internet connection / Retry Failed (7) / Maximize detaill and clarity with advanced AI.",
+      "trace": "R-127"
+    },
+    {
+      "id": "enhance-processing@4955,14233",
+      "board": "enhance-processing",
+      "x": 4955,
+      "y": 14233,
+      "low": false,
+      "text": "• 沿用現行 loading 畫面，將 string 替換為「Enhancing k / N」，k=已完成 / enhance 數量，N=enhance request 總數；遮罩蓋住整個畫面，縮圖列在遮罩下方 / • Enhance 過程中不能跳出去編輯其他東西（不能切 Crop / Adjustment、不能點 / 縮圖切換），要等全部做完（RD 確認） [D1-02] / • 沒有取消，要等全部做完；跑完前不能存檔 [D1-03][D1-02]",
+      "trace": "R-120, R-121, R-122"
+    },
+    {
+      "id": "enhance-result@6415,14233",
+      "board": "enhance-result",
+      "x": 6415,
+      "y": 14233,
+      "low": false,
+      "text": "• 跑完全部才一次總結：「X completed, Y failed」「Failed photos are marked / on the thumbnails.」；Y 張失敗的照片在縮圖右上角標紅色 !（X 張成功的不 / 標），點失敗縮圖可切過去看 [D1-04] / • button 為「Retry Failed (x)」，只重做失敗的照片，(x) 為enhance 失敗張數； / Retry 後 ! 消失，成功的照片不重做；失敗不算做過 [D1-04][DR-12e] / • Retry 後的總結以整批照片累計計算，不是只算這次重試：例 15 張先「12 / completed, 3 failed」→ Retry 3 張、2 張成功 →「14 completed, 1 failed」，按 / 鈕變「Retry Failed (1)」；全部成功時不再顯示失敗訊息與 Retry 按鈕 [D1-04]",
+      "trace": "R-123, R-124, R-125"
+    },
+    {
+      "id": "entry-batch-shortcut@2465,880",
+      "board": "entry-batch-shortcut",
+      "x": 2465,
+      "y": 880,
+      "low": false,
+      "text": "Entry: Launcher › Batch Editing shortcut / 9:41 / PhotoD irector",
+      "trace": "R-022, Q-2"
+    },
+    {
+      "id": "entry-batch-shortcut@2481,1193",
+      "board": "entry-batch-shortcut",
+      "x": 2481,
+      "y": 1193,
+      "low": false,
+      "text": "AI Group Photos / Edit / Quick Action / Motion Swap / AI Removal / AI Group Photo / Cinematic Reel Creator",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2731,1259",
+      "board": "entry-batch-shortcut",
+      "x": 2731,
+      "y": 1259,
+      "low": false,
+      "text": "Camera / AI Edit Agent / Reel Creator / AI Try-On / Beautify / View all",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2491,1744",
+      "board": "entry-batch-shortcut",
+      "x": 2491,
+      "y": 1744,
+      "low": false,
+      "text": "Home / Discover / Trendy",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2628,1744",
+      "board": "entry-batch-shortcut",
+      "x": 2628,
+      "y": 1744,
+      "low": false,
+      "text": "AI Videos / AI Photos",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2783,1744",
+      "board": "entry-batch-shortcut",
+      "x": 2783,
+      "y": 1744,
+      "low": false,
+      "text": "MIne",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2904,1920",
+      "board": "entry-batch-shortcut",
+      "x": 2904,
+      "y": 1920,
+      "low": false,
+      "text": "Lorem ipsum",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2640,1957",
+      "board": "entry-batch-shortcut",
+      "x": 2640,
+      "y": 1957,
+      "low": false,
+      "text": "Lorem ipsum",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2776,1958",
+      "board": "entry-batch-shortcut",
+      "x": 2776,
+      "y": 1958,
+      "low": false,
+      "text": "Lorem ipsum",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2504,1959",
+      "board": "entry-batch-shortcut",
+      "x": 2504,
+      "y": 1959,
+      "low": false,
+      "text": "Lorem ipsum / What’s New",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-batch-shortcut@2505,2145",
+      "board": "entry-batch-shortcut",
+      "x": 2505,
+      "y": 2145,
+      "low": false,
+      "text": "Try Now / Lorem ipsum dolor sit amet, consectetur amet / AI Removal",
+      "trace": "ui: Launcher mockup of the Batch Editing shortcut board (R-022)"
+    },
+    {
+      "id": "entry-edit@380,880",
+      "board": "entry-edit",
+      "x": 380,
+      "y": 880,
+      "low": false,
+      "text": "Entry: Launcher › Edit（批次 Tab）",
+      "trace": "R-020, R-012"
+    },
+    {
+      "id": "entry-enhance-shortcut@380,4372",
+      "board": "entry-enhance-shortcut",
+      "x": 380,
+      "y": 4372,
+      "low": false,
+      "text": "Entry: Launcher Shortcut › AI Enhance（批次 Tab）",
+      "trace": "R-021"
+    },
+    {
+      "id": "flow-adjustment@380,2044",
+      "board": "flow-adjustment",
+      "x": 380,
+      "y": 2044,
+      "low": false,
+      "text": "Batch Edit Room › Adjustment / Try Now / 9:41 / Lorem ipsum dolor sit amet, consectetur amet / AI Removal",
+      "trace": "label: board title 「Batch Edit Room › Adjustment」 (with scrolled Launcher mockup text of the Entry board above)"
+    },
+    {
+      "id": "flow-adjustment@850,2119",
+      "board": "flow-adjustment",
+      "x": 850,
+      "y": 2119,
+      "low": false,
+      "text": "9:41",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@1280,2119",
+      "board": "flow-adjustment",
+      "x": 1280,
+      "y": 2119,
+      "low": false,
+      "text": "9:41",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@396,2390",
+      "board": "flow-adjustment",
+      "x": 396,
+      "y": 2390,
+      "low": false,
+      "text": "AI Enhance HOT",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@396,2575",
+      "board": "flow-adjustment",
+      "x": 396,
+      "y": 2575,
+      "low": false,
+      "text": "AI Magic",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@1368,2579",
+      "board": "flow-adjustment",
+      "x": 1368,
+      "y": 2579,
+      "low": false,
+      "text": "Applied to 11 photos",
+      "trace": "R-093"
+    },
+    {
+      "id": "flow-adjustment@928,2745",
+      "board": "flow-adjustment",
+      "x": 928,
+      "y": 2745,
+      "low": false,
+      "text": "Light / Color / Details / Auto / Exposure / Contrast / Hightlight",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@1358,2745",
+      "board": "flow-adjustment",
+      "x": 1358,
+      "y": 2745,
+      "low": false,
+      "text": "Light / Color / Details / Dark / Auto / Shadows / Exposure / Contrast / Hightlight",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@404,2746",
+      "board": "flow-adjustment",
+      "x": 404,
+      "y": 2746,
+      "low": false,
+      "text": "AI Hairstyle",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@580,2746",
+      "board": "flow-adjustment",
+      "x": 580,
+      "y": 2746,
+      "low": false,
+      "text": "AI Expand",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@1111,2829",
+      "board": "flow-adjustment",
+      "x": 1111,
+      "y": 2829,
+      "low": false,
+      "text": "Bright / MidTone",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@1541,2829",
+      "board": "flow-adjustment",
+      "x": 1541,
+      "y": 2829,
+      "low": false,
+      "text": "Bright / MidTone",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@1685,2829",
+      "board": "flow-adjustment",
+      "x": 1685,
+      "y": 2829,
+      "low": false,
+      "text": "Dark / Shadows",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@434,2906",
+      "board": "flow-adjustment",
+      "x": 434,
+      "y": 2906,
+      "low": false,
+      "text": "Crop & Rotate / Adjustment / AI Face Swap",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@660,2906",
+      "board": "flow-adjustment",
+      "x": 660,
+      "y": 2906,
+      "low": false,
+      "text": "AI Enhance / Fashion Outfit",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@407,3095",
+      "board": "flow-adjustment",
+      "x": 407,
+      "y": 3095,
+      "low": false,
+      "text": "Business Outfit",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-adjustment@583,3095",
+      "board": "flow-adjustment",
+      "x": 583,
+      "y": 3095,
+      "low": false,
+      "text": "AI Headshot",
+      "trace": "ui: Launcher (scrolled) and Adjustment room mockup text (R-090)"
+    },
+    {
+      "id": "flow-ai-enhance@380,3208",
+      "board": "flow-ai-enhance",
+      "x": 380,
+      "y": 3208,
+      "low": false,
+      "text": "Batch Edit Room › AI Enhance（批次）",
+      "trace": "label: board title 「Batch Edit Room › AI Enhance（批次）」"
+    },
+    {
+      "id": "free-user-iap@2595,4852",
+      "board": "free-user-iap",
+      "x": 2595,
+      "y": 4852,
+      "low": false,
+      "text": "沿用既有 Premium IAP 頁（本檔無畫面）",
+      "trace": "R-119"
+    },
+    {
+      "id": "leave-flow@380,7864",
+      "board": "leave-flow",
+      "x": 380,
+      "y": 7864,
+      "low": false,
+      "text": "返回：離開 Batch Edit",
+      "trace": "label: board title 「返回：離開 Batch Edit」"
+    },
+    {
+      "id": "leave-flow@1670,8100",
+      "board": "leave-flow",
+      "x": 1670,
+      "y": 8100,
+      "low": false,
+      "text": "只有做過編輯才跳 Discard Dialog；還沒做任何編輯時，Home / 直接回 Launcher、Replace photo 直接回 Photo Picker 批次 / Discard 之後去哪，看是從哪個按鈕來： / • Replace photo → 回 Photo Picker 批次 Tab（保留之前選過 / 的照片，編輯全部丟掉） [D1-08b] / • Home → 回 Launcher [D1-08]",
+      "trace": "R-034, R-035, R-141"
+    },
+    {
+      "id": "leave-flow@380,9018",
+      "board": "leave-flow",
+      "x": 380,
+      "y": 9018,
+      "low": false,
+      "text": "— 藍線＝去程（點擊觸發）　— 紅線＝回程（✓ / ‹ / 取消 / Discard 返回）",
+      "trace": "label: arrow legend (blue forward, red back)"
+    },
+    {
+      "id": "meitu-cases@148,2880",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 2880,
+      "low": false,
+      "text": "C1｜單張預設框 / 操作：關閉 Apply to all，在 ④ 海景選 3:4。 / 美圖結果：最大框 1151×1535，高度貼滿、置中。 / 👉 PhD 相同。",
+      "trace": "R-070"
+    },
+    {
+      "id": "meitu-cases@148,3629",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 3629,
+      "low": false,
+      "text": "C5｜只選比例，不動框 / 操作：開 Apply to all，在 ① 手扶梯選 3:2 → 套用。 / 美圖結果：四張都是各自的 3:2 最大框，置中。 / 👉 PhD 相同。",
+      "trace": "R-071"
+    },
+    {
+      "id": "meitu-cases@148,4378",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 4378,
+      "low": false,
+      "text": "C6｜橫圖拖到最左 / 操作：在 ④ 海景選 Square，拖到最左 → 套用。 / 美圖結果：其他三張置中。但 ①②③ 套 1:1 時都沒有左右移動空間，所以這個 case 驗證不出位置是 / 否同步。 / 👉 PhD 相同（沒空間的方向置中）。",
+      "trace": "R-072"
+    },
+    {
+      "id": "meitu-cases@148,5127",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 5127,
+      "low": false,
+      "text": "C7｜直圖拖到最下 / 操作：在 ② 101 選 Square，拖到最下 → 套用。 / 美圖結果：① 手扶梯框偏下（比 C6 下移）→ 垂直位置有同步；④ 海景沒有上下空間 → 置中。 / 👉 PhD 相同。",
+      "trace": "R-073"
+    },
+    {
+      "id": "meitu-cases@148,5876",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 5876,
+      "low": false,
+      "text": "C8｜縮小框 + 移到右下 / 操作：在 ④ 海景選 Square，縮到 865×865（約最大框 56%）放右下 → 套用。 / 美圖結果：其他張都放大成局部、偏右下；框約為各自最大框的 56%（茶杯字樣放大約 1.7 倍）。→ / 同步相對大小，不是 px。 / 👉 PhD 不同：其他張用最大框，只同步位置（偏右下）。",
+      "trace": "R-074"
+    },
+    {
+      "id": "meitu-cases@148,6625",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 6625,
+      "low": false,
+      "text": "C9｜比例相同的照片 / 操作：在 ④ 海景選 Square → 套用，看 ③ 茶杯。 / 美圖結果：茶杯維持原圖，不裁切。（肉眼確認，無截圖） / 👉 PhD 相同。",
+      "trace": "R-075"
+    },
+    {
+      "id": "meitu-cases@148,7036",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 7036,
+      "low": false,
+      "text": "C10｜Free + 移到左上 / 操作：在 ① 手扶梯選 Free，拉成 1236×611（約寬度 72%）放左上 → 套用。 / 美圖結果：其他張都變成約 2:1、貼左上，寬度約各自原圖 72%（海景右下角剛好露出大樓）。→ / Free 也同步比例 + 相對大小 + 位置。 / 👉 PhD：Free 視為自訂比例同步比例 + 位置，其他張用最大框。",
+      "trace": "R-076"
+    },
+    {
+      "id": "meitu-cases@148,7865",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 7865,
+      "low": false,
+      "text": "操作：全部 3:2 後，在任一張選 Original → 套用。 / 美圖結果：四張各自回到原始比例。（肉眼確認，無截圖） / 👉 PhD 相同。",
+      "trace": "R-077"
+    },
+    {
+      "id": "meitu-cases@148,8196",
+      "board": "meitu-cases",
+      "x": 148,
+      "y": 8196,
+      "low": false,
+      "text": "C12｜手動輸入超出範圍的 px / 操作：在 ④ 海景點鉛筆，輸入 3000×3000。 / 美圖結果：跳 toast「Width and height exceed the range」；欄位下方顯示範圍 238～2730 / 238 / ～1535 px（= 該張原圖尺寸）。 / 👉 PhD 比照：限制範圍 + toast；套用到其他張時只取比例。",
+      "trace": "R-066, Q-6"
+    },
+    {
+      "id": "meitu-conclusion@154,947",
+      "board": "meitu-conclusion",
+      "x": 154,
+      "y": 947,
+      "low": false,
+      "text": "PhD crop · Apply to all：同步「比例 + 相對位置」，不同步框的大小",
+      "trace": "R-058, R-059, R-060"
+    },
+    {
+      "id": "meitu-conclusion@154,1130",
+      "board": "meitu-conclusion",
+      "x": 154,
+      "y": 1130,
+      "low": false,
+      "text": "• 目前這張：保留使用者調整後的框（大小、位置都不變）。 / • 其他張：一律使用該比例的「最大框」，再依目前這張的相對位置擺放。 / • 最大框 = 在選定比例下，該張照片能裁出的最大範圍；寬或高其中一邊貼齊原圖，只切掉比例不合的那一塊。 / • 輸出尺寸依各張原圖計算，各張 px 不同屬預期行為。 / • 套用時覆蓋其他張原本的裁剪結果，一律從原圖重算。 / 二、相對位置 / • 水平位置 = 框左邊距 ÷（原圖寬 − 框寬）；垂直位置 = 框上邊距 ÷（原圖高 − 框高）。0 = 貼左／上，0.5 = 置中，1 = 貼右／下。 / • 只有「有移動空間的方向」會吃到位置值；沒有移動空間的方向置中。 / • 來源某方向沒有移動空間（分母為 0）時，該方向視為 0.5（置中）。 / 三、各比例選項 / • 一般比例（Square、2:3、3:2…、Social Media）：依上述規則。 / • Free：拉出的框視為自訂比例，同步「比例 + 相對位置」，其他張用該比例的最大框。 / • Original：每張回到自己的原始比例，不裁切。 / • 比例與原圖相同：最大框等於整張，不裁切。 / • 手動輸入 px：可輸入範圍 238 px ～ 該張原圖寬／高，超出跳 toast；Apply to all 時只取其比例，不同步 px 數值。 / 四、範例（C8：在海景把 1:1 框縮到 865×865 放右下） / • 海景（來源）：維持 865×865，右下。 / • 手扶梯 2:3（1706×2559）：1706×1706 最大框，貼底。（美圖：縮成約 56% 小框） / • 101 4:5（1576×1970）：1576×1576 最大框，貼底。（美圖：縮成約 56% 小框） / • 茶杯 1:1：整張，不裁切。（美圖：縮成約 56%，畫面放大變糊） / 👉 與美圖差異：美圖會連「相對大小」一起同步，小圖容易被裁成局部或放大變糊；PhD 不同步大小，其他張只切掉比例不合的部分，主體大多保留。 / 五、Rotate 與 Undo / • Rotate：Apply to all 時同步。90° 旋轉、水平／垂直翻轉直接套用到每張；角度微調同步相同角度，為避免黑邊而自動縮小的框由各張依自身尺寸計算，再套用上述裁切規則（比 / 例 + 相對位置）。 / • Undo（Apply to all 後回到編輯頁按 Undo）：比照已決的小 room undo / redo 做法，一次 Undo 撤銷「全部照片」的該次套用；Redo 同理一次還原全部。",
+      "trace": "R-056, R-057, R-058, R-059, R-060, R-061, R-062, R-063, R-064, R-065, R-066, R-067, R-068, R-069, R-074, R-087, Q-9"
+    },
+    {
+      "id": "meitu-photos@3259,212",
+      "board": "meitu-photos",
+      "x": 3259,
+      "y": 212,
+      "low": false,
+      "text": "測試照片（匯入順序）：① 手扶梯 2:3（1706×2559）② 101 4:5（1576×1970）③ 茶杯 1:1（小圖）④ 海景 16:9（2730×1535）",
+      "trace": "label: test photo set, used in the Precondition of every Section 3 row (R-070 – R-077)"
+    },
+    {
+      "id": "meitu-summary@88,81",
+      "board": "meitu-summary",
+      "x": 88,
+      "y": 81,
+      "low": false,
+      "text": "美圖 crop · Apply to all 實測",
+      "trace": "label: page title"
+    },
+    {
+      "id": "meitu-summary@148,270",
+      "board": "meitu-summary",
+      "x": 148,
+      "y": 270,
+      "low": false,
+      "text": "美圖行為摘要：同步「比例 + 相對大小 + 相對位置」，Free 也一樣 / • 比例：其他張用同比例；Free 拉出的框也視為一個自訂比例同步。 / • 相對大小：框佔該張最大框的比例同步（C8 約 56%、C10 約 72%），不是同步 px。 / • 相對位置：只有「有移動空間的方向」會吃到位置；沒空間的方向置中。 / • 手動輸入 px：範圍 238 px ～ 該張原圖尺寸，超出跳 toast。 / ※ 相對大小為截圖目測推算，誤差約 ±5%。 / 👉 PhD 決定：同步「比例 + 相對位置」，不同步大小（其他張一律用最大框）。",
+      "trace": "R-059, R-060, R-061, R-066"
+    },
+    {
+      "id": "overview@100,340",
+      "board": "overview",
+      "x": 100,
+      "y": 340,
+      "low": false,
+      "text": "與 Edit Room 的差異：Edit Room 一次修一張、什麼工具都能用；Batch Edit 一次修 N 張，只提供能『同一個設定套到每張』的三種調整，用一次設定換 N 張結果，再個別微調。 [D0-03]",
+      "trace": "R-003, R-052, R-055"
+    },
+    {
+      "id": "overview@138,624",
+      "board": "overview",
+      "x": 138,
+      "y": 624,
+      "low": false,
+      "text": "• 幫誰：旅遊／活動一組照片、賣家商品照、社群 carousel；競品 Meitu、Fotor 都有 [D0-01] / • 名稱 Batch Edit／Batch Edit Room；只出現在 Launcher「Edit」Picker 與 AI Enhance Shortcut Picker，Edit Room 內不出現 [D0-04][D0-04b] / • iOS + Android 同步，26'11/E [D0-05] / • 今天 app 沒有任何批次編輯；本版只做 AI Enhance／Crop & Rotate／Adjustment，Filter／Preset 看用量再加 [D0-07][D0-06][DR-03] / • 差異化：Meitu、Fotor 批次都沒有 AI Enhance；批次本身免費，AI Enhance 也不扣點 [D0-08][D5-01b]",
+      "trace": "R-001, R-002, R-003, R-004, R-005"
+    },
+    {
+      "id": "picker-batch-one@3495,9519",
+      "board": "picker-batch-one",
+      "x": 3495,
+      "y": 9519,
+      "low": false,
+      "text": "• 批次 Tab 只選 1 張按 Done → 自動走單張 Edit Room [DR-01b] / • 單張 Edit Room 流程同今天 [DR-13] / • 單張 Edit Room 按 Replace photo → Picker 可切到批次 Tab，改走 Batch Edit",
+      "trace": "R-016, R-011, R-017"
+    },
+    {
+      "id": "picker-batch@2035,9519",
+      "board": "picker-batch",
+      "x": 2035,
+      "y": 9519,
+      "low": false,
+      "text": "• 切到「Batch」Tab 才能多選，最多 20 張（兩平台一致） [DR-01] / • 縮圖顯示點選順序 1、2、3…，Batch Edit Room 照此順序排列 [D2-01] / • 底部新增：已選張數＋Done [DR-01] / • 埋點見【Tracking Event】 [D0-02]",
+      "trace": "R-013, R-014, R-015, R-160"
+    },
+    {
+      "id": "picker-over-max@4955,9519",
+      "board": "picker-over-max",
+      "x": 4955,
+      "y": 9519,
+      "low": false,
+      "text": "• 選第 21 張：擋下並顯示 toast「Please pick at most 20 photos.」 [DR-01]",
+      "trace": "R-018"
+    },
+    {
+      "id": "picker-single@575,9519",
+      "board": "picker-single",
+      "x": 575,
+      "y": 9519,
+      "low": false,
+      "text": "• Picker 上方新增 Tab「Single / Batch」，每次打開預設「Single」 [DR-01b] / • 單張 Tab 選 1 張 → 現有 Edit Room，流程不變 [DR-13] / • Launcher「Edit」與 AI Enhance Shortcut 兩個 Picker 用同一套 Tab [DR-01b] / • 比照 Meitu：Picker 可選 single or batch [DR-01]",
+      "trace": "R-010, R-011, R-012"
+    },
+    {
+      "id": "room-default@590,10671",
+      "board": "room-default",
+      "x": 590,
+      "y": 10671,
+      "low": false,
+      "text": "•長得像現在的 Edit Room，底部只有三個 button：Crop & Rotate / Adjustment / / AI Enhance；點進去比照現在各 feature room [D1-11] / •Top bar: Save 不變，最右是 Setting 按鈕 [D1-11] / •photo Picker 進來先落在這個主畫面；button 順序：Crop & Rotate → / • 縮圖列放主畫面，點縮圖切換照片；照片不能移除、也不能新增（縮圖沒有 ×） / • 右上存檔 → Saving k / N → Batch Save page [D5-01b] / • 左上 Home：還沒做任何編輯 → 直接回 Launcher；有編輯 → Discard Dialog / → Discard 後回 Launcher [D1-08] / • 左上 Replace photo：還沒做任何編輯 → 直接回 Photo Picker 批次 Tab；有編 / 輯 → Discard Dialog → Discard 後回 Photo Picker 批次 Tab。兩種都保留之前選 / 過的照片，有編輯時丟掉這次 Batch Edit 的所有編輯 [D1-08][D1-08b] / • 外層 Undo / Redo 也是每張照片各自一條：只作用在目前這張；從 room 按 ✓ / 回來後，那次 room 對每張的修改在各自的歷史算一步 [DR-05][DR-05d] / • AI Enhance 的 Undo / Redo：在單張照片按 Undo 可退回 Enhance 前，只退那 / 一張；想拿回結果按 Redo。退回後若又對那張做了其他修改，Redo 會被清掉， / Enhance 結果拿不回來，且那張不能再 Enhance [DR-10b][DR-12e]",
+      "trace": "R-030, R-031, R-032, R-033, R-034, R-035, R-036, R-037, R-038, R-150"
+    },
+    {
+      "id": "save-flow@404,6766",
+      "board": "save-flow",
+      "x": 404,
+      "y": 6766,
+      "low": false,
+      "text": "AI Sketch / 9:41 / Collage",
+      "trace": "ui: Launcher and Batch Edit Room mockup text of the Save flow (R-030)"
+    },
+    {
+      "id": "save-flow@1281,6775",
+      "board": "save-flow",
+      "x": 1281,
+      "y": 6775,
+      "low": false,
+      "text": "9:41 / Saved 12 photos",
+      "trace": "R-153"
+    },
+    {
+      "id": "save-flow@661,6812",
+      "board": "save-flow",
+      "x": 661,
+      "y": 6812,
+      "low": false,
+      "text": "View all",
+      "trace": "ui: Launcher and Batch Edit Room mockup text of the Save flow (R-030)"
+    },
+    {
+      "id": "save-flow@397,7005",
+      "board": "save-flow",
+      "x": 397,
+      "y": 7005,
+      "low": false,
+      "text": "Collage",
+      "trace": "ui: Launcher and Batch Edit Room mockup text of the Save flow (R-030)"
+    },
+    {
+      "id": "save-flow@661,7007",
+      "board": "save-flow",
+      "x": 661,
+      "y": 7007,
+      "low": false,
+      "text": "View all",
+      "trace": "ui: Launcher and Batch Edit Room mockup text of the Save flow (R-030)"
+    },
+    {
+      "id": "save-flow@954,7135",
+      "board": "save-flow",
+      "x": 954,
+      "y": 7135,
+      "low": false,
+      "text": "Saving 3 / 20 / Please do not leave this page or quit / the app.",
+      "trace": "R-150"
+    },
+    {
+      "id": "save-flow@1376,7524",
+      "board": "save-flow",
+      "x": 1376,
+      "y": 7524,
+      "low": false,
+      "text": "Edit Next Batch",
+      "trace": "R-155"
+    },
+    {
+      "id": "save-flow@434,7562",
+      "board": "save-flow",
+      "x": 434,
+      "y": 7562,
+      "low": false,
+      "text": "Crop & Rotate / Adjustment",
+      "trace": "ui: Launcher and Batch Edit Room mockup text of the Save flow (R-030)"
+    },
+    {
+      "id": "save-flow@660,7562",
+      "board": "save-flow",
+      "x": 660,
+      "y": 7562,
+      "low": false,
+      "text": "AI Enhance",
+      "trace": "ui: Launcher and Batch Edit Room mockup text of the Save flow (R-030)"
+    },
+    {
+      "id": "save-saved@2050,17731",
+      "board": "save-saved",
+      "x": 2050,
+      "y": 17731,
+      "low": false,
+      "text": "• 新的 Batch Save page：縮圖格狀＋「Saved N photos」（本畫面為示意：檔內 / 還沒有現行 Save page） [D1-07] / • 左上 ‹ = 回 Batch Edit Room；右上 Home = 回 Launcher [D1-07] / • 底部固定「Edit Next Batch」：進 Photo Picker 批次 Tab、不勾任何照片；從 / Picker 按返回 → Launcher，不回 Save page [D1-07] / • 縮圖不能點開放大 [D1-07] / • 不顯示 Video tab / Turn it to video [D1-07] / • Rating dialog 一次批次算 1 次存檔；IAP flyer / 廣告照常 [D1-07] / • 埋點見【Tracking Event】 [D0-02][D1-07]",
+      "trace": "R-153, R-154, R-155, R-156, R-157, R-158, R-160"
+    },
+    {
+      "id": "save-saving@590,17731",
+      "board": "save-saving",
+      "x": 590,
+      "y": 17731,
+      "low": false,
+      "text": "• 存檔中顯示「Saving k / N」「Please do not leave this page or quit the / app.」，存完才進 Batch Save page（跟進 Meitu） [D5-01b] / • 存成新檔，不覆蓋原圖 [D1-06] / • 存全部輸入照片（含沒編輯過的），每張都存成新檔 [D1-06]",
+      "trace": "R-150, R-151, R-152"
+    },
+    {
+      "id": "server-task-notes@5900,563",
+      "board": "server-task-notes",
+      "x": 5900,
+      "y": 563,
+      "low": false,
+      "text": "• 部分失敗：跑完全部才一次總結，不逐張跳 Dialog；失敗的圖片可重試 [D1-04] / • 沒有取消，要等全部做完（同今天所有 server task） [D1-03] / • App 被殺：Batch Edit Room 不見（同今天 sync 任務），已做的 AI Enhance 結果也不會留下 / （Standard 不存到 My AI Artwork） [D1-05][D1-10] / • 斷網：視同失敗，用 Retry Failed 重跑；切背景：暫停，回來後繼續 [D1-05]",
+      "trace": "R-122, R-123, R-126, R-128, R-129"
+    },
+    {
+      "id": "server-task-notes@5864,913",
+      "board": "server-task-notes",
+      "x": 5864,
+      "y": 913,
+      "low": false,
+      "text": "Q2 可將 bath editing 鎖 premium，增加訂閱意圖 / ➡️ 待決：Meitu 是在 photo picker 選擇到第 13 張跳 IAP (premium support 50 photos batch editing) / 主：Judy confirming with Samuel",
+      "trace": "Q-8"
+    },
+    {
+      "id": "tracking@7000,562",
+      "board": "tracking",
+      "x": 7000,
+      "y": 562,
+      "low": false,
+      "text": "• 主指標：進入比例＝批次進入 event ÷ 進 Picker [D0-02] / • 次指標：Batch session 存檔比例＝Photo_Result_Save [D0-02] / • 命名規則：event 三段 PascalCase（Xxx_Yyy_Zzz）、參數 snake_case，不符合會被兩平台丟掉 [D0-02] / 名稱待定（例 Batch_Edit_Enter）",
+      "trace": "R-160"
+    },
+    {
+      "id": "tracking@7545,696",
+      "board": "tracking",
+      "x": 7545,
+      "y": 696,
+      "low": false,
+      "text": "觸發時機 / Picker 切批次 Tab 並進 Batch Edit / 批次 AI Enhance，每張各送一次 / Batch session 存檔 / Batch Save page 點「Edit Next",
+      "trace": "R-160"
+    },
+    {
+      "id": "tracking@7885,696",
+      "board": "tracking",
+      "x": 7885,
+      "y": 696,
+      "low": false,
+      "text": "參數 / 值 / —（主指標分子）",
+      "trace": "R-160"
+    },
+    {
+      "id": "tracking@8265,696",
+      "board": "tracking",
+      "x": 8265,
+      "y": 696,
+      "low": false,
+      "text": "決策來源",
+      "trace": "R-160"
+    },
+    {
+      "id": "tracking@7345,823",
+      "board": "tracking",
+      "x": 7345,
+      "y": 823,
+      "low": false,
+      "text": "既有，新增 from 值 / 既有，不變",
+      "trace": "R-160"
+    },
+    {
+      "id": "tracking@7015,950",
+      "board": "tracking",
+      "x": 7015,
+      "y": 950,
+      "low": false,
+      "text": "名稱待定",
+      "trace": "R-160"
+    },
+    {
+      "id": "tracking@7885,950",
+      "board": "tracking",
+      "x": 7885,
+      "y": 950,
+      "low": false,
+      "text": "記點擊次數",
+      "trace": "R-160"
+    }
+  ]
+}

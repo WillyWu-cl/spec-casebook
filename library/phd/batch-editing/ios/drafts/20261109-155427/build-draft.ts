@@ -489,7 +489,7 @@ const domain = grid(['Entry', 'Requirements'], IOS ? [
   ['KP-068 (risk)', `${rCropPx} (the large-photo variant uses a long edge over 1600 px)`], ['KP-082 (risk)', `${rCropPx}, ${rSaveAll} (crop → Adjustment → Save checked in the file)`],
   ['KP-097 (risk)', `${rBg} (Activity re-creation variant)`], ['KP-099 (risk)', `${rPx} (size fields above the keyboard)`],
 ]);
-const ledger = grid(['Ledger entry', 'Requirements'], [['REQ-001', `${rWhere}, ${rTabs} … every requirement (new feature from the PM and Design Figma)`]]);
+const ledger = grid(['Ledger entry', 'Requirements'], [['REQ-009', `${rWhere}, ${rTabs} … every requirement (new feature from the PM and Design Figma)`]]);
 const sysBack = AND ? '\n### System back\n\n' + grid(['Screen', 'Rows'], [
   ['Photo Picker (Launcher Edit, AI Enhance shortcut)', T('sb-picker')], ['Batch Edit Room (no edit / with edits)', T('sb-room-clean', 'sb-room')],
   ['「Discard changes?」 dialog', T('sb-dialog')], ['Crop & Rotate room', T('sb-crop')], ['Crop size input with keyboard', T('sb-px')], ['Adjustment room', T('sb-adj')],

@@ -1,0 +1,13 @@
+{
+  "since": "2026-10-30",
+  "reason": "no Figma links supplied with the spec set; figma-design and figma-pm need authentication on this machine",
+  "links": {
+    "design": null,
+    "pm": null,
+    "mx": null
+  },
+  "owed": [
+    "step 8",
+    "step 10"
+  ]
+}

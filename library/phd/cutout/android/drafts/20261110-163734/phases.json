@@ -1,0 +1,89 @@
+{
+  "draft": "20261110-163734",
+  "current": [
+    "R1"
+  ],
+  "needs": {},
+  "unavailable": {},
+  "phases": [
+    {
+      "id": "R1",
+      "name": "Full run of the draft on the S23",
+      "round": true,
+      "note": "Sample photo 1 (three women) in Edit › Cutout. Where a row names the 「Wall」 chip, use the first template chip the build shows (Trending on 20.19.0) and say so in the result.",
+      "segments": [
+        {
+          "id": "R1-a",
+          "name": "Entry, button states, steps per operation",
+          "note": "TC-014 needs a template not downloaded yet: pick one with the download arrow and keep another for TC-044.",
+          "cases": [
+            "TC-001",
+            "TC-002",
+            "TC-003",
+            "TC-004",
+            "TC-005",
+            "TC-006",
+            "TC-007",
+            "TC-008",
+            "TC-009",
+            "TC-010",
+            "TC-011",
+            "TC-012",
+            "TC-013",
+            "TC-014",
+            "TC-015",
+            "TC-016",
+            "TC-017",
+            "TC-018",
+            "TC-051",
+            "TC-019",
+            "TC-020",
+            "TC-021",
+            "TC-022",
+            "TC-023",
+            "TC-024",
+            "TC-025"
+          ]
+        },
+        {
+          "id": "R1-b",
+          "name": "Non-steps, undo across tabs, Reset and the cutout style",
+          "cases": [
+            "TC-026",
+            "TC-027",
+            "TC-028",
+            "TC-029",
+            "TC-030",
+            "TC-031",
+            "TC-032",
+            "TC-033",
+            "TC-034",
+            "TC-035",
+            "TC-036",
+            "TC-037",
+            "TC-038",
+            "TC-039"
+          ]
+        },
+        {
+          "id": "R1-c",
+          "name": "Leaving the room, other scenarios, Android Back",
+          "note": "TC-044/045 need an undownloaded template; TC-046 makes 60 steps.",
+          "cases": [
+            "TC-040",
+            "TC-041",
+            "TC-042",
+            "TC-043",
+            "TC-044",
+            "TC-045",
+            "TC-046",
+            "TC-047",
+            "TC-048",
+            "TC-049",
+            "TC-050"
+          ]
+        }
+      ]
+    }
+  ]
+}

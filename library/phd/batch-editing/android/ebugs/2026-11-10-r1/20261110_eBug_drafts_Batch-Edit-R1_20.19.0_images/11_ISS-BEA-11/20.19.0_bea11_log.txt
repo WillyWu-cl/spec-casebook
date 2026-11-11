@@ -1,0 +1,20 @@
+PhotoDirector Android 20.19.0 (90201900), Samsung Galaxy S23 / Android 16 — logcat excerpt, offline batch AI Enhance
+(Wi-Fi off) ending 「8 completed, 7 failed」, then 「Retry Failed (7)」 tapped at 14:35:02 while still offline: the
+toast 「No Internet connection」 shows and no BatchEditRunner work starts. Duplicate lines removed.
+
+2026-11-10 14:34:17.793 29963 30671 I BatchEditRunner: image 617: load 28638-28830 process 28830-37923 commit 37923-38169 -> Succeeded(savedUri=null)
+2026-11-10 14:34:25.390 29963 30671 I BatchEditRunner: image 618: load 38197-38219 process 38219-45653 commit 45653-45766 -> Succeeded(savedUri=null)
+2026-11-10 14:34:32.329 29963 30671 I BatchEditRunner: image 619: load 45791-45807 process 45807-52590 commit 52590-52705 -> Succeeded(savedUri=null)
+2026-11-10 14:34:38.413 29963 30671 I BatchEditRunner: image 620: load 52718-52737 process 52737-58698 commit 58698-58789 -> Succeeded(savedUri=null)
+2026-11-10 14:34:42.796 29963 30671 I BatchEditRunner: image 621: load 58804-58892 process 58892-63074 commit 63074-63172 -> Succeeded(savedUri=null)
+2026-11-10 14:34:44.278 29963 30671 E executeWithAuthRetry: Exception during API call: uploadFile, java.net.UnknownHostException: Unable to resolve host "cl-aol-media-demo.s3-accelerate.amazonaws.com": No address associated with hostname
+2026-11-10 14:34:44.287 29963 30671 I BatchEditRunner: image 622: load 63184-63384 process 63384 -> Failed(error=NETWORK_ERROR)
+2026-11-10 14:34:44.356 29963 30671 I BatchEditRunner: image 623: load 64707-64725 process 64725 -> Failed(error=NETWORK_ERROR)
+2026-11-10 14:34:44.420 29963 30671 I BatchEditRunner: image 624: load 64750-64793 process 64793 -> Failed(error=NETWORK_ERROR)
+2026-11-10 14:34:44.466 29963 30671 I BatchEditRunner: image 625: load 64816-64840 process 64840 -> Failed(error=NETWORK_ERROR)
+2026-11-10 14:34:44.512 29963 30671 I BatchEditRunner: image 626: load 64860-64886 process 64886 -> Failed(error=NETWORK_ERROR)
+2026-11-10 14:34:44.553 29963 30671 I BatchEditRunner: image 627: load 64903-64927 process 64927 -> Failed(error=NETWORK_ERROR)
+2026-11-10 14:34:44.611 29963 30671 I BatchEditRunner: image 628: load 64960-64985 process 64985 -> Failed(error=NETWORK_ERROR)
+2026-11-10 14:34:44.630 29963 30671 I BatchEditRunner: batch of 15 (maxInFlight=1) took 65006 ms
+2026-11-10 14:35:02.054 29963 29963 I Toast   : show: caller = uoc.b:70 
+2026-11-10 14:35:02.089 29963 29963 I VRI[Toast]@1eee3ed: Relayout returned: old=(0,98,1080,2205) new=(291,1106,789,1197) relayoutAsync=false req=(498,91)0 dur=3 res=0x3 s={true 0xb400006fa8f5e800} ch=true seqId=0

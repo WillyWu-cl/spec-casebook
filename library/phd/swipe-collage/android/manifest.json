@@ -1,0 +1,38 @@
+{
+  "feature": "phd/swipe-collage",
+  "platform": "android",
+  "title": "Swipe Collage",
+  "version": 2,
+  "approved_at": "2026-11-09T06:36:22.663Z",
+  "draft": "20261030-145851",
+  "spec_folder": "specs/2026-10-29",
+  "spec_files": [
+    {
+      "name": "Collage.pdf",
+      "sha256": "4d8c229b1f50e930e8ef5da943cab7a720d32f3c2fb4d8b13fb3522b785e1e24",
+      "bytes": 16592266
+    }
+  ],
+  "spec_set_sha256": "9f76ca716281dc3f645d8d8750ce3bb8a09ec2cb5a75edc7cd226f5d25e3adeb",
+  "cases": 169,
+  "history": [
+    {
+      "version": 1,
+      "approved_at": "2026-10-30T06:57:28.205Z",
+      "spec_set_sha256": "9f76ca716281dc3f645d8d8750ce3bb8a09ec2cb5a75edc7cd226f5d25e3adeb",
+      "draft": "20261029-171116",
+      "cases": 169,
+      "csv": "history/v1.csv",
+      "requirements": "history/v1-requirements.md"
+    },
+    {
+      "version": 2,
+      "approved_at": "2026-11-09T06:36:22.663Z",
+      "spec_set_sha256": "9f76ca716281dc3f645d8d8750ce3bb8a09ec2cb5a75edc7cd226f5d25e3adeb",
+      "draft": "20261030-145851",
+      "cases": 169,
+      "csv": "cases.csv",
+      "requirements": "requirements.md"
+    }
+  ]
+}

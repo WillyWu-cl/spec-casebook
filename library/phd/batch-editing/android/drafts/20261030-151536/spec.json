@@ -1,0 +1,22 @@
+{
+  "feature": "phd/batch-editing",
+  "platform": "android",
+  "title": "Batch Editing",
+  "draft": "20261030-151536",
+  "created_at": "2026-10-30T07:15:36.819Z",
+  "based_on_version": null,
+  "spec_folder": "specs/2026-10-30",
+  "spec_files": [
+    {
+      "name": "UI UX flow.pdf",
+      "sha256": "008b278dd9cc2cb1ca6caeb6e9bb49d6b91a3d911aaf1b21358563084e4b4ca0",
+      "bytes": 17208133
+    },
+    {
+      "name": "Section 3 · 美圖 Apply to all 實測.pdf",
+      "sha256": "de324203fd6718741d9bfa039456f54878754f76f374c1846c38de540614932c",
+      "bytes": 6021684
+    }
+  ],
+  "spec_set_sha256": "f4c1ea412c932418cdb078fcea82069e76d4ad6f3f2b4cc9601d5543a0443182"
+}

@@ -1,0 +1,12 @@
+{
+  "Cutout Reset Undo Redo Spec 11E.pdf": [
+    { "id": "pm-11e-buttons", "title": "【Requirement】Cutout add reset / undo / redo button (scope, room mockup, button states)", "region": [0, 0, 1500, 1450] },
+    { "id": "pm-11e-logic", "title": "1. undo / redo 邏輯 (operation table)", "region": [1700, 150, 1550, 1000] },
+    { "id": "pm-11e-open", "title": "5. 待決事項", "region": [3280, 1130, 1159, 300] },
+    { "id": "pm-11e-crosstab", "title": "Flow：跨 tab Undo", "region": [0, 1650, 2480, 1474] },
+    { "id": "pm-11e-rules", "title": "【Requirement】【按鈕行為】【其他情境】", "region": [2480, 1850, 1959, 1274] }
+  ],
+  "Cutout UI UX flow (before 11E).pdf": [
+    { "id": "uiux-before-11e", "title": "UI UX flow (before 11/E): Cutout page and Background room", "region": [0, 0, 1034, 1142] }
+  ]
+}

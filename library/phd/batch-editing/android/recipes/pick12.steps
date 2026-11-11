@@ -1,0 +1,23 @@
+# From the Launcher: Edit › Batch, scroll the grid to the top, pick 12 photos: All tiles 8-11 first (stand-in
+# originals ① ② ③ ④, photo 1 = 1706 x 2559; tiles 1-3 are TC-112's saved portraits, 4-7 TC-060's squares),
+# then tiles 4-7, 1-3 and 12. Ends on Batch Edit Room main screen.
+lbl Edit
+waitfor "Batch" --timeout 10
+lbl Batch
+fingerdrag 540 900 540 1700
+fingerdrag 540 900 540 1700
+tap 505 1370
+tap 850 1370
+tap 160 1650
+tap 505 1650
+tap 160 1025
+tap 505 1025
+tap 850 1025
+tap 160 1370
+tap 160 680
+tap 505 680
+tap 850 680
+tap 850 1650
+expect "(12/20)"
+lbl Next
+waitfor "Crop & Rotate" --timeout 15

@@ -1,0 +1,22 @@
+{
+  "feature": "phd/my-ai-artwork-category-list",
+  "folder": "2026-11-11",
+  "received_at": "2026-11-11T02:54:45.321Z",
+  "spec_set_sha256": "76f24dcaad0f5a8527ec6f6094358e038be1c501ff10b618eabfac7f8c70584c",
+  "files": [
+    {
+      "name": "my ai artwork category list.pdf",
+      "sha256": "20e181e098a945a6d632c8eb9de5fdea44d2c2575e97cfb7019087dd4dab9deb",
+      "bytes": 1790660
+    }
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/NacadNfWFAGglU880DupER/UX-Issues?node-id=14451-2196",
+    "pm_spec_section": "14567:1713",
+    "pm_draft_section": "14452:6990",
+    "pdf_offset": [
+      1771,
+      -7732
+    ]
+  }
+}

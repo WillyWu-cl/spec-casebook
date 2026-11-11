@@ -1,0 +1,46 @@
+
+0 of 11 entries have a possible duplicate (overlap >= 34%, or a shared quoted label / rare phrase, marked !). Judge each one yourself — wording varies, so this ranks candidates, it does not decide.
+
+[Batch-Edit-R1-01] PHD-A 20.19.0 - [AIAgent] Batch Edit: AI Enhance does not pause in the background; remaining photos fail as Connection lost
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-02] PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: The Crop & Rotate room has no ‹ (back) button at the top left of the top bar
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-03] PHD-A 20.19.0 - [AIAgent] Batch Edit: Undo in the Adjustment room switches the Light / Color / Details tab
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-04] PHD-A 20.19.0 - [AIAgent] Batch Edit: System Back does not close the AI Enhance confirm dialog 「Enhance 12 photos?」
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-05] PHD-A 20.19.0 - [AIAgent] Batch Edit: System Back does not close the 「Discard changes?」 dialog opened from Home
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-06] PHD-A 20.19.0 - [AIAgent] Batch Edit: Square crop applied to all saves a 16:9 photo as 1434 x 1435, not square
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-07] PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: The feedback button stays on the dimmed top bar while 「Saving k / 20」 shows
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-08] PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: The Discard dialog's button reads 「Keep」, not 「Keep Editing」
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-09] PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: 21st-photo toast reads 「You can only select 20 photos.」, not the spec copy
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-10] PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: The main screen's tool label reads 「Adjustments」, not 「Adjustment」
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R1-11] PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: Offline Retry Failed toast reads 「No Internet connection」 (capital I)
+      feature='Batch Edit'  searched 0 candidate(s)
+      no likely duplicate

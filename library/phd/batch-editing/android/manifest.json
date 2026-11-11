@@ -2,28 +2,312 @@
   "feature": "phd/batch-editing",
   "platform": "android",
   "title": "Batch Editing",
-  "version": 1,
-  "approved_at": "2026-11-10T01:08:56.617Z",
-  "draft": "20261109-164126",
+  "version": 4,
+  "approved_at": "2026-11-11T03:50:58.704Z",
+  "draft": "20261109-150747",
   "spec_folder": "specs/2026-11-09",
   "spec_files": [
     {
-      "name": "Batch Editing - PM and Design Figma.md",
-      "sha256": "92e49a0d0cfdca50abf3f23d99c0aa1f3eee138f6e1de26281611fbd58528d36",
-      "bytes": 45876
+      "name": "Design - 9_Adjust_HSL_collapse-1.pdf",
+      "sha256": "00938470bee6f00c57d49771dbfa01d437aec8ef31e74f51170f6c1e770eb973",
+      "bytes": 935707
+    },
+    {
+      "name": "UI UX flow 2.pdf",
+      "sha256": "0141025bbf2c0e46d56ce329dd10864349bfef1e935424551788356833cb80e0",
+      "bytes": 18084539
+    },
+    {
+      "name": "Design - save2-1.pdf",
+      "sha256": "046b1a99784af8cb591d151771007b9a57f61990fb3f83121333836834e262b2",
+      "bytes": 241528
+    },
+    {
+      "name": "Design - canvas_img_focus-1.pdf",
+      "sha256": "0f67cecab5ddcb168ffb4ec52e981c334717bfe1a9078ae01783f5d627881d42",
+      "bytes": 204029
+    },
+    {
+      "name": "Design - Enhance_1-6.pdf",
+      "sha256": "133089d35f5030f546245bcf1919f5fd65cd2d9b4375a331c0ffda903fdb287d",
+      "bytes": 225431
+    },
+    {
+      "name": "Design - canvas_img_focus-3.pdf",
+      "sha256": "175a78ce7ba1ebe69e75bb300fdc921f59bfe1b9635e75c996c82778cd97e221",
+      "bytes": 204079
+    },
+    {
+      "name": "Design - adjust-1.pdf",
+      "sha256": "1f925e92cfc1d5f6392a4a111cd060e1d15cfc87c754868b7646d7eb3013a6b7",
+      "bytes": 435559
+    },
+    {
+      "name": "Design - row label 1.pdf",
+      "sha256": "22e96adb5ebe73aca068cdc0cc86903e9e4db16256e6a0c5a8ac72ca780a8a10",
+      "bytes": 23938
+    },
+    {
+      "name": "Design - row label 9.pdf",
+      "sha256": "28f7ac664ed1cc3d85fc39211c8a5aa0756bacb980414cc8457e10531f8fceb8",
+      "bytes": 23941
+    },
+    {
+      "name": "Design - canvas_img_focus-6.pdf",
+      "sha256": "318896089d06dcc988458be6a64a864e0698199acbfe9cb9b2115cb4216745d1",
+      "bytes": 203964
+    },
+    {
+      "name": "Design - 9_Adjust_curve_collapse.pdf",
+      "sha256": "3c3353f9208c88480bbc5344c4c7b0b78e08821a33710e4f29e388c03967b856",
+      "bytes": 935728
+    },
+    {
+      "name": "Design - Enhance_1-5.pdf",
+      "sha256": "43caf6ddf918c84a23dad0d0161879352e8738d39838d2a1b580e24972c13856",
+      "bytes": 242166
+    },
+    {
+      "name": "Design - adjust.pdf",
+      "sha256": "473dbf9c4d95bce60a6296702eb3aebc1dd416cda2662e70f5a7b643982adecc",
+      "bytes": 459210
+    },
+    {
+      "name": "Design - save2.pdf",
+      "sha256": "47bc0aff585fcaaeb682a51c48a1bf1865bda053ea8167a8207148ab1100c957",
+      "bytes": 241411
+    },
+    {
+      "name": "Design - canvas_img_focus-5.pdf",
+      "sha256": "485fbf47a5fb66426286795bedbe40ace99df285aea624a2bd2fc44a84049e5c",
+      "bytes": 204024
+    },
+    {
+      "name": "Design - Discard dialog.pdf",
+      "sha256": "54f6097de928a1244124a2aea4cbae00192fcf96057913004b055d3b94fa4294",
+      "bytes": 245797
+    },
+    {
+      "name": "Design - canvas_img_focus-2.pdf",
+      "sha256": "5c40180e0f0ce633c4722b1e9e0a97d8aa28ad45b1cc2516749563cd8eb6ce91",
+      "bytes": 204020
+    },
+    {
+      "name": "Design - row label 3.pdf",
+      "sha256": "601da43e35cd5707538f213b726e5dcdce1e0eac1900b8f1a08cacf9be9035cf",
+      "bytes": 25061
+    },
+    {
+      "name": "Design - row label 4.pdf",
+      "sha256": "61332f8b6957e175cfee4c950dfe72c033fde2564c3ed953221f5e6d75ae34e8",
+      "bytes": 10041
+    },
+    {
+      "name": "Design - 9_Adjust_HSL.pdf",
+      "sha256": "62158548867323d72fd5062e3fb830f26dd15588a46818a80bb841c2aed9c672",
+      "bytes": 789496
+    },
+    {
+      "name": "Design - 9_Adjust_HSL_collapse.pdf",
+      "sha256": "6234649f3cef09e8856bc49993cde0f20314d5454d010eefba3d7c594a33c645",
+      "bytes": 935727
+    },
+    {
+      "name": "Design - Enhance_1-1.pdf",
+      "sha256": "68464b0c3cbd492ac4b19b1d4988b73f02319cee7868849ebe08a7e9d034e72b",
+      "bytes": 208356
+    },
+    {
+      "name": "Design - canvas_img_focus.pdf",
+      "sha256": "7934eaf7b4a63b680db39de35c0770f805de319c162cc6f8e84ae04a50c0971b",
+      "bytes": 203992
+    },
+    {
+      "name": "Design - photo_picker-1.pdf",
+      "sha256": "7b375fe37df4813c79209119421f3472623cc44e1a691658d3fc424f567c66f5",
+      "bytes": 1094162
+    },
+    {
+      "name": "Design - status-1.pdf",
+      "sha256": "7b4785e9de8d49dd247907bb7d310a0fe5b81f2d9afe830076722722fd0dc3e9",
+      "bytes": 9790
+    },
+    {
+      "name": "Design - canvas_img_focus-8.pdf",
+      "sha256": "7c5d81b8656b8b4f8155d37156f6c0d25e0170beedc2ce52a45996eb64f97488",
+      "bytes": 242494
+    },
+    {
+      "name": "Design - status.pdf",
+      "sha256": "7e94347fec25bf150c81c50ad5a321282e307ed6f2394344800b86b6efbb454f",
+      "bytes": 9775
+    },
+    {
+      "name": "Design - Enhance_1.pdf",
+      "sha256": "91e5d0d1c2cf1823b1442393923b515ffc6a4c2bcff0e92f5d234c37357c70cb",
+      "bytes": 208294
+    },
+    {
+      "name": "Design - photo_picker.pdf",
+      "sha256": "96a2f31b545f2e105c9ab79646e42dee809fece5779388dbd61e2dbef487cfee",
+      "bytes": 1093576
+    },
+    {
+      "name": "Design - 3_.pdf",
+      "sha256": "9825df5bb98a0815e9cfd602f03ebac5f57cb24680f629677beb99da7dd6d1f8",
+      "bytes": 230482
+    },
+    {
+      "name": "Design - canvas_img_focus-4.pdf",
+      "sha256": "9cbed34b74198afbd01dd7d2de31747dcfe5abd94896b991fe61326bf8593753",
+      "bytes": 203964
+    },
+    {
+      "name": "Design - cut.pdf",
+      "sha256": "9e0f63d2f93ad222471b8750d18a9c10b3f2f40ac37d871b27eb0884830f22d1",
+      "bytes": 7972
+    },
+    {
+      "name": "Design - canvas_img_focus-9.pdf",
+      "sha256": "9e7f5c49f6b5badf03ba5f19e4914f7bac01b7a55b19bbca5760dd568654105b",
+      "bytes": 242532
+    },
+    {
+      "name": "Design - canvas_img_focus-7.pdf",
+      "sha256": "abf1c342bff627ddde50b7c123030a040442071ab130192852b1ea23bf36a7fa",
+      "bytes": 204022
+    },
+    {
+      "name": "Design - main_down_tool_box-1.pdf",
+      "sha256": "b1ce0f8d35137d5acce1284a84c996b3fdb9d633fb83d4fae92f7cea3af49ab9",
+      "bytes": 37880
+    },
+    {
+      "name": "Design - row label 10.pdf",
+      "sha256": "b2977ad3b96f1051c08086a2a100cd3fadb596ea6bcd491d1d62401511b1eea4",
+      "bytes": 22934
+    },
+    {
+      "name": "Design - 9_Adjust_curve.pdf",
+      "sha256": "b2b26b8b8876c24c050f7faa7a6d0d5b0bf019c1a54acf96716c4db78fe81ea2",
+      "bytes": 792693
+    },
+    {
+      "name": "Design - 9_Adjust_HSL-1.pdf",
+      "sha256": "b5fb5d271a968260417cbaad91385c9b2bb51dedd641e8a94243f13e16cba4d9",
+      "bytes": 789450
+    },
+    {
+      "name": "Design - row label 11.pdf",
+      "sha256": "b83648eeac24a915841953bd866449fa1dcc49a1b12283b17f10126c0f9f572c",
+      "bytes": 25067
+    },
+    {
+      "name": "Design - Enhance_1-2.pdf",
+      "sha256": "bf2c8ff1dd4d8295e8fa8a327870d02b148102abe306d1c2cca66f3aac85dd1c",
+      "bytes": 410309
+    },
+    {
+      "name": "Design - Discard dialog-1.pdf",
+      "sha256": "c1b5278d80bb6e43b38b2819e894976000a3c6b573f111e11b56a1d0cccb06f7",
+      "bytes": 245812
+    },
+    {
+      "name": "Design - Enhance_1-7.pdf",
+      "sha256": "c95a9bd7672cba38223d63040c73eb798b2fc865d55ef7e1dcfef251c8d71b9d",
+      "bytes": 225470
+    },
+    {
+      "name": "Design - 3_-1.pdf",
+      "sha256": "ca891e90e8f2cbe868b9445a3f247b4450f16b43d8770a9f66c91f19a4f9c704",
+      "bytes": 230665
+    },
+    {
+      "name": "Design - cut-1.pdf",
+      "sha256": "d4e22dbabfd3563154014ba15ae7199c7473b134109ff40b85bb38740bbd40d9",
+      "bytes": 7952
+    },
+    {
+      "name": "Section 3 · 美圖 Apply to all 實測.pdf",
+      "sha256": "de324203fd6718741d9bfa039456f54878754f76f374c1846c38de540614932c",
+      "bytes": 6021684
+    },
+    {
+      "name": "Design - 9_Adjust_curve_collapse-1.pdf",
+      "sha256": "df501a9bad433e53c6edf873b7b580a3aa0a2d125812b9450fac1bb04cec8de8",
+      "bytes": 935711
+    },
+    {
+      "name": "Design - row label 2.pdf",
+      "sha256": "e374dae293b6ed72001b1a9ec305cd9dd3bb8645f9ccc49b1621ae0828e7edd3",
+      "bytes": 22928
+    },
+    {
+      "name": "Design - Enhance_1-3.pdf",
+      "sha256": "eaae4b6fab5177adbe9743c752388c6b4d693d4aff610cf46c84ef9b7d57a688",
+      "bytes": 409199
+    },
+    {
+      "name": "Design - 9_Adjust_curve-1.pdf",
+      "sha256": "f84dbb32674f8bf05be88d66cbeacdf5682d627a704903da46a8f43c68ae7b02",
+      "bytes": 788081
+    },
+    {
+      "name": "Design - Enhance_1-4.pdf",
+      "sha256": "fa14584a5ef6ced2b56eeead554090db80db61693e88be67227d2f4dd39abc39",
+      "bytes": 242142
+    },
+    {
+      "name": "Design - main_down_tool_box.pdf",
+      "sha256": "fc721f357284048d7a57cd96a1430e981ebc4b4846766cd3cb4a71d49fdf3fa6",
+      "bytes": 37901
+    },
+    {
+      "name": "Design - row label 8.pdf",
+      "sha256": "fd997c11939f5f740f6b322f6dd8873b11b92d5b63b4643928d6bbf35f7bdc0d",
+      "bytes": 10044
     }
   ],
-  "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
-  "cases": 140,
+  "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
+  "cases": 161,
   "history": [
     {
       "version": 1,
+      "approved_at": "2026-11-09T06:34:52.458Z",
+      "spec_set_sha256": "f4c1ea412c932418cdb078fcea82069e76d4ad6f3f2b4cc9601d5543a0443182",
+      "draft": "20261030-151536",
+      "cases": 149,
+      "csv": "history/v1.csv",
+      "requirements": "history/v1-requirements.md"
+    },
+    {
+      "version": 2,
+      "approved_at": "2026-11-09T07:31:43.468Z",
+      "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
+      "draft": "20261109-150747",
+      "cases": 161,
+      "csv": "history/v2.csv",
+      "requirements": "history/v2-requirements.md"
+    },
+    {
+      "version": 3,
       "approved_at": "2026-11-10T01:08:56.617Z",
       "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
       "draft": "20261109-164126",
       "cases": 140,
+      "csv": "history/v3.csv",
+      "requirements": "history/v3-requirements.md",
+      "note": "Approved on origin/main by ethan-hsu-cl as v1 (commit 5ca5495, from the PM + Design Figma); renumbered v3 when the branch merged main. Superseded by v4 (user, 2026-11-11, REQ-010: keep the user's table). Its control trace and design plan are kept as history/v3-control-trace.json and history/v3-design-plan.json."
+    },
+    {
+      "version": 4,
+      "approved_at": "2026-11-11T03:50:58.704Z",
+      "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
+      "draft": "20261109-150747",
+      "cases": 161,
       "csv": "cases.csv",
-      "requirements": "requirements.md"
+      "requirements": "requirements.md",
+      "note": "Re-save of v2 (same rows) over main's table (REQ-010)."
     }
   ]
 }

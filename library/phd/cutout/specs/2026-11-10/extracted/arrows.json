@@ -1,0 +1,8 @@
+{
+  "arrows": [
+    { "arrow": "pm-11e-crosstab-a1", "node": "pm-11e-crosstab-a1", "edge": "A. Background tab (after ① Wall, ② Stroke, ③ back on Background) → 「按 Undo」 → B", "expected": "Undo reverts ② 「調整 Stroke」 and the panel switches to the Stroke tab" },
+    { "arrow": "pm-11e-crosstab-a2", "node": "pm-11e-crosstab-a2", "edge": "B (Stroke tab) → 「再按 Undo」 → C", "expected": "Undo reverts ① 「選 Wall 背景」, the panel switches back to the Background tab; initial state: Reset and Undo disabled" },
+    { "arrow": "pm-11e-crosstab-a3", "node": "pm-11e-crosstab-a3", "edge": "C ✕ (room bottom bar) → Cutout page (Auto / Box / Circle / Brush / Eraser)", "expected": "Leaving the room with ✕ opens the Cutout page; the room's history is cleared" },
+    { "arrow": "pm-11e-crosstab-a4", "node": "pm-11e-crosstab-a4", "edge": "C ✓ (room bottom bar) → Cutout page (Auto / Box / Circle / Brush / Eraser)", "expected": "Leaving the room with ✓ flattens the image and opens the Cutout page; the room's history is cleared" }
+  ]
+}

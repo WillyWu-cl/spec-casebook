@@ -1,0 +1,24 @@
+{
+  "Collage.pdf": {
+    "page_size": [31456, 19676],
+    "note": "One Figma export page. Read from the PDF text layer (it maps Chinese correctly in this file) and close-up renders; macOS Vision OCR (spec-boards.ts) is not available on this Windows machine. No Figma links were supplied.",
+    "boards": [
+      { "id": "pm-sketch", "title": "Early PM sketch flows (Squidward mockups, green arrows)", "region": [0, 0, 20000, 6500] },
+      { "id": "plan-notes", "title": "Content / CMS / Design plan notes", "region": [16100, 0, 2500, 1000] },
+      { "id": "overview", "title": "Demo + Spec — Scrollable Collage (26 11E): Overview", "region": [21100, 50, 3400, 800] },
+      { "id": "leave-notes", "title": "Leave / Discard / Continue editing notes", "region": [24550, 400, 1100, 500] },
+      { "id": "monetization-notes", "title": "Monetization notes", "region": [25650, 400, 1100, 450] },
+      { "id": "event-notes", "title": "Event notes", "region": [26750, 400, 1100, 450] },
+      { "id": "scrl-compare", "title": "SCRL competitor comparison", "region": [27850, 900, 1300, 800] },
+      { "id": "entry-banner", "title": "Entry: Collage banner (flow)", "region": [21100, 800, 3400, 1450] },
+      { "id": "entry-deeplink", "title": "Entry: Deeplink scrollable_collage (flow)", "region": [21100, 2250, 1400, 1350] },
+      { "id": "add-layer-flow", "title": "Next: Canvas [+] → Add Layer five functions (flow)", "region": [21100, 3650, 3400, 1300] },
+      { "id": "removal-flow", "title": "Next: Image focus → Removal (flow)", "region": [21100, 5050, 3400, 1350] },
+      { "id": "enhance-flow", "title": "Next: Image focus → Enhance (flow)", "region": [21100, 6400, 3400, 1500] },
+      { "id": "flow-table", "title": "Screen × Button → Next table", "region": [24550, 2650, 1300, 2700] },
+      { "id": "tbd", "title": "TBD-1 … TBD-9 (PM Meg, pending)", "region": [26950, 2650, 1300, 1250] },
+      { "id": "cms", "title": "CMS fields and Template Spec", "region": [24400, 8000, 1700, 900] },
+      { "id": "states", "title": "State boards: Collage Room … Canvas · image_locked", "region": [21100, 8000, 10300, 11600] }
+    ]
+  }
+}

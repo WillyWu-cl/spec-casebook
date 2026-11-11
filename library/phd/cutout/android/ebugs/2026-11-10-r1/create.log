@@ -1,0 +1,28 @@
+Filing as Creator: WILLY_WU
+  Creator verified — last filed PHA262026P0061 on 2026-11-10
+Format check: PHD-A 20.19.0
+
+7 bug(s) checked — 0 error(s), 0 warning(s)
+Format OK — clear to file.
+
+[Cutout-Undo-R1-01] created PHA262026P0063
+  PHA262026P0063  sev 2  RD  NewCreated  build 202611061839  by WILLY_WU
+[Cutout-Undo-R1-02] created PHA262026P0064
+[Cutout-Undo-R1-03] created PHA262026P0065
+[Cutout-Undo-R1-04] created PHA262026P0066
+[Cutout-Undo-R1-05] created PHA262026P0067
+[Cutout-Undo-R1-06] created PHA262026P0068
+[Cutout-Undo-R1-07] created PHA262026P0069
+
+created 7 · skipped 0 · failed 0
+
+Read-back (Status: OK is not proof — Version has been seen not to persist):
+  PHA262026P0063  sev 2  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0064  sev 2  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0065  sev 3  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0066  sev 3  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0067  sev 3  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0068  sev 3  RD  NewCreated  build 202611061839  by WILLY_WU
+  PHA262026P0069  sev 3  RD  NewCreated  build 202611061839  by WILLY_WU
+
+Attachments are NOT part of create — upload them with `ecl_if3.py upload <BugCode> <files…>` (SKILL.md → IF3 attachments over the API).

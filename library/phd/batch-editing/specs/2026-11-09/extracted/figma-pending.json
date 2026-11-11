@@ -1,0 +1,13 @@
+{
+  "since": "2026-10-30",
+  "reason": "Design read from per-frame PDF exports on 2026-11-09 (Design - *.pdf): the figma-design source read stopped on the Figma MCP quota; four planned boards (67:10037, 67:10070, 67:10377, 67:10838) are gone from the file. No PM / MX Figma links.",
+  "links": {
+    "design": "https://www.figma.com/design/qZXJfrM5gb5g4tFoCIS1YU/Batch-Edit?node-id=12-2321",
+    "pm": null,
+    "mx": null
+  },
+  "owed": [
+    "step 8",
+    "step 10"
+  ]
+}

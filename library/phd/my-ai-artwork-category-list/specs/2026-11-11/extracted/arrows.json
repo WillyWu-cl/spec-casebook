@@ -1,0 +1,6 @@
+{
+  "arrows": [
+    { "arrow": "pm-entry-flow-a1", "node": "pm-entry-flow-a1", "edge": "My AI Artwork (Recent) tab bar ☰ (far right) → All categories sheet", "expected": "Tapping ☰ opens the 「All categories」 sheet over My AI Artwork" },
+    { "arrow": "pm-entry-flow-a2", "node": "pm-entry-flow-a2", "edge": "All categories 「AI Creative Studio」 row → My AI Artwork 「AI Creative Studio」 tab", "expected": "Tapping a row closes the sheet and switches My AI Artwork to that category's tab" }
+  ]
+}

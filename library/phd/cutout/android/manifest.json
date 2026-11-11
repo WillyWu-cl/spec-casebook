@@ -1,0 +1,34 @@
+{
+  "feature": "phd/cutout",
+  "platform": "android",
+  "title": "Cutout Reset / Undo / Redo",
+  "version": 1,
+  "approved_at": "2026-11-10T09:17:26.094Z",
+  "draft": "20261110-163734",
+  "spec_folder": "specs/2026-11-10",
+  "spec_files": [
+    {
+      "name": "Cutout UI UX flow (before 11E).pdf",
+      "sha256": "793775d3c3f5cc78e128d0a304e115448ef7b6de6c88992b27b9e22b41e0d8bb",
+      "bytes": 1143342
+    },
+    {
+      "name": "Cutout Reset Undo Redo Spec 11E.pdf",
+      "sha256": "e25471600f0e024c6067052af8f188a2c22c39382143a0d5c437f0b62d7b31f0",
+      "bytes": 9020752
+    }
+  ],
+  "spec_set_sha256": "0ebabad8f68f1a53ccd28a556a686f92061bb1541562910a2d39f98ff7df6b68",
+  "cases": 51,
+  "history": [
+    {
+      "version": 1,
+      "approved_at": "2026-11-10T09:17:26.094Z",
+      "spec_set_sha256": "0ebabad8f68f1a53ccd28a556a686f92061bb1541562910a2d39f98ff7df6b68",
+      "draft": "20261110-163734",
+      "cases": 51,
+      "csv": "cases.csv",
+      "requirements": "requirements.md"
+    }
+  ]
+}

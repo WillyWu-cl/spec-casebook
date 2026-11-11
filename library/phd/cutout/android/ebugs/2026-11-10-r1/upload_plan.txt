@@ -1,0 +1,7 @@
+PHA262026P0063 upload/20.19.0_cut01_undo_reverts_white.jpg upload/20.19.0_cut01_template_applied_after_download.jpg upload/20.19.0_cut01_log.txt
+PHA262026P0064 upload/20.19.0_cut02_palette_open_red.jpg upload/20.19.0_cut02_room_closed_after_back.jpg upload/20.19.0_cut02_log.txt
+PHA262026P0065 upload/20.19.0_cut03_undo_after_round_trip.jpg upload/20.19.0_cut03_first_undo_keeps_white.jpg
+PHA262026P0066 upload/20.19.0_cut04_palette_closed_white.jpg upload/20.19.0_cut04_first_undo_no_change.jpg
+PHA262026P0067 upload/20.19.0_cut05_reset_enabled_at_entry_state.jpg
+PHA262026P0068 upload/20.19.0_cut06_no_flip_button.jpg
+PHA262026P0069 upload/20.19.0_cut07_album_list_no_recent.jpg upload/20.19.0_cut07_picker_tabs.jpg

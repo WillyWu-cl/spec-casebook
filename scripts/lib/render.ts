@@ -16,7 +16,9 @@ export type PageData = {
   requirements: string; update_plan: string;
   // Open questions and their answers (scripts/lib/questions.ts); the review page shows them above the table
   questions?: { id: string; text: string; rows: string[] }[];
+  questions_zh?: Record<string, string>;   // Chinese reading copy of the questions by Q-id (questions.zh-Hant.json), shown in 中文 mode
   answers?: Record<string, { answer: string; by: string; at: string; platform: string; status: string; resolution?: string; question: string }>;
+  zh?: Record<string, Record<string, string>>;   // Chinese reading copy by case ID (review.ts), shown in 中文 mode
 };
 
 export function renderPage(data: PageData): string {

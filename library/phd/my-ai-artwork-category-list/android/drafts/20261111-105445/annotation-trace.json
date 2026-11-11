@@ -1,0 +1,92 @@
+{
+  "spec_folder": "specs/2026-11-11",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-all-categories@1120,3373",
+      "board": "pm-all-categories",
+      "x": 1120,
+      "y": 3373,
+      "low": false,
+      "text": "• 標題「All categories」  [D0-05] / • 項目跟 tab 列一模一樣；Recent 第一個， / 其他英文字母序  [D1-27][D1-27b][D1-17] / • 只顯示功能名稱，這版不顯示作品數量 / （server 沒有數量 API）；沒作品的也不灰 / 字  [D1-28][D2-04][D1-27] / • 目前所在的 tab 用 peach 色高亮  [D1-17] / • 點任一列（含沒作品的功能）→ 關閉並切 / 到該 tab；多選中點 → 切過去並取消選取",
+      "trace": "R-010, R-011, R-012, R-014, R-015, R-016, R-020, R-021, R-022, R-023, Q-4"
+    },
+    {
+      "id": "pm-entry-flow@160,879",
+      "board": "pm-entry-flow",
+      "x": 160,
+      "y": 879,
+      "low": false,
+      "text": "Entry: My AI Artwork（Recent）→ ☰ → All categories → 分類 tab / 預設落在 Recent（第一個 tab）；點 tab / 列最右 ☰  [D0-07][D1-10]",
+      "trace": "R-001, R-002, R-010, R-020, R-070"
+    },
+    {
+      "id": "pm-entry-flow@670,929",
+      "board": "pm-entry-flow",
+      "x": 670,
+      "y": 929,
+      "low": false,
+      "text": "點「AI Creative Studio」→ 關閉清單並切 / 到該 tab  [D1-11]",
+      "trace": "R-020, R-071"
+    },
+    {
+      "id": "pm-entry-flow@1180,929",
+      "board": "pm-entry-flow",
+      "x": 1180,
+      "y": 929,
+      "low": false,
+      "text": "切到該分類的 tab（同 今天；截圖為今天的 / 多選狀態）  [D1-12]",
+      "trace": "R-020, Q-6"
+    },
+    {
+      "id": "pm-entry-flow@160,1933",
+      "board": "pm-entry-flow",
+      "x": 160,
+      "y": 1933,
+      "low": false,
+      "text": "— 藍線＝去程（點擊觸發）",
+      "trace": "label: arrow legend (blue line = forward, tap)"
+    },
+    {
+      "id": "pm-header@100,309",
+      "board": "pm-header",
+      "x": 100,
+      "y": 309,
+      "low": false,
+      "text": "My AI Artwork：☰ All categories（11/E · 帳本 2026-10-28） / 與今天 My AI Artwork 的差異：今天 20 幾個 tab 只能橫滑找；改成點 ☰ 就看得到所有功能，點一下直接跳過去。（建議句，待 PM 確認）  [D0-04]",
+      "trace": "R-013, Q-1, Q-7"
+    },
+    {
+      "id": "pm-overview@160,555",
+      "board": "pm-overview",
+      "x": 160,
+      "y": 555,
+      "low": false,
+      "text": "• 為何：QA 單 PHI262609-0006 — tab 太多，舊作品（例如 AI Art）很難找；已排進 11/E  [D0-01][D0-02] / • 做什麼：tab 列最右加 ☰，打開 All categories，列出所有功能，點了直接跳過去  [D0-09][D1-10] / • 這版不顯示作品數量：server API 沒有提供數量（RD 10/28 回覆）  [D1-28][D2-04] / • 不做（主管 10/27 決定）：Expiring、Recent 列表／格狀切換、空 tab 反灰、tab 加數量、搜尋、收藏  [D0-08] / • 平台：iOS + Android 同時；純 UX，不收費  [D0-06][D3-01] / • Event：Artwork_FeatureList_Appear（from_tab）、Artwork_Category_Select（category、source=sheet / tab）  [D0-03]",
+      "trace": "R-002, R-005, R-010, R-013, R-014, R-017, R-024, R-040, R-041, R-050, R-051, R-052, R-004"
+    },
+    {
+      "id": "pm-recent@160,2336",
+      "board": "pm-recent",
+      "x": 160,
+      "y": 2336,
+      "low": false,
+      "text": "Recent（☰ 入口）",
+      "trace": "label: board title"
+    },
+    {
+      "id": "pm-recent@1120,2373",
+      "board": "pm-recent",
+      "x": 1120,
+      "y": 2373,
+      "low": false,
+      "text": "• tab 列最右邊固定 ☰；點了開 All / • tab 列本身同今天：Recent 第一個、其他 / 英文字母序；空 tab 照樣顯示、有 Create / • Recent 列表、Photo / Video、Select 都 / 同今天（26 8E Recent）  [D0-08][D0-07]",
+      "trace": "R-002, R-003, R-004, R-005, R-010, Q-1"
+    }
+  ]
+}

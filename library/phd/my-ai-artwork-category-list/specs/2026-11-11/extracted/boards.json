@@ -1,0 +1,9 @@
+{
+  "my ai artwork category list.pdf": [
+    { "id": "pm-header", "title": "My Artwork: Artwork category list add filter Demo + Spec — My AI Artwork：☰ All categories（11/E · 帳本 2026-10-28）", "region": [60, 60, 2160, 380] },
+    { "id": "pm-overview", "title": "Overview", "region": [60, 440, 2000, 360] },
+    { "id": "pm-entry-flow", "title": "Entry: My AI Artwork（Recent）→ ☰ → All categories → 分類 tab", "region": [60, 820, 2000, 1220] },
+    { "id": "pm-recent", "title": "Recent（☰ 入口）", "region": [60, 2200, 1560, 1000] },
+    { "id": "pm-all-categories", "title": "All categories", "region": [60, 3200, 1560, 1120] }
+  ]
+}

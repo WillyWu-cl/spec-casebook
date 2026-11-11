@@ -1,0 +1,1 @@
+{"mode":"hidden","board":"103:6032","from":0,"next":null,"instances":3,"count":87,"read_at":"2026-11-05T07:40:30.161Z","nodes":[],"tpl":[],"it":[[{"s":"~64:5064","t":"RECTANGLE","n":"btn_n 1","d":[0,0,282.39,48.39],"p":"","a":null,"src":"64:5064","ax":1,"sid":1}]],"ins":[["103:6102",0,19.44,677.29]],"unsure":[],"bytes":151,"took_ms":14}
