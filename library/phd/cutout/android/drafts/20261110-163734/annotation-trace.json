@@ -1,0 +1,320 @@
+{
+  "spec_folder": "specs/2026-11-10",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-11e-buttons@100,103",
+      "board": "pm-11e-buttons",
+      "x": 100,
+      "y": 103,
+      "low": false,
+      "text": "範圍：只管 Cutout room 內的編輯紀錄（Background + Stroke 共用一條），離開 room（✕ / ✓）即清空",
+      "trace": "R-005, R-060, R-061"
+    },
+    {
+      "id": "pm-11e-buttons@579,251",
+      "board": "pm-11e-buttons",
+      "x": 579,
+      "y": 251,
+      "low": false,
+      "text": "參考過去 Design 2025/09 spec: link",
+      "trace": "label: link to the Design 2025/09 page; its items are traced below"
+    },
+    {
+      "id": "pm-11e-buttons@579,461",
+      "board": "pm-11e-buttons",
+      "x": 579,
+      "y": 461,
+      "low": false,
+      "text": "❷ Cutout Reset / Undo / Redo 按鈕狀態定義（灰＝disabled） / ① 剛進入 room（目前＝初始狀態）",
+      "trace": "R-010"
+    },
+    {
+      "id": "pm-11e-buttons@606,692",
+      "board": "pm-11e-buttons",
+      "x": 606,
+      "y": 692,
+      "low": false,
+      "text": "② 做了任一操作後",
+      "trace": "R-011"
+    },
+    {
+      "id": "pm-11e-buttons@606,842",
+      "board": "pm-11e-buttons",
+      "x": 606,
+      "y": 842,
+      "low": false,
+      "text": "③ Undo 後，尚未回到初始狀態",
+      "trace": "R-012"
+    },
+    {
+      "id": "pm-11e-buttons@606,992",
+      "board": "pm-11e-buttons",
+      "x": 606,
+      "y": 992,
+      "low": false,
+      "text": "④ Undo 到底（回到初始狀態）",
+      "trace": "R-013"
+    },
+    {
+      "id": "pm-11e-buttons@606,1142",
+      "board": "pm-11e-buttons",
+      "x": 606,
+      "y": 1142,
+      "low": false,
+      "text": "⑤ 按下 Reset 後",
+      "trace": "R-014"
+    },
+    {
+      "id": "pm-11e-buttons@606,1302",
+      "board": "pm-11e-buttons",
+      "x": 606,
+      "y": 1302,
+      "low": false,
+      "text": "⑤ Reset 本身算一步，所以 Undo 可用；Reset 會清空 Redo 紀錄",
+      "trace": "R-014, R-028"
+    },
+    {
+      "id": "pm-11e-crosstab@145,1702",
+      "board": "pm-11e-crosstab",
+      "x": 145,
+      "y": 1702,
+      "low": false,
+      "text": "Flow：跨 tab Undo / 規則：undo / redo 的變更不在目前 tab 時，自動切到該變更所在的 tab，讓使用者看到變化",
+      "trace": "R-040"
+    },
+    {
+      "id": "pm-11e-crosstab@1342,1830",
+      "board": "pm-11e-crosstab",
+      "x": 1342,
+      "y": 1830,
+      "low": false,
+      "text": "B. 按 Undo → 復原 ②",
+      "trace": "R-090"
+    },
+    {
+      "id": "pm-11e-crosstab@2017,1830",
+      "board": "pm-11e-crosstab",
+      "x": 2017,
+      "y": 1830,
+      "low": false,
+      "text": "C. 再按 Undo → 復原 ①",
+      "trace": "R-091"
+    },
+    {
+      "id": "pm-11e-crosstab@1153,2242",
+      "board": "pm-11e-crosstab",
+      "x": 1153,
+      "y": 2242,
+      "low": false,
+      "text": "按 Undo",
+      "trace": "R-090"
+    },
+    {
+      "id": "pm-11e-crosstab@1828,2242",
+      "board": "pm-11e-crosstab",
+      "x": 1828,
+      "y": 2242,
+      "low": false,
+      "text": "再按 Undo",
+      "trace": "R-091"
+    },
+    {
+      "id": "pm-11e-crosstab@667,2716",
+      "board": "pm-11e-crosstab",
+      "x": 667,
+      "y": 2716,
+      "low": false,
+      "text": "編輯  ①  → 編輯  ②  → locate  ③ ： / ① 選 Wall 背景（Background tab） / ② 調整 Stroke（Stroke tab） / ③  locate 回 Background tab",
+      "trace": "R-003, R-090"
+    },
+    {
+      "id": "pm-11e-crosstab@1342,2716",
+      "board": "pm-11e-crosstab",
+      "x": 1342,
+      "y": 2716,
+      "low": false,
+      "text": "復原 ②「調整 Stroke」 / → 變更在 Stroke tab，自動切到 Stroke",
+      "trace": "R-040, R-090"
+    },
+    {
+      "id": "pm-11e-crosstab@2017,2716",
+      "board": "pm-11e-crosstab",
+      "x": 2017,
+      "y": 2716,
+      "low": false,
+      "text": "復原 ①「選 Wall 背景」 / → 變更在 Background tab，自動切回 / → 已回到初始狀態：Reset、Undo",
+      "trace": "R-040, R-013, R-091"
+    },
+    {
+      "id": "pm-11e-logic@1720,194",
+      "board": "pm-11e-logic",
+      "x": 1720,
+      "y": 194,
+      "low": false,
+      "text": "1. undo / redo 邏輯 / 選擇純色背景 / 選擇模板背景（Wall／Romantic…） / 匯入照片當背景 / 色盤選色 / Stroke 樣式／顏色 / Stroke 粗細 slider / Rotate cutout 物件 / Flip cutout 物件 / click edit button → Cutout page 再返回 / 在畫布上選取 cutout 物件 / 切換 Background／Stroke tab / 切換分類 chip（Solid／Wall…） / 橫向捲動素材列 / 點選已選中的項目",
+      "trace": "R-020, R-021, R-022, R-023, R-024, R-025, R-026, R-027, R-028, R-029, R-030, R-031, R-032, R-033, R-034"
+    },
+    {
+      "id": "pm-11e-logic@2144,264",
+      "board": "pm-11e-logic",
+      "x": 2144,
+      "y": 264,
+      "low": false,
+      "text": "是否記為一步",
+      "trace": "label: column heading (是否記為一步)"
+    },
+    {
+      "id": "pm-11e-logic@2284,264",
+      "board": "pm-11e-logic",
+      "x": 2284,
+      "y": 264,
+      "low": false,
+      "text": "記錄時機 / 點選當下 / 套用完成時 / 照片套用到畫布時 / 確認或關閉色盤時（拖動中不記錄） / 點選當下 / 手指放開時（拖動中不記錄） / 手指放開時（旋轉中不記錄） / 點擊當下 / 點擊當下",
+      "trace": "R-020, R-021, R-022, R-023, R-024, R-025, R-026, R-027, R-028"
+    },
+    {
+      "id": "pm-11e-logic@2604,264",
+      "board": "pm-11e-logic",
+      "x": 2604,
+      "y": 264,
+      "low": false,
+      "text": "Undo 後狀態 / 回到前一個背景，panel 選中框同步移回 / 照片從畫布移除，回到前一個背景 / 回到選色前的背景 / 回到前一個 stroke 設定 / 回到拖動前的數值 / 回到旋轉前的角度 / 回到 flip 前的方向 / 回到 reset 前的狀態（含 cutout 樣式） / 不受影響（由 edit cutout page 自己的 undo 管理；Reset 會一併還原）",
+      "trace": "R-020, R-021, R-022, R-023, R-024, R-025, R-026, R-027, R-028, R-006, R-051"
+    },
+    {
+      "id": "pm-11e-open@3311,1169",
+      "board": "pm-11e-open",
+      "x": 3311,
+      "y": 1169,
+      "low": false,
+      "text": "5. 待決事項 / 步數上限 / Reset 是否還原 edit cutout page 的修改？",
+      "trace": "R-072, R-051"
+    },
+    {
+      "id": "pm-11e-open@3756,1292",
+      "board": "pm-11e-open",
+      "x": 3756,
+      "y": 1292,
+      "low": false,
+      "text": "請 RD 確認 / 還原；否則使用者可能卡住，無法繼續 undo / redo",
+      "trace": "Q-6, R-051"
+    },
+    {
+      "id": "pm-11e-rules@2553,1938",
+      "board": "pm-11e-rules",
+      "x": 2553,
+      "y": 1938,
+      "low": false,
+      "text": "Background 和 Stroke 共用同一條紀錄 / 不在目前 tab 時，user click undo / redo 會自動切到該變更所在的 tab / 例：在 C 按 Redo → 重做 ①「選 Wall 背景」→ 留在 Background tab，再 / 按 Redo → 重做 ②「調整 Stroke」→ 自動切到 Stroke tab / undo / redo / reset 需包含 edit cutout page 的修改（cutout 樣式） / 離開 room（✕ 或 ✓）後，壓平圖片處理，紀錄全部清空 / 【按鈕行為】 / 行為：復原上一步，包含 edit cutout page 的修改（cutout 樣式），畫布和 / panel 選中狀態同步更新 / Enabled：有可以 undo 的步驟 / Disabled：沒有任何步驟 / 行為：重做最近一次被 undo 的步驟，包含 edit cutout page 的修改（cutout / Enabled：有被 undo 的步驟 / Disabled：沒有被 undo 的步驟（undo 後做了新操作，紀錄即清空） / 行為：回到進入 room 時的狀態（不是原始照片），包含 edit cutout page 的 / 修改（cutout 樣式），避免 user 卡住無法繼續 undo / redo / Enabled：目前狀態（含 cutout 樣式）和初始狀態不同 / Disabled：目前狀態（含 cutout 樣式）和初始狀態相同 / 一旦 user click reset，自動切到 Background tab / 【其他情境】 / • 模板還在下載中就按 undo：取消這次套用；下載完成後也不自動套用 / • 匯入照片後又 undo：照片從畫布移除，仍保留在「最近使用」 / • 步數達到上限：最舊的步驟會被捨棄，使用者沒有感知",
+      "trace": "R-005, R-040, R-041, R-042, R-050, R-060, R-061, R-035, R-016, R-017, R-015, R-055, R-044, R-070, R-071, R-072, Q-1"
+    },
+    {
+      "id": "uiux-before-11e@137,164",
+      "board": "uiux-before-11e",
+      "x": 137,
+      "y": 164,
+      "low": false,
+      "text": "9:41",
+      "trace": "ui: status bar"
+    },
+    {
+      "id": "uiux-before-11e@599,181",
+      "board": "uiux-before-11e",
+      "x": 599,
+      "y": 181,
+      "low": false,
+      "text": "9:41",
+      "trace": "ui: status bar"
+    },
+    {
+      "id": "uiux-before-11e@673,752",
+      "board": "uiux-before-11e",
+      "x": 673,
+      "y": 752,
+      "low": false,
+      "text": "Background / Template / Favorite / Trendy / Back to School",
+      "trace": "older: the 11/E room has tabs Background / Stroke (R-004)"
+    },
+    {
+      "id": "uiux-before-11e@865,791",
+      "board": "uiux-before-11e",
+      "x": 865,
+      "y": 791,
+      "low": false,
+      "text": "Smoke / Tennis",
+      "trace": "older: the 11/E room chips (R-004)"
+    },
+    {
+      "id": "uiux-before-11e@1013,791",
+      "board": "uiux-before-11e",
+      "x": 1013,
+      "y": 791,
+      "low": false,
+      "text": "Natu",
+      "trace": "older: the 11/E room chips (R-004)"
+    },
+    {
+      "id": "uiux-before-11e@141,895",
+      "board": "uiux-before-11e",
+      "x": 141,
+      "y": 895,
+      "low": false,
+      "text": "Auto",
+      "trace": "R-001"
+    },
+    {
+      "id": "uiux-before-11e@281,895",
+      "board": "uiux-before-11e",
+      "x": 281,
+      "y": 895,
+      "low": false,
+      "text": "Circle / Brush / Collag e",
+      "trace": "R-001"
+    },
+    {
+      "id": "uiux-before-11e@419,895",
+      "board": "uiux-before-11e",
+      "x": 419,
+      "y": 895,
+      "low": false,
+      "text": "Eraser / Cuto",
+      "trace": "R-001"
+    },
+    {
+      "id": "pm-11e-buttons@579,311",
+      "board": "pm-11e-buttons",
+      "x": 579,
+      "y": 311,
+      "low": false,
+      "text": "[link Figma Design file 「cutout」 (gFipZWdRXPw0Lf4zCCTx5O) › page 「250901_enlarge_thumbnail」 (162:1211)] Frame 「3_edit_mask_room」 titled 「Background」: canvas with an info button, Background panel with chips Favorite / Trendy / Back to School / Smoke / Tennis / Nature, an add-image thumbnail first, then background thumbnails; bottom bar 「bottom_action/4icons」; the panel's undo / redo icons are hidden layers",
+      "trace": "older: 11/E boards (2025/09 Background room; R-002, R-004)",
+      "link": "162:1211"
+    },
+    {
+      "id": "pm-11e-buttons@579,371",
+      "board": "pm-11e-buttons",
+      "x": 579,
+      "y": 371,
+      "low": false,
+      "text": "[link Figma Design file 「cutout」 (gFipZWdRXPw0Lf4zCCTx5O) › page 「250901_enlarge_thumbnail」 (162:1211)] Frame 「3_edit_mask_room」 titled 「AI Background」: chips Custom / Trendy / Back to School / Smoke / Tennis / Nature, thumbnails, credit box 「Cost 2 credit per creation」 with a credit button",
+      "trace": "older: 11/E boards (2025/09 AI Background room, not part of this spec)",
+      "link": "162:1211"
+    },
+    {
+      "id": "pm-11e-buttons@579,431",
+      "board": "pm-11e-buttons",
+      "x": 579,
+      "y": 431,
+      "low": false,
+      "text": "[link Figma Design file 「cutout」 (gFipZWdRXPw0Lf4zCCTx5O) › page 「250901_enlarge_thumbnail」 (162:1211)] Frame 「5」 (Text to image): undo and redo drawn as on-canvas icons (editing_area/ic_undo_n, ic_redo_n) at the canvas bottom-left, a continuous slider, capsule tabs, thumbnails, X and ✓ at the bottom",
+      "trace": "older: 11/E boards (2025/09 on-canvas undo / redo; 11/E puts them in the bottom bar, R-002)",
+      "link": "162:1211"
+    }
+  ]
+}

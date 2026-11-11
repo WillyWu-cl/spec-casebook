@@ -1,0 +1,83 @@
+{
+  "Q-1": {
+    "question": "Undo / Redo and the cutout style. The 【Requirement】 and 【按鈕行為】 notes say undo / redo include the edit cutout page's edits, while the operation table (#10) says the round trip is no step and the history is 「不受影響」. Unclear what Undo does to a cutout edited after a room step. Assumption: each step's state includes the cutout style, so Undo of an earlier step also brings back the cutout shape of that step. R-050, R-029; TC-037, TC-038.",
+    "answer": "每一步記錄的狀態都包含當時的去背樣式，所以 Undo 回到較早的步驟時，去背形狀也會一起回到那一步的樣子",
+    "by": "",
+    "at": "2026-11-10T09:06:24.249Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-005): R-050 now states it; TC-038 note updated."
+  },
+  "Q-2": {
+    "question": "Undo during a template download. A template is recorded when applying completes (#2), and Undo during the download cancels the apply (【其他情境】). Unclear whether that Undo also reverts the step before it, and whether Undo can cancel a download when there is no earlier step (Undo disabled). Assumption: Undo only cancels the pending apply; with no earlier step Undo stays disabled. R-021, R-070; TC-013, TC-014, TC-044, TC-045.",
+    "answer": "Undo 只取消這次還沒完成的套用；沒有更早的步驟時 Undo 維持不能按",
+    "by": "",
+    "at": "2026-11-10T09:06:24.249Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-005): R-021, R-070 updated; TC-014, TC-044 expected results and notes updated."
+  },
+  "Q-3": {
+    "question": "✕ and ✓. The rules say both 「離開 room（✕ 或 ✓）後，壓平圖片處理」 and the flow board draws both back to the Cutout page. Unclear whether ✕ keeps or discards the room's edits and whether ✓ really returns to the Cutout page (not the editor). Assumption: ✕ discards and opens the Cutout page; ✓ flattens and opens the Cutout page. R-060, R-061, R-092, R-093; TC-040, TC-042.",
+    "answer": "✕ 捨棄編輯並回到 Cutout 頁；✓ 壓平圖片後回到 Cutout 頁",
+    "by": "",
+    "at": "2026-11-10T09:06:24.249Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-005): R-060, R-061 updated; TC-040 now checks the edits are discarded; TC-042 note updated."
+  },
+  "Q-4": {
+    "question": "Where 「最近使用」 (Recent) is: not drawn in the room. Assumption: the photo picker or import list opened from the import-photo item. R-071; TC-016.",
+    "answer": "目前沒有recent, 執行完這條請先開個bug",
+    "by": "",
+    "at": "2026-11-10T09:09:58.950Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Ruling REQ-008 (run): TC-016 stays as the spec states and is expected to fail; after it runs, an eBug for the missing Recent is filed first."
+  },
+  "Q-5": {
+    "question": "The 11/E page numbers its sections 「1. undo / redo 邏輯」 and 「5. 待決事項」 (with Q3 and Q7); sections 2–4 and questions Q1, Q2, Q4–Q6 are not in the export. Also, Figma not compared with the PDF: frames newer than the export may be missing (the PDFs carry no link to their own boards). R-005 – R-072.",
+    "answer": "Figma上面的已經都儲存下來了, 有更新會再更新",
+    "by": "",
+    "at": "2026-11-10T09:15:23.925Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Ruling REQ-010: the PDFs hold everything on Figma; moved to Answered questions, no row changed. Updates will come as a new spec set."
+  },
+  "Q-6": {
+    "question": "Step limit (spec Q3, owner RD, open). The limit row is parked until RD gives the number. R-072; TC-046.",
+    "answer": "沒有上限",
+    "by": "",
+    "at": "2026-11-10T09:08:16.534Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Ruling REQ-006: no step limit; R-072 rewritten; TC-046 now makes 60 steps and undoes them all (no longer parked)."
+  },
+  "Q-7": {
+    "question": "System Back is not drawn for the Cutout room, the colour palette or the edit cutout page. Assumption: Back does what the screen's own close does (room = ✕, palette = close, edit page = return). R-080; TC-048, TC-049, TC-050.",
+    "answer": "返回鍵的效果和該畫面自己的關閉相同",
+    "by": "",
+    "at": "2026-11-10T09:09:58.950Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-005): R-080 updated; TC-048 – TC-050 notes updated."
+  },
+  "Q-8": {
+    "question": "Rotate and flip of the cutout object are steps (#7, #8) but the spec draws no rotate or flip control. Assumption: two-finger rotate on the canvas and the app's flip on the selected object. R-026, R-027; TC-023, TC-024.",
+    "answer": "只能旋轉不能翻轉",
+    "by": "",
+    "at": "2026-11-10T09:08:16.534Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Corrected by the user (REQ-009, supersedes REQ-007): there must be a Flip button. R-027 and TC-024 stay; a run that finds no Flip records Fail and files an eBug."
+  },
+  "Q-9": {
+    "question": "The palette records on 「確認或關閉色盤時」. Unclear whether closing with no colour change counts as a step. Assumption: only a changed colour is a step (as #15). R-023; TC-018.",
+    "answer": "沒改就不算",
+    "by": "",
+    "at": "2026-11-10T09:06:43.765Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-005): R-023 updated; new row TC-051 (close the palette unchanged → no step), placed after TC-018."
+  }
+}

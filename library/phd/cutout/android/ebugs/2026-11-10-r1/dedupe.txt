@@ -1,0 +1,14 @@
+Dedupe — Cutout Reset / Undo / Redo Android, run 2026-11-10-r1, PhotoDirector 20.19.0 (90201900). Read-only; Android
+pool only (product "PhotoDirector Mobile for Android"; dedupe per OS, user 2026-10-28). 2026-11-10.
+
+1. ecl_query.py dedupe upload/bodies.json --product "PhotoDirector Mobile for Android" --limit 600
+   → feature 'Cutout': 24 candidates per entry; 0 of 7 entries have a likely duplicate. Cutout-Undo-R1-06 (no Flip
+   button) scored 40 % against PHA262026-0275 (ID_Photo background), PHA252025-0610 (Cutout-stroke Next Edit),
+   PHA252025-0465 (ID_Photo Undo crash), PHA252025-0029 (Cutout ✓ page) — all about other behaviour, not duplicates.
+   Raw output in dedupe-raw.txt.
+2. Text searches in the same pool (ecl_query.py bugs --text …): "Cutout" (Cutout tickets up to 20.13, none about
+   Reset / Undo / Redo, Flip, palette or template download), "Flip" (2: Crop tickets), "Undo" (PHA242024-0543 Cutout
+   Edit Room buttons, 19.3.0, closed, other behaviour), "Reset", "Recent" (My_AI_Artwork / AI_Try_On), "palette" (0).
+
+Same-OS matches left off the drafts: none. Every entry stays a new card.
+Pool note: PHD-A Short Descriptions name this feature 「Cutout:」, as the drafts do.

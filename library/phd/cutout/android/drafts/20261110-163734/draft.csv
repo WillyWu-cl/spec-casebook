@@ -1,0 +1,154 @@
+ID,Section,Precondition,Action,Expected Result,Priority,Spec Ref,Notes,Change,Change Reason
+TC-001,Entry and layout,A photo with one or two people open in the editor,"1. Tap Edit › 「Cutout」
+2. Tap 「Auto」
+3. Tap 「Cutout」","The Cutout room opens with the cut-out people on the canvas, an edit (pencil) button on the canvas, tabs 「Background」 and 「Stroke」 with 「Background」 selected, category chips starting with 「Solid」 and the item row below.",P1,"R-001, R-003, R-004",,new,New table from the 11/E spec
+TC-002,Entry and layout,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",Look at the bottom bar,"Five buttons from left to right: ✕, Reset, Undo, Redo, ✓. Reset, Undo and Redo are grey (disabled); ✕ and ✓ are enabled.",P1,"R-002, R-010",,new,New table from the 11/E spec
+TC-003,Entry and layout,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap Reset
+2. Tap Undo
+3. Tap Redo","Nothing happens: canvas and panel unchanged, the three buttons stay grey.",P2,R-010,,new,New table from the 11/E spec
+TC-004,Button states,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",Tap 「White」 in the 「Solid」 item row,The background turns white. Reset and Undo are enabled; Redo stays disabled.,P1,"R-011, R-020",,new,New table from the 11/E spec
+TC-005,Button states,"In the Cutout room, 「Solid」 chip (two steps):
+1. Tap 「White」
+2. Tap 「Black」",Tap Undo,"The background is white again. Reset, Undo and Redo are all enabled.",P1,R-012,,new,New table from the 11/E spec
+TC-006,Button states,"In the Cutout room, 「Solid」 chip (two steps):
+1. Tap 「White」
+2. Tap 「Black」
+3. Tap Undo (background white)",Tap Undo,The canvas is back to the entry state (transparent background). Reset and Undo are disabled; Redo is enabled.,P1,"R-013, R-016",,new,New table from the 11/E spec
+TC-007,Button states,"In the Cutout room, 「Solid」 chip (two steps):
+1. Tap 「White」
+2. Tap 「Black」",Tap Reset,"The canvas is back to the entry state. Reset is disabled, Undo is enabled, Redo is disabled.",P1,R-014,,new,New table from the 11/E spec
+TC-008,Button states,"In the Cutout room, 「Solid」 chip (two steps):
+1. Tap 「White」
+2. Tap 「Black」
+3. Tap Reset","1. Tap Undo
+2. Tap Redo","After Undo: the black background is back and Reset is enabled again. After Redo: the Reset is applied again (entry state), Reset disabled and Undo enabled.",P1,"R-014, R-028, R-035",,new,New table from the 11/E spec
+TC-009,Button states,"In the Cutout room, 「Solid」 chip (two steps):
+1. Tap 「White」
+2. Tap 「Black」
+3. Tap Undo (Redo enabled)",Tap Reset,Entry state. Redo is disabled (Reset clears the Redo history); Undo is enabled.,P1,"R-014, R-017",,new,New table from the 11/E spec
+TC-010,Button states,"In the Cutout room, 「Solid」 chip (two steps):
+1. Tap 「White」
+2. Tap 「Black」
+3. Tap Undo (Redo enabled)",Tap 「Blue」 in the item row,The background turns blue. Redo is disabled (the new step cleared the Redo history); Undo is enabled.,P1,R-017,,new,New table from the 11/E spec
+TC-011,Button states,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; note which item is selected on entry (transparent)","1. Tap 「White」
+2. Tap the item selected on entry (transparent)",The canvas looks as on entry. Reset is disabled (state equals the initial one) while Undo is enabled (two steps); tapping Undo once shows the white background.,P2,"R-015, R-016",,new,New table from the 11/E spec
+TC-012,Steps per operation,"In the Cutout room, 「Solid」 chip; 「White」 selected (one step)","1. Tap 「Black」
+2. Tap Undo
+3. Tap Redo",After Undo: white background and the orange selection frame back on 「White」. After Redo: black background and the frame on 「Black」.,P1,"R-020, R-035",,new,New table from the 11/E spec
+TC-013,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; a 「Wall」 template already downloaded (no download arrow)","1. Tap the 「Wall」 chip
+2. Tap the downloaded template
+3. Tap Undo
+4. Tap Redo","The template is applied and Undo enables once it shows. After Undo: the entry background and the selection frame back on the entry item. After Redo: the template again, frame on it.",P1,"R-021, R-035",,new,New table from the 11/E spec
+TC-014,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; a 「Wall」 template not downloaded yet (download arrow), slow network if available","1. Tap the 「Wall」 chip
+2. Tap the template with the download arrow
+3. Watch Undo while it downloads",Undo stays disabled while the template downloads and enables only when the template is applied to the canvas (recorded when applying completes).,P1,"R-021, R-070",Q-2 answered (REQ-005): with no earlier step Undo stays disabled during the download.,new,New table from the 11/E spec
+TC-015,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap the import-photo item
+2. Choose a photo
+3. Tap Undo
+4. Tap Redo",Undo enables when the photo shows on the canvas. After Undo: the photo is gone from the canvas and the entry background is back. After Redo: the photo again.,P1,"R-022, R-035",,new,New table from the 11/E spec
+TC-016,Steps per operation,"In the Cutout room:
+1. Import a photo as background
+2. Tap Undo",Open the import-photo item again,The undone photo is still listed under 「最近使用」 (Recent).,P2,R-071,"REQ-008: the app has no 「最近使用」 for now, so this row is expected to fail; after running it, file an eBug for the missing Recent first.",new,New table from the 11/E spec
+TC-017,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap the colour-palette item
+2. Drag across several colours without confirming
+3. Look at Undo
+4. Confirm the colour
+5. Tap Undo",Undo stays disabled while dragging; it enables only after confirming. Undo returns the background from before the palette opened (not an intermediate dragged colour).,P1,R-023,,new,New table from the 11/E spec
+TC-018,Steps per operation,In the Cutout room: 「White」 selected (one step),"1. Tap the colour-palette item
+2. Drag to a red colour
+3. Close the palette without confirming
+4. Tap Undo",Closing the palette records the pick as one step: the background is the picked colour after closing; one Undo returns white.,P2,R-023,,new,New table from the 11/E spec
+TC-051,Steps per operation,In the Cutout room: 「White」 selected (one step),"1. Tap the colour-palette item
+2. Close the palette without changing the colour
+3. Tap Undo",Closing the palette unchanged adds no step: one Undo returns the entry background and Undo is then disabled.,P2,R-023,Q-9 answered (REQ-005).,new,New table from the 11/E spec
+TC-019,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap the 「Stroke」 tab
+2. Tap an orange colour swatch
+3. Tap Undo
+4. Tap Redo",Undo enables on the tap. After Undo: the stroke setting from before (entry colour). After Redo: orange stroke.,P1,"R-024, R-035",,new,New table from the 11/E spec
+TC-020,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap the 「Stroke」 tab
+2. Tap a different stroke style thumbnail
+3. Tap Undo",Undo enables on the tap; Undo returns the previous stroke style.,P1,R-024,,new,New table from the 11/E spec
+TC-021,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; 「Stroke」 tab, thickness slider at its entry value (33 in the Design)","1. Drag the thickness slider to about 60 and hold
+2. Look at Undo
+3. Release
+4. Tap Undo",Undo stays disabled while the finger is down and enables on release. Undo returns the slider and the stroke to the entry value.,P1,R-025,,new,New table from the 11/E spec
+TC-022,Steps per operation,"In the Cutout room: 「Stroke」 tab, thickness slider at 33","1. Drag the slider to about 60 and release
+2. Drag it to about 10 and release
+3. Tap Undo","One Undo returns the slider to about 60 (each release is one step, no step for the positions in between).",P2,R-025,,new,New table from the 11/E spec
+TC-023,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Rotate the cutout with two fingers and hold
+2. Look at Undo
+3. Release
+4. Tap Undo",Undo stays disabled while rotating and enables on release. Undo returns the cutout to its angle before the rotation.,P1,R-026,,new,New table from the 11/E spec
+TC-024,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Select the cutout on the canvas
+2. Tap the Flip button
+3. Tap Undo
+4. Tap Redo",A Flip button is there and flips the cutout; Undo enables on the flip. After Undo: the cutout faces the direction from before the flip. After Redo: flipped again.,P1,"R-027, R-035","REQ-009: the room must have a Flip button; if the build has none, record Fail and file an eBug.",new,New table from the 11/E spec
+TC-025,Steps per operation,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap 「White」
+2. Tap the 「Stroke」 tab
+3. Tap an orange swatch
+4. Drag the thickness slider and release
+5. Rotate the cutout and release
+6. Tap Undo four times
+7. Tap Redo four times","The four Undo taps revert rotation, thickness, stroke colour and white background in that order, ending at the entry state (Reset and Undo disabled, Redo enabled). The four Redo taps re-apply them in the original order.",P1,"R-005, R-035",,new,New table from the 11/E spec
+TC-026,Operations that are not steps,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap the cutout on the canvas
+2. Tap 「Stroke」
+3. Tap 「Background」
+4. Tap the 「Wall」 chip
+5. Tap the 「Romantic」 chip
+6. Tap the 「Solid」 chip
+7. Scroll the item row left and right
+8. Tap the item already selected","Reset, Undo and Redo stay disabled after every action.",P2,"R-030, R-031, R-032, R-033, R-034",,new,New table from the 11/E spec
+TC-027,Operations that are not steps,"In the Cutout room, 「Solid」 chip (two steps):
+1. Tap 「White」
+2. Tap 「Black」
+3. Tap Undo (Redo enabled)","1. Tap the cutout on the canvas
+2. Tap 「Stroke」
+3. Tap 「Background」
+4. Tap the 「Wall」 chip
+5. Tap the 「Solid」 chip
+6. Scroll the item row
+7. Tap the selected 「White」 again
+8. Tap Redo",Redo stays enabled through steps 1–7 (none of them is a step) and Redo brings the black background back.,P2,"R-017, R-030, R-031, R-032, R-033, R-034",,new,New table from the 11/E spec
+TC-028,Operations that are not steps,In the Cutout room: 「White」 selected (one step),"1. Tap 「White」 again
+2. Tap Undo",One Undo returns the entry background; Undo is then disabled (the second tap added no step).,P2,R-034,,new,New table from the 11/E spec
+TC-029,Undo across tabs,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; a 「Wall」 template downloaded","1. Apply the 「Wall」 template
+2. Tap 「Stroke」 and change the stroke colour
+3. Tap 「Background」
+4. Tap Undo",The stroke change is reverted and the panel switches to the 「Stroke」 tab by itself.,P1,"R-040, R-090",,new,New table from the 11/E spec
+TC-030,Undo across tabs,"After the previous row: on the 「Stroke」 tab, the Wall template still applied",Tap Undo,The Wall template is reverted; the panel switches back to 「Background」; the canvas is at the entry state with Reset and Undo disabled and Redo enabled.,P1,"R-040, R-013, R-091",,new,New table from the 11/E spec
+TC-031,Undo across tabs,"After the previous row: entry state on 「Background」, Redo enabled","1. Tap Redo
+2. Tap Redo",First Redo: the Wall template is back and the panel stays on 「Background」. Second Redo: the stroke change is back and the panel switches to 「Stroke」.,P1,"R-041, R-042, R-035",,new,New table from the 11/E spec
+TC-032,Undo across tabs,"In the Cutout room: 「Stroke」 tab, two stroke colour changes made on it",Tap Undo,The last stroke colour is reverted and the panel stays on 「Stroke」.,P2,R-041,,new,New table from the 11/E spec
+TC-033,Reset and the cutout style,"In the Cutout room: background, stroke colour and thickness changed; the panel on 「Stroke」",Tap Reset,The panel switches to 「Background」 and the canvas shows the entry state: cutout on its entry background with the entry stroke.,P1,"R-044, R-055",,new,New table from the 11/E spec
+TC-034,Reset and the cutout style,In the Cutout room: background changed,Tap Reset,"The canvas shows the state on entering the room (the cut-out people), not the original photo with its own background.",P1,R-055,,new,New table from the 11/E spec
+TC-035,Reset and the cutout style,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap the edit (pencil) button on the canvas
+2. On the edit cutout page, brush an extra area into the selection
+3. Return to the Cutout room",The cutout shows the edited shape. Undo and Redo stay disabled (the round trip is no step); Reset is enabled (the state differs from the entry state).,P1,"R-029, R-052",,new,New table from the 11/E spec
+TC-036,Reset and the cutout style,"After the previous row: cutout edited on the edit cutout page, no room step",Tap Reset,"The cutout returns to its shape on entering the room. Reset is disabled, Undo is enabled, the panel is on 「Background」.",P1,"R-051, R-014",,new,New table from the 11/E spec
+TC-037,Reset and the cutout style,After the previous row: Reset done,Tap Undo,"The edited cutout shape comes back (the state before Reset, cutout style included).",P1,"R-028, R-050",,new,New table from the 11/E spec
+TC-038,Reset and the cutout style,In the Cutout room: 「White」 selected (one step),"1. Tap the edit button
+2. Brush an extra area into the selection
+3. Return to the Cutout room
+4. Tap Undo
+5. Tap Redo",The round trip adds no step. Undo reverts 「White」 and the cutout goes back to its shape at that step (entry shape); Redo brings back the white background and the edited cutout.,P2,"R-029, R-050",Q-1 answered (REQ-005).,new,New table from the 11/E spec
+TC-039,Reset and the cutout style,In the Cutout room: tapped the edit button (on the edit cutout page),"1. Brush an extra area
+2. Tap the edit cutout page's own Undo",The edit cutout page's Undo reverts the brush stroke on that page.,P3,R-006,,new,New table from the 11/E spec
+TC-040,Leaving the room,In the Cutout room: two steps made,Tap ✕,The room closes without keeping its edits and the Cutout page opens (Auto / Box / Circle / Brush / Eraser) showing the image as it was before the room.,P1,"R-060, R-092",,new,New table from the 11/E spec
+TC-041,Leaving the room,After the previous row: on the Cutout page,Tap 「Cutout」 to enter the room again,"Reset, Undo and Redo are all disabled; no earlier step can be undone.",P1,"R-060, R-010",,new,New table from the 11/E spec
+TC-042,Leaving the room,In the Cutout room: background changed to white and stroke changed,Tap ✓,"The image is flattened (background, cutout and stroke as one image) and the Cutout page opens with it.",P1,"R-061, R-093",,new,New table from the 11/E spec
+TC-043,Leaving the room,After the previous row: on the Cutout page with the flattened image,"1. Make a selection
+2. Tap 「Cutout」 to enter the room again","Reset, Undo and Redo are all disabled; the white background and stroke are part of the image and cannot be undone in the room.",P1,"R-061, R-010",,new,New table from the 11/E spec
+TC-044,Other scenarios,In the Cutout room: 「White」 selected (one step); a 「Wall」 template not downloaded yet; slow network if available,"1. Tap the template with the download arrow
+2. While it downloads, tap Undo",Only the template apply is cancelled: the canvas does not show the template and the white background stays.,P1,R-070,Q-2 answered (REQ-005).,new,New table from the 11/E spec
+TC-045,Other scenarios,After the previous row: the cancelled template still downloading,Wait until the download finishes,The template is not applied when the download finishes; the canvas is unchanged.,P2,R-070,,new,New table from the 11/E spec
+TC-046,Other scenarios,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Make 60 steps (alternate 「White」 and 「Black」)
+2. Tap Undo until it is disabled",Undo walks back all 60 steps to the entry state (transparent background) before it disables; no step is dropped and no message appears.,P2,R-072,REQ-006: no step limit.,new,New table from the 11/E spec
+TC-047,Other scenarios,"In the Cutout room:
+1. Make two steps
+2. Tap Undo","1. Send the app to the background for 10 s
+2. Return to the app","The room shows the same canvas and panel; Reset, Undo and Redo are enabled as before; Redo still re-applies the undone step.",P2,R-081,,new,New table from the 11/E spec
+TC-048,Android,In the Cutout room: two steps made,Press system Back,Back does what ✕ does: the room closes to the Cutout page and the history is cleared on re-entry.,P2,"R-080, R-060",Q-7 answered (REQ-005).,new,New table from the 11/E spec
+TC-049,Android,"In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet","1. Tap the colour-palette item
+2. Drag to a colour
+3. Press system Back",Back closes the palette only (the room stays) and the pick is recorded as one step (Undo enabled; Undo returns the entry background).,P2,"R-080, R-023",Q-7 answered (REQ-005).,new,New table from the 11/E spec
+TC-050,Android,In the Cutout room: tapped the edit button (on the edit cutout page),Press system Back,Back returns to the Cutout room (like the page's own close); the room's Reset / Undo / Redo states are unchanged.,P3,"R-080, R-029",Q-7 answered (REQ-005).,new,New table from the 11/E spec

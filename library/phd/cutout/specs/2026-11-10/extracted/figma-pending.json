@@ -1,0 +1,6 @@
+{
+  "since": "2026-11-10",
+  "reason": "user, 2026-11-10 (REQ-010): the PDFs hold everything on Figma, updates will be sent; no links: the 11/E spec PDF and the UI UX flow PDF carry no Figma link to their own boards; the only link (Design 2025/09 reference, 162:1211) was read with figma-design get_metadata. Both Figma sign-ins work on this machine (qa-dm, qa1).",
+  "links": { "design": "https://www.figma.com/design/gFipZWdRXPw0Lf4zCCTx5O/cutout?node-id=162-1211", "pm": null, "mx": null },
+  "owed": ["step 8", "step 10"]
+}

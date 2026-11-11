@@ -1,0 +1,18 @@
+{
+  "feature": "phd/cutout",
+  "folder": "2026-11-10",
+  "received_at": "2026-11-10T08:37:33.867Z",
+  "spec_set_sha256": "0ebabad8f68f1a53ccd28a556a686f92061bb1541562910a2d39f98ff7df6b68",
+  "files": [
+    {
+      "name": "Cutout UI UX flow (before 11E).pdf",
+      "sha256": "793775d3c3f5cc78e128d0a304e115448ef7b6de6c88992b27b9e22b41e0d8bb",
+      "bytes": 1143342
+    },
+    {
+      "name": "Cutout Reset Undo Redo Spec 11E.pdf",
+      "sha256": "e25471600f0e024c6067052af8f188a2c22c39382143a0d5c437f0b62d7b31f0",
+      "bytes": 9020752
+    }
+  ]
+}

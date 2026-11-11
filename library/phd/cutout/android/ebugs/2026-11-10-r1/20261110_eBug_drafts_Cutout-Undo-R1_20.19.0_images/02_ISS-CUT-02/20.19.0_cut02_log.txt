@@ -1,0 +1,10 @@
+PhotoDirector Android 20.19.0 (90201900), Samsung Galaxy S23 / Android 16 — logcat excerpt, Cutout room with the colour
+palette open: system Back pressed at 18:00:57. The panel goes to PANEL_NONE and the Cutout fragment is popped
+(doFragmentPopBackStack); the Edit tabs appear again. Times are the phone's (CST). Repeated identical lines removed.
+
+2026-11-10 18:00:57.577 26456 26456 D BottomToolBar: onCurrentPanelChange, panel: PANEL_NONE
+2026-11-10 18:00:57.584 26456 26456 D EditViewActivity: doFragmentPopBackStack
+2026-11-10 18:00:57.585 26456 26456 I [PHD-A][Mixpanel]: Photo_Tab_Appear:{"tab":"Edit"}
+2026-11-10 18:01:08.242 26456 26456 D BottomToolBar: onCurrentPanelChange, panel: PANEL_CUTOUT
+2026-11-10 18:01:08.370 26456 26619 D CutoutPanel: [onContentListUpdatedComplete] 
+2026-11-10 18:01:08.374 26456 26456 I [PHD-A][Mixpanel]: Photo_Feature_Appear:{"feature":"cutout"}

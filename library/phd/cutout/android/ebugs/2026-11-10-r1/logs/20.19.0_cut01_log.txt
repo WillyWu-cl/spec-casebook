@@ -1,0 +1,18 @@
+PhotoDirector Android 20.19.0 (90201900), Samsung Galaxy S23 / Android 16 — logcat excerpt, Cutout room, Undo tapped
+while a Trending template was downloading (twice: the fireworks template, then the white-wood template at ~17:52:20).
+No cancel is logged; each template is still applied (SetSkyTemplate … doApplySkyReplacement() end) when its download
+ends. Times are the phone's (CST). Repeated identical lines removed.
+
+2026-11-10 17:51:22.404 26456 26456 D BottomToolBar: onCurrentPanelChange, panel: PANEL_CUTOUT
+2026-11-10 17:51:22.437 26456 26685 D CutoutPanel: [onContentListUpdatedComplete] 
+2026-11-10 17:51:39.470 26456 26903 D NativeDump: SetSkyROI() ready
+2026-11-10 17:51:39.473 26456 26903 D NativeDump: SetSkyTemplate() source buffer ready
+2026-11-10 17:51:39.473 26456 26903 D NativeDump: SetSkyTemplate() size 1364 x 1364, 7441984
+2026-11-10 17:51:39.482 26456 26903 D NativeDump: doApplySkyReplacement() end
+2026-11-10 17:52:23.204 26456 26903 D NativeDump: SetSkyROI() ready
+2026-11-10 17:52:23.204 26456 26903 D NativeDump: SetSkyTemplate() source buffer ready
+2026-11-10 17:52:23.204 26456 26903 D NativeDump: SetSkyTemplate() size 1364 x 1364, 7441984
+2026-11-10 17:52:23.210 26456 26903 D NativeDump: doApplySkyReplacement() end
+2026-11-10 17:52:53.502 26456 26456 D BottomToolBar: onCurrentPanelChange, panel: PANEL_NONE
+2026-11-10 17:52:54.819 26456 26456 D BottomToolBar: onCurrentPanelChange, panel: PANEL_CUTOUT
+2026-11-10 17:52:54.872 26456 26685 D CutoutPanel: [onContentListUpdatedComplete] 
