@@ -102,3 +102,8 @@ design plan, so no design check.
   method.
 - The run tested the v2 **draft**; save it through the review page if it is to become the approved table.
 - Nothing is committed (run folder, drafts, ledger REQ-005 / REQ-006, knowledge entries).
+
+## Filed (2026-11-10, user decisions)
+On TR261106-0051 (20.19.0 build 202611061839), Creator WILLY_WU, feature name 「Batch_Editing:」 (REQ-008): PHA262026P0057 (ISS-BEA-01, S2), P0058 (ISS-BEA-04,
+S2), P0059 (ISS-BEA-05, S2), P0060 (ISS-BEA-06, S3), P0061 (ISS-BEA-09, S3, PC-Doc). ISS-BEA-02, 03, 07, 08, 10, 11
+are not bugs (user). Record: `ebugs/2026-11-10-r1/filed_bugcodes.json` / `.md`.

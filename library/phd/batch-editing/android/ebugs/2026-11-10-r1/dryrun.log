@@ -1,0 +1,150 @@
+Filing as Creator: WILLY_WU
+  Creator verified — last filed PHA262026P0056 on 2026-11-10
+Format check: PHD-A 20.19.0
+⚠ WARN  Batch-Edit-R1-01  Short Description is 123 chars (budget 120)
+
+5 bug(s) checked — 0 error(s), 1 warning(s)
+Format OK — clear to file.
+
+
+--- [Batch-Edit-R1-01] would POST /api/TSR/Ebug/Create ---
+{
+  "Creator": "WILLY_WU",
+  "ProductID": 216,
+  "ProductName": "PhotoDirector Mobile for Android",
+  "ProductCode": "PHA",
+  "TemplateID": 23298,
+  "TemplateName": "PHD_Android_Generic 20.19",
+  "Version": "20.19.0",
+  "BuildNo": "202611061839",
+  "IsOEM": false,
+  "BugSource": "QA",
+  "ParentTRCode": "TR261106-0051",
+  "ParentSRCode": "",
+  "BugBelong": "RD",
+  "ReproduceOut": 2,
+  "ReproduceTimes": 2,
+  "IsHappened": "Unknown",
+  "IssueType": "",
+  "CustomerIssueID": "",
+  "DueDate": "2026-11-25",
+  "ShortDescription": "PHD-A 20.19.0 - [AIAgent] Batch Edit: AI Enhance does not pause in the background; remaining photos fail as Connection lost",
+  "IssueReproducer": "QA",
+  "Priority": 5,
+  "Severity": 2,
+  "DescribeIssue": "Repro Steps:\n1. Launch the APP\n2. Tap Edit on the Launcher\n3. Tap Batch\n4. Select 12 photos\n5. Tap Next\n6. Tap AI Enhance\n7. Tap Enhance\n8. Tap Start\n9. Wait until 「Enhancing 4 / 12」 shows\n10. Press the Home key\n11. Wait 30 seconds\n12. Open PhotoDirector from Recents\n13. Check the result\n\nResult:\nNot paused: the 7 remaining photos failed in the background; on return 「5 completed, 7 failed」 / Connection lost.\n摘要：背景期間未暫停，剩餘 7 張立即以 Connection lost 失敗（兩次皆重現）。\n{20.19.0_bea01_return_5done_7failed.jpg} {20.19.0_bea01_return2_4done_8failed.jpg} {20.19.0_bea01_log.txt}\n\nExpect Result:\nProcessing pauses while the app is in the background and continues from where it was on return; it finishes normally.\n摘要：App 在背景時暫停處理，回到前景後由中斷處繼續並正常完成。\n\nNote:\nDevice: Samsung Galaxy S23 (SM-S9110) / Android 16\nSpec Link: Batch Edit PM spec (UI UX flow 2.pdf), Server task notes board (server-task-notes)\nRelated: PHA262026P0022 (AI_Removal: false Network Error after backgrounding during Generate)\n<Claude Reviewed>"
+}
+
+--- [Batch-Edit-R1-04] would POST /api/TSR/Ebug/Create ---
+{
+  "Creator": "WILLY_WU",
+  "ProductID": 216,
+  "ProductName": "PhotoDirector Mobile for Android",
+  "ProductCode": "PHA",
+  "TemplateID": 23298,
+  "TemplateName": "PHD_Android_Generic 20.19",
+  "Version": "20.19.0",
+  "BuildNo": "202611061839",
+  "IsOEM": false,
+  "BugSource": "QA",
+  "ParentTRCode": "TR261106-0051",
+  "ParentSRCode": "",
+  "BugBelong": "RD",
+  "ReproduceOut": 2,
+  "ReproduceTimes": 2,
+  "IsHappened": "Unknown",
+  "IssueType": "",
+  "CustomerIssueID": "",
+  "DueDate": "2026-11-25",
+  "ShortDescription": "PHD-A 20.19.0 - [AIAgent] Batch Edit: System Back does not close the AI Enhance confirm dialog 「Enhance 12 photos?」",
+  "IssueReproducer": "QA",
+  "Priority": 5,
+  "Severity": 2,
+  "DescribeIssue": "Repro Steps:\n1. Launch the APP\n2. Tap Edit on the Launcher\n3. Tap Batch\n4. Select 12 photos\n5. Tap Next\n6. Tap AI Enhance\n7. Tap Enhance\n8. Press the system Back key\n9. Press the system Back key\n10. Check the result\n\nResult:\nThe dialog stays open after each Back; only 「Cancel」 closes it. Nothing is processed.\n摘要：按系統返回鍵兩次，確認對話框仍不關閉。\n{20.19.0_bea04_confirm_after_back.jpg}\n\nExpect Result:\nBack acts like 「Cancel」: the dialog closes, the AI Enhance page shows and nothing is processed.\n摘要：返回鍵等同 Cancel：關閉對話框且不開始處理。\n\nNote:\nDevice: Samsung Galaxy S23 (SM-S9110) / Android 16\nSpec Link: Batch Edit PM spec (UI UX flow 2.pdf), AI Enhance Confirm Dialog · default board (confirm-dialog)\n<Claude Reviewed>"
+}
+
+--- [Batch-Edit-R1-05] would POST /api/TSR/Ebug/Create ---
+{
+  "Creator": "WILLY_WU",
+  "ProductID": 216,
+  "ProductName": "PhotoDirector Mobile for Android",
+  "ProductCode": "PHA",
+  "TemplateID": 23298,
+  "TemplateName": "PHD_Android_Generic 20.19",
+  "Version": "20.19.0",
+  "BuildNo": "202611061839",
+  "IsOEM": false,
+  "BugSource": "QA",
+  "ParentTRCode": "TR261106-0051",
+  "ParentSRCode": "",
+  "BugBelong": "RD",
+  "ReproduceOut": 2,
+  "ReproduceTimes": 2,
+  "IsHappened": "Unknown",
+  "IssueType": "",
+  "CustomerIssueID": "",
+  "DueDate": "2026-11-25",
+  "ShortDescription": "PHD-A 20.19.0 - [AIAgent] Batch Edit: System Back does not close the 「Discard changes?」 dialog opened from Home",
+  "IssueReproducer": "QA",
+  "Priority": 5,
+  "Severity": 2,
+  "DescribeIssue": "Repro Steps:\n1. Launch the APP\n2. Tap Edit on the Launcher\n3. Tap Batch\n4. Select 12 photos\n5. Tap Next\n6. Tap Crop & Rotate\n7. Tap Square\n8. Tap ✓\n9. Tap Home\n10. Press the system Back key\n11. Wait 2 seconds\n12. Press the system Back key\n13. Check the result\n\nResult:\nThe 「Discard changes?」 dialog stays open after each Back.\n摘要：按系統返回鍵兩次，放棄變更對話框仍不關閉。\n{20.19.0_bea05_discard_after_back.jpg}\n\nExpect Result:\nBack acts like 「Keep Editing」: the dialog closes and Batch Edit Room stays with the edits.\n摘要：返回鍵等同 Keep Editing：關閉對話框並保留編輯。\n\nNote:\nDevice: Samsung Galaxy S23 (SM-S9110) / Android 16\nSpec Link: Batch Edit PM spec (UI UX flow 2.pdf), Discard Dialog · default board (discard-dialog)\n<Claude Reviewed>"
+}
+
+--- [Batch-Edit-R1-06] would POST /api/TSR/Ebug/Create ---
+{
+  "Creator": "WILLY_WU",
+  "ProductID": 216,
+  "ProductName": "PhotoDirector Mobile for Android",
+  "ProductCode": "PHA",
+  "TemplateID": 23298,
+  "TemplateName": "PHD_Android_Generic 20.19",
+  "Version": "20.19.0",
+  "BuildNo": "202611061839",
+  "IsOEM": false,
+  "BugSource": "QA",
+  "ParentTRCode": "TR261106-0051",
+  "ParentSRCode": "",
+  "BugBelong": "RD",
+  "ReproduceOut": 1,
+  "ReproduceTimes": 1,
+  "IsHappened": "Unknown",
+  "IssueType": "",
+  "CustomerIssueID": "",
+  "DueDate": "2026-11-25",
+  "ShortDescription": "PHD-A 20.19.0 - [AIAgent] Batch Edit: Square crop applied to all saves a 16:9 photo as 1434 x 1435, not square",
+  "IssueReproducer": "QA",
+  "Priority": 5,
+  "Severity": 3,
+  "DescribeIssue": "Repro Steps:\n1. Launch the APP\n2. Tap Edit on the Launcher\n3. Tap Batch\n4. Select 4 photos, the 4th one 2730 x 1535 (16:9)\n5. Tap Next\n6. Tap Crop & Rotate\n7. Tap the 4th thumbnail\n8. Tap Square\n9. Tap All\n10. Tap ✓\n11. Tap Save\n12. Check the saved files' pixel sizes\n\nResult:\nThe room labels the box 「1434 x 1435」 and the saved file is 1434 x 1435; the other three are square.\n摘要：16:9 照片套用 Square 後輸出 1434 x 1435，並非正方形。\n{20.19.0_bea06_square_label_1434x1435.jpg} {20.19.0_bea06_saved_4_photos.jpg}\n\nExpect Result:\nSquare is a 1:1 crop: every saved photo's width equals its height.\n摘要：Square 為 1:1，輸出寬高應相等。\n\nNote:\nDevice: Samsung Galaxy S23 (SM-S9110) / Android 16\nSpec Link: Batch Edit PM spec (UI UX flow 2.pdf), Batch Edit Room · Crop & Rotate · default board (crop-default)\nSpec Link: Batch Edit PM test (Section 3 · 美圖 Apply to all 實測.pdf), 結論 board (meitu-conclusion)\n<Claude Reviewed>"
+}
+
+--- [Batch-Edit-R1-09] would POST /api/TSR/Ebug/Create ---
+{
+  "Creator": "WILLY_WU",
+  "ProductID": 216,
+  "ProductName": "PhotoDirector Mobile for Android",
+  "ProductCode": "PHA",
+  "TemplateID": 23298,
+  "TemplateName": "PHD_Android_Generic 20.19",
+  "Version": "20.19.0",
+  "BuildNo": "202611061839",
+  "IsOEM": false,
+  "BugSource": "QA",
+  "ParentTRCode": "TR261106-0051",
+  "ParentSRCode": "",
+  "BugBelong": "PC-Doc",
+  "ReproduceOut": 2,
+  "ReproduceTimes": 2,
+  "IsHappened": "Unknown",
+  "IssueType": "",
+  "CustomerIssueID": "",
+  "DueDate": "2026-11-25",
+  "ShortDescription": "PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: 21st-photo toast reads 「You can only select 20 photos.」, not the spec copy",
+  "IssueReproducer": "QA",
+  "Priority": 5,
+  "Severity": 3,
+  "DescribeIssue": "Repro Steps:\n1. Launch the APP\n2. Tap Edit on the Launcher\n3. Tap Batch\n4. Select 20 photos\n5. Tap a 21st photo\n6. Check the toast\n\nResult:\nThe 21st photo is not selected and the 20 stay selected, but the toast reads 「You can only select 20 photos.」.\n摘要：第 21 張被擋下，但 toast 文案不同。\n{20.19.0_bea09_toast.jpg} {20.19.0_bea09_picker_20_of_20.jpg}\n\nExpect Result:\nThe toast reads 「Please pick at most 20 photos.」.\n摘要：Toast 應為「Please pick at most 20 photos.」。\n\nNote:\nDevice: Samsung Galaxy S23 (SM-S9110) / Android 16\nSpec Link: Batch Edit PM spec (UI UX flow 2.pdf), Photo Picker · over_max board (picker-over-max)\n<Claude Reviewed>"
+}
+
+Dry run — 5 bug(s) would be created. Nothing was sent.

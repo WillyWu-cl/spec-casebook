@@ -21,7 +21,7 @@ Legend — Class: Functional / UI · Severity: S1 critical and blocking only, S2
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent] Batch Edit: AI Enhance does not pause in the background; remaining photos fail as Connection lost
+PHD-A 20.19.0 - [AIAgent] Batch_Editing: AI Enhance does not pause in the background; remaining photos fail as Connection lost
 ```
 
 **Description:**
@@ -71,7 +71,7 @@ Related: PHA262026P0022 (AI_Removal: false Network Error after backgrounding dur
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: The Crop & Rotate room has no ‹ (back) button at the top left of the top bar
+PHD-A 20.19.0 - [AIAgent][UI] Batch_Editing: The Crop & Rotate room has no ‹ (back) button at the top left of the top bar
 ```
 
 **Description:**
@@ -115,7 +115,7 @@ Spec Link: Batch Edit Design spec, 3_ (Crop & Rotate) frame (Figma page Batch Ed
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent] Batch Edit: Undo in the Adjustment room switches the Light / Color / Details tab
+PHD-A 20.19.0 - [AIAgent] Batch_Editing: Undo in the Adjustment room switches the Light / Color / Details tab
 ```
 
 **Description:**
@@ -166,7 +166,7 @@ Spec Link: Batch Edit PM spec (UI UX flow 2.pdf), Batch Edit Room · Adjustment 
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent] Batch Edit: System Back does not close the AI Enhance confirm dialog 「Enhance 12 photos?」
+PHD-A 20.19.0 - [AIAgent] Batch_Editing: System Back does not close the AI Enhance confirm dialog 「Enhance 12 photos?」
 ```
 
 **Description:**
@@ -212,7 +212,7 @@ Spec Link: Batch Edit PM spec (UI UX flow 2.pdf), AI Enhance Confirm Dialog · d
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent] Batch Edit: System Back does not close the 「Discard changes?」 dialog opened from Home
+PHD-A 20.19.0 - [AIAgent] Batch_Editing: System Back does not close the 「Discard changes?」 dialog opened from Home
 ```
 
 **Description:**
@@ -261,7 +261,7 @@ Spec Link: Batch Edit PM spec (UI UX flow 2.pdf), Discard Dialog · default boar
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent] Batch Edit: Square crop applied to all saves a 16:9 photo as 1434 x 1435, not square
+PHD-A 20.19.0 - [AIAgent] Batch_Editing: Square crop applied to all saves a 16:9 photo as 1434 x 1435, not square
 ```
 
 **Description:**
@@ -310,7 +310,7 @@ Spec Link: Batch Edit PM test (Section 3 · 美圖 Apply to all 實測.pdf), 結
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: The feedback button stays on the dimmed top bar while 「Saving k / 20」 shows
+PHD-A 20.19.0 - [AIAgent][UI] Batch_Editing: The feedback button stays on the dimmed top bar while 「Saving k / 20」 shows
 ```
 
 **Description:**
@@ -354,7 +354,7 @@ Spec Link: Batch Edit PM spec (UI UX flow 2.pdf), Batch Save Page · saving boar
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: The Discard dialog's button reads 「Keep」, not 「Keep Editing」
+PHD-A 20.19.0 - [AIAgent][UI] Batch_Editing: The Discard dialog's button reads 「Keep」, not 「Keep Editing」
 ```
 
 **Description:**
@@ -401,7 +401,7 @@ Spec Link: Batch Edit Design spec, Discard dialog frame (Figma page Batch Edit) 
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: 21st-photo toast reads 「You can only select 20 photos.」, not the spec copy
+PHD-A 20.19.0 - [AIAgent][UI] Batch_Editing: 21st-photo toast reads 「You can only select 20 photos.」, not the spec copy
 ```
 
 **Description:**
@@ -443,7 +443,7 @@ Spec Link: Batch Edit PM spec (UI UX flow 2.pdf), Photo Picker · over_max board
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: The main screen's tool label reads 「Adjustments」, not 「Adjustment」
+PHD-A 20.19.0 - [AIAgent][UI] Batch_Editing: The main screen's tool label reads 「Adjustments」, not 「Adjustment」
 ```
 
 **Description:**
@@ -486,7 +486,7 @@ Spec Link: Batch Edit Design spec, canvas_img_focus frame (Figma page Batch Edit
 **Short Description:**
 
 ```
-PHD-A 20.19.0 - [AIAgent][UI] Batch Edit: Offline Retry Failed toast reads 「No Internet connection」 (capital I)
+PHD-A 20.19.0 - [AIAgent][UI] Batch_Editing: Offline Retry Failed toast reads 「No Internet connection」 (capital I)
 ```
 
 **Description:**
