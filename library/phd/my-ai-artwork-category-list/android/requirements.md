@@ -6,7 +6,7 @@ Read from the PDF text layer and region renders; the PM Figma page (UX-Issues �
 - R-001 [PM:pm-entry-flow; PM:pm-recent] My AI Artwork opens on 「Recent」, the first tab, as today (「預設落在 Recent（第一個 tab）」).
 - R-002 [PM:pm-overview; PM:pm-recent; PM:pm-entry-flow] The tab bar has a ☰ button fixed at its far right (「tab 列最右邊固定 ☰」): it stays at the right edge while the tabs are scrolled and whichever tab is selected.
 - R-003 [PM:pm-recent] The tab bar itself is unchanged: 「Recent」 first, every other tab in alphabetical order.
-- R-004 [PM:pm-recent] Tabs of features with no works are still shown in the tab bar, and such an empty tab shows 「Create More」.
+- R-004 [PM:pm-recent; Req: REQ-006] Tabs of features with no works are still shown in the tab bar, and such an empty tab shows 「Nothing yet.」 and 「Start to Create」; 「Create More」 shows only on a tab with works (the spec's 「有 Create More」 corrected by REQ-006).
 - R-005 [PM:pm-recent; PM:pm-overview] The Recent list, the 「Photo」 / 「Video」 filter and 「Select」 work as today (the 8/E Recent spec, 「26 8E Recent」), i.e. as the app behaves now (Q-1 answered, REQ-003); Recent gets no list / grid switch (not done, manager decision 10/27).
 
 ## All categories sheet
@@ -149,5 +149,6 @@ Read from the PDF text layer and region renders; the PM Figma page (UX-Issues �
 |---|---|
 | REQ-001 | R-001 – R-052 (the whole table) |
 | REQ-003 | R-003, R-004, R-005, R-012, R-020, R-023, R-030, R-031, R-032 |
+| REQ-006 | R-004 (empty-tab button) |
 | REQ-004 | R-014, R-023, R-025 (Figma draft section) |
 | REQ-002 | n/a (platform scope: this Android table only, the iOS draft was removed) |

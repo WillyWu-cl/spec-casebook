@@ -1,0 +1,77 @@
+{
+  "draft": "20261111-135316",
+  "current": [
+    "R1"
+  ],
+  "needs": {
+    "TC-028": [
+      "analytics"
+    ],
+    "TC-029": [
+      "analytics"
+    ],
+    "TC-030": [
+      "analytics"
+    ],
+    "TC-031": [
+      "analytics"
+    ]
+  },
+  "unavailable": {
+    "analytics": "observability: no analytics event log is available on the android build"
+  },
+  "phases": [
+    {
+      "id": "R1",
+      "name": "Full run of the draft (TC-032 is new in this draft)",
+      "round": true,
+      "note": "Needs works saved under at least three features (AI Art and AI Creative Studio among them) and at least one feature with no works. Free-account row (TC-025) and paid row (TC-026) need both account states.",
+      "segments": [
+        {
+          "id": "R1-a",
+          "name": "Tab bar, sheet, choosing and closing, no charge",
+          "cases": [
+            "TC-001",
+            "TC-002",
+            "TC-003",
+            "TC-004",
+            "TC-005",
+            "TC-006",
+            "TC-007",
+            "TC-008",
+            "TC-009",
+            "TC-010",
+            "TC-011",
+            "TC-012",
+            "TC-013",
+            "TC-014",
+            "TC-015",
+            "TC-016",
+            "TC-017",
+            "TC-018",
+            "TC-019",
+            "TC-032",
+            "TC-020",
+            "TC-021",
+            "TC-022",
+            "TC-023",
+            "TC-024",
+            "TC-025",
+            "TC-026",
+            "TC-027"
+          ]
+        },
+        {
+          "id": "R1-b",
+          "name": "Tracking events (parked)",
+          "cases": [
+            "TC-028",
+            "TC-029",
+            "TC-030",
+            "TC-031"
+          ]
+        }
+      ]
+    }
+  ]
+}

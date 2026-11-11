@@ -1,0 +1,56 @@
+﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註,變更,變更原因
+TC-001,入口與分頁列,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」,開啟 My AI Artwork（Launcher › AI Photos › 右上角 My Artwork）,頁面停在第一個分頁「Recent」（peach 色選取）；分頁列最右邊有 ☰ 按鈕,P1,"R-001, R-002",,未變更,
+TC-002,入口與分頁列,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁,"1. 把分頁列往左滑到看見最後一個分頁
+2. 點最後一個分頁",分頁滑動時 ☰ 固定在分頁列最右邊；點完後最後一個分頁被選取，☰ 仍在最右邊,P2,R-002,,未變更,
+TC-003,入口與分頁列,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁,從第一個分頁讀到最後一個（往左滑分頁列）,「Recent」排第一，其他分頁依英文字母順序（A → Z）；沒有作品的功能分頁也在其中,P2,"R-003, R-004",把分頁清單記下來：TC-007 要拿清單來比對,未變更,
+TC-004,入口與分頁列,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；有一個沒有作品的功能（分頁裡是空的）,在分頁列點那個功能的分頁,空分頁開啟並顯示「Nothing yet.」和「Start to Create」；該分頁在分頁列上沒有反灰,P2,R-004,REQ-006：有作品的分頁才會顯示「Create More」,修改,REQ-006：空分頁顯示「Nothing yet.」/「Start to Create」；有作品才顯示「Create More」（R-004）
+TC-005,入口與分頁列,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；Recent 裡有照片也有影片,"1. 點「Video」
+2. 點「Photo」
+3. 點「Select」
+4. 點「Cancel」",和改版前一樣：「Video」只顯示影片、「Photo」只顯示照片；「Select」進入多選、「Cancel」結束多選。Recent 仍是原本的列表，沒有列表／格狀切換,P2,"R-005, R-017",Q-1 已回答（REQ-003）：「同今天」= App 目前的行為,未變更,
+TC-006,All categories 清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁,點分頁列最右邊的 ☰,頁面變暗，上方蓋一個標題為「All categories」、右上角有 ✕ 的清單；第一列是「Recent」,P1,R-010,,未變更,
+TC-007,All categories 清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟；已記下 TC-003 的分頁清單,從上到下讀每一列（捲動清單）,清單內容和分頁列完全一樣：名稱相同、不多不少、順序相同——「Recent」第一，其他依英文字母順序（A → Z）,P1,"R-011, R-012",Q-4 已回答（REQ-003）：只在英文介面檢查順序,未變更,
+TC-008,All categories 清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟,把清單捲到最底,清單能捲到最後一列，最後一列就是分頁列的最後一個分頁；每個功能都有一列,P2,R-013,,未變更,
+TC-009,All categories 清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟；至少有一個沒有作品的功能,看一個有作品和一個沒有作品的功能列,每列只顯示功能名稱，沒有作品數量；沒有作品的那列字色和其他列一樣（沒有反灰）,P2,"R-014, R-015",,未變更,
+TC-010,All categories 清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟,看「Recent」列和下面其他列,只有「Recent」以 peach 色高亮，其他列都沒有,P2,R-016,,未變更,
+TC-011,All categories 清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Art」分頁,點 ☰,「All categories」中「AI Art」列以 peach 色高亮；「Recent」和其他列都沒有,P2,R-016,,未變更,
+TC-012,All categories 清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟,"1. 看一遍清單
+2. 點 ✕ 關閉
+3. 看一遍頁面和分頁",清單和頁面都沒有搜尋欄、收藏（星號）或 Expiring 清單，分頁也沒有顯示數量,P3,"R-014, R-017",,未變更,
+TC-013,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟,點「AI Creative Studio」,清單關閉，My AI Artwork 切到「AI Creative Studio」分頁：分頁列上該分頁被選取（peach 底線）且在畫面內，並顯示它的作品,P1,R-020,,未變更,
+TC-014,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟,點「AI Art」,清單關閉並停在「AI Art」分頁，顯示 AI Art 的作品（包含舊作品），不用滑分頁列,P1,"R-020, R-024",QA 單 PHI262609-0006 的問題,未變更,
+TC-015,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁,"1. 在分頁列點「AI Art」分頁
+2. 記下顯示內容（作品、篩選、捲動在最上方）
+3. 點「Recent」分頁
+4. 點 ☰
+5. 點「AI Art」",從清單選「AI Art」看到的分頁、作品和篩選狀態，和直接點分頁時一樣（「同今天」）,P2,R-020,,未變更,
+TC-016,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟；有一個沒有作品的功能,點那個功能的列,清單關閉，切到該功能的空分頁，顯示「Nothing yet.」和「Start to Create」,P2,"R-021, R-004",REQ-006,修改,REQ-006：空分頁顯示「Nothing yet.」/「Start to Create」；有作品才顯示「Create More」（R-004）
+TC-017,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Art」分頁；已點 ☰，「All categories」已開啟,點「AI Art」（高亮的那列）,清單關閉，頁面仍停在「AI Art」分頁,P3,R-022,,未變更,
+TC-018,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Art」分頁；已點 ☰，「All categories」已開啟,點「Recent」,清單關閉，回到「Recent」，分頁列上「Recent」被選取,P2,R-020,,未變更,
+TC-019,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Creative Studio」分頁,"1. 點「Select」
+2. 選兩個作品
+3. 點 ☰
+4. 點「AI Art」
+5. 點「AI Creative Studio」分頁",步驟 4：清單關閉並停在「AI Art」分頁，選取被取消（沒有作品被選、多選結束：沒有「Cancel」、沒有底部操作列）。步驟 5：那兩個作品已不是選取狀態,P2,R-023,Q-5 已回答（REQ-003）：多選結束,未變更,
+TC-032,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Creative Studio」分頁,"1. 點「Select」
+2. 選兩個作品
+3. 在分頁列點「AI Art」分頁
+4. 點「AI Creative Studio」分頁",步驟 3：頁面切到「AI Art」分頁，選取被取消（沒有作品被選、多選結束：沒有「Cancel」、沒有底部操作列）。步驟 4：那兩個作品已不是選取狀態,P2,R-025,Figma draft 區塊「選取狀態」（REQ-004）,未變更,
+TC-020,選擇分類,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟,點清單最後一列,清單關閉並停在該分頁；分頁列捲到最後，該分頁被選取且在畫面內,P3,R-020,Q-6 已回答（REQ-003）,未變更,
+TC-021,關閉清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Art」分頁；已點 ☰，「All categories」已開啟,點 ✕,清單關閉；頁面仍停在「AI Art」分頁，沒有變化,P2,R-030,Q-3 已回答（REQ-003）,未變更,
+TC-022,關閉清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Art」分頁；已點 ☰，「All categories」已開啟,拖住清單上方的拉桿往下拉,清單關閉；頁面仍停在「AI Art」分頁,P3,R-031,Q-3 已回答（REQ-003）,未變更,
+TC-023,關閉清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Art」分頁；已點 ☰，「All categories」已開啟,點清單上方變暗的頁面,清單關閉；頁面仍停在「AI Art」分頁,P3,R-031,Q-3 已回答（REQ-003）,未變更,
+TC-024,關閉清單,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Art」分頁；已點 ☰，「All categories」已開啟,按系統返回鍵,只有清單關閉；My AI Artwork 仍停在「AI Art」分頁（沒有離開頁面）,P2,R-032,Q-3 已回答（REQ-003）,未變更,
+TC-025,不收費,Android 手機，PhotoDirector 已登入，使用免費（未訂閱）帳號；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 停在「Recent」；已記下 credit 餘額,"1. 點 ☰
+2. 點「AI Art」
+3. 點 ☰
+4. 點 ✕",每個步驟都沒有出現升級或購買提示；credit 餘額不變,P2,R-040,,未變更,
+TC-026,不收費,Android 手機，PhotoDirector 已登入，使用 VIP 帳號；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 停在「Recent」；已記下 credit 餘額,"1. 點 ☰
+2. 點「AI Art」",沒有出現升級或購買提示；credit 餘額不變,P2,R-040,,未變更,
+TC-027,從功能進入,Android 手機，PhotoDirector 已登入；有一個帶 History 按鈕（右下有時鐘的紙張圖示）且底下有作品的功能,"1. 開啟該功能
+2. 點它的 History 按鈕
+3. 點 ☰",My AI Artwork 開在該功能的分頁；「All categories」中該功能那列以 peach 色高亮,P3,R-060,KP-026（團隊規則）,未變更,
+TC-028,埋點事件,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已開啟 analytics 事件紀錄,點 ☰,送出「Artwork_FeatureList_Appear」，from_tab = Recent,P3,R-050,等有事件紀錄可看時再執行（先擱置）,未變更,
+TC-029,埋點事件,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「AI Art」分頁；已開啟 analytics 事件紀錄,點 ☰,送出「Artwork_FeatureList_Appear」，from_tab = AI Art,P3,R-050,等有事件紀錄可看時再執行（先擱置）,未變更,
+TC-030,埋點事件,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已點 ☰，「All categories」已開啟；已開啟 analytics 事件紀錄,點「AI Art」,送出「Artwork_Category_Select」，category = AI Art、source = sheet,P3,R-051,等有事件紀錄可看時再執行（先擱置）,未變更,
+TC-031,埋點事件,Android 手機，PhotoDirector 已登入；至少三個功能底下有作品，其中包含「AI Art」和「AI Creative Studio」；My AI Artwork（Launcher › AI Photos › 右上角 My Artwork） 已開啟並停在「Recent」分頁；已開啟 analytics 事件紀錄,在分頁列點「AI Art」分頁,送出「Artwork_Category_Select」，category = AI Art、source = tab,P3,R-052,等有事件紀錄可看時再執行（先擱置）,未變更,

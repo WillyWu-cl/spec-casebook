@@ -1,0 +1,151 @@
+{
+  "spec_folder": "specs/2026-11-11",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-all-categories@1120,3373",
+      "board": "pm-all-categories",
+      "x": 1120,
+      "y": 3373,
+      "low": false,
+      "text": "• 標題「All categories」  [D0-05] / • 項目跟 tab 列一模一樣；Recent 第一個， / 其他英文字母序  [D1-27][D1-27b][D1-17] / • 只顯示功能名稱，這版不顯示作品數量 / （server 沒有數量 API）；沒作品的也不灰 / 字  [D1-28][D2-04][D1-27] / • 目前所在的 tab 用 peach 色高亮  [D1-17] / • 點任一列（含沒作品的功能）→ 關閉並切 / 到該 tab；多選中點 → 切過去並取消選取",
+      "trace": "R-010, R-011, R-012, R-014, R-015, R-016, R-020, R-021, R-022, R-023, Q-4",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-draft@1931,360",
+      "board": "pm-draft",
+      "x": 1931,
+      "y": 360,
+      "low": false,
+      "text": "備選方案：All categories 顯示作品數量 / 狀態：未採用 — RD 10/28 回覆 server API 沒有提供數量，app 是一頁一頁撈到沒資料為止。server 支援一次回傳各功能作品數後可啟用。 [D2-04][D1-28]",
+      "trace": "R-014",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-draft@962,530",
+      "board": "pm-draft",
+      "x": 962,
+      "y": 530,
+      "low": false,
+      "text": "• Photo features/Video feature/Recent 的選取狀態都應有 Stroke + 右上角數字 / • error 的 results 也要可以多選/刪除",
+      "trace": "older: the 8/E multi-select spec (selection stroke and number, failed results selectable); unchanged by 11/E, held as today by R-005 (Q-1 answered)",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-draft@2341,614",
+      "board": "pm-draft",
+      "x": 2341,
+      "y": 614,
+      "low": false,
+      "text": "• 每列「名稱 (x)」，沒作品顯示「(0)」、不灰字；超過 999 顯示「(999+)」；Recent 不帶數量 [D1-28][D1-28c][D1-27b] / • x＝點進去看得到幾個卡片：生成中、失敗都算，一包算 1 [D1-28a] / • Photo / Video 子 tab 加總成一個數字；影片只算 AI Creations，Edits 不算 [D1-28b] / • 每次點開 ≡ 都重新拿；載入中先顯示名稱、數字晚點出現；拿不到只顯示名稱，不顯示 (0) [D1-28d] / • 點「(0)」的功能照樣切到該 tab，看到空狀態和 Create More [D1-28e] / • 前提：server 提供一次回傳各功能作品數的 API（今天沒有） [D2-04]",
+      "trace": "older: the count option is marked 「未採用」 (RD 10/28, no count API); R-014 holds",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-draft@1580,1960",
+      "board": "pm-draft",
+      "x": 1580,
+      "y": 1960,
+      "low": false,
+      "text": "[background] Jau request, 全產品調整 / • Photo and Video tab 區分 result 性質 / • Layout: 應有 result 生成日期, feature icon (new), feature name, expire date 等基本資訊; Photo/ Video 都改成長條狀, 左側 1:1 result, 右側基本資訊 / • Video features: 應顯示影片 duration; I2V & V2V 不帶 custom 的 prompt; prompt 在 result page 呈現即可; I2V 不帶 Template name / • empty state: same as feature categories / • Call server 資料的上限: Photo: 一次問最新的 25 張, user 向下滑到底部 (25 張已滑完) 才會再 call 下一筆; 上限 100 筆; Video: local 有記, 上限 100 筆 / • 倘若用戶 delete creations, 下次 call server 時須回補刪除的數量 (AP 問一筆, 再看用戶刪多少決定補多少); 若刪掉 ≥25 creations, 只補 25 個 (一筆的數量) / • 用戶有 ≥100 個 creations, 滑到底 call 不出資料時, UI 上有字串告知: You've reached the end. Showing your 100 most recent creations. / 用戶只有 <100 creations 時, 滑到底部沒有字串 / • AI Headshot (V2) 的結果是一包的, 在 Recent 也應以一包呈現: thumbnail 只 show 第一張; click → show 20/40/60 張 results",
+      "trace": "older: the 8/E Recent spec (「26 8E Recent」); unchanged by 11/E, held as today by R-005 (Q-1 answered)",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-draft@1500,3290",
+      "board": "pm-draft",
+      "x": 1500,
+      "y": 3290,
+      "low": false,
+      "text": "選取狀態: 不論 Video feature/ Photo feature/ Recent 都應有 stroke + 數字標列右上角 / Recent/ AI Group Shot 都有 Photo/Video tab, 多選的行為比照現行 → 倘若用戶多 select 時切換 tab/category, 會帶他到目的並取消選取",
+      "trace": "R-023, R-025",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-entry-flow@160,879",
+      "board": "pm-entry-flow",
+      "x": 160,
+      "y": 879,
+      "low": false,
+      "text": "Entry: My AI Artwork（Recent）→ ☰ → All categories → 分類 tab / 預設落在 Recent（第一個 tab）；點 tab / 列最右 ☰  [D0-07][D1-10]",
+      "trace": "R-001, R-002, R-010, R-020, R-070",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-entry-flow@670,929",
+      "board": "pm-entry-flow",
+      "x": 670,
+      "y": 929,
+      "low": false,
+      "text": "點「AI Creative Studio」→ 關閉清單並切 / 到該 tab  [D1-11]",
+      "trace": "R-020, R-071",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-entry-flow@1180,929",
+      "board": "pm-entry-flow",
+      "x": 1180,
+      "y": 929,
+      "low": false,
+      "text": "切到該分類的 tab（同 今天；截圖為今天的 / 多選狀態）  [D1-12]",
+      "trace": "R-020, Q-6",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-entry-flow@160,1933",
+      "board": "pm-entry-flow",
+      "x": 160,
+      "y": 1933,
+      "low": false,
+      "text": "— 藍線＝去程（點擊觸發）",
+      "trace": "label: arrow legend (blue line = forward, tap)",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-header@100,309",
+      "board": "pm-header",
+      "x": 100,
+      "y": 309,
+      "low": false,
+      "text": "My AI Artwork：☰ All categories（11/E · 帳本 2026-10-28） / 與今天 My AI Artwork 的差異：今天 20 幾個 tab 只能橫滑找；改成點 ☰ 就看得到所有功能，點一下直接跳過去。（建議句，待 PM 確認）  [D0-04]",
+      "trace": "R-013, Q-1, Q-7",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-overview@160,555",
+      "board": "pm-overview",
+      "x": 160,
+      "y": 555,
+      "low": false,
+      "text": "• 為何：QA 單 PHI262609-0006 — tab 太多，舊作品（例如 AI Art）很難找；已排進 11/E  [D0-01][D0-02] / • 做什麼：tab 列最右加 ☰，打開 All categories，列出所有功能，點了直接跳過去  [D0-09][D1-10] / • 這版不顯示作品數量：server API 沒有提供數量（RD 10/28 回覆）  [D1-28][D2-04] / • 不做（主管 10/27 決定）：Expiring、Recent 列表／格狀切換、空 tab 反灰、tab 加數量、搜尋、收藏  [D0-08] / • 平台：iOS + Android 同時；純 UX，不收費  [D0-06][D3-01] / • Event：Artwork_FeatureList_Appear（from_tab）、Artwork_Category_Select（category、source=sheet / tab）  [D0-03]",
+      "trace": "R-002, R-005, R-010, R-013, R-014, R-017, R-024, R-040, R-041, R-050, R-051, R-052, R-004",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-recent@160,2336",
+      "board": "pm-recent",
+      "x": 160,
+      "y": 2336,
+      "low": false,
+      "text": "Recent（☰ 入口）",
+      "trace": "label: board title",
+      "carried_from": "20261111-120017"
+    },
+    {
+      "id": "pm-recent@1120,2373",
+      "board": "pm-recent",
+      "x": 1120,
+      "y": 2373,
+      "low": false,
+      "text": "• tab 列最右邊固定 ☰；點了開 All / • tab 列本身同今天：Recent 第一個、其他 / 英文字母序；空 tab 照樣顯示、有 Create / • Recent 列表、Photo / Video、Select 都 / 同今天（26 8E Recent）  [D0-08][D0-07]",
+      "trace": "R-002, R-003, R-004, R-005, R-010, Q-1",
+      "carried_from": "20261111-120017"
+    }
+  ]
+}

@@ -2,9 +2,9 @@
   "feature": "phd/my-ai-artwork-category-list",
   "platform": "android",
   "title": "My AI Artwork: All categories",
-  "version": 2,
-  "approved_at": "2026-11-11T04:34:58.276Z",
-  "draft": "20261111-120017",
+  "version": 3,
+  "approved_at": "2026-11-11T05:56:20.142Z",
+  "draft": "20261111-135316",
   "spec_folder": "specs/2026-11-11",
   "spec_files": [
     {
@@ -30,6 +30,15 @@
       "approved_at": "2026-11-11T04:34:58.276Z",
       "spec_set_sha256": "76f24dcaad0f5a8527ec6f6094358e038be1c501ff10b618eabfac7f8c70584c",
       "draft": "20261111-120017",
+      "cases": 32,
+      "csv": "history/v2.csv",
+      "requirements": "history/v2-requirements.md"
+    },
+    {
+      "version": 3,
+      "approved_at": "2026-11-11T05:56:20.142Z",
+      "spec_set_sha256": "76f24dcaad0f5a8527ec6f6094358e038be1c501ff10b618eabfac7f8c70584c",
+      "draft": "20261111-135316",
       "cases": 32,
       "csv": "cases.csv",
       "requirements": "requirements.md"
