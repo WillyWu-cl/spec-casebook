@@ -316,6 +316,18 @@ account. No switching accounts between reads.
 | `figma-design` | Design spec | `qa-dm@cyberlink.com` | Dev seat: enough MCP calls for the inventory |
 | `figma-pm` | PM and MX specs | `qa1@cyberlink.com` | `qa-dm` has only a View seat in PM Workspace, which allows very few MCP calls |
 
+**REST token for the Design source read (2026-11-11).** The figma skill reads the Design boards through the Figma REST
+API plus one `use_figma` call (`scripts/figma-rest.ts`), which needs qa-dm's personal access token on each computer
+that reads: sign in to figma.com as `qa-dm@cyberlink.com` › Settings › Security › Personal access tokens › create one
+with **File content: Read-only**, then store it in the macOS keychain (it asks for the token without showing it):
+
+```bash
+security add-generic-password -U -a "$USER" -s com.cyberlink.figma-retrieval -w
+```
+
+(`FIGMA_TOKEN` in the environment or `~/.casebook/figma-token`, `chmod 600`, work too.) Never put it in the repo. Without
+it the source read uses the use_figma-only route.
+
 **Claude Code.** Both servers are defined in the repo's `.mcp.json`, so no config is needed; only the approval and
 the two sign-ins. These are done once per machine, in the terminal version of Claude Code (the tested route, run
 from the desktop app's Terminal panel on 2026-10-29). The desktop app's agent can start it for you: ask it to "sign in the Figma

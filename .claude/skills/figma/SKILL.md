@@ -9,7 +9,7 @@ Two branches over one read of the Design file. Read the reference the task needs
 
 | Branch | Read | For | Main command |
 |---|---|---|---|
-| **Source** | `references/source.md` | Reading the Design boards (every node, styling, arrows, board images) once; later reads touch only changed boards | `scripts/figma-source.ts` |
+| **Source** | `references/source.md` | Reading the Design boards (every node, styling, arrows, board images) once; later reads touch only changed boards | `scripts/figma-rest.ts` (default: REST + one `use_figma` call); `scripts/figma-source.ts` (use_figma only, on request) |
 | **Conformance** | `references/conformance.md` | The design check: route, capture, check, two review passes, decisions, eBugs, recheck on the next build | `scripts/design.ts` (`status` names the next step) |
 
 Conformance makes **no Figma call of its own**: every Figma value it compares comes from the source read.
@@ -23,7 +23,7 @@ what the other already has:
 |---|---|---|
 | Design link and page | `specs/<set>/extracted/figma-frames.json` › `files.design` | yes |
 | Board images (1 px = 1 pt, 256 colours) | `specs/<set>/extracted/figma/<board>.png` + `shots.json`: the casebook's coverage page and the source read use the same file | yes |
-| Source read | `specs/<set>/extracted/figma-source/design/responses/`, `hashes.json`, `scope.json` | yes |
+| Source read | `specs/<set>/extracted/figma-source/design/`: `source.json` (which route read last), `hashes.json`, `scope.json`, and `rest/boards/*.gz` + `rest/extras.json` (REST route) or `responses/` (use_figma route) | yes |
 | Expanded Figma data and crops | `…/figma-source/design/out/` | no: rebuilt from the committed files, by `design.ts` itself after a pull |
 | Design check plan | `<platform>/design/plan.json` | yes |
 | Captures, results, verdicts | `<platform>/runs/<run>/design/` (a 750 px copy of each capture included) | yes |
@@ -64,8 +64,12 @@ in the inbox (spec-casebook `run.md`, *Knowledge during a run*).
 2. Follow AGENTS.md › *Figma access*: `whoami` on `figma-design` first, never switch accounts by hand, never use a
    claude.ai Figma connector. Without the sign-in, say so and stop the source branch; conformance still runs on the
    committed read.
-3. Quota is small: plan calls first, chunk calls and screenshots only for boards whose fingerprint changed and whose
-   shared image is not current, and stop (do not retry in a loop) when the quota runs out.
+3. Quota is small. The default route (REST + one `use_figma` call) costs 2–3 REST calls and 1 MCP call per read; on
+   the use_figma-only route (on request), plan calls first, chunk calls and screenshots only for boards whose
+   fingerprint changed and whose shared image is not current. Stop (do not retry in a loop) when a quota runs out.
+4. The REST route needs qa-dm's personal access token on this computer (README Setup 5; `FIGMA_TOKEN`, the keychain
+   item `com.cyberlink.figma-retrieval`, or `~/.casebook/figma-token`). Without it, say so and use the use_figma-only
+   route. Never print the token or put it in a file in the repo.
 
 ## Standard or full check
 

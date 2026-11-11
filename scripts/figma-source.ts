@@ -309,6 +309,15 @@ function scope(boards: Map<string, any>) {
 // ---- merge --------------------------------------------------------------------------------------------------------------
 function merge() {
   const { boards, chunks } = plans();
+  // two routes (references/source.md): when the newest read is the REST one (source.json), out/ comes from its
+  // rest/boards and an older use_figma read must not replace it; --mcp merges it anyway. A use_figma read newer than
+  // the REST one takes over, and source.json then names this route.
+  const srcJson = join(dir, 'source.json'), restRead = existsSync(srcJson) && read(srcJson).route === 'rest' ? read(srcJson).read_at : null;
+  const newestRead = [...boards.values()].reduce((m: string, b: any) => String(b.checked_at ?? b.read_at) > m ? String(b.checked_at ?? b.read_at) : m, '');
+  if (restRead && newestRead < restRead && !process.argv.includes('--mcp')) {
+    console.error(`The newest Design read is the REST route (${restRead}, source.json); out/ comes from rest/boards (design.ts unpacks it). These use_figma responses are older (${newestRead || 'none'}): merge them anyway with --mcp.`);
+    process.exit(2);
+  }
   scope(boards);
   const got = new Map<string, any[]>();
   for (const { f, r } of chunkResponses()) {
@@ -458,6 +467,8 @@ function merge() {
   for (const i of summary.incomplete) if (boards.get(i.board)?.box) i.box = boards.get(i.board).box;
   writeJson(join(outDir, 'summary.json'), summary);
   writeJson(hashesPath, hashes);
+  // a feature that only ever had use_figma reads keeps no source.json (no file appears on a pull's rebuild)
+  if (existsSync(srcJson)) writeJson(srcJson, { route: 'mcp', read_at: newestRead, boards: summary.boards.length, calls: summary.calls });
   console.log(`${summary.boards.length} board(s) merged (${summary.boards.reduce((s: number, b: any) => s + b.nodes, 0)} nodes, ${screens.length} screens, ${arrows.length} arrows) from ${summary.calls.plan} plan and ${summary.calls.chunk} chunk call(s); out: ${rel(outDir)}`);
   for (const i of summary.incomplete) console.log(`INCOMPLETE ${i.board} ${i.name}: ${i.missing.length ? `missing ${i.missing.join(', ')}` : ''}${i.changed_since_plan.length ? ` changed since the plan (${i.changed_since_plan.join(', ')}): plan this board again` : ''}`);
   // a Design board the casebook inventories but no plan covers was never read (REQ-080): name it, so a design check
