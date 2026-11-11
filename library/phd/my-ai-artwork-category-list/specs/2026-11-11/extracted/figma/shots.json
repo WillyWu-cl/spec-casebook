@@ -58,5 +58,12 @@
       1560,
       1120
     ]
+  },
+  "pm-draft.png": {
+    "board": "14452:6990",
+    "group": null,
+    "hash": null,
+    "captured_at": "2026-11-11T04:00:09+00:00",
+    "note": "figma-pm get_screenshot of section 「draft」 (1:1, 40-pt margin cut)"
   }
 }

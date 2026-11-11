@@ -1,6 +1,6 @@
 # My AI Artwork: All categories — requirements (android)
 Spec: my ai artwork category list.pdf (spec set 2026-11-11; PM page 「My Artwork: Artwork category list add filter Demo + Spec」, 11/E, ledger 2026-10-28)
-Read PDF-only from the text layer and the region renders (figma-pending.json: the PDF carries no Figma link). The page is the only spec file: no separate Design or MX file was supplied; its mockups are iPhone frames and its strings are used as the expected UI text.
+Read from the PDF text layer and region renders; the PM Figma page (UX-Issues 「26 11E UIUX Revamp」, REQ-004) was compared on 2026-11-11: its spec section 14567:1713 is the PDF (same pixels), and its 「draft」 section 14452:6990 is read as board pm-draft. The Figma control inventory is still owed (figma-pending.json: use_figma refused, Full seat). No separate Design or MX file was supplied; the mockups are iPhone frames and their strings are used as the expected UI text.
 
 ## Entry and tab bar
 - R-001 [PM:pm-entry-flow; PM:pm-recent] My AI Artwork opens on 「Recent」, the first tab, as today (「預設落在 Recent（第一個 tab）」).
@@ -14,7 +14,7 @@ Read PDF-only from the text layer and the region renders (figma-pending.json: th
 - R-011 [PM:pm-all-categories] The sheet's rows are exactly the tab bar's tabs (「項目跟 tab 列一模一樣」): the same tabs with the same names, none missing and none extra.
 - R-012 [PM:pm-all-categories] The rows are in the tab bar's order: 「Recent」 first, the others in alphabetical order.
 - R-013 [PM:pm-header; PM:pm-overview] The sheet lists every feature (today 「20 幾個 tab」, more than 20), so each one can be reached from it without scrolling the tab bar; the list scrolls down to the last feature.
-- R-014 [PM:pm-all-categories; PM:pm-overview] Rows show the feature name only: no work count this version (the server API gives no count, RD 10/28), and no count on the tabs either.
+- R-014 [PM:pm-all-categories; PM:pm-overview; PM:pm-draft] Rows show the feature name only: no work count this version (the server API gives no count, RD 10/28), and no count on the tabs either.
 - R-015 [PM:pm-all-categories; PM:pm-overview] Rows of features with no works look like every other row (「沒作品的也不灰字」): not greyed.
 - R-016 [PM:pm-all-categories] The row of the current tab is highlighted in peach; the other rows are not.
 - R-017 [PM:pm-overview] Not in this version (manager decision 10/27): no Expiring list, no search, no favourites in My AI Artwork or the sheet.
@@ -23,7 +23,8 @@ Read PDF-only from the text layer and the region renders (figma-pending.json: th
 - R-020 [PM:pm-entry-flow; PM:pm-all-categories; PM:pm-overview] Tapping a row closes the sheet and switches My AI Artwork to that tab, the same as tapping that tab today (「切到該分類的 tab（同 今天）」): the tab is selected in the tab bar and its works are shown; a tab chosen from the sheet is scrolled into view in the tab bar (Q-6 answered, REQ-003).
 - R-021 [PM:pm-all-categories] Tapping the row of a feature with no works also closes the sheet and switches to that feature's empty tab.
 - R-022 [PM:pm-all-categories] Tapping the current tab's row (「點任一列」) closes the sheet and stays on that tab.
-- R-023 [PM:pm-all-categories] Tapping a row while works are selected in multi-select (「Select」) switches to that tab and cancels the selection (「多選中點 → 切過去並取消選取」): multi-select ends (Q-5 answered, REQ-003).
+- R-023 [PM:pm-all-categories; PM:pm-draft] Tapping a row while works are selected in multi-select (「Select」) switches to that tab and cancels the selection (「多選中點 → 切過去並取消選取」): multi-select ends (Q-5 answered, REQ-003).
+- R-025 [PM:pm-draft] Switching to another tab in the tab bar while works are selected in multi-select also goes to that tab and cancels the selection (draft 「選取狀態」: 「倘若用戶多 select 時切換 tab/category, 會帶他到目的並取消選取」, 「多選的行為比照現行」).
 - R-024 [PM:pm-overview] The sheet takes the user straight to old works that are hard to find in the tab bar, e.g. 「AI Art」 (QA ticket PHI262609-0006).
 
 ## Closing the sheet
@@ -51,7 +52,7 @@ Read PDF-only from the text layer and the region renders (figma-pending.json: th
 
 ## Answered questions (2026-11-11, Cases page)
 - Q-1 — 同今天意思是照目前當下的狀態 → 「as today」 is the current behaviour of the app; the ledger and the 8/E Recent spec are not needed. REQ-003; R-003, R-004, R-005.
-- Q-2 — 先當 PDF 是完整的 → the PDF is taken as complete; the Figma reads stay owed (figma-pending.json) until a link arrives. REQ-003.
+- Q-2 — 先當 PDF 是完整的 → the PDF is taken as complete. The Figma link came later (REQ-004): its spec section is the same as the PDF; only the control inventory is still owed. REQ-003, REQ-004.
 - Q-3 — 預期都會關閉清單 → ✕, the grabber, the dimmed page and system Back each close the sheet, tab unchanged. REQ-003; R-030, R-031, R-032.
 - Q-4 — 只在英文檢查 → the alphabetical order is checked in the English UI only. REQ-003; R-003, R-012.
 - Q-5 — 結束多選 → choosing a category during multi-select ends multi-select. REQ-003; R-023.
@@ -99,6 +100,8 @@ Read PDF-only from the text layer and the region renders (figma-pending.json: th
 | R-020 × row chosen | Recent | TC-018 |
 | R-020 × row chosen | last row | TC-020 |
 | R-021 × row chosen | feature with no works | TC-016 |
+| R-023 × way of switching | a row of the sheet | TC-019 |
+| R-025 × way of switching | a tab of the tab bar | TC-032 |
 | R-050 × from_tab | Recent | TC-028 |
 | R-050 × from_tab | a feature tab | TC-029 |
 
@@ -146,4 +149,5 @@ Read PDF-only from the text layer and the region renders (figma-pending.json: th
 |---|---|
 | REQ-001 | R-001 – R-052 (the whole table) |
 | REQ-003 | R-003, R-004, R-005, R-012, R-020, R-023, R-030, R-031, R-032 |
+| REQ-004 | R-014, R-023, R-025 (Figma draft section) |
 | REQ-002 | n/a (platform scope: this Android table only, the iOS draft was removed) |
