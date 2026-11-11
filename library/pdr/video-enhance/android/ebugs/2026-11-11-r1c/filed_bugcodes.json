@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "creator": "ETHAN_HSU",
+    "creators_read_back": [
+      "ETHAN_HSU"
+    ],
+    "token_owner": "",
+    "method": "api",
+    "tr": "TR261109-0041",
+    "server": "Stage",
+    "version": "16.9.0",
+    "build": "2611091",
+    "filed_on": "2026-11-11"
+  },
+  "bugs": [
+    {
+      "bugcode": "DRA262611P0101",
+      "short": "PDR-A 16.9.0 - [AIAgent] AI Video Enhance: 8K video is converted to Full HD; panel shows a black Preview, 「0fps · 1080p」",
+      "status": "BugNeedReview",
+      "severity": 2,
+      "priority": 5,
+      "belong": "RD",
+      "creator": "ETHAN_HSU",
+      "created": "2026-11-11T12:45:39",
+      "build": "2611091",
+      "tr": "TR261109-0041",
+      "product": "PowerDirector Mobile for Android",
+      "template": "Generic v16.9",
+      "assignee": null,
+      "handler": "ALBERT_CHANG, BALLY_HSU, MIKE_LU, NICKLOUS_CHEN, SAM_CHANG, WILLY_WU",
+      "version": "16.9.0",
+      "bug_source": "QA",
+      "reproduce": "1/1",
+      "happened": "Unknown",
+      "desc": "Repro Steps:\n1. Launch the APP\n2. Tap 「Video Enhance」 on the Launcher\n3. Tap a 2 s 8K (7680 × 4320) HEVC 30 fps video in Add Media\n4. Tap 「OK」 on 「Converting for Better Performance」\n5. Wait for the panel\n6. Check the result\n\nResult:\nAfter a Full HD conversion the panel shows a black Preview, 「0fps · 1080p」, no fps chips and the 1080p rate.\n摘要：8K 影片先轉成 Full HD，面板預覽全黑、顯示「0fps · 1080p」，fps 不可選，以 1080p 計價。\n{16.9.0_vea34_8k_converting_dialog.jpg} {16.9.0_vea34_8k_panel_black.jpg} {16.9.0_vea34_4k_panel_ok.jpg} {16.9.0_vea34_log.txt}\n\nExpect Result:\nThe panel opens like for a 4K video: Preview shows it, badge 「30fps · 4320p」, fps chips enabled, 「4K」 selected.\n摘要：8K 影片應如 4K 影片正常開啟：預覽正常、標示「30fps · 4320p」、可選 fps，解析度預設 4K。\n\nNote:\nDevice: Samsung SM-A5360 (Galaxy A53 5G) / Android 15\nSpec Link: AI Video Enhance Design spec (Video Enhance, section AI Video Enhance_26.09_v2), AI Video Enhance (settings) board (預設值規則: Resolution takes the highest option when the source is above it) -\nhttps://www.figma.com/design/HceGLJVaxnKsv7gXSXzKWh/Video-Enhance?node-id=3300-32003\n<Claude Reviewed>",
+      "attachments": [
+        "16.9.0_vea34_8k_converting_dialog.jpg",
+        "16.9.0_vea34_8k_panel_black.jpg",
+        "16.9.0_vea34_4k_panel_ok.jpg",
+        "16.9.0_vea34_log.txt"
+      ],
+      "key": "Video-Enhance-R1c-01",
+      "iss": "ISS-VEA-34",
+      "feature": "Video-Enhance-R1c",
+      "problem_type": "Functional"
+    }
+  ],
+  "dispositions": {}
+}

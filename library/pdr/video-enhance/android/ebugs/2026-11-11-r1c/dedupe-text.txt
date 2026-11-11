@@ -1,0 +1,24 @@
+== 8K
+DRA262611P0072    Cancelled       2    RD         2611091    ETHAN_HSU       PDR-A 16.9.0 - [AIAgent] AI Video Enhance: 1440p, 4K and 8K videos open the panel instead of 
+DRA262610P0263    Close           1    RD         2610221    JAMIE_YEH       PDR-A 16.7.4 - [Pixel 10] Import: Failed to Convert 8K Video When Importing It for the First 
+DRA262610P0110    Close           1    RD         2610141    SAM_CHANG       PDR-A 16.7.3 - [S25/17] Timeline (Export): An error dialog appears when exporting a 1080P vid
+DRA262610P0051    Close           2    RD         2610082    SAM_CHANG       PDR-A 16.7.3 - [S25/17][8K Video] Timeline: Decode error occurs when seeking the timeline and
+DRA262605-0005    Won't Fix       2    RD         2605041    SAM_CHANG       PDR-A 16.4.0 - Timeline: Use Original button missing for 8K video in performance dialog
+DRA262604-0087    Close           2    RD         2604221    SAM_CHANG       PDR-A 16.4.0 - [S25] Media Picker: Cannot import 8K video
+DRA262603-0149    Close           2    RD         2603182    SAM_CHANG       PDR-A 16.2.0 - Media Picker (Trim): Preview fails for 8K video with decoder error in trim mod
+DRA231216-0026    NewCreated      2    PM         1216140    BALLY_HSU       PDR-A 12.1.0 - [UX] Produce (Export): Does not support 8K output
+DRA231216-0010    Propose Won't   1    RD         1216100    HAUSEN_LIN      PDR-A 12.0.0 - Independent Entry: Crash after import a captured 8K video
+DRA231215-0230    NewCreated      2    RD         1215301    HAUSEN_LIN      PDR-A 12.0.0 - Edit: Converting dialog doesn't pop up after import a 8K video
+DRA231215-0229    Close           1    RD         1215301    HAUSEN_LIN      PDR-A 12.0.0 - Independent Entry: Crash after import a 8K video
+DRA211047-0023    Assigned        2    RD         104793     NICKLOUS_CHEN1  PDR-A 9.7.0 - Timeline: AP crash one time after adding 8K clip then scroll the timeline
+DRA211047-0022    Assigned        2    RD         104793     NICKLOUS_CHEN1  PDR-A 9.7.0 - Timeline: Cannot generate thumbnail on timeline for 8K video clip without conve
+DRA211047-0019    Assigned        2    RD         104793     NICKLOUS_CHEN1  PDR-A 9.7.0 - Video(Capture): AP crash one time after recording 8K video
+DRA211047-0018    Assigned        2    RD         104793     NICKLOUS_CHEN1  PDR-A 9.7.0 - Library: 8K video clip become not supported ("The media clip's format is not su
+== Converting for Better Performance
+DRA262610-0023    Close           2    RD         2610081    SAM_CHANG       PDR-A 16.8.0 - Timeline: "Converting for Better Performance" dialog does not appear when addi
+DRA221155-0005    Assigned        2    RD         115500     AMBER_MAI       PDR-A 10.2.0 - [MUI]Add Media: Unable to show complete string "Converting for Better Performa
+
+2 bug(s)
+== Enhance 0fps
+
+0 bug(s)

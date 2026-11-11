@@ -1,0 +1,62 @@
+Filing as Creator: ETHAN_HSU
+  Creator verified — last filed DRA262611P0085 on 2026-11-11
+Format check: PDR-A 16.9.0
+⚠ WARN  Video-Enhance-R1b-15  Short Description is 122 chars (budget 120)
+
+15 bug(s) checked — 0 error(s), 1 warning(s)
+Format OK — clear to file.
+
+[Video-Enhance-R1b-01] created DRA262611P0086
+  DRA262611P0086  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+[Video-Enhance-R1b-02] created DRA262611P0087
+[Video-Enhance-R1b-04] created DRA262611P0088
+[Video-Enhance-R1b-05] created DRA262611P0089
+[Video-Enhance-R1b-06] created DRA262611P0090
+[Video-Enhance-R1b-07] created DRA262611P0091
+[Video-Enhance-R1b-08] created DRA262611P0092
+[Video-Enhance-R1b-09] created DRA262611P0093
+[Video-Enhance-R1b-11] created DRA262611P0094
+[Video-Enhance-R1b-12] created DRA262611P0095
+[Video-Enhance-R1b-13] created DRA262611P0096
+[Video-Enhance-R1b-14] created DRA262611P0097
+[Video-Enhance-R1b-15] created DRA262611P0098
+[Video-Enhance-R1b-16] created DRA262611P0099
+[Video-Enhance-R1b-17] created DRA262611P0100
+
+created 15 · skipped 0 · failed 0
+
+Read-back (Status: OK is not proof — Version has been seen not to persist):
+  DRA262611P0086  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0087  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0088  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0089  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0090  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0091  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0092  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0093  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0094  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0095  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0096  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0097  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0098  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0099  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0100  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+
+Required fields the API cannot set — fill them on each ticket's web edit form:
+  DRA262611P0086  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0087  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0088  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0089  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0090  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0091  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0092  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0093  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0094  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0095  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0096  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0097  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0098  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0099  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0100  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+
+Attachments are NOT part of create — upload them with `ecl_if3.py upload <BugCode> <files…>` (SKILL.md → IF3 attachments over the API).

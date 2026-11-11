@@ -1,0 +1,5 @@
+library/pdr/video-enhance/android/ebugs/2026-11-11-r1c/20261111_eBug_drafts_Video-Enhance-R1c_16.9.0.md
+  1 entries · 4 images · 1 Spec Link lines · 0/0 ▲ rows · max ShortDesc 132
+FAILED:
+  library/pdr/video-enhance/android/ebugs/2026-11-11-r1c/20261111_eBug_drafts_Video-Enhance-R1c_16.9.0.md e1 (ISS-VEA-34): links 'AI Video Enhance Design spec (Video Enhance, section AI Video Enhance_26.09_v2), AI Video Enhance (settings) board (預設值規則: Resolution takes the highest option when the source is above it)' but Description never names that sheet in full (ambiguous=True)
+  library/pdr/video-enhance/android/ebugs/2026-11-11-r1c/20261111_eBug_drafts_Video-Enhance-R1c_16.9.0.md e1: unknown sheet 'AI Video Enhance Design spec (Video Enhance, section AI Video Enhance_26.09_v2), AI Video Enhance (settings) board (預設值規則: Resolution takes the highest option when the source is above it)'

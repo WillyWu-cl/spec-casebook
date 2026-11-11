@@ -240,7 +240,7 @@ files} }` — and exits non-zero on any error. What it catches:
 | Feature segment is a noun phrase, not the start of a sentence | `[EDF][UX] AI task failure dialog asks the user…` parses as prose and files as unfilterable |
 | Tags are known, source first, at most one type tag | stops `[UX]` being filed where `[EDF][UX]` was meant |
 | **One action per Repro step, one step per line** — no `>` / `›` / `→`, no two numbered steps on a line | reviewer rule 1, 2026-10-21 |
-| **A `Spec Link:` with a URL or PDF name on every bug** (`--no-link-ok <key>` for a reviewer-approved exception) | reviewer rule 2 |
+| **A `Spec Link:` with a URL or PDF name on every bug** (`--no-link-ok <key>` for a reviewer-approved exception), the URL alone on the next line | reviewer rule 2; user 2026-11-11 |
 | **At least one image per bug; no video** without `--videos-requested` | reviewer rule 3 |
 | **UX basis:** `[UX]` needs `Basis: External — …` / `Basis: None — …`; `Basis: In-product` or no basis line means not `[UX]`; `[AIAgent][UX]` fails (`--allow-agent-ux` is the casebook's revert switch) | RD, 2026-10-21: too many AI-filed UX tickets |
 | ≤140 chars hard, 120 soft | the list view truncates |

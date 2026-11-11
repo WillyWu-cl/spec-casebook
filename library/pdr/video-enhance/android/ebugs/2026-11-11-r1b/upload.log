@@ -1,0 +1,124 @@
+== Video-Enhance-R1b-01 DRA262611P0086
+  16.9.0_vea16_demo_reframe_text.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0086: 1 file(s) on the page
+== Video-Enhance-R1b-02 DRA262611P0087
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea18_right_handle_0000.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea18_left_handle_0000.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea18_after_release.jpg
+FAIL Video-Enhance-R1b-02
+== Video-Enhance-R1b-04 DRA262611P0088
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea20_ticked.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea20_add_media_direct.jpg
+FAIL Video-Enhance-R1b-04
+== Video-Enhance-R1b-05 DRA262611P0089
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea21_0_9s_opens.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea21_0_5s_opens.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea21_mkv_opens.jpg
+FAIL Video-Enhance-R1b-05
+== Video-Enhance-R1b-06 DRA262611P0090
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea22_standard_0200.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea22_professional_same_scale.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea22_0801_professional.jpg
+FAIL Video-Enhance-R1b-06
+== Video-Enhance-R1b-07 DRA262611P0091
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea23_drag_right_earlier.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea23_drag_left_later.jpg
+FAIL Video-Enhance-R1b-07
+== Video-Enhance-R1b-08 DRA262611P0092
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea24_paused_0006.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea24_full_screen_no_close.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea24_full_screen_from_0000.jpg
+FAIL Video-Enhance-R1b-08
+== Video-Enhance-R1b-09 DRA262611P0093
+  16.9.0_vea25_bubble_covers_preview.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0093: 1 file(s) on the page
+== Video-Enhance-R1b-11 DRA262611P0094
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea27_leave_dialog.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea27_ledger_minus30.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea27_refund_2140.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea27_log.txt
+FAIL Video-Enhance-R1b-11
+== Video-Enhance-R1b-12 DRA262611P0095
+  16.9.0_vea28_notification_copy.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0095: 1 file(s) on the page
+== Video-Enhance-R1b-13 DRA262611P0096
+  16.9.0_vea29_saved_to_gallery.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0096: 1 file(s) on the page
+== Video-Enhance-R1b-14 DRA262611P0097
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea30_select_mode.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea30_delete_only.jpg
+FAIL Video-Enhance-R1b-14
+== Video-Enhance-R1b-15 DRA262611P0098
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea31_saved_listed.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea31_saved_file.jpg
+FAIL Video-Enhance-R1b-15
+== Video-Enhance-R1b-16 DRA262611P0099
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea32_panel_capped_0800.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea32_info_max_8_min.jpg
+FAIL Video-Enhance-R1b-16
+== Video-Enhance-R1b-17 DRA262611P0100
+
+ERROR: not found: library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea33_banner_in_editor.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea33_clip_not_replaced.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea33_add_to_timeline_new_project.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea33_projects_list.jpg library/pdr/video-enhance/android/ebugs/2026-11-11-r1b/upload/16.9.0_vea33_log.txt
+FAIL Video-Enhance-R1b-17
+== retry Video-Enhance-R1b-02 DRA262611P0087
+  16.9.0_vea18_right_handle_0000.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea18_left_handle_0000.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea18_after_release.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0087: 3 file(s) on the page
+== retry Video-Enhance-R1b-04 DRA262611P0088
+  16.9.0_vea20_ticked.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea20_add_media_direct.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0088: 2 file(s) on the page
+== retry Video-Enhance-R1b-05 DRA262611P0089
+  16.9.0_vea21_0_9s_opens.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea21_0_5s_opens.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea21_mkv_opens.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0089: 3 file(s) on the page
+== retry Video-Enhance-R1b-06 DRA262611P0090
+  16.9.0_vea22_standard_0200.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea22_professional_same_scale.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea22_0801_professional.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0090: 3 file(s) on the page
+== retry Video-Enhance-R1b-07 DRA262611P0091
+  16.9.0_vea23_drag_right_earlier.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea23_drag_left_later.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0091: 2 file(s) on the page
+== retry Video-Enhance-R1b-08 DRA262611P0092
+  16.9.0_vea24_paused_0006.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea24_full_screen_no_close.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea24_full_screen_from_0000.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0092: 3 file(s) on the page
+== retry Video-Enhance-R1b-11 DRA262611P0094
+  16.9.0_vea27_leave_dialog.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea27_ledger_minus30.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea27_refund_2140.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea27_log.txt  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0094: 4 file(s) on the page
+== retry Video-Enhance-R1b-14 DRA262611P0097
+  16.9.0_vea30_select_mode.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea30_delete_only.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0097: 2 file(s) on the page
+== retry Video-Enhance-R1b-15 DRA262611P0098
+  16.9.0_vea31_saved_listed.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea31_saved_file.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0098: 2 file(s) on the page
+== retry Video-Enhance-R1b-16 DRA262611P0099
+  16.9.0_vea32_panel_capped_0800.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea32_info_max_8_min.jpg  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0099: 2 file(s) on the page
+== retry Video-Enhance-R1b-17 DRA262611P0100
+  16.9.0_vea33_banner_in_editor.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea33_clip_not_replaced.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea33_add_to_timeline_new_project.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea33_projects_list.jpg  uploaded, formDataUpdated  (objectKey None)
+  16.9.0_vea33_log.txt  uploaded, formDataUpdated  (objectKey None)
+
+DRA262611P0100: 5 file(s) on the page

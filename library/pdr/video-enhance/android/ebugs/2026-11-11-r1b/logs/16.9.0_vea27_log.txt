@@ -1,0 +1,13 @@
+# ISS-VEA-27 Leave during the upload: charge at the session, upload started, cancelled
+# PowerDirector Mobile for Android 16.9.0 (2611091), Stage server, Samsung SM-A5360 / Android 15 (phone time, UTC+8)
+# Video Enhance task lines (session = charge, transcode, upload, status, errors, push, toasts) and the balance
+# when it changes, in the windows below; identical status polls folded; tokens dropped, URL queries cut at '?'.
+
+## TC-113 Enhance, Cancel, Leave (2026-11-10 18:37:55–18:38:25; logs/R1-e-20261110-185356/logcat-live.txt)
+2026-11-10 18:38:01.056 CreditSystemManager: totalRemain=27668
+2026-11-10 18:38:01.664 Create session: start
+2026-11-10 18:38:02.485 AIVideoAnime:  create session response code->200
+2026-11-10 18:38:02.486 Create session: end
+2026-11-10 18:38:02.489 Transcode: start
+2026-11-10 18:38:12.707 Transcode: finish
+2026-11-10 18:38:12.827 Upload to S3: start

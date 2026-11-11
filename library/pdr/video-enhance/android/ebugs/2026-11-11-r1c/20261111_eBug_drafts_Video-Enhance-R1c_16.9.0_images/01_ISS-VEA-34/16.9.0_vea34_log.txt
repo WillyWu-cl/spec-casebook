@@ -1,0 +1,21 @@
+# ISS-VEA-34 8K source: converted to Full HD before the panel, then a black Preview and 「0fps · 1080p」
+# PowerDirector Mobile for Android 16.9.0 (2611091), Stage server, Samsung SM-A5360 / Android 15, 2026-11-10 (phone time, UTC+8)
+# Source ve-res8k.mp4: HEVC 7680 × 4320, 30 fps, 2.000 s. App process 7961 only; codec parameter dumps and UI lines dropped.
+
+## TC-022 step 3 (2026-11-10 17:19:00–17:19:17; logs/R1-a-20261110-172759/logcat-live.txt)
+2026-11-10 17:19:00.583 7961 8820 E MediaMetadataRetrieverJNI: getFrameAtTime: videoFrame is a NULL pointer
+2026-11-10 17:19:02.272 7961 7961 V ConfirmDialogFragment: onCreateView
+2026-11-10 17:19:12.259 7961 7961 V NuMediaExtractor: track of type 'video/hevc' does not publish bitrate
+2026-11-10 17:19:12.285 7961 10739 V NuMediaExtractor: track of type 'video/hevc' does not publish bitrate
+2026-11-10 17:19:12.318 7961 10744 I CCodec : allocate(c2.exynos.h264.encoder)
+2026-11-10 17:19:12.384 7961 10752 I CCodec : allocate(c2.exynos.hevc.decoder)
+2026-11-10 17:19:12.442 7961 10759 I CCodec : allocate(c2.android.aac.decoder)
+2026-11-10 17:19:12.578 7961 10774 I CCodec : allocate(c2.android.aac.encoder)
+2026-11-10 17:19:16.434 7961 10739 E libEGL : call to OpenGL ES API with no current context (logged once per thread)
+2026-11-10 17:19:16.529 7961 10739 D MPEG4Writer: Video track stopped. Status:0. Stop source
+2026-11-10 17:19:16.532 7961 10739 E MPEG4Writer: Stop() called but track is not started or stopped
+2026-11-10 17:19:16.732 7961 7961 V VideoEnhanceSetupActivity: GDPRHandler.checkGDPRPrivacyPolicy: None
+2026-11-10 17:19:16.752 7961 10803 I CCodec : allocate(c2.exynos.h264.decoder)
+2026-11-10 17:19:16.802 7961 8819 V MediaMetadataRetriever: getFrameAtTime: time(166666 us) option(2) colorFormat(1) metaOnly(0)
+2026-11-10 17:19:16.817 7961 10820 I CCodec : allocate(c2.android.aac.decoder)
+2026-11-10 17:19:16.924 7961 8819 V MediaMetadataRetriever: getFrameAtTime: time(500000 us) option(2) colorFormat(1) metaOnly(0)

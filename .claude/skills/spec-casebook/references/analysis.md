@@ -279,6 +279,16 @@ cites its rule (e.g. `[Rule 2: wait thresholds]`), a flow arrow cites its Figma 
 9. **Evidence and order.** Capture baseline, trigger and result for each case; use Appium screen recording for audio,
    captions and motion. Order the run by state: first-use, coachmark and bubble checks before anything consumes them,
    then input → outline → character → storyboard → video → History, with destructive and reset cases last. A case
-   that needs a fresh install says so in its Precondition. Don't cap generations below what the cases need.
+   that needs a fresh install says so in its Precondition.
+   **One-way state (user, 2026-11-11; R1 TC-013 turned the Demo page off, so TC-014 was Blocked).** A row that leaves
+   a state the app keeps and the UI cannot undo (「Don't show again」 ticked by any path, a dismissed first-use hint,
+   a consent, a setting with no way back) runs after every row that needs the state as it was. When two rows each
+   consume it, every one after the first gets a reset: order them last in their phase, each behind its own reset
+   (Android: `pm clear` + the phone's sign-in, or uninstall and reinstall, with logs pulled first; on the QA iPhone
+   no reinstall, so Blocked as test-data), and say 「Reset (part of this case)」 in the Precondition. When building
+   `phases.json`, list for each row the kept state it sets and the state its Precondition needs, and check the
+   order against both. When the later consumer checks the same outcome as the first (both expect the Demo page
+   gone after the tick), the first one's evidence is enough: record the later row from it, citing the row and its
+   screenshots, and reset only for an outcome no earlier row has observed (user, 2026-11-11). Don't cap generations below what the cases need.
 10. **Dedupe and platforms.** Dedupe per OS (`ebugs.md`, step 3). Keep separate iOS and Android tables. Android
     baseline: no Pink menu (`run-android.md`), Pro instead of Pro+, Google Play billing, chat limits Free 10 / Pro 100.

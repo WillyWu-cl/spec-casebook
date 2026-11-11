@@ -1,0 +1,23 @@
+# Dedupe per OS (user, 2026-10-28): same-OS matches are left off the drafts and the review page.
+# Android pool (PowerDirector Mobile for Android), read-only: ecl_query.py dedupe upload/bodies.json (dedupe-query.txt), 2026-11-11,
+# plus batch 1's filed DRA262611P0071 – P0085 (none repeated here).
+
+# Same-OS ticket that decides the behaviour: the finding is withdrawn and its rows cite the ticket
+ISS-VEA-17 (TC-201, TC-021)	DRA242410-0142	Close, fixed 15.1.0.2503311: Back on the media picker after Try It Now → Launcher (root cause 「Spec changed」); the app does that. Withdrawn, cited.
+
+# Same-OS open ticket carrying an open question (cited, not filed)
+Q-17 / O-12	DRA262608-0072	NewCreated, PM, 16.6.0: static 「4 minutes left...」 and 0% progress
+Q-17 / O-12	DRA262608-0071	NewCreated, PM, 16.6.0: 4-second clip states 「4 minutes left」 but zero progress
+
+# Candidates read, none a duplicate
+ISS-VEA-16 / 20	DRA252503-0298	Close, 15.1.0: ‹ from Recent task back to the Demo page after Don't show again (other path; fix finishes the Demo activity when ticked). Related to ISS-VEA-20, named in its QA note.
+ISS-VEA-21	DRA262611P0072	Batch 1: 2K+ sources not rejected (other sources; Q-13 is under 1 s / MKV)
+ISS-VEA-25	DRA262611P0074	Batch 1: no Preview time until play (other symptom)
+ISS-VEA-26	DRA262611P0073	Batch 1: 「0fps」 badge (other badge)
+ISS-VEA-27	DRA262611P0079	Batch 1: Home during upload charged (Q-18); this is Leave (Q-2). Related, named in the QA note
+ISS-VEA-28	DRA252504-0015	Close, 15.0.2: notification after AI generation (other issue)
+ISS-VEA-29 / 31 / 33	DRA252510-0092	Close, 15.8.0: [Light Mode] Result icon black (unrelated)
+ISS-VEA-30	DRA262611P0082	Batch 1: 「Select」 label for 「Manage」 (copy); this asks what Manage opens (Q-8)
+ISS-VEA-30	DRA242410-0074	Close, 14.5.0: Launcher returned from Recent (unrelated)
+
+# Other OS (not duplicates, per OS): iOS DRI261895P0021 (「Video Enhancer」, QA Propose Won't Fix) is cited for R-203; DRI261897P0026 (Enhance disabled after Leave) is another symptom of ISS-VEA-27.

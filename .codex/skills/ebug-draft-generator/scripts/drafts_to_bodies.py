@@ -25,7 +25,8 @@ UX entries (2026-10-21): every entry carries `ux` (its Short Description has [UX
 (the Note's `Basis:` line, if any), so the review page can flag UX cards for the reviewer's UX check.
 With --decisions, a [UX] entry that is still filed must have `confirmed` in the table's `UX check`
 column; anything else stops the run, because RD asked that every UX ticket be checked by a person
-first. Reclassifying (Type → Functional/UI, Short Description without [UX]) needs no UX check.
+first. Reclassifying (Type → Functional/UI, Short Description without [UX]) needs no UX check. Type UX chosen by the
+reviewer counts as the check and adds [UX] to a Short Description that lacks it (user, 2026-11-11).
 """
 import argparse
 import json
@@ -115,8 +116,15 @@ def apply_decisions(bodies, path):
             bodies[key]["type"] = get("type")
         if get("short description"):
             bodies[key]["short"] = get("short description")
-        bodies[key]["ux"] = "[UX]" in bodies[key]["short"]
-        bodies[key]["ux_check"] = get("ux check").lower()
+        # user, 2026-11-11: a PM decision the reviewer types UX is filed [AIAgent][UX]; choosing Type UX on the
+        # review page is the reviewer's UX check, and a Short Description without the tag gets it
+        sd = bodies[key]["short"]
+        reviewer_ux = get("type").upper() == "UX"
+        if reviewer_ux and "[UX]" not in sd:
+            sd = re.sub(r"\[(AIAgent|AIFound|EDF|MXFound)\](\[UI\])?", r"[\1][UX]", sd, count=1)
+            bodies[key]["short"] = sd
+        bodies[key]["ux"] = "[UX]" in sd
+        bodies[key]["ux_check"] = get("ux check").lower() or ("confirmed" if reviewer_ux else "")
         if get("note"):
             notes.append((key, get("note")))
     return notes

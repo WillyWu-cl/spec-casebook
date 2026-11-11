@@ -22,6 +22,11 @@ Exit code 0 = clean (warnings allowed), 1 = at least one ERROR.
 Reviewer rules (user, 2026-10-21) are errors: one action per numbered Repro step on its own line
 (no '>' / '›' / '→' chains), a Spec Link with a URL or PDF name on every entry, at least one image
 per entry, and no video unless the user asked for one (--videos-requested).
+A Spec Link's URL goes on the line after its label (user, 2026-11-11): 'Spec Link: <label> -' then the URL
+alone on the next line; a URL on the Spec Link line itself is an error.
+
+[AIAgent][UX] (user, 2026-11-11): a user-experience problem filed to PM for a decision carries [UX] (BugBelong PM);
+spec-driven [UX] owned by anyone else is still an error.
 
 UX basis rule (RD, 2026-10-21): [UX] marks a finding with no spec and no in-product reference —
 it rests on another product's behaviour or on nothing, and PM decides. So a [UX] entry needs a
@@ -45,7 +50,8 @@ MAX_SUMMARY = 60       # the 摘要 zh-TW one-liner
 MAX_NOTE_LINES = 6     # Device / Spec Link (≤2) / Basis / Related / <Claude Reviewed>
 SUMMARY_RE = re.compile(r"^摘要\s*[:：]\s*")
 SECTIONS = ["Repro Steps:", "Result:", "Expect Result:", "Note:"]
-NOTE_LINE = re.compile(r"\s*(Device:|Spec Link:|Basis:|Related:|Design:|Jira:|<Claude Reviewed>|<GPT Reviewed>)")
+URL_LINE = re.compile(r"^\s*https?://\S+\s*$")
+NOTE_LINE = re.compile(r"\s*(https?://\S+\s*$|Device:|Spec Link:|Basis:|Related:|Design:|Jira:|<Claude Reviewed>|<GPT Reviewed>)")
 BASIS_RE = re.compile(r"^\s*Basis:\s*(In-product|External|None)\b\s*[—–-]?\s*(.*)$", re.I | re.M)
 IMAGE_EXT = re.compile(r"\.(jpe?g|png|gif|heic|webp)$", re.I)
 LOG_EXT = re.compile(r"_log\.(txt|log|zip)$", re.I)
@@ -177,9 +183,10 @@ def check_basis(key, tags, note, belong, rep, allow_agent_ux):
             rep.err(key, f"Basis: {k} names no feature / product and document",
                     "e.g. 'Basis: In-product — Text to Image: Stop keeps the credits (Spec Link 8/E Stop)'")
     if tags and tags[0] == "AIAgent":
-        if ux and not allow_agent_ux:
-            rep.err(key, "[AIAgent][UX]: spec-driven findings never carry [UX] (RD, 2026-10-21)",
-                    "file as [AIAgent][UI] or [AIAgent] (Functional), owner RD; RD forwards to PM if needed")
+        # user, 2026-11-11: a user-experience problem that goes only to PM for a decision is [AIAgent][UX], owner PM
+        if ux and belong != "PM" and not allow_agent_ux:
+            rep.err(key, "[AIAgent][UX] is only for a PM decision: BugBelong must be PM (user, 2026-11-11)",
+                    "a UX problem PM must decide → BugBelong PM; one RD fixes → [AIAgent][UI] or [AIAgent] (Functional), owner RD")
         if kinds & {"External", "None"} and not allow_agent_ux:
             rep.err(key, "[AIAgent] entry rests on another product or on nothing — not a spec-driven bug",
                     "hold it and raise it as an exploration (AIFound) UX finding or a PM question")
@@ -289,7 +296,8 @@ def check_desc(key, desc, version, rep, files, upload_dir, tags=None, belong=Non
                 rep.err(key, f"{label}'s 摘要 contains no Chinese; it must be 正體中文（台灣用語）")
 
     note_lines = [l for l in note.split("\n") if l.strip()]
-    if len(note_lines) > MAX_NOTE_LINES:
+    # a Spec Link's URL sits on its own line (user, 2026-11-11); it does not count against the cap
+    if len([l for l in note_lines if not URL_LINE.match(l)]) > MAX_NOTE_LINES:
         rep.err(key, f"Note has {len(note_lines)} lines (cap {MAX_NOTE_LINES}) — "
                      "only Device / Spec Link / <Claude Reviewed> belong here",
                 "move the rest into the QA-note blockquote above the entry")
@@ -300,7 +308,18 @@ def check_desc(key, desc, version, rep, files, upload_dir, tags=None, belong=Non
     if not re.search(r"^\s*Device:\s*\S", note, re.M):
         rep.err(key, "Note has no 'Device:' line")
     # reviewer rule (2026-10-21): every entry links the spec used as the reference
-    links = re.findall(r"^\s*Spec Link:\s*(.*)$", note, re.M)
+    # each Spec Link is its label line plus, for a URL, the URL alone on the next line
+    links = [m.group(1) + (" " + m.group(2) if m.group(2) else "")
+             for m in re.finditer(r"^\s*Spec Link:\s*(.*)$(?:\n\s*(https?://\S+)\s*$)?", note, re.M)]
+    for m in re.finditer(r"^\s*Spec Link:\s*(.*)$", note, re.M):
+        if re.search(r"https?://", m.group(1)):
+            rep.err(key, f"Spec Link has its URL on the same line: {m.group(1).strip()[:60]!r}",
+                    "end the label with ' -' and put the URL alone on the next line (user, 2026-11-11)")
+    for i, l in enumerate(note_lines):
+        if URL_LINE.match(l):
+            prev = note_lines[i - 1] if i else ""
+            if not prev.strip().startswith("Spec Link:"):
+                rep.err(key, f"URL line in Note not under a Spec Link: {l.strip()[:60]!r}")
     if not links and not no_link_ok:
         rep.err(key, "Note has no 'Spec Link:' line — every bug carries its link",
                 "Figma URL with node-id for the screen it is about (PDF name + board ID only when no URL exists)")

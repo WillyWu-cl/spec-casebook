@@ -186,3 +186,15 @@ The knowledge-inbox subagent filed the run's facts:
 1. **The eBug review page.** Decide file or hold for each card, the Creator and TR, and in particular VEA-09 (Q-18) and VEA-07.
 2. **The 16 PM / table questions.** In particular PQ-1 / PQ-2, the copy strings that fail 37 and 36 rows.
 3. **Making the account paid again.** The 5 Timeline rows need it. Any purchase rows also need a go-ahead.
+
+## Update 2026-11-11 (table v5)
+
+- **Old board (REQ-011):** DRA262611P0072 (2K+ block) followed the spec agent's 2026-10-07 export of the old 26.09_v2
+  state and was Cancelled. Today's board takes 4K for larger sources, so TC-022 steps 1–3 now expect the panel: 1440p
+  and 4K do, 8K does not (black Preview, 「0fps · 1080p」, fps chips disabled) — filed as DRA262611P0101.
+- **Rulings (REQ-012):** Android has no Pro+ and no 「You're all set」 dialog; TC-004, TC-093, TC-095 re-recorded Pass.
+- **P0076 (one extra credit):** the app bills the video track's own length rounded up; the test videos carry 33 ms of
+  encoder padding. Padding-free 1.000 s files price at 1 and camera videos have no padding (KF-001).
+- **Batch 2 filed:** DRA262611P0086 – P0100 (15; F-3 and F-10 held).
+- **Run now:** 85 Pass, 67 Fail, 16 Blocked.
+

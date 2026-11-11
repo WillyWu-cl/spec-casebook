@@ -14,6 +14,8 @@ skill's body. Rule numbers are cited elsewhere (AGENTS.md: "rule 5 of the eBug o
    `board-notes.md`. Only when no URL exists: the PDF name + board ID. Entries resting on a QA rule (rule 7 text,
    rule 8 checks) cite the board that shows the screen or string they are about. The format check fails an entry
    with no `Spec Link:` line, `Spec Link: none`, or a link with neither a URL nor a PDF name.
+   The URL goes alone on the line under its label (`Spec Link: <source>, <board> board (<what>) -`, then the URL;
+   user, 2026-11-11); the check fails a URL on the Spec Link line itself.
 3. **Attachments on every entry:** at least one image (red-boxed frame) per bug, cited inline as `{<ver>_<slug>.jpg}`;
    plus the relevant log excerpt (`<ver>_<slug>_log.txt`) when the finding has a log cause. **Every failure-related
    entry carries its log (user, 2026-10-27):** a failed generation, turn, upload or retry, an error card or dialog,
@@ -33,9 +35,14 @@ skill's body. Rule numbers are cited elsewhere (AGENTS.md: "rule 5 of the eBug o
    still names the build the findings were verified on before filing; if not, stop and ask.
 5. **No `[UX]` on casebook findings (RD, 2026-10-21 — in force until the user reverts it).** The casebook tests
    against the spec, so every finding is `[AIAgent]` (Functional) or `[AIAgent][UI]`, owner RD (text: RD when the spec states it and the app differs, PM when the spec's own text must change, never Doc; user, 2026-11-11, `ebug-draft-generator` › Owner) —
-   interaction and flow problems included; RD forwards one to PM when it wants a ruling. A finding with no spec basis
-   is not a casebook bug: hold it and list it on the review page as a PM question. `check_ebug_format.py` fails
-   `[AIAgent][UX]`. This supersedes the 2026-10-20 rule "a UX problem goes to PM (BugBelong PM)".
+   interaction and flow problems included; RD forwards one to PM when it wants a ruling. A plainly visible defect whose
+   exact expected wording is only a proposal or open question is filed, not held, and an open question the run
+   cannot settle (an undecided string, a proposal the app differs from) is filed to PM (BugBelong PM) for a
+   decision rather than held (user, 2026-11-11, spec-casebook `ebugs.md` step 1). **A problem filed only to PM for a
+   decision that is a user-experience problem (how a flow feels or behaves, not wrong text or a broken function) is
+   `[AIAgent][UX]`, BugBelong PM (user, 2026-11-11)**: the drafts propose Type UX for it, and the reviewer's Type UX on
+   the review page adds the tag. `check_ebug_format.py` fails `[AIAgent][UX]` owned by anyone but PM. This supersedes
+   the 2026-10-20 rule "a UX problem goes to PM (BugBelong PM)" for RD-owned findings.
    **To revert** (back to `[AIAgent][UX]` with BugBelong PM): delete this rule 5 from this file (`.claude` and
    `.codex` copies), restore the 2026-10-20 wording of *eBug owner and type* in `AGENTS.md` (kept there under
    "Revert"), drop the UX line in the casebook skill's *eBug drafts and review page* step 1, and run
