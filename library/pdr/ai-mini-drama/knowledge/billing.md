@@ -23,6 +23,15 @@ Free users get 10 chats a day, counted app-side; once used, Generate shows 「Da
 「Upgrade to Premium」 (no ✕, DRI261894P0022). The paid-tier dialog is 「Today's AI Chats Are Used Up」 /
 「Continue Tomorrow」. Earlier runs the same day use up the quota unless Unlimited daily chat is on.
 
+## KF-059 Free daily chat limit dialog on Android
+- kind: fact · platform: android · use: analysis, run · tags: quota, tier
+- source: inbox I-001 (run 2026-11-05-dra262610p0347-recheck/official-build/result.md) · verified: 16.8.0 build 2611041 (2026-11-05, official, Stage, Free)
+
+On Android 「Daily Free Chat Limit Reached」 has an ✕ (`button_mini_drama_chat_quota_close`, content-desc Cancel)
+and a tap outside also closes it (KF-042's 「no ✕」 is iOS). The blocked message stays in the input box and nothing is
+charged. Which turns count is unknown: after a reinstall it came on the 19th counted turn (title changes included),
+on a re-signed build the same day at about 11.
+
 ## KF-043 Free tier and Full Edit export
 - kind: risk · platform: ios · use: analysis, run · tags: tier, export, captions
 - source: exploration KB ai-mini-drama.md (2026-10-15 New User, 16.9.0 189631)

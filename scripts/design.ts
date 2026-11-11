@@ -1039,7 +1039,7 @@ function ebugs() {
   const plan = planFresh(feature, platform, true);
   const cmp = read(join(designDir, 'compare.json')), found = read(join(designDir, 'findings.json')).screens;
   const all = process.argv.includes('--all'), key = plan.file?.fileKey ?? plan.file?.key ?? '';
-  const out: string[] = [`# Design check bugs — ${basename(runDir)}`, '', `Build ${cmp.build || '(not recorded)'} · ${feature} · ${platform}. Drafted through spec-casebook references/ebugs.md: [UI], owner RD (Doc for copy), never [UX].`, ''];
+  const out: string[] = [`# Design check bugs — ${basename(runDir)}`, '', `Build ${cmp.build || '(not recorded)'} · ${feature} · ${platform}. Drafted through spec-casebook references/ebugs.md: [UI], owner RD (PM when the spec's own text must change), never [UX].`, ''];
   let n = 0;
   for (const s of cmp.screens) for (const [id, v] of Object.entries<any>(found[s.id] ?? {})) {
     if (v.verdict !== 'bug' || (!all && !v.ebug) || !live(s, id)) continue;

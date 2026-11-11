@@ -1,0 +1,27 @@
+# ISS-VEA-06 exact-length videos billed one second more
+# PowerDirector Mobile for Android 16.9.0 (2611091), Stage server, Samsung SM-A5360 / Android 15, 2026-11-10 (phone time, UTC+8)
+# Video Enhance task lines (session = charge, transcode, upload, status, errors, push, toasts) and the balance
+# when it changes, in the windows below; identical status polls folded; tokens dropped, URL queries cut at '?'.
+
+## TC-265 1.000 s video, Enhance 2 charged (2026-11-10 19:08:05–19:08:14; logs/R1-f-20261110-191722/logcat-live.txt)
+2026-11-10 19:08:11.137 CreditSystemManager: totalRemain=29604
+2026-11-10 19:08:11.857 Create session: start
+2026-11-10 19:08:12.228 AIVideoAnime:  create session response code->200
+2026-11-10 19:08:12.229 Create session: end
+2026-11-10 19:08:12.234 Transcode: start
+2026-11-10 19:08:12.749 Transcode: finish
+2026-11-10 19:08:12.883 Upload to S3: start
+2026-11-10 19:08:13.215 AIVideoAnime:  upload response code->200
+2026-11-10 19:08:13.216 Upload to S3: finish
+
+## TC-267 30.000 s video, Enhance 31 charged (2026-11-10 19:13:15–19:13:38; logs/R1-f-20261110-191722/logcat-live.txt)
+2026-11-10 19:13:21.304 CreditSystemManager: totalRemain=29598
+2026-11-10 19:13:21.984 Create session: start
+2026-11-10 19:13:22.334 AIVideoAnime:  create session response code->200
+2026-11-10 19:13:22.335 Create session: end
+2026-11-10 19:13:22.341 Transcode: start
+2026-11-10 19:13:29.514 Transcode: finish
+2026-11-10 19:13:29.808 Upload to S3: start
+2026-11-10 19:13:37.844 AIVideoAnime:  upload response code->200
+2026-11-10 19:13:37.844 Upload to S3: finish
+2026-11-10 19:13:38.965 DownloadUriTask: java.lang.IllegalArgumentException: URI is not absolute

@@ -1,0 +1,14 @@
+# Dedupe per OS (user, 2026-10-28): same-OS matches are left off the drafts and the review page.
+# Android pool (PowerDirector Mobile for Android), read-only ecl_query.py searches, 2026-11-10.
+
+O-12	DRA262608-0072	NewCreated, PM, 16.6.0: Recent tasks shows a static 「4 minutes left...」 and 0% progress for the whole run
+O-12	DRA262608-0071	NewCreated, PM, 16.6.0: 4-second clip states 「4 minutes left」 but zero progress for 16 min
+
+# ecl_query.py dedupe upload/bodies.json --product "PowerDirector Mobile for Android" (dedupe-query.txt): candidates read, none a duplicate
+ISS-VEA-01	DRA242410-0146	Close, 14.5.0: AI Video Enhancer wrong function name (old feature, closed; not the same label)
+ISS-VEA-08	DRA242410-0010	Close, 14.5.0 [CHT] credits copy (unrelated)
+ISS-VEA-10 / 15	DRA252510-0092	Close, 15.8.0 [Light Mode] Result icon black (unrelated)
+ISS-VEA-11 / 12	DRA252503-0298	Close, 15.1.0: ‹ from Recent task goes back to the Demo page after Don't show again (old flow, other symptom)
+ISS-VEA-11 / 12	DRA242411-0023	Close, 14.6.0: Recent task empty after uploading (unrelated)
+ISS-VEA-11	DRA242410-0074	Close, 14.5.0: Launcher returned from Recent (old flow)
+ISS-VEA-14	DRA262608-0071 / -0072	NewCreated, PM, 16.6.0: static 「4 minutes left」, zero progress (related; ours is completion time vs the company standard)

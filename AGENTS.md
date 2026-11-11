@@ -45,12 +45,15 @@ lines; put the full rule in the skill or reference file that applies it and poin
   left off the drafts and review page (kept only in `dedupe.txt`), unless that ticket is **closed** and the bug is
   back: then it is a new card naming the closed ticket (overlay, *Dedupe per OS*).
 - **eBug owner and type (RD, 2026-10-21 — replaces the 2026-10-20 rule; revertible).** Casebook findings are
-  `[AIAgent]` Functional or `[UI]`, owner RD (Doc for copy), never `[UX]`; RD forwards to PM when it wants a ruling. A
+  `[AIAgent]` Functional or `[UI]`, owner RD, never `[UX]`; RD forwards to PM when it wants a ruling. A
   finding with no spec basis is held as a PM question, not filed. Exploration (`[AIFound]`) keeps filing `[UX]`.
   **Revert** — the user may restore the 2026-10-20 rule: "A UX problem goes to PM (BugBelong PM), who decides before
   handing it to RD. A problem that plainly needs an RD fix (performance, waits, missing behaviour) is Functional,
   owner RD, with no `[UX]` tag." Put that text back here, then follow the revert steps in overlay rule 5
   (`--allow-agent-ux` / `ALLOW_AGENT_UX=1`).
+- **Text bugs go to RD or PM (user, 2026-11-11).** Text that differs from the spec is RD when the spec states it and
+  the app shows something else (fix the app's text), PM when the spec's own text must change (wrong, unclear, two
+  sheets disagree, or none states it); never Doc (`ebug-draft-generator` › Owner, overlay rule 5).
 - **Pink fault switches, AI Mini Drama (2026-10-20).** 「Fail turn」 fails an LLM chat turn (outline, cast confirm,
   storyboard offer); 「Inject failure status」 only applies to a video beat once filming starts. An injected failure
   logs `AppTweaks injected <Tool> failure #N`; `status=tool_error` alone is the server's own failure. Re-check any bug

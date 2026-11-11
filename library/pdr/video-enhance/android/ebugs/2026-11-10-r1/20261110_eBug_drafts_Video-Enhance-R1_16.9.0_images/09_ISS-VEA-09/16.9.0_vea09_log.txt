@@ -1,0 +1,19 @@
+# ISS-VEA-09 Home during the upload: charge at the session, background network error, no upload
+# PowerDirector Mobile for Android 16.9.0 (2611091), Stage server, Samsung SM-A5360 / Android 15, 2026-11-10 (phone time, UTC+8)
+# Video Enhance task lines (session = charge, transcode, upload, status, errors, push, toasts) and the balance
+# when it changes, in the windows below; identical status polls folded; tokens dropped, URL queries cut at '?'.
+
+## TC-115 Enhance, Home, reopen (2026-11-10 18:44:30–18:45:45; logs/R1-e-20261110-185356/logcat-live.txt)
+2026-11-10 18:44:33.556 CreditSystemManager: totalRemain=27638
+2026-11-10 18:44:34.226 Create session: start
+2026-11-10 18:44:34.592 AIVideoAnime:  create session response code->200
+2026-11-10 18:44:34.593 Create session: end
+2026-11-10 18:44:34.596 Transcode: start
+2026-11-10 18:44:47.312 Transcode: finish
+2026-11-10 18:44:47.318 System.err: java.net.UnknownHostException: Unable to resolve host "demo.myedit.online": No address associated with hostname
+2026-11-10 18:44:47.323 AIVideoAnimeServerAPI:  exception->java.net.UnknownHostException: Unable to resolve host "demo.myedit.online": No address associated with hostname
+2026-11-10 18:45:36.264 ExoPlayerImpl: Init d11946e [AndroidXMedia3/1.11.1] [a53x, SM-A5360, samsung, 35]
+2026-11-10 18:45:40.371 CreditSystemManager: totalRemain=27608
+
+## no app call around the 22:00 refund (2026-11-10 21:58:00–22:02:00; logs/R1-g2-20261110-223518/logcat-live.txt)
+2026-11-10 21:58:13.138 AIFeatureRepository: applyEffect status: Applying 0   (×23 until 22:01:56.139)

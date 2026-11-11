@@ -1,0 +1,9 @@
+{
+  "logs": {
+    "files": "[_/](videoenhance|cl_credit|logcat-live)\\.txt$",
+    "failure": "VideoEnhance.*(fail|error)|status=fail|error=",
+    "toast": "Toast|toast for",
+    "credit": "CreditSystemManager|credit=|refund|returned",
+    "timing": "VideoEnhance.*(upload|progress|complete)"
+  }
+}

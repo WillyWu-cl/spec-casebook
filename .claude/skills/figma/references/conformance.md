@@ -303,7 +303,7 @@ a superseded frame is not the spec, and a conflict is a question (AGENTS.md *Des
   on a candidate the check no longer makes (an area left out since) is not shown, settled or drafted.
 - `design.ts … ebugs <run dir>` writes `design/ebug-findings.md`: each ticked bug with the screen, its Figma link, the
   row (or Design path) that reaches it, Figma against the app, both review notes, the build and the sheet. Draft from
-  it through spec-casebook `references/ebugs.md` and the casebook overlay: `[UI]`, owner RD (Doc for copy), never
+  it through spec-casebook `references/ebugs.md` and the casebook overlay: `[UI]`, owner RD (PM when the spec's own text must change), never
   `[UX]`; Spec Link = the Figma node; image = the sheet; dedupe per OS. Filing waits for the user.
 
 ## 6. Recheck on the next build
