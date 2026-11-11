@@ -182,9 +182,12 @@ and the pass / fail / block reason, and Save works only on this computer:
 - **Copy decisions** copies a short change list to paste into the chat; **Copy final CSV** copies the whole table.
 - **中文 (user, 2026-10-30).** The page's English / 中文 switch (the tab bar's under `pages.ts`) shows the page in
   Traditional Chinese (Taiwan wording). When the draft has a Chinese reading copy `draft.zh-Hant.csv` (same columns,
-  Chinese headers; built by the draft's `build-zh.ts`, as in `phd/swipe-collage/android/drafts/20261029-171116/`), each
-  row shows it above its English fields; rows stay English and only the English is edited and saved. Save copies the
-  file to `cases.zh-Hant.csv`. Rebuild the copy whenever `draft.csv` changes.
+  Chinese headers), each row shows it above its English fields; rows stay English and only the English is edited and
+  saved. Save copies the file (and its row fingerprints) to `cases.zh-Hant.csv`. Every table gets one (user,
+  2026-11-11), also shown on Results, Progress and Coverage: build and update it with `scripts/zh-copy.ts`
+  (`export` → translate the batches → `merge`) after a draft is built or changed and after a Save changed rows; only
+  new and changed rows are translated, and a stale row shows its English. The translation must read as natural
+  Chinese, never word by word: `references/zh-copy.md`.
   The Open questions get one too (user, 2026-11-10, phd/cutout REQ-004): `questions.zh-Hant.json` beside the draft's
   `requirements.md` (`{ "Q-1": "<question>。假設：<assumption>" }`, Taiwan wording), shown above each English question
   in 中文 mode and copied to the table on Save. Update it whenever the Open questions change.

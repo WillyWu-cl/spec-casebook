@@ -119,3 +119,6 @@ library/**/runs/*/exports/
 
 # One-off HTML pages asked for in chat stay local (user, 2026-11-05); platform comparisons/ stay committed.
 library/*/*/comparisons/
+
+# Chinese copy work files (scripts/zh-copy.ts export → merge), local only
+zh-work/

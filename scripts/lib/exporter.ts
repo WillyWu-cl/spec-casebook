@@ -8,7 +8,8 @@ import { readZhCopy } from './zh.ts';
 
 const WIDTHS: Record<string, number> = { ID: 11, Section: 20, Precondition: 30, Action: 48, 'Expected Result': 48, Priority: 9, 'Spec Ref': 16, Notes: 30 };
 
-export async function exportTable(feature: string, platform: string) {
+// htmlOnly: only cases.html (its 中文 mode reads the Chinese copy; the Excel file has none), used by zh-copy.ts merge
+export async function exportTable(feature: string, platform: string, htmlOnly = false) {
   const dir = tableDir(feature, platform);
   const m = readManifest(feature, platform);
   if (!m) throw new Error(`No approved table for ${feature} / ${platform}`);
@@ -28,13 +29,13 @@ export async function exportTable(feature: string, platform: string) {
    ['Approved', m.approved_at], ['Cases', String(rows.length)], ['Spec set SHA-256', m.spec_set_sha256],
    ...m.spec_files.map(f => ['Spec file', `${f.name}  (${f.sha256})`])].forEach(r => info.addRow(r));
   info.getColumn(1).font = { bold: true };
-  await wb.xlsx.writeFile(join(dir, 'cases.xlsx'));
+  if (!htmlOnly) await wb.xlsx.writeFile(join(dir, 'cases.xlsx'));
   const reqPath = join(dir, 'requirements.md');
   writeFileSync(join(dir, 'cases.html'), renderPage({
     mode: 'view', save: false, feature, platform, title: m.title, draft: m.draft, based_on_version: null,
     version: m.version, approved_at: m.approved_at, spec_files: m.spec_files, rows, previous: {},
     requirements: existsSync(reqPath) ? readFileSync(reqPath, 'utf8') : '', update_plan: '',
-    zh: readZhCopy(join(dir, 'cases.zh-Hant.csv')),   // 中文 mode of the exported page, as on the review page
+    zh: readZhCopy(join(dir, 'cases.zh-Hant.csv'), rows),   // 中文 mode of the exported page, as on the review page
   }));
   return { xlsx: join(dir, 'cases.xlsx'), html: join(dir, 'cases.html'), cases: rows.length };
 }

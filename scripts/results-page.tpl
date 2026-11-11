@@ -127,7 +127,8 @@ a.tk:hover, a.tk:focus-visible { border-color: var(--fail); background: color-mi
 let D = __DATA__;
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-// Language: English or 中文 for what the page writes itself; the run's own text (actions, results) stays as recorded.
+// Language: English or 中文 for what the page writes itself and the case text (from the table's Chinese copy); what
+// the run recorded (What happened, Blocked because) stays as recorded.
 // Served by scripts/pages.ts the tab bar holds the switch; a static results.html keeps its own.
 let L = 'en';
 if (window.CASEBOOK) L = window.CASEBOOK.lang; else try { if (localStorage.getItem('casebook-lang') === 'zh') L = 'zh'; } catch (e) {}
@@ -214,26 +215,28 @@ function tools() {
 }
 const match = c => (res === 'all' || (res === 'attention' ? ATTN.includes(c.result) : c.result === res)) && (!seg || c.seg === seg) && (!disp || c.disp === disp) && (!only || c.shots.length)
   && (!onlyBug || c.ebugs.length) && (!noBug || (c.result === 'Fail' && !c.ebugs.length))
-  && (!q || [c.id, c.section, c.action, c.expected, c.actual, c.why, c.disp, ...c.ebugs.flatMap(b => [b.code, b.title])].join(' ').toLowerCase().includes(q));
+  && (!q || [c.id, c.section, c.action, c.expected, ...Object.values(c.zh ?? {}), c.actual, c.why, c.disp, ...c.ebugs.flatMap(b => [b.code, b.title])].join(' ').toLowerCase().includes(q));
 function cardBody(c) {
   const links = [PAGES.review && `<a href="${esc(PAGES.review)}#${encodeURIComponent(c.id)}">${t('review')} →</a>`,
     PAGES.plan && `<a href="${esc(PAGES.plan)}#case=${encodeURIComponent(c.id)}">${t('plan')} →</a>`,
     PAGES.coverage && `<a href="${esc(PAGES.coverage)}#case=${encodeURIComponent(c.id)}">${t('spec')} →</a>`].filter(Boolean).join('');
   return `${ebugBand(c)}
   <div class="grid">
-    <div>${c.pre ? `<h4>${t('pre')}</h4><p class="small">${esc(c.pre)}</p>` : ''}<h4>${t('action')}</h4><p>${esc(c.action)}</p></div>
-    <div><h4>${t('expected')}</h4><p>${esc(c.expected)}</p></div>
+    <div>${c.pre ? `<h4>${t('pre')}</h4><p class="small">${esc(ZT(c, 'pre'))}</p>` : ''}<h4>${t('action')}</h4><p>${esc(ZT(c, 'action'))}</p></div>
+    <div><h4>${t('expected')}</h4><p>${esc(ZT(c, 'expected'))}</p></div>
     <div class="found ${esc(c.result.replace(' ', ''))}"><h4>${t('actual')}</h4><p>${bugs(c.actual) || '—'}</p>${c.why ? `<div class="why"><b>${t('why')}:</b> ${esc(c.why)}${c.group ? ` <span class="disp">${esc(c.group)}</span>` : ''}</div>` : ''}${c.files.length ? `<div class="small" style="margin-top:6px">${t('files')}: ${c.files.map(esc).join(' ')}${!c.shots.length && c.files.some(f => IMG.test(f)) ? ` (${t('notHere')})` : ''}</div>` : ''}</div>
   </div>
   ${c.shots.length ? `<div class="shots">${c.shots.map((s, i) => `<button type="button" data-c="${esc(c.id)}" data-i="${i}" title="${esc(s.name)}"><img loading="lazy" src="${esc(s.src)}${THUMB}" alt="${esc(c.id)} ${esc(s.name)}"><span>${esc(s.name)}</span></button>`).join('')}</div>` : ''}
   <div class="xl">${links}<span class="disp" style="margin-left:auto">${esc(c.seg)} · ${t('at')} ${fmt(c.at)}</span></div>`;
 }
 // one line per case, the whole record when it is opened: the finding and its eBug can be scanned down the page
+// the table's Chinese reading copy of a case field in 中文 mode (cases.zh-Hant.csv, fresh rows only), else the English
+const ZT = (c, k) => (L === 'zh' && c.zh?.[k]) || c[k];
 const oneLine = c => { const s = String((c.result === 'Blocked' && c.why) || c.actual || c.why || '').replace(/\s+/g, ' ').trim(), m = s.match(/^.{40,}?[.。](?=\s|$)/);
   const x = m ? m[0] : s; return x.length > 170 ? `${x.slice(0, 169)}…` : x; };
 function card(c) {
   const k = esc(c.result.replace(' ', '')), on = isOpen(c.id), bug = c.ebugs[0];
-  return `<details class="case ${k}${c.id === focus ? ' focus' : ''}" id="c-${esc(c.id)}" data-id="${esc(c.id)}"${on ? ' open' : ''}><summary><span class="cid">${esc(c.id)}</span><span class="res ${k}">${esc(resName(c.result))}</span><span class="one">${esc(oneLine(c))}</span><span class="facts"><span class="sec">${esc(c.section)}</span>${c.prio ? `<span class="disp">${t('prio')} ${esc(c.prio)}</span>` : ''}${c.needs ? `<span class="disp">${t('needs')} ${esc(c.needs)}</span>` : ''}${c.disp ? `<span class="disp">${esc(c.disp)}</span>` : ''}</span>${bug ? `<a class="bug" href="${ECL(bug.code)}" target="_blank" rel="noopener noreferrer">${esc(bug.code)}</a>${c.ebugs.length > 1 ? `<span class="disp">+${c.ebugs.length - 1}</span>` : ''}` : ''}</summary><div class="cbody">${on ? cardBody(c) : ''}</div></details>`;
+  return `<details class="case ${k}${c.id === focus ? ' focus' : ''}" id="c-${esc(c.id)}" data-id="${esc(c.id)}"${on ? ' open' : ''}><summary><span class="cid">${esc(c.id)}</span><span class="res ${k}">${esc(resName(c.result))}</span><span class="one">${esc(oneLine(c))}</span><span class="facts"><span class="sec">${esc(ZT(c, 'section'))}</span>${c.prio ? `<span class="disp">${t('prio')} ${esc(c.prio)}</span>` : ''}${c.needs ? `<span class="disp">${t('needs')} ${esc(c.needs)}</span>` : ''}${c.disp ? `<span class="disp">${esc(c.disp)}</span>` : ''}</span>${bug ? `<a class="bug" href="${ECL(bug.code)}" target="_blank" rel="noopener noreferrer">${esc(bug.code)}</a>${c.ebugs.length > 1 ? `<span class="disp">+${c.ebugs.length - 1}</span>` : ''}` : ''}</summary><div class="cbody">${on ? cardBody(c) : ''}</div></details>`;
 }
 function list() {
   if (!run) { $('list').innerHTML = `<p class="empty">${t('noRuns')}</p>`; $('count').textContent = ''; return; }

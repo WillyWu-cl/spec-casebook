@@ -12,7 +12,7 @@
 // Open questions (user, 2026-11-04): the page lists the Open questions of requirements.md in a panel above the table and
 // marks the rows they touch; answers go to library/<product>/<feature>/question-answers.json through POST /answers
 // (scripts/lib/questions.ts), separate from Save, and the agent applies them (skill: "Question answers").
-import { copyFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join } from 'node:path';
@@ -58,7 +58,7 @@ function load() {
     spec = { title: manifest.title, spec_folder: manifest.spec_folder, spec_files: manifest.spec_files, spec_set_sha256: manifest.spec_set_sha256 };
     if (existsSync(join(table, 'requirements.md'))) requirements = readFileSync(join(table, 'requirements.md'), 'utf8');
   }
-  zh = readZhCopy(draftDir ? join(draftDir, 'draft.zh-Hant.csv') : join(table, 'cases.zh-Hant.csv'));
+  zh = readZhCopy(draftDir ? join(draftDir, 'draft.zh-Hant.csv') : join(table, 'cases.zh-Hant.csv'), rows);   // stale rows show English
   qzh = readQuestionsZh(draftDir ?? table);
   previous = {};
   if (manifest && existsSync(join(table, 'cases.csv'))) for (const r of readTable(join(table, 'cases.csv'))) previous[r.ID] = r;
@@ -90,6 +90,11 @@ async function save(body: { rows: Record<string, string>[]; decisions: unknown[]
   if (draftDir && existsSync(join(draftDir, 'control-trace.json'))) copyFileSync(join(draftDir, 'control-trace.json'), join(table, 'control-trace.json'));
   // the Chinese reading copy goes along too; rows edited on the page show their English as newer in 中文 mode
   if (draftDir && existsSync(join(draftDir, 'draft.zh-Hant.csv'))) copyFileSync(join(draftDir, 'draft.zh-Hant.csv'), join(table, 'cases.zh-Hant.csv'));
+  // with its row fingerprints (scripts/zh-copy.ts); a copy without them must not inherit the old copy's
+  if (draftDir && existsSync(join(draftDir, 'draft.zh-Hant.csv'))) {
+    if (existsSync(join(draftDir, 'draft.zh-Hant.prints.json'))) copyFileSync(join(draftDir, 'draft.zh-Hant.prints.json'), join(table, 'cases.zh-Hant.prints.json'));
+    else rmSync(join(table, 'cases.zh-Hant.prints.json'), { force: true });
+  }
   if (draftDir && existsSync(join(draftDir, 'questions.zh-Hant.json'))) copyFileSync(join(draftDir, 'questions.zh-Hant.json'), join(table, 'questions.zh-Hant.json'));
   const now = new Date().toISOString();
   const entry = { version, approved_at: now, spec_set_sha256: spec.spec_set_sha256, draft: draftId, cases: clean.length, csv: 'cases.csv', requirements: 'requirements.md' };

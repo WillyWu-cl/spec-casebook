@@ -29,6 +29,7 @@ import { createServer } from 'node:http';
 import { networkInterfaces } from 'node:os';
 import { join } from 'node:path';
 import { readRecords } from './lib/csv.ts';
+import { zhCaseText } from './lib/zh.ts';
 import { localRunMessages, syncTokens } from './lib/run-ledger.ts';
 import { H5, WEEK, W, activity, estimator, series, upper, wsum, type Series, increments, readCalibration, readSnaps, weeklyRatio, weight, type Span } from './lib/usage-estimate.ts';
 import { addMsg, projectTranscripts, zero, type Msg, type U } from './token-usage.ts';
@@ -62,6 +63,11 @@ function buildData() {
     ...(existsSync(draftCsv) ? readRecords(readFileSync(draftCsv, 'utf8')).map(r => [r.ID, r] as const) : []),
     ...readRecords(readFileSync(join(base, 'cases.csv'), 'utf8')).map(r => [r.ID, r] as const),
   ]);
+  // 中文 mode's case text (lib/zh.ts): the table's Chinese copy, then the draft's for rows only the draft has
+  const zh = {
+    ...(existsSync(draftCsv) ? zhCaseText(draftCsv, readRecords(readFileSync(draftCsv, 'utf8'))) : {}),
+    ...zhCaseText(join(base, 'cases.csv'), readRecords(readFileSync(join(base, 'cases.csv'), 'utf8'))),
+  };
   const manifest = existsSync(join(base, 'manifest.json')) ? JSON.parse(readFileSync(join(base, 'manifest.json'), 'utf8')) : {};
   
   // Latest result per case across run folders, and which run folder a phase uses.
@@ -196,7 +202,7 @@ function buildData() {
       segments: p.segments.map((s: any) => ({ id: s.id, name: s.name, stats: pub(stat[`${p.id}/${s.id}`]), cases: s.cases.map((id: string) => {
         const runName = (phaseRun[p.id] ?? '').replace(/^runs\/|\/$/g, '');
         const l = p.round ? byRun[runName]?.[id] : latest[id];
-        return { id, origin: p.origin?.[id] ?? '', needs: (phasesFile.needs?.[id] ?? []).join(' '), section: cases[id]?.Section ?? '', action: short(cases[id]?.Action ?? ''), result: l?.result ?? 'Not run', disp: l?.disp ?? '', actual: short(l?.actual ?? '', 400),
+        return { id, origin: p.origin?.[id] ?? '', needs: (phasesFile.needs?.[id] ?? []).join(' '), section: cases[id]?.Section ?? '', action: short(cases[id]?.Action ?? ''), zh: zh[id] ? { section: zh[id].section, action: short(zh[id].action ?? '') } : undefined, result: l?.result ?? 'Not run', disp: l?.disp ?? '', actual: short(l?.actual ?? '', 400),
           why: l?.result === 'Blocked' ? why(id, l) : undefined,
           at: l?.at ? new Date(l.at).toISOString().replace('T', ' ').slice(0, 16) + ' UTC' : '' };
       }) })),

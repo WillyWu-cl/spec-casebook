@@ -1,0 +1,273 @@
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註
+TC-001,入口,iPhone，已登入 PhotoDirector（Free 方案）,從 Launcher 進入 Collage,Collage 房間頂端顯示橫幅「Try Swipe Collage!」，副標為「Create the perfect year-end recap post.」；Collage 房間其餘部分（版面、分頁標籤、範本）和以前一樣,P1,"R-002, R-001",PM 草圖的文案不同（「Try Scrollable Collage!」），以 Design 為準（Q-1）
+TC-002,入口,iPhone，已登入 PhotoDirector（Free 方案）,"1. 從 Launcher 進入 Collage
+2. 點選「Try Swipe Collage!」橫幅",開啟標題為「Swipe Collage」的版型頁；這是獨立的房間，不是 Collage 底下的分類標籤,P1,"R-010, R-001",
+TC-003,入口,iPhone，已登入 PhotoDirector（Free 方案）,"1. 從 Launcher 進入 Collage
+2. 點選橫幅
+3. 連點兩次「‹」返回，離開 Collage 房間
+4. 再次從 Launcher 進入 Collage",頂端仍然顯示「Try Swipe Collage!」橫幅,P2,R-003,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-004,入口,iPhone，已登入 PhotoDirector（Free 方案）；手機上有一個 deeplink scrollable_collage（不帶參數），例如貼在備忘錄裡,點選該 deeplink,PhotoDirector 開啟並停在 Swipe Collage 版型頁,P2,R-004,deeplink 格式由 RD 提供（Q-17）。僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-005,入口,iPhone，已登入 PhotoDirector（Free 方案）；deeplink scrollable_collage 帶入「Year End」以外某個分類的 category_guid,點選該 deeplink,開啟版型頁，並選取該分類的標籤，列出該分類的版型,P2,R-005,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-006,入口,iPhone，已登入 PhotoDirector（Free 方案）；deeplink scrollable_collage 帶入 template_guid,點選該 deeplink,直接開啟該版型的 Template Preview（標題為「Template」，並有「Use Template」）,P2,R-006,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-007,入口,iPhone，已登入 PhotoDirector（Free 方案）；已透過帶 template_guid 的 deeplink 開啟某版型的 Template Preview,點 ‹,回到 Swipe Collage 版型頁,P3,R-032,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-008,入口,iPhone，已登入 PhotoDirector（Free 方案）；已透過 deeplink scrollable_collage 開啟版型頁,點選一張版型卡片,開啟該版型的 Template Preview,P3,R-024,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-009,入口,iPhone，已登入 PhotoDirector（Free 方案）,開啟 Launcher，查看 Features 區的功能格,Features 區第一頁、「AI Art」之後有「Swipe Collage」捷徑，使用 Swipe Collage 圖示，沒有 NEW / HOT 標籤；「Collage」仍然在,P2,R-007,Design 「entry」 199:3566（2026-11-05 之後繪製）有畫這個捷徑；PM D0-06 與 Design 總覽則仍寫此版本沒有捷徑（Q-21）
+TC-151,入口,iPhone，已登入 PhotoDirector（Free 方案）,"1. 開啟 Launcher
+2. 在 Features 區點選「Swipe Collage」",開啟標題為「Swipe Collage」的版型頁，與 Collage 房間橫幅開啟的是同一頁,P2,R-168,Design 沒有畫出目的地（沒有箭頭），暫時假設和橫幅一樣是版型頁（Q-21）
+TC-010,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；版型頁已開啟（已點過橫幅）,查看頁面頂端與分類標籤,標題為「Swipe Collage」，左側有「‹」；分類標籤共 3 到 4 個，「Year End」排第一個（Design 畫的是「Year End」、「Category1」、「Category2」），且「Year End」為選取狀態,P1,"R-011, R-012",
+TC-011,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；版型頁停在「Year End」,往下捲動清單,版型以瀑布流（錯落排列）顯示；每張卡片只顯示「N photos · M pages」（例如「9 photos · 5 pages」），沒有直式／橫式標示；每張縮圖顯示的是該版型的第一頁,P1,"R-014, R-015, R-016",
+TC-012,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；版型頁已開啟,在一張卡片上向右滑,卡片顯示該版型的下一頁（繼續滑就繼續往後）；清單本身不會捲動,P2,"R-017, R-018",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-013,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；版型頁停在「Year End」,依序點選其他每個分類標籤,每個標籤都顯示各自的版型；被選取的標籤會反白,P2,"R-013, R-012",
+TC-014,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；版型頁已開啟,查看每個分類裡所有的卡片,CMS 標為 NEW 的卡片顯示「NEW」；PRO 版型的卡片右上角有 PRO 圖示；免費版型兩者都沒有,P2,"R-019, R-020",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-015,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；版型頁已開啟,數一數每個分類標籤裡的版型數量,上線第一天共 20 個版型,P3,R-021,同一個版型出現在兩個分類只算一個；上線後 CMS 內容可能會變動。僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-016,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；版型頁已開啟；手機的地區與語言為繁體中文（台灣）,"1. 記下前 3 個版型的縮圖
+2. 把地區與語言改成英文（美國）
+3. 重新開啟版型頁",縮圖會依語系使用東方或西方的那一組（以 PM 對 Q-3 的回覆為準）；每個版型的每一頁都有縮圖,P3,R-018,Q-3：使用者會看到哪一組縮圖。僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-017,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；從 Collage 橫幅開啟版型頁,點 ‹,回到 Collage 房間,P2,R-022,
+TC-018,版型頁,iPhone，已登入 PhotoDirector（Free 方案）；版型頁已開啟,點選一張版型卡片,開啟該版型的 Template Preview,P1,R-023,
+TC-019,版型預覽,iPhone，已登入 PhotoDirector（Free 方案）；已開啟免費「9 photos · 5 pages」版型的 Template Preview,查看頁面,標題為「Template」，並顯示分類「Year End」、「9 photos · 5 pages」與「Use Template」按鈕；預覽顯示該版型的預設版面（Design 畫成「9 photos · 5pages」，中間沒有空格：預期應為「5 pages」）,P1,"R-025, R-029",
+TC-020,版型預覽,iPhone，已登入 PhotoDirector（Free 方案）；已開啟 5 頁版型的 Template Preview,"1. 向左滑 4 次
+2. 向右滑 4 次",每滑一次預覽就換一頁，從第 1 頁依序到第 5 頁，再回到第 1 頁,P1,R-026,
+TC-021,版型預覽,iPhone，已登入 PhotoDirector（Free 方案）；版型頁已開啟,點選一個有 PRO 圖示的版型,它的 Template Preview 也顯示 PRO 圖示，而且可以按「Use Template」,P2,R-027,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-022,版型預覽,iPhone，已登入 PhotoDirector（Free 方案）；已開啟免費版型的 Template Preview,點「Use Template」,開啟畫布，版面與預覽看到的一致（背景、frame、文字），空的 frame 顯示「+」,P1,"R-030, R-029, R-035",
+TC-023,版型預覽,iPhone，已登入 PhotoDirector（Free 方案）；已開啟 PRO 版型的 Template Preview,點「Use Template」，並編輯其中一個 frame（匯入一張照片）,畫布正常開啟，可以編輯，不會跳出 IAP 頁面,P1,R-028,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-024,版型預覽,iPhone，已登入 PhotoDirector（Free 方案）；從版型頁開啟 Template Preview,點 ‹,回到版型頁，仍停在原本的分類,P2,R-031,
+TC-025,畫布,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,查看畫布的上方與下方,下方有「Background」、「Layers」、「+」、「Ratio」、「Pages」，其下一排為 ✕、↶、↷、✓；上方沒有工具列。每個空位都顯示「+」,P1,"R-034, R-035",
+TC-026,畫布,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,"1. 在畫布上向左滑到最後一頁
+2. 雙指向外撐開放大
+3. 雙指向內捏合縮小",畫布可以左右逐頁捲動；畫面可自由放大縮小，且各頁仍是連在一起的同一張畫布,P1,R-033,
+TC-027,畫布,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）,"1. 點一個 frame 讓它被選取
+2. 把它的角落控制點往外拖",frame 變大；照片仍留在 frame 內,P2,"R-038, R-037",
+TC-028,畫布,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,"1. 點選版型的文字「a year in pictures」
+2. 修改它的內容、顏色與字型",文字顯示新的內容、顏色與字型,P2,R-037,
+TC-029,畫布,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）,"1. 在 frame 上連點兩下，選取裡面的圖片
+2. 在 frame 內拖曳圖片",圖片在 frame 內移動,P2,"R-037, R-048",
+TC-030,畫布,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）,"1. 依序做四個操作：移動一個 frame、翻轉一張圖片、更改背景顏色、刪除一個 frame
+2. 點「↶」4 次
+3. 點「↷」4 次",每點一次「↶」就依相反順序復原一個操作，直到回到最初狀態；每點一次「↷」就依原順序重做一個操作,P1,R-036,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-031,畫布,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；有一張貼圖，中心在第 2 頁，並跨到第 3 頁,"1. 開啟「Pages」
+2. 把第 2 頁拖到最後一個位置
+3. 點「✓」",貼圖跟著第 2 頁（貼圖中心所在的頁面）一起移動，仍然跨在相鄰的頁面上,P2,R-039,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-032,匯入照片,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,點空 frame 裡的「+」,開啟照片選擇頁，顯示「Please select 3 photos to continue.」，計數器「(n/3)」對應畫布上剩下的 3 個空 frame，並有「Photo」／「Stock」兩個分頁,P1,"R-045, R-040, R-041",計數器的總數就是畫布上空 frame 的數量（Q-4）
+TC-033,匯入照片,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；畫布上有 3 個空 frame,"1. 點空 frame 裡的「+」
+2. 選 3 張照片
+3. 嘗試選第 4 張",選不到第 4 張（計數器停在「(3/3)」）,P1,R-042,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-034,匯入照片,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；畫布上有 3 個空 frame,"1. 點空 frame 裡的「+」
+2. 選 2 張照片
+3. 點計數器旁橘色的「✓」",2 張照片依序放進前 2 個空 frame，第 3 個 frame 仍是空的，顯示「+」,P1,"R-043, R-044",Design 的文案「Please select 3 photos to continue.」可能代表一定要剛好選 3 張（Q-4）
+TC-035,匯入照片,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；好幾頁都有空 frame,"1. 點空 frame 裡的「+」
+2. 依序選照片 A、B、C
+3. 點計數器旁橘色的「✓」",回到畫布，A、B、C 依序放進空 frame：逐頁處理，每頁由左到右、由上到下,P1,"R-046, R-044",
+TC-036,匯入照片,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；畫布上有超過 20 個空 frame（點「+」›「Frame」新增 frame，直到有 21 個空 frame）,"1. 點空 frame 裡的「+」
+2. 一直選照片，直到選不下去為止",照片選擇頁最多只能選 20 張,P2,R-042,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-037,匯入照片,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,"1. 點空 frame 裡的「+」
+2. 選一張照片
+3. 點「‹」",回到畫布，沒有匯入任何照片,P2,R-047,
+TC-038,Frame 選取,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）,"1. 點一個 frame
+2. 再點同一個 frame
+3. 再點一次",第一次點：選取 frame，顯示 frame 工具；第二次點：選取圖片，顯示「Image selected」與圖片工具；第三次點：回到選取 frame,P1,R-048,
+TC-039,Frame 選取,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 frame（frame 選取狀態）,查看功能列與該 frame,功能列有「Opacity」、「Shadow」、「Flip H」、「Flip V」、「Duplicate」、「Lock」和刪除；frame 旁浮出刪除、複製、鎖定圖示,P1,"R-049, R-050",
+TC-040,Frame 選取,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 frame（frame 選取狀態）,點浮出的刪除圖示,整個 frame 連同照片都從畫布上消失,P1,"R-051, R-055",
+TC-041,Frame 選取,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 frame（frame 選取狀態）,點「Duplicate」,旁邊出現一個複製的 frame，裡面是同一張照片,P2,"R-052, R-055",
+TC-042,Frame 選取,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 frame（frame 選取狀態）,點浮出的複製圖示,出現一個複製的 frame，效果和功能列的「Duplicate」一樣,P3,"R-052, R-050",
+TC-043,Frame 選取,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 frame（frame 選取狀態）,"1. 點「Flip H」
+2. 點「Flip V」",frame 會立即先水平翻轉，再垂直翻轉,P2,R-053,
+TC-044,Frame 選取,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 frame（frame 選取狀態）,"1. 點「Opacity」，把滑桿拖到中間
+2. 點「Shadow」並調整",兩者都會開啟和 Collage 房間一樣的滑桿；frame 變成半透明／加上陰影,P2,R-054,PM 提案 TBD-1（Q-6）。僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-045,Frame 選取,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 frame（frame 選取狀態）,點「Lock」,frame 被鎖定：顯示「Frame locked」，浮出的按鈕變成刪除、複製、解除鎖定,P1,"R-055, R-084, R-086",
+TC-046,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,把功能列捲到最後,功能列是同一條、可左右捲動：「Replace」、「Flip H」、「Flip V」、「Adjust」、「Filter」、「Removal」、「Enhance」；「Removal」和「Enhance」有付費標記,P1,"R-056, R-061",Design 把「Filter」拼成「Fliter」（Q-7）
+TC-047,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,"1. 點「Replace」
+2. 選另一張照片",新照片取代同一個 frame 裡的舊照片,P1,R-057,
+TC-048,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,"1. 點「Flip H」
+2. 點「Flip V」",圖片在 frame 內先水平翻轉，再垂直翻轉；frame 本身不會翻轉,P2,R-058,
+TC-049,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,"1. 點「Adjust」並調整亮度
+2. 套用",工具和 Collage 房間的一樣；只有被選取的那張圖片有變化,P2,R-059,
+TC-050,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,"1. 點「Filter」並選一個濾鏡
+2. 套用",只有被選取的那張圖片套用濾鏡,P2,R-059,
+TC-051,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,點刪除圖示,照片被移除；frame 還在，是空的，顯示「+」新增圖片圖示,P1,"R-060, R-055",
+TC-052,圖片選取與工具,iPhone，已登入 PhotoDirector（Pro 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,點「Removal」,開啟 Object Removal，載入被選取的那張照片,P1,R-066,
+TC-053,圖片選取與工具,iPhone，已登入 PhotoDirector（Pro 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已從圖片選取狀態進入 Object Removal,"1. 標記一個物件，點「Remove」
+2. 點「✓」",回到畫布並維持圖片選取狀態，原本的照片已換成處理後的結果；點「↶」可以還原成原圖；相簿裡不會多出新圖片,P1,"R-068, R-062, R-065",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-054,圖片選取與工具,iPhone，已登入 PhotoDirector（Pro 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已從圖片選取狀態進入 Object Removal,"1. 標記一個物件，點「Remove」
+2. 點「✕」",回到畫布，照片維持原樣、沒有變動,P2,"R-069, R-063",
+TC-055,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已從圖片選取狀態進入 Object Removal,"1. 標記一個物件，點「Remove」
+2. 點「✓」",跳出「PhotoDirector Premium」IAP 頁面；畫布上不會套用任何變更,P1,"R-067, R-064",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-056,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已在 Object Removal 點「✓」，開啟 IAP 頁面,點 IAP 頁面的「✕」,回到 Object Removal 畫面,P2,"R-070, R-160",
+TC-057,圖片選取與工具,iPhone，已登入 PhotoDirector（Pro 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,點「Enhance」,開啟 AI Enhance，載入被選取的那張照片,P1,R-071,
+TC-058,圖片選取與工具,iPhone，已登入 PhotoDirector（Pro 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已從圖片選取狀態進入 AI Enhance,"1. 點「Enhance」
+2. 點「✓」",回到畫布並維持圖片選取狀態，原本的照片已換成增強後的結果；點「↶」可以還原成原圖；相簿裡不會多出新圖片,P1,"R-073, R-062",AI Enhance 在它自己的畫面會顯示點數費用（和現行一樣）；Swipe Collage 本身不收費。僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-059,圖片選取與工具,iPhone，已登入 PhotoDirector（Pro 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已從圖片選取狀態進入 AI Enhance,點 ✕,回到畫布，照片維持原樣、沒有變動,P2,"R-074, R-063",
+TC-060,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已從圖片選取狀態進入 AI Enhance,"1. 點「Enhance」
+2. 點「✓」",跳出「PhotoDirector Premium」IAP 頁面；不會套用任何變更,P1,"R-072, R-064",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-061,圖片選取與工具,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已在 AI Enhance 點「✓」，開啟 IAP 頁面,點 IAP 頁面的「✕」,回到 AI Enhance 畫面,P2,R-075,
+TC-062,圖片選取與工具,iPhone，已登入 PhotoDirector（Pro+ 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro+）；已開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），每個 frame 都已放入照片；已從圖片選取狀態進入 Object Removal,"1. 標記一個物件，點「Remove」
+2. 點「✓」",處理後的結果取代畫布上的照片，不會跳出 IAP 頁面,P2,"R-161, R-062",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-063,交換與 frame 樣式,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）,"1. 長按 frame 1 裡的照片
+2. 拖到 frame 2 上放開",frame 1 和 frame 2 的照片互相對調,P1,R-076,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-064,交換與 frame 樣式,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；有一個多格 frame（例如底片樣式），每一格都有照片,"1. 長按第 1 格裡的照片
+2. 拖到同一個 frame 的第 2 格上放開",frame 內這兩張照片互相對調,P2,"R-077, R-078",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-065,交換與 frame 樣式,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 frame（frame 選取狀態）,找出 frame 樣式工具並點選,從 frame 工具列開啟 frame 樣式清單（PM 提案：第一個工具「Frame」）；樣式是用點選來切換，不是用拖曳,P2,R-079,TBD-2（Q-8）。僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-066,交換與 frame 樣式,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個放有照片 A 的單張照片 frame,把它的樣式切換成 3 張照片的 frame,照片 A 在第一格（左上）；其他格顯示「+」新增圖片,P1,R-080,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-067,交換與 frame 樣式,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 3 格 frame，依閱讀順序放有照片 A、B、C,把它的樣式切換成單張照片的 frame,frame 裡只剩 A；B 和 C 不見了,P1,R-081,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-068,交換與 frame 樣式,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個 4 格 frame，依閱讀順序放有照片 A、B、C、D,把它的樣式切換成 2 張照片的 frame,frame 裡只剩 A 和 B；C 和 D 不見了,P2,R-082,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-069,交換與 frame 樣式,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；一個放有 A、B、C 的 3 格 frame，已切換成單張（只留下 A）,"1. 再切換回 3 張照片的樣式
+2. 點「↶」，直到 frame 又出現 A、B、C",切換回來後只有 A（其他格顯示「+」）；點「↶」可以還原 A、B、C,P2,"R-083, R-036",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-070,鎖定,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；有一個 frame 已鎖定（選取 frame ›「Lock」）,"1. 嘗試拖曳這個 frame
+2. 嘗試用雙指縮放它",frame 不會移動，大小也不會改變,P1,R-084,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-071,鎖定,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個被鎖定的 frame,依序點功能列上的每個工具,「Opacity」、「Shadow」、「Flip H」、「Flip V」是灰色的，點了沒有反應；「Duplicate」、「Unlock」和刪除可以使用,P2,R-085,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-072,鎖定,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個被鎖定的 frame,點浮出的複製圖示,出現一個複製的 frame（和未鎖定的 frame 一樣）,P3,"R-086, R-085",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-073,鎖定,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一個被鎖定的 frame,點浮出的刪除圖示,被鎖定的 frame 會被刪除,P2,R-086,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-074,鎖定,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,"1. 鎖定該圖片（點浮出的鎖定圖示）
+2. 嘗試拖曳並雙指縮放該圖片",顯示「Image locked」；圖片不會移動，也不能縮放,P1,"R-087, R-055",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-075,鎖定,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張被鎖定的圖片,依序點功能列上的每個工具，並查看浮出的按鈕,除了「Unlock」和「Delete」，其他工具都是灰色的；浮出的按鈕為刪除、複製、解除鎖定,P2,R-088,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-076,鎖定,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；有一個被鎖定的 frame 和一張被鎖定的圖片,"1. 點 frame 的解除鎖定
+2. 拖曳該 frame
+3. 點圖片的解除鎖定
+4. 拖曳該圖片",每次解除鎖定後，frame／圖片都可以再移動，所有工具也恢復可用,P1,R-089,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-077,鎖定,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；第 2 頁有一個被鎖定的 frame,"1. 開啟「Pages」
+2. 刪除第 2 頁（點「•••」›「Delete page」）
+3. 點「✓」",第 2 頁連同上面被鎖定的 frame 都不見了,P2,"R-090, R-134",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-078,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,點下方列的「+」,開啟「Add Layer」，只有「Image」、「Text」、「Sticker」、「Frame」、「Text Bubble」（沒有影片、檔案、格線、形狀或繪圖）,P1,R-091,
+TC-079,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Add Layer 面板已開啟,"1. 點「Image」
+2. 選一張照片",開啟照片選擇頁；選好後，畫布上多了一個單張照片的 frame，放著該照片,P1,"R-099, R-104, R-092",TBD-5（Q-9）
+TC-080,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Add Layer 面板已開啟,"1. 點「Text」
+2. 輸入「Strong」
+3. 點「Done」",開啟 Collage 的文字輸入畫面並跳出鍵盤；點「Done」後鍵盤收起，畫布上出現新文字「Strong」,P1,"R-100, R-105, R-093",
+TC-081,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Add Layer 面板已開啟,"1. 點「Sticker」
+2. 點選一個貼圖",開啟 Edit Room 的貼圖面板（分頁有「Favorites」、「AI Sticker」、「Flower」、「Holiday」等）；貼圖出現在畫布上,P1,"R-101, R-106, R-094, R-098",
+TC-082,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Add Layer ›「Text」已開啟，並已輸入「Strong」,"1. 點粗體
+2. 點斜體
+3. 點靠左對齊
+4. 點置中對齊
+5. 點靠右對齊
+6. 點「Done」",每個樣式都和 Collage 文字輸入畫面一樣套用在文字上；點「Done」後鍵盤收起，畫布上是套好樣式的文字,P3,"R-093, R-037",
+TC-083,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Add Layer 面板已開啟,"1. 點「Frame」
+2. 點選「3 photos」的 frame",Frame 面板顯示方形縮圖，標示為「1 photo」、「3 photos」…；選好的 frame 出現在畫布上，有 3 個空格，各顯示「+」,P1,"R-102, R-107, R-095, R-078",
+TC-084,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Frame 面板已開啟,瀏覽所有 frame,新的 frame 顯示「NEW」；PRO 的 frame 顯示 PRO 圖示,P2,R-096,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-085,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Add Layer 面板已開啟,"1. 點「Text Bubble」
+2. 點選一個對話框",開啟 Edit Room 的 Text Bubble 面板；對話框出現在畫布上,P1,"R-103, R-108, R-097, R-098",
+TC-086,新增圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；已新增一個文字泡泡並選取，Text Bubble 面板已開啟,點「none」（無對話框）選項,對話框外形被移除、文字保留，和 Edit Room 一致,P3,"R-097, R-098",
+TC-087,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,點「Background」,開啟面板，有「Solid」和「Texture」兩個分頁，預設選「Solid」，只有純色（沒有漸層）,P1,R-109,
+TC-088,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Background ›「Solid」已開啟,"1. 數一數色票
+2. 點一個色票",共 32 個色票（8 × 4）；每一頁的畫布背景立刻換成該顏色,P1,R-110,
+TC-089,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Background ›「Solid」已開啟,點自訂顏色,開啟顏色選擇器，和文字顏色選擇器一樣：飽和度／亮度方塊、色相條、滴管、「Cancel」和「Done」,P2,R-111,
+TC-090,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Background 的自訂顏色選擇器已開啟,"1. 在色相條和方塊上選一個顏色
+2. 點「Done」",畫布背景換成選好的顏色,P2,R-113,
+TC-091,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Background 的自訂顏色選擇器已開啟,"1. 選另一個顏色
+2. 點「Cancel」",背景維持原本的顏色,P2,R-113,
+TC-092,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Background 的自訂顏色選擇器已開啟,"1. 點滴管
+2. 點畫布上某張照片的一個位置
+3. 點「Done」",取到的顏色就是照片在該位置的顏色，並成為背景色,P2,R-112,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-093,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Background 面板已開啟,"1. 點「Texture」
+2. 點選一個紋理
+3. 點「Solid」",紋理鋪滿整張畫布和每一頁，頁與頁之間、圖塊之間都看不到接縫；NEW／PRO 紋理有標示；點「Solid」會切回色票,P1,"R-114, R-115",
+TC-094,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Background 面板已開啟,"1. 點一個色票
+2. 點面板的「✓」",面板關閉，新的背景保留,P1,R-116,
+TC-095,背景,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Background 面板已開啟,"1. 點一個色票
+2. 點面板的「✕」",面板關閉，背景回到開啟面板之前的樣子,P2,R-116,TBD-4 提案的做法相反（Q-10）
+TC-096,圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已新增一張貼圖和一段文字,點「Layers」,開啟圖層清單：每個圖層的縮圖放在透明棋盤格上，左邊有「⋯」，右邊有「≡」,P1,R-117,
+TC-097,圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Layers 面板已開啟,"1. 點任一圖層的 ⋯
+2. 點「Duplicate」
+3. 再點任一圖層的 ⋯
+4. 點「Lock」
+5. 點已鎖定圖層的 ⋯",選單有「Delete」、「Duplicate」、「Lock」，每一項都帶圖示；點 Duplicate 會多出一個複製的圖層；Lock 之後，選單裡的「Lock」變成「Unlock」,P1,R-118,
+TC-098,圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Layers 面板已開啟,"1. 點貼圖圖層的 ⋯
+2. 點「Delete」",該圖層從清單消失，畫布上的貼圖也一併消失,P2,R-118,
+TC-099,圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Layers 面板已開啟；有一張貼圖蓋在照片 frame 上,"1. 長按貼圖圖層的 ≡
+2. 拖曳到 frame 圖層的下方
+3. 放開",圖層順序改變；在畫布上，貼圖現在位於 frame 的後面,P2,R-119,TBD-3（Q-11）。僅 PM 有定義：Design 還沒有對應的 frame（Design 2026-10-29）
+TC-100,圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Layers 面板已開啟，且已複製一個圖層,點面板的 ✓,面板關閉；複製出來的圖層仍留在畫布上,P2,R-116,
+TC-101,圖層,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Layers 面板已開啟，且已複製一個圖層,點面板的 ✕,面板關閉；複製出來的圖層被移除（Q-10）,P3,R-116,TBD-4 提案的做法相反（Q-10）
+TC-102,比例,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,點「Ratio」,Ratio 面板列出 1:1、4:5、5:4、3:4、4:3、9:16、16:9，使用 PhD Crop 的圖示與數字，沒有 AI Expand 的宣傳內容,P1,"R-120, R-121, R-124",Design frame 畫的是 Crop 清單（「Custom」、「Original」、「Squre」、「2:3」、「3:2」、「3:4」）：見 Q-2，請在手機上確認
+TC-103,比例,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）,"1. 先記下每個元素的位置
+2. 點「Ratio」
+3. 點 9:16
+4. 點 1:1",切到 9:16 時，每一頁往下加高；切到 1:1 時往上縮短；寬度不變，所有元素的位置都不會移動,P1,"R-123, R-122",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-104,比例,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布,依序點每一種比例；並分別在 4:5 與 16:9 各匯出一次,每種比例都會改變頁面的形狀；匯出的圖片符合所選比例，且短邊為 1080 px（視 Q-13 的結果而定）,P2,"R-120, R-122",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-105,比例,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Ratio 面板已開啟，畫布比例為 1:1,"1. 點 4:5
+2. 點面板的 ✓",面板關閉，畫布維持 4:5,P2,R-116,
+TC-106,比例,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Ratio 面板已開啟，畫布比例為 1:1,"1. 點 4:5
+2. 點面板的 ✕",面板關閉，畫布恢復成 1:1（Q-10）,P3,R-116,TBD-4 提案的做法相反（Q-10）
+TC-107,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；畫布停在第 3 頁（共 5 頁）,點「Pages」,開啟 Pages，選取的是第 3 頁，並顯示「Page 3 / 5」；各頁連在一起，頁與頁之間只有一條細線,P1,"R-125, R-126",
+TC-108,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Pages 已開啟，共 5 頁,"1. 點縮圖列中的 +
+2. 點下方的 +
+3. 點下方的 −",每點一次 + 都會在最後新增一頁空白頁並捲動到該頁（共 7 頁）；點 − 會刪掉最後一頁（剩 6 頁）,P1,R-128,
+TC-109,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Pages 已開啟,"1. 一直點 + 直到有 10 頁
+2. 再點下方的 + 和縮圖列的 +
+3. 點任一頁的 •••",到 10 頁時，縮圖列的 +、下方的 +、「Duplicate page」都是不能按的狀態；頁數維持 10 頁,P1,"R-129, R-127",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-110,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Pages 已開啟,"1. 一直點 − 直到只剩 1 頁
+2. 再點一次 −
+3. 點該頁的 •••",只剩 1 頁時，下方的 −、「Delete page」都是不能按的狀態；這一頁不會被刪掉,P1,"R-130, R-127",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-111,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟，共 5 頁,"1. 點第 2 頁的 •••
+2. 點「Duplicate page」",第 2 頁後面緊接著出現一份完整的複本，所有元素都一併複製（共 6 頁）,P1,R-131,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-112,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟，共 5 頁,"1. 點第 2 頁的 •••
+2. 點「Delete page」",第 2 頁連同上面的所有元素立刻被刪除，不會跳出確認視窗（剩 4 頁）,P1,"R-131, R-134",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-113,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；有一張貼圖，中心在第 2 頁，並跨到第 3 頁,"1. 開啟「Pages」
+2. 刪除第 3 頁
+3. 點 ✓",依 PM 對 Q-12 的答覆而定（提議：碰到被刪除頁面的元素，會跟著該頁一起刪除）,P3,R-134,TBD-6（Q-12）。僅 PM 有定義：Design 還沒有對應的 frame（Design 2026-10-29）
+TC-114,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟，共 5 頁,"1. 長按第 1 頁的 ≡
+2. 拖曳到第 3 個位置
+3. 放開",拖曳時，縮圖會放大並呈半透明，其他縮圖讓出位置；放開後第 1 頁變成第 3 頁；並顯示提示「Hold ≡ & drag to reorder」,P1,R-132,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-115,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟,只點一下 ≡（不要長按）,沒有任何反應,P3,R-132,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-116,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟,"1. 點第 4 頁的縮圖
+2. 試著拖曳該頁上的 frame
+3. 點 ✓",選取第 4 頁（顯示「Page 4 / 5」）；該頁的 frame 無法移動；點 ✓ 回到畫布，並停在第 4 頁,P1,"R-133, R-135",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-117,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟,找找看有沒有 ↶ / ↷,Pages 裡沒有復原／重做按鈕,P3,R-135,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-118,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟,"1. 刪除一頁
+2. 點 ✕",跳出「Discard changes?」，有「Discard」和「Keep」兩個選項,P1,R-136,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-119,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟；已刪除一頁；跳出「Discard changes?」,點「Discard」,畫布恢復顯示所有頁面，和刪除前一樣,P1,R-136,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-120,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟；已刪除一頁；跳出「Discard changes?」,點「Keep」,留在 Pages，被刪掉的那一頁仍是刪除狀態,P2,R-136,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-121,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Pages 已開啟，尚未做任何變更,點 ✕,直接回到畫布，不會跳出任何對話框,P2,R-136,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-122,頁面,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；Pages 已開啟,"1. 按住 ≡ 不放
+2. 按住 ••• 不放
+3. 按住縮圖列的 + 不放
+4. 一直點 + 直到有 10 頁
+5. 一直點 − 直到只剩 1 頁",按住時，按鈕會顯示按下的狀態；到達上限時，步進器的 +（10 頁）或 −（1 頁）以及縮圖列的 + 會呈現不能按的樣式，和 Canvas 圖示按鈕規格表上畫的一致,P3,R-137,
+TC-123,離開與接續編輯,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已移動一張照片,點畫布左下角的 ✕,跳出「Discard changes?」，有「Discard」和「Keep」兩個選項（和 Edit Room 一樣）,P1,R-138,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-124,離開與接續編輯,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；點「✕」後跳出「Discard changes?」,點「Discard」,回到同一個版型的 Template Preview；再次用「Use Template」開啟，會是全新的畫布,P1,"R-142, R-138",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-125,離開與接續編輯,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；點「✕」後跳出「Discard changes?」,點「Keep」,對話框關閉，畫布保留所有編輯內容,P1,R-139,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-126,離開與接續編輯,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已選取一張圖片（圖片選取狀態）,"1. 點左下角的 ✕
+2. 點「Discard」",同樣跳出「Discard changes?」對話框；點 Discard 後回到 Template Preview,P2,R-143,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-127,離開與接續編輯,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；好幾頁都有編輯過,"1. 從最近使用的 App 清單把 PhotoDirector 滑掉
+2. 重新開啟 PhotoDirector",跳出「Continue editing?」（和 Edit Room 一樣）；選擇繼續後，會重新開啟 Swipe Collage 畫布，所有頁面與編輯內容都還在,P1,R-140,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-128,離開與接續編輯,iPhone，已登入 PhotoDirector（Free 方案）；畫布 A 編輯後，點「✕」›「Discard」離開；畫布 B（另一個版型）已編輯；在畫布 B 開著的時候，強制結束 App,"1. 開啟 PhotoDirector
+2. 選擇繼續編輯",只會還原畫布 B（最新的那一個）,P2,R-141,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-129,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）,點畫布右下角的 ✓,開啟「Save & Share」頁面，顯示「5 images in this set」、「Swipe to view」、「1/5」和預覽圖；預覽圖下方有「Save all 5 images」（橘色）和「Save this image」（外框樣式）；沒有縮圖列,P1,"R-155, R-144, R-146, R-147",Design 10/29 畫的是「Save this image only」；PM 11/3 較新，以 PM 為準
+TC-130,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Save & Share 已開啟（5 頁）,在預覽圖上向左滑 4 次,計數器依序顯示「1/5」…「5/5」，每一張預覽都是畫布的其中一頁,P1,"R-145, R-146",
+TC-131,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Save & Share 已開啟（5 頁）,"1. 點「Save all 5 images」
+2. 開啟 Photos / Gallery App",「PhotoDirector」相簿多了 5 張新圖片，一頁一張，順序與頁面順序相同；每張都沒有浮水印；也不會跳出評分對話框,P1,"R-147, R-149, R-145, R-152, R-153",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-132,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Save & Share 已開啟（5 頁），預覽已滑到「3/5」,"1. 點「Save this image」
+2. 開啟 Photos / Gallery App",只儲存第 3 頁（多一張新圖片）,P1,R-147,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-133,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已在 Pages 把畫布刪減為 1 頁,點畫布右下角的 ✓,Save & Share 只顯示一張圖片和一個橘色的「Save」按鈕（沒有「Save this image」，也沒有計數器），並有「Share to」和「You might also like」,P1,"R-148, R-154",Q-14「You might also like」
+TC-134,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Save & Share 已開啟（5 頁）；手機已安裝 Instagram、Facebook、Twitter、Line 和 Tiktok,"1. 點 Instagram
+2. 回到 PhotoDirector
+3. 點 Facebook
+4. 回到 PhotoDirector
+5. 點 Twitter
+6. 回到 PhotoDirector
+7. 點 Line
+8. 回到 PhotoDirector
+9. 點 Tiktok",「Share to」依序列出 Instagram、Facebook、Twitter、Line、Tiktok；點選後會開啟對應的 App：支援多張圖片的 App 會帶入 5 張圖片，不支援的就只開啟 App,P2,R-150,
+TC-135,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Settings › Image Quality 已設為最高；畫布比例為 4:5,"1. 匯出並儲存全部圖片
+2. 在 Photos / Gallery 的資訊裡查看其中一張已儲存圖片的尺寸",圖片尺寸的長邊依 Image Quality 的設定而定（視 Q-13 的結果而定）,P2,"R-151, R-122",Q-13：以 Image Quality 為準，還是固定短邊。僅 PM 有定義：Design 還沒有對應的 frame（Design 2026-10-29）
+TC-136,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；Save & Share 已開啟,點 ‹,回到畫布，所有編輯內容都還在,P2,R-156,
+TC-137,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已從 Save & Share 儲存圖片,開啟 My AI Artwork,清單裡沒有任何 Swipe Collage 的專案或圖片,P2,R-008,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-138,匯出與 Save & Share,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；每個 frame 都已放入照片（點 frame 上的「+」›選照片›「Done」）；已記下點數餘額（Mine › My Credits）,"1. 匯出並儲存全部圖片
+2. 再查看點數餘額",點數餘額沒有變動，也不會因為拼貼本身而跳出任何購買提示,P2,R-009,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-139,PRO 內容與 IAP,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟 PRO 版型，其中一個 frame 已放入照片,點畫布右下角的 ✓,不會進入 Save & Share，而是開啟 IAP 頁面，並顯示「Paid style applied」,P1,"R-157, R-028, R-159",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-140,PRO 內容與 IAP,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；已從 Add Layer ›「Frame」加入一個 PRO frame,點畫布右下角的 ✓,開啟 IAP 頁面，並顯示「Paid style applied」,P1,R-157,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-141,PRO 內容與 IAP,iPhone，已登入 PhotoDirector（Free 方案）；用「Use Template」開啟「Year End」版型（多頁、有空的照片 frame，例如「9 photos · 5 pages」），已進入畫布；背景已設為 PRO 材質,點畫布右下角的 ✓,開啟 IAP 頁面，並顯示「Paid style applied」,P1,"R-157, R-115",僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-142,PRO 內容與 IAP,iPhone，已登入 PhotoDirector（Pro 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro）；已開啟 PRO 版型，並用了 PRO frame 與 PRO 材質,"1. 點畫布右下角的 ✓
+2. 點「Save all N images」",直接進入 Save & Share，圖片順利儲存；不會出現 IAP 頁面,P1,R-157,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-143,PRO 內容與 IAP,iPhone，已登入 PhotoDirector（Pro+ 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro+）；已開啟 PRO 版型,點畫布右下角的「✓」並儲存,開啟 Save & Share，圖片儲存完成，不會出現 IAP 頁面,P2,R-161,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-144,PRO 內容與 IAP,iPhone，已登入 PhotoDirector（Free 方案）；已開啟 2 頁的免費版型，frame 都已放入照片；沒有使用 PRO 內容,"1. 匯出並點「Save all 2 images」
+2. 再重複匯出與儲存兩次",前兩次儲存都能順利完成；第三次儲存時開啟 IAP 頁面（以匯出次數計算，不是以圖片張數計算：第三次之前已儲存 4 張圖片）,P1,R-158,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-145,PRO 內容與 IAP,iPhone，已登入 PhotoDirector（Pro 方案：Launcher › Pink › ☰ › [0] IAP › Status 設為 Pro）；已開啟免費版型，frame 都已放入照片,匯出並儲存 3 次,每一次儲存都不會出現 IAP 頁面,P2,R-158,僅 PM 有寫：Design 尚未畫此畫面（Design 2026-10-29）
+TC-146,PRO 內容與 IAP,iPhone，已登入 PhotoDirector（Free 方案）；含有 PRO 內容，並已點「Export」開啟 IAP 頁面,點 IAP 頁面的「✕」,IAP 頁面關閉（回到畫布或 Save & Share，依 PM 對 Q-15 的答覆而定）；編輯內容都保留,P2,R-160,Q-15。僅 PM 有定義：Design 還沒有對應的 frame（Design 2026-10-29）
+TC-147,淺色與深色模式,iPhone，已登入 PhotoDirector（Free 方案）；手機為淺色外觀（Settings › Display & Brightness › Light）,"1. 依序開啟 Collage 房間的橫幅、Template Page、Template Preview 和畫布
+2. 依序開啟 Background、Layers、Ratio、Pages 和 Add Layer",每個畫面都是淺色設計（淺色底、深色圖示），和 Design 的淺色版一致,P2,R-162,Q-16：是否跟隨系統外觀？
+TC-148,淺色與深色模式,iPhone，已登入 PhotoDirector（Free 方案）；手機為深色外觀,"1. 依序開啟 Collage 房間的橫幅、Template Page、Template Preview 和畫布
+2. 依序開啟 Background、Layers、Ratio、Pages 和 Add Layer",每個畫面都是深色設計（深色底、淺色圖示），和 Design 的深色版一致,P2,R-162,Q-16
+TC-149,事件追蹤,iPhone，已登入 PhotoDirector（Free 方案）；可以看到 App 的分析事件（拉 log 或用 RD 的事件檢視工具）,"1. 從 Collage 橫幅開啟畫布
+2. 用帶有 template_guid 的 deeplink 開啟畫布",每次都會送出 ScrollableCollage_Canvas_Appear：第一次 from = Collage_Banner，第二次 from = Deeplink，並帶有 template_guid,P3,R-163,事件名稱暫定；等有事件 log 可看時再測
+TC-150,事件追蹤,iPhone，已登入 PhotoDirector（Free 方案）；可以看到分析事件；畫布 3 頁、比例 4:5、放有 4 張照片,匯出並儲存全部圖片,送出 ScrollableCollage_Export_Done，帶有 template_guid、page_count = 3、photo_count = 4、ratio = 4:5,P3,R-164,事件名稱暫定；等有事件 log 可看時再測

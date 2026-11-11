@@ -35,6 +35,7 @@ import { networkInterfaces, tmpdir } from 'node:os';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { ROOT, arg, assertIds, draftsDir, featureDir, readManifest, readTable, tableDir } from './lib/library.ts';
+import { zhCaseText } from './lib/zh.ts';
 import { thumbnail } from './lib/thumbs.ts';
 import { LINK_STEP, linkBlocks } from './lib/links.ts';
 import { arrowRequirement, matchTaps, requirementRows, tcList, type MatchGroup, type TapMatch } from './lib/coverage.ts';
@@ -468,8 +469,9 @@ const reqView = (rid: string) => {
 };
 const refsOf = (r: Record<string, string>) => [...new Set((r['Spec Ref'] ?? '').match(/\bR-\d{3,}\b/g) ?? [])];
 const reqs = Object.fromEntries([...new Set(rows.flatMap(refsOf))].filter(rid => reqLines.has(rid)).map(rid => [rid, reqView(rid)]));
+const zh = zhCaseText(join(src, draftId ? 'draft.csv' : 'cases.csv'), rows);   // 中文 mode's case text (lib/zh.ts)
 const rowInfo = Object.fromEntries(rows.map(r => { const x = result.get(r.ID);
-  return [r.ID, { action: r.Action, expected: r['Expected Result'], section: r.Section, refs: refsOf(r), ...(x ?? { result: 'Not run' }), ...(x?.result === 'Blocked' ? { reason: blockReason(x) } : {}) }]; }));
+  return [r.ID, { action: r.Action, expected: r['Expected Result'], section: r.Section, refs: refsOf(r), zh: zh[r.ID], ...(x ?? { result: 'Not run' }), ...(x?.result === 'Blocked' ? { reason: blockReason(x) } : {}) }]; }));
 const data = {
   feature, platform, draft: draftId ?? null, title: manifest?.title ?? feature, version: draftId ? (manifest ? `${manifest.version} + draft ${draftId}` : `new table · draft ${draftId}`) : manifest!.version, spec_folder: specFolder, built_at: new Date().toISOString(),
   runs: runNames, taps: taps.length, unmatched: unmatchedView, figma: Object.fromEntries(Object.entries<any>(inv.files).map(([k, f]) => [k, `https://www.figma.com/design/${k}/?node-id=`])),

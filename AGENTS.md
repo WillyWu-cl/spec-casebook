@@ -157,6 +157,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   (`qa-report/SKILL.md` › *Expected = today's spec*). But a build that does what the bug expected is OK even
   with a board unread or a question open (user, 2026-11-05, REQ-098).
 - **AI Mini Drama credits (user, 2026-11-03, REQ-073, until lifted).** For runs and rechecks, use whatever credits a check needs for anything except a full video generation (characters, outlines, storyboards, regenerations, updates); a full video generation still needs the user's go-ahead or an existing video. Check every path a bug names rather than stopping at one to save credits.
+- **Chinese copy of every table (user, 2026-11-11).** Each table has a Traditional Chinese reading copy
+  (`cases.zh-Hant.csv`) that the 中文 switch shows on Cases, Results, Progress and Coverage; it is natural Taiwan
+  Chinese, never word by word, kept current row by row with `scripts/zh-copy.ts` after drafts and Saves; run results
+  stay as recorded (`references/zh-copy.md`, `SKILL.md` step 4).
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
   warns (`formats.md`, writing rules).

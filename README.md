@@ -416,6 +416,8 @@ Typical requests:
    ledger entry is cited, and the job-state grid has no empty cell.
 7. **Review**: `review.ts` serves `http://127.0.0.1:4387/` (or the next free port). Edit rows, Keep or Delete,
    add cases, then **Save as approved table**. The previous version moves to `history/`.
+   Then bring the Chinese reading copy up to date (`zh-copy.ts … export`, translate the batches, `merge`): only
+   the rows the Save changed are translated again.
 8. **Comparison report (only on request)**: "Compare the casebook with the spec agent" builds
    `comparisons/<date>_casebook-vs-spec-agent.html` (coverage both ways, the cases only the casebook has). It is
    never part of an analysis and adds no rows.
@@ -531,7 +533,9 @@ work. With `--lan` it prints the LAN address to share. `--draft <id>` reviews a 
 `runs/RUN-PLAN-*.md` and the newest draft with a `phases.json` (`--plan`, `--plan-draft` pick others). Save on the
 review page works only on the computer running the server; colleagues on the network can read, edit in their
 browser and Copy. The tab bar is the same on every page and holds the one English / 中文 switch; the choice is
-remembered in the browser and applies to every page (table rows stay in English).
+remembered in the browser and applies to every page. In 中文 the case text (section, precondition, action, expected
+result) comes from the table's Chinese reading copy `cases.zh-Hant.csv`; the rows themselves stay in English, and
+what a run recorded (what happened, blocked reasons) stays as recorded.
 
 **Results** shows what each run found, case by case: the action, the expected result, what happened (the pass, fail
 or block reason, eBug codes linked, the blocked note) and the screenshots recorded as evidence, which open in a
@@ -654,6 +658,7 @@ Using `library/pdr/ai-mini-drama/` as the example:
 | `ios/control-trace.json` | Every control group and the rows that press it (inputs: and dismiss it), or why it is excluded |
 | `ios/cases.csv` | The approved table, the source of truth |
 | `ios/cases.xlsx`, `ios/cases.html` | Generated views for reading and sharing |
+| `ios/cases.zh-Hant.csv`, `ios/cases.zh-Hant.prints.json` | Traditional Chinese reading copy for the pages' 中文 mode, and the fingerprint of each row's English it was translated from (`zh-copy.ts`) |
 | `ios/requirements.md` | Requirements with sources, open questions, job-state grid and ledger coverage |
 | `ios/manifest.json` | Version, approval time, spec set and checksums, history |
 | `ios/history/` | Earlier approved versions (`vN.csv`, `vN-requirements.md`) |
@@ -724,6 +729,7 @@ All scripts run from the repository root with `node scripts/<name>.ts`. In the u
 | `design-page.ts <feature> <platform> [--serve [port] [--lan]]` | The Design tab: every Design screen's status, Figma and app side by side with the differences |
 | `review.ts <feature> <platform> [--draft <id>] [--lan]` | Serves the review page and saves the approved table (Save from this computer only) |
 | `export.ts <feature> <platform>` | Rebuilds `cases.xlsx` / `cases.html` from `cases.csv` |
+| `zh-copy.ts <feature> <platform> [--draft <id>] status \| export \| merge \| adopt` | Keeps the Chinese reading copy current: exports only new and changed rows as batches to translate (`zh-work/`, local), merges and checks the translations; style in `spec-casebook/references/zh-copy.md` |
 | `device.ts <run dir> <command>` | Appium client for the QA iPhone: screenshots, taps (each logged to `taps.jsonl`), `case`, `scrollto`, `waitfor`, `pink`, recipes, logs, ledger, `design` captures |
 | `device-android.ts <run dir> <command>` | The same for the QA Android phone (UiAutomator2, pixel coordinates), plus `back`, `wifi`, `build`, `logcat`, `pull-logs` |
 | `app-setup.ts <run dir> <command>` | Build check, reinstall from TestFlight, first launch, Developer Server, fresh install, log pulls |
@@ -754,6 +760,7 @@ runs the tests in `scripts/test/`.
   The figma skill's expanded data (`figma-source/design/out/`) is rebuilt locally from committed files. The inventory, overrides, reviews and control traces are committed, so the page can be rebuilt.
 - **Pulled app logs, Appium session files and full eBug logs** (they can hold tokens). The checked log excerpts
   attached to eBugs are committed.
+- `zh-work/` folders: the Chinese copy's translation batches between `zh-copy.ts export` and `merge`.
 - `node_modules/`, Python caches and patch leftovers.
 
 ## Contributing

@@ -1,0 +1,128 @@
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註
+TC-001,房間,剛啟動受測版本,打開 Effects 選單，查看 Reel Creator 房間的按鈕文字,按鈕名稱是「Reel Creator」（不再是「Cinematic Reel Creator」）,P2,R-002,
+TC-002,房間,在 Launcher,查看 Launcher 上這個房間的 Shortcut 名稱,Shortcut 名稱是「Reel Creator」,P2,R-003,
+TC-003,房間,在 Launcher,捲到 Launcher 的 Template 列，找到這個房間，查看它的標題,這一列的標題是「Reel Creator」,P2,R-004,
+TC-004,房間,已開啟 AI Video 頁,在 AI Video 頁查看這個房間的入口名稱,入口名稱是「Reel Creator」,P2,R-005,
+TC-005,房間,在 Launcher,點 Launcher 上的「Reel Creator」Shortcut,開啟房間，標題是「Reel Creator」；頂端列有「‹」、點數膠囊（餘額和「+」）和一個歷史記錄圖示,P1,"R-001, R-008",
+TC-006,房間,已開啟 Reel Creator 房間,從上到下捲動整個房間，查看每個區塊的標題,沒有分頁，是一頁式的多個區塊，包含「Cinematic Styles 🎬」、「Year-End Recap 📅」、「Christmas Time 🎄」和「Cool Transitions 🤳🏻」，三個功能的內容混在一起,P1,"R-006, R-009",區塊順序尚未確定（Q-1）：請記錄實際看到的順序。
+TC-007,房間,已開啟 Reel Creator 房間,分別在每個區塊的卡片列上左右滑動,每個區塊都能橫向捲動，看到自己的範本卡片,P2,R-007,
+TC-008,房間,已開啟 Reel Creator 房間；先記下帳號目前的點數餘額,先看右上角的藍色點數按鈕，再點它,按鈕顯示帳號目前的餘額和「+」；點下去會開啟 Buy Credit 頁,P2,R-008,Domain K75（user，2026-11-03）。同樣的按鈕在 Preview 頁和確認頁也有。
+TC-112,房間,已開啟 Reel Creator 房間,點右上角的 History 按鈕（一張紙加一個時鐘）,開啟 My AI Artwork，並停在「Reel Creator」分頁,P2,R-101,Domain K76（user，2026-11-03）。
+TC-009,房間,已開啟 Reel Creator 房間,點「‹」,離開房間，回到進來之前的那一頁,P3,R-089,
+TC-113,房間,在 Launcher,依序從每個入口進入房間：Effects 按鈕、Launcher Shortcut、Launcher Template 列、AI Video 頁、My AI Artwork 的「Create More」；每次進入後都點「‹」,每個入口都能開啟 Reel Creator 房間；每次點「‹」都回到該入口原本所在的頁面,P2,R-108,Domain K01：每個入口都是獨立的路徑。
+TC-010,從 Edit Room 進入,已開啟 Edit Room，裡面有一張照片，且已套用過編輯,在 Edit Room 點 Reel Creator 的入口,跳出對話框（和 Image to Video 一樣），詢問是否要跳到 Reel Creator,P1,R-010,對話框文字設計稿沒有畫（Q-13）：請記錄實際文字。
+TC-011,從 Edit Room 進入,從 Edit Room 跳出了跳轉對話框,選擇取消,對話框關閉；留在 Edit Room，照片和剛才的編輯都還在,P2,R-011,
+TC-012,從 Edit Room 進入,從 Edit Room 跳出了跳轉對話框；先記下 Gallery 裡的照片數量,確認跳轉,開啟 Reel Creator 房間；照片已自動存進 Gallery，而且是套用 Edit Room 編輯後的版本（不是原始檔案）,P1,"R-010, R-012, R-109",Domain K02（PHA262026-0382：當時用到的是原始照片，不是編輯後的）。
+TC-013,從 Edit Room 進入,Reel Creator 房間是從 Edit Room 開啟的,打開一個 Cinematic Styles 範本，點「Use Template」；再用 Creative 範本做一次同樣的操作,兩個選照片畫面都沒有預先選好 Edit Room 的照片（已選 0 張）；房間開啟時沒有帶入那張照片,P1,R-012,目前 CineStory 會把照片帶進去，新規格不會。Domain K02（帶入編輯後的圖片）不再適用，以規格為準。
+TC-014,Deeplink,PhotoDirector 已關閉；使用沒有參數的舊版 Cinematic Reel Creator deeplink,開啟 deeplink（adb `am start -a android.intent.action.VIEW -d <link>`）,開啟 Reel Creator 房間,P2,"R-013, R-014",需要：RD 提供 deeplink 網址（Q-15）。
+TC-114,Deeplink,PhotoDirector 已在其他頁面執行中（例如 Edit Room）；deeplink 的 template 參數是某個 Creative 內容的 GUID,開啟 deeplink,開啟的 Preview 頁和冷啟動時一樣；沒有當機，範本清單已載入,P2,"R-110, R-015",需要：RD 提供 deeplink 網址（Q-15）。Domain K05（冷啟動與熱啟動的差異，資料可能還沒載入）。
+TC-015,Deeplink,deeplink 的 template 參數是某個 Creative 範本的內容 GUID,開啟 deeplink,直接開啟該範本的 Preview 頁；沒有選任何照片,P2,"R-015, R-017",需要：RD 提供 deeplink 網址（Q-15）。Domain K04：要開啟的是連結指定的那個範本，不是該分類的第一個。
+TC-016,Deeplink,deeplink 的 template 參數是某個 AI Transition 範本的內容 GUID,開啟 deeplink,直接開啟該範本的 Preview 頁,P2,"R-015, R-017",需要：RD 提供 deeplink 網址（Q-15）。
+TC-017,Deeplink,deeplink 的 template 參數是某個 CineStory（Cinematic Styles）範本的 GUID,開啟 deeplink,直接開啟該 Cinematic 範本的 Preview 頁；沒有選任何照片,P2,"R-015, R-016",需要：RD 提供 deeplink 網址（Q-15）。
+TC-018,Deeplink,deeplink 的 template 參數是一個不存在的 GUID,開啟 deeplink,開啟 Reel Creator 房間（不會出現錯誤頁面）,P2,R-018,需要：RD 提供 deeplink 網址（Q-15）。
+TC-019,Deeplink,deeplink 只帶了 category 參數,開啟 deeplink,開啟 Reel Creator 房間；category 參數被忽略,P3,R-019,需要：RD 提供 deeplink 網址（Q-15）。
+TC-020,Deeplink,由範本 GUID 的 deeplink 開啟了 Preview 頁,點「‹」,記錄會回到哪一頁（預期：Reel Creator 房間）,P3,"R-015, R-035",規格沒有說明（Q-8、Q-15）。
+TC-021,Preview 頁,這次安裝後第一次進入房間（清除 App 資料，或使用全新的帳號狀態）,進入房間，點一個 Year-End Recap 範本,出現手指動畫，引導上下滑動,P2,R-033,需要第一次進入的狀態；請在其他 Preview 頁的列之前先跑。Domain K05：第一次進入、冷啟動和之後再進入，是三種不同的引導狀態。
+TC-022,Preview 頁,滑動引導已經出現過一次,離開房間，再進入一次，打開一個範本,不會再出現手指動畫,P3,R-033,
+TC-023,Preview 頁,已開啟 Reel Creator 房間,點「Top 5 of My Year」卡片,全螢幕 9:16 的示範影片自動播放，播完會重複播放,P1,R-026,
+TC-024,Preview 頁,「Top 5 of My Year」（Year-End Recap，5–15 張照片）這個 Creative 範本的 Preview 頁,查看畫面,左上角是「View photo tips」；右側有靜音按鈕；底部依序是名稱「Top 5 of My Year」、說明「Rank your year's best moments in one reel」、「5–15 photos」和「Use Template」；文字壓在示範影片變暗的底部上,P2,"R-029, R-031, R-032, R-020",
+TC-025,Preview 頁,「Top 5 of My Year」（Year-End Recap，5–15 張照片）這個 Creative 範本的 Preview 頁,點靜音按鈕，再點一次,示範影片的聲音先關閉，再恢復；圖示跟著變化,P2,R-030,
+TC-115,Preview 頁,「Top 5 of My Year」（Year-End Recap，5–15 張照片）這個 Creative 範本的 Preview 頁；示範影片已靜音,往上滑到下一個範本，再往下滑回來,每個範本的示範影片都維持靜音,P3,R-111,Domain K52（切換範本後靜音狀態要保留）；規格沒有說明。
+TC-026,Preview 頁,「Top 5 of My Year」（Year-End Recap，5–15 張照片）這個 Creative 範本的 Preview 頁,先往上滑，再往下滑,往上滑會看到同分類（Year-End Recap）的下一個範本，有它自己的示範影片、名稱和張數；往下滑則回到原本的範本,P1,R-027,
+TC-027,Preview 頁,Year-End Recap 最後一個範本的 Preview 頁,往上滑,出現 Year-End Recap 的第一個範本（無限循環，不會跑到其他分類）,P2,R-028,
+TC-028,Preview 頁,Year-End Recap 第一個範本的 Preview 頁,往下滑,出現 Year-End Recap 的最後一個範本（無限循環）,P2,R-028,
+TC-029,Preview 頁,某個 Cool Transitions 範本的 Preview 頁,一直往上滑，直到看到重複的範本為止,只會出現 Cool Transitions 的範本；清單會循環,P3,R-028,
+TC-030,Preview 頁,某個 Cinematic Styles 範本的 Preview 頁,查看張數那一行,張數顯示「1 photo」,P3,R-031,
+TC-031,Preview 頁,「Top 5 of My Year」（Year-End Recap，5–15 張照片）這個 Creative 範本的 Preview 頁,點「‹」,回到 Reel Creator 房間,P2,R-035,設計稿沒有畫箭頭（Q-8）。
+TC-032,View photo tips,已進入房間，並開啟某個範本的 Preview 頁,停在 Preview 頁 10 秒，不要碰畫面,照片提示面板不會自己彈出來,P2,R-036,
+TC-033,View photo tips,「Top 5 of My Year」（Year-End Recap，5–15 張照片）這個 Creative 範本的 Preview 頁,點「View photo tips」,開啟「Photo tips」面板：「✓ Recommended」區有範例圖片和條列說明（包含「Portrait (vertical) photos work best」），「✕ Avoid」區也有範例圖片和條列說明，最下面是「Got it」,P1,"R-036, R-037, R-039",
+TC-034,View photo tips,已開啟照片提示面板,點「Got it」,面板關閉，Preview 頁仍停在同一個範本,P2,R-040,
+TC-035,View photo tips,已在「Top 5 of My Year」看過照片提示,滑到另一個範本，打開它的「View photo tips」,提示內容（文字和範例圖片）是這個範本自己的,P3,R-038,
+TC-036,View photo tips,已開啟照片提示面板,點面板上方變暗的區域，或把面板往下拖,記錄面板會不會關閉,P3,R-037,設計稿只畫了「Got it」；請記錄實際行為。
+TC-037,選照片,「Top 5 of My Year」（Year-End Recap，5–15 張照片）這個 Creative 範本的 Preview 頁,點「Use Template」,直接開啟「Add Photos」選照片畫面（有「‹」、「Recents ▾」）；底部托盤顯示「Select 5–15 photos」、「0/15」和「Next」,P1,"R-034, R-041, R-042",
+TC-038,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片,選 3 張照片,照片依選取順序顯示 01、02、03；托盤顯示「3/15」和 3 張縮圖；紅字「Select at least 5 photos (2 more)」；Next 不能按,P1,"R-041, R-043",
+TC-039,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），已選 3 張照片,點「Next」,沒有反應（張數低於最少需求，Next 不能按）,P2,R-043,
+TC-040,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片,剛好選 5 張照片,紅字提示消失；顯示「5/15」；Next 可以按,P1,"R-043, R-022",
+TC-041,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片,選 10 張照片，並滑動托盤,托盤縮圖可以橫向捲動，依選取順序顯示全部 10 張,P2,R-042,
+TC-042,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片,選 15 張照片，再試著選第 16 張,第 16 張選不起來（或 Next 變成不能按）；最多只能選到 15/15,P1,"R-047, R-022",第 16 張怎麼被擋下來，設計稿沒有畫（Q-11）：請記錄實際行為。
+TC-043,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），已選 4 張照片（01–04）,再點一次照片 02,照片 02 取消選取；張數變成 3/15；記錄 03、04 的編號會不會往前遞補,P2,R-048,Q-11。
+TC-044,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片,選一張橫向照片和一張直向照片,兩張都能選，並且都有編號,P2,R-046,
+TC-045,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片；Gallery 裡有一張短邊 299 px 的照片,選這張照片,這張照片被標示為不符合需求,P2,R-045,需要：測試照片。標示的文字設計稿沒有畫（Q-11）。
+TC-046,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片；Gallery 裡有尺寸剛好 300 px 和 4096 px 的照片,兩張都選,兩張都能選（300–4096 px，含邊界值）,P2,R-045,需要：測試照片。
+TC-047,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片；Gallery 裡有一張長邊 4097 px 以上的照片,選這張照片,這張照片被標示為不符合需求,P2,R-045,需要：測試照片。
+TC-048,選照片,"「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片；Gallery 裡有一張 1200 × 1200 px 的 JPEG，檔案補到 11,000,000 bytes（不管是 10 MB 還是 10 MiB 都超過）",選這張照片,這張照片被標示為不符合需求（需 ≤ 10 MB）,P2,R-045,"需要：測試照片。10 MB 的單位還不確定（Q-22）；11,000,000 bytes 兩種算法都超過。"
+TC-126,選照片,"「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片；Gallery 裡有一張 1200 × 1200 px 的 JPEG，檔案補到 9,900,000 bytes（不管是 10 MB 還是 10 MiB 都沒超過）",選這張照片,這張照片可以選，並且有編號（沒有被標示）,P2,R-045,"需要：測試照片。10 MB 的單位還不確定（Q-22）；9,900,000 bytes 兩種算法都沒超過。"
+TC-049,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片；Gallery 裡有一張 NSFW 測試照片,選這張照片,這張照片被標示為不允許使用,P2,R-045,需要：NSFW 測試照片。
+TC-050,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片；Gallery 裡有一張名人照片,選這張照片,這張照片被標示為不允許使用,P2,R-045,需要：名人測試照片。
+TC-051,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），尚未選任何照片,點「Recents ▾」，選另一個相簿,照片格狀區顯示該相簿裡的照片,P3,R-049,
+TC-052,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），已選 3 張照片,點「‹」,回到同一個範本的 Preview 頁,P2,R-050,設計稿沒有畫箭頭（Q-8）。
+TC-053,選照片,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），已選 7 張照片,點「Next」,開啟確認頁，裡面是這 7 張照片,P1,R-095,
+TC-054,選照片記憶,App 已重新啟動（強制停止後再開），開始一個新的工作階段；在「Top 5 of My Year」的選照片畫面選了 7 張照片、點了「Next」，然後回到房間,再次打開「Top 5 of My Year」›「Use Template」,托盤上方出現「Use the 7 photos you picked last time?」，附「Import」和「×」；這時還沒有選任何照片（0/15）,P1,"R-051, R-052",哪一組照片算「last time」（上次）還沒確定（Q-3）。
+TC-055,選照片記憶,已出現匯入提示，內容是上次的 7 張照片,點「Import」,選照片畫面裡選好這 7 張照片（7/15），編號都有打勾；選照片畫面維持開啟（不會直接跳到確認頁）,P1,R-053,Domain K03：如果照片有顯示但沒有打勾，通常是照片 ID 搞混了。
+TC-056,選照片記憶,已出現匯入提示,點提示上的「×」；離開選照片畫面，再進入一次,提示關閉；記錄下次進入時提示會不會再出現,P2,R-052,Q-5。
+TC-057,選照片記憶,App 已重新啟動（強制停止後再開），開始一個新的工作階段；在這個工作階段裡上次選了 3 張照片（例如在需要 4 張照片的 AI Transition 選照片畫面選好後離開）,打開「Top 5 of My Year」› Use Template ›「Import」,匯入 3 張照片；托盤顯示紅字「Select at least 5 photos (2 more)」；再選 2 張之前，Next 都不能按,P1,"R-055, R-094",設計稿畫出的流程（picker-a2）。
+TC-058,選照片記憶,App 已重新啟動（強制停止後再開），開始一個新的工作階段；上次在某個 Creative 範本選了 10 張照片,打開一個需要 4 張照片的 AI Transition 範本 › Use Template ›「Import」,匯入 10 張照片；托盤顯示紅字；要把照片刪到剩 4 張，Next 才能按,P1,"R-054, R-059, R-087",
+TC-059,選照片記憶,App 已重新啟動（強制停止後再開），開始一個新的工作階段；上次選了 6 張照片，之後從 Gallery 刪掉其中 2 張,再進入選照片畫面，點「Import」,只會選到還留在 Gallery 的那 4 張照片,P2,R-056,請記錄提示裡顯示的數字 N（Q-17）。
+TC-060,選照片記憶,App 已重新啟動（強制停止後再開），開始一個新的工作階段；上次只選了 1 張照片（例如 Cinematic Styles）,進入「Top 5 of My Year」的選照片畫面,不會出現「Use the … photos you picked last time?」提示,P2,R-057,
+TC-061,選照片記憶,上一個工作階段選了 7 張照片,強制停止 App 後重新啟動，再打開「Top 5 of My Year」的選照片畫面,不會出現 Import 提示（記憶只到工作階段結束為止）,P2,R-058,
+TC-062,選照片記憶,App 已重新啟動（強制停止後再開），開始一個新的工作階段；在 Reel Creator 的選照片畫面選了 7 張照片,打開 App 裡另一個選照片畫面（例如 Collage），看托盤上方,記錄那裡會不會出現 Import 提示,P3,R-051,Q-4。Domain K07：選取狀態跑到其他功能，是過去出現過的一類 bug。
+TC-063,確認頁,已選 7 張照片，進入「Top 5 of My Year」的確認頁,查看整個頁面,頂部是範本縮圖、「Top 5 of My Year」、「5–15 photos · output 9:16」、「‹」和點數膠囊；「Your photos」「7/15」，旁邊有「Long-press to reorder · tap × to remove」；7 張有編號的照片，各有「×」，另外有一個「+」方塊；「Text language」「English ▾」；「Generate | 60」,P1,"R-060, R-061, R-067, R-068, R-023",
+TC-064,確認頁,已選 7 張照片，進入「Top 5 of My Year」的確認頁,長按第 3 張照片，拖到第 1 個位置,照片移到第 1 個位置，編號依新的順序重排,P1,R-062,
+TC-065,確認頁,已選 7 張照片，進入「Top 5 of My Year」的確認頁,點第 7 張照片上的「×」,這張照片被移除；張數變成 6/15,P1,R-063,
+TC-066,確認頁,已選 7 張照片，進入「Top 5 of My Year」的確認頁,一直移除照片，直到剩 4 張,張數「4/15」變成紅字；「Generate」不能按,P1,"R-069, R-096",
+TC-067,確認頁,已選 7 張照片，進入「Top 5 of My Year」的確認頁；移除後剩 4 張,點不能按的「Generate」,跳出提示訊息「Please upload at least 5 photos」；不會開始生成，也不會扣點數,P1,"R-069, R-096",
+TC-068,確認頁,已選 7 張照片，進入「Top 5 of My Year」的確認頁；移除後剩 4 張,點「+」方塊,開啟選照片畫面，目前的 4 張照片都已選好並打勾（4/15）,P1,R-064,Domain K03。
+TC-069,確認頁,從確認頁的「+」開啟選照片畫面，已選 4 張照片,再選 2 張，點「Next」,確認頁顯示 6 張照片（原本保留的 4 張加上新選的 2 張）,P2,R-064,
+TC-070,確認頁,確認頁已有 15/15 張照片,查看有沒有「+」方塊,記錄張數到達上限時，是否還顯示「+」,P3,R-064,Q-16。
+TC-071,確認頁,已選 7 張照片，進入「Top 5 of My Year」的確認頁,點「‹」,回到選照片畫面（記錄那 7 張照片是否仍維持已選）,P2,R-072,設計稿沒有畫箭頭（Q-8）。
+TC-116,確認頁,已選 7 張照片，進入「Top 5 of My Year」的確認頁；照片順序已調整；Text language 選「日本語」；開發人員選項已開啟「Don't keep activities」,按 Home 鍵，打開另一個 App，再回到 PhotoDirector,回到確認頁，照片、順序、張數和 Text language 都和離開前一樣；沒有當機,P2,R-112,Domain K62（Activity 重新建立）。測完要把「Don't keep activities」關掉。
+TC-072,確認頁,登入 Free（非 Premium）帳號，點數餘額低於 60；已選 7 張照片，進入「Top 5 of My Year」的確認頁,點「Generate | 60」,開啟付費牆（IAP 頁）；不會開始生成,P1,R-070,PHD 每輪開始時的狀態（免費使用者、0 點數；domain test-setup）就符合這一列。
+TC-073,確認頁,登入 PhotoDirector Premium（已訂閱）帳號，點數餘額低於 60；已選 7 張照片，進入「Top 5 of My Year」的確認頁,點「Generate | 60」,出現「More Credits Required」；它的按鈕會前往 Credit Shop,P1,R-070,需要：點數不足的 Premium 帳號。Domain K36b：Android 上 VIP = Pro = Premium = 已訂閱，都是同一種模式。
+TC-074,確認頁,點數餘額 60 以上（先記下餘額）；已選 7 張照片，進入「Top 5 of My Year」的確認頁,點「Generate | 60」,開始生成；餘額剛好少 60,P1,"R-071, R-068",
+TC-117,確認頁,點數 ≥ 120（先記下餘額）；已選 7 張照片，進入「Top 5 of My Year」的確認頁,盡可能快地連點「Generate | 60」三次,只會啟動一個工作：My AI Artwork 只多一張卡片，餘額也只扣一次 60,P1,R-103,Domain K30（PHA262026-0418）：快速連點只會扣一次。
+TC-118,確認頁,「Top 5 of My Year」剛生成完成（TC-074）,點點數按鈕 › Buy Credit ›右上角的「Detail」,最新的一筆紀錄寫的是這個功能的名稱（Reel Creator / Creative 功能），並顯示扣了 60；如果有退點，也會列出退回的數量,P1,R-102,Domain K36a。功能名稱還沒定案（Q-2）：請記錄實際名稱。
+TC-075,文字語言,手機語言為英文；已選 7 張照片，進入「Top 5 of My Year」的確認頁,點「Text language」「English ▾」,開啟語言清單，第一項是「English (Device language)」並已打勾，接著是「繁體中文」、「简体中文」、「日本語」、「한국어」、「Español」、「Français」、「Deutsch」、「Português」、「Italiano」、「ภาษาไทย」……；清單可以捲動,P1,"R-073, R-074",
+TC-076,文字語言,App 以繁體中文啟動（`launch --lang zh-Hant`）；已選 7 張照片，進入「Top 5 of My Year」的確認頁,查看 Text language 目前的值，並打開清單,預設是「繁體中文」，並標示 (Device language),P2,R-073,測完要執行 `locale reset`。
+TC-077,文字語言,已開啟 Text language 清單,捲到清單最底,PhotoDirector 支援的語言都有列出；請記錄清單內容（應該和 iOS 一致）,P3,R-074,
+TC-078,文字語言,已開啟 Text language 清單,選「日本語」,清單關閉；Text language 顯示「日本語」,P2,R-074,
+TC-079,文字語言,在確認頁已把 Text language 設為「日本語」,回到選照片畫面，再點一次「Next」；然後打開另一個 Creative 範本的確認頁,只要還在房間裡（同一個工作階段），Text language 仍然顯示「日本語」,P2,R-076,
+TC-080,文字語言,Text language 已設為「日本語」,離開 Reel Creator 房間，再進入一次，並進到某個 Creative 的確認頁,Text language 回到裝置語言,P2,R-076,
+TC-081,文字語言,點數 ≥ 60；已選 7 張照片，進入「Top 5 of My Year」的確認頁；Text language 選「日本語」,點「Generate」，生成完成後打開影片,影片裡的文字是日文,P1,R-075,
+TC-082,文字語言,點數 ≥ 60；已選 7 張照片，進入「Top 5 of My Year」的確認頁；Text language 選「繁體中文」,點「Generate」，生成完成後打開影片,影片裡的文字是繁體中文,P2,R-075,
+TC-083,文字語言,點數 ≥ 60；已選 7 張照片，進入「Top 5 of My Year」的確認頁；Text language 維持預設的「English (Device language)」,點「Generate」，生成完成後打開影片,影片裡的文字是英文,P2,R-075,
+TC-084,文字語言,My AI Artwork 裡有一支已完成的 Creative 影片,打開這支影片，找找看有沒有編輯文字的方式,影片裡的文字不能編輯,P3,R-077,
+TC-123,App 語言,App 先以繁體中文啟動，再以日文啟動（`launch --lang zh-Hant` / `ja`）,兩種語言各做一次：在「Top 5 of My Year」的選照片畫面選 3 張照片；出現 Import 提示（比照 TC-054 的準備方式）；在確認頁把照片移除到剩 4 張，點 Generate,托盤、Import 提示和提示訊息裡的數字（5–15、2、N、5）在該語言下都顯示正確；沒有任何畫面當機，也沒有露出未替換的佔位符,P2,R-105,Domain K70（佔位符 %d / %1$s）。測完要執行 `locale reset`。
+TC-124,App 語言,App 以阿拉伯文啟動（`launch --lang ar`，前提是 PhotoDirector 有提供）,依序走過：房間 → Preview 頁 → 選照片畫面 → 確認頁 → Text language 清單,版面左右鏡射（‹ 在右邊，托盤和清單都在範圍內，滑動引導和提示指向正確的控制項）；使用西方數字 0–9 也可以接受,P3,R-106,Domain K66、K68。如果沒有提供阿拉伯文，記錄為 Not run。測完要執行 `locale reset`。
+TC-125,App 語言,App 先以德文啟動，再以葡萄牙文啟動,查看選照片的托盤、Import 提示、確認頁的提示文字和「Generate」,每段文字都看得清楚（沒有被截斷或互相重疊），所有按鈕都還點得到,P3,R-107,Domain K69（長字串）。測完要執行 `locale reset`。
+TC-085,生成與 My AI Artwork,點數 ≥ 60；已選 7 張照片，進入「Top 5 of My Year」的確認頁,點「Generate | 60」,開啟 My AI Artwork 的「Reel Creator」分頁，最上面多了一張新的「Top 5 of My Year」卡片，顯示「Processing…」、預估時間（「… minutes remaining…」）和進度條,P1,"R-078, R-097",Domain K60 / K61：「3 minutes」只是設計稿上的示意文字，不是保證的時間；請判斷等待畫面本身。記錄卡片上的縮圖（Q-18）。
+TC-086,生成與 My AI Artwork,My AI Artwork 裡有一支 Creative 影片正在處理中,等它處理完，再點那張卡片,卡片顯示日期和「Top 5 of My Year」；影片可以播放，影片檔的像素比例是 9:16（寬：高）,P1,"R-083, R-023, R-081",Domain K51 / K53：要檢查檔案本身的像素尺寸，以及檔案能不能開，不能只看畫面上顯示的大小。
+TC-087,生成與 My AI Artwork,有一支用 7 張不同照片生成、已完成的 Creative 影片,把整支影片看完,輸入的 7 張照片都有出現在影片裡（順序可能和確認頁不同）,P2,R-066,
+TC-088,生成與 My AI Artwork,My AI Artwork 裡有一支影片正在處理中,離開 My AI Artwork（點 ‹），等 1 分鐘，再從房間的歷史記錄圖示打開,卡片仍在處理中（或已完成）；沒有任何東西遺失,P2,R-078,規格沒有說明處理中離開會怎樣（Q-12）。
+TC-121,生成與 My AI Artwork,一支 Creative 影片剛開始處理,按 Home 鍵，等工作完成；點完成通知,收到有標題和內文的通知；點通知會開啟 My AI Artwork（Reel Creator 分頁）並停在完成的影片上，絕對不會出現「APP version does not support feature」,P2,R-104,Domain K48（PHA262026-0373）。規格本身沒有說明（Q-12）。
+TC-089,生成與 My AI Artwork,已開啟 My AI Artwork,查看分頁,分頁包含「Image to Video」、「Reel Creator」、「Character Motion Swap」；沒有名為「Cinematic Reel Creator」的分頁,P2,R-080,
+TC-090,生成與 My AI Artwork,Creative、AI Transition 和 Cinematic Styles 各有一個已完成的成品,打開「Reel Creator」分頁,三個成品在同一個清單裡，沒有子分頁，由新到舊排列，每個都有日期和範本名稱,P1,"R-079, R-081",
+TC-091,生成與 My AI Artwork,My AI Artwork 停在「Reel Creator」分頁,點「Create More」,開啟 Reel Creator 房間,P2,"R-082, R-098",
+TC-122,生成與 My AI Artwork,房間是從 My AI Artwork 的「Create More」開啟的；點數 ≥ 40,再生成一支 Cinematic Styles 影片，然後在房間按「‹」,第二個工作正常執行並完成；按「‹」能離開房間，沒有出現錯誤或黑畫面,P2,R-113,Domain K28（Create More / 返回時資源已過期）。Create More 是否保留先前的輸入還沒確定（Q-20）。
+TC-092,Cinematic Styles,已開啟 Reel Creator 房間,點一個 Cinematic Styles 範本（例如「Micro Cinema」），再點「Use Template」,Preview 頁顯示「1 photo」；點「Use Template」會開啟選照片畫面，顯示「Select 1 photo」「0/1」,P1,"R-084, R-044, R-099",
+TC-093,Cinematic Styles,Cinematic 的選照片畫面顯示「Select 1 photo」,選 1 張照片，再試著選第 2 張,第一張顯示 01 和 1/1；Next 可以按；第二張選不起來（或 Next 變成不能按）,P2,"R-044, R-047",
+TC-094,Cinematic Styles,Cinematic 的選照片畫面已選 1 張照片,點「Next」,確認頁顯示「Micro Cinema」、「1 photo · output 9:16」、「Your photos」「1/1」、「Tap the photo to replace」、「Generate | 40」；沒有 Text language,P1,"R-085, R-086, R-100",
+TC-095,Cinematic Styles,已在 Cinematic 的確認頁,點那張照片，再選另一張,確認頁上的照片換成新選的那張（仍是 1/1）,P2,R-085,
+TC-096,Cinematic Styles,已在 Cinematic 的確認頁；點數 ≥ 40（先記下餘額）,點「Generate | 40」,My AI Artwork 的「Reel Creator」分頁出現處理中的「Micro Cinema」卡片；餘額剛好少 40,P1,"R-084, R-079",
+TC-127,Cinematic Styles,TC-096 的「Micro Cinema」影片已完成,從 My AI Artwork 打開它，播放並檢查影片檔,影片可以播放；影片檔的像素比例是 9:16（寬：高），而且能開啟,P2,"R-023, R-083",Domain K51 / K53：要量檔案本身的尺寸，不要只看畫面上顯示的大小。
+TC-119,Cinematic Styles,Cinematic Styles 剛生成完成,打開 Buy Credit ›「Detail」,最新的一筆紀錄寫的是這個功能的名稱（Cinematic Styles / CineStory），並顯示扣了 40,P2,R-102,Domain K36a。
+TC-097,Cinematic Styles,App 已重新啟動（強制停止後再開），開始一個新的工作階段；上次在某個 Creative 範本選了 7 張照片,打開一個 Cinematic 範本 ›「Use Template」,記錄 Import 提示會不會出現；如果按了 Import，Next 要等照片刪到只剩 1 張才能按,P3,"R-084, R-054",Q-7。
+TC-098,AI Transition,已開啟 Reel Creator 房間,打開一個 Cool Transitions 範本，查看張數，再點「Use Template」,Preview 頁顯示固定的張數（「4 photos」或「6 photos」）；選照片畫面的托盤顯示「Select 4 photos」（或 6）和「0/4」,P1,"R-021, R-044, R-087",
+TC-099,AI Transition,AI Transition 的選照片畫面顯示「Select 4 photos」,先選 3 張照片，再選第 4 張,選 3 張時 Next 不能按；選到 4/4 時可以按；第 5 張選不起來,P1,"R-087, R-043",
+TC-100,AI Transition,AI Transition 的選照片畫面已選 4 張照片,點「Next」,確認頁顯示「4/4」張照片、調整順序的提示和「Generate | <price>」；沒有 Text language,P1,"R-088, R-067",價格設計稿沒有畫（Q-9）：請記錄實際價格。
+TC-101,AI Transition,AI Transition 確認頁有照片 A、B、C、D；點數足夠（先記下餘額）,長按拖曳，把順序調成 D、C、B、A，再點「Generate」,完成的影片裡照片順序是 D、C、B、A，影片檔的像素比例是 9:16；餘額減少的數字等於按鈕上標示的價格,P1,"R-065, R-088, R-023",
+TC-120,AI Transition,AI Transition 剛生成完成,打開 Buy Credit ›「Detail」,最新的一筆紀錄寫的是這個功能的名稱（AI Transition），並顯示扣了按鈕上標示的價格,P2,R-102,Domain K36a。
+TC-102,AI Transition,6 張照片的 Cool Transitions 範本的 Preview 頁（前提是範本清單裡有這種範本）,點「Use Template」,托盤顯示「Select 6 photos」,P2,"R-021, R-087",
+TC-103,Android 返回鍵,已開啟 Reel Creator 房間,按系統返回鍵,和點「‹」一樣：離開房間,P2,R-089,Domain K63：返回鍵的 regression（Predictive Back）是一個畫面一個畫面發生的，所以每個畫面都有自己的一列。
+TC-104,Android 返回鍵,「Top 5 of My Year」（Year-End Recap，5–15 張照片）這個 Creative 範本的 Preview 頁,按系統返回鍵,和點「‹」一樣：回到房間,P2,R-089,
+TC-105,Android 返回鍵,已開啟照片提示面板,按系統返回鍵,面板關閉（和點「Got it」一樣）；Preview 頁維持不變,P2,R-089,
+TC-106,Android 返回鍵,「Top 5 of My Year」的選照片畫面（由「Use Template」開啟），已選 3 張照片,按系統返回鍵,和點選照片畫面的「‹」一樣：回到 Preview 頁,P2,R-089,
+TC-107,Android 返回鍵,選照片畫面出現了 Import 提示,按系統返回鍵,記錄結果：是提示關閉，還是整個選照片畫面關閉,P3,R-089,規格沒有說明（Q-8）。
+TC-108,Android 返回鍵,已選 7 張照片，進入「Top 5 of My Year」的確認頁,按系統返回鍵,和點「‹」一樣：回到選照片畫面,P2,R-089,
+TC-109,Android 返回鍵,在確認頁開啟了 Text language 清單,按系統返回鍵,清單關閉，語言維持不變；確認頁仍在,P2,R-089,
+TC-110,Android 返回鍵,已跳出 Edit Room 的跳轉對話框,按系統返回鍵,對話框關閉，視同取消；留在 Edit Room,P3,R-089,
+TC-111,Android 返回鍵,按 Generate 後開啟了 My AI Artwork,按系統返回鍵,記錄會回到哪一頁（確認頁、房間，還是上一頁）,P3,R-089,規格沒有說明（Q-8）。

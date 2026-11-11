@@ -1,0 +1,82 @@
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註
+TC-001,入口與房間,iPhone，PhotoDirector 已登入；相簿裡有一張人像照片；已在編輯器開啟該照片,在編輯器開啟「Background」（AI Background）,開啟 AI Background 房間，畫布上是已去除背景的主體，底下是棋盤格,P1,R-001,入口路徑依 KP-126（Edit › Background）；要在手機上確認是哪個入口會開啟 AI Background
+TC-002,入口與房間,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；App 使用預設的深色外觀,進入房間後先不要點任何東西，直接檢查畫面,由上到下：左上角是 ⓘ，右上角是點數顯示鈕（餘額和 ⊕）；畫布，左下角有橡皮擦和裁切，右下角是比較按鈕；分類分頁；縮圖列；「Generate」按鈕和它的點數價格；最下方的工具列有 X、復原、重做、✓。深色工具列和縮圖列的樣式與 Design 畫面「5」一致,P2,"R-005, R-055",Design 畫面 5（1:451）
+TC-003,入口與房間,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,"1. 點畫布左下角的橡皮擦
+2. 擦掉主體的一部分（例如一邊肩膀）
+3. 回到房間",畫布上主體被擦掉的部分消失了,P2,R-002,
+TC-004,入口與房間,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,"1. 點橡皮擦旁邊的裁切按鈕
+2. 把主體裁得更小一點
+3. 確認裁切",畫布顯示裁切後的主體,P2,R-003,
+TC-005,入口與房間,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已產生背景（範本或 Custom）並顯示在畫布上,"1. 按住畫布右下角的比較按鈕不放
+2. 放開",按住時，畫布顯示變更前的照片；放開後又回到目前的結果,P3,R-008,
+TC-006,入口與房間,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,"1. 點左上角的 ⓘ
+2. 關閉開啟的內容",點 ⓘ 會開啟 AI Background 的說明；關閉後回到房間，什麼都沒有改變,P3,R-006,規格只畫了這個按鈕，沒有說明裡面要顯示什麼
+TC-007,入口與房間,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,"1. 點右上角的點數顯示鈕
+2. 返回",點數顯示鈕顯示目前餘額和 ⊕；點下去會開啟購買點數的頁面；返回後回到原本的房間，畫面不變（沒有購買）,P3,R-007,不要真的購買點數
+TC-008,入口與房間,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,還沒做任何變更時，查看底部工具列,底部工具列有 X、復原、重做和 ✓；復原和重做是灰色的,P3,R-009,
+TC-009,分類分頁與縮圖,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,查看分類分頁,分類是排成一列的膠囊形分頁，選取中的分頁是橘色底。名稱拼字正確（第三個分頁是「Balloon」）,P3,R-011,Design 畫的是「Custom」「Neutrals」「Ballon」「Wood」「Vintage」「Life」；分類清單是 CMS 內容（Q-8）；拼字問題見 Q-2
+TC-010,分類分頁與縮圖,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,選取「Custom」分頁，查看它的左邊緣,橘色的「Custom」膠囊和螢幕左邊緣之間留有間距（Design：12 pt，和第一張縮圖對齊），沒有貼到邊緣,P3,R-012,PM：目前 App 的 Custom 膠囊太靠近邊緣
+TC-011,分類分頁與縮圖,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,"1. 點「Neutrals」
+2. 點另一個分類分頁",點到的分頁都會變成選取狀態（橘色底，前一個恢復成沒有底色），縮圖列顯示該分類的範本,P2,R-017,
+TC-012,分類分頁與縮圖,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,查看縮圖列,每張縮圖是 80 × 80 pt 的圖片，下方有一條名稱列（整體 80 × 98 pt），縮圖之間相隔 4 pt；比目前 App 的縮圖小,P3,R-013,PM「thumbnail 大小」；Design thumb/80x80/withname
+TC-013,分類分頁與縮圖,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,查看縮圖列的最前面,最前面是「Custom」（橘色漸層，上面有魔術棒圖示），接著是一條直線分隔線，後面才是各個範本,P3,R-014,
+TC-014,分類分頁與縮圖,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,逐一滑動每個分類的縮圖，找出付費範本,每個付費範本的右上角都有皇冠標記；免費範本沒有,P3,R-015,哪些範本是付費的由 CMS 決定（Q-8）；Free 使用者能用到什麼：見 Q-10
+TC-015,分類分頁與縮圖,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,點一張範本縮圖（例如「Neutrals」的第一張）,點到的縮圖出現橘色外框（其他縮圖都沒有），「Generate」按鈕顯示「Generate」、點數圖示和「2」,P1,"R-016, R-040",Q-1（Design 2）、Q-3（「Generate」是否可以按）
+TC-016,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）,點「Custom」縮圖,提示詞面板在房間上方展開，同時跳出鍵盤；不會另外開啟新的房間或頁面,P1,R-020,只有 PM 規格：還沒有 Design 畫面（Design 2026-11-03）。目前的 App 會開新的房間
+TC-017,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板,查看還沒輸入內容的面板,"面板有「Prompts」、「My Prompts」、灰色的 ✓、文字框（提示文字是「Please describe the content to replace (guitar, flower, chair)」），文字框右上角有展開按鈕，左下角有灰色的垃圾桶按鈕，以及「0/2,500」",P2,"R-021, R-022",只有 PM 規格：還沒有 Design 畫面（Design 2026-11-03）
+TC-018,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板,輸入「a sunny beach at sunset」,"文字框顯示輸入的文字，計數變成「23/2,500」，✓ 變成橘色，垃圾桶按鈕變成可以按",P1,"R-022, R-023",只有 PM 規格：還沒有 Design 畫面（Design 2026-11-03）
+TC-019,Custom 提示詞面板,"iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；剪貼簿裡有一段 2,600 字元的文字","1. 把文字貼到文字框
+2. 再試著多輸入一個字母","文字框只保留前 2,500 個字元，計數顯示「2,500/2,500」，多輸入的字母不會被加進去",P2,R-024,"只有 PM 規格。規格只寫了上限（「0/2,500」），要在手機上確認實際是怎麼限制的"
+TC-020,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入超過三行的提示詞,"1. 點文字框右上角的展開按鈕
+2. 點展開後文字框右上角的收合按鈕","1. 文字框展開成完整高度，顯示整段提示詞，左下角有垃圾桶按鈕
+2. 文字框縮回一般高度，提示詞內容不變",P2,R-025,只有 PM 規格：示意圖第 2 列；收合按鈕取自 PM Figma（round/ic_collapse_text）
+TC-021,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞,點垃圾桶按鈕,"提示詞被清空，重新顯示提示文字，計數變成「0/2,500」，✓ 變成灰色",P2,"R-026, R-022",只有 PM 規格
+TC-022,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞,"1. 點「My Prompts」
+2. 回到面板",點「My Prompts」有反應，會開啟 My Prompts；回到面板後，剛才輸入的提示詞還在,P2,R-027,只有 PM 規格。規格沒有說明 My Prompts 裡放什麼（Q-4）：開單前要先在手機上確認，再和使用者決定
+TC-023,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞,點 ✓,面板和鍵盤關閉；「Custom」縮圖呈選取狀態，有橘色外框；Generate 變成可以按（橘色），並顯示需要「5」點,P1,"R-028, R-041",只有 PM 規格。價格：PM 示意圖是 5，Design 是 2（Q-1）
+TC-024,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞,點面板上方的畫布（空白處）,面板和鍵盤關閉；「Custom」縮圖呈選取狀態，有橘色外框，Generate 變成可以按,P1,R-028,只有 PM 規格
+TC-025,Custom 提示詞面板,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已選取「Custom」分頁，但沒有選任何縮圖,查看 Generate 按鈕,Generate 是灰色的，點了沒有反應,P2,R-029,PM 示意圖第 1 列；Q-3
+TC-026,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板,點 Generate，並觀察房間最前面的 10 秒,房間維持開啟，0 到 10 秒顯示「Analyzing your image...」,P1,"R-030, R-032",只有 PM 規格。用碼錶或螢幕錄影計時
+TC-027,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板；已點 Generate（和 TC-026 同一次操作）,繼續觀察 10 到 20 秒這段時間,房間顯示「Understanding the scene...」,P2,R-033,只有 PM 規格。如果結果提早出來，記為 Blocked
+TC-028,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板；已點 Generate（和 TC-026 同一次操作）,繼續觀察 20 到 30 秒這段時間,房間顯示「Creating the new background...」,P2,R-034,只有 PM 規格。如果結果提早出來，記為 Blocked
+TC-029,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板；已點 Generate（和 TC-026 同一次操作）,繼續觀察 30 到 40 秒這段時間,房間顯示「Refining the details...」,P2,R-035,只有 PM 規格。如果結果提早出來，記為 Blocked
+TC-030,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板；已點 Generate（和 TC-026 同一次操作）,繼續觀察 40 到 45 秒這段時間,房間顯示「Making the final adjustments...」,P2,R-036,只有 PM 規格。如果結果提早出來，記為 Blocked
+TC-031,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板；已點 Generate（和 TC-026 同一次操作）,45 秒之後繼續觀察，直到結果出現,從 45 秒起到結果出現之前，房間都顯示「Almost done!」,P2,R-037,只有 PM 規格。如果結果提早出來，記為 Blocked。KP-060：驗證的是等待時的畫面，不是等待多久
+TC-032,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板；已點 Generate,等待期間查看房間畫面,使用者就留在房間裡等：不會出現 My Artwork 按鈕、連結或提示訊息，也沒有「continue in the background」的通知,P2,R-030,只有 PM 規格
+TC-033,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板；先記下點數餘額,點 Generate，等結果出來,畫布顯示主體搭配符合提示詞的新背景；點數顯示鈕的餘額比原本少 5,P1,"R-039, R-041, R-042",只有 PM 規格，價格是 5（Q-1）；點數數字要以此為準
+TC-034,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已選一個範本；先記下點數餘額,點 Generate，等結果出來,產生期間會顯示等待中的提示；接著畫布顯示主體搭配該範本的背景；點數顯示鈕的餘額比原本少 2,P1,"R-038, R-040, R-042",Design 價格是 2（Q-1）；範本的等待文字：Q-14
+TC-056,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；先記下點數餘額,"1. 點「Balloon」分類分頁
+2. 點縮圖列的第一個範本
+3. 點 Generate
+4. 等結果出來",「Balloon」呈選取狀態（橘色底），它的第一個範本有橘色外框；接著畫布顯示主體搭配新背景，風格和該範本相同（可和縮圖對照）；點數顯示鈕的餘額剛好少 2,P2,"R-011, R-017, R-038, R-040, R-042",分類變化版 category=Balloon（Neutrals 由 TC-034 涵蓋）；Design 拼成「Ballon」（Q-2）。分類來自 CMS（Q-8）：如果這個版本沒有「Balloon」，記為 Blocked。Design 價格是 2（Q-1）；範本的等待文字：Q-14
+TC-057,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；先記下點數餘額,"1. 點「Wood」分類分頁
+2. 點縮圖列的第一個範本
+3. 點 Generate
+4. 等結果出來",「Wood」呈選取狀態（橘色底），它的第一個範本有橘色外框；接著畫布顯示主體搭配新背景，風格和該範本相同（可和縮圖對照）；點數顯示鈕的餘額剛好少 2,P2,"R-011, R-017, R-038, R-040, R-042",分類變化版 category=Wood（Neutrals 由 TC-034 涵蓋）。分類來自 CMS（Q-8）：如果這個版本沒有「Wood」，記為 Blocked。Design 價格是 2（Q-1）；範本的等待文字：Q-14
+TC-058,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；先記下點數餘額,"1. 點「Vintage」分類分頁
+2. 點縮圖列的第一個範本
+3. 點 Generate
+4. 等結果出來",「Vintage」呈選取狀態（橘色底），它的第一個範本有橘色外框；接著畫布顯示主體搭配新背景，風格和該範本相同（可和縮圖對照）；點數顯示鈕的餘額剛好少 2,P2,"R-011, R-017, R-038, R-040, R-042",分類變化版 category=Vintage（Neutrals 由 TC-034 涵蓋）。分類來自 CMS（Q-8）：如果這個版本沒有「Vintage」，記為 Blocked。Design 價格是 2（Q-1）；範本的等待文字：Q-14
+TC-059,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；先記下點數餘額,"1. 點「Life」分類分頁
+2. 點縮圖列的第一個範本
+3. 點 Generate
+4. 等結果出來",「Life」呈選取狀態（橘色底），它的第一個範本有橘色外框；接著畫布顯示主體搭配新背景，風格和該範本相同（可和縮圖對照）；點數顯示鈕的餘額剛好少 2,P2,"R-011, R-017, R-038, R-040, R-042",分類變化版 category=Life（Neutrals 由 TC-034 涵蓋）。分類來自 CMS（Q-8）：如果這個版本沒有「Life」，記為 Blocked。Design 價格是 2（Q-1）；範本的等待文字：Q-14
+TC-035,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已產生背景（範本或 Custom）並顯示在畫布上,"1. 點復原
+2. 點重做",復原會讓畫布回到產生背景之前的樣子，同時重做變成可以按；重做會再次顯示剛產生的結果,P2,R-009,
+TC-036,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已產生背景（範本或 Custom）並顯示在畫布上,點底部工具列的 ✓,房間關閉，編輯器顯示已換成新背景的照片,P1,R-010,沿用目前 App 的行為
+TC-037,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已產生背景（範本或 Custom）並顯示在畫布上,點底部工具列的 X（如果跳出放棄變更的提示，就選放棄）,房間關閉，編輯器顯示的照片沒有套用新產生的背景,P2,R-010,沿用目前 App 的行為；規格沒有說明是否會跳出放棄變更的提示
+TC-038,產生與等待,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已點「Custom」並開啟提示詞面板；已輸入提示詞（例如「a sunny beach at sunset」），並用 ✓ 關閉面板；先記下點數餘額；已點 Generate,等待期間，往上滑回主畫面，等 20 秒後再開啟 PhotoDirector,房間仍在產生中，或已顯示結果；不會悄悄消失，而且只有在結果送達後才會扣點數,P2,R-031,規格：處理方式和 AI Enhance 相同（Q-7）。使用者的 QA 規則：離開再回來，任務要保留
+TC-039,免費試用,iPhone，帳號從沒用過 AI Background 的免費試用（全新帳號，或請 RD 重設）；相簿裡有一張人像照片,"1. 開啟一張照片
+2. 開啟「Background」並選一個範本",行動按鈕（CTA）顯示「1 Free Trial」，價格顯示為「2 → 0」（2 有刪除線）；不會先閃一下付費價格,P1,"R-045, R-046",需要全新的試用資格（有可用帳號前先擱置）。知識庫 KP-016
+TC-040,免費試用,iPhone，帳號從沒用過 AI Background 的免費試用（全新帳號，或請 RD 重設）；相簿裡有一張人像照片；畫面顯示「1 Free Trial」；先記下點數餘額,點「1 Free Trial」，等結果出來,成功產生新背景；點數餘額不變（扣 0 點）；之後按鈕變回付費的「Generate」，並顯示價格,P1,"R-045, R-046",需要全新的試用資格
+TC-041,免費試用,iPhone，帳號從沒用過 AI Background 的免費試用（全新帳號，或請 RD 重設）；相簿裡有一張人像照片；已用掉免費試用（TC-040）,"1. 離開 AI Background
+2. 換一張照片再開啟，並選一個範本",按鈕顯示付費的「Generate」和「2」，不會再出現「1 Free Trial」,P2,R-046,需要全新的試用資格。知識庫 KP-016
+TC-042,Feature ID 與 Action ID,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已開啟 App log 記錄（PhotoDirector 還沒有擷取 log 的方式）；已擦掉主體的一部分並確認提示詞,"1. 點 Generate
+2. 等結果出來
+3. 擷取 App log，找到產生背景的請求",請求帶的 Feature ID 是「PeopleBackgroundV3」，Action ID 是「genimage_1_img_bytedance_seedream5.0pro_none_custom」，而且上傳的圖片是 App 去背後的主體，被擦掉的部分是缺的,P2,"R-004, R-050, R-051",需要 App log（擱置中：還沒有 PhotoDirector 的 log 擷取）；Q-16：PM 頁面標題寫的是 GPT Image 2.5 Flare
+TC-043,Feature ID 與 Action ID,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；已開啟 App log 記錄（PhotoDirector 還沒有擷取 log 的方式）；已選一個範本,"1. 點 Generate
+2. 等結果出來
+3. 擷取 App log，找到產生背景的請求",請求帶的 Feature ID 是「PeopleBackgroundV3」，Action ID 是「genimage_1_img_bytedance_seedream5.0pro_none_tmpl」,P2,"R-050, R-052",需要 App log；Q-16：PM 頁面標題寫的是 GPT Image 2.5 Flare
+TC-044,Feature ID 與 Action ID,iPhone，帳號從沒用過 AI Background 的免費試用（全新帳號，或請 RD 重設）；相簿裡有一張人像照片；已開啟 App log 記錄,"1. 用「1 Free Trial」產生背景
+2. 擷取 App log，找到產生背景的請求",請求帶的任務 ID 是「temp_one_time_free」,P2,R-047,需要 App log 和全新的試用資格
+TC-045,主題,iPhone，PhotoDirector 已登入且至少有 20 點數；相簿裡有一張人像照片。在編輯器開啟該照片，再開啟「Background」（AI Background）；App 使用能顯示淺色 Design 的外觀（Q-9）,查看房間,房間畫面和 Design 畫面「6」一致：工具列和縮圖列是淺色，點數顯示鈕帶橘色調，各個控制項的位置和深色房間相同,P3,R-055,Q-9：要用哪個設定才會顯示；如果 App 沒有淺色外觀，記為 Blocked
