@@ -10,7 +10,8 @@ Source order: Design (2026-10-29) over PM, except the PM 「Save page」 11/3 up
 - R-004 [PM:pm-flow D1-09; PM:pm-ui-1 D1-09] Deeplink scrollable_collage opens the Template Page
 - R-005 [PM:pm-flow D1-09; PM:pm-ui-1 D2-07] Deeplink scrollable_collage with category_guid opens the Template Page on that category
 - R-006 [PM:pm-flow D1-09; PM:pm-ui-1 D1-09] Deeplink scrollable_collage with template_guid opens that template's Template Preview directly
-- R-007 [PM:pm-header D0-04, D0-06, D1-08] This build has no Launcher shortcut for Swipe Collage (the shortcut is decided later)
+- R-007 [DS:design-launcher 「entry」 199:3566 (2026-11-09); PM:pm-header D0-04, D0-06, D1-08] The Launcher's Features grid shows a 「Swipe Collage」 shortcut (Swipe Collage icon, no NEW / HOT badge) after 「AI Art」 on the first page. The PM header and the Design overview still say the Launcher shortcut is not in this build; the newer Design frame wins (Q-21)
+- R-168 [DS:design-launcher 「entry」 199:3566 (2026-11-09)] Tapping the Launcher's 「Swipe Collage」 shortcut opens Swipe Collage: the Template Page, as the Collage room banner does (no arrow drawn; Q-21)
 - R-008 [PM:pm-header D0-04; PM:pm-ui-4 D0-06] Swipe Collage projects and exports never appear in My AI Artwork
 - R-009 [PM:pm-header D4-01; PM:pm-save-iap D4-01] Swipe Collage is not generative: it charges no credits and opens no new purchase item (SKU)
 
@@ -194,6 +195,7 @@ Source order: Design (2026-10-29) over PM, except the PM 「Save page」 11/3 up
 - Q-17 CMS handoff blocker: the CMS type string, contentVer and CMS sheet are still mock (MOCK_CMS_TYPE, MOCK_CMS_SHEET), and the deeplink format with category_guid / template_guid needs real guids from RD. Assumption: rows needing real guids wait for RD (R-166, R-005, R-006; TC-005, TC-006).
 - Q-18 The PM mockups show the swap hint 「Long press & drag to swap」 and the labels 「Frame selected」 / 「Image selected」; the Design draws only 「Image selected」. Assumption: the hint and 「Frame selected」 are optional (not asserted) (R-076, R-048; TC-063, TC-038).
 - Q-19 The Design's IAP frame (「B (mimic VVG/ Beauty plus)」: 「Start 7-Day Free Trial」, 「Auto-renewal for $29.99/year」) differs from the PM's 「Continue」 page, while the PM says the IAP page is the existing one, unchanged. Assumption: whatever the existing IAP page shows; its copy is not asserted (R-160; TC-146, TC-056).
+- Q-21 Launcher shortcut. The Design added a Launcher frame 「entry」 (199:3566, after 2026-11-05) whose Features grid has a 「Swipe Collage」 shortcut, while the PM header (D0-04, D0-06, D1-08) and the Design's own overview still say the Launcher shortcut is not in this build and is decided later. Where does the shortcut lead, is it in this build, and does it send its own tracking 「from」 value (R-163 lists Collage_Banner and Deeplink only)? Assumption: the newer Design frame: the shortcut is shown and opens the Template Page (R-007, R-168; TC-009, TC-151).
 
 ## Added 2026-11-05 — coverage passes and standing inputs
 
@@ -321,3 +323,4 @@ Source order: Design (2026-10-29) over PM, except the PM 「Save page」 11/3 up
 | Ledger entry | Requirements |
 |---|---|
 | REQ-001 | R-001, R-002 … every requirement (new feature from the PM and Design Figma) |
+| REQ-003 | R-007, R-168 (Design re-read 2026-11-09: new Launcher frame) |

@@ -189,7 +189,15 @@ chip, card, tag) the same as Figma's, (2) font size and the text's centring in i
 A text is paired by its words when they match, else by its place (the app text on the same line where Figma draws one),
 so other wording is neither `missing` nor `extra` and its box is still measured.
 
-`node scripts/design.ts … check <run dir> [--screen <ids>] [--recheck <earlier run>]` measures every new capture
+**Full check, on request (user, 2026-11-09).** The standard check above is the default: it tolerates a text's words and
+small absolute shifts. Only when the user asks for the old, unrestricted check ("full check", "old format", "check the
+words and positions too"), add `--full` to `check`: everything above, plus `copy` (a text paired with other words,
+one holding the other, or a number in another format; a text cut short stays `truncated` only) and `position` (an
+exactly matched text more than 4 pt from Figma's place after the projection, in a half with a fit). The run keeps the
+rule set (`rules: "full"` in compare.json and on each screen; the Design tab says 「Full check」 on the screen), so a
+later `check` of the same run stays full until `--standard`. Never switch a run to `--full` on your own judgment.
+
+`node scripts/design.ts … check <run dir> [--screen <ids>] [--recheck <earlier run>] [--full | --standard]` measures every new capture
 against the Figma screen and draws its review sheet (`screenshots/design/<id>-sheet.png`: Figma and app side by side
 at one width, every candidate numbered on both). The script header has the rules; in short, Figma's width maps to the
 window width, each half of the screen is aligned on its matched texts (that fit only places shapes and icons), and
@@ -210,6 +218,8 @@ what is left is a candidate:
 | `colour` | a filled shape (buttons, chips, cards, and badges and tags from 12 × 8 pt) ΔE > 12 from its Figma fill, or a text ΔE > 18 from its Figma colour | minor |
 | `control` | an icon control of the inventory (no label) with no tappable app element where Figma draws it | major |
 | `extra` | short app text Figma does not draw, on no line where Figma draws a text | info |
+| `copy` | `--full` only: other words than Figma's (minor when one holds the other or only a number's format differs) | major |
+| `position` | `--full` only: an exactly matched text more than 4 pt from where Figma puts it | minor |
 
 Letters, not OCR boxes (user, 2026-11-06): OCR boxes run about 2 pt wide on each side, which put the language chips
 3–5 pt short of padding in all where their letters sit 12–13 pt in from each edge, as in Figma; both review passes
@@ -293,7 +303,7 @@ a superseded frame is not the spec, and a conflict is a question (AGENTS.md *Des
   on a candidate the check no longer makes (an area left out since) is not shown, settled or drafted.
 - `design.ts … ebugs <run dir>` writes `design/ebug-findings.md`: each ticked bug with the screen, its Figma link, the
   row (or Design path) that reaches it, Figma against the app, both review notes, the build and the sheet. Draft from
-  it through spec-casebook `references/ebugs.md` and the casebook overlay: `[UI]`, owner RD (Doc for copy), never
+  it through spec-casebook `references/ebugs.md` and the casebook overlay: `[UI]`, owner RD (PM when the spec's own text must change), never
   `[UX]`; Spec Link = the Figma node; image = the sheet; dedupe per OS. Filing waits for the user.
 
 ## 6. Recheck on the next build

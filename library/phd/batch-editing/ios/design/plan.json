@@ -1,0 +1,1612 @@
+{
+  "built_at": "2026-11-10T06:38:01.724Z",
+  "spec_set": "2026-11-09",
+  "file": {
+    "fileKey": "qZXJfrM5gb5g4tFoCIS1YU",
+    "page": "12:2321",
+    "url": "https://www.figma.com/design/qZXJfrM5gb5g4tFoCIS1YU/Batch-Edit?node-id=12-2321",
+    "account": "qa-dm@cyberlink.com"
+  },
+  "phases": null,
+  "skip": [],
+  "skip_reason": null,
+  "skip_reasons": {},
+  "scope_review": {
+    "at": "2026-11-10",
+    "by": "user",
+    "ids": [
+      "22:2798",
+      "110:5426",
+      "57:6798",
+      "134:8803",
+      "128:8508",
+      "134:9401",
+      "63:7874",
+      "134:9013",
+      "105:4123",
+      "134:9215",
+      "41:923",
+      "110:5611",
+      "48:1432",
+      "57:3956",
+      "57:5448",
+      "13:2826",
+      "57:5666",
+      "110:5090",
+      "110:5258",
+      "67:9285",
+      "110:4922",
+      "67:9438",
+      "110:4532",
+      "110:8280",
+      "57:4257",
+      "57:4625",
+      "57:4892",
+      "57:5097",
+      "110:5843",
+      "110:6102",
+      "110:6196",
+      "110:5928",
+      "13:2380",
+      "110:4804",
+      "57:6001",
+      "67:10721"
+    ]
+  },
+  "scope_included": [],
+  "source_gaps": {
+    "unread": [],
+    "incomplete": [],
+    "listed": [],
+    "page_listed": true
+  },
+  "casebook": true,
+  "counts": {
+    "screens": 36,
+    "routed": 36,
+    "figma_paths": 0,
+    "gaps": 0,
+    "no_route": 0,
+    "excluded": 0
+  },
+  "by_case": {
+    "TC-035": [
+      "22:2798",
+      "110:5426"
+    ],
+    "TC-068": [
+      "57:6798"
+    ],
+    "TC-057": [
+      "134:8803",
+      "128:8508",
+      "134:9401",
+      "105:4123",
+      "134:9215"
+    ],
+    "TC-067": [
+      "63:7874",
+      "134:9013"
+    ],
+    "TC-049": [
+      "41:923",
+      "110:5611"
+    ],
+    "TC-026": [
+      "48:1432",
+      "57:3956",
+      "57:5448",
+      "13:2826",
+      "57:5666",
+      "110:5090",
+      "110:5258",
+      "67:9285",
+      "110:4922",
+      "67:9438"
+    ],
+    "TC-112": [
+      "110:4532",
+      "110:8280"
+    ],
+    "TC-072": [
+      "57:4257",
+      "57:4892",
+      "110:5843",
+      "110:6196"
+    ],
+    "TC-073": [
+      "57:4625",
+      "110:6102"
+    ],
+    "TC-091": [
+      "57:5097",
+      "110:5928"
+    ],
+    "TC-001": [
+      "13:2380",
+      "110:4804"
+    ],
+    "TC-106": [
+      "57:6001",
+      "67:10721"
+    ]
+  },
+  "screens": [
+    {
+      "id": "22:2798",
+      "name": "3_",
+      "board": "22:2798",
+      "board_name": "3_",
+      "abs": [
+        798,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        798,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "22:2798",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "C-4f0857",
+        "fit": "high",
+        "edge": "ic_1v1",
+        "segment": "",
+        "section": "Crop & Rotate",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+        "action": "1. Tap 「Squre」\n2. Tap 「All」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-039",
+        "TC-044",
+        "TC-045",
+        "TC-048"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:5426",
+      "name": "3_",
+      "board": "110:5426",
+      "board_name": "3_",
+      "abs": [
+        4110,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        4110,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:5426",
+      "status": "routed",
+      "route": {
+        "case": "TC-035",
+        "how": "on",
+        "via": "C-4f0857",
+        "fit": "high",
+        "edge": "ic_1v1",
+        "segment": "",
+        "section": "Crop & Rotate",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+        "action": "1. Tap 「Squre」\n2. Tap 「All」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-039",
+        "TC-044",
+        "TC-045",
+        "TC-048"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:6798",
+      "name": "9_Adjust_curve",
+      "board": "57:6798",
+      "board_name": "9_Adjust_curve",
+      "abs": [
+        790,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        790,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:6798",
+      "status": "routed",
+      "route": {
+        "case": "TC-068",
+        "how": "on",
+        "via": "K-55ae2a",
+        "fit": "high",
+        "edge": "ic_mask_n",
+        "segment": "",
+        "section": "Adjustment",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1; Color › Curve open with a point moved",
+        "action": "1. Press and hold the compare button\n2. Tap the reset button",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-057",
+        "TC-058",
+        "TC-059",
+        "TC-069"
+      ],
+      "flags": []
+    },
+    {
+      "id": "134:8803",
+      "name": "9_Adjust_curve",
+      "board": "134:8803",
+      "board_name": "9_Adjust_curve",
+      "abs": [
+        4110,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        4110,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "134:8803",
+      "status": "routed",
+      "route": {
+        "case": "TC-057",
+        "how": "on",
+        "via": "K-161aa5",
+        "fit": "mid",
+        "edge": "AI Exposure",
+        "segment": "",
+        "section": "Adjustment",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-058",
+        "TC-059",
+        "TC-068",
+        "TC-069"
+      ],
+      "flags": []
+    },
+    {
+      "id": "128:8508",
+      "name": "9_Adjust_curve_collapse",
+      "board": "128:8508",
+      "board_name": "9_Adjust_curve_collapse",
+      "abs": [
+        1187,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        1187,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "128:8508",
+      "status": "routed",
+      "route": {
+        "case": "TC-057",
+        "how": "on",
+        "via": "K-161aa5",
+        "fit": "mid",
+        "edge": "AI Exposure",
+        "segment": "",
+        "section": "Adjustment",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-058",
+        "TC-059",
+        "TC-068",
+        "TC-069"
+      ],
+      "flags": []
+    },
+    {
+      "id": "134:9401",
+      "name": "9_Adjust_curve_collapse",
+      "board": "134:9401",
+      "board_name": "9_Adjust_curve_collapse",
+      "abs": [
+        4507,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        4507,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "134:9401",
+      "status": "routed",
+      "route": {
+        "case": "TC-057",
+        "how": "on",
+        "via": "K-161aa5",
+        "fit": "mid",
+        "edge": "AI Exposure",
+        "segment": "",
+        "section": "Adjustment",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-058",
+        "TC-059",
+        "TC-068",
+        "TC-069"
+      ],
+      "flags": []
+    },
+    {
+      "id": "63:7874",
+      "name": "9_Adjust_HSL",
+      "board": "63:7874",
+      "board_name": "9_Adjust_HSL",
+      "abs": [
+        1637,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        1637,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "63:7874",
+      "status": "routed",
+      "route": {
+        "case": "TC-067",
+        "how": "on",
+        "via": "C-745d29",
+        "fit": "high",
+        "edge": "Hue",
+        "segment": "",
+        "section": "Adjustment",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "action": "1. Tap 「Color」\n2. Open HSL\n3. Tap a colour chip and move 「Hue」, 「Saturation」, 「Lightness」\n4. Tap Exposure",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-057",
+        "TC-058",
+        "TC-059",
+        "TC-068"
+      ],
+      "flags": []
+    },
+    {
+      "id": "134:9013",
+      "name": "9_Adjust_HSL",
+      "board": "134:9013",
+      "board_name": "9_Adjust_HSL",
+      "abs": [
+        4957,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        4957,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "134:9013",
+      "status": "routed",
+      "route": {
+        "case": "TC-067",
+        "how": "on",
+        "via": "C-745d29",
+        "fit": "high",
+        "edge": "Hue",
+        "segment": "",
+        "section": "Adjustment",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "action": "1. Tap 「Color」\n2. Open HSL\n3. Tap a colour chip and move 「Hue」, 「Saturation」, 「Lightness」\n4. Tap Exposure",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-057",
+        "TC-058",
+        "TC-059",
+        "TC-068"
+      ],
+      "flags": []
+    },
+    {
+      "id": "105:4123",
+      "name": "9_Adjust_HSL_collapse",
+      "board": "105:4123",
+      "board_name": "9_Adjust_HSL_collapse",
+      "abs": [
+        2040,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        2040,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "105:4123",
+      "status": "routed",
+      "route": {
+        "case": "TC-057",
+        "how": "on",
+        "via": "K-161aa5",
+        "fit": "mid",
+        "edge": "AI Exposure",
+        "segment": "",
+        "section": "Adjustment",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-058",
+        "TC-059",
+        "TC-068",
+        "TC-069"
+      ],
+      "flags": []
+    },
+    {
+      "id": "134:9215",
+      "name": "9_Adjust_HSL_collapse",
+      "board": "134:9215",
+      "board_name": "9_Adjust_HSL_collapse",
+      "abs": [
+        5360,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        5360,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "134:9215",
+      "status": "routed",
+      "route": {
+        "case": "TC-057",
+        "how": "on",
+        "via": "K-161aa5",
+        "fit": "mid",
+        "edge": "AI Exposure",
+        "segment": "",
+        "section": "Adjustment",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-058",
+        "TC-059",
+        "TC-068",
+        "TC-069"
+      ],
+      "flags": []
+    },
+    {
+      "id": "41:923",
+      "name": "adjust",
+      "board": "41:923",
+      "board_name": "adjust",
+      "abs": [
+        393,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        393,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "41:923",
+      "status": "routed",
+      "route": {
+        "case": "TC-049",
+        "how": "on",
+        "via": "K-14ddab",
+        "fit": "mid",
+        "edge": "33",
+        "segment": "",
+        "section": "Crop & Rotate",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+        "action": "1. Drag the angle slider to 15\n2. Tap 「All」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-057",
+        "TC-058",
+        "TC-059",
+        "TC-069"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:5611",
+      "name": "adjust",
+      "board": "110:5611",
+      "board_name": "adjust",
+      "abs": [
+        3705,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        3705,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:5611",
+      "status": "routed",
+      "route": {
+        "case": "TC-049",
+        "how": "on",
+        "via": "K-14ddab",
+        "fit": "mid",
+        "edge": "33",
+        "segment": "",
+        "section": "Crop & Rotate",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+        "action": "1. Drag the angle slider to 15\n2. Tap 「All」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-057",
+        "TC-058",
+        "TC-059",
+        "TC-069"
+      ],
+      "flags": []
+    },
+    {
+      "id": "48:1432",
+      "name": "canvas_img_focus",
+      "board": "48:1432",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        0,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "48:1432",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-027",
+        "TC-028",
+        "TC-056",
+        "TC-071"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:3956",
+      "name": "canvas_img_focus",
+      "board": "57:3956",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        0,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:3956",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-027",
+        "TC-028",
+        "TC-056",
+        "TC-071"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:5448",
+      "name": "canvas_img_focus",
+      "board": "57:5448",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        0,
+        3348,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        3348,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:5448",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-027",
+        "TC-028",
+        "TC-056",
+        "TC-071"
+      ],
+      "flags": []
+    },
+    {
+      "id": "13:2826",
+      "name": "canvas_img_focus",
+      "board": "13:2826",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        393,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        393,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "13:2826",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-027",
+        "TC-028",
+        "TC-056",
+        "TC-071"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:5666",
+      "name": "canvas_img_focus",
+      "board": "57:5666",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        399,
+        3348,
+        375,
+        812
+      ],
+      "board_box": [
+        399,
+        3348,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:5666",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-028",
+        "TC-056",
+        "TC-071",
+        "TC-100"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:5090",
+      "name": "canvas_img_focus",
+      "board": "110:5090",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        3312,
+        1100,
+        375,
+        812
+      ],
+      "board_box": [
+        3312,
+        1100,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:5090",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-027",
+        "TC-028",
+        "TC-056",
+        "TC-071"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:5258",
+      "name": "canvas_img_focus",
+      "board": "110:5258",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        3312,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        3312,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:5258",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-027",
+        "TC-028",
+        "TC-056",
+        "TC-071"
+      ],
+      "flags": []
+    },
+    {
+      "id": "67:9285",
+      "name": "canvas_img_focus",
+      "board": "67:9285",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        3312,
+        3348,
+        375,
+        812
+      ],
+      "board_box": [
+        3312,
+        3348,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "67:9285",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-027",
+        "TC-028",
+        "TC-056",
+        "TC-071"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:4922",
+      "name": "canvas_img_focus",
+      "board": "110:4922",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        3705,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        3705,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:4922",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-027",
+        "TC-028",
+        "TC-056",
+        "TC-071"
+      ],
+      "flags": []
+    },
+    {
+      "id": "67:9438",
+      "name": "canvas_img_focus",
+      "board": "67:9438",
+      "board_name": "canvas_img_focus",
+      "abs": [
+        3711,
+        3348,
+        375,
+        812
+      ],
+      "board_box": [
+        3711,
+        3348,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "67:9438",
+      "status": "routed",
+      "route": {
+        "case": "TC-026",
+        "how": "on",
+        "via": "K-55d5ba",
+        "fit": "mid",
+        "edge": "top/ic_settings",
+        "segment": "",
+        "section": "Batch Edit Room",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "action": "Tap Settings (the gear, rightmost in the top bar)",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-028",
+        "TC-056",
+        "TC-071",
+        "TC-100"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:4532",
+      "name": "Discard dialog",
+      "board": "110:4532",
+      "board_name": "Discard dialog",
+      "abs": [
+        1596,
+        3348,
+        375,
+        812
+      ],
+      "board_box": [
+        1596,
+        3348,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:4532",
+      "status": "routed",
+      "route": {
+        "case": "TC-112",
+        "how": "on",
+        "via": "K-457d02",
+        "fit": "high",
+        "edge": "Discard",
+        "segment": "",
+        "section": "Leaving Batch Edit",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+        "action": "1. Tap Home\n2. Tap 「Discard」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-113",
+        "TC-115",
+        "TC-117",
+        "TC-072"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:8280",
+      "name": "Discard dialog",
+      "board": "110:8280",
+      "board_name": "Discard dialog",
+      "abs": [
+        4908,
+        3348,
+        375,
+        812
+      ],
+      "board_box": [
+        4908,
+        3348,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:8280",
+      "status": "routed",
+      "route": {
+        "case": "TC-112",
+        "how": "on",
+        "via": "K-457d02",
+        "fit": "high",
+        "edge": "Discard",
+        "segment": "",
+        "section": "Leaving Batch Edit",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+        "action": "1. Tap Home\n2. Tap 「Discard」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-113",
+        "TC-115",
+        "TC-117",
+        "TC-072"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:4257",
+      "name": "Enhance_1",
+      "board": "57:4257",
+      "board_name": "Enhance_1",
+      "abs": [
+        399,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        399,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:4257",
+      "status": "routed",
+      "route": {
+        "case": "TC-072",
+        "how": "on",
+        "via": "K-0816be",
+        "fit": "mid",
+        "edge": "Enhance",
+        "segment": "",
+        "section": "AI Enhance",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "action": "Tap 「Enhance」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-063",
+        "TC-064"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:4625",
+      "name": "Enhance_1",
+      "board": "57:4625",
+      "board_name": "Enhance_1",
+      "abs": [
+        798,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        798,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:4625",
+      "status": "routed",
+      "route": {
+        "case": "TC-073",
+        "how": "on",
+        "via": "K-6ddcb1",
+        "fit": "high",
+        "edge": "Cancel",
+        "segment": "",
+        "section": "AI Enhance",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "action": "1. Tap 「Enhance」\n2. Tap 「Cancel」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-074",
+        "TC-072",
+        "TC-053",
+        "TC-054"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:4892",
+      "name": "Enhance_1",
+      "board": "57:4892",
+      "board_name": "Enhance_1",
+      "abs": [
+        1197,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        1197,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:4892",
+      "status": "routed",
+      "route": {
+        "case": "TC-072",
+        "how": "on",
+        "via": "K-0816be",
+        "fit": "mid",
+        "edge": "Enhance",
+        "segment": "",
+        "section": "AI Enhance",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "action": "Tap 「Enhance」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-063",
+        "TC-064"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:5097",
+      "name": "Enhance_1",
+      "board": "57:5097",
+      "board_name": "Enhance_1",
+      "abs": [
+        1596,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        1596,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:5097",
+      "status": "routed",
+      "route": {
+        "case": "TC-091",
+        "how": "on",
+        "via": "K-a03f73",
+        "fit": "high",
+        "edge": "Retry Failed (3)",
+        "segment": "",
+        "section": "AI Enhance errors",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 「12 completed, 3 failed」; the failure fixture lets 2 of 3 succeed",
+        "action": "1. Tap 「Retry Failed (3)」 (the dialog may show first)\n2. Wait until it ends",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-063",
+        "TC-064"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:5843",
+      "name": "Enhance_1",
+      "board": "110:5843",
+      "board_name": "Enhance_1",
+      "abs": [
+        3711,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        3711,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:5843",
+      "status": "routed",
+      "route": {
+        "case": "TC-072",
+        "how": "on",
+        "via": "K-0816be",
+        "fit": "mid",
+        "edge": "Enhance",
+        "segment": "",
+        "section": "AI Enhance",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "action": "Tap 「Enhance」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-063",
+        "TC-064"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:6102",
+      "name": "Enhance_1",
+      "board": "110:6102",
+      "board_name": "Enhance_1",
+      "abs": [
+        4110,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        4110,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:6102",
+      "status": "routed",
+      "route": {
+        "case": "TC-073",
+        "how": "on",
+        "via": "K-6ddcb1",
+        "fit": "high",
+        "edge": "Cancel",
+        "segment": "",
+        "section": "AI Enhance",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "action": "1. Tap 「Enhance」\n2. Tap 「Cancel」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-074",
+        "TC-072",
+        "TC-053",
+        "TC-054"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:6196",
+      "name": "Enhance_1",
+      "board": "110:6196",
+      "board_name": "Enhance_1",
+      "abs": [
+        4509,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        4509,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:6196",
+      "status": "routed",
+      "route": {
+        "case": "TC-072",
+        "how": "on",
+        "via": "K-0816be",
+        "fit": "mid",
+        "edge": "Enhance",
+        "segment": "",
+        "section": "AI Enhance",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "action": "Tap 「Enhance」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-063",
+        "TC-064"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:5928",
+      "name": "Enhance_1",
+      "board": "110:5928",
+      "board_name": "Enhance_1",
+      "abs": [
+        4908,
+        2226,
+        375,
+        812
+      ],
+      "board_box": [
+        4908,
+        2226,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:5928",
+      "status": "routed",
+      "route": {
+        "case": "TC-091",
+        "how": "on",
+        "via": "K-a03f73",
+        "fit": "high",
+        "edge": "Retry Failed (3)",
+        "segment": "",
+        "section": "AI Enhance errors",
+        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 「12 completed, 3 failed」; the failure fixture lets 2 of 3 succeed",
+        "action": "1. Tap 「Retry Failed (3)」 (the dialog may show first)\n2. Wait until it ends",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-053",
+        "TC-054",
+        "TC-063",
+        "TC-064"
+      ],
+      "flags": []
+    },
+    {
+      "id": "13:2380",
+      "name": "photo_picker",
+      "board": "13:2380",
+      "board_name": "photo_picker",
+      "abs": [
+        0,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        0,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "13:2380",
+      "status": "routed",
+      "route": {
+        "case": "TC-001",
+        "how": "on",
+        "via": "K-32efa4",
+        "fit": "high",
+        "edge": "Single",
+        "segment": "",
+        "section": "Entry and Photo Picker",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+        "action": "Open Launcher › 「Edit」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-002",
+        "TC-005",
+        "TC-006",
+        "TC-007"
+      ],
+      "flags": []
+    },
+    {
+      "id": "110:4804",
+      "name": "photo_picker",
+      "board": "110:4804",
+      "board_name": "photo_picker",
+      "abs": [
+        3312,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        3312,
+        0,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "110:4804",
+      "status": "routed",
+      "route": {
+        "case": "TC-001",
+        "how": "on",
+        "via": "K-32efa4",
+        "fit": "high",
+        "edge": "Single",
+        "segment": "",
+        "section": "Entry and Photo Picker",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+        "action": "Open Launcher › 「Edit」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-002",
+        "TC-005",
+        "TC-006",
+        "TC-007"
+      ],
+      "flags": []
+    },
+    {
+      "id": "57:6001",
+      "name": "save2",
+      "board": "57:6001",
+      "board_name": "save2",
+      "abs": [
+        798,
+        3348,
+        375,
+        812
+      ],
+      "board_box": [
+        798,
+        3348,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "57:6001",
+      "status": "routed",
+      "route": {
+        "case": "TC-106",
+        "how": "on",
+        "via": "K-6e1204",
+        "fit": "high",
+        "edge": "Edit Next Batch",
+        "segment": "",
+        "section": "Save",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+        "action": "Tap 「Edit Next Batch」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-055",
+        "TC-104",
+        "TC-105",
+        "TC-111"
+      ],
+      "flags": []
+    },
+    {
+      "id": "67:10721",
+      "name": "save2",
+      "board": "67:10721",
+      "board_name": "save2",
+      "abs": [
+        4110,
+        3348,
+        375,
+        812
+      ],
+      "board_box": [
+        4110,
+        3348,
+        375,
+        812
+      ],
+      "board_png": null,
+      "inventory_screen": "67:10721",
+      "status": "routed",
+      "route": {
+        "case": "TC-106",
+        "how": "on",
+        "via": "K-6e1204",
+        "fit": "high",
+        "edge": "Edit Next Batch",
+        "segment": "",
+        "section": "Save",
+        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+        "action": "Tap 「Edit Next Batch」",
+        "result": "Not run",
+        "run": ""
+      },
+      "alternatives": [
+        "TC-055",
+        "TC-104",
+        "TC-105",
+        "TC-111"
+      ],
+      "flags": []
+    }
+  ]
+}

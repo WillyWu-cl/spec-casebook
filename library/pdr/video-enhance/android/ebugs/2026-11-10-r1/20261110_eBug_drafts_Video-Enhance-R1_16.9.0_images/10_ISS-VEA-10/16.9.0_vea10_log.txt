@@ -1,0 +1,19 @@
+# ISS-VEA-10 banner View at 18:39:18: player init, nothing loads
+# PowerDirector Mobile for Android 16.9.0 (2611091), Stage server, Samsung SM-A5360 / Android 15, 2026-11-10 (phone time, UTC+8)
+# Video Enhance task lines (session = charge, transcode, upload, status, errors, push, toasts) and the balance
+# when it changes, in the windows below; identical status polls folded; tokens dropped, URL queries cut at '?'.
+
+## TC-131 banner View, black Result (2026-11-10 18:39:10–18:42:15; logs/R1-e-20261110-185356/logcat-live.txt)
+2026-11-10 18:39:18.038 ExoPlayerImpl: Init 5e8ccab [AndroidXMedia3/1.11.1] [a53x, SM-A5360, samsung, 35]
+2026-11-10 18:40:49.209 CreditSystemManager: totalRemain=27638
+2026-11-10 18:40:55.266 ExoPlayerImpl: Init 4c802e9 [AndroidXMedia3/1.11.1] [a53x, SM-A5360, samsung, 35]
+2026-11-10 18:41:01.386 ExoPlayerImpl: Init 5de0497 [AndroidXMedia3/1.11.1] [a53x, SM-A5360, samsung, 35]
+2026-11-10 18:41:32.488 AIVideoAnime:  upload response code->200
+2026-11-10 18:41:32.488 Upload to S3: finish
+2026-11-10 18:41:35.497 DownloadUriTask: java.lang.IllegalArgumentException: URI is not absolute
+2026-11-10 18:41:35.694 ExoPlayerImpl: Init d07fbe9 [AndroidXMedia3/1.11.1] [a53x, SM-A5360, samsung, 35]
+2026-11-10 18:41:49.593 ExoPlayerImpl: Init 93aa97d [AndroidXMedia3/1.11.1] [a53x, SM-A5360, samsung, 35]
+2026-11-10 18:41:54.221 DownloadUriTask: java.lang.IllegalArgumentException: URI is not absolute
+2026-11-10 18:41:54.802 AIFeatureRepository: applyEffect status: Applying 0
+2026-11-10 18:42:05.048 ExoPlayerImpl: Init 8704d60 [AndroidXMedia3/1.11.1] [a53x, SM-A5360, samsung, 35]
+2026-11-10 18:42:10.646 FcmInstanceIDService: key = Msg, value = Good news! Your AI Video Enhance task has been completed. Tap here to view your results.

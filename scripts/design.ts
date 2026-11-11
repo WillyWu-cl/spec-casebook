@@ -12,8 +12,11 @@
 //                     only those the run has not captured (a design pass after a casebook run walks just these).
 //                     In a casebook run the device scripts capture a row's screens on their own (`case ID` arms
 //                     lib/design-watch.ts); this list is for the ones they could not match.
-//   check <run dir> [--screen <id,…>] [--recheck <earlier run>] [--build <version (build)>]
-//                     measure every new capture (below) and draw its sheet
+//   check <run dir> [--screen <id,…>] [--recheck <earlier run>] [--build <version (build)>] [--full | --standard]
+//                     measure every new capture (below) and draw its sheet. --full: the full check (user, 2026-11-09),
+//                     only when the user asks for it: the words (`copy`) and each text's place on the screen
+//                     (`position`) are items again, beside everything the standard check holds; the run keeps the
+//                     rule set it was last checked with (compare.json `rules`) until --standard
 //   settle <run dir>  merge the two review passes into design/findings.json
 //   decide [file]     apply a Design-tab decisions block (sent by its Save, or pasted from a file or stdin) to the runs' findings
 //   ebugs <run dir>   write design/ebug-findings.md: the settled bugs ticked for filing (all bugs with --all), each with
@@ -36,7 +39,11 @@
 //             it down (or the other way), or the screen kept moving while it was captured                  major
 //   appearance the frame is dark and the capture light (or the other way)                                     major
 //   (no `copy` and no `position` since 2026-11-06, user: a text's words and its own place are not checked. A text
-//   is paired by its words, else by its place: the app text on the same line where Figma draws it)
+//   is paired by its words, else by its place: the app text on the same line where Figma draws it. Both come back
+//   with --full, the full check (user, 2026-11-09):
+//   copy      a Figma text paired with app text of other words (most similar, or on its line), or one holding the
+//             other, or a number in another format (a date's digit counts)                         major (minor: part, format)
+//   position  an exactly matched text more than 4 pt from where Figma puts it, after the projection     minor)
 //   missing   a Figma text with no app text with its words nor on its line; long sample text (> 60 characters) is
 //             `sample`, info                                                                                major
 //   truncated the app text ends in an ellipsis Figma does not have, or runs past the screen edge           major
@@ -86,7 +93,7 @@ const shown = (p: string) => p.startsWith(ROOT) ? p.slice(ROOT.length + 1) : p;
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
 const runOf = (r: string) => existsSync(r) ? r : join(runsDir, r);
 const OTHER = /^n\/a:\s*other feature\b/i;
-const KINDS = ['state', 'appearance', 'missing', 'truncated', 'lines', 'size', 'weight', 'radius', 'padding', 'align', 'border', 'spacing', 'colour', 'control', 'extra', 'sample'];
+const KINDS = ['state', 'appearance', 'copy', 'missing', 'truncated', 'lines', 'size', 'weight', 'radius', 'padding', 'align', 'border', 'spacing', 'colour', 'control', 'extra', 'sample', 'position'];
 const USAGE = 'Usage: node scripts/design.ts <product>/<feature> <ios|android> plan | screens <TC-…> | check <run dir> | settle <run dir> | decide [file] | scope [file] | ebugs <run dir> | status [run dir]';
 // the newest run folder holding design captures
 const newestRun = () => existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design', 'captures.jsonl'))).sort().at(-1) : undefined;
@@ -143,6 +150,12 @@ type Cand = { id: string; kind: string; severity: string; figma?: any; app?: any
 
 function measure() {
   const plan = planFresh(feature, platform);
+  // the rule set (user, 2026-11-09): standard by default; --full only when the user asks, and kept for the run's later
+  // checks (a check of one more screen must not mix rule sets) until --standard
+  if (process.argv.includes('--full') && process.argv.includes('--standard')) { console.error('--full or --standard, not both'); process.exit(2); }
+  const cmpWas = join(designDir, 'compare.json'), wasRules = existsSync(cmpWas) ? read(cmpWas).rules : undefined;
+  const full = process.argv.includes('--full') || (!process.argv.includes('--standard') && wasRules === 'full');
+  console.log(full ? `full check: words (copy) and each text's place (position) are items too${process.argv.includes('--full') ? '' : ' (kept from this run\'s last check; --standard to go back)'}` : 'standard check (words and a text\'s own place not checked; --full for the full check)');
   if (gapLine(plan.source_gaps ?? { unread: [], incomplete: [] })) console.error(`  WARNING source read not complete: ${gapLine(plan.source_gaps)}; captures of those boards' screens cannot be checked (design.ts … status)`);
   const ex = join(featureDir(feature), 'specs', plan.spec_set, 'extracted'), out = join(ex, 'figma-source', 'design', 'out');
   const inv = existsSync(join(ex, 'inventory.json')) ? read(join(ex, 'inventory.json')) : { controls: [] };
@@ -159,6 +172,8 @@ function measure() {
     if (c.part > 1) { if (caps.has(c.screen)) parts.get(c.screen)!.push(c); } else { caps.set(c.screen, c); parts.set(c.screen, []); }
   }
   const prev = existsSync(join(designDir, 'compare.json')) ? read(join(designDir, 'compare.json')).screens.filter((s: any) => !caps.has(s.id)) : [];
+  const mixed = prev.filter((s: any) => (s.rules === 'full') !== full);
+  if (mixed.length) console.error(`  NOTE ${mixed.length} screen(s) kept from the last check were measured with the ${full ? 'standard' : 'full'} check (${mixed.map((s: any) => s.id).join(', ')}): check them again without --screen to put the run on one rule set`);
   const state = existsSync(join(runDir, 'run-state.md')) ? readFileSync(join(runDir, 'run-state.md'), 'utf8') : '';
   const build = state.match(/\b[A-Z][A-Za-z]+(?: iOS| Android)? (\d+\.\d+\.\d+ \(\d+\))/)?.[1] ?? arg('build') ?? '';
   const old = arg('recheck'), oldDir = old && (existsSync(old) ? old : join(table, 'runs', old));
@@ -264,7 +279,14 @@ function measure() {
         cands.push({ id: `${sample ? 'sample' : 'missing'}:${t.node}`, kind: sample ? 'sample' : 'missing', severity: sample ? 'info' : 'major', figma: { node: t.node, text: t.text, box: r1(t.box) } }); continue; }
       pairs.push({ t, a: hit.a, how });
       const appBox = hit.a.part > 1 ? undefined : r1(hit.a.f);
-      // no `copy` item: the words are not checked (user, 2026-11-06)
+      // no `copy` item: the words are not checked (user, 2026-11-06), except in the full check (--full, 2026-11-09)
+      // a text cut short (its start, then an ellipsis) is the `truncated` item below, not other words
+      const cut = /(…|\.\.\.)$/.test(hit.a.text) && n.startsWith(normLabel(hit.a.text.replace(/(…|\.\.\.)$/, '')));
+      if (full && !cut) {
+        if (how === 'copy' || how === 'place' || (how === 'part' && hit.a.n !== n)) cands.push({ id: `copy:${t.node}`, kind: 'copy', severity: how === 'part' ? 'minor' : 'major', note: how === 'part' ? 'one text contains the other' : how === 'place' ? 'other words where Figma draws this text' : undefined, figma: { node: t.node, text: t.text, box: r1(t.box) }, app: { text: hit.a.text, box: appBox } });
+        // numbers are sample data, their format is not (user, 2026-11-04): 「2026/08/19」 against 「26/08/19」 or 「8/19」
+        else if (how === 'exact' && numShape(t.text) !== numShape(hit.a.text)) cands.push({ id: `copy:${t.node}`, kind: 'copy', severity: 'minor', note: 'number format differs', figma: { node: t.node, text: t.text, box: r1(t.box) }, app: { text: hit.a.text, box: appBox } });
+      }
       // cut short: the app ends in an ellipsis Figma does not have, or runs past the window's edge
       if (/(…|\.\.\.)$/.test(hit.a.text) && !/(…|\.\.\.)$/.test(t.text)) cands.push({ id: `truncated:${t.node}`, kind: 'truncated', severity: 'major', figma: { node: t.node, text: t.text, box: r1(t.box) }, app: { text: hit.a.text, box: appBox } });
       else if (hit.a.part === 1 && (hit.a.f[0] < -1 || hit.a.f[0] + hit.a.f[2] > Wf + 1)) cands.push({ id: `truncated:${t.node}`, kind: 'truncated', severity: 'major', note: 'runs past the screen edge', figma: { node: t.node, text: t.text, box: r1(t.box) }, app: { text: hit.a.text, box: appBox } });
@@ -321,6 +343,9 @@ function measure() {
       // where a text sits on the screen is not an item (user, 2026-11-06: small offsets of a text's own place are not
       // checked); the offset is kept for the fit only. Padding and centring inside its box are (layoutCands).
       (p as any).off = { x: r1n(dx), y: r1n(dy) };
+      // the full check (--full, user 2026-11-09) holds it to Figma's place: more than 4 pt off, where the half has a fit
+      if (full && fit[half(p.t.box)].ok && (Math.abs(dx) > 4 || Math.abs(dy) > 4))
+        cands.push({ id: `position:${p.t.node}`, kind: 'position', severity: 'minor', figma: { node: p.t.node, text: p.t.text, box: r1(tb) }, app: { text: p.a.text, box: r1(ab) }, delta: { x: r1n(dx), y: r1n(dy) } });
       // wrapping: the lines the OCR reads on each side (a text view's box is often taller than its lines: 「AI Mini⏎Drama」
       // drawn on one line passed on its box height, and a padded button read as two; user, 2026-11-04), else Figma's
       // box over its line height and the app's view box
@@ -399,7 +424,7 @@ function measure() {
         .map(([id, v]) => ({ id, note: v.note ?? '', ...(v.note_zh ? { note_zh: v.note_zh } : {}), now: id.startsWith('visual:') ? 'check' : now.has(id) ? 'still' : 'fixed' })) };
     }
     results.push({ id: scr.id, name: scr.name, board: scr.board, board_name: scr.board_name, case: cap.case || scr.route?.case || '', captured_at: cap.t, png: cap.png,
-      parts: parts.get(cap.screen)!.map(p => p.png), note: cap.note || '', build, win: cap.win, k: r3(k), fw: Wf, arrival, fit,
+      parts: parts.get(cap.screen)!.map(p => p.png), note: cap.note || '', build, ...(full ? { rules: 'full' } : {}), win: cap.win, k: r3(k), fw: Wf, arrival, fit,
       ...(fig.out.length ? { out: fig.out.map(o => ({ name: o.name, box: r1(o.box) })) } : {}), ...(cap.unsettled ? { unsettled: true } : {}),
       ...(lay.unmatched ? { layout_unmatched: lay.unmatched } : {}),
 
@@ -453,7 +478,7 @@ function measure() {
     for (const it of r.recheck.items) if (!it.id.startsWith('visual:')) it.now = now.has(it.id) ? 'still' : 'fixed'; }
   // one screen per line (writeJsonRows): the file is rewritten on every check and committed with the run
   writeJsonRows(join(designDir, 'compare.json'), { built_at: new Date().toISOString(), spec_set: plan.spec_set, platform, build, recheck_of: old ? basename(oldDir!) : undefined,
-    ...(fontWidth ? { font_width: fontWidth } : {}), screens: all });
+    ...(full ? { rules: 'full' } : {}), ...(fontWidth ? { font_width: fontWidth } : {}), screens: all });
   const n = (kind: string) => results.reduce((t, r) => t + r.candidates.filter((c: Cand) => c.kind === kind).length, 0);
   console.log(`${shown(join(designDir, 'compare.json'))}: ${results.length} screens measured (${all.length} in the file); ` +
     KINDS.map(k => `${n(k)} ${k}`).join(', '));
@@ -1014,7 +1039,7 @@ function ebugs() {
   const plan = planFresh(feature, platform, true);
   const cmp = read(join(designDir, 'compare.json')), found = read(join(designDir, 'findings.json')).screens;
   const all = process.argv.includes('--all'), key = plan.file?.fileKey ?? plan.file?.key ?? '';
-  const out: string[] = [`# Design check bugs — ${basename(runDir)}`, '', `Build ${cmp.build || '(not recorded)'} · ${feature} · ${platform}. Drafted through spec-casebook references/ebugs.md: [UI], owner RD (Doc for copy), never [UX].`, ''];
+  const out: string[] = [`# Design check bugs — ${basename(runDir)}`, '', `Build ${cmp.build || '(not recorded)'} · ${feature} · ${platform}. Drafted through spec-casebook references/ebugs.md: [UI], owner RD (PM when the spec's own text must change), never [UX].`, ''];
   let n = 0;
   for (const s of cmp.screens) for (const [id, v] of Object.entries<any>(found[s.id] ?? {})) {
     if (v.verdict !== 'bug' || (!all && !v.ebug) || !live(s, id)) continue;
@@ -1052,3 +1077,7 @@ function deltaE(a: string, b: string) {
 function r1n(n: number) { return Math.round(n * 10) / 10; }
 function r1(b: number[]) { return b.map(r1n); }
 function r3(n: number) { return Math.round(n * 1000) / 1000; }
+
+// a number's format (full check only): a date (three groups split by / - .) keeps its digit counts (「2026/08/19」 is
+// not 「26/08/19」), any other number is one mark whatever its digits (credits, sizes and times are sample data)
+function numShape(t: string) { return t.replace(/\s+/g, ' ').trim().replace(/\d+[/.-]\d+[/.-]\d+/g, d => d.replace(/\d/g, '9')).replace(/\d+([.,]\d+)*/g, '#'); }

@@ -85,7 +85,9 @@ existed only in the reviewer's head. Ask for it per finding, and **rewrite the b
 than filing your original wording.
 
 Persist the controls in `localStorage` (wrapped in try/catch) and give the page a **Copy decisions**
-button that emits a markdown table of `# / Sev / Belong / Type / UX check / Action / Short Description / Note`, so
+button (it copies with `document.execCommand("copy")` on the selected textarea first, then
+`navigator.clipboard.writeText`, and only then asks for Cmd+C, saying why: an app's preview pane refuses the
+Clipboard API, user 2026-11-11; `pdr/video-enhance/android/ebugs/2026-11-10-r1/generators/review.py`) that emits a markdown table of `# / Sev / Belong / Type / UX check / Action / Short Description / Note`, so
 the reviewer pastes one block back instead of transcribing rows. `UX check` is `confirmed`, `reclassify`
 or `—` (see *UX entries* below); `drafts_to_bodies.py --decisions` refuses to stage a filed `[UX]` entry
 without `confirmed`.

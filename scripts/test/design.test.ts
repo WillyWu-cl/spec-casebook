@@ -6,7 +6,7 @@
 import { after, before, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, utimesSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, utimesSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { appElements, figmaScreen, keyboardInSource } from '../lib/design-match.ts';
@@ -349,6 +349,27 @@ test('check: a half with too few anchors has no fit, and a text\'s own place is 
   const s = read(join(RUNS, 'r0', 'design', 'compare.json')).screens[0];
   assert.equal(s.fit.top.ok, false);
   assert.ok(!s.candidates.some((x: any) => x.kind === 'position'));
+});
+
+test('check --full: the words and a text\'s own place are items again, and the run keeps the rule set', () => {
+  cpSync(join(RUNS, 'r1'), join(RUNS, 'r1-full'), { recursive: true }); rmSync(join(RUNS, 'r1-full', 'design', 'compare.json'), { force: true });
+  const r = design('check', 'r1-full', '--full');
+  assert.equal(r.status, 0, r.out); assert.match(r.out, /full check/);
+  const c = cands('r1-full', '1:10');
+  const by = (id: string) => c.find((x: any) => x.id === id);
+  assert.equal(by('copy:1:1a')?.app.text, 'Choose the template', 'other words are a copy item');
+  assert.ok(!by('copy:1:1b'), 'a text cut short is `truncated` only');
+  assert.deepEqual(by('position:1:13')?.delta, { x: 12, y: 0 }, '「Pick a style…」 12 pt right');
+  assert.equal(read(join(RUNS, 'r1-full', 'design', 'compare.json')).rules, 'full');
+  // everything the standard check finds is still found
+  for (const id of ['align:1:14', 'padding:1:1i', 'missing:1:1e', 'truncated:1:1b']) assert.ok(c.some((x: any) => x.id === id), id);
+  // a later check without the flag keeps the full rules; --standard goes back
+  assert.match(design('check', 'r1-full').out, /kept from this run's last check/);
+  assert.ok(cands('r1-full', '1:10').some((x: any) => x.kind === 'copy'));
+  assert.equal(design('check', 'r1-full', '--standard').status, 0);
+  assert.ok(!cands('r1-full', '1:10').some((x: any) => ['copy', 'position'].includes(x.kind)));
+  assert.equal(read(join(RUNS, 'r1-full', 'design', 'compare.json')).rules, undefined);
+  rmSync(join(RUNS, 'r1-full'), { recursive: true });
 });
 
 // ---- review, decisions, eBugs ----------------------------------------------------------------------------------------

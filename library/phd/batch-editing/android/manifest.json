@@ -2,8 +2,8 @@
   "feature": "phd/batch-editing",
   "platform": "android",
   "title": "Batch Editing",
-  "version": 2,
-  "approved_at": "2026-11-09T07:31:43.468Z",
+  "version": 4,
+  "approved_at": "2026-11-11T03:50:58.704Z",
   "draft": "20261109-150747",
   "spec_folder": "specs/2026-11-09",
   "spec_files": [
@@ -286,8 +286,28 @@
       "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
       "draft": "20261109-150747",
       "cases": 161,
+      "csv": "history/v2.csv",
+      "requirements": "history/v2-requirements.md"
+    },
+    {
+      "version": 3,
+      "approved_at": "2026-11-10T01:08:56.617Z",
+      "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
+      "draft": "20261109-164126",
+      "cases": 140,
+      "csv": "history/v3.csv",
+      "requirements": "history/v3-requirements.md",
+      "note": "Approved on origin/main by ethan-hsu-cl as v1 (commit 5ca5495, from the PM + Design Figma); renumbered v3 when the branch merged main. Superseded by v4 (user, 2026-11-11, REQ-010: keep the user's table). Its control trace and design plan are kept as history/v3-control-trace.json and history/v3-design-plan.json."
+    },
+    {
+      "version": 4,
+      "approved_at": "2026-11-11T03:50:58.704Z",
+      "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
+      "draft": "20261109-150747",
+      "cases": 161,
       "csv": "cases.csv",
-      "requirements": "requirements.md"
+      "requirements": "requirements.md",
+      "note": "Re-save of v2 (same rows) over main's table (REQ-010)."
     }
   ]
 }

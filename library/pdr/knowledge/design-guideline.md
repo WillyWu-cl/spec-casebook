@@ -1,7 +1,7 @@
 # Design guideline (PDRM)
 
 ## KP-066 Android text is held to the Android equivalent of the iOS font
-- kind: rule · platform: android · use: analysis, run · tags: design, font, typography
+- kind: rule · platform: android · use: analysis, run · tags: design, font, typography · authority: spec
 - source: 2025_PDRM_design_guideline, Typography board (Figma qSdtJ1wbHddNm6ebWvF4ia, node 3883:8926), read 2026-11-06; user, 2026-11-06
 
 The Design Figma is drawn for iOS in SF Pro. On Android the standard is Roboto: SF Pro Regular 400 → Roboto Regular

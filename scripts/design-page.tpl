@@ -158,6 +158,7 @@ dialog::backdrop { background: rgba(10, 16, 18, 0.6) }
 .pbh { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; padding-top: 6px }
 .pr { display: grid; grid-template-columns: 88px minmax(0, 1.2fr) minmax(0, 1.6fr) minmax(220px, 1fr); gap: 10px; align-items: center;
   background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--matches); border-radius: 6px; padding: 6px 10px; font-size: 0.86rem }
+details.blist > summary { cursor: pointer; color: var(--muted); margin-top: 4px } details.blist details.blist { margin-left: 12px }
 .pr.x { border-left-color: var(--none); opacity: 0.82 } .pr.flag { border-left-color: var(--question) } .pr.chg { box-shadow: 0 0 0 2px var(--unreviewed) }
 .pr.todo { border-left-color: var(--differs); background: color-mix(in srgb, var(--differs) 7%, var(--panel)) }
 .pr .ask { grid-column: 2 / -1; font-size: 0.82rem; color: var(--ink) } .pr .ask b { color: var(--differs) }
@@ -261,7 +262,7 @@ const T = {
     run: 'Run', open: 'Open in Figma', cases: 'Cases', cov: 'Coverage', res: 'Results', info: n => `${n} info items (sample text, app text not in Figma)`,
     showInfo: 'Show', hideInfo: 'Hide', nothing: 'No differences measured.', notCaptured: 'Not captured yet: reach it as shown and capture it (device.ts … design <id>).', close: 'Close',
     fitNote: (t, b) => `Fit offset: top ${t} pt, bottom ${b} pt`, allKinds: 'All differences', copy: n => `Copy decisions (${n})`, copied: 'Copied',
-    bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', boxes: 'Boxes',
+    bug: 'Bug', ok: 'OK', na: 'N/A', ebug: 'eBug', you: 'your call', recheck: r => `Recheck of ${r}`, build: 'Build', fullCheck: 'Full check (words and positions too)', boxes: 'Boxes',
     doubt: (m, n) => `Only ${m} of ${n} Figma texts were found: this capture may be another state.`, part: n => `part ${n}`, zoom: 'Click to see it full size', dwhy: 'Why it is not a problem (required)', dwhyOpt: 'Note (optional)',
     needDecWhy: n => `${n} bug(s) moved to OK or N/A need a reason first.`, colSet: 'Set to', colDrawn: 'On screen', colDrawnT: 'The colour as drawn on the image, sampled from the pixels', colDiff: (a, b) => `Difference ΔE ${a} as set${b != null ? `, ${b} on screen` : ''}`, srcApp: 'app data', srcAppT: "Read from the app's own view data (exact), not from the screenshot",
     revNote: 'Review:', howMeasured: 'How it was measured', secondRev: 'Second review:',
@@ -276,9 +277,10 @@ const T = {
     views: { plan: 'Capture plan', results: 'Findings' }, scope: 'Scope', reviewed: (d, n) => `Reviewed ${d}${n ? ` · ${n} new since` : ''}`, notReviewed: 'Not reviewed yet',
     sFigma: 'Figma read', sScreens: 'Screens', sMeasured: 'Measured on every capture', sLooked: 'Looked at by the two review passes', sNot: 'Not covered',
     boardsRead: (n, d) => `${n} boards read${d ? `, ${d}` : ''}`, specSet: s => `spec set ${s}`,
+    showBoards: (n, z) => `${n} boards with screens${z ? `, ${z} without` : ''} (light and dark on one line)`, noScreenBoards: n => `${n} boards with no screen (labels, notes, icons)`, nScreens: n => `${n} screen${n === 1 ? '' : 's'}`,
     unread: 'Not read yet: its screens are not in this plan. Read it before the check, or exclude it with a reason.', partial: 'Read incompletely: its screens are left out until the read finishes.', unreadS: 'not read yet', partialS: 'read incomplete',
     included: 'Included', excluded: 'Excluded', noRoute: 'No route', toLook: 'Needs your decision', lookT: r => r ? 'Added since the scope review: pick Include or Exclude.' : 'Flagged screens: read the note on each, then pick Include or Exclude.', decided: 'Decided', changed: 'Your changes',
-    measured: ['Copy: each Figma text against the app text', 'Missing text and icon controls', 'Truncation (「…」 or past the edge)', 'Wrapping (number of lines)', 'Position, after aligning top and bottom', 'Fill and text colour', 'Arrival: the capture is the frame\'s state'],
+    measured: ['Missing text and icon controls', 'Truncation (「…」 or past the edge)', 'Wrapping (number of lines)', 'Text box padding and border, and the text centred in its box', 'Font size', 'Gaps between buttons', 'Fill and text colour', 'Arrival: the capture is the frame\'s state', 'Not the words or where a text sits (only in a full check on request)'],
     looked: ['Icon drawings and images', 'Font weight and size', 'Corner radius, shadows and borders', 'Anything else the sheet shows'],
     notCov: ['Excluded screens and boards (reason on each line)', 'Animation, motion and timing', 'Languages and appearances other than the frame\'s', 'Screens whose state cannot be brought about (named in the run)'],
     flagN: { area: 'Approximate route', variant: 'State to bring about', drawing: 'Not a phone screen', gap: 'Gap in the table' },
@@ -289,7 +291,7 @@ const T = {
       gap: 'No test case reaches this screen yet. Include to keep it (the analysis adds a case); Exclude if it is not in this release.',
       noroute: 'No way to reach this screen was found. Exclude it, or Include and say in the chat how to get there.',
       fresh: 'Added to Figma after the last scope review.' },
-    psave: (n, left) => left ? `Save${n ? ` (${n})` : ''} · ${left} still to decide` : n ? `Save and finish the review (${n})` : 'Saved',
+    psave: (n, left, rev) => left ? `Save${n ? ` (${n})` : ''} · ${left} still to decide` : n ? `Save and finish the review (${n})` : rev ? 'Saved' : 'Mark the scope reviewed',
     save: n => `Save decisions (${n})`, saving: 'Saving…', saveFail: 'Could not save:',
     flagT: { area: 'The row only reaches the area (a shared control); the runner brings about the state the frame shows.', variant: 'Drawn beside a reached screen: brought about there.',
       drawing: 'Narrower than a phone: a card or detail drawn on its own. Its texts are still compared where the card appears.', gap: 'No casebook row reaches it: the analysis adds one.' },
@@ -307,7 +309,7 @@ const T = {
     run: '執行', open: '在 Figma 開啟', cases: '案例', cov: '覆蓋率', res: '結果', info: n => `${n} 個資訊項目（範例文字、Figma 沒有的 App 文字）`,
     showInfo: '顯示', hideInfo: '隱藏', nothing: '沒有量到差異。', notCaptured: '尚未擷取：依右側方式到達後擷取（device.ts … design <id>）。', close: '關閉',
     fitNote: (t, b) => `對齊位移：上 ${t} pt，下 ${b} pt`, allKinds: '全部差異', copy: n => `複製決定（${n}）`, copied: '已複製',
-    bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', boxes: '框線',
+    bug: '問題', ok: '一致', na: '無法判定', ebug: '開 eBug', you: '你的決定', recheck: r => `複驗 ${r}`, build: '版本', fullCheck: '完整檢查（含文案與位置）', boxes: '框線',
     doubt: (m, n) => `只找到 ${m} / ${n} 個 Figma 文字：這張擷取圖可能是別的狀態。`, part: n => `第 ${n} 段`, zoom: '點一下看原尺寸', dwhy: '為什麼不是問題（必填）', dwhyOpt: '備註（選填）',
     needDecWhy: n => `有 ${n} 個改成「一致」或「無法判定」的問題需要先填原因。`, colSet: '設定值', colDrawn: '畫面上', colDrawnT: '圖上實際畫出的顏色，取自像素', colDiff: (a, b) => `差異 ΔE：設定值 ${a}${b != null ? `，畫面上 ${b}` : ''}`, srcApp: 'App 資料', srcAppT: '數值取自 App 本身的版面資料（精確值），不是從截圖量的',
     revNote: '審查說明：', howMeasured: '量測細節', secondRev: '第二位審查：',
@@ -322,9 +324,10 @@ const T = {
     views: { plan: '擷取計畫', results: '比對結果' }, scope: '範圍', reviewed: (d, n) => `已審查 ${d}${n ? ` · 之後新增 ${n} 個` : ''}`, notReviewed: '尚未審查',
     sFigma: 'Figma 讀取', sScreens: '畫面', sMeasured: '每張擷取圖自動量測', sLooked: '由兩輪審查人工檢視', sNot: '不在範圍內',
     boardsRead: (n, d) => `已讀取 ${n} 個畫板${d ? `，${d}` : ''}`, specSet: s => `規格 ${s}`,
+    showBoards: (n, z) => `${n} 個有畫面的畫板${z ? `，${z} 個沒有` : ''}（淺色與深色同一行）`, noScreenBoards: n => `${n} 個沒有畫面的畫板（標籤、註解、圖示）`, nScreens: n => `${n} 個畫面`,
     unread: '尚未讀取：此畫板的畫面不在計畫中。請先讀取再檢查，或註明原因排除。', partial: '讀取未完成：讀取完成前不含此畫板的畫面。', unreadS: '尚未讀取', partialS: '讀取未完成',
     included: '納入', excluded: '排除', noRoute: '無路徑', toLook: '需要你決定', lookT: r => r ? '範圍審查後新增：請選納入或排除。' : '有標記的畫面：看完每行的說明後選納入或排除。', decided: '已決定', changed: '你的變更',
-    measured: ['文案：每個 Figma 文字對照 App 文字', '缺少的文字與圖示控制項', '截斷（「…」或超出邊界）', '換行（行數）', '位置（上下對齊後）', '填色與文字顏色', '到達：擷取圖是否為該畫面的狀態'],
+    measured: ['缺少的文字與圖示控制項', '截斷（「…」或超出邊界）', '換行（行數）', '文字框的內距與邊框，文字在框內置中', '字級', '按鈕之間的間距', '填色與文字顏色', '到達：擷取圖是否為該畫面的狀態', '不比對文字內容與文字位置（僅在依要求的完整檢查中比對）'],
     looked: ['圖示繪製與圖片', '字重與字級', '圓角、陰影與框線', '比對圖上其他可見差異'],
     notCov: ['已排除的畫面與畫板（每行附原因）', '動畫、動態與時間', '畫面以外的語言與外觀模式', '無法製造出狀態的畫面（執行時註明）'],
     flagN: { area: '路徑不精確', variant: '需製造狀態', drawing: '非完整畫面', gap: '測試表缺口' },
@@ -335,7 +338,7 @@ const T = {
       gap: '還沒有測試案例到達此畫面。選「納入」保留（分析會補案例）；不在本次版本就選「排除」。',
       noroute: '找不到到達此畫面的方式。選「排除」，或選「納入」並在對話中說明怎麼到。',
       fresh: '上次範圍審查之後才加到 Figma。' },
-    psave: (n, left) => left ? `儲存${n ? `（${n}）` : ''} · 還有 ${left} 個待決定` : n ? `儲存並完成審查（${n}）` : '已儲存',
+    psave: (n, left, rev) => left ? `儲存${n ? `（${n}）` : ''} · 還有 ${left} 個待決定` : n ? `儲存並完成審查（${n}）` : rev ? '已儲存' : '標記範圍已審查',
     save: n => `儲存決定（${n}）`, saving: '儲存中…', saveFail: '無法儲存：',
     flagT: { area: '案例只到達該區域（共用控制項）；執行者需製造出畫面所示的狀態。', variant: '畫在已到達畫面旁：在那裡製造出此狀態。',
       drawing: '比手機窄：單獨畫出的卡片或細節。其文字仍會在卡片出現處比對。', gap: '沒有測試表案例到達：分析需補上。' },
@@ -436,7 +439,9 @@ $('pq').oninput = e => { pq = e.target.value.trim().toLowerCase(); planList(); }
 // Save (served live): the choices go to design.ts scope, which writes plan.json; the scope counts as reviewed once no
 // screen still needs a decision. Opened as a file, the same block is copied for the chat instead.
 const pbtn = () => { const n = changedIds().length, left = D.screens.filter(lookOf).length, b = $('pcopy');
-  b.textContent = canSave ? t('psave')(n, left) : t('pcopy')(n); b.disabled = canSave && !n && (left || D.review); b.classList.toggle('go', !!n && !left); };
+  b.textContent = canSave ? t('psave')(n, left, !!D.review) : t('pcopy')(n); b.disabled = canSave && !n && (left || D.review);
+  // nothing to decide and nothing changed, but never reviewed: the button marks it reviewed, so it must not read "Saved"
+  b.classList.toggle('go', !left && (!!n || !D.review)); };
 // a saved choice is gone from this browser; the page then shows what plan.json holds
 const post = async (cmd, block) => { const r = await fetch(`apply/${cmd}`, { method: 'POST', headers: { 'content-type': 'text/plain' }, body: block });
   const j = await r.json().catch(() => ({ error: r.statusText })); if (!r.ok || j.error) throw new Error(j.error || r.statusText); return j; };
@@ -454,17 +459,28 @@ $('pcopy').onclick = async () => {
 };
 // a choice re-renders the list: keep the page where it was
 const keepScroll = f => { const y = scrollY; f(); scrollTo(0, y); };
+// the boards read, short (user, 2026-11-10: 99 lines was too long): collapsed, light/dark twins on one line, boards
+// with no screen (labels, notes, icons) in their own list; a board read wrongly stays in view with its warning
+function boardList() {
+  const link = (b, label) => D.file ? `<a href="https://www.figma.com/design/${esc(D.file)}?node-id=${esc(b.id.replace(':', '-'))}" target="_blank" rel="noopener">${esc(label)}</a>` : esc(label);
+  const per = b => D.screens.filter(s => s.board_id === b.id).length;
+  const gapOf = b => D.gaps.unread.some(g => g.id === b.id) ? 'unread' : D.gaps.incomplete.some(g => g.id === b.id) ? 'partial' : '';
+  const all = [...boardOrder(), ...D.gaps.unread.filter(g => !D.boards.some(b => b.id === g.id))], groups = new Map();
+  for (const b of all) { const k = (gapOf(b) ? '!' + b.id : '') + b.name; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(b); }
+  const li = bs => { const k = gapOf(bs[0]), n = bs.reduce((a, b) => a + per(b), 0);
+    return `<li${k ? ` title="${esc(t(k))}"` : ''}>${link(bs[0], bs[0].name)}${bs.slice(1).map((b, i) => ` <span class="more">·</span> ${link(b, String(i + 2))}`).join('')} ${k ? `<span class="gapnote">⚠ ${esc(t(k + 'S'))}</span>` : `<span class="more">· ${esc(t('nScreens')(n))}</span>`}</li>`; };
+  const gs = [...groups.values()], bad = gs.filter(bs => gapOf(bs[0])), ok = gs.filter(bs => !gapOf(bs[0]));
+  const withS = ok.filter(bs => bs.some(per)), noS = ok.filter(bs => !bs.some(per));
+  return `${bad.length ? `<ul>${bad.map(li).join('')}</ul>` : ''}<details class="blist"><summary>${esc(t('showBoards')(withS.length, noS.length))}</summary>
+    <ul>${withS.map(li).join('')}</ul>${noS.length ? `<details class="blist"><summary>${esc(t('noScreenBoards')(noS.reduce((a, bs) => a + bs.length, 0)))}</summary><ul>${noS.map(bs => `<li>${bs.map((b, i) => link(b, i ? String(i + 1) : b.name)).join(' <span class="more">·</span> ')}</li>`).join('')}</ul></details>` : ''}</details>`;
+}
 function planView() {
   const S = D.screens, inc = S.filter(s => !exOf(s) && s.status !== 'no-route'), ex = S.filter(s => exOf(s));
   const fl = f => inc.filter(s => s.flags.includes(f)).length, last = D.boards.map(b => b.read_at).sort().at(-1);
-  const per = b => S.filter(s => s.board_id === b.id).length;
   $('scope').innerHTML = `<div class="sh"><h2>${esc(t('scope'))}</h2>${D.review ? `<span class="badge ok">${esc(t('reviewed')(D.review.at, D.review.fresh.length))}</span>` : `<span class="badge todo">${esc(t('notReviewed'))}</span>`}</div>
     <div class="sgrid">
       <div><b>${esc(t('sFigma'))}</b>${esc(t('boardsRead')(D.boards.length, last ? last.slice(0, 10) : ''))} · ${esc(t('specSet')(D.spec_set))}
-        <ul>${[...boardOrder(), ...D.gaps.unread.filter(g => !D.boards.some(b => b.id === g.id))].map(b => {
-          const k = D.gaps.unread.some(g => g.id === b.id) ? 'unread' : D.gaps.incomplete.some(g => g.id === b.id) ? 'partial' : '';
-          const name = D.file ? `<a href="https://www.figma.com/design/${esc(D.file)}?node-id=${esc(b.id.replace(':', '-'))}" target="_blank" rel="noopener">${esc(b.name)}</a>` : esc(b.name);
-          return `<li${k ? ` title="${esc(t(k))}"` : ''}>${name} ${k ? `<span class="gapnote">⚠ ${esc(t(k + 'S'))}</span>` : `<span class="more">· ${per(b)}</span>`}</li>`; }).join('')}</ul>
+        ${boardList()}
         ${D.gaps.unread.length + D.gaps.incomplete.length ? `<p class="more">⚠ ${esc([D.gaps.unread.length ? t('unread') : '', D.gaps.incomplete.length ? t('partial') : ''].filter(Boolean).join(' '))}</p>` : ''}</div>
       <div><b>${esc(t('sScreens'))}</b><div class="nums"><span><b>${inc.length}</b> ${esc(t('included'))}</span><span><b>${ex.length}</b> ${esc(t('excluded'))}</span>${S.filter(s => s.status === 'no-route').length ? `<span><b>${S.filter(s => s.status === 'no-route').length}</b> ${esc(t('noRoute'))}</span>` : ''}</div>
         <ul>${['area', 'variant', 'drawing', 'gap'].filter(fl).map(f => `<li title="${esc(t('flagT')[f])}">${esc(t('flagN')[f])}: ${fl(f)}</li>`).join('')}</ul></div>
@@ -798,7 +814,7 @@ function detail(id) {
     ${s.views ? `<p class="more">${esc(t('viewsNote')(s.views.matched, s.views.texts, s.views.font_scale))}</p>` : s.font_width ? `<p class="more">${esc(t('fontNote')(s.font_width.width, s.font_width.texts))}</p>` : ''}
     ${s.fit ? `<p class="more">${esc(t('fitNote')(s.fit.top.dy, s.fit.bottom.dy))}</p>` : ''}`.trim();
   $('dlg').innerHTML = `<div class="dh"><h2>${esc(labelOf(s))}</h2><span class="st"><i style="background:${COL(s.status)}"></i>${esc(STN[L][s.status])}</span>
-    <span class="more">${labelOf(s) !== s.name ? `${esc(s.name)} · ` : ''}${esc(s.board)} · ${esc(s.id)}${s.run ? ` · ${t('run')} ${esc(s.run)}` : ''}${s.build ? ` · ${t('build')} ${esc(s.build)}` : ''}</span>
+    <span class="more">${labelOf(s) !== s.name ? `${esc(s.name)} · ` : ''}${esc(s.board)} · ${esc(s.id)}${s.run ? ` · ${t('run')} ${esc(s.run)}` : ''}${s.build ? ` · ${t('build')} ${esc(s.build)}` : ''}${s.rules === 'full' ? ` · ${t('fullCheck')}` : ''}</span>
     <label class="more"><input type="checkbox" id="bx"${noBoxes ? '' : ' checked'}> ${esc(t('boxes'))}</label>
     ${figmaUrl ? `<a class="more" href="${figmaUrl}" target="_blank" rel="noopener">${esc(t('open'))} ↗</a>` : ''}<button type="button" class="x" id="x" aria-label="${esc(t('close'))}">✕</button></div>
   <div class="db"><div class="pair">

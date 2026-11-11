@@ -201,7 +201,13 @@ const tx = (en: string, zh: string) => `<span data-en="${esc(en)}" data-zh="${es
 const tabName = (d: Def, r: Ref) => d.id === 'review' ? tx(`${d.label}${reviewOf(r)}`, `${d.zh}${reviewOf(r).replace('draft', '草稿')}`) : tx(d.label, d.zh);
 const platformName = (p: string) => p === 'ios' ? 'iOS' : 'Android';
 // a tab is a link unless the page cannot open: no run plan yet, or it failed the last time it was started
-const problem = (d: Def, r: Ref) => (d.id === 'plan' && !d.argv(r) ? d.why : undefined) ?? (({ proc, error }) => proc ? undefined : error)(childOf(d, r));
+// (a "no run plan" error left from an earlier visit no longer counts once the plan is there)
+const problem = (d: Def, r: Ref) => (d.id === 'plan' && !d.argv(r) ? d.why : undefined) ?? (({ proc, error }) => proc || error === d.why ? undefined : error)(childOf(d, r));
+// one tab of the bar: a link, or a greyed-out name when the page cannot open (data-cb-tab: the bar swaps it when that
+// changes; not data-t, which the pages use for their own translations)
+const tabHtml = (d: Def, r: Ref, current: string) => { const why = problem(d, r); return why
+  ? `<span class="off" data-cb-tab="${d.id}" title="${esc(why)}">${tabName(d, r)}</span>`
+  : `<a data-cb-tab="${d.id}" href="${base(r)}/${d.path}/"${d.id === current ? ' aria-current="page"' : ''}>${tabName(d, r)}</a>`; };
 // the same page on the table's other platform: its draft of the same id if it has one, else the approved table, else its newest draft
 const otherPlatform = (r: Ref, path: string) => { const p = PLATFORMS.find(x => x !== r.platform)!;
   const draft = r.draft && hasDraft(r.feature, p, r.draft) ? r.draft : readManifest(r.feature, p) ? undefined : openDrafts(r.feature, p).at(-1);
@@ -222,6 +228,7 @@ const barCss = `<style>
 .cb-tabs a:hover{background:#2c3a4a;color:#fff}
 .cb-tabs a[aria-current="page"]{background:#3d6fd9;color:#fff}
 .cb-tabs span.off{opacity:.45;cursor:not-allowed}
+.cb-tabs a.cb-new{box-shadow:inset 0 0 0 2px #e0a526;color:#fff}
 .cb-tabs .cb-note{margin-left:auto;font-size:12px;opacity:.7}
 .cb-tabs .cb-lang{display:inline-flex;border:1px solid #3a4a5c;border-radius:6px;overflow:hidden;margin-left:8px}
 .cb-tabs .cb-lang button{font-family:inherit;font-size:12px;font-weight:600;line-height:1;border:0;background:transparent;color:#c9d3dd;padding:5px 10px;cursor:pointer}
@@ -231,12 +238,10 @@ const barCss = `<style>
 @media print{.cb-tabs{display:none}}
 </style>`;
 const shareNote = () => lan ? tx('Shared on the network', '已在區域網路分享') : tx('This computer only', '僅限本機');
-const tabBar = (r: Ref, current: string, version = '') => {
+const tabBar = (r: Ref, current: string, version = '', gone = false) => {
   const links = Object.fromEntries(defs.filter(d => !problem(d, r)).map(d => [d.id, `${base(r)}/${d.path}/`]));
   const path = defs.find(d => d.id === current)!.path;
-  return `${barCss}<nav class="cb-tabs" aria-label="Casebook pages"><a class="cb-home" href="/">${tx('All features', '全部功能')}</a><b>${esc(r.feature)}</b><span class="cb-sep"></span>${defs.map(d => { const why = problem(d, r); return why
-    ? `<span class="off" title="${esc(why)}">${tabName(d, r)}</span>`
-    : `<a href="${base(r)}/${d.path}/"${d.id === current ? ' aria-current="page"' : ''}>${tabName(d, r)}</a>`; }).join('')}<button type="button" class="cb-upd" hidden>${current === 'review' ? tx('Files changed · Reload (unsaved edits are lost)', '檔案已更新 · 重新載入（未儲存的修改會遺失）') : tx('Updated · Reload', '已更新 · 重新載入')}</button><span class="cb-note">${shareNote()}</span>${platformSwitch(r, path)}<span class="cb-lang" role="group" aria-label="Language"><button type="button" data-l="en">English</button><button type="button" data-l="zh">中文</button></span></nav>
+  return `${barCss}<nav class="cb-tabs" aria-label="Casebook pages"><a class="cb-home" href="/">${tx('All features', '全部功能')}</a><b>${esc(r.feature)}</b><span class="cb-sep"></span>${defs.map(d => tabHtml(d, r, current)).join('')}<button type="button" class="cb-upd" hidden>${current === 'review' ? tx('Files changed · Reload (unsaved edits are lost)', '檔案已更新 · 重新載入（未儲存的修改會遺失）') : tx('Updated · Reload', '已更新 · 重新載入')}</button><span class="cb-note">${shareNote()}</span>${platformSwitch(r, path)}<span class="cb-lang" role="group" aria-label="Language"><button type="button" data-l="en">English</button><button type="button" data-l="zh">中文</button></span></nav>
 <script>(()=>{let l='en';try{if(localStorage.getItem('casebook-lang')==='zh')l='zh'}catch(e){}
 window.CASEBOOK=Object.assign(${JSON.stringify({ pages: links, current })},{lang:l});
 const n=document.currentScript.previousElementSibling,b=getComputedStyle(document.body),t=parseFloat(b.paddingTop)||0;
@@ -251,7 +256,7 @@ show(l);
 // scripts change) shows the button too, and reloads a hidden tab other than Cases.
 // this table's place on the navigation page: Recent, and the tab it opens on
 try{const k='casebook-seen',m=JSON.parse(localStorage.getItem(k)||'{}');m[${JSON.stringify(base(r))}]={path:${JSON.stringify(path)},at:Date.now()};localStorage.setItem(k,JSON.stringify(m))}catch(e){}
-const C=CASEBOOK,u=n.querySelector('.cb-upd'),cur=${JSON.stringify(current)},F=${JSON.stringify(r.feature)};let d0=${stampOf(r.feature)},c0=${codeStamp},v=${JSON.stringify(version)},busy=0,again=0,later=0,stale=0;u.onclick=()=>location.reload();
+const C=CASEBOOK,u=n.querySelector('.cb-upd'),cur=${JSON.stringify(current)},F=${JSON.stringify(r.feature)};let d0=${stampOf(r.feature)},c0=${codeStamp},v=${JSON.stringify(version)},gone=${gone},busy=0,again=0,later=0,stale=0;u.onclick=()=>location.reload();
 const H=Object.getOwnPropertyDescriptor(Element.prototype,'innerHTML'),XH='http://www.w3.org/1999/xhtml';
 const same=(o,m)=>o.nodeType===m.nodeType&&(o.nodeType!==1||o.tagName===m.tagName&&o.id===m.id);
 const sync=(a,b)=>{let i=0;for(const m of [...b.childNodes]){const o=a.childNodes[i];
@@ -271,9 +276,14 @@ C.quiet=f=>{Object.defineProperty(Element.prototype,'innerHTML',{configurable:tr
   try{return f()}finally{Object.defineProperty(Element.prototype,'innerHTML',H)}};
 // a hidden tab asks for nothing, so its page process can stop when idle; it catches up when it is shown
 C.check=async fresh=>{if(document.hidden){later=1;return}if(busy){again=1;return}busy=1;try{const r=await fetch('__check?v='+encodeURIComponent(v)+(C.onData?'&data=1':'')+(fresh?'&fresh=1':''),{cache:'no-store'});
-  if(r.status!==200)return;const j=await r.json();v=j.v;if(C.onData)C.quiet(()=>C.onData(j.data));else u.hidden=false}catch(e){}finally{busy=0;if(again){again=0;C.check()}}};
+  if(r.status!==200)return;const j=await r.json();v=j.v;if(gone)return location.reload();if(C.onData)C.quiet(()=>C.onData(j.data));else u.hidden=false}catch(e){}finally{busy=0;if(again){again=0;C.check()}}};
+// the tabs follow the files too: a run plan added (or removed) turns Progress into a link (or back) with no reload
+const tabs=async()=>{try{const r=await fetch('__tabs',{cache:'no-store'});if(!r.ok)return;const t=await r.json();
+  for(const[id,h]of Object.entries(t)){const o=n.querySelector('[data-cb-tab="'+id+'"]');if(!o||o.outerHTML===h)continue;const x=document.createElement('template');H.set.call(x,h);const e=x.content.firstElementChild;e.querySelectorAll('[data-zh]').forEach(y=>y.textContent=y.dataset[C.lang]);
+  // a page that just became available is outlined (like the Reload button), so the change is seen
+  if(o.tagName!=='A'&&e.tagName==='A'){e.classList.add('cb-new');e.title=C.lang==='zh'?'已可開啟':'Now available'}o.replaceWith(e)}}catch(e){}};
 const got=s=>{if(s.code>c0){if(document.hidden&&cur!=='review'){stale=1;return}u.hidden=false;return}
-  const d=s.stamps[F];if(d>d0){d0=d;C.check()}};
+  const d=s.stamps[F];if(d>d0){d0=d;C.check();tabs()}};
 addEventListener('visibilitychange',async()=>{if(document.hidden)return;if(stale)return location.reload();if(later){later=0;C.check()}try{got(await(await fetch('/__stamp',{cache:'no-store'})).json())}catch(e){}});
 // one tab per browser holds /__events (a Web Lock) and passes each stamp to the others (BroadcastChannel); the next
 // tab takes over when it closes. Locks need a secure context (localhost, not a LAN address): there, poll instead.
@@ -307,7 +317,7 @@ const check = (c: Child, data: boolean, fresh: boolean) => {
   checks.set(key, { stamp, job }); job.catch(() => checks.delete(key));
   return job;
 };
-const notAvailable = (c: Child, r: Ref) => `<!doctype html><meta charset="utf-8"><title>${esc(c.def.label)}</title><body style="margin:0;font:15px system-ui;background:#f4f5f7">${tabBar(r, c.def.id)}<p style="padding:24px;max-width:80ch">${esc(c.error ?? 'Not available.')}</p></body>`;
+const notAvailable = (c: Child, r: Ref) => `<!doctype html><meta charset="utf-8"><title>${esc(c.def.label)}</title><body style="margin:0;font:15px system-ui;background:#f4f5f7">${tabBar(r, c.def.id, '', true)}<p style="padding:24px;max-width:80ch">${esc(c.error ?? 'Not available.')}</p></body>`;
 // The navigation page. Its data is a few small files per table, read when it is asked for.
 const boardsData = () => ({ products: listBoards(), live: live().length, idleMinutes: IDLE_MS / 60_000 });
 const loginPage = (next: string, error = '') => withShared(readFileSync(script('login-page.tpl'), 'utf8')).replace('__NEXT__', () => esc(next)).replace('__HIDE__', error ? '' : ' hidden').replace('__ERROR__', () => esc(error));
@@ -390,6 +400,7 @@ async function handle(req: import('node:http').IncomingMessage, res: import('nod
   if (!def) { notFound(req, res, `No page ${path}.`); return; }
   if (!m[5]) { res.writeHead(301, { location: `${base(ref)}/${path}/` }); res.end(); return; }
   const c = childOf(def, ref);
+  if (m[5].startsWith('/__tabs')) { res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(Object.fromEntries(defs.map(d => [d.id, tabHtml(d, ref, def.id)])))); return; }
   if (m[5].startsWith('/__check')) {
     const q = new URL(url, 'http://x').searchParams, data = q.has('data');
     c.used = Date.now();

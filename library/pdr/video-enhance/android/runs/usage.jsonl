@@ -1,0 +1,12 @@
+{"at":"2026-11-10T09:05:00.000Z","fiveHourPct":36,"fiveHourResetsAt":"2026-11-10T11:00:00.938Z","weeklyPct":6,"weeklyResetsAt":"2026-11-17T06:00:00.938Z","proMultiplier":6.25,"note":"R1 setup (build download, Figma check, run plan); seat 6.25 (user, 2026-11-10)"}
+{"at":"2026-11-10T09:10:46.597Z","fiveHourPct":37,"fiveHourResetsAt":"2026-11-10T11:00:00.299Z","weeklyPct":7,"weeklyResetsAt":"2026-11-17T06:00:00.299Z","proMultiplier":6.25,"note":"R1-a start"}
+{"at":"2026-11-10T09:29:20.253Z","fiveHourPct":43,"fiveHourResetsAt":"2026-11-10T11:00:00.547Z","weeklyPct":7,"weeklyResetsAt":"2026-11-17T06:00:00.547Z","proMultiplier":6.25,"note":"R1-a end / R1-b start"}
+{"at":"2026-11-10T09:50:43.215Z","fiveHourPct":49,"fiveHourResetsAt":"2026-11-10T11:00:00.702Z","weeklyPct":8,"weeklyResetsAt":"2026-11-17T06:00:00.702Z","proMultiplier":6.25,"note":"R1-b end / R1-c start"}
+{"at":"2026-11-10T10:12:33.163Z","fiveHourPct":53,"fiveHourResetsAt":"2026-11-10T11:00:00.732Z","weeklyPct":9,"weeklyResetsAt":"2026-11-17T06:00:00.732Z","proMultiplier":6.25,"note":"R1-c end / R1-d start"}
+{"at":"2026-11-10T10:22:07.534Z","fiveHourPct":54,"fiveHourResetsAt":"2026-11-10T11:00:00.986Z","weeklyPct":9,"weeklyResetsAt":"2026-11-17T06:00:00.986Z","proMultiplier":6.25,"note":"R1-d end / R1-e start"}
+{"at":"2026-11-10T10:54:56.670Z","fiveHourPct":57,"fiveHourResetsAt":"2026-11-10T11:00:00.190Z","weeklyPct":10,"weeklyResetsAt":"2026-11-17T06:00:00.190Z","proMultiplier":6.25,"note":"R1-e end / R1-f start"}
+{"at":"2026-11-10T11:18:25.062Z","fiveHourPct":2,"fiveHourResetsAt":"2026-11-10T16:00:00.836Z","weeklyPct":10,"weeklyResetsAt":"2026-11-17T06:00:00.836Z","proMultiplier":6.25,"note":"R1-f end / R1-g1 start (new 5-hour window)"}
+{"at":"2026-11-10T12:27:52.237Z","fiveHourPct":6,"fiveHourResetsAt":"2026-11-10T16:00:00.862Z","weeklyPct":11,"weeklyResetsAt":"2026-11-17T06:00:00.862Z","proMultiplier":6.25,"note":"R1-g1 end / R1-g2 start"}
+{"at":"2026-11-10T14:36:35.817Z","fiveHourPct":13,"fiveHourResetsAt":"2026-11-10T16:00:00.296Z","weeklyPct":12,"weeklyResetsAt":"2026-11-17T06:00:00.296Z","proMultiplier":6.25,"note":"R1-g2 end / R1-h start"}
+{"at":"2026-11-10T14:42:23.627Z","fiveHourPct":14,"fiveHourResetsAt":"2026-11-10T16:00:00.138Z","weeklyPct":12,"weeklyResetsAt":"2026-11-17T06:00:00.138Z","proMultiplier":6.25,"note":"R1-h end / R1-i start"}
+{"at":"2026-11-10T14:52:11.542Z","fiveHourPct":15,"fiveHourResetsAt":"2026-11-10T16:00:00.433Z","weeklyPct":12,"weeklyResetsAt":"2026-11-17T06:00:00.433Z","proMultiplier":6.25,"note":"R1-i end / R1 wrap-up start"}

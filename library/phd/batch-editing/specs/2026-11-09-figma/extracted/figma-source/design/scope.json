@@ -1,0 +1,613 @@
+{
+  "written_at": "2026-11-10T06:12:56.842Z",
+  "file": "qZXJfrM5gb5g4tFoCIS1YU",
+  "page": [
+    "12:2321",
+    "261104_design"
+  ],
+  "listed": [
+    [
+      "13:2380",
+      "photo_picker",
+      "FRAME"
+    ],
+    [
+      "110:4804",
+      "photo_picker",
+      "FRAME"
+    ],
+    [
+      "13:2826",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "110:4922",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "48:1432",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "110:5090",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "57:3956",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "110:5258",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "57:5448",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "67:9285",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "57:5666",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "67:9438",
+      "canvas_img_focus",
+      "FRAME"
+    ],
+    [
+      "22:2798",
+      "3_",
+      "FRAME"
+    ],
+    [
+      "110:5426",
+      "3_",
+      "FRAME"
+    ],
+    [
+      "31:953",
+      "main_down_tool_box",
+      "FRAME"
+    ],
+    [
+      "110:5578",
+      "main_down_tool_box",
+      "FRAME"
+    ],
+    [
+      "41:923",
+      "adjust",
+      "FRAME"
+    ],
+    [
+      "110:5611",
+      "adjust",
+      "FRAME"
+    ],
+    [
+      "47:1430",
+      "row label 1",
+      "TEXT"
+    ],
+    [
+      "110:5840",
+      "row label 9",
+      "TEXT"
+    ],
+    [
+      "48:1649",
+      "row label 2",
+      "TEXT"
+    ],
+    [
+      "110:5841",
+      "row label 10",
+      "TEXT"
+    ],
+    [
+      "57:3954",
+      "row label 3",
+      "TEXT"
+    ],
+    [
+      "110:5842",
+      "row label 11",
+      "TEXT"
+    ],
+    [
+      "57:5665",
+      "row label 4",
+      "TEXT"
+    ],
+    [
+      "67:10291",
+      "row label 8",
+      "TEXT"
+    ],
+    [
+      "57:4257",
+      "Enhance_1",
+      "FRAME"
+    ],
+    [
+      "110:5843",
+      "Enhance_1",
+      "FRAME"
+    ],
+    [
+      "57:5097",
+      "Enhance_1",
+      "FRAME"
+    ],
+    [
+      "110:5928",
+      "Enhance_1",
+      "FRAME"
+    ],
+    [
+      "57:4625",
+      "Enhance_1",
+      "FRAME"
+    ],
+    [
+      "110:6102",
+      "Enhance_1",
+      "FRAME"
+    ],
+    [
+      "110:4532",
+      "Discard dialog",
+      "FRAME"
+    ],
+    [
+      "110:8280",
+      "Discard dialog",
+      "FRAME"
+    ],
+    [
+      "57:4892",
+      "Enhance_1",
+      "FRAME"
+    ],
+    [
+      "110:6196",
+      "Enhance_1",
+      "FRAME"
+    ],
+    [
+      "57:6001",
+      "save2",
+      "FRAME"
+    ],
+    [
+      "67:10721",
+      "save2",
+      "FRAME"
+    ],
+    [
+      "57:6798",
+      "9_Adjust_curve",
+      "FRAME"
+    ],
+    [
+      "63:7874",
+      "9_Adjust_HSL",
+      "FRAME"
+    ],
+    [
+      "105:4123",
+      "9_Adjust_HSL_collapse",
+      "FRAME"
+    ],
+    [
+      "128:8508",
+      "9_Adjust_curve_collapse",
+      "FRAME"
+    ],
+    [
+      "105:4500",
+      "status",
+      "FRAME"
+    ],
+    [
+      "110:6885",
+      "status",
+      "FRAME"
+    ],
+    [
+      "134:8803",
+      "9_Adjust_curve",
+      "FRAME"
+    ],
+    [
+      "134:9013",
+      "9_Adjust_HSL",
+      "FRAME"
+    ],
+    [
+      "134:9215",
+      "9_Adjust_HSL_collapse",
+      "FRAME"
+    ],
+    [
+      "134:9401",
+      "9_Adjust_curve_collapse",
+      "FRAME"
+    ],
+    [
+      "139:10122",
+      "cut",
+      "FRAME"
+    ],
+    [
+      "139:10146",
+      "cut",
+      "FRAME"
+    ]
+  ],
+  "read": [
+    {
+      "id": "13:2380",
+      "name": "photo_picker",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "9d6a0937",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:4804",
+      "name": "photo_picker",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "c3791f01",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "13:2826",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "55a2cb79",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:4922",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "606e4219",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "48:1432",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "b7720b60",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5090",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "1ff31b50",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:3956",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "b3d1020b",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5258",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "3125da88",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:5448",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "4f140fff",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "67:9285",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "fd14bd95",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:5666",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "ddd06f05",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "67:9438",
+      "name": "canvas_img_focus",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "307e33d7",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "22:2798",
+      "name": "3_",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "0434e170",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5426",
+      "name": "3_",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "3b5d4a96",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "31:953",
+      "name": "main_down_tool_box",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "418cfcf9",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5578",
+      "name": "main_down_tool_box",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "a831a92d",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "41:923",
+      "name": "adjust",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "4fa7e3f8",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5611",
+      "name": "adjust",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "4e5bd379",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "47:1430",
+      "name": "row label 1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "afc9d5ab",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5840",
+      "name": "row label 9",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "bade9603",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "48:1649",
+      "name": "row label 2",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "7eed48f0",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5841",
+      "name": "row label 10",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "fa9cbc7f",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:3954",
+      "name": "row label 3",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "b06b1657",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5842",
+      "name": "row label 11",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "eb202556",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:5665",
+      "name": "row label 4",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "73805d5a",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "67:10291",
+      "name": "row label 8",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "c92f710e",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:4257",
+      "name": "Enhance_1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "eb76b188",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5843",
+      "name": "Enhance_1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "cd0cfb3d",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:5097",
+      "name": "Enhance_1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "b222af81",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:5928",
+      "name": "Enhance_1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "5b60bbca",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:4625",
+      "name": "Enhance_1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "17b23c06",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:6102",
+      "name": "Enhance_1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "3eefd3bc",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:4532",
+      "name": "Discard dialog",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "2b3d301f",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:8280",
+      "name": "Discard dialog",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "859475d0",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:4892",
+      "name": "Enhance_1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "4807ec91",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:6196",
+      "name": "Enhance_1",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "53bb9ab6",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:6001",
+      "name": "save2",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "a9e5bf36",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "67:10721",
+      "name": "save2",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "615ddb28",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "57:6798",
+      "name": "9_Adjust_curve",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "5b6e884b",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "63:7874",
+      "name": "9_Adjust_HSL",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "14dada95",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "105:4123",
+      "name": "9_Adjust_HSL_collapse",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "ec302b33",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "128:8508",
+      "name": "9_Adjust_curve_collapse",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "5a5ab196",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "105:4500",
+      "name": "status",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "9c48b9ee",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "110:6885",
+      "name": "status",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "3565bb3a",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "134:8803",
+      "name": "9_Adjust_curve",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "68deb17d",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "134:9013",
+      "name": "9_Adjust_HSL",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "7bac1e95",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "134:9215",
+      "name": "9_Adjust_HSL_collapse",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "cb14c52a",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "134:9401",
+      "name": "9_Adjust_curve_collapse",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "822d9c38",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "139:10122",
+      "name": "cut",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "95b2cd41",
+      "plan": "plan-12-2321.json"
+    },
+    {
+      "id": "139:10146",
+      "name": "cut",
+      "read_at": "2026-11-09T08:46:50.625Z",
+      "hash": "c4baf088",
+      "plan": "plan-12-2321.json"
+    }
+  ],
+  "missing": []
+}

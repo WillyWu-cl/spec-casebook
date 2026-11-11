@@ -1,0 +1,61 @@
+Filing as Creator: ETHAN_HSU
+  Creator verified — last filed DRA262610P0425 on 2026-10-30
+Format check: PDR-A 16.9.0
+
+15 bug(s) checked — 0 error(s), 0 warning(s)
+Format OK — clear to file.
+
+[Video-Enhance-R1-01] created DRA262611P0071
+  DRA262611P0071  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+[Video-Enhance-R1-02] created DRA262611P0072
+[Video-Enhance-R1-03] created DRA262611P0073
+[Video-Enhance-R1-04] created DRA262611P0074
+[Video-Enhance-R1-05] created DRA262611P0075
+[Video-Enhance-R1-06] created DRA262611P0076
+[Video-Enhance-R1-07] created DRA262611P0077
+[Video-Enhance-R1-08] created DRA262611P0078
+[Video-Enhance-R1-09] created DRA262611P0079
+[Video-Enhance-R1-10] created DRA262611P0080
+[Video-Enhance-R1-11] created DRA262611P0081
+[Video-Enhance-R1-12] created DRA262611P0082
+[Video-Enhance-R1-13] created DRA262611P0083
+[Video-Enhance-R1-14] created DRA262611P0084
+[Video-Enhance-R1-15] created DRA262611P0085
+
+created 15 · skipped 0 · failed 0
+
+Read-back (Status: OK is not proof — Version has been seen not to persist):
+  DRA262611P0071  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0072  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0073  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0074  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0075  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0076  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0077  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0078  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0079  sev 2  PM  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0080  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0081  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0082  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0083  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0084  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+  DRA262611P0085  sev 2  RD  BugNeedReview  build 2611091  by ETHAN_HSU
+
+Required fields the API cannot set — fill them on each ticket's web edit form:
+  DRA262611P0071  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0072  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0073  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0074  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0075  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0076  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0077  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0078  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0079  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0080  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0081  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0082  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0083  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0084  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+  DRA262611P0085  OS Language (Traditional Chinese / English / 9 Languages / 24 Languages / Japanese / Korean)
+
+Attachments are NOT part of create — upload them with `ecl_if3.py upload <BugCode> <files…>` (SKILL.md → IF3 attachments over the API).

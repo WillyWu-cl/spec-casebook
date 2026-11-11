@@ -45,12 +45,15 @@ lines; put the full rule in the skill or reference file that applies it and poin
   left off the drafts and review page (kept only in `dedupe.txt`), unless that ticket is **closed** and the bug is
   back: then it is a new card naming the closed ticket (overlay, *Dedupe per OS*).
 - **eBug owner and type (RD, 2026-10-21 — replaces the 2026-10-20 rule; revertible).** Casebook findings are
-  `[AIAgent]` Functional or `[UI]`, owner RD (Doc for copy), never `[UX]`; RD forwards to PM when it wants a ruling. A
+  `[AIAgent]` Functional or `[UI]`, owner RD, never `[UX]`; RD forwards to PM when it wants a ruling. A
   finding with no spec basis is held as a PM question, not filed. Exploration (`[AIFound]`) keeps filing `[UX]`.
   **Revert** — the user may restore the 2026-10-20 rule: "A UX problem goes to PM (BugBelong PM), who decides before
   handing it to RD. A problem that plainly needs an RD fix (performance, waits, missing behaviour) is Functional,
   owner RD, with no `[UX]` tag." Put that text back here, then follow the revert steps in overlay rule 5
   (`--allow-agent-ux` / `ALLOW_AGENT_UX=1`).
+- **Text bugs go to RD or PM (user, 2026-11-11).** Text that differs from the spec is RD when the spec states it and
+  the app shows something else (fix the app's text), PM when the spec's own text must change (wrong, unclear, two
+  sheets disagree, or none states it); never Doc (`ebug-draft-generator` › Owner, overlay rule 5).
 - **Pink fault switches, AI Mini Drama (2026-10-20).** 「Fail turn」 fails an LLM chat turn (outline, cast confirm,
   storyboard offer); 「Inject failure status」 only applies to a video beat once filming starts. An injected failure
   logs `AppTweaks injected <Tool> failure #N`; `status=tool_error` alone is the server's own failure. Re-check any bug
@@ -64,6 +67,13 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **What the repo is for (user, 2026-10-27, REQ-036 / REQ-037).** A thorough spec analysis, then a run that does not
   drain tokens. Missed rules are fixed in the reading step or pass that skipped them, never by copying another
   tool's cases; the spec agent comparison is a report on request only (`SKILL.md`, `analysis.md`).
+- **Spec agent cases as an input, Video Enhance (user, 2026-11-10, REQ-008).** For `pdr/video-enhance` the spec agent's
+  colleague-checked cases are a source: the table covers all of them; their rules win where our spec is silent or
+  older (ECL pricing, Android tier, 2K+ block), our newer Figma wins where theirs follows an older spec. Other features
+  keep REQ-037 unless the user says otherwise.
+- **Every combination (user, 2026-11-10, REQ-008).** Settings chosen together get a row per combination of their
+  values (the full cross product), each priced and checked in the result; `### Combinations` grid, `check.ts`
+  (`analysis.md` pass 10).
 - **The analysis finds spec rules itself (user, 2026-10-22, REQ-030 / REQ-032).** Dated Figma frames newer than the
   PDF are read, every annotation block and linked page is traced, hidden clauses get an observing row, and each
   variant gets its own row (`reading-the-spec.md` steps 8–9, `analysis.md` passes 9–10).
@@ -156,6 +166,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **What the design check holds the app to (user, 2026-11-06).** A text box's padding and border, font size and the
   text's centring in its box, and the gaps between buttons; never a text's words or its own place on the screen
   (`copy` and `position` are gone; texts pair by place when the words differ) (`figma/references/conformance.md` §3).
+- **Full design check on request (user, 2026-11-09).** The standard check above stays the default; when the user asks
+  for the old format with no limits, `design.ts … check <run> --full` brings back `copy` and `position` items, kept
+  for that run until `--standard` (`figma/references/conformance.md` › *Full check, on request*).
 - **Android text against the Android font (user, 2026-11-06).** Figma is drawn for iOS (SF Pro); on Android the design
   check holds weights to the PDRM guideline's Roboto equivalents (Semibold 600 → Medium 500), KP-066
   (`library/pdr/knowledge/design-guideline.md`). Padding is measured from the letters' pixels, so a chip narrower only

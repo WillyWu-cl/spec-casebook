@@ -1,0 +1,15 @@
+# ISS-VEA-08 1:30 1080p task: transcode under the 0% ring, 9.5 min upload
+# PowerDirector Mobile for Android 16.9.0 (2611091), Stage server, Samsung SM-A5360 / Android 15, 2026-11-10 (phone time, UTC+8)
+# Video Enhance task lines (session = charge, transcode, upload, status, errors, push, toasts) and the balance
+# when it changes, in the windows below; identical status polls folded; tokens dropped, URL queries cut at '?'.
+
+## TC-110 Enhance to upload done (2026-11-10 18:24:15–18:34:35; logs/R1-e-20261110-185356/logcat-live.txt)
+2026-11-10 18:24:18.898 CreditSystemManager: totalRemain=27852
+2026-11-10 18:24:19.712 Create session: start
+2026-11-10 18:24:20.099 AIVideoAnime:  create session response code->200
+2026-11-10 18:24:20.101 Create session: end
+2026-11-10 18:24:20.106 Transcode: start
+2026-11-10 18:24:57.949 Transcode: finish
+2026-11-10 18:24:58.090 Upload to S3: start
+2026-11-10 18:34:31.178 AIVideoAnime:  upload response code->200
+2026-11-10 18:34:31.178 Upload to S3: finish

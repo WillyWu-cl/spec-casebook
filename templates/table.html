@@ -88,10 +88,8 @@ a.spec{display:inline-block;margin-top:4px;font:600 .7rem var(--mono);color:var(
 a.spec:hover{background:var(--edit-soft)}
 .xl{display:flex;flex-wrap:wrap;gap:4px}
 /* Open questions (user, 2026-11-04): one plain panel above the table, and a marker on each row a question touches */
-details.qs>summary{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;list-style:none}
-details.qs>summary::-webkit-details-marker{display:none}
-details.qs>summary::before{content:"▸";display:inline-block;width:.8em;margin-right:-6px;transition:transform .15s}
-details.qs[open]>summary::before{transform:rotate(90deg)}
+/* the summary keeps the browser's own marker, like the other panels; the wrapping layout is on the span inside */
+details.qs>summary>.qsum{display:inline-flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;vertical-align:top}
 details.qs>summary .qhint{font-weight:400;font-size:.84rem;color:var(--muted)}
 .qwrap{padding:0 14px 14px;display:grid;gap:10px}
 .qname{display:flex;gap:8px;align-items:center;font-size:.84rem;color:var(--muted)}
@@ -104,7 +102,8 @@ details.qs>summary .qhint{font-weight:400;font-size:.84rem;color:var(--muted)}
 .qtext{font-size:13px;white-space:pre-wrap}
 .qassume{font-size:13px;color:var(--muted)} .qassume b{color:var(--fg);font-weight:600}
 body.l-zh .qitem .qtext:not(.zh),body.l-zh .qitem .qassume:not(.zh){font-size:11.5px;color:var(--muted)} .qitem .zh.qassume{color:var(--fg)}
-.qrows{font-size:.8rem;color:var(--muted)} .qrows a{font-family:var(--mono);color:var(--edit);margin-right:6px}
+.qrows{font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.qrow{display:inline-flex;gap:4px;align-items:center} .qrow a.qcase{font-family:var(--mono);color:var(--edit)} .qrow a.spec{margin-top:0}
 .qitem textarea{border:1px solid var(--line);background:var(--surface);min-height:3.2em;font-size:13.5px}
 .qmeta{font-size:.76rem;color:var(--muted)} .qres{font-size:.8rem;color:var(--new)}
 .qfoot{display:flex;gap:10px;align-items:center;justify-content:flex-end}
@@ -231,7 +230,8 @@ function questions(){
   const qs=D.questions||[];if(!qs.length)return;
   const open=qs.filter(q=>qState(q.id)==='open').length,ans=qs.length-open;
   $('#qBox').hidden=false;
-  $('#qSum').innerHTML=L==='zh'?`${T('qTitle')} <span class="note">（${T('qOpen')} ${open}${ans?` · ${T('qAnswered')} ${ans}`:''}）</span><span class="qhint">${T('qHint')}</span>`:`Questions for the team <span class="note">(${open} open${ans?` · ${ans} answered`:''})</span><span class="qhint">Where the spec is unclear the rows follow an assumption. Answer any question you know; leave the rest.</span>`;
+  const qsumText=L==='zh'?`${T('qTitle')} <span class="note">（${T('qOpen')} ${open}${ans?` · ${T('qAnswered')} ${ans}`:''}）</span><span class="qhint">${T('qHint')}</span>`:`Questions for the team <span class="note">(${open} open${ans?` · ${ans} answered`:''})</span><span class="qhint">Where the spec is unclear the rows follow an assumption. Answer any question you know; leave the rest.</span>`;
+  $('#qSum').innerHTML=`<span class="qsum">${qsumText}</span>`;
   const unsaved=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;
   let by='';try{by=localStorage.getItem('casebook-q-by')||''}catch(e){}
   const QZ=D.questions_zh||{};
@@ -239,7 +239,8 @@ function questions(){
     const [text,assume]=qSplit(q.text),a=qSaved(q.id),st=qState(q.id),v=qEdits[q.id]!==undefined?qEdits[q.id]:(a?a.answer:'');
     const z=L==='zh'?QZ[q.id]:'',zi=z?z.search(/假設[：:]/):-1,zq=z?(zi<0?z:z.slice(0,zi)).trim():'',za=zi<0?'':z.slice(zi).replace(/^假設[：:]\s*/,'').trim();
     const zhHtml=L!=='zh'?'':z?`<div class="qtext zh">${esc(zq)}</div>${za?`<div class="qassume zh"><b>${T('qAssume')}</b>${esc(za)}</div>`:''}`:`<div class="qassume">${T('qNoZh')}</div>`;
-    const rowsHtml=q.rows.length?`<div class="qrows">${T('qRows')??'Rows: '}${q.rows.map(id=>`<a href="#${esc(id)}">${esc(id)}</a>`).join('')}</div>`:'';
+    const rowsHtml=q.rows.length?`<div class="qrows"><span>${(T('qRows')??'Rows:').trim()}</span>${q.rows.map(id=>{const r=find(id),pl=r&&!r.added?pageLinks(id):[];
+      return `<span class="qrow"><a class="qcase" href="#${esc(id)}" data-case="${esc(id)}">${esc(id)}</a>${pl.join('')}</span>`}).join('')}</div>`:'';
     return `<div class="qitem" id="q-${esc(q.id)}"><div class="qhead">${esc(q.id)} <span class="qstate ${st}">${st==='open'?T('qStOpen')??'Open':st==='done'?T('qStDone')??'Applied':T('qStWait')??'Answered · waiting for the agent'}</span></div>
       ${zhHtml}<div class="qtext">${esc(text)}</div>${assume?`<div class="qassume"><b>For now the rows assume:</b> ${esc(assume)}</div>`:''}${rowsHtml}
       <textarea data-qa="${esc(q.id)}" placeholder="${T('qPh')??'Your answer, if you know it'}">${esc(v)}</textarea>
@@ -305,15 +306,19 @@ function idCell(r){
   const badges=[ch&&ch!=='unchanged'?`<span class="badge b-${ch}">${T(ch)??ch}</span>`:'',REVIEW&&st!=='kept'?`<span class="badge b-${st==='deleted'?'removed':st}">${T(st)??st}</span>`:''].join(' ');
   // opens the coverage page on this case: its requirements, the spec boards they come from, the controls it presses
   // and the run plan on it: the segment that runs it and its latest result
-  const links=r.added?[]:[PAGES.coverage&&`<a class="spec" href="${esc(PAGES.coverage)}#case=${encodeURIComponent(r.cur.ID)}" aria-label="Coverage: where in the spec this case comes from and the controls it presses" data-tip="Coverage: where in the spec this case comes from and the controls it presses">Cov</a>`,
-    PAGES.plan&&`<a class="spec" href="${esc(PAGES.plan)}#case=${encodeURIComponent(r.cur.ID)}" aria-label="Progress: the segment that runs this case and its latest result" data-tip="Progress: the segment that runs this case and its latest result">Prog</a>`,
-    PAGES.results&&`<a class="spec" href="${esc(PAGES.results)}#case=${encodeURIComponent(r.cur.ID)}" aria-label="Results: what each run found, with screenshots" data-tip="Results: what each run found, with screenshots">Res</a>`].filter(Boolean);
+  const links=r.added?[]:pageLinks(r.cur.ID);
   const spec=links.length?`<div class="xl">${links.join('')}</div>`:'';
   // the open questions this row's assumption depends on: a marker that opens the question above the table
   const qm=(D.questions||[]).filter(q=>q.rows.includes(r.cur.ID)).map(q=>{const st=qState(q.id);
     return `<a class="qmark ${st}" href="#q-${esc(q.id)}" data-q="${esc(q.id)}" title="${esc(st==='open'?'This row assumes an answer to an open question: read it or answer it':st==='done'?'Answered and applied':'Answered, waiting for the agent')}">${esc(q.id)}${st==='open'?' ?':' ✓'}</a>`}).join(' ');
   const why=(L==='zh'&&ZH[r.cur.ID]?.['Change Reason'])||r.cur['Change Reason'];
   return `${esc(r.cur.ID)}<div>${badges}</div>${qm?`<div>${qm}</div>`:''}${spec}${why?`<div class="reason">${esc(why)}</div>`:''}`;
+}
+// the Cov / Prog / Res links of a case, on its row and under each question that names it
+function pageLinks(id){
+  return [PAGES.coverage&&`<a class="spec" href="${esc(PAGES.coverage)}#case=${encodeURIComponent(id)}" aria-label="Coverage: where in the spec this case comes from and the controls it presses" data-tip="Coverage: where in the spec this case comes from and the controls it presses">Cov</a>`,
+    PAGES.plan&&`<a class="spec" href="${esc(PAGES.plan)}#case=${encodeURIComponent(id)}" aria-label="Progress: the segment that runs this case and its latest result" data-tip="Progress: the segment that runs this case and its latest result">Prog</a>`,
+    PAGES.results&&`<a class="spec" href="${esc(PAGES.results)}#case=${encodeURIComponent(id)}" aria-label="Results: what each run found, with screenshots" data-tip="Results: what each run found, with screenshots">Res</a>`].filter(Boolean);
 }
 const find=id=>rows.find(r=>r.cur.ID===id);
 function bindField(el){el.onchange=el.oninput=()=>{const r=find(el.dataset.id);r.cur[el.dataset.f]=el.value;persist();counts();const tr=el.closest('tr');tr.querySelector('td.id').innerHTML=idCell(r);};el.onblur=()=>filters()}
@@ -417,7 +422,11 @@ const tip=document.createElement('div');tip.id='tip';tip.hidden=true;document.bo
 for(const ev of ['mouseover','focusin'])document.addEventListener(ev,e=>{const a=e.target.closest?.('a[data-tip]');if(!a){tip.hidden=true;return}
   tip.textContent=a.dataset.tip;tip.hidden=false;const r=a.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(r.left,innerWidth-tip.offsetWidth-8))+'px';tip.style.top=(r.bottom+6)+'px'});
 document.addEventListener('keydown',e=>{const d=e.target.closest?.('.cv[data-id]');if(d&&e.key==='Enter'){e.preventDefault();editCell(d)}});
-document.addEventListener('click',e=>{const m=e.target.closest?.('a.qmark');if(!m)return;e.preventDefault();openQuestion(m.dataset.q)});
+document.addEventListener('click',e=>{const m=e.target.closest?.('a.qmark');if(!m)return;e.preventDefault();
+  if(location.hash!=='#q-'+m.dataset.q)history.pushState(null,'','#q-'+m.dataset.q);openQuestion(m.dataset.q)});
+// a question's row link scrolls to the row every time, also when the address already ends in that row's #ID
+document.addEventListener('click',e=>{const a=e.target.closest?.('a.qcase');if(!a)return;e.preventDefault();
+  if(location.hash!=='#'+a.dataset.case)history.pushState(null,'','#'+encodeURIComponent(a.dataset.case));focusRow()});
 applyLang();header();questions();filters();body();counts();focusRow();if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3));
 </script>
 </body>

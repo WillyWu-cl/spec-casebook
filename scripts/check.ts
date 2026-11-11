@@ -224,6 +224,34 @@ if (draft && reqText) {
       for (const tc of tcs) if (!active.has(tc)) errors.push(`Variants: ${id} × ${variant} names ${tc}, which is not an active row`);
     }
   }
+  // "Combinations" grid (pass 10, user 2026-11-10, REQ-008): when the user can choose two or more settings that change
+  // what the feature makes, every combination of their values is a row. The grid's `- Setting <name>: a, b, c` lines
+  // give the values; every combination (`name=value · name=value …`, in the settings' order) names its rows or
+  // `n/a (<why>)` (a combination the spec says cannot be chosen).
+  const settingNames = new Set([...(vg ?? []).map(c => c[1]?.match(/^\s*([^=]+?)\s*=/)?.[1]?.trim().toLowerCase()).filter(Boolean)]);
+  const combText = reqText.match(/\n#+ Combinations\n([\s\S]*?)(?=\n#+ |\s*$)/)?.[1];
+  if (settingNames.size >= 2 && !combText) errors.push(`No "Combinations" grid in requirements.md (pass 10): the Variants grid lists the settings ${[...settingNames].join(', ')}, so every combination of their values needs its row`);
+  if (combText) {
+    const settings = [...combText.matchAll(/^- Setting ([^:]+):\s*(.+)$/gm)].map(m => ({ name: m[1].trim(), values: m[2].split(',').map(v => v.trim()).filter(Boolean) }));
+    if (settings.length < 2) errors.push('Combinations: list each setting as "- Setting <name>: a, b, c" (two or more settings)');
+    const key = (s: string) => s.split('·').map(p => p.trim().replace(/\s*=\s*/, '=').toLowerCase()).join(' · ');
+    const lines = new Map<string, string>();
+    for (const l of combText.split('\n').filter(l => /^\|/.test(l)).slice(2)) {
+      const [combo, by] = l.split('|').slice(1, -1).map(c => c.trim());
+      if (combo) lines.set(key(combo), by ?? '');
+    }
+    let combos: string[][] = [[]];
+    for (const s of settings) combos = combos.flatMap(c => s.values.map(v => [...c, `${s.name}=${v}`]));
+    const missing: string[] = [];
+    if (settings.length >= 2) for (const c of combos) {
+      const by = lines.get(key(c.join(' · ')));
+      if (by === undefined) { missing.push(c.join(' · ')); continue; }
+      const tcs = tcRefs(by);
+      if (!tcs.length && !/^n\/a \(/.test(by)) errors.push(`Combinations: ${c.join(' · ')} names no row`);
+      for (const tc of tcs) if (!active.has(tc)) errors.push(`Combinations: ${c.join(' · ')} names ${tc}, which is not an active row`);
+    }
+    if (missing.length) errors.push(`Combinations: ${missing.length} of ${combos.length} combination(s) missing, e.g. ${missing.slice(0, 3).join('; ')}`);
+  }
 }
 
 // Domain knowledge (user, 2026-11-03, domain-knowledge skill): every [KB: K…] citation resolves to a current entry,

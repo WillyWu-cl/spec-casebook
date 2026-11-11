@@ -69,7 +69,9 @@ const reqsOf = (board: string, line: string) => [...new Set(blocks.filter(b => b
 
 const ocr = (name: string) => {
   const p = join(ex, 'boards', `${name}.md`); if (!existsSync(p)) return null;
-  return readFileSync(p, 'utf8').split('\n').map(l => l.match(/^\s*-?\d+\s+-?\d+\s+(.+)$/)).filter(Boolean).map(m => ({ text: m![1].trim(), low: /\(\?\)\s*$/.test(m![1]) }));
+  return readFileSync(p, 'utf8').split('\n').map(l => l.match(/^\s*-?\d+\s+-?\d+\s+(.+)$/s)).filter(Boolean).map(m => ({ text: m![1].replace(/^\s*\[phone\]\s*/, '').trim(), low: /\(\?\)\s*$/.test(m![1]) }));
+  // Figma-only sets write the board's Figma text there with a "[phone]" tag on lines inside a phone mockup, and a
+  // Figma line break (U+2028) stays inside its line, so `.` must match it (2026-11-09)
 };
 const report: any = { checked_at: new Date().toISOString(), set, boards: [] as any[], no_texts: noTexts };
 for (const b of scope) {

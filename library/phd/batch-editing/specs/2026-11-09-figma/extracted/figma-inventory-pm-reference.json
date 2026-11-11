@@ -1,0 +1,300 @@
+{
+  "file": "iWlQTjlmfykHfmlNvg9J4p",
+  "page": "0:1",
+  "group": "pm-reference",
+  "extracted_at": "2026-11-09",
+  "section": [
+    "0:1",
+    "26'11/E Batch editing:  AI enhance, crop & rotate, adjustments",
+    -1374,
+    -861,
+    25267,
+    19852
+  ],
+  "boards": [
+    [
+      "3:2",
+      "pm-reference",
+      -1330,
+      122,
+      7242,
+      10703
+    ]
+  ],
+  "names": [],
+  "screens": [],
+  "controls": [],
+  "arrows": [],
+  "hidden": {
+    "screens": 0,
+    "controls": 0
+  },
+  "entries": [
+    {
+      "id": "3:2",
+      "name": "pm-reference"
+    }
+  ],
+  "hash": {
+    "3:2": "ae3a2909"
+  },
+  "hashed_at": "2026-11-09T07:53:56.435Z",
+  "overlay": {
+    "3:2": "c7df1e8c"
+  },
+  "overlay_box": {
+    "3:2": [
+      -1330,
+      122,
+      7242,
+      10703
+    ]
+  },
+  "texts": [
+    [
+      0,
+      -1230,
+      222,
+      7042,
+      201,
+      "Reference",
+      0
+    ],
+    [
+      0,
+      -1180,
+      587,
+      295,
+      100,
+      "① Meitu",
+      0
+    ],
+    [
+      0,
+      -1180,
+      6781,
+      297,
+      100,
+      "②  Fotor",
+      0
+    ],
+    [
+      0,
+      -1180,
+      8721,
+      494,
+      100,
+      "③ Photomater",
+      0
+    ],
+    [
+      0,
+      3772,
+      3771,
+      1123,
+      90,
+      "Meitu\n\nPartial 狀態下只會 adjust 1 photo (會跳 toast 告知 user)",
+      0
+    ],
+    [
+      0,
+      4356,
+      2325,
+      1123,
+      90,
+      "Meitu\n\n沒有 v apply all, 除了該張 phto，其他會維持原本的 aspect ratio ",
+      0
+    ],
+    [
+      0,
+      3688,
+      761,
+      528,
+      24,
+      "項目",
+      0
+    ],
+    [
+      0,
+      4248,
+      761,
+      728,
+      24,
+      "Meitu",
+      0
+    ],
+    [
+      0,
+      5008,
+      761,
+      728,
+      24,
+      "Fotor",
+      0
+    ],
+    [
+      0,
+      3688,
+      813,
+      528,
+      24,
+      "Picker / Apply to All / Crop [DR-01][DR-04][DR-07]",
+      0
+    ],
+    [
+      0,
+      4248,
+      813,
+      728,
+      24,
+      "Picker 可選 image or batch；Apply to All 預設勾選並記住；Crop Free 比例可 Apply to All",
+      0
+    ],
+    [
+      0,
+      5008,
+      813,
+      728,
+      24,
+      "—",
+      0
+    ],
+    [
+      0,
+      3688,
+      865,
+      528,
+      24,
+      "批次 AI 畫質增強怎麼收費 [D5-01]",
+      0
+    ],
+    [
+      0,
+      4248,
+      865,
+      728,
+      24,
+      "Meitu 沒有支援 gen AI feature in batch editing",
+      0
+    ],
+    [
+      0,
+      5008,
+      865,
+      728,
+      24,
+      "Fotor 沒有 AI Enhance batch editing, only batch upscaler & batch bg remover, 鎖 premium",
+      0
+    ],
+    [
+      0,
+      3688,
+      917,
+      528,
+      24,
+      "批次時要等多久、能不能離開 [D5-01]",
+      0
+    ],
+    [
+      0,
+      4248,
+      917,
+      728,
+      24,
+      "Meitu 沒有 gen ai feature 沒這個問題",
+      0
+    ],
+    [
+      0,
+      5008,
+      917,
+      728,
+      24,
+      "Fotor 無法得知沒有買方案",
+      0
+    ],
+    [
+      0,
+      3688,
+      969,
+      528,
+      24,
+      "部分失敗怎麼處理 [D5-01]",
+      0
+    ],
+    [
+      0,
+      4248,
+      969,
+      728,
+      24,
+      "Meitu 沒有 gen ai feature 沒這個問題",
+      0
+    ],
+    [
+      0,
+      5008,
+      969,
+      728,
+      24,
+      "Fotor 無法得知沒有買方案",
+      0
+    ],
+    [
+      0,
+      3688,
+      1021,
+      528,
+      24,
+      "存檔方式 [D5-01][D1-06]",
+      0
+    ],
+    [
+      0,
+      4248,
+      1021,
+      728,
+      72,
+      "batch editing adjust 完後，直接原地存檔，一次存所有張數，會有像 1/10 儲存的進度；儲存的時候 Meitu 會 show 儲存 dialog 1/2..；4 張只存有 batch edit 的 2 張，4 張都沒 edit 仍可 save 並顯示 4 photo",
+      0
+    ],
+    [
+      0,
+      5008,
+      1021,
+      728,
+      24,
+      "Fotor 無法得知沒有買方案",
+      0
+    ],
+    [
+      0,
+      3688,
+      1121,
+      528,
+      24,
+      "我們的立場 [D5-01b][D0-08]",
+      0
+    ],
+    [
+      0,
+      4248,
+      1121,
+      728,
+      48,
+      "跟進：Picker Tab、Apply to All、Crop、存檔進度「Saving k / N」；差異化：批次 AI Enhance（Meitu 批次無 Gen AI）",
+      0
+    ],
+    [
+      0,
+      5008,
+      1121,
+      728,
+      24,
+      "差異化：批次本身免費，AI Enhance 也不扣點（Fotor 鎖 Premium）",
+      0
+    ]
+  ],
+  "ms": 1749,
+  "size": 2034
+}

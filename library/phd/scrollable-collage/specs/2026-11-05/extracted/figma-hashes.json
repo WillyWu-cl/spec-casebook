@@ -4,164 +4,372 @@
       "hash": "6a9c518d",
       "overlay": "",
       "at": "2026-11-05T08:45:50.755Z",
-      "group": "d-canvas"
+      "group": "d-canvas",
+      "box": [
+        3900,
+        -200,
+        2900,
+        1100
+      ],
+      "holder": ""
     },
     "0:1/design-dark-canvas": {
       "hash": "e13419ba",
       "overlay": "",
       "at": "2026-11-05T08:45:50.755Z",
-      "group": "d-canvas"
+      "group": "d-canvas",
+      "box": [
+        12296,
+        -200,
+        2900,
+        1100
+      ],
+      "holder": ""
     },
     "0:1/design-light-entry": {
-      "hash": "cd1b06fd",
+      "hash": "a59afe2d",
       "overlay": "34c14a73",
-      "at": "2026-11-05T08:45:49.020Z",
-      "group": "d-entry"
+      "at": "2026-11-09T07:45:48.618Z",
+      "group": "d-entry",
+      "box": [
+        -10,
+        -1400,
+        3600,
+        2412
+      ],
+      "holder": ""
     },
     "0:1/design-dark-entry": {
       "hash": "bd9197e8",
       "overlay": "34c14a73",
-      "at": "2026-11-05T08:45:49.020Z",
-      "group": "d-entry"
+      "at": "2026-11-09T07:45:48.618Z",
+      "group": "d-entry",
+      "box": [
+        8386,
+        -1400,
+        3600,
+        2412
+      ],
+      "holder": ""
     },
     "116:3010": {
-      "hash": "98302915",
+      "hash": "03bebfd0",
       "overlay": "",
-      "at": "2026-11-05T08:48:19.749Z",
-      "group": "d-icons"
+      "at": "2026-11-09T07:47:02.284Z",
+      "group": "d-icons",
+      "box": [
+        15936,
+        -135,
+        952,
+        1082
+      ],
+      "holder": "116:3010"
     },
     "130:3237": {
       "hash": "6bdcd84d",
       "overlay": "",
-      "at": "2026-11-05T08:48:19.749Z",
-      "group": "d-icons"
+      "at": "2026-11-09T07:47:02.284Z",
+      "group": "d-icons",
+      "box": [
+        16968,
+        -135,
+        952,
+        1082
+      ],
+      "holder": "130:3237"
     },
     "122:3043": {
-      "hash": "08fede48",
+      "hash": "f38ab87f",
       "overlay": "",
-      "at": "2026-11-05T08:48:19.749Z",
-      "group": "d-icons"
+      "at": "2026-11-09T07:47:02.284Z",
+      "group": "d-icons",
+      "box": [
+        17957,
+        -135,
+        407,
+        470
+      ],
+      "holder": "122:3043"
     },
     "0:1/design-light-add-layer": {
       "hash": "a67b4c98",
       "overlay": "d27e8ce3",
-      "at": "2026-11-05T08:48:17.205Z",
-      "group": "d-layers"
+      "at": "2026-11-09T07:48:16.014Z",
+      "group": "d-layers",
+      "box": [
+        -10,
+        911,
+        2400,
+        1059
+      ],
+      "holder": ""
     },
     "0:1/design-dark-add-layer": {
-      "hash": "04b493a6",
+      "hash": "c2c15b4d",
       "overlay": "d27e8ce3",
-      "at": "2026-11-05T08:48:17.205Z",
-      "group": "d-layers"
+      "at": "2026-11-09T07:48:16.014Z",
+      "group": "d-layers",
+      "box": [
+        8386,
+        911,
+        2400,
+        1059
+      ],
+      "holder": ""
     },
     "0:1/design-light-removal": {
       "hash": "491588e9",
       "overlay": "",
-      "at": "2026-11-05T08:48:17.205Z",
-      "group": "d-layers"
+      "at": "2026-11-09T07:48:16.014Z",
+      "group": "d-layers",
+      "box": [
+        -10,
+        2050,
+        1200,
+        1000
+      ],
+      "holder": ""
     },
     "0:1/design-dark-removal": {
       "hash": "9a10616f",
       "overlay": "",
-      "at": "2026-11-05T08:48:17.205Z",
-      "group": "d-layers"
+      "at": "2026-11-09T07:48:16.014Z",
+      "group": "d-layers",
+      "box": [
+        8386,
+        2050,
+        1200,
+        1000
+      ],
+      "holder": ""
     },
     "0:1/design-light-enhance": {
       "hash": "3250bfba",
       "overlay": "",
-      "at": "2026-11-05T08:48:17.205Z",
-      "group": "d-layers"
+      "at": "2026-11-09T07:48:16.014Z",
+      "group": "d-layers",
+      "box": [
+        -10,
+        3160,
+        1200,
+        1000
+      ],
+      "holder": ""
     },
     "0:1/design-dark-enhance": {
       "hash": "48291cc3",
       "overlay": "",
-      "at": "2026-11-05T08:48:17.205Z",
-      "group": "d-layers"
+      "at": "2026-11-09T07:48:16.014Z",
+      "group": "d-layers",
+      "box": [
+        8386,
+        3160,
+        1200,
+        1000
+      ],
+      "holder": ""
     },
     "2316:20": {
       "hash": "8f3c68e8",
       "overlay": "",
       "at": "2026-11-05T08:51:56.326Z",
-      "group": "pm-buttons"
+      "group": "pm-buttons",
+      "box": [
+        6691,
+        475,
+        2240,
+        2680
+      ],
+      "holder": "2316:20"
     },
     "2214:5": {
       "hash": "6ed5029b",
       "overlay": "",
       "at": "2026-11-05T08:45:44.190Z",
-      "group": "pm-flow"
+      "group": "pm-flow",
+      "box": [
+        3261,
+        -1747,
+        3330,
+        7458
+      ],
+      "holder": "2214:5"
     },
     "2226:8/pm-header": {
       "hash": "f6ab3ba4",
       "overlay": "",
       "at": "2026-11-05T08:50:44.206Z",
-      "group": "pm-header"
+      "group": "pm-header",
+      "box": [
+        3261,
+        -2087,
+        8100,
+        330
+      ],
+      "holder": "2226:8"
     },
     "2214:7": {
       "hash": "227ec9c1",
       "overlay": "",
       "at": "2026-11-05T08:50:44.238Z",
-      "group": "pm-notes"
+      "group": "pm-notes",
+      "box": [
+        6691,
+        -1747,
+        1000,
+        469
+      ],
+      "holder": "2214:7"
     },
     "2214:8": {
       "hash": "0d64ad92",
       "overlay": "",
       "at": "2026-11-05T08:50:44.238Z",
-      "group": "pm-notes"
+      "group": "pm-notes",
+      "box": [
+        7791,
+        -1747,
+        1000,
+        378
+      ],
+      "holder": "2214:8"
     },
     "2214:9": {
       "hash": "935cc58b",
       "overlay": "",
       "at": "2026-11-05T08:50:44.238Z",
-      "group": "pm-notes"
+      "group": "pm-notes",
+      "box": [
+        8891,
+        -1747,
+        1000,
+        416
+      ],
+      "holder": "2214:9"
     },
     "2214:10": {
       "hash": "3486d4e8",
       "overlay": "",
       "at": "2026-11-05T08:50:44.238Z",
-      "group": "pm-notes"
+      "group": "pm-notes",
+      "box": [
+        9991,
+        -1747,
+        1370,
+        1202
+      ],
+      "holder": "2214:10"
     },
     "2316:533": {
       "hash": "f10c72f6",
       "overlay": "",
       "at": "2026-11-05T08:50:44.238Z",
-      "group": "pm-notes"
+      "group": "pm-notes",
+      "box": [
+        9031,
+        475,
+        1000,
+        1261
+      ],
+      "holder": "2316:533"
     },
     "2509:971": {
       "hash": "f85a4686",
       "overlay": "",
       "at": "2026-11-05T08:50:44.238Z",
-      "group": "pm-notes"
+      "group": "pm-notes",
+      "box": [
+        6691,
+        4639,
+        1908,
+        1072
+      ],
+      "holder": "2509:971"
     },
     "2196:21": {
       "hash": "6c1cd23a",
       "overlay": "942661b0",
       "at": "2026-11-05T08:51:56.782Z",
-      "group": "pm-scrl"
+      "group": "pm-scrl",
+      "box": [
+        -17925,
+        -2187,
+        19607,
+        6365
+      ],
+      "holder": ""
     },
     "2214:6/pm-ui-1": {
       "hash": "0187b7e7",
       "overlay": "",
       "at": "2026-11-05T08:48:12.008Z",
-      "group": "pm-ui-1"
+      "group": "pm-ui-1",
+      "box": [
+        3261,
+        5811,
+        10170,
+        3180
+      ],
+      "holder": "2214:6"
     },
     "2214:6/pm-ui-2": {
       "hash": "ef075db2",
       "overlay": "",
       "at": "2026-11-05T08:48:12.269Z",
-      "group": "pm-ui-2"
+      "group": "pm-ui-2",
+      "box": [
+        3261,
+        8991,
+        10170,
+        2100
+      ],
+      "holder": "2214:6"
     },
     "2214:6/pm-ui-3": {
       "hash": "ea22c3b5",
       "overlay": "",
       "at": "2026-11-05T08:49:31.935Z",
-      "group": "pm-ui-3"
+      "group": "pm-ui-3",
+      "box": [
+        3261,
+        11091,
+        10170,
+        3150
+      ],
+      "holder": "2214:6"
     },
     "2214:6/pm-ui-4": {
       "hash": "bd7c54c0",
       "overlay": "",
       "at": "2026-11-05T08:49:32.753Z",
-      "group": "pm-ui-4"
+      "group": "pm-ui-4",
+      "box": [
+        3261,
+        14241,
+        10170,
+        3054
+      ],
+      "holder": "2214:6"
+    },
+    "199:3566": {
+      "hash": "6b05534e",
+      "overlay": "",
+      "at": "2026-11-09T07:56:32.098Z",
+      "group": "d-launcher"
     }
   },
-  "files": {}
+  "files": {
+    "design": {
+      "key": "iUy5kOrVNG7IjcyxGGnp9t",
+      "page": "0:1",
+      "others": [],
+      "checked_at": "2026-11-09T07:51:10.658Z"
+    },
+    "pm": {
+      "key": "zrl1BBEyqTvdLfjtaT8g6I",
+      "page": "2171:2",
+      "others": [],
+      "checked_at": "2026-11-09T07:43:21.237Z"
+    }
+  }
 }

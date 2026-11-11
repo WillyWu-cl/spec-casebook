@@ -7,18 +7,18 @@
     1082
   ],
   "lines": [
-    ["Canvas icon buttons•Dark mode",15981,-80,406,23],
-    ["Move / More / Add page / Page stepper / Import photo slot - same size as light version, dark surface + light icon.",15982,-45,746,16],
-    ["States: normal• press•selected•disable",15981,-26,274,14],
-    ["btn_page_move/dark•36x36•normal /press/selected/ disable",15982,26,426,14],
-    ["btn_page_more/dark•36x36• normal /press/selected/disable",15981,159,424,14],
-    ["btn_add_page/dark• 40x40• normal / press / disable",15981,291,350,14],
-    ["＋",16070,340,21,19],
-    ["page_stepper•107x42• default / minus_press / plus_press / minus_disable / plus_disable",15982,426,580,13],
-    ["-+",16008,468,84,32],
-    ["--+）—一+",16392,468,210,38],
-    ["import_img• 109x109• empty photo slot （tap to import）",15981,565,366,14],
-    ["ic_square_plus_filled •64x64•normal / press",15982,768,306,13],
-    ["十",16100,828,30,30]
+    ["Canvas icon buttons• Dark mode",15984,-81,406,23],
+    ["Move / More / Add page / Page stepper / Import photo slot - same size as light version, dark surface + light icon.",15984,-45,744,16],
+    ["States: normal•press•selected•disable",15984,-27,274,14],
+    ["btn_page_move/dark•36x36•normal / press /selected/ disable",15984,26,424,13],
+    ["个",16115,79,15,15],
+    ["btn_page_more/dark•36x36• normal / press / selected / disable",15984,158,422,14],
+    ["btn_add_page/dark•40x40• normal /press / disable",15984,290,350,13],
+    ["page_stepper•107x42•default / minus_press / plus_press / minus_disable / plus_disable",15981,427,580,13],
+    ["-",16004,468,64,36],
+    ["+1+1+",16202,468,325,40],
+    ["import img • 109x109•",15982,564,164,12],
+    ["empty photo slot （tap to import）",16145,565,203,14],
+    ["ic_square_plus_filled•64x64•normal / press",15981,769,305,15]
   ]
 }

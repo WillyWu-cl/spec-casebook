@@ -32,7 +32,7 @@ skill's body. Rule numbers are cited elsewhere (AGENTS.md: "rule 5 of the eBug o
    means that previous batch's TR when the build matches: read the TR header (`ecl_query.py tr <TR>`) and confirm it
    still names the build the findings were verified on before filing; if not, stop and ask.
 5. **No `[UX]` on casebook findings (RD, 2026-10-21 — in force until the user reverts it).** The casebook tests
-   against the spec, so every finding is `[AIAgent]` (Functional) or `[AIAgent][UI]`, owner RD (Doc for copy) —
+   against the spec, so every finding is `[AIAgent]` (Functional) or `[AIAgent][UI]`, owner RD (text: RD when the spec states it and the app differs, PM when the spec's own text must change, never Doc; user, 2026-11-11, `ebug-draft-generator` › Owner) —
    interaction and flow problems included; RD forwards one to PM when it wants a ruling. A finding with no spec basis
    is not a casebook bug: hold it and list it on the review page as a PM question. `check_ebug_format.py` fails
    `[AIAgent][UX]`. This supersedes the 2026-10-20 rule "a UX problem goes to PM (BugBelong PM)".

@@ -1,0 +1,3413 @@
+{
+ "note": "2026-11-10 (b): fresh comparison of Android draft 20261110-160000 (library/pdr/video-enhance/android/drafts/20261110-160000/draft.csv, 168 active rows: approved v3's 123 rows, 25 modified, plus 45 new) against the 271 spec agent Video Enhance cases in the snapshot spec-agent/android.json (YAMLs re-read 2026-11-10 for their fixtures: ECL rates form 22061491221, durations, sources). REQ-008: every case is covered (271 of 271 cov). Decisions (user, 2026-11-10): 1 every Mode × Enhancement style × fps × Resolution combination is a row (TC-219 – TC-224 kept as combination rows, TC-225 – TC-254 new); 2 the ECL rate table prices tasks by Mode, Resolution and output fps, and each combination row's pre-generation CTA and rate-line checks cover the credit-display cases; 3 Android unlocks with Pro (colleague feedback 2026-10-07); 4 2K+ sources are rejected before the panel (user requirement 2026-10-16); 5 strip scale follows the spec agent pending PM (Q-24); 6 older-spec cases are written to our newer Figma (Design toast and bubble copy; Mode is Standard on entry, Professional boundaries checked on the switch); 7 partial drag cases extended; 8 not-from-spec cases added as the spec agent states them; 9 one-year retention: what a run can see, the year confirmed with RD. Also tightened four cases v3 already called covered with a remainder (TC-VE2-173, 234, 235, 236) and the rounding cases TC-VE2-175 – 184 (TC-269). Codes: cov covered (all). cb: full / partial / none against the spec agent. Mapped by hand with build_map from the draft rows; report only.",
+ "spec_agent_commit": "uncommitted-20261104",
+ "sa": {
+  "TC-VE2-001": "cov",
+  "TC-VE2-002": "cov",
+  "TC-VE2-003": "cov",
+  "TC-VE2-004": "cov",
+  "TC-VE2-005": "cov",
+  "TC-VE2-006": "cov",
+  "TC-VE2-007": "cov",
+  "TC-VE2-008": "cov",
+  "TC-VE2-009": "cov",
+  "TC-VE2-010": "cov",
+  "TC-VE2-011": "cov",
+  "TC-VE2-012": "cov",
+  "TC-VE2-013": "cov",
+  "TC-VE2-014": "cov",
+  "TC-VE2-015": "cov",
+  "TC-VE2-016": "cov",
+  "TC-VE2-017": "cov",
+  "TC-VE2-018": "cov",
+  "TC-VE2-019": "cov",
+  "TC-VE2-020": "cov",
+  "TC-VE2-021": "cov",
+  "TC-VE2-022": "cov",
+  "TC-VE2-023": "cov",
+  "TC-VE2-024": "cov",
+  "TC-VE2-025": "cov",
+  "TC-VE2-026": "cov",
+  "TC-VE2-027": "cov",
+  "TC-VE2-028": "cov",
+  "TC-VE2-029": "cov",
+  "TC-VE2-030": "cov",
+  "TC-VE2-031": "cov",
+  "TC-VE2-032": "cov",
+  "TC-VE2-033": "cov",
+  "TC-VE2-034": "cov",
+  "TC-VE2-035": "cov",
+  "TC-VE2-036": "cov",
+  "TC-VE2-037": "cov",
+  "TC-VE2-038": "cov",
+  "TC-VE2-039": "cov",
+  "TC-VE2-040": "cov",
+  "TC-VE2-041": "cov",
+  "TC-VE2-042": "cov",
+  "TC-VE2-043": "cov",
+  "TC-VE2-044": "cov",
+  "TC-VE2-045": "cov",
+  "TC-VE2-046": "cov",
+  "TC-VE2-047": "cov",
+  "TC-VE2-048": "cov",
+  "TC-VE2-049": "cov",
+  "TC-VE2-050": "cov",
+  "TC-VE2-051": "cov",
+  "TC-VE2-052": "cov",
+  "TC-VE2-053": "cov",
+  "TC-VE2-054": "cov",
+  "TC-VE2-055": "cov",
+  "TC-VE2-056": "cov",
+  "TC-VE2-057": "cov",
+  "TC-VE2-058": "cov",
+  "TC-VE2-059": "cov",
+  "TC-VE2-060": "cov",
+  "TC-VE2-061": "cov",
+  "TC-VE2-062": "cov",
+  "TC-VE2-063": "cov",
+  "TC-VE2-064": "cov",
+  "TC-VE2-065": "cov",
+  "TC-VE2-066": "cov",
+  "TC-VE2-067": "cov",
+  "TC-VE2-068": "cov",
+  "TC-VE2-069": "cov",
+  "TC-VE2-070": "cov",
+  "TC-VE2-071": "cov",
+  "TC-VE2-072": "cov",
+  "TC-VE2-073": "cov",
+  "TC-VE2-074": "cov",
+  "TC-VE2-075": "cov",
+  "TC-VE2-076": "cov",
+  "TC-VE2-077": "cov",
+  "TC-VE2-078": "cov",
+  "TC-VE2-079": "cov",
+  "TC-VE2-080": "cov",
+  "TC-VE2-081": "cov",
+  "TC-VE2-082": "cov",
+  "TC-VE2-083": "cov",
+  "TC-VE2-084": "cov",
+  "TC-VE2-085": "cov",
+  "TC-VE2-086": "cov",
+  "TC-VE2-087": "cov",
+  "TC-VE2-088": "cov",
+  "TC-VE2-089": "cov",
+  "TC-VE2-090": "cov",
+  "TC-VE2-091": "cov",
+  "TC-VE2-092": "cov",
+  "TC-VE2-093": "cov",
+  "TC-VE2-094": "cov",
+  "TC-VE2-095": "cov",
+  "TC-VE2-096": "cov",
+  "TC-VE2-097": "cov",
+  "TC-VE2-098": "cov",
+  "TC-VE2-099": "cov",
+  "TC-VE2-100": "cov",
+  "TC-VE2-101": "cov",
+  "TC-VE2-102": "cov",
+  "TC-VE2-103": "cov",
+  "TC-VE2-104": "cov",
+  "TC-VE2-105": "cov",
+  "TC-VE2-106": "cov",
+  "TC-VE2-107": "cov",
+  "TC-VE2-108": "cov",
+  "TC-VE2-109": "cov",
+  "TC-VE2-110": "cov",
+  "TC-VE2-111": "cov",
+  "TC-VE2-112": "cov",
+  "TC-VE2-113": "cov",
+  "TC-VE2-114": "cov",
+  "TC-VE2-115": "cov",
+  "TC-VE2-116": "cov",
+  "TC-VE2-117": "cov",
+  "TC-VE2-118": "cov",
+  "TC-VE2-119": "cov",
+  "TC-VE2-120": "cov",
+  "TC-VE2-121": "cov",
+  "TC-VE2-122": "cov",
+  "TC-VE2-123": "cov",
+  "TC-VE2-124": "cov",
+  "TC-VE2-125": "cov",
+  "TC-VE2-126": "cov",
+  "TC-VE2-127": "cov",
+  "TC-VE2-128": "cov",
+  "TC-VE2-129": "cov",
+  "TC-VE2-130": "cov",
+  "TC-VE2-131": "cov",
+  "TC-VE2-132": "cov",
+  "TC-VE2-133": "cov",
+  "TC-VE2-134": "cov",
+  "TC-VE2-135": "cov",
+  "TC-VE2-136": "cov",
+  "TC-VE2-137": "cov",
+  "TC-VE2-138": "cov",
+  "TC-VE2-139": "cov",
+  "TC-VE2-140": "cov",
+  "TC-VE2-141": "cov",
+  "TC-VE2-142": "cov",
+  "TC-VE2-143": "cov",
+  "TC-VE2-144": "cov",
+  "TC-VE2-145": "cov",
+  "TC-VE2-146": "cov",
+  "TC-VE2-147": "cov",
+  "TC-VE2-148": "cov",
+  "TC-VE2-149": "cov",
+  "TC-VE2-150": "cov",
+  "TC-VE2-151": "cov",
+  "TC-VE2-152": "cov",
+  "TC-VE2-153": "cov",
+  "TC-VE2-154": "cov",
+  "TC-VE2-155": "cov",
+  "TC-VE2-156": "cov",
+  "TC-VE2-157": "cov",
+  "TC-VE2-158": "cov",
+  "TC-VE2-159": "cov",
+  "TC-VE2-160": "cov",
+  "TC-VE2-161": "cov",
+  "TC-VE2-162": "cov",
+  "TC-VE2-163": "cov",
+  "TC-VE2-164": "cov",
+  "TC-VE2-165": "cov",
+  "TC-VE2-166": "cov",
+  "TC-VE2-167": "cov",
+  "TC-VE2-168": "cov",
+  "TC-VE2-169": "cov",
+  "TC-VE2-170": "cov",
+  "TC-VE2-171": "cov",
+  "TC-VE2-172": "cov",
+  "TC-VE2-173": "cov",
+  "TC-VE2-174": "cov",
+  "TC-VE2-175": "cov",
+  "TC-VE2-176": "cov",
+  "TC-VE2-177": "cov",
+  "TC-VE2-178": "cov",
+  "TC-VE2-179": "cov",
+  "TC-VE2-180": "cov",
+  "TC-VE2-181": "cov",
+  "TC-VE2-182": "cov",
+  "TC-VE2-183": "cov",
+  "TC-VE2-184": "cov",
+  "TC-VE2-185": "cov",
+  "TC-VE2-186": "cov",
+  "TC-VE2-187": "cov",
+  "TC-VE2-188": "cov",
+  "TC-VE2-189": "cov",
+  "TC-VE2-190": "cov",
+  "TC-VE2-191": "cov",
+  "TC-VE2-192": "cov",
+  "TC-VE2-193": "cov",
+  "TC-VE2-194": "cov",
+  "TC-VE2-195": "cov",
+  "TC-VE2-196": "cov",
+  "TC-VE2-197": "cov",
+  "TC-VE2-198": "cov",
+  "TC-VE2-199": "cov",
+  "TC-VE2-200": "cov",
+  "TC-VE2-201": "cov",
+  "TC-VE2-202": "cov",
+  "TC-VE2-203": "cov",
+  "TC-VE2-204": "cov",
+  "TC-VE2-205": "cov",
+  "TC-VE2-206": "cov",
+  "TC-VE2-207": "cov",
+  "TC-VE2-208": "cov",
+  "TC-VE2-209": "cov",
+  "TC-VE2-210": "cov",
+  "TC-VE2-211": "cov",
+  "TC-VE2-212": "cov",
+  "TC-VE2-213": "cov",
+  "TC-VE2-214": "cov",
+  "TC-VE2-215": "cov",
+  "TC-VE2-216": "cov",
+  "TC-VE2-217": "cov",
+  "TC-VE2-218": "cov",
+  "TC-VE2-219": "cov",
+  "TC-VE2-220": "cov",
+  "TC-VE2-221": "cov",
+  "TC-VE2-222": "cov",
+  "TC-VE2-223": "cov",
+  "TC-VE2-224": "cov",
+  "TC-VE2-225": "cov",
+  "TC-VE2-226": "cov",
+  "TC-VE2-227": "cov",
+  "TC-VE2-228": "cov",
+  "TC-VE2-230": "cov",
+  "TC-VE2-231": "cov",
+  "TC-VE2-232": "cov",
+  "TC-VE2-233": "cov",
+  "TC-VE2-234": "cov",
+  "TC-VE2-235": "cov",
+  "TC-VE2-236": "cov",
+  "TC-VE2-237": "cov",
+  "TC-VE2-238": "cov",
+  "TC-VE2-239": "cov",
+  "TC-VE2-240": "cov",
+  "TC-VE2-241": "cov",
+  "TC-VE2-242": "cov",
+  "TC-VE2-243": "cov",
+  "TC-VE2-244": "cov",
+  "TC-VE2-245": "cov",
+  "TC-VE2-246": "cov",
+  "TC-VE2-247": "cov",
+  "TC-VE2-248": "cov",
+  "TC-VE2-249": "cov",
+  "TC-VE2-250": "cov",
+  "TC-VE2-251": "cov",
+  "TC-VE2-252": "cov",
+  "TC-VE2-253": "cov",
+  "TC-VE2-254": "cov",
+  "TC-VE2-256": "cov",
+  "TC-VE2-257": "cov",
+  "TC-VE2-258": "cov",
+  "TC-VE2-259": "cov",
+  "TC-VE2-260": "cov",
+  "TC-VE2-261": "cov",
+  "TC-VE2-262": "cov",
+  "TC-VE2-263": "cov",
+  "TC-VE2-264": "cov",
+  "TC-VE2-265": "cov",
+  "TC-VE2-266": "cov",
+  "TC-VE2-267": "cov",
+  "TC-VE2-268": "cov",
+  "TC-VE2-269": "cov",
+  "TC-VE2-270": "cov",
+  "TC-VE2-271": "cov",
+  "TC-VE2-272": "cov",
+  "TC-VE2-276": "cov"
+ },
+ "sa_detail": {
+  "TC-VE2-001": {
+   "code": "cov",
+   "rows": [
+    "TC-001"
+   ],
+   "reason": "Launcher shortcut 「AI Video Enhance」 opens the Demo page."
+  },
+  "TC-VE2-002": {
+   "code": "cov",
+   "rows": [
+    "TC-002"
+   ],
+   "reason": "AI Magic 「AI Enhance」 section card 「AI Video Enhance」."
+  },
+  "TC-VE2-003": {
+   "code": "cov",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "The clip toolbar tool 「AI Video Enhance」 (the Design draws it among the clip tools; their path is Toolbar › Enhance)."
+  },
+  "TC-VE2-004": {
+   "code": "cov",
+   "rows": [
+    "TC-001",
+    "TC-012"
+   ],
+   "reason": "Demo page appears from the Launcher / AI Magic until 「Don’t show again」 is saved."
+  },
+  "TC-VE2-005": {
+   "code": "cov",
+   "rows": [
+    "TC-001",
+    "TC-010"
+   ],
+   "reason": "Demo page title 「AI Video Enhance」."
+  },
+  "TC-VE2-006": {
+   "code": "cov",
+   "rows": [
+    "TC-010"
+   ],
+   "reason": "「Try It Now」 opens Add Media."
+  },
+  "TC-VE2-007": {
+   "code": "cov",
+   "rows": [
+    "TC-020"
+   ],
+   "reason": "A thumbnail opens the panel with that video."
+  },
+  "TC-VE2-008": {
+   "code": "cov",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "Timeline tool opens the panel with the clip, no Demo page and no Add Media."
+  },
+  "TC-VE2-009": {
+   "code": "cov",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "Timeline tool opens the panel with the clip, no Demo page and no Add Media."
+  },
+  "TC-VE2-010": {
+   "code": "cov",
+   "rows": [
+    "TC-014"
+   ],
+   "reason": "「Don’t show again」 + 「Try It Now」 stops the Demo page from the Launcher and AI Magic."
+  },
+  "TC-VE2-011": {
+   "code": "cov",
+   "rows": [
+    "TC-033"
+   ],
+   "reason": "Panel title 「AI Video Enhance」."
+  },
+  "TC-VE2-012": {
+   "code": "cov",
+   "rows": [
+    "TC-033",
+    "TC-052"
+   ],
+   "reason": "Preview lower right shows the source fps and resolution (1005_preview)."
+  },
+  "TC-VE2-013": {
+   "code": "cov",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "A video longer than 8:00 selects 00:00–08:00 in Standard."
+  },
+  "TC-VE2-014": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-015": {
+   "code": "cov",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Right handle stops at 8:00 in Standard (haptic + bubble)."
+  },
+  "TC-VE2-016": {
+   "code": "cov",
+   "rows": [
+    "TC-030"
+   ],
+   "reason": "First-entry bubble 「Max 8 minutes. Drag to choose which part.」 appears by itself and closes after about 3 s."
+  },
+  "TC-VE2-017": {
+   "code": "cov",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "ⓘ reopens the Selected Length bubble; a tap anywhere closes it."
+  },
+  "TC-VE2-018": {
+   "code": "cov",
+   "rows": [
+    "TC-030"
+   ],
+   "reason": "First-entry bubble 「Max 8 minutes. Drag to choose which part.」 appears by itself and closes after about 3 s."
+  },
+  "TC-VE2-019": {
+   "code": "cov",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "ⓘ reopens the Selected Length bubble; a tap anywhere closes it."
+  },
+  "TC-VE2-020": {
+   "code": "cov",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Covered by TC-214 (left handle dragged right: start, length, price and the Preview at the handle follow)."
+  },
+  "TC-VE2-021": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Right handle drag changes the length; the Preview shows the frame at that end."
+  },
+  "TC-VE2-022": {
+   "code": "cov",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Covered by TC-214 (left handle dragged right: start, length, price and the Preview at the handle follow)."
+  },
+  "TC-VE2-023": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Right handle drag changes the length; the Preview shows the frame at that end."
+  },
+  "TC-VE2-024": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-025": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-026": {
+   "code": "cov",
+   "rows": [
+    "TC-045",
+    "TC-264"
+   ],
+   "reason": "Decision 5: one strip width = the active Mode limit, re-laid on a Mode switch (TC-045 at 08:00 / 12:30, TC-264 at 150.01 s / 481 s); follows the spec agent pending PM (Q-24)."
+  },
+  "TC-VE2-027": {
+   "code": "cov",
+   "rows": [
+    "TC-050",
+    "TC-051"
+   ],
+   "reason": "Mode defaults to Standard on every entry."
+  },
+  "TC-VE2-028": {
+   "code": "cov",
+   "rows": [
+    "TC-050"
+   ],
+   "reason": "Enhancement style defaults to Natural."
+  },
+  "TC-VE2-029": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-053",
+    "TC-054",
+    "TC-055"
+   ],
+   "reason": "fps default = smallest option not below the source (1–30 → 30, 31–60 → 60, 61+ → 120)."
+  },
+  "TC-VE2-030": {
+   "code": "cov",
+   "rows": [
+    "TC-056",
+    "TC-057",
+    "TC-058",
+    "TC-022"
+   ],
+   "reason": "Resolution default = smallest option not below the source, below 2K (TC-056 – TC-058: 1081p / 1200p → 4K); 2K+ sources are rejected before the panel (TC-022, decision 4)."
+  },
+  "TC-VE2-031": {
+   "code": "cov",
+   "rows": [
+    "TC-070"
+   ],
+   "reason": "Mode chips are exclusive; switching with a selection ≤ 2:30 keeps the selection."
+  },
+  "TC-VE2-032": {
+   "code": "cov",
+   "rows": [
+    "TC-061"
+   ],
+   "reason": "Natural / Sharp exclusive."
+  },
+  "TC-VE2-033": {
+   "code": "cov",
+   "rows": [
+    "TC-062"
+   ],
+   "reason": "fps 30 / 60 / 120, one selected."
+  },
+  "TC-VE2-034": {
+   "code": "cov",
+   "rows": [
+    "TC-063"
+   ],
+   "reason": "Resolution 720p / 1080p / 4K, one selected."
+  },
+  "TC-VE2-035": {
+   "code": "cov",
+   "rows": [
+    "TC-061",
+    "TC-062",
+    "TC-063"
+   ],
+   "reason": "Selected / unselected chip states as each tap moves the selection."
+  },
+  "TC-VE2-036": {
+   "code": "cov",
+   "rows": [
+    "TC-061",
+    "TC-062",
+    "TC-063"
+   ],
+   "reason": "Selected / unselected chip states as each tap moves the selection."
+  },
+  "TC-VE2-037": {
+   "code": "cov",
+   "rows": [
+    "TC-064"
+   ],
+   "reason": "A disabled chip cannot be selected."
+  },
+  "TC-VE2-038": {
+   "code": "cov",
+   "rows": [
+    "TC-035"
+   ],
+   "reason": "Older spec: their pass text quotes PM 9/29 「Standard: up to 8 minutes. Professional: up to 2m 30s.」; TC-035 checks the same ⓘ bubble with the newer Design copy 「Standard: Great quality · up to 8 min」 / 「Professional: Maximum detail · up to 2:30」 (decision 6)."
+  },
+  "TC-VE2-039": {
+   "code": "cov",
+   "rows": [
+    "TC-036"
+   ],
+   "reason": "Enhancement style ⓘ bubble copy (Natural / Sharp)."
+  },
+  "TC-VE2-040": {
+   "code": "cov",
+   "rows": [
+    "TC-090"
+   ],
+   "reason": "Decision 3: on Android a Free user sees a Pro unlock action (not 「Unlock Pro+ to Enhance」); wording recorded (Q-25)."
+  },
+  "TC-VE2-041": {
+   "code": "cov",
+   "rows": [
+    "TC-090"
+   ],
+   "reason": "Decision 3: the Free user's unlock action opens the IAP page on the 「Pro」 tab (TC-090 step 2)."
+  },
+  "TC-VE2-042": {
+   "code": "cov",
+   "rows": [
+    "TC-095"
+   ],
+   "reason": "After the subscription purchase the app returns to the panel with the selection kept."
+  },
+  "TC-VE2-043": {
+   "code": "cov",
+   "rows": [
+    "TC-096"
+   ],
+   "reason": "Too few credits → Credit page, nothing uploaded or charged."
+  },
+  "TC-VE2-044": {
+   "code": "cov",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy More → back on the panel with the new balance and the selection and settings kept."
+  },
+  "TC-VE2-045": {
+   "code": "cov",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy More → back on the panel with the new balance and the selection and settings kept."
+  },
+  "TC-VE2-046": {
+   "code": "cov",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy More → back on the panel with the new balance and the selection and settings kept."
+  },
+  "TC-VE2-047": {
+   "code": "cov",
+   "rows": [
+    "TC-080",
+    "TC-269"
+   ],
+   "reason": "Price = seconds rounded up × per-second rate (TC-080: 3.96 s → 4 × 2 = 8; TC-269 boundaries)."
+  },
+  "TC-VE2-048": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Changing the length changes the CTA price at once."
+  },
+  "TC-VE2-049": {
+   "code": "cov",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Enhance starts at once: progress ring, 「Video uploading...」, 「Please keep the app open」, 「Cancel」."
+  },
+  "TC-VE2-050": {
+   "code": "cov",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Enhance starts at once: progress ring, 「Video uploading...」, 「Please keep the app open」, 「Cancel」."
+  },
+  "TC-VE2-051": {
+   "code": "cov",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Enhance starts at once: progress ring, 「Video uploading...」, 「Please keep the app open」, 「Cancel」."
+  },
+  "TC-VE2-052": {
+   "code": "cov",
+   "rows": [
+    "TC-111"
+   ],
+   "reason": "「Cancel」 opens 「Sure You Want to Leave?」 with 「Leave」 / 「Keep Uploading」."
+  },
+  "TC-VE2-053": {
+   "code": "cov",
+   "rows": [
+    "TC-112"
+   ],
+   "reason": "「Keep Uploading」 closes the dialog and the upload goes on. (TC-VE2-234 also wants the CTA greyed behind the dialog, from colleague feedback item 11; no row asserts that.)"
+  },
+  "TC-VE2-054": {
+   "code": "cov",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "「Leave」 returns to the panel; credits are not restored."
+  },
+  "TC-VE2-055": {
+   "code": "cov",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "「Leave」 returns to the panel; credits are not restored."
+  },
+  "TC-VE2-056": {
+   "code": "cov",
+   "rows": [
+    "TC-114"
+   ],
+   "reason": "Recent task processing card with 「processing...」 and the time left."
+  },
+  "TC-VE2-057": {
+   "code": "cov",
+   "rows": [
+    "TC-114"
+   ],
+   "reason": "Recent task processing card with 「processing...」 and the time left."
+  },
+  "TC-VE2-058": {
+   "code": "cov",
+   "rows": [
+    "TC-140"
+   ],
+   "reason": "Recent task title 「AI Video Enhance」 and the one-year cloud notice."
+  },
+  "TC-VE2-059": {
+   "code": "cov",
+   "rows": [
+    "TC-143"
+   ],
+   "reason": "Completed card 「View」 opens the Result."
+  },
+  "TC-VE2-060": {
+   "code": "cov",
+   "rows": [
+    "TC-143"
+   ],
+   "reason": "Completed card 「View」 opens the Result."
+  },
+  "TC-VE2-061": {
+   "code": "cov",
+   "rows": [
+    "TC-150",
+    "TC-151"
+   ],
+   "reason": "Result 「Original」 / 「Result」."
+  },
+  "TC-VE2-062": {
+   "code": "cov",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Result player: play, slider, time. (Their PDF frame reads 01:48/03:00; our newer Design reads 04:48/08:00.)"
+  },
+  "TC-VE2-063": {
+   "code": "cov",
+   "rows": [
+    "TC-152"
+   ],
+   "reason": "「Save Result」 saves the video to the phone gallery. (TC-VE2-236 also imports it back into a Timeline, colleague feedback item 14.)"
+  },
+  "TC-VE2-064": {
+   "code": "cov",
+   "rows": [
+    "TC-153"
+   ],
+   "reason": "「Add to Timeline」 opens a new project; no existing project changes."
+  },
+  "TC-VE2-065": {
+   "code": "cov",
+   "rows": [
+    "TC-153"
+   ],
+   "reason": "「Add to Timeline」 opens a new project; no existing project changes."
+  },
+  "TC-VE2-066": {
+   "code": "cov",
+   "rows": [
+    "TC-154"
+   ],
+   "reason": "「Enhance More」 opens Add Media."
+  },
+  "TC-VE2-067": {
+   "code": "cov",
+   "rows": [
+    "TC-142"
+   ],
+   "reason": "⌂ on Recent task opens the Launcher."
+  },
+  "TC-VE2-068": {
+   "code": "cov",
+   "rows": [
+    "TC-130"
+   ],
+   "reason": "Completion banner on the Launcher."
+  },
+  "TC-VE2-069": {
+   "code": "cov",
+   "rows": [
+    "TC-131"
+   ],
+   "reason": "Banner 「View」 opens the Result."
+  },
+  "TC-VE2-070": {
+   "code": "cov",
+   "rows": [
+    "TC-170"
+   ],
+   "reason": "Failed card: 「Error」 thumbnail and 「View Details」."
+  },
+  "TC-VE2-071": {
+   "code": "cov",
+   "rows": [
+    "TC-170"
+   ],
+   "reason": "Failed card: 「Error」 thumbnail and 「View Details」."
+  },
+  "TC-VE2-072": {
+   "code": "cov",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "「An Error Has Occurred」 / 「Credits have been refunded.」 / server-busy text; 「OK」 closes it."
+  },
+  "TC-VE2-073": {
+   "code": "cov",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "「An Error Has Occurred」 / 「Credits have been refunded.」 / server-busy text; 「OK」 closes it."
+  },
+  "TC-VE2-074": {
+   "code": "cov",
+   "rows": [
+    "TC-173"
+   ],
+   "reason": "A failure refunds the credits automatically."
+  },
+  "TC-VE2-075": {
+   "code": "cov",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "「An Error Has Occurred」 / 「Credits have been refunded.」 / server-busy text; 「OK」 closes it."
+  },
+  "TC-VE2-076": {
+   "code": "cov",
+   "rows": [
+    "TC-114",
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224",
+    "TC-225",
+    "TC-226",
+    "TC-227",
+    "TC-228",
+    "TC-229",
+    "TC-230",
+    "TC-231",
+    "TC-232",
+    "TC-233",
+    "TC-234",
+    "TC-235",
+    "TC-236",
+    "TC-237",
+    "TC-238",
+    "TC-239",
+    "TC-240",
+    "TC-241",
+    "TC-242",
+    "TC-243",
+    "TC-244",
+    "TC-245",
+    "TC-246",
+    "TC-247",
+    "TC-248",
+    "TC-249",
+    "TC-250",
+    "TC-251",
+    "TC-252",
+    "TC-253",
+    "TC-254"
+   ],
+   "reason": "The balance drops by the CTA price after the upload (TC-114) and in every combination row, each configuration charged by the ECL table."
+  },
+  "TC-VE2-077": {
+   "code": "cov",
+   "rows": [
+    "TC-268",
+    "TC-140"
+   ],
+   "reason": "Decision 9: what a run can see — the notice (TC-140, TC-268) and a completed task still on Recent task with its Result days later after reopening the app (TC-268); the one-year limit itself is confirmed with RD (TC-268 Notes, R-117)."
+  },
+  "TC-VE2-078": {
+   "code": "cov",
+   "rows": [
+    "TC-116"
+   ],
+   "reason": "The task keeps running on the server while the app is away."
+  },
+  "TC-VE2-079": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-080": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-081": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-082": {
+   "code": "cov",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-083": {
+   "code": "cov",
+   "rows": [
+    "TC-055",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-084": {
+   "code": "cov",
+   "rows": [
+    "TC-053",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-085": {
+   "code": "cov",
+   "rows": [
+    "TC-053",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-086": {
+   "code": "cov",
+   "rows": [
+    "TC-055",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-087": {
+   "code": "cov",
+   "rows": [
+    "TC-054",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-088": {
+   "code": "cov",
+   "rows": [
+    "TC-054",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-089": {
+   "code": "cov",
+   "rows": [
+    "TC-054",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-090": {
+   "code": "cov",
+   "rows": [
+    "TC-054",
+    "TC-050"
+   ],
+   "reason": "Same fps band rule; Standard / Natural defaults (TC-050)."
+  },
+  "TC-VE2-091": {
+   "code": "cov",
+   "rows": [
+    "TC-056",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-092": {
+   "code": "cov",
+   "rows": [
+    "TC-056",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-093": {
+   "code": "cov",
+   "rows": [
+    "TC-056",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-094": {
+   "code": "cov",
+   "rows": [
+    "TC-057",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-095": {
+   "code": "cov",
+   "rows": [
+    "TC-057",
+    "TC-033"
+   ],
+   "reason": "Same resolution band rule; the source label in the Preview is TC-033."
+  },
+  "TC-VE2-096": {
+   "code": "cov",
+   "rows": [
+    "TC-058"
+   ],
+   "reason": "1081p → 4K (TC-058 now uses a 1081p fixture, decision 4)."
+  },
+  "TC-VE2-097": {
+   "code": "cov",
+   "rows": [
+    "TC-022"
+   ],
+   "reason": "Decision 4: a 2160p source is rejected before the panel opens, not loaded, no task (TC-022 step 2; message recorded, Q-23)."
+  },
+  "TC-VE2-098": {
+   "code": "cov",
+   "rows": [
+    "TC-022"
+   ],
+   "reason": "Decision 4: a 4320p source is rejected before the panel opens, not loaded, no task (TC-022 step 3; message recorded, Q-23)."
+  },
+  "TC-VE2-099": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-100": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-101": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-102": {
+   "code": "cov",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "A video longer than 8:00 selects 00:00–08:00 in Standard."
+  },
+  "TC-VE2-103": {
+   "code": "cov",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "A video longer than 8:00 selects 00:00–08:00 in Standard."
+  },
+  "TC-VE2-104": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-105": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-106": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-107": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-108": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-109": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-110": {
+   "code": "cov",
+   "rows": [
+    "TC-216",
+    "TC-214"
+   ],
+   "reason": "Decision 7: TC-216 now checks the Preview frame at the left handle while it is dragged earlier (TC-214: later)."
+  },
+  "TC-VE2-111": {
+   "code": "cov",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Covered by TC-214 (left handle dragged right: start, length, price and the Preview at the handle follow)."
+  },
+  "TC-VE2-112": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Right handle drag changes the length; the Preview shows the frame at that end."
+  },
+  "TC-VE2-113": {
+   "code": "cov",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Right handle drag changes the length; the Preview shows the frame at that end."
+  },
+  "TC-VE2-114": {
+   "code": "cov",
+   "rows": [
+    "TC-223"
+   ],
+   "reason": "Price display for Standard / Natural / 30fps / 720p (REQ-008 decision 2): TC-223 checks the rate line 「Charge 1 credits per second」 and the CTA at 1 s (「Enhance ◆ 1」) and 3.2 s (「Enhance ◆ 4」) before generating; price = rounded-up seconds × 1 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-115": {
+   "code": "cov",
+   "rows": [
+    "TC-225"
+   ],
+   "reason": "Price display for Standard / Natural / 30fps / 1080p (REQ-008 decision 2): TC-225 checks the rate line 「Charge 2 credits per second」 and the CTA at 1 s (「Enhance ◆ 2」) and 3.2 s (「Enhance ◆ 8」) before generating; price = rounded-up seconds × 2 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-116": {
+   "code": "cov",
+   "rows": [
+    "TC-224"
+   ],
+   "reason": "Price display for Standard / Natural / 30fps / 4K (REQ-008 decision 2): TC-224 checks the rate line 「Charge 3 credits per second」 and the CTA at 1 s (「Enhance ◆ 3」) and 3.2 s (「Enhance ◆ 12」) before generating; price = rounded-up seconds × 3 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-117": {
+   "code": "cov",
+   "rows": [
+    "TC-226",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Natural / 60fps / 720p (REQ-008 decision 2): TC-226 checks the rate line 「Charge 1 credits per second」 and the CTA at 1 s (「Enhance ◆ 1」) and 3.2 s (「Enhance ◆ 4」) before generating; price = rounded-up seconds × 1 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-118": {
+   "code": "cov",
+   "rows": [
+    "TC-221",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Natural / 60fps / 1080p (REQ-008 decision 2): TC-221 checks the rate line 「Charge 2 credits per second」 and the CTA at 1 s (「Enhance ◆ 2」) and 3.2 s (「Enhance ◆ 8」) before generating; price = rounded-up seconds × 2 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-119": {
+   "code": "cov",
+   "rows": [
+    "TC-227",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Natural / 60fps / 4K (REQ-008 decision 2): TC-227 checks the rate line 「Charge 6 credits per second」 and the CTA at 1 s (「Enhance ◆ 6」) and 3.2 s (「Enhance ◆ 24」) before generating; price = rounded-up seconds × 6 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-120": {
+   "code": "cov",
+   "rows": [
+    "TC-228",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Natural / 120fps / 720p (REQ-008 decision 2): TC-228 checks the rate line 「Charge 1 credits per second」 and the CTA at 1 s (「Enhance ◆ 1」) and 3.2 s (「Enhance ◆ 4」) before generating; price = rounded-up seconds × 1 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-121": {
+   "code": "cov",
+   "rows": [
+    "TC-222",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Natural / 120fps / 1080p (REQ-008 decision 2): TC-222 checks the rate line 「Charge 2 credits per second」 and the CTA at 1 s (「Enhance ◆ 2」) and 3.2 s (「Enhance ◆ 8」) before generating; price = rounded-up seconds × 2 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-122": {
+   "code": "cov",
+   "rows": [
+    "TC-229",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Natural / 120fps / 4K (REQ-008 decision 2): TC-229 checks the rate line 「Charge 8 credits per second」 and the CTA at 1 s (「Enhance ◆ 8」) and 3.2 s (「Enhance ◆ 32」) before generating; price = rounded-up seconds × 8 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-123": {
+   "code": "cov",
+   "rows": [
+    "TC-230"
+   ],
+   "reason": "Price display for Standard / Sharp / 30fps / 720p (REQ-008 decision 2): TC-230 checks the rate line 「Charge 1 credits per second」 and the CTA at 1 s (「Enhance ◆ 1」) and 3.2 s (「Enhance ◆ 4」) before generating; price = rounded-up seconds × 1 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-124": {
+   "code": "cov",
+   "rows": [
+    "TC-220"
+   ],
+   "reason": "Price display for Standard / Sharp / 30fps / 1080p (REQ-008 decision 2): TC-220 checks the rate line 「Charge 2 credits per second」 and the CTA at 1 s (「Enhance ◆ 2」) and 3.2 s (「Enhance ◆ 8」) before generating; price = rounded-up seconds × 2 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-125": {
+   "code": "cov",
+   "rows": [
+    "TC-231"
+   ],
+   "reason": "Price display for Standard / Sharp / 30fps / 4K (REQ-008 decision 2): TC-231 checks the rate line 「Charge 3 credits per second」 and the CTA at 1 s (「Enhance ◆ 3」) and 3.2 s (「Enhance ◆ 12」) before generating; price = rounded-up seconds × 3 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-126": {
+   "code": "cov",
+   "rows": [
+    "TC-232",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Sharp / 60fps / 720p (REQ-008 decision 2): TC-232 checks the rate line 「Charge 1 credits per second」 and the CTA at 1 s (「Enhance ◆ 1」) and 3.2 s (「Enhance ◆ 4」) before generating; price = rounded-up seconds × 1 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-127": {
+   "code": "cov",
+   "rows": [
+    "TC-233",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Sharp / 60fps / 1080p (REQ-008 decision 2): TC-233 checks the rate line 「Charge 2 credits per second」 and the CTA at 1 s (「Enhance ◆ 2」) and 3.2 s (「Enhance ◆ 8」) before generating; price = rounded-up seconds × 2 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-128": {
+   "code": "cov",
+   "rows": [
+    "TC-234",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Sharp / 60fps / 4K (REQ-008 decision 2): TC-234 checks the rate line 「Charge 6 credits per second」 and the CTA at 1 s (「Enhance ◆ 6」) and 3.2 s (「Enhance ◆ 24」) before generating; price = rounded-up seconds × 6 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-129": {
+   "code": "cov",
+   "rows": [
+    "TC-235",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Sharp / 120fps / 720p (REQ-008 decision 2): TC-235 checks the rate line 「Charge 1 credits per second」 and the CTA at 1 s (「Enhance ◆ 1」) and 3.2 s (「Enhance ◆ 4」) before generating; price = rounded-up seconds × 1 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-130": {
+   "code": "cov",
+   "rows": [
+    "TC-236",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Sharp / 120fps / 1080p (REQ-008 decision 2): TC-236 checks the rate line 「Charge 2 credits per second」 and the CTA at 1 s (「Enhance ◆ 2」) and 3.2 s (「Enhance ◆ 8」) before generating; price = rounded-up seconds × 2 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-131": {
+   "code": "cov",
+   "rows": [
+    "TC-237",
+    "TC-087"
+   ],
+   "reason": "Price display for Standard / Sharp / 120fps / 4K (REQ-008 decision 2): TC-237 checks the rate line 「Charge 8 credits per second」 and the CTA at 1 s (「Enhance ◆ 8」) and 3.2 s (「Enhance ◆ 32」) before generating; price = rounded-up seconds × 8 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-132": {
+   "code": "cov",
+   "rows": [
+    "TC-238"
+   ],
+   "reason": "Price display for Professional / Natural / 30fps / 720p (REQ-008 decision 2): TC-238 checks the rate line 「Charge 2 credits per second」 and the CTA at 1 s (「Enhance ◆ 2」) and 3.2 s (「Enhance ◆ 8」) before generating; price = rounded-up seconds × 2 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-133": {
+   "code": "cov",
+   "rows": [
+    "TC-219"
+   ],
+   "reason": "Price display for Professional / Natural / 30fps / 1080p (REQ-008 decision 2): TC-219 checks the rate line 「Charge 4 credits per second」 and the CTA at 1 s (「Enhance ◆ 4」) and 3.2 s (「Enhance ◆ 16」) before generating; price = rounded-up seconds × 4 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-134": {
+   "code": "cov",
+   "rows": [
+    "TC-239"
+   ],
+   "reason": "Price display for Professional / Natural / 30fps / 4K (REQ-008 decision 2): TC-239 checks the rate line 「Charge 12 credits per second」 and the CTA at 1 s (「Enhance ◆ 12」) and 3.2 s (「Enhance ◆ 48」) before generating; price = rounded-up seconds × 12 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-135": {
+   "code": "cov",
+   "rows": [
+    "TC-240",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Natural / 60fps / 720p (REQ-008 decision 2): TC-240 checks the rate line 「Charge 4 credits per second」 and the CTA at 1 s (「Enhance ◆ 4」) and 3.2 s (「Enhance ◆ 16」) before generating; price = rounded-up seconds × 4 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-136": {
+   "code": "cov",
+   "rows": [
+    "TC-241",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Natural / 60fps / 1080p (REQ-008 decision 2): TC-241 checks the rate line 「Charge 8 credits per second」 and the CTA at 1 s (「Enhance ◆ 8」) and 3.2 s (「Enhance ◆ 32」) before generating; price = rounded-up seconds × 8 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-137": {
+   "code": "cov",
+   "rows": [
+    "TC-242",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Natural / 60fps / 4K (REQ-008 decision 2): TC-242 checks the rate line 「Charge 24 credits per second」 and the CTA at 1 s (「Enhance ◆ 24」) and 3.2 s (「Enhance ◆ 96」) before generating; price = rounded-up seconds × 24 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-138": {
+   "code": "cov",
+   "rows": [
+    "TC-243",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Natural / 120fps / 720p (REQ-008 decision 2): TC-243 checks the rate line 「Charge 8 credits per second」 and the CTA at 1 s (「Enhance ◆ 8」) and 3.2 s (「Enhance ◆ 32」) before generating; price = rounded-up seconds × 8 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-139": {
+   "code": "cov",
+   "rows": [
+    "TC-244",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Natural / 120fps / 1080p (REQ-008 decision 2): TC-244 checks the rate line 「Charge 16 credits per second」 and the CTA at 1 s (「Enhance ◆ 16」) and 3.2 s (「Enhance ◆ 64」) before generating; price = rounded-up seconds × 16 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-140": {
+   "code": "cov",
+   "rows": [
+    "TC-245",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Natural / 120fps / 4K (REQ-008 decision 2): TC-245 checks the rate line 「Charge 48 credits per second」 and the CTA at 1 s (「Enhance ◆ 48」) and 3.2 s (「Enhance ◆ 192」) before generating; price = rounded-up seconds × 48 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-141": {
+   "code": "cov",
+   "rows": [
+    "TC-246"
+   ],
+   "reason": "Price display for Professional / Sharp / 30fps / 720p (REQ-008 decision 2): TC-246 checks the rate line 「Charge 2 credits per second」 and the CTA at 1 s (「Enhance ◆ 2」) and 3.2 s (「Enhance ◆ 8」) before generating; price = rounded-up seconds × 2 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-142": {
+   "code": "cov",
+   "rows": [
+    "TC-247"
+   ],
+   "reason": "Price display for Professional / Sharp / 30fps / 1080p (REQ-008 decision 2): TC-247 checks the rate line 「Charge 4 credits per second」 and the CTA at 1 s (「Enhance ◆ 4」) and 3.2 s (「Enhance ◆ 16」) before generating; price = rounded-up seconds × 4 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-143": {
+   "code": "cov",
+   "rows": [
+    "TC-248"
+   ],
+   "reason": "Price display for Professional / Sharp / 30fps / 4K (REQ-008 decision 2): TC-248 checks the rate line 「Charge 12 credits per second」 and the CTA at 1 s (「Enhance ◆ 12」) and 3.2 s (「Enhance ◆ 48」) before generating; price = rounded-up seconds × 12 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s)."
+  },
+  "TC-VE2-144": {
+   "code": "cov",
+   "rows": [
+    "TC-249",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Sharp / 60fps / 720p (REQ-008 decision 2): TC-249 checks the rate line 「Charge 4 credits per second」 and the CTA at 1 s (「Enhance ◆ 4」) and 3.2 s (「Enhance ◆ 16」) before generating; price = rounded-up seconds × 4 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-145": {
+   "code": "cov",
+   "rows": [
+    "TC-250",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Sharp / 60fps / 1080p (REQ-008 decision 2): TC-250 checks the rate line 「Charge 8 credits per second」 and the CTA at 1 s (「Enhance ◆ 8」) and 3.2 s (「Enhance ◆ 32」) before generating; price = rounded-up seconds × 8 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-146": {
+   "code": "cov",
+   "rows": [
+    "TC-251",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Sharp / 60fps / 4K (REQ-008 decision 2): TC-251 checks the rate line 「Charge 24 credits per second」 and the CTA at 1 s (「Enhance ◆ 24」) and 3.2 s (「Enhance ◆ 96」) before generating; price = rounded-up seconds × 24 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-147": {
+   "code": "cov",
+   "rows": [
+    "TC-252",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Sharp / 120fps / 720p (REQ-008 decision 2): TC-252 checks the rate line 「Charge 8 credits per second」 and the CTA at 1 s (「Enhance ◆ 8」) and 3.2 s (「Enhance ◆ 32」) before generating; price = rounded-up seconds × 8 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-148": {
+   "code": "cov",
+   "rows": [
+    "TC-253",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Sharp / 120fps / 1080p (REQ-008 decision 2): TC-253 checks the rate line 「Charge 16 credits per second」 and the CTA at 1 s (「Enhance ◆ 16」) and 3.2 s (「Enhance ◆ 64」) before generating; price = rounded-up seconds × 16 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-149": {
+   "code": "cov",
+   "rows": [
+    "TC-254",
+    "TC-087"
+   ],
+   "reason": "Price display for Professional / Sharp / 120fps / 4K (REQ-008 decision 2): TC-254 checks the rate line 「Charge 48 credits per second」 and the CTA at 1 s (「Enhance ◆ 48」) and 3.2 s (「Enhance ◆ 192」) before generating; price = rounded-up seconds × 48 at other lengths (TC-042 / TC-214 length changes, TC-269 rounding up to 180 s). TC-087 walks the fps chips and their prices (output fps prices the task, Q-3 answered)."
+  },
+  "TC-VE2-150": {
+   "code": "cov",
+   "rows": [
+    "TC-010",
+    "TC-020",
+    "TC-110",
+    "TC-114",
+    "TC-143"
+   ],
+   "reason": "The main flow Demo → Add Media → panel → upload → Recent → Result."
+  },
+  "TC-VE2-151": {
+   "code": "cov",
+   "rows": [
+    "TC-150",
+    "TC-154"
+   ],
+   "reason": "Button reads 「Enhance More」."
+  },
+  "TC-VE2-152": {
+   "code": "cov",
+   "rows": [
+    "TC-033"
+   ],
+   "reason": "The panel lists Selected Length, Mode, Enhancement style, fps and Resolution."
+  },
+  "TC-VE2-153": {
+   "code": "cov",
+   "rows": [
+    "TC-255",
+    "TC-010"
+   ],
+   "reason": "Decision 8: TC-255 opens Add Media from 「Try It Now」 and imports a video from every source tab and local album the picker offers."
+  },
+  "TC-VE2-154": {
+   "code": "cov",
+   "rows": [
+    "TC-020",
+    "TC-255"
+   ],
+   "reason": "A local video picked in Add Media opens the panel (TC-020); every local source (TC-255)."
+  },
+  "TC-VE2-155": {
+   "code": "cov",
+   "rows": [
+    "TC-256"
+   ],
+   "reason": "Decision 8: Pexels stock import (TC-256)."
+  },
+  "TC-VE2-156": {
+   "code": "cov",
+   "rows": [
+    "TC-257"
+   ],
+   "reason": "Decision 8: Pixabay stock import (TC-257)."
+  },
+  "TC-VE2-157": {
+   "code": "cov",
+   "rows": [
+    "TC-216"
+   ],
+   "reason": "Covered by TC-216 (left handle dragged left until the Standard 8:00 stop, with haptic and bubble)."
+  },
+  "TC-VE2-158": {
+   "code": "cov",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Covered by TC-214 (left handle dragged right: start, length, price and the Preview at the handle follow)."
+  },
+  "TC-VE2-159": {
+   "code": "cov",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "Decision 7: TC-215 step 3 drags the playhead earlier; bubble, Preview time and frame follow."
+  },
+  "TC-VE2-160": {
+   "code": "cov",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "TC-215 step 2 drags the playhead later."
+  },
+  "TC-VE2-161": {
+   "code": "cov",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "Decision 7: TC-215 steps 4–5 drag the playhead back and forth; bubble, time and frame follow both ways."
+  },
+  "TC-VE2-162": {
+   "code": "cov",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Play, full-screen preview and its return with the selection kept."
+  },
+  "TC-VE2-163": {
+   "code": "cov",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Decision 8: TC-037 step 2 pauses the source Preview; time and frame stay through step 3."
+  },
+  "TC-VE2-164": {
+   "code": "cov",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Play, full-screen preview and its return with the selection kept."
+  },
+  "TC-VE2-165": {
+   "code": "cov",
+   "rows": [
+    "TC-132"
+   ],
+   "reason": "Banner 「Close」 dismisses it."
+  },
+  "TC-VE2-166": {
+   "code": "cov",
+   "rows": [
+    "TC-151"
+   ],
+   "reason": "Original vs Result look different."
+  },
+  "TC-VE2-167": {
+   "code": "cov",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Result player: play, slider, time. (Their PDF frame reads 01:48/03:00; our newer Design reads 04:48/08:00.)"
+  },
+  "TC-VE2-168": {
+   "code": "cov",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Decision 8: TC-150 step 2 pauses the Result; time and frame stay through step 3."
+  },
+  "TC-VE2-169": {
+   "code": "cov",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Result player: play, slider, time. (Their PDF frame reads 01:48/03:00; our newer Design reads 04:48/08:00.)"
+  },
+  "TC-VE2-170": {
+   "code": "cov",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Play, full-screen preview and its return with the selection kept."
+  },
+  "TC-VE2-171": {
+   "code": "cov",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224",
+    "TC-225",
+    "TC-226",
+    "TC-227",
+    "TC-228",
+    "TC-229",
+    "TC-230",
+    "TC-231",
+    "TC-232",
+    "TC-233",
+    "TC-234",
+    "TC-235",
+    "TC-236",
+    "TC-237",
+    "TC-238",
+    "TC-239",
+    "TC-240",
+    "TC-241",
+    "TC-242",
+    "TC-243",
+    "TC-244",
+    "TC-245",
+    "TC-246",
+    "TC-247",
+    "TC-248",
+    "TC-249",
+    "TC-250",
+    "TC-251",
+    "TC-252",
+    "TC-253",
+    "TC-254",
+    "TC-152"
+   ],
+   "reason": "Every combination row checks the saved file's fps (30 / 60 / 120) for its combination; TC-152 the default 30 fps."
+  },
+  "TC-VE2-172": {
+   "code": "cov",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224",
+    "TC-225",
+    "TC-226",
+    "TC-227",
+    "TC-228",
+    "TC-229",
+    "TC-230",
+    "TC-231",
+    "TC-232",
+    "TC-233",
+    "TC-234",
+    "TC-235",
+    "TC-236",
+    "TC-237",
+    "TC-238",
+    "TC-239",
+    "TC-240",
+    "TC-241",
+    "TC-242",
+    "TC-243",
+    "TC-244",
+    "TC-245",
+    "TC-246",
+    "TC-247",
+    "TC-248",
+    "TC-249",
+    "TC-250",
+    "TC-251",
+    "TC-252",
+    "TC-253",
+    "TC-254",
+    "TC-152"
+   ],
+   "reason": "Every combination row checks the saved file's resolution (1280 × 720 / 1920 × 1080 / 3840 × 2160); TC-152 1920 × 1080."
+  },
+  "TC-VE2-173": {
+   "code": "cov",
+   "rows": [
+    "TC-170",
+    "TC-171"
+   ],
+   "reason": "Failure card and dialog; TC-170 Notes now name their setup (one task on a moderation-refused NSFW video)."
+  },
+  "TC-VE2-174": {
+   "code": "cov",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224",
+    "TC-225",
+    "TC-226",
+    "TC-227",
+    "TC-228",
+    "TC-229",
+    "TC-230",
+    "TC-231",
+    "TC-232",
+    "TC-233",
+    "TC-234",
+    "TC-235",
+    "TC-236",
+    "TC-237",
+    "TC-238",
+    "TC-239",
+    "TC-240",
+    "TC-241",
+    "TC-242",
+    "TC-243",
+    "TC-244",
+    "TC-245",
+    "TC-246",
+    "TC-247",
+    "TC-248",
+    "TC-249",
+    "TC-250",
+    "TC-251",
+    "TC-252",
+    "TC-253",
+    "TC-254"
+   ],
+   "reason": "Decision 8: every combination row ends on the credit history: one debit 「AI Video Enhance」 of exactly the CTA price (R-203)."
+  },
+  "TC-VE2-175": {
+   "code": "cov",
+   "rows": [
+    "TC-269",
+    "TC-022",
+    "TC-046"
+   ],
+   "reason": "TC-269 step 1: a 0.9 s source is refused (under 1 s, R-015) and no selection can be under 1 s (TC-046); their case prices 1 credit 「subject to a separately confirmed minimum rule」, and that minimum rule is ours (R-015, R-035)."
+  },
+  "TC-VE2-176": {
+   "code": "cov",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "TC-269 reads 「Enhance ◆ 1」 for a 1 s video at rate 1 (Standard / Natural / 30fps / 720p)."
+  },
+  "TC-VE2-177": {
+   "code": "cov",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "TC-269 reads 「Enhance ◆ 2」 for a 1.01 s video at rate 1 (Standard / Natural / 30fps / 720p)."
+  },
+  "TC-VE2-178": {
+   "code": "cov",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "TC-269 reads 「Enhance ◆ 3」 for a 2.99 s video at rate 1 (Standard / Natural / 30fps / 720p)."
+  },
+  "TC-VE2-179": {
+   "code": "cov",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "TC-269 reads 「Enhance ◆ 3」 for a 3 s video at rate 1 (Standard / Natural / 30fps / 720p)."
+  },
+  "TC-VE2-180": {
+   "code": "cov",
+   "rows": [
+    "TC-223",
+    "TC-269"
+   ],
+   "reason": "3.2 s → 4 billable seconds: the 3.2 s fixture of every combination row (TC-223 at rate 1: 「Enhance ◆ 4」)."
+  },
+  "TC-VE2-181": {
+   "code": "cov",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "TC-269 reads 「Enhance ◆ 4」 for a 3.99 s video at rate 1 (Standard / Natural / 30fps / 720p)."
+  },
+  "TC-VE2-182": {
+   "code": "cov",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "TC-269 reads 「Enhance ◆ 180」 for a 179.01 s video at rate 1 (Standard / Natural / 30fps / 720p)."
+  },
+  "TC-VE2-183": {
+   "code": "cov",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "TC-269 reads 「Enhance ◆ 180」 for a 179.99 s video at rate 1 (Standard / Natural / 30fps / 720p)."
+  },
+  "TC-VE2-184": {
+   "code": "cov",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "TC-269 reads 「Enhance ◆ 180」 for a 180 s video at rate 1 (Standard / Natural / 30fps / 720p)."
+  },
+  "TC-VE2-185": {
+   "code": "cov",
+   "rows": [
+    "TC-223"
+   ],
+   "reason": "Combination row TC-223 (REQ-008 decision 1): sets Standard / Natural / 30fps / 720p, checks 「Charge 1 credits per second」 and the CTA (1 at 1 s, 4 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 4), the Result look and the saved file (720p, 30 fps). ECL rate 1/s (form 22061491221)."
+  },
+  "TC-VE2-186": {
+   "code": "cov",
+   "rows": [
+    "TC-225"
+   ],
+   "reason": "Combination row TC-225 (REQ-008 decision 1): sets Standard / Natural / 30fps / 1080p, checks 「Charge 2 credits per second」 and the CTA (2 at 1 s, 8 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 8), the Result look and the saved file (1080p, 30 fps). ECL rate 2/s (form 22061491221)."
+  },
+  "TC-VE2-187": {
+   "code": "cov",
+   "rows": [
+    "TC-224"
+   ],
+   "reason": "Combination row TC-224 (REQ-008 decision 1): sets Standard / Natural / 30fps / 4K, checks 「Charge 3 credits per second」 and the CTA (3 at 1 s, 12 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 12), the Result look and the saved file (4K, 30 fps). ECL rate 3/s (form 22061491221)."
+  },
+  "TC-VE2-188": {
+   "code": "cov",
+   "rows": [
+    "TC-226"
+   ],
+   "reason": "Combination row TC-226 (REQ-008 decision 1): sets Standard / Natural / 60fps / 720p, checks 「Charge 1 credits per second」 and the CTA (1 at 1 s, 4 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 4), the Result look and the saved file (720p, 60 fps). ECL rate 1/s (form 22061491221)."
+  },
+  "TC-VE2-189": {
+   "code": "cov",
+   "rows": [
+    "TC-221"
+   ],
+   "reason": "Combination row TC-221 (REQ-008 decision 1): sets Standard / Natural / 60fps / 1080p, checks 「Charge 2 credits per second」 and the CTA (2 at 1 s, 8 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 8), the Result look and the saved file (1080p, 60 fps). ECL rate 2/s (form 22061491221)."
+  },
+  "TC-VE2-190": {
+   "code": "cov",
+   "rows": [
+    "TC-227"
+   ],
+   "reason": "Combination row TC-227 (REQ-008 decision 1): sets Standard / Natural / 60fps / 4K, checks 「Charge 6 credits per second」 and the CTA (6 at 1 s, 24 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 24), the Result look and the saved file (4K, 60 fps). ECL rate 6/s (form 22061491221)."
+  },
+  "TC-VE2-191": {
+   "code": "cov",
+   "rows": [
+    "TC-228"
+   ],
+   "reason": "Combination row TC-228 (REQ-008 decision 1): sets Standard / Natural / 120fps / 720p, checks 「Charge 1 credits per second」 and the CTA (1 at 1 s, 4 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 4), the Result look and the saved file (720p, 120 fps). ECL rate 1/s (form 22061491221)."
+  },
+  "TC-VE2-192": {
+   "code": "cov",
+   "rows": [
+    "TC-222"
+   ],
+   "reason": "Combination row TC-222 (REQ-008 decision 1): sets Standard / Natural / 120fps / 1080p, checks 「Charge 2 credits per second」 and the CTA (2 at 1 s, 8 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 8), the Result look and the saved file (1080p, 120 fps). ECL rate 2/s (form 22061491221)."
+  },
+  "TC-VE2-193": {
+   "code": "cov",
+   "rows": [
+    "TC-229"
+   ],
+   "reason": "Combination row TC-229 (REQ-008 decision 1): sets Standard / Natural / 120fps / 4K, checks 「Charge 8 credits per second」 and the CTA (8 at 1 s, 32 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 32), the Result look and the saved file (4K, 120 fps). ECL rate 8/s (form 22061491221)."
+  },
+  "TC-VE2-194": {
+   "code": "cov",
+   "rows": [
+    "TC-230"
+   ],
+   "reason": "Combination row TC-230 (REQ-008 decision 1): sets Standard / Sharp / 30fps / 720p, checks 「Charge 1 credits per second」 and the CTA (1 at 1 s, 4 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 4), the Result look and the saved file (720p, 30 fps). ECL rate 1/s (form 22061491221)."
+  },
+  "TC-VE2-195": {
+   "code": "cov",
+   "rows": [
+    "TC-220"
+   ],
+   "reason": "Combination row TC-220 (REQ-008 decision 1): sets Standard / Sharp / 30fps / 1080p, checks 「Charge 2 credits per second」 and the CTA (2 at 1 s, 8 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 8), the Result look and the saved file (1080p, 30 fps). ECL rate 2/s (form 22061491221)."
+  },
+  "TC-VE2-196": {
+   "code": "cov",
+   "rows": [
+    "TC-231"
+   ],
+   "reason": "Combination row TC-231 (REQ-008 decision 1): sets Standard / Sharp / 30fps / 4K, checks 「Charge 3 credits per second」 and the CTA (3 at 1 s, 12 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 12), the Result look and the saved file (4K, 30 fps). ECL rate 3/s (form 22061491221)."
+  },
+  "TC-VE2-197": {
+   "code": "cov",
+   "rows": [
+    "TC-232"
+   ],
+   "reason": "Combination row TC-232 (REQ-008 decision 1): sets Standard / Sharp / 60fps / 720p, checks 「Charge 1 credits per second」 and the CTA (1 at 1 s, 4 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 4), the Result look and the saved file (720p, 60 fps). ECL rate 1/s (form 22061491221)."
+  },
+  "TC-VE2-198": {
+   "code": "cov",
+   "rows": [
+    "TC-233"
+   ],
+   "reason": "Combination row TC-233 (REQ-008 decision 1): sets Standard / Sharp / 60fps / 1080p, checks 「Charge 2 credits per second」 and the CTA (2 at 1 s, 8 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 8), the Result look and the saved file (1080p, 60 fps). ECL rate 2/s (form 22061491221)."
+  },
+  "TC-VE2-199": {
+   "code": "cov",
+   "rows": [
+    "TC-234"
+   ],
+   "reason": "Combination row TC-234 (REQ-008 decision 1): sets Standard / Sharp / 60fps / 4K, checks 「Charge 6 credits per second」 and the CTA (6 at 1 s, 24 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 24), the Result look and the saved file (4K, 60 fps). ECL rate 6/s (form 22061491221)."
+  },
+  "TC-VE2-200": {
+   "code": "cov",
+   "rows": [
+    "TC-235"
+   ],
+   "reason": "Combination row TC-235 (REQ-008 decision 1): sets Standard / Sharp / 120fps / 720p, checks 「Charge 1 credits per second」 and the CTA (1 at 1 s, 4 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 4), the Result look and the saved file (720p, 120 fps). ECL rate 1/s (form 22061491221)."
+  },
+  "TC-VE2-201": {
+   "code": "cov",
+   "rows": [
+    "TC-236"
+   ],
+   "reason": "Combination row TC-236 (REQ-008 decision 1): sets Standard / Sharp / 120fps / 1080p, checks 「Charge 2 credits per second」 and the CTA (2 at 1 s, 8 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 8), the Result look and the saved file (1080p, 120 fps). ECL rate 2/s (form 22061491221)."
+  },
+  "TC-VE2-202": {
+   "code": "cov",
+   "rows": [
+    "TC-237"
+   ],
+   "reason": "Combination row TC-237 (REQ-008 decision 1): sets Standard / Sharp / 120fps / 4K, checks 「Charge 8 credits per second」 and the CTA (8 at 1 s, 32 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 32), the Result look and the saved file (4K, 120 fps). ECL rate 8/s (form 22061491221)."
+  },
+  "TC-VE2-203": {
+   "code": "cov",
+   "rows": [
+    "TC-238"
+   ],
+   "reason": "Combination row TC-238 (REQ-008 decision 1): sets Professional / Natural / 30fps / 720p, checks 「Charge 2 credits per second」 and the CTA (2 at 1 s, 8 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 8), the Result look and the saved file (720p, 30 fps). ECL rate 2/s (form 22061491221)."
+  },
+  "TC-VE2-204": {
+   "code": "cov",
+   "rows": [
+    "TC-219"
+   ],
+   "reason": "Combination row TC-219 (REQ-008 decision 1): sets Professional / Natural / 30fps / 1080p, checks 「Charge 4 credits per second」 and the CTA (4 at 1 s, 16 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 16), the Result look and the saved file (1080p, 30 fps). ECL rate 4/s (form 22061491221)."
+  },
+  "TC-VE2-205": {
+   "code": "cov",
+   "rows": [
+    "TC-239"
+   ],
+   "reason": "Combination row TC-239 (REQ-008 decision 1): sets Professional / Natural / 30fps / 4K, checks 「Charge 12 credits per second」 and the CTA (12 at 1 s, 48 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 48), the Result look and the saved file (4K, 30 fps). ECL rate 12/s (form 22061491221)."
+  },
+  "TC-VE2-206": {
+   "code": "cov",
+   "rows": [
+    "TC-240"
+   ],
+   "reason": "Combination row TC-240 (REQ-008 decision 1): sets Professional / Natural / 60fps / 720p, checks 「Charge 4 credits per second」 and the CTA (4 at 1 s, 16 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 16), the Result look and the saved file (720p, 60 fps). ECL rate 4/s (form 22061491221)."
+  },
+  "TC-VE2-207": {
+   "code": "cov",
+   "rows": [
+    "TC-241"
+   ],
+   "reason": "Combination row TC-241 (REQ-008 decision 1): sets Professional / Natural / 60fps / 1080p, checks 「Charge 8 credits per second」 and the CTA (8 at 1 s, 32 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 32), the Result look and the saved file (1080p, 60 fps). ECL rate 8/s (form 22061491221)."
+  },
+  "TC-VE2-208": {
+   "code": "cov",
+   "rows": [
+    "TC-242"
+   ],
+   "reason": "Combination row TC-242 (REQ-008 decision 1): sets Professional / Natural / 60fps / 4K, checks 「Charge 24 credits per second」 and the CTA (24 at 1 s, 96 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 96), the Result look and the saved file (4K, 60 fps). ECL rate 24/s (form 22061491221)."
+  },
+  "TC-VE2-209": {
+   "code": "cov",
+   "rows": [
+    "TC-243"
+   ],
+   "reason": "Combination row TC-243 (REQ-008 decision 1): sets Professional / Natural / 120fps / 720p, checks 「Charge 8 credits per second」 and the CTA (8 at 1 s, 32 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 32), the Result look and the saved file (720p, 120 fps). ECL rate 8/s (form 22061491221)."
+  },
+  "TC-VE2-210": {
+   "code": "cov",
+   "rows": [
+    "TC-244"
+   ],
+   "reason": "Combination row TC-244 (REQ-008 decision 1): sets Professional / Natural / 120fps / 1080p, checks 「Charge 16 credits per second」 and the CTA (16 at 1 s, 64 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 64), the Result look and the saved file (1080p, 120 fps). ECL rate 16/s (form 22061491221)."
+  },
+  "TC-VE2-211": {
+   "code": "cov",
+   "rows": [
+    "TC-245"
+   ],
+   "reason": "Combination row TC-245 (REQ-008 decision 1): sets Professional / Natural / 120fps / 4K, checks 「Charge 48 credits per second」 and the CTA (48 at 1 s, 192 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 192), the Result look and the saved file (4K, 120 fps). ECL rate 48/s (form 22061491221)."
+  },
+  "TC-VE2-212": {
+   "code": "cov",
+   "rows": [
+    "TC-246"
+   ],
+   "reason": "Combination row TC-246 (REQ-008 decision 1): sets Professional / Sharp / 30fps / 720p, checks 「Charge 2 credits per second」 and the CTA (2 at 1 s, 8 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 8), the Result look and the saved file (720p, 30 fps). ECL rate 2/s (form 22061491221)."
+  },
+  "TC-VE2-213": {
+   "code": "cov",
+   "rows": [
+    "TC-247"
+   ],
+   "reason": "Combination row TC-247 (REQ-008 decision 1): sets Professional / Sharp / 30fps / 1080p, checks 「Charge 4 credits per second」 and the CTA (4 at 1 s, 16 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 16), the Result look and the saved file (1080p, 30 fps). ECL rate 4/s (form 22061491221)."
+  },
+  "TC-VE2-214": {
+   "code": "cov",
+   "rows": [
+    "TC-248"
+   ],
+   "reason": "Combination row TC-248 (REQ-008 decision 1): sets Professional / Sharp / 30fps / 4K, checks 「Charge 12 credits per second」 and the CTA (12 at 1 s, 48 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 48), the Result look and the saved file (4K, 30 fps). ECL rate 12/s (form 22061491221)."
+  },
+  "TC-VE2-215": {
+   "code": "cov",
+   "rows": [
+    "TC-249"
+   ],
+   "reason": "Combination row TC-249 (REQ-008 decision 1): sets Professional / Sharp / 60fps / 720p, checks 「Charge 4 credits per second」 and the CTA (4 at 1 s, 16 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 16), the Result look and the saved file (720p, 60 fps). ECL rate 4/s (form 22061491221)."
+  },
+  "TC-VE2-216": {
+   "code": "cov",
+   "rows": [
+    "TC-250"
+   ],
+   "reason": "Combination row TC-250 (REQ-008 decision 1): sets Professional / Sharp / 60fps / 1080p, checks 「Charge 8 credits per second」 and the CTA (8 at 1 s, 32 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 32), the Result look and the saved file (1080p, 60 fps). ECL rate 8/s (form 22061491221)."
+  },
+  "TC-VE2-217": {
+   "code": "cov",
+   "rows": [
+    "TC-251"
+   ],
+   "reason": "Combination row TC-251 (REQ-008 decision 1): sets Professional / Sharp / 60fps / 4K, checks 「Charge 24 credits per second」 and the CTA (24 at 1 s, 96 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 96), the Result look and the saved file (4K, 60 fps). ECL rate 24/s (form 22061491221)."
+  },
+  "TC-VE2-218": {
+   "code": "cov",
+   "rows": [
+    "TC-252"
+   ],
+   "reason": "Combination row TC-252 (REQ-008 decision 1): sets Professional / Sharp / 120fps / 720p, checks 「Charge 8 credits per second」 and the CTA (8 at 1 s, 32 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 32), the Result look and the saved file (720p, 120 fps). ECL rate 8/s (form 22061491221)."
+  },
+  "TC-VE2-219": {
+   "code": "cov",
+   "rows": [
+    "TC-253"
+   ],
+   "reason": "Combination row TC-253 (REQ-008 decision 1): sets Professional / Sharp / 120fps / 1080p, checks 「Charge 16 credits per second」 and the CTA (16 at 1 s, 64 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 64), the Result look and the saved file (1080p, 120 fps). ECL rate 16/s (form 22061491221)."
+  },
+  "TC-VE2-220": {
+   "code": "cov",
+   "rows": [
+    "TC-254"
+   ],
+   "reason": "Combination row TC-254 (REQ-008 decision 1): sets Professional / Sharp / 120fps / 4K, checks 「Charge 48 credits per second」 and the CTA (48 at 1 s, 192 at 3.2 s), generates, checks the charge (balance and the credit-history debit 「AI Video Enhance」 of 192), the Result look and the saved file (4K, 120 fps). ECL rate 48/s (form 22061491221)."
+  },
+  "TC-VE2-221": {
+   "code": "cov",
+   "rows": [
+    "TC-265"
+   ],
+   "reason": "Decision 8: 1 s selection, timed to the card completing: 1.5 – 2.5 s (TC-265)."
+  },
+  "TC-VE2-222": {
+   "code": "cov",
+   "rows": [
+    "TC-266"
+   ],
+   "reason": "Decision 8: 3.2 s selection, timed to the completion banner: 4.8 – 8 s (TC-266)."
+  },
+  "TC-VE2-223": {
+   "code": "cov",
+   "rows": [
+    "TC-267"
+   ],
+   "reason": "Decision 8: 30 s selection, timed to whichever completion signal comes first: 45 – 75 s (TC-267)."
+  },
+  "TC-VE2-224": {
+   "code": "cov",
+   "rows": [
+    "TC-140"
+   ],
+   "reason": "Recent task title 「AI Video Enhance」 and the one-year cloud notice."
+  },
+  "TC-VE2-225": {
+   "code": "cov",
+   "rows": [
+    "TC-258"
+   ],
+   "reason": "Decision 8: import from a named local album (TC-258)."
+  },
+  "TC-VE2-226": {
+   "code": "cov",
+   "rows": [
+    "TC-261",
+    "TC-073"
+   ],
+   "reason": "149 s / 149.99 s within 2:30: Professional switches (TC-261 at entry, TC-073 after trimming to 02:20)."
+  },
+  "TC-VE2-227": {
+   "code": "cov",
+   "rows": [
+    "TC-263",
+    "TC-261"
+   ],
+   "reason": "150 s: Professional switches (TC-263 step 4 at 02:30, TC-261 for a 150 s source)."
+  },
+  "TC-VE2-228": {
+   "code": "cov",
+   "rows": [
+    "TC-263",
+    "TC-071"
+   ],
+   "reason": "Decision 6: a 02:31 (151 s) selection is refused with the newer Design toast, Mode stays Standard, the interval kept (TC-263; TC-071 at 05:00)."
+  },
+  "TC-VE2-230": {
+   "code": "cov",
+   "rows": [
+    "TC-071",
+    "TC-073"
+   ],
+   "reason": "Decision 6: 05:00 refused with the newer Design toast, interval kept (TC-071), shortened to 02:20 and switched (TC-073)."
+  },
+  "TC-VE2-231": {
+   "code": "cov",
+   "rows": [
+    "TC-074"
+   ],
+   "reason": "Professional: right handle stops at 2:30 (haptic + bubble)."
+  },
+  "TC-VE2-232": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-233": {
+   "code": "cov",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Dragging the middle moves the range at the same length; the Preview shows its first frame."
+  },
+  "TC-VE2-234": {
+   "code": "cov",
+   "rows": [
+    "TC-112"
+   ],
+   "reason": "TC-112 now checks the CTA stays disabled behind the dialogs and after 「Keep Uploading」 until the upload ends."
+  },
+  "TC-VE2-235": {
+   "code": "cov",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "TC-113 now checks 「Leave」 returns to the panel with 「Enhance」 enabled again."
+  },
+  "TC-VE2-236": {
+   "code": "cov",
+   "rows": [
+    "TC-152"
+   ],
+   "reason": "TC-152 now checks the saved new file, listed under 「All」 in the media picker, added to a timeline and played."
+  },
+  "TC-VE2-237": {
+   "code": "cov",
+   "rows": [
+    "TC-141"
+   ],
+   "reason": "‹ on Recent task returns to the panel."
+  },
+  "TC-VE2-238": {
+   "code": "cov",
+   "rows": [
+    "TC-141"
+   ],
+   "reason": "‹ on Recent task returns to the panel."
+  },
+  "TC-VE2-239": {
+   "code": "cov",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "ⓘ reopens the Selected Length bubble; a tap anywhere closes it."
+  },
+  "TC-VE2-240": {
+   "code": "cov",
+   "rows": [
+    "TC-038"
+   ],
+   "reason": "Panel ‹ returns to Add Media."
+  },
+  "TC-VE2-241": {
+   "code": "cov",
+   "rows": [
+    "TC-091"
+   ],
+   "reason": "Decision 3: an Android Pro account gets the enabled 「Enhance ◆ <credits>」, no unlock action (TC-091)."
+  },
+  "TC-VE2-242": {
+   "code": "cov",
+   "rows": [
+    "TC-216"
+   ],
+   "reason": "Covered by TC-216 (left handle dragged left until the Standard 8:00 stop, with haptic and bubble)."
+  },
+  "TC-VE2-243": {
+   "code": "cov",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Right handle stops at 8:00 in Standard (haptic + bubble)."
+  },
+  "TC-VE2-244": {
+   "code": "cov",
+   "rows": [
+    "TC-075"
+   ],
+   "reason": "Back to Standard keeps the selection; it can then be dragged past 2:30 up to 8:00."
+  },
+  "TC-VE2-245": {
+   "code": "cov",
+   "rows": [
+    "TC-260"
+   ],
+   "reason": "Decision 6: a 1 s source opens in Standard (the newer Design default, not PM 9/29 ① Professional) with all of it selected; Professional then switches with the selection kept (TC-260)."
+  },
+  "TC-VE2-246": {
+   "code": "cov",
+   "rows": [
+    "TC-260"
+   ],
+   "reason": "Decision 6: a 30 s source opens in Standard, whole selected; Professional switches (TC-260)."
+  },
+  "TC-VE2-247": {
+   "code": "cov",
+   "rows": [
+    "TC-261"
+   ],
+   "reason": "Decision 6: a 149.99 s source opens in Standard, whole selected; Professional switches (rounded up to 150 s) (TC-261)."
+  },
+  "TC-VE2-248": {
+   "code": "cov",
+   "rows": [
+    "TC-261"
+   ],
+   "reason": "Decision 6: a 150 s source opens in Standard, whole selected; Professional switches (TC-261)."
+  },
+  "TC-VE2-249": {
+   "code": "cov",
+   "rows": [
+    "TC-262"
+   ],
+   "reason": "Decision 6: a 150.01 s source opens in Standard, whole selected; Professional is refused (151 s) with the Design toast (TC-262)."
+  },
+  "TC-VE2-250": {
+   "code": "cov",
+   "rows": [
+    "TC-262"
+   ],
+   "reason": "Decision 6: a 750 s source opens in Standard with 00:00–08:00; Professional is refused with the Design toast (TC-262)."
+  },
+  "TC-VE2-251": {
+   "code": "cov",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "A video up to 8:00 is selected whole."
+  },
+  "TC-VE2-252": {
+   "code": "cov",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "A video longer than 8:00 selects 00:00–08:00 in Standard."
+  },
+  "TC-VE2-253": {
+   "code": "cov",
+   "rows": [
+    "TC-076",
+    "TC-073"
+   ],
+   "reason": "The limit compares rounded-up seconds (2:30.4 = 151 s is over)."
+  },
+  "TC-VE2-254": {
+   "code": "cov",
+   "rows": [
+    "TC-076",
+    "TC-073"
+   ],
+   "reason": "The limit compares rounded-up seconds (2:30.4 = 151 s is over)."
+  },
+  "TC-VE2-256": {
+   "code": "cov",
+   "rows": [
+    "TC-216"
+   ],
+   "reason": "Covered by TC-216 (left handle dragged left until the Standard 8:00 stop, with haptic and bubble)."
+  },
+  "TC-VE2-257": {
+   "code": "cov",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Right handle stops at 8:00 in Standard (haptic + bubble)."
+  },
+  "TC-VE2-258": {
+   "code": "cov",
+   "rows": [
+    "TC-218"
+   ],
+   "reason": "Covered by TC-218 (left handle stops at the Professional 2:30 limit)."
+  },
+  "TC-VE2-259": {
+   "code": "cov",
+   "rows": [
+    "TC-074"
+   ],
+   "reason": "Professional: right handle stops at 2:30 (haptic + bubble)."
+  },
+  "TC-VE2-260": {
+   "code": "cov",
+   "rows": [
+    "TC-070",
+    "TC-083"
+   ],
+   "reason": "A permitted switch keeps the range; the price changes to the new Mode’s rate."
+  },
+  "TC-VE2-261": {
+   "code": "cov",
+   "rows": [
+    "TC-070",
+    "TC-083"
+   ],
+   "reason": "A permitted switch keeps the range; the price changes to the new Mode’s rate."
+  },
+  "TC-VE2-262": {
+   "code": "cov",
+   "rows": [
+    "TC-070",
+    "TC-083"
+   ],
+   "reason": "A permitted switch keeps the range; the price changes to the new Mode’s rate."
+  },
+  "TC-VE2-263": {
+   "code": "cov",
+   "rows": [
+    "TC-070",
+    "TC-083"
+   ],
+   "reason": "A permitted switch keeps the range; the price changes to the new Mode’s rate."
+  },
+  "TC-VE2-264": {
+   "code": "cov",
+   "rows": [
+    "TC-264"
+   ],
+   "reason": "Decision 5: 481 s source, 8:00 per width in Standard, 2:30 in Professional (TC-264)."
+  },
+  "TC-VE2-265": {
+   "code": "cov",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "Decision 5: 750 s source, 8:00 per width in Standard, 2:30 in Professional (TC-045)."
+  },
+  "TC-VE2-266": {
+   "code": "cov",
+   "rows": [
+    "TC-264"
+   ],
+   "reason": "Decision 5: 150.01 s source fills the width in Standard, 2:30 per width in Professional (TC-264)."
+  },
+  "TC-VE2-267": {
+   "code": "cov",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "Decision 5: 480 s source fills the width in Standard, 2:30 per width in Professional (TC-045)."
+  },
+  "TC-VE2-268": {
+   "code": "cov",
+   "rows": [
+    "TC-071",
+    "TC-073"
+   ],
+   "reason": "Decision 6: Media Room source — 05:00 refused, toast about 3 s (Design copy), interval kept (TC-071); shorten and retry (TC-073)."
+  },
+  "TC-VE2-269": {
+   "code": "cov",
+   "rows": [
+    "TC-160"
+   ],
+   "reason": "Decision 6: Timeline clip — 05:00 refused, toast about 3 s (Design copy); shortened to 02:20, Professional switches (TC-160)."
+  },
+  "TC-VE2-270": {
+   "code": "cov",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Light haptic at the Standard limit."
+  },
+  "TC-VE2-271": {
+   "code": "cov",
+   "rows": [
+    "TC-074"
+   ],
+   "reason": "Professional: right handle stops at 2:30 (haptic + bubble)."
+  },
+  "TC-VE2-272": {
+   "code": "cov",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy More → back on the panel with the new balance and the selection and settings kept."
+  },
+  "TC-VE2-276": {
+   "code": "cov",
+   "rows": [
+    "TC-259"
+   ],
+   "reason": "Decision 8: a 150.01 s source reads 「00:00/02:31」 (TC-259)."
+  }
+ },
+ "cb": {
+  "TC-001": "full",
+  "TC-002": "full",
+  "TC-003": "full",
+  "TC-004": "none",
+  "TC-010": "full",
+  "TC-011": "none",
+  "TC-012": "partial",
+  "TC-013": "none",
+  "TC-014": "full",
+  "TC-020": "full",
+  "TC-255": "full",
+  "TC-256": "full",
+  "TC-257": "full",
+  "TC-258": "full",
+  "TC-021": "none",
+  "TC-022": "full",
+  "TC-023": "none",
+  "TC-030": "full",
+  "TC-031": "full",
+  "TC-032": "none",
+  "TC-033": "partial",
+  "TC-259": "full",
+  "TC-035": "partial",
+  "TC-036": "full",
+  "TC-037": "full",
+  "TC-038": "full",
+  "TC-040": "full",
+  "TC-041": "full",
+  "TC-042": "partial",
+  "TC-214": "full",
+  "TC-043": "full",
+  "TC-215": "full",
+  "TC-044": "partial",
+  "TC-216": "full",
+  "TC-045": "full",
+  "TC-264": "full",
+  "TC-046": "full",
+  "TC-217": "none",
+  "TC-050": "full",
+  "TC-051": "partial",
+  "TC-052": "full",
+  "TC-053": "full",
+  "TC-054": "full",
+  "TC-055": "full",
+  "TC-056": "full",
+  "TC-057": "full",
+  "TC-058": "full",
+  "TC-059": "none",
+  "TC-061": "full",
+  "TC-062": "full",
+  "TC-063": "partial",
+  "TC-064": "full",
+  "TC-070": "full",
+  "TC-071": "full",
+  "TC-073": "partial",
+  "TC-074": "partial",
+  "TC-218": "full",
+  "TC-075": "full",
+  "TC-076": "full",
+  "TC-263": "full",
+  "TC-260": "full",
+  "TC-261": "full",
+  "TC-262": "full",
+  "TC-080": "full",
+  "TC-269": "full",
+  "TC-083": "full",
+  "TC-087": "full",
+  "TC-090": "full",
+  "TC-091": "full",
+  "TC-093": "none",
+  "TC-094": "none",
+  "TC-095": "full",
+  "TC-096": "full",
+  "TC-097": "full",
+  "TC-098": "none",
+  "TC-100": "none",
+  "TC-110": "full",
+  "TC-111": "full",
+  "TC-112": "full",
+  "TC-113": "full",
+  "TC-114": "full",
+  "TC-115": "none",
+  "TC-116": "partial",
+  "TC-117": "none",
+  "TC-118": "none",
+  "TC-119": "none",
+  "TC-120": "none",
+  "TC-121": "none",
+  "TC-130": "full",
+  "TC-131": "full",
+  "TC-132": "full",
+  "TC-133": "none",
+  "TC-134": "none",
+  "TC-140": "partial",
+  "TC-141": "full",
+  "TC-142": "full",
+  "TC-143": "full",
+  "TC-265": "full",
+  "TC-266": "full",
+  "TC-267": "full",
+  "TC-144": "none",
+  "TC-268": "full",
+  "TC-150": "full",
+  "TC-151": "full",
+  "TC-152": "full",
+  "TC-153": "full",
+  "TC-154": "full",
+  "TC-155": "none",
+  "TC-223": "full",
+  "TC-225": "full",
+  "TC-224": "full",
+  "TC-226": "full",
+  "TC-221": "full",
+  "TC-227": "full",
+  "TC-228": "full",
+  "TC-222": "full",
+  "TC-229": "full",
+  "TC-230": "full",
+  "TC-220": "full",
+  "TC-231": "full",
+  "TC-232": "full",
+  "TC-233": "full",
+  "TC-234": "full",
+  "TC-235": "full",
+  "TC-236": "full",
+  "TC-237": "full",
+  "TC-238": "full",
+  "TC-219": "full",
+  "TC-239": "full",
+  "TC-240": "full",
+  "TC-241": "full",
+  "TC-242": "full",
+  "TC-243": "full",
+  "TC-244": "full",
+  "TC-245": "full",
+  "TC-246": "full",
+  "TC-247": "full",
+  "TC-248": "full",
+  "TC-249": "full",
+  "TC-250": "full",
+  "TC-251": "full",
+  "TC-252": "full",
+  "TC-253": "full",
+  "TC-254": "full",
+  "TC-160": "full",
+  "TC-161": "none",
+  "TC-162": "none",
+  "TC-163": "none",
+  "TC-164": "none",
+  "TC-165": "none",
+  "TC-170": "full",
+  "TC-171": "full",
+  "TC-173": "full",
+  "TC-174": "none",
+  "TC-200": "none",
+  "TC-201": "none",
+  "TC-202": "none",
+  "TC-203": "none",
+  "TC-204": "none",
+  "TC-205": "none",
+  "TC-206": "none",
+  "TC-207": "none",
+  "TC-208": "none",
+  "TC-209": "none",
+  "TC-210": "none",
+  "TC-211": "none",
+  "TC-212": "none",
+  "TC-213": "none"
+ },
+ "cb_detail": {
+  "TC-001": {
+   "match": "full",
+   "spec_agent": "TC-VE2-001, TC-VE2-004, TC-VE2-005",
+   "note": ""
+  },
+  "TC-002": {
+   "match": "full",
+   "spec_agent": "TC-VE2-002",
+   "note": ""
+  },
+  "TC-003": {
+   "match": "full",
+   "spec_agent": "TC-VE2-003, TC-VE2-008, TC-VE2-009",
+   "note": ""
+  },
+  "TC-004": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Pro+ badge on the clip toolbar tool"
+  },
+  "TC-010": {
+   "match": "full",
+   "spec_agent": "TC-VE2-005, TC-VE2-006, TC-VE2-150, TC-VE2-153",
+   "note": ""
+  },
+  "TC-011": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Demo description must not be AI Reframe’s copy (Q-1)"
+  },
+  "TC-012": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-004",
+   "note": ""
+  },
+  "TC-013": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Ticking 「Don’t show again」 and leaving with ‹ does not save it"
+  },
+  "TC-014": {
+   "match": "full",
+   "spec_agent": "TC-VE2-010",
+   "note": ""
+  },
+  "TC-020": {
+   "match": "full",
+   "spec_agent": "TC-VE2-007, TC-VE2-150, TC-VE2-154",
+   "note": ""
+  },
+  "TC-255": {
+   "match": "full",
+   "spec_agent": "TC-VE2-153, TC-VE2-154",
+   "note": ""
+  },
+  "TC-256": {
+   "match": "full",
+   "spec_agent": "TC-VE2-155",
+   "note": ""
+  },
+  "TC-257": {
+   "match": "full",
+   "spec_agent": "TC-VE2-156",
+   "note": ""
+  },
+  "TC-258": {
+   "match": "full",
+   "spec_agent": "TC-VE2-225",
+   "note": ""
+  },
+  "TC-021": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Add Media ‹ returns to where it was opened from"
+  },
+  "TC-022": {
+   "match": "full",
+   "spec_agent": "TC-VE2-030, TC-VE2-097, TC-VE2-098, TC-VE2-175",
+   "note": ""
+  },
+  "TC-023": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Add Media empty state 「No videos yet」"
+  },
+  "TC-030": {
+   "match": "full",
+   "spec_agent": "TC-VE2-016, TC-VE2-018",
+   "note": ""
+  },
+  "TC-031": {
+   "match": "full",
+   "spec_agent": "TC-VE2-017, TC-VE2-019, TC-VE2-239",
+   "note": ""
+  },
+  "TC-032": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "The automatic bubble does not come back on later entries"
+  },
+  "TC-033": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-011, TC-VE2-012, TC-VE2-091, TC-VE2-092, TC-VE2-093, TC-VE2-094, TC-VE2-095, TC-VE2-152",
+   "note": ""
+  },
+  "TC-259": {
+   "match": "full",
+   "spec_agent": "TC-VE2-276",
+   "note": ""
+  },
+  "TC-035": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-038",
+   "note": ""
+  },
+  "TC-036": {
+   "match": "full",
+   "spec_agent": "TC-VE2-039",
+   "note": ""
+  },
+  "TC-037": {
+   "match": "full",
+   "spec_agent": "TC-VE2-162, TC-VE2-163, TC-VE2-164, TC-VE2-170",
+   "note": ""
+  },
+  "TC-038": {
+   "match": "full",
+   "spec_agent": "TC-VE2-240",
+   "note": ""
+  },
+  "TC-040": {
+   "match": "full",
+   "spec_agent": "TC-VE2-013, TC-VE2-102, TC-VE2-103, TC-VE2-252",
+   "note": ""
+  },
+  "TC-041": {
+   "match": "full",
+   "spec_agent": "TC-VE2-014, TC-VE2-099, TC-VE2-100, TC-VE2-101, TC-VE2-251",
+   "note": ""
+  },
+  "TC-042": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-021, TC-VE2-023, TC-VE2-048, TC-VE2-112, TC-VE2-113",
+   "note": ""
+  },
+  "TC-214": {
+   "match": "full",
+   "spec_agent": "TC-VE2-020, TC-VE2-022, TC-VE2-110, TC-VE2-111, TC-VE2-158",
+   "note": ""
+  },
+  "TC-043": {
+   "match": "full",
+   "spec_agent": "TC-VE2-024, TC-VE2-025, TC-VE2-104, TC-VE2-105, TC-VE2-106, TC-VE2-107, TC-VE2-108, TC-VE2-109, TC-VE2-232, TC-VE2-233",
+   "note": ""
+  },
+  "TC-215": {
+   "match": "full",
+   "spec_agent": "TC-VE2-159, TC-VE2-160, TC-VE2-161",
+   "note": ""
+  },
+  "TC-044": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-015, TC-VE2-243, TC-VE2-257, TC-VE2-270",
+   "note": ""
+  },
+  "TC-216": {
+   "match": "full",
+   "spec_agent": "TC-VE2-110, TC-VE2-157, TC-VE2-242, TC-VE2-256",
+   "note": ""
+  },
+  "TC-045": {
+   "match": "full",
+   "spec_agent": "TC-VE2-026, TC-VE2-265, TC-VE2-267",
+   "note": ""
+  },
+  "TC-264": {
+   "match": "full",
+   "spec_agent": "TC-VE2-026, TC-VE2-264, TC-VE2-266",
+   "note": ""
+  },
+  "TC-046": {
+   "match": "full",
+   "spec_agent": "TC-VE2-175",
+   "note": ""
+  },
+  "TC-217": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Left handle: shortest selection 1 s (the spec agent has no 1 s minimum case)"
+  },
+  "TC-050": {
+   "match": "full",
+   "spec_agent": "TC-VE2-027, TC-VE2-028, TC-VE2-079, TC-VE2-080, TC-VE2-081, TC-VE2-082, TC-VE2-083, TC-VE2-084, TC-VE2-085, TC-VE2-086, TC-VE2-087, TC-VE2-088, TC-VE2-089, TC-VE2-090",
+   "note": ""
+  },
+  "TC-051": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-027",
+   "note": ""
+  },
+  "TC-052": {
+   "match": "full",
+   "spec_agent": "TC-VE2-012, TC-VE2-029, TC-VE2-079, TC-VE2-080, TC-VE2-081, TC-VE2-082",
+   "note": ""
+  },
+  "TC-053": {
+   "match": "full",
+   "spec_agent": "TC-VE2-029, TC-VE2-084, TC-VE2-085",
+   "note": ""
+  },
+  "TC-054": {
+   "match": "full",
+   "spec_agent": "TC-VE2-029, TC-VE2-087, TC-VE2-088, TC-VE2-089, TC-VE2-090",
+   "note": ""
+  },
+  "TC-055": {
+   "match": "full",
+   "spec_agent": "TC-VE2-029, TC-VE2-083, TC-VE2-086",
+   "note": ""
+  },
+  "TC-056": {
+   "match": "full",
+   "spec_agent": "TC-VE2-030, TC-VE2-091, TC-VE2-092, TC-VE2-093",
+   "note": ""
+  },
+  "TC-057": {
+   "match": "full",
+   "spec_agent": "TC-VE2-030, TC-VE2-094, TC-VE2-095",
+   "note": ""
+  },
+  "TC-058": {
+   "match": "full",
+   "spec_agent": "TC-VE2-030, TC-VE2-096",
+   "note": ""
+  },
+  "TC-059": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Portrait video: the short side picks the resolution (Q-5)"
+  },
+  "TC-061": {
+   "match": "full",
+   "spec_agent": "TC-VE2-032, TC-VE2-035, TC-VE2-036",
+   "note": ""
+  },
+  "TC-062": {
+   "match": "full",
+   "spec_agent": "TC-VE2-033, TC-VE2-035, TC-VE2-036",
+   "note": ""
+  },
+  "TC-063": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-034, TC-VE2-035, TC-VE2-036",
+   "note": ""
+  },
+  "TC-064": {
+   "match": "full",
+   "spec_agent": "TC-VE2-037",
+   "note": ""
+  },
+  "TC-070": {
+   "match": "full",
+   "spec_agent": "TC-VE2-031, TC-VE2-260, TC-VE2-261, TC-VE2-262, TC-VE2-263",
+   "note": ""
+  },
+  "TC-071": {
+   "match": "full",
+   "spec_agent": "TC-VE2-228, TC-VE2-230, TC-VE2-268",
+   "note": ""
+  },
+  "TC-073": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-226, TC-VE2-230, TC-VE2-253, TC-VE2-254, TC-VE2-268",
+   "note": ""
+  },
+  "TC-074": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-231, TC-VE2-259, TC-VE2-271",
+   "note": ""
+  },
+  "TC-218": {
+   "match": "full",
+   "spec_agent": "TC-VE2-258",
+   "note": ""
+  },
+  "TC-075": {
+   "match": "full",
+   "spec_agent": "TC-VE2-244",
+   "note": ""
+  },
+  "TC-076": {
+   "match": "full",
+   "spec_agent": "TC-VE2-253, TC-VE2-254",
+   "note": ""
+  },
+  "TC-263": {
+   "match": "full",
+   "spec_agent": "TC-VE2-227, TC-VE2-228",
+   "note": ""
+  },
+  "TC-260": {
+   "match": "full",
+   "spec_agent": "TC-VE2-245, TC-VE2-246",
+   "note": ""
+  },
+  "TC-261": {
+   "match": "full",
+   "spec_agent": "TC-VE2-226, TC-VE2-227, TC-VE2-247, TC-VE2-248",
+   "note": ""
+  },
+  "TC-262": {
+   "match": "full",
+   "spec_agent": "TC-VE2-249, TC-VE2-250",
+   "note": ""
+  },
+  "TC-080": {
+   "match": "full",
+   "spec_agent": "TC-VE2-047",
+   "note": ""
+  },
+  "TC-269": {
+   "match": "full",
+   "spec_agent": "TC-VE2-047, TC-VE2-175, TC-VE2-176, TC-VE2-177, TC-VE2-178, TC-VE2-179, TC-VE2-180, TC-VE2-181, TC-VE2-182, TC-VE2-183, TC-VE2-184",
+   "note": ""
+  },
+  "TC-083": {
+   "match": "full",
+   "spec_agent": "TC-VE2-260, TC-VE2-261, TC-VE2-262, TC-VE2-263",
+   "note": ""
+  },
+  "TC-087": {
+   "match": "full",
+   "spec_agent": "TC-VE2-117, TC-VE2-118, TC-VE2-119, TC-VE2-120, TC-VE2-121, TC-VE2-122, TC-VE2-126, TC-VE2-127, TC-VE2-128, TC-VE2-129, TC-VE2-130, TC-VE2-131, TC-VE2-135, TC-VE2-136, TC-VE2-137, TC-VE2-138, TC-VE2-139, TC-VE2-140, TC-VE2-144, TC-VE2-145, TC-VE2-146, TC-VE2-147, TC-VE2-148, TC-VE2-149",
+   "note": ""
+  },
+  "TC-090": {
+   "match": "full",
+   "spec_agent": "TC-VE2-040, TC-VE2-041",
+   "note": ""
+  },
+  "TC-091": {
+   "match": "full",
+   "spec_agent": "TC-VE2-241",
+   "note": ""
+  },
+  "TC-093": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "IAP page layout and plan taps"
+  },
+  "TC-094": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Closing the IAP page leaves the panel unchanged"
+  },
+  "TC-095": {
+   "match": "full",
+   "spec_agent": "TC-VE2-042",
+   "note": ""
+  },
+  "TC-096": {
+   "match": "full",
+   "spec_agent": "TC-VE2-043",
+   "note": ""
+  },
+  "TC-097": {
+   "match": "full",
+   "spec_agent": "TC-VE2-044, TC-VE2-045, TC-VE2-046, TC-VE2-272",
+   "note": ""
+  },
+  "TC-098": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Claim daily credits on the Credit page"
+  },
+  "TC-100": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Offline Enhance: toast, nothing sent or charged"
+  },
+  "TC-110": {
+   "match": "full",
+   "spec_agent": "TC-VE2-049, TC-VE2-050, TC-VE2-051, TC-VE2-150",
+   "note": ""
+  },
+  "TC-111": {
+   "match": "full",
+   "spec_agent": "TC-VE2-052",
+   "note": ""
+  },
+  "TC-112": {
+   "match": "full",
+   "spec_agent": "TC-VE2-053, TC-VE2-234",
+   "note": ""
+  },
+  "TC-113": {
+   "match": "full",
+   "spec_agent": "TC-VE2-054, TC-VE2-055, TC-VE2-235",
+   "note": ""
+  },
+  "TC-114": {
+   "match": "full",
+   "spec_agent": "TC-VE2-056, TC-VE2-057, TC-VE2-076, TC-VE2-150",
+   "note": ""
+  },
+  "TC-115": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Home during the upload cancels it and charges nothing (Q-18)"
+  },
+  "TC-116": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-078",
+   "note": ""
+  },
+  "TC-117": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "A processing task cannot be cancelled in v1"
+  },
+  "TC-118": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "First-task 「Turn on notifications」 prompt (PM-only)"
+  },
+  "TC-119": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Turn On opens the system permission / settings"
+  },
+  "TC-120": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "「Later」: never asked again"
+  },
+  "TC-121": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Two tasks at once (Q-12)"
+  },
+  "TC-130": {
+   "match": "full",
+   "spec_agent": "TC-VE2-068",
+   "note": ""
+  },
+  "TC-131": {
+   "match": "full",
+   "spec_agent": "TC-VE2-069",
+   "note": ""
+  },
+  "TC-132": {
+   "match": "full",
+   "spec_agent": "TC-VE2-165",
+   "note": ""
+  },
+  "TC-133": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "System notification 「Your video is ready. Tap to view.」 (PM-only)"
+  },
+  "TC-134": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Result listed in AI Magic › My Artwork and Template › My Artwork"
+  },
+  "TC-140": {
+   "match": "partial",
+   "spec_agent": "TC-VE2-058, TC-VE2-077, TC-VE2-224",
+   "note": ""
+  },
+  "TC-141": {
+   "match": "full",
+   "spec_agent": "TC-VE2-237, TC-VE2-238",
+   "note": ""
+  },
+  "TC-142": {
+   "match": "full",
+   "spec_agent": "TC-VE2-067",
+   "note": ""
+  },
+  "TC-143": {
+   "match": "full",
+   "spec_agent": "TC-VE2-059, TC-VE2-060, TC-VE2-150",
+   "note": ""
+  },
+  "TC-265": {
+   "match": "full",
+   "spec_agent": "TC-VE2-221",
+   "note": ""
+  },
+  "TC-266": {
+   "match": "full",
+   "spec_agent": "TC-VE2-222",
+   "note": ""
+  },
+  "TC-267": {
+   "match": "full",
+   "spec_agent": "TC-VE2-223",
+   "note": ""
+  },
+  "TC-144": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Recent task 「Manage」"
+  },
+  "TC-268": {
+   "match": "full",
+   "spec_agent": "TC-VE2-077",
+   "note": ""
+  },
+  "TC-150": {
+   "match": "full",
+   "spec_agent": "TC-VE2-061, TC-VE2-062, TC-VE2-151, TC-VE2-167, TC-VE2-168, TC-VE2-169",
+   "note": ""
+  },
+  "TC-151": {
+   "match": "full",
+   "spec_agent": "TC-VE2-061, TC-VE2-166",
+   "note": ""
+  },
+  "TC-152": {
+   "match": "full",
+   "spec_agent": "TC-VE2-063, TC-VE2-171, TC-VE2-172, TC-VE2-236",
+   "note": ""
+  },
+  "TC-153": {
+   "match": "full",
+   "spec_agent": "TC-VE2-064, TC-VE2-065",
+   "note": ""
+  },
+  "TC-154": {
+   "match": "full",
+   "spec_agent": "TC-VE2-066, TC-VE2-151",
+   "note": ""
+  },
+  "TC-155": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Result ‹ returns to Recent task"
+  },
+  "TC-223": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-114, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-180, TC-VE2-185",
+   "note": ""
+  },
+  "TC-225": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-115, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-186",
+   "note": ""
+  },
+  "TC-224": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-116, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-187",
+   "note": ""
+  },
+  "TC-226": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-117, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-188",
+   "note": ""
+  },
+  "TC-221": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-118, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-189",
+   "note": ""
+  },
+  "TC-227": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-119, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-190",
+   "note": ""
+  },
+  "TC-228": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-120, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-191",
+   "note": ""
+  },
+  "TC-222": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-121, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-192",
+   "note": ""
+  },
+  "TC-229": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-122, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-193",
+   "note": ""
+  },
+  "TC-230": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-123, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-194",
+   "note": ""
+  },
+  "TC-220": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-124, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-195",
+   "note": ""
+  },
+  "TC-231": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-125, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-196",
+   "note": ""
+  },
+  "TC-232": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-126, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-197",
+   "note": ""
+  },
+  "TC-233": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-127, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-198",
+   "note": ""
+  },
+  "TC-234": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-128, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-199",
+   "note": ""
+  },
+  "TC-235": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-129, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-200",
+   "note": ""
+  },
+  "TC-236": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-130, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-201",
+   "note": ""
+  },
+  "TC-237": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-131, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-202",
+   "note": ""
+  },
+  "TC-238": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-132, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-203",
+   "note": ""
+  },
+  "TC-219": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-133, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-204",
+   "note": ""
+  },
+  "TC-239": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-134, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-205",
+   "note": ""
+  },
+  "TC-240": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-135, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-206",
+   "note": ""
+  },
+  "TC-241": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-136, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-207",
+   "note": ""
+  },
+  "TC-242": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-137, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-208",
+   "note": ""
+  },
+  "TC-243": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-138, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-209",
+   "note": ""
+  },
+  "TC-244": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-139, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-210",
+   "note": ""
+  },
+  "TC-245": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-140, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-211",
+   "note": ""
+  },
+  "TC-246": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-141, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-212",
+   "note": ""
+  },
+  "TC-247": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-142, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-213",
+   "note": ""
+  },
+  "TC-248": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-143, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-214",
+   "note": ""
+  },
+  "TC-249": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-144, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-215",
+   "note": ""
+  },
+  "TC-250": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-145, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-216",
+   "note": ""
+  },
+  "TC-251": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-146, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-217",
+   "note": ""
+  },
+  "TC-252": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-147, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-218",
+   "note": ""
+  },
+  "TC-253": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-148, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-219",
+   "note": ""
+  },
+  "TC-254": {
+   "match": "full",
+   "spec_agent": "TC-VE2-076, TC-VE2-149, TC-VE2-171, TC-VE2-172, TC-VE2-174, TC-VE2-220",
+   "note": ""
+  },
+  "TC-160": {
+   "match": "full",
+   "spec_agent": "TC-VE2-269",
+   "note": ""
+  },
+  "TC-161": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "A Timeline clip over 8:00 does not open the panel"
+  },
+  "TC-162": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Timeline task: the result replaces the clip, 「Applied Video Enhance」"
+  },
+  "TC-163": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Panel ‹ from the Timeline returns to the editor"
+  },
+  "TC-164": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Clip deleted during generation: nothing pasted, result stays in Recent"
+  },
+  "TC-165": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Timeline task Result: 「Add to Timeline」 returns to the original project"
+  },
+  "TC-170": {
+   "match": "full",
+   "spec_agent": "TC-VE2-070, TC-VE2-071, TC-VE2-173",
+   "note": ""
+  },
+  "TC-171": {
+   "match": "full",
+   "spec_agent": "TC-VE2-072, TC-VE2-073, TC-VE2-075, TC-VE2-173",
+   "note": ""
+  },
+  "TC-173": {
+   "match": "full",
+   "spec_agent": "TC-VE2-074",
+   "note": ""
+  },
+  "TC-174": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Failure notification 「Video Enhance didn’t finish…」 (PM proposal)"
+  },
+  "TC-200": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): TC-VE2-010 / TC-VE2-004 cover the Demo page, not system Back on it."
+  },
+  "TC-201": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): no spec agent case presses Back on Add Media."
+  },
+  "TC-202": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): TC-VE2-240 checks the top-left ‹ to Add Media, not system Back."
+  },
+  "TC-203": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): TC-VE2-019 closes a bubble with a tap elsewhere, not system Back."
+  },
+  "TC-204": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): TC-VE2-052 checks 「Cancel」 opening the leave dialog, not system Back."
+  },
+  "TC-205": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): TC-VE2-053 checks 「Keep Uploading」, not system Back."
+  },
+  "TC-206": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): no spec agent case leaves the IAP page without buying."
+  },
+  "TC-207": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): no spec agent case leaves the Credit page without buying."
+  },
+  "TC-208": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): TC-VE2-237 / 238 check the top-left ‹ on Recent task, not system Back."
+  },
+  "TC-209": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): no spec agent case goes back from the Result page."
+  },
+  "TC-210": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): TC-VE2-075 checks 「OK」, not system Back."
+  },
+  "TC-211": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): no spec agent case has the 「Turn on notifications」 prompt."
+  },
+  "TC-212": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): TC-VE2-170 checks the full-screen preview’s own return control, not system Back."
+  },
+  "TC-213": {
+   "match": "none",
+   "spec_agent": "",
+   "note": "Android system Back (R-190, pass 8): no spec agent case leaves the panel opened from the Timeline."
+  }
+ }
+}
