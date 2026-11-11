@@ -51,6 +51,7 @@ library/*/*/specs/*/extracted/figma/*
 !library/*/*/specs/*/extracted/figma-source/
 library/*/*/specs/*/extracted/figma-source/*/calls/
 library/*/*/specs/*/extracted/figma-source/*/out/
+library/*/*/specs/*/extracted/figma-source/*/rest/
 library/*/*/*/drafts/*/server.log
 
 # Run screenshot folders stay local, including the on-screen text dumps saved next to each screenshot
