@@ -34,6 +34,7 @@ import { spawnSync } from 'node:child_process';
 import { basename, join } from 'node:path';
 import { arg, assertIds, featureDir, ROOT, writeJson } from './lib/library.ts';
 import { listSpecSets } from './lib/specs.ts';
+import { cutByHost } from './lib/figma-returns.ts';
 
 const argv = process.argv.slice(2).filter((a, i, all) => !a.startsWith('--') && !(i > 0 && all[i - 1].startsWith('--') && !['--all'].includes(all[i - 1])));
 const [feature] = argv;
@@ -260,7 +261,7 @@ function save() {
   files.sort((a, b) => b.t - a.t);
   const desc = new Map(want.map(n => [`casebook figma-source ${role} ${n}`, n])), found = new Map<string, string>();
   const written = new Map(want.map(n => [n, existsSync(join(callsDir, `${n}.js`)) ? statSync(join(callsDir, `${n}.js`)).mtimeMs : 0]));
-  const stale = new Set<string>();
+  const stale = new Set<string>(), cut = new Map<string, string>();
   const fresh = (n: string, at?: string) => { const ok = !at || Date.parse(at) >= written.get(n)! - 60_000; if (!ok) stale.add(n); return ok; };
   const text = (c: any): string => typeof c === 'string' ? c : Array.isArray(c) ? c.map(text).join('') : c && typeof c === 'object' ? (typeof c.text === 'string' ? c.text : text(c.content ?? c.Ok?.content ?? '')) : '';
   const full = (t: string) => { const m = t.match(/Full output saved to: (\S+)/); return m && existsSync(m[1]) ? readFileSync(m[1], 'utf8') : t; };
@@ -282,11 +283,16 @@ function save() {
         if (r && !r.Err && fresh(n, o.timestamp)) here.set(n, full(text(r.Ok?.content ?? r.content ?? r)));
       }
     }
-    for (const [n, t] of here) if (!found.has(n) && parseResult(t)) found.set(n, t);
+    for (const [n, t] of here) if (!found.has(n)) {
+      const why = cutByHost(t);
+      if (why) { if (!cut.has(n)) cut.set(n, why); continue; } // a newer, whole return of the same call still wins
+      if (parseResult(t)) found.set(n, t);
+    }
   }
   mkdirSync(respDir, { recursive: true });
   for (const n of want) {
     const t = found.get(n);
+    if (!t && cut.has(n)) { console.log(`${n}: the return was ${cut.get(n)}; not saved. The missing part is on no disk, so run a smaller call (source.md › When a call fails), not the same one again`); continue; }
     if (!t) { console.log(stale.has(n) ? `stale: ${n} (only returns older than calls/${n}.js were found: run the call again)` : `not found: ${n} (no use_figma call with description "casebook figma-source ${role} ${n}" in the last two days' transcripts)`); continue; }
     if (!parseResult(t)) { console.log(`${n}: the return holds no figma-source result (an error?); not saved:\n${t.slice(0, 300)}`); continue; }
     writeFileSync(join(respDir, `${n}.json`), t);

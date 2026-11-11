@@ -190,6 +190,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   exact text colour, size, weight, lines and drawables; the first install replaces the app with an uninstall (data
   cleared) only with `--yes-uninstall` once agreed. With that build, Android design captures save the view data and
   the check reads it before OCR and pixels (REQ-086; `figma/references/conformance.md` §3).
+- **A design check needs every screen (user, 2026-11-11, video-enhance REQ-013).** A run that left Design screens
+  uncaptured or in the wrong state (Android: or without view data) is discarded for the design check, not topped up:
+  once the phone is free, a design pass on the re-signed debuggable build captures every routed screen again
+  (`figma/references/conformance.md` §2, *All or again*).
 - **What the design check holds the app to (user, 2026-11-06).** A text box's padding and border, font size and the
   text's centring in its box, and the gaps between buttons; never a text's words or its own place on the screen
   (`copy` and `position` are gone; texts pair by place when the words differ) (`figma/references/conformance.md` §3).
@@ -201,6 +205,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   (`library/pdr/knowledge/design-guideline.md`). Padding is measured from the letters' pixels, so a chip narrower only
   because Roboto is narrower is fine, and a chip whose padding differs is a `padding` item, never the next chip's
   position (`figma/references/conformance.md` §3).
+- **Ported from the spec agent's Android branch (user, 2026-11-11).** From rdqe-spec-contract-agent
+  `feat/figma-android-ui-conformance`, copied by hand: Figma replies cut by the host are refused on save; Android
+  design captures clear FLAG_SECURE for the screenshot and refuse a blank one; `unspecced` lists tappable app controls
+  where Figma draws nothing; icon buttons are measured by the icon they paint (`figma/references/conformance.md`).
 - **Design tab items for Design and RD (user, 2026-11-06).** Each item opens with a plain sentence (what differs,
   Design's value, the app's); raw values sit under 「How it was measured」; review notes avoid ΔE and tool terms
   (`figma/references/conformance.md` §4).

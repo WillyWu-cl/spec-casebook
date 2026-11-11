@@ -46,6 +46,20 @@ export function useFigmaReturns(notBefore: Map<string, number>, opts: { days?: n
   return found;
 }
 
+// A return the host cut before writing it to the transcript (ported from rdqe-spec-contract-agent's save-mcp-response,
+// feat/figma-android-ui-conformance, 2026-11-02, with the user's approval 2026-11-11). Codex (0.163+) keeps only the
+// head and tail of any string over about 50,000 characters and puts 「…N chars truncated…」 in the middle; Claude Code
+// stops an MCP result at 25,000 tokens (MAX_MCP_OUTPUT_TOKENS) and appends 「[OUTPUT TRUNCATED - exceeded N token
+// limit]」. The missing part is on no disk, so saving again or repeating the same call never gets it: the call must
+// return less (smaller --budget, --per 1, or fewer groups). Returns why, or null for a whole return.
+export function cutByHost(t: string): string | null {
+  const codex = [...t.matchAll(/…(\d+) chars truncated…/g)].map(m => Number(m[1]));
+  if (codex.length) return `cut by Codex: ${codex.reduce((a, b) => a + b, 0)} characters missing in ${codex.length} place(s)`;
+  const cc = t.match(/\[OUTPUT TRUNCATED - exceeded (\d+) token limit\]/);
+  if (cc) return `cut by Claude Code at its ${cc[1]}-token MCP output limit (MAX_MCP_OUTPUT_TOKENS)`;
+  return null;
+}
+
 // the JSON object in a return: bare, inside the host's text blocks, or with a line of text around it
 export function jsonOf(t: string): any {
   const s = t.trim();

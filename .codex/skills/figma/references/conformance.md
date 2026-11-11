@@ -124,6 +124,12 @@ dark or light background (a board drawing each screen in both) is only taken fro
   capture those by hand (`design <id>`) if they did show, else a later round does. The `state` check and the review
   passes still catch a wrong state. A computer without the Figma data (`out/`) gets one line saying so and captures by
   hand (`design.ts … screens <TC-…>` lists a row's screens).
+- **All or again (user, 2026-11-11).** A design check is made on one complete set of captures. When a run leaves any
+  routed screen uncaptured or in the wrong state (or, on Android, captured without view data), do not check or review
+  it and do not top it up from `--left`: discard its design captures (`git rm` its `captures.jsonl`, move its
+  `screenshots/design/` to `screenshots/design-discarded/`) and, once the phone is free, run a design pass on the
+  re-signed debuggable build (`android-viewdump.ts prepare`) that captures every routed screen. A screen that cannot be
+  brought about on the platform (no fault switch) is excluded on the Plan view with that reason first.
 - **A design pass** (asked for on its own, or a feature with no table): its own run folder `runs/<date>-design/`.
   After a casebook run on the same build, `design.ts … screens --left <run>` lists only what that run did not capture,
   and the pass walks just those (check both run folders; the Design tab shows the newest capture of each screen).
@@ -152,6 +158,14 @@ below 1) and the colour on the screenshot (`figma.drawn`, `app.drawn`, `delta.dE
 not show (alpha, a layer over the view, another view matched) is named on the item, and `check` prints how many set
 values it checked and which were drawn differently: a sanity check on the view data's matching. Sizes are compared in sp, before the phone's font scale; a phone not at font scale 1.0 (the SM-A5360 is at 1.1)
 wraps differently, which the `lines` note says.
+
+**Secure screens are not captured black (2026-11-11, ported from rdqe-spec-contract-agent).** A window the app marks
+FLAG_SECURE (PhotoDirector's editor does for free accounts) screenshots black or empty. Every Android design capture
+(and `android-viewdump.ts dump`) first asks `dumpsys window` whether a visible app window is secure; if so, the view
+dumper clears the flag on the app's own windows for the moment of the screenshot and puts it back, confirmed by
+dumpsys both ways (`secure_cleared` on the capture). Without the debuggable build the capture is refused and says so;
+a flag that will not come back stops with `adb shell am force-stop <package>`, which restores it. A screenshot that is
+still empty, not a PNG or one flat colour below the status bar is refused too, whatever the cause.
 `node scripts/android-viewdump.ts` gets what no outside dump holds, from inside the app: each view's text colour,
 size (px and sp), weight (100–900) and typeface, line count, alpha and visibility, background and outline, elevation,
 on-screen bounds (they match the page source's) and the layout file's own attributes (`@dimen/…`, `@color/…`,
@@ -213,10 +227,11 @@ what is left is a candidate:
 | `padding` | the inset from a text's letters to the edge of its box more than 2 pt off Figma's (the letters found on the screenshot in the text's own colour inside the box, Figma's render bounds on the other side; 3 pt on OCR boxes, 4 pt on text boxes where no letters were found): the aligned side and the top; where the box hugs its content (a chip, a tag) and the words are the same, also left and right together (and top and bottom), their sum more than 3 pt off, centred text or not;  top and bottom only for one line on both sides, measured to the middle of the line | minor |
 | `align` | a text Figma centres in its box more than 2 pt off centre (its letters; 3 on OCR boxes, 4 on text boxes), across or down | minor |
 | `border` | the box's border: Figma's stroke (a see-through one blended over the fill) against the app's own stroke (view data) or the border read on the screenshot; one drawn and not the other, ΔE > 18, or over 1 pt wider or narrower | minor |
-| `spacing` | the gap (up to 32 pt in Figma) between neighbouring buttons on a row or in a column, more than 2 pt off edge to edge (3 pt centre to centre where an app box is a touch area larger than the drawing) | minor |
+| `spacing` | the gap (up to 32 pt in Figma) between neighbouring buttons on a row or in a column, more than 2 pt off edge to edge (3 pt centre to centre where an app box is a touch area larger than the drawing). An Android icon button with view data is measured by the box its icon is painted in (its scaleType inside the padding, when its own background paints nothing; ported from rdqe-spec-contract-agent, 2026-11-11), so padding around the icon is not a gap | minor |
 | `radius` | a fill's corner radius over 2 dp from Figma's (view data) | minor |
 | `colour` | a filled shape (buttons, chips, cards, and badges and tags from 12 × 8 pt) ΔE > 12 from its Figma fill, or a text ΔE > 18 from its Figma colour | minor |
 | `control` | an icon control of the inventory (no label) with no tappable app element where Figma draws it | major |
+| `unspecced` | Android: a tappable app control (clickable and enabled in the page source, not under a later layer, under 30 % of the window) where Figma draws no node of about its size (overlapping half of the smaller, 1/25 to 4 times its area): not in the Design, or drawn elsewhere; the outer one of nested controls. Only on a capture in the frame's state, outside other features' areas (ported from rdqe-spec-contract-agent COVER-02, 2026-11-11: two misplaced Replace buttons passed every Figma-first item) | minor |
 | `extra` | short app text Figma does not draw, on no line where Figma draws a text | info |
 | `copy` | `--full` only: other words than Figma's (minor when one holds the other or only a number's format differs) | major |
 | `position` | `--full` only: an exactly matched text more than 4 pt from where Figma puts it | minor |

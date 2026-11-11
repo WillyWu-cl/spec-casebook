@@ -198,6 +198,10 @@ and `library.json` values come from those nodes; `modes` is set only on frames t
   chunk exactly. Keep the smaller plan's return out of `responses/` (the newest plan per board wins). On 2811:89056
   (2026-11-02) one 513-node chunk dropped every time; its pieces took 62 s, 66 s and 16 s.
 - A return over the host's tool output limit: lower `--budget` (the default keeps returns near 40 KB) and plan again.
+  The host may cut a long return without an error: Codex keeps only the head and tail of a string over about 50,000
+  characters (「…N chars truncated…」 in the middle), Claude Code stops at 25,000 tokens (「[OUTPUT TRUNCATED …]」).
+  `save` and `figma-check.ts --save` refuse such a return and say so (`lib/figma-returns.ts` cutByHost, ported from
+  rdqe-spec-contract-agent, 2026-11-11). The missing part is on no disk: run a smaller call, never the same one again.
 - A board over 65536 pt on its long side: `todo.json` says so; take its screens one by one after merge.
 - Quota: Figma counts every call. `summary.json` records how many this read took; note the account's remaining
   quota before a large read and stop (do not retry in a loop) when it runs out.

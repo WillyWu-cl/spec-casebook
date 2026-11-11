@@ -29,7 +29,7 @@ import { spawnSync } from 'node:child_process';
 import { join } from 'node:path';
 import { arg, assertIds, featureDir, ROOT, writeJson } from './lib/library.ts';
 import { listSpecSets } from './lib/specs.ts';
-import { jsonOf, useFigmaReturns } from './lib/figma-returns.ts';
+import { cutByHost, jsonOf, useFigmaReturns } from './lib/figma-returns.ts';
 
 const [feature, maybeSet] = process.argv.slice(2);
 if (!feature) { console.error('Usage: node scripts/figma-check.ts <product>/<feature> [<spec-set folder>] [--compare | --ack <ids> | --shot <png> <board> [--box x,y,w,h] [--tiles ids] | --prune]'); process.exit(2); }
@@ -250,14 +250,16 @@ function readPlan() {
   for (const c of todo?.calls ?? []) notBefore.set(desc(c.name), statSync(join(checkDir, `${c.name}.js`)).mtimeMs);
   const found = useFigmaReturns(notBefore, { marker: 'figma-check' });
   for (const f of files) {
-    const r = found.get(desc(tag(f))), j = r && jsonOf(r.text);
-    if (j?.mode === 'hash') { writeJson(join(checkDir, `${tag(f)}.json`), j); console.log(`saved check ${tag(f)}.json (${j.boards.length} boards)`); }
+    const r = found.get(desc(tag(f))), cut = r && cutByHost(r.text), j = r && !cut && jsonOf(r.text);
+    if (cut) console.log(`check ${tag(f)}: the reply was ${cut}; not saved (check fewer boards per call)`);
+    else if (j?.mode === 'hash') { writeJson(join(checkDir, `${tag(f)}.json`), j); console.log(`saved check ${tag(f)}.json (${j.boards.length} boards)`); }
   }
   if (!todo) return;
   const left = new Map<string, { key: string; page: string; entries: any[] }>(), today = new Date().toISOString().slice(0, 10);
   for (const c of todo.calls) {
-    const r = found.get(desc(c.name)), j = r && jsonOf(r.text);
+    const r = found.get(desc(c.name)), cut = r && cutByHost(r.text), j = r && !cut && jsonOf(r.text);
     const keep = (names: string[]) => { for (const n of names) left.set(n, { key: c.key, page: c.page, entries: c.groups[n] }); };
+    if (cut) { console.log(`${c.name}: the reply was ${cut}; nothing saved from it, packed again (if it is cut again, plan with a smaller --budget)`); keep(Object.keys(c.groups)); continue; }
     if (!j || j.mode !== 'groups') { console.log(`${c.name}: ${r ? `no inventory in the reply: ${r.text.slice(0, 200)}` : 'no reply found (dropped?)'}; packed again`); keep(Object.keys(c.groups)); continue; }
     for (const [name, g] of Object.entries<any>(j.groups)) {
       writeJson(join(ex, `figma-inventory-${name}.json`), { file: c.key, page: c.page, group: name, extracted_at: today, ...g });

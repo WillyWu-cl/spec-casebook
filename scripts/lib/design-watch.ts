@@ -62,9 +62,9 @@ export function darkFill(node: any): boolean | null {
   return l < 0.35 ? true : l > 0.65 ? false : null;
 }
 
-/** A screenshot's appearance (its upper half): true when most of it is dark, false when most is light, null when unreadable or mixed.
- *  Plain 8-bit RGB / RGBA PNGs (what WDA and UiAutomator2 return); every 4th pixel of every 4th row is sampled. */
-export function darkShot(png: Buffer): boolean | null {
+// Plain 8-bit RGB / RGBA PNGs (what WDA, UiAutomator2 and screencap return): every 4th pixel of every 4th row whose
+// y the filter keeps, as luma 0–1; null when the file is not one.
+function sampleLuma(png: Buffer, keep: (y: number, h: number) => boolean): number[] | null {
   try {
     if (png.length < 33 || png.readUInt32BE(0) !== 0x89504e47) return null;
     const w = png.readUInt32BE(16), h = png.readUInt32BE(20), depth = png[24], type = png[25];
@@ -76,8 +76,8 @@ export function darkShot(png: Buffer): boolean | null {
       if (kind === 'IEND') break;
       o += 12 + len;
     }
-    const raw = inflateSync(Buffer.concat(idat)), bpp = type === 6 ? 4 : 3, stride = w * bpp;
-    let prev = new Uint8Array(stride), cur = new Uint8Array(stride), dark = 0, all = 0;
+    const raw = inflateSync(Buffer.concat(idat)), bpp = type === 6 ? 4 : 3, stride = w * bpp, out: number[] = [];
+    let prev = new Uint8Array(stride), cur = new Uint8Array(stride);
     for (let y = 0; y < h; y++) {
       const at = y * (stride + 1), filter = raw[at];
       for (let i = 0; i < stride; i++) {
@@ -87,13 +87,32 @@ export function darkShot(png: Buffer): boolean | null {
         else if (filter === 4) { const q = a + b - c, pa = Math.abs(q - a), pb = Math.abs(q - b), pc = Math.abs(q - c); p = pa <= pb && pa <= pc ? a : pb <= pc ? b : c; }
         cur[i] = (x + p) & 255;
       }
-      // the page's background shows in the upper half below the status bar; a keyboard or sheet fills the lower one
-      if (y % 4 === 0 && y > h * 0.06 && y < h * 0.5) for (let i = 0; i + 2 < stride; i += 4 * bpp) { all++; if (luma(cur[i], cur[i + 1], cur[i + 2]) < 0.5) dark++; }
+      if (y % 4 === 0 && keep(y, h)) for (let i = 0; i + 2 < stride; i += 4 * bpp) out.push(luma(cur[i], cur[i + 1], cur[i + 2]));
       [prev, cur] = [cur, prev];
     }
-    if (!all) return null;
-    return dark / all > 0.6 ? true : dark / all < 0.4 ? false : null;
+    return out;
   } catch { return null; }
+}
+
+/** A screenshot's appearance (its upper half): true when most of it is dark, false when most is light, null when unreadable or mixed. */
+export function darkShot(png: Buffer): boolean | null {
+  // the page's background shows in the upper half below the status bar; a keyboard or sheet fills the lower one
+  const l = sampleLuma(png, (y, h) => y > h * 0.06 && y < h * 0.5);
+  if (!l?.length) return null;
+  const dark = l.filter(v => v < 0.5).length / l.length;
+  return dark > 0.6 ? true : dark < 0.4 ? false : null;
+}
+
+/** Why a screenshot shows nothing, or null when it shows something: empty, not a PNG, or one flat colour below the
+ *  status bar (a FLAG_SECURE window comes back black; ported from rdqe-spec-contract-agent caf66e6, 2026-11-11). */
+export function blankShot(png: Buffer): string | null {
+  if (!png.length) return 'the screenshot is empty';
+  if (png.length < 8 || png.readUInt32BE(0) !== 0x89504e47) return 'the screenshot is not a PNG';
+  const l = sampleLuma(png, (y, h) => y > h * 0.06);
+  if (!l) return null;   // a PNG the sampler does not read (16-bit, palette): let it through
+  let lo = 1, hi = 0; for (const v of l) { if (v < lo) lo = v; if (v > hi) hi = v; }
+  if (l.length && hi - lo < 0.01) return `the screenshot is one flat colour (luma ${l[0].toFixed(2)}): a secure (FLAG_SECURE) screen, or nothing drawn yet`;
+  return null;
 }
 
 // Short Figma texts and the background appearance of every routed screen, cached in the run folder until plan.json
