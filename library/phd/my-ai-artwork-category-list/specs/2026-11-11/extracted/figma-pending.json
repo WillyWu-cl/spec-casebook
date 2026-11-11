@@ -1,0 +1,6 @@
+{
+  "since": "2026-11-11",
+  "reason": "no links: the PDF (a Figma export) carries no Figma link to its boards or file",
+  "links": { "design": null, "pm": null, "mx": null },
+  "owed": ["step 8", "step 10"]
+}

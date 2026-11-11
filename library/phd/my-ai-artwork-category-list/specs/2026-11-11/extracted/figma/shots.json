@@ -1,0 +1,62 @@
+{
+  "region-pm-header.png": {
+    "board": "pm-header",
+    "group": null,
+    "hash": null,
+    "captured_at": "2026-11-11T02:56:59.172500Z",
+    "box": [
+      60,
+      60,
+      2160,
+      380
+    ]
+  },
+  "region-pm-overview.png": {
+    "board": "pm-overview",
+    "group": null,
+    "hash": null,
+    "captured_at": "2026-11-11T02:56:59.226489Z",
+    "box": [
+      60,
+      440,
+      2000,
+      360
+    ]
+  },
+  "region-pm-entry-flow.png": {
+    "board": "pm-entry-flow",
+    "group": null,
+    "hash": null,
+    "captured_at": "2026-11-11T02:56:59.382280Z",
+    "box": [
+      60,
+      820,
+      2000,
+      1220
+    ]
+  },
+  "region-pm-recent.png": {
+    "board": "pm-recent",
+    "group": null,
+    "hash": null,
+    "captured_at": "2026-11-11T02:56:59.466646Z",
+    "box": [
+      60,
+      2200,
+      1560,
+      1000
+    ]
+  },
+  "region-pm-all-categories.png": {
+    "board": "pm-all-categories",
+    "group": null,
+    "hash": null,
+    "captured_at": "2026-11-11T02:56:59.557211Z",
+    "box": [
+      60,
+      3200,
+      1560,
+      1120
+    ]
+  }
+}

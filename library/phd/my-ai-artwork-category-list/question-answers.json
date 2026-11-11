@@ -1,0 +1,65 @@
+{
+  "Q-1": {
+    "question": "The spec says the tab bar, the Recent list, 「Photo」 / 「Video」 and 「Select」 stay 「同今天」 and cites 「26 8E Recent」 and the decisions ledger 「帳本 2026-10-28」 (codes [D0-xx] / [D1-xx]); neither file is in the spec set, so the rows take 「today」 as the build before 11/E. Please send the ledger and the 8/E Recent spec, or confirm. Assumption: today's build behaviour is the expected result. R-003, R-004, R-005, TC-003, TC-004, TC-005",
+    "answer": "同今天意思是照目前當下的狀態",
+    "by": "",
+    "at": "2026-11-11T03:35:05.323Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-003): R-005 now says 「as today」 = the app's current behaviour; TC-005 note updated."
+  },
+  "Q-2": {
+    "question": "Figma not compared with the PDF: frames newer than the export may be missing (the PDF carries no Figma link). Assumption: the PDF is complete. All rows.",
+    "answer": "先當PDF是完整的",
+    "by": "",
+    "at": "2026-11-11T03:35:05.323Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-003): the PDF is taken as complete; figma-pending.json stays until a Figma link arrives. No row changed."
+  },
+  "Q-3": {
+    "question": "The sheet draws ✕, a grabber and a dimmed page behind it but states what none of them does, nor what Android system Back does. Assumption: each closes the sheet and leaves the tab unchanged. R-030, R-031, R-032, TC-021, TC-022, TC-023, TC-024",
+    "answer": "預期都會關閉清單",
+    "by": "",
+    "at": "2026-11-11T03:40:49.337Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-003): R-030, R-031, R-032 marked answered; TC-021 – TC-024 notes updated."
+  },
+  "Q-4": {
+    "question": "「其他英文字母序」: in a non-English UI language, are the tabs and rows sorted by the English feature names or by the translated names? Assumption: the order is checked in the English UI only. R-003, R-012, TC-003, TC-007",
+    "answer": "只在英文檢查",
+    "by": "",
+    "at": "2026-11-11T03:40:49.337Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-003): R-012 says the order is checked in English; TC-007 note updated."
+  },
+  "Q-5": {
+    "question": "「多選中點 → 切過去並取消選取」: does multi-select end entirely (no 「Cancel」, no bottom bar) on the new tab, or does only the selection clear while 「Select」 mode stays? Assumption: multi-select ends. R-023, TC-019",
+    "answer": "結束多選",
+    "by": "",
+    "at": "2026-11-11T03:40:49.337Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-003): R-023 now states multi-select ends; TC-019 note updated."
+  },
+  "Q-6": {
+    "question": "After choosing a tab far to the right, is the chosen tab scrolled into view in the tab bar? The entry-flow mockup shows it so, the notes only say 「同今天」. Assumption: it is scrolled into view. R-020, TC-020",
+    "answer": "會",
+    "by": "",
+    "at": "2026-11-11T03:40:49.337Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-003): R-020 now states the chosen tab is scrolled into view; TC-020 note updated."
+  },
+  "Q-7": {
+    "question": "The header sentence 「與今天 My AI Artwork 的差異：…」 is marked 「建議句，待 PM 確認」: is it meant to appear in the app (a What's New or tip text)? Assumption: it is a description for the team, not an app string, so no row checks it.",
+    "answer": "不用檢查",
+    "by": "",
+    "at": "2026-11-11T03:35:30.543Z",
+    "platform": "android",
+    "status": "done",
+    "resolution": "Confirmed the assumption (REQ-003): no row checks the header sentence. No row changed."
+  }
+}
