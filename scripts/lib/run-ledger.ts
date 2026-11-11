@@ -75,8 +75,13 @@ export function syncTokens(file: string, local: Msg[]): Msg[] {
     }
     c = { size, byId }; ledgerCache.set(file, c);
   }
+  // A transcript can hold one message ID twice (a streamed partial with zero counts, then the final one): keep the
+  // larger, or each build sees one of them as changed and appends both again, forever (2026-11-11)
+  const sum = (m: Msg) => m.input + m.cacheWrite + m.cacheRead + m.output;
+  const best = new Map<string, Msg>();
+  for (const m of local) { const o = best.get(m.id); if (!o || sum(m) >= sum(o)) best.set(m.id, m); }
   const add: string[] = [];
-  for (const m of local) {
+  for (const m of best.values()) {
     const o = c.byId.get(m.id);
     if (o && o.input === m.input && o.cacheWrite === m.cacheWrite && o.cacheRead === m.cacheRead && o.output === m.output) continue;
     c.byId.set(m.id, m);

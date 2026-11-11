@@ -1,0 +1,14 @@
+{
+  "spec_agent": {
+    "repo": "~/Desktop/Spec Agent",
+    "ref": "origin/main",
+    "commit": "uncommitted-20261104",
+    "feature": "video-enhance",
+    "platform": "ios",
+    "cases": 271,
+    "from": "snapshot"
+  },
+  "mapping": "comparisons/20261110b_casebook-vs-spec-agent.mapping.json",
+  "generated_at": "2026-11-10T06:55:17.976Z",
+  "gaps": []
+}

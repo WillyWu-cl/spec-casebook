@@ -46,7 +46,7 @@ lines; put the full rule in the skill or reference file that applies it and poin
   back: then it is a new card naming the closed ticket (overlay, *Dedupe per OS*).
 - **eBug owner and type (RD, 2026-10-21 — replaces the 2026-10-20 rule; revertible).** Casebook findings are
   `[AIAgent]` Functional or `[UI]`, owner RD, never `[UX]`; RD forwards to PM when it wants a ruling. A
-  finding with no spec basis is held as a PM question, not filed. Exploration (`[AIFound]`) keeps filing `[UX]`.
+  finding with no spec basis is filed to PM for a decision (2026-11-11, below). Exploration (`[AIFound]`) keeps filing `[UX]`.
   **Revert** — the user may restore the 2026-10-20 rule: "A UX problem goes to PM (BugBelong PM), who decides before
   handing it to RD. A problem that plainly needs an RD fix (performance, waits, missing behaviour) is Functional,
   owner RD, with no `[UX]` tag." Put that text back here, then follow the revert steps in overlay rule 5
@@ -54,6 +54,17 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **Text bugs go to RD or PM (user, 2026-11-11).** Text that differs from the spec is RD when the spec states it and
   the app shows something else (fix the app's text), PM when the spec's own text must change (wrong, unclear, two
   sheets disagree, or none states it); never Doc (`ebug-draft-generator` › Owner, overlay rule 5).
+- **Visible defects and open questions are filed (user, 2026-11-11).** A plainly wrong screen is filed even when its
+  exact expected wording is only a PM proposal or open question; a question the run cannot settle (an undecided
+  string, a proposal the app differs from) is filed to PM (BugBelong PM) for a decision, not held; one already
+  answered by a ruling or ticket is cited instead (`ebugs.md` step 1, overlay rule 5).
+- **PM decisions on user experience are `[UX]` (user, 2026-11-11).** A problem filed only to PM for a decision that is
+  a user-experience problem is `[AIAgent][UX]`, BugBelong PM; text stays `[UI]`, broken behaviour Functional (overlay
+  rule 5; `check_ebug_format.py` allows `[AIAgent][UX]` only with BugBelong PM).
+- **One-way state orders the run (user, 2026-11-11).** A row that leaves a kept state the UI cannot undo (「Don't show
+  again」…) runs after every row needing the old state; further consumers go last behind a reset (Android `pm clear`
+  or reinstall), unless an earlier row already observed the same outcome: then its evidence records the later
+  row (`analysis.md` pass 9).
 - **Pink fault switches, AI Mini Drama (2026-10-20).** 「Fail turn」 fails an LLM chat turn (outline, cast confirm,
   storyboard offer); 「Inject failure status」 only applies to a video beat once filming starts. An injected failure
   logs `AppTweaks injected <Tool> failure #N`; `status=tool_error` alone is the server's own failure. Re-check any bug
@@ -68,9 +79,15 @@ lines; put the full rule in the skill or reference file that applies it and poin
   drain tokens. Missed rules are fixed in the reading step or pass that skipped them, never by copying another
   tool's cases; the spec agent comparison is a report on request only (`SKILL.md`, `analysis.md`).
 - **Spec agent cases as an input, Video Enhance (user, 2026-11-10, REQ-008).** For `pdr/video-enhance` the spec agent's
-  colleague-checked cases are a source: the table covers all of them; their rules win where our spec is silent or
-  older (ECL pricing, Android tier, 2K+ block), our newer Figma wins where theirs follows an older spec. Other features
-  keep REQ-037 unless the user says otherwise.
+  colleague-checked cases are a source: the table covers all of them; their rules win only where today's board is
+  silent (ECL pricing, Android tier). Their main PDF is a 2026-10-07 export of the old 26.09_v2 state, so a case that
+  today's board contradicts is dropped, never filed (user, 2026-11-11, REQ-011: the 2K+ block, DRA262611P0072). Other
+  features keep REQ-037 unless the user says otherwise.
+- **Video Enhance Design source (user, 2026-11-11, REQ-010).** The only Design spec for `pdr/video-enhance` is page
+  2974:19965, section 「AI Video Enhance_26.09_v2」 (`figma-frames.json` `design_only`); every Design link and Expect in
+  its eBugs comes from there (`ebugs.md` step 1).
+- **Spec Link URL on its own line (user, 2026-11-11).** In an eBug Note, `Spec Link: <source>, <board> board (…) -`
+  then the URL alone on the next line; `check_ebug_format.py` fails a URL on the label's line (overlay rule 2).
 - **Every combination (user, 2026-11-10, REQ-008).** Settings chosen together get a row per combination of their
   values (the full cross product), each priced and checked in the result; `### Combinations` grid, `check.ts`
   (`analysis.md` pass 10).
@@ -140,6 +157,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   (`qa-report/SKILL.md` › *Expected = today's spec*). But a build that does what the bug expected is OK even
   with a board unread or a question open (user, 2026-11-05, REQ-098).
 - **AI Mini Drama credits (user, 2026-11-03, REQ-073, until lifted).** For runs and rechecks, use whatever credits a check needs for anything except a full video generation (characters, outlines, storyboards, regenerations, updates); a full video generation still needs the user's go-ahead or an existing video. Check every path a bug names rather than stopping at one to save credits.
+- **Chinese copy of every table (user, 2026-11-11).** Each table has a Traditional Chinese reading copy
+  (`cases.zh-Hant.csv`) that the 中文 switch shows on Cases, Results, Progress and Coverage; it is natural Taiwan
+  Chinese, never word by word, kept current row by row with `scripts/zh-copy.ts` after drafts and Saves; run results
+  stay as recorded (`references/zh-copy.md`, `SKILL.md` step 4).
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
   warns (`formats.md`, writing rules).

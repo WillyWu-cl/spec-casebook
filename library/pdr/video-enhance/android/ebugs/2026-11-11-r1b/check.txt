@@ -1,0 +1,4 @@
+⚠ WARN  Video-Enhance-R1b-15  Short Description is 122 chars (budget 120)
+
+15 bug(s) checked — 0 error(s), 1 warning(s)
+Format OK — clear to file.

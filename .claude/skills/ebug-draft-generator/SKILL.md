@@ -83,10 +83,12 @@ Reviewer rules 1–7 are in `.claude/skills/ebug-tr-filer/references/casebook-ov
 fails an entry that breaks one. Beyond them: no two numbered steps on one line, and a typed prompt stays inside its
 own step, verbatim; when no document exists at all, put 「Link needed」 in the QA note so the review page asks the
 reviewer for one; put the Class call in the entry header and its reasoning in the QA note, so the reviewer can flip
-it. Casebook findings never carry `[UX]` (rule 5).
+it. Casebook findings carry `[UX]` only when they go to PM for a decision on a user-experience problem
+(`[AIAgent][UX]`, BugBelong PM; user, 2026-11-11, rule 5).
 
 **UX basis rule (RD, 2026-10-21) — exploration tags only** (`[AIFound]` / `[EDF]` / `[MXFound]`; `[AIAgent]` never
-takes `[UX]`). Tag and owner follow what the expected result rests on:
+takes `[UX]` except a PM decision on a user-experience problem, rule 5). Tag and owner follow what the expected
+result rests on:
 
 | Basis of the expectation | Tag | Class · Owner | Note line |
 |---|---|---|---|
@@ -157,7 +159,8 @@ Spec string: 「...」          (only when a spec defines the string)
 
 Note:
 Device: <device the finding was last reproduced on>
-Spec Link: <milestone> <sheet> - <url>          (every entry — the sheet it rests on, else the screen's sheet)
+Spec Link: <milestone> <sheet> -                (every entry — the sheet it rests on, else the screen's sheet)
+<url>                                           (alone on the line under its Spec Link, user 2026-11-11)
 Basis: In-product — <feature>: <behaviour> (<document>)   (only when not spec-based; External / None → [UX], owner PM)
 <Claude Reviewed>
 ​```
@@ -331,7 +334,8 @@ exactly one 摘要 with Chinese in it, Note lines restricted). Run it through
   16.7.0 batch stamped 24 iOS bugs with the host Mac). Then the reviewer marker on its own line: **`<Claude
   Reviewed>`**. No build numbers here — Version and Build No are separate eBug fields.
   - **`Spec Link:` lines** (QA, 2026-08-27; reviewer rule 2) go between `Device:` and `<Claude Reviewed>`, **one line
-    per sheet**: `Spec Link: <milestone> <sheet name> - <url>`. **Only the sheet(s) this entry's argument rests on —
+    per sheet**: `Spec Link: <milestone> <sheet name> -`, then **the URL alone on the next line** (user, 2026-11-11:
+    a URL on the label's line is hard to read and copy; `check_ebug_format.py` fails it). **Only the sheet(s) this entry's argument rests on —
     never a blanket set**: two disagreeing sheets → both; one disputed string → the sheet that defines it; a sheet
     that merely contains the string on a board about something else → left out. An entry claiming no sheet covers
     the behaviour links the one sheet for the screen it is about and says 「No sheet describes this」 in Expect

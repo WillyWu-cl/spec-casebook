@@ -1,0 +1,7 @@
+# Dedupe, batch 3 (ISS-VEA-34), Android pool only (per OS), 2026-11-11
+ISS-VEA-34	dedupe on bodies.json (83 Video Enhance candidates)	no likely duplicate
+ISS-VEA-34	DRA262611P0072	Cancelled (old board, REQ-011): asked for the opposite (reject 2K+)
+ISS-VEA-34	DRA262611P0073	Open, batch 1: 「0fps」 badge for stock and Timeline sources — same badge, other cause; related, named in the QA note
+ISS-VEA-34	DRA262603-0149	Close, 16.2.0: Media Picker trim preview fails for 8K — another screen
+ISS-VEA-34	DRA262610-0023	Close, 16.8.0: Timeline converting dialog missing — the editor path, not Video Enhance
+# Text searches: 「8K」, 「Converting for Better Performance」, 「Enhance 0fps」 (dedupe-text.txt)

@@ -1,0 +1,19 @@
+# ISS-VEA-33 Timeline task: charge at the tap, upload, completion only as a push
+# PowerDirector Mobile for Android 16.9.0 (2611091), Stage server, Samsung SM-A5360 / Android 15 (phone time, UTC+8)
+# Video Enhance task lines (session = charge, transcode, upload, status, errors, push, toasts) and the balance
+# when it changes, in the windows below; identical status polls folded; tokens dropped, URL queries cut at '?'.
+
+## TC-162 Enhance and upload (2026-11-11 09:40:20–09:41:00; logs/R1-tc095-20261111-093235/logcat-live.txt)
+2026-11-11 09:40:25.469 CreditSystemManager: totalRemain=28811
+2026-11-11 09:40:26.371 Create session: start
+2026-11-11 09:40:26.745 AIVideoAnime:  create session response code->200
+2026-11-11 09:40:26.746 Create session: end
+2026-11-11 09:40:26.759 Transcode: start
+2026-11-11 09:40:34.213 Transcode: finish
+2026-11-11 09:40:34.338 Upload to S3: start
+2026-11-11 09:40:53.586 AIVideoAnime:  upload response code->200
+2026-11-11 09:40:53.586 Upload to S3: finish
+
+## TC-162 completion in the editor (2026-11-11 09:43:50–09:45:00; logs/R1-tc095-20261111-093235/logcat-live.txt)
+2026-11-11 09:43:57.004 FcmInstanceIDService: key = Link, value = pdr://ai_video_enhance?oid=credit_create_video_enhance_v2_1794361226164
+2026-11-11 09:43:57.004 FcmInstanceIDService: key = Msg, value = Good news! Your AI Video Enhance task has been completed. Tap here to view your results.

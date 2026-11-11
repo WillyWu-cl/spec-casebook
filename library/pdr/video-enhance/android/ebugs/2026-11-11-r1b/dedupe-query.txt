@@ -1,0 +1,93 @@
+
+12 of 18 entries have a possible duplicate (overlap >= 34%, or a shared quoted label / rare phrase, marked !). Judge each one yourself — wording varies, so this ranks candidates, it does not decide.
+
+[Video-Enhance-R1b-01] PDR-A 16.9.0 - [AIAgent][UI] AI Video Enhance: Demo page description is AI Reframe's text, not Video Enhance's
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 29%  closed    DRA252503-0298  PDR-A 15.1.0 - Imgae to Video/Talking Avatar/AI Video Enhancer/AI Video Upscaler/AI Anim
+              shares phrase "demo page"
+    ! 29%  closed    DRA242410-0142  PDR-A 14.5.1 - [AT Found]AI Video Enhancer: Back to the demo page after tapping the back
+              shares phrase "demo page"
+
+[Video-Enhance-R1b-02] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: ‹ and system Back on Add Media skip the Demo page it was opened from
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 50%  closed    DRA242410-0142  PDR-A 14.5.1 - [AT Found]AI Video Enhancer: Back to the demo page after tapping the back
+              shares phrase "demo page"
+    ! 38%  closed    DRA252503-0298  PDR-A 15.1.0 - Imgae to Video/Talking Avatar/AI Video Enhancer/AI Video Upscaler/AI Anim
+              shares phrase "demo page"
+    ! 25%  OPEN      DRA262611P0081  PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Recent task has no ‹ and system Back exits to
+              shares phrase "system back"
+
+[Video-Enhance-R1b-03] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Trim handles can meet, leaving a 「00:00」 selection under the 1 s minimum
+      feature='AI Video Enhance'  searched 68 candidate(s)
+      no likely duplicate
+
+[Video-Enhance-R1b-04] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Pro purchase succeeds but no 「You're all set」 dialog is shown
+      feature='AI Video Enhance'  searched 68 candidate(s)
+      no likely duplicate
+
+[Video-Enhance-R1b-05] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: 「Don't show again」 ticked then left with ‹ still turns the Demo page off
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 56%  closed    DRA252503-0298  PDR-A 15.1.0 - Imgae to Video/Talking Avatar/AI Video Enhancer/AI Video Upscaler/AI Anim
+              shares label "don t show again", phrase "demo page"
+    ! 22%  closed    DRA242410-0142  PDR-A 14.5.1 - [AT Found]AI Video Enhancer: Back to the demo page after tapping the back
+              shares phrase "demo page"
+
+[Video-Enhance-R1b-06] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Videos under 1 s and MKV files are not greyed; they open the panel
+      feature='AI Video Enhance'  searched 68 candidate(s)
+      43%  OPEN      DRA262611P0072  PDR-A 16.9.0 - [AIAgent] AI Video Enhance: 1440p, 4K and 8K videos open the panel instea
+
+[Video-Enhance-R1b-07] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Switching to Professional does not re-lay the strip to 2:30 per width
+      feature='AI Video Enhance'  searched 68 candidate(s)
+      no likely duplicate
+
+[Video-Enhance-R1b-08] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Dragging the selection moves the range the opposite way to the finger
+      feature='AI Video Enhance'  searched 68 candidate(s)
+      no likely duplicate
+
+[Video-Enhance-R1b-09] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Full-screen preview has no close control and always restarts at 00:00
+      feature='AI Video Enhance'  searched 68 candidate(s)
+      no likely duplicate
+
+[Video-Enhance-R1b-10] PDR-A 16.9.0 - [AIAgent][UI] AI Video Enhance: 「Up to 8 minutes in Standard mode」 bubble covers Preview time and play
+      feature='AI Video Enhance'  searched 68 candidate(s)
+      38%  OPEN      DRA262611P0074  PDR-A 16.9.0 - [AIAgent][UI] AI Video Enhance: Panel Preview shows no 「00:00/12:30」 time
+
+[Video-Enhance-R1b-11] PDR-A 16.9.0 - [AIAgent][UI] AI Video Enhance: Toolbar badge reads 「Pro」, IAP page has no Pro+ tab (no Android Design)
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 22%  OPEN      DRA262611P0073  PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Badge reads 「0fps」 and fps chips are disabled
+              shares phrase "badge reads"
+
+[Video-Enhance-R1b-12] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: 「Leave」 during upload charges 30 credits, then a refund comes 3 h later
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 62%  OPEN      DRA262611P0079  PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Home during upload ends the task but charges 
+              shares phrase "during upload"
+
+[Video-Enhance-R1b-13] PDR-A 16.9.0 - [AIAgent][UI] AI Video Enhance: Notification copy is the banner's, not 「Your video is ready. Tap to view」
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 12%  closed    DRA252504-0015  PDR-A 15.0.2 - AI Video Enhancer, Upscaler, Talking Avatar, Image to video : After AI ge
+              shares label "notification"
+
+[Video-Enhance-R1b-14] PDR-A 16.9.0 - [AIAgent][UI] AI Video Enhance: Save Result toast reads 「Saved to Gallery」, not 「Saved to your device」
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 12%  closed    DRA252510-0092  PDR-A 15.8.0 - [Light Mode] Shortcut (AI Video Enhancer): "Result" icon appears black in
+              shares label "result"
+
+[Video-Enhance-R1b-15] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Recent task's 「Select」 offers only Delete; what 「Manage」 opens is unspecified
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 10%  closed    DRA242410-0074  PDR-A 14.5.0 - AI Video Enhancer: When the Launcher is returned from "Recent", it someti
+              shares label "recent"
+      40%  OPEN      DRA262611P0082  PDR-A 16.9.0 - [AIAgent][UI] AI Video Enhance: Recent task notice reads 「1 year」 and 「Se
+
+[Video-Enhance-R1b-16] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Each finished task is auto-saved to Movies; Save Result makes a second copy
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    !  9%  closed    DRA252510-0092  PDR-A 15.8.0 - [Light Mode] Shortcut (AI Video Enhancer): "Result" icon appears black in
+              shares label "result"
+
+[Video-Enhance-R1b-17] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Timeline clip over 8:00 opens the panel capped at 08:00, no split toast
+      feature='AI Video Enhance'  searched 68 candidate(s)
+      no likely duplicate
+
+[Video-Enhance-R1b-18] PDR-A 16.9.0 - [AIAgent] AI Video Enhance: Timeline task result is not pasted back; Add to Timeline makes a new project
+      feature='AI Video Enhance'  searched 68 candidate(s)
+    ! 11%  closed    DRA252510-0092  PDR-A 15.8.0 - [Light Mode] Shortcut (AI Video Enhancer): "Result" icon appears black in
+              shares label "result"

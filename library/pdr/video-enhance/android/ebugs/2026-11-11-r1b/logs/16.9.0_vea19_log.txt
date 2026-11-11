@@ -1,0 +1,15 @@
+# ISS-VEA-19 Pro purchase: Play result, transaction, verify, acknowledge
+# PowerDirector Mobile for Android 16.9.0 (2611091), Stage server, Samsung SM-A5360 / Android 15 (phone time, UTC+8)
+# Video Enhance task lines (session = charge, transcode, upload, status, errors, push, toasts) and the balance
+# when it changes, in the windows below; identical status polls folded; tokens dropped, URL queries cut at '?'.
+
+## TC-095 Subscribe to panel (2026-11-11 09:30:40–09:31:10; logs/R1-tc095-20261111-093235/logcat-live.txt)
+2026-11-11 09:30:48.739 GoogleBillingWrapper: onPurchasesUpdated
+2026-11-11 09:30:48.824 CreditSystemManager: [doUpdateUserTransaction]: Purchase. Json: {"orderId":"GPA.3360-0327-8760-81195","packageName":"com.cyberlink.powerdirector.DRA140225_01","productId":"yearly_sub_usd34.99_yfree_202307","purchaseTime":1794360646346,"purchaseState":0,"purchaseToken":"…","quantity":1,"autoRenewing":true,"acknowledged":false}
+2026-11-11 09:30:49.220 CreditSystemRepository: doUpdateUserTransaction successful response: Response{protocol=h2, code=200, message=, url=https://apptest.cyberlink.com/service/UpdateUserTransaction/PowerDirector%20Mobile%20for%20Android/1.0/DE/Android}
+2026-11-11 09:30:49.232 b       : doUpdateUserTransaction response: {"status":"OK"}
+2026-11-11 09:30:49.767 GoogleBillingWrapper: acknowledgePurchaseResponse 0
+2026-11-11 09:30:49.788 GoogleBillingWrapper: acknowledgePurchaseResponse 2 Server error, please try again.
+2026-11-11 09:30:52.268 CreditSystemManager: doVerifySubscribe, doVerifySubscribeResponse: GDoVerifySubscribeResponse(status=OK, errorMsg=null)
+2026-11-11 09:30:53.698 CreditSystemManager: totalRemain=28811
+2026-11-11 09:30:54.115 GoogleBillingWrapper: doVerifySubscribeResponse OK null

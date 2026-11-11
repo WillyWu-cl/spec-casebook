@@ -1,313 +1,313 @@
 {
- "draft": "20261110-160000",
- "current": [
-  "R1"
- ],
- "needs": {
-  "TC-095": [
-   "purchase"
+  "draft": "20261110-160000",
+  "current": [
+    "R1"
   ],
-  "TC-097": [
-   "purchase",
-   "low-balance"
-  ],
-  "TC-096": [
-   "low-balance"
-  ],
-  "TC-098": [
-   "low-balance"
-  ],
-  "TC-207": [
-   "low-balance"
-  ],
-  "TC-118": [
-   "system-setting"
-  ],
-  "TC-119": [
-   "system-setting"
-  ],
-  "TC-120": [
-   "system-setting"
-  ],
-  "TC-211": [
-   "system-setting"
-  ],
-  "TC-170": [
-   "server-failure"
-  ],
-  "TC-171": [
-   "server-failure"
-  ],
-  "TC-173": [
-   "server-failure"
-  ],
-  "TC-174": [
-   "server-failure"
-  ],
-  "TC-210": [
-   "server-failure"
-  ],
-  "TC-268": [
-   "old-task"
-  ],
-  "TC-023": [
-   "no-videos"
-  ]
- },
- "unavailable": {
-  "purchase": "test-data: a Google Play purchase needs the user's go-ahead (and an account that may buy); remove once given",
-  "low-balance": "test-data: the account has 27,752 credits and the run never spends a balance down; needs an account with a balance below the price",
-  "system-setting": "test-data: turning PowerDirector notifications off in Android Settings needs the user's go-ahead",
-  "server-failure": "observability: no fault switch on Android (KP-003) makes a Video Enhance task fail on the server",
-  "old-task": "test-data: no Video Enhance task finished 2 days ago yet (first run on this feature)",
-  "no-videos": "test-data: emptying the phone's gallery is not done in a run"
- },
- "phases": [
-  {
-   "id": "R1",
-   "name": "Round 1: first full run of Android v4 on 16.9.0 (2611091), TR261109-0041",
-   "round": true,
-   "note": "Setup first (run plan › Setup): build 2611091 installed, Stage (yellow bar), test videos pushed. R1-a – R1-h run on the user's paid account; R1-i on the Free account cltqauiap2.",
-   "segments": [
+  "needs": {
+    "TC-095": [
+      "purchase"
+    ],
+    "TC-097": [
+      "purchase",
+      "low-balance"
+    ],
+    "TC-096": [
+      "low-balance"
+    ],
+    "TC-098": [
+      "low-balance"
+    ],
+    "TC-207": [
+      "low-balance"
+    ],
+    "TC-118": [
+      "system-setting"
+    ],
+    "TC-119": [
+      "system-setting"
+    ],
+    "TC-120": [
+      "system-setting"
+    ],
+    "TC-211": [
+      "system-setting"
+    ],
+    "TC-170": [
+      "server-failure"
+    ],
+    "TC-171": [
+      "server-failure"
+    ],
+    "TC-173": [
+      "server-failure"
+    ],
+    "TC-174": [
+      "server-failure"
+    ],
+    "TC-210": [
+      "server-failure"
+    ],
+    "TC-268": [
+      "old-task"
+    ],
+    "TC-023": [
+      "no-videos"
+    ]
+  },
+  "unavailable": {
+    "purchase": "test-data: a Google Play purchase needs the user's go-ahead (and an account that may buy); remove once given",
+    "low-balance": "test-data: the account has 27,752 credits and the run never spends a balance down; needs an account with a balance below the price",
+    "system-setting": "test-data: turning PowerDirector notifications off in Android Settings needs the user's go-ahead",
+    "server-failure": "observability: no fault switch on Android (KP-003) makes a Video Enhance task fail on the server",
+    "old-task": "test-data: no Video Enhance task finished 2 days ago yet (first run on this feature)",
+    "no-videos": "test-data: emptying the phone's gallery is not done in a run"
+  },
+  "phases": [
     {
-     "id": "R1-a",
-     "name": "Entry points, Demo page and Add Media",
-     "note": "Free tier is enough: nothing is charged. TC-001 / TC-002 / TC-010 – TC-014 need the Demo page not yet dismissed; TC-014 (ticks 「Don’t show again」) goes last among them. Test videos from make-videos.ts in Movies/casebook-ve and Movies/VE test.",
-     "cases": [
-      "TC-001",
-      "TC-002",
-      "TC-004",
-      "TC-010",
-      "TC-011",
-      "TC-012",
-      "TC-013",
-      "TC-200",
-      "TC-201",
-      "TC-021",
-      "TC-255",
-      "TC-256",
-      "TC-257",
-      "TC-258",
-      "TC-020",
-      "TC-022",
-      "TC-023",
-      "TC-014",
-      "TC-003"
-     ]
-    },
-    {
-     "id": "R1-b",
-     "name": "Panel layout, first-run bubble and trim",
-     "note": "TC-030 needs the panel never opened on this install: run it first, before any other panel row. Nothing is charged.",
-     "cases": [
-      "TC-030",
-      "TC-032",
-      "TC-031",
-      "TC-033",
-      "TC-259",
-      "TC-035",
-      "TC-036",
-      "TC-037",
-      "TC-038",
-      "TC-202",
-      "TC-203",
-      "TC-212",
-      "TC-040",
-      "TC-041",
-      "TC-042",
-      "TC-214",
-      "TC-043",
-      "TC-215",
-      "TC-044",
-      "TC-216",
-      "TC-045",
-      "TC-264",
-      "TC-046",
-      "TC-217"
-     ]
-    },
-    {
-     "id": "R1-c",
-     "name": "Default settings, chips and Mode length limit",
-     "note": "Nothing is charged: read the CTA price only.",
-     "cases": [
-      "TC-050",
-      "TC-051",
-      "TC-052",
-      "TC-053",
-      "TC-054",
-      "TC-055",
-      "TC-056",
-      "TC-057",
-      "TC-058",
-      "TC-059",
-      "TC-061",
-      "TC-062",
-      "TC-063",
-      "TC-064",
-      "TC-070",
-      "TC-071",
-      "TC-073",
-      "TC-074",
-      "TC-218",
-      "TC-075",
-      "TC-076",
-      "TC-263",
-      "TC-260",
-      "TC-261",
-      "TC-262"
-     ]
-    },
-    {
-     "id": "R1-d",
-     "name": "Credit price, eligibility and purchase",
-     "note": "Prices are binding numbers (formats.md). Purchase rows stop for the user (never complete a Google Play sheet without the user's go-ahead).",
-     "cases": [
-      "TC-080",
-      "TC-269",
-      "TC-083",
-      "TC-087",
-      "TC-091",
-      "TC-096",
-      "TC-207",
-      "TC-098",
-      "TC-100"
-     ]
-    },
-    {
-     "id": "R1-e",
-     "name": "Generating, cancel, background task and notifications",
-     "note": "Charged: each Enhance costs its CTA price; record the balance before and after and the Credit Details rows. TC-100 style offline cases use device-android.ts wifi. Real footage (user, 2026-11-10): TC-110's 01:30 1080p 30 fps source is ve-real-0130-1080p30 (Movies/casebook-ve-real), so its Result in R1-f shows a visible enhancement.",
-     "cases": [
-      "TC-110",
-      "TC-204",
-      "TC-111",
-      "TC-205",
-      "TC-112",
-      "TC-113",
-      "TC-114",
-      "TC-115",
-      "TC-116",
-      "TC-117",
-      "TC-121",
-      "TC-118",
-      "TC-211",
-      "TC-119",
-      "TC-120",
-      "TC-130",
-      "TC-131",
-      "TC-132",
-      "TC-133",
-      "TC-134"
-     ]
-    },
-    {
-     "id": "R1-f",
-     "name": "Recent task, Result and failure",
-     "note": "Uses the tasks R1-e made. TC-265 – TC-267 time the task with waitfor's seconds. Judge 「Result」 over 「Original」 on the real-footage tasks (ve-real-*).",
-     "cases": [
-      "TC-140",
-      "TC-141",
-      "TC-142",
-      "TC-208",
-      "TC-143",
-      "TC-150",
-      "TC-151",
-      "TC-152",
-      "TC-153",
-      "TC-154",
-      "TC-155",
-      "TC-209",
-      "TC-144",
-      "TC-265",
-      "TC-266",
-      "TC-267",
-      "TC-268",
-      "TC-170",
-      "TC-171",
-      "TC-210",
-      "TC-173",
-      "TC-174"
-     ]
-    },
-    {
-     "id": "R1-g1",
-     "name": "Setting combinations 1–18",
-     "note": "One 3.2 s 720p 30 fps source for every row: ve-real-000320-720p30 (a cut of the team's real 1080p clip, Movies/casebook-ve-real; user, 2026-11-10), so 「Result」 over 「Original」 can be judged; each row prices, generates, saves and reads the saved file with ffprobe (adb pull into the run folder's exports/).",
-     "cases": [
-      "TC-223",
-      "TC-225",
-      "TC-224",
-      "TC-226",
-      "TC-221",
-      "TC-227",
-      "TC-228",
-      "TC-222",
-      "TC-229",
-      "TC-230",
-      "TC-220",
-      "TC-231",
-      "TC-232",
-      "TC-233",
-      "TC-234",
-      "TC-235",
-      "TC-236",
-      "TC-237"
-     ]
-    },
-    {
-     "id": "R1-g2",
-     "name": "Setting combinations 19–36",
-     "note": "One 3.2 s 720p 30 fps source for every row: ve-real-000320-720p30 (a cut of the team's real 1080p clip, Movies/casebook-ve-real; user, 2026-11-10), so 「Result」 over 「Original」 can be judged; each row prices, generates, saves and reads the saved file with ffprobe (adb pull into the run folder's exports/).",
-     "cases": [
-      "TC-238",
-      "TC-219",
-      "TC-239",
-      "TC-240",
-      "TC-241",
-      "TC-242",
-      "TC-243",
-      "TC-244",
-      "TC-245",
-      "TC-246",
-      "TC-247",
-      "TC-248",
-      "TC-249",
-      "TC-250",
-      "TC-251",
-      "TC-252",
-      "TC-253",
-      "TC-254"
-     ]
-    },
-    {
-     "id": "R1-h",
-     "name": "Timeline entry",
-     "note": "Projects with 05:00, 10:00 and 00:30 clips (ve-0500, ve-1000, ve-0030). TC-162 is charged.",
-     "cases": [
-      "TC-160",
-      "TC-161",
-      "TC-162",
-      "TC-164",
-      "TC-163",
-      "TC-213",
-      "TC-165"
-     ]
-    },
-    {
-     "id": "R1-i",
-     "name": "Free account rows",
-     "note": "Last: sign the phone back in to cltqauiap2@gmail.com (Free) with the sign-in page's Google button (no password, the agent does it, fixtures.md) and note the user's paid account to restore afterwards. TC-095 / TC-097 purchase on Google Play only with the user's go-ahead.",
-     "cases": [
-      "TC-090",
-      "TC-093",
-      "TC-094",
-      "TC-206",
-      "TC-095",
-      "TC-097"
-     ]
+      "id": "R1",
+      "name": "Round 1: first full run of Android v4 on 16.9.0 (2611091), TR261109-0041",
+      "round": true,
+      "note": "Setup first (run plan › Setup): build 2611091 installed, Stage (yellow bar), test videos pushed. R1-a – R1-h run on the user's paid account; R1-i on the Free account cltqauiap2.",
+      "segments": [
+        {
+          "id": "R1-a",
+          "name": "Entry points, Demo page and Add Media",
+          "note": "Free tier is enough: nothing is charged. TC-001 / TC-002 / TC-010 – TC-014 need the Demo page not yet dismissed; TC-014 (ticks 「Don’t show again」) goes last among them. Test videos from make-videos.ts in Movies/casebook-ve and Movies/VE test. One-way state (user, 2026-11-11): TC-014 and TC-013 both turn the Demo page off (Don't show again saves on Try It Now and on ‹), so TC-014 runs after every Demo page row and TC-013 runs last behind a reset (pm clear + Google sign-in, logs pulled first).",
+          "cases": [
+            "TC-001",
+            "TC-002",
+            "TC-004",
+            "TC-010",
+            "TC-011",
+            "TC-012",
+            "TC-200",
+            "TC-201",
+            "TC-021",
+            "TC-255",
+            "TC-256",
+            "TC-257",
+            "TC-258",
+            "TC-020",
+            "TC-022",
+            "TC-023",
+            "TC-014",
+            "TC-003",
+            "TC-013"
+          ]
+        },
+        {
+          "id": "R1-b",
+          "name": "Panel layout, first-run bubble and trim",
+          "note": "TC-030 needs the panel never opened on this install: run it first, before any other panel row. Nothing is charged.",
+          "cases": [
+            "TC-030",
+            "TC-032",
+            "TC-031",
+            "TC-033",
+            "TC-259",
+            "TC-035",
+            "TC-036",
+            "TC-037",
+            "TC-038",
+            "TC-202",
+            "TC-203",
+            "TC-212",
+            "TC-040",
+            "TC-041",
+            "TC-042",
+            "TC-214",
+            "TC-043",
+            "TC-215",
+            "TC-044",
+            "TC-216",
+            "TC-045",
+            "TC-264",
+            "TC-046",
+            "TC-217"
+          ]
+        },
+        {
+          "id": "R1-c",
+          "name": "Default settings, chips and Mode length limit",
+          "note": "Nothing is charged: read the CTA price only.",
+          "cases": [
+            "TC-050",
+            "TC-051",
+            "TC-052",
+            "TC-053",
+            "TC-054",
+            "TC-055",
+            "TC-056",
+            "TC-057",
+            "TC-058",
+            "TC-059",
+            "TC-061",
+            "TC-062",
+            "TC-063",
+            "TC-064",
+            "TC-070",
+            "TC-071",
+            "TC-073",
+            "TC-074",
+            "TC-218",
+            "TC-075",
+            "TC-076",
+            "TC-263",
+            "TC-260",
+            "TC-261",
+            "TC-262"
+          ]
+        },
+        {
+          "id": "R1-d",
+          "name": "Credit price, eligibility and purchase",
+          "note": "Prices are binding numbers (formats.md). Purchase rows stop for the user (never complete a Google Play sheet without the user's go-ahead).",
+          "cases": [
+            "TC-080",
+            "TC-269",
+            "TC-083",
+            "TC-087",
+            "TC-091",
+            "TC-096",
+            "TC-207",
+            "TC-098",
+            "TC-100"
+          ]
+        },
+        {
+          "id": "R1-e",
+          "name": "Generating, cancel, background task and notifications",
+          "note": "Charged: each Enhance costs its CTA price; record the balance before and after and the Credit Details rows. TC-100 style offline cases use device-android.ts wifi. Real footage (user, 2026-11-10): TC-110's 01:30 1080p 30 fps source is ve-real-0130-1080p30 (Movies/casebook-ve-real), so its Result in R1-f shows a visible enhancement.",
+          "cases": [
+            "TC-110",
+            "TC-204",
+            "TC-111",
+            "TC-205",
+            "TC-112",
+            "TC-113",
+            "TC-114",
+            "TC-115",
+            "TC-116",
+            "TC-117",
+            "TC-121",
+            "TC-118",
+            "TC-211",
+            "TC-119",
+            "TC-120",
+            "TC-130",
+            "TC-131",
+            "TC-132",
+            "TC-133",
+            "TC-134"
+          ]
+        },
+        {
+          "id": "R1-f",
+          "name": "Recent task, Result and failure",
+          "note": "Uses the tasks R1-e made. TC-265 – TC-267 time the task with waitfor's seconds. Judge 「Result」 over 「Original」 on the real-footage tasks (ve-real-*).",
+          "cases": [
+            "TC-140",
+            "TC-141",
+            "TC-142",
+            "TC-208",
+            "TC-143",
+            "TC-150",
+            "TC-151",
+            "TC-152",
+            "TC-153",
+            "TC-154",
+            "TC-155",
+            "TC-209",
+            "TC-144",
+            "TC-265",
+            "TC-266",
+            "TC-267",
+            "TC-268",
+            "TC-170",
+            "TC-171",
+            "TC-210",
+            "TC-173",
+            "TC-174"
+          ]
+        },
+        {
+          "id": "R1-g1",
+          "name": "Setting combinations 1–18",
+          "note": "One 3.2 s 720p 30 fps source for every row: ve-real-000320-720p30 (a cut of the team's real 1080p clip, Movies/casebook-ve-real; user, 2026-11-10), so 「Result」 over 「Original」 can be judged; each row prices, generates, saves and reads the saved file with ffprobe (adb pull into the run folder's exports/).",
+          "cases": [
+            "TC-223",
+            "TC-225",
+            "TC-224",
+            "TC-226",
+            "TC-221",
+            "TC-227",
+            "TC-228",
+            "TC-222",
+            "TC-229",
+            "TC-230",
+            "TC-220",
+            "TC-231",
+            "TC-232",
+            "TC-233",
+            "TC-234",
+            "TC-235",
+            "TC-236",
+            "TC-237"
+          ]
+        },
+        {
+          "id": "R1-g2",
+          "name": "Setting combinations 19–36",
+          "note": "One 3.2 s 720p 30 fps source for every row: ve-real-000320-720p30 (a cut of the team's real 1080p clip, Movies/casebook-ve-real; user, 2026-11-10), so 「Result」 over 「Original」 can be judged; each row prices, generates, saves and reads the saved file with ffprobe (adb pull into the run folder's exports/).",
+          "cases": [
+            "TC-238",
+            "TC-219",
+            "TC-239",
+            "TC-240",
+            "TC-241",
+            "TC-242",
+            "TC-243",
+            "TC-244",
+            "TC-245",
+            "TC-246",
+            "TC-247",
+            "TC-248",
+            "TC-249",
+            "TC-250",
+            "TC-251",
+            "TC-252",
+            "TC-253",
+            "TC-254"
+          ]
+        },
+        {
+          "id": "R1-h",
+          "name": "Timeline entry",
+          "note": "Projects with 05:00, 10:00 and 00:30 clips (ve-0500, ve-1000, ve-0030). TC-162 is charged.",
+          "cases": [
+            "TC-160",
+            "TC-161",
+            "TC-162",
+            "TC-164",
+            "TC-163",
+            "TC-213",
+            "TC-165"
+          ]
+        },
+        {
+          "id": "R1-i",
+          "name": "Free account rows",
+          "note": "Last: sign the phone back in to cltqauiap2@gmail.com (Free) with the sign-in page's Google button (no password, the agent does it, fixtures.md) and note the user's paid account to restore afterwards. TC-095 / TC-097 purchase on Google Play only with the user's go-ahead.",
+          "cases": [
+            "TC-090",
+            "TC-093",
+            "TC-094",
+            "TC-206",
+            "TC-095",
+            "TC-097"
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

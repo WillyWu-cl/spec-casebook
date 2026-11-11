@@ -20,6 +20,7 @@ import { join, relative } from 'node:path';
 import { readRecords } from './lib/csv.ts';
 import { thumbnail } from './lib/thumbs.ts';
 import { ROOT, arg, assertIds, readManifest, readTable, tableDir } from './lib/library.ts';
+import { zhCaseText } from './lib/zh.ts';
 import { withShared } from './lib/page-shared.ts';
 
 const [feature, platform] = process.argv.slice(2);
@@ -81,6 +82,7 @@ function buildData(link: (abs: string) => string) {
   const ebugsOf = ebugIndex();
   const cases = existsSync(join(table, 'cases.csv')) ? readTable(join(table, 'cases.csv')) : [];
   const row = new Map(cases.map(r => [r.ID, r]));
+  const zh = zhCaseText(join(table, 'cases.csv'), cases);   // 中文 mode's case text (lib/zh.ts)
   const runs: any[] = [];
   for (const d of existsSync(runsDir) ? readdirSync(runsDir).filter(d => statSync(join(runsDir, d)).isDirectory()).sort() : []) {
     const dir = join(runsDir, d), rc = join(dir, 'results.csv');
@@ -99,6 +101,7 @@ function buildData(link: (abs: string) => string) {
       latest.set(id, { id, t: at, at: r['Recorded At'] ?? '', phase: r.Phase ?? '', seg: r.Segment ?? '', needs: r.Needs ?? '', section: r.Section || t?.Section || '',
         pre: t?.Precondition ?? '', prio: t?.Priority ?? '', action: r.Action || t?.Action || '', expected: r['Expected Result'] || t?.['Expected Result'] || '',
         result: r.Result || 'Not run', disp: r.Disposition ?? '', actual: r.Actual ?? '', why: blocked[id]?.note ?? '', group: blocked[id]?.group ?? '',
+        zh: zh[id] && (!r.Action || r.Action === t?.Action) ? zh[id] : undefined,
         shots, files: other, ebugs: /^fail/i.test(r.Result ?? '') ? ebugsOf(d, id, `${r.Actual ?? ''} ${r.Disposition ?? ''}`) : [] });
     }
     if (!latest.size) continue;

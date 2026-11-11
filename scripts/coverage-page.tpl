@@ -293,6 +293,8 @@ let L = 'en';
 try { L = window.CASEBOOK ? window.CASEBOOK.lang : new URLSearchParams(location.search).get('lang') === 'zh' ? 'zh' : localStorage.getItem('coverage-lang') === 'zh' ? 'zh' : 'en'; } catch {}
 const t = k => I18N[L][k] ?? I18N.en[k];
 const ST = () => t('st');
+// the table's Chinese reading copy of a case field in 中文 mode (lib/zh.ts), else the English
+const ZT = (r, k) => (L === 'zh' && r.zh?.[k]) || r[k];
 const tr = r => r.split('; ').map(x => I18N[L].reasons?.[x] ?? x).join('；');
 const COLOR = s => `var(--${s})`;
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -540,7 +542,7 @@ function hoverMark(m, keep) {
 const kindName = k => t('kinds')[k] ?? k;
 const rowHtml = id => { const r = D.rows[id] || { result: 'Not run' };
   // the id opens the case view here; review → opens the row on the review page
-  return `<div class="row"><a class="id" href="#case=${encodeURIComponent(id)}">${esc(id)}</a>${PAGES.review ? `<a class="rv" href="${esc(PAGES.review)}#${encodeURIComponent(id)}">${t('reviewLink')}</a>` : ''}${PAGES.plan ? `<a class="rv" href="${esc(PAGES.plan)}#case=${encodeURIComponent(id)}">${t('planLink')}</a>` : ''}${PAGES.results ? `<a class="rv" href="${esc(PAGES.results)}#case=${encodeURIComponent(id)}">${t('resultsLink')}</a>` : ''}<span class="res ${esc(r.result)}">${esc(r.result === 'Not run' ? t('plannedRes') : r.result)}</span>${r.reason ? ` <span style="color:var(--blocked);font-size:.8rem">${esc(tr(r.reason))}</span>` : ''}${r.run ? ` <span class="mono" style="color:var(--muted)">${esc(r.run)}</span>` : ''}<div>${esc(r.action || '')}</div>${r.actual ? `<div style="color:var(--muted);font-size:.82rem">${esc(r.actual)}</div>` : ''}</div>`; };
+  return `<div class="row"><a class="id" href="#case=${encodeURIComponent(id)}">${esc(id)}</a>${PAGES.review ? `<a class="rv" href="${esc(PAGES.review)}#${encodeURIComponent(id)}">${t('reviewLink')}</a>` : ''}${PAGES.plan ? `<a class="rv" href="${esc(PAGES.plan)}#case=${encodeURIComponent(id)}">${t('planLink')}</a>` : ''}${PAGES.results ? `<a class="rv" href="${esc(PAGES.results)}#case=${encodeURIComponent(id)}">${t('resultsLink')}</a>` : ''}<span class="res ${esc(r.result)}">${esc(r.result === 'Not run' ? t('plannedRes') : r.result)}</span>${r.reason ? ` <span style="color:var(--blocked);font-size:.8rem">${esc(tr(r.reason))}</span>` : ''}${r.run ? ` <span class="mono" style="color:var(--muted)">${esc(r.run)}</span>` : ''}<div>${esc(ZT(r, 'action') || '')}</div>${r.actual ? `<div style="color:var(--muted);font-size:.82rem">${esc(r.actual)}</div>` : ''}</div>`; };
 function select(kind, id) {
   sel = kind === 'g' ? { group: id } : kind === 'n' ? { note: id } : { arrow: id }; draw(); renderPanel(); caseBar();
 }
@@ -656,9 +658,9 @@ function casePanel() {
   const gBtn = g => `<button data-g="${esc(g.group)}"><span class="sw" style="color:${COLOR(g.status)};width:9px;height:9px"></span>${esc(g.label || g.name)} <span class="muted">${esc(kindName(g.kind))}</span><span class="b">${esc(BN(where(g)))}</span></button>`;
   const aBtn = a => `<button data-a="${esc(a.id)}"><span class="sw" style="color:${COLOR(a.status)};width:9px;height:9px"></span>${esc(a.edge)}<span class="b">${esc(BN(a.board))}</span></button>`;
   const scBtn = sc => `<button data-board="${D.boards.findIndex(b => b.name === sc.board)}">${esc(sc.name)}<span class="b">${esc(BN(sc.board))}</span></button>`;
-  $('panel').innerHTML = `<div class="k muted" style="font-size:.8rem;text-transform:uppercase;letter-spacing:.04em">${t('caseEyebrow')}${r.section ? ` · ${esc(r.section)}` : ''}</div>
+  $('panel').innerHTML = `<div class="k muted" style="font-size:.8rem;text-transform:uppercase;letter-spacing:.04em">${t('caseEyebrow')}${r.section ? ` · ${esc(ZT(r, 'section'))}` : ''}</div>
     <h2>${esc(kase)} <span class="res ${esc(r.result)}">${esc(r.result === 'Not run' ? t('plannedRes') : r.result)}</span></h2>
-    <dl><dt>${t('action')}</dt><dd>${esc(r.action)}</dd><dt>${t('expected')}</dt><dd>${esc(r.expected)}</dd></dl>
+    <dl><dt>${t('action')}</dt><dd>${esc(ZT(r, 'action'))}</dd><dt>${t('expected')}</dt><dd>${esc(ZT(r, 'expected'))}</dd></dl>
     <p style="display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 0">${PAGES.review ? `<a href="${esc(PAGES.review)}#${encodeURIComponent(kase)}">${t('openReview')} →</a>` : ''}${PAGES.plan ? `<a href="${esc(PAGES.plan)}#case=${encodeURIComponent(kase)}">${t('openPlan')} →</a>` : ''}${PAGES.results ? `<a href="${esc(PAGES.results)}#case=${encodeURIComponent(kase)}">${t('openResults')} →</a>` : ''}</p>
     <h2 style="margin-top:14px">${t('caseWhere')}</h2>${r.refs.length ? r.refs.map(reqHtml).join('') : `<p class="empty">${t('caseNoRefs')}</p>`}
     ${it.groups.length ? `<h2 style="margin-top:14px">${t('casePresses')} (${it.groups.length})</h2><div class="items">${it.groups.map(gBtn).join('')}</div>` : ''}

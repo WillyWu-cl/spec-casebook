@@ -12,8 +12,26 @@ controls, and the `decision` entries (Won't Fix, NAB, PM rulings) that make a fi
    **Spec basis check (PDRA, 2026-10-29, REQ-055; A2 had 4 invalid entries of 40).** Before an entry goes on the
    review page, open the spec text its Expect Result rests on and confirm each point, else hold it as a PM question
    or drop it:
+   - **A visible defect is filed, not held (user, 2026-11-11; TC-011, TC-201, TC-046, TC-217 were held in R1).**
+     When the app is plainly wrong whatever the open point decides (another feature's text on this screen, system
+     Back doing something other than ‹, a selection going under the spec's minimum), it is a bug even when the exact
+     expected wording is only a PM proposal or an open question: the Expect says what must be true (「a description
+     of Video Enhance」), quotes the proposal as the proposal and names the Q-id. Owner by the text rule (PM when the
+     spec must supply the text, RD when the spec states it) or RD for behaviour. Hold only a finding whose wrongness
+     itself hangs on the open question (the app's behaviour may be the intended one, e.g. TC-013's tick saved on ‹).
+   - **Open questions are filed to PM (user, 2026-11-11).** A question the run cannot settle (a string the spec has
+     not decided, as Q-1 and Q-2; a behaviour where PM's proposal and the app differ, as TC-013) is not left on the
+     review page as a PM question: it becomes an eBug, BugBelong PM, Class UI for text, UX for a user-experience problem (`[AIAgent][UX]`, user
+     2026-11-11) and Functional for broken behaviour,
+     asking PM to decide. One eBug per question (its Fail (question) rows on the `Report step:` line); the Result says
+     what the app does, the Expect states the decision needed with the sources and the proposal quoted, and the Note
+     names the Q-id. A question another PM ruling or ticket already answers (on either OS) is not filed: cite it.
    - the rule is written for the screen, state and entry path in the Repro steps; when the row's own path could not
      be reached, the row is Blocked (test-data) — never a finding on a nearby screen or a substitute flow;
+   - **only the named Design source (user, 2026-11-11, Video Enhance REQ-010):** when the user names the Design page or
+     section that is the spec (`figma-frames.json` `design_only`), every Design Spec Link and every Design-based Expect
+     is inside it; a frame on any other page of the Design file is not a source, newer or not. Check filed batches too
+     when the rule arrives after filing;
    - no newer dated Design or PM frame draws what the app does (check every set in `specs/`, newest first), and the
      Expect quotes the Design string where Design and PM differ;
    - the expectation is the spec's own words, not our paraphrase (`arrows.json` `expected`, requirement wording) and
