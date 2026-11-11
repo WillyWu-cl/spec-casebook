@@ -21,7 +21,7 @@ import { renderPage } from './lib/render.ts';
 import { parseCsv } from './lib/csv.ts';
 import { exportTable } from './lib/exporter.ts';
 import { writeFeatureIndex } from './lib/feature-index.ts';
-import { parseQuestions, readAnswers, saveAnswers } from './lib/questions.ts';
+import { parseQuestions, readAnswers, readQuestionsZh, saveAnswers } from './lib/questions.ts';
 import { isLocal } from './lib/local.ts';
 
 const [feature, platform] = process.argv.slice(2);
@@ -40,6 +40,7 @@ let previous: Record<string, Record<string, string>> = {};
 // rows stay English (AGENTS.md), so Save never writes it back.
 const ZH_COLS = ['ID', 'Section', 'Precondition', 'Action', 'Expected Result', 'Priority', 'Spec Ref', 'Notes', 'Change', 'Change Reason'];
 let zh: Record<string, Record<string, string>> = {};
+let qzh: Record<string, string> = {};
 function readZh(path: string) {
   if (!existsSync(path)) return {};
   const [, ...body] = parseCsv(readFileSync(path, 'utf8').replace(/^﻿/, ''));
@@ -66,6 +67,7 @@ function load() {
     if (existsSync(join(table, 'requirements.md'))) requirements = readFileSync(join(table, 'requirements.md'), 'utf8');
   }
   zh = readZh(draftDir ? join(draftDir, 'draft.zh-Hant.csv') : join(table, 'cases.zh-Hant.csv'));
+  qzh = readQuestionsZh(draftDir ?? table);
   previous = {};
   if (manifest && existsSync(join(table, 'cases.csv'))) for (const r of readTable(join(table, 'cases.csv'))) previous[r.ID] = r;
 }
@@ -75,7 +77,7 @@ const page = (local: boolean) => renderPage({
   mode: 'review', save: local, feature, platform, title: spec.title ?? feature, draft: draftId,
   based_on_version: manifest?.version ?? null, version: manifest?.version ?? null, approved_at: manifest?.approved_at ?? null,
   spec_files: spec.spec_files, rows, previous: draftArg ? previous : {}, requirements, update_plan: plan, zh,
-  questions: parseQuestions(requirements), answers: readAnswers(feature),
+  questions: parseQuestions(requirements), answers: readAnswers(feature), questions_zh: qzh,
 });
 
 type Note = { id: string; section: string; text: string; at?: string };
@@ -96,6 +98,7 @@ async function save(body: { rows: Record<string, string>[]; decisions: unknown[]
   if (draftDir && existsSync(join(draftDir, 'control-trace.json'))) copyFileSync(join(draftDir, 'control-trace.json'), join(table, 'control-trace.json'));
   // the Chinese reading copy goes along too; rows edited on the page show their English as newer in 中文 mode
   if (draftDir && existsSync(join(draftDir, 'draft.zh-Hant.csv'))) copyFileSync(join(draftDir, 'draft.zh-Hant.csv'), join(table, 'cases.zh-Hant.csv'));
+  if (draftDir && existsSync(join(draftDir, 'questions.zh-Hant.json'))) copyFileSync(join(draftDir, 'questions.zh-Hant.json'), join(table, 'questions.zh-Hant.json'));
   const now = new Date().toISOString();
   const entry = { version, approved_at: now, spec_set_sha256: spec.spec_set_sha256, draft: draftId, cases: clean.length, csv: 'cases.csv', requirements: 'requirements.md' };
   const hist = history.filter(h => h.version !== version).map(h => ({ ...h, csv: `history/v${h.version}.csv`, requirements: `history/v${h.version}-requirements.md` }));

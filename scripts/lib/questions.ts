@@ -25,6 +25,15 @@ export function parseQuestions(md: string): Question[] {
   return out;
 }
 
+// Chinese reading copy of the Open questions (user, 2026-11-10, REQ-004 of phd/cutout): questions.zh-Hant.json beside
+// requirements.md (draft folder, copied to the table on Save), { "Q-1": "<question>。假設：<assumption>", … } in
+// Traditional Chinese with Taiwan wording. The page's 中文 mode shows it above the English question; requirements.md
+// stays English and is what answers are keyed to.
+export function readQuestionsZh(dir: string | null): Record<string, string> {
+  const p = dir ? join(dir, 'questions.zh-Hant.json') : '';
+  return p && existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : {};
+}
+
 const answersFile = (feature: string) => join(featureDir(feature), 'question-answers.json');
 export const readAnswers = (feature: string): Record<string, Answer> =>
   existsSync(answersFile(feature)) ? JSON.parse(readFileSync(answersFile(feature), 'utf8')) : {};

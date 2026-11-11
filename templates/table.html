@@ -103,6 +103,7 @@ details.qs>summary .qhint{font-weight:400;font-size:.84rem;color:var(--muted)}
 .qstate.answered{background:var(--mod-soft);color:var(--mod)} .qstate.done{background:var(--new-soft);color:var(--new)}
 .qtext{font-size:13px;white-space:pre-wrap}
 .qassume{font-size:13px;color:var(--muted)} .qassume b{color:var(--fg);font-weight:600}
+body.l-zh .qitem .qtext:not(.zh),body.l-zh .qitem .qassume:not(.zh){font-size:11.5px;color:var(--muted)} .qitem .zh.qassume{color:var(--fg)}
 .qrows{font-size:.8rem;color:var(--muted)} .qrows a{font-family:var(--mono);color:var(--edit);margin-right:6px}
 .qitem textarea{border:1px solid var(--line);background:var(--surface);min-height:3.2em;font-size:13.5px}
 .qmeta{font-size:.76rem;color:var(--muted)} .qres{font-size:.8rem;color:var(--new)}
@@ -174,7 +175,9 @@ const I18N={zh:{plan:'更新計畫',req:'從規格整理出的需求',ID:'編號
   counts:(f,k,e,a,d,n)=>`最終表格 <b>${f}</b> 筆 · 保留 ${k} · 已修改 ${e} · 已新增 ${a} · 已刪除 ${d}${n?` · 下一版草稿有 <b>${n}</b> 則新案例說明`:''}`,countsView:n=>`<b>${n}</b> 筆案例`,
   copied:l=>`已複製${l}。`,copyFail:'複製失敗，請手動選取文字。',csvLabel:'最終 CSV',decLabel:'審查決定',csvNotes:'已複製最終 CSV。新案例說明還不是正式的列：請用「複製審查決定」或「儲存」交給 agent。',
   fillFirst:ids=>`儲存前請先填寫 ${ids} 的操作步驟與預期結果。`,saved:(v,c,p)=>`已儲存為核准版本 ${v}：${c} 筆案例。${p}`,savedNotes:(n,f)=>` · ${n} 則新案例說明已存到 ${f}：請 agent 把它們寫進下一版草稿。`,saveFail:'儲存失敗：',
-  noSave:'請透過 scripts/review.ts 開啟這個頁面才能儲存。'}};
+  noSave:'請透過 scripts/review.ts 開啟這個頁面才能儲存。',
+  qTitle:'給團隊的問題',qOpen:'待回答',qAnswered:'已回答',qHint:'規格不清楚的地方，表格先依假設撰寫。知道答案的請填寫，其他的可以先跳過。',qName:'您的名字',qOpt:'選填',
+  qRows:'相關案例：',qAssume:'目前表格的假設：',qPh:'如果您知道答案，請填在這裡',qStOpen:'待回答',qStDone:'已套用',qStWait:'已回答 · 等待 agent 處理',qSaveBtn:'儲存回答',qUnsaved:n=>`${n} 則未儲存`,qNoZh:'這題還沒有中文翻譯。'}};
 let L='en';try{L=window.CASEBOOK?.lang??(new URLSearchParams(location.search).get('lang')==='zh'||localStorage.getItem('casebook-lang')==='zh'?'zh':'en')}catch(e){}
 const T=(k,...a)=>{const v=L==='zh'?I18N.zh[k]:undefined;return typeof v==='function'?v(...a):v??null};
 const secZh=s=>{if(L!=='zh')return s;const r=rows.find(r=>r.cur.Section===s&&ZH[r.cur.ID]);return r?ZH[r.cur.ID].Section||s:s};
@@ -228,17 +231,20 @@ function questions(){
   const qs=D.questions||[];if(!qs.length)return;
   const open=qs.filter(q=>qState(q.id)==='open').length,ans=qs.length-open;
   $('#qBox').hidden=false;
-  $('#qSum').innerHTML=`Questions for the team <span class="note">(${open} open${ans?` · ${ans} answered`:''})</span><span class="qhint">Where the spec is unclear the rows follow an assumption. Answer any question you know; leave the rest.</span>`;
+  $('#qSum').innerHTML=L==='zh'?`${T('qTitle')} <span class="note">（${T('qOpen')} ${open}${ans?` · ${T('qAnswered')} ${ans}`:''}）</span><span class="qhint">${T('qHint')}</span>`:`Questions for the team <span class="note">(${open} open${ans?` · ${ans} answered`:''})</span><span class="qhint">Where the spec is unclear the rows follow an assumption. Answer any question you know; leave the rest.</span>`;
   const unsaved=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;
   let by='';try{by=localStorage.getItem('casebook-q-by')||''}catch(e){}
-  $('#qList').innerHTML=`<label class="qname">Your name <input id="qBy" value="${esc(by)}" placeholder="optional"></label>`+qs.map(q=>{
+  const QZ=D.questions_zh||{};
+  $('#qList').innerHTML=`<label class="qname">${T('qName')??'Your name'} <input id="qBy" value="${esc(by)}" placeholder="${T('qOpt')??'optional'}"></label>`+qs.map(q=>{
     const [text,assume]=qSplit(q.text),a=qSaved(q.id),st=qState(q.id),v=qEdits[q.id]!==undefined?qEdits[q.id]:(a?a.answer:'');
-    const rowsHtml=q.rows.length?`<div class="qrows">Rows: ${q.rows.map(id=>`<a href="#${esc(id)}">${esc(id)}</a>`).join('')}</div>`:'';
-    return `<div class="qitem" id="q-${esc(q.id)}"><div class="qhead">${esc(q.id)} <span class="qstate ${st}">${st==='open'?'Open':st==='done'?'Applied':'Answered · waiting for the agent'}</span></div>
-      <div class="qtext">${esc(text)}</div>${assume?`<div class="qassume"><b>For now the rows assume:</b> ${esc(assume)}</div>`:''}${rowsHtml}
-      <textarea data-qa="${esc(q.id)}" placeholder="Your answer, if you know it">${esc(v)}</textarea>
+    const z=L==='zh'?QZ[q.id]:'',zi=z?z.search(/假設[：:]/):-1,zq=z?(zi<0?z:z.slice(0,zi)).trim():'',za=zi<0?'':z.slice(zi).replace(/^假設[：:]\s*/,'').trim();
+    const zhHtml=L!=='zh'?'':z?`<div class="qtext zh">${esc(zq)}</div>${za?`<div class="qassume zh"><b>${T('qAssume')}</b>${esc(za)}</div>`:''}`:`<div class="qassume">${T('qNoZh')}</div>`;
+    const rowsHtml=q.rows.length?`<div class="qrows">${T('qRows')??'Rows: '}${q.rows.map(id=>`<a href="#${esc(id)}">${esc(id)}</a>`).join('')}</div>`:'';
+    return `<div class="qitem" id="q-${esc(q.id)}"><div class="qhead">${esc(q.id)} <span class="qstate ${st}">${st==='open'?T('qStOpen')??'Open':st==='done'?T('qStDone')??'Applied':T('qStWait')??'Answered · waiting for the agent'}</span></div>
+      ${zhHtml}<div class="qtext">${esc(text)}</div>${assume?`<div class="qassume"><b>For now the rows assume:</b> ${esc(assume)}</div>`:''}${rowsHtml}
+      <textarea data-qa="${esc(q.id)}" placeholder="${T('qPh')??'Your answer, if you know it'}">${esc(v)}</textarea>
       ${a?`<div class="qmeta">Answered ${esc(a.at.slice(0,16).replace('T',' '))}${a.by?' by '+esc(a.by):''} (${esc(a.platform==='ios'?'iOS':'Android')} page)${a.question!==q.text?' · the question has changed since':''}</div>`:''}${a&&a.resolution?`<div class="qres">${esc(a.resolution)}</div>`:''}</div>`}).join('')+
-    `<div class="qfoot"><span class="note" id="qSt">${unsaved?unsaved+' unsaved':''}</span><button class="btn primary" id="qSave"${unsaved&&D.save?'':' disabled'}${D.save?'':' title="Answers can be saved only on the computer running the pages."'}>Save answers</button></div>`;
+    `<div class="qfoot"><span class="note" id="qSt">${unsaved?unsaved+' unsaved':''}</span><button class="btn primary" id="qSave"${unsaved&&D.save?'':' disabled'}${D.save?'':' title="Answers can be saved only on the computer running the pages."'}>${T('qSaveBtn')??'Save answers'}</button></div>`;
   $('#qBy').oninput=e=>{try{localStorage.setItem('casebook-q-by',e.target.value)}catch(x){}};
   $('#qList').querySelectorAll('textarea[data-qa]').forEach(t=>t.oninput=()=>{qEdits[t.dataset.qa]=t.value;try{localStorage.setItem(QKEY,JSON.stringify(qEdits))}catch(e){}
     const n=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;$('#qSt').textContent=n?n+' unsaved':'';$('#qSave').disabled=!n||!D.save});
