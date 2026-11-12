@@ -1,0 +1,2472 @@
+{
+  "spec_folder": "specs/2026-11-09-figma",
+  "platform": "ios",
+  "inventory": "specs/2026-11-09-figma/extracted/inventory.json",
+  "entries": [
+    {
+      "group": "K-471aa6",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "btn",
+      "label": "All",
+      "set": false,
+      "instances": 12,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse",
+        "3_"
+      ],
+      "controls": [
+        "K-54e75f",
+        "K-212c5a",
+        "K-1d03be",
+        "K-7b99c1"
+      ],
+      "app": [],
+      "press": "TC-035, TC-058",
+      "how": "trace"
+    },
+    {
+      "group": "C-e0011e",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "btn_color",
+      "label": "choice of 16",
+      "set": true,
+      "instances": 16,
+      "screens": [
+        "9_Adjust_HSL"
+      ],
+      "controls": [
+        "K-26314b",
+        "K-d6757e",
+        "K-986be6",
+        "K-08057d",
+        "K-2ea5d0",
+        "K-ddbe33",
+        "K-61cae2",
+        "K-7dd75d",
+        "K-986b4e",
+        "K-5b310f",
+        "K-593cab",
+        "K-3a11d2",
+        "K-4d510b",
+        "K-7e3a38",
+        "K-cda652",
+        "K-ce20f4"
+      ],
+      "app": [],
+      "press": "TC-067",
+      "how": "trace"
+    },
+    {
+      "group": "K-767df6",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "DownSheet_caption/btn_cancel_n",
+      "label": "",
+      "set": false,
+      "instances": 22,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse",
+        "Enhance_1"
+      ],
+      "controls": [
+        "K-720e4f",
+        "K-d56efc",
+        "K-0a71bb",
+        "K-933fd7",
+        "K-520dae",
+        "K-64a3eb",
+        "K-0f916c",
+        "K-ab872c"
+      ],
+      "app": [],
+      "press": "TC-063, TC-053",
+      "how": "trace"
+    },
+    {
+      "group": "K-42ab79",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "DownSheet_caption/btn_ok_n",
+      "label": "",
+      "set": false,
+      "instances": 24,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse",
+        "Enhance_1"
+      ],
+      "controls": [
+        "K-e6eb9a",
+        "K-bdc9f6",
+        "K-a274ca",
+        "K-fb4759",
+        "K-50789a",
+        "K-00dd2f",
+        "K-538b09",
+        "K-3ce28c",
+        "K-422226",
+        "K-6091e6"
+      ],
+      "app": [],
+      "press": "TC-064, TC-054",
+      "how": "trace"
+    },
+    {
+      "group": "K-14866f",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "ic_magic_wand",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse"
+      ],
+      "controls": [
+        "K-d855d0",
+        "K-69f870"
+      ],
+      "app": [],
+      "press": "TC-070",
+      "how": "trace"
+    },
+    {
+      "group": "K-55ae2a",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust"
+      ],
+      "name": "ic_mask_n",
+      "label": "",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "9_Adjust_curve"
+      ],
+      "controls": [
+        "K-a5207e"
+      ],
+      "app": [],
+      "press": "TC-068",
+      "how": "trace"
+    },
+    {
+      "group": "K-0dafc6",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "ic_redo",
+      "label": "",
+      "set": false,
+      "instances": 12,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse",
+        "3_"
+      ],
+      "controls": [
+        "K-4af404",
+        "K-a4eba3",
+        "K-abde3d",
+        "K-8ee098"
+      ],
+      "app": [],
+      "press": "TC-062, TC-050",
+      "how": "trace"
+    },
+    {
+      "group": "K-f474c6",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "ic_undo",
+      "label": "",
+      "set": false,
+      "instances": 12,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse",
+        "3_"
+      ],
+      "controls": [
+        "K-d49c86",
+        "K-173d4e",
+        "K-b850d0",
+        "K-a845fa"
+      ],
+      "app": [],
+      "press": "TC-061, TC-051",
+      "how": "trace"
+    },
+    {
+      "group": "K-b56a6b",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "On-screen/btn_BA_n",
+      "label": "",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse"
+      ],
+      "controls": [
+        "K-4022fe",
+        "K-4b254d",
+        "K-36b7ec",
+        "K-c1b078"
+      ],
+      "app": [],
+      "press": "TC-068",
+      "how": "trace"
+    },
+    {
+      "group": "K-67b0a7",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "round/ic_brightness",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse"
+      ],
+      "controls": [
+        "K-8f566d",
+        "K-6a91c5"
+      ],
+      "app": [],
+      "press": "TC-057",
+      "how": "trace"
+    },
+    {
+      "group": "K-68ce29",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "round/ic_contrast",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse"
+      ],
+      "controls": [
+        "K-068416",
+        "K-176f50"
+      ],
+      "app": [],
+      "press": "TC-057, TC-059",
+      "how": "trace"
+    },
+    {
+      "group": "K-66b151",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "round/ic_exposure",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse"
+      ],
+      "controls": [
+        "K-575ea3",
+        "K-9efe55"
+      ],
+      "app": [],
+      "press": "TC-058",
+      "how": "trace"
+    },
+    {
+      "group": "K-3978a7",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "round/ic_feedback",
+      "label": "",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "canvas_img_focus"
+      ],
+      "controls": [
+        "K-e00d2d",
+        "K-71726a",
+        "K-6328a4",
+        "K-b2fca4",
+        "K-2a875c",
+        "K-d04a9b",
+        "K-73a5d3",
+        "K-663f53"
+      ],
+      "app": [],
+      "press": "TC-027",
+      "how": "trace"
+    },
+    {
+      "group": "K-14ddab",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "slider_center",
+      "label": "33",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "adjust",
+        "3_"
+      ],
+      "controls": [
+        "K-6bdf7b",
+        "K-3ffa29",
+        "K-a455d7",
+        "K-bdbe3c"
+      ],
+      "app": [],
+      "press": "TC-058, TC-049",
+      "how": "trace"
+    },
+    {
+      "group": "C-745d29",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "slider_hsl_compact",
+      "label": "choice of 3: 「Hue」 「Saturation」 「Lightness」",
+      "set": true,
+      "instances": 6,
+      "screens": [
+        "9_Adjust_HSL"
+      ],
+      "controls": [
+        "K-ea6dfa",
+        "K-4d8b1a",
+        "K-03f1bc",
+        "K-8fe31a",
+        "K-8c0d33",
+        "K-cf0f81"
+      ],
+      "app": [],
+      "press": "TC-067",
+      "how": "trace"
+    },
+    {
+      "group": "C-fcde4f",
+      "kind": "tab",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "tab",
+      "label": "choice of 3: 「Crop & Rotate」 「Adjustment」 「AI Enhance」",
+      "set": true,
+      "instances": 30,
+      "screens": [
+        "canvas_img_focus"
+      ],
+      "controls": [
+        "K-11b60d",
+        "K-148fa7",
+        "K-0ec47f",
+        "K-eb1d38",
+        "K-61cbd0",
+        "K-1cd309",
+        "K-1421dc",
+        "K-dd1318",
+        "K-64c4d1",
+        "K-2609a4",
+        "K-b3c468",
+        "K-469603",
+        "K-642995",
+        "K-b00dc3",
+        "K-6a145c",
+        "K-e905ca",
+        "K-de5244",
+        "K-4b96a2",
+        "K-5ffd25",
+        "K-bc0935",
+        "K-572910",
+        "K-d71890",
+        "K-f272ed",
+        "K-1c41a1"
+      ],
+      "app": [],
+      "press": "TC-028, TC-056, TC-071",
+      "how": "trace"
+    },
+    {
+      "group": "K-570f14",
+      "kind": "tab",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "tab",
+      "label": "",
+      "set": false,
+      "instances": 12,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse",
+        "3_"
+      ],
+      "controls": [
+        "K-217663",
+        "K-ac01f0",
+        "K-da2ec7",
+        "K-42144e"
+      ],
+      "app": [],
+      "press": "n/a: 10-pt divider between the Auto tool and the other tools (not tappable)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-161aa5",
+      "kind": "tab",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "tab",
+      "label": "AI Exposure",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse"
+      ],
+      "controls": [
+        "K-a25e47",
+        "K-4454b0"
+      ],
+      "app": [],
+      "press": "TC-057",
+      "how": "trace"
+    },
+    {
+      "group": "K-407daa",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "top/ic_download",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "canvas_img_focus"
+      ],
+      "controls": [
+        "K-a8c69f",
+        "K-ed3bcb",
+        "K-873cae",
+        "K-f1774a",
+        "K-fbb9bc",
+        "K-a25675",
+        "K-734452",
+        "K-8d326f"
+      ],
+      "app": [],
+      "press": "TC-100",
+      "how": "trace"
+    },
+    {
+      "group": "K-fddfa3",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "top/ic_home",
+      "label": "",
+      "set": false,
+      "instances": 12,
+      "screens": [
+        "canvas_img_focus",
+        "save2"
+      ],
+      "controls": [
+        "K-0725f8",
+        "K-58ebce",
+        "K-8caf13",
+        "K-6ec8f3",
+        "K-444ee1",
+        "K-f452bf",
+        "K-f4da60",
+        "K-1a0025",
+        "K-6ed899",
+        "K-095ecc"
+      ],
+      "app": [],
+      "press": "TC-111, TC-105",
+      "how": "trace"
+    },
+    {
+      "group": "K-90a9b5",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust"
+      ],
+      "name": "top/ic_info",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "adjust",
+        "9_Adjust_curve",
+        "9_Adjust_HSL",
+        "9_Adjust_HSL_collapse",
+        "9_Adjust_curve_collapse"
+      ],
+      "controls": [
+        "K-c75353",
+        "K-797584"
+      ],
+      "app": [],
+      "press": "TC-069",
+      "how": "trace"
+    },
+    {
+      "group": "K-9b8db7",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "top/ic_photo_lib",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "canvas_img_focus"
+      ],
+      "controls": [
+        "K-4400e5",
+        "K-42ff5c",
+        "K-259bc4",
+        "K-a0fb11",
+        "K-0beb60",
+        "K-f2f2ae",
+        "K-0cf19a",
+        "K-fcefbe"
+      ],
+      "app": [],
+      "press": "TC-115, TC-114",
+      "how": "trace"
+    },
+    {
+      "group": "K-55d5ba",
+      "kind": "button",
+      "board": "design-light-adjust",
+      "boards": [
+        "design-light-adjust",
+        "design-dark-adjust",
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "top/ic_settings",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "canvas_img_focus"
+      ],
+      "controls": [
+        "K-10ae65",
+        "K-c978df",
+        "K-e383ee",
+        "K-a39967",
+        "K-f562fe",
+        "K-d3cc86",
+        "K-a47e10",
+        "K-d9d08b"
+      ],
+      "app": [],
+      "press": "TC-026",
+      "how": "trace"
+    },
+    {
+      "group": "K-0816be",
+      "kind": "button",
+      "board": "design-light-enhance",
+      "boards": [
+        "design-light-enhance",
+        "design-dark-enhance",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "btn_primary_large",
+      "label": "Enhance",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "Enhance_1",
+        "Discard dialog"
+      ],
+      "controls": [
+        "K-34bae2",
+        "K-063050",
+        "K-c7dd94",
+        "K-4e9047"
+      ],
+      "app": [],
+      "press": "TC-072",
+      "how": "trace"
+    },
+    {
+      "group": "K-a03f73",
+      "kind": "button",
+      "board": "design-light-enhance",
+      "boards": [
+        "design-light-enhance",
+        "design-dark-enhance"
+      ],
+      "name": "btn_primary_large",
+      "label": "Retry Failed (3)",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "Enhance_1"
+      ],
+      "controls": [
+        "K-0a5d6f",
+        "K-558888"
+      ],
+      "app": [],
+      "press": "TC-091",
+      "how": "trace"
+    },
+    {
+      "group": "K-027f5f",
+      "kind": "button",
+      "board": "design-light-enhance",
+      "boards": [
+        "design-light-enhance",
+        "design-dark-enhance"
+      ],
+      "name": "btn_primary_large",
+      "label": "Start",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "Enhance_1"
+      ],
+      "controls": [
+        "K-e3c852",
+        "K-f46baa"
+      ],
+      "app": [],
+      "press": "TC-074",
+      "how": "trace"
+    },
+    {
+      "group": "K-6ddcb1",
+      "kind": "button",
+      "board": "design-light-enhance",
+      "boards": [
+        "design-light-enhance",
+        "design-dark-enhance"
+      ],
+      "name": "btn_teritary_outline_large",
+      "label": "Cancel",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "Enhance_1"
+      ],
+      "controls": [
+        "K-3e3959",
+        "K-d9a741"
+      ],
+      "app": [],
+      "press": "TC-073",
+      "how": "trace"
+    },
+    {
+      "group": "C-e2a31f",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "btn_cancel",
+      "label": "choice of 8",
+      "set": true,
+      "instances": 8,
+      "screens": [
+        "photo_picker"
+      ],
+      "controls": [
+        "K-1023cd",
+        "K-88121d",
+        "K-54c7cf",
+        "K-e2c0f2",
+        "K-819e1c",
+        "K-81f6e3",
+        "K-2e2c8b",
+        "K-8c1931"
+      ],
+      "app": [],
+      "press": "TC-007",
+      "how": "trace"
+    },
+    {
+      "group": "K-768f43",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "btn_primary_small",
+      "label": "Next",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "photo_picker"
+      ],
+      "controls": [
+        "K-5aaf09",
+        "K-fab7fd"
+      ],
+      "app": [],
+      "press": "TC-006",
+      "how": "trace"
+    },
+    {
+      "group": "K-32efa4",
+      "kind": "toggle",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "capsule_switcher",
+      "label": "Single",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "photo_picker"
+      ],
+      "controls": [
+        "K-69f52a",
+        "K-6726d4"
+      ],
+      "app": [],
+      "press": "TC-001, TC-005",
+      "how": "trace"
+    },
+    {
+      "group": "C-4f0857",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "ic_1v1",
+      "label": "choice of 4",
+      "set": true,
+      "instances": 4,
+      "screens": [
+        "3_"
+      ],
+      "controls": [
+        "K-17a9d8",
+        "K-0f2ec7",
+        "K-414afb",
+        "K-70add9"
+      ],
+      "app": [],
+      "press": "TC-035, TC-039",
+      "how": "trace"
+    },
+    {
+      "group": "K-8d5d5a",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "ic_checked",
+      "label": "1",
+      "set": false,
+      "instances": 14,
+      "screens": [
+        "photo_picker"
+      ],
+      "controls": [
+        "K-29dff5",
+        "K-e7fb68",
+        "K-fce1f7",
+        "K-0fc828",
+        "K-c844b7",
+        "K-f58636",
+        "K-ca1e19",
+        "K-a6ee2c",
+        "K-d4fd8a",
+        "K-bb9432",
+        "K-ef50e9",
+        "K-69202f",
+        "K-104de9",
+        "K-eecd07"
+      ],
+      "app": [],
+      "press": "TC-005",
+      "how": "trace"
+    },
+    {
+      "group": "K-0ea28f",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "ic_crop_free",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "3_"
+      ],
+      "controls": [
+        "K-260b8e",
+        "K-c6e1d9"
+      ],
+      "app": [],
+      "press": "TC-044",
+      "how": "trace"
+    },
+    {
+      "group": "K-e7543f",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "ic_image",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "3_"
+      ],
+      "controls": [
+        "K-de98ca",
+        "K-bf10f4"
+      ],
+      "app": [],
+      "press": "TC-045",
+      "how": "trace"
+    },
+    {
+      "group": "K-0e44a5",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "round/ic_vertical_flip",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "3_"
+      ],
+      "controls": [
+        "K-63f8f0",
+        "K-a11e22"
+      ],
+      "app": [],
+      "press": "TC-048",
+      "how": "trace"
+    },
+    {
+      "group": "K-68efe7",
+      "kind": "tab",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "tab",
+      "label": "Photo",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "photo_picker"
+      ],
+      "controls": [
+        "K-fd051e",
+        "K-f0fff4"
+      ],
+      "app": [],
+      "press": "n/a: the picker's existing Photo / Stock source tabs, unchanged by this feature (the spec adds only Single / Batch)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-464eb7",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry",
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "top/ic_back",
+      "label": "",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "3_",
+        "save2"
+      ],
+      "controls": [
+        "K-a8d1f8",
+        "K-6bc1a8",
+        "K-4d86a8",
+        "K-84c1fb"
+      ],
+      "app": [],
+      "press": "TC-055, TC-104",
+      "how": "trace"
+    },
+    {
+      "group": "K-960eab",
+      "kind": "button",
+      "board": "design-light-entry",
+      "boards": [
+        "design-light-entry",
+        "design-dark-entry"
+      ],
+      "name": "top/ic_back_n",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "photo_picker"
+      ],
+      "controls": [
+        "K-5f430e",
+        "K-bc83e0"
+      ],
+      "app": [],
+      "press": "TC-002, TC-015",
+      "how": "trace"
+    },
+    {
+      "group": "K-23b3e5",
+      "kind": "button",
+      "board": "design-light-save",
+      "boards": [
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "btn_add_credit",
+      "label": "100",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "Discard dialog"
+      ],
+      "controls": [
+        "K-3dd6fe",
+        "K-181610"
+      ],
+      "app": [],
+      "press": "n/a: credit pill / History drawn in the AI Enhance room top bar; batch charges nothing and whether they show is Q-17",
+      "how": "n/a"
+    },
+    {
+      "group": "K-71e5cc",
+      "kind": "button",
+      "board": "design-light-save",
+      "boards": [
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "btn_primary_large",
+      "label": "Keep Editing",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "Discard dialog"
+      ],
+      "controls": [
+        "K-bf8e3d",
+        "K-de472b"
+      ],
+      "app": [],
+      "press": "TC-113, TC-117",
+      "how": "trace"
+    },
+    {
+      "group": "K-6e1204",
+      "kind": "button",
+      "board": "design-light-save",
+      "boards": [
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "btn_primary_large",
+      "label": "Edit Next Batch",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "save2"
+      ],
+      "controls": [
+        "K-b59511",
+        "K-843fb0"
+      ],
+      "app": [],
+      "press": "TC-106",
+      "how": "trace"
+    },
+    {
+      "group": "K-457d02",
+      "kind": "button",
+      "board": "design-light-save",
+      "boards": [
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "btn_teritary_outline_large",
+      "label": "Discard",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "Discard dialog"
+      ],
+      "controls": [
+        "K-ab9b57",
+        "K-1dec78"
+      ],
+      "app": [],
+      "press": "TC-112, TC-115",
+      "how": "trace"
+    },
+    {
+      "group": "K-5c3877",
+      "kind": "button",
+      "board": "design-light-save",
+      "boards": [
+        "design-light-save",
+        "design-dark-save"
+      ],
+      "name": "ic_history",
+      "label": "",
+      "set": false,
+      "instances": 2,
+      "screens": [
+        "Discard dialog"
+      ],
+      "controls": [
+        "K-ae5068",
+        "K-09cd5a"
+      ],
+      "app": [],
+      "press": "n/a: credit pill / History drawn in the AI Enhance room top bar; batch charges nothing and whether they show is Q-17",
+      "how": "n/a"
+    },
+    {
+      "group": "K-db6d33",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-flow-2",
+        "pm-flow-3",
+        "pm-ui-3",
+        "pm-ui-4",
+        "pm-ui-5"
+      ],
+      "name": "DownSheet_caption/btn_ok_n",
+      "label": "",
+      "set": false,
+      "instances": 13,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Adjustment · default ("
+      ],
+      "controls": [
+        "K-3706a5",
+        "K-eccf22",
+        "K-08eba4",
+        "K-2ccdc1",
+        "K-a2f2e8",
+        "K-bc61d6",
+        "K-1e2f6e"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "K-1561b4",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-ui-3"
+      ],
+      "name": "ic_crop_free",
+      "label": "",
+      "set": false,
+      "instances": 7,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Crop & Rotate · applie"
+      ],
+      "controls": [
+        "K-a7b6df",
+        "K-39ce7a",
+        "K-a1537f"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "K-e0955f",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-ui-3"
+      ],
+      "name": "ic_horizontal_flip",
+      "label": "",
+      "set": false,
+      "instances": 7,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Crop & Rotate · applie"
+      ],
+      "controls": [
+        "K-df43a4",
+        "K-f5cbac",
+        "K-0365e9"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "K-1df5f2",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-ui-3"
+      ],
+      "name": "ic_image",
+      "label": "",
+      "set": false,
+      "instances": 7,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Crop & Rotate · applie"
+      ],
+      "controls": [
+        "K-f420fa",
+        "K-7721db",
+        "K-8a6799"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "K-f0dffe",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-flow-2",
+        "pm-ui-3",
+        "pm-ui-4"
+      ],
+      "name": "ic_redo",
+      "label": "",
+      "set": false,
+      "instances": 11,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Adjustment · default ("
+      ],
+      "controls": [
+        "K-d5dfb9",
+        "K-160538",
+        "K-a8b501",
+        "K-581411",
+        "K-e76e0a"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "K-aebfa3",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-ui-3"
+      ],
+      "name": "ic_rotate_square",
+      "label": "",
+      "set": false,
+      "instances": 7,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Crop & Rotate · applie"
+      ],
+      "controls": [
+        "K-fab14d",
+        "K-7129c3",
+        "K-ab7ee3"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "K-9e4152",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-flow-2",
+        "pm-ui-3",
+        "pm-ui-4"
+      ],
+      "name": "ic_undo",
+      "label": "",
+      "set": false,
+      "instances": 11,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Adjustment · default ("
+      ],
+      "controls": [
+        "K-0478d4",
+        "K-3d649e",
+        "K-815f58",
+        "K-6c78e0",
+        "K-13a2a7"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "K-7f2e97",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-ui-3"
+      ],
+      "name": "ic_vertical_flip",
+      "label": "",
+      "set": false,
+      "instances": 7,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Crop & Rotate · applie"
+      ],
+      "controls": [
+        "K-01a060",
+        "K-2b4c5d",
+        "K-44185e"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "K-bbf6d3",
+      "kind": "button",
+      "board": "pm-apply-all-options",
+      "boards": [
+        "pm-apply-all-options",
+        "pm-flow-1",
+        "pm-ui-3"
+      ],
+      "name": "slider/center",
+      "label": "33",
+      "set": false,
+      "instances": 7,
+      "screens": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D",
+        "Batch Edit Room · Crop & Rotate · defaul",
+        "Batch Edit Room · Crop & Rotate · applie"
+      ],
+      "controls": [
+        "K-3ee4f1",
+        "K-a75b8f",
+        "K-5a24bd"
+      ],
+      "app": [],
+      "press": "n/a: PM draft board 「Apply to all · icon options」 (給 PM 選, not in the spec); the same tools are pressed on the Design Crop & Rotate frame",
+      "how": "n/a"
+    },
+    {
+      "group": "C-417772",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "btn",
+      "label": "choice of 6: 「Quick Action」 「Motion Swap」 「AI Edit Agent」 「AI Group Photo」 …",
+      "set": true,
+      "instances": 17,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-a55746",
+        "K-cbd7cd",
+        "K-a2e002",
+        "K-5f263b",
+        "K-212d3a",
+        "K-50fabb",
+        "K-ca56e0",
+        "K-e71892",
+        "K-ebfde9",
+        "K-e6d0b9",
+        "K-de44f6"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-92c5f3",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "btn_premium",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-32e30d",
+        "K-04ad5e"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-8fb7ec",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "btn_setting",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-1488b6",
+        "K-7e3f6f"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-1599a8",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-2",
+        "pm-flow-3",
+        "pm-flow-5",
+        "pm-flow-6",
+        "pm-flow-7",
+        "pm-ui-2",
+        "pm-ui-8"
+      ],
+      "name": "btn_top_home_n",
+      "label": "",
+      "set": false,
+      "instances": 10,
+      "screens": [
+        "Batch Edit Room · default (NEW)",
+        "Edit Room（同 Edit Room）",
+        "Batch Save Page · saved (NEW)"
+      ],
+      "controls": [
+        "K-9dc7bf",
+        "K-06d012",
+        "K-16f153",
+        "K-5d07e3",
+        "K-3875b8",
+        "K-738e29",
+        "K-e6818b",
+        "K-173154",
+        "K-08d615"
+      ],
+      "app": [],
+      "press": "TC-111, TC-105",
+      "how": "trace"
+    },
+    {
+      "group": "K-a60d7d",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "button",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-d830a4",
+        "K-806932"
+      ],
+      "app": [],
+      "press": "TC-001",
+      "how": "trace"
+    },
+    {
+      "group": "K-e61079",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-2",
+        "pm-flow-3",
+        "pm-flow-5",
+        "pm-flow-6",
+        "pm-flow-7",
+        "pm-ui-2"
+      ],
+      "name": "editing_area/btn_BA_n",
+      "label": "",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "Batch Edit Room · default (NEW)",
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-23fb63",
+        "K-515d7b",
+        "K-88ff70",
+        "K-6c4670",
+        "K-c02f1e",
+        "K-7bcaf6",
+        "K-94e1db"
+      ],
+      "app": [],
+      "press": "TC-025",
+      "how": "trace"
+    },
+    {
+      "group": "K-5062a6",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-2",
+        "pm-flow-3",
+        "pm-flow-5",
+        "pm-flow-6",
+        "pm-flow-7",
+        "pm-ui-2"
+      ],
+      "name": "editing_area/btn_redo_n",
+      "label": "",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "Batch Edit Room · default (NEW)",
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-0c1308",
+        "K-06dcd9",
+        "K-97af5f",
+        "K-e81497",
+        "K-8c5f5e",
+        "K-bbda62",
+        "K-edebc5"
+      ],
+      "app": [],
+      "press": "TC-021",
+      "how": "trace"
+    },
+    {
+      "group": "K-6ffd14",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-2",
+        "pm-flow-3",
+        "pm-flow-5",
+        "pm-flow-6",
+        "pm-flow-7",
+        "pm-ui-2"
+      ],
+      "name": "editing_area/btn_undo_n",
+      "label": "",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "Batch Edit Room · default (NEW)",
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-55979e",
+        "K-6fbd77",
+        "K-230561",
+        "K-41978b",
+        "K-0ffee0",
+        "K-c7156d",
+        "K-b48992"
+      ],
+      "app": [],
+      "press": "TC-021",
+      "how": "trace"
+    },
+    {
+      "group": "K-f071d7",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "ic_account_circle",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-95bf04",
+        "K-017d02"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-7dde0f",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "ic_ai_photo",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-9bc8ea",
+        "K-d4c473"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-b06e44",
+      "kind": "item",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "ic_ai_video",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-867dfd",
+        "K-61b6c6"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-45214a",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "ic_eraser",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-f10c21",
+        "K-513753"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-998798",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "ic_home",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-abae13",
+        "K-89f094"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-4e956f",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "round/ic_chevron_right",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-758419",
+        "K-93defb"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-efb427",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-2",
+        "pm-flow-3",
+        "pm-flow-5",
+        "pm-flow-6",
+        "pm-flow-7",
+        "pm-ui-2"
+      ],
+      "name": "round/ic_crop",
+      "label": "",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "Batch Edit Room · default (NEW)",
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-986b8a",
+        "K-84d6fb",
+        "K-c61cf1",
+        "K-dc315e",
+        "K-498386",
+        "K-4d58e0",
+        "K-bba6d1"
+      ],
+      "app": [],
+      "press": "TC-028",
+      "how": "trace"
+    },
+    {
+      "group": "K-529c88",
+      "kind": "button",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "round/ic_video_edit_by_chat",
+      "label": "",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-d6ddbb",
+        "K-f321b3"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-6c9709",
+      "kind": "tab",
+      "board": "pm-flow-1",
+      "boards": [
+        "pm-flow-1",
+        "pm-flow-4"
+      ],
+      "name": "tab",
+      "label": "Discover",
+      "set": false,
+      "instances": 3,
+      "screens": [
+        "Launcher（同 Launcher）",
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-940c24",
+        "K-08e85d"
+      ],
+      "app": [],
+      "press": "n/a: other features' controls on the shared Launcher (PM mockup of the existing Launcher)",
+      "how": "n/a"
+    },
+    {
+      "group": "C-69394e",
+      "kind": "button",
+      "board": "pm-flow-2",
+      "boards": [
+        "pm-flow-2",
+        "pm-ui-4"
+      ],
+      "name": "AI Anime_Tab",
+      "label": "choice of 3: 「Light」 「Color」 「Details」",
+      "set": true,
+      "instances": 12,
+      "screens": [
+        "Batch Edit Room · Adjustment · default (",
+        "Batch Edit Room · Adjustment · applied ("
+      ],
+      "controls": [
+        "K-863429",
+        "K-ea642c",
+        "K-a34f21",
+        "K-edef6d",
+        "K-bc4619",
+        "K-5d82fb"
+      ],
+      "app": [],
+      "press": "TC-061, TC-065",
+      "how": "trace"
+    },
+    {
+      "group": "K-6b58e4",
+      "kind": "button",
+      "board": "pm-flow-2",
+      "boards": [
+        "pm-flow-2",
+        "pm-flow-3",
+        "pm-ui-4",
+        "pm-ui-5"
+      ],
+      "name": "DownSheet_caption/btn_cancel_n",
+      "label": "",
+      "set": false,
+      "instances": 6,
+      "screens": [
+        "Batch Edit Room · Adjustment · default (",
+        "Batch Edit Room · Adjustment · applied (",
+        "Batch Edit Room · AI Enhance · processin"
+      ],
+      "controls": [
+        "K-b53963",
+        "K-aa2ed2",
+        "K-7ae790",
+        "K-cb317f"
+      ],
+      "app": [],
+      "press": "TC-063",
+      "how": "trace"
+    },
+    {
+      "group": "K-380963",
+      "kind": "button",
+      "board": "pm-flow-2",
+      "boards": [
+        "pm-flow-2",
+        "pm-ui-4"
+      ],
+      "name": "ic_gradient_mask_n",
+      "label": "",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "Batch Edit Room · Adjustment · default (",
+        "Batch Edit Room · Adjustment · applied ("
+      ],
+      "controls": [
+        "K-ace178",
+        "K-aee17b",
+        "K-647aca",
+        "K-667acd"
+      ],
+      "app": [],
+      "press": "n/a: PM mockup of the 26'10/E Adjustment room (subject-mask toggle); the batch room shows no Subject Detection (DR-06) and the Design draws none",
+      "how": "n/a"
+    },
+    {
+      "group": "K-dfcc50",
+      "kind": "button",
+      "board": "pm-flow-2",
+      "boards": [
+        "pm-flow-2",
+        "pm-ui-4"
+      ],
+      "name": "ic_restart",
+      "label": "",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "Batch Edit Room · Adjustment · default (",
+        "Batch Edit Room · Adjustment · applied ("
+      ],
+      "controls": [
+        "K-d88ad2",
+        "K-0c579e"
+      ],
+      "app": [],
+      "press": "n/a: PM mockup of the existing room's reset; the Design (261104) batch bottom row is ✕ ↶ ↷ ✓ only",
+      "how": "n/a"
+    },
+    {
+      "group": "C-a494aa",
+      "kind": "button",
+      "board": "pm-flow-2",
+      "boards": [
+        "pm-flow-2",
+        "pm-ui-4"
+      ],
+      "name": "round/ic_brightness",
+      "label": "choice of 6",
+      "set": true,
+      "instances": 12,
+      "screens": [
+        "Batch Edit Room · Adjustment · default (",
+        "Batch Edit Room · Adjustment · applied ("
+      ],
+      "controls": [
+        "K-310619",
+        "K-3d50db",
+        "K-2de9f2",
+        "K-537890",
+        "K-7d37f1",
+        "K-23e895"
+      ],
+      "app": [],
+      "press": "TC-057",
+      "how": "trace"
+    },
+    {
+      "group": "K-57b6f8",
+      "kind": "button",
+      "board": "pm-flow-2",
+      "boards": [
+        "pm-flow-2",
+        "pm-ui-4"
+      ],
+      "name": "round/ic_contrast",
+      "label": "",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "Batch Edit Room · Adjustment · default (",
+        "Batch Edit Room · Adjustment · applied ("
+      ],
+      "controls": [
+        "K-4216f9",
+        "K-23494f"
+      ],
+      "app": [],
+      "press": "TC-057",
+      "how": "trace"
+    },
+    {
+      "group": "K-93d18f",
+      "kind": "button",
+      "board": "pm-flow-2",
+      "boards": [
+        "pm-flow-2",
+        "pm-ui-4"
+      ],
+      "name": "slider_continous",
+      "label": "33",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "Batch Edit Room · Adjustment · default (",
+        "Batch Edit Room · Adjustment · applied ("
+      ],
+      "controls": [
+        "K-766ac5",
+        "K-f37fc5"
+      ],
+      "app": [],
+      "press": "TC-058",
+      "how": "trace"
+    },
+    {
+      "group": "C-aa3629",
+      "kind": "tab",
+      "board": "pm-flow-2",
+      "boards": [
+        "pm-flow-2",
+        "pm-ui-4"
+      ],
+      "name": "tab",
+      "label": "choice of 2: 「Auto」 「Exposure」",
+      "set": true,
+      "instances": 8,
+      "screens": [
+        "Batch Edit Room · Adjustment · default (",
+        "Batch Edit Room · Adjustment · applied ("
+      ],
+      "controls": [
+        "K-1f13ad",
+        "K-c6b76f",
+        "K-811fbd",
+        "K-92be9d"
+      ],
+      "app": [],
+      "press": "TC-070, TC-058",
+      "how": "trace"
+    },
+    {
+      "group": "K-a20d53",
+      "kind": "button",
+      "board": "pm-flow-3",
+      "boards": [
+        "pm-flow-3",
+        "pm-flow-4",
+        "pm-tbd",
+        "pm-ui-5"
+      ],
+      "name": "btn_credit",
+      "label": "182",
+      "set": false,
+      "instances": 11,
+      "screens": [
+        "Batch Edit Room · AI Enhance · default (",
+        "Batch Edit Room · AI Enhance · result_su",
+        "Batch Edit Room · AI Enhance · free_user",
+        "Batch Edit Room · AI Enhance · already_d",
+        "Batch Edit Room · AI Enhance · network_i"
+      ],
+      "controls": [
+        "K-be23ac",
+        "K-a0c46e",
+        "K-296314",
+        "K-8a7090"
+      ],
+      "app": [],
+      "press": "n/a: credit pill / History drawn in the AI Enhance room top bar; batch charges nothing and whether they show is Q-17",
+      "how": "n/a"
+    },
+    {
+      "group": "K-e1af9c",
+      "kind": "button",
+      "board": "pm-flow-3",
+      "boards": [
+        "pm-flow-3",
+        "pm-flow-4",
+        "pm-tbd",
+        "pm-ui-5"
+      ],
+      "name": "btn_credit_primary_1row",
+      "label": "Enhance",
+      "set": false,
+      "instances": 8,
+      "screens": [
+        "Batch Edit Room · AI Enhance · default (",
+        "Batch Edit Room · AI Enhance · processin",
+        "Batch Edit Room · AI Enhance · free_user"
+      ],
+      "controls": [
+        "K-cad006",
+        "K-837423",
+        "K-34bc9d",
+        "K-30224d"
+      ],
+      "app": [],
+      "press": "TC-072, TC-082",
+      "how": "trace"
+    },
+    {
+      "group": "K-849da8",
+      "kind": "button",
+      "board": "pm-flow-3",
+      "boards": [
+        "pm-flow-3",
+        "pm-ui-5"
+      ],
+      "name": "btn_credit_primary_1row",
+      "label": "Retry Failed (3)",
+      "set": false,
+      "instances": 4,
+      "screens": [
+        "Batch Edit Room · AI Enhance · result_su",
+        "Batch Edit Room · AI Enhance · network_i"
+      ],
+      "controls": [
+        "K-f8dd17",
+        "K-9c61f8",
+        "K-94cae4"
+      ],
+      "app": [],
+      "press": "TC-091",
+      "how": "trace"
+    },
+    {
+      "group": "K-5f0901",
+      "kind": "button",
+      "board": "pm-flow-3",
+      "boards": [
+        "pm-flow-3",
+        "pm-flow-4",
+        "pm-tbd",
+        "pm-ui-5"
+      ],
+      "name": "ic_history_n",
+      "label": "",
+      "set": false,
+      "instances": 11,
+      "screens": [
+        "Batch Edit Room · AI Enhance · default (",
+        "Batch Edit Room · AI Enhance · result_su",
+        "Batch Edit Room · AI Enhance · free_user",
+        "Batch Edit Room · AI Enhance · already_d",
+        "Batch Edit Room · AI Enhance · network_i"
+      ],
+      "controls": [
+        "K-bdef96",
+        "K-b09a53",
+        "K-b78bf2",
+        "K-15a671"
+      ],
+      "app": [],
+      "press": "n/a: credit pill / History drawn in the AI Enhance room top bar; batch charges nothing and whether they show is Q-17",
+      "how": "n/a"
+    },
+    {
+      "group": "K-2fe040",
+      "kind": "button",
+      "board": "pm-flow-4",
+      "boards": [
+        "pm-flow-4"
+      ],
+      "name": "round/ic_ai_enhance",
+      "label": "",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "Launcher（同 Launcher，AI Enhance shortcut "
+      ],
+      "controls": [
+        "K-58239a"
+      ],
+      "app": [],
+      "press": "TC-013",
+      "how": "trace"
+    },
+    {
+      "group": "C-fbe74f",
+      "kind": "button",
+      "board": "pm-flow-5",
+      "boards": [
+        "pm-flow-5"
+      ],
+      "name": "AI Anime_Tab",
+      "label": "choice of 5: 「Quick Action」 「Edit」 「Enhance」 「Portrait」 …",
+      "set": true,
+      "instances": 5,
+      "screens": [
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-a20a73",
+        "K-ad28d3",
+        "K-f7dd36",
+        "K-c48a84",
+        "K-88c6bb"
+      ],
+      "app": [],
+      "press": "n/a: the existing single-photo Edit Room, unchanged by this feature (other tools)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-f1cf6b",
+      "kind": "button",
+      "board": "pm-flow-5",
+      "boards": [
+        "pm-flow-5"
+      ],
+      "name": "ic_cutout",
+      "label": "",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-6abbeb"
+      ],
+      "app": [],
+      "press": "n/a: the existing single-photo Edit Room, unchanged by this feature (other tools)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-c03eda",
+      "kind": "button",
+      "board": "pm-flow-5",
+      "boards": [
+        "pm-flow-5"
+      ],
+      "name": "ic_mosaic",
+      "label": "",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-cec19c"
+      ],
+      "app": [],
+      "press": "n/a: the existing single-photo Edit Room, unchanged by this feature (other tools)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-9d1050",
+      "kind": "button",
+      "board": "pm-flow-5",
+      "boards": [
+        "pm-flow-5"
+      ],
+      "name": "ic_removal",
+      "label": "",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-278d00"
+      ],
+      "app": [],
+      "press": "n/a: the existing single-photo Edit Room, unchanged by this feature (other tools)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-674a1e",
+      "kind": "tab",
+      "board": "pm-flow-5",
+      "boards": [
+        "pm-flow-5"
+      ],
+      "name": "tab",
+      "label": "Background",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "Edit Room（同 Edit Room）"
+      ],
+      "controls": [
+        "K-b86a82"
+      ],
+      "app": [],
+      "press": "n/a: the existing single-photo Edit Room, unchanged by this feature (other tools)",
+      "how": "n/a"
+    },
+    {
+      "group": "K-8372f2",
+      "kind": "button",
+      "board": "pm-ui-5",
+      "boards": [
+        "pm-ui-5"
+      ],
+      "name": "btn_credit_primary_1row",
+      "label": "Enhanced",
+      "set": false,
+      "instances": 1,
+      "screens": [
+        "Batch Edit Room · AI Enhance · already_d"
+      ],
+      "controls": [
+        "K-038ead"
+      ],
+      "app": [],
+      "press": "TC-076",
+      "how": "trace"
+    }
+  ]
+}

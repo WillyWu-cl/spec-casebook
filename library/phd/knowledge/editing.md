@@ -55,3 +55,10 @@ the category to All. Create More keeping the whole session is an open question.
 
 AI Replace returning from Artwork to edit the mask shows the red mask; VHS / Glitch returning from Store keep a
 working mask.
+
+## KP-134 Android Adjustment Undo switches the tab
+- kind: rule · platform: android · use: analysis, run · tags: adjustment, undo, tab · authority: spec
+- source: PM, Batch Editing pm-ui-4 DR-05g (Figma, changed 2026-11-11), which states it of today's Android single Adjustment room
+
+In the Android Adjustment room, Undo / Redo switches to the Light / Color / Details tab of the value it undoes or
+redoes. Whether the iOS single Adjustment room does the same is not stated (Batch Editing iOS Q-18).

@@ -1,0 +1,14 @@
+
+0 of 3 entries have a possible duplicate (overlap >= 34%, or a shared quoted label / rare phrase, marked !). Judge each one yourself — wording varies, so this ranks candidates, it does not decide.
+
+[Batch-Edit-R2-01] PHD-A 20.19.0 - [AIAgent] Batch_Editing: 「All」 is never disabled in Crop & Rotate or Adjustment, even after applying
+      feature='Batch_Editing'  searched 5 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R2-02] PHD-A 20.19.0 - [AIAgent] Batch_Editing: Thumbnail strip stays shown and tappable while Adjustment Curve or HSL is open
+      feature='Batch_Editing'  searched 5 candidate(s)
+      no likely duplicate
+
+[Batch-Edit-R2-03] PHD-A 20.19.0 - [AIAgent][UX] Batch_Editing: One Undo after an edit and 「All」 keeps the current photo's own edit
+      feature='Batch_Editing'  searched 5 candidate(s)
+      no likely duplicate

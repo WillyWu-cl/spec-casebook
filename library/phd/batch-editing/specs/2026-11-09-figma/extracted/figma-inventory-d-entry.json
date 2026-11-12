@@ -2,7 +2,7 @@
   "file": "qZXJfrM5gb5g4tFoCIS1YU",
   "page": "12:2321",
   "group": "d-entry",
-  "extracted_at": "2026-11-09",
+  "extracted_at": "2026-11-11",
   "section": [
     "12:2321",
     "261104_design",
@@ -1102,9 +1102,9 @@
   ],
   "hash": {
     "12:2321/design-light-entry": "171dc98a",
-    "12:2321/design-dark-entry": "698219d6"
+    "12:2321/design-dark-entry": "ffd8e3cb"
   },
-  "hashed_at": "2026-11-09T07:49:46.541Z",
+  "hashed_at": "2026-11-11T09:42:44.084Z",
   "overlay": {
     "12:2321/design-light-entry": "",
     "12:2321/design-dark-entry": ""
@@ -1827,6 +1827,6 @@
       0
     ]
   ],
-  "ms": 2343,
+  "ms": 2289,
   "size": 6839
 }

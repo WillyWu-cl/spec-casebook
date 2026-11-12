@@ -2,7 +2,7 @@
   "file": "iWlQTjlmfykHfmlNvg9J4p",
   "page": "0:1",
   "group": "pm-flow-a",
-  "extracted_at": "2026-11-09",
+  "extracted_at": "2026-11-11",
   "section": [
     "16:9281",
     "Spec - Flow",
@@ -1117,11 +1117,11 @@
     }
   ],
   "hash": {
-    "16:9281/pm-flow-1": "e4d71391",
+    "16:9281/pm-flow-1": "8e0501b1",
     "16:9281/pm-flow-2": "b43dacb6",
     "16:9281/pm-flow-3": "f5d00d40"
   },
-  "hashed_at": "2026-11-09T07:49:40.739Z",
+  "hashed_at": "2026-11-11T09:41:24.259Z",
   "overlay": {
     "16:9281/pm-flow-1": "",
     "16:9281/pm-flow-2": "47feef2a",
@@ -1770,6 +1770,15 @@
       0
     ],
     [
+      0,
+      9147,
+      1087,
+      830,
+      58,
+      "要請 design 出 icon 設計 for shortcut",
+      0
+    ],
+    [
       1,
       6646,
       2166,
@@ -2319,6 +2328,6 @@
       1
     ]
   ],
-  "ms": 2810,
-  "size": 10344
+  "ms": 3450,
+  "size": 10402
 }

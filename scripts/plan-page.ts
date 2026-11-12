@@ -107,7 +107,7 @@ function buildData() {
   const claim = new Map<string, { m: Msg; ph: string }>();
   for (const [ph, d] of Object.entries(runOf).sort((a, b) => (stat[a[0]]?.first ?? 0) - (stat[b[0]]?.first ?? 0))) {
     const mine = spans.filter(sp => sp.phase === ph);
-    const inSpan = (m: Msg) => mine.some(sp => m.t > sp.a && m.t <= sp.b);
+    const inSpan = (m: Msg & { whole?: boolean }) => !!m.whole || mine.some(sp => m.t > sp.a && m.t <= sp.b);
     for (const m of syncTokens(join(runsDir, d, 'tokens.jsonl'), (local.get(d) ?? []).filter(inSpan))) claim.set(m.id, { m, ph });
   }
   const byPhase: Record<string, Msg[]> = {};
@@ -120,6 +120,17 @@ function buildData() {
     s.test += sp.b - sp.a; s.first = Math.min(s.first, sp.a); s.last = Math.max(s.last, sp.b);
     const mine = ser[sp.phase] ?? empty, msgs = mine.msgs;
     for (let i = upper(mine, sp.a); i < msgs.length && msgs[i].t <= sp.b; i++) { addMsg(s.tokens, msgs[i]); if (!msgs[i].model.startsWith('<')) s.models[msgs[i].model] = (s.models[msgs[i].model] ?? 0) + 1; }
+  }
+  // Ledger messages outside every span of their phase (a segment subagent's reading before its first device command,
+  // a wrap-up after its last: `whole` messages, run-ledger.ts) go to the nearest span: the one that ended last before
+  // the message, else the phase's first span. Their tokens count; the active time does not change (2026-11-11).
+  for (const [ph, ser1] of Object.entries(ser)) {
+    const mine = spans.filter(sp => sp.phase === ph).sort((a, b) => a.a - b.a); if (!mine.length) continue;
+    for (const m of ser1.msgs) {
+      if (mine.some(sp => m.t > sp.a && m.t <= sp.b)) continue;
+      const sp = [...mine].reverse().find(x => x.b < m.t) ?? mine[0];
+      for (const s of [st(ph), st(`${ph}/${sp.seg}`)]) { addMsg(s.tokens, m); if (!m.model.startsWith('<')) s.models[m.model] = (s.models[m.model] ?? 0) + 1; }
+    }
   }
   for (const g of idles) for (const s of [st(g.phase), st(`${g.phase}/${g.seg}`)]) { s.idle += g.b - g.a; s.gaps++; }
   // Plan usage, in Pro-% (plan-% × the snapshot's seat size). Account figure: each increment the run overlaps, split

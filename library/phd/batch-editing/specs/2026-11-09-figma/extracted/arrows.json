@@ -217,5 +217,6 @@
       "expected": "「Keep Editing」 closes the dialog; the edits stay",
       "how": "PM Spec - Flow group 「<from> --> <to>」 (blue = forward tap, red = return); listed by hand from the group names and the board image (reading-the-spec.md, Figma-only spec)"
     }
-  ]
+  ],
+  "count": 31
 }

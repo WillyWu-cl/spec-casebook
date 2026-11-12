@@ -2,7 +2,7 @@
   "file": "iWlQTjlmfykHfmlNvg9J4p",
   "page": "0:1",
   "group": "pm-ui-a",
-  "extracted_at": "2026-11-09",
+  "extracted_at": "2026-11-11",
   "section": [
     "16:13767",
     "",
@@ -634,9 +634,9 @@
     "16:13767/pm-ui-1": "aaccfb79",
     "16:13767/pm-ui-2": "2a73ec28",
     "16:13767/pm-ui-3": "762c664c",
-    "16:13767/pm-ui-4": "e8a6769a"
+    "16:13767/pm-ui-4": "bbb51a58"
   },
-  "hashed_at": "2026-11-09T07:52:26.369Z",
+  "hashed_at": "2026-11-11T09:39:02.106Z",
   "overlay": {
     "16:13767/pm-ui-1": "",
     "16:13767/pm-ui-2": "",
@@ -1792,7 +1792,7 @@
       14340,
       730,
       348,
-      "• Room 內只有一組 Undo / Redo（一條共用歷史），依操作順序記錄兩種步驟：① Apply to all（一次調整多張）② 單張單個參數編輯 [DR-05][DR-05b]\n• Undo / Redo 依序退回／重做最近一步：Apply to all → 所有照片一起；單張編輯 → 只影響被編輯的那一張（不論目前選取哪張） [DR-05b]\n• 切換照片不會清掉歷史 [DR-05e]\n• Undo / Redo 的單張編輯不是目前選取的照片時，自動切到那張照片（縮圖列同步選取），讓用戶看到變化 [DR-05h]\n• ✕：丟掉這次進 room 後所有照片的修改（含 Apply to all） [DR-05c]\n• ✓：回 Batch Edit Room，這次 room 對每張的修改在該張的外層歷史算一步 [DR-05d]\n• Undo / Redo 不會自動切換 tab（Light / Color / Details），同今天單張 Adjustment room [DR-05g]",
+      "• Room 內只有一組 Undo / Redo（一條共用歷史），依操作順序記錄兩種步驟：① Apply to all（一次調整多張）② 單張單個參數編輯 [DR-05][DR-05b]\n• Undo / Redo 依序退回／重做最近一步：Apply to all → 所有照片一起；單張編輯 → 只影響被編輯的那一張（不論目前選取哪張） [DR-05b]\n• 切換照片不會清掉歷史 [DR-05e]\n• Undo / Redo 的單張編輯不是目前選取的照片時，自動切到那張照片（縮圖列同步選取），讓用戶看到變化 [DR-05h]\n• ✕：丟掉這次進 room 後所有照片的修改（含 Apply to all） [DR-05c]\n• ✓：回 Batch Edit Room，這次 room 對每張的修改在該張的外層歷史算一步 [DR-05d]\n• Undo / Redo 會自動切換 tab（Light / Color / Details），同今天 Android 單張 Adjustment room [DR-05g]",
       0
     ],
     [
@@ -2021,6 +2021,6 @@
       0
     ]
   ],
-  "ms": 2808,
-  "size": 13235
+  "ms": 2958,
+  "size": 13243
 }

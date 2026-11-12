@@ -1,0 +1,17 @@
+Dedupe — Batch Editing Android, run 2026-11-11-r2 (phase R2), PhotoDirector 20.19.0 (90201900). Read-only; Android pool
+only (product "PhotoDirector Mobile for Android"; dedupe per OS, user 2026-10-28). 2026-11-11.
+
+1. ecl_query.py dedupe upload/bodies.json --product "PhotoDirector Mobile for Android" --limit 600
+   → 0 of 3 entries have a possible duplicate (feature 'Batch_Editing': 5 candidates = PHA262026P0057–P0061; raw output
+   in dedupe-raw.txt).
+2. Text searches in the same pool (ecl_query.py bugs --text …): "Apply to all", "thumbnail strip" → 0 bugs; "Curve",
+   "HSL" → single-photo Adjustment tickets only (PHA252025-0308 Compare after Auto, PHA252025-0304 Trash Can in Curve,
+   PHA152521-0009), none about the batch strip; "Batch_Editing" → P0057–P0061 (AI Enhance background, Back on two
+   dialogs, Square 1434 x 1435, 21st-photo toast), none about 「All」 states, the Curve / HSL strip or Undo.
+3. Earlier batch ebugs/2026-11-10-r1: not filed there — ISS-BEA-03 (TC-079 tab switch on Undo) is now the spec (DR-05g
+   changed 2026-11-11, TC-079 Pass in R2); TC-062 / TC-076 were held as a PM question in R1 and are drafted now as
+   ISS-BEA-14 (PM, per the 2026-11-11 rule that open questions are filed to PM).
+
+Same-OS matches left off the drafts: none. Every entry stays a new card.
+verify_ebug_drafts.py not used for the gate: it expects exploration-batch sheets and an owner-split table and still
+refuses [AIAgent][UX] (pre-2026-11-11); check_ebug_format.py (0 errors, 0 warnings, check.txt) is the gate, as in R1.

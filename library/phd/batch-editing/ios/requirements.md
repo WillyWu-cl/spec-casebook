@@ -1,6 +1,8 @@
 # Batch Editing — requirements (ios)
 Spec: Batch Editing - PM and Design Figma.md (Figma-only spec set 2026-11-09: PM page 0:1 「26'11/E Batch editing: AI enhance, crop & rotate, adjustments」, Design page 12:2321 「261104_design」)
 
+Re-read 2026-11-11 (REQ-011): five boards changed (pm-flow-1, pm-ui-4, the dark Design entry / adjust / enhance boards); the only rule change is DR-05g (R-067).
+
 Source order: Design (page dated 261104) over PM, except where a PM rule is newer or more specific (the 「✅ 結論」 crop rule board, the TBD Q1 / Q2 decisions of 10/30) (analysis.md pass 7). Decision ids in brackets ([D1-07], [DR-04]) are the PM's own. The draft boards 「Apply to all · icon options」 and 「提案 · Adjustment 縮圖列」 are proposals the PM marks as not in the spec yet; the 「Reference」 section is competitor material.
 
 ## Entry and Photo Picker
@@ -66,7 +68,7 @@ Source order: Design (page dated 261104) over PM, except where a PM rule is newe
 ## Adjustment
 - R-065 [DS:design-light-adjust 「adjust」 41:923; PM:pm-ui-4 D1-11, DR-03, DR-06] The batch Adjustment room is the 26'10/E Adjustment room with tabs 「Light」 / 「Color」 / 「Details」, ⓘ at the top left and 「All」 at the top right, the thumbnail strip, ✕ ↶ ↷ ✓; it has no Subject Detection; the Design draws 「AI Exposure」 in the tool row while the PM says it is not shown (Q-8)
 - R-066 [PM:pm-ui-4 DR-04, DR-04c] Adjustment Apply to all copies the room's whole setting: photo 1 Exposure +20 → 「All」 → every photo +20; photo 3 Contrast +10; photo 1 Exposure +30 → 「All」 → every other photo matches photo 1 and photo 3 loses its Contrast +10
-- R-067 [PM:pm-ui-4 DR-05g] Undo / Redo in Adjustment do not switch the Light / Color / Details tab (as the single Adjustment room)
+- R-067 [PM:pm-ui-4 DR-05g, re-read 2026-11-11] Undo / Redo in Adjustment switch to the Light / Color / Details tab of the value they undo or redo (the PM changed this on 2026-11-11 from 「the tab stays」 and cites today's Android single Adjustment room: Q-18)
 - R-068 [DS:design-light-adjust 「9_Adjust_curve」 57:6798, 「9_Adjust_HSL」 63:7874; PM:pm-ui-4 D1-12, 31:1833] Opening Color › Curve or HSL hides the thumbnail strip (it cannot be tapped); 「All」 stays shown
 - R-069 [DS:design-light-adjust 「9_Adjust_curve_collapse」 128:8508, 「9_Adjust_HSL_collapse」 105:4123; PM:pm-ui-4 D1-12] Collapsing the Curve / HSL panel (﹀) or going back to a slider tool such as Exposure shows the strip again; to switch photos the panel is collapsed first
 - R-070 [DS:design-light-adjust 63:7874] HSL has the colour chips and 「Hue」, 「Saturation」, 「Lightness」 sliders as in the single Adjustment room, and Curve has its reset and compare buttons
@@ -144,6 +146,7 @@ Source order: Design (page dated 261104) over PM, except where a PM rule is newe
 - Q-12 Result message second line: the Design says 「Failed photos are marked with ! on the thumbnails.」; the PM UI board says 「Failed photos are marked on the thumbnails.」 (its flow board has the Design wording). Assumption: the Design (R-098; TC-088).
 - Q-13 Batch Save page title: the Design says 「Save 12 photos」; the PM says 「Saved 12 photos」. Assumption: the Design wording, the count as the batch size (R-111; TC-101).
 - Q-14 Light and dark: the Design draws every screen in both; does the app follow the system appearance? Assumption: the system appearance (R-132; TC-118, TC-119).
+- Q-18 Adjustment tab on Undo / Redo: the PM changed DR-05g on 2026-11-11 from 「Undo / Redo does not switch the tab, as today's single Adjustment room」 to 「Undo / Redo switches the tab, as today's Android single Adjustment room」. Does the iOS batch room switch the tab too (the iOS single room may not)? Assumption: yes, the batch rule is for both platforms (R-067; TC-061).
 - Q-16 Adjustment strip in Curve / HSL: the PM rule (D1-12) and the Design (261104) hide the strip while Curve / HSL is open; the PM draft board 「提案 · Adjustment 縮圖列」 shows RD's current build (「RD 實作提案一」) keeping the strip with a blank bar and ﹀, and two proposals (smaller strip; hide while dragging; ﹀ in the strip) marked 「尚未寫進 spec」. Assumption: the PM rule and the Design (R-068, R-069; TC-065, TC-066).
 - Q-17 Credit pill and History in the AI Enhance room: the PM mockups (pm-ui-5) and the Design's Discard dialog frame show a credit pill (「182」 / 「100」) and a History icon at the top right, while batch AI Enhance charges nothing (DR-11) and the Design's own AI Enhance frames draw no top bar. Are they shown, and what do they open? Assumption: not asserted; only the 「Enhance」 button and the dialog are held to 「no price」 (R-078; TC-071, TC-081).
 
@@ -230,6 +233,7 @@ Source order: Design (page dated 261104) over PM, except where a PM rule is newe
 | R-034 | above the original | TC-030 |
 | R-034 | below 238 px | TC-031 |
 | R-003 | tier=Free (Crop, Adjustment, save) | TC-084, TC-009 |
+| R-003 | tier=Free (20-photo batch: Crop, Adjustment, save) | TC-125 |
 | R-003 | tier=Pro | TC-076, TC-078 |
 | R-086 | tier=Free | TC-082 |
 | R-086 | tier=Pro (dialog, no IAP) | TC-072 |
@@ -251,6 +255,10 @@ Source order: Design (page dated 261104) over PM, except where a PM rule is newe
 | R-132 | appearance=Dark | TC-119 |
 | R-014 | Launcher shortcut | TC-016 |
 | R-014 | deeplink | TC-017 |
+
+### Combinations
+
+- Not combined: room, ratio, tier, entry, photos, appearance (each is one condition a rule holds under, never chosen together to change one output: the room a rule is checked in, a crop ratio, the account tier, the picker entry, the batch size, the system appearance; rotation and flips applied with a ratio are checked together in TC-047 and TC-049)
 
 ### Flow arrows walked by existing rows
 - R-015 [DS: flow arrow 16:10599 https://www.figma.com/design/iWlQTjlmfykHfmlNvg9J4p/Batch-Editing?node-id=16-10599] Launcher 「Edit」 → Photo Picker (Batch tab): tapping 「Edit」 opens the Photo Picker, where the 「Batch」 tab allows several photos. Walked by: TC-001.
@@ -297,3 +305,4 @@ Source order: Design (page dated 261104) over PM, except where a PM rule is newe
 | Ledger entry | Requirements |
 |---|---|
 | REQ-009 | R-001, R-004 … every requirement (new feature from the PM and Design Figma) |
+| REQ-011 | R-003, R-028, R-060, R-067, R-068, R-069 (the spec agent comparison's partial cases; DR-05g re-read) |

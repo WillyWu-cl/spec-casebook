@@ -8,7 +8,7 @@
 //   --all      every board whose group read has texts
 //   --accept   after the update plan took the changes: save each board's current Figma text as its baseline
 //              (extracted/figma-text/<board>.json, committed), so the next comparison is Figma against Figma
-// The baseline is the board's last accepted Figma text, else its PDF OCR. A Figma line counts as present when the
+// The baseline is the board's last accepted Figma text, else its PDF OCR (a Figma-only set's text snapshot, compared exactly). A Figma line counts as present when the
 // baseline holds it (spaces, punctuation and full-width forms ignored; OCR noise tolerated); a baseline line counts as
 // gone when the Figma text no longer holds it. Each line names the requirements whose spec notes (the approved tables'
 // annotation-trace.json) hold it. Writes extracted/figma-text-diff.json; exit 0 no change, 10 changed.
@@ -27,6 +27,7 @@ const set = maybeSet && !maybeSet.startsWith('--') ? maybeSet : listSpecSets(fea
 if (!set) { console.log('No spec set has figma-inventory-<group>.json'); process.exit(1); }
 const ex = join(specs, set, 'extracted'), baseDir = join(ex, 'figma-text');
 const read = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
+const figmaOnly = existsSync(join(specs, set, 'spec-set.json')) && !!read(join(specs, set, 'spec-set.json')).figma_only;
 const has = (f: string) => process.argv.includes(`--${f}`);
 const slug = (s: string) => s.replace(/[^\w.-]+/g, '-');
 
@@ -78,14 +79,19 @@ for (const b of scope) {
   const saved = existsSync(join(baseDir, `${slug(b.name)}.json`)) ? read(join(baseDir, `${slug(b.name)}.json`)) : null;
   const base = saved ? saved.lines.map((l: any) => ({ text: l.text, low: false })) : ocr(b.name);
   if (!base) { report.boards.push({ board: b.name, id: b.id, group: b.group, baseline: 'none' }); continue; }
-  const from = saved ? 'figma' : 'pdf-ocr';
-  // OCR misreads characters, so a line is gone only when little of it is left; Figma against Figma is exact
-  const keep = saved ? 0.95 : 0.6, present = saved ? 0.95 : 0.8;
+  // A Figma-only set's boards/<board>.md is Figma's own text, not OCR, so it is compared exactly like an accepted baseline
+  const exact = !!saved || figmaOnly;
+  const from = saved ? 'figma' : figmaOnly ? 'figma-snapshot' : 'pdf-ocr';
+  // OCR misreads characters, so a line is gone only when little of it is left. Figma against Figma is exact, line by
+  // line: a one-character change (「不會自動切換」 → 「會自動切換」, DR-05g, 2026-11-11) leaves most of a line's
+  // character groups in place, so an overlap test would pass it; exact lines show it as one line gone, one new.
+  const keep = 0.6, present = 0.8;
   const now = b.lines.map(l => norm(l.text)).join('|'), nowG = grams(now);
   const was = base.map((l: any) => norm(l.text)).join('|'), wasG = grams(was);
-  const added = b.lines.filter(l => worth(norm(l.text)) && cover(norm(l.text), was, wasG) < present)
+  const nowSet = new Set(b.lines.map(l => norm(l.text))), wasSet = new Set(base.map((l: any) => norm(l.text)));
+  const added = b.lines.filter(l => worth(norm(l.text)) && (exact ? !wasSet.has(norm(l.text)) : cover(norm(l.text), was, wasG) < present))
     .map(l => ({ text: l.text, inPhone: !!l.inPhone, reqs: reqsOf(b.name, norm(l.text)) }));
-  const removed = base.filter((l: any) => worth(norm(l.text)) && cover(norm(l.text), now, nowG) < keep)
+  const removed = base.filter((l: any) => worth(norm(l.text)) && (exact ? !nowSet.has(norm(l.text)) : cover(norm(l.text), now, nowG) < keep))
     .map((l: any) => ({ text: l.text.replace(/\s*\(\?\)\s*$/, ''), ...(l.low ? { low: true } : {}), reqs: reqsOf(b.name, norm(l.text)) }));
   const reqs = [...new Set(blocks.filter(x => x.board === b.name).flatMap(x => x.reqs))];
   report.boards.push({ board: b.name, id: b.id, group: b.group, baseline: from, added, removed, reqs });
@@ -94,7 +100,7 @@ writeJson(join(ex, 'figma-text-diff.json'), report);
 const changed = report.boards.filter((b: any) => b.added?.length || b.removed?.length);
 console.log(`${changed.length ? 'FIGMA TEXT: CHANGED' : 'FIGMA TEXT: UNCHANGED'} — ${scope.length} board(s) compared${flagged?.size && !pick && !has('all') ? ' (changed in figma-check.json)' : ''}, ${changed.length} with new or gone lines`);
 for (const b of changed) {
-  console.log(`  ${b.board} (${b.id}, against its ${b.baseline === 'figma' ? 'last accepted Figma text' : 'PDF OCR'}): +${b.added.length} / −${b.removed.length}; requirements on this board: ${b.reqs.join(', ') || 'none'}`);
+  console.log(`  ${b.board} (${b.id}, against its ${b.baseline === 'figma' ? 'last accepted Figma text' : b.baseline === 'figma-snapshot' ? 'Figma text snapshot' : 'PDF OCR'}): +${b.added.length} / −${b.removed.length}; requirements on this board: ${b.reqs.join(', ') || 'none'}`);
   for (const l of b.added.slice(0, 12)) console.log(`    + ${l.text}${l.inPhone ? ' [screen]' : ''}${l.reqs.length ? `  (${l.reqs.join(', ')})` : ''}`);
   for (const l of b.removed.slice(0, 12)) console.log(`    − ${l.text}${l.low ? ' [low OCR]' : ''}${l.reqs.length ? `  (${l.reqs.join(', ')})` : ''}`);
   if (b.added.length > 12 || b.removed.length > 12) console.log('    … all lines in figma-text-diff.json');

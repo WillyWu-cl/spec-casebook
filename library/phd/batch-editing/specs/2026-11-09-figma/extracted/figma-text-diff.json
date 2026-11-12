@@ -1,0 +1,520 @@
+{
+  "checked_at": "2026-11-11T09:45:39.424Z",
+  "set": "2026-11-09-figma",
+  "boards": [
+    {
+      "board": "design-light-adjust",
+      "id": "12:2321/design-light-adjust",
+      "group": "d-adjust",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-070",
+        "R-042",
+        "R-065"
+      ]
+    },
+    {
+      "board": "design-dark-adjust",
+      "id": "12:2321/design-dark-adjust",
+      "group": "d-adjust",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-070",
+        "R-042",
+        "R-065"
+      ]
+    },
+    {
+      "board": "design-light-enhance",
+      "id": "12:2321/design-light-enhance",
+      "group": "d-enhance",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "design-dark-enhance",
+      "id": "12:2321/design-dark-enhance",
+      "group": "d-enhance",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "design-light-entry",
+      "id": "12:2321/design-light-entry",
+      "group": "d-entry",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "design-dark-entry",
+      "id": "12:2321/design-dark-entry",
+      "group": "d-entry",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "design-light-save",
+      "id": "12:2321/design-light-save",
+      "group": "d-save",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-111",
+        "R-108",
+        "R-125",
+        "R-075"
+      ]
+    },
+    {
+      "board": "design-dark-save",
+      "id": "12:2321/design-dark-save",
+      "group": "d-save",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-111",
+        "R-108",
+        "R-125",
+        "R-075"
+      ]
+    },
+    {
+      "board": "pm-apply-all-options",
+      "id": "145:2810",
+      "group": "pm-drafts",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "pm-crop-apply-rule",
+      "id": "293:2246",
+      "group": "pm-drafts",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-047",
+        "R-048",
+        "R-049",
+        "R-050",
+        "R-051",
+        "R-052",
+        "R-053",
+        "R-034",
+        "R-035",
+        "R-054",
+        "R-055",
+        "R-046"
+      ]
+    },
+    {
+      "board": "pm-adjust-strip-proposal",
+      "id": "382:2617",
+      "group": "pm-drafts",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "pm-flow-1",
+      "id": "16:9281/pm-flow-1",
+      "group": "pm-flow-a",
+      "baseline": "figma-snapshot",
+      "added": [
+        {
+          "text": "要請 design 出 icon 設計 for shortcut",
+          "inPhone": false,
+          "reqs": []
+        }
+      ],
+      "removed": [],
+      "reqs": [
+        "R-001",
+        "R-002",
+        "R-003",
+        "R-014"
+      ]
+    },
+    {
+      "board": "pm-flow-2",
+      "id": "16:9281/pm-flow-2",
+      "group": "pm-flow-a",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-042",
+        "R-065"
+      ]
+    },
+    {
+      "board": "pm-flow-3",
+      "id": "16:9281/pm-flow-3",
+      "group": "pm-flow-a",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "pm-flow-4",
+      "id": "16:9281/pm-flow-4",
+      "group": "pm-flow-b",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-086"
+      ]
+    },
+    {
+      "board": "pm-flow-5",
+      "id": "16:9281/pm-flow-5",
+      "group": "pm-flow-b",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-013"
+      ]
+    },
+    {
+      "board": "pm-flow-6",
+      "id": "16:9281/pm-flow-6",
+      "group": "pm-flow-b",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-111",
+        "R-108",
+        "R-114"
+      ]
+    },
+    {
+      "board": "pm-flow-7",
+      "id": "16:9281/pm-flow-7",
+      "group": "pm-flow-b",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-123",
+        "R-124",
+        "R-114"
+      ]
+    },
+    {
+      "board": "pm-background",
+      "id": "1:2",
+      "group": "pm-notes",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "pm-header",
+      "id": "42:3016/pm-header",
+      "group": "pm-notes",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-002"
+      ]
+    },
+    {
+      "board": "pm-credit",
+      "id": "16:15541",
+      "group": "pm-notes",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-078"
+      ]
+    },
+    {
+      "board": "pm-error-handle",
+      "id": "16:15545",
+      "group": "pm-notes",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-098",
+        "R-083",
+        "R-106",
+        "R-107",
+        "R-103",
+        "R-105"
+      ]
+    },
+    {
+      "board": "pm-tracking",
+      "id": "16:15550",
+      "group": "pm-notes",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-133",
+        "R-135",
+        "R-137",
+        "R-134",
+        "R-136"
+      ]
+    },
+    {
+      "board": "pm-tbd",
+      "id": "42:3016/pm-tbd",
+      "group": "pm-notes",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-078",
+        "R-003"
+      ]
+    },
+    {
+      "board": "pm-reference",
+      "id": "3:2",
+      "group": "pm-reference",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": []
+    },
+    {
+      "board": "pm-ui-1",
+      "id": "16:13767/pm-ui-1",
+      "group": "pm-ui-a",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-004",
+        "R-005",
+        "R-006",
+        "R-007",
+        "R-008",
+        "R-009",
+        "R-133",
+        "R-012",
+        "R-013",
+        "R-011"
+      ]
+    },
+    {
+      "board": "pm-ui-2",
+      "id": "16:13767/pm-ui-2",
+      "group": "pm-ui-a",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-024",
+        "R-025",
+        "R-026",
+        "R-027",
+        "R-108",
+        "R-123",
+        "R-124",
+        "R-028",
+        "R-029"
+      ]
+    },
+    {
+      "board": "pm-ui-3",
+      "id": "16:13767/pm-ui-3",
+      "group": "pm-ui-a",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-032",
+        "R-033",
+        "R-034",
+        "R-035",
+        "R-036",
+        "R-037",
+        "R-038",
+        "R-040",
+        "R-041",
+        "R-043",
+        "R-044",
+        "R-045",
+        "R-061",
+        "R-028",
+        "R-042",
+        "R-055",
+        "R-048",
+        "R-054",
+        "R-051",
+        "R-056",
+        "R-057",
+        "R-058",
+        "R-059",
+        "R-060"
+      ]
+    },
+    {
+      "board": "pm-ui-4",
+      "id": "16:13767/pm-ui-4",
+      "group": "pm-ui-a",
+      "baseline": "figma-snapshot",
+      "added": [
+        {
+          "text": "• Undo / Redo 會自動切換 tab（Light / Color / Details），同今天 Android 單張 Adjustment room [DR-05g]",
+          "inPhone": false,
+          "reqs": [
+            "R-066",
+            "R-056",
+            "R-057",
+            "R-058",
+            "R-059",
+            "R-060",
+            "R-067"
+          ]
+        }
+      ],
+      "removed": [
+        {
+          "text": "• Undo / Redo 不會自動切換 tab（Light / Color / Details），同今天單張 Adjustment room [DR-05g]",
+          "reqs": [
+            "R-066",
+            "R-056",
+            "R-057",
+            "R-058",
+            "R-059",
+            "R-060",
+            "R-067"
+          ]
+        }
+      ],
+      "reqs": [
+        "R-068",
+        "R-069",
+        "R-065",
+        "R-037",
+        "R-044",
+        "R-045",
+        "R-061",
+        "R-038",
+        "R-036",
+        "R-040",
+        "R-041",
+        "R-028",
+        "R-042",
+        "R-043",
+        "R-055",
+        "R-066",
+        "R-056",
+        "R-057",
+        "R-058",
+        "R-059",
+        "R-060",
+        "R-067"
+      ]
+    },
+    {
+      "board": "pm-ui-5",
+      "id": "16:13767/pm-ui-5",
+      "group": "pm-ui-b",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-075",
+        "R-076",
+        "R-080",
+        "R-078",
+        "R-079",
+        "R-023",
+        "R-089",
+        "R-084",
+        "R-085",
+        "R-077",
+        "R-086",
+        "R-082",
+        "R-083",
+        "R-098",
+        "R-099",
+        "R-101",
+        "R-102",
+        "R-103",
+        "R-104",
+        "R-106",
+        "R-107"
+      ]
+    },
+    {
+      "board": "pm-ui-6",
+      "id": "16:13767/pm-ui-6",
+      "group": "pm-ui-b",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-080",
+        "R-081",
+        "R-078",
+        "R-079"
+      ]
+    },
+    {
+      "board": "pm-ui-7",
+      "id": "16:13767/pm-ui-7",
+      "group": "pm-ui-b",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-123",
+        "R-124",
+        "R-125",
+        "R-126",
+        "R-107"
+      ]
+    },
+    {
+      "board": "pm-ui-8",
+      "id": "16:13767/pm-ui-8",
+      "group": "pm-ui-b",
+      "baseline": "figma-snapshot",
+      "added": [],
+      "removed": [],
+      "reqs": [
+        "R-108",
+        "R-109",
+        "R-110",
+        "R-111",
+        "R-113",
+        "R-114",
+        "R-112",
+        "R-116",
+        "R-115"
+      ]
+    }
+  ],
+  "no_texts": []
+}

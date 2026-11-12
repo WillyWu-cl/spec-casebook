@@ -123,7 +123,7 @@ function usageData() {
   // the calibration's basis phase, counted the way Progress counts it (its run folder's ledger inside its active spans)
   const basisDir = cal && existsSync(runsDir) ? readdirSync(runsDir).find(d => phaseOf(d) === cal.basis && rowsOf(d)) : undefined;
   const files = projectTranscripts(ROOT), local = localRunMessages(files, new Set([...dirs, ...(basisDir ? [basisDir] : [])]));
-  const inSpans = (sp: { a: number; b: number }[]) => (m: Msg) => sp.some(x => m.t > x.a && m.t <= x.b);
+  const inSpans = (sp: { a: number; b: number }[]) => (m: Msg & { whole?: boolean }) => !!m.whole || sp.some(x => m.t > x.a && m.t <= x.b);
   const ledger = (d: string, sp: { a: number; b: number }[]) => syncTokens(join(runsDir, d, 'tokens.jsonl'), (local.get(d) ?? []).filter(inSpans(sp)));
   let basisW = cal?.basisWeightedTokens ?? 0;
   if (cal && basisDir) { const sp = activity(join(runsDir, basisDir), rowsOf(basisDir)!, cal.basis).spans, u = zero(); for (const m of ledger(basisDir, sp)) if (inSpans(sp)(m)) addMsg(u, m); basisW = weight(u) || basisW; }

@@ -8,7 +8,13 @@ print them (`D1-08`, `DR-05b` …); `[S3:<board>]` for Section 3 · 美圖 Apply
 carries the UI; `[DS:<board>]` = a Design frame (`ds-*` boards, `design-text.md`). UI strings follow the Design frames,
 rules the PM boards; where the two disagree on a rule the question is open and the row says which it follows. Mockups
 are iPhone frames; Android differences are in "System back". The Design Figma was read from PDF exports, not through
-Figma (quota ran out mid read: `figma-pending.json`, Q-12). Request ledger: REQ-001 (this table), REQ-003 (this update), REQ-004 (UI copy follows the Design).
+Figma (quota ran out mid read: `figma-pending.json`, Q-12). Request ledger: REQ-001 (this table), REQ-003 (this update), REQ-004 (UI copy follows the Design), REQ-011 (v5).
+
+**Also read (REQ-011, 2026-11-11):** the PM and Design Figma pages themselves (PM page 0:1, Design page 12:2321), as the
+text snapshot of spec set 2026-11-09-figma (re-read 2026-11-11). `[PMF:<board>; <rule IDs>]` = a PM Figma board
+(`specs/2026-11-09-figma/extracted/figma-inventory-pm-*.json`). The PDF export 「UI UX flow 2.pdf」 is an older state
+of that page: it lacks the 【NEW】 「All」 states and the width / height rule (DR-04), the Curve / HSL strip rule (D1-12)
+and has DR-05g before its 2026-11-11 change (KF-005). Where the two differ, the Figma page wins.
 
 ## Scope
 - R-001 [PM:overview; D0-04, D0-04b] The feature is named 「Batch Edit」 / 「Batch Edit Room」 and is reached only from the Photo Picker of the Launcher 「Edit」 button and of the Launcher 「AI Enhance」 shortcut.
@@ -49,8 +55,9 @@ Figma (quota ran out mid read: `figma-pending.json`, Q-12). Request ledger: REQ-
 
 ## Crop & Rotate room
 - R-050 [PM:crop-default; D1-11, DR-03; DS:ds-3, ds-main-down-tool-box] The room matches the current Crop & Rotate room (Rotate, Flip, Flip Vertically, Original, Custom, Square, 2:3, 3:2, 3:4 and more ratios, angle slider, ✕ / undo / redo / ✓), with no title above the tool panel. Its top bar has ‹ at the left, the current photo's pixel size 「W x H」 with a pencil (manual pixel input, R-066) in the middle and 「All」 at the right (‹ beside ✕: Q-22).
-- R-051 [PM:crop-default; DR-04] Top right: an 「Apply to all」 button (icon + 「All」, semi-transparent dark capsule). It is a one-shot button, not a checkbox.
-- R-234 [DS:ds-status] 「All」 has a normal and a greyed (disabled) look; when it is greyed is not stated (Q-16).
+- R-051 [PM:crop-default; DR-04] Top right: an 「Apply to all」 button (icon + 「All」, semi-transparent dark capsule). It is a one-shot button, not a checkbox; it has a normal and a disabled state (R-234).
+- R-234 [DS:ds-status; PMF:pm-ui-3, pm-ui-4 DR-04 【NEW】] 「All」 (Crop & Rotate and Adjustment) is normal or disabled by the current photo: disabled on entering the room while the current photo has no change; normal once it has a change not yet applied; disabled once applied, until the current photo changes again; on switching photos, set by that photo's own unapplied changes; Undo of the Apply to all step → normal, Redo of it → disabled.
+- R-236 [PMF:pm-ui-3 DR-04 【NEW】] Crop manual size (W x H ✎): with width and height linked, a size-only change keeps the ratio, so there is nothing to apply and 「All」 stays disabled; with them unlinked the ratio changes to 「Free」 (custom) and 「All」 turns normal, applying that Free ratio.
 - R-052 [PM:crop-default, crop-applied; DR-04, DR-04c] Tapping 「All」 applies this room's settings from the current photo to every other photo; the screen stays in the room.
 - R-053 [PM:crop-applied; DR-04] After 「All」 the toast 「Applied to x photos」 appears; x = the number of photos other than the current one.
 - R-054 [PM:crop-default, crop-applied; DR-04] The thumbnail strip updates at once to show the applied result on every photo.
@@ -90,7 +97,9 @@ Figma (quota ran out mid read: `figma-pending.json`, Q-12). Request ledger: REQ-
 - R-090 [PM:adjust-default; D1-11, DR-03, DR-06] The room matches the 26'10/E Adjustment room (Light / Color / Details), without Subject Detection and without AI Exposure (the Design frames draw 「AI Exposure」 in the tool list: Q-18; rows follow PM).
 - R-230 [DS:ds-9-adjust-hsl, ds-9-adjust-curve, ds-9-adjust-hsl-collapse, ds-9-adjust-curve-collapse; PM:adjust-guideline-note] The Color tab has an HSL panel (「Hue」 / 「Saturation」 / 「Lightness」 sliders and eight colour dots: red, orange, yellow, green, cyan, blue, purple, magenta) and a Curve panel (channel buttons RGB / red / green / blue beside the tone curve), as the current Adjustment room; each panel folds down with a chevron (﹀) and opens again with ︿, and reset and compare sit on the photo.
 - R-231 [PM:adjust-default; DR-04, DR-04c; DS:ds-9-adjust-hsl, ds-9-adjust-curve] 「All」 carries the HSL and Curve values with the rest of the set (the whole set of the room, R-092).
-- R-232 [PM:adjust-guideline-note] PM asks Design for the HSL / Curve layout with the thumbnail strip (the photo gets small) and prefers the proposal 「Adjustment 縮圖列（draft）」: A. thumbnails 50→40 px, strip 62→48 px; B. the strip fades out while a finger holds a slider or a curve point and fades back on release. — NOT TESTABLE: direction only, not drawn yet (Q-17).
+- R-232 [PM:adjust-guideline-note] PM asks Design for the HSL / Curve layout with the thumbnail strip (the photo gets small) and prefers the proposal 「Adjustment 縮圖列（draft）」: A. thumbnails 50→40 px, strip 62→48 px; B. the strip fades out while a finger holds a slider or a curve point and fades back on release. — NOT TESTABLE: direction only, not drawn yet (Q-17). Decided in the PM Figma (D1-12): R-237, R-238.
+- R-237 [PMF:pm-ui-4 D1-12; DS:9_Adjust_curve, 9_Adjust_HSL] Opening Color › Curve or HSL fades the batch thumbnail strip out; it cannot be tapped (the panel lies over the photo); 「All」 stays shown at the top right.
+- R-238 [PMF:pm-ui-4 D1-12; DS:9_Adjust_curve_collapse, 9_Adjust_HSL_collapse] Collapsing the panel (﹀), or going back to a slider tool such as Exposure, shows the strip again; to switch photos the panel is collapsed first.
 - R-091 [PM:adjust-default; DR-04] Top right: the one-shot 「Apply to all」 button (icon + 「All」, semi-transparent dark capsule, as PDR), not a checkbox.
 - R-092 [PM:adjust-default, adjust-applied; DR-04, DR-04c] Tapping 「All」 applies the whole set of this room's settings from the current photo to every other photo; the screen stays in the room.
 - R-093 [PM:adjust-applied; DR-04] The toast 「Applied to x photos」 appears, x = the photos other than the current one.
@@ -104,7 +113,7 @@ Figma (quota ran out mid read: `figma-pending.json`, Q-12). Request ledger: REQ-
 - R-101 [PM:adjust-default; DR-05h] Undo / Redo of a single edit on a non-current photo switches to that photo (strip selection follows).
 - R-102 [PM:adjust-default; DR-05c] ✕ drops every change to every photo since entering the room, Apply to all included.
 - R-103 [PM:adjust-default; DR-05d] ✓ returns to Batch Edit Room; the room's changes are one step in each photo's main-screen history.
-- R-104 [PM:adjust-default; DR-05g] Undo / Redo does not switch the Light / Color / Details tab (as the single Adjustment room).
+- R-104 [PM:adjust-default; PMF:pm-ui-4 DR-05g, changed 2026-11-11] Undo / Redo switches to the Light / Color / Details tab of the value it undoes or redoes, as the Android single Adjustment room (was: no tab switch).
 - R-105 [PM:adjust-applied; DR-05b] Apply to all is one step: Undo takes it back on all photos at once.
 
 ## AI Enhance
@@ -172,6 +181,10 @@ Figma (quota ran out mid read: `figma-pending.json`, Q-12). Request ledger: REQ-
 - Q-13 What happens to the selected photos when the user deselects one on the Batch tab, by tapping the tile or the tray ✕ (do the numbers renumber?), is 「Next」 disabled with none selected, and what does a tile's expand icon open? Spec silent; rows record it. Assumption: the numbers close up. (R-019, R-233, TC-009, TC-010, TC-150, TC-151)
 - Q-14 Does 「‹」 on the Batch Save page return to an editable Batch Edit Room (edits kept, Save again saves another N new files)? Spec only says it returns. (R-154)
 
+## Answered questions
+- Q-16 (when 「All」 is greyed) — answered by the PM Figma DR-04 【NEW】 list (REQ-011): R-234, R-236; TC-042, TC-153, TC-162, TC-163, TC-059, TC-062, TC-063, TC-075, TC-076, TC-164, TC-165.
+- Q-17 (the strip in HSL / Curve) — answered by the PM Figma D1-12 rule: the strip hides while the panel is open (REQ-011): R-237, R-238; TC-166, TC-167, TC-168.
+
 ## Added 2026-10-30 (updated 2026-11-09) — coverage passes and standing inputs
 
 ### Job states
@@ -232,6 +245,12 @@ Figma (quota ran out mid read: `figma-pending.json`, Q-12). Request ledger: REQ-
 | R-004 | Premium user (AI Enhance without credits) | TC-093 |
 | R-013 | Free user, 20 photos (no IAP at any count) | TC-156 |
 | R-013 | Premium user, 20 photos | TC-011 |
+| R-234 | Crop & Rotate room | TC-153, TC-162, TC-042, TC-062, TC-063 |
+| R-234 | Adjustment room | TC-164, TC-075, TC-076, TC-165 |
+| R-236 | width / height linked | TC-163 |
+| R-236 | width / height unlinked | TC-059 |
+| R-237 | Curve | TC-166 |
+| R-237 | HSL | TC-168 |
 | R-229 | photos already enhanced (enhanced again) | TC-157 |
 | R-229 | photo whose Enhance was undone | TC-097 |
 | R-231 | HSL values | TC-158 |
@@ -279,6 +298,7 @@ The PDF has no Figma links, so arrows are read from the drawn flows (`arrows.jso
 
 | Entry | Requirements |
 |---|---|
+| KP-134 | R-104 |
 | KP-012 | n/a (batch has no paid mode split: Free and Premium are R-004, R-013, R-119) |
 | KP-014 | n/a (PM: no AI Exposure in the batch Adjustment room, R-090; Design draws it: Q-18) |
 | KP-015 | n/a (no purchase in this feature) |
@@ -322,10 +342,9 @@ The PDF has no Figma links, so arrows are read from the drawn flows (`arrows.jso
 | REQ-001 | every requirement of this table (first Android draft) |
 | REQ-003 | R-013, R-015, R-019, R-022, R-031, R-038, R-050, R-090, R-116, R-123, R-130, R-150, R-153, R-155, R-229, R-230, R-231, R-232, R-233, R-234, R-235 (Design frames and UI UX flow 2) |
 | REQ-004 | R-015, R-016, R-017, R-020, R-021, R-123, R-153 (Design copy over PM wording) |
+| REQ-011 | R-051, R-103, R-104, R-232, R-234, R-236, R-237, R-238 (PM Figma rules the PDF lacks; spec agent comparison) |
 | REQ-010 | every requirement of this table (kept over main's Android v1 when the branch merged main, re-saved as v4) |
 - Q-15 The PM entry board now plans a Launcher Batch Edit shortcut (icon to be designed after Meitu) and the deeplink `phd://navigate/page?name=batch_edit`, while D0-04 still says Batch Edit appears only in the two pickers. Where do the shortcut and the deeplink land (Photo Picker on 「Batch」?), and is the shortcut in 26'11/E? Assumption: the deeplink opens the Photo Picker on 「Batch」; rows record it. (R-022, TC-022, TC-152)
-- Q-16 The Design draws 「All」 in a normal and a greyed state. When is it greyed (no change on the current photo yet, one photo only)? R-051 says it is a one-shot button that works again with no change. Assumption: enabled always; rows record when it is grey. (R-234, TC-042, TC-153)
-- Q-17 PM asks Design to lay out HSL / Curve with the thumbnail strip and links a proposal 「Adjustment 縮圖列（draft）」 (smaller strip, or the strip hidden while dragging). The link could not be opened from the PDF and no Design frame draws the change. Assumption: the strip as today; no row checks the proposal. (R-232)
 - Q-18 PM (re-exported 2026-11-09) says the Adjustment room shows no AI Exposure; every Design Adjustment frame draws 「AI Exposure」 between 「Exposure」 and 「Contrast」. Which holds? Assumption: PM (no AI Exposure); the row records what the app shows. (R-090, TC-070)
 - Q-19 The Design draws the Discard Dialog over the AI Enhance page (with a credit pill 「100」 and a history icon at the top right), while PM says ✕ on that page returns to Batch Edit Room keeping the results and the dialog comes from Home / Replace photo. Does ✕ (or Back) on the AI Enhance page ask to discard, and does that page show a credit pill? Assumption: PM (no dialog, results kept). (R-130, TC-100, TC-142)
 - Q-20 Batch Save page title: Design 「Save 12 photos」, PM 「Saved 12 photos」 (D1-07). Assumption: the Design copy. (R-153, TC-128)

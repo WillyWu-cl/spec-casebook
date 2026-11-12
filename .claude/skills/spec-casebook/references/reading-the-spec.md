@@ -251,6 +251,11 @@ Figma file by days, and the control list is read by eye instead of from layers),
   `arrows.json` as step 7 says (node = the board id plus a counter, e.g. `pm-main-flow-a3`, when the PDF carries no
   Figma link). Write rows that press them as usual. With no `inventory.json` there is no `control-trace.json` and the
   coverage page shows board images only; that is the owed part.
+- **Another table read Figma (2026-11-11, phd/batch-editing REQ-011).** When the other platform's table of the same
+  feature, or another spec set of it, has the Figma text (`extracted/figma-inventory-*.json`, a Figma-only snapshot),
+  this analysis is not PDF-only for what that read covers: read those texts beside the PDF (`[PMF:…]` / `[DS:…]` tags,
+  naming the set in `requirements.md`), run `figma-check.ts` on that set first, and let the Figma text win where the
+  two differ (the PDF is the older export). `check.ts` stops warning once `requirements.md` names that set.
 - **Catching up** (a machine where both `whoami` are right, on the user's yes; SKILL.md step 0). Run steps 8 and 10 on
   the same spec set as written, then compare: frames the PDF lacked and controls or arrows the PDF read missed or got
   wrong go through the update plan (SKILL.md step 3) into a draft, `controls.ts` traces every control, and the
