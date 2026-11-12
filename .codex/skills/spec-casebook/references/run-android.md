@@ -23,6 +23,12 @@ adb serial HQ61563393, Android 12, 1080 × 2520; setup in README › Android pho
   chat taps ↓ first: `waitfor "…" --bottom` (taps ↓ each round it shows), `expect "…" --bottom`, or `bottom` on its
   own (seen on 2611061: `button_mini_drama_scroll_bottom`, no content-desc). Leave `--bottom` off only in the rows
   that test the scrolling itself (R-088, R-250, R-274, R-279, R-457, R-485), where tapping ↓ is a step of the case.
+- **One Appium server (user, 2026-11-12).** `start` / `restart` start the shared Android server (port 4724) only when
+  no server exists on that port, detached so it outlives the segment, on macOS and Windows (`lib/appium-server.ts`:
+  a busy server is waited for, a held port is never given a second server, a lock stops two segments starting it at
+  once). Never start `appium` by hand or put it in a run plan: a server started in an agent's background shell dies
+  with that agent and the next segment starts another. `status` prints `Appium servers: …` and warns when a port
+  has more than one; report that to the user rather than killing one.
 - **iOS rule → Android command.** Segment start: `restart` (fresh UiAutomator2 server, PowerDirector in front). Keep
   the phone awake: the user turns on Developer options › Stay awake (or the longest Screen timeout) and uses no PIN
   lock. Rows in a list: `scrollto` (it also prints a row's switch state, `| row Switch on at X,Y`). Pages opened as

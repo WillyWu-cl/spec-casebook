@@ -159,7 +159,8 @@ refuses them), and it runs in one folder, e.g. `runs/<date>-p23-regression-flows
   `logs/<case ID>-<YYYYMMDD-HHMMSS>/` (git-ignored) and `ledger/<case ID>-<time>.json`. Nothing goes to ~/Downloads,
   AirDrop or a share target.
 
-1. `node scripts/device.ts <run dir> status` — reuse a live session; `start <udid>` only if none. Never stop Appium.
+1. `node scripts/device.ts <run dir> status` — reuse a live session; `start <udid>` only if none. Never stop Appium,
+   and never start it by hand in a segment: one shared server per port, which `status` counts (`Appium servers: …`).
    Taps are in points (screenshot pixels ÷ 3 on the 3× phones).
    **Keeping WDA alive (user, 2026-10-27; P9 lost a segment when an 18-hour-old WDA died and the phone locked, and
    the phone later stopped trusting the QA certificate):**

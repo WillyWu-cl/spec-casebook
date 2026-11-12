@@ -70,6 +70,7 @@ import { join } from 'node:path';
 import { configForRunDir, productValue } from './lib/feature-config.ts';
 import { BLOCKER, env, logActivity, runRecipe, sleep, stamp, webdriver } from './lib/device-common.ts';
 import { armWatch, saveCapture, settledCapture, stateMismatch, watchSource } from './lib/design-watch.ts';
+import { appiumServersLine } from './lib/appium-server.ts';
 
 const BASE = process.env.APPIUM_URL ?? 'http://127.0.0.1:4723';
 const [runDir, cmd, ...rest] = process.argv.slice(2);
@@ -273,6 +274,7 @@ switch (cmd) {
   }
   case 'status': {
     console.log(JSON.stringify((await call('GET', '/status')).value));
+    console.log(appiumServersLine());
     if (existsSync(SID)) { try { await s('GET', '/window/rect'); console.log('session alive', sid()); } catch (e) { console.log('session not alive:', String(e).slice(0, 200)); } }
     if (existsSync(WDA_FILE)) { const h = (Date.now() - Date.parse(readFileSync(WDA_FILE, 'utf8'))) / 3_600_000; console.log(`WDA started ${h.toFixed(1)} h ago${h > 3 ? ' — run `restart` at the next segment start' : ''}`); }
     break;
