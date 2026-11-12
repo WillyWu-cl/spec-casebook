@@ -1,0 +1,721 @@
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註,變更,變更原因
+TC-001,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）",在 Launcher 點「Edit」,開啟照片挑選器，上方有「Single」／「Batch」切換，預設選在「Single」,P1,"R-004, R-015",,未變更,
+TC-002,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 點 ‹
+4. 再次在 Launcher 點「Edit」","挑選器又回到「Single」（不會記住「Batch」）
+第一次點 ‹ 有回到 Launcher",P2,"R-004, R-017",,未變更,
+TC-003,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 在「Single」下點選一張照片",開啟既有的單張 Edit Room 並帶入該照片，與這個功能推出前相同（Quick Action／Edit／Enhance／Portrait／Effects）,P1,R-005,,未變更,
+TC-004,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」（「Single」）
+2. 試著勾選第二張照片","「Single」只能選一張照片
+選了就直接進入 Edit Room",P2,R-007,,未變更,
+TC-005,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 依序點選照片 C、A、B","縮圖上的編號為 C 是 1、A 是 2、B 是 3
+底部顯示「Select 1 to 20 photos to continue.(3/20)」與「Next」，且「Next」上方的列依序列出 C、A、B",P1,"R-008, R-009, R-010",採 Design 文案；PM 畫板為「3 selected (max 20)」／「Done」（Q-1）,未變更,
+TC-128,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 在未勾選任何照片時查看底部列
+4. 點「Next」","步驟 3：底部顯示「Select 1 to 20 photos to continue.(0/20)」
+步驟 4：沒有照片時不會開啟 Batch Edit Room
+步驟 4：記錄「Next」是無法點選還是點了沒有反應",P3,R-009,「1 to 20」表示不能用 0 張照片開始批次編輯（隱含條款，REQ-014）；規格沒寫「Next」此時的狀態（Android TC-010）。,新增,REQ-014：Figma Agent 的 picker-boundaries 檢查點，0 張照片（Android 已有 TC-010）
+TC-006,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 依序點選 3 張照片
+4. 點「Next」",開啟 Batch Edit Room 主畫面，縮圖列的 3 張照片依點選順序排列（C、A、B）,P1,"R-016, R-008, R-024",,未變更,
+TC-007,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 點選 3 張照片
+4. 點「Next」上方列中第二張照片的 ×","該照片不再被勾選
+張數顯示 (2/20)，其餘照片維持原本順序（重新編為 1、2）",P2,R-010,只有 Design 畫了這個控制項（Q-2）：規格沒寫是否重新編號,未變更,
+TC-008,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 點選 20 張照片
+4. 再點第 21 張照片","第 21 張不會被勾選，並跳出 toast「Please pick at most 20 photos.」
+張數維持 20",P1,"R-011, R-007",,未變更,
+TC-009,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 依序點選 20 張照片
+4. 點「Next」",開啟 Batch Edit Room，帶入全部 20 張照片（Free 使用者，不會跳出 IAP）,P1,"R-007, R-003",,未變更,
+TC-010,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 只點選一張照片
+4. 點「Next」",開啟既有的單張 Edit Room 並帶入該照片（不是 Batch Edit Room）,P1,"R-012, R-021",,未變更,
+TC-011,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟單張 Edit Room（Edit › Single › 選一張照片）","1. 點 Replace photo（左上角的照片圖示）
+2. 點「Batch」
+3. 點選 3 張照片
+4. 點「Next」","點 Replace photo 會開啟照片挑選器
+切到「Batch」並選 3 張後，「Next」開啟 Batch Edit Room",P2,"R-013, R-022",,未變更,
+TC-012,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟單張 Edit Room",查看 Edit Room 的各個工具與上方列,單張 Edit Room 沒有批次按鈕，也沒有「Batch Edit」入口,P3,R-001,,未變更,
+TC-013,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）",在 Launcher 點「AI Enhance」捷徑,開啟照片挑選器，有相同的「Single」／「Batch」切換，預設選在「Single」,P1,"R-018, R-006",,未變更,
+TC-014,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「AI Enhance」捷徑
+2. 點「Batch」
+3. 點選 3 張照片
+4. 點「Next」",直接開啟批次的 AI Enhance room（只有一個「Enhance」按鈕，縮圖列有這 3 張照片），而不是 Batch Edit Room 主畫面,P1,"R-019, R-023",,未變更,
+TC-015,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）","1. 在 Launcher 點「AI Enhance」捷徑
+2. 點 ‹",回到 Launcher,P2,R-020,,未變更,
+TC-016,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）",在 Launcher 尋找「Batch Editing」捷徑並點它,Launcher 上有「Batch Editing」捷徑，點了會開啟 Batch Edit（照片挑選器的「Batch」分頁，Q-3）,P2,R-014,圖示尚待設計；規格沒寫會到哪一頁（Q-3）。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-017,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已把連結 phd://navigate/page?name=batch_edit 傳到手機（例如貼在「備忘錄」）",點連結,PhotoDirector 開啟 Batch Edit（照片挑選器的「Batch」分頁，Q-3）,P2,R-014,PM-only: no Design frame yet（Design 261104）,未變更,
+TC-018,入口與照片挑選器,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",查看 Batch Edit Room 的底部,只有「Crop & Rotate」、「Adjustment」、「AI Enhance」三個工具：沒有 Filter、Preset 或其他工具,P2,"R-002, R-024",,未變更,
+TC-019,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",查看 Batch Edit Room 畫面,外觀像 Edit Room：上方列左側為 Home 與 Replace photo，右側為 Save 與 Settings（Settings 在最右邊；Design 另外畫了回饋圖示）；中間是照片、↶ ↷ 與比較按鈕，下方是縮圖列，以及依序排列的「Crop & Rotate」、「Adjustment」、「AI Enhance」,P1,"R-024, R-025",,未變更,
+TC-020,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）","1. 點第三張縮圖
+2. 點第一張縮圖","顯示的照片依序切換成第 3 張、第 1 張
+縮圖上沒有 ×，縮圖列也沒有新增照片的方式",P1,R-027,,未變更,
+TC-021,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）","1. 在第 1 張開「Adjustment」，把 Exposure 設為 +30、Contrast 設為 +20，點 ✓
+2. 在第 2 張開「Adjustment」，把 Contrast 設為 +30，點 ✓
+3. 切到第 1 張，點一次 ↶
+4. 點 ↷","點一次 ↶ 第 1 張就回到進那次 room 之前的樣子（Exposure、Contrast 都沒改）
+第 2 張仍保留 Contrast +30
+點 ↷ 後第 1 張的兩個數值都回來",P1,"R-028, R-060",,未變更,
+TC-022,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）","1. 開「Crop & Rotate」，選「Squre」，點「All」
+2. 切到第 3 張，點「Rotate」
+3. 點 ✓
+4. 切到第 3 張，點一次 ↶","點一次 ↶ 第 3 張就回到進那次 room 之前的樣子（沒裁切也沒旋轉）
+第 1、2、4、5 張仍是正方形",P2,"R-028, R-060",,未變更,
+TC-023,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）","1. 開啟「AI Enhance」，點「Enhance」›「Start」，等處理完成後點 ✓
+2. 切到第 2 張，點 ↶
+3. 點 ↷","↶ 讓第 2 張回到 Enhance 之前的樣子（其他張仍維持已 Enhance）
+↷ 會把第 2 張已 Enhance 的結果重做回來",P1,R-029,,未變更,
+TC-024,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）","1. 對整批照片執行 Enhance，點 ✓
+2. 切到第 2 張，點 ↶
+3. 在第 2 張開啟「Adjustment」，把 Exposure 設為 +10，點 ✓","↷ 不能再把第 2 張已 Enhance 的結果重做回來
+再次開啟「AI Enhance」可以重新對它做 Enhance",P2,"R-029, R-085",,未變更,
+TC-025,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做過一項編輯（Crop & Rotate ›「Squre」› ✓）",長按照片右下角的比較按鈕,按住時顯示目前這張未編輯的樣子，放開後回到編輯後的樣子,P3,R-030,與 Edit Room 相同；規格有畫這個按鈕，但沒有新增說明,未變更,
+TC-026,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",點 Settings（上方列最右邊的齒輪）,開啟既有的儲存設定，與從 Edit Room 開啟的相同（Q-4）,P3,"R-026, R-025",PM-only: no Design frame yet（Design 261104）,未變更,
+TC-027,Batch Edit Room 主畫面,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",點上方列的回饋圖示,開啟 App 既有的回饋頁（Q-4）,P3,R-031,只有 Design 畫了這個圖示（Q-4）,未變更,
+TC-028,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",點「Crop & Rotate」,"開啟批次的 Crop & Rotate room：上方有 ‹ 與「1920 x 2560 ✎」這類尺寸，右上角的「All」為灰色（不能按），下方依序是縮圖列、角度滑桿、「Rotate」、「Flip」、「Flip Vertically」、「Original」、「Custom」與各比例，以及 ✕ ↶ ↷ ✓
+沒有面板標題列",P1,"R-063, R-032, R-038, R-037",,未變更,
+TC-029,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 查看上方的尺寸
+2. 點另一張不同尺寸照片的縮圖",尺寸先顯示第 1 張輸出的「W x H」，再顯示另一張自己的「W x H」,P2,"R-033, R-061",,未變更,
+TC-030,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點 ✎
+2. 輸入比照片原始寬度更大的寬度並確認",跳出 toast 提示尺寸超出範圍，輸入的值不會套用（範圍為 238 px 到原始尺寸）,P2,R-034,規格沒給 toast 文案（Meitu 為「Width and height exceed the range」，Q-5）。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-031,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點 ✎
+2. 輸入 200 px 並確認",跳出 toast，200 px 不會套用（最小值為 238 px）,P3,R-034,PM-only: no Design frame yet（Design 261104）,未變更,
+TC-032,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 在寬高連動的狀態下點 ✎
+2. 輸入較小的寬度並確認",高度會跟著變（維持比例），「All」仍為灰色（不能按）,P2,R-036,PM-only: no Design frame yet（Design 261104）,未變更,
+TC-033,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點 ✎，解除寬高連動
+2. 輸入 1000 x 500 並確認
+3. 點「All」","比例切換成 Free，「All」變成可以按
+點「All」後，其他照片會各自在最大範圍內套用 2:1 的裁切框，而不是 1000 x 500 px",P2,"R-036, R-035, R-051",PM-only: no Design frame yet（Design 261104）,未變更,
+TC-034,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」",點「Squre」,「All」變成可以按,P1,R-039,,未變更,
+TC-035,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」
+2. 點「All」",仍停留在 room 內，跳出 toast「Applied to 4 photos」，縮圖列每張縮圖都變成正方形裁切，「All」變成灰色（不能按）,P1,"R-037, R-042, R-043, R-039",,未變更,
+TC-036,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」›「All」
+2. 點第 2 張的縮圖
+3. 點「2:3」
+4. 點第 3 張的縮圖
+5. 再點第 2 張的縮圖",切到第 2 張後「All」為灰色；點「2:3」後變成可以按；切到第 3 張時為灰色（沒有未套用的變更）；回到第 2 張又變成可以按,P1,"R-040, R-044",,未變更,
+TC-037,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」›「All」
+2. 切到第 2 張，把裁切框拖到最右邊
+3. 點 ✓","只有第 2 張的裁切框移動
+第 1、3、4、5 張仍維持原本的正方形裁切框",P1,R-044,,未變更,
+TC-038,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」›「All」
+2. 切到第 2 張，點「2:3」
+3. 切回第 1 張，點「3:4」，再點「All」","每一張（包含第 2 張）都改成 3:4 裁切
+第 2 張原本的 2:3 被取代
+toast 顯示「Applied to 4 photos」",P1,"R-045, R-050",,未變更,
+TC-039,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「3:4」
+2. 點「All」","第 1 張顯示置中的最大 3:4 裁切框
+點「All」後，每張照片都是各自置中的最大 3:4 裁切框",P1,"R-046, R-048",,未變更,
+TC-040,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」
+2. 把裁切框縮小並移到右下角
+3. 點「All」","第 1 張的小裁切框維持在右下角
+其他每張照片都取其尺寸允許的最大正方形，有空間的方向才往右／往下靠（沒有空間的方向則置中）",P1,"R-047, R-048",採較新的 PM 裁切規則（✅ 結論），不採 PM UI 畫板的「centred」（置中）（Q-6）,未變更,
+TC-041,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」
+5. 第 1 張為 16:9 橫式，第 2 張為 2:3 直式","1. 點「Squre」
+2. 把裁切框拖到最左邊
+3. 點「All」","第 2 張（直式）左右沒有空間，所以是置中的正方形
+橫式照片則取最大的正方形並靠到最左邊",P2,R-048,,未變更,
+TC-042,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」
+5. 第 1 張為 4:5 直式，第 2 張為 2:3 直式，第 3 張為 16:9 橫式","1. 在第 1 張點「Squre」
+2. 把裁切框拖到最下方
+3. 點「All」","第 2 張的正方形靠在最下方
+第 3 張（上下沒有空間）則置中",P2,R-048,,未變更,
+TC-043,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」›「All」
+2. 點 ✓
+3. 儲存這批照片，並在「照片」App 中開啟儲存的檔案",每張儲存的照片都是依自己尺寸裁出的正方形（各張的 px 不同），並且是從原圖裁切而來,P2,"R-049, R-050",,未變更,
+TC-044,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Custom」（Free），並把一個寬的裁切框拖到左上角
+2. 點「All」","其他照片套用相同比例的最大裁切框，有空間的話靠在左上角
+而不是相同的相對大小",P2,"R-051, R-048",,未變更,
+TC-045,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「3:2」›「All」
+2. 點「Original」›「All」",每張照片都回到各自的原始比例，沒有被裁切,P2,R-052,,未變更,
+TC-046,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」
+5. 第 3 張是 1:1 的照片","1. 在第 1 張點「Squre」›「All」
+2. 切到第 3 張",第 3 張不會被裁切（維持完整照片）,P2,R-053,,未變更,
+TC-047,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Rotate」一次
+2. 點「Flip」
+3. 點「All」",每張照片都和第 1 張一樣，旋轉 90° 並水平翻轉,P1,R-054,,未變更,
+TC-048,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Flip Vertically」
+2. 點「All」",每張照片都被垂直翻轉,P2,R-054,,未變更,
+TC-049,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 把角度滑桿拖到 15
+2. 點「All」",每張照片都傾斜 15°，且各自依本身尺寸縮小裁切框，不會露出黑邊,P2,R-054,,未變更,
+TC-050,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」›「All」
+2. 點 ↶
+3. 點 ↷","↶ 一次還原所有照片的正方形裁切，「All」變成可以按
+↷ 再對所有照片套用一次，「All」又變成灰色（不能按）",P1,"R-055, R-041, R-056",,未變更,
+TC-051,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」›「All」
+2. 切到第 2 張，點「2:3」
+3. 切到第 4 張
+4. 點 ↶","room 會切到第 2 張（縮圖列同步選取），且第 2 張回到正方形
+第 4 張與其他張都沒有變動",P1,"R-056, R-058",,未變更,
+TC-052,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 在第 1 張點「Squre」
+2. 點第 2 張的縮圖
+3. 點第 1 張的縮圖
+4. 點 ↶",第 1 張的正方形裁切被還原：切換照片後，操作紀錄仍保留,P2,R-057,,未變更,
+TC-053,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」›「All」
+2. 切到第 2 張，點「2:3」
+3. 點 ✕",回到 Batch Edit Room，每張照片都和開啟 room 之前一樣（沒有正方形，也沒有 2:3）,P1,R-059,,未變更,
+TC-054,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」›「All」
+2. 點 ✓",回到 Batch Edit Room，每張照片都是正方形,P1,"R-064, R-060",,未變更,
+TC-055,裁切與旋轉,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Crop & Rotate」","1. 點「Squre」
+2. 點左上角的 ‹",回到 Batch Edit Room，第 1 張沒有被裁切（‹ 等同 ✕，Q-7）,P3,R-062,,未變更,
+TC-056,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",點「Adjustment」,"開啟批次的 Adjustment room：上方有 ⓘ 與灰色（不能按）的「All」，下方依序是縮圖列、滑桿、「Light」／「Color」／「Details」、工具列，以及 ✕ ↶ ↷ ✓
+沒有 Subject Detection
+請記錄工具列有沒有「AI Exposure」（Design 有畫，PM 說沒有；Q-8）",P1,"R-072, R-065, R-038",Design 與 PM 對 AI Exposure 的說法不一致：請在裝置上確認（Q-8）,未變更,
+TC-057,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 依序點 Exposure、Contrast、Highlight，並各自移動滑桿
+2. 若工具列有「AI Exposure」，也點它","每個工具都只改變第 1 張，並讓「All」變成可以按
+工具與單張 Adjustment room 的一樣（AI Exposure：Q-8）",P2,"R-065, R-039",,未變更,
+TC-058,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 點 Exposure，設為 +20
+2. 點「All」",跳出 toast「Applied to 4 photos」，每張縮圖都變亮，「All」變成灰色（不能按），仍停留在 room 內,P1,"R-074, R-042, R-043, R-037, R-039",,未變更,
+TC-059,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 把 Exposure 設為 +20，點「All」
+2. 切到第 3 張，把 Contrast 設為 +10
+3. 切回第 1 張，把 Exposure 設為 +30，點「All」","其他每張都和第 1 張一致（Exposure +30）
+第 3 張原本的 Contrast +10 不再保留",P1,"R-066, R-045, R-044",,未變更,
+TC-060,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 把 Exposure 設為 +20，點「All」
+2. 切到第 2 張，把 Contrast 設為 +10
+3. 切到第 4 張
+4. 切回第 2 張",第 2 張改過之後「All」可以按；切到第 4 張時為灰色（不能按）；回到第 2 張又變成可以按,P2,R-040,,未變更,
+TC-061,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 把 Exposure 設為 +20，點「All」
+2. 切到第 2 張，把 Contrast 設為 +10
+3. 切到第 4 張，點「Color」
+4. 點 ↶
+5. 再點 ↶","第一次 ↶ 會切到第 2 張並還原它的 Contrast（只有第 2 張），分頁也會切到 Contrast 所在的「Light」
+第二次 ↶ 還原所有照片的 Exposure +20，「All」變成可以按",P1,"R-056, R-058, R-067, R-041",PM 在 2026-11-11 改了 DR-05g（原本是分頁不動），並註明比照 Android 單張 Adjustment room（Q-18）。,未變更,
+TC-062,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 把 Exposure 設為 +20，點「All」
+2. 點 ↶
+3. 點 ↷",↷ 再次對所有照片套用 Exposure +20，「All」變成灰色（不能按）,P2,"R-041, R-056",,未變更,
+TC-063,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 把 Exposure 設為 +20，點「All」
+2. 點 ✕",回到 Batch Edit Room，每張照片都沒有 Exposure 的調整,P1,R-059,,未變更,
+TC-064,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 把 Exposure 設為 +20，點「All」
+2. 點 ✓",回到 Batch Edit Room，每張照片都變亮,P1,"R-073, R-060",,未變更,
+TC-065,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 點「Color」
+2. 開啟 Curve","縮圖列隱藏，點了也沒有反應
+「All」仍然顯示",P1,R-068,,未變更,
+TC-066,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」
+5. 已開啟 Color › Curve","1. 點 ﹀ 收合面板
+2. 點第 2 張的縮圖",收合後縮圖列重新顯示，並切到第 2 張,P1,R-069,,未變更,
+TC-126,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」
+5. 已開啟 Color › Curve","1. 點選紅色色版
+2. 把曲線中段往上拉
+3. 點 ﹀ 收合面板
+4. 點 ︿ 再次展開","步驟 3：面板收合時，照片仍保持加強後的紅色
+步驟 4：仍選取紅色色版
+步驟 4：曲線上的控制點仍在剛才拖曳的位置",P2,"R-069, R-070",收合只是把面板藏起來（隱含條款，REQ-013）。規格沒有寫重新展開後應選取哪個色版／顏色；若選取被重設，開給 PM 決定。,新增,REQ-013：第 10b 輪，收合面板後數值與選取應保留（Figma Agent 比較）
+TC-124,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」
+5. 已開啟 Color › Curve","1. 點「Light」
+2. 點 Exposure
+3. 點第 2 張的縮圖","一選到滑桿工具（Exposure），縮圖列就重新出現
+點第 2 張會切到第 2 張",P2,R-069,,未變更,
+TC-067,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 點「Color」
+2. 開啟 HSL
+3. 點一個顏色圓點，並移動「Hue」、「Saturation」、「Lightness」
+4. 點 Exposure","HSL 有顏色色塊和三條滑桿，開著時縮圖列隱藏、「All」仍顯示
+切回 Exposure 後縮圖列重新出現",P2,"R-070, R-068, R-069",,未變更,
+TC-127,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」
+5. 已開啟 Color › HSL","1. 點選綠色色塊
+2. 將「Hue」設為 +30、「Saturation」設為 -20、「Lightness」設為 +10
+3. 點 ﹀ 收合面板
+4. 點 ︿ 再次展開","步驟 3：面板收合時，照片仍保持綠色的調整
+步驟 4：仍選取綠色色塊
+步驟 4：顯示「Hue」+30、「Saturation」-20、「Lightness」+10",P2,"R-069, R-070",收合只是把面板藏起來（隱含條款，REQ-013）。規格沒有寫重新展開後應選取哪個色版／顏色；若選取被重設，開給 PM 決定。,新增,REQ-013：第 10b 輪，收合面板後數值與選取應保留（Figma Agent 比較）
+TC-068,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」
+5. 已開啟 Color › Curve，並拖動過一個控制點","1. 長按比較按鈕
+2. 點重設按鈕","按住比較按鈕時，顯示沒有套用曲線的照片
+點重設後曲線回到直線",P3,R-070,,未變更,
+TC-069,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」",點左上角的 ⓘ,開啟既有的 Adjustment 說明（Q-7）,P3,R-071,只有 Design 畫了這個圖示（Q-7）,未變更,
+TC-070,調整,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已在第 1 張開啟「Adjustment」","1. 點「Auto」
+2. 點「All」","「Auto」自動調整第 1 張
+點「All」後，其他每張照片都套用相同的設定",P2,"R-037, R-065",,未變更,
+TC-071,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",點「AI Enhance」,"開啟批次的 AI Enhance room：只有一個「Enhance」按鈕，附文字「Maximize detaill and clarity with advanced AI.」，上方是縮圖列，另有 ✕ 與 ✓
+沒有 Standard／Advanced 分頁、沒有情境選項，按鈕上也沒有 credit 價格",P1,"R-091, R-075, R-077, R-078",,未變更,
+TC-072,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」",點「Enhance」,"跳出對話框「Enhance 5 photos?」／「Processing takes a moment and cannot be canceled once started.」，有「Cancel」與「Start」兩個按鈕
+不顯示 credit 價格",P1,"R-092, R-080, R-078",假設 {xx} 為這批照片的張數（Q-9）,未變更,
+TC-073,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」","1. 點「Enhance」
+2. 點「Cancel」","對話框關閉
+room 維持原狀，沒有任何照片被處理",P1,"R-094, R-081",,未變更,
+TC-074,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」","1. 點「Enhance」
+2. 點「Start」","整個畫面（包含縮圖列）被「Creating Your AI Image」與附進度條的「Enhancing k / 5」蓋住
+k 會一路數到 5",P1,"R-093, R-081, R-082",,未變更,
+TC-075,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」","1. 點「Enhance」›「Start」
+2. 處理期間，點縮圖、✕、✓ 以及底部按鈕的位置",在所有照片處理完之前，畫面都沒有反應：不能切換照片、不能離開、也不能取消,P1,R-083,,未變更,
+TC-076,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」","1. 點「Enhance」›「Start」
+2. 等到處理結束
+3. 點「Enhanced」","縮圖列中每張照片都已 Enhance
+按鈕變成灰色的「Enhanced」，點了沒有反應
+全部成功時不會出現結果訊息",P1,"R-095, R-079, R-084, R-102",,未變更,
+TC-077,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」","1. 對整批照片執行 Enhance
+2. 點 ✓
+3. 再點一次「AI Enhance」","「Enhance」又變成可以按
+再執行一次會對已 Enhance 的照片再 Enhance 一次（會先跳出對話框）",P2,"R-085, R-080",,未變更,
+TC-078,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」","1. 對整批照片執行 Enhance
+2. 點 ✓",回到 Batch Edit Room，每張照片都是已 Enhance 的樣子,P1,R-096,,未變更,
+TC-079,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」","1. 對整批照片執行 Enhance
+2. 點 ✕","回到 Batch Edit Room
+請記錄 Enhance 的結果有沒有保留（Q-11）",P2,R-088,規格沒寫（Q-11）,未變更,
+TC-080,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」",點第 3 張的縮圖,「Enhance」按鈕上方顯示第 3 張照片,P2,R-089,,未變更,
+TC-081,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」
+5. 先記下 credit 餘額（Mine › My Credits）","1. 對整批照片執行 Enhance，再點 ✓
+2. 開啟 Mine › My Credits",餘額和之前一樣：批次 AI Enhance 不會扣任何 credit,P1,R-078,,未變更,
+TC-082,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」",點「Enhance」,直接開啟既有的 Premium IAP 頁（不會先跳對話框，也沒有試用一張的機會）,P1,"R-097, R-086",,未變更,
+TC-083,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已從「Enhance」開啟 Premium IAP 頁",不購買，直接關閉 IAP 頁,回到 AI Enhance room，沒有任何照片被 Enhance（Q-10）,P2,R-087,規格沒寫（Q-10）。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-084,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）","1. 開啟「Crop & Rotate」，點「Squre」›「All」› ✓
+2. 開啟「Adjustment」，把 Exposure 設為 +20，點「All」› ✓
+3. 點 Save",Free 使用者可以裁切、調整並儲存全部 5 張照片，不會跳出 IAP，也不會扣 credit,P1,"R-003, R-078",,未變更,
+TC-125,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 20 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 20 張 › Next）","1. 開啟「Crop & Rotate」，點「Squre」›「All」› ✓
+2. 開啟「Adjustment」，把 Exposure 設為 +20，點「All」› ✓
+3. 點 Save","Free 用戶可以把 20 張全部裁切、調整並存檔，不會跳 IAP 頁也不扣點
+toast 顯示「Applied to 19 photos」",P1,"R-003, R-078",,未變更,
+TC-085,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 20 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 20 張 › Next）
+4. 已開啟「AI Enhance」","1. 點「Enhance」›「Start」
+2. 等到處理結束",20 張照片一次全部 Enhance 完成（「Enhancing k / 20」）,P1,"R-079, R-082, R-007",,未變更,
+TC-086,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro+ 帳號（Pink › ☰ › [0] IAP › Status = Pro+）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room
+4. 已開啟「AI Enhance」","1. 點「Enhance」›「Start」
+2. 等到處理結束",每張照片都完成 Enhance，不會跳出 IAP，也不會扣 credit（與 Pro 相同）,P2,"R-090, R-079, R-078",,未變更,
+TC-087,AI Enhance,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」
+5. 可以取得 App log（log pull）","1. 對整批照片執行 Enhance
+2. 取出 App log",每個請求都使用 Standard · Portrait 的 enhance（與 10/E 的 Standard · Portrait 相同）,P3,R-076,暫緩，等 log 或 RD 提供使用的模型。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-088,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. 讓部分照片處理失敗（RD 提供的失敗 fixture，或伺服器會拒絕的照片）","1. 點「Enhance」›「Start」
+2. 等到處理結束","結束時出現一則訊息：「12 completed, 3 failed」／「Failed photos are marked with ! on the thumbnails.」（Design 文案；PM 沒有「with !」，Q-12）
+失敗的縮圖右上角有紅色 !
+按鈕變成「Retry Failed (3)」",P1,"R-098, R-101",需要失敗 fixture,未變更,
+TC-089,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. 上一輪處理結束時有 3 張失敗",點有 ! 的縮圖,顯示該張照片,P2,R-099,,未變更,
+TC-090,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. 上一輪處理結束時有 3 張失敗",點結果訊息上的 ×,"訊息關閉
+! 標記與「Retry Failed (3)」仍然保留",P3,R-100,只有 Design 畫了這個 ×,未變更,
+TC-091,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. 上一輪處理結束時顯示「12 completed, 3 failed」
+6. 失敗 fixture 設為 3 張中有 2 張會成功","1. 點「Retry Failed (3)」（可能會先跳出對話框）
+2. 等到處理結束","只處理那 3 張失敗的照片（「Enhancing k / 3」）
+訊息變成「14 completed, 1 failed」，按鈕變成「Retry Failed (1)」
+成功的那 2 張不再有 !",P1,"R-101, R-102",需要失敗 fixture,未變更,
+TC-092,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. 上一輪處理結束時有 1 張失敗","1. 點「Retry Failed (1)」
+2. 等到處理成功","訊息與「Retry Failed」都消失
+每張縮圖都沒有 !",P2,R-102,,未變更,
+TC-093,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. Wi-Fi 與行動數據可以手動開關","1. 點「Enhance」›「Start」
+2. 處理幾張之後，關閉 Wi-Fi（與行動數據）
+3. 等到處理結束","已處理完的照片維持已 Enhance
+未完成的會出現 !
+訊息顯示「X completed, Y failed」／「Connection lost. Check your connection and retry.」
+按鈕為「Retry Failed (Y)」",P1,R-103,,未變更,
+TC-094,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. 上一輪因「Connection lost…」而結束
+6. 手機仍是離線狀態",點「Retry Failed (x)」,跳出 toast「No internet connection」，不會開始處理,P1,R-104,,未變更,
+TC-095,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. 上一輪因「Connection lost…」而結束","1. 重新開啟 Wi-Fi
+2. 點「Retry Failed (x)」並等待","只處理未完成的照片
+訊息的數字以整批照片計算",P2,"R-104, R-101",,未變更,
+TC-096,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」
+5. 失敗 fixture 已開啟，且處理到一半要關閉 Wi-Fi","1. 點「Enhance」›「Start」
+2. 有幾張失敗之後，關閉 Wi-Fi
+3. 等到處理結束",張數會合併兩種失敗的數量，第二行文字顯示「Connection lost. Check your connection and retry.」,P2,R-103,需要失敗 fixture。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-097,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」","1. 點「Enhance」›「Start」
+2. 處理幾張之後，按手機的 Home 鍵
+3. 等 30 秒再回到 PhotoDirector",離開期間進度沒有前進（暫停），回來後從原本的 k 繼續,P1,R-105,,未變更,
+TC-098,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 15 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 15 張 › Next）
+4. 已開啟「AI Enhance」","1. 點「Enhance」›「Start」
+2. 等到處理完幾張
+3. 強制關閉 PhotoDirector 後再重新開啟","App 開啟後不會回到 Batch Edit Room
+已 Enhance 的結果哪裡都沒有保留（不在相簿，也不在 My AI Artwork）",P1,"R-106, R-107",,未變更,
+TC-099,AI Enhance 錯誤處理,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」
+5. 先記下 My AI Artwork 的內容","1. 對整批照片執行 Enhance，點 ✓ 並儲存
+2. 開啟 My AI Artwork",My AI Artwork 沒有新增任何來自批次 AI Enhance 的項目,P2,R-107,,未變更,
+TC-100,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 20 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 20 張 › Next）","1. 做一項編輯（Crop & Rotate ›「Squre」›「All」› ✓）
+2. 點 Save（右上角的下載圖示）","顯示「Saving k / 20」與「Please do not leave this page or quit the app.」以及進度條
+k 數到 20 時，開啟 Batch Save 頁",P1,"R-117, R-118, R-108",,未變更,
+TC-101,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 已儲存",查看 Batch Save 頁,「Save 5 photos」下方有 5 張已儲存照片的格狀清單（Design 文案；PM 為「Saved 5 photos」，Q-13），左上角是 ‹，右上角是 Home，底部是「Edit Next Batch」,P1,R-111,Q-13,未變更,
+TC-102,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 先記下相簿的照片數量","1. 只在第 1 張做 Adjustment › Exposure +20 › ✓
+2. 點 Save
+3. 開啟相簿","相簿多了 5 張新照片（沒編輯的 4 張也會儲存）
+原本的 5 張原圖都還在，沒有變動",P1,"R-109, R-110",,未變更,
+TC-103,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 已儲存",點 Batch Save 頁上的縮圖,沒有任何反應（不會開啟其他畫面）,P3,R-112,,未變更,
+TC-104,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 已儲存",點 ‹,回到 Batch Edit Room，編輯內容都還在,P1,"R-119, R-113",,未變更,
+TC-105,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 已儲存",點 Home,回到 Launcher（不會跳出 Discard 對話框）,P1,"R-120, R-113",,未變更,
+TC-106,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 已儲存",點「Edit Next Batch」,開啟照片挑選器並停在「Batch」分頁，沒有任何照片被勾選,P1,"R-121, R-114",,未變更,
+TC-107,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 已儲存
+6. 已點「Edit Next Batch」開啟照片挑選器",點 ‹,回到 Batch Edit Room，先前的照片與編輯都還在（不是回到 Launcher）,P1,"R-122, R-114, R-115",,未變更,
+TC-108,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 已儲存
+6. 已點「Edit Next Batch」開啟照片挑選器","1. 點選 3 張照片
+2. 點「Next」",開啟新的 Batch Edit Room，只有這 3 張新照片，且沒有任何編輯,P2,R-114,,未變更,
+TC-109,存檔,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. App 的評分對話框設定在下一次儲存時出現（RD 設定）",儲存這批照片,"評分對話框把整批算成一次儲存（只跳出一次，不會每張照片各跳一次）
+IAP flyer／廣告的行為與一般儲存相同",P3,R-116,暫緩，等 RD 能設定評分計數器。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-110,離開 Batch Edit,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",點 Home,直接回到 Launcher（沒有跳出對話框）,P1,R-123,,未變更,
+TC-111,離開 Batch Edit,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做過一項編輯（Crop & Rotate ›「Squre」› ✓）",點 Home,跳出對話框「Discard changes?」／「Your edits to these photos will be lost.」，有「Discard」與「Keep Editing」兩個按鈕,P1,"R-127, R-123, R-125",,未變更,
+TC-112,離開 Batch Edit,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做過一項編輯（Crop & Rotate ›「Squre」› ✓）","1. 點 Home
+2. 點「Discard」","回到 Launcher
+再次開啟 Edit › Batch 時，沒有任何已選的照片，也沒有任何編輯",P1,R-123,,未變更,
+TC-113,離開 Batch Edit,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做過一項編輯（Crop & Rotate ›「Squre」› ✓）","1. 點 Home
+2. 點「Keep Editing」","對話框關閉
+Batch Edit Room 保留所有編輯",P1,"R-130, R-126",,未變更,
+TC-114,離開 Batch Edit,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）",點 Replace photo（左上角的照片圖示）,直接開啟照片挑選器並停在「Batch」，原本的 5 張照片仍是勾選狀態,P1,R-124,,未變更,
+TC-115,離開 Batch Edit,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做過一項編輯（Crop & Rotate ›「Squre」› ✓）","1. 點 Replace photo
+2. 點「Discard」","會先跳出對話框
+點「Discard」後，開啟照片挑選器並停在「Batch」，原本的 5 張照片仍是勾選狀態",P1,"R-128, R-129, R-124, R-125",,未變更,
+TC-116,離開 Batch Edit,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做過一項編輯（Crop & Rotate ›「Squre」› ✓）","1. 點 Replace photo ›「Discard」
+2. 點「Next」",開啟 Batch Edit Room，照片仍是原本的 5 張，但先前的編輯都不在了,P1,"R-131, R-124",,未變更,
+TC-117,離開 Batch Edit,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做過一項編輯（Crop & Rotate ›「Squre」› ✓）","1. 點 Replace photo
+2. 點「Keep Editing」",Batch Edit Room 保留所有編輯,P2,R-126,,未變更,
+TC-118,淺色與深色模式,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 手機外觀設為淺色",依序開啟挑選器、Batch Edit Room、各個 room、對話框與 Batch Save 頁,每個畫面都是淺色設計,P3,R-132,Q-14,未變更,
+TC-119,淺色與深色模式,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 手機外觀設為深色",依序開啟挑選器、Batch Edit Room、各個 room、對話框與 Batch Save 頁,每個畫面都是深色設計,P3,R-132,Q-14,未變更,
+TC-120,事件追蹤,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 可以查看 App 的 analytics 事件（取出 log 或使用 RD 的事件檢視器）","1. 在 Launcher 點「Edit」
+2. 點「Batch」
+3. 依序點選 3 張照片
+4. 點「Next」",新的進入 Batch 事件只送出一次（名稱為 Xxx_Yyy_Zzz 格式，參數為 snake_case）,P3,"R-133, R-137",事件名稱待定；暫緩，等有事件 log 再測。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-121,事件追蹤,"1. iPhone 上已登入 PhotoDirector，Pro 帳號（Launcher › Pink › ☰ › [0] IAP › Status = Pro）
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已開啟「AI Enhance」
+5. 可以查看 analytics 事件",對整批照片執行 Enhance,GenAI_Feature_Generate 送出 5 次，每次都帶 from = BatchEdit 與 batch_size = 5,P3,"R-134, R-137",暫緩，等有事件 log 再測。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-122,事件追蹤,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 可以查看 analytics 事件",儲存這批照片,批次儲存時送出 Photo_Result_Save,P3,R-135,暫緩，等有事件 log 再測。PM-only: no Design frame yet（Design 261104）,未變更,
+TC-123,事件追蹤,"1. iPhone 上已登入 PhotoDirector，Free 帳號
+2. 相簿中至少有 21 張照片，尺寸與比例不一（例如 2:3、4:5、1:1、16:9）
+3. 已開啟有 5 張照片的 Batch Edit Room（Launcher › Edit › Batch › 選 5 張 › Next）
+4. 已做一項編輯（Crop & Rotate ›「Squre」› ✓）
+5. 已儲存
+6. 可以查看 analytics 事件",點「Edit Next Batch」,送出新的 Edit Next Batch 點擊事件,P3,R-136,事件名稱待定；暫緩，等有事件 log 再測。PM-only: no Design frame yet（Design 261104）,未變更,

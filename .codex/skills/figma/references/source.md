@@ -33,14 +33,22 @@ All commands are `node scripts/figma-rest.ts <product>/<feature> [<set>] …`; r
    content as `code` and `skillNames: "resource:figma-use"` (about 20 KB of code; about 19 KB comes back). Then `save`
    copies the return from the transcript into `rest/extras.json`. It returns variable names, mode names, vectors with
    mixed (per-vertex) caps with their arrowheads, joins REST leaves out, boolean-operation radius and video fills;
-   variable values per mode are left out (too large; no reader needs them).
+   variable values per mode are left out (too large; no reader needs them). The vectors whose join REST leaves out are
+   sent by id (a table of id segments keeps it about 20 KB): walk positions drifted where the plugin and REST count
+   hidden layers inside instances differently (2026-11-12). A value the call was not asked for (`0`) leaves REST's own
+   value in place, and a text run's own style comes from REST's `inheritTextStyleId`.
 4. **Publish**: `publish` converts the REST reply and the extras to `out/` (figma-source's node format, with
    `screens.json`, `arrows.json`, `library.json` and `<board>.metadata.xml` made by figma-source's own functions),
    writes the committed copy `rest/boards/<file>.gz`, updates `hashes.json` and `scope.json` with the fingerprints and
    writes `source.json` (route, read time, the boards that changed). It refuses an extras return older than the fetch
    (`--no-extras` publishes without it: names, caps, radius and videos then stay unknown).
 5. **Images** (1 REST call, only when a board's shared image is not current): `images` renders those boards at 1 px =
-   1 pt into the shared `extracted/figma/` files and lists them in `calls/todo.json`; a board Figma renders smaller
+   1 pt into the shared `extracted/figma/` files and lists them in `calls/todo.json`. A REST render is the node alone,
+   without the arrows and notes drawn over it (REQ-078), so a board the casebook keeps a current image of, cut from
+   what holds it (`box` in `shots.json`), is cropped from that image, never rendered again, unless this read found the
+   board changed (then the image predates the redraw and the board is rendered: 2026-11-12, batch-editing); a board with marks drawn
+   over it and no current image is left to the casebook's change check (`figma-check.ts` prints the re-capture), and
+   no render ever takes the name of such an image (2026-11-12, video-enhance: two boards lost their notes and arrows); a board Figma renders smaller
    (very large boards: `main flow`, 9909 pt, came back 8388 px) is listed for `get_screenshot` on `figma-design`
    (`nodeId`, `maxDimension`; download to `save_to`). Then `node scripts/figma-source.ts <feature> [<set>] crop design`
    shrinks, records and crops them as on the other route.

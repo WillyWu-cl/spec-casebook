@@ -403,5 +403,145 @@
     "hash": "70fd9d31",
     "overlay": "10ca0671",
     "captured_at": "2026-11-09T07:59:09.506Z"
+  },
+  "photo-picker.png": {
+    "board": "110:4804",
+    "group": null,
+    "hash": null,
+    "source_hash": "c3791f01",
+    "captured_at": "2026-11-12T05:58:28.464Z"
+  },
+  "canvas-img-focus.png": {
+    "board": "110:4922",
+    "group": null,
+    "hash": null,
+    "source_hash": "5b28d1aa",
+    "captured_at": "2026-11-12T05:58:28.544Z"
+  },
+  "canvas-img-focus-110-5090.png": {
+    "board": "110:5090",
+    "group": null,
+    "hash": null,
+    "source_hash": "a038a8db",
+    "captured_at": "2026-11-12T05:58:28.625Z"
+  },
+  "canvas-img-focus-110-5258.png": {
+    "board": "110:5258",
+    "group": null,
+    "hash": null,
+    "source_hash": "81bed73b",
+    "captured_at": "2026-11-12T05:58:28.704Z"
+  },
+  "3.png": {
+    "board": "110:5426",
+    "group": null,
+    "hash": null,
+    "source_hash": "3b5d4a96",
+    "captured_at": "2026-11-12T05:58:28.788Z"
+  },
+  "adjust.png": {
+    "board": "41:923",
+    "group": null,
+    "hash": null,
+    "source_hash": "cc54b0e7",
+    "captured_at": "2026-11-12T05:58:28.865Z"
+  },
+  "adjust-110-5611.png": {
+    "board": "110:5611",
+    "group": null,
+    "hash": null,
+    "source_hash": "4e5bd379",
+    "captured_at": "2026-11-12T05:58:28.939Z"
+  },
+  "enhance-1.png": {
+    "board": "110:5843",
+    "group": null,
+    "hash": null,
+    "source_hash": "b209a5c6",
+    "captured_at": "2026-11-12T05:58:29.018Z"
+  },
+  "enhance-1-110-5928.png": {
+    "board": "110:5928",
+    "group": null,
+    "hash": null,
+    "source_hash": "5b60bbca",
+    "captured_at": "2026-11-12T05:58:29.099Z"
+  },
+  "enhance-1-110-6102.png": {
+    "board": "110:6102",
+    "group": null,
+    "hash": null,
+    "source_hash": "3eefd3bc",
+    "captured_at": "2026-11-12T05:58:29.175Z"
+  },
+  "enhance-1-110-6196.png": {
+    "board": "110:6196",
+    "group": null,
+    "hash": null,
+    "source_hash": "53bb9ab6",
+    "captured_at": "2026-11-12T05:58:29.257Z"
+  },
+  "9-adjust-curve.png": {
+    "board": "57:6798",
+    "group": null,
+    "hash": null,
+    "source_hash": "bf992a3a",
+    "captured_at": "2026-11-12T05:58:29.329Z"
+  },
+  "9-adjust-hsl.png": {
+    "board": "63:7874",
+    "group": null,
+    "hash": null,
+    "source_hash": "861541ae",
+    "captured_at": "2026-11-12T05:58:29.398Z"
+  },
+  "9-adjust-hsl-collapse.png": {
+    "board": "105:4123",
+    "group": null,
+    "hash": null,
+    "source_hash": "526f7442",
+    "captured_at": "2026-11-12T05:58:29.467Z"
+  },
+  "9-adjust-curve-collapse.png": {
+    "board": "128:8508",
+    "group": null,
+    "hash": null,
+    "source_hash": "6b4b3428",
+    "captured_at": "2026-11-12T05:58:29.536Z"
+  },
+  "9-adjust-curve-134-8803.png": {
+    "board": "134:8803",
+    "group": null,
+    "hash": null,
+    "source_hash": "a60fab3a",
+    "captured_at": "2026-11-12T05:58:29.605Z"
+  },
+  "9-adjust-hsl-134-9013.png": {
+    "board": "134:9013",
+    "group": null,
+    "hash": null,
+    "source_hash": "56df7426",
+    "captured_at": "2026-11-12T05:58:29.673Z"
+  },
+  "9-adjust-hsl-collapse-134-9215.png": {
+    "board": "134:9215",
+    "group": null,
+    "hash": null,
+    "source_hash": "aa162dd4",
+    "captured_at": "2026-11-12T05:58:29.743Z"
+  },
+  "9-adjust-curve-collapse-134-9401.png": {
+    "board": "134:9401",
+    "group": null,
+    "hash": null,
+    "source_hash": "8c7fc8e1",
+    "captured_at": "2026-11-12T05:58:29.812Z"
+  },
+  "launcher-light-orange-rest.png": {
+    "board": "225:3699",
+    "group": null,
+    "hash": null,
+    "source_hash": "0371830e",
+    "captured_at": "2026-11-12T05:58:29.889Z"
   }
 }

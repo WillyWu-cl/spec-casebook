@@ -1,0 +1,1887 @@
+{
+  "mode": "rest-extras",
+  "read_at": "2026-11-12T05:55:53.029Z",
+  "vars": [
+    [
+      "VariableID:021402ae11d5f4ef2a9c12a6df3c4cc73f7a9d88/10752:15",
+      "- Indicator/Indicator",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:04222fd9a804987adfb32594ea88c8fb62b7ce42/10752:32",
+      "Settings/Title",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:06b17ae9672424034f91e4742c8ca71cedb5863a/10752:61",
+      "- Tab_Edit/Tab_text_highlight",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:0716c9679def133369b2ca059d1ae4e2356531d3/10752:28",
+      "Settings/Bg_gradient_2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:0aa5d52f2418ad8de5a8053d62427c09852285de/9439:1442",
+      "- Button/teritaryBtn_outline_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:0e22c8940286295b6f2c76aa9218e71caad4d2e4/10752:47",
+      "- Checkbox/Checkbox_bg_check",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:10c5d9f97b057b74db627ff2c4f44cd0a897fc32/10752:219",
+      "- Capsule_switcher/Capsule_switcher_text_selected",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:147ae1e1b86d8f35f67bf4776f96fe4341e71481/10752:26",
+      "- Status Bars/Status Bars_Bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:14aa027c938ae81a26823dd8c22f48189bce4d04/10752:190",
+      "- Thumbnail/thumbnail_name_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:16e83994fa4521f3cc916aad469888de703dda68/10752:282",
+      "- Thumbnail/thumbnail_delete_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:185ccb1ab0faeb87ebe9599a986bc0b7054a729d/10752:9",
+      "Launcher/Bg_gradient_2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:18749943c4ab4cd46a30dcff34d6720f38b6a13c/10752:262",
+      "IAP/table mask1",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:198709d7e2f0b08ee2f3ebf3f7b95d50c1d32832/10752:361",
+      "- Figure/Curve",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:1dccd2c876c11f459b3d65ddf6d6ee4408699dfc/10752:217",
+      "- Capsule_switcher/Capsule_switcher_text_unselected",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:2021e98dd1b23019b12b9f83a8aa1616cfd079ed/10752:67",
+      "- Slider/Slider_focus",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:22532a10531c0207d1592fcf8d2c43ed14fe8ba8/10752:268",
+      "- Toast/Toast_bg_outline",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:28b64bf815f127d8cc3d57573fc65c2e289a23b0/10752:189",
+      "- Thumbnail/thumbnail_name_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:2b9279324e45b8106b44173ae96e42669ad22c69/10752:20",
+      "- Tab_Main/Tab_text_p",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:2ccfa3c29ba7ac539d7a9c95559f4b3b8d68256d/10752:17",
+      "- Indicator/Indicator_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:2da99172aea973cb60aef9a80b12fc369dac4ba6/10752:59",
+      "Edit_AI Expand/Tool_icon_icon",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:2da99172aea973cb60aef9a80b12fc369dac4ba6/9439:1007",
+      "Edit_AI Expand/Tool_icon_icon",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:2de45d6fa6580df249a05cbe6a75344025b0e788/2929:19",
+      "Dark/Neutral/Neutral 100 100%",
+      "PHD all colors",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:30790673174eae56adb869db55403092438b222c/10752:226",
+      "- Progress bar/bar_gradient_2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:311f455a706ae5e78db924d06d9f2bbfc8135168/3095:12",
+      "Overlays/Default",
+      "System Colors",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:318d0d5ea3a7bf0e05e286db93eebf4f21736077/10752:328",
+      "- Text/Main_2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:341a6e81810ea34a06ea1c39acb90f591c8c8118/10752:11",
+      "Launcher/Btn_text_1",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:350a4baadb59e22d97056af568471a9e5bcc8112/10752:117",
+      "- Bottom Sheet/Bottom Sheet_title",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:387b27d34e46285f8d8ebdd5437d4d0f1ff1c1d3/10752:86",
+      "- Tab_Main/Tab_divider",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:39681d96797551b8b6a53b0048fa52b1a057c6bf/10752:57",
+      "Edit_AI Expand/Bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:43e3e5a0f6efaa22d5a164e84cdf8cb10274a97c/10752:400",
+      "Launcher/Thumbnail_frame",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:4539b2c267e8efe117c09746ad2abc223883127b/10752:416",
+      "- Button/SecBtn_bg_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:455bea5dd3ee9f30e6314b7bf116d8467d68ab83/10752:263",
+      "IAP/table mask2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:4986063fffbce8c238fe9d82bccc9c64e9f700e4/10752:125",
+      "- Tab_Main/Tab_divider_2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:4986063fffbce8c238fe9d82bccc9c64e9f700e4/8233:0",
+      "- Tab_Main/Tab_divider_2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:4b6b8784492601f4256f3ef93b496a68dadf619e/9439:1113",
+      "- Credit/Text_1",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:4e6480ab1e5bde83b9e5e6c96352f90659a8cc6c/10752:50",
+      "- Dialogue/Bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:58a1aaae91c8bf14332750d6706cd5a4f900f68e/9439:838",
+      "Dark/Secondary/Secondary 10 100%",
+      "Variable collection 1",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:5936c78e8703219c3ced2adf6a673c07303ef44a/9439:837",
+      "Dark/Secondary/Secondary 15 100%",
+      "Variable collection 1",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:59b8d571875fa3d18f2c3fd3cc2b93bc53bb7e37/10752:27",
+      "Settings/Bg_gradient_1",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:5a3327932235ea805eb8917c8bd25b7ecce8e361/10752:25",
+      "- Action Bar/Action Bar_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:5a3327932235ea805eb8917c8bd25b7ecce8e361/9439:973",
+      "- Action Bar/Action Bar_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:5cc7479a2d85d99390dcd7c6414d004649938be8/10752:22",
+      "- Popup/Popup_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:665d1f18acc6b6832b51bb8fded929c06f6a5115/10752:90",
+      "- Tab_Edit/Tab_2_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:6702361d39fcf4b90c3c78617910413303bab691/8562:11",
+      "Dark/Neutral/Neutral 0 0%",
+      "Variable collection 1",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:695a9385f02d7b76dffecb584d7ce18ab20bce5a/10752:360",
+      "- Figure/Bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:6b75363e661b81786937da3393a9afb23c641f21/11725:29",
+      "gradient/01/start",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:6ce895638bf682a07feae372320fb73501c3f240/10752:24",
+      "- Action Bar/Action Bar_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:6ce895638bf682a07feae372320fb73501c3f240/9439:972",
+      "- Action Bar/Action Bar_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:70c132fafeb50a799b9ac4d0fcc7ce47d49cafcb/10752:19",
+      "- Tab_Main/Tab_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:7600b42b22dfdd420895b6b8e57fde8c8df5b0b6/10752:308",
+      "- Thumbnail/delete_icon_icon",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:7739a5598cd1fc1befb62232438baf2cb9133444/10752:216",
+      "- Capsule_switcher/Capsule_switcher_bg_unselected",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:792de16a6adab21164cc923ab3bee9f657cf0966/10752:12",
+      "Launcher/Btn_text_2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:7a435621888c0758a7d484fd6c6ac1bf0bde95cb/10752:315",
+      "Edit_AI Expand/Tool_icon_bg_d",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:7e062eed4cbe613ac2b8d934490f74002877ddd7/10752:60",
+      "Edit_AI Expand/Tool_icon_outline",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:7e062eed4cbe613ac2b8d934490f74002877ddd7/9439:1008",
+      "Edit_AI Expand/Tool_icon_outline",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:7e062eed4cbe613ac2b8d934490f74002877ddd7/9808:6",
+      "Edit_AI Expand/Tool_icon_outline",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:7f4d60d2c4df78400d8a066a905d3412be035713/10752:18",
+      "- Tab_Main/Tab_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:8362242fe476a6cf1211d4176729a121e932a9fd/10752:225",
+      "- Progress bar/bar_gradient_1",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:85a6ca2bac45a3c3c9043ae6bedc2410aff353d5/10752:168",
+      "- Tab_Edit/Tab_text_p",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:863acab2d8179993e7bc348407da6b438329be0b/1242:254",
+      "text/01",
+      "token.02",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:89923625a2d06c24be2df5305f86ca543cb0c65e/10752:196",
+      "- Thumbnail/thumbnail_normal_frame",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:89d98995458316c9e8df2dea77f927878400120f/10752:55",
+      "- Tab_Edit/Tab_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:8b8a7f2f6375c172e8a83faa7c11488f9b83bf36/11725:31",
+      "gradient/01/end",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:8c84efab4fe330226d39894045bb5ba22a82089d/10752:364",
+      "- Figure/Dot",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:911ceaf088349d3e5bde41ca896b4489e00d1376/10752:3",
+      "- PhD Title/Gradient color 2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:94666b25feb8795a10c834e1e81ceda2867c52ec/10752:58",
+      "Edit_AI Expand/Tool_icon_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:94666b25feb8795a10c834e1e81ceda2867c52ec/9439:1006",
+      "Edit_AI Expand/Tool_icon_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:962437043076ab960dd8605b9c204673a2a81432/10752:6",
+      "Launcher/Shortcut_icon",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:979974f822346ee239b622ff66acff0615301715/10752:14",
+      "- Indicator/Page Control_main",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:9acfd603203b3ba2a9c043520d25f6b0ddbfb75c/10752:124",
+      "- Button/Button_1_text_d",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:9d06fe2e9c18158df4f012793f4790b6f2f0673c/10752:267",
+      "- Toast/Toast_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:9d104cea29823320a67804fb75856d638ff60e97/10752:363",
+      "- Figure/Line_sub",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:9e9343923cc4c0aabeeaf7eb86e17bb629aeec0e/10752:51",
+      "- Dialogue/Description",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:9e93b5f04124bbf61c36f918ea3c08ee5b167513/11726:57",
+      "accent/02",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:a0285ee7887c222397dd77dbcf6e5b0629fb7598/9439:826",
+      "Dark/Secondary/Secondary 98 100%",
+      "Variable collection 1",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:ab5fa29369be36270d1b7e443aff14145b9e7f9f/9439:1444",
+      "- Button/teritaryBtn_text_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:ab77621d34e911384d197f03b31295b7b2441dc9/10752:66",
+      "- Slider/Slider_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:b3aa690dd8cd602d3ec4cdc90170776e583a58fe/10752:38",
+      "- Button/Button_1_bg_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:b3aa690dd8cd602d3ec4cdc90170776e583a58fe/9484:11",
+      "- Button/Button_1_bg_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:b5844298ddca52a746103666bb1ba0ec8889091f/10752:16",
+      "- Indicator/Page Control_sub",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:b850e46189013ca37b590096c72e4ff8f504e475/11355:6",
+      "Launcher/Bg_gradient_2_0",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:b8b52a34afb98cd8f8088095f8b11d4032f8a8a0/9439:1336",
+      "Dark/Special/edit_tool_ic_bg",
+      "Variable collection 1",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:b9ff6e035abc567e5d7670e4c2b8c7d0e552f37c/11725:30",
+      "gradient/01/mid",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:bb92946d13d934080f247fa0a6ba1538240d84b4/10752:5",
+      "Launcher/Shortcut_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:c147e65555f11cc1d7835a3759cc82ac894f5bfd/10752:417",
+      "- Button/SecBtn_text_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:c1c98caa9ae1a30a6e9d836ff430592bfa75f588/10752:13",
+      "- Status Bars/Status Bars_Text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:c2058babdfb441396b27be63caf834a56a3c04b8/10752:362",
+      "- Figure/Line_main",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:c2cfee0458a3ad3c77027e985434401cb7afe57d/10752:218",
+      "- Capsule_switcher/Capsule_switcher_bg_selected",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:c471fc0249673bd5bfd770a44cd033af008ea148/10752:131",
+      "- Status Bars/Status Bars_Bg_2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:c4e53d39bb1d793cc18ae189321e502fff23b928/10752:21",
+      "- Text/Main",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:c9ffd57d647874a2c276acf13c3832177a13af71/10752:191",
+      "- Thumbnail/thumbnail_selected_frame",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:cbb5c1b31792583d72086d9cf2f93b6c8a625e6e/10752:259",
+      "- Slider/Slider_center_starter",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:cf86313e6081f00bcd57d64029567f18d9cf630a/10752:378",
+      "- Figure/ic_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:d70b5db8efd13335b9567af5667f667ba464b1d6/10752:2",
+      "- PhD Title/Gradient color 1",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:d7129b4417feb6331523ac1b166f1f20c9b7cb40/6580:1047",
+      "Dark/Neutral/Neutral 0 100%",
+      "Variable collection 1",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:d92282af353c9995849512372df762f01cdf1eaf/10752:129",
+      "- Text/Sub",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:dbd8a19d10c57f85e7d88d4447d03316e1add315/10752:23",
+      "- Popup/Popup_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:df399c2d599b114dc11c84e55ffe7c52e26f498d/10752:95",
+      "- Slider/Button_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:dfa3ab6491be8c2df28b818b5a1f24ccf2df5461/10752:123",
+      "- Button/Button_1_bg_d",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:e2b753436c5c8236315034e61f7a9fe9d6ec37eb/10752:227",
+      "- Progress bar/bar_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:e449256378d3b93c286f8fb171c7b71dcfcf7c9c/11699:3",
+      "- Button/SecBtn_text_d2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:e503990c9f17dfb6239d412af122740bbba8e2e7/10752:82",
+      "- Button/Button_2_bg_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:e7731cf35b928d4370ff7ea6a50990f01934bfba/9439:812",
+      "Dark/Neutral/Neutral 100 100%",
+      "Variable collection 1",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:e80d78b273e079989d7c632abe836401da231385/10752:68",
+      "- Slider/Slider_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:e9d658e110d1847f5e2778e0421dcb2a69121a75/9439:1112",
+      "- Credit/Bg_1",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:ec7a9079105ad193e3b477d870f082ee4d989840/10752:39",
+      "- Button/Button_1_text_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:ec7a9079105ad193e3b477d870f082ee4d989840/9439:987",
+      "- Button/Button_1_text_n",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:ecb5676568f6393ac9d6eaecd377a3bea4714cd9/9439:945",
+      "Light/Error/Error 40 100%",
+      "Variable collection 1",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:f385753408e589ee6b789e4f1b7908e15ce1afd0/9439:1042",
+      "- Tab_Edit/Tab_2_text_highlight",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:f53ce61f0a0e1a51bbb98aa67707d18f794716a2/9487:0",
+      "- Tab_Edit/Tab_2_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:fa5e34f3c060a9b62308c9ebe66a38ecdf163844/10752:4",
+      "Launcher/Shortcut_bg",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:fb1f33fcc1df33fdf5107048543de2a04fd8854f/11699:1",
+      "- Button/SecBtn_bg_d2",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:fba567887dca9249f74ec79da3c71197260e714a/10752:56",
+      "- Tab_Edit/Tab_text",
+      "Light mode",
+      "COLOR",
+      1
+    ],
+    [
+      "VariableID:fc191e8b1dbe3dbc07b62e2413bffc90e0158041/10752:306",
+      "- Action Bar/Action Bar_bg_divider",
+      "Light mode",
+      "COLOR",
+      1
+    ]
+  ],
+  "cols": [
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/7253:409",
+      "Light mode",
+      "6385:1",
+      "Light"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/7253:409",
+      "Light mode",
+      "6381:0",
+      "Dark"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/10752:1",
+      "Light mode",
+      "6385:1",
+      "Light"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/10752:1",
+      "Light mode",
+      "6381:0",
+      "Dark"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/6385:435",
+      "Light mode",
+      "6385:1",
+      "Light"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/9205:404",
+      "Light mode",
+      "6385:1",
+      "Light"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/8149:635",
+      "Light mode",
+      "6385:1",
+      "Light"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/6385:435",
+      "Light mode",
+      "6381:0",
+      "Dark"
+    ],
+    [
+      "VariableCollectionId:9aa3bdc44acc72eccf7044800c08cf476c43fb7a/2402:57",
+      "System Colors",
+      "404:1",
+      "Dark"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/9205:404",
+      "Light mode",
+      "6381:0",
+      "Dark"
+    ],
+    [
+      "VariableCollectionId:c336453c182ab1bc7a715aad4a7c46142bec79db/8149:635",
+      "Light mode",
+      "6381:0",
+      "Dark"
+    ]
+  ],
+  "boards": [
+    {
+      "id": "13:2380",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:4804",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "13:2826",
+      "vec": [
+        [
+          "13:2858",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I22:2686;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I22:2686;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "15:178",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:4922",
+      "vec": [
+        [
+          "110:4954",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5000;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5000;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "110:5058",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "48:1432",
+      "vec": [
+        [
+          "48:1464",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I48:1495;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I48:1495;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "48:1553",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5090",
+      "vec": [
+        [
+          "110:5122",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5168;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5168;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "110:5226",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:3956",
+      "vec": [
+        [
+          "57:3988",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:4019;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:4019;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "57:4077",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5258",
+      "vec": [
+        [
+          "110:5290",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5336;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5336;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "110:5394",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:5448",
+      "vec": [
+        [
+          "57:5480",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:5511;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:5511;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "57:5569",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "67:9285",
+      "vec": [
+        [
+          "67:9317",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I67:9348;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I67:9348;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "67:9406",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:5666",
+      "vec": [
+        [
+          "57:5698",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:5729;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:5729;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "57:5787",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "67:9438",
+      "vec": [
+        [
+          "67:9470",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I67:9501;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I67:9501;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "67:9559",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "22:2798",
+      "vec": [
+        [
+          "22:2830",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I22:3260;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I22:3260;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "I22:2932;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5426",
+      "vec": [
+        [
+          "110:5476",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5507;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5507;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "I110:5577;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "31:953",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5578",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "41:923",
+      "vec": [
+        [
+          "41:955",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I41:1317;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I41:1317;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "I41:1057;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5611",
+      "vec": [
+        [
+          "110:5643",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5691;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5691;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ],
+        [
+          "I110:5839;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "47:1430",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5840",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "48:1649",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5841",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:3954",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5842",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:5665",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "67:10291",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:4257",
+      "vec": [
+        [
+          "57:4289",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:4520;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:4520;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5843",
+      "vec": [
+        [
+          "110:5875",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5906;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5906;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:5097",
+      "vec": [
+        [
+          "57:5129",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:5160;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:5160;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:5928",
+      "vec": [
+        [
+          "110:5960",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5991;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:5991;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:4625",
+      "vec": [
+        [
+          "57:4657",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:4688;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:4688;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:6102",
+      "vec": [
+        [
+          "110:6134",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:6165;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:6165;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:4532",
+      "vec": [
+        [
+          "110:4564",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:4595;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:4595;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:8280",
+      "vec": [
+        [
+          "110:8312",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:8343;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:8343;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:4892",
+      "vec": [
+        [
+          "57:4924",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:4955;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I57:4955;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:6196",
+      "vec": [
+        [
+          "110:6228",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:6259;7924:7259;9819:6583",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I110:6259;7924:7259;9819:6584",
+          0,
+          "mixed",
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:6001",
+      "vec": [
+        [
+          "57:6033",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "67:10721",
+      "vec": [
+        [
+          "67:10753",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "57:6798",
+      "vec": [
+        [
+          "57:6830",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I128:8476;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "63:7874",
+      "vec": [
+        [
+          "63:7906",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I63:8262;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "105:4123",
+      "vec": [
+        [
+          "105:4155",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I128:8492;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "128:8508",
+      "vec": [
+        [
+          "128:8540",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I128:8618;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "105:4500",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "110:6885",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "134:8803",
+      "vec": [
+        [
+          "134:8835",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I134:8915;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "134:9013",
+      "vec": [
+        [
+          "134:9045",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I134:9113;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "134:9215",
+      "vec": [
+        [
+          "134:9247",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I134:9325;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "134:9401",
+      "vec": [
+        [
+          "134:9433",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I134:9511;1334:5833;513:1064",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "139:10122",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "139:10146",
+      "vec": [],
+      "bool": [],
+      "video": []
+    },
+    {
+      "id": "225:3699",
+      "vec": [
+        [
+          "225:3728",
+          "mixed",
+          0,
+          0
+        ],
+        [
+          "I225:3836;10002:5966",
+          "mixed",
+          0,
+          0
+        ]
+      ],
+      "bool": [],
+      "video": [
+        [
+          "225:4313",
+          [
+            [
+              0,
+              "9eaa1b2e713130864fea6b03f16dc2483c5f1178"
+            ]
+          ]
+        ],
+        [
+          "225:4350",
+          [
+            [
+              0,
+              "9eaa1b2e713130864fea6b03f16dc2483c5f1178"
+            ]
+          ]
+        ],
+        [
+          "225:4380",
+          [
+            [
+              0,
+              "6821470e44e451d715fd18055ff9174e09d77915"
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "225:4592",
+      "vec": [],
+      "bool": [],
+      "video": []
+    }
+  ],
+  "took_ms": 4269,
+  "bytes": 12836
+}

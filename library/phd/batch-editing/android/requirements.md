@@ -236,6 +236,7 @@ and has DR-05g before its 2026-11-11 change (KF-005). Where the two differ, the 
 | R-151 | new files, originals not overwritten | Gallery / file manager: originals unchanged, new files dated now | TC-125 |
 | R-152 | unedited photos saved too | Gallery count = N new files | TC-126 |
 | R-158 | rating dialog counts a batch as one save | rating dialog timing over several batch saves (needs the rating trigger count from RD) | TC-136 |
+| R-238 | folding the Curve / HSL panel only hides it: the curve, its point and channel, the HSL colour and its three values stay as set | the photo while folded, the panel after ︿ (pass 10b, Figma Agent comparison 2026-11-12) | TC-169, TC-170 |
 
 ### Variants
 
@@ -344,6 +345,7 @@ The PDF has no Figma links, so arrows are read from the drawn flows (`arrows.jso
 | REQ-004 | R-015, R-016, R-017, R-020, R-021, R-123, R-153 (Design copy over PM wording) |
 | REQ-011 | R-051, R-103, R-104, R-232, R-234, R-236, R-237, R-238 (PM Figma rules the PDF lacks; spec agent comparison) |
 | REQ-010 | every requirement of this table (kept over main's Android v1 when the branch merged main, re-saved as v4) |
+| REQ-013 | R-238 (hidden clause: folding the Curve / HSL panel keeps its values and selection; TC-169, TC-170) |
 - Q-15 The PM entry board now plans a Launcher Batch Edit shortcut (icon to be designed after Meitu) and the deeplink `phd://navigate/page?name=batch_edit`, while D0-04 still says Batch Edit appears only in the two pickers. Where do the shortcut and the deeplink land (Photo Picker on 「Batch」?), and is the shortcut in 26'11/E? Assumption: the deeplink opens the Photo Picker on 「Batch」; rows record it. (R-022, TC-022, TC-152)
 - Q-18 PM (re-exported 2026-11-09) says the Adjustment room shows no AI Exposure; every Design Adjustment frame draws 「AI Exposure」 between 「Exposure」 and 「Contrast」. Which holds? Assumption: PM (no AI Exposure); the row records what the app shows. (R-090, TC-070)
 - Q-19 The Design draws the Discard Dialog over the AI Enhance page (with a credit pill 「100」 and a history icon at the top right), while PM says ✕ on that page returns to Batch Edit Room keeping the results and the dialog comes from Home / Replace photo. Does ✕ (or Back) on the AI Enhance page ask to discard, and does that page show a credit pill? Assumption: PM (no dialog, results kept). (R-130, TC-100, TC-142)

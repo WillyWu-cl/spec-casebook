@@ -130,7 +130,9 @@ and return, waits), which apply to every job.
    can change it, each its own check: entering the screen, a change on the current item, the action itself, Undo of
    it, Redo of it, switching to an item with and without its own pending change, and the input modes that feed it
    (linked / unlinked size). A panel that hides or covers other controls (Curve / HSL over the strip) gets what hides,
-   what stays (「All」), what does not react, and every way back (collapse, another tool). One 「record when it is
+   what stays (「All」), what does not react, and every way back (collapse, another tool). Folding a panel and opening it again keeps its values and selection (curve point and channel, HSL colour
+   and its three values): one row per panel (2026-11-12, phd/batch-editing REQ-013, missed until the Figma Agent's
+   `curve-collapse` / `hsl-collapse`). One 「record when it is
    grey」 row is not enough: Android TC-153 stood for eleven state checks (spec agent ADJUSTMENT-ALL-* and CROP-ALL-*).
    A rule the spec changes in place (DR-05g on 2026-11-11, one character) reaches the table only through the change
    check, so run `figma-check.ts` and read `figma-text.ts` before every draft.

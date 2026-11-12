@@ -301,6 +301,24 @@ TC-159,Adjustment,"1. Signed in with a PhotoDirector Premium account
 Curve shows RGB / red / green / blue channels beside the curve
 ﹀ folds the panel and the photo grows, ︿ opens it again
 Reset and compare sit on the photo",P2,R-230,
+TC-169,Adjustment,"1. Signed in with a PhotoDirector Premium account
+2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet
+3. Adjustment room open on photo 1
+4. Color › Curve open","1. Tap the red channel
+2. Drag the middle of the curve up
+3. Tap ﹀ to collapse the panel
+4. Tap ︿ to open it again","Step 3: the photo keeps the stronger reds while the panel is folded
+Step 4: the red channel is still selected
+Step 4: the curve keeps the point where it was dragged",P2,"R-230, R-238","Folding only hides the panel (hidden clause, REQ-013). No spec states which channel / colour is selected after reopening; a reset selection is filed to PM for a decision."
+TC-170,Adjustment,"1. Signed in with a PhotoDirector Premium account
+2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet
+3. Adjustment room open on photo 1
+4. Color › HSL open","1. Tap the green colour dot
+2. Set 「Hue」 +30, 「Saturation」 -20 and 「Lightness」 +10
+3. Tap ﹀ to collapse the panel
+4. Tap ︿ to open it again","Step 3: the photo keeps the green shift while the panel is folded
+Step 4: the green dot is still selected
+Step 4: 「Hue」 +30, 「Saturation」 -20 and 「Lightness」 +10 are shown",P2,"R-230, R-238","Folding only hides the panel (hidden clause, REQ-013). No spec states which channel / colour is selected after reopening; a reset selection is filed to PM for a decision."
 TC-166,Adjustment,"1. Signed in with a PhotoDirector Premium account
 2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet
 3. Adjustment room open on photo 1","1. Tap 「Color」
