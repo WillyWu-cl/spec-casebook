@@ -1,0 +1,2057 @@
+{
+ "spec_folder": "specs/2026-11-05",
+ "platform": "android",
+ "inventory": "specs/2026-11-05/extracted/inventory.json",
+ "entries": [
+  {
+   "group": "K-f9661f",
+   "kind": "button",
+   "board": "1_entry (dark)",
+   "boards": [
+    "1_entry (dark)",
+    "canvas_default (dark)",
+    "add_layer_panel (dark)",
+    "1_entry",
+    "canvas_default",
+    "add_layer_panel"
+   ],
+   "name": "round/ic_background",
+   "label": "",
+   "set": false,
+   "instances": 6,
+   "screens": [
+    "1_entry",
+    "canvas_default",
+    "[+] 開 Add Layer：五個 function  "
+   ],
+   "controls": [
+    "K-c73851",
+    "K-598299",
+    "K-cfd6e0",
+    "K-bdecbc",
+    "K-168de7",
+    "K-61b8c3"
+   ],
+   "app": [],
+   "press": "TC-090",
+   "how": "manual"
+  },
+  {
+   "group": "K-b30c3d",
+   "kind": "button",
+   "board": "1_entry (dark)",
+   "boards": [
+    "1_entry (dark)",
+    "canvas_default (dark)",
+    "add_layer_panel (dark)",
+    "1_entry",
+    "canvas_default",
+    "add_layer_panel"
+   ],
+   "name": "round/ic_layer_clip",
+   "label": "",
+   "set": false,
+   "instances": 6,
+   "screens": [
+    "1_entry",
+    "canvas_default",
+    "[+] 開 Add Layer：五個 function  "
+   ],
+   "controls": [
+    "K-27f24b",
+    "K-df02ff",
+    "K-84a95a",
+    "K-f43969",
+    "K-136a5a",
+    "K-65626c"
+   ],
+   "app": [],
+   "press": "TC-108",
+   "how": "manual"
+  },
+  {
+   "group": "C-5863e5",
+   "kind": "tab",
+   "board": "1_entry (dark)",
+   "boards": [
+    "1_entry (dark)",
+    "canvas_default (dark)",
+    "add_layer_panel (dark)",
+    "1_entry",
+    "canvas_default",
+    "add_layer_panel"
+   ],
+   "name": "tab",
+   "label": "choice of 4: 「Ratio」 「Pages」 「Text」 「Sticker」",
+   "set": true,
+   "instances": 22,
+   "screens": [
+    "1_entry",
+    "canvas_default",
+    "[+] 開 Add Layer：五個 function  "
+   ],
+   "controls": [
+    "K-8c2c1f",
+    "K-bb3b2c",
+    "K-8b8ca1",
+    "K-ae6151",
+    "K-97e25f",
+    "K-fdc6de",
+    "K-9a91ac",
+    "K-2bf799",
+    "K-b3cfc9",
+    "K-352edf",
+    "K-184e05",
+    "K-fcb1bb",
+    "K-42f144",
+    "K-2e155b",
+    "K-984cc9",
+    "K-0ecfb0",
+    "K-2f7e52",
+    "K-a0afbe",
+    "K-393c32",
+    "K-5cb151",
+    "K-6a92b3",
+    "K-aaa32c"
+   ],
+   "app": [],
+   "press": "TC-114, TC-118, TC-099",
+   "how": "manual"
+  },
+  {
+   "group": "K-a09e67",
+   "kind": "button",
+   "board": "2_add_text (dark)",
+   "boards": [
+    "2_add_text (dark)",
+    "3_Add_Sticker (dark)",
+    "4_frame (dark)",
+    "5_Text_bubble (dark)",
+    "background_panel_texture (dark)",
+    "GAI_removal (dark)",
+    "Enhance_2 (dark)",
+    "background_panel_solid (dark)",
+    "Layers (dark)",
+    "3_Add_Sticker",
+    "4_frame",
+    "5_Text_bubble",
+    "background_panel_texture",
+    "GAI_removal",
+    "Enhance_2",
+    "background_panel_solid",
+    "Layers",
+    "2_add_text"
+   ],
+   "name": "DownSheet_caption/btn_cancel_n",
+   "label": "",
+   "set": false,
+   "instances": 18,
+   "screens": [
+    "2_add_text",
+    "3_Add_Sticker",
+    "4_frame",
+    "5_Text_bubble",
+    "background_panel_texture",
+    "GAI_removal"
+   ],
+   "controls": [
+    "K-b78ba6",
+    "K-f4e3a6",
+    "K-30085a",
+    "K-cad253",
+    "K-0b8b93",
+    "K-cbabf4",
+    "K-bd62fb",
+    "K-3cb1bd",
+    "K-c56d3f",
+    "K-b677bc",
+    "K-a76107",
+    "K-f314d3",
+    "K-17ca5e",
+    "K-f45cd4",
+    "K-9b3972",
+    "K-84f1d5",
+    "K-91aea5",
+    "K-08ba4b"
+   ],
+   "app": [],
+   "press": "TC-098, TC-102, TC-113, TC-117",
+   "how": "manual"
+  },
+  {
+   "group": "K-4bddb9",
+   "kind": "button",
+   "board": "2_add_text (dark)",
+   "boards": [
+    "2_add_text (dark)",
+    "2_add_text"
+   ],
+   "name": "ic_text_align_center",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "2_add_text"
+   ],
+   "controls": [
+    "K-a1959c",
+    "K-6a2f48"
+   ],
+   "app": [],
+   "press": "TC-174",
+   "how": "manual"
+  },
+  {
+   "group": "K-659a0d",
+   "kind": "button",
+   "board": "2_add_text (dark)",
+   "boards": [
+    "2_add_text (dark)",
+    "2_add_text"
+   ],
+   "name": "ic_text_align_left",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "2_add_text"
+   ],
+   "controls": [
+    "K-3d7bc6",
+    "K-758168"
+   ],
+   "app": [],
+   "press": "TC-174",
+   "how": "manual"
+  },
+  {
+   "group": "K-615aaf",
+   "kind": "button",
+   "board": "2_add_text (dark)",
+   "boards": [
+    "2_add_text (dark)",
+    "2_add_text"
+   ],
+   "name": "ic_text_align_right",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "2_add_text"
+   ],
+   "controls": [
+    "K-194d6a",
+    "K-817a4b"
+   ],
+   "app": [],
+   "press": "TC-174",
+   "how": "manual"
+  },
+  {
+   "group": "K-b2e956",
+   "kind": "button",
+   "board": "2_add_text (dark)",
+   "boards": [
+    "2_add_text (dark)",
+    "2_add_text"
+   ],
+   "name": "ic_text_bold",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "2_add_text"
+   ],
+   "controls": [
+    "K-57b87b",
+    "K-193395"
+   ],
+   "app": [],
+   "press": "TC-174",
+   "how": "manual"
+  },
+  {
+   "group": "K-62bb77",
+   "kind": "button",
+   "board": "2_add_text (dark)",
+   "boards": [
+    "2_add_text (dark)",
+    "2_add_text"
+   ],
+   "name": "ic_text_italic",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "2_add_text"
+   ],
+   "controls": [
+    "K-732eec",
+    "K-de2d41"
+   ],
+   "app": [],
+   "press": "TC-174",
+   "how": "manual"
+  },
+  {
+   "group": "K-43ded9",
+   "kind": "button",
+   "board": "3_Add_Sticker (dark)",
+   "boards": [
+    "3_Add_Sticker (dark)",
+    "4_frame (dark)",
+    "5_Text_bubble (dark)",
+    "background_panel_texture (dark)",
+    "background_panel_solid (dark)",
+    "Layers (dark)",
+    "3_Add_Sticker",
+    "4_frame",
+    "5_Text_bubble",
+    "background_panel_texture",
+    "background_panel_solid",
+    "Layers"
+   ],
+   "name": "btn_close_sheet_n",
+   "label": "",
+   "set": false,
+   "instances": 12,
+   "screens": [
+    "3_Add_Sticker",
+    "4_frame",
+    "5_Text_bubble",
+    "background_panel_texture",
+    "background_panel_solid",
+    "Layers"
+   ],
+   "controls": [
+    "K-76713a",
+    "K-37a52b",
+    "K-206016",
+    "K-b38cea",
+    "K-0911bf",
+    "K-c3e20a",
+    "K-668755",
+    "K-0a5ccd",
+    "K-7e4e73",
+    "K-b28b0f",
+    "K-eae77e",
+    "K-06d8ee"
+   ],
+   "app": [],
+   "press": "n/a: collapse ⌄ of a sheet; the spec gives it no rule (closing is ✕ / ✓, TC-098, TC-173)",
+   "how": "manual"
+  },
+  {
+   "group": "K-cb20fc",
+   "kind": "button",
+   "board": "5_Text_bubble (dark)",
+   "boards": [
+    "5_Text_bubble (dark)",
+    "5_Text_bubble"
+   ],
+   "name": "ic_none",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "5_Text_bubble"
+   ],
+   "controls": [
+    "K-88ed56",
+    "K-0b94f9"
+   ],
+   "app": [],
+   "press": "TC-106",
+   "how": "manual"
+  },
+  {
+   "group": "K-fc0237",
+   "kind": "button",
+   "board": "add_layer_panel (dark)",
+   "boards": [
+    "add_layer_panel (dark)",
+    "add_layer_panel"
+   ],
+   "name": "ic_text_bubble",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "[+] 開 Add Layer：五個 function  "
+   ],
+   "controls": [
+    "K-529aa1",
+    "K-1196ee"
+   ],
+   "app": [],
+   "press": "TC-106",
+   "how": "manual"
+  },
+  {
+   "group": "K-9a596c",
+   "kind": "button",
+   "board": "add_layer_panel (dark)",
+   "boards": [
+    "add_layer_panel (dark)",
+    "add_layer_panel"
+   ],
+   "name": "round/ic_frame2",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "[+] 開 Add Layer：五個 function  "
+   ],
+   "controls": [
+    "K-a14f8a",
+    "K-8bf834"
+   ],
+   "app": [],
+   "press": "TC-104",
+   "how": "manual"
+  },
+  {
+   "group": "K-0f06d0",
+   "kind": "button",
+   "board": "add_layer_panel (dark)",
+   "boards": [
+    "add_layer_panel (dark)",
+    "add_layer_panel"
+   ],
+   "name": "round/ic_image",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "[+] 開 Add Layer：五個 function  "
+   ],
+   "controls": [
+    "K-af141c",
+    "K-d056f0"
+   ],
+   "app": [],
+   "press": "TC-100",
+   "how": "manual"
+  },
+  {
+   "group": "C-86ed4a",
+   "kind": "button",
+   "board": "canvas_frame_focus",
+   "boards": [
+    "canvas_frame_focus"
+   ],
+   "name": "ic_lock",
+   "label": "choice of 2",
+   "set": true,
+   "instances": 2,
+   "screens": [
+    "canvas_frame_focus"
+   ],
+   "controls": [
+    "K-718b75",
+    "K-e10d84"
+   ],
+   "app": [],
+   "press": "TC-079",
+   "how": "manual"
+  },
+  {
+   "group": "K-2cb94c",
+   "kind": "button",
+   "board": "canvas_frame_focus (dark)",
+   "boards": [
+    "canvas_frame_focus (dark)",
+    "canvas_frame_focus"
+   ],
+   "name": "ic_lock",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "canvas_frame_focus"
+   ],
+   "controls": [
+    "K-f22b80",
+    "K-eed8f7"
+   ],
+   "app": [],
+   "press": "TC-079",
+   "how": "manual"
+  },
+  {
+   "group": "K-2569c7",
+   "kind": "button",
+   "board": "canvas_frame_focus (dark)",
+   "boards": [
+    "canvas_frame_focus (dark)",
+    "canvas_frame_focus"
+   ],
+   "name": "round/ic_duplicate",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "canvas_frame_focus"
+   ],
+   "controls": [
+    "K-4e1741",
+    "K-9c76a8"
+   ],
+   "app": [],
+   "press": "TC-053",
+   "how": "manual"
+  },
+  {
+   "group": "K-27d8c9",
+   "kind": "button",
+   "board": "canvas_frame_focus (dark)",
+   "boards": [
+    "canvas_frame_focus (dark)",
+    "canvas_frame_focus"
+   ],
+   "name": "round/ic_shadow",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "canvas_frame_focus"
+   ],
+   "controls": [
+    "K-a21b4f",
+    "K-bd76cc"
+   ],
+   "app": [],
+   "press": "TC-055",
+   "how": "manual"
+  },
+  {
+   "group": "K-361b21",
+   "kind": "tab",
+   "board": "canvas_frame_focus (dark)",
+   "boards": [
+    "canvas_frame_focus (dark)",
+    "canvas_frame_focus"
+   ],
+   "name": "tab",
+   "label": "Shadow",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "canvas_frame_focus"
+   ],
+   "controls": [
+    "K-fb3e62",
+    "K-82c106"
+   ],
+   "app": [],
+   "press": "TC-055",
+   "how": "manual"
+  },
+  {
+   "group": "K-c744a8",
+   "kind": "button",
+   "board": "canvas_img_focus · Removal row (dark)",
+   "boards": [
+    "canvas_img_focus · Removal row (dark)",
+    "canvas_img_focus · Enhance row (dark)",
+    "canvas_img_focus · Removal row",
+    "canvas_img_focus · Enhance row"
+   ],
+   "name": "round/ic_ai_enhance",
+   "label": "",
+   "set": false,
+   "instances": 4,
+   "screens": [
+    "canvas_img_focus"
+   ],
+   "controls": [
+    "K-c15d98",
+    "K-3d9bcd",
+    "K-f6ae15",
+    "K-f7c940"
+   ],
+   "app": [],
+   "press": "TC-062",
+   "how": "manual"
+  },
+  {
+   "group": "K-ce457c",
+   "kind": "button",
+   "board": "canvas_img_focus (dark)",
+   "boards": [
+    "canvas_img_focus (dark)",
+    "canvas_img_focus · Removal row (dark)",
+    "canvas_img_focus · Enhance row (dark)",
+    "canvas_img_focus",
+    "canvas_img_focus · Removal row",
+    "canvas_img_focus · Enhance row"
+   ],
+   "name": "ic_filter",
+   "label": "",
+   "set": false,
+   "instances": 6,
+   "screens": [
+    "canvas_img_focus"
+   ],
+   "controls": [
+    "K-f68b17",
+    "K-608417",
+    "K-0d9d48",
+    "K-25e0ea",
+    "K-47418c",
+    "K-082130"
+   ],
+   "app": [],
+   "press": "TC-059",
+   "how": "manual"
+  },
+  {
+   "group": "K-7d1f73",
+   "kind": "button",
+   "board": "canvas_img_focus (dark)",
+   "boards": [
+    "canvas_img_focus (dark)",
+    "canvas_img_focus · Removal row (dark)",
+    "canvas_img_focus · Enhance row (dark)",
+    "canvas_img_focus",
+    "canvas_img_focus · Removal row",
+    "canvas_img_focus · Enhance row"
+   ],
+   "name": "round/ic_adjustment",
+   "label": "",
+   "set": false,
+   "instances": 6,
+   "screens": [
+    "canvas_img_focus"
+   ],
+   "controls": [
+    "K-b1855c",
+    "K-05390c",
+    "K-ef93fd",
+    "K-eda159",
+    "K-fd0e83",
+    "K-070ffa"
+   ],
+   "app": [],
+   "press": "TC-059",
+   "how": "manual"
+  },
+  {
+   "group": "K-4d769a",
+   "kind": "button",
+   "board": "canvas_img_focus (dark)",
+   "boards": [
+    "canvas_img_focus (dark)",
+    "canvas_img_focus · Removal row (dark)",
+    "canvas_img_focus · Enhance row (dark)",
+    "canvas_img_focus",
+    "canvas_img_focus · Removal row",
+    "canvas_img_focus · Enhance row"
+   ],
+   "name": "round/ic_erase",
+   "label": "",
+   "set": false,
+   "instances": 6,
+   "screens": [
+    "canvas_img_focus"
+   ],
+   "controls": [
+    "K-b9f524",
+    "K-224a77",
+    "K-756ded",
+    "K-ba52cf",
+    "K-5a22db",
+    "K-5961f2"
+   ],
+   "app": [],
+   "press": "TC-061",
+   "how": "manual"
+  },
+  {
+   "group": "K-6bc24d",
+   "kind": "button",
+   "board": "canvas_img_focus (dark)",
+   "boards": [
+    "canvas_img_focus (dark)",
+    "canvas_img_focus · Removal row (dark)",
+    "canvas_img_focus · Enhance row (dark)",
+    "canvas_frame_focus (dark)",
+    "canvas_img_focus",
+    "canvas_img_focus · Removal row",
+    "canvas_img_focus · Enhance row",
+    "canvas_frame_focus"
+   ],
+   "name": "round/ic_horizontal_flip",
+   "label": "",
+   "set": false,
+   "instances": 8,
+   "screens": [
+    "canvas_img_focus",
+    "canvas_frame_focus"
+   ],
+   "controls": [
+    "K-ea8f5a",
+    "K-08a3e8",
+    "K-a5ebc1",
+    "K-2b07a5",
+    "K-ebcb53",
+    "K-944237",
+    "K-f8611e",
+    "K-63e2e4"
+   ],
+   "app": [],
+   "press": "TC-054, TC-058",
+   "how": "manual"
+  },
+  {
+   "group": "K-99c78b",
+   "kind": "button",
+   "board": "canvas_img_focus (dark)",
+   "boards": [
+    "canvas_img_focus (dark)",
+    "canvas_img_focus"
+   ],
+   "name": "round/ic_replace_image",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "canvas_img_focus"
+   ],
+   "controls": [
+    "K-12b79e",
+    "K-b35dcb"
+   ],
+   "app": [],
+   "press": "TC-057",
+   "how": "manual"
+  },
+  {
+   "group": "K-c147a7",
+   "kind": "button",
+   "board": "canvas_img_focus (dark)",
+   "boards": [
+    "canvas_img_focus (dark)",
+    "canvas_img_focus · Removal row (dark)",
+    "canvas_img_focus · Enhance row (dark)",
+    "canvas_frame_focus (dark)",
+    "canvas_img_focus",
+    "canvas_img_focus · Removal row",
+    "canvas_img_focus · Enhance row",
+    "canvas_frame_focus"
+   ],
+   "name": "round/ic_vertical_flip",
+   "label": "",
+   "set": false,
+   "instances": 8,
+   "screens": [
+    "canvas_img_focus",
+    "canvas_frame_focus"
+   ],
+   "controls": [
+    "K-c23928",
+    "K-d67ee4",
+    "K-55d225",
+    "K-d5fbee",
+    "K-ca6c23",
+    "K-f9691b",
+    "K-1ef80a",
+    "K-3c6122"
+   ],
+   "app": [],
+   "press": "TC-054, TC-058",
+   "how": "manual"
+  },
+  {
+   "group": "K-64e185",
+   "kind": "button",
+   "board": "Collage Room · banner (NEW) (dark)",
+   "boards": [
+    "Collage Room · banner (NEW) (dark)",
+    "Collage Room · banner (NEW)"
+   ],
+   "name": "btn_collage2_n",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Collage Room · banner (NEW)"
+   ],
+   "controls": [
+    "K-65ef0f",
+    "K-ca03b9"
+   ],
+   "app": [],
+   "press": "n/a: other feature: Collage room layout filter",
+   "how": "manual"
+  },
+  {
+   "group": "K-f6e6b9",
+   "kind": "button",
+   "board": "Collage Room · banner (NEW) (dark)",
+   "boards": [
+    "Collage Room · banner (NEW) (dark)",
+    "Collage Room · banner (NEW)"
+   ],
+   "name": "btn_collage3_n",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Collage Room · banner (NEW)"
+   ],
+   "controls": [
+    "K-ecdce3",
+    "K-a30208"
+   ],
+   "app": [],
+   "press": "n/a: other feature: Collage room layout filter",
+   "how": "manual"
+  },
+  {
+   "group": "K-4bd0b7",
+   "kind": "button",
+   "board": "Collage Room · banner (NEW) (dark)",
+   "boards": [
+    "Collage Room · banner (NEW) (dark)",
+    "Collage Room · banner (NEW)"
+   ],
+   "name": "btn_collage4_n",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Collage Room · banner (NEW)"
+   ],
+   "controls": [
+    "K-7160cb",
+    "K-73d457"
+   ],
+   "app": [],
+   "press": "n/a: other feature: Collage room layout filter",
+   "how": "manual"
+  },
+  {
+   "group": "K-3f4f51",
+   "kind": "button",
+   "board": "Collage Room · banner (NEW) (dark)",
+   "boards": [
+    "Collage Room · banner (NEW) (dark)",
+    "Collage Room · banner (NEW)"
+   ],
+   "name": "btn_collage6_n",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Collage Room · banner (NEW)"
+   ],
+   "controls": [
+    "K-552cbf",
+    "K-01aefe"
+   ],
+   "app": [],
+   "press": "n/a: other feature: Collage room layout filter",
+   "how": "manual"
+  },
+  {
+   "group": "K-c0efe8",
+   "kind": "input",
+   "board": "Collage Room · banner (NEW) (dark)",
+   "boards": [
+    "Collage Room · banner (NEW) (dark)",
+    "Collage Room · banner (NEW)"
+   ],
+   "name": "ic_search",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Collage Room · banner (NEW)"
+   ],
+   "controls": [
+    "K-81caf5",
+    "K-5ac9c7"
+   ],
+   "app": [],
+   "press": "n/a: other feature: Collage room search",
+   "dismiss": "",
+   "how": "manual"
+  },
+  {
+   "group": "K-149b40",
+   "kind": "button",
+   "board": "Collage Room · banner (NEW) (dark)",
+   "boards": [
+    "Collage Room · banner (NEW) (dark)",
+    "Collage Room · banner (NEW)"
+   ],
+   "name": "round/ic_menu",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Collage Room · banner (NEW)"
+   ],
+   "controls": [
+    "K-3a49e4",
+    "K-4c8e69"
+   ],
+   "app": [],
+   "press": "n/a: other feature: Collage room menu",
+   "how": "manual"
+  },
+  {
+   "group": "C-c007ff",
+   "kind": "tab",
+   "board": "Collage Room · banner (NEW) (dark)",
+   "boards": [
+    "Collage Room · banner (NEW) (dark)",
+    "Collage Room · banner (NEW)"
+   ],
+   "name": "tab-03",
+   "label": "choice of 3: 「All」 「1」 「5」",
+   "set": true,
+   "instances": 6,
+   "screens": [
+    "Collage Room · banner (NEW)"
+   ],
+   "controls": [
+    "K-dc3ce9",
+    "K-a3b7eb",
+    "K-f8c6cc",
+    "K-ab7328",
+    "K-8f1669",
+    "K-0a6bf2"
+   ],
+   "app": [],
+   "press": "n/a: other feature: Collage room layout filter tabs",
+   "how": "manual"
+  },
+  {
+   "group": "K-a0d999",
+   "kind": "button",
+   "board": "Collage Room · banner (NEW) (dark)",
+   "boards": [
+    "Collage Room · banner (NEW) (dark)",
+    "Template Page · default (NEW) (dark)",
+    "entry_launcher2 (dark)",
+    "Save (dark)",
+    "Save: Only 1 img (dark)",
+    "Collage Room · banner (NEW)",
+    "Template Page · default (NEW)",
+    "entry_launcher2",
+    "Save",
+    "Save: Only 1 img"
+   ],
+   "name": "top/ic_back",
+   "label": "",
+   "set": false,
+   "instances": 12,
+   "screens": [
+    "Collage Room · banner (NEW)",
+    "Template Page · default (NEW)",
+    "entry_launcher2",
+    "Save",
+    "Save: Only 1 img"
+   ],
+   "controls": [
+    "K-16b26d",
+    "K-176197",
+    "K-7e29c9",
+    "K-fddf07",
+    "K-71fb3a",
+    "K-ed8abb",
+    "K-678b37",
+    "K-22a631",
+    "K-687a7f",
+    "K-54aaca",
+    "K-2dd136",
+    "K-fad403"
+   ],
+   "app": [],
+   "press": "TC-019, TC-023, TC-144",
+   "how": "manual"
+  },
+  {
+   "group": "K-11dc10",
+   "kind": "button",
+   "board": "Enhance_2 (dark)",
+   "boards": [
+    "Enhance_2 (dark)",
+    "Enhance_2"
+   ],
+   "name": "btn_add_credit",
+   "label": "100",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Enhance_2"
+   ],
+   "controls": [
+    "K-3a06f1",
+    "K-d448e0"
+   ],
+   "app": [],
+   "press": "TC-172",
+   "how": "manual"
+  },
+  {
+   "group": "K-dbbb47",
+   "kind": "button",
+   "board": "Enhance_2 (dark)",
+   "boards": [
+    "Enhance_2 (dark)",
+    "Enhance_2"
+   ],
+   "name": "btn_credit_primary_1row",
+   "label": "Enhance",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Enhance_2"
+   ],
+   "controls": [
+    "K-12f4cc",
+    "K-2c8bdb"
+   ],
+   "app": [],
+   "press": "TC-062, TC-065, TC-172",
+   "how": "manual"
+  },
+  {
+   "group": "K-ae7d46",
+   "kind": "button",
+   "board": "Enhance_2 (dark)",
+   "boards": [
+    "Enhance_2 (dark)",
+    "Enhance_2"
+   ],
+   "name": "ic_history",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Enhance_2"
+   ],
+   "controls": [
+    "K-0c3343",
+    "K-4aeaa9"
+   ],
+   "app": [],
+   "press": "n/a: existing AI Enhance room control; the spec gives it no Swipe Collage rule",
+   "how": "manual"
+  },
+  {
+   "group": "K-ad658c",
+   "kind": "button",
+   "board": "Enhance_2 (dark)",
+   "boards": [
+    "Enhance_2 (dark)",
+    "Enhance_2"
+   ],
+   "name": "round/ic_color_LUT",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Enhance_2"
+   ],
+   "controls": [
+    "K-85ce1f",
+    "K-f1491b"
+   ],
+   "app": [],
+   "press": "TC-062",
+   "how": "manual"
+  },
+  {
+   "group": "K-65d595",
+   "kind": "button",
+   "board": "Enhance_2 (dark)",
+   "boards": [
+    "Enhance_2 (dark)",
+    "Enhance_2"
+   ],
+   "name": "round/ic_photo_anime",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Enhance_2"
+   ],
+   "controls": [
+    "K-babcdb",
+    "K-f46c1c"
+   ],
+   "app": [],
+   "press": "TC-062",
+   "how": "manual"
+  },
+  {
+   "group": "K-ab6ff0",
+   "kind": "button",
+   "board": "Enhance_2 (dark)",
+   "boards": [
+    "Enhance_2 (dark)",
+    "Enhance_2"
+   ],
+   "name": "round/ic_sparkles",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Enhance_2"
+   ],
+   "controls": [
+    "K-1018c5",
+    "K-f23b7e"
+   ],
+   "app": [],
+   "press": "TC-062",
+   "how": "manual"
+  },
+  {
+   "group": "C-f2b397",
+   "kind": "tab",
+   "board": "Enhance_2 (dark)",
+   "boards": [
+    "Enhance_2 (dark)",
+    "Enhance_2"
+   ],
+   "name": "tab",
+   "label": "choice of 3: 「Portrait」 「Scenery」 「Pets」",
+   "set": true,
+   "instances": 6,
+   "screens": [
+    "Enhance_2"
+   ],
+   "controls": [
+    "K-49de43",
+    "K-4c4846",
+    "K-1eab41",
+    "K-392d1e",
+    "K-f9185f",
+    "K-570c92"
+   ],
+   "app": [],
+   "press": "TC-062",
+   "how": "manual"
+  },
+  {
+   "group": "K-f16a29",
+   "kind": "button",
+   "board": "entry_launcher2 (dark)",
+   "boards": [
+    "entry_launcher2 (dark)",
+    "entry_launcher2"
+   ],
+   "name": "btn_primary_large",
+   "label": "Use Template",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "entry_launcher2"
+   ],
+   "controls": [
+    "K-75c950",
+    "K-aee39e"
+   ],
+   "app": [],
+   "press": "TC-024, TC-025",
+   "how": "manual"
+  },
+  {
+   "group": "K-af03c6",
+   "kind": "button",
+   "board": "GAI_removal (dark)",
+   "boards": [
+    "GAI_removal (dark)",
+    "GAI_removal"
+   ],
+   "name": "btn_primary_large",
+   "label": "Remove",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "GAI_removal"
+   ],
+   "controls": [
+    "K-4cf033",
+    "K-3bd5ff"
+   ],
+   "app": [],
+   "press": "TC-061, TC-064",
+   "how": "manual"
+  },
+  {
+   "group": "K-565c58",
+   "kind": "button",
+   "board": "GAI_removal (dark)",
+   "boards": [
+    "GAI_removal (dark)",
+    "GAI_removal"
+   ],
+   "name": "ic_background",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "GAI_removal"
+   ],
+   "controls": [
+    "K-48e6ab",
+    "K-3b8a65"
+   ],
+   "app": [],
+   "press": "n/a: existing Object Removal room control (compare); no Swipe Collage rule",
+   "how": "manual"
+  },
+  {
+   "group": "C-02eca4",
+   "kind": "tab",
+   "board": "GAI_removal (dark)",
+   "boards": [
+    "GAI_removal (dark)",
+    "GAI_removal"
+   ],
+   "name": "tab",
+   "label": "choice of 2: 「Circle」 「Swipe」",
+   "set": true,
+   "instances": 4,
+   "screens": [
+    "GAI_removal"
+   ],
+   "controls": [
+    "K-df7043",
+    "K-029d41",
+    "K-87db9b",
+    "K-4e4115"
+   ],
+   "app": [],
+   "press": "TC-061",
+   "how": "manual"
+  },
+  {
+   "group": "K-928e7e",
+   "kind": "toggle",
+   "board": "GAI_removal (dark)",
+   "boards": [
+    "GAI_removal (dark)",
+    "GAI_removal"
+   ],
+   "name": "Toggle",
+   "label": "PRO",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "GAI_removal"
+   ],
+   "controls": [
+    "K-f73dd2",
+    "K-eae746"
+   ],
+   "app": [],
+   "press": "n/a: existing Object Removal room PRO toggle; no Swipe Collage rule",
+   "how": "manual"
+  },
+  {
+   "group": "K-4c4c4c",
+   "kind": "button",
+   "board": "GAI_removal (dark)",
+   "boards": [
+    "GAI_removal (dark)",
+    "GAI_removal"
+   ],
+   "name": "top/ic_info",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "GAI_removal"
+   ],
+   "controls": [
+    "K-fc7b5e",
+    "K-63b5f8"
+   ],
+   "app": [],
+   "press": "n/a: existing Object Removal room info; no Swipe Collage rule",
+   "how": "manual"
+  },
+  {
+   "group": "K-133033",
+   "kind": "button",
+   "board": "IAP page · Removal row (dark)",
+   "boards": [
+    "IAP page · Removal row (dark)",
+    "IAP page · Enhance row (dark)",
+    "IAP page · Removal row",
+    "IAP page · Enhance row"
+   ],
+   "name": "btn_close_outline",
+   "label": "",
+   "set": false,
+   "instances": 4,
+   "screens": [
+    "B (mimic VVG/ Beauty plus)"
+   ],
+   "controls": [
+    "K-69f931",
+    "K-565ddb",
+    "K-e71842",
+    "K-6400bc"
+   ],
+   "app": [],
+   "press": "TC-063, TC-152",
+   "how": "manual"
+  },
+  {
+   "group": "K-b60ac4",
+   "kind": "button",
+   "board": "IAP page · Removal row (dark)",
+   "boards": [
+    "IAP page · Removal row (dark)",
+    "IAP page · Enhance row (dark)",
+    "IAP page · Removal row",
+    "IAP page · Enhance row"
+   ],
+   "name": "btn_primary_solid_np",
+   "label": "Start 7-Day Free Trial",
+   "set": false,
+   "instances": 4,
+   "screens": [
+    "B (mimic VVG/ Beauty plus)"
+   ],
+   "controls": [
+    "K-29b92f",
+    "K-c2bd70",
+    "K-12e355",
+    "K-2d82c3"
+   ],
+   "app": [],
+   "press": "n/a: starts a purchase (not tapped; R-199)",
+   "how": "manual"
+  },
+  {
+   "group": "C-37c0b5",
+   "kind": "button",
+   "board": "Layers (dark)",
+   "boards": [
+    "Layers (dark)",
+    "Layers"
+   ],
+   "name": "btn",
+   "label": "choice of 2: 「Delete」 「Duplicate」",
+   "set": true,
+   "instances": 4,
+   "screens": [
+    "Layers"
+   ],
+   "controls": [
+    "K-35d11f",
+    "K-d7b421",
+    "K-c114b8",
+    "K-6beb46"
+   ],
+   "app": [],
+   "press": "TC-110",
+   "how": "manual"
+  },
+  {
+   "group": "K-9b6aa2",
+   "kind": "button",
+   "board": "Layers (dark)",
+   "boards": [
+    "Layers (dark)",
+    "canvas_frame_focus (dark)",
+    "Layers"
+   ],
+   "name": "ic_lock",
+   "label": "",
+   "set": false,
+   "instances": 3,
+   "screens": [
+    "Layers",
+    "canvas_frame_focus"
+   ],
+   "controls": [
+    "K-8b0532",
+    "K-8cf613",
+    "K-642fbd"
+   ],
+   "app": [],
+   "press": "TC-111",
+   "how": "manual"
+  },
+  {
+   "group": "K-192079",
+   "kind": "button",
+   "board": "Layers (dark)",
+   "boards": [
+    "Layers (dark)",
+    "Layers"
+   ],
+   "name": "round/ic_drag",
+   "label": "",
+   "set": false,
+   "instances": 10,
+   "screens": [
+    "Layers"
+   ],
+   "controls": [
+    "K-0ef62e",
+    "K-10f631",
+    "K-12f635",
+    "K-14f638",
+    "K-06f622",
+    "K-9e978f",
+    "K-a09792",
+    "K-a29795",
+    "K-a49798",
+    "K-a6979c"
+   ],
+   "app": [],
+   "press": "TC-112",
+   "how": "manual"
+  },
+  {
+   "group": "K-c8c110",
+   "kind": "button",
+   "board": "Layers (dark)",
+   "boards": [
+    "Layers (dark)",
+    "Layers"
+   ],
+   "name": "round/ic_more_filled",
+   "label": "",
+   "set": false,
+   "instances": 10,
+   "screens": [
+    "Layers"
+   ],
+   "controls": [
+    "K-f17916",
+    "K-ef7913",
+    "K-f5791c",
+    "K-f37919",
+    "K-e9790a",
+    "K-f29c4a",
+    "K-f09c47",
+    "K-ee9c44",
+    "K-ec9c40",
+    "K-ea9c3d"
+   ],
+   "app": [],
+   "press": "TC-109",
+   "how": "manual"
+  },
+  {
+   "group": "K-6f409e",
+   "kind": "button",
+   "board": "page",
+   "boards": [
+    "page"
+   ],
+   "name": "btn_add_page",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "page"
+   ],
+   "controls": [
+    "K-9cff72"
+   ],
+   "app": [],
+   "press": "TC-124",
+   "how": "manual"
+  },
+  {
+   "group": "C-573502",
+   "kind": "button",
+   "board": "page",
+   "boards": [
+    "page"
+   ],
+   "name": "ic_more_filled",
+   "label": "choice of 2",
+   "set": true,
+   "instances": 2,
+   "screens": [
+    "page"
+   ],
+   "controls": [
+    "K-f15b42",
+    "K-545b37"
+   ],
+   "app": [],
+   "press": "TC-122, TC-123",
+   "how": "manual"
+  },
+  {
+   "group": "K-23f0ae",
+   "kind": "button",
+   "board": "page (dark)",
+   "boards": [
+    "page (dark)"
+   ],
+   "name": "btn_add_page/dark",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "page"
+   ],
+   "controls": [
+    "K-e52eff"
+   ],
+   "app": [],
+   "press": "TC-124",
+   "how": "manual"
+  },
+  {
+   "group": "C-6f1f8c",
+   "kind": "button",
+   "board": "page (dark)",
+   "boards": [
+    "page (dark)"
+   ],
+   "name": "btn_page_more/dark",
+   "label": "choice of 2",
+   "set": true,
+   "instances": 2,
+   "screens": [
+    "page"
+   ],
+   "controls": [
+    "K-247ae8",
+    "K-ab78c1"
+   ],
+   "app": [],
+   "press": "TC-122, TC-123",
+   "how": "manual"
+  },
+  {
+   "group": "C-a13e49",
+   "kind": "button",
+   "board": "page (dark)",
+   "boards": [
+    "page (dark)"
+   ],
+   "name": "btn_page_move/dark",
+   "label": "choice of 2",
+   "set": true,
+   "instances": 2,
+   "screens": [
+    "page"
+   ],
+   "controls": [
+    "K-eeb410",
+    "K-3afdba"
+   ],
+   "app": [],
+   "press": "TC-120, TC-121",
+   "how": "manual"
+  },
+  {
+   "group": "K-80eb11",
+   "kind": "button",
+   "board": "page (dark)",
+   "boards": [
+    "page (dark)",
+    "page"
+   ],
+   "name": "ic_add",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "page"
+   ],
+   "controls": [
+    "K-afb9ce",
+    "K-2e0b59"
+   ],
+   "app": [],
+   "press": "TC-125, TC-126",
+   "how": "manual"
+  },
+  {
+   "group": "K-89b171",
+   "kind": "button",
+   "board": "page (dark)",
+   "boards": [
+    "page (dark)",
+    "page"
+   ],
+   "name": "ic_minus",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "page"
+   ],
+   "controls": [
+    "K-f919d1",
+    "K-56f1e0"
+   ],
+   "app": [],
+   "press": "TC-125, TC-127",
+   "how": "manual"
+  },
+  {
+   "group": "K-5fa964",
+   "kind": "button",
+   "board": "photo_picker (dark)",
+   "boards": [
+    "photo_picker (dark)",
+    "photo_picker"
+   ],
+   "name": "btn_cancel",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "photo_picker"
+   ],
+   "controls": [
+    "K-421c2a",
+    "K-26608c"
+   ],
+   "app": [],
+   "press": "TC-170",
+   "how": "manual"
+  },
+  {
+   "group": "K-e5842e",
+   "kind": "button",
+   "board": "photo_picker (dark)",
+   "boards": [
+    "photo_picker (dark)",
+    "2_add_text (dark)",
+    "3_Add_Sticker (dark)",
+    "4_frame (dark)",
+    "5_Text_bubble (dark)",
+    "1_add_img (dark)",
+    "background_panel_texture (dark)",
+    "GAI_removal (dark)",
+    "Enhance_2 (dark)",
+    "background_panel_solid (dark)",
+    "Layers (dark)",
+    "photo_picker",
+    "3_Add_Sticker",
+    "4_frame",
+    "5_Text_bubble",
+    "background_panel_texture",
+    "1_add_img",
+    "GAI_removal",
+    "Enhance_2",
+    "background_panel_solid",
+    "Layers",
+    "2_add_text"
+   ],
+   "name": "DownSheet_caption/btn_ok_n",
+   "label": "",
+   "set": false,
+   "instances": 24,
+   "screens": [
+    "photo_picker",
+    "2_add_text",
+    "3_Add_Sticker",
+    "4_frame",
+    "5_Text_bubble",
+    "1_add_img"
+   ],
+   "controls": [
+    "K-19ccc5",
+    "K-1e5aea",
+    "K-fc15dd",
+    "K-33b5aa",
+    "K-04a7f6",
+    "K-a5d3f7",
+    "K-8d79dd",
+    "K-7e5ec4",
+    "K-a9c20a",
+    "K-c96c72",
+    "K-3334f3",
+    "K-577a5d",
+    "K-2e0fb0",
+    "K-46b344",
+    "K-55950c",
+    "K-7a47e8",
+    "K-5d5cb9",
+    "K-fbc8cb",
+    "K-6d0adb",
+    "K-6f6883",
+    "K-5d6749",
+    "K-06c628",
+    "K-50b059",
+    "K-c67aa9"
+   ],
+   "app": [],
+   "press": "TC-043, TC-101, TC-103, TC-173",
+   "how": "manual"
+  },
+  {
+   "group": "K-a23e55",
+   "kind": "tab",
+   "board": "photo_picker (dark)",
+   "boards": [
+    "photo_picker (dark)",
+    "1_add_img (dark)",
+    "photo_picker",
+    "1_add_img"
+   ],
+   "name": "tab",
+   "label": "Photo",
+   "set": false,
+   "instances": 4,
+   "screens": [
+    "photo_picker",
+    "1_add_img"
+   ],
+   "controls": [
+    "K-fbaa58",
+    "K-674277",
+    "K-94e6d6",
+    "K-fd97ce"
+   ],
+   "app": [],
+   "press": "TC-171",
+   "how": "manual"
+  },
+  {
+   "group": "K-09c4a7",
+   "kind": "button",
+   "board": "photo_picker (dark)",
+   "boards": [
+    "photo_picker (dark)",
+    "1_add_img (dark)",
+    "photo_picker",
+    "1_add_img"
+   ],
+   "name": "top/ic_back_n",
+   "label": "",
+   "set": false,
+   "instances": 4,
+   "screens": [
+    "photo_picker",
+    "1_add_img"
+   ],
+   "controls": [
+    "K-4a30ea",
+    "K-16123d",
+    "K-8f824d",
+    "K-fb9951"
+   ],
+   "app": [],
+   "press": "TC-047",
+   "how": "manual"
+  },
+  {
+   "group": "C-d896e3",
+   "kind": "button",
+   "board": "Ratio (dark)",
+   "boards": [
+    "Ratio (dark)",
+    "Ratio"
+   ],
+   "name": "ic_1v1",
+   "label": "choice of 8",
+   "set": true,
+   "instances": 8,
+   "screens": [
+    "Ratio"
+   ],
+   "controls": [
+    "K-e00d72",
+    "K-71365a",
+    "K-d23784",
+    "K-3d7958",
+    "K-ca4e06",
+    "K-5c52d4",
+    "K-dfbc29",
+    "K-d5c7b9"
+   ],
+   "app": [],
+   "press": "TC-115",
+   "how": "manual"
+  },
+  {
+   "group": "K-c440be",
+   "kind": "button",
+   "board": "Ratio (dark)",
+   "boards": [
+    "Ratio (dark)",
+    "Ratio"
+   ],
+   "name": "ic_crop_free",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Ratio"
+   ],
+   "controls": [
+    "K-9ee602",
+    "K-62604c"
+   ],
+   "app": [],
+   "press": "TC-115",
+   "how": "manual"
+  },
+  {
+   "group": "K-e41903",
+   "kind": "button",
+   "board": "Ratio (dark)",
+   "boards": [
+    "Ratio (dark)",
+    "Ratio"
+   ],
+   "name": "ic_image",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Ratio"
+   ],
+   "controls": [
+    "K-e4434b",
+    "K-592b0b"
+   ],
+   "app": [],
+   "press": "TC-115",
+   "how": "manual"
+  },
+  {
+   "group": "K-084af7",
+   "kind": "button",
+   "board": "Save (dark)",
+   "boards": [
+    "Save (dark)",
+    "Save: Only 1 img (dark)",
+    "Save",
+    "Save: Only 1 img"
+   ],
+   "name": "btn_primary_l_with_ar",
+   "label": "Save",
+   "set": false,
+   "instances": 4,
+   "screens": [
+    "Save",
+    "Save: Only 1 img"
+   ],
+   "controls": [
+    "K-1d3751",
+    "K-dbe036",
+    "K-2a1e2b",
+    "K-0070d7"
+   ],
+   "app": [],
+   "press": "TC-137",
+   "how": "manual"
+  },
+  {
+   "group": "K-bbca7c",
+   "kind": "button",
+   "board": "Save (dark)",
+   "boards": [
+    "Save (dark)",
+    "Save"
+   ],
+   "name": "button",
+   "label": "1/5",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Save"
+   ],
+   "controls": [
+    "K-b037d5",
+    "K-7356a4"
+   ],
+   "app": [],
+   "press": "n/a: page counter 「1/5」, not tappable (checked in TC-177)",
+   "how": "manual"
+  },
+  {
+   "group": "K-e64eba",
+   "kind": "button",
+   "board": "Save (dark)",
+   "boards": [
+    "Save (dark)",
+    "Save"
+   ],
+   "name": "secondary/btn/outline",
+   "label": "Save this image only",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Save"
+   ],
+   "controls": [
+    "K-754613",
+    "K-a32a92"
+   ],
+   "app": [],
+   "press": "TC-178",
+   "how": "manual"
+  },
+  {
+   "group": "K-277f13",
+   "kind": "button",
+   "board": "Save: Only 1 img (dark)",
+   "boards": [
+    "Save: Only 1 img (dark)",
+    "Save: Only 1 img"
+   ],
+   "name": "round/ic_ig",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Save: Only 1 img"
+   ],
+   "controls": [
+    "K-3d1cda",
+    "K-5b4e0f"
+   ],
+   "app": [],
+   "press": "TC-141",
+   "how": "manual"
+  },
+  {
+   "group": "K-9d83a1",
+   "kind": "button",
+   "board": "Save: Only 1 img (dark)",
+   "boards": [
+    "Save: Only 1 img (dark)",
+    "Save: Only 1 img"
+   ],
+   "name": "round/ic_line",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Save: Only 1 img"
+   ],
+   "controls": [
+    "K-42635a",
+    "K-77fd7a"
+   ],
+   "app": [],
+   "press": "TC-182",
+   "how": "manual"
+  },
+  {
+   "group": "K-75ed76",
+   "kind": "button",
+   "board": "Save: Only 1 img (dark)",
+   "boards": [
+    "Save: Only 1 img (dark)",
+    "Save: Only 1 img"
+   ],
+   "name": "round/ic_tiktok",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Save: Only 1 img"
+   ],
+   "controls": [
+    "K-e13401",
+    "K-32b8dd"
+   ],
+   "app": [],
+   "press": "TC-183",
+   "how": "manual"
+  },
+  {
+   "group": "K-36c2de",
+   "kind": "button",
+   "board": "Save: Only 1 img (dark)",
+   "boards": [
+    "Save: Only 1 img (dark)",
+    "Save: Only 1 img"
+   ],
+   "name": "round/ic_twitter",
+   "label": "",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Save: Only 1 img"
+   ],
+   "controls": [
+    "K-f9c0c3",
+    "K-c877e3"
+   ],
+   "app": [],
+   "press": "TC-181",
+   "how": "manual"
+  },
+  {
+   "group": "K-3174c1",
+   "kind": "button",
+   "board": "Template Page · default (NEW) (dark)",
+   "boards": [
+    "Template Page · default (NEW) (dark)",
+    "entry_launcher2 (dark)",
+    "Save (dark)",
+    "Template Page · default (NEW)",
+    "entry_launcher2",
+    "Save"
+   ],
+   "name": "button",
+   "label": "",
+   "set": false,
+   "instances": 14,
+   "screens": [
+    "Template Page · default (NEW)",
+    "entry_launcher2",
+    "Save"
+   ],
+   "controls": [
+    "K-df6dcb",
+    "K-52753c",
+    "K-f1f1fc",
+    "K-63f96b",
+    "K-68f973",
+    "K-1d6bd5",
+    "K-145578",
+    "K-88d788",
+    "K-11d011",
+    "K-5b8dbb",
+    "K-619003",
+    "K-5c8ffb",
+    "K-5607e8",
+    "K-4ff00e"
+   ],
+   "app": [],
+   "press": "TC-020, TC-021",
+   "how": "manual"
+  },
+  {
+   "group": "K-711f70",
+   "kind": "tab",
+   "board": "Template Page · default (NEW) (dark)",
+   "boards": [
+    "Template Page · default (NEW) (dark)",
+    "Template Page · default (NEW)"
+   ],
+   "name": "tab/text/content/set",
+   "label": "Year End",
+   "set": false,
+   "instances": 2,
+   "screens": [
+    "Template Page · default (NEW)"
+   ],
+   "controls": [
+    "K-ede621",
+    "K-58fa9b"
+   ],
+   "app": [],
+   "press": "TC-013",
+   "how": "manual"
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+  "feature": "phd/swipe-collage",
+  "platform": "android",
+  "title": "Swipe Collage",
+  "draft": "20261112-094820",
+  "created_at": "2026-11-12T01:48:20.995Z",
+  "based_on_version": 2,
+  "spec_folder": "specs/2026-11-05",
+  "spec_files": [
+    {
+      "name": "Swipe Collage PhDM Spec.pdf",
+      "sha256": "c70707697dc4d87b665cd6e8eb4891ebe9d0577785bcf26c5fe5c1d8160f422b",
+      "bytes": 14661610
+    }
+  ],
+  "spec_set_sha256": "39ec8cd506d551c19b6602fab628954fc02ace53cbbaf456fa5b7acd7a91cea2"
+}

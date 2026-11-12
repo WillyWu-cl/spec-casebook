@@ -1,0 +1,526 @@
+{
+  "note": "The Design Figma page (iUy5kOrVNG7IjcyxGGnp9t 0:1) draws no arrows (source read and inventory: 0). Arrows are the PM flow table (ft-) and the red back arrows of the drawn flows (dr-) of Swipe Collage PhDM Spec.pdf, unchanged from spec set 2026-10-29; node = that id.",
+  "arrows": [
+    {
+      "arrow": "ft-01",
+      "node": "ft-01",
+      "board": "flow-table",
+      "edge": "Collage Room banner",
+      "expected": "Template Page",
+      "requirement": "R-140"
+    },
+    {
+      "arrow": "ft-02",
+      "node": "ft-02",
+      "board": "flow-table",
+      "edge": "Template Page ‹",
+      "expected": "Collage Room",
+      "requirement": "R-141"
+    },
+    {
+      "arrow": "ft-03",
+      "node": "ft-03",
+      "board": "flow-table",
+      "edge": "Category tab",
+      "expected": "category switched",
+      "requirement": "R-142"
+    },
+    {
+      "arrow": "ft-04",
+      "node": "ft-04",
+      "board": "flow-table",
+      "edge": "Template thumbnail",
+      "expected": "Template Preview",
+      "requirement": "R-143"
+    },
+    {
+      "arrow": "ft-05",
+      "node": "ft-05",
+      "board": "flow-table",
+      "edge": "Thumbnail swipe right",
+      "expected": "next page of that template",
+      "requirement": "R-144"
+    },
+    {
+      "arrow": "ft-06",
+      "node": "ft-06",
+      "board": "flow-table",
+      "edge": "Template Preview ‹",
+      "expected": "Template Page",
+      "requirement": "R-145"
+    },
+    {
+      "arrow": "ft-07",
+      "node": "ft-07",
+      "board": "flow-table",
+      "edge": "Template Preview swipe",
+      "expected": "page by page",
+      "requirement": "R-146"
+    },
+    {
+      "arrow": "ft-08",
+      "node": "ft-08",
+      "board": "flow-table",
+      "edge": "Use Template",
+      "expected": "Canvas",
+      "requirement": "R-147"
+    },
+    {
+      "arrow": "ft-09",
+      "node": "ft-09",
+      "board": "flow-table",
+      "edge": "Canvas ‹",
+      "expected": "Discard dialog → Template Preview",
+      "requirement": "R-148"
+    },
+    {
+      "arrow": "ft-10",
+      "node": "ft-10",
+      "board": "flow-table",
+      "edge": "↶ / ↷",
+      "expected": "undo / redo",
+      "requirement": "R-149"
+    },
+    {
+      "arrow": "ft-11",
+      "node": "ft-11",
+      "board": "flow-table",
+      "edge": "Export",
+      "expected": "Save & Share",
+      "requirement": "R-150"
+    },
+    {
+      "arrow": "ft-12",
+      "node": "ft-12",
+      "board": "flow-table",
+      "edge": "Export with PRO content, Free user",
+      "expected": "IAP page",
+      "requirement": "R-151"
+    },
+    {
+      "arrow": "ft-13",
+      "node": "ft-13",
+      "board": "flow-table",
+      "edge": "Frame +",
+      "expected": "Photo picker",
+      "requirement": "R-152"
+    },
+    {
+      "arrow": "ft-14",
+      "node": "ft-14",
+      "board": "flow-table",
+      "edge": "Tap frame",
+      "expected": "frame focus",
+      "requirement": "R-153"
+    },
+    {
+      "arrow": "ft-15",
+      "node": "ft-15",
+      "board": "flow-table",
+      "edge": "Tap image",
+      "expected": "image focus",
+      "requirement": "R-154"
+    },
+    {
+      "arrow": "ft-16",
+      "node": "ft-16",
+      "board": "flow-table",
+      "edge": "Long-press image",
+      "expected": "drag swap between / inside frames",
+      "requirement": "R-155"
+    },
+    {
+      "arrow": "ft-17",
+      "node": "ft-17",
+      "board": "flow-table",
+      "edge": "Background",
+      "expected": "Background sheet",
+      "requirement": "R-156"
+    },
+    {
+      "arrow": "ft-18",
+      "node": "ft-18",
+      "board": "flow-table",
+      "edge": "Layers",
+      "expected": "Layers list",
+      "requirement": "R-157"
+    },
+    {
+      "arrow": "ft-19",
+      "node": "ft-19",
+      "board": "flow-table",
+      "edge": "+",
+      "expected": "Add Layer",
+      "requirement": "R-158"
+    },
+    {
+      "arrow": "ft-20",
+      "node": "ft-20",
+      "board": "flow-table",
+      "edge": "Ratio",
+      "expected": "Ratio sheet",
+      "requirement": "R-159"
+    },
+    {
+      "arrow": "ft-21",
+      "node": "ft-21",
+      "board": "flow-table",
+      "edge": "Pages",
+      "expected": "Pages",
+      "requirement": "R-160"
+    },
+    {
+      "arrow": "ft-22",
+      "node": "ft-22",
+      "board": "flow-table",
+      "edge": "Frame focus floating Delete",
+      "expected": "frame removed",
+      "requirement": "R-161"
+    },
+    {
+      "arrow": "ft-23",
+      "node": "ft-23",
+      "board": "flow-table",
+      "edge": "Floating Duplicate",
+      "expected": "frame copied",
+      "requirement": "R-162"
+    },
+    {
+      "arrow": "ft-24",
+      "node": "ft-24",
+      "board": "flow-table",
+      "edge": "Floating Lock",
+      "expected": "frame locked",
+      "requirement": "R-163"
+    },
+    {
+      "arrow": "ft-25",
+      "node": "ft-25",
+      "board": "flow-table",
+      "edge": "Opacity / Shadow",
+      "expected": "controls (TBD-1)",
+      "requirement": "R-164"
+    },
+    {
+      "arrow": "ft-26",
+      "node": "ft-26",
+      "board": "flow-table",
+      "edge": "Frame Flip H / Flip V",
+      "expected": "flipped",
+      "requirement": "R-165"
+    },
+    {
+      "arrow": "ft-27",
+      "node": "ft-27",
+      "board": "flow-table",
+      "edge": "Frame style switch",
+      "expected": "Frame panel (TBD-2)",
+      "requirement": "R-166"
+    },
+    {
+      "arrow": "ft-28",
+      "node": "ft-28",
+      "board": "flow-table",
+      "edge": "Image Replace",
+      "expected": "Photo picker",
+      "requirement": "R-167"
+    },
+    {
+      "arrow": "ft-29",
+      "node": "ft-29",
+      "board": "flow-table",
+      "edge": "Image Flip H / Flip V",
+      "expected": "flipped",
+      "requirement": "R-168"
+    },
+    {
+      "arrow": "ft-30",
+      "node": "ft-30",
+      "board": "flow-table",
+      "edge": "Adjust / Filter",
+      "expected": "Collage panels",
+      "requirement": "R-169"
+    },
+    {
+      "arrow": "ft-31",
+      "node": "ft-31",
+      "board": "flow-table",
+      "edge": "Removal",
+      "expected": "Object Removal room, IAP at apply",
+      "requirement": "R-170"
+    },
+    {
+      "arrow": "ft-32",
+      "node": "ft-32",
+      "board": "flow-table",
+      "edge": "Enhance",
+      "expected": "AI Enhance room, IAP at apply",
+      "requirement": "R-171"
+    },
+    {
+      "arrow": "ft-33",
+      "node": "ft-33",
+      "board": "flow-table",
+      "edge": "Image Lock",
+      "expected": "image locked",
+      "requirement": "R-172"
+    },
+    {
+      "arrow": "ft-34",
+      "node": "ft-34",
+      "board": "flow-table",
+      "edge": "Image Delete",
+      "expected": "empty frame",
+      "requirement": "R-173"
+    },
+    {
+      "arrow": "ft-35",
+      "node": "ft-35",
+      "board": "flow-table",
+      "edge": "Locked Unlock",
+      "expected": "normal focus",
+      "requirement": "R-174"
+    },
+    {
+      "arrow": "ft-36",
+      "node": "ft-36",
+      "board": "flow-table",
+      "edge": "Locked Duplicate / Delete",
+      "expected": "as unlocked",
+      "requirement": "R-175"
+    },
+    {
+      "arrow": "ft-37",
+      "node": "ft-37",
+      "board": "flow-table",
+      "edge": "Background Solid / Texture",
+      "expected": "tab switched",
+      "requirement": "R-176"
+    },
+    {
+      "arrow": "ft-38",
+      "node": "ft-38",
+      "board": "flow-table",
+      "edge": "Swatch / texture",
+      "expected": "background applied",
+      "requirement": "R-177"
+    },
+    {
+      "arrow": "ft-39",
+      "node": "ft-39",
+      "board": "flow-table",
+      "edge": "Custom color",
+      "expected": "picker",
+      "requirement": "R-178"
+    },
+    {
+      "arrow": "ft-40",
+      "node": "ft-40",
+      "board": "flow-table",
+      "edge": "Eyedropper",
+      "expected": "colour from canvas",
+      "requirement": "R-179"
+    },
+    {
+      "arrow": "ft-41",
+      "node": "ft-41",
+      "board": "flow-table",
+      "edge": "Picker Cancel / Done",
+      "expected": "not applied / applied",
+      "requirement": "R-180"
+    },
+    {
+      "arrow": "ft-42",
+      "node": "ft-42",
+      "board": "flow-table",
+      "edge": "Background ✕",
+      "expected": "closed (TBD-4)",
+      "requirement": "R-181"
+    },
+    {
+      "arrow": "ft-43",
+      "node": "ft-43",
+      "board": "flow-table",
+      "edge": "Layers ⋯",
+      "expected": "Delete / Duplicate / Lock menu",
+      "requirement": "R-182"
+    },
+    {
+      "arrow": "ft-44",
+      "node": "ft-44",
+      "board": "flow-table",
+      "edge": "Layers ≡",
+      "expected": "TBD-3",
+      "requirement": "R-183"
+    },
+    {
+      "arrow": "ft-45",
+      "node": "ft-45",
+      "board": "flow-table",
+      "edge": "Layers ✕",
+      "expected": "closed (TBD-4)",
+      "requirement": "R-184"
+    },
+    {
+      "arrow": "ft-46",
+      "node": "ft-46",
+      "board": "flow-table",
+      "edge": "Add Layer Image",
+      "expected": "Photo picker",
+      "requirement": "R-185"
+    },
+    {
+      "arrow": "ft-47",
+      "node": "ft-47",
+      "board": "flow-table",
+      "edge": "Add Layer Text / Sticker / Frame / Text Bubble",
+      "expected": "their panels",
+      "requirement": "R-186"
+    },
+    {
+      "arrow": "ft-48",
+      "node": "ft-48",
+      "board": "flow-table",
+      "edge": "Add Layer ✕",
+      "expected": "closed (TBD-4)",
+      "requirement": "R-187"
+    },
+    {
+      "arrow": "ft-49",
+      "node": "ft-49",
+      "board": "flow-table",
+      "edge": "Frame panel thumbnail",
+      "expected": "frame added",
+      "requirement": "R-188"
+    },
+    {
+      "arrow": "ft-50",
+      "node": "ft-50",
+      "board": "flow-table",
+      "edge": "Ratio item",
+      "expected": "applied, long side only",
+      "requirement": "R-189"
+    },
+    {
+      "arrow": "ft-51",
+      "node": "ft-51",
+      "board": "flow-table",
+      "edge": "Ratio ✕",
+      "expected": "closed (TBD-4)",
+      "requirement": "R-190"
+    },
+    {
+      "arrow": "ft-52",
+      "node": "ft-52",
+      "board": "flow-table",
+      "edge": "Pages ✕",
+      "expected": "discard, Discard dialog when changed",
+      "requirement": "R-191"
+    },
+    {
+      "arrow": "ft-53",
+      "node": "ft-53",
+      "board": "flow-table",
+      "edge": "Pages ✓",
+      "expected": "Canvas on the selected page",
+      "requirement": "R-192"
+    },
+    {
+      "arrow": "ft-54",
+      "node": "ft-54",
+      "board": "flow-table",
+      "edge": "Pages thumbnail",
+      "expected": "page selected",
+      "requirement": "R-193"
+    },
+    {
+      "arrow": "ft-55",
+      "node": "ft-55",
+      "board": "flow-table",
+      "edge": "Hold ≡",
+      "expected": "drag to reorder",
+      "requirement": "R-194"
+    },
+    {
+      "arrow": "ft-56",
+      "node": "ft-56",
+      "board": "flow-table",
+      "edge": "•••",
+      "expected": "Duplicate / Delete page",
+      "requirement": "R-195"
+    },
+    {
+      "arrow": "ft-57",
+      "node": "ft-57",
+      "board": "flow-table",
+      "edge": "Row + / bottom − +",
+      "expected": "pages added / removed at the end",
+      "requirement": "R-196"
+    },
+    {
+      "arrow": "ft-58",
+      "node": "ft-58",
+      "board": "flow-table",
+      "edge": "Photo picker Done",
+      "expected": "frames filled, Canvas",
+      "requirement": "R-197"
+    },
+    {
+      "arrow": "ft-59",
+      "node": "ft-59",
+      "board": "flow-table",
+      "edge": "Save page Instagram / Facebook / More",
+      "expected": "share",
+      "requirement": "R-198"
+    },
+    {
+      "arrow": "ft-60",
+      "node": "ft-60",
+      "board": "flow-table",
+      "edge": "IAP page ✕ / Continue",
+      "expected": "as existing (Continue starts a purchase and is not tapped)",
+      "requirement": "R-199"
+    },
+    {
+      "arrow": "dr-01",
+      "node": "dr-01",
+      "board": "entry-banner",
+      "edge": "Photo picker ‹",
+      "expected": "Canvas",
+      "requirement": "R-200"
+    },
+    {
+      "arrow": "dr-02",
+      "node": "dr-02",
+      "board": "entry-banner",
+      "edge": "Save & Share ‹",
+      "expected": "Canvas",
+      "requirement": "R-201"
+    },
+    {
+      "arrow": "dr-03",
+      "node": "dr-03",
+      "board": "removal-flow",
+      "edge": "Removal / Enhance room ✕",
+      "expected": "Canvas, not applied",
+      "requirement": "R-202"
+    },
+    {
+      "arrow": "dr-04",
+      "node": "dr-04",
+      "board": "removal-flow",
+      "edge": "IAP page ✕",
+      "expected": "back",
+      "requirement": "R-203"
+    },
+    {
+      "arrow": "dr-05",
+      "node": "dr-05",
+      "board": "add-layer-flow",
+      "edge": "Add Layer panel finished",
+      "expected": "Canvas with the new element",
+      "requirement": "R-204"
+    }
+  ],
+  "count": 65
+}

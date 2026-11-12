@@ -1,0 +1,251 @@
+{
+ "Swipe Collage PhDM Spec.pdf": {
+  "page_size": [
+   10370,
+   19676
+  ],
+  "note": "One Figma export page: the right half (Demo + Spec — Scrollable Collage) of Collage.pdf (spec set 2026-10-29) without the early PM sketch. Text layer identical to that half (x = old x − 21086). Read from the PDF text layer; macOS Vision OCR (spec-boards.ts) is not available on this Windows machine.",
+  "boards": [
+   {
+    "id": "overview",
+    "title": "Demo + Spec — Scrollable Collage (26 11E): Overview",
+    "region": [
+     14,
+     50,
+     3400,
+     800
+    ]
+   },
+   {
+    "id": "leave-notes",
+    "title": "Leave / Discard / Continue editing notes",
+    "region": [
+     3464,
+     400,
+     1100,
+     500
+    ]
+   },
+   {
+    "id": "monetization-notes",
+    "title": "Monetization notes",
+    "region": [
+     4564,
+     400,
+     1100,
+     450
+    ]
+   },
+   {
+    "id": "event-notes",
+    "title": "Event notes",
+    "region": [
+     5664,
+     400,
+     1100,
+     450
+    ]
+   },
+   {
+    "id": "scrl-compare",
+    "title": "SCRL competitor comparison",
+    "region": [
+     6764,
+     900,
+     1300,
+     800
+    ]
+   },
+   {
+    "id": "entry-banner",
+    "title": "Entry: Collage banner (flow)",
+    "region": [
+     14,
+     800,
+     3400,
+     1450
+    ]
+   },
+   {
+    "id": "entry-deeplink",
+    "title": "Entry: Deeplink scrollable_collage (flow)",
+    "region": [
+     14,
+     2250,
+     1400,
+     1350
+    ]
+   },
+   {
+    "id": "add-layer-flow",
+    "title": "Next: Canvas [+] → Add Layer five functions (flow)",
+    "region": [
+     14,
+     3650,
+     3400,
+     1300
+    ]
+   },
+   {
+    "id": "removal-flow",
+    "title": "Next: Image focus → Removal (flow)",
+    "region": [
+     14,
+     5050,
+     3400,
+     1350
+    ]
+   },
+   {
+    "id": "enhance-flow",
+    "title": "Next: Image focus → Enhance (flow)",
+    "region": [
+     14,
+     6400,
+     3400,
+     1500
+    ]
+   },
+   {
+    "id": "flow-table",
+    "title": "Screen × Button → Next table",
+    "region": [
+     3464,
+     2650,
+     2300,
+     2700
+    ]
+   },
+   {
+    "id": "tbd",
+    "title": "TBD-1 … TBD-9 (PM Meg, pending)",
+    "region": [
+     5864,
+     2650,
+     1300,
+     1250
+    ]
+   },
+   {
+    "id": "cms",
+    "title": "CMS fields and Template Spec",
+    "region": [
+     3314,
+     8000,
+     1700,
+     900
+    ]
+   },
+   {
+    "id": "states-collage-room",
+    "title": "State boards: Collage Room · banner",
+    "region": [
+     14,
+     8000,
+     3300,
+     1100
+    ]
+   },
+   {
+    "id": "states-template-page",
+    "title": "State boards: Template Page · default / thumb_swipe",
+    "region": [
+     14,
+     9100,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-template-preview",
+    "title": "State boards: Template Preview · default / pro",
+    "region": [
+     14,
+     10150,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-canvas",
+    "title": "State boards: Canvas · default … swap_in_frame",
+    "region": [
+     14,
+     11200,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-background",
+    "title": "State boards: Background · solid / texture / custom_color",
+    "region": [
+     14,
+     12250,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-layers",
+    "title": "State boards: Add Layer, Layers, Frame Panel",
+    "region": [
+     14,
+     13300,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-ratio",
+    "title": "State boards: Ratio · default",
+    "region": [
+     14,
+     14350,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-pages",
+    "title": "State boards: Pages · default … discard",
+    "region": [
+     14,
+     15400,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-photo-picker",
+    "title": "State boards: Photo Picker · default",
+    "region": [
+     14,
+     16450,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-save-page",
+    "title": "State boards: Save Page · default / iap_every_3 / pro_export",
+    "region": [
+     14,
+     17500,
+     10300,
+     1050
+    ]
+   },
+   {
+    "id": "states-locks",
+    "title": "State boards: Canvas · frame_locked / image_locked",
+    "region": [
+     14,
+     18550,
+     10300,
+     1126
+    ]
+   }
+  ]
+ }
+}

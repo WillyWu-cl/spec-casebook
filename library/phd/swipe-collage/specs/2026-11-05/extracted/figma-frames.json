@@ -5,5 +5,14 @@
       "page": "0:1",
       "url": "https://www.figma.com/design/iUy5kOrVNG7IjcyxGGnp9t/Swipe_collage?node-id=0-1&p=f&m=dev"
     }
-  }
+  },
+  "frames": [
+    {
+      "label": "20261029_Swipe Collage (Design page 0:1)",
+      "node": "0:1",
+      "in_pdf": false,
+      "read": "figma-source/design (source read 2026-11-05, 56 phone frames + 3 icon sheets); board-notes.md › Design — Figma (draft 20261112-094820)"
+    }
+  ],
+  "note": "The Design file has no PDF export in this spec set; the PDF (Swipe Collage PhDM Spec.pdf) is the PM spec. Loose texts on the page (row labels, callouts, overview copies) were read on 2026-11-12 (1 use_figma call): all are copies of PM notes."
 }

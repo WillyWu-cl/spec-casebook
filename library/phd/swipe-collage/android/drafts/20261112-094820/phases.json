@@ -1,0 +1,566 @@
+{
+  "draft": "20261112-094820",
+  "current": [
+    "R1"
+  ],
+  "needs": {
+    "TC-005": [
+      "deeplink"
+    ],
+    "TC-006": [
+      "deeplink"
+    ],
+    "TC-007": [
+      "deeplink"
+    ],
+    "TC-008": [
+      "deeplink"
+    ],
+    "TC-183": [
+      "tiktok"
+    ],
+    "TC-025": [
+      "free-account"
+    ],
+    "TC-061": [
+      "free-account"
+    ],
+    "TC-062": [
+      "free-account"
+    ],
+    "TC-063": [
+      "free-account",
+      "purchase"
+    ],
+    "TC-168": [
+      "free-account",
+      "purchase"
+    ],
+    "TC-093": [
+      "free-account"
+    ],
+    "TC-105": [
+      "free-account"
+    ],
+    "TC-149": [
+      "free-account",
+      "purchase"
+    ],
+    "TC-150": [
+      "free-account",
+      "purchase"
+    ],
+    "TC-151": [
+      "free-account",
+      "purchase"
+    ],
+    "TC-152": [
+      "free-account",
+      "purchase"
+    ],
+    "TC-145": [
+      "free-account",
+      "new-account"
+    ],
+    "TC-146": [
+      "free-account",
+      "new-account"
+    ],
+    "TC-154": [
+      "free-account",
+      "new-account"
+    ],
+    "TC-064": [
+      "premium",
+      "credits"
+    ],
+    "TC-065": [
+      "premium",
+      "credits"
+    ],
+    "TC-172": [
+      "premium",
+      "credits"
+    ],
+    "TC-066": [
+      "premium",
+      "credits"
+    ],
+    "TC-067": [
+      "premium",
+      "credits"
+    ],
+    "TC-068": [
+      "premium"
+    ],
+    "TC-136": [
+      "premium"
+    ],
+    "TC-179": [
+      "premium"
+    ],
+    "TC-147": [
+      "premium"
+    ],
+    "TC-153": [
+      "premium"
+    ],
+    "TC-155": [
+      "credits"
+    ],
+    "TC-018": [
+      "app-language"
+    ],
+    "TC-186": [
+      "system-setting"
+    ],
+    "TC-187": [
+      "system-setting"
+    ]
+  },
+  "unavailable": {
+    "deeplink": "test-data: deeplink URLs (scrollable_collage, category_guid, template_guid) not supplied by RD (Q-10)",
+    "tiktok": "test-data: TikTok is not installed on the S23 (Instagram, Facebook, X, LINE are)"
+  },
+  "notes": {
+    "purchase": "IAP pages are only viewed and closed; never buy, never tap QA consume/purchase rows (user, 2026-11-12)",
+    "credits": "One generation per row allowed (Enhance about 5 credits, Removal); record the balance before and after (user, 2026-11-12)",
+    "system-setting": "User allowed switching the phone dark/light theme for TC-186/187 (2026-11-12); restore the original theme after",
+    "new-account": "Fresh export counter: adb shell pm clear on the signed-out phone at the end of R1-g (one-way state, AGENTS 2026-11-11); the Premium account then needs the user to sign in again",
+    "free-account": "Signed-out state of the phone (non-Premium); R1-g signs out of Premium first"
+  },
+  "phases": [
+    {
+      "id": "R1",
+      "name": "Full run of v3 (first run of the table)",
+      "round": true,
+      "note": "Premium account (user signs in) for R1-a to R1-f; R1-g signs out for the Free rows and ends with pm clear for the fresh export counter; R1-h needs no account. Every Year End journey needs 20+ gallery photos (fixtures.md).",
+      "origin": {
+        "TC-001": "R1",
+        "TC-002": "R1",
+        "TC-003": "R1",
+        "TC-004": "R1",
+        "TC-005": "R1",
+        "TC-006": "R1",
+        "TC-007": "R1",
+        "TC-008": "R1",
+        "TC-009": "R1",
+        "TC-010": "R1",
+        "TC-011": "R1",
+        "TC-012": "R1",
+        "TC-013": "R1",
+        "TC-014": "R1",
+        "TC-015": "R1",
+        "TC-016": "R1",
+        "TC-017": "R1",
+        "TC-019": "R1",
+        "TC-020": "R1",
+        "TC-021": "R1",
+        "TC-022": "R1",
+        "TC-023": "R1",
+        "TC-024": "R1",
+        "TC-156": "R1",
+        "TC-157": "R1",
+        "TC-040": "R1",
+        "TC-041": "R1",
+        "TC-170": "R1",
+        "TC-171": "R1",
+        "TC-042": "R1",
+        "TC-043": "R1",
+        "TC-044": "R1",
+        "TC-045": "R1",
+        "TC-046": "R1",
+        "TC-047": "R1",
+        "TC-161": "R1",
+        "TC-026": "R1",
+        "TC-027": "R1",
+        "TC-028": "R1",
+        "TC-029": "R1",
+        "TC-030": "R1",
+        "TC-031": "R1",
+        "TC-180": "R1",
+        "TC-032": "R1",
+        "TC-033": "R1",
+        "TC-034": "R1",
+        "TC-035": "R1",
+        "TC-158": "R1",
+        "TC-159": "R1",
+        "TC-048": "R1",
+        "TC-049": "R1",
+        "TC-050": "R1",
+        "TC-051": "R1",
+        "TC-052": "R1",
+        "TC-053": "R1",
+        "TC-054": "R1",
+        "TC-055": "R1",
+        "TC-056": "R1",
+        "TC-057": "R1",
+        "TC-058": "R1",
+        "TC-059": "R1",
+        "TC-060": "R1",
+        "TC-160": "R1",
+        "TC-069": "R1",
+        "TC-070": "R1",
+        "TC-071": "R1",
+        "TC-072": "R1",
+        "TC-073": "R1",
+        "TC-074": "R1",
+        "TC-075": "R1",
+        "TC-076": "R1",
+        "TC-077": "R1",
+        "TC-078": "R1",
+        "TC-079": "R1",
+        "TC-080": "R1",
+        "TC-081": "R1",
+        "TC-082": "R1",
+        "TC-083": "R1",
+        "TC-084": "R1",
+        "TC-085": "R1",
+        "TC-086": "R1",
+        "TC-087": "R1",
+        "TC-088": "R1",
+        "TC-089": "R1",
+        "TC-064": "R1",
+        "TC-066": "R1",
+        "TC-065": "R1",
+        "TC-172": "R1",
+        "TC-067": "R1",
+        "TC-068": "R1",
+        "TC-167": "R1",
+        "TC-185": "R1",
+        "TC-090": "R1",
+        "TC-091": "R1",
+        "TC-092": "R1",
+        "TC-094": "R1",
+        "TC-095": "R1",
+        "TC-096": "R1",
+        "TC-097": "R1",
+        "TC-163": "R1",
+        "TC-098": "R1",
+        "TC-173": "R1",
+        "TC-162": "R1",
+        "TC-099": "R1",
+        "TC-100": "R1",
+        "TC-101": "R1",
+        "TC-174": "R1",
+        "TC-102": "R1",
+        "TC-164": "R1",
+        "TC-175": "R1",
+        "TC-103": "R1",
+        "TC-104": "R1",
+        "TC-106": "R1",
+        "TC-107": "R1",
+        "TC-184": "R1",
+        "TC-108": "R1",
+        "TC-109": "R1",
+        "TC-110": "R1",
+        "TC-111": "R1",
+        "TC-112": "R1",
+        "TC-113": "R1",
+        "TC-114": "R1",
+        "TC-115": "R1",
+        "TC-117": "R1",
+        "TC-176": "R1",
+        "TC-118": "R1",
+        "TC-119": "R1",
+        "TC-120": "R1",
+        "TC-121": "R1",
+        "TC-122": "R1",
+        "TC-123": "R1",
+        "TC-124": "R1",
+        "TC-125": "R1",
+        "TC-126": "R1",
+        "TC-127": "R1",
+        "TC-128": "R1",
+        "TC-129": "R1",
+        "TC-130": "R1",
+        "TC-131": "R1",
+        "TC-132": "R1",
+        "TC-133": "R1",
+        "TC-165": "R1",
+        "TC-166": "R1",
+        "TC-134": "R1",
+        "TC-135": "R1",
+        "TC-116": "R1",
+        "TC-136": "R1",
+        "TC-177": "R1",
+        "TC-137": "R1",
+        "TC-178": "R1",
+        "TC-179": "R1",
+        "TC-138": "R1",
+        "TC-139": "R1",
+        "TC-140": "R1",
+        "TC-141": "R1",
+        "TC-142": "R1",
+        "TC-143": "R1",
+        "TC-181": "R1",
+        "TC-182": "R1",
+        "TC-183": "R1",
+        "TC-144": "R1",
+        "TC-169": "R1",
+        "TC-147": "R1",
+        "TC-148": "R1",
+        "TC-153": "R1",
+        "TC-155": "R1",
+        "TC-025": "R1",
+        "TC-061": "R1",
+        "TC-062": "R1",
+        "TC-063": "R1",
+        "TC-168": "R1",
+        "TC-093": "R1",
+        "TC-105": "R1",
+        "TC-149": "R1",
+        "TC-150": "R1",
+        "TC-151": "R1",
+        "TC-152": "R1",
+        "TC-145": "R1",
+        "TC-146": "R1",
+        "TC-154": "R1",
+        "TC-036": "R1",
+        "TC-037": "R1",
+        "TC-038": "R1",
+        "TC-039": "R1",
+        "TC-018": "R1",
+        "TC-186": "R1",
+        "TC-187": "R1"
+      },
+      "segments": [
+        {
+          "id": "R1-a",
+          "name": "Entry, Template Page, Template Preview, photo picker",
+          "cases": [
+            "TC-001",
+            "TC-002",
+            "TC-003",
+            "TC-004",
+            "TC-005",
+            "TC-006",
+            "TC-007",
+            "TC-008",
+            "TC-009",
+            "TC-010",
+            "TC-011",
+            "TC-012",
+            "TC-013",
+            "TC-014",
+            "TC-015",
+            "TC-016",
+            "TC-017",
+            "TC-019",
+            "TC-020",
+            "TC-021",
+            "TC-022",
+            "TC-023",
+            "TC-024",
+            "TC-156",
+            "TC-157",
+            "TC-040",
+            "TC-041",
+            "TC-170",
+            "TC-171",
+            "TC-042",
+            "TC-043",
+            "TC-044",
+            "TC-045",
+            "TC-046",
+            "TC-047",
+            "TC-161"
+          ]
+        },
+        {
+          "id": "R1-b",
+          "name": "Canvas, undo/redo and Discard, frame and image focus, swap and drag",
+          "cases": [
+            "TC-026",
+            "TC-027",
+            "TC-028",
+            "TC-029",
+            "TC-030",
+            "TC-031",
+            "TC-180",
+            "TC-032",
+            "TC-033",
+            "TC-034",
+            "TC-035",
+            "TC-158",
+            "TC-159",
+            "TC-048",
+            "TC-049",
+            "TC-050",
+            "TC-051",
+            "TC-052",
+            "TC-053",
+            "TC-054",
+            "TC-055",
+            "TC-056",
+            "TC-057",
+            "TC-058",
+            "TC-059",
+            "TC-060",
+            "TC-160",
+            "TC-069",
+            "TC-070",
+            "TC-071",
+            "TC-072"
+          ]
+        },
+        {
+          "id": "R1-c",
+          "name": "Frame styles, locks, Removal and Enhance on Premium (credits)",
+          "cases": [
+            "TC-073",
+            "TC-074",
+            "TC-075",
+            "TC-076",
+            "TC-077",
+            "TC-078",
+            "TC-079",
+            "TC-080",
+            "TC-081",
+            "TC-082",
+            "TC-083",
+            "TC-084",
+            "TC-085",
+            "TC-086",
+            "TC-087",
+            "TC-088",
+            "TC-089",
+            "TC-064",
+            "TC-066",
+            "TC-065",
+            "TC-172",
+            "TC-067",
+            "TC-068",
+            "TC-167",
+            "TC-185"
+          ]
+        },
+        {
+          "id": "R1-d",
+          "name": "Bottom sheets: Background, Add Layer, Layers",
+          "cases": [
+            "TC-090",
+            "TC-091",
+            "TC-092",
+            "TC-094",
+            "TC-095",
+            "TC-096",
+            "TC-097",
+            "TC-163",
+            "TC-098",
+            "TC-173",
+            "TC-162",
+            "TC-099",
+            "TC-100",
+            "TC-101",
+            "TC-174",
+            "TC-102",
+            "TC-164",
+            "TC-175",
+            "TC-103",
+            "TC-104",
+            "TC-106",
+            "TC-107",
+            "TC-184",
+            "TC-108",
+            "TC-109",
+            "TC-110",
+            "TC-111",
+            "TC-112",
+            "TC-113"
+          ]
+        },
+        {
+          "id": "R1-e",
+          "name": "Ratio and Pages",
+          "cases": [
+            "TC-114",
+            "TC-115",
+            "TC-117",
+            "TC-176",
+            "TC-118",
+            "TC-119",
+            "TC-120",
+            "TC-121",
+            "TC-122",
+            "TC-123",
+            "TC-124",
+            "TC-125",
+            "TC-126",
+            "TC-127",
+            "TC-128",
+            "TC-129",
+            "TC-130",
+            "TC-131",
+            "TC-132",
+            "TC-133",
+            "TC-165",
+            "TC-166",
+            "TC-134",
+            "TC-135",
+            "TC-116"
+          ]
+        },
+        {
+          "id": "R1-f",
+          "name": "Export, Save & Share, sharing, Premium export rules",
+          "cases": [
+            "TC-136",
+            "TC-177",
+            "TC-137",
+            "TC-178",
+            "TC-179",
+            "TC-138",
+            "TC-139",
+            "TC-140",
+            "TC-141",
+            "TC-142",
+            "TC-143",
+            "TC-181",
+            "TC-182",
+            "TC-183",
+            "TC-144",
+            "TC-169",
+            "TC-147",
+            "TC-148",
+            "TC-153",
+            "TC-155"
+          ]
+        },
+        {
+          "id": "R1-g",
+          "name": "IAP and credits on the Free (signed-out) state; fresh export counter last, behind pm clear",
+          "cases": [
+            "TC-025",
+            "TC-061",
+            "TC-062",
+            "TC-063",
+            "TC-168",
+            "TC-093",
+            "TC-105",
+            "TC-149",
+            "TC-150",
+            "TC-151",
+            "TC-152",
+            "TC-145",
+            "TC-146",
+            "TC-154"
+          ]
+        },
+        {
+          "id": "R1-h",
+          "name": "Interruption, app language, appearance (dark / light) last",
+          "cases": [
+            "TC-036",
+            "TC-037",
+            "TC-038",
+            "TC-039",
+            "TC-018",
+            "TC-186",
+            "TC-187"
+          ]
+        }
+      ]
+    }
+  ]
+}

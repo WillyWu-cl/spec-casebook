@@ -1,0 +1,731 @@
+{
+ "spec_folder": "specs/2026-11-05",
+ "skip": [],
+ "skip_reason": "",
+ "grouping": {
+  "x_tolerance": 120,
+  "y_gap": 140
+ },
+ "blocks": [
+  {
+   "id": "add-layer-flow@160,3739",
+   "board": "add-layer-flow",
+   "x": 160,
+   "y": 3739,
+   "low": false,
+   "text": "Next: Canvas [+] → Add Layer 五個 function / [+] 開 Add Layer：五個 function  [F11]",
+   "trace": "R-087"
+  },
+  {
+   "id": "add-layer-flow@630,3809",
+   "board": "add-layer-flow",
+   "x": 630,
+   "y": 3809,
+   "low": false,
+   "text": "Image → 同 Collage photo picker  [D1-42]",
+   "trace": "R-088"
+  },
+  {
+   "id": "add-layer-flow@1100,3809",
+   "board": "add-layer-flow",
+   "x": 1100,
+   "y": 3809,
+   "low": false,
+   "text": "Text → 同 Collage Text 輸入  [D1-14][D1-42]",
+   "trace": "R-089"
+  },
+  {
+   "id": "add-layer-flow@1570,3809",
+   "board": "add-layer-flow",
+   "x": 1570,
+   "y": 3809,
+   "low": false,
+   "text": "Sticker → 同 Edit Room Sticker panel",
+   "trace": "R-090"
+  },
+  {
+   "id": "add-layer-flow@2040,3809",
+   "board": "add-layer-flow",
+   "x": 2040,
+   "y": 3809,
+   "low": false,
+   "text": "Frame → NEW Frame panel（方形縮圖）",
+   "trace": "R-091, R-094"
+  },
+  {
+   "id": "add-layer-flow@2510,3809",
+   "board": "add-layer-flow",
+   "x": 2510,
+   "y": 3809,
+   "low": false,
+   "text": "Text Bubble → 同 Edit Room Text Bubble",
+   "trace": "R-092"
+  },
+  {
+   "id": "add-layer-flow@2980,3809",
+   "board": "add-layer-flow",
+   "x": 2980,
+   "y": 3809,
+   "low": false,
+   "text": "完成後回 Canvas，新元件出現在畫布  [D1-42]",
+   "trace": "R-093"
+  },
+  {
+   "id": "cms@3400,8154",
+   "board": "cms",
+   "x": 3400,
+   "y": 8154,
+   "low": false,
+   "text": "CMS type: MOCK_CMS_TYPE（未定）",
+   "trace": "R-135"
+  },
+  {
+   "id": "cms@3752,8265",
+   "board": "cms",
+   "x": 3752,
+   "y": 8265,
+   "low": false,
+   "text": "template id；deeplink template_guid 直接開 preview / 3–4 個，順序由 CMS，Year End 第一；deeplink category_guid / free / purchase → PRO icon，匯出時擋 / default 支援張數（瀑布流 / preview 顯示） / canvas 頁數（1–10） / 每一頁一張；瀑布流顯示第一頁",
+   "trace": "R-009, R-008, R-013, R-016, R-026, R-011, R-111, R-012"
+  },
+  {
+   "id": "cms@3412,8553",
+   "board": "cms",
+   "x": 3412,
+   "y": 8553,
+   "low": false,
+   "text": "thumbnails（東 / 西） / • Day 1：20 顆 template  [F16] / • 新內容：frame（mask 支援單張 / 多張 image）  [F17] / • 新內容：背景 texture（需可 loop）  [D1-17] / • 文字 / 字體 / 文字樣式 / text bubble / 貼紙沿用既有 CMS  [D1-14] / • ⚠️ HANDOFF BLOCKER：CMS type string / contentVer 未定（MOCK_CMS_TYPE）；CMS sheet 連結未提供（MOCK_CMS_SHEET）",
+   "trace": "R-018, R-019, R-065, R-081, R-090, R-135"
+  },
+  {
+   "id": "enhance-flow@160,6559",
+   "board": "enhance-flow",
+   "x": 160,
+   "y": 6559,
+   "low": false,
+   "text": "Enhance 掛 premium tag，點擊進房間",
+   "trace": "R-054, R-056"
+  },
+  {
+   "id": "enhance-flow@630,6559",
+   "board": "enhance-flow",
+   "x": 630,
+   "y": 6559,
+   "low": false,
+   "text": "同 AI Enhance；Free user apply 時跳 IAP",
+   "trace": "R-056"
+  },
+  {
+   "id": "enhance-flow@1100,6559",
+   "board": "enhance-flow",
+   "x": 1100,
+   "y": 6559,
+   "low": false,
+   "text": "IAP page 同既有  [D3-01]",
+   "trace": "R-061"
+  },
+  {
+   "id": "enhance-flow@1202,7090",
+   "board": "enhance-flow",
+   "x": 1202,
+   "y": 7090,
+   "low": false,
+   "text": "IAP page（同既有，不改版）",
+   "trace": "R-061"
+  },
+  {
+   "id": "enhance-flow@160,7813",
+   "board": "enhance-flow",
+   "x": 160,
+   "y": 7813,
+   "low": false,
+   "text": "— 藍線＝去程（點擊觸發）　— 紅線＝回程（‹ 返回）",
+   "trace": "label: flow legend (blue = forward tap, red = back ‹)"
+  },
+  {
+   "id": "entry-banner@160,939",
+   "board": "entry-banner",
+   "x": 160,
+   "y": 939,
+   "low": false,
+   "text": "點 banner 進 Scrollable Collage  [D1-07]",
+   "trace": "R-004"
+  },
+  {
+   "id": "entry-banner@630,939",
+   "board": "entry-banner",
+   "x": 630,
+   "y": 939,
+   "low": false,
+   "text": "瀑布流，只標張數 / 頁數  [D1-01]",
+   "trace": "R-010, R-011"
+  },
+  {
+   "id": "entry-banner@1100,939",
+   "board": "entry-banner",
+   "x": 1100,
+   "y": 939,
+   "low": false,
+   "text": "顯示張數 / 頁數，可逐頁滑  [D1-02]",
+   "trace": "R-022, R-023"
+  },
+  {
+   "id": "entry-banner@1570,939",
+   "board": "entry-banner",
+   "x": 1570,
+   "y": 939,
+   "low": false,
+   "text": "點 frame 的 + 匯入照片  [F4]",
+   "trace": "R-036"
+  },
+  {
+   "id": "entry-banner@2040,939",
+   "board": "entry-banner",
+   "x": 2040,
+   "y": 939,
+   "low": false,
+   "text": "上限＝空 frame 數  [D2-06]",
+   "trace": "R-037"
+  },
+  {
+   "id": "entry-banner@2510,939",
+   "board": "entry-banner",
+   "x": 2510,
+   "y": 939,
+   "low": false,
+   "text": "編輯元件後按 Export  [D1-04]",
+   "trace": "R-031, R-119"
+  },
+  {
+   "id": "entry-banner@2980,939",
+   "board": "entry-banner",
+   "x": 2980,
+   "y": 939,
+   "low": false,
+   "text": "N 張存相簿 + 分享  [D2-05]",
+   "trace": "R-120, R-122"
+  },
+  {
+   "id": "entry-banner@1570,2107",
+   "board": "entry-banner",
+   "x": 1570,
+   "y": 2107,
+   "low": false,
+   "text": "Canvas ‹ 返回會先跳 Discard dialog（同 Edit Room），確認後回 Template Preview  [D1-10]",
+   "trace": "R-033"
+  },
+  {
+   "id": "entry-deeplink@160,2419",
+   "board": "entry-deeplink",
+   "x": 160,
+   "y": 2419,
+   "low": false,
+   "text": "Deeplink 落在瀑布流；category_guid 定位 / 分類  [D1-09]",
+   "trace": "R-007, R-008"
+  },
+  {
+   "id": "entry-deeplink@630,2419",
+   "board": "entry-deeplink",
+   "x": 630,
+   "y": 2419,
+   "low": false,
+   "text": "template_guid 直接開 preview  [D1-09]",
+   "trace": "R-009"
+  },
+  {
+   "id": "event-notes@5790,502",
+   "board": "event-notes",
+   "x": 5790,
+   "y": 502,
+   "low": false,
+   "text": "• 成功指標：匯出完成率＝Export_Done 人數 ÷ Canvas_Appear 人數  [D0-02] / • 新開專用 event（參數與以往不同 + 獨立房間）  [D0-05] / • ScrollableCollage_Canvas_Appear  [D1-15] / • ScrollableCollage_Export_Done  [D1-15] / • 名稱與參數暫定  [D1-15]",
+   "trace": "R-132, R-133"
+  },
+  {
+   "id": "flow-table@4262,2810",
+   "board": "flow-table",
+   "x": 4262,
+   "y": 2810,
+   "low": false,
+   "text": "回 Collage Room / 切換分類 / 看該 template 的下一頁 / 回 Template Page / 逐頁預覽 / Discard dialog → 回 Template Preview / 上一步 / 下一步 / Save page；用了 PRO 內容的 free user 先跳 IAP",
+   "trace": "R-020, R-014, R-017, R-027, R-023, R-033, R-030, R-119, R-128"
+  },
+  {
+   "id": "flow-table@3962,2930",
+   "board": "flow-table",
+   "x": 3962,
+   "y": 2930,
+   "low": false,
+   "text": "縮圖往右滑",
+   "trace": "R-017"
+  },
+  {
+   "id": "flow-table@3962,3210",
+   "board": "flow-table",
+   "x": 3962,
+   "y": 3210,
+   "low": false,
+   "text": "frame 的 + / 點 frame / 點 image / 長按 image",
+   "trace": "R-036, R-041, R-062"
+  },
+  {
+   "id": "flow-table@4262,3330",
+   "board": "flow-table",
+   "x": 4262,
+   "y": 3330,
+   "low": false,
+   "text": "拖曳互換（frame 間 / frame 內）",
+   "trace": "R-062, R-063"
+  },
+  {
+   "id": "flow-table@3962,3570",
+   "board": "flow-table",
+   "x": 3962,
+   "y": 3570,
+   "low": false,
+   "text": "懸浮 Delete / 懸浮 Duplicate / 懸浮 Lock / 切換 frame 樣式",
+   "trace": "R-042, R-044, R-045, R-073, R-066"
+  },
+  {
+   "id": "flow-table@4262,3570",
+   "board": "flow-table",
+   "x": 4262,
+   "y": 3570,
+   "low": false,
+   "text": "刪除整個 frame / 複製 frame / 立即翻轉 / Frame panel（入口 TBD-2） / 立即翻轉 / 同 Collage 房間 / Object Removal 房間（apply 時 IAP） / AI Enhance 房間（apply 時 IAP） / 變回空 frame / 解鎖，回一般 focus / 同未鎖定 / 切換分頁 / 套用背景 / 從畫布取色 / 不套用 / 套用 / Delete / Duplicate / Lock 選單 / Photo Picker（同 Collage）；新增內容 TBD-5 / Text 輸入（同 Collage） / Sticker panel（同 Edit Room） / Frame panel（NEW，方形縮圖） / Text Bubble panel（同 Edit Room） / 在畫布新增該 frame / 套用，只改長邊 / 放棄調整；有變動先跳 Discard / 套用回 Canvas，定位到選取頁 / 選取該頁 / 拖曳排序 / 增減頁數（從最後一頁） / 依序填入空 frame，回 Canvas / 分享；不能帶多張就只開 app / 同既有 IAP page",
+   "trace": "R-044, R-045, R-046, R-066, R-050, R-051, R-052, R-055, R-056, R-053, R-078, R-073, R-079, R-080, R-084, R-085, R-096, R-088, R-089, R-090, R-091, R-092, R-100, R-116, R-115, R-105, R-106, R-110, R-039, R-122, R-061"
+  },
+  {
+   "id": "flow-table@3962,4090",
+   "board": "flow-table",
+   "x": 3962,
+   "y": 4090,
+   "low": false,
+   "text": "懸浮 / 工具列 Unlock / 其他工具 / 色票 / texture / 調色盤 Cancel / Done",
+   "trace": "R-078, R-072, R-076, R-080, R-081, R-085"
+  },
+  {
+   "id": "flow-table@3962,5131",
+   "board": "flow-table",
+   "x": 3962,
+   "y": 5131,
+   "low": false,
+   "text": "縮圖列 + / 底部 − + / 選照片 → Done",
+   "trace": "R-110, R-039"
+  },
+  {
+   "id": "leave-notes@3590,502",
+   "board": "leave-notes",
+   "x": 3590,
+   "y": 502,
+   "low": false,
+   "text": "• 用戶自己按 ‹ 返回 → Discard dialog（同 Edit Room \"Discard changes?\" Discard / Keep） / • App 被殺掉 → 下次出現 continue editing? dialog（同 Edit Room）  [D1-10] / • 只恢復最新一筆編輯紀錄（用戶同時只能做一件事）  [D1-18]",
+   "trace": "R-033, R-034, R-035"
+  },
+  {
+   "id": "leave-notes@3629,739",
+   "board": "leave-notes",
+   "x": 3629,
+   "y": 739,
+   "low": false,
+   "text": "按鈕：Discard / Keep（同 Edit Room）",
+   "trace": "R-033"
+  },
+  {
+   "id": "leave-notes@4047,739",
+   "board": "leave-notes",
+   "x": 4047,
+   "y": 739,
+   "low": false,
+   "text": "文案與按鈕同 Edit Room",
+   "trace": "R-034"
+  },
+  {
+   "id": "monetization-notes@4690,502",
+   "board": "monetization-notes",
+   "x": 4690,
+   "y": 502,
+   "low": false,
+   "text": "• Removal / Enhance：工具列掛 premium tag，apply 時 IAP page 擋（沿用既有房間）  [D3-01] / • 部分 content（template / frame / texture）由 CMS 設為 PRO  [D3-02] / • PRO 內容可先用，匯出時才跳 IAP（同 AI 功能「Paid style applied」）  [D3-04] / • 不加 watermark  [D3-03] / • Free user 每 save 3 次跳 IAP page；算匯出次數，不算張數  [D3-05] / • 無評分 dialog（9 月起已全面移除）  [D3-05] / • 不收 credit、不開新 SKU  [D4-01]",
+   "trace": "R-054, R-055, R-056, R-016, R-082, R-094, R-026, R-128, R-123, R-126, R-127, R-130"
+  },
+  {
+   "id": "overview@100,330",
+   "board": "overview",
+   "x": 100,
+   "y": 330,
+   "low": false,
+   "text": "與 Collage 的差異：Collage 是單張圖片挖空、給用戶上傳圖；Scrollable Collage 是一個 canvas，給用戶自由增減 frame  [D0-03]",
+   "trace": "R-133"
+  },
+  {
+   "id": "overview@160,563",
+   "board": "overview",
+   "x": 160,
+   "y": 563,
+   "low": false,
+   "text": "• Feature：Scrollable Collage — 一個多頁 canvas，用戶自由增減 frame，匯出時自動切成多張  [D0-03] / • 對象：IG / TikTok 輪播、photo dump 用戶；搭 Year End Recap 上線（26 11E）  [D0-01] / • 成功指標：匯出完成率＝進畫布的人裡有多少人匯出  [D0-02] / • 入口：Collage 房間 banner（獨立新房間）、Deeplink scrollable_collage；Launcher Shortcut 不在本 spec；不進 My AI Artwork  [D0-04] / ◦ Launcher Shortcut 不跟 build，後續討論  [D0-06][D1-08] / • 非 generative：不收 credit、不開新 SKU  [D4-01]",
+   "trace": "R-133, R-006, R-005, R-007, R-130"
+  },
+  {
+   "id": "removal-flow@160,5209",
+   "board": "removal-flow",
+   "x": 160,
+   "y": 5209,
+   "low": false,
+   "text": "Removal 掛 premium tag，點擊進房間",
+   "trace": "R-054"
+  },
+  {
+   "id": "removal-flow@630,5209",
+   "board": "removal-flow",
+   "x": 630,
+   "y": 5209,
+   "low": false,
+   "text": "同 Object Removal；Free user apply 時跳",
+   "trace": "R-055"
+  },
+  {
+   "id": "removal-flow@1100,5209",
+   "board": "removal-flow",
+   "x": 1100,
+   "y": 5209,
+   "low": false,
+   "text": "IAP page 同既有  [D3-01]",
+   "trace": "R-061"
+  },
+  {
+   "id": "removal-flow@1570,5479",
+   "board": "removal-flow",
+   "x": 1570,
+   "y": 5479,
+   "low": false,
+   "text": "Removal / Enhance：付費用戶按 ✓ → 結果取代該 frame 的照片、回畫布、可 undo、不另存相簿； / ✕ → 不套用回畫布  [D1-11]",
+   "trace": "R-057, R-058, R-059, R-060"
+  },
+  {
+   "id": "removal-flow@1202,5740",
+   "board": "removal-flow",
+   "x": 1202,
+   "y": 5740,
+   "low": false,
+   "text": "IAP page（同既有，不改版）",
+   "trace": "R-061"
+  },
+  {
+   "id": "scrl-compare@6890,1387",
+   "board": "scrl-compare",
+   "x": 6890,
+   "y": 1387,
+   "low": false,
+   "text": "• SCRL：瀑布流 → 模板詳情（方向 / 照片數 / 頁數）→ 畫布 → 匯出輪播 / 影片；7 天免費試用 Premium，影片填框、影片匯出、繪圖付費 / • 我們不標方向（直式 / 橫式）  [D1-01] / • 我們不做影片、漸層、網格、形狀、繪圖  [F11] / • 範本連結、TikTok 分享、影片匯出、專案、類似模板、收藏：Day-1 都不做（我們也沒有這麼多款）  [D5-01] / • 比例：SCRL 直向 / 故事 / 正方；我們開放 7 種  [F12]",
+   "trace": "R-135, R-011, R-087, R-099"
+  },
+  {
+   "id": "states-background@1110,12317",
+   "board": "states-background",
+   "x": 1110,
+   "y": 12317,
+   "low": false,
+   "text": "• 背景：純色；不做漸層  [F10] / • 色卡 8×4＝32 色，由 content team 定義 / • 自訂顏色：調色盤 + 色相條 + 滴管（同",
+   "trace": "R-080, R-083"
+  },
+  {
+   "id": "states-background@2560,12317",
+   "board": "states-background",
+   "x": 2560,
+   "y": 12317,
+   "low": false,
+   "text": "• 質地 texture 為新內容，需可 loop  [D1-17] / • 部分 texture 可由 CMS 設為 PRO  [D3-02]",
+   "trace": "R-081, R-082"
+  },
+  {
+   "id": "states-background@4010,12317",
+   "board": "states-background",
+   "x": 4010,
+   "y": 12317,
+   "low": false,
+   "text": "• 點 Custom color 開調色盤：飽和度 / 明度 / 方塊 + 色相條  [D1-23] / • 滴管可從畫布取色  [D1-23] / • Cancel 不套用；Done 套用為背景色  [D1-23] / • 同 Text color picker  [D1-23]",
+   "trace": "R-083, R-084, R-085"
+  },
+  {
+   "id": "states-canvas@1110,11267",
+   "board": "states-canvas",
+   "x": 1110,
+   "y": 11267,
+   "low": false,
+   "text": "• 多頁 canvas，可自由縮放 view、左右捲動 / • 每個看似挖空的地方都是 add image 的 / • 點 + 匯入照片：一張或多張，上限＝目前 / 空 frame 數  [F4] / • 頂部 undo / redo，涵蓋畫布上所有操作 / • 底部：Background / Layers / + / Ratio / / • 元件皆可調整：文字顏色 / 內容 / 字體、圖 / 片位置  [D1-04]",
+   "trace": "R-028, R-029, R-037, R-040, R-030, R-031, R-032"
+  },
+  {
+   "id": "states-canvas@2560,11267",
+   "board": "states-canvas",
+   "x": 2560,
+   "y": 11267,
+   "low": false,
+   "text": "• focus frame 時 click → focus image； / focus image 時 click → focus frame  [F6] / • frame focus 懸浮鈕：delete / duplicate / / • frame 工具：opacity / shadow / 水平 flip / / 垂直 flip / duplicate / lock / delete（整個 / frame 刪除）  [F9] / • frame 可縮放  [F3] / • lock 後行為見 Canvas · frame_locked / • 選取狀態可刪除 / duplicate / lock  [D1-05]",
+   "trace": "R-041, R-042, R-043, R-044, R-048, R-071, R-045"
+  },
+  {
+   "id": "states-canvas@4010,11267",
+   "board": "states-canvas",
+   "x": 4010,
+   "y": 11267,
+   "low": false,
+   "text": "• image 工具（feature bar 一條橫向捲 / 動）：替換 / 水平 flip / 垂直 flip / / adjustment / filter（同 Collage）  [F8][D1-35] / • Removal / Enhance 在工具列掛 premium / • 進 Removal / Enhance 房間，apply 時 / IAP page 擋  [D3-01] / • 結果取代該 frame 的照片、回畫布、可 / undo、不另存相簿  [D1-11] / • delete：變回空 frame，+ add image icon / 出現  [F8] / • lock 後行為見 Canvas · image_locked",
+   "trace": "R-049, R-054, R-055, R-056, R-057, R-058, R-059, R-053, R-075"
+  },
+  {
+   "id": "states-canvas@5460,11267",
+   "board": "states-canvas",
+   "x": 5460,
+   "y": 11267,
+   "low": false,
+   "text": "• 長按可拖曳 input image，放到另一個 / frame 即兩張對調  [F5] / • 元件依中心點所在頁決定跟誰走；跨頁元件 / 拖曳後仍跨頁  [F13] / • 也可在多圖 frame 內部格子之間長按互換",
+   "trace": "R-062, R-064, R-063"
+  },
+  {
+   "id": "states-canvas@6910,11267",
+   "board": "states-canvas",
+   "x": 6910,
+   "y": 11267,
+   "low": false,
+   "text": "• frame 分單圖（例：拍立得）與多圖（例： / 底片）  [D1-19] / • 在 frame 工具列切換 frame 樣式（不是拖 / 曳）  [D1-21] / • 單圖 → 多圖：原圖自動帶到多圖 frame 左 / →右、上→下的第一格  [D1-21] / • 多圖 frame 的其餘格子顯示 + add image",
+   "trace": "R-065, R-066, R-067"
+  },
+  {
+   "id": "states-canvas@8360,11267",
+   "board": "states-canvas",
+   "x": 8360,
+   "y": 11267,
+   "low": false,
+   "text": "• 多圖 → 單圖：保留第一張，其餘自動刪除 / • 多圖 → 較少格（N 格）：保留左→右、上 / →下順序的前 N 張，其餘自動刪除  [D1-22] / • 刪掉的圖再切回多圖 frame 也叫不回來， / 只能 undo / redo  [D1-22]",
+   "trace": "R-068, R-069, R-070"
+  },
+  {
+   "id": "states-canvas@9810,11267",
+   "board": "states-canvas",
+   "x": 9810,
+   "y": 11267,
+   "low": false,
+   "text": "• 多圖 frame 內部：長按 image 拖到同 / frame 另一格即對調  [D1-20] / • frame 之間長按互換同 photo_swap  [F5]",
+   "trace": "R-063, R-062"
+  },
+  {
+   "id": "states-collage-room@1110,8117",
+   "board": "states-collage-room",
+   "x": 1110,
+   "y": 8117,
+   "low": false,
+   "text": "• Collage 房間一進去即顯示 banner「Try / Scrollable Collage!」，點擊進 Scrollable / • Scrollable Collage 是獨立新房間，不是 / Collage 的新分類  [D0-04] / • 每次進 Collage 都看得到，預設不拿掉 / • Collage 今天沒有 AI / Traditional 分類， / banner 放在 Collage 房間頂部  [D1-16] / • 其餘畫面同 Collage  [D0-04]",
+   "trace": "R-001, R-002, R-003, R-004"
+  },
+  {
+   "id": "states-layers@1110,13367",
+   "board": "states-layers",
+   "x": 1110,
+   "y": 13367,
+   "low": false,
+   "text": "• 新增圖層：圖片 / 文字 / 貼紙 / 框架 / 小工 / 具（text bubble）  [F11] / • 不做影片、檔案、網格、形狀、繪圖  [F11] / • 框架（frame）為新內容；mask 支援單張 / / 多張 image  [F17] / • 新內容只有 frame 與背景 texture  [D1-14] / • 文字 / 字體 / 文字樣式 / text bubble / 貼紙 / 沿用 Edit Room panel 與 CMS  [D1-14]",
+   "trace": "R-087, R-065, R-081, R-089, R-090, R-092"
+  },
+  {
+   "id": "states-layers@2560,13367",
+   "board": "states-layers",
+   "x": 2560,
+   "y": 13367,
+   "low": false,
+   "text": "• 底部 Layers 開圖層列表（同 SCRL）：每 / 層縮圖在透明格底上  [D1-31] / • 左側 ⋯：Delete / Duplicate / Lock（已 / lock 的顯示 Unlock）  [D1-31][D1-32] / • 右側 ≡  [D1-31]",
+   "trace": "R-095, R-096, R-098"
+  },
+  {
+   "id": "states-layers@4010,13367",
+   "board": "states-layers",
+   "x": 4010,
+   "y": 13367,
+   "low": false,
+   "text": "• 點 ⋯ 開選單：Delete / Duplicate / Lock， / 皆有 icon  [D1-31][D1-32] / • Lock 後該元件行為見 Canvas ·",
+   "trace": "R-096, R-097"
+  },
+  {
+   "id": "states-layers@5460,13367",
+   "board": "states-layers",
+   "x": 5460,
+   "y": 13367,
+   "low": false,
+   "text": "• Add Layer → Frame 開 Frame panel； / frame 是唯一新內容  [D1-14][D1-42] / • 縮圖為方形  [D1-42] / • 每顆標可放幾張照片（單圖 / 多圖）  [D1-19] / • 點縮圖 → 在畫布新增該 frame  [F2] / • NEW 用 CMS tag；部分由 CMS 設為 PRO",
+   "trace": "R-091, R-065, R-094"
+  },
+  {
+   "id": "states-locks@1110,18617",
+   "board": "states-locks",
+   "x": 1110,
+   "y": 18617,
+   "low": false,
+   "text": "• frame lock 後：不能在畫布上拖曳 / 旋轉 / 等  [D1-33] / • focus 時仍出現 feature bar，除 Duplicate / / Unlock / Delete 外皆 disable  [D1-33] / • 懸浮鈕：Delete / Duplicate / Unlock / • 在 Pages 刪頁 / 減頁時，lock 的 frame 仍 / 會被刪掉  [D1-33]",
+   "trace": "R-071, R-072, R-073, R-074"
+  },
+  {
+   "id": "states-locks@2560,18617",
+   "board": "states-locks",
+   "x": 2560,
+   "y": 18617,
+   "low": false,
+   "text": "• image lock 後：不能拖曳 / 縮放  [D1-34] / • focus 時仍出現 feature bar（一條），除 / Unlock / Delete 外皆 disable  [D1-34][D1-35] / • 懸浮鈕：Delete / Duplicate / Unlock / • Unlock 後恢復可編輯  [D1-32]",
+   "trace": "R-075, R-076, R-077, R-078"
+  },
+  {
+   "id": "states-pages@1110,15467",
+   "board": "states-pages",
+   "x": 1110,
+   "y": 15467,
+   "low": false,
+   "text": "• 用意：預覽拼起來的樣子，頁與頁之間只有 / 細線  [D1-38] / • 進來預設定位在進 Pages 前所在的頁；小 / 字顯示目前選取的頁數  [D1-41] / • 點縮圖＝選取該頁；此畫面不能編輯元件 / • 按住 ≡ 才能拖曳排序；點 ≡ 無反應  [D1-25] / • 縮圖列 + 與底部 − / +：增減頁數（加在最 / 後，畫面捲到最後）  [D1-28][D1-29] / • 不提供 undo / redo；✓ 套用、✕ 放棄",
+   "trace": "R-103, R-104, R-105, R-106, R-107, R-110, R-114, R-115, R-116"
+  },
+  {
+   "id": "states-pages@2560,15467",
+   "board": "states-pages",
+   "x": 2560,
+   "y": 15467,
+   "low": false,
+   "text": "• 最少 1 頁、最多 10 頁  [D1-12] / • 已 10 頁：縮圖列 + add page、底部 +、 / Duplicate page 不可用  [D1-12][D1-27]",
+   "trace": "R-111, R-112"
+  },
+  {
+   "id": "states-pages@4010,15467",
+   "board": "states-pages",
+   "x": 4010,
+   "y": 15467,
+   "low": false,
+   "text": "• ••• 選單：Duplicate page（接在原頁 / 後）/ Delete page（不跳確認）  [D1-27] / • 刪頁＝直接刪掉該頁上所有東西，lock 元 / 件也一起刪  [D1-39][D1-33] / • 只剩 1 頁：Delete page 與底部 − 不可用",
+   "trace": "R-108, R-109, R-074, R-113"
+  },
+  {
+   "id": "states-pages@5460,15467",
+   "board": "states-pages",
+   "x": 5460,
+   "y": 15467,
+   "low": false,
+   "text": "• 按住 ≡ 拖曳：縮圖放大半透明，其他頁讓 / 位，放開即排序  [D1-25] / • 頁面可拉動排序  [F13]",
+   "trace": "R-106, R-064"
+  },
+  {
+   "id": "states-pages@6910,15467",
+   "board": "states-pages",
+   "x": 6910,
+   "y": 15467,
+   "low": false,
+   "text": "• ✕ 放棄這次所有頁面調整並回畫布  [D1-24] / • 有變動時先跳 Discard dialog（同 Edit",
+   "trace": "R-116"
+  },
+  {
+   "id": "states-photo-picker@1110,16517",
+   "board": "states-photo-picker",
+   "x": 1110,
+   "y": 16517,
+   "low": false,
+   "text": "• 同 Collage photo picker  [D2-06] / • 一次匯入上限＝目前空 frame 數，兩平台 / 封頂 20（Android 不受預設 6 限制）  [D2-06] / • Done → 依序填入空 frame  [F4]",
+   "trace": "R-036, R-037, R-038, R-039"
+  },
+  {
+   "id": "states-ratio@1110,14417",
+   "board": "states-ratio",
+   "x": 1110,
+   "y": 14417,
+   "low": false,
+   "text": "• 比例開放用戶選：1:1 / 4:5 / 5:4 / 3:4 / 4:3 / • 切換 UI 用 PhD Crop / AI Expand 的 icon / ＋ 數字  [D1-37] / • 畫布預設短邊 1080 px；改比例只改長邊 / • 比例變動時元件不動，畫布往下長 / 往上縮 / • 不做 AI Expand 導流  [D1-06]",
+   "trace": "R-099, R-100, R-101, R-102"
+  },
+  {
+   "id": "states-save-page@1110,17567",
+   "board": "states-save-page",
+   "x": 1110,
+   "y": 17567,
+   "low": false,
+   "text": "• Export：每頁裁成一張  [D2-01] / • N 張一次全存「PhotoDirector」相簿， / Save page 顯示 N 張  [D2-05] / • 解析度沿用 Image Quality 設定，以每張長 / 邊套用  [D2-04] / • 分享沿用 IG / FB / More；能一次帶 N 張就 / 帶，不行就只打開該 app  [D2-05] / • 不加 watermark  [D3-03] / • 不存 My AI Artwork  [D0-06]",
+   "trace": "R-119, R-120, R-121, R-122, R-123, R-124"
+  },
+  {
+   "id": "states-save-page@2560,17567",
+   "board": "states-save-page",
+   "x": 2560,
+   "y": 17567,
+   "low": false,
+   "text": "• Free user 每 save 3 次跳 IAP page  [D3-03] / • 以匯出「次數」計，不算張數  [D3-05] / • 無評分 dialog（9 月起 iOS / Android 已全 / 面移除）  [D3-05]",
+   "trace": "R-126, R-127"
+  },
+  {
+   "id": "states-save-page@4010,17567",
+   "board": "states-save-page",
+   "x": 4010,
+   "y": 17567,
+   "low": false,
+   "text": "• 用了 PRO 內容，free user 按 Export 時跳 / IAP（同 AI 功能「Paid style applied」） / • Removal / Enhance 在其房間 apply 時已 / 擋，不在匯出擋  [D3-01]",
+   "trace": "R-128, R-129"
+  },
+  {
+   "id": "states-save-page@2252,17988",
+   "board": "states-save-page",
+   "x": 2252,
+   "y": 17988,
+   "low": false,
+   "text": "IAP page（同既有，不改版）",
+   "trace": "R-061"
+  },
+  {
+   "id": "states-save-page@3702,17988",
+   "board": "states-save-page",
+   "x": 3702,
+   "y": 17988,
+   "low": false,
+   "text": "IAP page（同既有，不改版）",
+   "trace": "R-061"
+  },
+  {
+   "id": "states-template-page@1110,9167",
+   "board": "states-template-page",
+   "x": 1110,
+   "y": 9167,
+   "low": false,
+   "text": "• Template 列表為瀑布流  [D1-01] / • 每顆只標 default 支援張數 & canvas 頁 / 數，不標直式 / 橫式  [D1-01] / • 縮圖顯示第一頁  [D2-08] / • 3–4 個 category，順序由 CMS，Year / End 第一；NEW 用 CMS tag  [D2-03][D2-07] / • CMS 設為 PRO 的 template 右上掛 PRO / • Day 1 共 20 顆 template  [F16]",
+   "trace": "R-010, R-011, R-012, R-013, R-015, R-016, R-019"
+  },
+  {
+   "id": "states-template-page@2560,9167",
+   "board": "states-template-page",
+   "x": 2560,
+   "y": 9167,
+   "low": false,
+   "text": "• 每顆縮圖可向右滑動看後面的頁（同 / • 東西方 thumbnails，每一頁都顯示於 UI / • Deeplink scrollable_collage 落點在此頁； / category_guid 定位分類  [D1-09]",
+   "trace": "R-017, R-018, R-007, R-008"
+  },
+  {
+   "id": "states-template-preview@1110,10217",
+   "board": "states-template-preview",
+   "x": 1110,
+   "y": 10217,
+   "low": false,
+   "text": "• 點 template 進 preview，顯示支援張數 / / 頁數  [D1-02] / • 可左右逐頁滑（同 SCRL）  [D2-09] / • Thumbnail = template 的 default 配置  [F1] / • Use Template → 進 Canvas  [D1-02] / • Deeplink 帶 template_guid 直接開此頁",
+   "trace": "R-021, R-022, R-023, R-024, R-025, R-009"
+  },
+  {
+   "id": "states-template-preview@2560,10217",
+   "board": "states-template-preview",
+   "x": 2560,
+   "y": 10217,
+   "low": false,
+   "text": "• CMS 設為 PRO 的 template 右上掛 PRO / • Free user 可先使用，匯出時才跳 IAP（同 / AI 功能「Paid style applied」）  [D3-04]",
+   "trace": "R-026, R-128"
+  },
+  {
+   "id": "tbd@5950,2737",
+   "board": "tbd",
+   "x": 5950,
+   "y": 2737,
+   "low": false,
+   "text": "TBD-1  frame 的 Opacity / Shadow 點了開什麼？ / ➡️ 同 Collage 房間既有的 Opacity / Shadow slider（Collage Image 頁「Img - Opacity Entry」已有） / 主：Meg（PM）· 待回覆 / TBD-2  「切換 frame 樣式」入口放哪？ / ➡️ frame 工具列第一顆加「Frame」（同 SCRL 框架） / 主：Meg（PM）· 待回覆 / TBD-3  Layers 的 ≡ 做什麼？ / ➡️ 按住拖曳調整圖層前後順序 / 主：Meg（PM）· 待回覆 / TBD-4  各 bottom sheet 的 ✕：關閉並保留已套用的變更？ / ➡️ 是，同 Edit Room panel / 主：Meg（PM）· 待回覆 / TBD-5  Add Layer → Image 新增的是單圖 frame 還是自由圖層？ / ➡️ 新增一個單圖 frame 並放入照片（畫布元件皆為 frame） / 主：Meg（PM）· 待回覆 / TBD-6  刪頁時跨頁元件：碰到就刪，還是照中心點？ / ➡️ 碰到被刪頁就整個刪（與「刪頁刪掉該頁上所有東西」一致） / 主：Meg（PM）· 待回覆 / TBD-7  匯出尺寸：固定短邊 1200 px，還是照 Image Quality？ / ➡️ 照畫布尺寸（短邊 1200 px）輸出 / 主：Meg（PM）· 待回覆 / TBD-8  Pages 小字「Page n / ?」分母是總頁數還是 10？ / ➡️ 總頁數 / 主：Meg（PM）· 待回覆 / TBD-9  Feature 名稱 / ➡️ Carousel Collage（輪播拼貼） / 主：Meg（PM）· 待回覆",
+   "trace": "Q-2, Q-3, Q-4, Q-5, Q-6, Q-7, Q-8, Q-9, R-010"
+  }
+ ]
+}
