@@ -39,6 +39,14 @@ Draft 20261112-141558 [Req: REQ-015]: the 4 groups Android R1 missed (run-cost c
 R-077 has a free route (Google Play test card, TC-097); R-031 and R-193 are timing rules judged from a screen
 recording (TC-042, TC-214, TC-216, TC-215). Changed: R-031, R-077, R-193; new: Q-27.
 
+Draft 20261112-170000 [Req: REQ-016]: scenario-level comparison with spec agent commit 8b411402. The rules stand;
+their rows now run the spec agent's scenarios: R-030 at 1 s, 479–481 s and one frame either side of 8:00 (TC-270);
+R-032 both ways with 8:00, 30 s, 90 s and 180 s selections (TC-043, TC-271); R-031 / R-033 / R-054 the other
+directions and every cap to the frame (TC-044, TC-272, TC-273); R-052 / R-053 / R-055 with a later start, the price
+each way and the fractional boundaries (TC-274, TC-275, TC-075, TC-276); R-043 / R-044 at 29, 59, 119, 144 fps,
+360p, 718p, 722p and the Preview label (TC-052 – TC-058); R-060 / R-063 / R-065 at 30 s, 90 s and the Mode limit
+for every combination (TC-278 – TC-313); R-204 timed on 19 combination rows. Requirement text unchanged.
+
 ## Entry points
 - R-001 [DS:ds-main-flow Launcher_2026_08; DS:ds-routing 「Launcher / AI Magic → Demo page」] The Launcher big shortcut 「AI Video Enhance」 opens the Demo page (until 「Don’t show again」 was confirmed, R-009).
 - R-002 [DS:ds-entry-points Launcher_AI Magic; DS:ds-routing] The AI Magic tab's 「AI Enhance」 section has an 「AI Video Enhance」 card that opens the Demo page (same rule as R-001).
@@ -464,3 +472,4 @@ None: no Testing Request build is named for this feature yet.
 | REQ-011 (analysis: spec agent cases from the old 26.09_v2 export never override today's board; the 2K+ block dropped) | R-015, R-044, R-196, Q-13 |
 | REQ-012 (rulings, Android: no Pro+; no 「You're all set」 dialog) | R-005, R-072, R-074, Q-25 |
 | REQ-015 (table, Android: the 4 groups R1 missed — 1 fps default, purchase return, 2 Preview lags) | R-043 (1 fps, TC-052), R-077 (free route, TC-097), R-031, R-193 (recording; TC-042, TC-214, TC-216, TC-215), Q-27 |
+| REQ-016 (table: scenario-level coverage of the spec agent's cases at 8b411402) | R-030, R-031, R-032, R-033, R-043, R-044, R-052, R-053, R-054, R-055, R-060, R-063, R-065, R-077, R-086, R-088, R-114, R-115, R-121, R-123, R-126, R-204 (rows only, no requirement changed) |

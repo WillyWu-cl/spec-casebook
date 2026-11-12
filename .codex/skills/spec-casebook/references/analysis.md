@@ -51,6 +51,15 @@ and return, waits), which apply to every job.
    delay the analysis opens an Open question for PM with the row's assumption (until answered: no visible lag,
    the frame keeps up with the handle). R1 passed four such rows from one screenshot each; another tool's recording
    found the lag.
+   **Scenarios, not only rules (user, 2026-11-12, video-enhance REQ-016).** A row that checks a rule once does not
+   cover its scenarios. Each gesture is run in both directions (a selection body dragged later *and* earlier, each
+   handle dragged outward *and* inward). Each limit is approached from just under it, with a start after 00:00 as well
+   as from 00:00, and checked to the frame, not only by the rounded label. A price rule is read at several lengths:
+   a short one, a middle one and the Mode's own limit (30 s, 90 s and 8:00 / 2:30), and in both directions of a
+   setting switch that changes it. A default derived from a source (selection length, fps, resolution) is read on
+   the screen that shows it, together with the label of the source it came from. Shown 2026-11-12: the 11/10 tables
+   matched all 271 spec agent cases by rule, but about 120 per platform ran only some of their scenarios. Examples:
+   price at 1 s and 3.2 s only, the body dragged one way, 29 / 59 / 119 fps never opened.
 5. **Persistence and sessions.** For everything the feature saves (task, title, thumbnail, chat position, episode),
    check reopen, rename, same and new session, reinstall and next episode, as far as the spec states them.
 6. **MX flows.** Tiers, daily chats, charge cards, first-use credits, free trial, discount. The MX file is part of

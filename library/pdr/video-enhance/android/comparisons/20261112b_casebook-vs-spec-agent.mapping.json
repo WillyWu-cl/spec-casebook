@@ -1,0 +1,2640 @@
+{
+ "note": "2026-11-12 (REQ-016): scenario-level comparison of android draft 20261112-170000 against spec agent commit 8b411402 (271 cases, test-specs/features/video-enhance/review/run-references/20261110-android/cases/). Codes: cov = the approved table already ran every scenario; add = newly run by the draft's rows; des = older spec, today's board wins; diff = the two expect different things, for a decision; part = only partly covered, not added (Not added in update-plan.md); before = the verdict against the approved table.",
+ "spec_agent_commit": "8b411402",
+ "sa": {
+  "TC-VE2-001": "cov",
+  "TC-VE2-002": "cov",
+  "TC-VE2-003": "add",
+  "TC-VE2-004": "cov",
+  "TC-VE2-005": "cov",
+  "TC-VE2-006": "cov",
+  "TC-VE2-007": "cov",
+  "TC-VE2-008": "cov",
+  "TC-VE2-009": "add",
+  "TC-VE2-010": "cov",
+  "TC-VE2-011": "cov",
+  "TC-VE2-012": "cov",
+  "TC-VE2-013": "cov",
+  "TC-VE2-014": "cov",
+  "TC-VE2-015": "cov",
+  "TC-VE2-016": "cov",
+  "TC-VE2-017": "cov",
+  "TC-VE2-018": "cov",
+  "TC-VE2-019": "cov",
+  "TC-VE2-020": "cov",
+  "TC-VE2-021": "cov",
+  "TC-VE2-022": "cov",
+  "TC-VE2-023": "add",
+  "TC-VE2-024": "cov",
+  "TC-VE2-025": "cov",
+  "TC-VE2-026": "add",
+  "TC-VE2-027": "cov",
+  "TC-VE2-028": "cov",
+  "TC-VE2-029": "cov",
+  "TC-VE2-030": "cov",
+  "TC-VE2-031": "cov",
+  "TC-VE2-032": "cov",
+  "TC-VE2-033": "cov",
+  "TC-VE2-034": "add",
+  "TC-VE2-035": "cov",
+  "TC-VE2-036": "cov",
+  "TC-VE2-037": "cov",
+  "TC-VE2-038": "cov",
+  "TC-VE2-039": "cov",
+  "TC-VE2-040": "cov",
+  "TC-VE2-041": "cov",
+  "TC-VE2-042": "add",
+  "TC-VE2-043": "cov",
+  "TC-VE2-044": "add",
+  "TC-VE2-045": "add",
+  "TC-VE2-046": "cov",
+  "TC-VE2-047": "cov",
+  "TC-VE2-048": "cov",
+  "TC-VE2-049": "cov",
+  "TC-VE2-050": "cov",
+  "TC-VE2-051": "cov",
+  "TC-VE2-052": "cov",
+  "TC-VE2-053": "cov",
+  "TC-VE2-054": "cov",
+  "TC-VE2-055": "add",
+  "TC-VE2-056": "cov",
+  "TC-VE2-057": "cov",
+  "TC-VE2-058": "cov",
+  "TC-VE2-059": "cov",
+  "TC-VE2-060": "cov",
+  "TC-VE2-061": "cov",
+  "TC-VE2-062": "cov",
+  "TC-VE2-063": "cov",
+  "TC-VE2-064": "cov",
+  "TC-VE2-065": "add",
+  "TC-VE2-066": "cov",
+  "TC-VE2-067": "add",
+  "TC-VE2-068": "cov",
+  "TC-VE2-069": "cov",
+  "TC-VE2-070": "cov",
+  "TC-VE2-071": "cov",
+  "TC-VE2-072": "cov",
+  "TC-VE2-073": "cov",
+  "TC-VE2-074": "cov",
+  "TC-VE2-075": "cov",
+  "TC-VE2-076": "cov",
+  "TC-VE2-077": "part",
+  "TC-VE2-078": "part",
+  "TC-VE2-079": "cov",
+  "TC-VE2-080": "cov",
+  "TC-VE2-081": "add",
+  "TC-VE2-082": "cov",
+  "TC-VE2-083": "add",
+  "TC-VE2-084": "add",
+  "TC-VE2-085": "cov",
+  "TC-VE2-086": "add",
+  "TC-VE2-087": "add",
+  "TC-VE2-088": "add",
+  "TC-VE2-089": "add",
+  "TC-VE2-090": "add",
+  "TC-VE2-091": "add",
+  "TC-VE2-092": "add",
+  "TC-VE2-093": "add",
+  "TC-VE2-094": "add",
+  "TC-VE2-095": "cov",
+  "TC-VE2-096": "add",
+  "TC-VE2-097": "des",
+  "TC-VE2-098": "des",
+  "TC-VE2-099": "add",
+  "TC-VE2-100": "add",
+  "TC-VE2-101": "add",
+  "TC-VE2-102": "add",
+  "TC-VE2-103": "cov",
+  "TC-VE2-104": "add",
+  "TC-VE2-105": "add",
+  "TC-VE2-106": "add",
+  "TC-VE2-107": "add",
+  "TC-VE2-108": "add",
+  "TC-VE2-109": "add",
+  "TC-VE2-110": "cov",
+  "TC-VE2-111": "cov",
+  "TC-VE2-112": "cov",
+  "TC-VE2-113": "add",
+  "TC-VE2-114": "add",
+  "TC-VE2-115": "add",
+  "TC-VE2-116": "add",
+  "TC-VE2-117": "add",
+  "TC-VE2-118": "add",
+  "TC-VE2-119": "add",
+  "TC-VE2-120": "add",
+  "TC-VE2-121": "add",
+  "TC-VE2-122": "add",
+  "TC-VE2-123": "add",
+  "TC-VE2-124": "add",
+  "TC-VE2-125": "add",
+  "TC-VE2-126": "add",
+  "TC-VE2-127": "add",
+  "TC-VE2-128": "add",
+  "TC-VE2-129": "add",
+  "TC-VE2-130": "add",
+  "TC-VE2-131": "add",
+  "TC-VE2-132": "add",
+  "TC-VE2-133": "add",
+  "TC-VE2-134": "add",
+  "TC-VE2-135": "add",
+  "TC-VE2-136": "add",
+  "TC-VE2-137": "add",
+  "TC-VE2-138": "add",
+  "TC-VE2-139": "add",
+  "TC-VE2-140": "add",
+  "TC-VE2-141": "add",
+  "TC-VE2-142": "add",
+  "TC-VE2-143": "add",
+  "TC-VE2-144": "add",
+  "TC-VE2-145": "add",
+  "TC-VE2-146": "add",
+  "TC-VE2-147": "add",
+  "TC-VE2-148": "add",
+  "TC-VE2-149": "add",
+  "TC-VE2-150": "cov",
+  "TC-VE2-151": "cov",
+  "TC-VE2-152": "cov",
+  "TC-VE2-153": "cov",
+  "TC-VE2-154": "cov",
+  "TC-VE2-155": "cov",
+  "TC-VE2-156": "cov",
+  "TC-VE2-157": "add",
+  "TC-VE2-158": "cov",
+  "TC-VE2-159": "cov",
+  "TC-VE2-160": "cov",
+  "TC-VE2-161": "cov",
+  "TC-VE2-162": "add",
+  "TC-VE2-163": "cov",
+  "TC-VE2-164": "cov",
+  "TC-VE2-165": "cov",
+  "TC-VE2-166": "add",
+  "TC-VE2-167": "cov",
+  "TC-VE2-168": "cov",
+  "TC-VE2-169": "add",
+  "TC-VE2-170": "add",
+  "TC-VE2-171": "cov",
+  "TC-VE2-172": "cov",
+  "TC-VE2-173": "cov",
+  "TC-VE2-174": "cov",
+  "TC-VE2-175": "diff",
+  "TC-VE2-176": "cov",
+  "TC-VE2-177": "cov",
+  "TC-VE2-178": "cov",
+  "TC-VE2-179": "cov",
+  "TC-VE2-180": "cov",
+  "TC-VE2-181": "cov",
+  "TC-VE2-182": "cov",
+  "TC-VE2-183": "cov",
+  "TC-VE2-184": "cov",
+  "TC-VE2-185": "cov",
+  "TC-VE2-186": "add",
+  "TC-VE2-187": "add",
+  "TC-VE2-188": "add",
+  "TC-VE2-189": "add",
+  "TC-VE2-190": "add",
+  "TC-VE2-191": "add",
+  "TC-VE2-192": "add",
+  "TC-VE2-193": "add",
+  "TC-VE2-194": "add",
+  "TC-VE2-195": "add",
+  "TC-VE2-196": "add",
+  "TC-VE2-197": "add",
+  "TC-VE2-198": "add",
+  "TC-VE2-199": "add",
+  "TC-VE2-200": "add",
+  "TC-VE2-201": "add",
+  "TC-VE2-202": "add",
+  "TC-VE2-203": "add",
+  "TC-VE2-204": "add",
+  "TC-VE2-205": "cov",
+  "TC-VE2-206": "cov",
+  "TC-VE2-207": "cov",
+  "TC-VE2-208": "cov",
+  "TC-VE2-209": "cov",
+  "TC-VE2-210": "cov",
+  "TC-VE2-211": "cov",
+  "TC-VE2-212": "cov",
+  "TC-VE2-213": "cov",
+  "TC-VE2-214": "cov",
+  "TC-VE2-215": "cov",
+  "TC-VE2-216": "cov",
+  "TC-VE2-217": "cov",
+  "TC-VE2-218": "cov",
+  "TC-VE2-219": "cov",
+  "TC-VE2-220": "cov",
+  "TC-VE2-221": "cov",
+  "TC-VE2-222": "cov",
+  "TC-VE2-223": "cov",
+  "TC-VE2-224": "cov",
+  "TC-VE2-225": "cov",
+  "TC-VE2-226": "add",
+  "TC-VE2-227": "cov",
+  "TC-VE2-228": "add",
+  "TC-VE2-230": "cov",
+  "TC-VE2-231": "cov",
+  "TC-VE2-232": "add",
+  "TC-VE2-233": "add",
+  "TC-VE2-234": "cov",
+  "TC-VE2-235": "cov",
+  "TC-VE2-236": "cov",
+  "TC-VE2-237": "cov",
+  "TC-VE2-238": "add",
+  "TC-VE2-239": "cov",
+  "TC-VE2-240": "cov",
+  "TC-VE2-241": "cov",
+  "TC-VE2-242": "cov",
+  "TC-VE2-243": "cov",
+  "TC-VE2-244": "add",
+  "TC-VE2-245": "des",
+  "TC-VE2-246": "des",
+  "TC-VE2-247": "des",
+  "TC-VE2-248": "des",
+  "TC-VE2-249": "des",
+  "TC-VE2-250": "des",
+  "TC-VE2-251": "add",
+  "TC-VE2-252": "add",
+  "TC-VE2-253": "add",
+  "TC-VE2-254": "add",
+  "TC-VE2-256": "add",
+  "TC-VE2-257": "add",
+  "TC-VE2-258": "add",
+  "TC-VE2-259": "add",
+  "TC-VE2-260": "add",
+  "TC-VE2-261": "add",
+  "TC-VE2-262": "add",
+  "TC-VE2-263": "add",
+  "TC-VE2-264": "add",
+  "TC-VE2-265": "add",
+  "TC-VE2-266": "add",
+  "TC-VE2-267": "cov",
+  "TC-VE2-268": "cov",
+  "TC-VE2-269": "add",
+  "TC-VE2-270": "cov",
+  "TC-VE2-271": "cov",
+  "TC-VE2-272": "add",
+  "TC-VE2-276": "cov"
+ },
+ "sa_detail": {
+  "TC-VE2-001": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-001"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-002": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-002"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-003": {
+   "code": "add",
+   "before": "different",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "Spec agent expects the entry under clip Toolbar › 「Enhance」 submenu (AI Video Enhance listed inside it); casebook R-003/TC-003 expects 「AI Video Enhance」 as a tool directly in the clip toolbar (Design Timeline_default; PM calls it 「Enhance」). Decide which path the build/spec uses."
+  },
+  "TC-VE2-004": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-001",
+    "TC-002",
+    "TC-012"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-005": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-001",
+    "TC-010"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-006": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-010"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-007": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-020"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-008": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-009": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-003"
+   ],
+   "reason": "TC-003 does not state the precondition that 「Don't show again」 has NOT been saved: add/annotate a run of the Timeline entry with the Demo still unsuppressed (before TC-014) and expect the panel to open with no Demo page."
+  },
+  "TC-VE2-010": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-014"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-011": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-033"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-012": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-033",
+    "TC-022",
+    "TC-052"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-013": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-040",
+    "TC-033"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-014": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-041"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-015": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-044",
+    "TC-216"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-016": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-030"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-017": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-018": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-030"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-019": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-020": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-214",
+    "TC-216"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-021": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-042",
+    "TC-044"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-022": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-214",
+    "TC-216"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-023": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Right handle dragged RIGHT (later, e.g. from 06:00 to 07:00 on the 12:30 video, within the 08:00 cap) while recording: at every sampled moment the Preview shows the frame at the right handle's time (TC-042 checks only the leftward/earlier drag; TC-044 drags right but checks no Preview frame)."
+  },
+  "TC-VE2-024": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-025": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-026": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-045",
+    "TC-277"
+   ],
+   "reason": "30 s source in Standard: the whole strip fills one width with no sideways scroll, first and last frames visible, thumbnails in time order.; 30 s source after tapping Professional: still fills one width, no sideways scroll, time order kept.; 150 s (02:30.00) source in Standard: fills one strip width, no sideways scroll.; 150 s (02:30.00) source after tapping Professional: still fills one width (exactly at the 2:30 limit), no sideways scroll, time order kept."
+  },
+  "TC-VE2-027": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-040",
+    "TC-050",
+    "TC-051",
+    "TC-260",
+    "TC-261",
+    "TC-262"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-028": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-050",
+    "TC-051",
+    "TC-223"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-029": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-052",
+    "TC-053",
+    "TC-054",
+    "TC-055"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-030": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-056",
+    "TC-057",
+    "TC-058",
+    "TC-022"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-031": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-070"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-032": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-061"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-033": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-062",
+    "TC-087"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-034": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-274"
+   ],
+   "reason": "With 「1080p」 (or 「4K」) selected, tap 「720p」: 「720p」 becomes selected and the other chip unselected (no row selects 720p by tapping; 720p is only ever the default of a 720p source). TC-063 taps only 4K, TC-087/combination rows tap 4K and 1080p."
+  },
+  "TC-VE2-035": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-061",
+    "TC-062",
+    "TC-063"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-036": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-061",
+    "TC-062",
+    "TC-063"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-037": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-064"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-038": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-035"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-039": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-036"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-040": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-090"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-041": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-090"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-042": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-095"
+   ],
+   "reason": "Pick the 「Yearly」 plan on the Pro page before 「Continue」 and expect the Google Play sheet to show 「PowerDirector Yearly Subscription」, 「Starting today」 and 「Test card, always approves」 before 「Subscribe」.; After 「Subscribe」, if a Google Play promotion appears tap 「Not now」, then expect the AI Video Enhance panel (not Home / Pro VIP page) as the return screen."
+  },
+  "TC-VE2-043": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-096"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-044": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Buy the 500-credit pack: My Credits shows 「Get 500 Credits」 at NT$1190 and the Google Play sheet shows 「500 Credits」, 「NT$1190」, 「Test card, always approves」, 「1-tap buy」.; After 「Payment successful」, if 「Want to get 100 credits, too?」 appears tap 「Not now」, then expect the AI Video Enhance panel as the destination (spec agent saw My Credits/Home)."
+  },
+  "TC-VE2-045": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "After the 500-credit purchase open My Credits (dismiss 「Check Backup Protection」 with 「Later」 and the 「sign in to get your credits back」 prompt with the same account if shown) and expect the balance = balance before + 500 (TC-097 checks only the panel credit pill)."
+  },
+  "TC-VE2-046": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-047": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-080",
+    "TC-269",
+    "TC-083",
+    "TC-087",
+    "TC-223"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-048": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-042",
+    "TC-214",
+    "TC-223"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-049": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-050": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-051": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-110"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-052": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-111"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-053": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-112"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-054": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-055": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "After 「Leave」 on a charged upload, open My Credits › 「Details」 and expect one 「AI Video Enhance」 debit of the task's price for the cancelled task and no refund entry linked to it (after the ledger sync window); TC-113 checks only the balance."
+  },
+  "TC-VE2-056": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-114"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-057": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-114"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-058": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-140",
+    "TC-268"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-059": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-143"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-060": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-143"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-061": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-150",
+    "TC-151"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-062": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-063": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-152"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-064": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-153"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-065": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-314"
+   ],
+   "reason": "Start from a recorded project whose clip is the source, get a completed Result, tap 「Add to Timeline」, then reopen the ORIGINAL project and expect its original clip unchanged (same clip, position, length); TC-153 starts from Add Media so there is no original timeline to inspect."
+  },
+  "TC-VE2-066": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-154"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-067": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-142"
+   ],
+   "reason": "With a task still processing on Recent task, tap ⌂ and expect the Launcher to open and the task to keep processing (no cancel); TC-142 has no processing task in its precondition and TC-266 taps ⌂ only as a timing step with no expectation on the Launcher."
+  },
+  "TC-VE2-068": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-130"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-069": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-130",
+    "TC-131"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-070": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-170"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-071": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-170"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-072": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-073": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-074": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-173"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-075": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-171"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-076": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-223",
+    "TC-225",
+    "TC-224",
+    "TC-219",
+    "TC-254",
+    "TC-114"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-077": {
+   "code": "part",
+   "before": "partial",
+   "rows": [
+    "TC-268",
+    "TC-140"
+   ],
+   "reason": "Not added: needs a task just under one year old (R-117 not testable; TC-268 covers what a run sees)."
+  },
+  "TC-VE2-078": {
+   "code": "part",
+   "before": "partial",
+   "rows": [
+    "TC-116",
+    "TC-114"
+   ],
+   "reason": "Not added: the server's own task record is not visible to a tester (value check 2)."
+  },
+  "TC-VE2-079": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-080": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-081": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-052"
+   ],
+   "reason": "A 90 s 1080p 29 fps source opens with 「30fps」, 「Standard」, 「Natural」 selected and Preview badge 「29fps · 1080p」"
+  },
+  "TC-VE2-082": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-052",
+    "TC-050"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-083": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-055"
+   ],
+   "reason": "Preview badge reads 「31fps · 1080p」 for the source (compared with ffprobe)"
+  },
+  "TC-VE2-084": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-053"
+   ],
+   "reason": "A 90 s 1080p 59 fps source opens with 「60fps」, 「Standard」, 「Natural」 selected and Preview badge 「59fps · 1080p」"
+  },
+  "TC-VE2-085": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-053",
+    "TC-050",
+    "TC-033"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-086": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-055"
+   ],
+   "reason": "Preview badge reads 「61fps · 1080p」 for the source (compared with ffprobe)"
+  },
+  "TC-VE2-087": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-054"
+   ],
+   "reason": "A 90 s 1080p 119 fps source opens with 「120fps」, 「Standard」, 「Natural」 selected and Preview badge 「119fps · 1080p」"
+  },
+  "TC-VE2-088": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-054"
+   ],
+   "reason": "Preview badge reads 「120fps · 1080p」 for the source (compared with ffprobe)"
+  },
+  "TC-VE2-089": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-054"
+   ],
+   "reason": "A 90 s 1080p 144 fps source opens with 「120fps」, 「Standard」, 「Natural」 selected and Preview badge 「144fps · 1080p」"
+  },
+  "TC-VE2-090": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-054"
+   ],
+   "reason": "Preview badge reads 「240fps · 1080p」 for the source (compared with ffprobe)"
+  },
+  "TC-VE2-091": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-056"
+   ],
+   "reason": "A 90 s 30 fps 360p (e.g. 640×360) source opens with 「720p」, 「Standard」, 「Natural」 selected and Preview badge 「30fps · 360p」"
+  },
+  "TC-VE2-092": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-056"
+   ],
+   "reason": "A 90 s 30 fps 719p (e.g. 1280×719) source opens with 「720p」, 「Standard」, 「Natural」 selected and Preview badge 「30fps · 719p」"
+  },
+  "TC-VE2-093": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-056"
+   ],
+   "reason": "Preview badge reads 「30fps · 720p」 for the source (compared with ffprobe)"
+  },
+  "TC-VE2-094": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-057"
+   ],
+   "reason": "A 90 s 30 fps 721p (e.g. 1280×721) source opens with 「1080p」, 「Standard」, 「Natural」 selected and Preview badge 「30fps · 721p」"
+  },
+  "TC-VE2-095": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-057",
+    "TC-033",
+    "TC-050"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-096": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-058"
+   ],
+   "reason": "Preview badge reads 「30fps · 1081p」 for the source (compared with ffprobe)"
+  },
+  "TC-VE2-097": {
+   "code": "des",
+   "before": "different-by-design",
+   "rows": [
+    "TC-022"
+   ],
+   "reason": "REQ-011: today's Design accepts 2160p and defaults 4K; spec agent rejection follows the old PDF."
+  },
+  "TC-VE2-098": {
+   "code": "des",
+   "before": "different-by-design",
+   "rows": [
+    "TC-022"
+   ],
+   "reason": "REQ-011: 4320p opens the panel with 4K; spec agent rejection follows the old PDF."
+  },
+  "TC-VE2-099": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-270"
+   ],
+   "reason": "A 1 s (00:01) source opens in Standard with the selection starting at 00:00 and 「Selected Length」 「00:01」 (whole video selected)"
+  },
+  "TC-VE2-100": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-270"
+   ],
+   "reason": "A 479 s (07:59) source opens in Standard with the whole video selected, start 00:00 and 「Selected Length」 「07:59」"
+  },
+  "TC-VE2-101": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-270"
+   ],
+   "reason": "The 480 s (08:00) source opens in Standard with the whole video selected 00:00–08:00 and 「Selected Length」 「08:00」 (TC-045 step 1 opens it but checks only the strip)"
+  },
+  "TC-VE2-102": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-270"
+   ],
+   "reason": "The 481 s (08:01) source opens in Standard with selection 00:00–08:00 and 「Selected Length」 「08:00」 (TC-264 step 5 opens it but checks only the strip)"
+  },
+  "TC-VE2-103": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-040"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-104": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-271"
+   ],
+   "reason": "With a 30 s (00:30) selection that is not at 00:00 on a 05:24 (324 s) timecoded source, drag the selection body earlier (left): both handles move by the same amount, 「Selected Length」 stays 「00:30」 and the Preview shows the source frame at the new start"
+  },
+  "TC-VE2-105": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-271"
+   ],
+   "reason": "With a 30 s (00:30) selection on a 05:24 (324 s) timecoded source, drag the selection body later: both handles move by the same amount, 「Selected Length」 stays 「00:30」 and the Preview shows the source frame at the new start"
+  },
+  "TC-VE2-106": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-271"
+   ],
+   "reason": "With a 90 s (01:30) selection that is not at 00:00 on a 05:24 (324 s) timecoded source, drag the selection body earlier (left): both handles move by the same amount, 「Selected Length」 stays 「01:30」 and the Preview shows the source frame at the new start"
+  },
+  "TC-VE2-107": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-271"
+   ],
+   "reason": "With a 90 s (01:30) selection on a 05:24 (324 s) timecoded source, drag the selection body later: both handles move by the same amount, 「Selected Length」 stays 「01:30」 and the Preview shows the source frame at the new start"
+  },
+  "TC-VE2-108": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-271"
+   ],
+   "reason": "With a 180 s (03:00) selection that is not at 00:00 on a 05:24 (324 s) timecoded source, drag the selection body earlier (left): both handles move by the same amount, 「Selected Length」 stays 「03:00」 and the Preview shows the source frame at the new start"
+  },
+  "TC-VE2-109": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-271"
+   ],
+   "reason": "With a 180 s (03:00) selection on a 05:24 (324 s) timecoded source, drag the selection body later: both handles move by the same amount, 「Selected Length」 stays 「03:00」 and the Preview shows the source frame at the new start"
+  },
+  "TC-VE2-110": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-216"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-111": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-112": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-042"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-113": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Drag the right handle later (e.g. from 06:00 toward 08:00 on the 12:30 video) under screen recording: at every sampled moment the Preview shows the frame at the right handle and 「Selected Length」 follows"
+  },
+  "TC-VE2-114": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-278"
+   ],
+   "reason": "Standard / Natural / 30fps / 720p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 30」; Standard / Natural / 30fps / 720p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 90」; Standard / Natural / 30fps / 720p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 480」"
+  },
+  "TC-VE2-115": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-225",
+    "TC-279"
+   ],
+   "reason": "Standard / Natural / 30fps / 1080p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 60」; Standard / Natural / 30fps / 1080p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 180」; Standard / Natural / 30fps / 1080p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 960」"
+  },
+  "TC-VE2-116": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-224",
+    "TC-280"
+   ],
+   "reason": "Standard / Natural / 30fps / 4K: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 3 credits per second」 and CTA 「Enhance ◆ 90」; Standard / Natural / 30fps / 4K: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 3 credits per second」 and CTA 「Enhance ◆ 270」; Standard / Natural / 30fps / 4K: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 3 credits per second」 and CTA 「Enhance ◆ 1440」"
+  },
+  "TC-VE2-117": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-226",
+    "TC-281"
+   ],
+   "reason": "Standard / Natural / 60fps / 720p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 30」; Standard / Natural / 60fps / 720p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 90」; Standard / Natural / 60fps / 720p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 480」"
+  },
+  "TC-VE2-118": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-221",
+    "TC-282"
+   ],
+   "reason": "Standard / Natural / 60fps / 1080p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 60」; Standard / Natural / 60fps / 1080p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 180」; Standard / Natural / 60fps / 1080p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 960」"
+  },
+  "TC-VE2-119": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-227",
+    "TC-283"
+   ],
+   "reason": "Standard / Natural / 60fps / 4K: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 6 credits per second」 and CTA 「Enhance ◆ 180」; Standard / Natural / 60fps / 4K: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 6 credits per second」 and CTA 「Enhance ◆ 540」; Standard / Natural / 60fps / 4K: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 6 credits per second」 and CTA 「Enhance ◆ 2880」"
+  },
+  "TC-VE2-120": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-228",
+    "TC-284"
+   ],
+   "reason": "Standard / Natural / 120fps / 720p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 30」; Standard / Natural / 120fps / 720p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 90」; Standard / Natural / 120fps / 720p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 480」"
+  },
+  "TC-VE2-121": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-222",
+    "TC-285"
+   ],
+   "reason": "Standard / Natural / 120fps / 1080p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 60」; Standard / Natural / 120fps / 1080p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 180」; Standard / Natural / 120fps / 1080p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 960」"
+  },
+  "TC-VE2-122": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-229",
+    "TC-286"
+   ],
+   "reason": "Standard / Natural / 120fps / 4K: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 240」; Standard / Natural / 120fps / 4K: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 720」; Standard / Natural / 120fps / 4K: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 3840」"
+  },
+  "TC-VE2-123": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-230",
+    "TC-287"
+   ],
+   "reason": "Standard / Sharp / 30fps / 720p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 30」; Standard / Sharp / 30fps / 720p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 90」; Standard / Sharp / 30fps / 720p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 480」"
+  },
+  "TC-VE2-124": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-220",
+    "TC-288"
+   ],
+   "reason": "Standard / Sharp / 30fps / 1080p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 60」; Standard / Sharp / 30fps / 1080p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 180」; Standard / Sharp / 30fps / 1080p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 960」"
+  },
+  "TC-VE2-125": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-231",
+    "TC-289"
+   ],
+   "reason": "Standard / Sharp / 30fps / 4K: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 3 credits per second」 and CTA 「Enhance ◆ 90」; Standard / Sharp / 30fps / 4K: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 3 credits per second」 and CTA 「Enhance ◆ 270」; Standard / Sharp / 30fps / 4K: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 3 credits per second」 and CTA 「Enhance ◆ 1440」"
+  },
+  "TC-VE2-126": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-232",
+    "TC-290"
+   ],
+   "reason": "Standard / Sharp / 60fps / 720p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 30」; Standard / Sharp / 60fps / 720p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 90」; Standard / Sharp / 60fps / 720p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 480」"
+  },
+  "TC-VE2-127": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-233",
+    "TC-291"
+   ],
+   "reason": "Standard / Sharp / 60fps / 1080p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 60」; Standard / Sharp / 60fps / 1080p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 180」; Standard / Sharp / 60fps / 1080p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 960」"
+  },
+  "TC-VE2-128": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-234",
+    "TC-292"
+   ],
+   "reason": "Standard / Sharp / 60fps / 4K: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 6 credits per second」 and CTA 「Enhance ◆ 180」; Standard / Sharp / 60fps / 4K: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 6 credits per second」 and CTA 「Enhance ◆ 540」; Standard / Sharp / 60fps / 4K: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 6 credits per second」 and CTA 「Enhance ◆ 2880」"
+  },
+  "TC-VE2-129": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-235",
+    "TC-293"
+   ],
+   "reason": "Standard / Sharp / 120fps / 720p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 30」; Standard / Sharp / 120fps / 720p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 90」; Standard / Sharp / 120fps / 720p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 1 credits per second」 and CTA 「Enhance ◆ 480」"
+  },
+  "TC-VE2-130": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-236",
+    "TC-294"
+   ],
+   "reason": "Standard / Sharp / 120fps / 1080p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 60」; Standard / Sharp / 120fps / 1080p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 180」; Standard / Sharp / 120fps / 1080p: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 960」"
+  },
+  "TC-VE2-131": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-237",
+    "TC-295"
+   ],
+   "reason": "Standard / Sharp / 120fps / 4K: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 240」; Standard / Sharp / 120fps / 4K: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 720」; Standard / Sharp / 120fps / 4K: select exactly 480 s (「Selected Length」 「08:00」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 3840」"
+  },
+  "TC-VE2-132": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-238",
+    "TC-296"
+   ],
+   "reason": "Professional / Natural / 30fps / 720p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 60」; Professional / Natural / 30fps / 720p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 180」; Professional / Natural / 30fps / 720p: select exactly 150 s (「Selected Length」 「02:30」) → 「Charge 2 credits per second」 and CTA 「Enhance ◆ 300」"
+  },
+  "TC-VE2-133": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-219",
+    "TC-297"
+   ],
+   "reason": "Professional / Natural / 30fps / 1080p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 4 credits per second」 and CTA 「Enhance ◆ 120」; Professional / Natural / 30fps / 1080p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 4 credits per second」 and CTA 「Enhance ◆ 360」; Professional / Natural / 30fps / 1080p: select exactly 150 s (「Selected Length」 「02:30」) → 「Charge 4 credits per second」 and CTA 「Enhance ◆ 600」"
+  },
+  "TC-VE2-134": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-298"
+   ],
+   "reason": "Professional / Natural / 30fps / 4K: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 12 credits per second」 and CTA 「Enhance ◆ 360」; Professional / Natural / 30fps / 4K: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 12 credits per second」 and CTA 「Enhance ◆ 1080」; Professional / Natural / 30fps / 4K: select exactly 150 s (「Selected Length」 「02:30」) → 「Charge 12 credits per second」 and CTA 「Enhance ◆ 1800」"
+  },
+  "TC-VE2-135": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-299"
+   ],
+   "reason": "Professional / Natural / 60fps / 720p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 4 credits per second」 and CTA 「Enhance ◆ 120」; Professional / Natural / 60fps / 720p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 4 credits per second」 and CTA 「Enhance ◆ 360」; Professional / Natural / 60fps / 720p: select exactly 150 s (「Selected Length」 「02:30」) → 「Charge 4 credits per second」 and CTA 「Enhance ◆ 600」"
+  },
+  "TC-VE2-136": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-300"
+   ],
+   "reason": "Professional / Natural / 60fps / 1080p: select exactly 30 s (「Selected Length」 「00:30」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 240」; Professional / Natural / 60fps / 1080p: select exactly 90 s (「Selected Length」 「01:30」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 720」; Professional / Natural / 60fps / 1080p: select exactly 150 s (「Selected Length」 「02:30」) → 「Charge 8 credits per second」 and CTA 「Enhance ◆ 1200」"
+  },
+  "TC-VE2-137": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-301"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Natural/60fps/4K; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 24 credits per second'; Professional/Natural/60fps/4K, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 720'; Professional/Natural/60fps/4K, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 2160'; Professional/Natural/60fps/4K, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhance "
+  },
+  "TC-VE2-138": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-302"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Natural/120fps/720p; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 8 credits per second'; Professional/Natural/120fps/720p, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 240'; Professional/Natural/120fps/720p, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 720'; Professional/Natural/120fps/720p, selection exactly 02:30 (150 s, the Professional cap): CTA"
+  },
+  "TC-VE2-139": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-303"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Natural/120fps/1080p; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 16 credits per second'; Professional/Natural/120fps/1080p, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 480'; Professional/Natural/120fps/1080p, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 1440'; Professional/Natural/120fps/1080p, selection exactly 02:30 (150 s, the Professional cap"
+  },
+  "TC-VE2-140": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-304"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Natural/120fps/4K; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 48 credits per second'; Professional/Natural/120fps/4K, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 1440'; Professional/Natural/120fps/4K, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 4320'; Professional/Natural/120fps/4K, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enh"
+  },
+  "TC-VE2-141": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-305"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/30fps/720p; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 2 credits per second'; Professional/Sharp/30fps/720p, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 60'; Professional/Sharp/30fps/720p, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 180'; Professional/Sharp/30fps/720p, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhance ◆ 3"
+  },
+  "TC-VE2-142": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-306"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/30fps/1080p; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 4 credits per second'; Professional/Sharp/30fps/1080p, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 120'; Professional/Sharp/30fps/1080p, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 360'; Professional/Sharp/30fps/1080p, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhanc"
+  },
+  "TC-VE2-143": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-307"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/30fps/4K; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 12 credits per second'; Professional/Sharp/30fps/4K, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 360'; Professional/Sharp/30fps/4K, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 1080'; Professional/Sharp/30fps/4K, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhance ◆ 1800';"
+  },
+  "TC-VE2-144": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-308"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/60fps/720p; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 4 credits per second'; Professional/Sharp/60fps/720p, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 120'; Professional/Sharp/60fps/720p, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 360'; Professional/Sharp/60fps/720p, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhance ◆ "
+  },
+  "TC-VE2-145": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-309"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/60fps/1080p; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 8 credits per second'; Professional/Sharp/60fps/1080p, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 240'; Professional/Sharp/60fps/1080p, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 720'; Professional/Sharp/60fps/1080p, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhanc"
+  },
+  "TC-VE2-146": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-310"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/60fps/4K; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 24 credits per second'; Professional/Sharp/60fps/4K, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 720'; Professional/Sharp/60fps/4K, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 2160'; Professional/Sharp/60fps/4K, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhance ◆ 3600';"
+  },
+  "TC-VE2-147": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-311"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/120fps/720p; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 8 credits per second'; Professional/Sharp/120fps/720p, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 240'; Professional/Sharp/120fps/720p, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 720'; Professional/Sharp/120fps/720p, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhanc"
+  },
+  "TC-VE2-148": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-312"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/120fps/1080p; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 16 credits per second'; Professional/Sharp/120fps/1080p, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 480'; Professional/Sharp/120fps/1080p, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 1440'; Professional/Sharp/120fps/1080p, selection exactly 02:30 (150 s, the Professional cap): CTA '"
+  },
+  "TC-VE2-149": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-313"
+   ],
+   "reason": "12:30 (750 s) source: in Standard shorten the selection to 00:30 first, then tap Professional and set Sharp/120fps/4K; expect the Mode actually switches to Professional (no toast) and the line reads 'Charge 48 credits per second'; Professional/Sharp/120fps/4K, selection exactly 00:30 (30 s): CTA 'Enhance ◆ 1440'; Professional/Sharp/120fps/4K, selection exactly 01:30 (90 s): CTA 'Enhance ◆ 4320'; Professional/Sharp/120fps/4K, selection exactly 02:30 (150 s, the Professional cap): CTA 'Enhance ◆ 7"
+  },
+  "TC-VE2-150": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-010",
+    "TC-020",
+    "TC-110",
+    "TC-114",
+    "TC-143"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-151": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-150",
+    "TC-154"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-152": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-033"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-153": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-255",
+    "TC-010"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-154": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-020",
+    "TC-255"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-155": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-256"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-156": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-257"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-157": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-272"
+   ],
+   "reason": "Left handle dragged left without reaching the Mode cap (e.g. 324 s source, 90 s selection 02:00-03:30 in Standard, drag left handle to 01:30): 'Selected Length' increases continuously during the drag and ends at 02:00 (= end - start), right handle stays at 03:30, no limit bubble or haptic"
+  },
+  "TC-VE2-158": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-214"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-159": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-160": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-161": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-215"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-162": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "With a trimmed selection (e.g. 12:30 source trimmed to 02:00-06:00) and the Preview paused inside it, tap Play: the Preview plays from the in-range position and its time advances (distinct early/later frames)"
+  },
+  "TC-VE2-163": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-164": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-165": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-132"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-166": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-151"
+   ],
+   "reason": "On a completed Result, select 'Original', seek to a fixed timestamp (e.g. 00:02) and pause; select 'Result', seek to the same timestamp and pause; the two same-timestamp frames show a visible image difference"
+  },
+  "TC-VE2-167": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-168": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-169": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-150"
+   ],
+   "reason": "Drag the Result progress slider later: the current-time readout (mm:ss/mm:ss) and the displayed frame follow to the new position; Drag the Result progress slider earlier: the current-time readout and frame follow back"
+  },
+  "TC-VE2-170": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-037"
+   ],
+   "reason": "Before full screen set a non-default state (e.g. selection 02:00-04:00, Professional / Sharp / 60fps / 4K), open full screen, return: the same video, selection 02:00-04:00, 'Selected Length' 02:00 and all four chips are unchanged and the CTA price is the same"
+  },
+  "TC-VE2-171": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224",
+    "TC-225",
+    "TC-226",
+    "TC-227",
+    "TC-228",
+    "TC-229",
+    "TC-230",
+    "TC-231",
+    "TC-232",
+    "TC-233",
+    "TC-234",
+    "TC-235",
+    "TC-236",
+    "TC-237",
+    "TC-238",
+    "TC-239",
+    "TC-240",
+    "TC-241",
+    "TC-242",
+    "TC-243",
+    "TC-244",
+    "TC-245",
+    "TC-246",
+    "TC-247",
+    "TC-248",
+    "TC-249",
+    "TC-250",
+    "TC-251",
+    "TC-252",
+    "TC-253",
+    "TC-254",
+    "TC-152"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-172": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224",
+    "TC-225",
+    "TC-226",
+    "TC-227",
+    "TC-228",
+    "TC-229",
+    "TC-230",
+    "TC-231",
+    "TC-232",
+    "TC-233",
+    "TC-234",
+    "TC-235",
+    "TC-236",
+    "TC-237",
+    "TC-238",
+    "TC-239",
+    "TC-240",
+    "TC-241",
+    "TC-242",
+    "TC-243",
+    "TC-244",
+    "TC-245",
+    "TC-246",
+    "TC-247",
+    "TC-248",
+    "TC-249",
+    "TC-250",
+    "TC-251",
+    "TC-252",
+    "TC-253",
+    "TC-254",
+    "TC-152"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-173": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-170",
+    "TC-171",
+    "TC-173"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-174": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-219",
+    "TC-220",
+    "TC-221",
+    "TC-222",
+    "TC-223",
+    "TC-224",
+    "TC-225",
+    "TC-226",
+    "TC-227",
+    "TC-228",
+    "TC-229",
+    "TC-230",
+    "TC-231",
+    "TC-232",
+    "TC-233",
+    "TC-234",
+    "TC-235",
+    "TC-236",
+    "TC-237",
+    "TC-238",
+    "TC-239",
+    "TC-240",
+    "TC-241",
+    "TC-242",
+    "TC-243",
+    "TC-244",
+    "TC-245",
+    "TC-246",
+    "TC-247",
+    "TC-248",
+    "TC-249",
+    "TC-250",
+    "TC-251",
+    "TC-252",
+    "TC-253",
+    "TC-254"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-175": {
+   "code": "diff",
+   "before": "different",
+   "rows": [
+    "TC-269",
+    "TC-022",
+    "TC-046"
+   ],
+   "reason": "Spec agent prices a 0.9 s selection at 1 credit; the casebook refuses a source under 1 s (R-015, Q-13 open). For a decision."
+  },
+  "TC-VE2-176": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-177": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-178": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-179": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-180": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-223",
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-181": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-182": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-183": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-184": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-269"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-185": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-223",
+    "TC-266"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-186": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-225"
+   ],
+   "reason": "Standard/Natural/30fps/1080p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-187": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-224"
+   ],
+   "reason": "Standard/Natural/30fps/4K on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-188": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-226"
+   ],
+   "reason": "Standard/Natural/60fps/720p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-189": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-221"
+   ],
+   "reason": "Standard/Natural/60fps/1080p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-190": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-227"
+   ],
+   "reason": "Standard/Natural/60fps/4K on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-191": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-228"
+   ],
+   "reason": "Standard/Natural/120fps/720p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-192": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-222"
+   ],
+   "reason": "Standard/Natural/120fps/1080p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-193": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-229"
+   ],
+   "reason": "Standard/Natural/120fps/4K on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-194": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-230"
+   ],
+   "reason": "Standard/Sharp/30fps/720p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-195": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-220"
+   ],
+   "reason": "Standard/Sharp/30fps/1080p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-196": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-231"
+   ],
+   "reason": "Standard/Sharp/30fps/4K on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-197": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-232"
+   ],
+   "reason": "Standard/Sharp/60fps/720p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-198": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-233"
+   ],
+   "reason": "Standard/Sharp/60fps/1080p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-199": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-234"
+   ],
+   "reason": "Standard/Sharp/60fps/4K on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-200": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-235"
+   ],
+   "reason": "Standard/Sharp/120fps/720p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-201": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-236"
+   ],
+   "reason": "Standard/Sharp/120fps/1080p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-202": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-237"
+   ],
+   "reason": "Standard/Sharp/120fps/4K on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-203": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-238"
+   ],
+   "reason": "Professional/Natural/30fps/720p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-204": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-219"
+   ],
+   "reason": "Professional/Natural/30fps/1080p on the 3.2 s 720p 30 fps source: time from the Recent task card's first remaining-time display to completion (card 'View' or completion banner, whichever first) is 4.8-8 s (1.5-2.5 x 3.2 s)"
+  },
+  "TC-VE2-205": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-239"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-206": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-240"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-207": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-241"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-208": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-242"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-209": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-243"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-210": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-244"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-211": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-245"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-212": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-246"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-213": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-247"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-214": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-248"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-215": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-249"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-216": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-250"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-217": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-251"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-218": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-252"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-219": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-253"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-220": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-254"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-221": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-265"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-222": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-266"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-223": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-267"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-224": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-140"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-225": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-258"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-226": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-274"
+   ],
+   "reason": "Standard, trim a selection to exactly 02:29 (149 s), tap 「Professional」: switches with no toast, selection stays 02:29 with the same start and end (TC-261 uses a whole 149.99 s source, TC-073 a 140 s selection)"
+  },
+  "TC-VE2-227": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-263"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-228": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-274"
+   ],
+   "reason": "Standard on a 12:30 video, selection 00:30-03:01 (151 s, nonzero start), tap 「Professional」: toast shown, Mode stays Standard, start 00:30, end 03:01 and 「02:31」 all unchanged (TC-263 checks 151 s only from 00:00; TC-071 checks a nonzero start only at 300 s)"
+  },
+  "TC-VE2-230": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-071",
+    "TC-073"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-231": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-074"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-232": {
+   "code": "add",
+   "before": "none",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Standard on a 12:30 (750 s) video, selection 08:00 long with room on the left (e.g. 04:30-12:30), drag the middle of the selection LEFT: start and end move by the same amount, 「Selected Length」 stays 「08:00」, Preview shows the first frame of the new start"
+  },
+  "TC-VE2-233": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-043"
+   ],
+   "reason": "Standard on a 12:30 (750 s) video, default selection 00:00-08:00, drag the middle RIGHT: start and end move by the same amount, 「Selected Length」 stays 「08:00」 (480 s, not ~6:00), Preview shows the first frame of the new start"
+  },
+  "TC-VE2-234": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-112"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-235": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-113"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-236": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-152"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-237": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-141"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-238": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-141"
+   ],
+   "reason": "Recent task opened from the panel with only completed task cards (no processing task), tap ‹: the panel is shown again"
+  },
+  "TC-VE2-239": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-031"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-240": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-038"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-241": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-091"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-242": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-216"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-243": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-244": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-075"
+   ],
+   "reason": "Professional 00:30-03:00 (02:30) on 12:30 video, tap 「Standard」: start 00:30 and end 03:00 unchanged (not only the length); Then drag the right handle as far right as it goes: it stops at 08:00 (end 08:30), 「Selected Length」 never reads 08:01"
+  },
+  "TC-VE2-245": {
+   "code": "des",
+   "before": "different-by-design",
+   "rows": [
+    "TC-260"
+   ],
+   "reason": "Spec agent opens the panel in Professional; casebook opens in Standard (R-040) and checks the 1 s source switching to Professional."
+  },
+  "TC-VE2-246": {
+   "code": "des",
+   "before": "different-by-design",
+   "rows": [
+    "TC-260"
+   ],
+   "reason": "Entry Mode = Standard by design; 30 s source checked on the switch."
+  },
+  "TC-VE2-247": {
+   "code": "des",
+   "before": "different-by-design",
+   "rows": [
+    "TC-261"
+   ],
+   "reason": "Entry Mode = Standard by design; 149.99 s source checked on the switch."
+  },
+  "TC-VE2-248": {
+   "code": "des",
+   "before": "different-by-design",
+   "rows": [
+    "TC-261"
+   ],
+   "reason": "Entry Mode = Standard by design; 150 s source checked on the switch."
+  },
+  "TC-VE2-249": {
+   "code": "des",
+   "before": "different-by-design",
+   "rows": [
+    "TC-262"
+   ],
+   "reason": "Entry Mode = Standard by design; spec agent expects Professional with 02:30 selected, casebook expects Standard with all 150.01 s selected and a rejected switch."
+  },
+  "TC-VE2-250": {
+   "code": "des",
+   "before": "different-by-design",
+   "rows": [
+    "TC-262"
+   ],
+   "reason": "Entry Mode = Standard by design; spec agent expects Professional 00:00-02:30, casebook Standard 00:00-08:00 and a rejected switch."
+  },
+  "TC-VE2-251": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-270"
+   ],
+   "reason": "A 07:59.99 (479.99 s, ffprobe-checked) source opens in Standard with the whole video selected: start 00:00, end at 07:59.99 (no frames cut)"
+  },
+  "TC-VE2-252": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-270"
+   ],
+   "reason": "A 08:00.01 (480.01 s, ffprobe-checked) source opens in Standard with 00:00-08:00 selected (480 s, not the whole 480.01 s), 「Selected Length」 「08:00」"
+  },
+  "TC-VE2-253": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-275"
+   ],
+   "reason": "Standard on a 12:30 video, selection 00:30-02:59.99 (149.99 s, nonzero start), tap 「Professional」: switches with no toast, start 00:30 and end 02:59.99 unchanged"
+  },
+  "TC-VE2-254": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-275"
+   ],
+   "reason": "Standard on a 12:30 video, selection 00:30-03:00.01 (150.01 s, nonzero start), tap 「Professional」: toast, Mode stays Standard, start 00:30 and end 03:00.01 unchanged"
+  },
+  "TC-VE2-256": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-273"
+   ],
+   "reason": "Standard, selection 07:59 (479 s) with a nonzero start on the 12:30 timecoded video, drag the left handle 1 s outward: it stops at 08:00 (480 s) with the cap bubble; Keep dragging the left handle past the cap: the exact start/end (burned-in timecode at the handle) give a length of at most 480, never a fractional overrun such as 480.01 s"
+  },
+  "TC-VE2-257": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-273"
+   ],
+   "reason": "Standard, selection 07:59 (479 s) with a nonzero start on the 12:30 timecoded video, drag the right handle 1 s outward: it stops at 08:00 (480 s) with the cap bubble; Keep dragging the right handle past the cap: the exact start/end (burned-in timecode at the handle) give a length of at most 480, never a fractional overrun such as 480.01 s"
+  },
+  "TC-VE2-258": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-273"
+   ],
+   "reason": "Professional, selection 02:29 (149 s) with a nonzero start on the 12:30 timecoded video, drag the left handle 1 s outward: it stops at 02:30 (150 s) with the cap bubble; Keep dragging the left handle past the cap: the exact start/end (burned-in timecode at the handle) give a length of at most 150, never a fractional overrun such as 150.01 s"
+  },
+  "TC-VE2-259": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-273"
+   ],
+   "reason": "Professional, selection 02:29 (149 s) with a nonzero start on the 12:30 timecoded video, drag the right handle 1 s outward: it stops at 02:30 (150 s) with the cap bubble; Keep dragging the right handle past the cap: the exact start/end (burned-in timecode at the handle) give a length of at most 150, never a fractional overrun such as 150.01 s"
+  },
+  "TC-VE2-260": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-274"
+   ],
+   "reason": "Standard / Natural / 30fps / 720p on a 750 s 720p source, selection 00:30-02:50 (140 s): CTA 「Enhance ◆ 140」; tap 「Professional」: start 00:30, end 02:50, 「02:20」 unchanged and CTA 「Enhance ◆ 280」 (2 credits/s)"
+  },
+  "TC-VE2-261": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-274"
+   ],
+   "reason": "Professional / Natural / 30fps / 720p, selection 00:30-02:50 (140 s): CTA 「Enhance ◆ 280」; tap 「Standard」: start/end/length unchanged, CTA 「Enhance ◆ 140」"
+  },
+  "TC-VE2-262": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-274"
+   ],
+   "reason": "Standard / Natural / 30fps / 720p, selection 00:30-03:00 (150 s): CTA 「Enhance ◆ 150」; tap 「Professional」: start 00:30, end 03:00 unchanged, CTA 「Enhance ◆ 300」"
+  },
+  "TC-VE2-263": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-274"
+   ],
+   "reason": "Professional / Natural / 30fps / 720p, selection 00:30-03:00 (150 s): CTA 「Enhance ◆ 300」; tap 「Standard」: start 00:30, end 03:00 unchanged, CTA 「Enhance ◆ 150」"
+  },
+  "TC-VE2-264": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-264"
+   ],
+   "reason": "08:01 (481 s) source, Professional after the re-lay: scroll to the end, the 08:01 tail is reachable at 2:30 per width; Then tap 「Standard」 without trimming: strip back to 8:00 per width, selection start/end/length unchanged"
+  },
+  "TC-VE2-265": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "12:30 (750 s) source, Professional after the re-lay: scroll to the end, the 12:30 tail is reachable at 2:30 per width; Then tap 「Standard」 without trimming: strip back to 8:00 per width, selection start/end/length unchanged"
+  },
+  "TC-VE2-266": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-264"
+   ],
+   "reason": "02:30.01 (150.01 s) source after the Professional re-lay (TC-264 step 4): tap 「Standard」: the whole video fits one strip width again, selection unchanged"
+  },
+  "TC-VE2-267": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-045"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-268": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-071",
+    "TC-073"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-269": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-276"
+   ],
+   "reason": "Timeline clip of 06:00 (360 s), panel selection 00:30-05:30 (nonzero start), tap 「Professional」: toast for about 3 s, Standard kept, start 00:30 and end 05:30 unchanged; Shorten to 00:30-02:50 (02:20) and tap 「Professional」: switches"
+  },
+  "TC-VE2-270": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-044"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-271": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-074"
+   ],
+   "reason": "Already run by the approved rows."
+  },
+  "TC-VE2-272": {
+   "code": "add",
+   "before": "partial",
+   "rows": [
+    "TC-097"
+   ],
+   "reason": "Open My Credits from the panel's top-right credit entry (Q-15: casebook leaves the pill n/a; TC-097 reaches it through a low-balance Enhance), pick the 500-credit pack: offer reads 「Get 500 Credits」 NT$1190; Google Play sheet shows 500 Credits, NT$1190, 「Test card, always approves」; pay once; If 「Want to get 100 credits, too?」 appears, tap 「Not now」; after purchase My Credits balance = before + 500 exactly; Back to the panel: media, start/end, Selected Length, Mode, style, fps and Resolution unc"
+  },
+  "TC-VE2-276": {
+   "code": "cov",
+   "before": "full",
+   "rows": [
+    "TC-259"
+   ],
+   "reason": "Already run by the approved rows."
+  }
+ }
+}

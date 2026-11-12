@@ -68,6 +68,7 @@ load();
 const page = (local: boolean) => renderPage({
   mode: 'review', save: local, feature, platform, title: spec.title ?? feature, draft: draftId,
   based_on_version: manifest?.version ?? null, version: manifest?.version ?? null, approved_at: manifest?.approved_at ?? null,
+  saved_from_draft: !!draftArg && manifest?.draft === draftId,
   spec_files: spec.spec_files, rows, previous: draftArg ? previous : {}, requirements, update_plan: plan, zh,
   questions: parseQuestions(requirements), answers: readAnswers(feature), questions_zh: qzh,
 });
