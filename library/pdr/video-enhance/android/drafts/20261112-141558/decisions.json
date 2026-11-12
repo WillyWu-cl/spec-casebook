@@ -1,0 +1,38 @@
+{
+  "saved_at": "2026-11-12T06:18:12.877Z",
+  "version": 7,
+  "decisions": [
+    {
+      "id": "TC-042",
+      "decision": "keep",
+      "change": "modified"
+    },
+    {
+      "id": "TC-214",
+      "decision": "keep",
+      "change": "modified"
+    },
+    {
+      "id": "TC-215",
+      "decision": "keep",
+      "change": "modified"
+    },
+    {
+      "id": "TC-216",
+      "decision": "keep",
+      "change": "modified"
+    },
+    {
+      "id": "TC-052",
+      "decision": "keep",
+      "change": "modified"
+    },
+    {
+      "id": "TC-097",
+      "decision": "keep",
+      "change": "modified"
+    }
+  ],
+  "summary": "Review: pdr/video-enhance / android · draft 20261112-141558\nFinal table: 168 cases · kept 168 · edited 0 · added 0 · deleted 0\nSaved on the user's request in chat (REQ-015: draft, save, commit and push).\n",
+  "notes": []
+}

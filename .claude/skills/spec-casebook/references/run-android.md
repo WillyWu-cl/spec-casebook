@@ -17,6 +17,16 @@ adb serial HQ61563393, Android 12, 1080 × 2520; setup in README › Android pho
   (adb `input motionevent` DOWN, moves ~100 ms apart, UP) for text that scrolls inside its own box, and before
   filing a 「drag does X」 bug retry it with `fingerdrag`. `setval` is setText, not a paste: it skips the field's
   paste limit, so an over-limit paste is checked by hand.
+- **Judging a drag (user, 2026-11-12, video-enhance REQ-015).** A row whose Expected Result says something follows a
+  gesture while it moves (the Preview shows the frame at the dragged handle, a bubble and the Preview time follow a
+  knob) is judged from a recording of the whole gesture, never from one screenshot taken with the finger down: R1
+  passed TC-042 / TC-214 / TC-216 / TC-215 that way while another tool's recording showed the Preview stuck on older
+  frames mid-drag. `record start`, the drag (`fingerdrag` with enough steps to last 2–3 s, or several drags in one
+  touch for the back-and-forth rows), `record stop <ID>-drag`, then sample frames on the computer
+  (`ffmpeg -i recordings/<ID>-drag.mp4 -vf fps=4 recordings/<ID>-drag-%03d.png`) and compare, frame by frame, the
+  time burned into the source video (the fixtures carry one) with the handle's or bubble's time. Record the largest
+  gap and how long it lasted in Actual. Pass or Fail against the delay the row names; while the spec states none
+  (an Open question), a visible lag is recorded with the numbers and filed to PM for a decision.
 - **New messages below the screen (user, 2026-11-06, REQ-107).** The AI Mini Drama chat pins the sent message to the
   top and lets the reply and its cards grow below it without following (R-250, R-485; ↓ R-088, R-274), so a new card
   or its lower lines can be off screen and missing from the page source. Every wait or check for something new in a

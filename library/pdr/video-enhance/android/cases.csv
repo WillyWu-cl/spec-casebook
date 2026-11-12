@@ -106,28 +106,41 @@ TC-040,Trim and selected length,"1. Signed in with a Pro+ account (no tier switc
 Mode is Standard",P1,R-030,PM 9/29 「5m 00s / 8m max」 and B1 「18s」 formats lose to the Design (Q-19).
 TC-041,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
 2. A 01:30 1080p 30 fps video in the album",Pick the video in Add Media,The whole video is selected and 「Selected Length」 reads 「01:30」,P2,R-030,
-TC-042,Trim and selected length,"Panel open with the 12:30 video, selection 00:00–08:00",Drag the right handle left to about 06:00,"While dragging the Preview shows the frame at the right handle
-「Selected Length」 follows (about 「06:00」) and the CTA price drops at once",P1,"R-031, R-061",
+TC-042,Trim and selected length,"Panel open with the 12:30 video, selection 00:00–08:00","1. Start a screen recording
+2. Drag the right handle left to about 06:00 over 2–3 seconds
+3. Stop the recording","Step 2: at every sampled moment of the drag the Preview shows the frame at the right handle (its burned-in time matches the handle's time, no visible lag)
+Step 2: 「Selected Length」 follows (about 「06:00」 at the end)
+Step 2: the CTA price drops at once",P1,"R-031, R-061","Evidence: screen recording of the whole drag (run-android.md, *Judging a drag*); the fixture burns its time into every frame. Allowed delay: Q-27 (assumed: no visible lag)."
 TC-214,Trim and selected length,"1. Panel open with the 12:30 video, selection 00:00–08:00
-2. Note the CTA price",Drag the left handle right to about 02:00,"While dragging the Preview shows the frame at the left handle (its time about 「02:00/12:30」)
-The selection is about 02:00–08:00, 「Selected Length」 follows (about 「06:00」), the right handle stays at 08:00 and the CTA price drops at once",P1,"R-031, R-061",Twin of TC-042 (analysis pass 11: either side handle is its own control).
+2. Note the CTA price","1. Start a screen recording
+2. Drag the left handle right to about 02:00 over 2–3 seconds
+3. Stop the recording","Step 2: at every sampled moment of the drag the Preview shows the frame at the left handle (its time follows toward 「02:00/12:30」, no visible lag)
+Step 2: the selection ends about 02:00–08:00 and 「Selected Length」 follows (about 「06:00」)
+Step 2: the right handle stays at 08:00
+Step 2: the CTA price drops at once",P1,"R-031, R-061","Twin of TC-042 (analysis pass 11: either side handle is its own control). Evidence: screen recording of the whole drag (run-android.md, *Judging a drag*); the fixture burns its time into every frame. Allowed delay: Q-27 (assumed: no visible lag)."
 TC-043,Trim and selected length,"Panel open with the 12:30 video, selection about 6:00 long",Drag the middle of the selection to the right,The whole range moves with the same length (「Selected Length」 unchanged) and the Preview shows the selection's first frame,P2,R-032,
 TC-215,Trim and selected length,"1. Panel open with the 12:30 video, selection 00:00–08:00
 2. Note the CTA price","1. Look at the strip
-2. Drag the ◀▶ knob under the 「00:00」 bubble to the right to about 03:00
-3. Drag the knob back to the left to about 01:00
-4. Drag the knob right and left several times without letting go
-5. Let go at about 02:00","Step 1: a playhead line sits at the selection start with the bubble 「00:00」 above the strip and the ◀▶ knob under it, and the Preview reads 「00:00/12:30」
-Step 2: the playhead moves later, the bubble and the Preview time follow together (about 「03:00」 and 「03:00/12:30」) and the Preview shows that frame
-Step 3: it moves earlier the same way (about 「01:00」 and 「01:00/12:30」)
-Step 4: the bubble, the Preview time and the frame follow the knob both ways
-Step 5: they stop at about 「02:00」
-In every step both trim handles, 「Selected Length」 「08:00」 and the CTA price stay the same",P2,"R-192, R-193","The knob (round/ic_btn_drag) is the playhead, not a trim handle (analysis pass 11, role from the board image). Q-21: how far the playhead may go is not stated."
+2. Start a screen recording
+3. Drag the ◀▶ knob under the 「00:00」 bubble to the right to about 03:00
+4. Drag the knob back to the left to about 01:00
+5. Drag the knob right and left several times without letting go
+6. Let go at about 02:00
+7. Stop the recording","Step 1: a playhead line sits at the selection start with the bubble 「00:00」 above the strip and the ◀▶ knob under it
+Step 1: the Preview reads 「00:00/12:30」
+Step 3: the playhead moves later
+Step 3: at every sampled moment the bubble, the Preview time and the frame's burned-in time agree (about 「03:00」 and 「03:00/12:30」 at the end, no visible lag)
+Step 4: it moves earlier the same way (about 「01:00」 and 「01:00/12:30」)
+Step 5: the bubble, the Preview time and the frame follow the knob both ways at every sampled moment
+Step 6: they stop at about 「02:00」
+Steps 3–6: both trim handles, 「Selected Length」 「08:00」 and the CTA price stay the same",P2,"R-192, R-193","The knob (round/ic_btn_drag) is the playhead, not a trim handle (analysis pass 11, role from the board image). Q-21: how far the playhead may go is not stated. Evidence: screen recording of the whole drag (run-android.md, *Judging a drag*); the fixture burns its time into every frame. Allowed delay: Q-27 (assumed: no visible lag)."
 TC-044,Trim and selected length,"Panel open with the 12:30 video in Standard, selection 00:00–06:00",Drag the right handle as far right as it goes,The handle stops at 8:00 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」,P2,"R-033, R-050",PM-only: no Design frame yet (PM 9/29 UI).
 TC-216,Trim and selected length,"1. Panel open with the 12:30 video in Standard
-2. The selection moved and trimmed to 06:30–12:30 (「06:00」)",Drag the left handle as far left as it goes,"While dragging the Preview shows the frame at the left handle (its time follows the handle back toward 「04:30/12:30」)
-The left handle stops at 04:30 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」
-The right handle stays at 12:30",P2,"R-033, R-050, R-031",Twin of TC-044 for the left handle. PM-only: no Design frame yet (PM 9/29 UI).
+2. The selection moved and trimmed to 06:30–12:30 (「06:00」)","1. Start a screen recording
+2. Drag the left handle as far left as it goes over 2–3 seconds
+3. Stop the recording","Step 2: at every sampled moment of the drag the Preview shows the frame at the left handle (its time follows the handle back toward 「04:30/12:30」, no visible lag)
+Step 2: the left handle stops at 04:30 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」
+Step 2: the right handle stays at 12:30",P2,"R-033, R-050, R-031","Twin of TC-044 for the left handle. PM-only: no Design frame yet (PM 9/29 UI). Evidence: screen recording of the whole drag (run-android.md, *Judging a drag*); the fixture burns its time into every frame. Allowed delay: Q-27 (assumed: no visible lag)."
 TC-045,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
 2. An 08:00 (480 s) and a 12:30 (750 s) video in the album","1. Open the panel with the 08:00 video (Standard)
 2. Drag the right handle left until 「Selected Length」 reads 「02:00」
@@ -169,9 +182,14 @@ TC-051,Default settings,"1. Panel open
 2. Tap ‹ to Add Media
 3. Pick another video","The panel opens with 「Standard」 and 「Natural」 again (the defaults are fixed, not remembered)",P2,R-042,PM §4.3 「記住上次」 and PM B3 [衝突] proposal lose to the Design 預設值規則 and the PM 1002 rule.
 TC-052,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
-2. A 24 fps and a 30 fps video in the album","1. Open the panel with the 24 fps video
-2. Go back and open it with the 30 fps video","Both select 「30fps」
-The Preview label reads 「24fps · …」 and 「30fps · …」",P1,"R-043, R-021",
+2. A 1 fps (ve-fps1-1080p), a 24 fps and a 30 fps video in the album","1. Open the panel with the 1 fps video
+2. Go back and open it with the 24 fps video
+3. Go back and open it with the 30 fps video","Step 1: 「30fps」 is selected and the fps chips are enabled as for any 1–30 fps source
+Step 1: the Preview label reads 「1fps · …」
+Step 2: 「30fps」 is selected
+Step 2: the Preview label reads 「24fps · …」
+Step 3: 「30fps」 is selected
+Step 3: the Preview label reads 「30fps · …」",P1,"R-043, R-021","1 fps is the lowest value of R-043's 1–30 band (analysis.md pass 4, ranges: both outer ends) [Req: REQ-015]; the Spec Agent saw no fps selected and every fps chip disabled for a 1 fps source."
 TC-053,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
 2. A 50 fps and a 60 fps video in the album","1. Open the panel with the 50 fps video
 2. Go back and open it with the 60 fps video",Both select 「60fps」,P1,R-043,
@@ -299,8 +317,13 @@ TC-096,Eligibility and purchase,"1. Signed in with a Pro+ account (no tier switc
 3. Panel open
 4. Note the balance",Tap 「Enhance」,"The Credit page opens (「My Credits」, 「Buy More」, 「Expiring within 7 days: … credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card)
 No upload dialog appears, Recent task gets no card and the balance is unchanged",P1,R-076,Parked: needs low-balance (the shared account holds many credits).
-TC-097,Eligibility and purchase,TC-096 setup: Credit page open from the panel,"1. Tap 「Buy More」
-2. Buy a credit pack on the Google Play purchase sheet",The app returns to the panel with the new balance in the credit pill and the selection and settings kept,P2,R-077,Parked: needs purchase.
+TC-097,Eligibility and purchase,"1. TC-096 setup: Credit page open from the panel
+2. The signed-in Google account is a license tester of PowerDirector on Google Play, so the purchase sheet offers 「Test card, always approves」 (no charge)
+3. The user's go-ahead for this purchase","1. Tap 「Buy More」
+2. Pick a credit pack
+3. Pay with 「Test card, always approves」 on the Google Play purchase sheet","After step 3 the app returns to the panel
+The credit pill shows the new balance (old balance + the pack)
+The selection and the settings are kept",P2,R-077,"Needs the user's go-ahead (Google Play test card, no charge; fixtures.md) [Req: REQ-015]. The Spec Agent bought the same pack this way and the app returned to My Credits, not the panel."
 TC-098,Eligibility and purchase,"1. Credit page open from the panel (TC-096)
 2. The daily credits not claimed in the last 24 h","1. Tap 「Claim」
 2. Tap ‹ on the Credit page","Step 1 adds the daily credits

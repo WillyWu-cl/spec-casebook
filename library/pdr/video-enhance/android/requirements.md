@@ -34,6 +34,11 @@ the same 26.09_v2 section, so its cases never override today's board. R-196 (2K+
 Design's 預設值規則 (「來源超過最高選項時取最高」) and now states that rule; changed: R-015, R-044, R-196, Q-13;
 removed: Q-23 (no 2K+ block, no message to ask about).
 
+Draft 20261112-141558 [Req: REQ-015]: the 4 groups Android R1 missed (run-cost comparison with the Spec Agent,
+`comparisons/2026-11-12_run-cost-vs-spec-agent.html`). R-043's 1–30 band is taken at its low end too (1 fps, TC-052);
+R-077 has a free route (Google Play test card, TC-097); R-031 and R-193 are timing rules judged from a screen
+recording (TC-042, TC-214, TC-216, TC-215). Changed: R-031, R-077, R-193; new: Q-27.
+
 ## Entry points
 - R-001 [DS:ds-main-flow Launcher_2026_08; DS:ds-routing 「Launcher / AI Magic → Demo page」] The Launcher big shortcut 「AI Video Enhance」 opens the Demo page (until 「Don’t show again」 was confirmed, R-009).
 - R-002 [DS:ds-entry-points Launcher_AI Magic; DS:ds-routing] The AI Magic tab's 「AI Enhance」 section has an 「AI Video Enhance」 card that opens the Demo page (same rule as R-001).
@@ -73,11 +78,11 @@ removed: Q-23 (no 2K+ block, no message to ask about).
 
 ## Trim and selected length
 - R-030 [DS:ds-ai-video-enhance Default / Length; PM:pm-main-flow 9/29 ①; PM:pm-draft-logic B1 [9/29 定案]] The default selection starts at 00:00 and is min(video length, Mode limit) long: a 12:30 video selects 「08:00」, a 01:30 video the whole 「01:30」. Selected Length shows mm:ss (Design; PM's 「5m 00s / 8m max」 and 「18s」 / 「1m 30s」 forms are older).
-- R-031 [PM:pm-draft-logic B1 [Design]; DS:ds-ai-video-enhance Length] Either side handle can be dragged: the left ‹ handle moves the start and the right › handle the end; each changes the selected length and the Preview shows the frame at the dragged end. (Two controls, one row each: analysis pass 11.)
+- R-031 [PM:pm-draft-logic B1 [Design]; DS:ds-ai-video-enhance Length] Either side handle can be dragged: the left ‹ handle moves the start and the right › handle the end; each changes the selected length and the Preview shows the frame at the dragged end. The frame follows the handle while it moves, not only when it stops: a timing rule judged from a screen recording of the whole drag; the allowed delay is not stated (Q-27) [Req: REQ-015]. (Two controls, one row each: analysis pass 11.)
 - R-032 [PM:pm-draft-logic B1 [Design]] Dragging the middle of the selection moves the whole range at the same length and the Preview shows its first frame.
 - R-033 [PM:pm-main-flow 9/29 UI; PM:pm-draft-logic UI 規格] At the Mode limit the dragged handle (left or right) stops, the phone gives a light haptic and a bubble says 「Up to 8 minutes in Standard mode」 (Standard) or 「Up to 2m 30s in Professional mode」 (Professional).
 - R-192 [DS:ds-main-flow VE · 01 strip 「00:00」; DS:ds-ai-video-enhance Default / Length (bubbles 「00:00」, 「02:30」, 「01:00」, 「00:14」)] The strip carries a playhead: a line across the strip with a time bubble above it (「00:00」 on entry) and a ◀▶ drag knob (round/ic_btn_drag) under the strip. The bubble shows the same time as the Preview's 「mm:ss/<video length>」 (「00:14」 with 「00:14/01:30」, 「01:00」 with 「01:00/12:30」). The knob is the playhead's, not a trim handle (role read from the board images, analysis pass 11).
-- R-193 [DS:ds-ai-video-enhance Length; DS:ds-main-flow VE · 01 knob round/ic_btn_drag] Dragging the playhead knob moves the playhead: the Preview shows the frame under it and the bubble and the Preview time follow; the trim handles, Selected Length and the price do not change (how far it may go: Q-21).
+- R-193 [DS:ds-ai-video-enhance Length; DS:ds-main-flow VE · 01 knob round/ic_btn_drag] Dragging the playhead knob moves the playhead: the Preview shows the frame under it and the bubble and the Preview time follow; the trim handles, Selected Length and the price do not change (how far it may go: Q-21). The frame, the bubble and the Preview time follow during the drag, not only at the end: a timing rule judged from a screen recording; allowed delay: Q-27 [Req: REQ-015].
 - R-034 [PM:pm-main-flow 9/29 ⑥; PM:pm-draft-logic B1-1 ⑥; Req: REQ-008; spec agent TC-VE2-026, TC-VE2-264 – TC-VE2-267] One strip width stands for the active Mode's limit: in Standard a video ≤ 8:00 fills the strip's width and a longer one scrolls sideways with 8:00 = one strip width; in Professional a video ≤ 2:30 fills the width and a longer one scrolls with 2:30 = one strip width. Switching Mode re-lays the strip to the new limit; the thumbnails stay in time order and the selection keeps its start, end and length. (Follows the spec agent's reading of ⑥, pending PM: Q-24.)
 - R-035 [PM:pm-draft-logic B1 [建議]] The shortest selection is 1 s, whichever handle is dragged toward the other.
 
@@ -122,7 +127,7 @@ removed: Q-23 (no 2K+ block, no message to ask about).
 - R-074 [DS:ds-main-flow arrows 3293-13677, 3293-13678] 「Continue」 opens the store purchase sheet (Google Play on Android); after the purchase the app shows 「You're all set」 / 「Your purchase was successful.」 with 「OK」. That dialog is iOS only: on Android the IAP page closes and the panel is back at once (R-075) [Req: REQ-012].
 - R-075 [DS:ds-main-flow arrow 3293-13679; DS:ds-alt-exception 「購買成功 → 回 AI Video Enhance（餘額已更新、選取狀態保留）」; PM:pm-draft-logic C2] After a purchase the app returns to the panel with the balance updated and the selection and settings kept; nothing is sent until the user taps the CTA again (PM C2 [建議]).
 - R-076 [DS:ds-alt-exception Insufficient Credits; DS:ds-routing 「餘額不足 → Credit Page」; PM:pm-access-credit §8.1] A Pro+ user whose balance is below the price is taken by 「Enhance」 to the Credit page (「My Credits」, 「Buy More」, 「Expiring within 7 days: 0 credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card); the video is not uploaded and nothing is charged.
-- R-077 [DS:ds-alt-exception 購買成功 → 回 AI Video Enhance] After buying credits with 「Buy More」 the app returns to the panel with the new balance and the selection kept.
+- R-077 [DS:ds-alt-exception 購買成功 → 回 AI Video Enhance] After buying credits with 「Buy More」 the app returns to the panel with the new balance and the selection kept. Run with a license-tester account and Google Play's 「Test card, always approves」 (no charge) on the user's go-ahead [Req: REQ-015].
 - R-078 [DS:ds-alt-exception Credit page_paid] 「Claim」 on the Credit page claims the daily credits; back on the panel the credit pill shows the new balance (balance-updated rule of R-075 / R-077).
 - R-079 [PM:pm-draft-logic C2 ① Pro+ → ② network → ③ balance; C3 [建議]] With no network, 「Enhance」 sends nothing and charges nothing; the toast 「Upload failed. Check your connection and try again.」 appears and the panel stays.
 - R-080 [DS:ds-routing 「餘額足夠 → 直接生成」; PM:pm-main-flow §2.2] With enough credits 「Enhance」 starts at once, with no extra confirmation.
@@ -211,6 +216,7 @@ removed: Q-23 (no 2K+ block, no message to ask about).
 - Q-21 Playhead: the Design draws a playhead on the strip (a line, a time bubble and a ◀▶ knob) but no note says how far it may be dragged (only inside the selection, or the whole video) or whether play starts from it. Assumption: dragging it scrubs the Preview inside the selection and changes neither the selection nor the price. R-192, R-193 (TC-215).
 - Q-22 Completed task card: PM D2 says a completed card opens the Result when tapped (「Completed (tap → Result)」); the Design draws only the 「View」 button. Assumption: tapping the card's thumbnail opens the same Result as 「View」. R-112 (TC-143).
 - Q-24 Strip scale (REQ-008): PM 9/29 ⑥ says the strip's scale depends only on the video length and a Mode switch does not re-lay it (our v3 reading); the spec agent reads the same note as one strip width = the active Mode's limit (8:00 Standard, 2:30 Professional), re-laid on a Mode switch. Neither source is newer. Assumption: the spec agent's reading, pending PM confirmation of PM 9/29 ⑥; a difference on the build is a PM question, not a defect, until PM confirms. R-034 (TC-045, TC-264).
+- Q-27 Preview delay while dragging (REQ-015): R-031 and R-193 say the Preview shows the frame at the dragged handle or playhead, but no source says how closely it must keep up during the drag (the Spec Agent's recording showed the Preview stuck on older frames mid-drag). Assumption: no visible lag: at every sampled moment of the recording (4 frames a second) the frame's time is within about 0.5 s of the handle's; a larger gap is recorded with its size and duration and filed to PM for a decision. R-031, R-193 (TC-042, TC-214, TC-216, TC-215).
 
 ## Answered questions
 - Q-25 Android unlock wording (REQ-008): the colleague feedback of 2026-10-07 makes Pro the Android tier, but no Design frame draws the Android CTA (the iPhone frame reads 「Unlock Pro+ to Enhance」), and the clip toolbar badge 「Pro+」 (R-005) is drawn for iOS too. Assumption: the CTA names Pro (e.g. 「Unlock Pro to Enhance」) and opens the IAP on the Pro tab; its exact words and the badge are recorded, not asserted. R-070, R-071, R-005 (TC-090, TC-004). Answer (2026-11-11, REQ-012, reviewer ruling on batch 2): Android has only Free and Pro; 「Pro+」 is iOS only, so the badge reads 「Pro」 and the IAP is a single Pro page (R-005, R-072); the 「You're all set」 dialog is iOS only (R-074).
@@ -288,6 +294,8 @@ Clauses the screen does not show and how a tester observes them (pass 9).
 | R-203 | the charge is booked as one debit named 「AI Video Enhance」 | the credit history after each combination generation | TC-219, TC-223 |
 | R-198 | the task is kept on the cloud (one year) | the completed card and its Result after closing and reopening the app days later; the year itself is NOT TESTABLE (R-117) | TC-268 |
 | R-142 | the refund is automatic | the balance before the task, after the charge and after the failure | TC-173 |
+| R-031 | the Preview keeps up with the handle during the drag (Q-27) | a screen recording sampled at 4 frames a second: the burned-in time against the handle's | TC-042, TC-214, TC-216 |
+| R-193 | the bubble, the Preview time and the frame keep up with the knob during the drag (Q-27) | a screen recording sampled at 4 frames a second | TC-215 |
 
 ### Variants
 One line per requirement × variant (pass 10).
@@ -304,7 +312,7 @@ One line per requirement × variant (pass 10).
 | R-071 | Pro+ | n/a (already unlocked, R-070) |
 | R-072 | Pro tab | TC-093 |
 | R-072 | Pro+ tab | TC-091, TC-093 |
-| R-043 | source 1–30 fps → 30fps | TC-052 |
+| R-043 | source 1–30 fps → 30fps (1, 24, 30 fps: the band's low end and both edges) | TC-052 |
 | R-043 | source 31–60 fps → 60fps | TC-053, TC-055 |
 | R-043 | source 61+ fps → 120fps | TC-054, TC-055 |
 | R-044 | 0–720p → 720p | TC-056 |
@@ -455,3 +463,4 @@ None: no Testing Request build is named for this feature yet.
 | REQ-008 (table, Android: cover all 271 spec agent cases; every Mode × Enhancement style × fps × Resolution combination priced, generated and checked) | R-015, R-034, R-044, R-060, R-062, R-063, R-065, R-070, R-071, R-087, R-088, R-122, R-194 (changed); R-196 – R-204 (new); Q-3, Q-4 (answered); Q-23 – Q-25; `### Combinations` (36 rows); mapping `comparisons/20261110b_casebook-vs-spec-agent.mapping.json` |
 | REQ-011 (analysis: spec agent cases from the old 26.09_v2 export never override today's board; the 2K+ block dropped) | R-015, R-044, R-196, Q-13 |
 | REQ-012 (rulings, Android: no Pro+; no 「You're all set」 dialog) | R-005, R-072, R-074, Q-25 |
+| REQ-015 (table, Android: the 4 groups R1 missed — 1 fps default, purchase return, 2 Preview lags) | R-043 (1 fps, TC-052), R-077 (free route, TC-097), R-031, R-193 (recording; TC-042, TC-214, TC-216, TC-215), Q-27 |

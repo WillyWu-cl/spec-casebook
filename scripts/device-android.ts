@@ -31,6 +31,9 @@
 //                             script reads is matched against the Design screens still to capture, and a match is saved
 //                             as `design` would (one `design: captured …` line)
 //   shot NAME                 save <run dir>/screenshots/NAME.png (device pixels; adb screencap when no session)
+//   record start [max s] | record stop NAME
+//                             screen recording around a gesture (default limit 180 s) → <run dir>/recordings/NAME.mp4;
+//                             sample frames on the computer with ffmpeg (run-android.md, *Judging a drag*)
 //   els [filter]              visible elements (format above); filter matches anywhere in the line, case-insensitive
 //   texts [NAME]              the visible on-screen strings only (text and content-desc, ids dropped, duplicates merged),
 //                             top to bottom; with NAME also screenshots/NAME.png + NAME.txt
@@ -404,6 +407,22 @@ switch (cmd) {
       writeFileSync(p, execFileSync(ADB, ['-s', serial(), 'exec-out', 'screencap', '-p'], { maxBuffer: 64 * 1024 * 1024 })); }
     console.log(p);
     return p;
+  }
+  case 'record': {
+    // Screen recording for rows judged during a gesture (Preview following a drag, motion): one screenshot taken with
+    // the finger down shows one moment, not lag (video-enhance REQ-015, 2026-11-12). `record start` before the
+    // gesture, `record stop NAME` after; NAME.mp4 goes to <run dir>/recordings/ (local, never committed).
+    if (rest[0] === 'start') {
+      await s('POST', '/appium/start_recording_screen', { options: { timeLimit: String(+(rest[1] ?? 180)), bitRate: '8000000', forceRestart: true } });
+      console.log('recording'); break;
+    }
+    if (rest[0] === 'stop' && rest[1]) {
+      const dir = join(runDir, 'recordings'); mkdirSync(dir, { recursive: true });
+      const p = join(dir, `${rest[1]}.mp4`);
+      writeFileSync(p, Buffer.from((await s('POST', '/appium/stop_recording_screen', {})).value, 'base64'));
+      console.log(p); break;
+    }
+    throw new Error('usage: record start [max s] | record stop NAME');
   }
   case 'els': console.log(parseEls(await source(), rest[0]).join('\n')); break;
   case 'source': console.log(await source()); break;

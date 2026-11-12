@@ -1,27 +1,27 @@
-﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註,變更,變更原因
 TC-001,入口,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 這個安裝版從未按過「Demo」頁的「Don’t show again」
-3. Launcher 已開啟",在 Launcher 點大的捷徑「AI Video Enhance」,開啟 Demo 頁，標題是「AI Video Enhance」（不是「Video Enhance」）,P1,"R-001, R-004",Design 1005_Update 的用字是「AI Video Enhance」；PM 和 KP-010（實測版本）寫的是「Video Enhance」，以 Design 為準。Demo 相關的列要在 TC-014 之前跑，因為 TC-014 會讓這個安裝版永久不再顯示 Demo 頁。
+3. Launcher 已開啟",在 Launcher 點大的捷徑「AI Video Enhance」,開啟 Demo 頁，標題是「AI Video Enhance」（不是「Video Enhance」）,P1,"R-001, R-004",Design 1005_Update 的用字是「AI Video Enhance」；PM 和 KP-010（實測版本）寫的是「Video Enhance」，以 Design 為準。Demo 相關的列要在 TC-014 之前跑，因為 TC-014 會讓這個安裝版永久不再顯示 Demo 頁。,未變更,
 TC-002,入口,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. Demo 頁未按過「Don’t show again」","1. 點底部列的「AI Magic」
 2. 捲動到「AI Enhance」區塊
 3. 點「AI Video Enhance」卡片","「AI Enhance」區塊裡有「AI Video Enhance」
-點這張卡片會開啟 Demo 頁",P2,R-002,
+點這張卡片會開啟 Demo 頁",P2,R-002,,未變更,
 TC-003,入口,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 編輯器已開啟專案，時間軸上有一段 2:30 以內的影片片段","1. 點時間軸上的片段
 2. 點片段工具列的「AI Video Enhance」","直接開啟 AI Video Enhance 面板，預覽區就是那段片段
-不會出現 Demo 頁，也不會出現 Add Media",P1,"R-003, R-130",PM 把這個工具叫「Enhance」（pm-timeline），Design 畫的是「AI Video Enhance」。裁切範圍是否適用於時間軸片段，見 Q-10。
-TC-004,入口,編輯器已開啟專案，並選取一段影片片段,查看片段工具列上的「AI Video Enhance」工具,工具上有「Pro」標章，和「Fix Shake」的標章相同（Android 沒有「Pro+」）,P3,R-005,Design（Timeline_default）畫的是 iOS 的「Pro+」；Android 只賣 Free 和 Pro [Req: REQ-012; KP-006]。標章只在 Free 帳號才會顯示。
+不會出現 Demo 頁，也不會出現 Add Media",P1,"R-003, R-130",PM 把這個工具叫「Enhance」（pm-timeline），Design 畫的是「AI Video Enhance」。裁切範圍是否適用於時間軸片段，見 Q-10。,未變更,
+TC-004,入口,編輯器已開啟專案，並選取一段影片片段,查看片段工具列上的「AI Video Enhance」工具,工具上有「Pro」標章，和「Fix Shake」的標章相同（Android 沒有「Pro+」）,P3,R-005,Design（Timeline_default）畫的是 iOS 的「Pro+」；Android 只賣 Free 和 Pro [Req: REQ-012; KP-006]。標章只在 Free 帳號才會顯示。,未變更,
 TC-010,Demo 頁,"1. 從 Launcher 開啟 Demo 頁（TC-001）
 2. 沒有勾選「Don’t show again」",點「Try It Now」,"點之前，Demo 頁上有 ‹、「AI Video Enhance」、範例影片、說明文字、「Don’t show again」和「Try It Now」
-點下去後開啟「Add Media」，而且只有「Video」分頁",P1,"R-006, R-008, R-012",
-TC-011,Demo 頁,已開啟 Demo 頁,閱讀標題下方的說明文字,"說明文字是在講影片畫質提升（PM 建議文案「Make blurry, noisy or dark videos look sharp and clear.」），而不是 AI Reframe 的「AI reframe your video for any aspect ratio, then fine-tune the crop in real time.」",P3,R-007,Q-1：Design 畫面上還是 AI Reframe 的文字（PM A1 [衝突]）。如果顯示的是另一段影片畫質提升的文案，屬於 PM 要決定的問題，不算 bug。
+點下去後開啟「Add Media」，而且只有「Video」分頁",P1,"R-006, R-008, R-012",,未變更,
+TC-011,Demo 頁,已開啟 Demo 頁,閱讀標題下方的說明文字,"說明文字是在講影片畫質提升（PM 建議文案「Make blurry, noisy or dark videos look sharp and clear.」），而不是 AI Reframe 的「AI reframe your video for any aspect ratio, then fine-tune the crop in real time.」",P3,R-007,Q-1：Design 畫面上還是 AI Reframe 的文字（PM A1 [衝突]）。如果顯示的是另一段影片畫質提升的文案，屬於 PM 要決定的問題，不算 bug。,未變更,
 TC-012,Demo 頁,離開 Demo 頁時是點「Try It Now」，沒有勾選「Don’t show again」（TC-010）,"1. 回到 Launcher
-2. 點「AI Video Enhance」",Demo 頁會再次出現,P2,R-009,
+2. 點「AI Video Enhance」",Demo 頁會再次出現,P2,R-009,,未變更,
 TC-013,Demo 頁,從 Launcher 開啟 Demo 頁,"1. 勾選「Don’t show again」
 2. 點 Demo 頁上的 ‹
 3. 再次點 Launcher 上的「AI Video Enhance」","步驟 2 回到 Launcher，不會開啟 Add Media
-步驟 3 Demo 頁還是會出現（剛才的勾選沒有被儲存）",P3,"R-010, R-011",PM A1 [建議]（提案）：若結果不同，屬於 PM 要決定的問題。僅 PM 有寫，Design 還沒有對應畫面。
+步驟 3 Demo 頁還是會出現（剛才的勾選沒有被儲存）",P3,"R-010, R-011",PM A1 [建議]（提案）：若結果不同，屬於 PM 要決定的問題。僅 PM 有寫，Design 還沒有對應畫面。,未變更,
 TC-014,Demo 頁,"1. 從 Launcher 開啟 Demo 頁
 2. 其他 Demo 頁的列都已測完","1. 勾選「Don’t show again」
 2. 點「Try It Now」
@@ -29,11 +29,11 @@ TC-014,Demo 頁,"1. 從 Launcher 開啟 Demo 頁
 4. 點「AI Video Enhance」
 5. 回到 Launcher
 6. 開啟「AI Magic」 › 「AI Video Enhance」","步驟 4 和 6 會直接開啟 Add Media
-從 Launcher 或 AI Magic 進入都不會再出現 Demo 頁",P2,R-009,這一列會破壞 Demo 頁的測試狀態，所以放最後跑（這個設定存在本機，清除 App 資料才能重置，同時也會登出並清空 History）。
+從 Launcher 或 AI Magic 進入都不會再出現 Demo 頁",P2,R-009,這一列會破壞 Demo 頁的測試狀態，所以放最後跑（這個設定存在本機，清除 App 資料才能重置，同時也會登出並清空 History）。,未變更,
 TC-020,Add Media,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 從功能進入 Add Media
 3. 相簿裡有一支 12:30、1080p、60 fps 的影片",點那支影片的縮圖,"只有「Video」分頁，而且只能選一支影片
-點下去後立刻開啟面板，預覽區就是那支影片（沒有 Next 按鈕）",P1,"R-012, R-013",
+點下去後立刻開啟面板，預覽區就是那支影片（沒有 Next 按鈕）",P1,"R-012, R-013",,未變更,
 TC-255,Add Media,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 正在顯示 Demo 頁
 3. 「All / Recents」和至少一個有命名的相簿或資料夾裡都有影片
@@ -41,44 +41,44 @@ TC-255,Add Media,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 記下選擇器提供的每個影片來源：相簿／資料夾選單，以及來源分頁列上的每個分頁（滑動分頁列可看到隱藏的分頁）
 3. 依序開啟每個來源，點其中一支支援的影片，每次面板開啟後都回到 Add Media","步驟 1 開啟 Add Media
 步驟 2：列出每個本機相簿或資料夾，以及每個素材庫分頁（請記錄下來）
-步驟 3：每個來源都列得出影片，點選的影片都會開啟面板，預覽區就是那支影片",P3,"R-202, R-008, R-012",規格沒有寫：來自同事的版本，對應 spec agent 的 TC-VE2-153 [Req: REQ-008]（Design 的 Add Media 只畫一個「Video」分頁，內容是 Recents）。如果某個來源沒辦法匯入影片，就是 bug。
+步驟 3：每個來源都列得出影片，點選的影片都會開啟面板，預覽區就是那支影片",P3,"R-202, R-008, R-012",規格沒有寫：來自同事的版本，對應 spec agent 的 TC-VE2-153 [Req: REQ-008]（Design 的 Add Media 只畫一個「Video」分頁，內容是 Recents）。如果某個來源沒辦法匯入影片，就是 bug。,未變更,
 TC-256,Add Media,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 從功能進入 Add Media
 3. 網路已開啟","1. 把來源分頁列向左滑，直到出現「Pexels」
 2. 點「Pexels」
 3. 點一支 Pexels 影片","步驟 2 列出 Pexels 影片
-步驟 3 需要時會先下載影片，再開啟面板，預覽區就是那支影片",P3,"R-202, R-012",規格沒有寫：來自同事的版本，對應 spec agent 的 TC-VE2-155 [Req: REQ-008]（Design 的 Add Media 只畫一個「Video」分頁，內容是 Recents）。要滑的是分頁列本身，不是下方的影片格。
+步驟 3 需要時會先下載影片，再開啟面板，預覽區就是那支影片",P3,"R-202, R-012",規格沒有寫：來自同事的版本，對應 spec agent 的 TC-VE2-155 [Req: REQ-008]（Design 的 Add Media 只畫一個「Video」分頁，內容是 Recents）。要滑的是分頁列本身，不是下方的影片格。,未變更,
 TC-257,Add Media,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 從功能進入 Add Media
 3. 網路已開啟","1. 把來源分頁列向左滑，直到出現「Pixabay」
 2. 點「Pixabay」
 3. 點一支 Pixabay 影片","步驟 2 列出 Pixabay 影片
-步驟 3 需要時會先下載影片，再開啟面板，預覽區就是那支影片",P3,"R-202, R-012",規格沒有寫：來自同事的版本，對應 spec agent 的 TC-VE2-156 [Req: REQ-008]（Design 的 Add Media 只畫一個「Video」分頁，內容是 Recents）。要滑的是分頁列本身，不是下方的影片格。
+步驟 3 需要時會先下載影片，再開啟面板，預覽區就是那支影片",P3,"R-202, R-012",規格沒有寫：來自同事的版本，對應 spec agent 的 TC-VE2-156 [Req: REQ-008]（Design 的 Add Media 只畫一個「Video」分頁，內容是 Recents）。要滑的是分頁列本身，不是下方的影片格。,未變更,
 TC-258,Add Media,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 有一支影片只存在於某個有命名的相簿（例如「VE test」），不在最前面的 Recents 裡
 3. 從功能進入 Add Media","1. 開啟相簿／資料夾選單
 2. 點該命名相簿
 3. 點那支影片","步驟 2 列出該相簿裡的影片
-步驟 3 開啟面板，預覽區就是那支影片",P3,"R-202, R-012",規格沒有寫：對應 spec agent 的 TC-VE2-225 [Req: REQ-008]。
-TC-021,Add Media,從 Demo 頁開啟 Add Media,點 Add Media 上的 ‹,回到進入 Add Media 之前的那一頁（Demo 頁，或已勾選「Don’t show again」時的 Launcher）,P3,R-014,Q-9：規格有畫 ‹ 但沒有畫箭頭，目前假設是回到上一頁。
+步驟 3 開啟面板，預覽區就是那支影片",P3,"R-202, R-012",規格沒有寫：對應 spec agent 的 TC-VE2-225 [Req: REQ-008]。,未變更,
+TC-021,Add Media,從 Demo 頁開啟 Add Media,點 Add Media 上的 ‹,回到進入 Add Media 之前的那一頁（Demo 頁，或已勾選「Don’t show again」時的 Launcher）,P3,R-014,Q-9：規格有畫 ‹ 但沒有畫箭頭，目前假設是回到上一頁。,未變更,
 TC-022,Add Media,"1. 已開啟 Add Media
 2. 相簿裡有 1440p（2560 × 1440）、4K（3840 × 2160）、8K（7680 × 4320）的影片各一支，另有一支不到 1 秒的影片，以及一支不是 MP4 / MOV 的影片","1. 點 1440p 影片
 2. 點 4K 影片
 3. 點 8K 影片
 4. 點不到 1 秒的影片
 5. 點不是 MP4 / MOV 的影片","步驟 1–3：每支都和其他來源一樣開啟面板：預設選在「4K」（來源高於最高選項時取最高選項），預覽區顯示並播放該影片，右下角標章顯示來源本身的 fps 和解析度（例如「30fps · 1440p」、「30fps · 2160p」、「30fps · 4320p」）
-步驟 4–5：每支都是灰色的，點下去會顯示「This video isn't supported. Try one up to 4K.」，而且不會開啟面板",P2,"R-196, R-044, R-015",步驟 1–3：Design ds-ai-video-enhance 預設值規則「Resolution 依來源（選不低於來源解析度的最小選項；來源超過最高選項時取最高）」，查表 1081p → 4K [Req: REQ-011]；spec agent 的 2K+ 擋下規則（TC-VE2-097 / 098）依據的是 2026-10-07 匯出的舊版看板，已捨棄。PM E1 [待確認]（≤ 4K，超過 4K 灰色）比 Design 舊（Q-13），所以 8K 這一步若不一致仍要開單。步驟 4–5：PM E1 / A2 [建議] 和 [待確認]（Q-13），若不一致屬於 PM 要決定的問題。需要五個測試素材（fixtures.md）。
-TC-023,Add Media,相簿裡沒有任何影片（所有影片都已隱藏，或使用只有照片的測試機）,從功能進入 Add Media,Add Media 顯示空白狀態「No videos yet」,P3,R-016,PM A2 [建議]；需要沒有影片的相簿（暫緩：test-data）。
+步驟 4–5：每支都是灰色的，點下去會顯示「This video isn't supported. Try one up to 4K.」，而且不會開啟面板",P2,"R-196, R-044, R-015",步驟 1–3：Design ds-ai-video-enhance 預設值規則「Resolution 依來源（選不低於來源解析度的最小選項；來源超過最高選項時取最高）」，查表 1081p → 4K [Req: REQ-011]；spec agent 的 2K+ 擋下規則（TC-VE2-097 / 098）依據的是 2026-10-07 匯出的舊版看板，已捨棄。PM E1 [待確認]（≤ 4K，超過 4K 灰色）比 Design 舊（Q-13），所以 8K 這一步若不一致仍要開單。步驟 4–5：PM E1 / A2 [建議] 和 [待確認]（Q-13），若不一致屬於 PM 要決定的問題。需要五個測試素材（fixtures.md）。,未變更,
+TC-023,Add Media,相簿裡沒有任何影片（所有影片都已隱藏，或使用只有照片的測試機）,從功能進入 Add Media,Add Media 顯示空白狀態「No videos yet」,P3,R-016,PM A2 [建議]；需要沒有影片的相簿（暫緩：test-data）。,未變更,
 TC-030,面板版面與首次提示泡泡,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 這個安裝版從未開啟過面板
 3. 相簿裡有一支 12:30、1080p、60 fps 的影片","1. 在 Add Media 選那支影片
-2. 不碰畫面，等 4 秒",提示泡泡「Max 8 minutes. Drag to choose which part.」會自己出現在「Selected Length」旁，約 3 秒後自動消失,P2,R-022,首次使用的狀態：要在其他面板的列之前跑（清除 App 資料可以恢復）。PM B2 建議的文案「Choose up to 8 minutes…」輸給 Design，以 Design 為準。
+2. 不碰畫面，等 4 秒",提示泡泡「Max 8 minutes. Drag to choose which part.」會自己出現在「Selected Length」旁，約 3 秒後自動消失,P2,R-022,首次使用的狀態：要在其他面板的列之前跑（清除 App 資料可以恢復）。PM B2 建議的文案「Choose up to 8 minutes…」輸給 Design，以 Design 為準。,未變更,
 TC-031,面板版面與首次提示泡泡,"1. 已開啟面板
 2. 已看過首次提示泡泡","1. 點「Selected Length」旁的 ⓘ
 2. 3 秒內點畫面上任一處","步驟 1 會再次顯示泡泡「Max 8 minutes. Drag to choose which part.」
-步驟 2 泡泡立刻消失",P3,"R-022, R-024",
+步驟 2 泡泡立刻消失",P3,"R-022, R-024",,未變更,
 TC-032,面板版面與首次提示泡泡,TC-030 已完成,"1. 點 ‹ 回到 Add Media
-2. 再選一次影片",面板開啟後不會自動跳出泡泡,P2,R-023,
+2. 再選一次影片",面板開啟後不會自動跳出泡泡,P2,R-023,,未變更,
 TC-033,面板版面與首次提示泡泡,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 已開啟面板，影片是相簿裡 12:30、1080p、60 fps 的那支",由上到下檢查整個面板,"頂端列：‹、「AI Video Enhance」、顯示餘額的點數膠囊，以及 Recent task 圖示
 預覽區：右下角「60fps · 1080p」、「00:00/12:30」、播放與全螢幕按鈕
@@ -87,11 +87,11 @@ TC-033,面板版面與首次提示泡泡,"1. 以 Pro+ 帳號登入（Android 沒
 「Enhancement style ⓘ」有 Natural / Sharp
 「fps」有 30fps / 60fps / 120fps
 「Resolution」有 720p / 1080p / 4K（沒有 2K）
-CTA 按鈕是「Enhance ◆ <credits>」，下方有「Charge X credits per second」",P1,"R-020, R-021, R-045, R-070, R-192",
+CTA 按鈕是「Enhance ◆ <credits>」，下方有「Charge X credits per second」",P1,"R-020, R-021, R-045, R-070, R-192",,未變更,
 TC-259,面板版面與首次提示泡泡,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
-2. 相簿裡有一支 02:30.01（150.01 秒，長度已用 ffprobe 確認）的影片（為測試另外製作）",用這支影片開啟面板，查看預覽區的時間,預覽區時間顯示「00:00/02:31」（總長無條件進位），不是「00:00/02:30」,P3,R-199,規格沒有寫：來自 2026-10-21 使用者的需求，對應 spec agent 的 TC-VE2-276 [Req: REQ-008]。測試素材與 TC-262、TC-264 相同。
-TC-035,面板版面與首次提示泡泡,已開啟面板,點「Mode」旁的 ⓘ,跳出泡泡，內容是「Standard: Great quality · up to 8 min」和「Professional: Maximum detail · up to 2:30」,P3,R-025,"PM 1002 的「Great quality, quick results」和 PM 9/29 的「Standard: up to 8 minutes…」是較舊的版本。"
-TC-036,面板版面與首次提示泡泡,已開啟面板,點「Enhancement style」旁的 ⓘ,"跳出泡泡，內容是「Natural: Lighter enhancement with fewer artifacts, for a more realistic look」和「Sharp: Moderate enhancement for a sharp, clear image」",P3,R-026,
+2. 相簿裡有一支 02:30.01（150.01 秒，長度已用 ffprobe 確認）的影片（為測試另外製作）",用這支影片開啟面板，查看預覽區的時間,預覽區時間顯示「00:00/02:31」（總長無條件進位），不是「00:00/02:30」,P3,R-199,規格沒有寫：來自 2026-10-21 使用者的需求，對應 spec agent 的 TC-VE2-276 [Req: REQ-008]。測試素材與 TC-262、TC-264 相同。,未變更,
+TC-035,面板版面與首次提示泡泡,已開啟面板,點「Mode」旁的 ⓘ,跳出泡泡，內容是「Standard: Great quality · up to 8 min」和「Professional: Maximum detail · up to 2:30」,P3,R-025,"PM 1002 的「Great quality, quick results」和 PM 9/29 的「Standard: up to 8 minutes…」是較舊的版本。",未變更,
+TC-036,面板版面與首次提示泡泡,已開啟面板,點「Enhancement style」旁的 ⓘ,"跳出泡泡，內容是「Natural: Lighter enhancement with fewer artifacts, for a more realistic look」和「Sharp: Moderate enhancement for a sharp, clear image」",P3,R-026,,未變更,
 TC-037,面板版面與首次提示泡泡,已開啟面板並載入一支影片,"1. 點預覽區下方的播放
 2. 再點同一個按鈕（暫停）
 3. 等 3 秒
@@ -99,35 +99,48 @@ TC-037,面板版面與首次提示泡泡,已開啟面板並載入一支影片,"1
 5. 關閉全螢幕預覽","步驟 1 開始播放，時間往前走
 步驟 2 暫停，到步驟 3 結束為止時間和畫面都維持不動
 步驟 4 以全螢幕顯示
-步驟 5 回到面板，選取範圍和各項設定都沒有變",P3,"R-027, R-200",暫停：spec agent TC-VE2-163（通用播放器規則，Design 沒有畫）[Req: REQ-008]。
-TC-038,面板版面與首次提示泡泡,從 Add Media 進入面板，目前沒有任何處理中的工作,點面板頂端列的 ‹,回到 Add Media,P2,R-028,
+步驟 5 回到面板，選取範圍和各項設定都沒有變",P3,"R-027, R-200",暫停：spec agent TC-VE2-163（通用播放器規則，Design 沒有畫）[Req: REQ-008]。,未變更,
+TC-038,面板版面與首次提示泡泡,從 Add Media 進入面板，目前沒有任何處理中的工作,點面板頂端列的 ‹,回到 Add Media,P2,R-028,,未變更,
 TC-040,裁切與選取長度,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有一支 12:30、1080p、30 fps 的影片",在 Add Media 選這支影片,"選取範圍從 00:00 開始，「Selected Length」顯示「08:00」（mm:ss 格式）
-Mode 是 Standard",P1,R-030,PM 9/29 的「5m 00s / 8m max」和 B1 的「18s」格式輸給 Design，以 Design 為準（Q-19）。
+Mode 是 Standard",P1,R-030,PM 9/29 的「5m 00s / 8m max」和 B1 的「18s」格式輸給 Design，以 Design 為準（Q-19）。,未變更,
 TC-041,裁切與選取長度,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
-2. 相簿裡有一支 01:30、1080p、30 fps 的影片",在 Add Media 選這支影片,整支影片都被選取，「Selected Length」顯示「01:30」,P2,R-030,
-TC-042,裁切與選取長度,已用 12:30 的影片開啟面板，選取範圍是 00:00–08:00,把右側把手向左拖到約 06:00,"拖曳時預覽區會顯示右側把手所在位置的畫面
-「Selected Length」跟著變（約「06:00」），CTA 的價格也立刻降低",P1,"R-031, R-061",
+2. 相簿裡有一支 01:30、1080p、30 fps 的影片",在 Add Media 選這支影片,整支影片都被選取，「Selected Length」顯示「01:30」,P2,R-030,,未變更,
+TC-042,裁切與選取長度,已用 12:30 的影片開啟面板，選取範圍是 00:00–08:00,"1. 開始錄製螢幕
+2. 用 2–3 秒把右側把手向左拖到約 06:00
+3. 停止錄製","步驟 2：拖曳中每個取樣時間點，預覽區都顯示右側把手所在位置的畫面（畫面燒入的時間與把手時間一致，看不出延遲）
+步驟 2：「Selected Length」跟著變（結束時約「06:00」）
+步驟 2：CTA 的價格立刻降低",P1,"R-031, R-061",取證：錄下整段拖曳的螢幕畫面（run-android.md，*Judging a drag*）；測試影片的每一格都燒有時間碼。可接受的延遲見 Q-27（暫定：看不出延遲）。,修改,REQ-015：改為錄影，在拖曳過程中的多個時間點判斷，不再只看一張截圖；可接受的延遲列為 Q-27 詢問 PM（Spec Agent 的錄影顯示拖曳中預覽停在較早的畫面）
 TC-214,裁切與選取長度,"1. 已用 12:30 的影片開啟面板，選取範圍是 00:00–08:00
-2. 先記下 CTA 的價格",把左側把手向右拖到約 02:00,"拖曳時預覽區會顯示左側把手所在位置的畫面（時間約「02:00/12:30」）
-選取範圍變成約 02:00–08:00，「Selected Length」跟著變（約「06:00」），右側把手維持在 08:00，CTA 的價格立刻降低",P1,"R-031, R-061",與 TC-042 成對（分析第 11 輪：左右兩側的把手各是獨立的控制項）。
-TC-043,裁切與選取長度,已用 12:30 的影片開啟面板，選取範圍約 6:00 長,拖曳選取範圍的中間部分向右移動,整段範圍以相同長度一起移動（「Selected Length」不變），預覽區顯示選取範圍的第一個畫面,P2,R-032,
+2. 先記下 CTA 的價格","1. 開始錄製螢幕
+2. 用 2–3 秒把左側把手向右拖到約 02:00
+3. 停止錄製","步驟 2：拖曳中每個取樣時間點，預覽區都顯示左側把手所在位置的畫面（時間往「02:00/12:30」走，看不出延遲）
+步驟 2：選取範圍最後約為 02:00–08:00，「Selected Length」跟著變（約「06:00」）
+步驟 2：右側把手維持在 08:00
+步驟 2：CTA 的價格立刻降低",P1,"R-031, R-061",與 TC-042 成對（分析第 11 輪：左右兩側的把手各是獨立的控制項）。取證：錄下整段拖曳的螢幕畫面（run-android.md，*Judging a drag*）；測試影片的每一格都燒有時間碼。可接受的延遲見 Q-27（暫定：看不出延遲）。,修改,REQ-015：改為錄影，在拖曳過程中的多個時間點判斷，不再只看一張截圖；可接受的延遲列為 Q-27 詢問 PM（Spec Agent 的錄影顯示拖曳中預覽停在較早的畫面）
+TC-043,裁切與選取長度,已用 12:30 的影片開啟面板，選取範圍約 6:00 長,拖曳選取範圍的中間部分向右移動,整段範圍以相同長度一起移動（「Selected Length」不變），預覽區顯示選取範圍的第一個畫面,P2,R-032,,未變更,
 TC-215,裁切與選取長度,"1. 已用 12:30 的影片開啟面板，選取範圍是 00:00–08:00
 2. 先記下 CTA 的價格","1. 查看縮圖列
-2. 把「00:00」泡泡下方的 ◀▶ 圓鈕向右拖到約 03:00
-3. 再把圓鈕向左拖回約 01:00
-4. 手指不放開，來回左右拖曳圓鈕數次
-5. 在約 02:00 的位置放開","步驟 1：選取範圍起點有一條播放頭線，線上方有「00:00」泡泡，下方有 ◀▶ 圓鈕，預覽區顯示「00:00/12:30」
-步驟 2：播放頭往後移，泡泡和預覽區時間一起跟著變（約「03:00」和「03:00/12:30」），預覽區顯示該時間點的畫面
-步驟 3：往前移的反應相同（約「01:00」和「01:00/12:30」）
-步驟 4：泡泡、預覽區時間和畫面都隨圓鈕左右移動
-步驟 5：停在約「02:00」
-每個步驟中，兩側裁切把手、「Selected Length」的「08:00」和 CTA 的價格都維持不變",P2,"R-192, R-193",這個圓鈕（round/ic_btn_drag）是播放頭，不是裁切把手（分析第 11 輪，依看板圖片判斷其角色）。Q-21：播放頭可以拖到多遠，規格沒有寫。
-TC-044,裁切與選取長度,已用 12:30 的影片以 Standard 開啟面板，選取範圍是 00:00–06:00,把右側把手盡可能向右拖,把手停在 8:00（「Selected Length」顯示「08:00」），伴隨輕微震動，並跳出泡泡「Up to 8 minutes in Standard mode」,P2,"R-033, R-050",僅 PM 有寫，Design 還沒有對應畫面（PM 9/29 UI）。
+2. 開始錄製螢幕
+3. 把「00:00」泡泡下方的 ◀▶ 圓鈕向右拖到約 03:00
+4. 再把圓鈕向左拖回約 01:00
+5. 手指不放開，來回左右拖曳圓鈕數次
+6. 在約 02:00 的位置放開
+7. 停止錄製","步驟 1：選取範圍起點有一條播放頭線，線上方有「00:00」泡泡，下方有 ◀▶ 圓鈕
+步驟 1：預覽區顯示「00:00/12:30」
+步驟 3：播放頭往後移
+步驟 3：每個取樣時間點，泡泡、預覽區時間和畫面燒入的時間都一致（結束時約「03:00」和「03:00/12:30」，看不出延遲）
+步驟 4：往前移的反應相同（約「01:00」和「01:00/12:30」）
+步驟 5：每個取樣時間點，泡泡、預覽區時間和畫面都隨圓鈕左右移動
+步驟 6：停在約「02:00」
+步驟 3–6：兩側裁切把手、「Selected Length」的「08:00」和 CTA 的價格都維持不變",P2,"R-192, R-193",這個圓鈕（round/ic_btn_drag）是播放頭，不是裁切把手（分析第 11 輪，依看板圖片判斷其角色）。Q-21：播放頭可以拖到多遠，規格沒有寫。取證：錄下整段拖曳的螢幕畫面（run-android.md，*Judging a drag*）；測試影片的每一格都燒有時間碼。可接受的延遲見 Q-27（暫定：看不出延遲）。,修改,REQ-015：改為錄影，在拖曳過程中的多個時間點判斷，不再只看一張截圖；可接受的延遲列為 Q-27 詢問 PM（Spec Agent 的錄影顯示拖曳中預覽停在較早的畫面）
+TC-044,裁切與選取長度,已用 12:30 的影片以 Standard 開啟面板，選取範圍是 00:00–06:00,把右側把手盡可能向右拖,把手停在 8:00（「Selected Length」顯示「08:00」），伴隨輕微震動，並跳出泡泡「Up to 8 minutes in Standard mode」,P2,"R-033, R-050",僅 PM 有寫，Design 還沒有對應畫面（PM 9/29 UI）。,未變更,
 TC-216,裁切與選取長度,"1. 已用 12:30 的影片以 Standard 開啟面板
-2. 選取範圍已移動並裁切為 06:30–12:30（「06:00」）",把左側把手盡可能向左拖,"拖曳時預覽區顯示左側把手所在位置的畫面（時間隨把手往回走，到約「04:30/12:30」）
-左側把手停在 04:30（「Selected Length」顯示「08:00」），伴隨輕微震動，並跳出泡泡「Up to 8 minutes in Standard mode」
-右側把手維持在 12:30",P2,"R-033, R-050, R-031",與 TC-044 成對，改測左側把手。僅 PM 有寫，Design 還沒有對應畫面（PM 9/29 UI）。
+2. 選取範圍已移動並裁切為 06:30–12:30（「06:00」）","1. 開始錄製螢幕
+2. 用 2–3 秒把左側把手盡可能向左拖
+3. 停止錄製","步驟 2：拖曳中每個取樣時間點，預覽區都顯示左側把手所在位置的畫面（時間隨把手往回走，到約「04:30/12:30」，看不出延遲）
+步驟 2：左側把手停在 04:30（「Selected Length」顯示「08:00」），伴隨輕微震動，並跳出泡泡「Up to 8 minutes in Standard mode」
+步驟 2：右側把手維持在 12:30",P2,"R-033, R-050, R-031",與 TC-044 成對，改測左側把手。僅 PM 有寫，Design 還沒有對應畫面（PM 9/29 UI）。取證：錄下整段拖曳的螢幕畫面（run-android.md，*Judging a drag*）；測試影片的每一格都燒有時間碼。可接受的延遲見 Q-27（暫定：看不出延遲）。,修改,REQ-015：改為錄影，在拖曳過程中的多個時間點判斷，不再只看一張截圖；可接受的延遲列為 Q-27 詢問 PM（Spec Agent 的錄影顯示拖曳中預覽停在較早的畫面）
 TC-045,裁切與選取長度,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 08:00（480 秒）和 12:30（750 秒）的影片各一支","1. 用 08:00 的影片開啟面板（Standard）
 2. 把右側把手向左拖，直到「Selected Length」顯示「02:00」
@@ -144,7 +157,7 @@ TC-045,裁切與選取長度,"1. 以 Pro+ 帳號登入（Android 沒有等級切
 步驟 5：08:00 的縮圖列再次填滿寬度
 步驟 6–7：12:30 的縮圖列可左右捲動，8:00 填滿一個寬度
 步驟 9–10：縮圖列重新排列為每個寬度 2:30
-每個步驟中縮圖都依時間順序排列，選取範圍的起點、終點和長度都不變（設定成 00:00–02:00 之後維持此範圍）",P3,"R-034, R-051",Q-24：依 spec agent 對 PM 9/29 ⑥ 的解讀（TC-VE2-026、TC-VE2-265、TC-VE2-267），等 PM 確認 [Req: REQ-008]；在 PM 確認前，若排列方式不同屬於 PM 要決定的問題。僅 PM 有寫，Design 還沒有對應畫面。
+每個步驟中縮圖都依時間順序排列，選取範圍的起點、終點和長度都不變（設定成 00:00–02:00 之後維持此範圍）",P3,"R-034, R-051",Q-24：依 spec agent 對 PM 9/29 ⑥ 的解讀（TC-VE2-026、TC-VE2-265、TC-VE2-267），等 PM 確認 [Req: REQ-008]；在 PM 確認前，若排列方式不同屬於 PM 要決定的問題。僅 PM 有寫，Design 還沒有對應畫面。,未變更,
 TC-264,裁切與選取長度,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 02:30.01（150.01 秒）和 08:01（481 秒）的影片各一支（為測試另外製作）","1. 用 02:30.01 的影片開啟面板（Standard）
 2. 把右側把手向左拖，直到「Selected Length」顯示「02:00」
@@ -158,96 +171,101 @@ TC-264,裁切與選取長度,"1. 以 Pro+ 帳號登入（Android 沒有等級切
 步驟 3–4：Professional 下影片超過 2:30，所以縮圖列重新排列為每個寬度 2:30，可以稍微左右捲動
 步驟 5–6：08:01 的縮圖列可左右捲動，每個寬度 8:00
 步驟 8–9：重新排列為每個寬度 2:30
-每次切換 Mode，縮圖都依時間順序排列，選取範圍維持 00:00–02:00",P3,"R-034, R-051",Mode 上限再加 1 秒的邊界情況（spec agent TC-VE2-264、TC-VE2-266）[Req: REQ-008]。Q-24 同 TC-045。需要這兩支測試素材。
-TC-046,裁切與選取長度,已用 01:30 的影片開啟面板,把右側把手盡可能向左側把手拖近,選取範圍不能短於 1 秒,P3,R-035,PM B1 [建議]（提案）。
+每次切換 Mode，縮圖都依時間順序排列，選取範圍維持 00:00–02:00",P3,"R-034, R-051",Mode 上限再加 1 秒的邊界情況（spec agent TC-VE2-264、TC-VE2-266）[Req: REQ-008]。Q-24 同 TC-045。需要這兩支測試素材。,未變更,
+TC-046,裁切與選取長度,已用 01:30 的影片開啟面板,把右側把手盡可能向左側把手拖近,選取範圍不能短於 1 秒,P3,R-035,PM B1 [建議]（提案）。,未變更,
 TC-217,裁切與選取長度,已用 01:30 的影片開啟面板,把左側把手盡可能向右側把手拖近,"選取範圍不能短於 1 秒
-右側把手維持在原位",P3,R-035,與 TC-046 成對，改測左側把手。PM B1 [建議]（提案）。
+右側把手維持在原位",P3,R-035,與 TC-046 成對，改測左側把手。PM B1 [建議]（提案）。,未變更,
 TC-050,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
-2. 相簿裡有一支 01:30、1080p、60 fps 的影片",在 Add Media 選這支影片,Mode 預設選「Standard」，Enhancement style 預設選「Natural」,P1,"R-040, R-041",
+2. 相簿裡有一支 01:30、1080p、60 fps 的影片",在 Add Media 選這支影片,Mode 預設選「Standard」，Enhancement style 預設選「Natural」,P1,"R-040, R-041",,未變更,
 TC-051,預設設定,"1. 已開啟面板
 2. 選取範圍在 2:30 以內","1. 選「Professional」和「Sharp」
 2. 點 ‹ 回到 Add Media
-3. 選另一支影片",面板開啟後又是「Standard」和「Natural」（預設值是固定的，不會記住上次的選擇）,P2,R-042,PM §4.3 的「記住上次」和 PM B3 [衝突] 的提案輸給 Design 的預設值規則和 PM 1002 的規則，以後者為準。
+3. 選另一支影片",面板開啟後又是「Standard」和「Natural」（預設值是固定的，不會記住上次的選擇）,P2,R-042,PM §4.3 的「記住上次」和 PM B3 [衝突] 的提案輸給 Design 的預設值規則和 PM 1002 的規則，以後者為準。,未變更,
 TC-052,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
-2. 相簿裡有 24 fps 和 30 fps 的影片各一支","1. 用 24 fps 的影片開啟面板
-2. 返回，改用 30 fps 的影片開啟","兩次都預設選「30fps」
-預覽區標籤分別顯示「24fps · …」和「30fps · …」",P1,"R-043, R-021",
+2. 相簿裡有 1 fps（ve-fps1-1080p）、24 fps 和 30 fps 的影片各一支","1. 用 1 fps 的影片開啟面板
+2. 返回，改用 24 fps 的影片開啟
+3. 返回，改用 30 fps 的影片開啟","步驟 1：預設選「30fps」，fps 選項和其他 1–30 fps 的來源一樣可以點選
+步驟 1：預覽區標籤顯示「1fps · …」
+步驟 2：預設選「30fps」
+步驟 2：預覽區標籤顯示「24fps · …」
+步驟 3：預設選「30fps」
+步驟 3：預覽區標籤顯示「30fps · …」",P1,"R-043, R-021",1 fps 是 R-043「1–30」區間的最低值（analysis.md 第 4 輪：範圍的兩個外端都要測）[Req: REQ-015]；Spec Agent 用 1 fps 的來源時，沒有任何 fps 被選取，所有 fps 選項都不能點。,修改,REQ-015：加測 1 fps 來源，也就是 R-043「1–30」區間的下端；R1 只測了區間交界
 TC-053,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 50 fps 和 60 fps 的影片各一支","1. 用 50 fps 的影片開啟面板
-2. 返回，改用 60 fps 的影片開啟",兩次都預設選「60fps」,P1,R-043,
+2. 返回，改用 60 fps 的影片開啟",兩次都預設選「60fps」,P1,R-043,,未變更,
 TC-054,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 120 fps 和 240 fps（慢動作）的影片各一支","1. 用 120 fps 的影片開啟面板
-2. 返回，改用 240 fps 的影片開啟",兩次都預設選「120fps」（來源高於最高選項時取最高選項）,P2,R-043,
+2. 返回，改用 240 fps 的影片開啟",兩次都預設選「120fps」（來源高於最高選項時取最高選項）,P2,R-043,,未變更,
 TC-055,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 31 fps 和 61 fps 的影片各一支（為測試另外製作）","1. 用 31 fps 的影片開啟面板
-2. 返回，改用 61 fps 的影片開啟",31 fps 預設選「60fps」，61 fps 預設選「120fps」（選不低於來源的最小選項）,P3,R-043,"這是 Design 查表規則的邊界值。PM 1002 的「nearest, tie lower」（取最近、同距取低）會得到 30fps / 60fps，以 Design 為準。需要這兩支測試素材。"
+2. 返回，改用 61 fps 的影片開啟",31 fps 預設選「60fps」，61 fps 預設選「120fps」（選不低於來源的最小選項）,P3,R-043,"這是 Design 查表規則的邊界值。PM 1002 的「nearest, tie lower」（取最近、同距取低）會得到 30fps / 60fps，以 Design 為準。需要這兩支測試素材。",未變更,
 TC-056,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 480p 和 720p 的影片各一支","1. 用 480p 的影片開啟面板
-2. 返回，改用 720p 的影片開啟",兩次都預設選「720p」,P1,R-044,
+2. 返回，改用 720p 的影片開啟",兩次都預設選「720p」,P1,R-044,,未變更,
 TC-057,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 900p（例如 1600×900）和 1080p 的影片各一支","1. 用 900p 的影片開啟面板
-2. 返回，改用 1080p 的影片開啟",兩次都預設選「1080p」,P1,R-044,"PM B3 的「nearest, tie lower」會讓 900p 變成 720p（解析度反而降低）；以 Design 的規則（不低於來源）為準。"
+2. 返回，改用 1080p 的影片開啟",兩次都預設選「1080p」,P1,R-044,"PM B3 的「nearest, tie lower」會讓 900p 變成 720p（解析度反而降低）；以 Design 的規則（不低於來源）為準。",未變更,
 TC-058,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 1081p（例如 1920 × 1081，為測試另外製作）和 1200p（1920 × 1200）的影片各一支","1. 用 1081p 的影片開啟面板
-2. 返回，改用 1200p 的影片開啟",兩次開啟面板後都預設選「4K」（來源從 1081p 到不足 2K，預設都是 4K）,P2,R-044,1440p、4K 和 8K 的來源預設也是 4K（R-196、TC-022 步驟 1–3）：Design ds-ai-video-enhance 預設值規則「Resolution 依來源（選不低於來源解析度的最小選項；來源超過最高選項時取最高）」，查表 1081p → 4K [Req: REQ-011]。需要這兩支測試素材。
+2. 返回，改用 1200p 的影片開啟",兩次開啟面板後都預設選「4K」（來源從 1081p 到不足 2K，預設都是 4K）,P2,R-044,1440p、4K 和 8K 的來源預設也是 4K（R-196、TC-022 步驟 1–3）：Design ds-ai-video-enhance 預設值規則「Resolution 依來源（選不低於來源解析度的最小選項；來源超過最高選項時取最高）」，查表 1081p → 4K [Req: REQ-011]。需要這兩支測試素材。,未變更,
 TC-059,預設設定,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
-2. 相簿裡有一支直式 1080×1920 的影片",用這支影片開啟面板,預設選「1080p」（以短邊判斷）,P3,R-044,Q-5：這是依 PM B3 做的假設；開單前先在裝置上確認，並和使用者討論後再決定。
+2. 相簿裡有一支直式 1080×1920 的影片",用這支影片開啟面板,預設選「1080p」（以短邊判斷）,P3,R-044,Q-5：這是依 PM B3 做的假設；開單前先在裝置上確認，並和使用者討論後再決定。,未變更,
 TC-061,設定選項,"1. 已開啟面板，目前選的是「Natural」
 2. 先記下 CTA 的價格","1. 點「Sharp」
 2. 點「Natural」","每次點選都會選取被點的選項、取消另一個
-CTA 的價格維持不變（風格不影響價格）",P2,"R-046, R-062",
+CTA 的價格維持不變（風格不影響價格）",P2,"R-046, R-062",,未變更,
 TC-062,設定選項,已用 60 fps 的影片開啟面板（目前選「60fps」）,點另一個沒有被停用的 fps 選項,"該選項被選取，「60fps」取消選取
-fps 一次只會選一個",P2,R-046,
+fps 一次只會選一個",P2,R-046,,未變更,
 TC-063,設定選項,"1. 已用 1080p 的影片開啟面板（目前選「1080p」）
 2. 先記下 CTA 的價格",點「4K」（如果 4K 被停用，就改點「720p」）,"被點的選項被選取，「1080p」取消選取
-CTA 的價格和「Charge X credits per second」會變成該解析度的費率",P2,"R-046, R-065",
-TC-064,設定選項,已開啟面板，且目前的 Mode 下有 fps 或 Resolution 選項是停用（灰色）的,點被停用的選項,沒有任何變化：選取狀態維持原樣，也不會跳出提示訊息,P3,R-047,Q-6：哪些組合要停用還在等結果（BytePlus）；PM B5 寫的是點下去會跳出提示。如果這個版本沒有任何選項被停用，就不跑這一列（並記錄下來）。
+CTA 的價格和「Charge X credits per second」會變成該解析度的費率",P2,"R-046, R-065",,未變更,
+TC-064,設定選項,已開啟面板，且目前的 Mode 下有 fps 或 Resolution 選項是停用（灰色）的,點被停用的選項,沒有任何變化：選取狀態維持原樣，也不會跳出提示訊息,P3,R-047,Q-6：哪些組合要停用還在等結果（BytePlus）；PM B5 寫的是點下去會跳出提示。如果這個版本沒有任何選項被停用，就不跑這一列（並記錄下來）。,未變更,
 TC-070,Mode 長度上限,"1. 已用 12:30 的影片開啟面板，Standard 下選取範圍約 02:00
 2. 先記下 CTA 的價格","1. 點「Professional」
 2. 點「Standard」","每次點選都會立即切換 Mode
-選取範圍和「Selected Length」不變，只有 CTA 的價格會變",P1,"R-051, R-046",
+選取範圍和「Selected Length」不變，只有 CTA 的價格會變",P1,"R-051, R-046",,未變更,
 TC-071,Mode 長度上限,已用 12:30 的影片以 Standard 開啟面板，選取範圍是 00:30–05:30（「05:00」）,點「Professional」,"點之前「Professional」看起來是正常狀態（沒有被停用）
 點下去會跳出提示「Professional supports clips up to 2:30. Shorten your selection to switch.」，約 3 秒後消失
-Mode 維持「Standard」，選取範圍也不會被縮短或移動：仍然是 00:30 開始、05:30 結束，顯示「05:00」",P1,R-052,依 Design 「Mode 長度上限」的畫面。PM 9/29 ③ 的提示「Professional mode supports up to 2m 30s…」（spec agent 的 TC-VE2-228、TC-VE2-230、TC-VE2-268 引用的版本）和草稿 B1-1 ② 的自動縮短，都輸給 Design，以 Design 為準。
+Mode 維持「Standard」，選取範圍也不會被縮短或移動：仍然是 00:30 開始、05:30 結束，顯示「05:00」",P1,R-052,依 Design 「Mode 長度上限」的畫面。PM 9/29 ③ 的提示「Professional mode supports up to 2m 30s…」（spec agent 的 TC-VE2-228、TC-VE2-230、TC-VE2-268 引用的版本）和草稿 B1-1 ② 的自動縮短，都輸給 Design，以 Design 為準。,未變更,
 TC-073,Mode 長度上限,TC-071 已完成（Standard，選取 05:00）,"1. 拖曳右側把手，直到「Selected Length」顯示「02:20」
 2. 點「Professional」","Mode 切換成「Professional」，沒有提示訊息
-選取範圍維持 02:20",P1,R-053,
-TC-074,Mode 長度上限,已選 Professional，選取範圍 02:20,把右側把手盡可能向右拖,把手停在 2:30（「02:30」），伴隨輕微震動，並跳出泡泡「Up to 2m 30s in Professional mode」,P2,"R-054, R-033",
+選取範圍維持 02:20",P1,R-053,,未變更,
+TC-074,Mode 長度上限,已選 Professional，選取範圍 02:20,把右側把手盡可能向右拖,把手停在 2:30（「02:30」），伴隨輕微震動，並跳出泡泡「Up to 2m 30s in Professional mode」,P2,"R-054, R-033",,未變更,
 TC-218,Mode 長度上限,"1. 已用 12:30 的影片開啟面板
 2. 選了 Professional，選取範圍是 05:00–07:20（「02:20」）",把左側把手盡可能向左拖,"左側把手停在 04:50（「Selected Length」顯示「02:30」），伴隨輕微震動，並跳出泡泡「Up to 2m 30s in Professional mode」
-右側把手維持在 07:20",P2,"R-054, R-033",與 TC-074 成對，改測左側把手。
+右側把手維持在 07:20",P2,"R-054, R-033",與 TC-074 成對，改測左側把手。,未變更,
 TC-075,Mode 長度上限,已選 Professional，選取範圍 02:30,"1. 點「Standard」
 2. 把右側把手再往右拖","步驟 1 選取範圍維持 02:30
-步驟 2 可以拉長到超過 2:30，最長到 8:00",P2,R-055,
+步驟 2 可以拉長到超過 2:30，最長到 8:00",P2,R-055,,未變更,
 TC-076,Mode 長度上限,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有一支長 2:30.4 的影片（為測試另外製作）","1. 用這支影片開啟面板（Standard 下整支影片都被選取）
-2. 點「Professional」",跳出提示「Professional supports clips up to 2:30. Shorten your selection to switch.」，Mode 維持 Standard（2:30.4 算 151 秒）,P3,R-056,
+2. 點「Professional」",跳出提示「Professional supports clips up to 2:30. Shorten your selection to switch.」，Mode 維持 Standard（2:30.4 算 151 秒）,P3,R-056,,未變更,
 TC-263,Mode 長度上限,已用 12:30 的影片以 Standard 開啟面板，選取範圍 00:00–08:00,"1. 把右側把手向左拖，直到「Selected Length」顯示「02:31」
 2. 點「Professional」
 3. 把右側把手向左拖，直到「Selected Length」顯示「02:30」
 4. 點「Professional」","步驟 2：跳出提示「Professional supports clips up to 2:30. Shorten your selection to switch.」，約 3 秒後消失，Mode 維持「Standard」，選取範圍維持 00:00–02:31
-步驟 4：Mode 切換成「Professional」，沒有提示訊息，選取範圍維持 00:00–02:30",P2,"R-052, R-053, R-050",151 秒 / 150 秒的邊界值（spec agent TC-VE2-227、TC-VE2-228）[Req: REQ-008]；他們用的提示文案是 PM 9/29 的版本，Design 的文案比較新。
+步驟 4：Mode 切換成「Professional」，沒有提示訊息，選取範圍維持 00:00–02:30",P2,"R-052, R-053, R-050",151 秒 / 150 秒的邊界值（spec agent TC-VE2-227、TC-VE2-228）[Req: REQ-008]；他們用的提示文案是 PM 9/29 的版本，Design 的文案比較新。,未變更,
 TC-260,Mode 長度上限,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 00:01（1 秒）和 00:30 的影片各一支（720p、30 fps）","1. 用 00:01 的影片開啟面板
 2. 點「Professional」
 3. 返回，改用 00:30 的影片開啟面板
 4. 點「Professional」","步驟 1 和 3：面板以「Standard」開啟，整支影片都被選取（「00:01」、「00:30」）
-步驟 2 和 4：Mode 切換成「Professional」，沒有提示訊息，選取範圍不變",P3,"R-197, R-040, R-030, R-051",spec agent 的 TC-VE2-245 / TC-VE2-246 預期面板一開啟就是 Professional（PM 9/29 ①）；比較新的 Design 預設值規則是每個入口都以 Standard 開啟（R-040），所以邊界值改在切換 Mode 時檢查 [Req: REQ-008]。
+步驟 2 和 4：Mode 切換成「Professional」，沒有提示訊息，選取範圍不變",P3,"R-197, R-040, R-030, R-051",spec agent 的 TC-VE2-245 / TC-VE2-246 預期面板一開啟就是 Professional（PM 9/29 ①）；比較新的 Design 預設值規則是每個入口都以 Standard 開啟（R-040），所以邊界值改在切換 Mode 時檢查 [Req: REQ-008]。,未變更,
 TC-261,Mode 長度上限,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 02:29.99（149.99 秒）和 02:30（150 秒）的影片各一支（為測試另外製作）","1. 用 02:29.99 的影片開啟面板
 2. 點「Professional」
 3. 返回，改用 02:30 的影片開啟面板
 4. 點「Professional」","步驟 1 和 3：面板以「Standard」開啟，整支影片都被選取
-步驟 2 和 4：Mode 切換成「Professional」，沒有提示訊息，選取範圍不變（149.99 秒進位成 150 秒，仍在 2:30 以內）",P2,"R-197, R-040, R-051, R-056",spec agent 的 TC-VE2-247 / TC-VE2-248 預期面板一開啟就是 Professional（PM 9/29 ①）；比較新的 Design 是每個入口都以 Standard 開啟（R-040）[Req: REQ-008]。
+步驟 2 和 4：Mode 切換成「Professional」，沒有提示訊息，選取範圍不變（149.99 秒進位成 150 秒，仍在 2:30 以內）",P2,"R-197, R-040, R-051, R-056",spec agent 的 TC-VE2-247 / TC-VE2-248 預期面板一開啟就是 Professional（PM 9/29 ①）；比較新的 Design 是每個入口都以 Standard 開啟（R-040）[Req: REQ-008]。,未變更,
 TC-262,Mode 長度上限,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有 02:30.01（150.01 秒）和 12:30（750 秒）的影片各一支","1. 用 02:30.01 的影片開啟面板
 2. 點「Professional」
 3. 返回，改用 12:30 的影片開啟面板
 4. 點「Professional」","步驟 1：面板以「Standard」開啟，整支影片都被選取
 步驟 3：以「Standard」開啟，選取範圍是 00:00–08:00
-步驟 2 和 4：跳出提示「Professional supports clips up to 2:30. Shorten your selection to switch.」，Mode 維持「Standard」，選取範圍不變（150.01 秒算 151 秒）",P2,"R-197, R-040, R-052, R-056",spec agent 的 TC-VE2-249 / TC-VE2-250 預期面板一開啟就是 Professional 並選取 2:30（PM 9/29 ①）；比較新的 Design 是每個入口都以 Standard 開啟（R-040），提示文案也是 Design 的比較新 [Req: REQ-008]。
+步驟 2 和 4：跳出提示「Professional supports clips up to 2:30. Shorten your selection to switch.」，Mode 維持「Standard」，選取範圍不變（150.01 秒算 151 秒）",P2,"R-197, R-040, R-052, R-056",spec agent 的 TC-VE2-249 / TC-VE2-250 預期面板一開啟就是 Professional 並選取 2:30（PM 9/29 ①）；比較新的 Design 是每個入口都以 Standard 開啟（R-040），提示文案也是 Design 的比較新 [Req: REQ-008]。,未變更,
 TC-080,點數價格,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
-2. 相簿裡有一支長 00:03.96、1080p、30 fps 的影片",用這支影片開啟面板（整支影片、Standard、Natural、30fps、1080p）,CTA 顯示「Enhance ◆ 8」（3.96 秒進位成 4 秒 × 2 點），下方是「Charge 2 credits per second」,P1,"R-060, R-063",點數數字是硬性規定（formats.md）：價格不同就是 bug。
+2. 相簿裡有一支長 00:03.96、1080p、30 fps 的影片",用這支影片開啟面板（整支影片、Standard、Natural、30fps、1080p）,CTA 顯示「Enhance ◆ 8」（3.96 秒進位成 4 秒 × 2 點），下方是「Charge 2 credits per second」,P1,"R-060, R-063",點數數字是硬性規定（formats.md）：價格不同就是 bug。,未變更,
 TC-269,點數價格,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 相簿裡有長度分別為 00:00.9、00:01、00:01.01、00:02.99、00:03、00:03.99、02:59.01、02:59.99 和 03:00 的影片（長度已用 ffprobe 確認），全部是 720p、30 fps（為測試另外製作）","1. 在 Add Media 點 00:00.9 的影片
 2. 依序用其他每支影片開啟面板（整支影片，Standard / Natural / 30fps / 720p = 每秒 1 點），查看 CTA","步驟 1：0.9 秒的影片是灰色的，點下去顯示「This video isn't supported. Try one up to 4K.」（不到 1 秒，R-015）
@@ -258,10 +276,10 @@ TC-269,點數價格,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2.99 秒「Enhance ◆ 3」
 3 秒「Enhance ◆ 3」
 3.99 秒「Enhance ◆ 4」
-179.01 秒、179.99 秒和 180 秒都是「Enhance ◆ 180」",P2,"R-060, R-063, R-015",對應 spec agent 的 TC-VE2-175 – TC-VE2-184 的進位邊界值 [Req: REQ-008]（Standard / Natural / 30fps / 720p 的 ECL 費率是 1）。他們的 0.9 秒案例計價 1 點，並註明「subject to a separately confirmed minimum rule」（須另行確認最低限制）：我們的最低限制是 R-015 / R-035（不能選不到 1 秒的範圍）。點數數字是硬性規定。需要這九支測試素材。
+179.01 秒、179.99 秒和 180 秒都是「Enhance ◆ 180」",P2,"R-060, R-063, R-015",對應 spec agent 的 TC-VE2-175 – TC-VE2-184 的進位邊界值 [Req: REQ-008]（Standard / Natural / 30fps / 720p 的 ECL 費率是 1）。他們的 0.9 秒案例計價 1 點，並註明「subject to a separately confirmed minimum rule」（須另行確認最低限制）：我們的最低限制是 R-015 / R-035（不能選不到 1 秒的範圍）。點數數字是硬性規定。需要這九支測試素材。,未變更,
 TC-083,點數價格,已用 00:03.96、1080p、30 fps 的影片以 Standard 開啟面板（「Enhance ◆ 8」、「Charge 2 credits per second」）,"1. 點「Professional」
 2. 點「Standard」","步驟 1：CTA 顯示「Enhance ◆ 16」，下方是「Charge 4 credits per second」（4 秒 × 4，Professional 1080p 30fps）
-步驟 2：回到「Enhance ◆ 8」和「Charge 2 credits per second」",P2,"R-065, R-064, R-063",ECL 費率表（表單 22061491221；spec agent TC-VE2-115、TC-VE2-133）[Req: REQ-008]；點數數字是硬性規定。
+步驟 2：回到「Enhance ◆ 8」和「Charge 2 credits per second」",P2,"R-065, R-064, R-063",ECL 費率表（表單 22061491221；spec agent TC-VE2-115、TC-VE2-133）[Req: REQ-008]；點數數字是硬性規定。,未變更,
 TC-087,點數價格,已用 00:03.96、1080p、30 fps 的影片以 Standard 開啟面板（「Enhance ◆ 8」）,"1. 點「60fps」
 2. 點「120fps」
 3. 點「4K」
@@ -276,135 +294,140 @@ TC-087,點數價格,已用 00:03.96、1080p、30 fps 的影片以 Standard 開�
 步驟 6：「Enhance ◆ 48」（Professional 4K 30fps，每秒 12 點）
 步驟 7：「Enhance ◆ 96」（每秒 24 點）
 步驟 8：「Enhance ◆ 192」（每秒 48 點）
-每次點選後，「Charge X credits per second」都會顯示對應的費率",P2,"R-065, R-063, R-064",ECL 費率表（表單 22061491221；spec agent TC-VE2-117 – TC-VE2-149）[Req: REQ-008]：輸出的 fps 選項會決定任務價格（Q-3 已有答案）。點數數字是硬性規定。如果某個選項是停用的（Q-6），記錄下來並跳過該步驟。
+每次點選後，「Charge X credits per second」都會顯示對應的費率",P2,"R-065, R-063, R-064",ECL 費率表（表單 22061491221；spec agent TC-VE2-117 – TC-VE2-149）[Req: REQ-008]：輸出的 fps 選項會決定任務價格（Q-3 已有答案）。點數數字是硬性規定。如果某個選項是停用的（Q-6），記錄下來並跳過該步驟。,未變更,
 TC-090,使用資格與購買,"1. 以 Free 帳號登入（Android 沒有等級切換，等級由帳號決定）
 2. 已開啟面板並載入一支影片","1. 查看 CTA
 2. 點 CTA","步驟 1：CTA 是解鎖 Pro 的按鈕，不顯示價格（例如「Unlock Pro to Enhance」），不是「Unlock Pro+ to Enhance」，下方有「Charge X credits per second」
-步驟 2：開啟 IAP 頁，停在「Pro」分頁（Pro 方案）",P1,"R-070, R-071",Android 的等級依據 2026-10-07 同事的回饋（spec agent TC-VE2-040、TC-VE2-041）[Req: REQ-008]，比 Design 和 PM 9/24 新；後兩者寫的是 Pro+（現在只適用 iOS）。Android 的確切文案見 Q-25，只記錄不判定。
+步驟 2：開啟 IAP 頁，停在「Pro」分頁（Pro 方案）",P1,"R-070, R-071",Android 的等級依據 2026-10-07 同事的回饋（spec agent TC-VE2-040、TC-VE2-041）[Req: REQ-008]，比 Design 和 PM 9/24 新；後兩者寫的是 Pro+（現在只適用 iOS）。Android 的確切文案見 Q-25，只記錄不判定。,未變更,
 TC-091,使用資格與購買,"1. 以 Pro（不是 Pro+）帳號登入（Android 沒有等級切換），點數足夠
 2. 已開啟面板並載入一支影片",查看 CTA,"Android 上 Pro 就夠用：CTA 是可以按的「Enhance ◆ <credits>」，顯示價格和「Charge X credits per second」
-沒有解鎖按鈕，也不會出現 IAP 頁",P1,R-070,Spec agent TC-VE2-241（2026-10-07 同事回饋第 8–9 項）[Req: REQ-008]。iOS 的表仍然只有 Pro+。這一列不會真的送出生成。
+沒有解鎖按鈕，也不會出現 IAP 頁",P1,R-070,Spec agent TC-VE2-241（2026-10-07 同事回饋第 8–9 項）[Req: REQ-008]。iOS 的表仍然只有 Pro+。這一列不會真的送出生成。,未變更,
 TC-093,使用資格與購買,從面板開啟 IAP 頁（TC-090）,"1. 點「Monthly」
 2. 點「Yearly」","只有一頁「PowerDirector Pro」，沒有 Pro / Pro+ 分頁：有年訂閱和月訂閱兩個方案、「Continue」，以及頁尾的「Terms of Service」 「Privacy Policy」 「Restore Purchase」
-點哪個方案就選取哪個方案",P3,R-072,Design 的 IAP_US 畫面（有 Pro / Pro+ 分頁和「Tap to compare」）是 iOS 的頁面；Android 只賣 Free 和 Pro [Req: REQ-012; KP-006]。方案標籤、折扣和價格都是商店的資料，不要判定對錯（KP-042）。Q-7（試用說明那一行）不判定。
+點哪個方案就選取哪個方案",P3,R-072,Design 的 IAP_US 畫面（有 Pro / Pro+ 分頁和「Tap to compare」）是 iOS 的頁面；Android 只賣 Free 和 Pro [Req: REQ-012; KP-006]。方案標籤、折扣和價格都是商店的資料，不要判定對錯（KP-042）。Q-7（試用說明那一行）不判定。,未變更,
 TC-094,使用資格與購買,"1. 以 Free 帳號登入（Android 沒有等級切換，等級由帳號決定）
 2. 面板的選取範圍是 00:30–05:30，風格選「Sharp」
-3. 已從 CTA 開啟 IAP 頁",不購買，直接點 IAP 頁上的 ‹,回到面板且內容不變：選取範圍 05:00、「Sharp」，CTA 還是 TC-090 的 Pro 解鎖按鈕,P2,R-073,
+3. 已從 CTA 開啟 IAP 頁",不購買，直接點 IAP 頁上的 ‹,回到面板且內容不變：選取範圍 05:00、「Sharp」，CTA 還是 TC-090 的 Pro 解鎖按鈕,P2,R-073,,未變更,
 TC-095,使用資格與購買,"1. 以 Free 帳號登入（Android 沒有等級切換，等級由帳號決定），該帳號可以購買 Pro
 2. 面板的選取範圍是 00:30–05:30，風格選「Sharp」
 3. IAP 頁已開啟，停在「Pro」分頁","1. 點「Continue」
-2. 完成 Google Play 的購買視窗",步驟 2 完成後，IAP 頁關閉並回到面板（Android 上不會出現「You're all set」對話框），點數膠囊裡的餘額已更新，選取範圍和「Sharp」都保留，CTA 是「Enhance ◆ <credits>」，在點 CTA 之前不會送出任何東西,P1,"R-074, R-075",暫緩：需要實際購買（每次都要使用者同意）。「You're all set」 / 「Your purchase was successful.」（Design 箭頭 3293-13678 / 13679）是 iOS 的對話框 [Req: REQ-012]；「不自動送出」是 PM C2 [建議]。
+2. 完成 Google Play 的購買視窗",步驟 2 完成後，IAP 頁關閉並回到面板（Android 上不會出現「You're all set」對話框），點數膠囊裡的餘額已更新，選取範圍和「Sharp」都保留，CTA 是「Enhance ◆ <credits>」，在點 CTA 之前不會送出任何東西,P1,"R-074, R-075",暫緩：需要實際購買（每次都要使用者同意）。「You're all set」 / 「Your purchase was successful.」（Design 箭頭 3293-13678 / 13679）是 iOS 的對話框 [Req: REQ-012]；「不自動送出」是 PM C2 [建議]。,未變更,
 TC-096,使用資格與購買,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 點數餘額低於 CTA 的價格（例如 0）
 3. 已開啟面板
 4. 先記下餘額",點「Enhance」,"開啟點數頁（「My Credits」、「Buy More」、「Expiring within 7 days: … credits」、「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」、「PowerDirector Pro+」卡片）
-不會出現上傳對話框，Recent task 沒有新增卡片，餘額也沒有變",P1,R-076,暫緩：需要低餘額的狀態（共用帳號裡的點數很多）。
-TC-097,使用資格與購買,同 TC-096 的設定：已從面板開啟點數頁,"1. 點「Buy More」
-2. 在 Google Play 購買視窗購買一個點數包",App 回到面板，點數膠囊顯示新的餘額，選取範圍和各項設定都保留,P2,R-077,暫緩：需要實際購買。
+不會出現上傳對話框，Recent task 沒有新增卡片，餘額也沒有變",P1,R-076,暫緩：需要低餘額的狀態（共用帳號裡的點數很多）。,未變更,
+TC-097,使用資格與購買,"1. 同 TC-096 的設定：已從面板開啟點數頁
+2. 登入的 Google 帳號是 PowerDirector 在 Google Play 的授權測試人員，購買視窗會出現「Test card, always approves」（不會扣款）
+3. 這次購買已取得使用者同意","1. 點「Buy More」
+2. 選一個點數包
+3. 在 Google Play 購買視窗用「Test card, always approves」付款","步驟 3 完成後 App 回到面板
+點數膠囊顯示新的餘額（原餘額加上點數包）
+選取範圍和各項設定都保留",P2,R-077,需要使用者同意（Google Play 測試卡，不會扣款；見 fixtures.md）[Req: REQ-015]。Spec Agent 用同樣方式買了同一個點數包，App 回到的是 My Credits，而不是面板。,修改,REQ-015：購買有免費的做法（授權測試人員加 Google Play 測試卡），這列不再暫緩，只需要使用者同意
 TC-098,使用資格與購買,"1. 已從面板開啟點數頁（TC-096）
 2. 過去 24 小時內沒有領過每日點數","1. 點「Claim」
 2. 點點數頁上的 ‹","步驟 1 會加上每日點數
-步驟 2 回到面板，選取範圍和各項設定不變，點數膠囊顯示新的餘額",P2,"R-073, R-078",與 TC-096 一起暫緩（需要低餘額的狀態）。點數頁上的「Details」會開啟點數紀錄（既有頁面，KP-041）。
+步驟 2 回到面板，選取範圍和各項設定不變，點數膠囊顯示新的餘額",P2,"R-073, R-078",與 TC-096 一起暫緩（需要低餘額的狀態）。點數頁上的「Details」會開啟點數紀錄（既有頁面，KP-041）。,未變更,
 TC-100,使用資格與購買,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），點數足夠
 2. 已開啟面板並載入一支影片
 3. Wi-Fi 已關閉（device-android.ts wifi off）且沒有行動數據
-4. 先記下餘額",點「Enhance」,跳出提示「Upload failed. Check your connection and try again.」，面板維持原狀且設定都在，Recent task 沒有新增卡片，餘額也沒有變,P2,R-079,PM C2 / C3 [建議] 的文案：如果離線訊息的文字不同，屬於 PM 要決定的問題；如果上傳開始了或被扣點，就是 bug。這一列測完後記得把 Wi-Fi 開回來。
+4. 先記下餘額",點「Enhance」,跳出提示「Upload failed. Check your connection and try again.」，面板維持原狀且設定都在，Recent task 沒有新增卡片，餘額也沒有變,P2,R-079,PM C2 / C3 [建議] 的文案：如果離線訊息的文字不同，屬於 PM 要決定的問題；如果上傳開始了或被扣點，就是 bug。這一列測完後記得把 Wi-Fi 開回來。,未變更,
 TC-110,生成與取消,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），點數足夠
 2. 已用 01:30、1080p、30 fps 的影片開啟面板，並維持預設值（Standard、Natural、30fps、1080p）
 3. 先記下餘額",點「Enhance ◆ <credits>」,"不會先跳出確認視窗
 處理中的對話框蓋住面板，上面有往上跑的進度圓環（「25%」…）、「Video uploading...」、「Please keep the app open」和「Cancel」
-圓環持續轉動（不會卡住超過 10 秒）",P1,"R-080, R-085, R-070, R-194",
-TC-111,生成與取消,正在顯示處理中的對話框（TC-110）,點「Cancel」,"跳出對話框，標題「Sure You Want to Leave?」，內容「Your video is still uploading. Leaving this page will cancel the process, and the credits will not be restored.」，有「Leave」和「Keep Uploading」兩個按鈕",P1,R-086,
+圓環持續轉動（不會卡住超過 10 秒）",P1,"R-080, R-085, R-070, R-194",,未變更,
+TC-111,生成與取消,正在顯示處理中的對話框（TC-110）,點「Cancel」,"跳出對話框，標題「Sure You Want to Leave?」，內容「Your video is still uploading. Leaving this page will cancel the process, and the credits will not be restored.」，有「Leave」和「Keep Uploading」兩個按鈕",P1,R-086,,未變更,
 TC-112,生成與取消,正在顯示離開確認對話框（TC-111）,"1. 查看對話框後方的「Enhance」 CTA
 2. 點「Keep Uploading」","步驟 1：對話框後方的 CTA 是灰色的（停用）
 步驟 2：離開確認對話框關閉，處理中的對話框從原本的進度繼續，上傳完成（TC-114）
-步驟 2：在那之前 CTA 都維持停用，也不能再開始第二個任務",P2,R-087,CTA 停用：同事回饋第 11 項，對應 spec agent 的 TC-VE2-234 [Req: REQ-008]。
+步驟 2：在那之前 CTA 都維持停用，也不能再開始第二個任務",P2,R-087,CTA 停用：同事回饋第 11 項，對應 spec agent 的 TC-VE2-234 [Req: REQ-008]。,未變更,
 TC-113,生成與取消,"1. 全新的任務：在處理中對話框點「Cancel」後，正顯示離開確認對話框
 2. 已記下點「Enhance」前的餘額",點「Leave」,"回到面板，選取範圍和設定都還在，「Enhance ◆ <credits>」 CTA 重新變成可以按
 處理停止（Recent task 裡不會出現這個任務的完成結果）
-餘額是先前記下的餘額扣掉價格（點數不退，如同對話框所說）",P1,"R-086, R-088",Q-2：PM §8 寫的是在上傳到達伺服器前取消不扣點也不建立任務；Design 比較新，以 Design 為準。不論有沒有扣點，開單前都要先在裝置上確認，並和使用者討論後再決定。
+餘額是先前記下的餘額扣掉價格（點數不退，如同對話框所說）",P1,"R-086, R-088",Q-2：PM §8 寫的是在上傳到達伺服器前取消不扣點也不建立任務；Design 比較新，以 Design 為準。不論有沒有扣點，開單前都要先在裝置上確認，並和使用者討論後再決定。,未變更,
 TC-114,生成與取消,"1. 正在顯示處理中的對話框（TC-110）
 2. 已記下點「Enhance」前的餘額",等上傳完成,"開啟 Recent task，裡面有一張處理中的卡片（縮圖、日期、名稱、「processing...」、「<n> minutes left...」、進度條）
 餘額是先前記下的餘額扣掉 CTA 的價格
-卡片上沒有取消的選項",P1,"R-089, R-111, R-091",Design 箭頭 3293-13681；PM：上傳到達伺服器時就會扣點。
+卡片上沒有取消的選項",P1,"R-089, R-111, R-091",Design 箭頭 3293-13681；PM：上傳到達伺服器時就會扣點。,未變更,
 TC-115,生成與取消,"1. 全新的任務：正在顯示處理中的對話框
 2. 已記下點「Enhance」前的餘額","1. 在顯示「Video uploading...」時按 Home 鍵
 2. 等 10 秒
-3. 從最近使用的 App 重新開啟 PowerDirector",上傳已被取消：面板上沒有處理中的對話框，Recent task 沒有新增卡片，餘額和先前記下的一樣,P3,R-090,Q-18：PM C3 [建議]；Design 沒有畫切到背景的情況。開單前先在裝置上確認，並和使用者討論後再決定。
+3. 從最近使用的 App 重新開啟 PowerDirector",上傳已被取消：面板上沒有處理中的對話框，Recent task 沒有新增卡片，餘額和先前記下的一樣,P3,R-090,Q-18：PM C3 [建議]；Design 沒有畫切到背景的情況。開單前先在裝置上確認，並和使用者討論後再決定。,未變更,
 TC-116,生成與取消,Recent task 裡有一個處理中的任務（TC-114）,"1. 按 Home 鍵
 2. 等到卡片上顯示的時間過去
-3. 從最近使用的 App 重新開啟 PowerDirector",任務在伺服器上持續執行：卡片已完成並顯示「View」（或仍在處理中，但剩餘時間變少）,P2,R-091,
-TC-117,生成與取消,Recent task 裡有一個處理中的任務,長按並滑動處理中的卡片,處理中的任務不提供取消、停止或刪除的操作（v1）,P2,R-091,
+3. 從最近使用的 App 重新開啟 PowerDirector",任務在伺服器上持續執行：卡片已完成並顯示「View」（或仍在處理中，但剩餘時間變少）,P2,R-091,,未變更,
+TC-117,生成與取消,Recent task 裡有一個處理中的任務,長按並滑動處理中的卡片,處理中的任務不提供取消、停止或刪除的操作（v1）,P2,R-091,,未變更,
 TC-118,生成與取消,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 已在 Android 設定中關閉 PowerDirector 的通知（變更系統設定需要使用者同意）
-3. 這個安裝版還沒建立過任何 Video Enhance 任務",點「Enhance」，等上傳完成,上傳完成後跳出對話框「Turn on notifications」 / 「We'll let you know when it's done.」，有「Turn On」和「Later」（Android 12 預設允許通知，所以要在通知關閉的狀態下檢查這個提示）,P2,R-093,僅 PM 有寫，Design 還沒有對應畫面（PM 397:1151）。這一列測完後記得把通知開回來。
+3. 這個安裝版還沒建立過任何 Video Enhance 任務",點「Enhance」，等上傳完成,上傳完成後跳出對話框「Turn on notifications」 / 「We'll let you know when it's done.」，有「Turn On」和「Later」（Android 12 預設允許通知，所以要在通知關閉的狀態下檢查這個提示）,P2,R-093,僅 PM 有寫，Design 還沒有對應畫面（PM 397:1151）。這一列測完後記得把通知開回來。,未變更,
 TC-119,生成與取消,正在顯示「Turn on notifications」對話框（TC-118）,點「Turn On」,"Android 開啟 PowerDirector 的通知設定頁（Android 12 的通知權限是在設定裡開關）
-開啟通知後返回，App 停留在 Generating / Recent task 畫面",P3,R-094,PM D1 [建議]（被拒絕 → 前往設定）。返回後停在哪個畫面是 Gap 6。
+開啟通知後返回，App 停留在 Generating / Recent task 畫面",P3,R-094,PM D1 [建議]（被拒絕 → 前往設定）。返回後停在哪個畫面是 Gap 6。,未變更,
 TC-120,生成與取消,正在顯示「Turn on notifications」對話框（同 TC-118 的設定）,"1. 點「Later」
 2. 開始第二個任務，等它上傳完成","步驟 1 關閉對話框
-步驟 2 不會再出現通知提示",P3,R-095,PM D1 [建議]。
+步驟 2 不會再出現通知提示",P3,R-095,PM D1 [建議]。,未變更,
 TC-121,生成與取消,"1. Recent task 裡有一個處理中的任務
 2. 點數足夠再開一個任務","1. 回到面板
-2. 選另一支影片，點「Enhance」",第二個任務開始上傳，Recent task 裡出現兩張處理中的卡片,P3,R-092,Q-12：上限還沒定案（PM 建議 3 個，提示「You can run up to 3 enhancements at a time.」）。
+2. 選另一支影片，點「Enhance」",第二個任務開始上傳，Recent task 裡出現兩張處理中的卡片,P3,R-092,Q-12：上限還沒定案（PM 建議 3 個，提示「You can run up to 3 enhancements at a time.」）。,未變更,
 TC-130,背景任務與通知,"1. 有一個處理中的任務
-2. 使用者停在 Launcher（App 在前景）",停在 Launcher 等任務完成,跳出橫幅「Good news! Your AI Video Enhance task has been completed. Tap here to view your results.」，有「Close」和「View」,P1,R-100,
-TC-131,背景任務與通知,正在顯示完成橫幅（TC-130）,立刻點橫幅上的「View」,開啟該任務的 Result 並播放影片（不是黑畫面、00:00/00:00 的播放器）,P1,R-101,KP-059 的風險（其他功能發生過）：結果還沒下載完，橫幅就先出現 View；要在橫幅出現後立刻點。
+2. 使用者停在 Launcher（App 在前景）",停在 Launcher 等任務完成,跳出橫幅「Good news! Your AI Video Enhance task has been completed. Tap here to view your results.」，有「Close」和「View」,P1,R-100,,未變更,
+TC-131,背景任務與通知,正在顯示完成橫幅（TC-130）,立刻點橫幅上的「View」,開啟該任務的 Result 並播放影片（不是黑畫面、00:00/00:00 的播放器）,P1,R-101,KP-059 的風險（其他功能發生過）：結果還沒下載完，橫幅就先出現 View；要在橫幅出現後立刻點。,未變更,
 TC-132,背景任務與通知,停在 Launcher 時另一個任務完成了（正顯示橫幅）,"1. 點橫幅上的「Close」
 2. 從面板開啟 Recent task","步驟 1 橫幅消失，不會開啟任何頁面
-步驟 2 該任務的卡片已完成並顯示「View」",P2,R-102,
+步驟 2 該任務的卡片已完成並顯示「View」",P2,R-102,,未變更,
 TC-133,背景任務與通知,"1. 已允許 PowerDirector 的通知
 2. 有一個處理中的任務","1. 按 Home 鍵
 2. 等通知出現
 3. 點通知","收到系統通知「Your video is ready. Tap to view.」
-點通知後開啟 PowerDirector，直接進入該任務的 Result",P2,R-103,僅 PM 有寫，Design 還沒有對應畫面（PM §9 文案、D1 [建議]）；Q-16。
+點通知後開啟 PowerDirector，直接進入該任務的 Result",P2,R-103,僅 PM 有寫，Design 還沒有對應畫面（PM §9 文案、D1 [建議]）；Q-16。,未變更,
 TC-134,背景任務與通知,至少有一個已完成的 Video Enhance 任務,"1. 開啟「AI Magic」 › 「My Artwork」
-2. 開啟「Template」 › 「My Artwork」",兩個地方都列得出增強後的影片,P2,R-104,PM §4.3 / D2 [建議]：Design 還沒有畫（僅 PM 有寫）。
-TC-140,Recent task,已開啟面板,點面板右上角的 Recent task 圖示,開啟 Recent task：標題「AI Video Enhance」、‹、⌂、提示「Tasks are stored on the cloud for 1 Year. Please download any you want to keep in local storage.」和「Manage」，以及任務卡片,P2,"R-110, R-113",
-TC-141,Recent task,從面板開啟 Recent task，裡面有一個處理中的任務,點 Recent task 上的 ‹,回到面板,P2,R-114,
-TC-142,Recent task,已開啟 Recent task,點 Recent task 上的 ⌂,開啟 Launcher,P2,R-115,
+2. 開啟「Template」 › 「My Artwork」",兩個地方都列得出增強後的影片,P2,R-104,PM §4.3 / D2 [建議]：Design 還沒有畫（僅 PM 有寫）。,未變更,
+TC-140,Recent task,已開啟面板,點面板右上角的 Recent task 圖示,開啟 Recent task：標題「AI Video Enhance」、‹、⌂、提示「Tasks are stored on the cloud for 1 Year. Please download any you want to keep in local storage.」和「Manage」，以及任務卡片,P2,"R-110, R-113",,未變更,
+TC-141,Recent task,從面板開啟 Recent task，裡面有一個處理中的任務,點 Recent task 上的 ‹,回到面板,P2,R-114,,未變更,
+TC-142,Recent task,已開啟 Recent task,點 Recent task 上的 ⌂,開啟 Launcher,P2,R-115,,未變更,
 TC-143,Recent task,已開啟 Recent task，裡面有一張處理中的卡片,"1. 停在 Recent task 等任務完成
 2. 點該卡片上的「View」
 3. 點 Result 上的 ‹
 4. 點已完成卡片的縮圖","步驟 1 卡片變成已完成（縮圖、日期、名稱、「View」），而且不會離開這一頁
 步驟 2 開啟 Result
 步驟 3 回到 Recent task
-步驟 4 開啟同一個 Result",P1,R-112,步驟 4：PM D2 寫的是「Completed (tap → Result)」（已完成，點下去進入 Result）；Design 只畫了「View」（Q-22）。
+步驟 4 開啟同一個 Result",P1,R-112,步驟 4：PM D2 寫的是「Completed (tap → Result)」（已完成，點下去進入 Result）；Design 只畫了「View」（Q-22）。,未變更,
 TC-265,Recent task,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），點數足夠
 2. 相簿裡有一支 00:01、720p、30 fps 的影片
 3. 準備螢幕錄影或有時間戳記的碼表","1. 用 00:01 的影片開啟面板（整支影片被選取，維持預設值）
 2. 點「Enhance ◆ <credits>」
 3. 從 Recent task 裡該任務的卡片第一次顯示剩餘時間開始計時
-4. 停在 Recent task，當卡片變成已完成並顯示「View」時停止計時",從步驟 3 到最後一個步驟結束的時間是 1.5 – 2.5 秒（選取長度 1 秒的 1.5 – 2.5 倍）,P3,"R-204, R-111",規格沒有寫：這是依使用者指示採用的公司效能標準，對應 spec agent TC-VE2-221 [Req: REQ-008]。會完整生成一次。
+4. 停在 Recent task，當卡片變成已完成並顯示「View」時停止計時",從步驟 3 到最後一個步驟結束的時間是 1.5 – 2.5 秒（選取長度 1 秒的 1.5 – 2.5 倍）,P3,"R-204, R-111",規格沒有寫：這是依使用者指示採用的公司效能標準，對應 spec agent TC-VE2-221 [Req: REQ-008]。會完整生成一次。,未變更,
 TC-266,Recent task,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），點數足夠
 2. 相簿裡有一支 00:03.2、720p、30 fps 的影片
 3. 準備螢幕錄影或有時間戳記的碼表","1. 用 00:03.2 的影片開啟面板（整支影片被選取，維持預設值）
 2. 點「Enhance ◆ <credits>」
 3. 從 Recent task 裡該任務的卡片第一次顯示剩餘時間開始計時
 4. 點 ⌂ 回到 Launcher
-5. 當完成橫幅「Good news! Your AI Video Enhance task has been completed. Tap here to view your results.」出現時停止計時",從步驟 3 到最後一個步驟結束的時間是 4.8 – 8 秒（選取長度 3.2 秒的 1.5 – 2.5 倍）,P3,"R-204, R-111",規格沒有寫：這是依使用者指示採用的公司效能標準，對應 spec agent TC-VE2-222 [Req: REQ-008]。會完整生成一次。
+5. 當完成橫幅「Good news! Your AI Video Enhance task has been completed. Tap here to view your results.」出現時停止計時",從步驟 3 到最後一個步驟結束的時間是 4.8 – 8 秒（選取長度 3.2 秒的 1.5 – 2.5 倍）,P3,"R-204, R-111",規格沒有寫：這是依使用者指示採用的公司效能標準，對應 spec agent TC-VE2-222 [Req: REQ-008]。會完整生成一次。,未變更,
 TC-267,Recent task,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），點數足夠
 2. 相簿裡有一支 00:30、720p、30 fps 的影片
 3. 準備螢幕錄影或有時間戳記的碼表","1. 用 00:30 的影片開啟面板（整支影片被選取，維持預設值）
 2. 點「Enhance ◆ <credits>」
 3. 從 Recent task 裡該任務的卡片第一次顯示剩餘時間開始計時
-4. 以最先看到的為準停止計時：卡片變成已完成，或出現完成橫幅或通知",從步驟 3 到最後一個步驟結束的時間是 45 – 75 秒（選取長度 30 秒的 1.5 – 2.5 倍）,P3,"R-204, R-111",規格沒有寫：這是依使用者指示採用的公司效能標準，對應 spec agent TC-VE2-223 [Req: REQ-008]。會完整生成一次。
-TC-144,Recent task,已開啟 Recent task，裡面有一個已完成的任務,點「Manage」,開啟管理已儲存任務的頁面（可以選取、下載或刪除任務）,P3,R-116,Q-8：規格沒有寫 Manage 會開啟什麼；記錄實際的行為。
+4. 以最先看到的為準停止計時：卡片變成已完成，或出現完成橫幅或通知",從步驟 3 到最後一個步驟結束的時間是 45 – 75 秒（選取長度 30 秒的 1.5 – 2.5 倍）,P3,"R-204, R-111",規格沒有寫：這是依使用者指示採用的公司效能標準，對應 spec agent TC-VE2-223 [Req: REQ-008]。會完整生成一次。,未變更,
+TC-144,Recent task,已開啟 Recent task，裡面有一個已完成的任務,點「Manage」,開啟管理已儲存任務的頁面（可以選取、下載或刪除任務）,P3,R-116,Q-8：規格沒有寫 Manage 會開啟什麼；記錄實際的行為。,未變更,
 TC-268,Recent task,"1. Recent task 裡有一個已完成的 Video Enhance 任務，完成時間至少是 2 天前（這次測試最久能等的時間）
 2. 先記下它的日期和名稱","1. 從最近使用的 App 把 PowerDirector 滑掉關閉
 2. 重新開啟 PowerDirector，從面板開啟 Recent task
 3. 閱讀上方提示
 4. 點先前記下的那個任務卡片上的「View」","步驟 2 列出先前記下的任務，狀態是已完成，並顯示日期和名稱
 步驟 3 提示是「Tasks are stored on the cloud for 1 Year. Please download any you want to keep in local storage.」
-步驟 4 開啟它的 Result 並播放影片",P3,"R-198, R-110",Spec agent TC-VE2-077 [Req: REQ-008]。一年的保存期限本身（R-117）要向 RD 確認，不在這次測試中驗證；執行時記錄該任務的天數。
+步驟 4 開啟它的 Result 並播放影片",P3,"R-198, R-110",Spec agent TC-VE2-077 [Req: REQ-008]。一年的保存期限本身（R-117）要向 RD 確認，不在這次測試中驗證；執行時記錄該任務的天數。,未變更,
 TC-150,結果頁,已開啟某個已完成任務的 Result（TC-143）,"1. 點播放
 2. 再點同一個按鈕（暫停）
 3. 等 3 秒
 4. 拖曳進度滑桿","頁面上有 ‹、「Original」 / 「Result」（目前選「Result」）、影片和時間（「mm:ss/mm:ss」），以及「Save Result」、「Add to Timeline」、「Enhance More」
 步驟 1 播放結果
 步驟 2 暫停，到步驟 3 結束為止時間和畫面都維持不動
-步驟 4 可以在結果影片中前後移動",P1,"R-120, R-201",PM 的「Edit More」是較舊的版本（D3 [衝突]：「Enhance More」）。暫停：spec agent TC-VE2-168（通用播放器規則，Design 沒有畫）[Req: REQ-008]。
+步驟 4 可以在結果影片中前後移動",P1,"R-120, R-201",PM 的「Edit More」是較舊的版本（D3 [衝突]：「Enhance More」）。暫停：spec agent TC-VE2-168（通用播放器規則，Design 沒有畫）[Req: REQ-008]。,未變更,
 TC-151,結果頁,已開啟 Result,"1. 點「Original」
-2. 點「Result」",「Original」顯示原始影片，「Result」顯示增強後的影片（看得出比較清晰或乾淨）,P2,R-121,
+2. 點「Result」",「Original」顯示原始影片，「Result」顯示增強後的影片（看得出比較清晰或乾淨）,P2,R-121,,未變更,
 TC-152,結果頁,已開啟 TC-110 那個任務的結果頁（來源為 01:30、1080p、30 fps 的影片；設定為 Standard、Natural、30fps、1080p）,"1. 點「Save Result」
 2. 讀取儲存檔案的解析度和幀率（相簿的詳細資訊，或用 adb 拉出檔案，在電腦上用 ffprobe 讀取）
 3. 在 PowerDirector 開一個新專案，素材選取畫面切到「All」
@@ -412,11 +435,11 @@ TC-152,結果頁,已開啟 TC-110 那個任務的結果頁（來源為 01:30、1
 5. 播放時間軸","10 s 內跳出提示「Saved to your device」
 增強後的影片是手機相簿（Google Photos / Files › Movies 或 DCIM）裡的一個新檔案，長度 01:30、1920 × 1080、30 fps（和面板上選的值一致），原始影片仍在、沒有被改動
 素材選取畫面的「All」裡找得到它
-可以加到時間軸並正常播放",P1,"R-122, R-194",提示文字為 PM D3 [建議]。步驟 3–5：同事回饋第 14 項，對應 spec agent 的 TC-VE2-236 [Req: REQ-008]。這裡用的是 1080p 來源的預設值；四項設定的每種組合都在「Setting combinations」各列中產生（REQ-008）。
+可以加到時間軸並正常播放",P1,"R-122, R-194",提示文字為 PM D3 [建議]。步驟 3–5：同事回饋第 14 項，對應 spec agent 的 TC-VE2-236 [Req: REQ-008]。這裡用的是 1080p 來源的預設值；四項設定的每種組合都在「Setting combinations」各列中產生（REQ-008）。,未變更,
 TC-153,結果頁,已開啟從 Add Media 開始的任務的結果頁,點「Add to Timeline」,"開啟一個新專案，時間軸上放的是增強後的影片
-沒有改動任何既有專案，相簿裡的原始影片也維持不變",P1,"R-123, R-126",
-TC-154,結果頁,已開啟結果頁,點「Enhance More」,開啟 Add Media，可以選下一支影片,P2,R-124,
-TC-155,結果頁,從 Recent task 的任務卡片開啟結果頁,點結果頁上的 ‹,回到 Recent task 畫面,P3,R-125,Q-9：規格沒有畫箭頭，先假設是回到上一頁。
+沒有改動任何既有專案，相簿裡的原始影片也維持不變",P1,"R-123, R-126",,未變更,
+TC-154,結果頁,已開啟結果頁,點「Enhance More」,開啟 Add Media，可以選下一支影片,P2,R-124,,未變更,
+TC-155,結果頁,從 Recent task 的任務卡片開啟結果頁,點結果頁上的 ‹,回到 Recent task 畫面,P3,R-125,Q-9：規格沒有畫箭頭，先假設是回到上一頁。,未變更,
 TC-223,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 4 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -439,7 +462,7 @@ TC-223,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1280 × 720、30 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_720p_30fps）；對應 spec agent 的 TC-VE2-185（產生）和 TC-VE2-114（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_720p_30fps）；對應 spec agent 的 TC-VE2-185（產生）和 TC-VE2-114（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。,未變更,
 TC-225,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 8 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -462,7 +485,7 @@ TC-225,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1920 × 1080、30 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_1080p_30fps）；對應 spec agent 的 TC-VE2-186（產生）和 TC-VE2-115（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_1080p_30fps）；對應 spec agent 的 TC-VE2-186（產生）和 TC-VE2-115（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。,未變更,
 TC-224,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 12 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -485,7 +508,7 @@ TC-224,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、3840 × 2160、30 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 12 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 3 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_4k_30fps）；對應 spec agent 的 TC-VE2-187（產生）和 TC-VE2-116（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 12 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 12 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 3 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_4k_30fps）；對應 spec agent 的 TC-VE2-187（產生）和 TC-VE2-116（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 12 點。,未變更,
 TC-226,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 4 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -508,7 +531,7 @@ TC-226,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1280 × 720、60 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_720p_60fps）；對應 spec agent 的 TC-VE2-188（產生）和 TC-VE2-117（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_720p_60fps）；對應 spec agent 的 TC-VE2-188（產生）和 TC-VE2-117（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。,未變更,
 TC-221,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 8 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -532,7 +555,7 @@ TC-221,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1920 × 1080、60 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_1080p_60fps）；對應 spec agent 的 TC-VE2-189（產生）和 TC-VE2-118（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_1080p_60fps）；對應 spec agent 的 TC-VE2-189（產生）和 TC-VE2-118（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。,未變更,
 TC-227,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 24 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -556,7 +579,7 @@ TC-227,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、3840 × 2160、60 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 24 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 6 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_4k_60fps）；對應 spec agent 的 TC-VE2-190（產生）和 TC-VE2-119（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 24 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 24 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 6 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_4k_60fps）；對應 spec agent 的 TC-VE2-190（產生）和 TC-VE2-119（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 24 點。,未變更,
 TC-228,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 4 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -579,7 +602,7 @@ TC-228,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1280 × 720、120 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_720p_120fps）；對應 spec agent 的 TC-VE2-191（產生）和 TC-VE2-120（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_720p_120fps）；對應 spec agent 的 TC-VE2-191（產生）和 TC-VE2-120（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。,未變更,
 TC-222,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 8 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -603,7 +626,7 @@ TC-222,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1920 × 1080、120 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_1080p_120fps）；對應 spec agent 的 TC-VE2-192（產生）和 TC-VE2-121（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_1080p_120fps）；對應 spec agent 的 TC-VE2-192（產生）和 TC-VE2-121（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。,未變更,
 TC-229,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 32 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -627,7 +650,7 @@ TC-229,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、3840 × 2160、120 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 32 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_4k_120fps）；對應 spec agent 的 TC-VE2-193（產生）和 TC-VE2-122（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 32 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 32 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_natural_4k_120fps）；對應 spec agent 的 TC-VE2-193（產生）和 TC-VE2-122（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 32 點。,未變更,
 TC-230,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 4 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -650,7 +673,7 @@ TC-230,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1280 × 720、30 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_720p_30fps）；對應 spec agent 的 TC-VE2-194（產生）和 TC-VE2-123（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_720p_30fps）；對應 spec agent 的 TC-VE2-194（產生）和 TC-VE2-123（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。,未變更,
 TC-220,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 8 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -674,7 +697,7 @@ TC-220,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1920 × 1080、30 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_1080p_30fps）；對應 spec agent 的 TC-VE2-195（產生）和 TC-VE2-124（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_1080p_30fps）；對應 spec agent 的 TC-VE2-195（產生）和 TC-VE2-124（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。,未變更,
 TC-231,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 12 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -698,7 +721,7 @@ TC-231,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、3840 × 2160、30 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 12 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 3 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_4k_30fps）；對應 spec agent 的 TC-VE2-196（產生）和 TC-VE2-125（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 12 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 12 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 3 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_4k_30fps）；對應 spec agent 的 TC-VE2-196（產生）和 TC-VE2-125（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 12 點。,未變更,
 TC-232,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 4 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -722,7 +745,7 @@ TC-232,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1280 × 720、60 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_720p_60fps）；對應 spec agent 的 TC-VE2-197（產生）和 TC-VE2-126（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_720p_60fps）；對應 spec agent 的 TC-VE2-197（產生）和 TC-VE2-126（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。,未變更,
 TC-233,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 8 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -747,7 +770,7 @@ TC-233,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1920 × 1080、60 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_1080p_60fps）；對應 spec agent 的 TC-VE2-198（產生）和 TC-VE2-127（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_1080p_60fps）；對應 spec agent 的 TC-VE2-198（產生）和 TC-VE2-127（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。,未變更,
 TC-234,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 24 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -772,7 +795,7 @@ TC-234,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、3840 × 2160、60 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 24 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 6 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_4k_60fps）；對應 spec agent 的 TC-VE2-199（產生）和 TC-VE2-128（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 24 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 24 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 6 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_4k_60fps）；對應 spec agent 的 TC-VE2-199（產生）和 TC-VE2-128（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 24 點。,未變更,
 TC-235,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 4 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -796,7 +819,7 @@ TC-235,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1280 × 720、120 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_720p_120fps）；對應 spec agent 的 TC-VE2-200（產生）和 TC-VE2-129（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 4 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 1 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_720p_120fps）；對應 spec agent 的 TC-VE2-200（產生）和 TC-VE2-129（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 4 點。,未變更,
 TC-236,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 8 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -821,7 +844,7 @@ TC-236,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1920 × 1080、120 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_1080p_120fps）；對應 spec agent 的 TC-VE2-201（產生）和 TC-VE2-130（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_1080p_120fps）；對應 spec agent 的 TC-VE2-201（產生）和 TC-VE2-130（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。,未變更,
 TC-237,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 32 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -846,7 +869,7 @@ TC-237,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」比「Original」畫質有提升（「Great quality」），而且畫面更銳利清晰（「Moderate enhancement for a sharp, clear image」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、3840 × 2160、120 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 32 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_4k_120fps）；對應 spec agent 的 TC-VE2-202（產生）和 TC-VE2-131（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 32 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 32 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_std_hd_4k_120fps）；對應 spec agent 的 TC-VE2-202（產生）和 TC-VE2-131（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 32 點。,未變更,
 TC-238,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開關），點數至少 8 點
 2. 相簿裡有一支 00:03.2（3.2 s）、720p、30 fps 的橫式影片（為測試另外製作，所有組合列都用同一支）
 3. 先記下目前的點數餘額，以及點數紀錄裡最新的一筆","1. 用 3.2 s 的影片開啟設定面板（選取整支影片）
@@ -869,7 +892,7 @@ TC-238,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有切換方案的開
 「Result」的細節比 Standard 的結果更豐富（「Maximum detail」），而且增強幅度較輕、看起來自然（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 點「Save Result」會顯示「Saved to your device」
 儲存的影片長度 3.2 s、1280 × 720、30 fps
-點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_720p_30fps）；對應 spec agent 的 TC-VE2-203（產生）和 TC-VE2-132（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。
+點數紀錄最新的一筆是扣款「AI Video Enhance」，共 8 點",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，出自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_720p_30fps）；對應 spec agent 的 TC-VE2-203（產生）和 TC-VE2-132（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。完整產生一次，花 8 點。,未變更,
 TC-219,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 16 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -893,7 +916,7 @@ TC-219,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且增強幅度較輕、看起來更貼近真實（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1920 × 1080、30 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 4 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_1080p_30fps）；對應 spec agent 的 TC-VE2-204（產生）和 TC-VE2-133（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 16 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 4 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_1080p_30fps）；對應 spec agent 的 TC-VE2-204（產生）和 TC-VE2-133（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 16 credits。,未變更,
 TC-239,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 48 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -917,7 +940,7 @@ TC-239,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且增強幅度較輕、看起來更貼近真實（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、3840 × 2160、30 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 48 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 12 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_4k_30fps）；對應 spec agent 的 TC-VE2-205（產生）和 TC-VE2-134（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 48 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 48 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 12 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_4k_30fps）；對應 spec agent 的 TC-VE2-205（產生）和 TC-VE2-134（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 48 credits。,未變更,
 TC-240,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 16 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -941,7 +964,7 @@ TC-240,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且增強幅度較輕、看起來更貼近真實（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1280 × 720、60 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 4 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_720p_60fps）；對應 spec agent 的 TC-VE2-206（產生）和 TC-VE2-135（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 16 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 4 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_720p_60fps）；對應 spec agent 的 TC-VE2-206（產生）和 TC-VE2-135（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 16 credits。,未變更,
 TC-241,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 32 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -966,7 +989,7 @@ TC-241,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且增強幅度較輕、看起來更貼近真實（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1920 × 1080、60 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_1080p_60fps）；對應 spec agent 的 TC-VE2-207（產生）和 TC-VE2-136（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 32 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_1080p_60fps）；對應 spec agent 的 TC-VE2-207（產生）和 TC-VE2-136（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 32 credits。,未變更,
 TC-242,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 96 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -991,7 +1014,7 @@ TC-242,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且增強幅度較輕、看起來更貼近真實（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、3840 × 2160、60 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 96 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 24 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_4k_60fps）；對應 spec agent 的 TC-VE2-208（產生）和 TC-VE2-137（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 96 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 96 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 24 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_4k_60fps）；對應 spec agent 的 TC-VE2-208（產生）和 TC-VE2-137（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 96 credits。,未變更,
 TC-243,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 32 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1015,7 +1038,7 @@ TC-243,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且增強幅度較輕、看起來更貼近真實（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1280 × 720、120 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_720p_120fps）；對應 spec agent 的 TC-VE2-209（產生）和 TC-VE2-138（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 32 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_720p_120fps）；對應 spec agent 的 TC-VE2-209（產生）和 TC-VE2-138（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 32 credits。,未變更,
 TC-244,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 64 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1040,7 +1063,7 @@ TC-244,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且增強幅度較輕、看起來更貼近真實（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1920 × 1080、120 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 64 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 16 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_1080p_120fps）；對應 spec agent 的 TC-VE2-210（產生）和 TC-VE2-139（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 64 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 64 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 16 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_1080p_120fps）；對應 spec agent 的 TC-VE2-210（產生）和 TC-VE2-139（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 64 credits。,未變更,
 TC-245,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 192 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1065,7 +1088,7 @@ TC-245,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且增強幅度較輕、看起來更貼近真實（「Lighter enhancement with fewer artifacts, for a more realistic look」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、3840 × 2160、120 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 192 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 48 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_4k_120fps）；對應 spec agent 的 TC-VE2-211（產生）和 TC-VE2-140（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 192 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 192 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 48 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_natural_4k_120fps）；對應 spec agent 的 TC-VE2-211（產生）和 TC-VE2-140（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 192 credits。,未變更,
 TC-246,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 8 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1089,7 +1112,7 @@ TC-246,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1280 × 720、30 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_720p_30fps）；對應 spec agent 的 TC-VE2-212（產生）和 TC-VE2-141（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 8 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 2 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_720p_30fps）；對應 spec agent 的 TC-VE2-212（產生）和 TC-VE2-141（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 8 credits。,未變更,
 TC-247,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 16 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1114,7 +1137,7 @@ TC-247,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1920 × 1080、30 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 4 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_1080p_30fps）；對應 spec agent 的 TC-VE2-213（產生）和 TC-VE2-142（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 16 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 4 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_1080p_30fps）；對應 spec agent 的 TC-VE2-213（產生）和 TC-VE2-142（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 16 credits。,未變更,
 TC-248,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 48 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1139,7 +1162,7 @@ TC-248,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、3840 × 2160、30 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 48 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 12 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_4k_30fps）；對應 spec agent 的 TC-VE2-214（產生）和 TC-VE2-143（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 48 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 48 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 12 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_4k_30fps）；對應 spec agent 的 TC-VE2-214（產生）和 TC-VE2-143（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 48 credits。,未變更,
 TC-249,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 16 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1164,7 +1187,7 @@ TC-249,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1280 × 720、60 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 4 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_720p_60fps）；對應 spec agent 的 TC-VE2-215（產生）和 TC-VE2-144（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 16 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 4 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_720p_60fps）；對應 spec agent 的 TC-VE2-215（產生）和 TC-VE2-144（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 16 credits。,未變更,
 TC-250,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 32 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1190,7 +1213,7 @@ TC-250,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1920 × 1080、60 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_1080p_60fps）；對應 spec agent 的 TC-VE2-216（產生）和 TC-VE2-145（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 32 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_1080p_60fps）；對應 spec agent 的 TC-VE2-216（產生）和 TC-VE2-145（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 32 credits。,未變更,
 TC-251,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 96 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1216,7 +1239,7 @@ TC-251,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、3840 × 2160、60 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 96 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 24 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_4k_60fps）；對應 spec agent 的 TC-VE2-217（產生）和 TC-VE2-146（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 96 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 96 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 24 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_4k_60fps）；對應 spec agent 的 TC-VE2-217（產生）和 TC-VE2-146（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 96 credits。,未變更,
 TC-252,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 32 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1241,7 +1264,7 @@ TC-252,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1280 × 720、120 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_720p_120fps）；對應 spec agent 的 TC-VE2-218（產生）和 TC-VE2-147（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 32 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=720p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 8 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_720p_120fps）；對應 spec agent 的 TC-VE2-218（產生）和 TC-VE2-147（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 32 credits。,未變更,
 TC-253,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 64 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1267,7 +1290,7 @@ TC-253,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、1920 × 1080、120 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 64 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 16 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_1080p_120fps）；對應 spec agent 的 TC-VE2-219（產生）和 TC-VE2-148（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 64 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 64 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=1080p（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 16 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_1080p_120fps）；對應 spec agent 的 TC-VE2-219（產生）和 TC-VE2-148（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 64 credits。,未變更,
 TC-254,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），至少有 192 credits
 2. 相簿裡有一支 00:03.2（3.2 秒）、720p、30 fps 的橫式影片（為測試製作，所有組合列都用同一支）
 3. 先記下目前的餘額和點數記錄中最新的一筆","1. 用這支 3.2 秒的影片開啟面板（整支影片都選取）
@@ -1293,51 +1316,51 @@ TC-254,設定組合,"1. 以 Pro+ 帳號登入（Android 沒有等級切換），
 「Result」比 Standard 的結果更細緻（「Maximum detail」），而且畫面更銳利清楚（「Moderate enhancement for a sharp, clear image」）
 「Save Result」顯示「Saved to your device」
 儲存的影片長 3.2 秒、3840 × 2160、120 fps
-點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 192 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 48 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_4k_120fps）；對應 spec agent 的 TC-VE2-220（產生）和 TC-VE2-149（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 192 credits。
+點數記錄最新一筆是一筆「AI Video Enhance」扣款，共 192 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203",組合：Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=4K（`### Combinations`，analysis pass 10）[Req: REQ-008]。費率每秒 48 點，取自 ECL 費率表（form 22061491221，action genvideo_1_sec_byteplus_pro_hd_4k_120fps）；對應 spec agent 的 TC-VE2-220（產生）和 TC-VE2-149（價格顯示）。點數數字必須完全一致。若這個組合的選項在畫面上是灰色的（Q-6），記為 Blocked --as question。需完整產生一次影片，花 192 credits。,未變更,
 TC-160,時間軸入口,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 專案裡有一段 05:00 的片段
 3. 已從片段工具列對它開啟面板","1. 點「Professional」
 2. 把右側把手往左拖，直到「Selected Length」顯示「02:20」
 3. 再點一次「Professional」","步驟 1：「Professional」外觀正常
 步驟 1：跳出 toast「Professional supports clips up to 2:30. Shorten your selection to switch.」約 3 秒，Mode 維持 Standard，選取長度仍是 05:00
-步驟 3：切換成「Professional」，不會跳 toast，選取長度維持 02:20",P2,"R-057, R-052, R-053",Q-10：draft B1-1 ⑦ 把這個 chip 設成不能按，並顯示「Professional mode supports clips up to 2m 30s. Split the clip to use it.」；要在手機上確認後與使用者決定。spec agent 的 TC-VE2-269 引用的是 PM 9/29 的 toast；Design 的文字較新。
+步驟 3：切換成「Professional」，不會跳 toast，選取長度維持 02:20",P2,"R-057, R-052, R-053",Q-10：draft B1-1 ⑦ 把這個 chip 設成不能按，並顯示「Professional mode supports clips up to 2m 30s. Split the clip to use it.」；要在手機上確認後與使用者決定。spec agent 的 TC-VE2-269 引用的是 PM 9/29 的 toast；Design 的文字較新。,未變更,
 TC-161,時間軸入口,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 專案裡有一段 10:00 的片段","1. 點選該片段
 2. 點片段工具列上的「AI Video Enhance」","面板不會開啟
-跳出 toast「Split clips longer than 8 minutes first」",P3,R-058,PM D4 [建議] / B1-1 ⑦（Q-10）：只有 PM 有寫。
+跳出 toast「Split clips longer than 8 minutes first」",P3,R-058,PM D4 [建議] / B1-1 ⑦（Q-10）：只有 PM 有寫。,未變更,
 TC-162,時間軸入口,"1. 以 Pro+ 帳號登入（Android 沒有等級切換）
 2. 專案裡有一段 00:30 的片段
 3. 已從片段工具列對它開啟面板","1. 點「Enhance ◆ <credits>」
 2. 留在編輯器，等到任務完成","上傳對話框和 Recent task 的流程與主流程相同
-任務完成後，時間軸上的片段會在原位置換成處理後的結果，並顯示「Applied Video Enhance」",P2,"R-131, R-130",PM-only：還沒有 Design frame（pm-timeline 397:1888；通知的形式未定，D4 提議用 3 秒的 toast「Video Enhance applied」）。Q-11：Design 的備註寫結果永遠不會取代原片段。
-TC-163,時間軸入口,從片段工具列開啟面板，目前沒有任務在跑,點面板頂端列的 ‹,回到編輯器，專案和片段都沒有改變,P2,R-133,
+任務完成後，時間軸上的片段會在原位置換成處理後的結果，並顯示「Applied Video Enhance」",P2,"R-131, R-130",PM-only：還沒有 Design frame（pm-timeline 397:1888；通知的形式未定，D4 提議用 3 秒的 toast「Video Enhance applied」）。Q-11：Design 的備註寫結果永遠不會取代原片段。,未變更,
+TC-163,時間軸入口,從片段工具列開啟面板，目前沒有任務在跑,點面板頂端列的 ‹,回到編輯器，專案和片段都沒有改變,P2,R-133,,未變更,
 TC-164,時間軸入口,時間軸上有一個任務正在處理（TC-162 的設定）,"1. 從時間軸刪除該片段
 2. 等到任務完成","不會有任何內容貼進專案
-結果會出現在 Recent task",P3,R-132,PM D4 [建議]（Gap 10）。
-TC-165,時間軸入口,已開啟一個從時間軸啟動的任務結果,點「Add to Timeline」,開啟原本的專案（不會建立新專案）,P3,R-134,PM D4 [建議]；與 Design 的「Add to Timeline → 開新 timeline」不一致（Q-11）。
-TC-170,失敗與退款,有一個在伺服器端失敗的 Video Enhance 任務,開啟 Recent task,失敗任務的卡片顯示「Error」縮圖和「View Details」（沒有 Retry）,P1,R-140,暫緩：需要先有可重現失敗的條件（目前不知道 Video Enhance 有沒有故障開關，要問 RD）。spec agent 的做法之一（TC-VE2-173，[Req: REQ-008]）：拿一支會被內容審核擋下的影片（NSFW 測試相簿）只試一次。
+結果會出現在 Recent task",P3,R-132,PM D4 [建議]（Gap 10）。,未變更,
+TC-165,時間軸入口,已開啟一個從時間軸啟動的任務結果,點「Add to Timeline」,開啟原本的專案（不會建立新專案）,P3,R-134,PM D4 [建議]；與 Design 的「Add to Timeline → 開新 timeline」不一致（Q-11）。,未變更,
+TC-170,失敗與退款,有一個在伺服器端失敗的 Video Enhance 任務,開啟 Recent task,失敗任務的卡片顯示「Error」縮圖和「View Details」（沒有 Retry）,P1,R-140,暫緩：需要先有可重現失敗的條件（目前不知道 Video Enhance 有沒有故障開關，要問 RD）。spec agent 的做法之一（TC-VE2-173，[Req: REQ-008]）：拿一支會被內容審核擋下的影片（NSFW 測試相簿）只試一次。,未變更,
 TC-171,失敗與退款,Recent task 裡有一張失敗的卡片（TC-170）,"1. 點「View Details」
 2. 點「OK」","第 1 步顯示「An Error Has Occurred」／「Credits have been refunded.」／「The server may be busy. Please try again later or use a different video.」，並附「OK」按鈕
-第 2 步關閉視窗，畫面停留在 Recent task",P1,"R-141, R-191",與 TC-170 一併暫緩。走 Design 箭頭 3393-18071（Recent 的「View Details」→ 對話框）。
+第 2 步關閉視窗，畫面停留在 Recent task",P1,"R-141, R-191",與 TC-170 一併暫緩。走 Design 箭頭 3393-18071（Recent 的「View Details」→ 對話框）。,未變更,
 TC-173,失敗與退款,在任務失敗前（TC-170）已記下餘額,失敗後，開啟 credit pill 或 Credit 頁,"餘額回到先前記下的數字（已自動退款）
 點數記錄中有退款紀錄
-任何地方都沒有提供 Retry",P1,R-142,KP-007：沒退款或退錯金額，都算獨立的缺陷。與 TC-170 一併暫緩。
+任何地方都沒有提供 Retry",P1,R-142,KP-007：沒退款或退錯金額，都算獨立的缺陷。與 TC-170 一併暫緩。,未變更,
 TC-174,失敗與退款,"1. 已允許通知
 2. 有一個會失敗的任務正在處理
-3. App 在背景執行",等待通知出現,收到通知「Video Enhance didn't finish. Your credits have been refunded.」,P3,R-143,PM D1 [建議]（Gap 8、Q-16）。與 TC-170 一併暫緩。
+3. App 在背景執行",等待通知出現,收到通知「Video Enhance didn't finish. Your credits have been refunded.」,P3,R-143,PM D1 [建議]（Gap 8、Q-16）。與 TC-170 一併暫緩。,未變更,
 TC-200,系統返回鍵,從 Launcher 開啟 Demo 頁,按系統返回鍵,"回到 Launcher（與 ‹ 相同）
-不會開啟 Add Media",P2,"R-011, R-190",
-TC-201,系統返回鍵,從 Demo 頁開啟 Add Media,按系統返回鍵,回到 Demo 頁（與 ‹ 相同）,P2,"R-014, R-190",
-TC-202,系統返回鍵,從 Add Media 開啟面板，目前沒有任務在跑,按系統返回鍵,回到 Add Media（與 ‹ 相同）,P2,"R-028, R-190",
-TC-203,系統返回鍵,面板上顯示一個提示泡泡（「Selected Length」旁的 ⓘ）,按系統返回鍵,泡泡關閉，面板留在原處,P3,"R-022, R-190",Q-20：規格沒有訂泡泡的返回鍵規則；暫時假設比照泡泡「點任何地方就關閉」。
+不會開啟 Add Media",P2,"R-011, R-190",,未變更,
+TC-201,系統返回鍵,從 Demo 頁開啟 Add Media,按系統返回鍵,回到 Demo 頁（與 ‹ 相同）,P2,"R-014, R-190",,未變更,
+TC-202,系統返回鍵,從 Add Media 開啟面板，目前沒有任務在跑,按系統返回鍵,回到 Add Media（與 ‹ 相同）,P2,"R-028, R-190",,未變更,
+TC-203,系統返回鍵,面板上顯示一個提示泡泡（「Selected Length」旁的 ⓘ）,按系統返回鍵,泡泡關閉，面板留在原處,P3,"R-022, R-190",Q-20：規格沒有訂泡泡的返回鍵規則；暫時假設比照泡泡「點任何地方就關閉」。,未變更,
 TC-204,系統返回鍵,處理中對話框顯示中（上傳中）,按系統返回鍵,"跳出離開確認「Sure You Want to Leave?」（與「Cancel」相同）
-上傳繼續進行",P2,"R-086, R-190",Q-20：假設——在處理中對話框按返回鍵會先詢問，和「Cancel」一樣。
-TC-205,系統返回鍵,離開確認「Sure You Want to Leave?」顯示中,按系統返回鍵,離開確認關閉，上傳繼續進行（與「Keep Uploading」相同），絕不會默默離開,P2,"R-087, R-190",Q-20（假設：返回鍵視為最安全的選擇）。
-TC-206,系統返回鍵,從面板開啟 IAP 頁,按系統返回鍵,回到面板，內容不變（與 ‹ 相同）,P2,"R-073, R-190",
-TC-207,系統返回鍵,從面板開啟 Credit 頁（餘額不足）,按系統返回鍵,回到面板，內容不變（與 ‹ 相同）,P2,"R-073, R-190",與 TC-096 一併暫緩（需要餘額不足的條件）。
-TC-208,系統返回鍵,從面板開啟 Recent task,按系統返回鍵,回到面板（與 ‹ 相同）,P2,"R-114, R-190",
-TC-209,系統返回鍵,從 Recent task 的卡片開啟 Result,按系統返回鍵,回到 Recent task（與 ‹ 相同）,P2,"R-125, R-190",
-TC-210,系統返回鍵,「An Error Has Occurred」對話框顯示中,按系統返回鍵,對話框關閉，效果同按「OK」,P3,"R-141, R-190",與 TC-170 一併暫緩（需要失敗的條件）。
-TC-211,系統返回鍵,「Turn on notifications」對話框顯示中（TC-118 的設定）,按系統返回鍵,對話框關閉，效果同按「Later」,P3,"R-095, R-190",Q-20（假設）。這是只有 PM 有畫的畫面。
-TC-212,系統返回鍵,從面板開啟全螢幕預覽,按系統返回鍵,全螢幕預覽關閉，回到面板，內容不變,P3,"R-027, R-190",
-TC-213,系統返回鍵,從片段工具列開啟面板，目前沒有任務在跑,按系統返回鍵,回到編輯器，專案不變（與 ‹ 相同）,P2,"R-133, R-190",
+上傳繼續進行",P2,"R-086, R-190",Q-20：假設——在處理中對話框按返回鍵會先詢問，和「Cancel」一樣。,未變更,
+TC-205,系統返回鍵,離開確認「Sure You Want to Leave?」顯示中,按系統返回鍵,離開確認關閉，上傳繼續進行（與「Keep Uploading」相同），絕不會默默離開,P2,"R-087, R-190",Q-20（假設：返回鍵視為最安全的選擇）。,未變更,
+TC-206,系統返回鍵,從面板開啟 IAP 頁,按系統返回鍵,回到面板，內容不變（與 ‹ 相同）,P2,"R-073, R-190",,未變更,
+TC-207,系統返回鍵,從面板開啟 Credit 頁（餘額不足）,按系統返回鍵,回到面板，內容不變（與 ‹ 相同）,P2,"R-073, R-190",與 TC-096 一併暫緩（需要餘額不足的條件）。,未變更,
+TC-208,系統返回鍵,從面板開啟 Recent task,按系統返回鍵,回到面板（與 ‹ 相同）,P2,"R-114, R-190",,未變更,
+TC-209,系統返回鍵,從 Recent task 的卡片開啟 Result,按系統返回鍵,回到 Recent task（與 ‹ 相同）,P2,"R-125, R-190",,未變更,
+TC-210,系統返回鍵,「An Error Has Occurred」對話框顯示中,按系統返回鍵,對話框關閉，效果同按「OK」,P3,"R-141, R-190",與 TC-170 一併暫緩（需要失敗的條件）。,未變更,
+TC-211,系統返回鍵,「Turn on notifications」對話框顯示中（TC-118 的設定）,按系統返回鍵,對話框關閉，效果同按「Later」,P3,"R-095, R-190",Q-20（假設）。這是只有 PM 有畫的畫面。,未變更,
+TC-212,系統返回鍵,從面板開啟全螢幕預覽,按系統返回鍵,全螢幕預覽關閉，回到面板，內容不變,P3,"R-027, R-190",,未變更,
+TC-213,系統返回鍵,從片段工具列開啟面板，目前沒有任務在跑,按系統返回鍵,回到編輯器，專案不變（與 ‹ 相同）,P2,"R-133, R-190",,未變更,
