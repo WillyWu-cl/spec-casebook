@@ -1,0 +1,397 @@
+{
+  "checked_at": "2026-11-11T09:37:21.873Z",
+  "set": "2026-11-09-figma",
+  "unchanged": [
+    {
+      "id": "12:2321/design-light-adjust",
+      "group": "d-adjust",
+      "box": [
+        -10,
+        970,
+        2440,
+        1000
+      ],
+      "holder": ""
+    },
+    {
+      "id": "12:2321/design-dark-adjust",
+      "group": "d-adjust",
+      "box": [
+        3302,
+        970,
+        2440,
+        1000
+      ],
+      "holder": ""
+    },
+    {
+      "id": "12:2321/design-light-enhance",
+      "group": "d-enhance",
+      "box": [
+        -10,
+        2080,
+        2000,
+        1000
+      ],
+      "holder": ""
+    },
+    {
+      "id": "12:2321/design-dark-enhance",
+      "group": "d-enhance",
+      "box": [
+        3302,
+        2080,
+        2000,
+        1000
+      ],
+      "holder": ""
+    },
+    {
+      "id": "12:2321/design-light-entry",
+      "group": "d-entry",
+      "box": [
+        -10,
+        -150,
+        1610,
+        1090
+      ],
+      "holder": ""
+    },
+    {
+      "id": "12:2321/design-dark-entry",
+      "group": "d-entry",
+      "box": [
+        3302,
+        -150,
+        1610,
+        1090
+      ],
+      "holder": ""
+    },
+    {
+      "id": "12:2321/design-light-save",
+      "group": "d-save",
+      "box": [
+        -10,
+        3200,
+        2000,
+        980
+      ],
+      "holder": ""
+    },
+    {
+      "id": "12:2321/design-dark-save",
+      "group": "d-save",
+      "box": [
+        3302,
+        3200,
+        2000,
+        980
+      ],
+      "holder": ""
+    },
+    {
+      "id": "145:2810",
+      "group": "pm-drafts",
+      "box": [
+        -1330,
+        11517,
+        1880,
+        1200
+      ],
+      "holder": "145:2810"
+    },
+    {
+      "id": "293:2246",
+      "group": "pm-drafts",
+      "box": [
+        16739,
+        193,
+        3000,
+        8771
+      ],
+      "holder": "293:2246"
+    },
+    {
+      "id": "382:2617",
+      "group": "pm-drafts",
+      "box": [
+        16611,
+        9851,
+        4924,
+        2633
+      ],
+      "holder": ""
+    },
+    {
+      "id": "16:9281/pm-flow-1",
+      "group": "pm-flow-a",
+      "box": [
+        6366,
+        622,
+        4540,
+        1360
+      ],
+      "holder": "16:9281"
+    },
+    {
+      "id": "16:9281/pm-flow-2",
+      "group": "pm-flow-a",
+      "box": [
+        6366,
+        1134,
+        4540,
+        2166
+      ],
+      "holder": "16:9281"
+    },
+    {
+      "id": "16:9281/pm-flow-3",
+      "group": "pm-flow-a",
+      "box": [
+        6366,
+        3300,
+        4540,
+        1164
+      ],
+      "holder": "16:9281"
+    },
+    {
+      "id": "16:9281/pm-flow-4",
+      "group": "pm-flow-b",
+      "box": [
+        6366,
+        4464,
+        4540,
+        1164
+      ],
+      "holder": "16:9281"
+    },
+    {
+      "id": "16:9281/pm-flow-5",
+      "group": "pm-flow-b",
+      "box": [
+        6366,
+        5628,
+        4540,
+        1327
+      ],
+      "holder": "16:9281"
+    },
+    {
+      "id": "16:9281/pm-flow-6",
+      "group": "pm-flow-b",
+      "box": [
+        6366,
+        6792,
+        4540,
+        1164
+      ],
+      "holder": "16:9281"
+    },
+    {
+      "id": "16:9281/pm-flow-7",
+      "group": "pm-flow-b",
+      "box": [
+        6366,
+        7956,
+        4540,
+        1268
+      ],
+      "holder": "16:9281"
+    },
+    {
+      "id": "1:2",
+      "group": "pm-notes",
+      "box": [
+        -1374,
+        -861,
+        2401,
+        738
+      ],
+      "holder": ""
+    },
+    {
+      "id": "42:3016/pm-header",
+      "group": "pm-notes",
+      "box": [
+        6366,
+        222,
+        9690,
+        300
+      ],
+      "holder": "42:3016"
+    },
+    {
+      "id": "16:15541",
+      "group": "pm-notes",
+      "box": [
+        11006,
+        622,
+        1000,
+        256
+      ],
+      "holder": "16:15541"
+    },
+    {
+      "id": "16:15545",
+      "group": "pm-notes",
+      "box": [
+        12106,
+        622,
+        1000,
+        294
+      ],
+      "holder": "16:15545"
+    },
+    {
+      "id": "16:15550",
+      "group": "pm-notes",
+      "box": [
+        13206,
+        622,
+        1500,
+        572
+      ],
+      "holder": "16:15550"
+    },
+    {
+      "id": "42:3016/pm-tbd",
+      "group": "pm-notes",
+      "box": [
+        13150,
+        1600,
+        2620,
+        1150
+      ],
+      "holder": "42:3016"
+    },
+    {
+      "id": "3:2",
+      "group": "pm-reference",
+      "box": [
+        -1330,
+        122,
+        7242,
+        10703
+      ],
+      "holder": ""
+    },
+    {
+      "id": "16:13767/pm-ui-1",
+      "group": "pm-ui-a",
+      "box": [
+        6366,
+        9424,
+        9681,
+        1180
+      ],
+      "holder": "16:13767"
+    },
+    {
+      "id": "16:13767/pm-ui-2",
+      "group": "pm-ui-a",
+      "box": [
+        6366,
+        10604,
+        9681,
+        1196
+      ],
+      "holder": "16:13767"
+    },
+    {
+      "id": "16:13767/pm-ui-3",
+      "group": "pm-ui-a",
+      "box": [
+        6366,
+        11800,
+        9681,
+        1600
+      ],
+      "holder": "16:13767"
+    },
+    {
+      "id": "16:13767/pm-ui-4",
+      "group": "pm-ui-a",
+      "box": [
+        6366,
+        13400,
+        9681,
+        1480
+      ],
+      "holder": "16:13767"
+    },
+    {
+      "id": "16:13767/pm-ui-5",
+      "group": "pm-ui-b",
+      "box": [
+        6366,
+        14880,
+        9681,
+        1150
+      ],
+      "holder": "16:13767"
+    },
+    {
+      "id": "16:13767/pm-ui-6",
+      "group": "pm-ui-b",
+      "box": [
+        6366,
+        16030,
+        9681,
+        1150
+      ],
+      "holder": "16:13767"
+    },
+    {
+      "id": "16:13767/pm-ui-7",
+      "group": "pm-ui-b",
+      "box": [
+        6366,
+        17180,
+        9681,
+        1200
+      ],
+      "holder": "16:13767"
+    },
+    {
+      "id": "16:13767/pm-ui-8",
+      "group": "pm-ui-b",
+      "box": [
+        6366,
+        18380,
+        9681,
+        1220
+      ],
+      "holder": "16:13767"
+    }
+  ],
+  "changed": [],
+  "removed": [],
+  "baseline": [],
+  "new_boards": [],
+  "missed_arrows": [],
+  "reread": [],
+  "shots": [
+    {
+      "png": "design-dark-entry.png",
+      "board": "12:2321/design-dark-entry"
+    },
+    {
+      "png": "design-dark-adjust.png",
+      "board": "12:2321/design-dark-adjust"
+    },
+    {
+      "png": "design-dark-enhance.png",
+      "board": "12:2321/design-dark-enhance"
+    },
+    {
+      "png": "pm-flow-1.png",
+      "board": "16:9281/pm-flow-1"
+    },
+    {
+      "png": "pm-ui-4.png",
+      "board": "16:13767/pm-ui-4"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Update plan — phd/swipe-collage / android: approved v2 → draft 20261112-094820
 
-Request: REQ-007 (user, 2026-11-12): update the table from spec set 2026-11-05 and the Design Figma, then run it on
+Request: REQ-008 (user, 2026-11-12): update the table from spec set 2026-11-05 and the Design Figma, then run it on
 Android. Rebuild the rows with `node library/phd/swipe-collage/android/drafts/20261112-094820/build-draft.ts`.
 
 ## Spec files
@@ -90,7 +90,7 @@ Android. Rebuild the rows with `node library/phd/swipe-collage/android/drafts/20
   charged, TC-172).
 - Pass 10 (variants): R-061 per tier / trigger; R-122 per share target; R-120 / R-207 / R-209 Save variants; R-210
   light / dark; R-099 every ratio the bar offers.
-- Standing inputs: request ledger REQ-007 added and cited; domain knowledge read (`knowledge.md`): KP-012, KP-020,
+- Standing inputs: request ledger REQ-008 added and cited; domain knowledge read (`knowledge.md`): KP-012, KP-020,
   KP-030, KP-033, KP-041 applied, the other rules listed n/a under Domain rules; no Testing Request / RD build note was
   named for this update, so no Build checks; no eBugs filed for this feature yet.
 

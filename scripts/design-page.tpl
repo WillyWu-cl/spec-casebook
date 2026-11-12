@@ -357,8 +357,8 @@ const COL = s => `var(--${({ differs: 'differs', question: 'question', unreviewe
 const VN = { en: { bug: 'Bug', question: 'Question', ok: 'OK', 'n/a': 'N/A', unreviewed: 'Unreviewed', info: 'Info' }, zh: { bug: '問題', question: '待確認', ok: '一致', 'n/a': '無法判定', unreviewed: '未審查', info: '資訊' } };
 // Info and N/A in readable colours, not the faint grey (user, 2026-11-04)
 const VC = v => `var(--${({ bug: 'differs', question: 'question', unreviewed: 'unreviewed', ok: 'matches', info: 'info', 'n/a': 'muted' })[v] ?? 'none'})`;
-const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', weight: 'Font weight', radius: 'Corner radius', padding: 'Padding', align: 'Centring', border: 'Border', spacing: 'Spacing', truncated: 'Truncated', control: 'Control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
-  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', weight: '字重', radius: '圓角', padding: '內距', align: '置中', border: '邊框', spacing: '按鍵間距', truncated: '截斷', control: '控制項', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
+const KN = { en: { state: 'State', appearance: 'Dark / light', size: 'Text size', weight: 'Font weight', radius: 'Corner radius', padding: 'Padding', align: 'Centring', border: 'Border', spacing: 'Spacing', truncated: 'Truncated', control: 'Control', unspecced: 'Extra control', copy: 'Copy', missing: 'Missing', lines: 'Lines', position: 'Position', colour: 'Colour', extra: 'Extra text', sample: 'Sample text', visual: 'Visual' },
+  zh: { state: '狀態', appearance: '深色／淺色', size: '文字大小', weight: '字重', radius: '圓角', padding: '內距', align: '置中', border: '邊框', spacing: '按鍵間距', truncated: '截斷', control: '控制項', unspecced: '多出按鍵', copy: '文案', missing: '缺少', lines: '行數', position: '位置', colour: '顏色', extra: '多出文字', sample: '範例文字', visual: '視覺' } };
 const PAGES = window.CASEBOOK?.pages ?? {};
 // Save goes to this computer only; a viewer on another computer gets Copy instead (decided once, at load)
 const canSave = D.live && D.save !== false;
@@ -761,6 +761,8 @@ function plain(it, H) {
     case 'truncated': return zh ? `${what} 在 App 上被截斷：${q(a.text)}。` : `${what} is cut short in the app: ${q(a.text)}.`;
     case 'missing': case 'sample': return zh ? `Design 有 ${what}，App 上找不到。` : `The Design shows ${what}; the app does not.`;
     case 'extra': return zh ? `App 有 ${q(a.text)}，Design 沒有。` : `The app shows ${q(a.text)}; the Design does not.`;
+    case 'unspecced': { const nm = a.text ? q(a.text) : a.id ? `「${String(a.id).replace(/^.*:id\//, '')}」` : '';
+      return zh ? `App 在此有可點的按鍵${nm}，Design 這裡沒有畫（不在 Design 裡，或畫在別處）。` : `The app has a tappable control${nm ? ' ' + nm : ''} here; the Design draws nothing there (not in the Design, or drawn elsewhere).`; }
     case 'control': return zh ? `Design 在此有按鍵「${f.name ?? ''}」，App 這裡沒有可點的按鍵。` : `The Design has the button 「${f.name ?? ''}」 here; the app has nothing to tap there.`;
     case 'copy': return zh ? `文字不同：Design ${q(f.text)}，App ${q(a.text)}。` : `Different words: Design ${q(f.text)}, app ${q(a.text)}.`;
     // (checks before 2026-11-06) y is measured from the bottom in the screen's lower half: larger is higher there

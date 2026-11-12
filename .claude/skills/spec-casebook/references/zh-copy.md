@@ -52,6 +52,8 @@ sound translated.
   ("Exceed word limit"), IDs (TC-, R-, KP-, KF-, Q-, REQ-), eBug codes, file and board names, numbers, units, sizes and
   prices. Product and feature names stay English (PowerDirector, AI Mini Drama, Launcher, Pro+, Premium, Free).
 - **Steps:** a numbered list stays numbered, one step per line, same numbers; a field that is not a list stays prose.
+  Precondition and Expected Result keep the English lines one for one (same count, same numbers, the same
+  「步驟 3：」 prefix), never joined with ；.
 - **Notes:** spec-source notes ("Design 1005_Update … wins over PM §13.11") become short Chinese explanations with the
   sources kept as written: `Design 1005_Update 的「Exceed word limit」比 PM §13.11（10/2）新，以 Design 為準`.
 - **Same thing, same words** within a table: one Chinese name per section (merge enforces it) and per recurring

@@ -100,9 +100,9 @@ import { homedir } from 'node:os';
 import { basename, join } from 'node:path';
 import { productValue } from './lib/feature-config.ts';
 import { BLOCKER, env, logActivity, runRecipe, sleep, stamp, webdriver } from './lib/device-common.ts';
-import { armWatch, saveCapture, settledCapture, stateMismatch, watchSource } from './lib/design-watch.ts';
+import { armWatch, blankShot, saveCapture, settledCapture, stateMismatch, watchSource } from './lib/design-watch.ts';
 import { keyboardInSource } from './lib/design-match.ts';
-import { compactViews, dumpViews, viewdumpProblem } from './lib/android-views.ts';
+import { compactViews, dumpViews, secureShot, viewdumpProblem } from './lib/android-views.ts';
 
 const HOME = homedir();
 const ANDROID_HOME = process.env.ANDROID_HOME ?? process.env.ANDROID_SDK_ROOT ?? join(HOME, 'Library/Android/sdk');
@@ -254,9 +254,19 @@ async function appViews() {
   if (why) { console.log(`design: no app view data (${why})`); return null; }
   try { const full = await dumpViews(a); return { full, compact: compactViews(full) }; } catch (e: any) { console.log(`design: app view data not read (${String(e?.message ?? e).slice(0, 160)})`); return null; }
 }
+// a design capture's screenshot: with the app's secure windows cleared for that moment (lib/android-views.ts
+// secureShot), and refused when it still shows nothing (lib/design-watch.ts blankShot), so Figma is never compared
+// with a black image (ported from rdqe-spec-contract-agent, 2026-11-11)
+let lastSecure: string[] | undefined;
+async function designShot(): Promise<Buffer> {
+  const r = await secureShot({ serial: serial(), pkg: PKG }, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'));
+  const blank = blankShot(r.png); if (blank) throw new Error(blank);
+  lastSecure = r.secure;
+  return r.png;
+}
 const source = async (): Promise<string> => {
   const xml: string = (await s('GET', '/source')).value;
-  if (watching()) { const l = await watchSource(runDir, xml, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'), async () => (await s('GET', '/window/rect')).value, async () => (await s('GET', '/source')).value,
+  if (watching()) { const l = await watchSource(runDir, xml, designShot, async () => (await s('GET', '/window/rect')).value, async () => (await s('GET', '/source')).value,
     async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value), appViews); if (l) console.log(l); }
   return xml;
 };
@@ -368,12 +378,13 @@ switch (cmd) {
     // itself; switched off again at once, as other windows would reach the run's lookups (`lbl`, `texts`)
     const multi = async () => { await s('POST', '/appium/settings', { settings: { enableMultiWindows: true } });
       try { return (await s('GET', '/source')).value as string; } finally { await s('POST', '/appium/settings', { settings: { enableMultiWindows: false } }).catch(() => {}); } };
-    const one = await settledCapture(multi, async () => Buffer.from((await s('GET', '/screenshot')).value, 'base64'));
+    let one: Awaited<ReturnType<typeof settledCapture>>;
+    try { one = await settledCapture(multi, designShot); } catch (e: any) { console.error(`not captured: ${rest[0]}: ${String(e?.message ?? e)}`); process.exit(1); }
     const kb = keyboardInSource(one.xml) ?? await (async () => Boolean((await s('GET', '/appium/device/is_keyboard_shown')).value))().catch(() => null);
     const off = part > 1 ? [] : stateMismatch(runDir, rest[0], one.png, kb);
     if (off.length && !anyway) { console.error(`not captured: ${rest[0]} is not in its frame's state: ${off.join('; ')}`); process.exit(1); }
     const { kase, png } = saveCapture(runDir, rest[0], { part, note: words.join(' '), png: one.png, xml: one.xml, win: (await s('GET', '/window/rect')).value, views: await appViews(),
-      extra: { ...(one.unsettled ? { unsettled: true } : {}), ...(kb !== null ? { keyboard: kb } : {}), ...(anyway ? { anyway, off } : {}) } });
+      extra: { ...(one.unsettled ? { unsettled: true } : {}), ...(lastSecure ? { secure_cleared: lastSecure } : {}), ...(kb !== null ? { keyboard: kb } : {}), ...(anyway ? { anyway, off } : {}) } });
     console.log(`captured ${rest[0]}${kase ? ` (${kase})` : ''} → ${png}${one.unsettled ? ' — the screen kept changing: wait until it is still and capture again' : ''}`);
     break;
   }

@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-11-10T06:38:01.724Z",
-  "spec_set": "2026-11-09",
+  "built_at": "2026-11-12T01:42:16.056Z",
+  "spec_set": "2026-11-09-figma",
   "file": {
     "fileKey": "qZXJfrM5gb5g4tFoCIS1YU",
     "page": "12:2321",
@@ -160,7 +160,7 @@
         "edge": "ic_1v1",
         "segment": "",
         "section": "Crop & Rotate",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1",
         "action": "1. Tap 「Squre」\n2. Tap 「All」",
         "result": "Not run",
         "run": ""
@@ -201,7 +201,7 @@
         "edge": "ic_1v1",
         "segment": "",
         "section": "Crop & Rotate",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1",
         "action": "1. Tap 「Squre」\n2. Tap 「All」",
         "result": "Not run",
         "run": ""
@@ -242,7 +242,7 @@
         "edge": "ic_mask_n",
         "segment": "",
         "section": "Adjustment",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1; Color › Curve open with a point moved",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1\n5. Color › Curve open with a point moved",
         "action": "1. Press and hold the compare button\n2. Tap the reset button",
         "result": "Not run",
         "run": ""
@@ -283,7 +283,7 @@
         "edge": "AI Exposure",
         "segment": "",
         "section": "Adjustment",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1",
         "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
         "result": "Not run",
         "run": ""
@@ -324,7 +324,7 @@
         "edge": "AI Exposure",
         "segment": "",
         "section": "Adjustment",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1",
         "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
         "result": "Not run",
         "run": ""
@@ -365,7 +365,7 @@
         "edge": "AI Exposure",
         "segment": "",
         "section": "Adjustment",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1",
         "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
         "result": "Not run",
         "run": ""
@@ -406,7 +406,7 @@
         "edge": "Hue",
         "segment": "",
         "section": "Adjustment",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1",
         "action": "1. Tap 「Color」\n2. Open HSL\n3. Tap a colour chip and move 「Hue」, 「Saturation」, 「Lightness」\n4. Tap Exposure",
         "result": "Not run",
         "run": ""
@@ -447,7 +447,7 @@
         "edge": "Hue",
         "segment": "",
         "section": "Adjustment",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1",
         "action": "1. Tap 「Color」\n2. Open HSL\n3. Tap a colour chip and move 「Hue」, 「Saturation」, 「Lightness」\n4. Tap Exposure",
         "result": "Not run",
         "run": ""
@@ -488,7 +488,7 @@
         "edge": "AI Exposure",
         "segment": "",
         "section": "Adjustment",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1",
         "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
         "result": "Not run",
         "run": ""
@@ -529,7 +529,7 @@
         "edge": "AI Exposure",
         "segment": "",
         "section": "Adjustment",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1",
         "action": "1. Tap Exposure, Contrast and Highlight in turn and move the slider for each\n2. If 「AI Exposure」 is in the tool row, tap it",
         "result": "Not run",
         "run": ""
@@ -570,7 +570,7 @@
         "edge": "33",
         "segment": "",
         "section": "Crop & Rotate",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1",
         "action": "1. Drag the angle slider to 15\n2. Tap 「All」",
         "result": "Not run",
         "run": ""
@@ -611,7 +611,7 @@
         "edge": "33",
         "segment": "",
         "section": "Crop & Rotate",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1",
         "action": "1. Drag the angle slider to 15\n2. Tap 「All」",
         "result": "Not run",
         "run": ""
@@ -652,7 +652,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -693,7 +693,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -734,7 +734,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -775,7 +775,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -816,7 +816,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -857,7 +857,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -898,7 +898,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -939,7 +939,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -980,7 +980,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -1021,7 +1021,7 @@
         "edge": "top/ic_settings",
         "segment": "",
         "section": "Batch Edit Room",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
         "action": "Tap Settings (the gear, rightmost in the top bar)",
         "result": "Not run",
         "run": ""
@@ -1062,7 +1062,7 @@
         "edge": "Discard",
         "segment": "",
         "section": "Leaving Batch Edit",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)",
         "action": "1. Tap Home\n2. Tap 「Discard」",
         "result": "Not run",
         "run": ""
@@ -1103,7 +1103,7 @@
         "edge": "Discard",
         "segment": "",
         "section": "Leaving Batch Edit",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)",
         "action": "1. Tap Home\n2. Tap 「Discard」",
         "result": "Not run",
         "run": ""
@@ -1144,7 +1144,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "AI Enhance",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open",
         "action": "Tap 「Enhance」",
         "result": "Not run",
         "run": ""
@@ -1185,7 +1185,7 @@
         "edge": "Cancel",
         "segment": "",
         "section": "AI Enhance",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open",
         "action": "1. Tap 「Enhance」\n2. Tap 「Cancel」",
         "result": "Not run",
         "run": ""
@@ -1226,7 +1226,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "AI Enhance",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open",
         "action": "Tap 「Enhance」",
         "result": "Not run",
         "run": ""
@@ -1267,7 +1267,7 @@
         "edge": "Retry Failed (3)",
         "segment": "",
         "section": "AI Enhance errors",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 「12 completed, 3 failed」; the failure fixture lets 2 of 3 succeed",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. A run ended with 「12 completed, 3 failed」\n6. The failure fixture lets 2 of 3 succeed",
         "action": "1. Tap 「Retry Failed (3)」 (the dialog may show first)\n2. Wait until it ends",
         "result": "Not run",
         "run": ""
@@ -1308,7 +1308,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "AI Enhance",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open",
         "action": "Tap 「Enhance」",
         "result": "Not run",
         "run": ""
@@ -1349,7 +1349,7 @@
         "edge": "Cancel",
         "segment": "",
         "section": "AI Enhance",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open",
         "action": "1. Tap 「Enhance」\n2. Tap 「Cancel」",
         "result": "Not run",
         "run": ""
@@ -1390,7 +1390,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "AI Enhance",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open",
         "action": "Tap 「Enhance」",
         "result": "Not run",
         "run": ""
@@ -1431,7 +1431,7 @@
         "edge": "Retry Failed (3)",
         "segment": "",
         "section": "AI Enhance errors",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 「12 completed, 3 failed」; the failure fixture lets 2 of 3 succeed",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. A run ended with 「12 completed, 3 failed」\n6. The failure fixture lets 2 of 3 succeed",
         "action": "1. Tap 「Retry Failed (3)」 (the dialog may show first)\n2. Wait until it ends",
         "result": "Not run",
         "run": ""
@@ -1472,7 +1472,7 @@
         "edge": "Single",
         "segment": "",
         "section": "Entry and Photo Picker",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
         "action": "Open Launcher › 「Edit」",
         "result": "Not run",
         "run": ""
@@ -1513,7 +1513,7 @@
         "edge": "Single",
         "segment": "",
         "section": "Entry and Photo Picker",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
         "action": "Open Launcher › 「Edit」",
         "result": "Not run",
         "run": ""
@@ -1554,7 +1554,7 @@
         "edge": "Edit Next Batch",
         "segment": "",
         "section": "Save",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved",
         "action": "Tap 「Edit Next Batch」",
         "result": "Not run",
         "run": ""
@@ -1595,7 +1595,7 @@
         "edge": "Edit Next Batch",
         "segment": "",
         "section": "Save",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved",
         "action": "Tap 「Edit Next Batch」",
         "result": "Not run",
         "run": ""

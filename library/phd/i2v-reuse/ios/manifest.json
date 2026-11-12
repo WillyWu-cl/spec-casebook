@@ -2,9 +2,9 @@
   "feature": "phd/i2v-reuse",
   "platform": "ios",
   "title": "Image to Video Reuse",
-  "version": 1,
-  "approved_at": "2026-11-06T04:18:16.775Z",
-  "draft": "20261106-121538",
+  "version": 2,
+  "approved_at": "2026-11-12T01:38:23.919Z",
+  "draft": "edit-20261112-093823",
   "spec_folder": "specs/2026-11-06",
   "spec_files": [
     {
@@ -26,6 +26,15 @@
       "approved_at": "2026-11-06T04:18:16.775Z",
       "spec_set_sha256": "da05200c88f28e9444ade6de751ec213402485680d558b043a89f67ed2a83286",
       "draft": "20261106-121538",
+      "cases": 47,
+      "csv": "history/v1.csv",
+      "requirements": "history/v1-requirements.md"
+    },
+    {
+      "version": 2,
+      "approved_at": "2026-11-12T01:38:23.919Z",
+      "spec_set_sha256": "da05200c88f28e9444ade6de751ec213402485680d558b043a89f67ed2a83286",
+      "draft": "edit-20261112-093823",
       "cases": 47,
       "csv": "cases.csv",
       "requirements": "requirements.md"

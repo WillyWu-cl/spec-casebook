@@ -9,7 +9,7 @@ Design and PM: the Design page is labelled 20261029 and the PM text has not chan
 dates cannot tell which is newer (Q-28). Rows follow the Design for UI and layout (format rule: Design outranks PM)
 and say 「check on device」 where the PM differs; PM rules the Design does not contradict stay as written.
 Mockups are iPhone frames; Android differences are stated where the spec names them (photo picker cap, D2-06) and in
-"System back". Request ledger: REQ-001 (this table), REQ-004 (TC-018 languages), REQ-007 (this update).
+"System back". Request ledger: REQ-001 (this table), REQ-004 (TC-018 languages), REQ-008 (this update).
 
 ## Entry
 - R-001 [PM:states-collage-room; D1-07, D1-16] [DS:Collage Room · banner (NEW) 1:238] On entering the Collage room a Swipe Collage banner is shown at the top of the room, under the layout filter tabs (「All」, 1–6) and above 「New」 (Collage has no AI / Traditional categories).
@@ -441,4 +441,4 @@ presses the Design's control.
 |---|---|
 | REQ-001 | R-001 – R-217 (the whole table) |
 | REQ-004 | R-018 (TC-018: East in Traditional Chinese and Japanese, West in English and German) |
-| REQ-007 | R-003, R-004, R-010, R-016, R-022, R-029 – R-031, R-033, R-036, R-037, R-039, R-042, R-043, R-049, R-054 – R-056, R-061, R-079 – R-099, R-103 – R-122, R-205 – R-217 (spec set 2026-11-05 and the Design Figma) |
+| REQ-008 | R-003, R-004, R-010, R-016, R-022, R-029 – R-031, R-033, R-036, R-037, R-039, R-042, R-043, R-049, R-054 – R-056, R-061, R-079 – R-099, R-103 – R-122, R-205 – R-217 (spec set 2026-11-05 and the Design Figma) |

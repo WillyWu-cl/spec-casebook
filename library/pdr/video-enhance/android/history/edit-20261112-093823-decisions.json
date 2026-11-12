@@ -1,0 +1,1415 @@
+{
+  "saved_at": "2026-11-12T01:38:23.874Z",
+  "version": 6,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-001",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); the Demo page was never dismissed with 「Don’t show again」 on this install; Launcher open",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. The Demo page was never dismissed with 「Don’t show again」 on this install\n3. Launcher open"
+    },
+    {
+      "id": "TC-002",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); Demo page not dismissed with 「Don’t show again」",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. Demo page not dismissed with 「Don’t show again」"
+    },
+    {
+      "id": "TC-002",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「AI Enhance」 section lists 「AI Video Enhance」; the card opens the Demo page",
+      "after": "The 「AI Enhance」 section lists 「AI Video Enhance」\nThe card opens the Demo page"
+    },
+    {
+      "id": "TC-003",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a project open in the editor with one video clip of 2:30 or less on the timeline",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A project open in the editor with one video clip of 2:30 or less on the timeline"
+    },
+    {
+      "id": "TC-003",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The AI Video Enhance panel opens directly with that clip in the Preview; no Demo page and no Add Media appear",
+      "after": "The AI Video Enhance panel opens directly with that clip in the Preview\nNo Demo page and no Add Media appear"
+    },
+    {
+      "id": "TC-010",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Demo page open from the Launcher (TC-001); 「Don’t show again」 not ticked",
+      "after": "1. Demo page open from the Launcher (TC-001)\n2. 「Don’t show again」 not ticked"
+    },
+    {
+      "id": "TC-010",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Before the tap the Demo page shows ‹, 「AI Video Enhance」, a sample video, a description, 「Don’t show again」 and 「Try It Now」; the tap opens 「Add Media」 with only the 「Video」 tab",
+      "after": "Before the tap the Demo page shows ‹, 「AI Video Enhance」, a sample video, a description, 「Don’t show again」 and 「Try It Now」\nThe tap opens 「Add Media」 with only the 「Video」 tab"
+    },
+    {
+      "id": "TC-013",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 2 returns to the Launcher without opening Add Media; step 3 shows the Demo page again (the tick was not saved)",
+      "after": "Step 2 returns to the Launcher without opening Add Media\nStep 3 shows the Demo page again (the tick was not saved)"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Demo page open from the Launcher; every other Demo page row done",
+      "after": "1. Demo page open from the Launcher\n2. Every other Demo page row done"
+    },
+    {
+      "id": "TC-014",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Steps 4 and 6 open Add Media directly; the Demo page no longer appears from the Launcher or AI Magic",
+      "after": "Steps 4 and 6 open Add Media directly\nThe Demo page no longer appears from the Launcher or AI Magic"
+    },
+    {
+      "id": "TC-020",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); Add Media open from the feature; a 12:30 1080p 60 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. Add Media open from the feature\n3. A 12:30 1080p 60 fps video in the album"
+    },
+    {
+      "id": "TC-020",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only the 「Video」 tab is offered and one video can be picked; the tap opens the panel with that video in the Preview at once (no Next button)",
+      "after": "Only the 「Video」 tab is offered and one video can be picked\nThe tap opens the panel with that video in the Preview at once (no Next button)"
+    },
+    {
+      "id": "TC-255",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); the Demo page showing; videos in All / Recents and in at least one named album or folder; network on",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. The Demo page showing\n3. Videos in All / Recents and in at least one named album or folder\n4. Network on"
+    },
+    {
+      "id": "TC-255",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 opens Add Media; step 2: every local album or folder and every stock library tab is listed (record them); step 3: each source lists videos and each tapped video opens the panel with that video in the Preview",
+      "after": "Step 1 opens Add Media\nStep 2: every local album or folder and every stock library tab is listed (record them)\nStep 3: each source lists videos and each tapped video opens the panel with that video in the Preview"
+    },
+    {
+      "id": "TC-256",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); Add Media open from the feature; network on",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. Add Media open from the feature\n3. Network on"
+    },
+    {
+      "id": "TC-256",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 2 lists Pexels videos; step 3 fetches the video if needed and opens the panel with that video in the Preview",
+      "after": "Step 2 lists Pexels videos\nStep 3 fetches the video if needed and opens the panel with that video in the Preview"
+    },
+    {
+      "id": "TC-257",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); Add Media open from the feature; network on",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. Add Media open from the feature\n3. Network on"
+    },
+    {
+      "id": "TC-257",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 2 lists Pixabay videos; step 3 fetches the video if needed and opens the panel with that video in the Preview",
+      "after": "Step 2 lists Pixabay videos\nStep 3 fetches the video if needed and opens the panel with that video in the Preview"
+    },
+    {
+      "id": "TC-258",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a video that is only in a named album (e.g. 「VE test」), not among the first Recents; Add Media open from the feature",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A video that is only in a named album (e.g. 「VE test」), not among the first Recents\n3. Add Media open from the feature"
+    },
+    {
+      "id": "TC-258",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 2 lists the album's videos; step 3 opens the panel with that video in the Preview",
+      "after": "Step 2 lists the album's videos\nStep 3 opens the panel with that video in the Preview"
+    },
+    {
+      "id": "TC-022",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Add Media open; the album holds a 1440p (2560 × 1440), a 4K (3840 × 2160) and an 8K (7680 × 4320) video, one under 1 s and one that is not MP4 / MOV",
+      "after": "1. Add Media open\n2. The album holds a 1440p (2560 × 1440), a 4K (3840 × 2160) and an 8K (7680 × 4320) video, one under 1 s and one that is not MP4 / MOV"
+    },
+    {
+      "id": "TC-022",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Steps 1–3: each opens the panel like any other source: 「4K」 is selected (a source above the highest option takes the highest), the Preview shows the video and plays it, and the badge at its lower right shows the source's own fps and resolution (e.g. 「30fps · 1440p」, 「30fps · 2160p」, 「30fps · 4320p」). Steps 4–5: each is greyed, the tap shows 「This video isn't supported. Try one up to 4K.」 and no panel opens",
+      "after": "Steps 1–3: each opens the panel like any other source: 「4K」 is selected (a source above the highest option takes the highest), the Preview shows the video and plays it, and the badge at its lower right shows the source's own fps and resolution (e.g. 「30fps · 1440p」, 「30fps · 2160p」, 「30fps · 4320p」)\nSteps 4–5: each is greyed, the tap shows 「This video isn't supported. Try one up to 4K.」 and no panel opens"
+    },
+    {
+      "id": "TC-030",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); the panel was never opened on this install; a 12:30 1080p 60 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. The panel was never opened on this install\n3. A 12:30 1080p 60 fps video in the album"
+    },
+    {
+      "id": "TC-031",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open; the first-run bubble already seen",
+      "after": "1. Panel open\n2. The first-run bubble already seen"
+    },
+    {
+      "id": "TC-031",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 shows the bubble 「Max 8 minutes. Drag to choose which part.」 again; step 2 closes it at once",
+      "after": "Step 1 shows the bubble 「Max 8 minutes. Drag to choose which part.」 again\nStep 2 closes it at once"
+    },
+    {
+      "id": "TC-033",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); panel open with a 12:30 1080p 60 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. Panel open with a 12:30 1080p 60 fps video in the album"
+    },
+    {
+      "id": "TC-033",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Top bar ‹, 「AI Video Enhance」, the credit pill with the balance and the Recent task icon; the Preview with 「60fps · 1080p」 at its lower right, 「00:00/12:30」, play and full-screen; 「Selected Length ⓘ」 「08:00」 and the thumbnail strip with a left ‹ and a right › trim handle and the playhead (a line with the bubble 「00:00」 above the strip and a ◀▶ knob under it); 「Mode ⓘ」 Standard / Professional; 「Enhancement style ⓘ」 Natural / Sharp; 「fps」 30fps / 60fps / 120fps; 「Resolution」 720p / 1080p / 4K (no 2K); CTA 「Enhance ◆ <credits>」 with 「Charge X credits per second」 under it",
+      "after": "Top bar ‹, 「AI Video Enhance」, the credit pill with the balance and the Recent task icon\nThe Preview with 「60fps · 1080p」 at its lower right, 「00:00/12:30」, play and full-screen\n「Selected Length ⓘ」 「08:00」 and the thumbnail strip with a left ‹ and a right › trim handle and the playhead (a line with the bubble 「00:00」 above the strip and a ◀▶ knob under it)\n「Mode ⓘ」 Standard / Professional\n「Enhancement style ⓘ」 Natural / Sharp\n「fps」 30fps / 60fps / 120fps\n「Resolution」 720p / 1080p / 4K (no 2K)\nCTA 「Enhance ◆ <credits>」 with 「Charge X credits per second」 under it"
+    },
+    {
+      "id": "TC-259",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 02:30.01 (150.01 s, length checked with ffprobe) video in the album (made for the test)",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 02:30.01 (150.01 s, length checked with ffprobe) video in the album (made for the test)"
+    },
+    {
+      "id": "TC-037",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 plays the video and the time advances; step 2 pauses it and the time and the frame stay the same through step 3; step 4 shows it full screen; step 5 returns to the panel with the selection and settings unchanged",
+      "after": "Step 1 plays the video and the time advances\nStep 2 pauses it and the time and the frame stay the same through step 3\nStep 4 shows it full screen\nStep 5 returns to the panel with the selection and settings unchanged"
+    },
+    {
+      "id": "TC-040",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 12:30 1080p 30 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 12:30 1080p 30 fps video in the album"
+    },
+    {
+      "id": "TC-040",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The selection starts at 00:00 and 「Selected Length」 reads 「08:00」 (mm:ss); Mode is Standard",
+      "after": "The selection starts at 00:00 and 「Selected Length」 reads 「08:00」 (mm:ss)\nMode is Standard"
+    },
+    {
+      "id": "TC-041",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 01:30 1080p 30 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 01:30 1080p 30 fps video in the album"
+    },
+    {
+      "id": "TC-042",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While dragging the Preview shows the frame at the right handle; 「Selected Length」 follows (about 「06:00」) and the CTA price drops at once",
+      "after": "While dragging the Preview shows the frame at the right handle\n「Selected Length」 follows (about 「06:00」) and the CTA price drops at once"
+    },
+    {
+      "id": "TC-214",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open with the 12:30 video, selection 00:00–08:00; note the CTA price",
+      "after": "1. Panel open with the 12:30 video, selection 00:00–08:00\n2. Note the CTA price"
+    },
+    {
+      "id": "TC-214",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While dragging the Preview shows the frame at the left handle (its time about 「02:00/12:30」); the selection is about 02:00–08:00, 「Selected Length」 follows (about 「06:00」), the right handle stays at 08:00 and the CTA price drops at once",
+      "after": "While dragging the Preview shows the frame at the left handle (its time about 「02:00/12:30」)\nThe selection is about 02:00–08:00, 「Selected Length」 follows (about 「06:00」), the right handle stays at 08:00 and the CTA price drops at once"
+    },
+    {
+      "id": "TC-215",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open with the 12:30 video, selection 00:00–08:00; note the CTA price",
+      "after": "1. Panel open with the 12:30 video, selection 00:00–08:00\n2. Note the CTA price"
+    },
+    {
+      "id": "TC-215",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: a playhead line sits at the selection start with the bubble 「00:00」 above the strip and the ◀▶ knob under it, and the Preview reads 「00:00/12:30」. Step 2: the playhead moves later, the bubble and the Preview time follow together (about 「03:00」 and 「03:00/12:30」) and the Preview shows that frame. Step 3: it moves earlier the same way (about 「01:00」 and 「01:00/12:30」). Step 4: the bubble, the Preview time and the frame follow the knob both ways. Step 5: they stop at about 「02:00」. In every step both trim handles, 「Selected Length」 「08:00」 and the CTA price stay the same",
+      "after": "Step 1: a playhead line sits at the selection start with the bubble 「00:00」 above the strip and the ◀▶ knob under it, and the Preview reads 「00:00/12:30」\nStep 2: the playhead moves later, the bubble and the Preview time follow together (about 「03:00」 and 「03:00/12:30」) and the Preview shows that frame\nStep 3: it moves earlier the same way (about 「01:00」 and 「01:00/12:30」)\nStep 4: the bubble, the Preview time and the frame follow the knob both ways\nStep 5: they stop at about 「02:00」\nIn every step both trim handles, 「Selected Length」 「08:00」 and the CTA price stay the same"
+    },
+    {
+      "id": "TC-216",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open with the 12:30 video in Standard; the selection moved and trimmed to 06:30–12:30 (「06:00」)",
+      "after": "1. Panel open with the 12:30 video in Standard\n2. The selection moved and trimmed to 06:30–12:30 (「06:00」)"
+    },
+    {
+      "id": "TC-216",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While dragging the Preview shows the frame at the left handle (its time follows the handle back toward 「04:30/12:30」); the left handle stops at 04:30 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」; the right handle stays at 12:30",
+      "after": "While dragging the Preview shows the frame at the left handle (its time follows the handle back toward 「04:30/12:30」)\nThe left handle stops at 04:30 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」\nThe right handle stays at 12:30"
+    },
+    {
+      "id": "TC-045",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); an 08:00 (480 s) and a 12:30 (750 s) video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. An 08:00 (480 s) and a 12:30 (750 s) video in the album"
+    },
+    {
+      "id": "TC-045",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: the 08:00 strip fills the strip width with no sideways scroll. Steps 3–4: the strip is re-laid so 2:30 fills one width and it scrolls sideways; the selection keeps 00:00–02:00. Step 5: the 08:00 strip fills the width again. Steps 6–7: the 12:30 strip scrolls sideways with 8:00 filling one width. Steps 9–10: the strip is re-laid to 2:30 per width. In every step the thumbnails stay in time order and the selection keeps its start, end and length (00:00–02:00 once set)",
+      "after": "Step 1: the 08:00 strip fills the strip width with no sideways scroll\nSteps 3–4: the strip is re-laid so 2:30 fills one width and it scrolls sideways\nSteps 3–4: the selection keeps 00:00–02:00\nStep 5: the 08:00 strip fills the width again\nSteps 6–7: the 12:30 strip scrolls sideways with 8:00 filling one width\nSteps 9–10: the strip is re-laid to 2:30 per width\nIn every step the thumbnails stay in time order and the selection keeps its start, end and length (00:00–02:00 once set)"
+    },
+    {
+      "id": "TC-264",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 02:30.01 (150.01 s) and an 08:01 (481 s) video in the album (made for the test)",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 02:30.01 (150.01 s) and an 08:01 (481 s) video in the album (made for the test)"
+    },
+    {
+      "id": "TC-264",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: the 02:30.01 strip fills the strip width (under 8:00). Steps 3–4: in Professional the video is over 2:30, so the strip is re-laid to 2:30 per width and scrolls a little sideways. Steps 5–6: the 08:01 strip scrolls sideways with 8:00 per width. Steps 8–9: re-laid to 2:30 per width. The thumbnails stay in time order and the selection keeps 00:00–02:00 through each Mode switch",
+      "after": "Step 1: the 02:30.01 strip fills the strip width (under 8:00)\nSteps 3–4: in Professional the video is over 2:30, so the strip is re-laid to 2:30 per width and scrolls a little sideways\nSteps 5–6: the 08:01 strip scrolls sideways with 8:00 per width\nSteps 8–9: re-laid to 2:30 per width\nThe thumbnails stay in time order and the selection keeps 00:00–02:00 through each Mode switch"
+    },
+    {
+      "id": "TC-217",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The selection cannot get shorter than 1 s; the right handle stays where it was",
+      "after": "The selection cannot get shorter than 1 s\nThe right handle stays where it was"
+    },
+    {
+      "id": "TC-050",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 01:30 1080p 60 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 01:30 1080p 60 fps video in the album"
+    },
+    {
+      "id": "TC-051",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open; selection 2:30 or less",
+      "after": "1. Panel open\n2. Selection 2:30 or less"
+    },
+    {
+      "id": "TC-052",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 24 fps and a 30 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 24 fps and a 30 fps video in the album"
+    },
+    {
+      "id": "TC-052",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Both select 「30fps」; the Preview label reads 「24fps · …」 and 「30fps · …」",
+      "after": "Both select 「30fps」\nThe Preview label reads 「24fps · …」 and 「30fps · …」"
+    },
+    {
+      "id": "TC-053",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 50 fps and a 60 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 50 fps and a 60 fps video in the album"
+    },
+    {
+      "id": "TC-054",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 120 fps and a 240 fps (slow-motion) video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 120 fps and a 240 fps (slow-motion) video in the album"
+    },
+    {
+      "id": "TC-055",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 31 fps and a 61 fps video in the album (made for the test)",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 31 fps and a 61 fps video in the album (made for the test)"
+    },
+    {
+      "id": "TC-056",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 480p and a 720p video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 480p and a 720p video in the album"
+    },
+    {
+      "id": "TC-057",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 900p (e.g. 1600×900) and a 1080p video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 900p (e.g. 1600×900) and a 1080p video in the album"
+    },
+    {
+      "id": "TC-058",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 1081p (e.g. 1920 × 1081, made for the test) and a 1200p (1920 × 1200) video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 1081p (e.g. 1920 × 1081, made for the test) and a 1200p (1920 × 1200) video in the album"
+    },
+    {
+      "id": "TC-059",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a portrait 1080×1920 video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A portrait 1080×1920 video in the album"
+    },
+    {
+      "id": "TC-061",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open, 「Natural」 selected; note the CTA price",
+      "after": "1. Panel open, 「Natural」 selected\n2. Note the CTA price"
+    },
+    {
+      "id": "TC-061",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each tap selects the tapped chip and unselects the other; the CTA price stays the same (style does not change the price)",
+      "after": "Each tap selects the tapped chip and unselects the other\nThe CTA price stays the same (style does not change the price)"
+    },
+    {
+      "id": "TC-062",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "That chip is selected and 「60fps」 unselected; one fps chip is selected at a time",
+      "after": "That chip is selected and 「60fps」 unselected\nOne fps chip is selected at a time"
+    },
+    {
+      "id": "TC-063",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open with a 1080p video (「1080p」 selected); note the CTA price",
+      "after": "1. Panel open with a 1080p video (「1080p」 selected)\n2. Note the CTA price"
+    },
+    {
+      "id": "TC-063",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The tapped chip is selected and 「1080p」 unselected; the CTA price and 「Charge X credits per second」 change to that resolution's rate",
+      "after": "The tapped chip is selected and 「1080p」 unselected\nThe CTA price and 「Charge X credits per second」 change to that resolution's rate"
+    },
+    {
+      "id": "TC-070",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open with the 12:30 video, selection about 02:00 in Standard; note the CTA price",
+      "after": "1. Panel open with the 12:30 video, selection about 02:00 in Standard\n2. Note the CTA price"
+    },
+    {
+      "id": "TC-070",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each tap switches the Mode at once; the selection and 「Selected Length」 stay the same and only the CTA price changes",
+      "after": "Each tap switches the Mode at once\nThe selection and 「Selected Length」 stay the same and only the CTA price changes"
+    },
+    {
+      "id": "TC-071",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Before the tap 「Professional」 looks normal (not disabled); the tap shows the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 for about 3 s; Mode stays 「Standard」 and the selection is neither shortened nor moved: it still starts at 00:30, ends at 05:30 and reads 「05:00」",
+      "after": "Before the tap 「Professional」 looks normal (not disabled)\nThe tap shows the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 for about 3 s\nMode stays 「Standard」 and the selection is neither shortened nor moved: it still starts at 00:30, ends at 05:30 and reads 「05:00」"
+    },
+    {
+      "id": "TC-073",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Mode switches to 「Professional」 with no toast; the selection stays 02:20",
+      "after": "The Mode switches to 「Professional」 with no toast\nThe selection stays 02:20"
+    },
+    {
+      "id": "TC-218",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Panel open with the 12:30 video; Professional selected, selection 05:00–07:20 (「02:20」)",
+      "after": "1. Panel open with the 12:30 video\n2. Professional selected, selection 05:00–07:20 (「02:20」)"
+    },
+    {
+      "id": "TC-218",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The left handle stops at 04:50 (「Selected Length」 「02:30」) with a light haptic and the bubble 「Up to 2m 30s in Professional mode」; the right handle stays at 07:20",
+      "after": "The left handle stops at 04:50 (「Selected Length」 「02:30」) with a light haptic and the bubble 「Up to 2m 30s in Professional mode」\nThe right handle stays at 07:20"
+    },
+    {
+      "id": "TC-075",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 keeps the selection at 02:30; step 2 lengthens it past 2:30 up to 8:00",
+      "after": "Step 1 keeps the selection at 02:30\nStep 2 lengthens it past 2:30 up to 8:00"
+    },
+    {
+      "id": "TC-076",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 2:30.4 long video in the album (made for the test)",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 2:30.4 long video in the album (made for the test)"
+    },
+    {
+      "id": "TC-263",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 2: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows for about 3 s, the Mode stays 「Standard」 and the selection keeps 00:00–02:31; step 4: the Mode switches to 「Professional」 with no toast and the selection stays 00:00–02:30",
+      "after": "Step 2: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows for about 3 s, the Mode stays 「Standard」 and the selection keeps 00:00–02:31\nStep 4: the Mode switches to 「Professional」 with no toast and the selection stays 00:00–02:30"
+    },
+    {
+      "id": "TC-260",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 00:01 (1 s) and a 00:30 video in the album (720p 30 fps)",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 00:01 (1 s) and a 00:30 video in the album (720p 30 fps)"
+    },
+    {
+      "id": "TC-260",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Steps 1 and 3: the panel opens in 「Standard」 with the whole video selected (「00:01」, 「00:30」); steps 2 and 4: the Mode switches to 「Professional」 with no toast and the selection unchanged",
+      "after": "Steps 1 and 3: the panel opens in 「Standard」 with the whole video selected (「00:01」, 「00:30」)\nSteps 2 and 4: the Mode switches to 「Professional」 with no toast and the selection unchanged"
+    },
+    {
+      "id": "TC-261",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 02:29.99 (149.99 s) and a 02:30 (150 s) video in the album (made for the test)",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 02:29.99 (149.99 s) and a 02:30 (150 s) video in the album (made for the test)"
+    },
+    {
+      "id": "TC-261",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Steps 1 and 3: the panel opens in 「Standard」 with the whole video selected; steps 2 and 4: the Mode switches to 「Professional」 with no toast and the selection unchanged (149.99 s rounds up to 150 s, within 2:30)",
+      "after": "Steps 1 and 3: the panel opens in 「Standard」 with the whole video selected\nSteps 2 and 4: the Mode switches to 「Professional」 with no toast and the selection unchanged (149.99 s rounds up to 150 s, within 2:30)"
+    },
+    {
+      "id": "TC-262",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 02:30.01 (150.01 s) and a 12:30 (750 s) video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 02:30.01 (150.01 s) and a 12:30 (750 s) video in the album"
+    },
+    {
+      "id": "TC-262",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: the panel opens in 「Standard」 with the whole video selected; step 3: in 「Standard」 with 00:00–08:00 selected; steps 2 and 4: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows, the Mode stays 「Standard」 and the selection is unchanged (150.01 s counts as 151 s)",
+      "after": "Step 1: the panel opens in 「Standard」 with the whole video selected\nStep 3: in 「Standard」 with 00:00–08:00 selected\nSteps 2 and 4: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows, the Mode stays 「Standard」 and the selection is unchanged (150.01 s counts as 151 s)"
+    },
+    {
+      "id": "TC-080",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a 00:03.96 long 1080p 30 fps video in the album",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A 00:03.96 long 1080p 30 fps video in the album"
+    },
+    {
+      "id": "TC-269",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); videos of 00:00.9, 00:01, 00:01.01, 00:02.99, 00:03, 00:03.99, 02:59.01, 02:59.99 and 03:00 (lengths checked with ffprobe), all 720p 30 fps, in the album (made for the test)",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. Videos of 00:00.9, 00:01, 00:01.01, 00:02.99, 00:03, 00:03.99, 02:59.01, 02:59.99 and 03:00 (lengths checked with ffprobe), all 720p 30 fps, in the album (made for the test)"
+    },
+    {
+      "id": "TC-269",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: the 0.9 s video is greyed and shows 「This video isn't supported. Try one up to 4K.」 (under 1 s, R-015); no panel opens. Step 2, the CTA reads: 1 s 「Enhance ◆ 1」; 1.01 s 「Enhance ◆ 2」; 2.99 s 「Enhance ◆ 3」; 3 s 「Enhance ◆ 3」; 3.99 s 「Enhance ◆ 4」; 179.01 s, 179.99 s and 180 s 「Enhance ◆ 180」 (seconds rounded up × 1)",
+      "after": "Step 1: the 0.9 s video is greyed and shows 「This video isn't supported. Try one up to 4K.」 (under 1 s, R-015)\nStep 1: no panel opens\nStep 2, the CTA reads (seconds rounded up × 1):\n1 s 「Enhance ◆ 1」\n1.01 s 「Enhance ◆ 2」\n2.99 s 「Enhance ◆ 3」\n3 s 「Enhance ◆ 3」\n3.99 s 「Enhance ◆ 4」\n179.01 s, 179.99 s and 180 s 「Enhance ◆ 180」"
+    },
+    {
+      "id": "TC-083",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: the CTA reads 「Enhance ◆ 16」 and the line 「Charge 4 credits per second」 (4 s × 4, Professional 1080p 30fps); step 2: back to 「Enhance ◆ 8」 and 「Charge 2 credits per second」",
+      "after": "Step 1: the CTA reads 「Enhance ◆ 16」 and the line 「Charge 4 credits per second」 (4 s × 4, Professional 1080p 30fps)\nStep 2: back to 「Enhance ◆ 8」 and 「Charge 2 credits per second」"
+    },
+    {
+      "id": "TC-087",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Steps 1–2: the CTA stays 「Enhance ◆ 8」 (Standard 1080p is 2 credits/s at every fps); step 3: 「Enhance ◆ 32」 (Standard 4K 120fps, 8/s); step 4: 「Enhance ◆ 24」 (6/s); step 5: 「Enhance ◆ 12」 (3/s); step 6: 「Enhance ◆ 48」 (Professional 4K 30fps, 12/s); step 7: 「Enhance ◆ 96」 (24/s); step 8: 「Enhance ◆ 192」 (48/s). After each tap 「Charge X credits per second」 shows that rate",
+      "after": "Steps 1–2: the CTA stays 「Enhance ◆ 8」 (Standard 1080p is 2 credits/s at every fps)\nStep 3: 「Enhance ◆ 32」 (Standard 4K 120fps, 8/s)\nStep 4: 「Enhance ◆ 24」 (6/s)\nStep 5: 「Enhance ◆ 12」 (3/s)\nStep 6: 「Enhance ◆ 48」 (Professional 4K 30fps, 12/s)\nStep 7: 「Enhance ◆ 96」 (24/s)\nStep 8: 「Enhance ◆ 192」 (48/s)\nAfter each tap 「Charge X credits per second」 shows that rate"
+    },
+    {
+      "id": "TC-090",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free account (Android has no tier switch: the tier comes from the account); panel open with a video",
+      "after": "1. Signed in with a Free account (Android has no tier switch: the tier comes from the account)\n2. Panel open with a video"
+    },
+    {
+      "id": "TC-090",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: the CTA is an unlock action for Pro with no price (e.g. 「Unlock Pro to Enhance」), not 「Unlock Pro+ to Enhance」, with 「Charge X credits per second」 under it; step 2 opens the IAP page on the 「Pro」 tab (the Pro plans)",
+      "after": "Step 1: the CTA is an unlock action for Pro with no price (e.g. 「Unlock Pro to Enhance」), not 「Unlock Pro+ to Enhance」, with 「Charge X credits per second」 under it\nStep 2 opens the IAP page on the 「Pro」 tab (the Pro plans)"
+    },
+    {
+      "id": "TC-091",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro (not Pro+) account (no tier switch on Android) with enough credits; panel open with a video",
+      "after": "1. Signed in with a Pro (not Pro+) account (no tier switch on Android) with enough credits\n2. Panel open with a video"
+    },
+    {
+      "id": "TC-091",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Pro is enough on Android: the CTA is the enabled 「Enhance ◆ <credits>」 with its price and 「Charge X credits per second」; no unlock action and no IAP page",
+      "after": "Pro is enough on Android: the CTA is the enabled 「Enhance ◆ <credits>」 with its price and 「Charge X credits per second」\nNo unlock action and no IAP page"
+    },
+    {
+      "id": "TC-093",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A single 「PowerDirector Pro」 page with no Pro / Pro+ tabs: a yearly and a monthly plan, 「Continue」 and the footer 「Terms of Service」 「Privacy Policy」 「Restore Purchase」; each plan tap selects that plan",
+      "after": "A single 「PowerDirector Pro」 page with no Pro / Pro+ tabs: a yearly and a monthly plan, 「Continue」 and the footer 「Terms of Service」 「Privacy Policy」 「Restore Purchase」\nEach plan tap selects that plan"
+    },
+    {
+      "id": "TC-094",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free account (Android has no tier switch: the tier comes from the account); panel open with selection 00:30–05:30 and 「Sharp」; IAP page opened from the CTA",
+      "after": "1. Signed in with a Free account (Android has no tier switch: the tier comes from the account)\n2. Panel open with selection 00:30–05:30 and 「Sharp」\n3. IAP page opened from the CTA"
+    },
+    {
+      "id": "TC-095",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free account (Android has no tier switch: the tier comes from the account) on an account that may buy Pro; panel open with selection 00:30–05:30 and 「Sharp」; IAP page open on the 「Pro」 tab",
+      "after": "1. Signed in with a Free account (Android has no tier switch: the tier comes from the account) on an account that may buy Pro\n2. Panel open with selection 00:30–05:30 and 「Sharp」\n3. IAP page open on the 「Pro」 tab"
+    },
+    {
+      "id": "TC-096",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); credit balance below the CTA price (e.g. 0); panel open; note the balance",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. Credit balance below the CTA price (e.g. 0)\n3. Panel open\n4. Note the balance"
+    },
+    {
+      "id": "TC-096",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Credit page opens (「My Credits」, 「Buy More」, 「Expiring within 7 days: … credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card); no upload dialog appears, Recent task gets no card and the balance is unchanged",
+      "after": "The Credit page opens (「My Credits」, 「Buy More」, 「Expiring within 7 days: … credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card)\nNo upload dialog appears, Recent task gets no card and the balance is unchanged"
+    },
+    {
+      "id": "TC-098",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Credit page open from the panel (TC-096); the daily credits not claimed in the last 24 h",
+      "after": "1. Credit page open from the panel (TC-096)\n2. The daily credits not claimed in the last 24 h"
+    },
+    {
+      "id": "TC-098",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 adds the daily credits; step 2 returns to the panel with the selection and settings unchanged and the new balance in the credit pill",
+      "after": "Step 1 adds the daily credits\nStep 2 returns to the panel with the selection and settings unchanged and the new balance in the credit pill"
+    },
+    {
+      "id": "TC-100",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with enough credits; panel open with a video; Wi-Fi off (device-android.ts wifi off) and no mobile data; note the balance",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with enough credits\n2. Panel open with a video\n3. Wi-Fi off (device-android.ts wifi off) and no mobile data\n4. Note the balance"
+    },
+    {
+      "id": "TC-110",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with enough credits; panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p); note the balance",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with enough credits\n2. Panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p)\n3. Note the balance"
+    },
+    {
+      "id": "TC-110",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No confirmation appears first; a processing dialog covers the panel with a progress ring counting up (「25%」…), 「Video uploading...」, 「Please keep the app open」 and 「Cancel」; the ring keeps moving (no frozen wait over 10 s)",
+      "after": "No confirmation appears first\nA processing dialog covers the panel with a progress ring counting up (「25%」…), 「Video uploading...」, 「Please keep the app open」 and 「Cancel」\nThe ring keeps moving (no frozen wait over 10 s)"
+    },
+    {
+      "id": "TC-112",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: the CTA behind the dialogs is greyed (disabled). Step 2: the leave dialog closes, the processing dialog continues from where it was and the upload finishes (TC-114); the CTA stays disabled until then and no second task can start",
+      "after": "Step 1: the CTA behind the dialogs is greyed (disabled)\nStep 2: the leave dialog closes, the processing dialog continues from where it was and the upload finishes (TC-114)\nStep 2: the CTA stays disabled until then and no second task can start"
+    },
+    {
+      "id": "TC-113",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "A new task: the leave dialog showing after 「Cancel」 on the processing dialog; balance before 「Enhance」 noted",
+      "after": "1. A new task: the leave dialog showing after 「Cancel」 on the processing dialog\n2. Balance before 「Enhance」 noted"
+    },
+    {
+      "id": "TC-113",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The panel is back with the selection and settings and its 「Enhance ◆ <credits>」 CTA enabled again; the process stops (no completed result for it appears in Recent task); the balance is the noted balance minus the price (credits not restored, as the dialog says)",
+      "after": "The panel is back with the selection and settings and its 「Enhance ◆ <credits>」 CTA enabled again\nThe process stops (no completed result for it appears in Recent task)\nThe balance is the noted balance minus the price (credits not restored, as the dialog says)"
+    },
+    {
+      "id": "TC-114",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Processing dialog showing (TC-110); balance before 「Enhance」 noted",
+      "after": "1. Processing dialog showing (TC-110)\n2. Balance before 「Enhance」 noted"
+    },
+    {
+      "id": "TC-114",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Recent task opens with a processing card (thumbnail, date, name, 「processing...」, 「<n> minutes left...」, progress bar); the balance is the noted balance minus the CTA price; the card offers no cancel",
+      "after": "Recent task opens with a processing card (thumbnail, date, name, 「processing...」, 「<n> minutes left...」, progress bar)\nThe balance is the noted balance minus the CTA price\nThe card offers no cancel"
+    },
+    {
+      "id": "TC-115",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "A new task: processing dialog showing; balance before 「Enhance」 noted",
+      "after": "1. A new task: processing dialog showing\n2. Balance before 「Enhance」 noted"
+    },
+    {
+      "id": "TC-118",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); notifications for PowerDirector turned off in Android Settings (user go-ahead needed for the system setting); no Video Enhance task created yet on this install",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. Notifications for PowerDirector turned off in Android Settings (user go-ahead needed for the system setting)\n3. No Video Enhance task created yet on this install"
+    },
+    {
+      "id": "TC-119",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Android opens PowerDirector's notification settings (the permission is a setting on Android 12); after turning it on and going back the app stays on the Generating / Recent task screen",
+      "after": "Android opens PowerDirector's notification settings (the permission is a setting on Android 12)\nAfter turning it on and going back the app stays on the Generating / Recent task screen"
+    },
+    {
+      "id": "TC-120",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 closes the dialog; step 2 shows no notification prompt",
+      "after": "Step 1 closes the dialog\nStep 2 shows no notification prompt"
+    },
+    {
+      "id": "TC-121",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "One task processing in Recent task; enough credits for another",
+      "after": "1. One task processing in Recent task\n2. Enough credits for another"
+    },
+    {
+      "id": "TC-130",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "A task processing; the user on the Launcher (app in front)",
+      "after": "1. A task processing\n2. The user on the Launcher (app in front)"
+    },
+    {
+      "id": "TC-132",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 dismisses the banner and nothing opens; in step 2 that task's card is completed with 「View」",
+      "after": "Step 1 dismisses the banner and nothing opens\nIn step 2 that task's card is completed with 「View」"
+    },
+    {
+      "id": "TC-133",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Notifications allowed for PowerDirector; a task processing",
+      "after": "1. Notifications allowed for PowerDirector\n2. A task processing"
+    },
+    {
+      "id": "TC-133",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A system notification 「Your video is ready. Tap to view.」 arrives; tapping it opens PowerDirector on that task's Result",
+      "after": "A system notification 「Your video is ready. Tap to view.」 arrives\nTapping it opens PowerDirector on that task's Result"
+    },
+    {
+      "id": "TC-143",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 turns the card completed (thumbnail, date, name, 「View」) without leaving the page; step 2 opens the Result; step 3 returns to Recent task; step 4 opens the same Result",
+      "after": "Step 1 turns the card completed (thumbnail, date, name, 「View」) without leaving the page\nStep 2 opens the Result\nStep 3 returns to Recent task\nStep 4 opens the same Result"
+    },
+    {
+      "id": "TC-265",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:01 720p 30 fps video in the album; a screen recording or stopwatch with timestamps",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with enough credits\n2. A 00:01 720p 30 fps video in the album\n3. A screen recording or stopwatch with timestamps"
+    },
+    {
+      "id": "TC-266",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:03.2 720p 30 fps video in the album; a screen recording or stopwatch with timestamps",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with enough credits\n2. A 00:03.2 720p 30 fps video in the album\n3. A screen recording or stopwatch with timestamps"
+    },
+    {
+      "id": "TC-267",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with enough credits; a 00:30 720p 30 fps video in the album; a screen recording or stopwatch with timestamps",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with enough credits\n2. A 00:30 720p 30 fps video in the album\n3. A screen recording or stopwatch with timestamps"
+    },
+    {
+      "id": "TC-268",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "A completed Video Enhance task in Recent task that finished at least 2 days ago (the longest wait the run allows); note its date and name",
+      "after": "1. A completed Video Enhance task in Recent task that finished at least 2 days ago (the longest wait the run allows)\n2. Note its date and name"
+    },
+    {
+      "id": "TC-268",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 2 lists the noted task as completed with its date and name; step 3 reads 「Tasks are stored on the cloud for 1 Year. Please download any you want to keep in local storage.」; step 4 opens its Result and the video plays",
+      "after": "Step 2 lists the noted task as completed with its date and name\nStep 3 reads 「Tasks are stored on the cloud for 1 Year. Please download any you want to keep in local storage.」\nStep 4 opens its Result and the video plays"
+    },
+    {
+      "id": "TC-150",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The page shows ‹, 「Original」 / 「Result」 with 「Result」 selected, the video with the time (「mm:ss/mm:ss」) and 「Save Result」, 「Add to Timeline」, 「Enhance More」; step 1 plays the result; step 2 pauses it and the time and the frame stay the same through step 3; step 4 moves through the result",
+      "after": "The page shows ‹, 「Original」 / 「Result」 with 「Result」 selected, the video with the time (「mm:ss/mm:ss」) and 「Save Result」, 「Add to Timeline」, 「Enhance More」\nStep 1 plays the result\nStep 2 pauses it and the time and the frame stay the same through step 3\nStep 4 moves through the result"
+    },
+    {
+      "id": "TC-152",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The toast 「Saved to your device」 appears within 10 s; the enhanced video is a new file in the phone gallery (Google Photos / Files › Movies or DCIM), 01:30 long, 1920 × 1080 and 30 fps (the values chosen on the panel), and the source video is still there unchanged; the media picker lists it under 「All」; it is added to the timeline and plays there",
+      "after": "The toast 「Saved to your device」 appears within 10 s\nThe enhanced video is a new file in the phone gallery (Google Photos / Files › Movies or DCIM), 01:30 long, 1920 × 1080 and 30 fps (the values chosen on the panel), and the source video is still there unchanged\nThe media picker lists it under 「All」\nIt is added to the timeline and plays there"
+    },
+    {
+      "id": "TC-153",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A new project opens with the enhanced video on its timeline; no existing project is changed and the source video in the album is unchanged",
+      "after": "A new project opens with the enhanced video on its timeline\nNo existing project is changed and the source video in the album is unchanged"
+    },
+    {
+      "id": "TC-223",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-223",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 2: 「Standard」, 「Natural」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",
+      "after": "After step 2: 「Standard」, 「Natural」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」\nStep 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1)\nStep 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1)\nStep 5 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 4\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits"
+    },
+    {
+      "id": "TC-225",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-225",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 2: 「Standard」, 「Natural」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 3: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 4: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",
+      "after": "After step 2: 「Standard」, 「Natural」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」\nStep 3: the CTA reads 「Enhance ◆ 2」 (1 s × 2)\nStep 4: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2)\nStep 5 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 8\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits"
+    },
+    {
+      "id": "TC-224",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 12 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 12 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-224",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 2: 「Standard」, 「Natural」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 3 credits per second」. Step 3: the CTA reads 「Enhance ◆ 3」 (1 s × 3); step 4: 「Enhance ◆ 12」 (3.2 s rounds up to 4 s × 3). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 12. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 12 credits",
+      "after": "After step 2: 「Standard」, 「Natural」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 3 credits per second」\nStep 3: the CTA reads 「Enhance ◆ 3」 (1 s × 3)\nStep 4: 「Enhance ◆ 12」 (3.2 s rounds up to 4 s × 3)\nStep 5 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 12\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 12 credits"
+    },
+    {
+      "id": "TC-226",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-226",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 2: 「Standard」, 「Natural」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",
+      "after": "After step 2: 「Standard」, 「Natural」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」\nStep 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1)\nStep 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1)\nStep 5 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 4\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits"
+    },
+    {
+      "id": "TC-221",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-221",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Standard」, 「Natural」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",
+      "after": "After step 3: 「Standard」, 「Natural」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2)\nStep 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 8\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits"
+    },
+    {
+      "id": "TC-227",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 24 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 24 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-227",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Standard」, 「Natural」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 6 credits per second」. Step 4: the CTA reads 「Enhance ◆ 6」 (1 s × 6); step 5: 「Enhance ◆ 24」 (3.2 s rounds up to 4 s × 6). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 24. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 24 credits",
+      "after": "After step 3: 「Standard」, 「Natural」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 6 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 6」 (1 s × 6)\nStep 5: 「Enhance ◆ 24」 (3.2 s rounds up to 4 s × 6)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 24\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 24 credits"
+    },
+    {
+      "id": "TC-228",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-228",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 2: 「Standard」, 「Natural」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",
+      "after": "After step 2: 「Standard」, 「Natural」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」\nStep 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1)\nStep 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1)\nStep 5 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 4\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits"
+    },
+    {
+      "id": "TC-222",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-222",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Standard」, 「Natural」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",
+      "after": "After step 3: 「Standard」, 「Natural」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2)\nStep 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 8\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits"
+    },
+    {
+      "id": "TC-229",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-229",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Standard」, 「Natural」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 4: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 5: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",
+      "after": "After step 3: 「Standard」, 「Natural」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 8 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 8」 (1 s × 8)\nStep 5: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 32\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits"
+    },
+    {
+      "id": "TC-230",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-230",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 2: 「Standard」, 「Sharp」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",
+      "after": "After step 2: 「Standard」, 「Sharp」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」\nStep 3: the CTA reads 「Enhance ◆ 1」 (1 s × 1)\nStep 4: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1)\nStep 5 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 4\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits"
+    },
+    {
+      "id": "TC-220",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-220",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Standard」, 「Sharp」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",
+      "after": "After step 3: 「Standard」, 「Sharp」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2)\nStep 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 8\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits"
+    },
+    {
+      "id": "TC-231",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 12 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 12 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-231",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Standard」, 「Sharp」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 3 credits per second」. Step 4: the CTA reads 「Enhance ◆ 3」 (1 s × 3); step 5: 「Enhance ◆ 12」 (3.2 s rounds up to 4 s × 3). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 12. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 12 credits",
+      "after": "After step 3: 「Standard」, 「Sharp」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 3 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 3」 (1 s × 3)\nStep 5: 「Enhance ◆ 12」 (3.2 s rounds up to 4 s × 3)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 12\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 12 credits"
+    },
+    {
+      "id": "TC-232",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-232",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Standard」, 「Sharp」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 4: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 5: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",
+      "after": "After step 3: 「Standard」, 「Sharp」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 1」 (1 s × 1)\nStep 5: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 4\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits"
+    },
+    {
+      "id": "TC-233",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-233",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Standard」, 「Sharp」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 5: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 6: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",
+      "after": "After step 4: 「Standard」, 「Sharp」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 2」 (1 s × 2)\nStep 6: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 8\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits"
+    },
+    {
+      "id": "TC-234",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 24 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 24 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-234",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Standard」, 「Sharp」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 6 credits per second」. Step 5: the CTA reads 「Enhance ◆ 6」 (1 s × 6); step 6: 「Enhance ◆ 24」 (3.2 s rounds up to 4 s × 6). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 24. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 24 credits",
+      "after": "After step 4: 「Standard」, 「Sharp」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 6 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 6」 (1 s × 6)\nStep 6: 「Enhance ◆ 24」 (3.2 s rounds up to 4 s × 6)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 24\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 24 credits"
+    },
+    {
+      "id": "TC-235",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-235",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Standard」, 「Sharp」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」. Step 4: the CTA reads 「Enhance ◆ 1」 (1 s × 1); step 5: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 4. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",
+      "after": "After step 3: 「Standard」, 「Sharp」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 1 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 1」 (1 s × 1)\nStep 5: 「Enhance ◆ 4」 (3.2 s rounds up to 4 s × 1)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 4\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits"
+    },
+    {
+      "id": "TC-236",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-236",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Standard」, 「Sharp」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 5: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 6: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",
+      "after": "After step 4: 「Standard」, 「Sharp」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 2」 (1 s × 2)\nStep 6: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 8\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits"
+    },
+    {
+      "id": "TC-237",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-237",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Standard」, 「Sharp」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",
+      "after": "After step 4: 「Standard」, 「Sharp」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 8 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8)\nStep 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 32\nThe task completes and its Result plays\n「Result」 looks enhanced over 「Original」 (「Great quality」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits"
+    },
+    {
+      "id": "TC-238",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-238",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 2: 「Professional」, 「Natural」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 3: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 4: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 5 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",
+      "after": "After step 2: 「Professional」, 「Natural」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」\nStep 3: the CTA reads 「Enhance ◆ 2」 (1 s × 2)\nStep 4: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2)\nStep 5 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 8\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits"
+    },
+    {
+      "id": "TC-219",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-219",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Professional」, 「Natural」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」. Step 4: the CTA reads 「Enhance ◆ 4」 (1 s × 4); step 5: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 16. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",
+      "after": "After step 3: 「Professional」, 「Natural」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 4」 (1 s × 4)\nStep 5: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 16\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits"
+    },
+    {
+      "id": "TC-239",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 48 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 48 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-239",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Professional」, 「Natural」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 12 credits per second」. Step 4: the CTA reads 「Enhance ◆ 12」 (1 s × 12); step 5: 「Enhance ◆ 48」 (3.2 s rounds up to 4 s × 12). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 48. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 48 credits",
+      "after": "After step 3: 「Professional」, 「Natural」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 12 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 12」 (1 s × 12)\nStep 5: 「Enhance ◆ 48」 (3.2 s rounds up to 4 s × 12)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 48\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 48 credits"
+    },
+    {
+      "id": "TC-240",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-240",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Professional」, 「Natural」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」. Step 4: the CTA reads 「Enhance ◆ 4」 (1 s × 4); step 5: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 16. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",
+      "after": "After step 3: 「Professional」, 「Natural」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 4」 (1 s × 4)\nStep 5: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 16\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits"
+    },
+    {
+      "id": "TC-241",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-241",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Professional」, 「Natural」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",
+      "after": "After step 4: 「Professional」, 「Natural」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8)\nStep 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 32\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits"
+    },
+    {
+      "id": "TC-242",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 96 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 96 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-242",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Professional」, 「Natural」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 24 credits per second」. Step 5: the CTA reads 「Enhance ◆ 24」 (1 s × 24); step 6: 「Enhance ◆ 96」 (3.2 s rounds up to 4 s × 24). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 96. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 96 credits",
+      "after": "After step 4: 「Professional」, 「Natural」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 24 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 24」 (1 s × 24)\nStep 6: 「Enhance ◆ 96」 (3.2 s rounds up to 4 s × 24)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 96\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 96 credits"
+    },
+    {
+      "id": "TC-243",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-243",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Professional」, 「Natural」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 4: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 5: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",
+      "after": "After step 3: 「Professional」, 「Natural」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 8」 (1 s × 8)\nStep 5: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 32\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits"
+    },
+    {
+      "id": "TC-244",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 64 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 64 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-244",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Professional」, 「Natural」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 16 credits per second」. Step 5: the CTA reads 「Enhance ◆ 16」 (1 s × 16); step 6: 「Enhance ◆ 64」 (3.2 s rounds up to 4 s × 16). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 64. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 64 credits",
+      "after": "After step 4: 「Professional」, 「Natural」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 16 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 16」 (1 s × 16)\nStep 6: 「Enhance ◆ 64」 (3.2 s rounds up to 4 s × 16)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 64\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 64 credits"
+    },
+    {
+      "id": "TC-245",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 192 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 192 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-245",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Professional」, 「Natural」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 48 credits per second」. Step 5: the CTA reads 「Enhance ◆ 48」 (1 s × 48); step 6: 「Enhance ◆ 192」 (3.2 s rounds up to 4 s × 48). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 192. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 192 credits",
+      "after": "After step 4: 「Professional」, 「Natural」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 48 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 48」 (1 s × 48)\nStep 6: 「Enhance ◆ 192」 (3.2 s rounds up to 4 s × 48)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 192\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and with a lighter, realistic enhancement (「Lighter enhancement with fewer artifacts, for a more realistic look」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 192 credits"
+    },
+    {
+      "id": "TC-246",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-246",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 3: 「Professional」, 「Sharp」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」. Step 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2); step 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2). Step 6 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 8. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",
+      "after": "After step 3: 「Professional」, 「Sharp」, 「30fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 2 credits per second」\nStep 4: the CTA reads 「Enhance ◆ 2」 (1 s × 2)\nStep 5: 「Enhance ◆ 8」 (3.2 s rounds up to 4 s × 2)\nStep 6 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 8\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits"
+    },
+    {
+      "id": "TC-247",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-247",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Professional」, 「Sharp」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」. Step 5: the CTA reads 「Enhance ◆ 4」 (1 s × 4); step 6: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 16. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",
+      "after": "After step 4: 「Professional」, 「Sharp」, 「30fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 4」 (1 s × 4)\nStep 6: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 16\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits"
+    },
+    {
+      "id": "TC-248",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 48 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 48 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-248",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Professional」, 「Sharp」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 12 credits per second」. Step 5: the CTA reads 「Enhance ◆ 12」 (1 s × 12); step 6: 「Enhance ◆ 48」 (3.2 s rounds up to 4 s × 12). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 48. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 30 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 48 credits",
+      "after": "After step 4: 「Professional」, 「Sharp」, 「30fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 12 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 12」 (1 s × 12)\nStep 6: 「Enhance ◆ 48」 (3.2 s rounds up to 4 s × 12)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 48\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 30 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 48 credits"
+    },
+    {
+      "id": "TC-249",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-249",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Professional」, 「Sharp」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」. Step 5: the CTA reads 「Enhance ◆ 4」 (1 s × 4); step 6: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 16. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",
+      "after": "After step 4: 「Professional」, 「Sharp」, 「60fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 4 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 4」 (1 s × 4)\nStep 6: 「Enhance ◆ 16」 (3.2 s rounds up to 4 s × 4)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 16\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits"
+    },
+    {
+      "id": "TC-250",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-250",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 5: 「Professional」, 「Sharp」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 6: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 7: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 8 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",
+      "after": "After step 5: 「Professional」, 「Sharp」, 「60fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」\nStep 6: the CTA reads 「Enhance ◆ 8」 (1 s × 8)\nStep 7: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8)\nStep 8 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 32\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits"
+    },
+    {
+      "id": "TC-251",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 96 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 96 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-251",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 5: 「Professional」, 「Sharp」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 24 credits per second」. Step 6: the CTA reads 「Enhance ◆ 24」 (1 s × 24); step 7: 「Enhance ◆ 96」 (3.2 s rounds up to 4 s × 24). Step 8 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 96. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 60 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 96 credits",
+      "after": "After step 5: 「Professional」, 「Sharp」, 「60fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 24 credits per second」\nStep 6: the CTA reads 「Enhance ◆ 24」 (1 s × 24)\nStep 7: 「Enhance ◆ 96」 (3.2 s rounds up to 4 s × 24)\nStep 8 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 96\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 60 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 96 credits"
+    },
+    {
+      "id": "TC-252",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-252",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 4: 「Professional」, 「Sharp」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」. Step 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8); step 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8). Step 7 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 32. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1280 × 720 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",
+      "after": "After step 4: 「Professional」, 「Sharp」, 「120fps」 and 「720p」 are selected (none disabled) and the line reads 「Charge 8 credits per second」\nStep 5: the CTA reads 「Enhance ◆ 8」 (1 s × 8)\nStep 6: 「Enhance ◆ 32」 (3.2 s rounds up to 4 s × 8)\nStep 7 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 32\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1280 × 720 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits"
+    },
+    {
+      "id": "TC-253",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 64 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 64 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-253",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 5: 「Professional」, 「Sharp」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 16 credits per second」. Step 6: the CTA reads 「Enhance ◆ 16」 (1 s × 16); step 7: 「Enhance ◆ 64」 (3.2 s rounds up to 4 s × 16). Step 8 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 64. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 1920 × 1080 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 64 credits",
+      "after": "After step 5: 「Professional」, 「Sharp」, 「120fps」 and 「1080p」 are selected (none disabled) and the line reads 「Charge 16 credits per second」\nStep 6: the CTA reads 「Enhance ◆ 16」 (1 s × 16)\nStep 7: 「Enhance ◆ 64」 (3.2 s rounds up to 4 s × 16)\nStep 8 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 64\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 1920 × 1080 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 64 credits"
+    },
+    {
+      "id": "TC-254",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android) with at least 192 credits; a 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row); note the balance and the newest entry of the credit history",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android) with at least 192 credits\n2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)\n3. Note the balance and the newest entry of the credit history"
+    },
+    {
+      "id": "TC-254",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After step 5: 「Professional」, 「Sharp」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 48 credits per second」. Step 6: the CTA reads 「Enhance ◆ 48」 (1 s × 48); step 7: 「Enhance ◆ 192」 (3.2 s rounds up to 4 s × 48). Step 8 starts the upload at once with no confirmation; after the upload the balance is the noted balance − 192. The task completes and its Result plays; 「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」). 「Save Result」 shows 「Saved to your device」; the saved video is 3.2 s long, 3840 × 2160 and 120 fps. The credit history's newest entry is one debit 「AI Video Enhance」 of 192 credits",
+      "after": "After step 5: 「Professional」, 「Sharp」, 「120fps」 and 「4K」 are selected (none disabled) and the line reads 「Charge 48 credits per second」\nStep 6: the CTA reads 「Enhance ◆ 48」 (1 s × 48)\nStep 7: 「Enhance ◆ 192」 (3.2 s rounds up to 4 s × 48)\nStep 8 starts the upload at once with no confirmation\nAfter the upload the balance is the noted balance − 192\nThe task completes and its Result plays\n「Result」 looks more detailed than a Standard result (「Maximum detail」) and sharper and clearer (「Moderate enhancement for a sharp, clear image」)\n「Save Result」 shows 「Saved to your device」\nThe saved video is 3.2 s long, 3840 × 2160 and 120 fps\nThe credit history's newest entry is one debit 「AI Video Enhance」 of 192 credits"
+    },
+    {
+      "id": "TC-160",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a project with a 05:00 clip; panel opened on it from the clip toolbar",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A project with a 05:00 clip\n3. Panel opened on it from the clip toolbar"
+    },
+    {
+      "id": "TC-160",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1: 「Professional」 looks normal; the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows for about 3 s, the Mode stays Standard and the selection stays 05:00; step 3 switches to 「Professional」 with no toast and the selection stays 02:20",
+      "after": "Step 1: 「Professional」 looks normal\nStep 1: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows for about 3 s, the Mode stays Standard and the selection stays 05:00\nStep 3 switches to 「Professional」 with no toast and the selection stays 02:20"
+    },
+    {
+      "id": "TC-161",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a project with a 10:00 clip",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A project with a 10:00 clip"
+    },
+    {
+      "id": "TC-161",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The panel does not open; the toast 「Split clips longer than 8 minutes first」 appears",
+      "after": "The panel does not open\nThe toast 「Split clips longer than 8 minutes first」 appears"
+    },
+    {
+      "id": "TC-162",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Pro+ account (no tier switch on Android); a project with a 00:30 clip; panel opened on it from the clip toolbar",
+      "after": "1. Signed in with a Pro+ account (no tier switch on Android)\n2. A project with a 00:30 clip\n3. Panel opened on it from the clip toolbar"
+    },
+    {
+      "id": "TC-162",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The upload dialog and the Recent task flow are those of the main flow; when the task completes the clip on the timeline is replaced by the result (same position) and 「Applied Video Enhance」 is shown",
+      "after": "The upload dialog and the Recent task flow are those of the main flow\nWhen the task completes the clip on the timeline is replaced by the result (same position) and 「Applied Video Enhance」 is shown"
+    },
+    {
+      "id": "TC-164",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Nothing is pasted into the project; the result is in Recent task",
+      "after": "Nothing is pasted into the project\nThe result is in Recent task"
+    },
+    {
+      "id": "TC-171",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 1 shows 「An Error Has Occurred」 / 「Credits have been refunded.」 / 「The server may be busy. Please try again later or use a different video.」 with 「OK」; step 2 closes it and Recent task stays",
+      "after": "Step 1 shows 「An Error Has Occurred」 / 「Credits have been refunded.」 / 「The server may be busy. Please try again later or use a different video.」 with 「OK」\nStep 2 closes it and Recent task stays"
+    },
+    {
+      "id": "TC-173",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The balance is back to the noted value (the charge was refunded automatically); the ledger shows the refund; nothing offers Retry",
+      "after": "The balance is back to the noted value (the charge was refunded automatically)\nThe ledger shows the refund\nNothing offers Retry"
+    },
+    {
+      "id": "TC-174",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Notifications allowed; a task processing that will fail; app in the background",
+      "after": "1. Notifications allowed\n2. A task processing that will fail\n3. App in the background"
+    },
+    {
+      "id": "TC-200",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Launcher is shown again (same as ‹); Add Media does not open",
+      "after": "The Launcher is shown again (same as ‹)\nAdd Media does not open"
+    },
+    {
+      "id": "TC-204",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The leave dialog 「Sure You Want to Leave?」 appears (same as 「Cancel」); the upload goes on",
+      "after": "The leave dialog 「Sure You Want to Leave?」 appears (same as 「Cancel」)\nThe upload goes on"
+    }
+  ],
+  "notes": []
+}

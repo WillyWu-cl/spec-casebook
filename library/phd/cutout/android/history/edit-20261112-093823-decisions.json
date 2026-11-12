@@ -1,0 +1,386 @@
+{
+  "saved_at": "2026-11-12T01:38:23.914Z",
+  "version": 2,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-002",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-002",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Five buttons from left to right: ✕, Reset, Undo, Redo, ✓. Reset, Undo and Redo are grey (disabled); ✕ and ✓ are enabled.",
+      "after": "Five buttons from left to right: ✕, Reset, Undo, Redo, ✓\nReset, Undo and Redo are grey (disabled)\n✕ and ✓ are enabled"
+    },
+    {
+      "id": "TC-003",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-004",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-004",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The background turns white. Reset and Undo are enabled; Redo stays disabled.",
+      "after": "The background turns white\nReset and Undo are enabled\nRedo stays disabled"
+    },
+    {
+      "id": "TC-005",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The background is white again. Reset, Undo and Redo are all enabled.",
+      "after": "The background is white again\nReset, Undo and Redo are all enabled"
+    },
+    {
+      "id": "TC-006",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The canvas is back to the entry state (transparent background). Reset and Undo are disabled; Redo is enabled.",
+      "after": "The canvas is back to the entry state (transparent background)\nReset and Undo are disabled\nRedo is enabled"
+    },
+    {
+      "id": "TC-007",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The canvas is back to the entry state. Reset is disabled, Undo is enabled, Redo is disabled.",
+      "after": "The canvas is back to the entry state\nReset is disabled, Undo is enabled, Redo is disabled"
+    },
+    {
+      "id": "TC-008",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After Undo: the black background is back and Reset is enabled again. After Redo: the Reset is applied again (entry state), Reset disabled and Undo enabled.",
+      "after": "After Undo: the black background is back and Reset is enabled again\nAfter Redo: the Reset is applied again (entry state), Reset disabled and Undo enabled"
+    },
+    {
+      "id": "TC-009",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Entry state. Redo is disabled (Reset clears the Redo history); Undo is enabled.",
+      "after": "Entry state\nRedo is disabled (Reset clears the Redo history)\nUndo is enabled"
+    },
+    {
+      "id": "TC-010",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The background turns blue. Redo is disabled (the new step cleared the Redo history); Undo is enabled.",
+      "after": "The background turns blue\nRedo is disabled (the new step cleared the Redo history)\nUndo is enabled"
+    },
+    {
+      "id": "TC-011",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; note which item is selected on entry (transparent)",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet\n3. Note which item is selected on entry (transparent)"
+    },
+    {
+      "id": "TC-011",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The canvas looks as on entry. Reset is disabled (state equals the initial one) while Undo is enabled (two steps); tapping Undo once shows the white background.",
+      "after": "The canvas looks as on entry\nReset is disabled (state equals the initial one) while Undo is enabled (two steps)\nTapping Undo once shows the white background"
+    },
+    {
+      "id": "TC-012",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room, 「Solid」 chip; 「White」 selected (one step)",
+      "after": "1. In the Cutout room, 「Solid」 chip\n2. 「White」 selected (one step)"
+    },
+    {
+      "id": "TC-012",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After Undo: white background and the orange selection frame back on 「White」. After Redo: black background and the frame on 「Black」.",
+      "after": "After Undo: white background and the orange selection frame back on 「White」\nAfter Redo: black background and the frame on 「Black」"
+    },
+    {
+      "id": "TC-013",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; a 「Wall」 template already downloaded (no download arrow)",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet\n3. A 「Wall」 template already downloaded (no download arrow)"
+    },
+    {
+      "id": "TC-013",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The template is applied and Undo enables once it shows. After Undo: the entry background and the selection frame back on the entry item. After Redo: the template again, frame on it.",
+      "after": "The template is applied and Undo enables once it shows\nAfter Undo: the entry background and the selection frame back on the entry item\nAfter Redo: the template again, frame on it"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; a 「Wall」 template not downloaded yet (download arrow), slow network if available",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet\n3. A 「Wall」 template not downloaded yet (download arrow), slow network if available"
+    },
+    {
+      "id": "TC-015",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-015",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo enables when the photo shows on the canvas. After Undo: the photo is gone from the canvas and the entry background is back. After Redo: the photo again.",
+      "after": "Undo enables when the photo shows on the canvas\nAfter Undo: the photo is gone from the canvas and the entry background is back\nAfter Redo: the photo again"
+    },
+    {
+      "id": "TC-017",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-017",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo stays disabled while dragging; it enables only after confirming. Undo returns the background from before the palette opened (not an intermediate dragged colour).",
+      "after": "Undo stays disabled while dragging\nIt enables only after confirming\nUndo returns the background from before the palette opened (not an intermediate dragged colour)"
+    },
+    {
+      "id": "TC-018",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Closing the palette records the pick as one step: the background is the picked colour after closing; one Undo returns white.",
+      "after": "Closing the palette records the pick as one step: the background is the picked colour after closing\nOne Undo returns white"
+    },
+    {
+      "id": "TC-019",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-019",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo enables on the tap. After Undo: the stroke setting from before (entry colour). After Redo: orange stroke.",
+      "after": "Undo enables on the tap\nAfter Undo: the stroke setting from before (entry colour)\nAfter Redo: orange stroke"
+    },
+    {
+      "id": "TC-020",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-020",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo enables on the tap; Undo returns the previous stroke style.",
+      "after": "Undo enables on the tap\nUndo returns the previous stroke style"
+    },
+    {
+      "id": "TC-021",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; 「Stroke」 tab, thickness slider at its entry value (33 in the Design)",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet\n3. 「Stroke」 tab, thickness slider at its entry value (33 in the Design)"
+    },
+    {
+      "id": "TC-021",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo stays disabled while the finger is down and enables on release. Undo returns the slider and the stroke to the entry value.",
+      "after": "Undo stays disabled while the finger is down and enables on release\nUndo returns the slider and the stroke to the entry value"
+    },
+    {
+      "id": "TC-023",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-023",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo stays disabled while rotating and enables on release. Undo returns the cutout to its angle before the rotation.",
+      "after": "Undo stays disabled while rotating and enables on release\nUndo returns the cutout to its angle before the rotation"
+    },
+    {
+      "id": "TC-024",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-024",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A Flip button is there and flips the cutout; Undo enables on the flip. After Undo: the cutout faces the direction from before the flip. After Redo: flipped again.",
+      "after": "A Flip button is there and flips the cutout\nUndo enables on the flip\nAfter Undo: the cutout faces the direction from before the flip\nAfter Redo: flipped again"
+    },
+    {
+      "id": "TC-025",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-025",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The four Undo taps revert rotation, thickness, stroke colour and white background in that order, ending at the entry state (Reset and Undo disabled, Redo enabled). The four Redo taps re-apply them in the original order.",
+      "after": "The four Undo taps revert rotation, thickness, stroke colour and white background in that order, ending at the entry state (Reset and Undo disabled, Redo enabled)\nThe four Redo taps re-apply them in the original order"
+    },
+    {
+      "id": "TC-026",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-028",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One Undo returns the entry background; Undo is then disabled (the second tap added no step).",
+      "after": "One Undo returns the entry background\nUndo is then disabled (the second tap added no step)"
+    },
+    {
+      "id": "TC-029",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet; a 「Wall」 template downloaded",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet\n3. A 「Wall」 template downloaded"
+    },
+    {
+      "id": "TC-030",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Wall template is reverted; the panel switches back to 「Background」; the canvas is at the entry state with Reset and Undo disabled and Redo enabled.",
+      "after": "The Wall template is reverted\nThe panel switches back to 「Background」\nThe canvas is at the entry state with Reset and Undo disabled and Redo enabled"
+    },
+    {
+      "id": "TC-031",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "First Redo: the Wall template is back and the panel stays on 「Background」. Second Redo: the stroke change is back and the panel switches to 「Stroke」.",
+      "after": "First Redo: the Wall template is back and the panel stays on 「Background」\nSecond Redo: the stroke change is back and the panel switches to 「Stroke」"
+    },
+    {
+      "id": "TC-033",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room: background, stroke colour and thickness changed; the panel on 「Stroke」",
+      "after": "1. In the Cutout room: background, stroke colour and thickness changed\n2. The panel on 「Stroke」"
+    },
+    {
+      "id": "TC-035",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-035",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The cutout shows the edited shape. Undo and Redo stay disabled (the round trip is no step); Reset is enabled (the state differs from the entry state).",
+      "after": "The cutout shows the edited shape\nUndo and Redo stay disabled (the round trip is no step)\nReset is enabled (the state differs from the entry state)"
+    },
+    {
+      "id": "TC-036",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The cutout returns to its shape on entering the room. Reset is disabled, Undo is enabled, the panel is on 「Background」.",
+      "after": "The cutout returns to its shape on entering the room\nReset is disabled, Undo is enabled, the panel is on 「Background」"
+    },
+    {
+      "id": "TC-038",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The round trip adds no step. Undo reverts 「White」 and the cutout goes back to its shape at that step (entry shape); Redo brings back the white background and the edited cutout.",
+      "after": "The round trip adds no step\nUndo reverts 「White」 and the cutout goes back to its shape at that step (entry shape)\nRedo brings back the white background and the edited cutout"
+    },
+    {
+      "id": "TC-041",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Reset, Undo and Redo are all disabled; no earlier step can be undone.",
+      "after": "Reset, Undo and Redo are all disabled\nNo earlier step can be undone"
+    },
+    {
+      "id": "TC-043",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Reset, Undo and Redo are all disabled; the white background and stroke are part of the image and cannot be undone in the room.",
+      "after": "Reset, Undo and Redo are all disabled\nThe white background and stroke are part of the image and cannot be undone in the room"
+    },
+    {
+      "id": "TC-044",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room: 「White」 selected (one step); a 「Wall」 template not downloaded yet; slow network if available",
+      "after": "1. In the Cutout room: 「White」 selected (one step)\n2. A 「Wall」 template not downloaded yet\n3. Slow network if available"
+    },
+    {
+      "id": "TC-045",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The template is not applied when the download finishes; the canvas is unchanged.",
+      "after": "The template is not applied when the download finishes\nThe canvas is unchanged"
+    },
+    {
+      "id": "TC-046",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-046",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo walks back all 60 steps to the entry state (transparent background) before it disables; no step is dropped and no message appears.",
+      "after": "Undo walks back all 60 steps to the entry state (transparent background) before it disables\nNo step is dropped and no message appears"
+    },
+    {
+      "id": "TC-047",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The room shows the same canvas and panel; Reset, Undo and Redo are enabled as before; Redo still re-applies the undone step.",
+      "after": "The room shows the same canvas and panel\nReset, Undo and Redo are enabled as before\nRedo still re-applies the undone step"
+    },
+    {
+      "id": "TC-049",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped); no step made yet",
+      "after": "1. In the Cutout room just entered (a person photo, 「Auto」 selection, 「Cutout」 tapped)\n2. No step made yet"
+    },
+    {
+      "id": "TC-050",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Back returns to the Cutout room (like the page's own close); the room's Reset / Undo / Redo states are unchanged.",
+      "after": "Back returns to the Cutout room (like the page's own close)\nThe room's Reset / Undo / Redo states are unchanged"
+    }
+  ],
+  "notes": []
+}

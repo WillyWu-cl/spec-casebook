@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-10T06:35:50.182Z",
+  "built_at": "2026-11-12T01:42:16.533Z",
   "spec_set": "2026-11-05",
   "file": {
     "fileKey": "iUy5kOrVNG7IjcyxGGnp9t",
@@ -230,7 +230,7 @@
         "edge": "round/ic_image",
         "segment": "",
         "section": "Add Layer",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer open",
         "action": "1. Tap 「Image」\n2. Pick one photo",
         "result": "Not run",
         "run": ""
@@ -271,7 +271,7 @@
         "edge": "round/ic_image",
         "segment": "",
         "section": "Add Layer",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer open",
         "action": "1. Tap 「Image」\n2. Pick one photo",
         "result": "Not run",
         "run": ""
@@ -312,7 +312,7 @@
         "edge": "top/ic_back_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
         "action": "1. Tap + in an empty frame\n2. Pick one photo\n3. Tap ‹",
         "result": "Not run",
         "run": ""
@@ -353,7 +353,7 @@
         "edge": "top/ic_back_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
         "action": "1. Tap + in an empty frame\n2. Pick one photo\n3. Tap ‹",
         "result": "Not run",
         "run": ""
@@ -394,7 +394,7 @@
         "edge": "tab",
         "segment": "",
         "section": "Canvas",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A sticker placed so its centre is on page 2 and it overlaps page 3",
         "action": "1. Open 「Pages」\n2. Drag page 2 to the last position\n3. Tap ✓",
         "result": "Not run",
         "run": ""
@@ -435,7 +435,7 @@
         "edge": "tab",
         "segment": "",
         "section": "Canvas",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A sticker placed so its centre is on page 2 and it overlaps page 3",
         "action": "1. Open 「Pages」\n2. Drag page 2 to the last position\n3. Tap ✓",
         "result": "Not run",
         "run": ""
@@ -476,7 +476,7 @@
         "edge": "ic_text_bold",
         "segment": "",
         "section": "Add Layer",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer › 「Text」 open with 「Strong」 typed",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer › 「Text」 open with 「Strong」 typed",
         "action": "1. Tap bold\n2. Tap italic\n3. Tap align left\n4. Tap align center\n5. Tap align right\n6. Tap Done",
         "result": "Not run",
         "run": ""
@@ -517,7 +517,7 @@
         "edge": "ic_text_bold",
         "segment": "",
         "section": "Add Layer",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer › 「Text」 open with 「Strong」 typed",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer › 「Text」 open with 「Strong」 typed",
         "action": "1. Tap bold\n2. Tap italic\n3. Tap align left\n4. Tap align center\n5. Tap align right\n6. Tap Done",
         "result": "Not run",
         "run": ""
@@ -558,7 +558,7 @@
         "edge": "DownSheet_caption/btn_ok_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages",
         "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
         "result": "Not run",
         "run": ""
@@ -601,7 +601,7 @@
         "edge": "DownSheet_caption/btn_ok_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages",
         "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
         "result": "Not run",
         "run": ""
@@ -644,7 +644,7 @@
         "edge": "DownSheet_caption/btn_ok_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages",
         "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
         "result": "Not run",
         "run": ""
@@ -687,7 +687,7 @@
         "edge": "DownSheet_caption/btn_ok_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages",
         "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
         "result": "Not run",
         "run": ""
@@ -730,7 +730,7 @@
         "edge": "ic_none",
         "segment": "",
         "section": "Add Layer",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; a text bubble added and focused, the Text Bubble panel open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. A text bubble added and focused, the Text Bubble panel open",
         "action": "Tap the 「none」 (no bubble) choice",
         "result": "Not run",
         "run": ""
@@ -771,7 +771,7 @@
         "edge": "ic_none",
         "segment": "",
         "section": "Add Layer",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; a text bubble added and focused, the Text Bubble panel open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. A text bubble added and focused, the Text Bubble panel open",
         "action": "Tap the 「none」 (no bubble) choice",
         "result": "Not run",
         "run": ""
@@ -812,7 +812,7 @@
         "edge": "btn_close_outline",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. The IAP page opened by ✓ in Object Removal",
         "action": "Tap the IAP page's ✕",
         "result": "Not run",
         "run": ""
@@ -851,7 +851,7 @@
         "edge": "btn_close_outline",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. The IAP page opened by ✓ in Object Removal",
         "action": "Tap the IAP page's ✕",
         "result": "Not run",
         "run": ""
@@ -890,7 +890,7 @@
         "edge": "btn_close_outline",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. The IAP page opened by ✓ in Object Removal",
         "action": "Tap the IAP page's ✕",
         "result": "Not run",
         "run": ""
@@ -929,7 +929,7 @@
         "edge": "btn_close_outline",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. The IAP page opened by ✓ in Object Removal",
         "action": "Tap the IAP page's ✕",
         "result": "Not run",
         "run": ""
@@ -968,7 +968,7 @@
         "edge": "DownSheet_caption/btn_ok_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages",
         "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
         "result": "Not run",
         "run": ""
@@ -1034,7 +1034,7 @@
         "edge": "DownSheet_caption/btn_ok_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages",
         "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
         "result": "Not run",
         "run": ""
@@ -1100,7 +1100,7 @@
         "edge": "DownSheet_caption/btn_ok_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages",
         "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
         "result": "Not run",
         "run": ""
@@ -1143,7 +1143,7 @@
         "edge": "DownSheet_caption/btn_ok_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages",
         "action": "1. Tap + in an empty frame\n2. Pick photos A, B, C in that order\n3. Tap the orange ✓ beside the counter",
         "result": "Not run",
         "run": ""
@@ -1186,7 +1186,7 @@
         "edge": "tab",
         "segment": "",
         "section": "Canvas",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A sticker placed so its centre is on page 2 and it overlaps page 3",
         "action": "1. Open 「Pages」\n2. Drag page 2 to the last position\n3. Tap ✓",
         "result": "Not run",
         "run": ""
@@ -1227,7 +1227,7 @@
         "edge": "tab",
         "segment": "",
         "section": "Canvas",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A sticker placed so its centre is on page 2 and it overlaps page 3",
         "action": "1. Open 「Pages」\n2. Drag page 2 to the last position\n3. Tap ✓",
         "result": "Not run",
         "run": ""
@@ -1268,7 +1268,7 @@
         "edge": "round/ic_duplicate",
         "segment": "",
         "section": "Frame focus",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus",
         "action": "Tap the floating Duplicate",
         "result": "Not run",
         "run": ""
@@ -1309,7 +1309,7 @@
         "edge": "round/ic_duplicate",
         "segment": "",
         "section": "Frame focus",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus",
         "action": "Tap the floating Duplicate",
         "result": "Not run",
         "run": ""
@@ -1350,7 +1350,7 @@
         "edge": "round/ic_horizontal_flip",
         "segment": "",
         "section": "Frame focus",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus",
         "action": "1. Tap 「Flip H」\n2. Tap 「Flip V」",
         "result": "Not run",
         "run": ""
@@ -1391,7 +1391,7 @@
         "edge": "round/ic_horizontal_flip",
         "segment": "",
         "section": "Frame focus",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus",
         "action": "1. Tap 「Flip H」\n2. Tap 「Flip V」",
         "result": "Not run",
         "run": ""
@@ -1432,7 +1432,7 @@
         "edge": "round/ic_replace_image",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus",
         "action": "1. Tap 「Replace」\n2. Pick another photo",
         "result": "Not run",
         "run": ""
@@ -1473,7 +1473,7 @@
         "edge": "round/ic_horizontal_flip",
         "segment": "",
         "section": "Frame focus",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus",
         "action": "1. Tap 「Flip H」\n2. Tap 「Flip V」",
         "result": "Not run",
         "run": ""
@@ -1514,7 +1514,7 @@
         "edge": "round/ic_horizontal_flip",
         "segment": "",
         "section": "Frame focus",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus",
         "action": "1. Tap 「Flip H」\n2. Tap 「Flip V」",
         "result": "Not run",
         "run": ""
@@ -1555,7 +1555,7 @@
         "edge": "round/ic_replace_image",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus",
         "action": "1. Tap 「Replace」\n2. Pick another photo",
         "result": "Not run",
         "run": ""
@@ -1596,7 +1596,7 @@
         "edge": "top/ic_back",
         "segment": "",
         "section": "Template Page",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Page open from the Collage banner",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. Template Page open from the Collage banner",
         "action": "Tap ‹",
         "result": "Not run",
         "run": ""
@@ -1635,7 +1635,7 @@
         "edge": "top/ic_back",
         "segment": "",
         "section": "Template Page",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Page open from the Collage banner",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. Template Page open from the Collage banner",
         "action": "Tap ‹",
         "result": "Not run",
         "run": ""
@@ -1674,7 +1674,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus",
         "action": "Tap 「Enhance」",
         "result": "Not run",
         "run": ""
@@ -1715,7 +1715,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus",
         "action": "Tap 「Enhance」",
         "result": "Not run",
         "run": ""
@@ -1796,7 +1796,7 @@
         "edge": "Use Template",
         "segment": "",
         "section": "Template Preview",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Preview of a free template open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. Template Preview of a free template open",
         "action": "Tap 「Use Template」",
         "result": "Not run",
         "run": ""
@@ -1837,7 +1837,7 @@
         "edge": "Use Template",
         "segment": "",
         "section": "Template Preview",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Preview of a free template open",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. Template Preview of a free template open",
         "action": "Tap 「Use Template」",
         "result": "Not run",
         "run": ""
@@ -1878,7 +1878,7 @@
         "edge": "Remove",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Object Removal opened from image focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Object Removal opened from image focus",
         "action": "1. Mark an object and tap 「Remove」\n2. Tap ✓",
         "result": "Not run",
         "run": ""
@@ -1919,7 +1919,7 @@
         "edge": "Remove",
         "segment": "",
         "section": "Image focus and tools",
-        "precondition": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Object Removal opened from image focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Object Removal opened from image focus",
         "action": "1. Mark an object and tap 「Remove」\n2. Tap ✓",
         "result": "Not run",
         "run": ""
@@ -1960,7 +1960,7 @@
         "edge": "Delete",
         "segment": "",
         "section": "Frame focus",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus",
         "action": "Tap the floating Delete",
         "result": "Not run",
         "run": ""
@@ -2001,7 +2001,7 @@
         "edge": "Delete",
         "segment": "",
         "section": "Frame focus",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus",
         "action": "Tap the floating Delete",
         "result": "Not run",
         "run": ""
@@ -2042,7 +2042,7 @@
         "edge": "btn_add_page",
         "segment": "",
         "section": "Pages",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Pages open with 5 pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Pages open with 5 pages",
         "action": "1. Tap the + in the thumbnail row\n2. Tap the bottom +\n3. Tap the bottom −",
         "result": "Not run",
         "run": ""
@@ -2082,7 +2082,7 @@
         "edge": "btn_add_page/dark",
         "segment": "",
         "section": "Pages",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Pages open with 5 pages",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Pages open with 5 pages",
         "action": "1. Tap the + in the thumbnail row\n2. Tap the bottom +\n3. Tap the bottom −",
         "result": "Not run",
         "run": ""
@@ -2123,7 +2123,7 @@
         "edge": "top/ic_back_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
         "action": "1. Tap + in an empty frame\n2. Pick one photo\n3. Tap ‹",
         "result": "Not run",
         "run": ""
@@ -2164,7 +2164,7 @@
         "edge": "top/ic_back_n",
         "segment": "",
         "section": "Photo import",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
         "action": "1. Tap + in an empty frame\n2. Pick one photo\n3. Tap ‹",
         "result": "Not run",
         "run": ""
@@ -2205,7 +2205,7 @@
         "edge": "ic_1v1",
         "segment": "",
         "section": "Ratio",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
         "action": "Tap 「Ratio」",
         "result": "Not run",
         "run": ""
@@ -2243,7 +2243,7 @@
         "edge": "ic_1v1",
         "segment": "",
         "section": "Ratio",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
         "action": "Tap 「Ratio」",
         "result": "Not run",
         "run": ""
@@ -2281,7 +2281,7 @@
         "edge": "1/5",
         "segment": "",
         "section": "Export and Save & Share",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open (5 pages)",
         "action": "Swipe the preview left 4 times",
         "result": "Not run",
         "run": ""
@@ -2322,7 +2322,7 @@
         "edge": "1/5",
         "segment": "",
         "section": "Export and Save & Share",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open (5 pages)",
         "action": "Swipe the preview left 4 times",
         "result": "Not run",
         "run": ""
@@ -2363,7 +2363,7 @@
         "edge": "round/ic_ig",
         "segment": "",
         "section": "Export and Save & Share",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages); Instagram, Facebook, Twitter, Line and Tiktok installed",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open (5 pages)\n5. Instagram, Facebook, Twitter, Line and Tiktok installed",
         "action": "1. Tap Instagram\n2. Go back to PhotoDirector\n3. Tap Facebook\n4. Go back to PhotoDirector\n5. Tap Twitter\n6. Go back to PhotoDirector\n7. Tap Line\n8. Go back to PhotoDirector\n9. Tap Tiktok",
         "result": "Not run",
         "run": ""
@@ -2404,7 +2404,7 @@
         "edge": "round/ic_ig",
         "segment": "",
         "section": "Export and Save & Share",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages); Instagram, Facebook, Twitter, Line and Tiktok installed",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open (5 pages)\n5. Instagram, Facebook, Twitter, Line and Tiktok installed",
         "action": "1. Tap Instagram\n2. Go back to PhotoDirector\n3. Tap Facebook\n4. Go back to PhotoDirector\n5. Tap Twitter\n6. Go back to PhotoDirector\n7. Tap Line\n8. Go back to PhotoDirector\n9. Tap Tiktok",
         "result": "Not run",
         "run": ""
@@ -2445,7 +2445,7 @@
         "edge": "Year End",
         "segment": "",
         "section": "Template Page",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Page open (banner tapped)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. Template Page open (banner tapped)",
         "action": "Look at the top of the page and the tabs",
         "result": "Not run",
         "run": ""
@@ -2486,7 +2486,7 @@
         "edge": "Year End",
         "segment": "",
         "section": "Template Page",
-        "precondition": "iPhone, PhotoDirector signed in, Free tier; Template Page open (banner tapped)",
+        "precondition": "1. iPhone, PhotoDirector signed in, Free tier\n2. Template Page open (banner tapped)",
         "action": "Look at the top of the page and the tabs",
         "result": "Not run",
         "run": ""

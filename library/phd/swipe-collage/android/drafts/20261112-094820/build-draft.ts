@@ -1,5 +1,5 @@
 // Draft on approved v2: spec set 2026-11-05 (Swipe Collage PhDM Spec.pdf, text unchanged from Collage.pdf's spec half)
-// plus the Design Figma file Swipe_collage (iUy5kOrVNG7IjcyxGGnp9t, page 0:1 「20261029_Swipe Collage」), REQ-007.
+// plus the Design Figma file Swipe_collage (iUy5kOrVNG7IjcyxGGnp9t, page 0:1 「20261029_Swipe Collage」), REQ-008.
 // Run from the repo root: node library/phd/swipe-collage/android/drafts/20261112-094820/build-draft.ts
 import { join } from 'node:path';
 import { DRAFT_COLUMNS, readTable, tableDir, writeTable } from '../../../../../../scripts/lib/library.ts';

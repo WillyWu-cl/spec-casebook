@@ -19,7 +19,7 @@ sec('Entry and tab bar', [
   ['R-001', 'PM:pm-entry-flow; PM:pm-recent', 'My AI Artwork opens on 「Recent」, the first tab, as today (「預設落在 Recent（第一個 tab）」).'],
   ['R-002', 'PM:pm-overview; PM:pm-recent; PM:pm-entry-flow', 'The tab bar has a ☰ button fixed at its far right (「tab 列最右邊固定 ☰」): it stays at the right edge while the tabs are scrolled and whichever tab is selected.'],
   ['R-003', 'PM:pm-recent', 'The tab bar itself is unchanged: 「Recent」 first, every other tab in alphabetical order.'],
-  ['R-004', 'PM:pm-recent; Req: REQ-006', 'Tabs of features with no works are still shown in the tab bar, and such an empty tab shows 「Nothing yet.」 and 「Start to Create」; 「Create More」 shows only on a tab with works (the spec\'s 「有 Create More」 corrected by REQ-006).'],
+  ['R-004', 'PM:pm-recent; Req: REQ-007', 'Tabs of features with no works are still shown in the tab bar, and such an empty tab shows 「Nothing yet.」 and 「Start to Create」; 「Create More」 shows only on a tab with works (the spec\'s 「有 Create More」 corrected by REQ-007).'],
   ['R-005', 'PM:pm-recent; PM:pm-overview', 'The Recent list, the 「Photo」 / 「Video」 filter and 「Select」 work as today (the 8/E Recent spec, 「26 8E Recent」), i.e. as the app behaves now (Q-1 answered, REQ-003); Recent gets no list / grid switch (not done, manager decision 10/27).'],
 ]);
 sec('All categories sheet', [
@@ -86,7 +86,7 @@ S('Entry and tab bar');
 R(BASE, `Open ${OPEN}`, 'The page opens on 「Recent」, the first tab, shown selected (peach); the tab bar ends with a ☰ button at its far right', 'P1', 'R-001, R-002');
 R(ON('Recent'), '1. Swipe the tab bar left until its last tab shows\n2. Tap the last tab', 'While the tabs scroll, ☰ stays fixed at the right edge of the tab bar; after the tap the last tab is selected and ☰ is still at the far right', 'P2', 'R-002');
 R(ON('Recent'), 'Read the tab bar from the first tab to the last (swipe it left)', '「Recent」 is first and every other tab follows in alphabetical order (A → Z); tabs of features with no works are among them', 'P2', 'R-003, R-004', 'Write down the tab list: TC-007 compares the sheet with it');
-R(`${ON('Recent')}; a feature with no works (its tab holds nothing)`, 'Tap that feature\'s tab in the tab bar', 'The empty tab opens and shows 「Nothing yet.」 and 「Start to Create」; the tab is not greyed in the tab bar', 'P2', 'R-004', 'REQ-006: 「Create More」 shows only on a tab with works');
+R(`${ON('Recent')}; a feature with no works (its tab holds nothing)`, 'Tap that feature\'s tab in the tab bar', 'The empty tab opens and shows 「Nothing yet.」 and 「Start to Create」; the tab is not greyed in the tab bar', 'P2', 'R-004', 'REQ-007: 「Create More」 shows only on a tab with works');
 R(`${ON('Recent')}; Recent holds photos and videos`, '1. Tap 「Video」\n2. Tap 「Photo」\n3. Tap 「Select」\n4. Tap 「Cancel」', 'As before the change: 「Video」 shows only videos, 「Photo」 only photos; 「Select」 starts multi-select and 「Cancel」 ends it. Recent shows the list as before, with no list / grid switch', 'P2', 'R-005, R-017', 'Q-1 answered (REQ-003): 「as today」 = the current behaviour of the app');
 
 S('All categories sheet');
@@ -102,7 +102,7 @@ S('Choosing a category');
 R(SHEET('Recent'), 'Tap 「AI Creative Studio」', 'The sheet closes and My AI Artwork switches to the 「AI Creative Studio」 tab: the tab is selected (peach underline) and in view in the tab bar, and its works are shown', 'P1', 'R-020');
 R(SHEET('Recent'), 'Tap 「AI Art」', 'The sheet closes on the 「AI Art」 tab, which shows the AI Art works, old ones included (no tab-bar swiping needed)', 'P1', 'R-020, R-024', 'The problem of QA ticket PHI262609-0006');
 R(ON('Recent'), '1. Tap the 「AI Art」 tab in the tab bar\n2. Note what it shows (works, filter, scroll position at the top)\n3. Tap the 「Recent」 tab\n4. Tap ☰\n5. Tap 「AI Art」', 'Choosing 「AI Art」 in the sheet shows the same tab, works and filter state as tapping the tab did (「同今天」)', 'P2', 'R-020');
-R(`${SHEET('Recent')}; a feature with no works`, 'Tap that feature\'s row', 'The sheet closes and the page switches to that feature\'s empty tab, which shows 「Nothing yet.」 and 「Start to Create」', 'P2', 'R-021, R-004', 'REQ-006');
+R(`${SHEET('Recent')}; a feature with no works`, 'Tap that feature\'s row', 'The sheet closes and the page switches to that feature\'s empty tab, which shows 「Nothing yet.」 and 「Start to Create」', 'P2', 'R-021, R-004', 'REQ-007');
 R(`${SHEET('AI Art')}`, 'Tap 「AI Art」 (the highlighted row)', 'The sheet closes and the page stays on the 「AI Art」 tab', 'P3', 'R-022');
 R(SHEET('AI Art'), 'Tap 「Recent」', 'The sheet closes and the page is back on 「Recent」, selected in the tab bar', 'P2', 'R-020');
 R(ON('AI Creative Studio'), '1. Tap 「Select」\n2. Select two works\n3. Tap ☰\n4. Tap 「AI Art」\n5. Tap the 「AI Creative Studio」 tab', 'Step 4: the sheet closes on the 「AI Art」 tab and the selection is cancelled (no work selected, multi-select ended: no 「Cancel」, no bottom action bar). Step 5: the two works are no longer selected', 'P2', 'R-023', 'Q-5 answered (REQ-003): multi-select ends');
@@ -217,7 +217,7 @@ md.push('| Ledger entry | Requirements |');
 md.push('|---|---|');
 md.push('| REQ-001 | R-001 – R-052 (the whole table) |');
 md.push('| REQ-003 | R-003, R-004, R-005, R-012, R-020, R-023, R-030, R-031, R-032 |');
-md.push('| REQ-006 | R-004 (empty-tab button) |');
+md.push('| REQ-007 | R-004 (empty-tab button) |');
 md.push('| REQ-004 | R-014, R-023, R-025 (Figma draft section) |');
 md.push('| REQ-002 | n/a (platform scope: this Android table only, the iOS draft was removed) |');
 
@@ -238,6 +238,6 @@ const doms: string[] = [];
 for (const m of ruleSection.matchAll(/^### (K[CPF]-\d+) (.+?) \(/gm)) doms.push(`| ${m[1]} ${m[2]} | ${applied[m[1]] ?? 'n/a (other feature or flow: not part of My AI Artwork\'s tab bar or the All categories sheet)'} |`);
 const text = md.join('\n').replace('@@DOMAIN@@', doms.join('\n') || '| (none) | n/a |') + '\n';
 writeFileSync(join(DIR, 'requirements.md'), text);
-for (const r of rows) if (r.ID === 'TC-004' || r.ID === 'TC-016') { r.Change = 'modified'; r['Change Reason'] = 'REQ-006: an empty tab shows 「Nothing yet.」 / 「Start to Create」; 「Create More」 only on a tab with works (R-004)'; }
+for (const r of rows) if (r.ID === 'TC-004' || r.ID === 'TC-016') { r.Change = 'modified'; r['Change Reason'] = 'REQ-007: an empty tab shows 「Nothing yet.」 / 「Start to Create」; 「Create More」 only on a tab with works (R-004)'; }
 writeTable(join(DIR, 'draft.csv'), DRAFT_COLUMNS, rows);
 console.log(`${PLATFORM}: ${sections.reduce((a, [, r]) => a + r.length, 0)} requirements, ${rows.length} rows`);

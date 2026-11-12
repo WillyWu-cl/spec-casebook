@@ -1,54 +1,73 @@
 ﻿ID,Section,Precondition,Action,Expected Result,Priority,Spec Ref,Notes
-TC-001,Enhance in the photo toolbars,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-001,Enhance in the photo toolbars,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to its end",The photo toolbar shows an 「Enhance」 button (between 「Effects」 and 「Tools」 in the PM mockup; the sheet puts it after 「Background」: Q-1),P1,R-001,Position not asserted until Q-1 is answered
-TC-002,Enhance in the photo toolbars,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-002,Enhance in the photo toolbars,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
-3. Tap 「Enhance」",A second layer opens over the toolbar with 「Photo Enhance」 first and 「AI Color」 second; 「Photo Enhance」 has the photo-with-sparkle icon,P1,"R-003, R-004, R-005, R-050",Design 24.10E draws no Enhance second layer (AI Color under Effects): the PM and the sheet are newer (Q-1)
-TC-003,Enhance in the photo toolbars,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track","1. Tap the photo clip on the PiP track
+3. Tap 「Enhance」","A second layer opens over the toolbar with 「Photo Enhance」 first and 「AI Color」 second
+「Photo Enhance」 has the photo-with-sparkle icon",P1,"R-003, R-004, R-005, R-050",Design 24.10E draws no Enhance second layer (AI Color under Effects): the PM and the sheet are newer (Q-1)
+TC-003,Enhance in the photo toolbars,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project with a video clip on the master track and a photo clip on a PiP track","1. Tap the photo clip on the PiP track
 2. Scroll the toolbar to its end",The PiP photo toolbar shows an 「Enhance」 button,P1,R-002,
-TC-004,Enhance in the photo toolbars,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track","1. Tap the photo clip on the PiP track
+TC-004,Enhance in the photo toolbars,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project with a video clip on the master track and a photo clip on a PiP track","1. Tap the photo clip on the PiP track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」","The same second layer opens: 「Photo Enhance」 first, 「AI Color」 second",P1,"R-003, R-004, R-051",
-TC-005,Enhance in the photo toolbars,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-005,Enhance in the photo toolbars,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「AI Color」",AI Color opens for the selected photo clip,P2,R-006,AI Color itself is another feature; only the entry is checked here
-TC-006,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-006,Apply Photo Enhance,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」",The dialog 「Ready to Enhance?」 appears with 「Your image will look even better in just a few seconds.」 and the buttons 「Cancel」 and 「Continue」,P1,"R-010, R-052",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-007,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-007,Apply Photo Enhance,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
-5. Tap 「Cancel」","The dialog closes; the photo is unchanged, no toast appears and 「Enhance」 has no white dot",P2,R-011,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-008,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+5. Tap 「Cancel」","The dialog closes
+The photo is unchanged, no toast appears and 「Enhance」 has no white dot",P2,R-011,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
+TC-008,Apply Photo Enhance,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
 5. Tap 「Continue」","The editor dims and shows a spinner, 「Enhancing...」 and a 「Cancel」 button",P1,"R-012, R-053",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). The shortcut room finishes a photo in about 3–5 s: record the screen before tapping 「Continue」
-TC-009,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-009,Apply Photo Enhance,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
 5. Tap 「Continue」
 6. Wait until 「Enhancing...」 closes","The preview shows the enhanced photo (sharper, compare with a screenshot taken before) and the toast 「Applied Photo Enhance」 appears",P1,"R-014, R-017, R-054",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-010,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)","1. Look at the toolbar 「Enhance」 button
+TC-010,Apply Photo Enhance,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)","1. Look at the toolbar 「Enhance」 button
 2. Tap 「Enhance」","1. A small white dot sits on 「Enhance」
 2. The second layer opens with a white dot over 「Photo Enhance」",P2,"R-015, R-016, R-055",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-011,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-011,Apply Photo Enhance,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
 5. Tap 「Continue」
-6. Tap 「Cancel」 while 「Enhancing...」 shows","The enhancement stops; the editor shows the original photo, no 「Applied Photo Enhance」 toast and no white dot (Q-2)",P2,R-013,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Assumption until Q-2 is answered
-TC-012,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track","1. Tap the photo clip on the PiP track
+6. Tap 「Cancel」 while 「Enhancing...」 shows","The enhancement stops
+The editor shows the original photo, no 「Applied Photo Enhance」 toast and no white dot (Q-2)",P2,R-013,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Assumption until Q-2 is answered
+TC-012,Apply Photo Enhance,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project with a video clip on the master track and a photo clip on a PiP track","1. Tap the photo clip on the PiP track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
 5. Tap 「Continue」
-6. Wait until 「Enhancing...」 closes",The PiP photo shows enhanced and 「Applied Photo Enhance」 appears; the master-track video is unchanged,P1,"R-014, R-017",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-023,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds two photo clips; Photo Enhance applied to the first clip only (TC-009)","1. Tap the second photo clip on the master track
+6. Wait until 「Enhancing...」 closes","The PiP photo shows enhanced and 「Applied Photo Enhance」 appears
+The master-track video is unchanged",P1,"R-014, R-017",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
+TC-023,Apply Photo Enhance,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds two photo clips
+3. Photo Enhance applied to the first clip only (TC-009)","1. Tap the second photo clip on the master track
 2. Look at the toolbar 「Enhance」 button
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
@@ -59,44 +78,87 @@ TC-023,Apply Photo Enhance,"Android phone, PowerDirector signed in, Pro tier (th
 4. 「Ready to Enhance?」 appears, not the panel
 5. The dialog closes
 6. The first clip still shows enhanced and 「Enhance」 has its white dot",P2,"R-015, R-016, R-017, R-010","PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). The dot and the dialog follow the selected clip, not the project"
-TC-013,Photo Enhance panel,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)","1. Tap the photo clip on the master track
+TC-013,Photo Enhance panel,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」","No dialog: the Photo Enhance panel opens with the photo preview, ✕ at the top left, an icon at the top right, 「Reset」, the title 「Photo Enhance」 and the options 「Original」 and 「Result」, with 「Result」 selected",P1,"R-020, R-056",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-014,Photo Enhance panel,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013); screen recording on","1. Tap 「Original」
+TC-014,Photo Enhance panel,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)
+4. The Photo Enhance panel open (TC-013)
+5. Screen recording on","1. Tap 「Original」
 2. Tap 「Result」","1. 「Original」 is outlined and the preview shows the photo without the enhancement
 2. 「Result」 is outlined and the enhanced photo returns at once, with no 「Enhancing...」 progress",P1,"R-021, R-022",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-015,Photo Enhance panel,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)",Tap ✕,The panel closes; the editor shows the enhanced photo and 「Enhance」 keeps its white dot,P2,"R-023, R-057",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-016,Photo Enhance panel,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)",Tap 「Reset」,The panel closes; the editor shows the original photo and the toast 「Removed Photo Enhance」 appears,P1,"R-024, R-058",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-017,Photo Enhance panel,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied and removed again (TC-016)","1. Look at the toolbar 「Enhance」 button
+TC-015,Photo Enhance panel,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)
+4. The Photo Enhance panel open (TC-013)",Tap ✕,"The panel closes
+The editor shows the enhanced photo and 「Enhance」 keeps its white dot",P2,"R-023, R-057",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
+TC-016,Photo Enhance panel,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)
+4. The Photo Enhance panel open (TC-013)",Tap 「Reset」,"The panel closes
+The editor shows the original photo and the toast 「Removed Photo Enhance」 appears",P1,"R-024, R-058",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
+TC-017,Photo Enhance panel,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied and removed again (TC-016)","1. Look at the toolbar 「Enhance」 button
 2. Tap 「Enhance」","1. 「Enhance」 has no white dot
 2. 「Photo Enhance」 in the second layer has no white dot",P2,R-025,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-018,Photo Enhance panel,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied and removed again (TC-016); screen recording on","1. Tap the photo clip on the master track
+TC-018,Photo Enhance panel,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied and removed again (TC-016)
+4. Screen recording on","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
 5. Tap 「Continue」 if 「Ready to Enhance?」 appears (Q-5)
 6. Send the app log","1. No 「Enhancing...」 progress appears; the enhanced photo and 「Applied Photo Enhance」 come at once
 2. The log shows no new enhance request for this clip",P1,"R-026, R-022",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Whether the dialog shows again: Q-5
-TC-019,Photo Enhance panel,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)",Tap and hold the icon at the top right of the panel,"It compares the original and the enhanced photo, as the Photo Enhance room's compare control does (Q-6)",P3,R-027,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Function not stated; assumption until Q-6 is answered
-TC-020,Full-screen preview,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)",Tap the full-screen button under the preview,The full-screen preview opens and shows the enhanced photo,P1,"R-030, R-059",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
-TC-021,Full-screen preview,"Android phone, PowerDirector signed in, Free tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the full-screen preview open (TC-020)",Take a screenshot (power + volume down),The screenshot is blocked the way the shortcut Photo Enhance room blocks it (the screenshot IAP dialog; Q-8),P1,"R-031, R-032, R-060",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Compare with a screenshot in Launcher › Photo Enhance on the same tier
-TC-022,Full-screen preview,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the full-screen preview open (TC-020)",Take a screenshot (power + volume down),"The screenshot is handled as in the shortcut Photo Enhance room on a Pro account (assumed: saved, no IAP dialog; Q-7)",P2,R-032,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). 「一律」 may mean every tier: check on device and decide with the user (Q-7)
-TC-024,Full-screen preview,"Android phone, PowerDirector signed in, Free tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance not applied to the photo clip; the full-screen preview open",Take a screenshot (power + volume down),The screenshot is blocked as on an enhanced photo: 「一律」 (always) taken literally (Q-7),P3,R-031,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). The note does not limit the block to enhanced photos: check on device and decide with the user (Q-7)
-TC-030,Android system Back,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-019,Photo Enhance panel,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)
+4. The Photo Enhance panel open (TC-013)",Tap and hold the icon at the top right of the panel,"It compares the original and the enhanced photo, as the Photo Enhance room's compare control does (Q-6)",P3,R-027,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Function not stated; assumption until Q-6 is answered
+TC-020,Full-screen preview,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)",Tap the full-screen button under the preview,The full-screen preview opens and shows the enhanced photo,P1,"R-030, R-059",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11)
+TC-021,Full-screen preview,"1. Android phone, PowerDirector signed in, Free tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)
+4. The full-screen preview open (TC-020)",Take a screenshot (power + volume down),The screenshot is blocked the way the shortcut Photo Enhance room blocks it (the screenshot IAP dialog; Q-8),P1,"R-031, R-032, R-060",PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). Compare with a screenshot in Launcher › Photo Enhance on the same tier
+TC-022,Full-screen preview,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)
+4. The full-screen preview open (TC-020)",Take a screenshot (power + volume down),"The screenshot is handled as in the shortcut Photo Enhance room on a Pro account (assumed: saved, no IAP dialog; Q-7)",P2,R-032,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). 「一律」 may mean every tier: check on device and decide with the user (Q-7)
+TC-024,Full-screen preview,"1. Android phone, PowerDirector signed in, Free tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance not applied to the photo clip
+4. The full-screen preview open",Take a screenshot (power + volume down),The screenshot is blocked as on an enhanced photo: 「一律」 (always) taken literally (Q-7),P3,R-031,PM-only: no Design frame yet (the Design link is the 24.10E toolbar regroup; Q-11). The note does not limit the block to enhanced photos: check on device and decide with the user (Q-7)
+TC-030,Android system Back,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
-4. Press system Back",The Enhance second layer closes; the editor stays with the photo clip selected,P2,R-040,
-TC-031,Android system Back,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+4. Press system Back","The Enhance second layer closes
+The editor stays with the photo clip selected",P2,R-040,
+TC-031,Android system Back,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
 5. Press system Back",The 「Ready to Enhance?」 dialog closes as with 「Cancel」: nothing applied,P2,"R-040, R-011",
-TC-032,Android system Back,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
+TC-032,Android system Back,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip","1. Tap the photo clip on the master track
 2. Scroll the toolbar to 「Enhance」
 3. Tap 「Enhance」
 4. Tap 「Photo Enhance」
 5. Tap 「Continue」
 6. Press system Back while 「Enhancing...」 shows","The enhancement stops as with 「Cancel」 (nothing applied), or Back is ignored until it ends (Q-2)",P2,"R-040, R-013",
-TC-033,Android system Back,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)",Press system Back,The panel closes as with ✕: the editor keeps the enhancement and the white dot,P2,"R-040, R-023",
-TC-034,Android system Back,"Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the full-screen preview open (TC-020)",Press system Back,The full-screen preview closes and the editor returns,P3,"R-040, R-030",
+TC-033,Android system Back,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)
+4. The Photo Enhance panel open (TC-013)",Press system Back,The panel closes as with ✕: the editor keeps the enhancement and the white dot,P2,"R-040, R-023",
+TC-034,Android system Back,"1. Android phone, PowerDirector signed in, Pro tier (the debug tier switch (KP-003); Q-3)
+2. An editor project whose master track holds one photo clip
+3. Photo Enhance applied to the photo clip (TC-009)
+4. The full-screen preview open (TC-020)",Press system Back,The full-screen preview closes and the editor returns,P3,"R-040, R-030",

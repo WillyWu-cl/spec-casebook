@@ -2,9 +2,9 @@
   "feature": "phd/batch-editing",
   "platform": "android",
   "title": "Batch Editing",
-  "version": 4,
-  "approved_at": "2026-11-11T03:50:58.704Z",
-  "draft": "20261109-150747",
+  "version": 6,
+  "approved_at": "2026-11-12T01:38:23.902Z",
+  "draft": "edit-20261112-093823",
   "spec_folder": "specs/2026-11-09",
   "spec_files": [
     {
@@ -269,7 +269,7 @@
     }
   ],
   "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
-  "cases": 161,
+  "cases": 168,
   "history": [
     {
       "version": 1,
@@ -305,9 +305,27 @@
       "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
       "draft": "20261109-150747",
       "cases": 161,
-      "csv": "cases.csv",
-      "requirements": "requirements.md",
+      "csv": "history/v4.csv",
+      "requirements": "history/v4-requirements.md",
       "note": "Re-save of v2 (same rows) over main's table (REQ-010)."
+    },
+    {
+      "version": 5,
+      "approved_at": "2026-11-11T09:58:56.129Z",
+      "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
+      "draft": "20261111-173421",
+      "cases": 168,
+      "csv": "history/v5.csv",
+      "requirements": "history/v5-requirements.md"
+    },
+    {
+      "version": 6,
+      "approved_at": "2026-11-12T01:38:23.902Z",
+      "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
+      "draft": "edit-20261112-093823",
+      "cases": 168,
+      "csv": "cases.csv",
+      "requirements": "requirements.md"
     }
   ]
 }

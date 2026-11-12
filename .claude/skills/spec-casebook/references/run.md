@@ -142,6 +142,9 @@ refuses them), and it runs in one folder, e.g. `runs/<date>-p23-regression-flows
   the run folder (inside its active spans) to `<run dir>/tokens.jsonl` and stamps each evidence file's time once into
   `activity.log` (`<ISO> file <path>`; `scripts/lib/run-ledger.ts`). Keep the page server running on the run machine
   during the run and commit both files with the run; a computer that did not run it shows the same figures after a pull.
+  A segment subagent whose brief names the run folder counts in full, also its reading before the first device
+  command and a phase wrap-up after the last one (2026-11-11: R2 lost a quarter of its messages to the span filter),
+  so every brief names the run folder; the orchestrator's own messages count only inside the run's spans.
 - **Time and token summary (user, 2026-10-19).** device.ts, app-setup.ts and run-log.ts stamp every command into
   `<run dir>/activity.log`. `run-log.ts <run dir> time [--cases]` reports wall, test and idle time (gaps over 15 min)
   per segment and case. `token-usage.ts --since <run start> <transcript.jsonl …>` sums Claude tokens from every

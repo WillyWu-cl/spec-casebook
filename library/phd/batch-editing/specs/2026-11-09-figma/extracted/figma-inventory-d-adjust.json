@@ -2,7 +2,7 @@
   "file": "qZXJfrM5gb5g4tFoCIS1YU",
   "page": "12:2321",
   "group": "d-adjust",
-  "extracted_at": "2026-11-09",
+  "extracted_at": "2026-11-11",
   "section": [
     "12:2321",
     "261104_design",
@@ -1190,9 +1190,9 @@
   ],
   "hash": {
     "12:2321/design-light-adjust": "d86ac178",
-    "12:2321/design-dark-adjust": "cdb1b2a3"
+    "12:2321/design-dark-adjust": "3cec0bc6"
   },
-  "hashed_at": "2026-11-09T07:49:47.542Z",
+  "hashed_at": "2026-11-11T09:41:29.339Z",
   "overlay": {
     "12:2321/design-light-adjust": "",
     "12:2321/design-dark-adjust": ""
@@ -2347,6 +2347,6 @@
       1
     ]
   ],
-  "ms": 3964,
+  "ms": 2021,
   "size": 8933
 }

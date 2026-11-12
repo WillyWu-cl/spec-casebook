@@ -23,6 +23,8 @@ Spec: <file names>
 ### Variants              | Requirement | Variant | Rows |   one line per variant (pass 10)
 ### Combinations          - Setting <name>: a, b, c (one line per setting), then | Combination | Rows |: every
                           combination of the settings' values, `Name=value · Name=value …`, its row or n/a (<why>) (pass 10)
+                          - Not combined: a, b (<why>) for Variants names that are never chosen together (the room a
+                          rule holds in, tier, entry, appearance): check.ts leaves them out of the cross product
 ### Flow arrows walked by existing rows
 - R-150 [DS: flow arrow <node> <Figma URL>] <from → to>: <expected>. Walked by: TC-033.
 ### Build checks
@@ -68,10 +70,18 @@ Writing rules (the table must be usable by a tester who has not read the spec):
   step goes on its own line inside the cell, numbered (`1. Open a template` newline `2. Send one typed message`
   newline `3. Tap 「Generate」`). This covers numbered runs (`1. … 2. … 3. …`) and plain sentences or clauses of
   steps (`Open a template, then send a message, then tap …`, `Tap X. Tap Y.`, `Tap X; tap Y`). One tap is one
-  step: `Tap 「General」, then 「AI Issues」` is two lines. A single step needs no number. Precondition states
-  joined by `;` (`Tier Pro; scene videos done`) are conditions, not steps, and may stay on one line; setup
-  steps in a Precondition follow the rule. The CSV field is quoted because it holds line breaks; the review page,
-  Excel and Results pages show them as separate lines. `check.ts` warns on steps run together on one line.
+  step: `Tap 「General」, then 「AI Issues」` is two lines. A single step needs no number. The CSV field is quoted
+  because it holds line breaks; the review page, Excel and Results pages show them as separate lines. `check.ts`
+  warns on steps run together on one line.
+- **One item per line in Precondition and Expected Result (user, 2026-11-12).** Never join items with `;` or run
+  several sentences together. A Precondition with two or more conditions or setup steps puts each on its own
+  numbered line, like Action (`1. Tier Pro` newline `2. Scene videos done`); a single one has no number. An Expected
+  Result with two or more checks puts each check on its own line, unnumbered (its numbers would read as the
+  Action's steps); a check tied to a step starts with it (`Step 3: the CTA reads 「Enhance ◆ 2」`), and every line
+  of that step repeats the prefix (`Steps 1–2: the chat does not move` newline `Steps 1–2: a ↓ button appears`).
+  Exception: an Expected Result already numbered one outcome per Action step keeps its numbers. `;` inside
+  (), 「」 and quotes is text, not a separator. A `›` path (`Background › 「Solid」 open`, `Launcher › Pink › ☰ › [0]
+  IAP › status`) names one place and stays on one line, in every column. `check.ts` warns on a top-level `;` or two sentences on one line.
 - Section = the spec's own feature area, in user-journey order (entry → main flow → edge cases → errors →
   settings / history). Rows are grouped by Section and follow the user journey inside it, so a later row can sit
   between earlier ones (REQ-033); IDs keep their numbers and need not be in sequence.

@@ -10,7 +10,7 @@ Test Server. No TR named. Nothing filed.
 
 - **TC-004, TC-016 (Pass after the ruling):** — an empty feature tab shows 「Nothing yet.」 and the button
   **「Start to Create」** (`create_more_btn`); R-004 / R-021 say 「Create More」. The spec states the tab bar 「同今天」
-  and Q-1 was answered 「同今天 = 目前當下的狀態」, so it was held as a question; the user ruled the spec wrong (REQ-006: 「Create More」 needs works), so both are Pass and the table follows in draft 20261111-135316.
+  and Q-1 was answered 「同今天 = 目前當下的狀態」, so it was held as a question; the user ruled the spec wrong (REQ-007: 「Create More」 needs works), so both are Pass and the table follows in draft 20261111-135316.
 - **Blocked, observability (4):** TC-028 – TC-031, the two analytics events (no event log on Android).
 - Everything the 11/E change adds passes: ☰ fixed at the far right (`all_categories_btn`), 「All categories」 rows equal
   to the tab bar in the same order, names only with no count and nothing greyed, the current tab in peach (also when
@@ -36,4 +36,4 @@ Test Server. No TR named. Nothing filed.
 - Knowledge inbox: nothing open; no observation contradicts a knowledge entry.
 
 ## Questions for PM
-- None open (empty-tab wording settled by REQ-006).
+- None open (empty-tab wording settled by REQ-007).

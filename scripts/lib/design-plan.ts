@@ -30,7 +30,8 @@
 //   drawing  narrower than a phone (under 360 pt): a card or detail drawn on its own, not a whole screen
 //   gap      no casebook row reaches it (the analysis adds one)
 import { spawnSync } from 'node:child_process';
-import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { gunzipSync } from 'node:zlib';
 import { join } from 'node:path';
 import { readRecords } from './csv.ts';
 import { arrowRequirement, requirementRows, tcList } from './coverage.ts';
@@ -44,13 +45,29 @@ export const planPath = (feature: string, platform: string) => join(tableDir(fea
 export function designSet(feature: string) {
   const specs = join(featureDir(feature), 'specs'), src = (s: string) => join(specs, s, 'extracted', 'figma-source', 'design');
   return [...listSpecSets(feature)].reverse().map(s => s.folder).find(s => existsSync(join(src(s), 'out', 'screens.json'))
+    || existsSync(join(src(s), 'rest', 'boards'))
     || (existsSync(join(src(s), 'responses')) && readdirSync(join(src(s), 'responses')).some(f => f.startsWith('chunk-'))));
 }
 
 // A computer that pulled the repo has the responses and the shared board images but no out/: rebuild it (merge, then
 // crop), with no Figma call. Also when the responses are newer than out/ (someone else read a changed board).
+// Two routes write the source (figma skill, references/source.md): REST + one use_figma call (the default since
+// 2026-11-11; committed as rest/boards/*.gz, unpacked here) or use_figma only (committed responses, merged here);
+// source.json names the newest one (none: use_figma only).
 export function ensureSource(feature: string, set: string, quiet = false) {
   const dir = join(featureDir(feature), 'specs', set, 'extracted', 'figma-source', 'design'), out = join(dir, 'out', 'screens.json');
+  const route = existsSync(join(dir, 'source.json')) ? read(join(dir, 'source.json')).route : 'mcp', boards = join(dir, 'rest', 'boards');
+  if (route === 'rest' && existsSync(boards)) {
+    const gz = readdirSync(boards).filter(f => f.endsWith('.gz')), newestGz = Math.max(0, ...gz.map(f => statSync(join(boards, f)).mtimeMs));
+    if (existsSync(out) && statSync(out).mtimeMs >= newestGz) return;
+    mkdirSync(join(dir, 'out'), { recursive: true });
+    for (const f of readdirSync(join(dir, 'out'))) if (/\.(json|xml)$/.test(f)) rmSync(join(dir, 'out', f));
+    for (const f of gz) writeFileSync(join(dir, 'out', f.slice(0, -3)), gunzipSync(readFileSync(join(boards, f))));
+    if (!quiet) console.log(`(figma source: ${gz.length} file(s) unpacked from rest/boards, the REST read of ${read(join(dir, 'source.json')).read_at})`);
+    const r = spawnSync(process.execPath, [join(import.meta.dirname, '..', 'figma-source.ts'), feature, set, 'crop', 'design'], { encoding: 'utf8' });
+    if (!quiet) console.log(`(figma-source crop: ${(r.stdout || r.stderr).trim().split('\n').at(-1)})`);
+    return;
+  }
   const resp = join(dir, 'responses');
   const newest = existsSync(resp) ? Math.max(0, ...readdirSync(resp).map(f => statSync(join(resp, f)).mtimeMs)) : 0;
   if (existsSync(out) && statSync(out).mtimeMs >= newest) return;

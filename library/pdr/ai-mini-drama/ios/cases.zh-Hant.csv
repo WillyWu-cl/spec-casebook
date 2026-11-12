@@ -1,37 +1,59 @@
 ﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註
 TC-001,入口與落地頁,App 在首頁（Launcher）,點「AI Mini Drama」捷徑,開啟 AI Mini Drama 落地頁,P1,R-001,
-TC-418,入口與落地頁,App 在首頁（Launcher）；這次安裝還沒用「Don't show again」關掉 AI Mini Drama 的介紹頁,"1. 點「AI Mini Drama」捷徑
+TC-418,入口與落地頁,"1. App 在首頁（Launcher）
+2. 這次安裝還沒用「Don't show again」關掉 AI Mini Drama 的介紹頁","1. 點「AI Mini Drama」捷徑
 2. 在介紹頁連點兩次音量圖示
 3. 點 ‹
 4. 再點一次捷徑
 5. 勾選「Don't show again」並點「Try It Now」
-6. 回到 Launcher，再點一次捷徑","介紹頁顯示「AI Mini Drama」／「Turn your idea into a video—same characters, same voices, every scene.」，有正在播放的示範影片、「Don't show again」和「Try It Now」；每點一次音量圖示，聲音就關閉或重新開啟；點 ‹ 回到 Launcher；點「Try It Now」開啟 AI Mini Drama 落地頁；勾選「Don't show again」之後，點捷徑會直接開啟落地頁，不再出現介紹頁",P3,R-456,PM-only：Design 還沒有對應畫面（PM 主流程 2283:10856「Demo page_Straight video」）。Design 的捷徑箭頭是直接連到落地頁（R-190）；若沒有出現介紹頁，請記錄下來（Q-29）
-TC-002,入口與落地頁,App 在首頁，主視覺橫幅輪播中,等「AI Mini Drama with Seedance 2.0 >」橫幅出現，然後點它,開啟 AI Mini Drama 落地頁,P2,R-002,橫幅輪播由 CMS 控制；若一直沒有出現就記為 Blocked
-TC-003,入口與落地頁,已開啟 AI Mini Drama 落地頁,查看落地頁,"顯示「Hi, I'm your」「AI Drama Assistant」、「Describe your idea and watch it come to life as a short drama.」、「Create Your Drama」、「Start from a template」（旁邊有「More」）和範本格狀列表；標題列有返回、點數膠囊和 History；每個範本縮圖都是該範本的海報劇照",P1,"R-003, R-289","回歸 DRI261893-0051（Assigned，無標籤）：""Hi, I'm your"" 文字上有陰影，這裡也要順便複驗這張單。Q-18：第一天範本是否只有 US 和 JP？"
-TC-004,入口與落地頁,已開啟落地頁；範本有 6 個以上,查看範本列的標題,「Start from a template」旁邊有「More」,P3,R-004,少於 6 個的情況需要伺服器設定才能測
+6. 回到 Launcher，再點一次捷徑","介紹頁顯示「AI Mini Drama」／「Turn your idea into a video—same characters, same voices, every scene.」，有正在播放的示範影片、「Don't show again」和「Try It Now」
+每點一次音量圖示，聲音就關閉或重新開啟
+點 ‹ 回到 Launcher
+點「Try It Now」開啟 AI Mini Drama 落地頁
+勾選「Don't show again」之後，點捷徑會直接開啟落地頁，不再出現介紹頁",P3,R-456,PM-only：Design 還沒有對應畫面（PM 主流程 2283:10856「Demo page_Straight video」）。Design 的捷徑箭頭是直接連到落地頁（R-190）；若沒有出現介紹頁，請記錄下來（Q-29）
+TC-002,入口與落地頁,"1. App 在首頁
+2. 主視覺橫幅輪播中",等「AI Mini Drama with Seedance 2.0 >」橫幅出現，然後點它,開啟 AI Mini Drama 落地頁,P2,R-002,橫幅輪播由 CMS 控制；若一直沒有出現就記為 Blocked
+TC-003,入口與落地頁,已開啟 AI Mini Drama 落地頁,查看落地頁,"顯示「Hi, I'm your」「AI Drama Assistant」、「Describe your idea and watch it come to life as a short drama.」、「Create Your Drama」、「Start from a template」（旁邊有「More」）和範本格狀列表
+標題列有返回、點數膠囊和 History
+每個範本縮圖都是該範本的海報劇照",P1,"R-003, R-289","回歸 DRI261893-0051（Assigned，無標籤）：""Hi, I'm your"" 文字上有陰影，這裡也要順便複驗這張單。Q-18：第一天範本是否只有 US 和 JP？"
+TC-004,入口與落地頁,"1. 已開啟落地頁
+2. 範本有 6 個以上",查看範本列的標題,「Start from a template」旁邊有「More」,P3,R-004,少於 6 個的情況需要伺服器設定才能測
 TC-005,入口與落地頁,已開啟落地頁,把點數膠囊和 Mine → credits 的數字對照,膠囊顯示目前的點數餘額,P2,R-005,回歸 DRI261894-0001（RDResolved、AIAgent）：扣除點數後，範本預覽顯示的是舊的點數餘額，這裡也要重測這張單
 TC-006,範本,已開啟落地頁,點「More」,開啟所有分類頁：每個分類有圖示和名稱（Office Romance、Fantasy World、Urban Romance、Family & Life、Animated Stories），底下各是一排附名稱的封面,P2,R-006,
-TC-007,範本,已開啟落地頁,點任一個範本封面,開啟範本詳情頁；範本影片自動播放並有聲音；畫面上有「Make my version」,P1,R-007,
+TC-007,範本,已開啟落地頁,點任一個範本封面,"開啟範本詳情頁
+範本影片自動播放並有聲音
+畫面上有「Make my version」",P1,R-007,
 TC-008,範本,範本詳細頁正在播放,"1. 點影片
 2. 點 ▶
-3. 點兩次音量圖示",第一次點影片會暫停（顯示 pause & volume off 狀態）；點 ▶ 會繼續播放；每點一次音量圖示，聲音就關閉再開啟，圖示也跟著變（volume off／volume on）,P3,"R-008, R-319",
+3. 點兩次音量圖示","第一次點影片會暫停（顯示 pause & volume off 狀態）
+點 ▶ 會繼續播放
+每點一次音量圖示，聲音就關閉再開啟，圖示也跟著變（volume off／volume on）",P3,"R-008, R-319",
 TC-009,範本,已開啟範本詳細頁,點「Make my version」,針對該範本開始一段聊天，先問「What format would you like for your video?」，之後才會產生大綱,P1,R-009,
 TC-010,範本,已開啟所有分類頁,逐一讀過每個範本名稱,名稱拼寫正確，例如「Six Things You Didn't Know」有撇號,P3,R-010,"Q-1：Design 檔本身漏了撇號；回歸 DRI261893-0158（NewCreated，AIAgent）：範本標題 ""Six Things You Didnt Know"" 少了撇號，這裡也要順便複驗這張單"
 TC-011,輸入點子,已開啟落地頁,點「Create Your Drama」,開啟空白聊天，輸入框提示文字是「Enter your idea to create drama」，旁邊有麥克風按鈕,P1,R-011,
 TC-399,輸入點子,空白聊天（接 TC-011）,"1. 點麥克風按鈕，不說話
-2. 再點一次（或點它的取消按鈕）停止",開始語音輸入：畫面顯示聆聽中的狀態（第一次使用時，iOS 會先詢問麥克風或語音辨識的權限）；停止後輸入框維持空白，可以直接打字,P2,"R-011, R-331",不需要真的說話：Appium 無法讓手機收到語音，轉文字的部分由 TC-191 負責。iOS 的權限詢問屬於系統設定：先記錄下來，回答前要問使用者
+2. 再點一次（或點它的取消按鈕）停止","開始語音輸入：畫面顯示聆聽中的狀態（第一次使用時，iOS 會先詢問麥克風或語音辨識的權限）
+停止後輸入框維持空白，可以直接打字",P2,"R-011, R-331",不需要真的說話：Appium 無法讓手機收到語音，轉文字的部分由 TC-191 負責。iOS 的權限詢問屬於系統設定：先記錄下來，回答前要問使用者
 TC-012,輸入點子,空白聊天，輸入框已取得焦點,查看輸入框上方,顯示「Surprise me」和兩個靈感標籤,P2,R-012,
 TC-013,輸入點子,空白聊天，有靈感標籤,點一個靈感標籤,標籤文字會填進輸入框，但不會送出,P2,R-013,
-TC-014,輸入點子,空白聊天,連點兩次「Surprise me」,第一次點，輸入框會填入一則靈感；第二次點，會把另一則靈感接在原有文字後面，而不是取代它,P2,R-014,回歸 DRI261893-0124（NewCreated，AIAgent）：與 TC-014 的「接在後面」規則衝突（DRI261895P0023），要對照目前的 spec 複驗。Surprise me 在同一次進入落地頁期間會換建議，這裡也要順便複驗這張單；回歸 DRI261895P0023（NewCreated，AIAgent）：Surprise me 會取代輸入框內容，而不是把建議接在後面，這裡也要順便複驗這張單
-TC-380,輸入點子,空白聊天；記下目前的兩個靈感標籤,連點「Surprise me」五次，每次都先清空輸入框,挑到的靈感都不是那兩個標籤的文字,P3,R-287,題庫共 10 則（R-014）
-TC-015,輸入點子,空白聊天,"把 1,050 個字元的文字貼進輸入框","輸入框只保留前 1,000 個字元；計數器變成紅色的「1000/1000」；顯示「You've reached the 1,000-character limit.」",P2,R-015,Q-2
-TC-016,輸入點子,"輸入框已滿 1,000 個字元",再多打一個字元,什麼都不會加進去；上限提示仍然顯示,P2,R-015,
+TC-014,輸入點子,空白聊天,連點兩次「Surprise me」,"第一次點，輸入框會填入一則靈感
+第二次點，會把另一則靈感接在原有文字後面，而不是取代它",P2,R-014,回歸 DRI261893-0124（NewCreated，AIAgent）：與 TC-014 的「接在後面」規則衝突（DRI261895P0023），要對照目前的 spec 複驗。Surprise me 在同一次進入落地頁期間會換建議，這裡也要順便複驗這張單；回歸 DRI261895P0023（NewCreated，AIAgent）：Surprise me 會取代輸入框內容，而不是把建議接在後面，這裡也要順便複驗這張單
+TC-380,輸入點子,"1. 空白聊天
+2. 記下目前的兩個靈感標籤",連點「Surprise me」五次，每次都先清空輸入框,挑到的靈感都不是那兩個標籤的文字,P3,R-287,題庫共 10 則（R-014）
+TC-015,輸入點子,空白聊天,"把 1,050 個字元的文字貼進輸入框","輸入框只保留前 1,000 個字元
+計數器變成紅色的「1000/1000」
+顯示「You've reached the 1,000-character limit.」",P2,R-015,Q-2
+TC-016,輸入點子,"輸入框已滿 1,000 個字元",再多打一個字元,"什麼都不會加進去
+上限提示仍然顯示",P2,R-015,
 TC-017,輸入點子,"輸入框已滿 1,000 個字元",刪掉一個字元,計數器不再是紅色，上限提示消失,P3,R-015,
 TC-018,輸入點子,輸入框有約 400 個字元,收起鍵盤,輸入框收合成最多 3 行,P3,R-016,
-TC-372,輸入點子,空白聊天，鍵盤已開啟,一直打字，直到文字超過輸入框的最大高度,輸入框會隨文字變高，直到最大高度；再多的文字在框內捲動，不會蓋住其他按鈕,P3,R-273,
-TC-373,輸入點子,聊天中已有大綱，鍵盤已開啟,一直打字，直到文字超過輸入框的最大高度,輸入框會隨文字變高，直到最大高度；再多的文字在框內捲動，不會蓋住其他按鈕,P3,R-273,
+TC-372,輸入點子,空白聊天，鍵盤已開啟,一直打字，直到文字超過輸入框的最大高度,"輸入框會隨文字變高，直到最大高度
+再多的文字在框內捲動，不會蓋住其他按鈕",P3,R-273,
+TC-373,輸入點子,聊天中已有大綱，鍵盤已開啟,一直打字，直到文字超過輸入框的最大高度,"輸入框會隨文字變高，直到最大高度
+再多的文字在框內捲動，不會蓋住其他按鈕",P3,R-273,
 TC-019,輸入點子,聊天中至少有一則訊息,"1. 查看輸入框上方
-2. 點「More ideas +」",顯示「More ideas +」標籤；點下去會提供更多故事點子可填入輸入框（記錄出現的內容，Q-19）,P3,"R-017, R-318",
+2. 點「More ideas +」","顯示「More ideas +」標籤
+點下去會提供更多故事點子可填入輸入框（記錄出現的內容，Q-19）",P3,"R-017, R-318",
 TC-020,格式卡片,空白聊天,送出一個點子（例如「A barista and a regular fall in love over a lost umbrella」）,"助理問「What format would you like for your video?」，並列出兩個問題：
 1. 影片語言（English、Spanish、French、German、Japanese、Korean、Chinese）
 2. 字幕（「Yes, include captions」／「No captions」）
@@ -42,82 +64,122 @@ TC-022,格式卡片,已顯示格式卡片,點卡片上的按鈕,卡片會換成�
 TC-381,格式卡片,空白聊天,"1. 輸入一個點子但不送出，點 Back
 2. 開啟新的聊天
 3. 送出一個點子，在格式卡片點 Back
-4. 開啟 History",每次點 Back 都回到 AI Mini Drama 落地頁，不會跳出對話框；History 裡沒有這兩個聊天的紀錄,P2,R-288,
+4. 開啟 History","每次點 Back 都回到 AI Mini Drama 落地頁，不會跳出對話框
+History 裡沒有這兩個聊天的紀錄",P2,R-288,
 TC-023,故事大綱,已確認格式,大綱產生期間，觀察聊天畫面,顯示狀態文字，例如「I'll create a story outline - give me a moment...」／「Writing your story...」,P2,R-020,
 TC-024,故事大綱,已產生大綱,讀一下產生的結果,「Story Outline & Characters Result」卡片顯示 Story Outline 和「Possible Characters:」，每個角色都有說明，下方有一列角色欄位,P1,R-021,
-TC-428,故事大綱,已產生大綱；App 的 Appearance 設為「Light mode」（Home ☰ › Settings › Preferences › Appearance）,"1. 查看有「Story Outline & Characters Result」卡片的聊天畫面
-2. 捲到點子輸入框",聊天畫面是淺色的：白色頁面、深色文字；大綱卡片和「Choose your characters」欄位都在淺色底上；「More ideas +」和點子輸入框也是淺色；沒有任何地方還是深色,P3,R-466,Design 2811:112113（Choose Character board，淺色聊天）；測完要把 Appearance 改回去。TC-024 檢查的是預設外觀下的卡片
+TC-428,故事大綱,"1. 已產生大綱
+2. App 的 Appearance 設為「Light mode」（Home ☰ › Settings › Preferences › Appearance）","1. 查看有「Story Outline & Characters Result」卡片的聊天畫面
+2. 捲到點子輸入框","聊天畫面是淺色的：白色頁面、深色文字
+大綱卡片和「Choose your characters」欄位都在淺色底上
+「More ideas +」和點子輸入框也是淺色
+沒有任何地方還是深色",P3,R-466,Design 2811:112113（Choose Character board，淺色聊天）；測完要把 Appearance 改回去。TC-024 檢查的是預設外觀下的卡片
 TC-025,故事大綱,大綱產生中,點 Back,"跳出「Leave this chat?」／「Your story outline isn't ready yet, so this chat won't be saved.」，有「Leave anyway」和「Stay」兩個按鈕",P1,R-022,
 TC-026,故事大綱,大綱產生中,點 History（右上角）,跳出同樣的「Leave this chat?」對話框,P2,R-022,回歸 DRI261894P0049（NewCreated，AIFound）：離開確認只在點 History 圖示時出現，點 Back 不會，而且文字說工作會中止，這裡也要順便複驗這張單
-TC-027,故事大綱,已顯示 Leave this chat?,點「Stay」,對話框關閉；停留在聊天中，大綱仍會出現,P2,R-023,
+TC-027,故事大綱,已顯示 Leave this chat?,點「Stay」,"對話框關閉
+停留在聊天中，大綱仍會出現",P2,R-023,
 TC-028,故事大綱,已顯示 Leave this chat?,"1. 點「Leave anyway」
-2. 開啟 History",聊天關閉；History 裡沒有這個點子的紀錄,P1,R-024,
+2. 開啟 History","聊天關閉
+History 裡沒有這個點子的紀錄",P1,R-024,
 TC-394,故事大綱,新點子的大綱產生中,"1. 點 Back
 2. 點「Leave anyway」","聊天關閉，開啟 AI Mini Drama 首頁（「Hi, I'm your AI Drama Assistant」、「Create Your Drama」、「Start from a template」）",P2,"R-309, R-261",落地頁依據 Design 1016_Chat navigation ①（流程箭頭 4877-33087）；對話框文字來自 PM 10/21（REQ-029）。TC-028 檢查 History 不會留下紀錄
 TC-357,故事大綱,大綱產生中,"1. 點 New chat
 2. 點「Stay」
 3. 點點數膠囊
-4. 點「Stay」","每次點擊都會跳出「Leave this chat?」／「Your story outline isn't ready yet, so this chat won't be saved.」，有 Leave anyway / Stay；點 Stay 會關閉對話框，留在聊天中，大綱仍會出現",P2,R-261,離開的路徑來自 Design 1016_Chat navigation；對話框文字取自 PM 10/21，因為它比較新（REQ-029）。Back 和 History 由 TC-025 – TC-028 涵蓋
+4. 點「Stay」","每次點擊都會跳出「Leave this chat?」／「Your story outline isn't ready yet, so this chat won't be saved.」，有 Leave anyway / Stay
+點 Stay 會關閉對話框，留在聊天中，大綱仍會出現",P2,R-261,離開的路徑來自 Design 1016_Chat navigation；對話框文字取自 PM 10/21，因為它比較新（REQ-029）。Back 和 History 由 TC-025 – TC-028 涵蓋
 TC-358,故事大綱,新點子的大綱產生中,"1. 點點數膠囊
 2. 點「Leave anyway」
-3. 開啟 History",開啟 My Credits；History 裡沒有這個點子的紀錄,P2,R-261,落地頁來自 Design 1016_Chat navigation（REQ-029）
-TC-398,點數與上限,Free 方案；從聊天的點數膠囊開啟 My Credits（接 TC-358，或在之後任何階段點膠囊）,"1. 點「Buy More」
+3. 開啟 History","開啟 My Credits
+History 裡沒有這個點子的紀錄",P2,R-261,落地頁來自 Design 1016_Chat navigation（REQ-029）
+TC-398,點數與上限,"1. Free 方案
+2. 從聊天的點數膠囊開啟 My Credits（接 TC-358，或在之後任何階段點膠囊）","1. 點「Buy More」
 2. 返回
 3. 點「Subscribe Now」
 4. 不訂閱，直接返回
-5. 點「Claim」",點「Buy More」開啟購買點數頁；點「Subscribe Now」開啟 Pro+ 訂閱頁；點「Claim」會把今天的免費點數加進餘額，24 小時後才能再領,P2,R-321,Design 1016_Chat navigation「Credit page_free」（Figma 4858:35398）。不要真的購買或訂閱。共用帳號每 24 小時只能領一次「Claim」：若今天已經領過，就記錄按鈕灰色不能按的狀態
+5. 點「Claim」","點「Buy More」開啟購買點數頁
+點「Subscribe Now」開啟 Pro+ 訂閱頁
+點「Claim」會把今天的免費點數加進餘額，24 小時後才能再領",P2,R-321,Design 1016_Chat navigation「Credit page_free」（Figma 4858:35398）。不要真的購買或訂閱。共用帳號每 24 小時只能領一次「Claim」：若今天已經領過，就記錄按鈕灰色不能按的狀態
 TC-395,故事大綱,新點子的大綱產生中,"1. 點 History
-2. 點「Leave anyway」",聊天關閉並開啟 Recent Task；清單裡沒有這個點子,P2,"R-307, R-261",落地頁依據 Design 1016_Chat navigation ④（流程箭頭 4877-33081）；對話框文字來自 PM 10/21（REQ-029）
+2. 點「Leave anyway」","聊天關閉並開啟 Recent Task
+清單裡沒有這個點子",P2,"R-307, R-261",落地頁依據 Design 1016_Chat navigation ④（流程箭頭 4877-33081）；對話框文字來自 PM 10/21（REQ-029）
 TC-396,故事大綱,新點子的大綱產生中,"1. 點 New chat
-2. 點「Leave anyway」","聊天關閉並開啟新的空白聊天（「Hi, I'm your AI Drama Assistant」、「Surprise me」、點子建議、空白輸入框）；放棄的點子不會出現在 History",P2,"R-308, R-261",落地頁依據 Design 1016_Chat navigation ②（流程箭頭 4877-33083）；對話框文字來自 PM 10/21（REQ-029）。TC-200 會複驗相關的單
+2. 點「Leave anyway」","聊天關閉並開啟新的空白聊天（「Hi, I'm your AI Drama Assistant」、「Surprise me」、點子建議、空白輸入框）
+放棄的點子不會出現在 History",P2,"R-308, R-261",落地頁依據 Design 1016_Chat navigation ②（流程箭頭 4877-33083）；對話框文字來自 PM 10/21（REQ-029）。TC-200 會複驗相關的單
 TC-386,故事大綱,新點子的大綱產生中,"1. 把 App 從背景滑掉（強制關閉）
 2. 重新開啟 App，進入 History",History 裡沒有那個點子的紀錄,P2,R-296,
 TC-029,故事大綱,大綱已完成,"1. 點 Back
-2. 從 History 重新開啟這部劇",離開時不會跳出對話框；這部劇會在 History 裡，重新開啟時停在大綱這一步,P1,R-025,
+2. 從 History 重新開啟這部劇","離開時不會跳出對話框
+這部劇會在 History 裡，重新開啟時停在大綱這一步",P1,R-025,
 TC-360,故事大綱,大綱已完成，沒有任何產生中的工作,"1. 點 History
 2. 重新開啟這部劇
 3. 點點數膠囊
 4. 返回
-5. 點 New chat",每次都不會跳出對話框；History 開啟 Recent Task，清單裡有這部劇；點數膠囊開啟 My Credits；New chat 開啟新的空白聊天,P2,R-263,PM：已儲存的聊天離開時不跳對話框；Design 1016 畫的是「Leave this chat?」，但比較舊（REQ-029）。Back 由 TC-029 涵蓋
-TC-030,故事大綱,大綱請求失敗，回傳 5xxx（Pink：Fail every call）,送出一個點子並確認格式,助理說「Something went wrong on my end. Let's try that again.」，並有「Try again」；點 Try again 會用同樣的點子和格式重送,P2,R-026,需要故障注入
-TC-031,故事大綱,大綱請求失敗，回傳 4xxx,送出一個違反政策的點子,助理說「I couldn't write a story from this idea. It may not meet our terms of service. Try describing it a different way.」，沒有按鈕；之後輸入新的點子會直接產生，不會再出現格式卡片,P2,R-027,審核機制不一定能重現
-TC-032,故事大綱,裝置離線（Wi-Fi 和行動網路都關閉）,送出一個點子,顯示「You're offline. Check your connection and try again.」；什麼都沒送出（log 裡沒有請求），也沒有扣點數（Credit Details）,P2,R-028,
-TC-387,故事大綱,大綱已完成；Wi-Fi 關閉且沒有行動網路（先確認 Appium 已透過 USB 連線）,送出一則聊天訊息,跳出 Toast「You're offline. Check your connection and try again.」，不會出現 AI 的回覆；什麼都沒送出（log 裡沒有請求），也沒有扣任何點數,P2,R-297,真的斷網（REQ-020）；測完馬上把 Wi-Fi 開回來
-TC-033,角色,大綱中有尚未設定的角色,點一個角色欄位,開啟「Change Characters」，有角色分頁、「Character Library」（「Create my character」磚塊、角色庫卡片、「My character」標籤）和篩選圖示；還沒有造型的欄位顯示預設的佔位圖,P1,"R-029, R-267",Design 把角色庫的標籤畫成「Mine」（R-269）；請記錄實際顯示哪一個標籤
-TC-034,角色,這個帳號第一次使用 AI Mini Drama（全新安裝或新帳號）；已開啟 Change Characters，還沒設定任何角色,替第一個角色選一個造型,出現提示「Tap to choose a look for {name}」，指向下一個尚未設定的欄位（先往右找）,P2,R-030,這個提示每位使用者只會出現一次（PM §13.1）；TC-346 檢查之後不會再出現
+5. 點 New chat","每次都不會跳出對話框
+History 開啟 Recent Task，清單裡有這部劇，點數膠囊開啟 My Credits，New chat 開啟新的空白聊天",P2,R-263,PM：已儲存的聊天離開時不跳對話框；Design 1016 畫的是「Leave this chat?」，但比較舊（REQ-029）。Back 由 TC-029 涵蓋
+TC-030,故事大綱,大綱請求失敗，回傳 5xxx（Pink：Fail every call）,送出一個點子並確認格式,"助理說「Something went wrong on my end. Let's try that again.」，並有「Try again」
+點 Try again 會用同樣的點子和格式重送",P2,R-026,需要故障注入
+TC-031,故事大綱,大綱請求失敗，回傳 4xxx,送出一個違反政策的點子,"助理說「I couldn't write a story from this idea. It may not meet our terms of service. Try describing it a different way.」，沒有按鈕
+之後輸入新的點子會直接產生，不會再出現格式卡片",P2,R-027,審核機制不一定能重現
+TC-032,故事大綱,裝置離線（Wi-Fi 和行動網路都關閉）,送出一個點子,"顯示「You're offline. Check your connection and try again.」
+什麼都沒送出（log 裡沒有請求），也沒有扣點數（Credit Details）",P2,R-028,
+TC-387,故事大綱,"1. 大綱已完成
+2. Wi-Fi 關閉且沒有行動網路（先確認 Appium 已透過 USB 連線）",送出一則聊天訊息,"跳出 Toast「You're offline. Check your connection and try again.」，不會出現 AI 的回覆
+什麼都沒送出（log 裡沒有請求），也沒有扣任何點數",P2,R-297,真的斷網（REQ-020）；測完馬上把 Wi-Fi 開回來
+TC-033,角色,大綱中有尚未設定的角色,點一個角色欄位,"開啟「Change Characters」，有角色分頁、「Character Library」（「Create my character」磚塊、角色庫卡片、「My character」標籤）和篩選圖示
+還沒有造型的欄位顯示預設的佔位圖",P1,"R-029, R-267",Design 把角色庫的標籤畫成「Mine」（R-269）；請記錄實際顯示哪一個標籤
+TC-034,角色,"1. 這個帳號第一次使用 AI Mini Drama（全新安裝或新帳號）
+2. 已開啟 Change Characters，還沒設定任何角色",替第一個角色選一個造型,出現提示「Tap to choose a look for {name}」，指向下一個尚未設定的欄位（先往右找）,P2,R-030,這個提示每位使用者只會出現一次（PM §13.1）；TC-346 檢查之後不會再出現
 TC-035,角色,已顯示提示,不點任何地方，等 5 秒,提示消失,P3,R-030,需要先有提示，而提示每個使用者只會出現一次（第一次使用）：和 TC-034 一起跑
 TC-036,角色,已開啟 Change Characters,"1. 開啟篩選
 2. 選擇 Gender 和 Ethnicity
 3. 點 Apply
 4. 點 Gender 標籤上的 ×
-5. 點篩選圖示",角色庫只顯示符合條件的角色；選好的篩選條件以可移除的標籤顯示，篩選圖示出現打勾記號；點 × 會移除該條件和它的標籤，清單範圍隨之變大；點篩選圖示會重新開啟 Filter 面板，剩下的那個選項仍是選取狀態,P2,"R-031, R-324",
+5. 點篩選圖示","角色庫只顯示符合條件的角色
+選好的篩選條件以可移除的標籤顯示，篩選圖示出現打勾記號
+點 × 會移除該條件和它的標籤，清單範圍隨之變大
+點篩選圖示會重新開啟 Filter 面板，剩下的那個選項仍是選取狀態",P2,"R-031, R-324",
 TC-444,角色,已在某個角色分頁開啟 Change Characters,"1. 開啟篩選
 2. 選一個沒有任何角色符合的組合（例如 Male、Southeast Asian、Age 90–100）
-3. 點 Apply","「Create my character」仍是第一個磚塊；下方顯示「No characters match this filter」／「Try a different filter, or create your own character.」和「Clear filters」按鈕",P2,R-491,PM 11/3 §13.27（board 5014:26418）。PM-only：Design 還沒有對應畫面
+3. 點 Apply","「Create my character」仍是第一個磚塊
+下方顯示「No characters match this filter」／「Try a different filter, or create your own character.」和「Clear filters」按鈕",P2,R-491,PM 11/3 §13.27（board 5014:26418）。PM-only：Design 還沒有對應畫面
 TC-445,角色,已顯示篩選後沒有結果的畫面（接 TC-444）,"1. 點「Clear filters」
 2. 再篩選一次，篩到沒有結果
-3. 一次一個，點每個標籤上的 ×",步驟 1：所有篩選標籤都被清除，完整清單回來，篩選圖示變回未套用的狀態；步驟 3：只要移除某個標籤後有結果，清單就照常顯示,P2,"R-491, R-500",PM 11/3 §13.27（5014:26418）。PM-only：Design 還沒有對應畫面
+3. 一次一個，點每個標籤上的 ×","步驟 1：所有篩選標籤都被清除，完整清單回來，篩選圖示變回未套用的狀態
+步驟 3：只要移除某個標籤後有結果，清單就照常顯示",P2,"R-491, R-500",PM 11/3 §13.27（5014:26418）。PM-only：Design 還沒有對應畫面
 TC-446,角色,Mine 裡至少有一個角色,"1. 開啟 Character Library 的 Mine 分頁
 2. 套用一個 Mine 裡的角色都不符合的篩選",Mine 裡也會出現同樣的空狀態和「Clear filters」，「Create my character」排第一個,P3,R-491,PM 11/3 §13.27：每個分頁都適用，包含 Mine。PM-only：Design 還沒有對應畫面
 TC-371,角色,已開啟 Change Characters › Filter,拖曳 Age 滑桿的把手,拖曳時，把手上方會顯示目前的數值（例如「26」）,P3,R-272,
 TC-037,角色,已開啟 Change Characters，且有尚未儲存的新選擇,點 X,"跳出「Leave without finishing?」／「If you leave now, your picks won't be saved.」，有「Leave」和「Keep choosing」",P2,R-032,Design 優先於 PM（使用者規定 2026-10-19）。PM 主流程寫的是「Discard character changes?」 / Discard / Keep Editing。
 TC-038,角色,已顯示 Leave without finishing?,"1. 點「Keep choosing」
-2. 再點一次 X，然後點「Leave」",點 Keep choosing 會保留選擇；點 Leave 會關閉畫面，不儲存這些選擇,P2,R-032,Design 優先於 PM（使用者規定 2026-10-19）。PM 的按鈕文字是 Keep Editing / Discard。
+2. 再點一次 X，然後點「Leave」","點 Keep choosing 會保留選擇
+點 Leave 會關閉畫面，不儲存這些選擇",P2,R-032,Design 優先於 PM（使用者規定 2026-10-19）。PM 的按鈕文字是 Keep Editing / Discard。
 TC-039,角色,大綱中有 2 個以上尚未設定的角色,開啟 Change Characters，不設定角色直接點 ✓,跳出面板「Finish your characters ⓘ」，顯示「{n} characters aren't set yet」／「Add a look to continue.」、尚未設定的欄位、「Generate all ◆4×n」（每個角色 ◆4：圖片 3 點加語音樣本 1 點）和「You have {n} credits left」,P1,R-033,Design 優先於 PM（使用者規定 2026-10-19）。PM 寫的是「They need a look before you can continue.」、Generate with AI、Choose myself。回歸 DRI261896P0005（RDResolved，AIFound）：Finish your characters 面板的縮圖沒有白色背景，這裡也要順便複驗這張單。價格以 Credit System 表單為準（REQ-103）；Design／PM 畫的是 ◆6×n。
 TC-040,角色,剛好有 1 個尚未設定的角色,在 Change Characters 點 ✓,顯示單數文字「1 character isn't set yet」／「Add a look to continue.」，並有「Generate ◆4」,P3,R-033,"檢查單複數文法。Design 優先於 PM（使用者規定 2026-10-19）。PM 寫的是「It needs a look before you can continue.」 / Generate with AI。回歸 DRI261896P0016（NewCreated，AIFound）：範本聊天顯示 ""1 characters isn't set yetThey need a look…""，這裡也要順便複驗這張單。價格 ◆4 以 Credit System 表單為準（REQ-103：圖片 3 + 語音樣本 1）；Design／PM 畫的是 ◆6。"
 TC-041,角色,已顯示尚未設定角色的面板,"1. 點「Generate all」
 2. 等待
-3. 點「Confirm」",先顯示「Creating {n} characters...」和「This may take a moment. Keep this screen open.」，接著是「Your characters are ready」／「Tap Confirm to continue.」和「Confirm」；點「Confirm」會關閉面板，回到聊天，角色都已設定完成,P1,"R-034, R-305, R-222",Design 優先於 PM（使用者規定 2026-10-19）。PM 寫的是「{n} characters are all set!」。PM 10/30（4012:21397）的提示「This may take a moment. Keep this screen open.」取代了「about 1 minute」（比 Design 新，見 AGENTS.md 的 Design vs PM）
-TC-042,角色,使用 Generate with AI，部分角色失敗（Pink：Trip image moderation）,對好幾個角色點「Generate with AI」,成功的會套用；失敗的欄位顯示「!」並退還點數；跳出「Couldn't create some images」／「{n} characters couldn't be created. Your credits have been refunded. Tap a character to try again.」,P2,R-035,需要故障注入。回歸 DRI261894P0006（RDResolved，無標籤）：要 AI 一次產生多個角色時，無法在單一請求中全部產生成功，這裡也要順便複驗這張單
-TC-384,角色,有些角色失敗（TC-042）；已顯示「Couldn't create some images」,"1. 關閉對話框
+3. 點「Confirm」","先顯示「Creating {n} characters...」和「This may take a moment. Keep this screen open.」，接著是「Your characters are ready」／「Tap Confirm to continue.」和「Confirm」
+點「Confirm」會關閉面板，回到聊天，角色都已設定完成",P1,"R-034, R-305, R-222",Design 優先於 PM（使用者規定 2026-10-19）。PM 寫的是「{n} characters are all set!」。PM 10/30（4012:21397）的提示「This may take a moment. Keep this screen open.」取代了「about 1 minute」（比 Design 新，見 AGENTS.md 的 Design vs PM）
+TC-042,角色,使用 Generate with AI，部分角色失敗（Pink：Trip image moderation）,對好幾個角色點「Generate with AI」,"成功的會套用
+失敗的欄位顯示「!」並退還點數
+跳出「Couldn't create some images」／「{n} characters couldn't be created. Your credits have been refunded. Tap a character to try again.」",P2,R-035,需要故障注入。回歸 DRI261894P0006（RDResolved，無標籤）：要 AI 一次產生多個角色時，無法在單一請求中全部產生成功，這裡也要順便複驗這張單
+TC-384,角色,"1. 有些角色失敗（TC-042）
+2. 已顯示「Couldn't create some images」","1. 關閉對話框
 2. 點一個失敗的「!」角色
-3. 嘗試繼續故事",「{n} characters aren't set yet」列出失敗的角色並標上「!」；點下去會開啟該角色的 Character Library（可重新產生或選一個造型）；所有角色都設定好之前，故事無法繼續,P2,R-294,需要故障注入（Pink › Trip image moderation；請記錄用了哪個開關）
-TC-043,角色,單一角色產生失敗,產生一個角色,跳出「Couldn't create image」／「We couldn't create this character. Your credits have been refunded. Try again.」，有「Got it」；點 Got it 會開啟 Choose Character，並選在失敗角色的欄位上，已成功的角色會套用,P2,"R-036, R-271",需要故障注入
+3. 嘗試繼續故事","「{n} characters aren't set yet」列出失敗的角色並標上「!」
+點下去會開啟該角色的 Character Library（可重新產生或選一個造型）
+所有角色都設定好之前，故事無法繼續",P2,R-294,需要故障注入（Pink › Trip image moderation；請記錄用了哪個開關）
+TC-043,角色,單一角色產生失敗,產生一個角色,"跳出「Couldn't create image」／「We couldn't create this character. Your credits have been refunded. Try again.」，有「Got it」
+點 Got it 會開啟 Choose Character，並選在失敗角色的欄位上，已成功的角色會套用",P2,"R-036, R-271",需要故障注入
 TC-044,角色,所有角色都已設定,確認角色陣容,助理說「The characters look great! Ready to create the storyboard?」，並附上 Create storyboard 卡片，顯示價格和 Generate,P1,R-037,回歸 DRI261894P0013（NeedMoreInfo，AIFound）：分鏡還不存在，卻問要不要重新產生分鏡，而且價格會變，這裡也要順便複驗這張單
-TC-045,角色,角色已設定好，分鏡尚未開始,在聊天中明確要求修改某個角色的造型（例如「Make The Manager a woman in her 40s」）,不會先反問；直接出現「Ready to update your characters?」和卡片「Update characters • 1 character • ◆{price} • Generate」，價格是產生一個角色的費用（◆4：圖片 3 點加語音樣本 1 點）,P2,R-038,PM 10/16 比 Design 畫面新，Design 還是舊版；使用者 2026-10-22（REQ-026）：測 PM 的版本（Design 1014 畫的是「Character looks aren't updated automatically…」）。價格：Credit System 表單 22632766997 / 22833510933（REQ-103）。
-TC-046,角色,在聊天中修改過角色之後,往上捲到先前的大綱卡片,較舊的 Story Outline & Characters 卡片沒有切換圖示，並保留舊的圖片；只有最新的操作卡片會顯示,P3,R-039,PM 10/16 board 7 和 PM 10/20 §13.2 ③（新的結果不會回頭改寫先前的訊息；使用者 2026-10-22，Q-17）
+TC-045,角色,角色已設定好，分鏡尚未開始,在聊天中明確要求修改某個角色的造型（例如「Make The Manager a woman in her 40s」）,"不會先反問
+直接出現「Ready to update your characters?」和卡片「Update characters • 1 character • ◆{price} • Generate」，價格是產生一個角色的費用（◆4：圖片 3 點加語音樣本 1 點）",P2,R-038,PM 10/16 比 Design 畫面新，Design 還是舊版；使用者 2026-10-22（REQ-026）：測 PM 的版本（Design 1014 畫的是「Character looks aren't updated automatically…」）。價格：Credit System 表單 22632766997 / 22833510933（REQ-103）。
+TC-046,角色,在聊天中修改過角色之後,往上捲到先前的大綱卡片,"較舊的 Story Outline & Characters 卡片沒有切換圖示，並保留舊的圖片
+只有最新的操作卡片會顯示",P3,R-039,PM 10/16 board 7 和 PM 10/20 §13.2 ③（新的結果不會回頭改寫先前的訊息；使用者 2026-10-22，Q-17）
 TC-429,角色,聊天中已顯示 Characters Result,"1. 在聊天中要求把一個角色改名為「Detective Jack Vance」
-2. 讀一下新的 Characters Result 那一列",「Detective Jack Vance」會在圖片下方換成第二行，文字完整沒有被截掉（沒有「…」）；那張卡片會變高來容納；其他名字維持一行,P2,R-467,Design 5366:70814 / 5366:70880「1029_DRA262610P0372」（卡片高度跟著名字變）；Android 的單 DRA262610P0372 在 iOS 上不算重複
+2. 讀一下新的 Characters Result 那一列","「Detective Jack Vance」會在圖片下方換成第二行，文字完整沒有被截掉（沒有「…」）
+那張卡片會變高來容納
+其他名字維持一行",P2,R-467,Design 5366:70814 / 5366:70880「1029_DRA262610P0372」（卡片高度跟著名字變）；Android 的單 DRA262610P0372 在 iOS 上不算重複
 TC-047,Make your character,已開啟 Change Characters,點「Create my character」,"「Create my character ⓘ」顯示正面／側面／背面的提示、「Tell us what {name} looks like - the more detail, the better.」、描述欄（0/1000、AI Suggestion、Clear）、Gender*、Ethnicity*、Age*、Reference（選填）和 Generate ◆4（角色圖片 3 點加語音樣本 1 點）",P1,R-040,"Design 優先於 PM（使用者規定 2026-10-19）。PM 寫的是標題 Make your character、Generate ◆7。回歸 DRI261894P0009（RDResolved，AIFound）：Create my character 標題寫成 ""what <name> look like""（應為 looks），這裡也要順便複驗這張單。價格以 Credit System 表單 22632766997 / 22833510933 為準（REQ-103），不是扣款面板的 ◆6。"
 TC-048,Make your character,已開啟 Make your character,"1. 只輸入描述和必填的屬性
 2. 點 Generate",開始產生（不需要照片）,P1,R-041,
@@ -125,185 +187,315 @@ TC-049,Make your character,已開啟 Make your character,"1. 只加參考照片�
 2. 點 Generate",開始產生（不需要描述）,P2,R-041,
 TC-050,Make your character,已開啟 Make your character,"1. 輸入描述
 2. Gender 留空",在 Gender、Ethnicity 和 Age 都選好之前，Generate 都不能按,P2,R-042,
-TC-051,Make your character,已開啟 Make your character,"把 1,050 個字元貼進描述欄","1,050 個字元全部保留；計數器顯示紅色的「1050/1000」，並顯示「You've reached the 1,000-character limit.」，輸入欄和展開的編輯器裡都一樣；Generate 不能按",P2,R-043,"Design 1005_Update ""Exceed word limit""（比 10/2 的 PM §13.11 新，PM 是把文字截在 1,000 字）；點子、場景和場景影片的輸入框仍照 PM 規則（沒有更新的 Design 畫面）"
+TC-051,Make your character,已開啟 Make your character,"把 1,050 個字元貼進描述欄","1,050 個字元全部保留
+計數器顯示紅色的「1050/1000」，並顯示「You've reached the 1,000-character limit.」，輸入欄和展開的編輯器裡都一樣
+Generate 不能按",P2,R-043,"Design 1005_Update ""Exceed word limit""（比 10/2 的 PM §13.11 新，PM 是把文字截在 1,000 字）；點子、場景和場景影片的輸入框仍照 PM 規則（沒有更新的 Design 畫面）"
 TC-052,Make your character,已開啟 Make your character,"1. 加入一張有三個人的照片
 2. 確認這時還不會跳出警告
 3. 點 Generate
-4. 點「Use another photo」","加入照片時沒有警告；點 Generate 之後跳出「More than one person detected」／「For the best result, use a photo with just one person.」，有「Generate anyway」和「Use another photo」；點「Use another photo」會關閉警告並開啟 Add Media (Select Media)，讓你選另一張照片",P2,"R-044, R-292, R-354",「Use another photo」→ Add Media 是「PM-only: no Design frame yet」（PM 主流程 2611-27730）
+4. 點「Use another photo」","加入照片時沒有警告
+點 Generate 之後跳出「More than one person detected」／「For the best result, use a photo with just one person.」，有「Generate anyway」和「Use another photo」
+點「Use another photo」會關閉警告並開啟 Add Media (Select Media)，讓你選另一張照片",P2,"R-044, R-292, R-354",「Use another photo」→ Add Media 是「PM-only: no Design frame yet」（PM 主流程 2611-27730）
 TC-053,Make your character,已開啟 Make your character,"1. 上傳一張沒有人的照片，點 Generate
-2. 點「Use another photo」",跳出「No person detected」／「Results may not turn out well. Want to try anyway?」，有「Generate anyway」和「Use another photo」；點「Use another photo」會關閉警告並開啟 Add Media (Select Media)，讓你選另一張照片,P3,"R-045, R-355",「Use another photo」→ Add Media 這段是「PM-only: no Design frame yet」（PM 主流程 2611-28043）
+2. 點「Use another photo」","跳出「No person detected」／「Results may not turn out well. Want to try anyway?」，有「Generate anyway」和「Use another photo」
+點「Use another photo」會關閉警告並開啟 Add Media (Select Media)，讓你選另一張照片",P3,"R-045, R-355",「Use another photo」→ Add Media 這段是「PM-only: no Design frame yet」（PM 主流程 2611-28043）
 TC-054,Make your character,已開啟 Make your character,"1. 上傳一張知名公眾人物的照片，點 Generate
-2. 點「Use another photo」",跳出「This photo can't be used」／「It looks like a real public figure. Please try another photo.」，並且不能產生；點「Use another photo」會關閉警告並開啟 Add Media (Select Media)，讓你選另一張照片,P2,"R-046, R-356",裝置上需要有名人的測試照片。「Use another photo」→ Add Media 是「PM-only: no Design frame yet」（PM 主流程 2611-27729）
-TC-452,Make your character,已開啟 Make your character，已登入，沒有參考照片；記下點數餘額（Credit Details）,"1. 以知名真實公眾人物（名字和外貌）作為角色描述
-2. 點 Generate，等待結果",不會顯示角色結果，而是跳出對話框「This image can't be used」／「It looks like a real public figure. Send us feedback and our support team will check your credits.」，有「Close」和藍色的「Send Feedback」；產生出來的角色不會顯示,P2,R-495,PM 11/5 §13.26（board 5318:2605）。PM-only：Design 還沒有對應畫面。這不是產生之前的參考照片檢查（TC-054，「This photo can't be used」）：這個檢查是判斷產生出來的圖片。要觸發它，需要伺服器判定結果是真實公眾人物，目前不知道有對應的故障開關；請用名字和外貌描述一位知名演員或國家元首；如果還是產生出長相相似的角色，就換另一個人試，並記錄試過的每一個描述。每試一次都會花掉角色的價格（允許，REQ-073）
-TC-453,Make your character,在 Make your character 之後已顯示「This image can't be used」（TC-452）；已登入,"1. 點「Send Feedback」並查看表單（不要送出）
-2. 點 ‹","步驟 1：Send Feedback 開在「AI Issues」，AI Feature Name 是「AI Mini Drama · Character generation」，What is the issue? 是「My character was blocked because it looked like a real public figure, but my credits were used. Please help me check. Time: {date & time}」（帶入目前的日期和時間），What Prompt did you use? 是 TC-452 輸入的描述，電子郵件已填好；不會顯示 task ID 欄位；步驟 2：表單關閉且沒有送出（請記錄回到的是對話框還是表單）",P2,"R-498, R-499",PM 11/5 §13.26（5318:2605，arrow 5318-2806）。PM-only：Design 還沒有對應畫面。絕對不要點「Submit」：它會把真實的回報送給 CyberLink 客服。未登入的情況（沒有電子郵件）不測：測試帳號是登入狀態。和逾時的 Send Feedback（TC-336）是同一份表單，只是問題文字換成名人的內容；這個 board 的功能名稱用「·」，逾時的 board 用「•」
+2. 點「Use another photo」","跳出「This photo can't be used」／「It looks like a real public figure. Please try another photo.」，並且不能產生
+點「Use another photo」會關閉警告並開啟 Add Media (Select Media)，讓你選另一張照片",P2,"R-046, R-356",裝置上需要有名人的測試照片。「Use another photo」→ Add Media 是「PM-only: no Design frame yet」（PM 主流程 2611-27729）
+TC-452,Make your character,"1. 已開啟 Make your character，已登入，沒有參考照片
+2. 記下點數餘額（Credit Details）","1. 以知名真實公眾人物（名字和外貌）作為角色描述
+2. 點 Generate，等待結果","不會顯示角色結果，而是跳出對話框「This image can't be used」／「It looks like a real public figure. Send us feedback and our support team will check your credits.」，有「Close」和藍色的「Send Feedback」
+產生出來的角色不會顯示",P2,R-495,PM 11/5 §13.26（board 5318:2605）。PM-only：Design 還沒有對應畫面。這不是產生之前的參考照片檢查（TC-054，「This photo can't be used」）：這個檢查是判斷產生出來的圖片。要觸發它，需要伺服器判定結果是真實公眾人物，目前不知道有對應的故障開關；請用名字和外貌描述一位知名演員或國家元首；如果還是產生出長相相似的角色，就換另一個人試，並記錄試過的每一個描述。每試一次都會花掉角色的價格（允許，REQ-073）
+TC-453,Make your character,"1. 在 Make your character 之後已顯示「This image can't be used」（TC-452）
+2. 已登入","1. 點「Send Feedback」並查看表單（不要送出）
+2. 點 ‹","步驟 1：Send Feedback 開在「AI Issues」，AI Feature Name 是「AI Mini Drama · Character generation」，What is the issue? 是「My character was blocked because it looked like a real public figure, but my credits were used. Please help me check. Time: {date & time}」（帶入目前的日期和時間），What Prompt did you use? 是 TC-452 輸入的描述，電子郵件已填好
+不會顯示 task ID 欄位
+步驟 2：表單關閉且沒有送出（請記錄回到的是對話框還是表單）",P2,"R-498, R-499",PM 11/5 §13.26（5318:2605，arrow 5318-2806）。PM-only：Design 還沒有對應畫面。絕對不要點「Submit」：它會把真實的回報送給 CyberLink 客服。未登入的情況（沒有電子郵件）不測：測試帳號是登入狀態。和逾時的 Send Feedback（TC-336）是同一份表單，只是問題文字換成名人的內容；這個 board 的功能名稱用「·」，逾時的 board 用「•」
 TC-454,Make your character,在 Make your character 之後已顯示「This image can't be used」（TC-453 離開表單後會回到這裡；否則照 TC-452 再觸發一次）,"1. 點「Close」
 2. 把描述改成一個虛構的角色
-3. 點 Generate",點 Close 會回到 Make your character 表單，描述和設定都還在，而且可以編輯；執行步驟 3 之後，角色正常產生,P2,R-497,PM 11/5 §13.26。PM-only：Design 還沒有對應畫面。最後一步會再花一次角色的價格
-TC-455,Make your character,有一個角色被「This image can't be used」擋下（TC-452），且對話框已關閉；已記下按 Generate 之前的餘額,"1. 開啟 Character Library 的 Mine 分頁
-2. 開啟 Credit Details",步驟 1：被擋下的角色不在 Mine 裡；步驟 2：被擋下的那次產生，扣款仍然保留，沒有退款（餘額 = 之前的餘額 − 角色價格）,P1,R-496,PM 11/5 §13.26：不會自動退款，使用者要透過 Send Feedback 找客服；這是「產生失敗要退款」（KP-007）的例外。PM-only：Design 還沒有對應畫面
+3. 點 Generate","點 Close 會回到 Make your character 表單，描述和設定都還在，而且可以編輯
+執行步驟 3 之後，角色正常產生",P2,R-497,PM 11/5 §13.26。PM-only：Design 還沒有對應畫面。最後一步會再花一次角色的價格
+TC-455,Make your character,"1. 有一個角色被「This image can't be used」擋下（TC-452），且對話框已關閉
+2. 已記下按 Generate 之前的餘額","1. 開啟 Character Library 的 Mine 分頁
+2. 開啟 Credit Details","步驟 1：被擋下的角色不在 Mine 裡
+步驟 2：被擋下的那次產生，扣款仍然保留，沒有退款（餘額 = 之前的餘額 − 角色價格）",P1,R-496,PM 11/5 §13.26：不會自動退款，使用者要透過 Send Feedback 找客服；這是「產生失敗要退款」（KP-007）的例外。PM-only：Design 還沒有對應畫面
 TC-055,Make your character,Make your character 已輸入文字,點 X,跳出「Discard this character?」／「What you've entered won't be saved.」，有 Discard / Keep editing,P2,R-047,回歸 DRI261894P0039（RDResolved，AIFound）：關閉 Create my character 時，輸入的內容全部被丟掉，沒有任何確認，這裡也要順便複驗這張單
 TC-056,Make your character,Make your character 是空的,點 X,直接關閉，不會跳出對話框,P3,R-047,
 TC-057,Make your character,角色已產生,在產生好的角色上點 X,"跳出「Discard this character?」／「It won't be saved, and the credits you spent won't be refunded.」，有「Keep」和紅色的「Discard」",P2,"R-248, R-293, R-494","舊行為：點 X 也會儲存角色（主流程註解 ""confirm or tap X 都會存""），10/21 已取代；DRI261896P0037"
 TC-058,Make your character,角色庫裡有使用者自己的角色,"1. 開啟它的 ⋮ 選單，點 Delete
-2. 點「Cancel」",跳出「Delete this character?」／「This character will be permanently deleted and can't be recovered.」，有 Cancel / Delete；點「Cancel」會關閉對話框，角色仍留在角色庫,P3,"R-049, R-357",「Cancel」→ Character Library 這段是「PM-only: no Design frame yet」（PM 主流程 2613-28739）
+2. 點「Cancel」","跳出「Delete this character?」／「This character will be permanently deleted and can't be recovered.」，有 Cancel / Delete
+點「Cancel」會關閉對話框，角色仍留在角色庫",P3,"R-049, R-357",「Cancel」→ Character Library 這段是「PM-only: no Design frame yet」（PM 主流程 2613-28739）
 TC-059,Make your character,已開啟角色庫,開啟一個 CyberLink 內建角色的選單,沒有 Delete 選項,P3,R-049,
-TC-060,分鏡,已顯示 Create storyboard 卡片,點 Generate,計價時顯示「Thinking...」，接著產生分鏡，實際扣的點數和卡片上顯示的價格一致；Mine › Credits › Details 會把它記成 Text to Image 幾筆（每張圖 3 點，Location 和場景圖都一樣）和一筆 Text to Speech（每 1000 字元 1 點），加起來剛好等於那個價格,P1,R-050,價格和 action id 來自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（使用者 2026-11-06，REQ-103）；取代 MX ③ 的扣款面板（REQ-059）。促銷價仍保留不測。Android 16.8.0.2611041（2026-11-05）：6 個場景加 6 個 Location 共 ◆37 = 12 × 3 + 1。預覽旁白是記在哪個 id：Q-40。
-TC-377,分鏡,已顯示「Create storyboard」卡片；記下點數膠囊上的數字,點 Generate,卡片消失，新增一則使用者訊息「Create storyboard」並釘在最上方；下方出現「I'll create a storyboard — give me a moment...」和「Preparing your scenes...」骨架畫面；顯示「Preparing your scenes...」期間，點數膠囊維持不變；變成「Creating your storyboard...」時，點數膠囊會扣掉卡片上顯示的價格,P2,"R-279, R-334","PM Figma 10/22（4422:2）：扣款改到階段 ② 一開始（待 RD 確認，Q-20）；它的示意圖也畫了「Yes, create storyboard」使用者氣泡（Q-23）；PM 11/4 §13.2 ② 取代了「不要使用者氣泡」（R-279）：氣泡文字就是 Answer「Create storyboard」（Q-23 已回答）"
-TC-432,分鏡,請 Iris 修改角色之後，已顯示「Update characters」卡片（和 TC-351 一樣，按 Generate 之前）,點 Generate,卡片消失，新增一則使用者訊息「Update characters」並釘在畫面最上方；Iris 的回覆和進度顯示在它下方逐步增加,P3,"R-279, R-250",PM 11/4 §13.2 ②：Generate 會把卡片的 Answer 文字當成使用者訊息送出。規則和 TC-377 的「Create storyboard」一樣。PM-only：Design 還沒有對應畫面
-TC-061,分鏡,分鏡階段 ①：已在「Create storyboard」點過 Generate；卡片顯示「Preparing your scenes...」骨架畫面,點 Back,"跳出「Leave while we're preparing?」／「Your storyboard will start soon. If you leave now, we'll have to prepare it again when you come back.」，有「Stay」和紅色的「Leave anyway」；不會出現「Stop and lose your credits?」",P1,"R-051, R-262",PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）
-TC-062,分鏡,已顯示「Leave while we're preparing?」（TC-061）,點「Stay」,對話框關閉，仍停留在聊天畫面；卡片接著變成「Creating your storyboard...」，分鏡產生完成,P2,R-051,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）
+TC-060,分鏡,已顯示 Create storyboard 卡片,點 Generate,"計價時顯示「Thinking...」，接著產生分鏡，實際扣的點數和卡片上顯示的價格一致
+Mine › Credits › Details 會把它記成 Text to Image 幾筆（每張圖 3 點，Location 和場景圖都一樣）和一筆 Text to Speech（每 1000 字元 1 點），加起來剛好等於那個價格",P1,R-050,價格和 action id 來自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（使用者 2026-11-06，REQ-103）；取代 MX ③ 的扣款面板（REQ-059）。促銷價仍保留不測。Android 16.8.0.2611041（2026-11-05）：6 個場景加 6 個 Location 共 ◆37 = 12 × 3 + 1。預覽旁白是記在哪個 id：Q-40。
+TC-377,分鏡,"1. 已顯示「Create storyboard」卡片
+2. 記下點數膠囊上的數字",點 Generate,"卡片消失，新增一則使用者訊息「Create storyboard」並釘在最上方
+下方出現「I'll create a storyboard — give me a moment...」和「Preparing your scenes...」骨架畫面
+顯示「Preparing your scenes...」期間，點數膠囊維持不變
+變成「Creating your storyboard...」時，點數膠囊會扣掉卡片上顯示的價格",P2,"R-279, R-334","PM Figma 10/22（4422:2）：扣款改到階段 ② 一開始（待 RD 確認，Q-20）；它的示意圖也畫了「Yes, create storyboard」使用者氣泡（Q-23）；PM 11/4 §13.2 ② 取代了「不要使用者氣泡」（R-279）：氣泡文字就是 Answer「Create storyboard」（Q-23 已回答）"
+TC-432,分鏡,請 Iris 修改角色之後，已顯示「Update characters」卡片（和 TC-351 一樣，按 Generate 之前）,點 Generate,"卡片消失，新增一則使用者訊息「Update characters」並釘在畫面最上方
+Iris 的回覆和進度顯示在它下方逐步增加",P3,"R-279, R-250",PM 11/4 §13.2 ②：Generate 會把卡片的 Answer 文字當成使用者訊息送出。規則和 TC-377 的「Create storyboard」一樣。PM-only：Design 還沒有對應畫面
+TC-061,分鏡,"1. 分鏡階段 ①：已在「Create storyboard」點過 Generate
+2. 卡片顯示「Preparing your scenes...」骨架畫面",點 Back,"跳出「Leave while we're preparing?」／「Your storyboard will start soon. If you leave now, we'll have to prepare it again when you come back.」，有「Stay」和紅色的「Leave anyway」
+不會出現「Stop and lose your credits?」",P1,"R-051, R-262",PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）
+TC-062,分鏡,已顯示「Leave while we're preparing?」（TC-061）,點「Stay」,"對話框關閉，仍停留在聊天畫面
+卡片接著變成「Creating your storyboard...」，分鏡產生完成",P2,R-051,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）
 TC-359,分鏡,分鏡階段 ①：卡片顯示「Preparing your scenes...」,"1. 點 History
 2. 點「Stay」
 3. 點 New chat
 4. 點「Stay」
 5. 點點數膠囊（credit pill）
-6. 點「Leave anyway」","每次點擊都會跳出「Leave while we're preparing?」／「Your storyboard will start soon. If you leave now, we'll have to prepare it again when you come back.」，有「Stay」／「Leave anyway」；點 Stay，聊天會繼續準備；點 Leave anyway 會開啟 My Credits",P2,R-262,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）。Back 的情況由 TC-061 負責
-TC-401,分鏡,分鏡階段 ②：卡片顯示「Creating your storyboard...」,點 Back,不會跳出對話框；出現提示「We'll keep making your storyboard. Find it in History.」，並開啟 AI Mini Drama 首頁；之後從 History 重新開啟這部劇，分鏡已經完成或仍在產生中,P1,R-051,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面
+6. 點「Leave anyway」","每次點擊都會跳出「Leave while we're preparing?」／「Your storyboard will start soon. If you leave now, we'll have to prepare it again when you come back.」，有「Stay」／「Leave anyway」
+點 Stay，聊天會繼續準備
+點 Leave anyway 會開啟 My Credits",P2,R-262,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）。Back 的情況由 TC-061 負責
+TC-401,分鏡,分鏡階段 ②：卡片顯示「Creating your storyboard...」,點 Back,"不會跳出對話框
+出現提示「We'll keep making your storyboard. Find it in History.」，並開啟 AI Mini Drama 首頁
+之後從 History 重新開啟這部劇，分鏡已經完成或仍在產生中",P1,R-051,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面
 TC-402,分鏡,分鏡階段 ②：卡片顯示「Creating your storyboard...」,"1. 點 History
 2. 重新開啟這部劇
 3. 點點數膠囊
 4. 返回
-5. 點 New chat",每次都不會跳出對話框；離開時出現「We'll keep making your storyboard. Find it in History.」；依序開啟 Recent Task、My Credits 和新的空白聊天；分鏡持續產生,P2,R-262,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。Back 的情況由 TC-401 負責
-TC-063,分鏡,分鏡階段 ①：卡片顯示「Preparing your scenes...」；已記下 Credit Details,"1. 點 Back
+5. 點 New chat","每次都不會跳出對話框
+離開時出現「We'll keep making your storyboard. Find it in History.」
+依序開啟 Recent Task、My Credits 和新的空白聊天
+分鏡持續產生",P2,R-262,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。Back 的情況由 TC-401 負責
+TC-063,分鏡,"1. 分鏡階段 ①：卡片顯示「Preparing your scenes...」
+2. 已記下 Credit Details","1. 點 Back
 2. 點「Leave anyway」
-3. 從 History 重新開啟這部劇並等待",聊天會自動重新開始準備（先顯示「Preparing your scenes...」，再變成「Creating your storyboard...」），不需要再點一次 Generate，分鏡最後產生完成；Mine › Credits › Details 這個分鏡只記一筆扣款,P2,"R-335, R-051",PM Figma 10/22（4422:2）；自動重新開始這點待 RD 確認（Q-20）。舊行為：重新開啟後停在分鏡提案，要再點 Generate 並再扣一次點數（R-052）
-TC-403,分鏡,分鏡階段 ①：卡片顯示「Preparing your scenes...」；已記下 Credit Details,"1. 把 App 從背景滑掉（強制關閉）
-2. 重新開啟 PowerDirector，從 History 開啟這部劇",聊天會自動重新開始準備（「Preparing your scenes...」），不需要再點一次 Generate，分鏡最後產生完成；Mine › Credits › Details 這個分鏡只記一筆扣款,P2,R-335,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。自動重新開始這點待 RD 確認（Q-20）。Leave anyway 的情況由 TC-063 負責
-TC-404,分鏡,分鏡階段 ②：卡片顯示「Creating your storyboard...」；已記下 Credit Details,"1. 把 App 從背景滑掉（強制關閉）
+3. 從 History 重新開啟這部劇並等待","聊天會自動重新開始準備（先顯示「Preparing your scenes...」，再變成「Creating your storyboard...」），不需要再點一次 Generate，分鏡最後產生完成
+Mine › Credits › Details 這個分鏡只記一筆扣款",P2,"R-335, R-051",PM Figma 10/22（4422:2）；自動重新開始這點待 RD 確認（Q-20）。舊行為：重新開啟後停在分鏡提案，要再點 Generate 並再扣一次點數（R-052）
+TC-403,分鏡,"1. 分鏡階段 ①：卡片顯示「Preparing your scenes...」
+2. 已記下 Credit Details","1. 把 App 從背景滑掉（強制關閉）
+2. 重新開啟 PowerDirector，從 History 開啟這部劇","聊天會自動重新開始準備（「Preparing your scenes...」），不需要再點一次 Generate，分鏡最後產生完成
+Mine › Credits › Details 這個分鏡只記一筆扣款",P2,R-335,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。自動重新開始這點待 RD 確認（Q-20）。Leave anyway 的情況由 TC-063 負責
+TC-404,分鏡,"1. 分鏡階段 ②：卡片顯示「Creating your storyboard...」
+2. 已記下 Credit Details","1. 把 App 從背景滑掉（強制關閉）
 2. 等 2 分鐘
-3. 重新開啟 PowerDirector，從 History 開啟這部劇",分鏡已在背景產生完成：聊天顯示「Here's your storyboard」，以及 Storyboard Result 和 Storyboard Preview 卡片；Credit Details 只記一筆扣款,P2,R-336,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。分鏡階段 ② 是否會在背景完成，待 RD 確認（Q-20）
-TC-064,分鏡,分鏡已產生完成,查看對話內容,出現「Here's your storyboard」、Storyboard Result 卡片（場景卡片附 9:16 縮圖，以及「View more >」）和 Storyboard Preview 卡片；Storyboard Preview 卡片會跟著分鏡一起出現，沒有自己的產生中狀態,P1,"R-053, R-282",回歸 DRI261893-0145（BugNeedReview，AIAgent）：分鏡腳本第一行和最後一行的第一個字，左邊被切掉，這裡也要順便複驗這張單；回歸 DRI261895P0035（RDResolved，AIAgent）：Scene 和 Location 圖片一律產生失敗，這裡也要順便複驗這張單
+3. 重新開啟 PowerDirector，從 History 開啟這部劇","分鏡已在背景產生完成：聊天顯示「Here's your storyboard」，以及 Storyboard Result 和 Storyboard Preview 卡片
+Credit Details 只記一筆扣款",P2,R-336,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。分鏡階段 ② 是否會在背景完成，待 RD 確認（Q-20）
+TC-064,分鏡,分鏡已產生完成,查看對話內容,"出現「Here's your storyboard」、Storyboard Result 卡片（場景卡片附 9:16 縮圖，以及「View more >」）和 Storyboard Preview 卡片
+Storyboard Preview 卡片會跟著分鏡一起出現，沒有自己的產生中狀態",P1,"R-053, R-282",回歸 DRI261893-0145（BugNeedReview，AIAgent）：分鏡腳本第一行和最後一行的第一個字，左邊被切掉，這裡也要順便複驗這張單；回歸 DRI261895P0035（RDResolved，AIAgent）：Scene 和 Location 圖片一律產生失敗，這裡也要順便複驗這張單
 TC-065,分鏡,畫面顯示 Storyboard Result,"1. 點「View more >」
-2. 用 ‹ › 切換",開啟場景詳細頁，有 X、「Scene N」、主圖、Location 列、標題和完整腳本；‹ › 可以在場景之間切換；腳本第一行和最後一行的字都完整顯示（沒有被切掉）,P1,R-054,
+2. 用 ‹ › 切換","開啟場景詳細頁，有 X、「Scene N」、主圖、Location 列、標題和完整腳本
+‹ › 可以在場景之間切換
+腳本第一行和最後一行的字都完整顯示（沒有被切掉）",P1,R-054,
 TC-066,分鏡,已開啟場景詳細頁,"1. 點 Location 縮圖
-2. 點場景主圖",兩次點擊都沒有任何反應（不會放大，也沒有重新產生的選項）；Location 圖片依 Design 畫面放在場景主圖旁邊，沒有「Location」標籤,P3,"R-055, R-329",PM（pm-update-6）在主圖下方畫了一列有標籤的「Location」，但以 Design 為準。回歸 DRI261895P0026（NewCreated，AIAgent）：以 Design 為準，Design 把 Location 圖和場景圖並排、沒有 Location 標籤（TC-066），這張單採用的 PM 版面不是預期結果。場景詳細頁少了 Location 縮圖和標籤，這裡也要順便複驗這張單
-TC-389,分鏡,場景詳細頁（Scene edit page）已開啟，而且該場景的 Location 圖片還在產生中：這個場景是從 Edit 重新產生（TC-070），或透過 Iris 更新（TC-073）,看著主圖下方的 Location 縮圖，直到兩張圖都產生完成,Location 縮圖先顯示骨架，接著在主圖完成之前就顯示地點圖片；主圖寬度維持不變,P3,R-299,PM 10/14 board 6「10/12 update - Scene 編輯頁的「地點圖片」」：此規則只適用於 Scene edit page。對話裡的分鏡卡片只顯示一個骨架載入圖示（Design），不屬於這一列；如果在 Location 產生期間打不開任何場景詳細頁，記為 Blocked（test-data），不要當成其他畫面的問題（Android DRA262610P0345 就是因為誤判而建立的；PDRA 2026-10-29，REQ-055）。TC-066 備註 Design 沒有畫「Location」標籤
-TC-390,分鏡,有一個場景的 Location 圖和主圖都失敗（Pink › Trip image moderation；請記錄用了哪個開關）,開啟場景詳細頁,主圖顯示錯誤卡片；Location 縮圖顯示粉紅色失敗圖示和「Location • Failed」；Edit 可以一次重新產生兩張共 2 張圖片（TC-070）,P2,"R-300, R-299",
+2. 點場景主圖","兩次點擊都沒有任何反應（不會放大，也沒有重新產生的選項）
+Location 圖片依 Design 畫面放在場景主圖旁邊，沒有「Location」標籤",P3,"R-055, R-329",PM（pm-update-6）在主圖下方畫了一列有標籤的「Location」，但以 Design 為準。回歸 DRI261895P0026（NewCreated，AIAgent）：以 Design 為準，Design 把 Location 圖和場景圖並排、沒有 Location 標籤（TC-066），這張單採用的 PM 版面不是預期結果。場景詳細頁少了 Location 縮圖和標籤，這裡也要順便複驗這張單
+TC-389,分鏡,場景詳細頁（Scene edit page）已開啟，而且該場景的 Location 圖片還在產生中：這個場景是從 Edit 重新產生（TC-070），或透過 Iris 更新（TC-073）,看著主圖下方的 Location 縮圖，直到兩張圖都產生完成,"Location 縮圖先顯示骨架，接著在主圖完成之前就顯示地點圖片
+主圖寬度維持不變",P3,R-299,PM 10/14 board 6「10/12 update - Scene 編輯頁的「地點圖片」」：此規則只適用於 Scene edit page。對話裡的分鏡卡片只顯示一個骨架載入圖示（Design），不屬於這一列；如果在 Location 產生期間打不開任何場景詳細頁，記為 Blocked（test-data），不要當成其他畫面的問題（Android DRA262610P0345 就是因為誤判而建立的；PDRA 2026-10-29，REQ-055）。TC-066 備註 Design 沒有畫「Location」標籤
+TC-390,分鏡,有一個場景的 Location 圖和主圖都失敗（Pink › Trip image moderation；請記錄用了哪個開關）,開啟場景詳細頁,"主圖顯示錯誤卡片
+Location 縮圖顯示粉紅色失敗圖示和「Location • Failed」
+Edit 可以一次重新產生兩張共 2 張圖片（TC-070）",P2,"R-300, R-299",
 TC-067,分鏡,場景圖片因 4xx 錯誤而失敗,"1. 開啟該場景並點 ⓘ
-2. 在對話框中點「terms of service」，回來後再點「Got it」",卡片顯示「Couldn't create image ⓘ」／「Your credits have been refunded. The service is busy — try again later.」和 Edit；ⓘ 對話框是「Couldn't generate this image」，附服務條款文字和 Got it；錯誤內容留在 9:16 的畫框內，文字依寬度換行；點對話框裡的「terms of service」會開啟服務條款，點「Got it」會關閉對話框,P2,"R-056, R-286","需要有失敗的場景（故障注入）。Design 優先於 PM（使用者規定 2026-10-19）。Design 1012 畫面用的是這種卡片內文；PM 10/14 的 4xx 文字是「Try editing the description…」。Design 畫了兩種 ⓘ 對話框。回歸 DRI261894P0031（Assigned，AIFound）：場景圖片失敗時卡片說 ""service is busy""，但 ⓘ 卻說是違反服務條款，這裡也要順便複驗這張單"
+2. 在對話框中點「terms of service」，回來後再點「Got it」","卡片顯示「Couldn't create image ⓘ」／「Your credits have been refunded. The service is busy — try again later.」和 Edit
+ⓘ 對話框是「Couldn't generate this image」，附服務條款文字和 Got it
+錯誤內容留在 9:16 的畫框內，文字依寬度換行
+點對話框裡的「terms of service」會開啟服務條款，點「Got it」會關閉對話框",P2,"R-056, R-286","需要有失敗的場景（故障注入）。Design 優先於 PM（使用者規定 2026-10-19）。Design 1012 畫面用的是這種卡片內文；PM 10/14 的 4xx 文字是「Try editing the description…」。Design 畫了兩種 ⓘ 對話框。回歸 DRI261894P0031（Assigned，AIFound）：場景圖片失敗時卡片說 ""service is busy""，但 ⓘ 卻說是違反服務條款，這裡也要順便複驗這張單"
 TC-068,分鏡,場景圖片因 5xx 錯誤而失敗,開啟該場景,顯示「Couldn't create image」／「Your credits have been refunded. The service is busy - try again later.」，有「Edit」，沒有 ⓘ,P2,"R-057, R-284",需要故障注入
 TC-069,分鏡,分鏡中有失敗的場景,"1. 查看 Storyboard Result
-2. 點失敗場景縮圖上的 ⟳",失敗的縮圖只顯示 ⟳ 圖示，沒有「Regenerate」文字；點 ⟳ 會開啟該場景的詳細頁，顯示「Couldn't create image」、退點數的說明文字和「Edit」,P3,"R-058, R-365",需要有失敗的場景；回歸 DRI261894P0001（RDResolved，無標籤）：有些分鏡產生失敗，點進去之後看不到重新整理的選項，這裡也要順便複驗這張單
+2. 點失敗場景縮圖上的 ⟳","失敗的縮圖只顯示 ⟳ 圖示，沒有「Regenerate」文字
+點 ⟳ 會開啟該場景的詳細頁，顯示「Couldn't create image」、退點數的說明文字和「Edit」",P3,"R-058, R-365",需要有失敗的場景；回歸 DRI261894P0001（RDResolved，無標籤）：有些分鏡產生失敗，點進去之後看不到重新整理的選項，這裡也要順便複驗這張單
 TC-070,分鏡,已開啟失敗的場景,"1. 點 Edit
 2. 修改描述
-3. 點 Done",出現描述編輯器，附 x/1000 字數計數；Regenerate Image ◆3（兩張圖都失敗時是 ◆6，並附說明「The location and scene image will both be regenerated (2 images).」）,P2,R-059,需要有失敗的場景；回歸 DRI261894P0032（RDResolved，AIFound）：場景編輯的垃圾桶圖示會直接清空腳本、沒有確認，而且還能重新產生空白內容，這裡也要順便複驗這張單。價格是每張圖 3 點（表單 22632766997，REQ-103）；Design 畫的是 ◆6 / ◆12。
-TC-442,分鏡,分鏡中至少有兩個失敗的場景（Pink › Trip image moderation；請記錄用了哪個開關）；其中一個剛點過「Regenerate Image」（場景編輯頁）；已記下點數膠囊上的數字,"1. 切到另一個失敗場景的編輯頁，修改它的描述
+3. 點 Done","出現描述編輯器，附 x/1000 字數計數
+Regenerate Image ◆3（兩張圖都失敗時是 ◆6，並附說明「The location and scene image will both be regenerated (2 images).」）",P2,R-059,需要有失敗的場景；回歸 DRI261894P0032（RDResolved，AIFound）：場景編輯的垃圾桶圖示會直接清空腳本、沒有確認，而且還能重新產生空白內容，這裡也要順便複驗這張單。價格是每張圖 3 點（表單 22632766997，REQ-103）；Design 畫的是 ◆6 / ◆12。
+TC-442,分鏡,"1. 分鏡中至少有兩個失敗的場景（Pink › Trip image moderation；請記錄用了哪個開關）
+2. 其中一個剛點過「Regenerate Image」（場景編輯頁）
+3. 已記下點數膠囊上的數字","1. 切到另一個失敗場景的編輯頁，修改它的描述
 2. 查看「Regenerate Image」
 3. 點它
-4. 點該場景錯誤卡片上的「Edit」",步驟 2：「Regenerate Image」以 40 % 不透明度顯示，但仍然可以點；步驟 3：跳出提示「Another image is regenerating. Try again when it's done.」，不會送出請求、不扣點數，修改過的描述會保留；步驟 4：「Edit」沒有被停用，照常開啟描述編輯器,P2,R-490,PM 10/30 §13.25 分鏡規則（board 4784:70878）：目前的建置會停用錯誤卡片上的「Edit」，必須修改。僅 PM 有：還沒有 Design 畫面
-TC-443,分鏡,有一張場景圖片正在重新產生；已回到對話畫面，看得到分鏡卡片,"1. 在分鏡卡片上點另一個場景縮圖的 ↻
+4. 點該場景錯誤卡片上的「Edit」","步驟 2：「Regenerate Image」以 40 % 不透明度顯示，但仍然可以點
+步驟 3：跳出提示「Another image is regenerating. Try again when it's done.」
+步驟 3：不會送出請求、不扣點數，修改過的描述會保留
+步驟 4：「Edit」沒有被停用，照常開啟描述編輯器",P2,R-490,PM 10/30 §13.25 分鏡規則（board 4784:70878）：目前的建置會停用錯誤卡片上的「Edit」，必須修改。僅 PM 有：還沒有 Design 畫面
+TC-443,分鏡,"1. 有一張場景圖片正在重新產生
+2. 已回到對話畫面，看得到分鏡卡片","1. 在分鏡卡片上點另一個場景縮圖的 ↻
 2. 等正在進行的圖片結束
-3. 再點一次 ↻",步驟 1：↻ 以 40 % 顯示，並跳出提示「Another image is regenerating. Try again when it's done.」，不扣點數；步驟 3：進行中的圖片結束後（不論成功或失敗），↻ 恢復正常並開始重新產生,P3,R-490,PM 10/30 §13.25（4784:70878）。僅 PM 有：還沒有 Design 畫面
+3. 再點一次 ↻","步驟 1：↻ 以 40 % 顯示，並跳出提示「Another image is regenerating. Try again when it's done.」，不扣點數
+步驟 3：進行中的圖片結束後（不論成功或失敗），↻ 恢復正常並開始重新產生",P3,R-490,PM 10/30 §13.25（4784:70878）。僅 PM 有：還沒有 Design 畫面
 TC-447,分鏡,分鏡中 Scene 2、3、4 失敗（圖片或 Location 圖片）（Pink › Trip image moderation；請記錄用了哪個開關）,開啟 Scene 4 的編輯頁,"跳出對話框「Fix Scene 2 first?」／「3 scenes couldn't be created. Start with Scene 2, since later scenes may use its images.」，按鈕是「Not now」和藍色的「Go to Scene 2」",P2,R-492,PM 11/4 §13.28（board 5212:27212）。僅 PM 有：還沒有 Design 畫面
 TC-448,分鏡,Scene 4 上已顯示「Fix Scene 2 first?」（接 TC-447）,點「Go to Scene 2」,編輯頁切換到 Scene 2（最早失敗的場景）,P2,"R-492, R-501",PM 11/4 §13.28。僅 PM 有：還沒有 Design 畫面
 TC-449,分鏡,分鏡中 Scene 2、3、4 失敗（圖片或 Location 圖片）（Pink › Trip image moderation；請記錄用了哪個開關）,"1. 開啟 Scene 4 的編輯頁
 2. 點「Not now」
 3. 修改描述，並用 ◀ ▶ 切到 Scene 3 再切回來
-4. 關閉編輯頁，再開啟 Scene 4",步驟 2：對話框關閉，停留在 Scene 4，仍可照常編輯和重新產生；步驟 3：這次編輯期間不會再跳出對話框；步驟 4：對話框會再次跳出,P2,"R-492, R-502",PM 11/4 §13.28。僅 PM 有：還沒有 Design 畫面
-TC-450,分鏡,分鏡中 Scene 2、3、4 失敗（圖片或 Location 圖片）（Pink › Trip image moderation；請記錄用了哪個開關）；已開啟 Scene 1 的編輯頁,"1. 用 ▶ 切到 Scene 2
-2. 用 ▶ 切到 Scene 3",步驟 1：Scene 2（最早失敗的場景）不會跳出對話框；步驟 2：Scene 3 會跳出「Fix Scene 2 first?」,P3,"R-492, R-493",PM 11/4 §13.28：用 ◀ ▶ 切換也會觸發。僅 PM 有：還沒有 Design 畫面
+4. 關閉編輯頁，再開啟 Scene 4","步驟 2：對話框關閉，停留在 Scene 4，仍可照常編輯和重新產生
+步驟 3：這次編輯期間不會再跳出對話框
+步驟 4：對話框會再次跳出",P2,"R-492, R-502",PM 11/4 §13.28。僅 PM 有：還沒有 Design 畫面
+TC-450,分鏡,"1. 分鏡中 Scene 2、3、4 失敗（圖片或 Location 圖片）（Pink › Trip image moderation；請記錄用了哪個開關）
+2. 已開啟 Scene 1 的編輯頁","1. 用 ▶ 切到 Scene 2
+2. 用 ▶ 切到 Scene 3","步驟 1：Scene 2（最早失敗的場景）不會跳出對話框
+步驟 2：Scene 3 會跳出「Fix Scene 2 first?」",P3,"R-492, R-493",PM 11/4 §13.28：用 ◀ ▶ 切換也會觸發。僅 PM 有：還沒有 Design 畫面
 TC-451,分鏡,分鏡中 Scene 2、3、4 失敗（圖片或 Location 圖片）（Pink › Trip image moderation；請記錄用了哪個開關）,"1. 從對話中的失敗訊息點「Edit」
 2. 重新產生 Scene 2 的圖片，進行中切到 Scene 4
 3. Scene 2 修好後，開啟 Scene 4
-4. 在只有一個失敗場景的分鏡上，開啟該場景",步驟 1：直接進入 Scene 2，不會跳出對話框；步驟 2：最早失敗的場景在重新產生期間，不會跳出對話框；步驟 3：跳出「Fix Scene 3 first?」（這時最早失敗的場景變成 Scene 3）；步驟 4：不會跳出對話框,P3,R-493,PM 11/4 §13.28 的「不跳」情境與 §13.7 的入口。僅 PM 有：還沒有 Design 畫面
+4. 在只有一個失敗場景的分鏡上，開啟該場景","步驟 1：直接進入 Scene 2，不會跳出對話框
+步驟 2：最早失敗的場景在重新產生期間，不會跳出對話框
+步驟 3：跳出「Fix Scene 3 first?」（這時最早失敗的場景變成 Scene 3）
+步驟 4：不會跳出對話框",P3,R-493,PM 11/4 §13.28 的「不跳」情境與 §13.7 的入口。僅 PM 有：還沒有 Design 畫面
 TC-378,分鏡,場景詳細頁正在重新產生場景圖片（TC-070 之後）,"1. 點 X
 2. 點「Keep Generating」
 3. 再點一次 X
-4. 點「Leave anyway」","每次點 X 都會跳出「Stop and lose your credits?」／「This is still generating. If you leave now, it'll stop and the credits you've spent won't be refunded.」，有 Leave anyway / Keep Generating；點 Keep Generating 會繼續產生；點 Leave anyway 會中止產生，Credit Details 裡也不會有退款",P2,R-280,PM 1002 畫面標了「新增」；Job states 表格原本寫這個工作「沒有 Stop」
+4. 點「Leave anyway」","每次點 X 都會跳出「Stop and lose your credits?」／「This is still generating. If you leave now, it'll stop and the credits you've spent won't be refunded.」，有 Leave anyway / Keep Generating
+點 Keep Generating 會繼續產生
+點 Leave anyway 會中止產生，Credit Details 裡也不會有退款",P2,R-280,PM 1002 畫面標了「新增」；Job states 表格原本寫這個工作「沒有 Stop」
 TC-071,分鏡,已點過 Regenerate Image,觀察該場景,新圖片出現前，圖片區域顯示骨架,P3,R-060,
-TC-397,分鏡,有一個場景的 Location 圖和場景圖都失敗（Pink › Trip image moderation；請記錄用了哪個開關）；已在它的場景詳細頁點了「Regenerate Image」◆6（TC-070 之後）,停留在場景詳細頁，直到產生結束,骨架換成並排的新 Location 圖和場景圖；「Couldn't create image」卡片和「Edit」消失；標題和完整腳本保持不變,P2,"R-306, R-059, R-060",Design Storyboard Error「生成」→ 結果畫面（流程箭頭 4299-168964）。如果測試資料只有主圖失敗，就記為 Blocked（test-data）；那種情況由 TC-292 負責
+TC-397,分鏡,"1. 有一個場景的 Location 圖和場景圖都失敗（Pink › Trip image moderation；請記錄用了哪個開關）
+2. 已在它的場景詳細頁點了「Regenerate Image」◆6（TC-070 之後）",停留在場景詳細頁，直到產生結束,"骨架換成並排的新 Location 圖和場景圖
+「Couldn't create image」卡片和「Edit」消失
+標題和完整腳本保持不變",P2,"R-306, R-059, R-060",Design Storyboard Error「生成」→ 結果畫面（流程箭頭 4299-168964）。如果測試資料只有主圖失敗，就記為 Blocked（test-data）；那種情況由 TC-292 負責
 TC-072,分鏡,分鏡已產生完成,在對話中輸入「Update the image for Scene 2 to show rain」,Iris 回覆一張「Create storyboard」卡片，附價格（每重畫一張圖 3 點；重新製作 Storyboard Preview 時另加 1 點 Text to Speech）和 Generate,P2,R-061,"PM 10/20：不論是改腳本或改圖片，卡片都寫 Create storyboard；DRI261895P0025 要求用舊的 ""Update storyboard images"" 標籤。回歸 DRI261895P0025（NewCreated，AIAgent）：分鏡修改提案的標籤誤寫成 Create storyboard，這裡也要順便複驗這張單。價格：Credit System 表單 22632766997 / 22833510933（REQ-103）；Android 16.8.0.2611041 對 4 張圖報價 ◆13（2026-11-05）。"
-TC-385,分鏡,已顯示 TC-072 的「Create storyboard」卡片,點 Generate，觀察分鏡,只有被修改的場景和 Storyboard Preview 顯示骨架；其他場景維持原樣,P2,R-295,
-TC-073,分鏡,請 Iris 更新場景圖片後，已顯示「Create storyboard」卡片,點 Generate,卡片消失；對話最下方出現新的分鏡卡片，被修改的場景和預覽先顯示骨架，接著出現新圖片；上方原本的分鏡卡片維持不變,P2,R-062,"回歸 DRI261896P0013（NewCreated，AIFound）：重新產生的分鏡寫在修改請求的上方，而不是下方，這裡也要順便複驗這張單；回歸 DRI261896P0014（NewCreated，AIFound）：重新產生分鏡期間，預覽卡片寫著 ""videos are being generated""，這裡也要順便複驗這張單"
-TC-405,分鏡,剛在場景圖片更新的「Create storyboard」卡片上點了 Generate（TC-073）,更新進行中，查看輸入區,輸入區只有麥克風；更新完成之前，不會出現 ■ 停止按鈕或其他停止的控制項,P2,R-332,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面
+TC-385,分鏡,已顯示 TC-072 的「Create storyboard」卡片,點 Generate，觀察分鏡,"只有被修改的場景和 Storyboard Preview 顯示骨架
+其他場景維持原樣",P2,R-295,
+TC-073,分鏡,請 Iris 更新場景圖片後，已顯示「Create storyboard」卡片,點 Generate,"卡片消失
+對話最下方出現新的分鏡卡片，被修改的場景和預覽先顯示骨架，接著出現新圖片
+上方原本的分鏡卡片維持不變",P2,R-062,"回歸 DRI261896P0013（NewCreated，AIFound）：重新產生的分鏡寫在修改請求的上方，而不是下方，這裡也要順便複驗這張單；回歸 DRI261896P0014（NewCreated，AIFound）：重新產生分鏡期間，預覽卡片寫著 ""videos are being generated""，這裡也要順便複驗這張單"
+TC-405,分鏡,剛在場景圖片更新的「Create storyboard」卡片上點了 Generate（TC-073）,更新進行中，查看輸入區,"輸入區只有麥克風
+更新完成之前，不會出現 ■ 停止按鈕或其他停止的控制項",P2,R-332,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面
 TC-074,分鏡,分鏡圖片更新之後,"1. 播放 Storyboard Preview
-2. 取出 log",預覽反映更新後的圖片（TTS／animatic 已重新產生）；log 中在圖片更新之後有一筆新的 TextToSpeech 呼叫,P3,R-063,
+2. 取出 log","預覽反映更新後的圖片（TTS／animatic 已重新產生）
+log 中在圖片更新之後有一筆新的 TextToSpeech 呼叫",P3,R-063,
 TC-075,分鏡預覽,分鏡已產生完成,"1. 查看 Storyboard Preview 卡片
 2. 播放
 3. 點 ⏸
 4. 再點 ▶
-5. 把進度條拖到大約中間",卡片顯示標題、長度和「See your story as pictures with a voice telling it. The real video comes next.」；播放時是有旁白的圖片投影片；播放器有 X、⏸、進度條和時間（例如「00:40/01:30」）；點 ⏸ 暫停，點 ▶ 繼續播放；拖曳進度條會跳到該時間點，時間也跟著變,P1,"R-064, R-328",
+5. 把進度條拖到大約中間","卡片顯示標題、長度和「See your story as pictures with a voice telling it. The real video comes next.」
+播放時是有旁白的圖片投影片
+播放器有 X、⏸、進度條和時間（例如「00:40/01:30」）
+點 ⏸ 暫停，點 ▶ 繼續播放
+拖曳進度條會跳到該時間點，時間也跟著變",P1,"R-064, R-328",
 TC-076,分鏡預覽,建立短劇時選了「No captions」,播放 Storyboard Preview,預覽還是有字幕,P3,R-065,
 TC-077,分鏡預覽,分鏡中有場景圖片缺失,查看 Storyboard Preview 卡片,顯示「Storyboard preview unavailable. Complete the image generation above first to view the preview.」，而且沒有產生按鈕,P2,R-066,需要有失敗的場景
 TC-078,分鏡預覽,Storyboard preview 產生失敗,查看卡片,顯示「Couldn't create the storyboard preview. Your credits have been refunded. Try again.」，並有 Retry,P3,R-067,需要故障注入
-TC-079,影片,分鏡已產生完成；畫面顯示 Storyboard Preview 卡片,"1. 點 Storyboard Preview 卡片上的「Create video」（請記錄卡片上有沒有這個按鈕，Q-30）
-2. 查看影片設定卡片",點「Create video」會新增氣泡「Create video」，接著出現影片設定卡片；卡片是「Choose your video settings」，有「Model • Seedance」和 Best / Standard / Fast 切換（Best 沒有 NEW 標籤）；選 Best 時，副標是「Seedance 2.5 • Sharper motion and richer detail」；Video length 有 Preview • 30 sec / Full Video；還有 Generate Video 和它的價格,P1,"R-068, R-302, R-458",PM 10/16 比 Design 畫面新，Design 還是舊版；使用者 2026-10-22（REQ-026）：測 PM 的版本（Design 畫的是 Seedance 2.0 / 2.0 Mini）。預設模型待定（PM 示意圖是 Best），請記錄實際選到哪一個。預覽卡片上的「Create video」是 PM-only：Design 還沒有對應畫面（PM 主流程 2186:7485）；Design 的卡片沒有這個按鈕（Q-30）
+TC-079,影片,"1. 分鏡已產生完成
+2. 畫面顯示 Storyboard Preview 卡片","1. 點 Storyboard Preview 卡片上的「Create video」（請記錄卡片上有沒有這個按鈕，Q-30）
+2. 查看影片設定卡片","點「Create video」會新增氣泡「Create video」，接著出現影片設定卡片
+卡片是「Choose your video settings」，有「Model • Seedance」和 Best / Standard / Fast 切換（Best 沒有 NEW 標籤）
+選 Best 時，副標是「Seedance 2.5 • Sharper motion and richer detail」
+Video length 有 Preview • 30 sec / Full Video
+還有 Generate Video 和它的價格",P1,"R-068, R-302, R-458",PM 10/16 比 Design 畫面新，Design 還是舊版；使用者 2026-10-22（REQ-026）：測 PM 的版本（Design 畫的是 Seedance 2.0 / 2.0 Mini）。預設模型待定（PM 示意圖是 Best），請記錄實際選到哪一個。預覽卡片上的「Create video」是 PM-only：Design 還沒有對應畫面（PM 主流程 2186:7485）；Design 的卡片沒有這個按鈕（Q-30）
 TC-080,影片,已顯示影片設定,"1. 在 Preview • 30 sec 下切換 Best、Standard 和 Fast
-2. 在 Full Video 下切換 Best、Standard 和 Fast",Preview • 30 sec 的價格是 ◆180（Best）、◆120（Standard）、◆60（Fast），不另收 reference audio 的點數；Full Video 每秒收 6 / 4 / 2 點（依影片長度計算），另加 reference audio 的 4 點（90 秒：◆540 / ◆360 / ◆180 + 4 = ◆544 / ◆364 / ◆184）；價格會立即更新,P2,R-069,PM 10/16 比 Design 畫面新，Design 還是舊版；使用者 2026-10-22（REQ-026）：測 PM 的版本。點數數字是有約束力的，價格依 Credit System 表單 22937582357 / 22850755605 / 21703885589（REQ-103）。Full Video 多出的 4 點是產生 reference audio 的費用（RD 的說明，由使用者轉述，2026-11-06：「4點應該是生reference audio的點數」；回答了 Q-38；目前沒有 Credit System 表單提到這一項）；Android 16.8.0.2611041 報價為 ◆544 / ◆364 / ◆184。Preview 報價不含 reference audio 的費用：它的 reference audio 來自角色／場景那一步，不會重新產生（RD 的說明，由使用者轉述，2026-11-06：「30s的應該前面生角色場景的地方生過了，所以不用重生」）。
+2. 在 Full Video 下切換 Best、Standard 和 Fast","Preview • 30 sec 的價格是 ◆180（Best）、◆120（Standard）、◆60（Fast），不另收 reference audio 的點數
+Full Video 每秒收 6 / 4 / 2 點（依影片長度計算），另加 reference audio 的 4 點（90 秒：◆540 / ◆360 / ◆180 + 4 = ◆544 / ◆364 / ◆184）
+價格會立即更新",P2,R-069,PM 10/16 比 Design 畫面新，Design 還是舊版；使用者 2026-10-22（REQ-026）：測 PM 的版本。點數數字是有約束力的，價格依 Credit System 表單 22937582357 / 22850755605 / 21703885589（REQ-103）。Full Video 多出的 4 點是產生 reference audio 的費用（RD 的說明，由使用者轉述，2026-11-06：「4點應該是生reference audio的點數」；回答了 Q-38；目前沒有 Credit System 表單提到這一項）；Android 16.8.0.2611041 報價為 ◆544 / ◆364 / ◆184。Preview 報價不含 reference audio 的費用：它的 reference audio 來自角色／場景那一步，不會重新產生（RD 的說明，由使用者轉述，2026-11-06：「30s的應該前面生角色場景的地方生過了，所以不用重生」）。
 TC-081,影片,這個安裝版本第一次產生影片,點 Generate Video,跳出「Get notified when your video is ready?」／「Videos take a few minutes. We'll let you know as soon as yours is done.」，按鈕是「Notify me」／「Not now」,P2,R-070,只有第一支影片會出現；可能已經被關掉過了。回歸 DRI261895P0022（NewCreated，AIAgent）：第一次產生影片時，漏掉了規格要求的通知預先詢問，這裡也要順便複驗這張單
-TC-406,影片,已顯示影片設定卡片（通知詢問已回答過）；已記下點數膠囊上的數字,點 Generate Video，並一直看著卡片和點數膠囊，直到影片開始產生,影片設定卡片原地變成標題為「Advancing the mini drama production.」的骨架畫面，點數膠囊維持不變；卡片變成「Making your video...」時，點數膠囊會扣掉卡片上顯示的價格,P1,"R-333, R-279",PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。扣款移到階段 ② 一開始（待 RD 確認，Q-20）
+TC-406,影片,"1. 已顯示影片設定卡片（通知詢問已回答過）
+2. 已記下點數膠囊上的數字",點 Generate Video，並一直看著卡片和點數膠囊，直到影片開始產生,"影片設定卡片原地變成標題為「Advancing the mini drama production.」的骨架畫面，點數膠囊維持不變
+卡片變成「Making your video...」時，點數膠囊會扣掉卡片上顯示的價格",P1,"R-333, R-279",PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。扣款移到階段 ② 一開始（待 RD 確認，Q-20）
 TC-407,影片,影片階段 ①：卡片顯示「Advancing the mini drama production.」,"1. 點 Back
-2. 點「Stay」","跳出「Leave while we're preparing?」／「Your video will start soon. If you leave now, we'll have to prepare it again when you come back.」，有「Stay」和紅色的「Leave anyway」；點 Stay 會關閉對話框，仍停留在聊天畫面，卡片接著變成「Making your video...」",P1,R-071,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面
+2. 點「Stay」","跳出「Leave while we're preparing?」／「Your video will start soon. If you leave now, we'll have to prepare it again when you come back.」，有「Stay」和紅色的「Leave anyway」
+點 Stay 會關閉對話框，仍停留在聊天畫面，卡片接著變成「Making your video...」",P1,R-071,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面
 TC-408,影片,影片階段 ①：卡片顯示「Advancing the mini drama production.」,"1. 點 History
 2. 點「Stay」
 3. 點 New chat
 4. 點「Stay」
 5. 點點數膠囊（credit pill）
-6. 點「Leave anyway」",每次點擊都會跳出「Leave while we're preparing?」（內文是影片版本），有「Stay」／「Leave anyway」；點 Stay，聊天會繼續準備；點 Leave anyway 會開啟 My Credits,P2,R-264,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。Back 的情況由 TC-407 負責
-TC-409,影片,影片階段 ①：卡片顯示「Advancing the mini drama production.」；已記下 Credit Details,"1. 點 Back
+6. 點「Leave anyway」","每次點擊都會跳出「Leave while we're preparing?」（內文是影片版本），有「Stay」／「Leave anyway」
+點 Stay，聊天會繼續準備
+點 Leave anyway 會開啟 My Credits",P2,R-264,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。Back 的情況由 TC-407 負責
+TC-409,影片,"1. 影片階段 ①：卡片顯示「Advancing the mini drama production.」
+2. 已記下 Credit Details","1. 點 Back
 2. 點「Leave anyway」
-3. 從 History 重新開啟這部劇並等待",聊天會自動重新開始準備（先顯示「Advancing the mini drama production.」，再變成「Making your video...」），不需要再點一次 Generate Video；Mine › Credits › Details 這支影片只記一筆扣款,P1,"R-335, R-071",PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。自動重新開始這點待 RD 確認（Q-20）
-TC-410,影片,影片階段 ①：卡片顯示「Advancing the mini drama production.」；已記下 Credit Details,"1. 把 App 切到背景（按 Home）
+3. 從 History 重新開啟這部劇並等待","聊天會自動重新開始準備（先顯示「Advancing the mini drama production.」，再變成「Making your video...」），不需要再點一次 Generate Video
+Mine › Credits › Details 這支影片只記一筆扣款",P1,"R-335, R-071",PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。自動重新開始這點待 RD 確認（Q-20）
+TC-410,影片,"1. 影片階段 ①：卡片顯示「Advancing the mini drama production.」
+2. 已記下 Credit Details","1. 把 App 切到背景（按 Home）
 2. 等 30 s
-3. 回到 PowerDirector",回到聊天後，準備工作會自動重新開始（或仍在進行中），並進入「Making your video...」，不需要再點一次 Generate Video；Credit Details 這支影片只記一筆扣款,P2,R-335,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。自動重新開始這點待 RD 確認（Q-20）
-TC-082,影片,影片階段 ②：卡片顯示「Making your video...」,點 Back,跳出提示「We'll keep making your video. Find it in History.」；沒有停止對話框；影片持續產生,P1,R-071,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）
+3. 回到 PowerDirector","回到聊天後，準備工作會自動重新開始（或仍在進行中），並進入「Making your video...」，不需要再點一次 Generate Video
+Credit Details 這支影片只記一筆扣款",P2,R-335,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。自動重新開始這點待 RD 確認（Q-20）
+TC-082,影片,影片階段 ②：卡片顯示「Making your video...」,點 Back,"跳出提示「We'll keep making your video. Find it in History.」
+沒有停止對話框
+影片持續產生",P1,R-071,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）
 TC-361,影片,影片階段 ②：卡片顯示「Making your video...」,"1. 點 History
 2. 重新開啟這部劇
 3. 點點數膠囊
 4. 返回
-5. 點 New chat",每次都不會跳出對話框；離開時顯示「We'll keep making your video. Find it in History.」；依序開啟的是 Recent Task、My Credits 和新的空白對話；影片持續產生,P2,R-264,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）。Back 的情況由 TC-082 負責
-TC-411,影片,影片階段 ②：卡片顯示「Making your video...」；已記下 Credit Details,"1. 把 App 從背景滑掉（強制關閉）
+5. 點 New chat","每次都不會跳出對話框
+離開時顯示「We'll keep making your video. Find it in History.」
+依序開啟的是 Recent Task、My Credits 和新的空白對話
+影片持續產生",P2,R-264,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 畫面都新（以新的為準）。Back 的情況由 TC-082 負責
+TC-411,影片,"1. 影片階段 ②：卡片顯示「Making your video...」
+2. 已記下 Credit Details","1. 把 App 從背景滑掉（強制關閉）
 2. 等 5 分鐘
-3. 重新開啟 PowerDirector，從 History 開啟這部劇",影片仍持續產生：History 顯示處理中或已完成，完成後聊天會顯示「Here's your drama.」和影片；Credit Details 只記一筆扣款,P2,R-336,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面
+3. 重新開啟 PowerDirector，從 History 開啟這部劇","影片仍持續產生：History 顯示處理中或已完成，完成後聊天會顯示「Here's your drama.」和影片
+Credit Details 只記一筆扣款",P2,R-336,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面
 TC-083,影片,"1. 全新安裝（屬於這個案例的一部分）：解除安裝 PowerDirector，重新安裝受測的版本，還原 Developer Server，登入，設定方案，開啟 Log stage timings 和 Write Log
-2. 第一次在影片產生期間離開，且在階段 ②（「Making your video...」）",離開後，查看 History 按鈕下方,出現藍色氣泡「Find your video here in History.」；點畫面任何地方都會讓它消失,P3,R-072,要自己全新安裝；在 P1-h 區段執行。只有第一次會出現
+2. 第一次在影片產生期間離開，且在階段 ②（「Making your video...」）",離開後，查看 History 按鈕下方,"出現藍色氣泡「Find your video here in History.」
+點畫面任何地方都會讓它消失",P3,R-072,要自己全新安裝；在 P1-h 區段執行。只有第一次會出現
 TC-084,影片,影片產生中,開啟 History,卡片顯示「processing..」，沒有進度條,P2,R-073,
 TC-085,影片,影片產生中，使用者在 App 的其他頁面,留在其他頁面，等影片完成,"跳出提示「Good news! Your ""{Drama title}"" is ready. Tap here to view your results.」，按鈕是 Close / View",P2,R-074,
 TC-086,影片,Preview 影片已完成,查看對話內容,出現「Here's your drama.」和影片卡片，接著是「Looking good! Ready for the full video?」，附「Create the full episode (90 sec)」和價格,P1,R-075,"回歸 DRI261894P0016（NewCreated，AIFound）：付費的預覽被當成完成的短劇，之後才賣完整一集，這裡也要順便複驗這張單；回歸 DRI261894P0035（RDResolved，AIFound）：按 Video Generate 沒有產生影片，聊天直接跳到完整一集的提案，這裡也要順便複驗這張單；回歸 DRI261894P0051（NewCreated，AIFound）：設定卡片提供 75/90 秒的完整影片，但後面的提案卻寫 60 sec，這裡也要順便複驗這張單；回歸 DRI261896P0020（NeedMoreInfo，AIFound）：最終短劇影片一律產生失敗，顯示 ""1 clip couldn't be generated""，這裡也要順便複驗這張單"
 TC-087,影片,完整影片已完成,查看對話內容,顯示「Ready for the next episode?」，附「Create Next Episode」,P2,R-076,需要產生一次完整影片
 TC-088,影片,影片已完成,"1. 開啟結果並點 Full Edit
-2. 返回，點 Export Full Video",Full Edit 每個場景顯示一個片段；Export Full Video 會匯出成一支合併好的影片,P2,R-077,回歸 DRI261896P0015（NewCreated，AIFound）：短劇自己的字幕被算成付費功能，導致 Full Edit 擋住 Free 使用者匯出，這裡也要順便複驗這張單
+2. 返回，點 Export Full Video","Full Edit 每個場景顯示一個片段
+Export Full Video 會匯出成一支合併好的影片",P2,R-077,回歸 DRI261896P0015（NewCreated，AIFound）：短劇自己的字幕被算成付費功能，導致 Full Edit 擋住 Free 使用者匯出，這裡也要順便複驗這張單
 TC-382,影片,影片已完成，已開啟結果頁,點第三個場景的縮圖,播放器跳到該場景,P3,R-290,
-TC-089,影片,影片已完成,點影片上的下載按鈕,不會跳出對話框；儲存期間整個畫面被深色遮罩（黑色 60 %）蓋住，中間有轉圈圈；儲存完成後遮罩消失，跳出提示「Saved to your device.」,P2,R-078,回歸 DRI261895P0027（NewCreated，AIAgent）：影片儲存成功時，顯示的是過時的 Saved to Photos 文字，這裡也要順便複驗這張單；PM 11/3（3325:18429）取代了按鈕上的轉圈圈。PM-only：Design 還沒有對應畫面
+TC-089,影片,影片已完成,點影片上的下載按鈕,"不會跳出對話框
+儲存期間整個畫面被深色遮罩（黑色 60 %）蓋住，中間有轉圈圈
+儲存完成後遮罩消失，跳出提示「Saved to your device.」",P2,R-078,回歸 DRI261895P0027（NewCreated，AIAgent）：影片儲存成功時，顯示的是過時的 Saved to Photos 文字，這裡也要順便複驗這張單；PM 11/3（3325:18429）取代了按鈕上的轉圈圈。PM-only：Design 還沒有對應畫面
 TC-090,影片,影片是開啟字幕做的，而且已下載,在「照片」App 播放下載的影片,看得到字幕,P2,R-079,
-TC-091,影片錯誤,影片有兩個以上的場景失敗，而且全部是因為內容審核（4xxx）而失敗（Pink › 對這些場景使用 Inject failure status；請記錄用了哪個開關）,查看對話內容和影片卡片,"對話顯示「{n} scenes couldn't be generated. Your credits have been refunded. Tap Edit to regenerate, or tell me what to change.」；卡片標題是「Fix {n} scenes to export your drama.」，內文是「Their descriptions may not meet our terms of service, such as violence, NSFW content, or content involving minors.」（「terms of service」有底線）和「Fix scenes」；標題中沒有場景編號；「Here's your drama.」的影片卡片沒有下載圖示",P2,"R-080, R-276, R-487",需要有失敗的場景影片。回歸 DRI261893-0064（Assigned，無標籤）：部分片段產生失敗時，成功的片段在結果頁也看不到，這裡也要順便複驗這張單；PM 11/3 和 Design 影片（11/5）一致；待 RD 確認 v1 是否分得出 4xxx 和 5xxx，否則改用通用文字（Q-35）
+TC-091,影片錯誤,影片有兩個以上的場景失敗，而且全部是因為內容審核（4xxx）而失敗（Pink › 對這些場景使用 Inject failure status；請記錄用了哪個開關）,查看對話內容和影片卡片,"對話顯示「{n} scenes couldn't be generated. Your credits have been refunded. Tap Edit to regenerate, or tell me what to change.」
+卡片標題是「Fix {n} scenes to export your drama.」，內文是「Their descriptions may not meet our terms of service, such as violence, NSFW content, or content involving minors.」（「terms of service」有底線）和「Fix scenes」
+標題中沒有場景編號
+「Here's your drama.」的影片卡片沒有下載圖示",P2,"R-080, R-276, R-487",需要有失敗的場景影片。回歸 DRI261893-0064（Assigned，無標籤）：部分片段產生失敗時，成功的片段在結果頁也看不到，這裡也要順便複驗這張單；PM 11/3 和 Design 影片（11/5）一致；待 RD 確認 v1 是否分得出 4xxx 和 5xxx，否則改用通用文字（Q-35）
 TC-436,影片錯誤,影片有兩個以上的場景失敗，而且全部是因為伺服器忙碌（5xxx）而失敗（Pink › 對這些場景使用 Inject failure status；請記錄用了哪個開關）,查看影片卡片,卡片顯示「Fix {n} scenes to export your drama.」，內文是「Our servers were busy. Try generating them again.」，並有「Fix scenes」,P2,"R-080, R-487",PM 11/3（4982:27069）。待 RD 確認 v1 是否分得出 4xxx 和 5xxx；如果分不出，就改用通用文字「Some scenes couldn't be generated. Edit the description or try again.」（Q-35）。PM-only：Design 還沒有對應畫面
-TC-437,影片錯誤,影片有兩種原因的失敗場景：部分是因為內容審核（4xxx），部分是因為伺服器忙碌（5xxx）（Pink › 對這些場景使用 Inject failure status；請記錄用了哪個開關）,查看影片卡片,"卡片標題是「Fix {n} scenes to export your drama.」（{n} 是兩種加總），下面兩行各自顯示自己的數量：「{a} scenes may not meet our terms of service, such as violence, NSFW content, or content involving minors. Edit their descriptions.」和「{b} scenes failed because our servers were busy. Try them again.」；數量為 1 時顯示「1 scene … Edit its description.」／「1 scene failed … Try it again.」",P3,R-487,PM 11/3（4982:27069）。Q-35。PM-only：Design 還沒有對應畫面
+TC-437,影片錯誤,影片有兩種原因的失敗場景：部分是因為內容審核（4xxx），部分是因為伺服器忙碌（5xxx）（Pink › 對這些場景使用 Inject failure status；請記錄用了哪個開關）,查看影片卡片,"卡片標題是「Fix {n} scenes to export your drama.」（{n} 是兩種加總），下面兩行各自顯示自己的數量：「{a} scenes may not meet our terms of service, such as violence, NSFW content, or content involving minors. Edit their descriptions.」和「{b} scenes failed because our servers were busy. Try them again.」
+數量為 1 時顯示「1 scene … Edit its description.」／「1 scene failed … Try it again.」",P3,R-487,PM 11/3（4982:27069）。Q-35。PM-only：Design 還沒有對應畫面
 TC-438,影片錯誤,影片剛好只有一個場景失敗（Pink › 對這些場景使用 Inject failure status；請記錄用了哪個開關）,查看對話訊息和影片卡片,全部都用單數：「1 scene couldn't be generated. …」，卡片是「Fix 1 scene to export your drama.」，內文是「Its description may not meet our terms of service…」（內容審核）或「Our servers were busy. Try generating it again.」（伺服器忙碌）,P3,"R-080, R-487",PM 11/3（4982:27069）。僅 PM 有：還沒有 Design 畫面
 TC-439,影片錯誤,已顯示內容審核失敗的 Fix 卡片（TC-091）,"1. 點卡片中的「terms of service」
 2. 返回
-3. 點「Fix scenes」",步驟 1：開啟服務條款頁（和 4xxx 對話框裡連結的是同一頁）；步驟 2：回到對話；步驟 3：列出失敗的場景，每個都標示原因：內容審核失敗的會要求修改描述，伺服器忙碌失敗的會提供 Retry,P3,R-488,PM 11/3（4982:27069）。僅 PM 有：還沒有 Design 畫面
-TC-376,影片錯誤,影片有失敗的場景,點對話中失敗訊息裡的「Edit」,失敗訊息是紅色文字，附「Edit」；點 Edit 會開啟 Full Edit，停在第一個失敗的場景,P2,R-278,需要有失敗的場景影片（Pink › Inject failure status；請記錄用了哪個開關）
+3. 點「Fix scenes」","步驟 1：開啟服務條款頁（和 4xxx 對話框裡連結的是同一頁）
+步驟 2：回到對話
+步驟 3：列出失敗的場景，每個都標示原因：內容審核失敗的會要求修改描述，伺服器忙碌失敗的會提供 Retry",P3,R-488,PM 11/3（4982:27069）。僅 PM 有：還沒有 Design 畫面
+TC-376,影片錯誤,影片有失敗的場景,點對話中失敗訊息裡的「Edit」,"失敗訊息是紅色文字，附「Edit」
+點 Edit 會開啟 Full Edit，停在第一個失敗的場景",P2,R-278,需要有失敗的場景影片（Pink › Inject failure status；請記錄用了哪個開關）
 TC-092,影片錯誤,有失敗的場景影片,"1. 點 Retry
-2. 如果又失敗，點 Edit",先顯示「Couldn't create scene」／「Something went wrong. Give it another try.」，附 Retry；接著是「Retrying didn't work. Try a different description.」，附 Edit → 編輯器 → Regenerate scene，價格是場景長度 × 該短劇所用模型的費率（Seedance 2.5 每秒 6 點、Seedance 2.0 每秒 4 點、Seedance 2.0 Mini 每秒 2 點；15 秒的場景 → ◆90 / ◆60 / ◆30）,P2,R-081,需要有失敗的場景影片
+2. 如果又失敗，點 Edit","先顯示「Couldn't create scene」／「Something went wrong. Give it another try.」，附 Retry
+接著是「Retrying didn't work. Try a different description.」，附 Edit → 編輯器 → Regenerate scene，價格是場景長度 × 該短劇所用模型的費率（Seedance 2.5 每秒 6 點、Seedance 2.0 每秒 4 點、Seedance 2.0 Mini 每秒 2 點；15 秒的場景 → ◆90 / ◆60 / ◆30）",P2,R-081,需要有失敗的場景影片
 TC-362,影片錯誤,有一個場景影片因 4xxx 而失敗（Pink › Inject failure status = moderation_blocked，指定那一個場景；請記錄用了哪個開關）,"1. 查看失敗的片段
-2. 點 ⓘ","片段卡片顯示「Couldn't create video ⓘ」和退點數的說明；點 ⓘ 會開啟「Couldn't generate this video」／「Your credits have been refunded. The description may not meet our terms of service, such as violence, NSFW content, or content involving minors. Edit the description to try again.」，附 Got it；在 Full Edit 裡，錯誤文字留在預覽畫框內，依寬度換行",P2,"R-257, R-286",PM 錯誤 board，10/13 更新。卡片文字：§13.7 文案表寫的是「Couldn't create video. The description may not meet our terms of service. Your credits have been refunded. Edit the description and try again.」；請記錄實際顯示的是哪一個
-TC-363,影片錯誤,有一個場景影片因 5xxx 而失敗（Pink › Inject failure status = tool_error，指定那一個場景；請記錄用了哪個開關）,查看失敗的片段，並點 ⓘ 原本會在的位置,片段卡片顯示「Couldn't create video」、退點數的說明和「Edit」，沒有 ⓘ；不會開啟任何對話框,P2,"R-258, R-284",PM 錯誤 board，10/13 更新（5xxx 的卡片拿掉 ⓘ）。§13.7 卡片文字：「Couldn't create video. Our service is busy right now. Your credits have been refunded. Try again later.」
-TC-093,影片錯誤,影片有失敗的場景片段；對話中影片卡片下方顯示場景失敗訊息,"1. 點對話中的影片卡片
-2. 在結果頁查看失敗的片段",開啟結果頁（Full Edit、Export Full Video、每個場景一張縮圖），停在失敗的場景，顯示它的錯誤卡片（第一次失敗是「Retry」，內容審核失敗或重試失敗後是「Edit」）；失敗的片段預設為 15 秒，沒有下載圖示,P3,"R-082, R-341, R-342, R-343, R-344",需要有失敗的場景影片
+2. 點 ⓘ","片段卡片顯示「Couldn't create video ⓘ」和退點數的說明
+點 ⓘ 會開啟「Couldn't generate this video」／「Your credits have been refunded. The description may not meet our terms of service, such as violence, NSFW content, or content involving minors. Edit the description to try again.」，附 Got it
+在 Full Edit 裡，錯誤文字留在預覽畫框內，依寬度換行",P2,"R-257, R-286",PM 錯誤 board，10/13 更新。卡片文字：§13.7 文案表寫的是「Couldn't create video. The description may not meet our terms of service. Your credits have been refunded. Edit the description and try again.」；請記錄實際顯示的是哪一個
+TC-363,影片錯誤,有一個場景影片因 5xxx 而失敗（Pink › Inject failure status = tool_error，指定那一個場景；請記錄用了哪個開關）,查看失敗的片段，並點 ⓘ 原本會在的位置,"片段卡片顯示「Couldn't create video」、退點數的說明和「Edit」，沒有 ⓘ
+不會開啟任何對話框",P2,"R-258, R-284",PM 錯誤 board，10/13 更新（5xxx 的卡片拿掉 ⓘ）。§13.7 卡片文字：「Couldn't create video. Our service is busy right now. Your credits have been refunded. Try again later.」
+TC-093,影片錯誤,"1. 影片有失敗的場景片段
+2. 對話中影片卡片下方顯示場景失敗訊息","1. 點對話中的影片卡片
+2. 在結果頁查看失敗的片段","開啟結果頁（Full Edit、Export Full Video、每個場景一張縮圖），停在失敗的場景，顯示它的錯誤卡片（第一次失敗是「Retry」，內容審核失敗或重試失敗後是「Edit」）
+失敗的片段預設為 15 秒，沒有下載圖示",P3,"R-082, R-341, R-342, R-343, R-344",需要有失敗的場景影片
 TC-094,影片錯誤,整支影片產生失敗,查看對話內容,顯示「Something went wrong on my end.」和「Video couldn't be created. Try creating your video again.」，附 Try again,P2,R-083,需要故障注入
 TC-095,影片錯誤,影片上傳失敗（6xxx）,查看影片卡片,顯示「Your video didn't finish saving. Tap Retry - you won't be charged again.」，附 Retry,P3,R-084,需要故障注入
 TC-379,影片錯誤,影片上傳以 6xxx 失敗已超過 3 小時（做完 TC-095 後離開這部短劇，等這次執行的後段再回來）,"1. 重新開啟這部短劇
 2. 查看影片卡片
-3. 開啟 Mine › Credits › Details",顯示「We couldn't finish this video. Your credits have been refunded. Edit the description and try again.」，附「Edit」；Credit Details 有退款紀錄,P2,"R-285, R-084",需要故障注入（6xxx）；3 小時的等待時間搭配其餘的執行一起過
+3. 開啟 Mine › Credits › Details","顯示「We couldn't finish this video. Your credits have been refunded. Edit the description and try again.」，附「Edit」
+Credit Details 有退款紀錄",P2,"R-285, R-084",需要故障注入（6xxx）；3 小時的等待時間搭配其餘的執行一起過
 TC-096,影片錯誤,影片重新產生中,"1. 播放舊版本
 2. 點它的下載圖示
-3. 開啟結果頁，在場景還顯示「generating...」時點「Export Full Video」",舊版本可以播放；點下載會跳出提示「Your video is still updating. Try again when it's done.」；點「Export Full Video」不會開始匯出，而是跳出附圖示的提示說明原因（請記錄提示文字，Q-24）；完成後顯示「Your video has been updated.」,P3,"R-085, R-281, R-345, R-346",回歸 DRI261895P0028（Assigned，AIAgent）：替換版本產生期間，播放和下載仍然可以按，這裡也要順便複驗這張單。PM 畫面沒有給提示文字（Q-24）
+3. 開啟結果頁，在場景還顯示「generating...」時點「Export Full Video」","舊版本可以播放
+點下載會跳出提示「Your video is still updating. Try again when it's done.」
+點「Export Full Video」不會開始匯出，而是跳出附圖示的提示說明原因（請記錄提示文字，Q-24）
+完成後顯示「Your video has been updated.」",P3,"R-085, R-281, R-345, R-346",回歸 DRI261895P0028（Assigned，AIAgent）：替換版本產生期間，播放和下載仍然可以按，這裡也要順便複驗這張單。PM 畫面沒有給提示文字（Q-24）
 TC-097,字幕,建立短劇時選了「No captions」,播放完成的影片,不會顯示字幕,P2,R-086,
-TC-364,字幕,短劇是用「No captions」建立的；Log stage timings 已開啟,"1. 產生完整影片
+TC-364,字幕,"1. 短劇是用「No captions」建立的
+2. Log stage timings 已開啟","1. 產生完整影片
 2. 完成後取出 log，查看這支影片的 tool 呼叫",影片沒有字幕，而且 log 中沒有這支影片的語音轉文字（STT）呼叫,P3,R-086,PM §13.13（10/6）：「user 選 No captions 時不跑STT」。TC-097 檢查影片本身；這一列檢查 STT 沒有執行。如果有字幕的影片在 log 裡也找不到標示 STT 的行，就記為 Blocked（observability），並請 RD 指出是哪一行。Spec agent 1012-PM-CAPTIONS-NO-STT（REQ-031）
-TC-098,字幕,字幕產生失敗,查看影片卡片，並點 Try again,整支影片都沒有字幕；顯示「Captions couldn't be added. Try again」；點 Try again 後顯示「Adding captions…」,P3,R-087,需要故障注入
-TC-365,字幕,只有部分段落的字幕失敗（「Captions couldn't be added. Try again」）；Log stage timings 已開啟,"1. 點 Try again
-2. 字幕出現後，取出 log，比較重試前後的 STT 呼叫",重試時只會把失敗的段落重新送去做 STT；所有段落都成功後，字幕才會一次全部出現,P3,R-087,PM §13.13（10/6）：「只重跑失敗的段落，全部成功才把字幕一次放上去」。目前沒有任何故障開關能讓 STT 失敗（TC-298）→ 在 RD 提供測試條件之前記為 Blocked（observability）。Spec agent 1012-PM-CAPTION-RETRY-SEGMENTS（REQ-031）
+TC-098,字幕,字幕產生失敗,查看影片卡片，並點 Try again,"整支影片都沒有字幕
+顯示「Captions couldn't be added. Try again」
+點 Try again 後顯示「Adding captions…」",P3,R-087,需要故障注入
+TC-365,字幕,"1. 只有部分段落的字幕失敗（「Captions couldn't be added. Try again」）
+2. Log stage timings 已開啟","1. 點 Try again
+2. 字幕出現後，取出 log，比較重試前後的 STT 呼叫","重試時只會把失敗的段落重新送去做 STT
+所有段落都成功後，字幕才會一次全部出現",P3,R-087,PM §13.13（10/6）：「只重跑失敗的段落，全部成功才把字幕一次放上去」。目前沒有任何故障開關能讓 STT 失敗（TC-298）→ 在 RD 提供測試條件之前記為 Blocked（observability）。Spec agent 1012-PM-CAPTION-RETRY-SEGMENTS（REQ-031）
 TC-099,字幕,建立短劇時有開啟字幕,播放完成的影片,對白會顯示字幕,P2,R-086,
 TC-100,聊天行為,很長的對話，已往上捲動,"1. 往上捲到較早的訊息
 2. 等助理傳來新訊息
 3. 點 ↓
-4. 再往上捲，然後傳送一則訊息",步驟 1–2：對話畫面不會動；新內容在畫面下方時，會出現 ↓ 按鈕（沒有未讀數字）；步驟 3：點 ↓ 會捲到最下方，按鈕自己消失；步驟 4：送出的訊息又會固定在最上方（同 TC-344）,P2,R-088,PM 11/4 §13.2（comment #247，board 5128:8）。僅 PM 有：還沒有 Design 畫面
+4. 再往上捲，然後傳送一則訊息","步驟 1–2：對話畫面不會動
+步驟 1–2：新內容在畫面下方時，會出現 ↓ 按鈕（沒有未讀數字）
+步驟 3：點 ↓ 會捲到最下方，按鈕自己消失
+步驟 4：送出的訊息又會固定在最上方（同 TC-344）",P2,R-088,PM 11/4 §13.2（comment #247，board 5128:8）。僅 PM 有：還沒有 Design 畫面
 TC-374,聊天行為,對話長達好幾個畫面，目前在最下方,"1. 往上捲到較早的訊息
-2. 點 ↓",往上捲動時，右下角會出現 ↓；點它會捲到最新的訊息，按鈕也會消失,P3,"R-274, R-088",
+2. 點 ↓","往上捲動時，右下角會出現 ↓
+點它會捲到最新的訊息，按鈕也會消失",P3,"R-274, R-088",
 TC-101,聊天行為,對話已捲到較早的訊息,"1. 開啟 History
 2. 返回",對話開啟後停在最下方（最新的訊息）,P3,R-089,"PM 10/20 §13.2 取代了 ""keeps the position the user left"""
 TC-102,聊天行為,對話已捲到較早的訊息,"1. 開啟 Change Characters
@@ -315,7 +507,8 @@ TC-105,歷史紀錄,"1. 全新安裝（屬於這個案例的一部分）：解�
 2. 這個安裝版本第一次進入 History","1. 開啟「歷史紀錄」
 2. 點提示以外的地方","跳出提示「To keep the file lightweight, we kept only the generated story outline, images and videos.」，點提示以外的地方後提示關閉",P2,R-092,要自己全新安裝；在 P1-h 區段執行。回歸 DRI261893-0013（Assigned，AIFound）：History 的提示點外面關不掉，還蓋住第一張卡片的日期，這裡也要順便複驗這張單；回歸 DRI261896P0026（RDResolved，AIAgent）：點外面無法關閉 History 的提示，這裡也要順便複驗這張單
 TC-106,歷史紀錄,歷史紀錄裡已有幾部戲,"1. 查看一張卡片
-2. 點「New Chat」",卡片顯示縮圖（已有分鏡時為第一張分鏡畫面）、日期與時間、Iris 產生的戲名、檔案大小，以及有 Rename 和 Delete 的 ⋮ 選單；右下角的「New Chat」會開啟一個全新的空白聊天,P1,"R-093, R-330",
+2. 點「New Chat」","卡片顯示縮圖（已有分鏡時為第一張分鏡畫面）、日期與時間、Iris 產生的戲名、檔案大小，以及有 Rename 和 Delete 的 ⋮ 選單
+右下角的「New Chat」會開啟一個全新的空白聊天",P1,"R-093, R-330",
 TC-107,歷史紀錄,歷史紀錄裡至少有 2 部戲,"1. 開啟一部較舊的戲
 2. 捲動畫面
 3. 播放並下載，但不做任何編輯
@@ -324,64 +517,94 @@ TC-108,歷史紀錄,歷史紀錄裡至少有 2 部戲,重新命名一部較舊�
 TC-109,歷史紀錄,已開啟重新命名視窗,把名稱清空，或只輸入空格,OK 不能按,P2,R-095,回歸 DRI261893-0016（RDResolved，AIFound）：History 重新命名時，名稱是空的 OK 仍可按，而且不會有任何反應，這裡也要順便複驗這張單；回歸 DRI261896P0030（NeedCodeReview，AIAgent）：名稱是空的或只有空白時，重新命名的 OK 仍可按，這裡也要順便複驗這張單
 TC-110,歷史紀錄,已開啟重新命名視窗,輸入「  New Title  」（前後有空格）後點 OK,儲存成「New Title」（前後空格已去掉）,P3,R-095,
 TC-111,歷史紀錄,歷史紀錄裡有一部為此案例另外做的拋棄式戲（做到大綱階段就夠了）,"1. 在這部拋棄式的戲點 ⋮ › Delete，再點「Cancel」
-2. 再點一次 ⋮ › Delete，這次點「Delete」","跳出「Delete this drama?」/「""{title}"" and its videos will be permanently deleted.」，有 Cancel 和 Delete 兩個按鈕；點「Cancel」會保留這部戲；點「Delete」會從歷史紀錄移除",P2,R-096,只刪為這個案例做的拋棄式短劇，絕對不要刪其他的
-TC-112,歷史紀錄,歷史紀錄裡有 3 部戲,Manage → Select All → Delete,跳出「Delete 3 dramas?」/「These chats and their videos will be permanently deleted.」；Select All 會變成 Deselect All；點 Cancel 離開,P2,R-097,只點 Cancel
+2. 再點一次 ⋮ › Delete，這次點「Delete」","跳出「Delete this drama?」/「""{title}"" and its videos will be permanently deleted.」，有 Cancel 和 Delete 兩個按鈕
+點「Cancel」會保留這部戲
+點「Delete」會從歷史紀錄移除",P2,R-096,只刪為這個案例做的拋棄式短劇，絕對不要刪其他的
+TC-112,歷史紀錄,歷史紀錄裡有 3 部戲,Manage → Select All → Delete,"跳出「Delete 3 dramas?」/「These chats and their videos will be permanently deleted.」
+Select All 會變成 Deselect All
+點 Cancel 離開",P2,R-097,只點 Cancel
 TC-113,歷史紀錄,歷史紀錄裡有停在不同階段的戲,逐一重新開啟,每一部都會回到它最新的階段（大綱 / 角色 / 分鏡 / 影片）,P1,R-098,回歸 DRI261896P0032（NeedCodeReview，AIAgent）：已儲存的分鏡聊天重新開啟後，沒有停在最下方，這裡也要順便複驗這張單
 TC-114,點數與上限,帳號還有免費的分鏡次數,"1. 查看「Create storyboard」卡片
 2. 建立一次分鏡
-3. 查看下一張卡片",分鏡價格（每張圖 ◆3、Location and scene，再加上 Text to Speech 的部分，同 TC-060；Design 畫的是 ◆15）會加上刪除線，旁邊顯示「Free • {n} left」，{n} 是剩餘次數；下一張卡片的次數少 1,P3,"R-099, R-259",Design 1016_support free trial（Figma 4847:34277）比 MX board 的畫面「Free for your first 3 creations - {n} left.」新；PM 沒有不同的說法（REQ-029）。需要有免費次數的帳號 → 否則記為 Blocked
+3. 查看下一張卡片","分鏡價格（每張圖 ◆3、Location and scene，再加上 Text to Speech 的部分，同 TC-060；Design 畫的是 ◆15）會加上刪除線，旁邊顯示「Free • {n} left」，{n} 是剩餘次數
+下一張卡片的次數少 1",P3,"R-099, R-259",Design 1016_support free trial（Figma 4847:34277）比 MX board 的畫面「Free for your first 3 creations - {n} left.」新；PM 沒有不同的說法（REQ-029）。需要有免費次數的帳號 → 否則記為 Blocked
 TC-356,點數與上限,免費分鏡次數已用完（共用的測試帳號）,查看「Create storyboard」卡片,只顯示價格（每張圖 ◆3、Location and scene，再加上 Text to Speech，同 TC-060）：沒有刪除線，也沒有「Free」,P3,R-260,Design 1016_support free trial（Figma 4847:34277）
-TC-115,點數與上限,點數足夠,查看影片設定卡片上 Generate 下方,有一行「You'll have {n} left」，顯示這次動作之後的餘額；點 Generate 會直接扣點，不會另外跳出確認,P2,R-100,Design 優先於 PM（使用者規則 2026-10-19）。Design 的 MX 畫面在 Generate 下方畫的是「You'll have 160 left」；PM Q-3 曾要求加一個確認步驟。回歸測試 DRI261893-0130（NewCreated、AIAgent）：以 Design 為準，Design 沒有 Consume credits? 卡片，MX 在 Generate 下方顯示「You'll have N left」（TC-115）。該單內容：產生角色與分鏡時跳過了點數確認卡片，這張單也在此一併複測
+TC-115,點數與上限,點數足夠,查看影片設定卡片上 Generate 下方,"有一行「You'll have {n} left」，顯示這次動作之後的餘額
+點 Generate 會直接扣點，不會另外跳出確認",P2,R-100,Design 優先於 PM（使用者規則 2026-10-19）。Design 的 MX 畫面在 Generate 下方畫的是「You'll have 160 left」；PM Q-3 曾要求加一個確認步驟。回歸測試 DRI261893-0130（NewCreated、AIAgent）：以 Design 為準，Design 沒有 Consume credits? 卡片，MX 在 Generate 下方顯示「You'll have N left」（TC-115）。該單內容：產生角色與分鏡時跳過了點數確認卡片，這張單也在此一併複測
 TC-116,點數與上限,點數不足,點 Generate,跳出「Not enough credits」/「{X} credits needed. You have {Y} credits left.」，有 Buy Credits 按鈕，點了會前往「Top up your credits」,P2,R-101,需要低餘額的帳號；不要真的購買。回歸 DRI261896P0011（RDResolved，AIFound）：以 Design 為準，對照 Design MX 影片設定畫面檢查。影片設定的 Buy Credits 按鈕樣式和餘額那一行，與規格不同，這裡也要順便複驗這張單
 TC-117,點數與上限,Free 帳號已達每日聊天上限（Pink：Show Free quota dialog）,"1. 傳送一則訊息
 2. 點「Upgrade to Premium」
-3. 在訂閱頁點 ‹ 離開，不訂閱","跳出「Daily Free Chat Limit Reached」/「You have used up your AI Mini Drama free chats. To keep chatting, please upgrade to Premium.」，附 Upgrade to Premium；點「Upgrade to Premium」開啟訂閱頁（Pro / Pro+ 分頁、方案比較、「Get 7-Day Free Trial」）；點 ‹ 回到聊天，對話框已關閉，訊息沒有送出",P2,"R-102, R-348, R-349, R-350",
-TC-419,點數與上限,Free 帳號已達每日聊天上限；從上限對話框的「Upgrade to Premium」開啟訂閱頁（同 TC-117）,"1. 點「Pro」
+3. 在訂閱頁點 ‹ 離開，不訂閱","跳出「Daily Free Chat Limit Reached」/「You have used up your AI Mini Drama free chats. To keep chatting, please upgrade to Premium.」，附 Upgrade to Premium
+點「Upgrade to Premium」開啟訂閱頁（Pro / Pro+ 分頁、方案比較、「Get 7-Day Free Trial」）
+點 ‹ 回到聊天，對話框已關閉，訊息沒有送出",P2,"R-102, R-348, R-349, R-350",
+TC-419,點數與上限,"1. Free 帳號已達每日聊天上限
+2. 從上限對話框的「Upgrade to Premium」開啟訂閱頁（同 TC-117）","1. 點「Pro」
 2. 點「Pro+」
 3. 點「Monthly」
 4. 點「Yearly」
 5. 點「Terms of Service」，再回來
 6. 點「Get 7-Day Free Trial」，然後取消 App Store 的購買面板
-7. 點 ‹",點「Pro」和「Pro+」會切換顯示的方案，分頁也跟著切換；點到的方案卡片會被選取，一次只會選一個；點「Terms of Service」會開啟服務條款頁，返回後回到訂閱頁；點「Get 7-Day Free Trial」會開啟 App Store 購買面板，按 Cancel 後回到訂閱頁，沒有購買任何東西；點 ‹ 回到聊天，訊息沒有送出,P3,"R-457, R-350",不要訂閱：一律取消 App Store 面板。「Privacy Policy」和「Restore purchase」是頁尾的另外兩個連結（MX mx-a-left 1034:39877）
+7. 點 ‹","點「Pro」和「Pro+」會切換顯示的方案，分頁也跟著切換
+點到的方案卡片會被選取，一次只會選一個
+點「Terms of Service」會開啟服務條款頁，返回後回到訂閱頁
+點「Get 7-Day Free Trial」會開啟 App Store 購買面板，按 Cancel 後回到訂閱頁，沒有購買任何東西
+點 ‹ 回到聊天，訊息沒有送出",P3,"R-457, R-350",不要訂閱：一律取消 App Store 面板。「Privacy Policy」和「Restore purchase」是頁尾的另外兩個連結（MX mx-a-left 1034:39877）
 TC-118,點數與上限,Pro+ 帳號已達每日聊天上限（Pink：Show Paid quota dialog）,"1. 傳送一則訊息
-2. 點「Continue Tomorrow」","跳出「Today's AI Chats Are Used Up」/「They'll refresh tomorrow, and we'll be ready to chat again.」，附 Continue Tomorrow；點「Continue Tomorrow」會關閉對話框並回到聊天，訊息沒有送出",P3,"R-103, R-320",MX 版本 A：Pro 看到的是 Free 的視窗（TC-216、R-277）
+2. 點「Continue Tomorrow」","跳出「Today's AI Chats Are Used Up」/「They'll refresh tomorrow, and we'll be ready to chat again.」，附 Continue Tomorrow
+點「Continue Tomorrow」會關閉對話框並回到聊天，訊息沒有送出",P3,"R-103, R-320",MX 版本 A：Pro 看到的是 Free 的視窗（TC-216、R-277）
 TC-119,角色,已開啟篩選面板，並且改過 Gender、Ethnicity 和 Age,"1. 勾選「My characters only」
-2. 點「Clear」",「My characters only」出現勾選；點 Clear 後所有篩選條件都回到預設值：沒有選 Gender 和 Ethnicity、Age 為 1–100、My characters only 關閉,P3,"R-104, R-031",Figma 流程箭頭 2811-105834
+2. 點「Clear」","「My characters only」出現勾選
+點 Clear 後所有篩選條件都回到預設值：沒有選 Gender 和 Ethnicity、Age 為 1–100、My characters only 關閉",P3,"R-104, R-031",Figma 流程箭頭 2811-105834
 TC-120,角色,已為某個角色欄位開啟 Choose Character，並且套用了篩選條件,點另一個角色欄位,標題改成該欄位的「Choose for {name}」，篩選條件也重設回預設值,P2,R-105,Figma 流程箭頭 2811-105838
 TC-121,角色,已開啟顯示新產生造型的 Finish your characters 面板,點面板上的 X,面板關閉並回到 Choose Character，新產生的造型不會套用到角色欄位,P2,R-106,Figma 流程箭頭 2811-90144
 TC-122,Make your character,已開啟 Create my character，描述欄裡有一些文字,點描述欄上的放大圖示,開啟全螢幕的描述編輯畫面，文字內容和原本相同,P3,R-107,Figma 流程箭頭 2811-90585
 TC-370,Make your character,已開啟 Create my character，描述欄裡有一些文字,點描述文字本身（不是放大圖示）,開啟全螢幕的描述編輯畫面，文字內容和原本相同,P3,R-270,
 TC-123,Make your character,已開啟放大的描述編輯畫面，文字已修改過,點縮小圖示,編輯畫面關閉並回到 Create my character，修改後的文字保留,P3,R-108,Figma 流程箭頭 2811-90145
 TC-124,Make your character,已開啟放大的描述編輯畫面，文字已修改過,點「Done」,編輯畫面關閉並回到 Create my character，修改後的文字保留,P3,R-109,Figma 流程箭頭 2811-90588
-TC-125,Make your character,描述的文字比可視範圍長,在描述框內拖曳,文字只在描述框內捲動，整個頁面不會跟著動,P3,R-110,Figma 流程箭頭 2811-90468
+TC-125,Make your character,描述的文字比可視範圍長,在描述框內拖曳,"文字只在描述框內捲動
+整個頁面不會跟著動",P3,R-110,Figma 流程箭頭 2811-90468
 TC-126,Make your character,已開啟 Create my character，欄位都是空的,點「AI Suggestion」,針對「Tell us what {name} looks like」裡的那個角色，自動填入描述以及 Gender、Ethnicity 和 Age，Generate 因此變成可以按,P2,"R-111, R-268",Figma 流程箭頭 2811-90584；回歸 DRI261896P0031（Assigned，AIAgent）：AI Suggestion 沒有填入必填的角色屬性，這裡也要順便複驗這張單（從 TC-211 合併）
 TC-127,Make your character,已開啟 Create my character,"1. 點 Age 欄位
 2. 輸入 24，點 ✓
 3. 點已填好的 Age 欄位
-4. 改成 30，點 ✓",Age（1–100）會開啟數字鍵盤，附輸入列（提示文字「1-100」）和 ✓；點 ✓ 會關閉鍵盤，Age 顯示 24；再點已填好的欄位，鍵盤會重新開啟並帶出 24，點 ✓ 後儲存為 30,P3,"R-112, R-323",Figma 流程箭頭 2811-90586
+4. 改成 30，點 ✓","Age（1–100）會開啟數字鍵盤，附輸入列（提示文字「1-100」）和 ✓
+點 ✓ 會關閉鍵盤，Age 顯示 24
+再點已填好的欄位，鍵盤會重新開啟並帶出 24，點 ✓ 後儲存為 30",P3,"R-112, R-323",Figma 流程箭頭 2811-90586
 TC-128,Make your character,已開啟 Create my character,點「Reference (optional)」,開啟 Select Media，可以挑一張參考照片,P2,R-113,Figma 流程箭頭 2811-90587
 TC-400,Make your character,已從 Reference 開啟 Select Media（接在 TC-128 之後）,"1. 點「Photo」
 2. 點「Recents ▾」，再關閉相簿清單
 3. 點某個圖庫來源分頁（例如 getty images | iStock），再回到「Recents」
 4. 點照片上的放大圖示，再關閉預覽
 5. 點「Photo」旁邊的滑桿圖示，再關閉
-6. 點相機圖示，然後取消",「Photo」維持選取的媒體類型；點「Recents ▾」會開啟相簿清單；圖庫分頁顯示該來源的照片；放大圖示會開啟該照片的全尺寸預覽；滑桿圖示會開啟選取器的選項（請記錄顯示的內容）；相機圖示會開啟相機；每一個都能關閉並回到 Select Media,P3,R-327,Design Choose Character「Add Media」畫面（這些控制項沒有流程箭頭）。不要匯入圖庫素材。相機權限的詢問屬於系統設定：回答前要先問使用者
+6. 點相機圖示，然後取消","「Photo」維持選取的媒體類型
+點「Recents ▾」會開啟相簿清單
+圖庫分頁顯示該來源的照片
+放大圖示會開啟該照片的全尺寸預覽
+滑桿圖示會開啟選取器的選項（請記錄顯示的內容）
+相機圖示會開啟相機
+每一個都能關閉並回到 Select Media",P3,R-327,Design Choose Character「Add Media」畫面（這些控制項沒有流程箭頭）。不要匯入圖庫素材。相機權限的詢問屬於系統設定：回答前要先問使用者
 TC-129,Make your character,已從 Reference 開啟 Select Media,挑一張照片,開啟 Crop 畫面，顯示該照片和「Drag and pinch to adjust how the clip fits within the frame」,P2,R-114,Figma 流程箭頭 2811-90589
 TC-130,Make your character,已開啟 Crop，裡面是參考照片,"1. 拖曳照片
 2. 兩指縮放",兩種手勢都會讓照片在框內的可見範圍移動或縮放,P3,R-115,Figma 流程箭頭 2837-147745
 TC-131,Make your character,已開啟 Crop，照片已調整過,點 ✓,Create my character 顯示依調整結果裁切後的參考照片,P2,R-116,Figma 流程箭頭 2837-147912
-TC-366,Make your character,已開啟 Make your character；準備一張參考照片，邊緣附近有一個容易辨認的物件,"1. 加入這張照片，在 Crop 把邊緣的物件裁掉，點 ✓
+TC-366,Make your character,"1. 已開啟 Make your character
+2. 準備一張參考照片，邊緣附近有一個容易辨認的物件","1. 加入這張照片，在 Crop 把邊緣的物件裁掉，點 ✓
 2. 點 Generate
 3. 之後拉出 log，開啟儲存的參考圖（ai-mini-drama-reference-photos）",用來產生角色的參考圖只包含裁切後的範圍：被裁掉的物件不在裡面,P2,R-265,PM 主流程備註「只送 crop 後的圖」（第一次閱讀時漏掉，2026-10-22 經畫面確認）。如果拉出的 log 裡沒有參考圖，記為 Blocked（無法觀察），並請 RD 提供上傳的圖片。Spec agent 1012-PM-CROP-UPLOAD（REQ-031）
 TC-132,Make your character,Create my character 表單已填寫完整且有效,點 Generate 並等待,載入中的畫面被正面 / 側面 / 背面三視圖取代，並出現「Save to library」,P1,R-117,"Figma 流程箭頭 2811-90147；回歸 DRI261895P0036（RDResolved，AIFound）：Create my character 一律失敗，顯示 ""Couldn't create image""，這裡也要順便複驗這張單"
 TC-133,Make your character,已顯示產生好的角色,點「Save to library」,角色會立刻套用到角色欄位，同時存進角色庫，縮圖左下角有「Mine」標籤,P1,"R-118, R-269",Figma 流程箭頭 2811-90591。PM 示意圖畫的是「My character」，以 Design 為準
 TC-134,Make your character,已顯示產生好的角色,"1. 點 X
-2. 在對話視窗點「Discard」",結果畫面關閉；角色不會套用到角色欄位，也不會存進 Mine,P2,R-119,PM 10/21 新增了 Discard 對話框（§13.23）；Figma 流程箭頭 2811-90593；回歸 DRI261896P0037（NewCreated，AIFound）：角色造型用 X 關閉而不是儲存時，仍然被加進 Mine，這裡也要順便複驗這張單
+2. 在對話視窗點「Discard」","結果畫面關閉
+角色不會套用到角色欄位，也不會存進 Mine",P2,R-119,PM 10/21 新增了 Discard 對話框（§13.23）；Figma 流程箭頭 2811-90593；回歸 DRI261896P0037（NewCreated，AIFound）：角色造型用 X 關閉而不是儲存時，仍然被加進 Mine，這裡也要順便複驗這張單
 TC-135,Make your character,已顯示角色庫,"1. 點角色上的放大圖示
 2. 開啟 ⋯，點「Download」
 3. 再開啟 ⋯
 4. 點「Report」，然後不送出，直接退出
-5. 點 ⓧ",開啟該角色的放大預覽；⋯ 列出「Download」和「Report」（自己的角色另有「Delete」）；Download 會把角色圖片儲存到裝置（請記錄跳出的提示）；Report 開啟回報流程；ⓧ 關閉預覽，回到角色庫,P3,"R-120, R-325",Figma 流程箭頭 2811-90592。不要送出回報；「照片」權限的詢問屬於系統設定：回答前要先問使用者
+5. 點 ⓧ","開啟該角色的放大預覽
+⋯ 列出「Download」和「Report」（自己的角色另有「Delete」）
+Download 會把角色圖片儲存到裝置（請記錄跳出的提示）
+Report 開啟回報流程
+ⓧ 關閉預覽，回到角色庫",P3,"R-120, R-325",Figma 流程箭頭 2811-90592。不要送出回報；「照片」權限的詢問屬於系統設定：回答前要先問使用者
 TC-136,角色,已開啟 Finish your characters，餘額低於 Generate 的價格,點 Generate / Generate all,不會開始產生，而是開啟點數面板,P2,R-121,Figma 流程箭頭 2811-90216
 TC-137,Make your character,Create my character 因伺服器錯誤而失敗,點「Got it」,回到 Create my character，參考照片和描述仍保留在欄位裡,P2,R-122,Figma 流程箭頭 3172-66578
 TC-138,分鏡,畫面顯示 Storyboard Result,"1. 點某張場景卡片的縮圖
@@ -389,132 +612,233 @@ TC-138,分鏡,畫面顯示 Storyboard Result,"1. 點某張場景卡片的縮圖
 3. 點卡片的文字（不是 View more）",每一次點擊都會開啟該場景的詳細畫面,P2,R-123,Figma 流程箭頭 2820-113560
 TC-139,分鏡,已開啟劇本很長的場景詳細畫面,在劇本區域內拖曳,劇本在自己的區域內捲動,P3,R-124,Figma 流程箭頭 2820-113559
 TC-140,分鏡,已開啟失敗場景的描述編輯畫面,點縮小圖示,回到重新產生的提示畫面，修改後的文字保留,P3,R-125,Figma 流程箭頭 3142-70055
-TC-141,分鏡,已顯示失敗場景重新產生的提示,點「Regenerate Image」,場景顯示骨架畫面並重新產生；點數只扣一次,P1,R-126,Figma 流程箭頭 3142-70056
+TC-141,分鏡,已顯示失敗場景重新產生的提示,點「Regenerate Image」,"場景顯示骨架畫面並重新產生
+點數只扣一次",P1,R-126,Figma 流程箭頭 3142-70056
 TC-142,影片,用範本做的戲，分鏡已完成,產生完整影片並等待,「Here's your drama.」顯示完成的影片，並附有 Edit 動作,P1,R-127,Figma 流程箭頭 2778-129154
 TC-143,影片,聊天裡已有完成的影片,點影片上的播放,開啟場景影片播放器並開始播放,P1,R-128,Figma 流程箭頭 2820-115460
 TC-375,影片,場景影片播放器正在播放,"1. 點正在播放的影片
-2. 點 ▶",播放暫停，畫面上出現播放按鈕；點 ▶ 會繼續播放,P2,"R-275, R-462",Design ds-video 註解「點擊 Preview 暫停」。Spec agent 以規格中沒有為由，把 TR-VIDEO-TAP-PAUSE-001 作廢（0c7f7e2c）；但 Design 有寫這一點
+2. 點 ▶","播放暫停，畫面上出現播放按鈕
+點 ▶ 會繼續播放",P2,"R-275, R-462",Design ds-video 註解「點擊 Preview 暫停」。Spec agent 以規格中沒有為由，把 TR-VIDEO-TAP-PAUSE-001 作廢（0c7f7e2c）；但 Design 有寫這一點
 TC-144,影片錯誤,場景影片正在重新產生,離開場景編輯畫面，回到聊天,原本的影片還在，卡片下方那一行寫著「Updating 1 scene... Your video will refresh when it's done.」,P2,"R-129, R-283",Figma 流程箭頭 4006-73627
-TC-440,影片錯誤,影片至少有兩個場景；其中一個場景影片正在重新產生（同 TC-144）；已記下點數顯示的數字,"1. 開啟另一個場景的編輯頁，修改它的提示詞
+TC-440,影片錯誤,"1. 影片至少有兩個場景
+2. 其中一個場景影片正在重新產生（同 TC-144）
+3. 已記下點數顯示的數字","1. 開啟另一個場景的編輯頁，修改它的提示詞
 2. 查看「Regenerate Clip」
-3. 點它",步驟 2：「Regenerate Clip」以 40 % 不透明度顯示，但仍可點；步驟 3：跳出提示「Another clip is regenerating. Try again when it's done.」；什麼都不會送出，點數顯示不變，改過的提示詞也還在,P2,R-489,PM 10/29 §13.25（board 4784:70878；PDR-A 16.8.0 AI Agent bug）。從 Fix Scene › Edit 進去也一樣。僅有 PM：還沒有 Design 畫面
+3. 點它","步驟 2：「Regenerate Clip」以 40 % 不透明度顯示，但仍可點
+步驟 3：跳出提示「Another clip is regenerating. Try again when it's done.」
+步驟 3：什麼都不會送出，點數顯示不變，改過的提示詞也還在",P2,R-489,PM 10/29 §13.25（board 4784:70878；PDR-A 16.8.0 AI Agent bug）。從 Fix Scene › Edit 進去也一樣。僅有 PM：還沒有 Design 畫面
 TC-441,影片錯誤,接在 TC-440 之後：第一個重新產生仍在進行中,"1. 等到進行中的重新產生結束（成功或失敗）
-2. 點另一個場景的「Regenerate Clip」",步驟 1：「Regenerate Clip」恢復成完整不透明度；步驟 2：另一個場景開始重新產生，價格只扣一次,P3,R-489,PM 10/29 §13.25（4784:70878）。僅有 PM：還沒有 Design 畫面
-TC-412,影片錯誤,場景影片正在重新產生，已回到聊天（TC-144）,重新產生進行中，查看輸入區,輸入區只有麥克風；影片更新完成之前，不會出現 ■ 停止按鈕或其他停止的控制項,P2,R-332,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。重新產生時是否也有「Leave while we're preparing?」這個階段，見 Q-22
+2. 點另一個場景的「Regenerate Clip」","步驟 1：「Regenerate Clip」恢復成完整不透明度
+步驟 2：另一個場景開始重新產生，價格只扣一次",P3,R-489,PM 10/29 §13.25（4784:70878）。僅有 PM：還沒有 Design 畫面
+TC-412,影片錯誤,場景影片正在重新產生，已回到聊天（TC-144）,重新產生進行中，查看輸入區,"輸入區只有麥克風
+影片更新完成之前，不會出現 ■ 停止按鈕或其他停止的控制項",P2,R-332,PM Figma 10/22（4422:2）；PM-only：Design 還沒有對應畫面。重新產生時是否也有「Leave while we're preparing?」這個階段，見 Q-22
 TC-145,影片錯誤,場景影片正在重新產生，使用者停在聊天畫面,等待重新產生完成,聊天裡的舊影片被更新後的影片取代,P2,R-130,Figma 流程箭頭 4006-73628
 TC-146,影片錯誤,影片中有一個失敗的場景片段,點失敗片段上的 Edit,開啟場景影片的描述編輯畫面,P2,R-131,Figma 流程箭頭 2820-116878
 TC-147,影片錯誤,已開啟失敗場景影片的編輯畫面（對失敗片段點 Edit，TC-146）,"1. 點描述欄上的放大圖示
 2. 修改文字
-3. 點縮小圖示",放大圖示會開啟全螢幕的描述編輯畫面，文字內容相同，畫面上有縮小圖示和「Done」；縮小圖示會回到重新產生的提示畫面，修改後的文字保留,P3,"R-132, R-461",Figma 流程箭頭 2820-118509
+3. 點縮小圖示","放大圖示會開啟全螢幕的描述編輯畫面，文字內容相同，畫面上有縮小圖示和「Done」
+縮小圖示會回到重新產生的提示畫面，修改後的文字保留",P3,"R-132, R-461",Figma 流程箭頭 2820-118509
 TC-148,影片錯誤,已開啟失敗場景影片的編輯畫面，文字已修改過,點「Done」,回到重新產生的提示畫面，修改後的文字保留,P3,R-133,Figma 流程箭頭 2820-118510
 TC-149,影片錯誤,已顯示失敗片段重新產生的提示,送出重新產生,該場景開始產生片段,P1,R-134,Figma 流程箭頭 2820-116880
 TC-150,影片錯誤,影片結果裡有失敗的場景,點「Fix scenes」,開啟失敗場景影片的修復畫面,P1,R-135,Design 影片 board（Fix scenes）
 TC-151,字幕,字幕正在重試中（「Adding captions…」）,等待重試成功,加好字幕的影片取代原本的畫面，「Captions couldn't be added」消失,P2,R-136,Figma 流程箭頭 4078-177645
 TC-152,點數與上限,重新產生的提示畫面，餘額低於它的價格,點點數動作按鈕,開啟儲值面板,P2,R-137,Figma 流程箭頭 2831-134024
-TC-153,中斷,大綱正在產生（輸入列顯示 ■）,點 ■,回覆停在當下的位置，已顯示的內容保留在聊天裡；不會跳出點數會損失的對話視窗；也不會扣點（Mine › Credits › Details 沒有對應的紀錄）,P2,"R-138, R-486","和返回按鈕的對話視窗（TC-025、TC-061）對照；Regression DRI261893-0128（NewCreated, AIAgent）：大綱與修改時按 Stop 沒有任何說明性的回饋，這裡也一併重新確認這張單；PM 11/4（4422:2，comment #246）：不扣點的回覆可以暫停，會扣點的不行。PM-only: no Design frame yet"
-TC-154,中斷,角色正在產生（看得到 Stop）,點 Stop,會跳出警告或訊息，說明什麼會停止、已花掉的點數是否會損失；之後該階段停止；Credit Details 保留這次已停止工作的扣點，沒有退款的紀錄（使用者自己按 Stop 不退款）,P2,R-138,"和返回按鈕的對話視窗（TC-025、TC-061）對照；Regression DRI261895P0024（NewCreated, AIAgent）：產生角色時沒有可用的 Stop 操作，也沒有取消前的警告，這裡也一併重新確認這張單"
-TC-155,中斷,Iris 正在回覆修改要求（輸入列顯示 ■）,點 ■,回覆停在當下的位置，已顯示的內容保留在聊天裡；不會跳出點數會損失的對話視窗；也不會扣點（Mine › Credits › Details 沒有對應的紀錄）,P2,"R-138, R-486",對照返回按鈕的對話視窗（TC-025、TC-061）；PM 11/4（4422:2，留言 #246）。僅有 PM：還沒有 Design 畫面
-TC-435,中斷,故事大綱和角色都已確認；為分鏡報價時顯示「Thinking...」（輸入列顯示 ■）,點 ■,報價停止；已顯示的內容保留；不會留下做到一半的「Create storyboard」報價卡片；不扣點；再傳訊息或重新要求分鏡都能正常運作,P3,R-486,PM 11/4（4422:2，留言 #246）：分鏡報價不扣點。僅有 PM：還沒有 Design 畫面
-TC-156,中斷,已點「Create storyboard」的 Generate；分鏡正在產生,在兩個階段（「Preparing your scenes...」和「Creating your storyboard...」）中，都查看輸入區和聊天畫面,輸入區只有麥克風：在分鏡完成之前，沒有 ■ 停止按鈕，聊天中也沒有任何暫停或停止的控制項,P2,R-332,PM Figma 10/22（4422:2）：現行版本在按下 Generate 後會出現 ■ 停止鈕，必須拿掉
-TC-157,中斷,已點 Generate Video；影片正在產生,在兩個階段（「Advancing the mini drama production.」和「Making your video...」）中，都查看輸入區和聊天畫面,輸入區只有麥克風：在影片完成之前，沒有 ■ 停止按鈕，聊天中也沒有任何暫停或停止的控制項,P2,R-332,PM Figma 10/22（4422:2）：現行版本在按下 Generate 後會出現 ■ 停止鈕，必須拿掉
+TC-153,中斷,大綱正在產生（輸入列顯示 ■）,點 ■,"回覆停在當下的位置，已顯示的內容保留在聊天裡
+不會跳出點數會損失的對話視窗
+也不會扣點（Mine › Credits › Details 沒有對應的紀錄）",P2,"R-138, R-486","和返回按鈕的對話視窗（TC-025、TC-061）對照；Regression DRI261893-0128（NewCreated, AIAgent）：大綱與修改時按 Stop 沒有任何說明性的回饋，這裡也一併重新確認這張單；PM 11/4（4422:2，comment #246）：不扣點的回覆可以暫停，會扣點的不行。PM-only: no Design frame yet"
+TC-154,中斷,角色正在產生（看得到 Stop）,點 Stop,"會跳出警告或訊息，說明什麼會停止、已花掉的點數是否會損失
+之後該階段停止
+Credit Details 保留這次已停止工作的扣點，沒有退款的紀錄（使用者自己按 Stop 不退款）",P2,R-138,"和返回按鈕的對話視窗（TC-025、TC-061）對照；Regression DRI261895P0024（NewCreated, AIAgent）：產生角色時沒有可用的 Stop 操作，也沒有取消前的警告，這裡也一併重新確認這張單"
+TC-155,中斷,Iris 正在回覆修改要求（輸入列顯示 ■）,點 ■,"回覆停在當下的位置，已顯示的內容保留在聊天裡
+不會跳出點數會損失的對話視窗
+也不會扣點（Mine › Credits › Details 沒有對應的紀錄）",P2,"R-138, R-486",對照返回按鈕的對話視窗（TC-025、TC-061）；PM 11/4（4422:2，留言 #246）。僅有 PM：還沒有 Design 畫面
+TC-435,中斷,"1. 故事大綱和角色都已確認
+2. 為分鏡報價時顯示「Thinking...」（輸入列顯示 ■）",點 ■,"報價停止
+已顯示的內容保留
+不會留下做到一半的「Create storyboard」報價卡片
+不扣點
+再傳訊息或重新要求分鏡都能正常運作",P3,R-486,PM 11/4（4422:2，留言 #246）：分鏡報價不扣點。僅有 PM：還沒有 Design 畫面
+TC-156,中斷,"1. 已點「Create storyboard」的 Generate
+2. 分鏡正在產生",在兩個階段（「Preparing your scenes...」和「Creating your storyboard...」）中，都查看輸入區和聊天畫面,輸入區只有麥克風：在分鏡完成之前，沒有 ■ 停止按鈕，聊天中也沒有任何暫停或停止的控制項,P2,R-332,PM Figma 10/22（4422:2）：現行版本在按下 Generate 後會出現 ■ 停止鈕，必須拿掉
+TC-157,中斷,"1. 已點 Generate Video
+2. 影片正在產生",在兩個階段（「Advancing the mini drama production.」和「Making your video...」）中，都查看輸入區和聊天畫面,輸入區只有麥克風：在影片完成之前，沒有 ■ 停止按鈕，聊天中也沒有任何暫停或停止的控制項,P2,R-332,PM Figma 10/22（4422:2）：現行版本在按下 Generate 後會出現 ■ 停止鈕，必須拿掉
 TC-158,中斷,任務停在這個階段：輸入欄裡有尚未送出的點子,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-159,中斷,任務停在這個階段：大綱產生中,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-160,中斷,任務停在這個階段：大綱已完成,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-161,中斷,任務停在這個階段：角色產生中,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-162,中斷,任務停在這個階段：角色已完成,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-163,中斷,任務停在這個階段：聊天修改進行中,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-164,中斷,任務停在這個階段：分鏡產生中,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-165,中斷,任務停在這個階段：分鏡已完成,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-166,中斷,任務停在這個階段：影片產生中,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-167,中斷,任務停在這個階段：影片已完成,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
 TC-168,中斷,任務停在這個階段：影片儲存 / 匯出中,"1. 回到 Launcher
-2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）",顯示的還是同一個任務、同一個階段，可以繼續；已儲存的內容不會無聲無息地消失,P2,R-139,
-TC-169,等待時間,大綱已開始產生,為每一段「只能離開、什麼都不能做」的時間計時,沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）；記錄最長的一段,P2,R-140,"計時以螢幕錄影為準；Regression DRI261895P0029（NewCreated, AIAgent）：產生大綱時，有用的操作被擋超過十秒，這裡也一併重新確認這張單"
-TC-170,等待時間,角色已開始產生,為每一段「只能離開、什麼都不能做」的時間計時,沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）；記錄最長的一段,P2,R-140,時間從螢幕錄影中記錄
-TC-171,等待時間,聊天修改已開始,為每一段「只能離開、什麼都不能做」的時間計時,沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）；記錄最長的一段,P2,R-140,"計時以螢幕錄影為準；Regression DRI261895P0030（NewCreated, AIAgent）：修改時，有用的操作被擋超過十秒，這裡也一併重新確認這張單"
-TC-172,等待時間,分鏡已開始產生,為每一段「只能離開、什麼都不能做」的時間計時,沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）；記錄最長的一段,P2,R-140,時間從螢幕錄影中記錄
-TC-173,等待時間,影片已開始產生,為每一段「只能離開、什麼都不能做」的時間計時,沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）；記錄最長的一段,P2,R-140,"計時以螢幕錄影為準；Regression DRI261895P0031（NewCreated, AIAgent）：製作影片時，有用的操作被擋超過十秒，這裡也一併重新確認這張單"
-TC-174,等待時間,已開始儲存 / 匯出,為每一段「只能離開、什麼都不能做」的時間計時,沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）；記錄最長的一段,P2,R-140,時間從螢幕錄影中記錄
-TC-175,回歸,待測版本；重現步驟與佐證見 DRI261893-0123,重現回報的步驟：分鏡的場景描述沒有編輯或儲存的操作,手動編輯場景描述後可以直接儲存，不必重新產生圖片。,P3,R-141,"DRI261893-0123（NewCreated, AIAgent）"
-TC-176,回歸,待測版本；重現步驟與佐證見 DRI261893-0136,重現回報的步驟：無法把特定的嬰兒範本套用成角色,可用的範本應套用到目前選取的、有名字的角色欄位（contract PDRM-MINIDRAMA-1005-QA-B016）。,P2,R-141,"DRI261893-0136（NewCreated, AIAgent）"
-TC-177,回歸,待測版本；重現步驟與佐證見 DRI261893-0160,重現回報的步驟：快速切換風格時，風格卡片會閃爍,不應該閃爍,P2,R-141,"DRI261893-0160（RDResolved, untagged）"
-TC-178,回歸,待測版本；重現步驟與佐證見 DRI261893-0163,重現回報的步驟：圖片產生成功的分鏡路徑裡，沒有圖片版本的編輯入口,對圖片產生成功的場景，應提供 PM F69/F73 規定的圖片版本編輯入口及其儲存控制項。,P2,R-141,"DRI261893-0163（QANeedRework, AIAgent）"
-TC-179,回歸,待測版本；重現步驟與佐證見 DRI261894P0007,"重現回報的步驟：產生角色圖片或影片時，點數明細顯示 ""TTS""、""TTI"" 或 ""AI Video Generator""，可能讓使用者困惑",點數明細應清楚標示這些點數是用在 AI Mini Drama。,P2,R-141,"DRI261894P0007（NewCreated, untagged）；Regression DRI261894P0021（NewCreated, AIFound）：點數明細把短劇的扣點列成 Text to Image / Text to Speech，這裡也一併重新確認這張單"
-TC-180,回歸,待測版本；重現步驟與佐證見 DRI261894P0011,"1. 重現回報的步驟
-2. Save to library 會把角色存到「照片」，並顯示 ""Saved to Photos""",Save to library 應該只把角色加進 App 內的角色庫；要存到「照片」是 Download 的功能。,P3,R-141,"DRI261894P0011（RDResolved, AIFound）"
-TC-181,回歸,待測版本；重現步驟與佐證見 DRI261894P0024,重現回報的步驟：角色還沒設定就離開，回來後 Iris 卻說角色看起來很棒,聊天應持續提示角色還需要確認。,P3,R-141,"DRI261894P0024（RDResolved, AIFound）"
-TC-182,回歸,待測版本；重現步驟與佐證見 DRI261894P0025,重現回報的步驟：內部的原始錯誤字串以 toast 直接顯示給使用者,發生錯誤時，應顯示給使用者看的訊息並說明下一步該怎麼做；內部字串只該出現在 log 裡。,P2,R-141,"DRI261894P0025（RDResolved, AIFound）"
-TC-183,回歸,待測版本；重現步驟與佐證見 DRI261894P0034,重現回報的步驟：展開的文字編輯器邊框畫成亮白色線條，和深色主題不搭,邊框應使用設計稿中深色主題的灰色線條。,P2,R-141,"DRI261894P0034（RDResolved, untagged）"
-TC-184,回歸,待測版本；重現步驟與佐證見 DRI261894P0036,重現回報的步驟：某個步驟失敗後，聊天畫面沒有下一步、沒有卡片，也沒有重試,步驟失敗時，應顯示錯誤訊息和重試，並保留最後一張提案卡片。,P2,R-141,"DRI261894P0036（Assigned, AIFound）"
-TC-185,回歸,待測版本；重現步驟與佐證見 DRI261894P0042,重現回報的步驟：VoiceOver 對 Back、History、X 和勾選按鈕，念出的是圖片 ID 或什麼都不念,"每個按鈕都應念出有意義的標籤，例如 ""Back""、""History""、""Close""、""Done""。",P3,R-141,"DRI261894P0042（Assigned, AIFound）"
-TC-186,回歸,待測版本；重現步驟與佐證見 DRI261894P0043,"重現回報的步驟：從空白的聊天按 Back，仍然會問 ""Leave this chat?""",從空白的聊天按 Back，應該直接離開，不跳出對話視窗。,P3,R-141,"DRI261894P0043（Assigned, AIFound）"
-TC-187,回歸,待測版本；重現步驟與佐證見 DRI261894P0046,重現回報的步驟：透過聊天更換語言後，大綱和場景標題仍是舊的語言,更換語言後，大綱、場景標題、腳本和字幕都應改用新的語言。,P2,R-141,"DRI261894P0046（RDResolved, AIFound）"
-TC-188,回歸,待測版本；重現步驟與佐證見 DRI261894P0048,重現回報的步驟：要求更改場景數量或視覺風格，卻沒有套用，也沒有任何提示,要求會套用到大綱和分鏡，或是 Iris 會說明做不到。,P2,R-141,"DRI261894P0048（RDResolved, AIFound）"
-TC-189,回歸,待測版本；重現步驟與佐證見 DRI261894P0050,重現回報的步驟：對於提問或不支援的要求，Iris 完全不回應,Iris 會用一句話回答，例如說明該選項目前無法使用。,P3,R-141,"DRI261894P0050（NewCreated, AIFound）"
-TC-190,回歸,待測版本；重現步驟與佐證見 DRI261894P0052,重現回報的步驟：同一部短劇的完整一集價格從 240 點變成 376 點,同一部短劇不論在哪個地方提供，完整一集的價格都應該一致。,P2,R-141,"DRI261894P0052（Assigned, AIFound）"
-TC-191,回歸,待測版本；重現步驟與佐證見 DRI261895P0002,重現回報的步驟：在聊天輸入框使用語音轉文字，沒有顯示任何文字。,在聊天輸入框使用語音轉文字，應能正確辨識語音並顯示文字。,P2,R-141,"DRI261895P0002（RDResolved, untagged）"
-TC-192,回歸,待測版本；重現步驟與佐證見 DRI261895P0003,"重現回報的步驟：日文版的 ""The Beer Heir"" 只顯示 ""Server is busy""，沒有大綱也沒有角色肖像",應能產生日文的大綱和角色，和英文及其他範本一樣。,P2,R-141,"DRI261895P0003（RDResolved, AIFound）"
-TC-193,回歸,待測版本；重現步驟與佐證見 DRI261895P0004,重現回報的步驟：推動劇情的寵物，從來不會被列為角色,在故事中有演出的寵物，應該有自己的角色欄位，就像 AI Mini Drama - PM Spec 中動物的處理方式。,P3,R-141,"DRI261895P0004（NewCreated, AIFound）"
-TC-194,回歸,待測版本；重現步驟與佐證見 DRI261895P0005,"重現回報的步驟：""Add New"" 會加入一個憑空捏造、沒有出現在任何場景的角色",Add New 應先詢問要加入誰，或是加入故事裡真的會用到的角色。,P3,R-141,"DRI261895P0005（NewCreated, AIFound）"
-TC-195,回歸,待測版本；重現步驟與佐證見 DRI261895P0007,重現回報的步驟：透過聊天修改場景後，影片只算繪修改過的那個場景,預覽應從 Scene 1 開始，並包含修改後的場景，和沒有修改時一樣。,P2,R-141,"DRI261895P0007（RDResolved, AIFound）"
-TC-196,回歸,待測版本；重現步驟與佐證見 DRI261895P0033,"重現回報的步驟：等待 AI 回應時，跳出 ""Sever is busy. Please try again later."" 的錯誤訊息。",AI 回應應能順利載入，不會出現伺服器忙碌的錯誤。,P2,R-141,"DRI261895P0033（RDResolved, AIFound）"
-TC-197,回歸,待測版本；重現步驟與佐證見 DRI261895P0034,重現回報的步驟：選好角色後，修改過的故事大綱沒有再次顯示,建立分鏡之前，應再次顯示修改後的故事大綱（和角色）讓使用者確認。,P2,R-141,"DRI261895P0034（RDResolved, untagged）"
-TC-198,回歸,待測版本；重現步驟與佐證見 DRI261896P0006,重現回報的步驟：載入中的佔位動畫在 Light mode 下幾乎看不見,載入動畫在 Light mode 下應清楚可見，和 Dark mode 一樣。,P2,R-141,"DRI261896P0006（NewCreated, AIFound）"
-TC-199,回歸,待測版本；重現步驟與佐證見 DRI261896P0007,"重現回報的步驟：聊天和輸入框都是空的時候，""New Chat"" 按鈕仍然可以按","沒有聊天紀錄也沒有輸入內容時，""New Chat"" 按鈕應為灰色（不能按）。",P2,R-141,"DRI261896P0007（NeedCodeReview, AIFound）"
-TC-200,回歸,待測版本；重現步驟與佐證見 DRI261896P0008,"重現回報的步驟：New Chat 點 ""Leave anyway"" 會回到上一頁，而不是清空聊天",App 應停留在目前這一頁，只清除目前的輸入內容和聊天。,P2,R-141,"DRI261896P0008（NeedCodeReview, AIFound）"
-TC-201,回歸,待測版本；重現步驟與佐證見 DRI261896P0009,重現回報的步驟：角色輪播沒有提示可以左右滑動的視覺線索,橫向的角色列表應露出下一張畫面外卡片的一部分，提示可以橫向滑動看到更多內容，與 Design Spec 一致。,P2,R-141,"DRI261896P0009（NeedCodeReview, untagged）"
-TC-202,回歸,待測版本；重現步驟與佐證見 DRI261896P0010,"1. 重現回報的步驟
+2. 再回到 AI Mini Drama（必要時從「歷史紀錄」開啟該任務）","顯示的還是同一個任務、同一個階段，可以繼續
+已儲存的內容不會無聲無息地消失",P2,R-139,
+TC-169,等待時間,大綱已開始產生,為每一段「只能離開、什麼都不能做」的時間計時,"沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）
+記錄最長的一段",P2,R-140,"計時以螢幕錄影為準；Regression DRI261895P0029（NewCreated, AIAgent）：產生大綱時，有用的操作被擋超過十秒，這裡也一併重新確認這張單"
+TC-170,等待時間,角色已開始產生,為每一段「只能離開、什麼都不能做」的時間計時,"沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）
+記錄最長的一段",P2,R-140,時間從螢幕錄影中記錄
+TC-171,等待時間,聊天修改已開始,為每一段「只能離開、什麼都不能做」的時間計時,"沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）
+記錄最長的一段",P2,R-140,"計時以螢幕錄影為準；Regression DRI261895P0030（NewCreated, AIAgent）：修改時，有用的操作被擋超過十秒，這裡也一併重新確認這張單"
+TC-172,等待時間,分鏡已開始產生,為每一段「只能離開、什麼都不能做」的時間計時,"沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）
+記錄最長的一段",P2,R-140,時間從螢幕錄影中記錄
+TC-173,等待時間,影片已開始產生,為每一段「只能離開、什麼都不能做」的時間計時,"沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）
+記錄最長的一段",P2,R-140,"計時以螢幕錄影為準；Regression DRI261895P0031（NewCreated, AIAgent）：製作影片時，有用的操作被擋超過十秒，這裡也一併重新確認這張單"
+TC-174,等待時間,已開始儲存 / 匯出,為每一段「只能離開、什麼都不能做」的時間計時,"沒有任何一段超過 5 秒而沒有等待動畫，或超過 10 秒（有等待動畫）
+記錄最長的一段",P2,R-140,時間從螢幕錄影中記錄
+TC-175,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261893-0123",重現回報的步驟：分鏡的場景描述沒有編輯或儲存的操作,手動編輯場景描述後可以直接儲存，不必重新產生圖片。,P3,R-141,"DRI261893-0123（NewCreated, AIAgent）"
+TC-176,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261893-0136",重現回報的步驟：無法把特定的嬰兒範本套用成角色,可用的範本應套用到目前選取的、有名字的角色欄位（contract PDRM-MINIDRAMA-1005-QA-B016）。,P2,R-141,"DRI261893-0136（NewCreated, AIAgent）"
+TC-177,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261893-0160",重現回報的步驟：快速切換風格時，風格卡片會閃爍,不應該閃爍,P2,R-141,"DRI261893-0160（RDResolved, untagged）"
+TC-178,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261893-0163",重現回報的步驟：圖片產生成功的分鏡路徑裡，沒有圖片版本的編輯入口,對圖片產生成功的場景，應提供 PM F69/F73 規定的圖片版本編輯入口及其儲存控制項。,P2,R-141,"DRI261893-0163（QANeedRework, AIAgent）"
+TC-179,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0007","重現回報的步驟：產生角色圖片或影片時，點數明細顯示 ""TTS""、""TTI"" 或 ""AI Video Generator""，可能讓使用者困惑",點數明細應清楚標示這些點數是用在 AI Mini Drama。,P2,R-141,"DRI261894P0007（NewCreated, untagged）；Regression DRI261894P0021（NewCreated, AIFound）：點數明細把短劇的扣點列成 Text to Image / Text to Speech，這裡也一併重新確認這張單"
+TC-180,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0011","1. 重現回報的步驟
+2. Save to library 會把角色存到「照片」，並顯示 ""Saved to Photos""","Save to library 應該只把角色加進 App 內的角色庫
+要存到「照片」是 Download 的功能",P3,R-141,"DRI261894P0011（RDResolved, AIFound）"
+TC-181,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0024",重現回報的步驟：角色還沒設定就離開，回來後 Iris 卻說角色看起來很棒,聊天應持續提示角色還需要確認。,P3,R-141,"DRI261894P0024（RDResolved, AIFound）"
+TC-182,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0025",重現回報的步驟：內部的原始錯誤字串以 toast 直接顯示給使用者,"發生錯誤時，應顯示給使用者看的訊息並說明下一步該怎麼做
+內部字串只該出現在 log 裡",P2,R-141,"DRI261894P0025（RDResolved, AIFound）"
+TC-183,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0034",重現回報的步驟：展開的文字編輯器邊框畫成亮白色線條，和深色主題不搭,邊框應使用設計稿中深色主題的灰色線條。,P2,R-141,"DRI261894P0034（RDResolved, untagged）"
+TC-184,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0036",重現回報的步驟：某個步驟失敗後，聊天畫面沒有下一步、沒有卡片，也沒有重試,步驟失敗時，應顯示錯誤訊息和重試，並保留最後一張提案卡片。,P2,R-141,"DRI261894P0036（Assigned, AIFound）"
+TC-185,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0042",重現回報的步驟：VoiceOver 對 Back、History、X 和勾選按鈕，念出的是圖片 ID 或什麼都不念,"每個按鈕都應念出有意義的標籤，例如 ""Back""、""History""、""Close""、""Done""。",P3,R-141,"DRI261894P0042（Assigned, AIFound）"
+TC-186,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0043","重現回報的步驟：從空白的聊天按 Back，仍然會問 ""Leave this chat?""",從空白的聊天按 Back，應該直接離開，不跳出對話視窗。,P3,R-141,"DRI261894P0043（Assigned, AIFound）"
+TC-187,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0046",重現回報的步驟：透過聊天更換語言後，大綱和場景標題仍是舊的語言,更換語言後，大綱、場景標題、腳本和字幕都應改用新的語言。,P2,R-141,"DRI261894P0046（RDResolved, AIFound）"
+TC-188,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0048",重現回報的步驟：要求更改場景數量或視覺風格，卻沒有套用，也沒有任何提示,要求會套用到大綱和分鏡，或是 Iris 會說明做不到。,P2,R-141,"DRI261894P0048（RDResolved, AIFound）"
+TC-189,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0050",重現回報的步驟：對於提問或不支援的要求，Iris 完全不回應,Iris 會用一句話回答，例如說明該選項目前無法使用。,P3,R-141,"DRI261894P0050（NewCreated, AIFound）"
+TC-190,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261894P0052",重現回報的步驟：同一部短劇的完整一集價格從 240 點變成 376 點,同一部短劇不論在哪個地方提供，完整一集的價格都應該一致。,P2,R-141,"DRI261894P0052（Assigned, AIFound）"
+TC-191,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261895P0002",重現回報的步驟：在聊天輸入框使用語音轉文字，沒有顯示任何文字。,在聊天輸入框使用語音轉文字，應能正確辨識語音並顯示文字。,P2,R-141,"DRI261895P0002（RDResolved, untagged）"
+TC-192,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261895P0003","重現回報的步驟：日文版的 ""The Beer Heir"" 只顯示 ""Server is busy""，沒有大綱也沒有角色肖像",應能產生日文的大綱和角色，和英文及其他範本一樣。,P2,R-141,"DRI261895P0003（RDResolved, AIFound）"
+TC-193,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261895P0004",重現回報的步驟：推動劇情的寵物，從來不會被列為角色,在故事中有演出的寵物，應該有自己的角色欄位，就像 AI Mini Drama - PM Spec 中動物的處理方式。,P3,R-141,"DRI261895P0004（NewCreated, AIFound）"
+TC-194,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261895P0005","重現回報的步驟：""Add New"" 會加入一個憑空捏造、沒有出現在任何場景的角色",Add New 應先詢問要加入誰，或是加入故事裡真的會用到的角色。,P3,R-141,"DRI261895P0005（NewCreated, AIFound）"
+TC-195,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261895P0007",重現回報的步驟：透過聊天修改場景後，影片只算繪修改過的那個場景,預覽應從 Scene 1 開始，並包含修改後的場景，和沒有修改時一樣。,P2,R-141,"DRI261895P0007（RDResolved, AIFound）"
+TC-196,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261895P0033","重現回報的步驟：等待 AI 回應時，跳出 ""Sever is busy. Please try again later."" 的錯誤訊息。",AI 回應應能順利載入，不會出現伺服器忙碌的錯誤。,P2,R-141,"DRI261895P0033（RDResolved, AIFound）"
+TC-197,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261895P0034",重現回報的步驟：選好角色後，修改過的故事大綱沒有再次顯示,建立分鏡之前，應再次顯示修改後的故事大綱（和角色）讓使用者確認。,P2,R-141,"DRI261895P0034（RDResolved, untagged）"
+TC-198,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0006",重現回報的步驟：載入中的佔位動畫在 Light mode 下幾乎看不見,載入動畫在 Light mode 下應清楚可見，和 Dark mode 一樣。,P2,R-141,"DRI261896P0006（NewCreated, AIFound）"
+TC-199,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0007","重現回報的步驟：聊天和輸入框都是空的時候，""New Chat"" 按鈕仍然可以按","沒有聊天紀錄也沒有輸入內容時，""New Chat"" 按鈕應為灰色（不能按）。",P2,R-141,"DRI261896P0007（NeedCodeReview, AIFound）"
+TC-200,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0008","重現回報的步驟：New Chat 點 ""Leave anyway"" 會回到上一頁，而不是清空聊天",App 應停留在目前這一頁，只清除目前的輸入內容和聊天。,P2,R-141,"DRI261896P0008（NeedCodeReview, AIFound）"
+TC-201,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0009",重現回報的步驟：角色輪播沒有提示可以左右滑動的視覺線索,橫向的角色列表應露出下一張畫面外卡片的一部分，提示可以橫向滑動看到更多內容，與 Design Spec 一致。,P2,R-141,"DRI261896P0009（NeedCodeReview, untagged）"
+TC-202,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0010","1. 重現回報的步驟
 2. 買了點數之後，Create my character 仍顯示 0 點",購買完成後，表單應立刻顯示新的餘額。,P2,R-141,"DRI261896P0010（NeedCodeReview, AIFound）"
-TC-203,回歸,待測版本；重現步驟與佐證見 DRI261896P0012,重現回報的步驟：分鏡的場景文字無法選取或複製,場景文字應可以選取和複製，和聊天中的文字一樣。,P2,R-141,"DRI261896P0012（RDResolved, AIFound）"
-TC-204,回歸,待測版本；重現步驟與佐證見 DRI261896P0017,"1. 重現回報的步驟
-2. 建立動物角色時，Create my character 要求一定要選人種",建立動物角色時，不應該需要選人種；AI Mini Drama - PM Spec 本來就有動物角色。,P2,R-141,"DRI261896P0017（NewCreated, AIFound）"
-TC-205,回歸,待測版本；重現步驟與佐證見 DRI261896P0018,重現回報的步驟：狗明明是金色造型、使用者也要求過，場景描述卻仍寫成白色,場景描述應該符合角色的造型和使用者的修改要求。,P3,R-141,"DRI261896P0018（NeedCodeReview, AIFound）"
-TC-206,回歸,待測版本；重現步驟與佐證見 DRI261896P0019,"重現回報的步驟：修改範本預先指定的角色時，出現 ""Server is busy"" 而失敗",預先指定的角色應依要求的修改重新產生。,P2,R-141,"DRI261896P0019（Assigned, AIFound）"
-TC-207,回歸,待測版本；重現步驟與佐證見 DRI261896P0023,重現回報的步驟：日文版的 The Beer Heir 和 The Ring He Worked For 沒有載入預設角色,每個角色欄位都應顯示範本角色對應表（JP）中的預設造型。,P2,R-141,"DRI261896P0023（NewCreated, AIFound）"
-TC-208,回歸,待測版本；重現步驟與佐證見 DRI261896P0024,重現回報的步驟：選好角色後，Story Outline & Characters Result 區塊出現兩次,大綱和角色只應顯示一次，或是直接更新先前的那個區塊。,P2,R-141,"DRI261896P0024（Assigned, AIFound）"
-TC-209,回歸,待測版本；重現步驟與佐證見 DRI261896P0027,重現回報的步驟：場景播放到場景結尾時，會接著播下一個場景,播放應停在所選場景的結尾，並恢復 Play 控制項。,P2,R-141,"DRI261896P0027（NewCreated, AIAgent）"
-TC-210,回歸,待測版本；重現步驟與佐證見 DRI261896P0028,"1. 重現回報的步驟
+TC-203,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0012",重現回報的步驟：分鏡的場景文字無法選取或複製,場景文字應可以選取和複製，和聊天中的文字一樣。,P2,R-141,"DRI261896P0012（RDResolved, AIFound）"
+TC-204,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0017","1. 重現回報的步驟
+2. 建立動物角色時，Create my character 要求一定要選人種","建立動物角色時，不應該需要選人種
+AI Mini Drama - PM Spec 本來就有動物角色",P2,R-141,"DRI261896P0017（NewCreated, AIFound）"
+TC-205,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0018",重現回報的步驟：狗明明是金色造型、使用者也要求過，場景描述卻仍寫成白色,場景描述應該符合角色的造型和使用者的修改要求。,P3,R-141,"DRI261896P0018（NeedCodeReview, AIFound）"
+TC-206,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0019","重現回報的步驟：修改範本預先指定的角色時，出現 ""Server is busy"" 而失敗",預先指定的角色應依要求的修改重新產生。,P2,R-141,"DRI261896P0019（Assigned, AIFound）"
+TC-207,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0023",重現回報的步驟：日文版的 The Beer Heir 和 The Ring He Worked For 沒有載入預設角色,每個角色欄位都應顯示範本角色對應表（JP）中的預設造型。,P2,R-141,"DRI261896P0023（NewCreated, AIFound）"
+TC-208,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0024",重現回報的步驟：選好角色後，Story Outline & Characters Result 區塊出現兩次,大綱和角色只應顯示一次，或是直接更新先前的那個區塊。,P2,R-141,"DRI261896P0024（Assigned, AIFound）"
+TC-209,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0027",重現回報的步驟：場景播放到場景結尾時，會接著播下一個場景,播放應停在所選場景的結尾，並恢復 Play 控制項。,P2,R-141,"DRI261896P0027（NewCreated, AIAgent）"
+TC-210,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0028","1. 重現回報的步驟
 2. 在已播完的場景按重播，卻從第一個場景重新開始",Play 應重播目前選取、已播完的那個場景。,P2,R-141,"DRI261896P0028（NewCreated, AIAgent）"
-TC-212,回歸,待測版本；重現步驟與佐證見 DRI261896P0034,重現回報的步驟：預設演員被指派給性別不符的角色,每個角色都應被指派性別與 Possible Characters 中描述相符的預設演員。,P2,R-141,"DRI261896P0034（NewCreated, untagged）"
-TC-213,回歸,待測版本；重現步驟與佐證見 DRI261896P0038,重現回報的步驟：還沒選格式就先送出訊息，結果跳過了語言和字幕的步驟,和 10.GM 主流程一樣，格式卡片應保留，直到選好影片語言和字幕為止。,P2,R-141,"DRI261896P0038（Assigned, AIFound）"
-TC-214,回歸,待測版本；重現步驟與佐證見 DRI261896P0039,重現回報的步驟：分鏡完成後透過聊天新增的角色，其欄位點不下去,點新角色的欄位應開啟 Choose Character，和分鏡完成之前的行為一樣。,P2,R-141,"DRI261896P0039（NeedCodeReview, AIFound）"
-TC-215,點數與上限,方案等級 Free（Pink › IAP › Status › Free）；每日額度有限,一直傳送聊天直到額度用完，每次傳送都要計數,第 11 次聊天會跳出「Daily Free Chat Limit Reached」，並附 Upgrade to Premium（TC-117）；記錄實際的次數,P2,R-142,規格的次數 10 是遠端設定的；Developer Server 的上限為 9999 時，記為已接受的假設
+TC-212,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0034",重現回報的步驟：預設演員被指派給性別不符的角色,每個角色都應被指派性別與 Possible Characters 中描述相符的預設演員。,P2,R-141,"DRI261896P0034（NewCreated, untagged）"
+TC-213,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0038",重現回報的步驟：還沒選格式就先送出訊息，結果跳過了語言和字幕的步驟,和 10.GM 主流程一樣，格式卡片應保留，直到選好影片語言和字幕為止。,P2,R-141,"DRI261896P0038（Assigned, AIFound）"
+TC-214,回歸,"1. 待測版本
+2. 重現步驟與佐證見 DRI261896P0039",重現回報的步驟：分鏡完成後透過聊天新增的角色，其欄位點不下去,點新角色的欄位應開啟 Choose Character，和分鏡完成之前的行為一樣。,P2,R-141,"DRI261896P0039（NeedCodeReview, AIFound）"
+TC-215,點數與上限,"1. 方案等級 Free（Pink › IAP › Status › Free）
+2. 每日額度有限",一直傳送聊天直到額度用完，每次傳送都要計數,"第 11 次聊天會跳出「Daily Free Chat Limit Reached」，並附 Upgrade to Premium（TC-117）
+記錄實際的次數",P2,R-142,規格的次數 10 是遠端設定的；Developer Server 的上限為 9999 時，記為已接受的假設
 TC-216,點數與上限,方案等級 Pro,"1. 一直傳送聊天直到額度用完
 2. 點「Upgrade to Premium」
 3. 在訂閱頁點「Continue」，再取消 App Store 視窗
-4. 不訂閱，直接點 ‹",第 31 次聊天會跳出 Premium 的上限對話框「Daily Free Chat Limit Reached」（Pro 的 mockup 標題是「Free Chat Limit Reached」），並附 Upgrade to Premium，而不是「Today's AI Chats Are Used Up」；點 Upgrade to Premium 會開啟 Pro+ 訂閱頁（「PowerDirector Pro+」、「Continue」）；點「Continue」會開啟 App Store 購買視窗，取消後回到訂閱頁，沒有購買任何東西；點 ‹ 回到聊天，對話框已關閉；記錄實際的次數和標題,P2,"R-142, R-277, R-351, R-457",規格的次數是 30；上限為 9999 時 → 記為已接受的假設。Pro+ 的對話框是 TC-118
-TC-217,點數與上限,方案等級 Pro+,一直傳送聊天直到額度用完,第 101 次聊天會跳出「Today's AI Chats Are Used Up」，有 Continue Tomorrow（TC-118）；記錄實際的次數,P2,R-142,規格的次數是 100；上限為 9999 時 → 記為已接受的假設。有一張 MX mockup 的標題寫成 Server Busy，以 Design 的對話框為準
+4. 不訂閱，直接點 ‹","第 31 次聊天會跳出 Premium 的上限對話框「Daily Free Chat Limit Reached」（Pro 的 mockup 標題是「Free Chat Limit Reached」），並附 Upgrade to Premium，而不是「Today's AI Chats Are Used Up」
+點 Upgrade to Premium 會開啟 Pro+ 訂閱頁（「PowerDirector Pro+」、「Continue」）
+點「Continue」會開啟 App Store 購買視窗，取消後回到訂閱頁，沒有購買任何東西
+點 ‹ 回到聊天，對話框已關閉
+記錄實際的次數和標題",P2,"R-142, R-277, R-351, R-457",規格的次數是 30；上限為 9999 時 → 記為已接受的假設。Pro+ 的對話框是 TC-118
+TC-217,點數與上限,方案等級 Pro+,一直傳送聊天直到額度用完,"第 101 次聊天會跳出「Today's AI Chats Are Used Up」，有 Continue Tomorrow（TC-118）
+記錄實際的次數",P2,R-142,規格的次數是 100；上限為 9999 時 → 記為已接受的假設。有一張 MX mockup 的標題寫成 Server Busy，以 Design 的對話框為準
 TC-218,點數與上限,任何方案等級，已知剩餘的聊天次數（額度有限）,"1. 開啟一個範本
 2. 傳送一則打字訊息
 3. 點一個任務按鈕（例如 Generate）",這三個動作各自剛好用掉一次聊天,P2,R-142,
-TC-367,點數與上限,方案等級 Pro（Pink › IAP › Status › Pro）；已知剩餘的聊天次數（額度有限）,"1. 開啟一個範本
+TC-367,點數與上限,"1. 方案等級 Pro（Pink › IAP › Status › Pro）
+2. 已知剩餘的聊天次數（額度有限）","1. 開啟一個範本
 2. 傳送一則打字訊息
 3. 點一個任務按鈕（例如 Generate）",這三個動作各自剛好用掉 Pro 每日聊天次數中的一次（額度 30）,P2,R-142,MX ① 版本 A。TC-218 對任何方案等級做同樣的檢查；每個方案等級各有一列（REQ-031）。Developer Server 的上限是 9999 時記為 Blocked（chat-count）。Spec agent MX-PRO-SEND-DEBIT-001（REQ-031）
-TC-368,點數與上限,方案等級 Pro+（Pink › IAP › Status › Pro+）；已知剩餘的聊天次數（額度有限）,"1. 開啟一個範本
+TC-368,點數與上限,"1. 方案等級 Pro+（Pink › IAP › Status › Pro+）
+2. 已知剩餘的聊天次數（額度有限）","1. 開啟一個範本
 2. 傳送一則打字訊息
 3. 點一個任務按鈕（例如 Generate）",這三個動作各自剛好用掉 Pro+ 每日聊天次數中的一次（額度 100）,P2,R-142,MX ① 版本 A。TC-218 對任何方案等級做同樣的檢查；每個方案等級各有一列（REQ-031）。Developer Server 的上限是 9999 時記為 Blocked（chat-count）。Spec agent MX-PROPLUS-SEND-DEBIT-001（REQ-031）
-TC-369,點數與上限,方案等級 Free；RD 已在 Firebase Remote Config 改了 Free 的每日聊天額度（例如改成 3）；App 已重新開啟,一直傳送聊天直到跳出上限視窗，每次傳送都要計數,上限視窗在第 4 次傳送時跳出（額度 3），而不是規格預設的第 11 次,P3,R-266,MX ① 版本 A：額度是遠端設定的（Firebase）。規格沒寫變更何時生效，所以先重新開啟 App。需要 RD 去改 Remote Config，否則記為 Blocked（remote-config）。Spec agent FIXTURE-0924-S002-B016（REQ-031）
-TC-392,點數與上限,方案等級 Pro；RD 已在 Remote Config 改了 Pro 的每日聊天額度（例如改成 3）；App 已重新開啟,一直傳送聊天直到跳出上限視窗，每次傳送都要計數,上限視窗在第 4 次傳送時跳出（額度 3），而不是第 31 次,P3,R-266,
-TC-393,點數與上限,方案等級 Pro+；RD 已在 Remote Config 改了 Pro+ 的每日聊天額度（例如改成 3）；App 已重新開啟,一直傳送聊天直到跳出上限視窗，每次傳送都要計數,上限視窗在第 4 次傳送時跳出（額度 3），而不是第 101 次,P3,R-266,
+TC-369,點數與上限,"1. 方案等級 Free
+2. RD 已在 Firebase Remote Config 改了 Free 的每日聊天額度（例如改成 3）
+3. App 已重新開啟",一直傳送聊天直到跳出上限視窗，每次傳送都要計數,上限視窗在第 4 次傳送時跳出（額度 3），而不是規格預設的第 11 次,P3,R-266,MX ① 版本 A：額度是遠端設定的（Firebase）。規格沒寫變更何時生效，所以先重新開啟 App。需要 RD 去改 Remote Config，否則記為 Blocked（remote-config）。Spec agent FIXTURE-0924-S002-B016（REQ-031）
+TC-392,點數與上限,"1. 方案等級 Pro
+2. RD 已在 Remote Config 改了 Pro 的每日聊天額度（例如改成 3）
+3. App 已重新開啟",一直傳送聊天直到跳出上限視窗，每次傳送都要計數,上限視窗在第 4 次傳送時跳出（額度 3），而不是第 31 次,P3,R-266,
+TC-393,點數與上限,"1. 方案等級 Pro+
+2. RD 已在 Remote Config 改了 Pro+ 的每日聊天額度（例如改成 3）
+3. App 已重新開啟",一直傳送聊天直到跳出上限視窗，每次傳送都要計數,上限視窗在第 4 次傳送時跳出（額度 3），而不是第 101 次,P3,R-266,
 TC-219,點數與上限,額度已用完，輸入欄裡有已輸入的文字,"1. 傳送
 2. 用 X 關閉上限視窗",聊天維持開啟，沒送出的文字還在輸入欄裡,P2,R-143,
 TC-220,點數與上限,額度已用完，上限視窗已關閉過一次,再傳送一次,每次傳送都會再次跳出上限視窗,P3,R-143,
 TC-221,點數與上限,額度已用完,"1. 從首頁開啟一個範本並點「Make my version」
-2. 用 ⓧ 關閉上限視窗",先開啟範本的聊天，接著才跳出上限視窗；點 ⓧ 關閉視窗後，範本聊天仍開著，沒有送出任何東西,P2,"R-143, R-347",
-TC-222,點數與上限,帳號等級為 Free，已跳出上限提示視窗；沙盒購買已驗證可用,點 Upgrade to Premium，完成訂閱,回到原本的聊天，並出現 Continue 訊息,P2,R-144,需要已驗證可用的沙盒訂閱；否則記為 Blocked（test-data）
+2. 用 ⓧ 關閉上限視窗","先開啟範本的聊天，接著才跳出上限視窗
+點 ⓧ 關閉視窗後，範本聊天仍開著，沒有送出任何東西",P2,"R-143, R-347",
+TC-222,點數與上限,"1. 帳號等級為 Free，已跳出上限提示視窗
+2. 沙盒購買已驗證可用",點 Upgrade to Premium，完成訂閱,回到原本的聊天，並出現 Continue 訊息,P2,R-144,需要已驗證可用的沙盒訂閱；否則記為 Blocked（test-data）
 TC-223,點數與上限,帳號等級為 Free，還有沒用完的免費聊天次數,"1. 切換成 Pro
-2. 一直聊到達上限，計算聊了幾次",只套用 Pro 的額度；沒用完的 Free 聊天次數不會加進來,P3,R-144,
-TC-224,點數與上限,全新安裝（屬於這個案例的一部分）：解除安裝 PowerDirector，重新安裝待測版本，還原 Developer Server，登入，設定方案等級，開啟 Log stage timings 和 Write Log；方案等級 Free；重新安裝前先用掉一些聊天次數，並記下次數,"1. 刪除 App 後重新安裝
+2. 一直聊到達上限，計算聊了幾次","只套用 Pro 的額度
+沒用完的 Free 聊天次數不會加進來",P3,R-144,
+TC-224,點數與上限,"1. 全新安裝（屬於這個案例的一部分）：解除安裝 PowerDirector，重新安裝待測版本，還原 Developer Server，登入，設定方案等級，開啟 Log stage timings 和 Write Log
+2. 方案等級 Free
+3. 重新安裝前先用掉一些聊天次數，並記下次數","1. 刪除 App 後重新安裝
 2. 登入
 3. 開啟 AI Mini Drama",每日免費聊天次數恢復為滿額,P3,R-145,自己做全新安裝，在 segment P1-h 執行。
 TC-225,點數與上限,方案等級 Pro 或 Pro+，餘額低於下一個動作的價格,"1. 查看扣點卡片
@@ -522,276 +846,420 @@ TC-225,點數與上限,方案等級 Pro 或 Pro+，餘額低於下一個動作�
 3. 在「Top up your credits」點 500 點的方案
 4. 點「Terms of Use」再返回
 5. 點「Privacy Policy」再返回
-6. 點「Buy Credit」，並取消 App Store 視窗（不要購買）",卡片提供 Buy Credit；Credit Panel 開啟時，預設選取 2000 點的方案；改點其他方案會改選該方案（一次只能選一個方案）；「Terms of Use」和「Privacy Policy」會開啟對應頁面，返回後回到 Credit Panel；Credit Panel 上的「Buy Credit」會開啟所選方案的 App Store 購買視窗，取消後回到 Credit Panel，沒有購買任何東西,P2,"R-146, R-322",Design 在點數不足的卡片上顯示 Buy Credits（TC-116）
+6. 點「Buy Credit」，並取消 App Store 視窗（不要購買）","卡片提供 Buy Credit
+Credit Panel 開啟時，預設選取 2000 點的方案
+改點其他方案會改選該方案（一次只能選一個方案）
+「Terms of Use」和「Privacy Policy」會開啟對應頁面，返回後回到 Credit Panel
+Credit Panel 上的「Buy Credit」會開啟所選方案的 App Store 購買視窗，取消後回到 Credit Panel，沒有購買任何東西",P2,"R-146, R-322",Design 在點數不足的卡片上顯示 Buy Credits（TC-116）
 TC-226,點數與上限,帳號等級為 Free，餘額低於下一個動作的價格,"1. 查看扣點卡片
 2. 點卡片上的按鈕
-3. 在訂閱頁不訂閱，直接點 ‹",卡片提供 Upgrade Now，點下去會開啟訂閱頁（Pro / Pro+、「Get 7-Day Free Trial」）；點 ‹ 回到聊天，卡片仍顯示點數不足的文字和 Upgrade Now,P2,"R-146, R-352, R-353",Design 只畫了 Buy Credits；MX 補上 Free 方案的按鈕。有一張 MX frame 把 Free 的卡片標成「Buy Credits」（Q-25）
-TC-227,點數與上限,畫面上有點數不足的扣點卡片；已儲值點數（沙盒）或已調高餘額,回到聊天,卡片改顯示點數足夠的文案和 Generate,P2,R-146,需要能改變餘額；否則記為 Blocked（test-data）
+3. 在訂閱頁不訂閱，直接點 ‹","卡片提供 Upgrade Now，點下去會開啟訂閱頁（Pro / Pro+、「Get 7-Day Free Trial」）
+點 ‹ 回到聊天，卡片仍顯示點數不足的文字和 Upgrade Now",P2,"R-146, R-352, R-353",Design 只畫了 Buy Credits；MX 補上 Free 方案的按鈕。有一張 MX frame 把 Free 的卡片標成「Buy Credits」（Q-25）
+TC-227,點數與上限,"1. 畫面上有點數不足的扣點卡片
+2. 已儲值點數（沙盒）或已調高餘額",回到聊天,卡片改顯示點數足夠的文案和 Generate,P2,R-146,需要能改變餘額；否則記為 Blocked（test-data）
 TC-228,點數與上限,剛從點數不足的卡片買了點數（沙盒）,回到該卡片,真正扣點之前，會再確認一次扣款,P2,R-146,需要沙盒購買；否則記為 Blocked（test-data）
-TC-229,點數與上限,方案等級 Pro 或 Pro+,在新的 drama 中，查看每張動作卡片上的價格,顯示 Credit System 表單上的完整（原始）價格：每個角色 ◆4（圖片 3 + 語音樣本 1）、每張分鏡圖 3 點（Location and scene）加上 Text to Speech，Seedance 2.5 / 2.0 / 2.0 Mini 每秒分別為 6 / 4 / 2 點；不顯示任何點數折扣,P2,R-147,價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。
-TC-424,點數與上限,方案等級 Pro 或 Pro+；Log stage timings 已開啟,"1. 為新的 drama 產生角色（點角色卡片上的 Generate）
-2. 取出 log，查看扣點內容",角色圖片記在 `genimage_1_img_openai_gptimage2.5sunburst_<none|enable>_1k_aiminidrama`（log 的 `action_id`）底下，每張圖 `total_credit` 為 3；語音樣本記在 `genaudio_1000_char_google_gemini3.8flash` 底下，為 1；兩者加起來，就是 Mine › Credits › Details 中該角色顯示的金額（◆4）,P2,"R-465, R-147",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。10/19 版本的 log 記的是 `…_aiminidrama`，沒有 _normal / _discount 後綴；以版本實際記錄的為準。Seedance 2.5 / 2.0 和 TTS 的表單只列 Android：記錄 iOS log 顯示的 id（Q-39）。
-TC-230,點數與上限,帳號等級為 Free，從未訂閱過，本次操作中也沒有訂閱,查看動作卡片上的價格,顯示完整價格，沒有點數折扣,P2,R-147,
-TC-421,點數與上限,方案等級 Pro 或 Pro+；角色已完成；Log stage timings 已開啟,"1. 點「Create storyboard」卡片上的 Generate
-2. 取出 log",卡片標示分鏡的價格為每張圖 3 點（Location and scene，另加 Text to Speech，同 TC-060），且實際扣的就是這個金額（Mine › Credits › Details）；log 記在 `genimage_1_img_openai_gptimage2.5sunburst_<none|enable>_1k_aiminidrama` 底下（Text to Speech 那一筆的 id 要記錄下來，Q-40）,P2,"R-465, R-050",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪的折扣列（REQ-057）。
-TC-422,點數與上限,方案等級 Pro 或 Pro+；分鏡已完成；已顯示影片設定卡片；Log stage timings 已開啟,"1. 選 Standard（Seedance 2.0）和 Preview 長度
+TC-229,點數與上限,方案等級 Pro 或 Pro+,在新的 drama 中，查看每張動作卡片上的價格,"顯示 Credit System 表單上的完整（原始）價格：每個角色 ◆4（圖片 3 + 語音樣本 1）、每張分鏡圖 3 點（Location and scene）加上 Text to Speech，Seedance 2.5 / 2.0 / 2.0 Mini 每秒分別為 6 / 4 / 2 點
+不顯示任何點數折扣",P2,R-147,價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。
+TC-424,點數與上限,"1. 方案等級 Pro 或 Pro+
+2. Log stage timings 已開啟","1. 為新的 drama 產生角色（點角色卡片上的 Generate）
+2. 取出 log，查看扣點內容","角色圖片記在 `genimage_1_img_openai_gptimage2.5sunburst_<none|enable>_1k_aiminidrama`（log 的 `action_id`）底下，每張圖 `total_credit` 為 3，語音樣本記在 `genaudio_1000_char_google_gemini3.8flash` 底下，為 1
+兩者加起來，就是 Mine › Credits › Details 中該角色顯示的金額（◆4）",P2,"R-465, R-147",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。10/19 版本的 log 記的是 `…_aiminidrama`，沒有 _normal / _discount 後綴；以版本實際記錄的為準。Seedance 2.5 / 2.0 和 TTS 的表單只列 Android：記錄 iOS log 顯示的 id（Q-39）。
+TC-230,點數與上限,帳號等級為 Free，從未訂閱過，本次操作中也沒有訂閱,查看動作卡片上的價格,"顯示完整價格
+沒有點數折扣",P2,R-147,
+TC-421,點數與上限,"1. 方案等級 Pro 或 Pro+
+2. 角色已完成
+3. Log stage timings 已開啟","1. 點「Create storyboard」卡片上的 Generate
+2. 取出 log","卡片標示分鏡的價格為每張圖 3 點（Location and scene，另加 Text to Speech，同 TC-060），且實際扣的就是這個金額（Mine › Credits › Details）
+log 記在 `genimage_1_img_openai_gptimage2.5sunburst_<none|enable>_1k_aiminidrama` 底下（Text to Speech 那一筆的 id 要記錄下來，Q-40）",P2,"R-465, R-050",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪的折扣列（REQ-057）。
+TC-422,點數與上限,"1. 方案等級 Pro 或 Pro+
+2. 分鏡已完成
+3. 已顯示影片設定卡片
+4. Log stage timings 已開啟","1. 選 Standard（Seedance 2.0）和 Preview 長度
 2. 查看價格
 3. 點 Generate
-4. 取出 log",卡片標示影片價格為每秒 4 點（Preview · 30 sec → ◆120），且實際扣的就是這個金額（Mine › Credits › Details）；log 記在 `genvideo_1_sec_bytedance_seedance2.0std_enable_480p_aiminidrama` 底下,P2,"R-465, R-069",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪的折扣列（REQ-057）。Seedance 2.5 / 2.0 和 TTS 的表單只列 Android：記錄 iOS log 顯示的 id（Q-39）。
-TC-423,點數與上限,方案等級 Pro 或 Pro+；分鏡已完成；已顯示影片設定卡片；Log stage timings 已開啟,"1. 選 Fast（Seedance 2.0 Mini）和 Preview 長度
+4. 取出 log","卡片標示影片價格為每秒 4 點（Preview · 30 sec → ◆120），且實際扣的就是這個金額（Mine › Credits › Details）
+log 記在 `genvideo_1_sec_bytedance_seedance2.0std_enable_480p_aiminidrama` 底下",P2,"R-465, R-069",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪的折扣列（REQ-057）。Seedance 2.5 / 2.0 和 TTS 的表單只列 Android：記錄 iOS log 顯示的 id（Q-39）。
+TC-423,點數與上限,"1. 方案等級 Pro 或 Pro+
+2. 分鏡已完成
+3. 已顯示影片設定卡片
+4. Log stage timings 已開啟","1. 選 Fast（Seedance 2.0 Mini）和 Preview 長度
 2. 查看價格
 3. 點 Generate
-4. 取出 log",卡片標示影片價格為每秒 2 點（Preview · 30 sec → ◆60），且實際扣的就是這個金額（Mine › Credits › Details）；log 記在 `genvideo_1_sec_bytedance_seedance2.0mini_<none|enable>_480p` 底下,P2,"R-465, R-069",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。Mini 的 id 用的是 Text to Video 表單的（表單上沒有列 `_aiminidrama` 的 id）；720p 則是每秒 4 點。原本是 TC-231 那一輪的折扣列（REQ-057）。
+4. 取出 log","卡片標示影片價格為每秒 2 點（Preview · 30 sec → ◆60），且實際扣的就是這個金額（Mine › Credits › Details）
+log 記在 `genvideo_1_sec_bytedance_seedance2.0mini_<none|enable>_480p` 底下",P2,"R-465, R-069",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。Mini 的 id 用的是 Text to Video 表單的（表單上沒有列 `_aiminidrama` 的 id）；720p 則是每秒 4 點。原本是 TC-231 那一輪的折扣列（REQ-057）。
 TC-232,點數與上限,先前的 session 中已拿到折扣,開始新的聊天（新的 session），查看價格,顯示完整價格,P2,R-147,
 TC-233,點數與上限,已用折扣完成一整部 drama,重新產生任一部分,以完整價格扣款,P3,R-147,
-TC-425,點數與上限,方案等級 Pro 或 Pro+；角色已產生；Log stage timings 已開啟,"1. 重新產生一個角色（請 Iris 改變它的造型，再點「Update characters」卡片上的 Generate，同 TC-045）
-2. 取出 log",「Update characters」卡片顯示每個角色 ◆4（圖片 3 + 語音樣本 1），且實際扣的就是這個金額（Mine › Credits › Details）；log 把圖片記在 `genimage_1_img_openai_gptimage2.5sunburst_<none|enable>_1k_aiminidrama` 底下，語音樣本記在 `genaudio_1000_char_google_gemini3.8flash` 底下,P2,"R-465, R-254",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪不含折扣的重新產生列（REQ-057）。Seedance 2.5 / 2.0 和 TTS 的表單只列 Android：記錄 iOS log 顯示的 id（Q-39）。
-TC-426,點數與上限,方案等級 Pro 或 Pro+；分鏡已完成；Log stage timings 已開啟,"1. 開啟一個場景
+TC-425,點數與上限,"1. 方案等級 Pro 或 Pro+
+2. 角色已產生
+3. Log stage timings 已開啟","1. 重新產生一個角色（請 Iris 改變它的造型，再點「Update characters」卡片上的 Generate，同 TC-045）
+2. 取出 log","「Update characters」卡片顯示每個角色 ◆4（圖片 3 + 語音樣本 1），且實際扣的就是這個金額（Mine › Credits › Details）
+log 把圖片記在 `genimage_1_img_openai_gptimage2.5sunburst_<none|enable>_1k_aiminidrama` 底下，語音樣本記在 `genaudio_1000_char_google_gemini3.8flash` 底下",P2,"R-465, R-254",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪不含折扣的重新產生列（REQ-057）。Seedance 2.5 / 2.0 和 TTS 的表單只列 Android：記錄 iOS log 顯示的 id（Q-39）。
+TC-426,點數與上限,"1. 方案等級 Pro 或 Pro+
+2. 分鏡已完成
+3. Log stage timings 已開啟","1. 開啟一個場景
 2. 點 Edit
 3. 修改描述
 4. 點 Done 和「Regenerate Image」（同 TC-070）
-5. 取出 log",「Regenerate Image」顯示 ◆3（同 TC-070），且實際扣的就是這個金額（Mine › Credits › Details）；log 記在 `genimage_1_img_openai_gptimage2.5sunburst_<none|enable>_1k_aiminidrama` 底下,P2,"R-465, R-059",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪不含折扣的重新產生列（REQ-057）。
-TC-427,點數與上限,方案等級 Pro 或 Pro+；場景影片已完成；Log stage timings 已開啟,"1. 重新產生一個場景影片（在場景編輯器中修改它的描述，再點「Regenerate Video」，同 TC-144）
-2. 取出 log",重新產生時顯示並收取「場景長度 × 這部 drama 所用模型的費率」（每秒 Seedance 2.5 為 6、Seedance 2.0 為 4、Seedance 2.0 Mini 為 2；15 秒的場景 → ◆90 / ◆60 / ◆30），Mine › Credits › Details 顯示的也是這個金額；log 記在該模型的 id 底下：`genvideo_1_sec_bytedance_seedance2.5std_<none|enable>_480p_aiminidrama`、`genvideo_1_sec_bytedance_seedance2.0std_enable_480p_aiminidrama` 或 `genvideo_1_sec_bytedance_seedance2.0mini_<none|enable>_480p`,P2,"R-465, R-081",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪不含折扣的重新產生列（REQ-057）。Seedance 2.5 / 2.0 和 TTS 的表單只列 Android：記錄 iOS log 顯示的 id（Q-39）。
-TC-234,範本,已記錄 build、伺服器和語系；名單檔為 template-roster-20261019.json,開啟 More，記錄每個分類中的每個範本，每一列和整個頁面都要捲到底,名單與凍結的清單一致：5 個分類共 20 個範本；有新增、移除或改名的範本就要回報,P1,R-148,build、伺服器或語系有變時，要重新凍結名單
-TC-235,範本,More › Workplace Romance › 第 1 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「Merger Season」
+5. 取出 log","「Regenerate Image」顯示 ◆3（同 TC-070），且實際扣的就是這個金額（Mine › Credits › Details）
+log 記在 `genimage_1_img_openai_gptimage2.5sunburst_<none|enable>_1k_aiminidrama` 底下",P2,"R-465, R-059",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪不含折扣的重新產生列（REQ-057）。
+TC-427,點數與上限,"1. 方案等級 Pro 或 Pro+
+2. 場景影片已完成
+3. Log stage timings 已開啟","1. 重新產生一個場景影片（在場景編輯器中修改它的描述，再點「Regenerate Video」，同 TC-144）
+2. 取出 log","重新產生時顯示並收取「場景長度 × 這部 drama 所用模型的費率」（每秒 Seedance 2.5 為 6、Seedance 2.0 為 4、Seedance 2.0 Mini 為 2；15 秒的場景 → ◆90 / ◆60 / ◆30），Mine › Credits › Details 顯示的也是這個金額
+log 記在該模型的 id 底下：`genvideo_1_sec_bytedance_seedance2.5std_<none|enable>_480p_aiminidrama`、`genvideo_1_sec_bytedance_seedance2.0std_enable_480p_aiminidrama` 或 `genvideo_1_sec_bytedance_seedance2.0mini_<none|enable>_480p`",P2,"R-465, R-081",價格與 action id 取自 ECL Credit System「Publish Feature List」表單 22937582357（Seedance 2.5）、22850755605（Seedance 2.0）、21703885589（Seedance 2.0 mini）、22632766997（Text to image）、22833510933（TTS）（user 2026-11-06，REQ-103），取代 MX ③ 的收費表（REQ-059）。促銷價仍暫不測。原本是 TC-231 那一輪不含折扣的重新產生列（REQ-057）。Seedance 2.5 / 2.0 和 TTS 的表單只列 Android：記錄 iOS log 顯示的 id（Q-39）。
+TC-234,範本,"1. 已記錄 build、伺服器和語系
+2. 名單檔為 template-roster-20261019.json",開啟 More，記錄每個分類中的每個範本，每一列和整個頁面都要捲到底,"名單與凍結的清單一致：5 個分類共 20 個範本
+有新增、移除或改名的範本就要回報",P1,R-148,build、伺服器或語系有變時，要重新凍結名單
+TC-235,範本,"1. More › Workplace Romance › 第 1 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「Merger Season」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「Merger Season」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 1/20（style_aidrama_merger-season）
+4. 點 Make my version","詳細頁顯示「Merger Season」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 1/20（style_aidrama_merger-season）
 TC-236,範本,已從「Merger Season」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,"範本 1/20；Seedance 2.0 + 完整一集（user, 2026-10-19）。範本列最後才跑；每趟流程開始前，如果餘額低於 300 點，就停止跑範本列，其餘標為 Not run，並列在報告中"
-TC-237,範本,More › Workplace Romance › 第 2 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「Forbidden Office Romance」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,"範本 1/20；Seedance 2.0 + 完整一集（user, 2026-10-19）。範本列最後才跑；每趟流程開始前，如果餘額低於 300 點，就停止跑範本列，其餘標為 Not run，並列在報告中"
+TC-237,範本,"1. More › Workplace Romance › 第 2 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「Forbidden Office Romance」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「Forbidden Office Romance」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 2/20（style_aidrama_forbidden-office-romance）
+4. 點 Make my version","詳細頁顯示「Forbidden Office Romance」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 2/20（style_aidrama_forbidden-office-romance）
 TC-238,範本,已從「Forbidden Office Romance」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 2/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-239,範本,More › Workplace Romance › 第 3 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The New Guy's Secret」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 2/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-239,範本,"1. More › Workplace Romance › 第 3 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The New Guy's Secret」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The New Guy's Secret」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 3/20（style_aidrama_the-new-guys-secret）
+4. 點 Make my version","詳細頁顯示「The New Guy's Secret」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 3/20（style_aidrama_the-new-guys-secret）
 TC-240,範本,已從「The New Guy's Secret」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 3/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-241,範本,More › Workplace Romance › 第 4 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Art of Falling」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 3/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-241,範本,"1. More › Workplace Romance › 第 4 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Art of Falling」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Art of Falling」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 4/20（style_aidrama_the-art-of-falling）
+4. 點 Make my version","詳細頁顯示「The Art of Falling」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 4/20（style_aidrama_the-art-of-falling）
 TC-242,範本,已從「The Art of Falling」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 4/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-243,範本,More › Workplace Romance › 第 5 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「Glad We Came」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 4/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-243,範本,"1. More › Workplace Romance › 第 5 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「Glad We Came」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「Glad We Came」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 5/20（style_aidrama_glad-we-came）
+4. 點 Make my version","詳細頁顯示「Glad We Came」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 5/20（style_aidrama_glad-we-came）
 TC-244,範本,已從「Glad We Came」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 5/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-245,範本,More › Fantasy & Destiny › 第 1 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「Love, Unscripted」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 5/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-245,範本,"1. More › Fantasy & Destiny › 第 1 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「Love, Unscripted」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version","詳細頁顯示「Love, Unscripted」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 6/20（style_aidrama_love-unscripted）
+4. 點 Make my version","詳細頁顯示「Love, Unscripted」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 6/20（style_aidrama_love-unscripted）
 TC-246,範本,"已從「Love, Unscripted」開始聊天（上一列）","1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 6/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-247,範本,More › Fantasy & Destiny › 第 2 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Dragon's Chosen Bride」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 6/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-247,範本,"1. More › Fantasy & Destiny › 第 2 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Dragon's Chosen Bride」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Dragon's Chosen Bride」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 7/20（style_aidrama_the-dragons-chosen-bride）
+4. 點 Make my version","詳細頁顯示「The Dragon's Chosen Bride」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 7/20（style_aidrama_the-dragons-chosen-bride）
 TC-248,範本,已從「The Dragon's Chosen Bride」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 7/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-249,範本,More › Fantasy & Destiny › 第 3 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「Awakening the Storm」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 7/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-249,範本,"1. More › Fantasy & Destiny › 第 3 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「Awakening the Storm」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「Awakening the Storm」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 8/20（style_aidrama_awakening-the-storm）
+4. 點 Make my version","詳細頁顯示「Awakening the Storm」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 8/20（style_aidrama_awakening-the-storm）
 TC-250,範本,已從「Awakening the Storm」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 8/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-251,範本,More › Fantasy & Destiny › 第 4 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Hero's Dangerous Heart」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 8/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-251,範本,"1. More › Fantasy & Destiny › 第 4 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Hero's Dangerous Heart」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Hero's Dangerous Heart」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 9/20（style_aidrama_the-heros-dangerous-heart）
+4. 點 Make my version","詳細頁顯示「The Hero's Dangerous Heart」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 9/20（style_aidrama_the-heros-dangerous-heart）
 TC-252,範本,已從「The Hero's Dangerous Heart」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 9/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-253,範本,More › Fantasy & Destiny › 第 5 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Rebel and the Valedictorian」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 9/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-253,範本,"1. More › Fantasy & Destiny › 第 5 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Rebel and the Valedictorian」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Rebel and the Valedictorian」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 10/20（style_aidrama_the-rebel-and-the-valedictorian）
+4. 點 Make my version","詳細頁顯示「The Rebel and the Valedictorian」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 10/20（style_aidrama_the-rebel-and-the-valedictorian）
 TC-254,範本,已從「The Rebel and the Valedictorian」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 10/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-255,範本,More › Urban Romance › 第 1 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「After Closing」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 10/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-255,範本,"1. More › Urban Romance › 第 1 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「After Closing」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「After Closing」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 11/20（style_aidrama_after-closing）
+4. 點 Make my version","詳細頁顯示「After Closing」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 11/20（style_aidrama_after-closing）
 TC-256,範本,已從「After Closing」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 11/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-257,範本,More › Urban Romance › 第 2 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Fake Engagement」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 11/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-257,範本,"1. More › Urban Romance › 第 2 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Fake Engagement」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Fake Engagement」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,"範本 12/20（style_aidrama_the-fake-engagement）；Regression DRI261894P0008（NewCreated, AIFound）：The Fake Engagement 範本的封面標題是 Billionaire Romance，這裡也一併重新確認這張單"
+4. 點 Make my version","詳細頁顯示「The Fake Engagement」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,"範本 12/20（style_aidrama_the-fake-engagement）；Regression DRI261894P0008（NewCreated, AIFound）：The Fake Engagement 範本的封面標題是 Billionaire Romance，這裡也一併重新確認這張單"
 TC-258,範本,已從「The Fake Engagement」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 12/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-259,範本,More › Urban Romance › 第 3 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Pop Star's Secret Girlfriend」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 12/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-259,範本,"1. More › Urban Romance › 第 3 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Pop Star's Secret Girlfriend」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Pop Star's Secret Girlfriend」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 13/20（style_aidrama_the-pop-stars-secret-girlfriend）
+4. 點 Make my version","詳細頁顯示「The Pop Star's Secret Girlfriend」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 13/20（style_aidrama_the-pop-stars-secret-girlfriend）
 TC-260,範本,已從「The Pop Star's Secret Girlfriend」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 13/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-261,範本,More › Urban Romance › 第 4 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The House We Both Wanted」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 13/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-261,範本,"1. More › Urban Romance › 第 4 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The House We Both Wanted」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The House We Both Wanted」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 14/20（style_aidrama_the-house-we-both-wanted）
+4. 點 Make my version","詳細頁顯示「The House We Both Wanted」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 14/20（style_aidrama_the-house-we-both-wanted）
 TC-262,範本,已從「The House We Both Wanted」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 14/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-263,範本,More › Family & Life › 第 1 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Heiress and Her Protector」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 14/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-263,範本,"1. More › Family & Life › 第 1 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Heiress and Her Protector」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Heiress and Her Protector」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 15/20（style_aidrama_the-heiress-and-her-protector）
+4. 點 Make my version","詳細頁顯示「The Heiress and Her Protector」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 15/20（style_aidrama_the-heiress-and-her-protector）
 TC-264,範本,已從「The Heiress and Her Protector」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 15/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-265,範本,More › Family & Life › 第 2 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「Proposal Across Every Lifetime」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 15/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-265,範本,"1. More › Family & Life › 第 2 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「Proposal Across Every Lifetime」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「Proposal Across Every Lifetime」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 16/20（style_aidrama_proposal-across-every-lifetime）
+4. 點 Make my version","詳細頁顯示「Proposal Across Every Lifetime」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 16/20（style_aidrama_proposal-across-every-lifetime）
 TC-266,範本,已從「Proposal Across Every Lifetime」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 16/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-267,範本,More › Family & Life › 第 3 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「Six Things You Didn't Know」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 16/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-267,範本,"1. More › Family & Life › 第 3 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「Six Things You Didn't Know」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「Six Things You Didn't Know」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 17/20（style_aidrama_six-things-you-didnt-know）
+4. 點 Make my version","詳細頁顯示「Six Things You Didn't Know」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 17/20（style_aidrama_six-things-you-didnt-know）
 TC-268,範本,已從「Six Things You Didn't Know」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 17/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-269,範本,More › Family & Life › 第 4 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Dog Who Remembered Her」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 17/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-269,範本,"1. More › Family & Life › 第 4 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Dog Who Remembered Her」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Dog Who Remembered Her」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 18/20（style_aidrama_the-dog-who-remembered-her）
+4. 點 Make my version","詳細頁顯示「The Dog Who Remembered Her」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 18/20（style_aidrama_the-dog-who-remembered-her）
 TC-270,範本,已從「The Dog Who Remembered Her」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 18/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-271,範本,More › Animated Stories › 第 1 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Ring He Worked For」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 18/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-271,範本,"1. More › Animated Stories › 第 1 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Ring He Worked For」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Ring He Worked For」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 19/20（style_aidrama_the-ring-he-worked-for）
+4. 點 Make my version","詳細頁顯示「The Ring He Worked For」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 19/20（style_aidrama_the-ring-he-worked-for）
 TC-272,範本,已從「The Ring He Worked For」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 19/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-273,範本,More › Animated Stories › 第 2 個；餘額至少 300 點（停止規則見備註）,"1. 開啟「The Beer Heir」
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 19/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-273,範本,"1. More › Animated Stories › 第 2 個
+2. 餘額至少 300 點（停止規則見備註）","1. 開啟「The Beer Heir」
 2. 檢查封面和標題
 3. 播放預覽
-4. 點 Make my version",詳細頁顯示「The Beer Heir」，有封面，預覽可以播放；點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）,P1,R-148,範本 20/20（style_aidrama_the-beer-heir）
+4. 點 Make my version","詳細頁顯示「The Beer Heir」，有封面，預覽可以播放
+點 Make my version 會開啟聊天，並從這個範本的故事開始（標題和故事前提與卡片相符）",P1,R-148,範本 20/20（style_aidrama_the-beer-heir）
 TC-274,範本,已從「The Beer Heir」開始聊天（上一列）,"1. 接受大綱
 2. 設定角色
 3. 產生分鏡
 4. 選 Seedance 2.0
 5. 點 Generate Video（30 sec 預覽）
-6. 產生完整一集（90 sec）",每個階段都順利完成、沒有錯誤；預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事；每個階段實際扣的點數和卡片上的價格一致,P1,R-148,範本 20/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
-TC-275,文字,App 語言已透過 iOS 設定 › PowerDirector › 語言 設為英文（ENU）,逐一瀏覽 AI Mini Drama 的每個頁面、對話框、toast 和狀態,沒有拼字、文法或標點錯誤；沒有被截斷或沒翻譯的字串,P3,R-149,
-TC-276,文字,App 語言已透過 iOS 設定 › PowerDirector › 語言 設為繁體中文（CHT）,逐一瀏覽 AI Mini Drama 的每個頁面、對話框、toast 和狀態,沒有拼字、文法或標點錯誤；沒有被截斷或沒翻譯的字串,P3,R-149,
-TC-277,文字,App 語言已透過 iOS 設定 › PowerDirector › 語言 設為日文（JPN）,逐一瀏覽 AI Mini Drama 的每個頁面、對話框、toast 和狀態,沒有拼字、文法或標點錯誤；沒有被截斷或沒翻譯的字串,P3,R-149,"Regression DRI261896P0022（Assigned, AIFound）：範本列表中的日文範本名稱被 ""…"" 截斷，這裡也一併重新確認這張單"
+6. 產生完整一集（90 sec）","每個階段都順利完成、沒有錯誤
+預覽和完整 90 秒的一集都能播放，且演的是這個範本的故事
+每個階段實際扣的點數和卡片上的價格一致",P1,R-148,範本 20/20；Seedance 2.0 加完整一集（user，2026-10-19）。範本列最後才跑；每次流程開始前，若餘額低於 300 點，就停止範本列，其餘標為 Not run 並列在報告中
+TC-275,文字,App 語言已透過 iOS 設定 › PowerDirector › 語言 設為英文（ENU）,逐一瀏覽 AI Mini Drama 的每個頁面、對話框、toast 和狀態,"沒有拼字、文法或標點錯誤
+沒有被截斷或沒翻譯的字串",P3,R-149,
+TC-276,文字,App 語言已透過 iOS 設定 › PowerDirector › 語言 設為繁體中文（CHT）,逐一瀏覽 AI Mini Drama 的每個頁面、對話框、toast 和狀態,"沒有拼字、文法或標點錯誤
+沒有被截斷或沒翻譯的字串",P3,R-149,
+TC-277,文字,App 語言已透過 iOS 設定 › PowerDirector › 語言 設為日文（JPN）,逐一瀏覽 AI Mini Drama 的每個頁面、對話框、toast 和狀態,"沒有拼字、文法或標點錯誤
+沒有被截斷或沒翻譯的字串",P3,R-149,"Regression DRI261896P0022（Assigned, AIFound）：範本列表中的日文範本名稱被 ""…"" 截斷，這裡也一併重新確認這張單"
 TC-278,文字,分鏡已產生完成,逐一閱讀每個產生出來的場景（語言）,所有產生出來的文字都是格式卡片上選的語言,P3,R-150,
-TC-279,文字,分鏡已產生完成,逐一閱讀每個產生出來的場景（空白欄位）,每個場景都有標題和劇本；沒有空白或只有空格的欄位,P3,R-150,
+TC-279,文字,分鏡已產生完成,逐一閱讀每個產生出來的場景（空白欄位）,"每個場景都有標題和劇本
+沒有空白或只有空格的欄位",P3,R-150,
 TC-280,文字,分鏡已產生完成,逐一閱讀每個產生出來的場景（重複內容）,除非劇情需要，否則不會有重複的句子或場景,P3,R-150,
 TC-281,文字,分鏡已產生完成,逐一閱讀每個產生出來的場景（亂碼）,沒有編碼錯誤或替代字元（亂碼）,P3,R-150,
 TC-282,文字,分鏡已產生完成,逐一閱讀每個產生出來的場景（看引號）,英文內容使用英文引號，不是「」,P3,R-150,
-TC-283,Make your character,相簿裡有一張特徵明顯的照片；先記下照片的主體和方向,選它當 Reference，並確認裁切,Reference 預覽顯示的是同一張照片，方向也相同（有縮放沒關係）,P2,R-151,
-TC-284,Make your character,已填 Description、Gender 和 Age，Ethnicity 留空,查看 Generate 以及任何提示,Generate 不能按；記錄有沒有任何提示說明原因，若有，是什麼,P2,R-152,"Regression DRI261895P0032（NeedCodeReview, AIFound）：缺少角色屬性時，Generate 按鈕變灰，卻沒有清楚說明原因，這裡也一併重新確認這張單"
-TC-285,Make your character,已填 Description、Gender 和 Ethnicity，Age 留空,查看 Generate 以及任何提示,Generate 不能按；記錄有沒有任何提示說明原因，若有，是什麼,P2,R-152,
+TC-283,Make your character,"1. 相簿裡有一張特徵明顯的照片
+2. 先記下照片的主體和方向",選它當 Reference，並確認裁切,Reference 預覽顯示的是同一張照片，方向也相同（有縮放沒關係）,P2,R-151,
+TC-284,Make your character,已填 Description、Gender 和 Age，Ethnicity 留空,查看 Generate 以及任何提示,"Generate 不能按
+記錄有沒有任何提示說明原因，若有，是什麼",P2,R-152,"Regression DRI261895P0032（NeedCodeReview, AIFound）：缺少角色屬性時，Generate 按鈕變灰，卻沒有清楚說明原因，這裡也一併重新確認這張單"
+TC-285,Make your character,已填 Description、Gender 和 Ethnicity，Age 留空,查看 Generate 以及任何提示,"Generate 不能按
+記錄有沒有任何提示說明原因，若有，是什麼",P2,R-152,
 TC-286,輸入點子,在想法輸入框和角色描述中都輸入很長的文字,對照文字與旁邊的展開和送出按鈕,文字不會跑到旁邊按鈕的下方，也不會蓋在按鈕上面,P3,R-153,
 TC-287,Make your character,鍵盤已在角色描述欄位上開啟,"不先關閉鍵盤，分別用下列方式結束編輯：
 1. Done
 2. Generate
 3. 點空白處
 4. Cancel
-5. Return",任務會繼續進行；不需要多點一下來關閉鍵盤,P3,R-153,
+5. Return","任務會繼續進行
+不需要多點一下來關閉鍵盤",P3,R-153,
 TC-288,角色,角色庫已開啟,開啟篩選，逐一試每個 Ethnicity 值，包括 Southeast Asian 和 Mixed,每個值都會列出符合的角色；若沒有符合的角色，則顯示清楚的空白狀態,P3,R-154,
 TC-289,角色,已建立一個屬性明確的新 Mine 角色,用這些屬性篩選,新角色會出現在它自己屬性的篩選結果中,P3,R-154,
 TC-290,角色,先前的短劇已把一個角色存進 Mine,開始新的短劇，並為一個角色欄位選擇該角色,該角色列出時帶有 Mine 標籤，並可套用到這個角色欄位,P2,R-155,
 TC-291,角色,卡司中有一個已產生的角色,試著從聊天或選擇器重新命名該角色,記錄有沒有重新命名的入口，以及新名稱是否有保留,P3,R-155,"Regression DRI261893-0119（NewCreated, AIAgent）：已產生的角色沒有 Rename 入口，這裡也一併重新確認這張單"
 TC-292,分鏡,某個場景的主圖失敗，但 Location 圖成功（Pink › Trip image moderation；記錄所用的開關）,"1. 點主圖錯誤卡片上的 Edit
-2. 點 Regenerate",只有主圖重新產生；Location 圖維持原樣；費用為一張圖（◆3）,P2,R-156,若測試資料讓兩張圖都失敗，記為 Blocked（test-data）；兩張都失敗的情況由 TC-070 涵蓋
-TC-293,分鏡,分鏡已完成；請 Iris 更新兩張場景圖，其中一張會失敗（Pink › Trip image moderation）,點「Create storyboard」卡片上的 Generate，然後等待,"成功的那張圖更新完成；失敗的場景顯示「!」和「1 image couldn't be updated. Your credits have been refunded. Tap Edit to try again, or tell me what to change.」，並附 Edit；Credit Details 顯示已退款",P2,R-157,
-TC-294,分鏡,請 Iris 更新場景圖後，已點「Create storyboard」卡片上的 Generate；處於階段 ①（「Preparing your scenes...」）,點 Back,"跳出「Leave while we're preparing?」/「Your storyboard will start soon. If you leave now, we'll have to prepare it again when you come back.」，有「Stay」和紅色的「Leave anyway」；不會出現「Stop and lose your credits?」",P2,R-158,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 的 frame 新（以新的為準）。這個 frame 說明的是在聊天中更新分鏡，並適用兩階段規則；階段 ① 的卡片標題沒有畫出來（Q-22）
+2. 點 Regenerate","只有主圖重新產生
+Location 圖維持原樣
+費用為一張圖（◆3）",P2,R-156,若測試資料讓兩張圖都失敗，記為 Blocked（test-data）；兩張都失敗的情況由 TC-070 涵蓋
+TC-293,分鏡,"1. 分鏡已完成
+2. 請 Iris 更新兩張場景圖，其中一張會失敗（Pink › Trip image moderation）",點「Create storyboard」卡片上的 Generate，然後等待,"成功的那張圖更新完成
+失敗的場景顯示「!」和「1 image couldn't be updated. Your credits have been refunded. Tap Edit to try again, or tell me what to change.」，並附 Edit
+Credit Details 顯示已退款",P2,R-157,
+TC-294,分鏡,"1. 請 Iris 更新場景圖後，已點「Create storyboard」卡片上的 Generate
+2. 處於階段 ①（「Preparing your scenes...」）",點 Back,"跳出「Leave while we're preparing?」/「Your storyboard will start soon. If you leave now, we'll have to prepare it again when you come back.」，有「Stay」和紅色的「Leave anyway」
+不會出現「Stop and lose your credits?」",P2,R-158,PM Figma 10/22（4422:2）比 PM 10/21 §13.6 和 Design 1016 的 frame 新（以新的為準）。這個 frame 說明的是在聊天中更新分鏡，並適用兩階段規則；階段 ① 的卡片標題沒有畫出來（Q-22）
 TC-413,分鏡,已在聊天中要求更新分鏡，處於階段 ②：卡片顯示「Creating your storyboard...」,"1. 點 Back
-2. 從 History 重新開啟這部劇",不會跳出對話框；顯示提示訊息「We'll keep making your storyboard. Find it in History.」；重新開啟後，更新過的場景圖會以新的分鏡訊息出現在聊天裡,P2,R-158,PM Figma 10/22（4422:2）；PM-only: no Design frame yet
-TC-295,分鏡,分鏡產生會失敗（Pink › 在分鏡那一輪開啟 Fail turn；記錄所用的開關）,點「Create storyboard」上的 Generate，然後等待,顯示「Something went wrong on my end.」和「ⓘ Storyboard couldn't be created. Try creating your storyboard again.」，並附 Try again；點 Try again 會重新產生分鏡,P2,R-159,任何失敗都要把所有故障開關關掉後再確認一次（團隊慣例）
-TC-296,影片錯誤,影片已完成；其中一次場景影片重新產生會失敗（Pink › Inject failure status，針對該段）,等重新產生結束,"舊版本仍保留且可播放；聊天顯示「{n} scenes couldn't be generated. Your credits have been refunded. Tap Edit to regenerate, or tell me what to change.」",P2,R-160,
-TC-297,影片,場景影片已重新產生；卡片下方顯示「Your video has been updated.」,"1. 播放影片
+2. 從 History 重新開啟這部劇","不會跳出對話框
+顯示提示訊息「We'll keep making your storyboard. Find it in History.」
+重新開啟後，更新過的場景圖會以新的分鏡訊息出現在聊天裡",P2,R-158,PM Figma 10/22（4422:2）；PM-only: no Design frame yet
+TC-295,分鏡,分鏡產生會失敗（Pink › 在分鏡那一輪開啟 Fail turn；記錄所用的開關）,點「Create storyboard」上的 Generate，然後等待,"顯示「Something went wrong on my end.」和「ⓘ Storyboard couldn't be created. Try creating your storyboard again.」，並附 Try again
+點 Try again 會重新產生分鏡",P2,R-159,任何失敗都要把所有故障開關關掉後再確認一次（團隊慣例）
+TC-296,影片錯誤,"1. 影片已完成
+2. 其中一次場景影片重新產生會失敗（Pink › Inject failure status，針對該段）",等重新產生結束,"舊版本仍保留且可播放
+聊天顯示「{n} scenes couldn't be generated. Your credits have been refunded. Tap Edit to regenerate, or tell me what to change.」",P2,R-160,
+TC-297,影片,"1. 場景影片已重新產生
+2. 卡片下方顯示「Your video has been updated.」","1. 播放影片
 2. 另一部重新產生過的短劇，離開聊天再回來",開始播放後，以及離開再回來之後，這則訊息都會消失,P3,R-161,
-TC-298,字幕,畫面顯示「Captions couldn't be added. Try again」；重試仍會失敗,點 Try again，然後等待,先顯示「Adding captions…」，之後又出現「Captions couldn't be added. Try again」和 Try again；影片仍然沒有字幕,P3,R-162,目前沒有已知的故障開關能讓語音轉文字失敗；沒有開關時記為 Blocked（observability）
+TC-298,字幕,"1. 畫面顯示「Captions couldn't be added. Try again」
+2. 重試仍會失敗",點 Try again，然後等待,"先顯示「Adding captions…」，之後又出現「Captions couldn't be added. Try again」和 Try again
+影片仍然沒有字幕",P3,R-162,目前沒有已知的故障開關能讓語音轉文字失敗；沒有開關時記為 Blocked（observability）
 TC-299,分鏡預覽,分鏡旁白的語音轉文字失敗,"1. 查看 Storyboard Preview 卡片
-2. 點 Retry",顯示「ⓘ Storyboard preview unavailable. Try again to generate the preview.」和 Retry；點 Retry 會建立預覽,P3,R-163,TC-078 是 TTS 失敗的情況。目前沒有已知的故障開關能讓 STT 失敗；沒有開關時記為 Blocked（observability）
-TC-300,分鏡,畫面顯示「Create storyboard」卡片；Wi-Fi 關閉且沒有行動網路（先確認 Appium 已透過 USB 連線）,點 Generate,跳出提示訊息「You're offline. Check your connection and try again.」；沒有送出任何請求（log 中沒有 request），也沒有扣款（Credit Details）；卡片仍保留,P2,R-164,真的斷網（REQ-020）；測完馬上把 Wi-Fi 開回來
-TC-301,故事大綱,大綱產生中；產生到一半時關閉 Wi-Fi（先確認 Appium 已透過 USB 連線）,重新打開 Wi-Fi 並等待,聊天顯示 Try again，不會自動繼續；網路恢復後，點 Try again 就能取得大綱；不會再顯示一次格式卡片,P2,R-165,要用真實的斷網（REQ-020）。版本備註 TR261006-0055 OUTLINE-NO-FORMAT-RETURN。PM 10/6（pm-update-5）比 09/30 的自動繼續（R-165、REQ-032）新，以 PM 10/6 為準
-TC-302,分鏡,已點「Create storyboard」的 Generate；畫面顯示「Thinking...」（計價中）,點 Back,不會跳出對話框；聊天直接關閉,P3,R-166,
+2. 點 Retry","顯示「ⓘ Storyboard preview unavailable. Try again to generate the preview.」和 Retry
+點 Retry 會建立預覽",P3,R-163,TC-078 是 TTS 失敗的情況。目前沒有已知的故障開關能讓 STT 失敗；沒有開關時記為 Blocked（observability）
+TC-300,分鏡,"1. 畫面顯示「Create storyboard」卡片
+2. Wi-Fi 關閉且沒有行動網路（先確認 Appium 已透過 USB 連線）",點 Generate,"跳出提示訊息「You're offline. Check your connection and try again.」
+沒有送出任何請求（log 中沒有 request），也沒有扣款（Credit Details）
+卡片仍保留",P2,R-164,真的斷網（REQ-020）；測完馬上把 Wi-Fi 開回來
+TC-301,故事大綱,"1. 大綱產生中
+2. 產生到一半時關閉 Wi-Fi（先確認 Appium 已透過 USB 連線）",重新打開 Wi-Fi 並等待,"聊天顯示 Try again，不會自動繼續
+網路恢復後，點 Try again 就能取得大綱
+不會再顯示一次格式卡片",P2,R-165,要用真實的斷網（REQ-020）。版本備註 TR261006-0055 OUTLINE-NO-FORMAT-RETURN。PM 10/6（pm-update-5）比 09/30 的自動繼續（R-165、REQ-032）新，以 PM 10/6 為準
+TC-302,分鏡,"1. 已點「Create storyboard」的 Generate
+2. 畫面顯示「Thinking...」（計價中）",點 Back,"不會跳出對話框
+聊天直接關閉",P3,R-166,
 TC-303,影片,"1. 全新安裝（屬於這個案例的一部分）：解除安裝 PowerDirector，重新安裝待測版本，還原 Developer Server，登入，設定方案等級，開啟 Log stage timings 和 Write Log
 2. 有一部 drama 停在影片設定卡片","1. 點 Generate Video
 2. 點「Notify me」",跳出 iOS 的通知權限對話框,P2,R-167,自己做全新安裝
@@ -799,30 +1267,45 @@ TC-304,影片,"1. 全新安裝（屬於這個案例的一部分）：解除安�
 2. 有一部 drama 停在影片設定卡片","1. 點 Generate Video
 2. 點「Not now」
 3. 再開始另一部影片",第二部影片不會再出現預先提示,P3,R-167,自己做全新安裝
-TC-305,影片,影片產生中，其中一個場景設為失敗（Pink › Inject failure status）；使用者停留在 App 的其他頁面,等影片結束,不會出現「Good news!」提示訊息,P2,R-168,
-TC-388,影片,影片產生中，其中一個場景設為以 6xxx 失敗並自動重試（Pink › Inject failure status；記錄所用的開關）；使用者停留在其他頁面,等重試成功、所有場景都完成,整部影片完成時，只出現一次「Good news!」提示訊息（以及推播），之前都不會出現,P3,R-298,如果沒有任何開關能做出自動重試的 6xxx，記為 Blocked（observability）
+TC-305,影片,"1. 影片產生中，其中一個場景設為失敗（Pink › Inject failure status）
+2. 使用者停留在 App 的其他頁面",等影片結束,不會出現「Good news!」提示訊息,P2,R-168,
+TC-388,影片,"1. 影片產生中，其中一個場景設為以 6xxx 失敗並自動重試（Pink › Inject failure status；記錄所用的開關）
+2. 使用者停留在其他頁面",等重試成功、所有場景都完成,整部影片完成時，只出現一次「Good news!」提示訊息（以及推播），之前都不會出現,P3,R-298,如果沒有任何開關能做出自動重試的 6xxx，記為 Blocked（observability）
 TC-306,影片,"在其他頁面上顯示提示訊息「Good news! Your ""{Drama title}"" is ready.」","1. 點「Close」
-2. 下一部完成的影片，改點「View」",Close 會關掉提示訊息，並停留在目前的頁面；View 會開啟 History,P3,R-169,
-TC-307,影片,已允許通知；影片產生中；App 已切到背景,"1. 等影片完成
-2. 點推播通知","只收到一則推播「Your drama is ready」/「""{Drama title}"" is done. Tap to watch it.」；點下去會開啟該聊天並停在影片卡片",P2,R-170,
+2. 下一部完成的影片，改點「View」","Close 會關掉提示訊息，並停留在目前的頁面
+View 會開啟 History",P3,R-169,
+TC-307,影片,"1. 已允許通知
+2. 影片產生中
+3. App 已切到背景","1. 等影片完成
+2. 點推播通知","只收到一則推播「Your drama is ready」/「""{Drama title}"" is done. Tap to watch it.」
+點下去會開啟該聊天並停在影片卡片",P2,R-170,
 TC-308,歷史紀錄,影片產生中，在 History 裡把短劇改名,"1. 在其他頁面等影片完成
 2. 再做第二部，讓 App 留在背景等它完成",提示訊息和推播都使用新名稱,P3,R-171,
 TC-309,角色,Change Characters 已開啟，且顯示著提示「Tap to choose a look for {name}」,點提示指向以外的另一個角色欄位,提示消失,P3,R-172,需要先有提示，而提示每個使用者只會出現一次（第一次使用）：和 TC-034 一起跑
-TC-310,角色,每個卡司欄位都已有造型,在大綱卡片上，點某個角色的 ⟳ 切換圖示，並更換該角色的造型,⟳ 圖示會針對該角色開啟 Change Characters；不會出現「Tap to choose a look for…」提示,P3,"R-172, R-326",
-TC-311,聊天行為,影片已完成；聊天已往上捲到較早的卡片,"1. 開啟 Full Edit
+TC-310,角色,每個卡司欄位都已有造型,在大綱卡片上，點某個角色的 ⟳ 切換圖示，並更換該角色的造型,"⟳ 圖示會針對該角色開啟 Change Characters
+不會出現「Tap to choose a look for…」提示",P3,"R-172, R-326",
+TC-311,聊天行為,"1. 影片已完成
+2. 聊天已往上捲到較早的卡片","1. 開啟 Full Edit
 2. 回到聊天",對話開啟後停在最下方（最新的訊息）,P3,R-173,PM 10/20 §13.2 取代了「保留使用者離開時的位置」；History 和 Change Characters 由 TC-101/102 涵蓋
-TC-433,聊天行為,分鏡已完成；聊天已往上捲到較早的卡片,"1. 開啟某個場景（場景編輯頁）
+TC-433,聊天行為,"1. 分鏡已完成
+2. 聊天已往上捲到較早的卡片","1. 開啟某個場景（場景編輯頁）
 2. 回到聊天",對話開啟後停在最下方（最新的訊息）,P3,R-089,PM 11/4 §13.2 ① 新增了場景編輯頁。PM-only: no Design frame yet
 TC-434,聊天行為,History 裡有一部聊天內容長達好幾個畫面的短劇,"1. 開啟 History
 2. 開啟該短劇",聊天開啟時停在最底部（最新的訊息），不是停在最上面或大綱,P3,R-089,PM 11/4 §13.2 ① / case 4（board 5128:8）。PM-only: no Design frame yet
 TC-312,分鏡,場景描述編輯器已開啟（在失敗的場景上點 Edit）,"1. 輸入到字數上限
-2. 再貼上更多文字","文字停在 1,000 字；計數器以紅色顯示「1000/1000」；並顯示「You've reached the 1,000-character limit.」",P3,R-174,
+2. 再貼上更多文字","文字停在 1,000 字
+計數器以紅色顯示「1000/1000」
+並顯示「You've reached the 1,000-character limit.」",P3,R-174,
 TC-313,分鏡,"場景描述編輯器已開啟（在失敗的場景上點 Edit），文字已達 1,000 字且顯示字數上限訊息",刪掉一個字元,計數器不再是紅色，訊息也消失,P3,R-174,
 TC-314,影片錯誤,場景影片描述編輯器已開啟（在失敗的片段上點 Edit）,"1. 輸入到字數上限
-2. 再貼上更多文字","文字停在 1,000 字；計數器以紅色顯示「1000/1000」；並顯示「You've reached the 1,000-character limit.」",P3,R-174,
+2. 再貼上更多文字","文字停在 1,000 字
+計數器以紅色顯示「1000/1000」
+並顯示「You've reached the 1,000-character limit.」",P3,R-174,
 TC-315,影片錯誤,"場景影片描述編輯器已開啟（在失敗的片段上點 Edit），文字已達 1,000 字且顯示字數上限訊息",刪掉一個字元,計數器不再是紅色，訊息也消失,P3,R-174,
-TC-316,影片錯誤,場景影片描述編輯器已開啟（在失敗的片段上點 Edit）,查看描述內容和按鈕,可直接編輯的純文字，分成四段，標題為「Cinematic Style」、「Scene」、「Motion」、「Camera」，每段一個段落；下方是「Regenerate scene ◆{price}」，{price} = 該場景長度 × 該短劇所用模型的費率（Seedance 2.5 每秒 6、Seedance 2.0 為 4、Seedance 2.0 Mini 為 2；15 秒的場景 → ◆90 / ◆60 / ◆30）,P3,R-175,PM 把按鈕寫成「Regenerate Video ◆30」；以 Design 為準
-TC-317,Make your character,Create my character 已加入一張 Reference 照片,再點一次 Reference，選另一張照片,新照片取代舊照片；畫面上只有一張 Reference 照片,P3,R-176,
+TC-316,影片錯誤,場景影片描述編輯器已開啟（在失敗的片段上點 Edit）,查看描述內容和按鈕,"可直接編輯的純文字，分成四段，標題為「Cinematic Style」、「Scene」、「Motion」、「Camera」，每段一個段落
+下方是「Regenerate scene ◆{price}」，{price} = 該場景長度 × 該短劇所用模型的費率（Seedance 2.5 每秒 6、Seedance 2.0 為 4、Seedance 2.0 Mini 為 2；15 秒的場景 → ◆90 / ◆60 / ◆30）",P3,R-175,PM 把按鈕寫成「Regenerate Video ◆30」；以 Design 為準
+TC-317,Make your character,Create my character 已加入一張 Reference 照片,再點一次 Reference，選另一張照片,"新照片取代舊照片
+畫面上只有一張 Reference 照片",P3,R-176,
 TC-318,歷史紀錄,短劇從未改過名,"1. 在聊天中請 Iris 更改故事標題
 2. 開啟 History",卡片顯示新的短劇標題,P3,R-177,
 TC-319,歷史紀錄,使用者已在 History 中把短劇改名,"1. 在聊天中請 Iris 更改故事標題
@@ -830,38 +1313,59 @@ TC-319,歷史紀錄,使用者已在 History 中把短劇改名,"1. 在聊天中�
 TC-320,歷史紀錄,短劇停在大綱階段時被儲存（還沒有分鏡）,開啟 History,該卡片顯示預設縮圖,P3,R-178,分鏡畫格的情況由 TC-106 涵蓋
 TC-430,歷史紀錄,短劇停在大綱階段時被儲存（還沒選角色，也沒有分鏡）,"1. 開啟 History
 2. 點該短劇的卡片",聊天重新開啟並回到大綱階段：想法圖片、附有所選格式的「What format would you like for your video?」、含 Story Outline 和 Possible Characters 的「Story Outline & Characters Result」卡片、角色欄位為空的「Choose your characters」、「More ideas +」以及想法輸入框,P2,R-468,Design 2824:128852（Recent Task「做到 story outline」，流程箭頭 2820:123493）。TC-113 一次把每個階段都重新開啟過
-TC-321,影片,完整影片已完成；畫面顯示「Ready for the next episode?」,點「Create Next Episode」,會依這部短劇的故事開始新的一集（記錄開啟的是什麼畫面）；第一部短劇仍原封不動留在 History,P2,R-179,Design 沒有畫出目的地；較舊的 PM frame 是開始新的大綱並保留第 1 集。若不同，列為 disposition question
-TC-322,中斷,大綱或聊天修改已用 Stop 停止,送出訊息請 Iris 繼續故事,故事從最後儲存的階段繼續；已完成的內容都不會遺失,P3,R-180,同事提出的方向；規格沒有提到。如果無法繼續，處置為 spec-addition
+TC-321,影片,"1. 完整影片已完成
+2. 畫面顯示「Ready for the next episode?」",點「Create Next Episode」,"會依這部短劇的故事開始新的一集（記錄開啟的是什麼畫面）
+第一部短劇仍原封不動留在 History",P2,R-179,Design 沒有畫出目的地；較舊的 PM frame 是開始新的大綱並保留第 1 集。若不同，列為 disposition question
+TC-322,中斷,大綱或聊天修改已用 Stop 停止,送出訊息請 Iris 繼續故事,"故事從最後儲存的階段繼續
+已完成的內容都不會遺失",P3,R-180,同事提出的方向；規格沒有提到。如果無法繼續，處置為 spec-addition
 TC-323,點數與上限,從未使用過 AI Mini Drama 的帳號,"1. 建立一個角色、一份分鏡和一部影片
-2. 在 AI Mini Drama 以外試用一個需要點數的功能",免費試用點數只發放一次，用來支付 AI Mini Drama 這三個步驟；其他地方不會提供；用完之後才扣帳號自己的點數,P2,R-181,
+2. 在 AI Mini Drama 以外試用一個需要點數的功能","免費試用點數只發放一次，用來支付 AI Mini Drama 這三個步驟
+其他地方不會提供
+用完之後才扣帳號自己的點數",P2,R-181,
 TC-324,點數與上限,帳號處於首次免費試用狀態,開啟圖片產生步驟和影片設定卡片,模型已預先設定，無法更改,P2,R-182,
 TC-325,聊天行為,聊天中有一則回覆正在產生,"每組操作順序各自獨立執行：
 1. Send › 回覆中按 Stop
 2. Stop › 編輯輸入框 › Send › Stop
 3. Stop › Back › 從 History 重新開啟聊天
-4. 回覆中按 Back › 回來 › Stop",App 不會當機或重新啟動；每組操作後聊天仍可正常使用,P2,R-183,
-TC-326,角色,Change Characters 已開啟，顯示內建的角色範本,連續點選好幾個範本,其他縮圖仍維持顯示；選取另一個時，沒有任何縮圖變空白或閃爍,P3,R-184,用 Appium 錄影畫面，才抓得到短暫的空白
+4. 回覆中按 Back › 回來 › Stop","App 不會當機或重新啟動
+每組操作後聊天仍可正常使用",P2,R-183,
+TC-326,角色,Change Characters 已開啟，顯示內建的角色範本,連續點選好幾個範本,"其他縮圖仍維持顯示
+選取另一個時，沒有任何縮圖變空白或閃爍",P3,R-184,用 Appium 錄影畫面，才抓得到短暫的空白
 TC-327,歷史紀錄,History 已開啟,點 ⓘ 按鈕,說明氣泡開啟，箭頭指向 ⓘ 按鈕，且完整顯示在畫面內,P3,R-185,文字內容和點空白處關閉由 TC-105 涵蓋
 TC-328,範本,已開啟 More 頁,查看每個分類的標題,每個分類都依 Design 顯示各自的圖示，不是整排重複同一個圖示,P3,R-186,
 TC-329,版本檢查,卡司中的每個角色都已有造型,"1. 請 Iris 重新產生所有角色
 2. 回答她提出的任何問題
-3. 點 Generate",會出現標價的「Create characters」提案（而不是空的選擇器）；Generate 完成後產生新的造型，且只扣一次點,P2,R-187,在兩個版本都通過後，就可以停用這一列
-TC-330,版本檢查,字幕產生失敗的影片,開啟某個場景的詳細資料，並播放該場景影片,場景詳細資料中沒有字幕缺失的標記，也沒有字幕錯誤卡片；場景影片可正常播放，沒有錯誤的覆蓋畫面,P3,R-188,在兩個版本都通過後，就可以停用這一列
-TC-331,版本檢查,影片已完成；Appium 已透過 USB 連線,"1. 點下載
+3. 點 Generate","會出現標價的「Create characters」提案（而不是空的選擇器）
+Generate 完成後產生新的造型，且只扣一次點",P2,R-187,在兩個版本都通過後，就可以停用這一列
+TC-330,版本檢查,字幕產生失敗的影片,開啟某個場景的詳細資料，並播放該場景影片,"場景詳細資料中沒有字幕缺失的標記，也沒有字幕錯誤卡片
+場景影片可正常播放，沒有錯誤的覆蓋畫面",P3,R-188,在兩個版本都通過後，就可以停用這一列
+TC-331,版本檢查,"1. 影片已完成
+2. Appium 已透過 USB 連線","1. 點下載
 2. 在下載完成前關閉 Wi-Fi
 3. 重新打開 Wi-Fi
-4. 再點一次下載",第一次下載會結束轉圈並顯示錯誤；第二次先顯示轉圈，之後出現「Saved to your device.」,P3,R-189,要用真實的斷網（REQ-020）。在兩個版本都通過後，就可以停用這一列
+4. 再點一次下載","第一次下載會結束轉圈並顯示錯誤
+第二次先顯示轉圈，之後出現「Saved to your device.」",P3,R-189,要用真實的斷網（REQ-020）。在兩個版本都通過後，就可以停用這一列
 TC-332,Make your character,Create my character 表單已填寫完整且有效,"1. 點 Generate
-2. 查看產生中的畫面，並點變暗的「generating...」按鈕",屬性標籤下方顯示「This may take a moment. Keep this screen open.」；X 仍可以按；Generating 按鈕下方有「Cancel」；「generating...」呈暗色，點它沒有反應,P2,"R-245, R-460",PM-only: no Design frame yet（Design 2026-10-19）；PM 10/30（4012:21397）的提示「This may take a moment. Keep this screen open.」取代了「about 1 minute」（比 Design 新，AGENTS.md Design vs PM）
+2. 查看產生中的畫面，並點變暗的「generating...」按鈕","屬性標籤下方顯示「This may take a moment. Keep this screen open.」
+X 仍可以按
+Generating 按鈕下方有「Cancel」
+「generating...」呈暗色，點它沒有反應",P2,"R-245, R-460",PM-only: no Design frame yet（Design 2026-10-19）；PM 10/30（4012:21397）的提示「This may take a moment. Keep this screen open.」取代了「about 1 minute」（比 Design 新，AGENTS.md Design vs PM）
 TC-333,Make your character,角色產生中,"1. 點「Cancel」
-2. 點「Leave anyway」","跳出「Stop and lose your credits?」/「This is still generating. If you leave now, it'll stop and the credits you've spent won't be refunded.」；Leave anyway 會停止產生；Credit Details 仍保留這筆扣款，沒有退款紀錄",P2,R-245,PM-only: no Design frame yet（Design 2026-10-19）
+2. 點「Leave anyway」","跳出「Stop and lose your credits?」/「This is still generating. If you leave now, it'll stop and the credits you've spent won't be refunded.」
+Leave anyway 會停止產生
+Credit Details 仍保留這筆扣款，沒有退款紀錄",P2,R-245,PM-only: no Design frame yet（Design 2026-10-19）
 TC-334,Make your character,角色產生中,"1. 點 X
-2. 點「Keep Generating」",跳出同一個對話框；Keep Generating 會關閉對話框，角色繼續完成產生,P3,R-245,PM-only: no Design frame yet（Design 2026-10-19）
+2. 點「Keep Generating」","跳出同一個對話框
+Keep Generating 會關閉對話框，角色繼續完成產生",P3,R-245,PM-only: no Design frame yet（Design 2026-10-19）
 TC-383,Make your character,角色產生中,"1. 點面板外的暗色區域
-2. 點「Keep Generating」",跳出「Stop and lose your credits?」，和點 X 時一樣；Keep Generating 會關閉對話框，角色繼續完成產生,P2,R-291,
+2. 點「Keep Generating」","跳出「Stop and lose your credits?」，和點 X 時一樣
+Keep Generating 會關閉對話框，角色繼續完成產生",P2,R-291,
 TC-335,Make your character,角色產生超過 5 分鐘仍在進行,"1. 等對話框跳出
-2. 點「Close」",跳出「We couldn't create your character」/「This is taking longer than expected. Send us feedback and our support team will check your credits.」，有 Close / Send Feedback；點 Close 會回到 Make your character，描述和設定都保留；Send Feedback 是藍色的主要按鈕,P2,"R-246, R-304",PM-only: no Design frame yet（Design 2026-10-19）
-TC-336,Make your character,逾時對話框已顯示,點「Send Feedback」並查看表單（不要送出）,"Feedback 開在「AI Issues」，AI Feature Name 為「AI Mini Drama • Character generation」，issue 為「My character took too long to generate and didn't finish, but my credits were used. Please help me check. Time: {date & time}」，描述會帶入當作 prompt，並已填入 Email；不顯示 task ID 欄位",P3,"R-246, R-303",PM-only: no Design frame yet（Design 2026-10-19）。未登入的分支（沒有 Email）不測：測試帳號是已登入的
+2. 點「Close」","跳出「We couldn't create your character」/「This is taking longer than expected. Send us feedback and our support team will check your credits.」，有 Close / Send Feedback
+點 Close 會回到 Make your character，描述和設定都保留
+Send Feedback 是藍色的主要按鈕",P2,"R-246, R-304",PM-only: no Design frame yet（Design 2026-10-19）
+TC-336,Make your character,逾時對話框已顯示,點「Send Feedback」並查看表單（不要送出）,"Feedback 開在「AI Issues」，AI Feature Name 為「AI Mini Drama • Character generation」，issue 為「My character took too long to generate and didn't finish, but my credits were used. Please help me check. Time: {date & time}」，描述會帶入當作 prompt，並已填入 Email
+不顯示 task ID 欄位",P3,"R-246, R-303",PM-only: no Design frame yet（Design 2026-10-19）。未登入的分支（沒有 Email）不測：測試帳號是已登入的
 TC-420,Make your character,從逾時對話框開啟的 Send Feedback 停在「AI Issues」，內容已預先填好（TC-336）,"1. 點「General」
 2. 點「AI Issues」
 3. 點「What Prompt did you use?」
@@ -871,51 +1375,93 @@ TC-420,Make your character,從逾時對話框開啟的 Send Feedback 停在「AI
 7. 把 Email 重新輸入，並點欄位以外的地方
 8. 點新增圖片的方塊，並取消選圖視窗
 9. 點「Privacy Policy」再返回
-10. 點 ‹",「General」顯示一般表單，再點回「AI Issues」會顯示 AI 表單（記錄預先填好的文字有沒有保留）；新加的字會顯示在欄位中，點欄位以外的地方會收起鍵盤；Email 為空時「Submit」變暗，也不會送出任何東西；新增圖片的方塊會開啟相簿選圖視窗；「Privacy Policy」會開啟隱私權頁面，返回後回到表單；‹ 會關閉 Send Feedback，且不送出,P3,R-459,PM-only: no Design frame yet（PM 主流程 2613:28618，update 9 4012:23497）。絕對不要點可以按的「Submit」：那會真的送一份回報給 CyberLink 客服
+10. 點 ‹","「General」顯示一般表單，再點回「AI Issues」會顯示 AI 表單（記錄預先填好的文字有沒有保留）
+新加的字會顯示在欄位中，點欄位以外的地方會收起鍵盤
+Email 為空時「Submit」變暗，也不會送出任何東西
+新增圖片的方塊會開啟相簿選圖視窗
+「Privacy Policy」會開啟隱私權頁面，返回後回到表單
+‹ 會關閉 Send Feedback，且不送出",P3,R-459,PM-only: no Design frame yet（PM 主流程 2613:28618，update 9 4012:23497）。絕對不要點可以按的「Submit」：那會真的送一份回報給 CyberLink 客服
 TC-337,角色,Finish your characters 中有兩個角色正在產生，其中一個已完成,"1. 點「Cancel」
-2. 點「Leave anyway」",跳出「Stop and lose your credits?」；已完成的角色保留，未完成的停止；Credit Details 中沒有它的退款,P2,R-247,PM-only: no Design frame yet（Design 2026-10-19）。產生中的標題和完成後的文字由 TC-041 涵蓋
+2. 點「Leave anyway」","跳出「Stop and lose your credits?」
+已完成的角色保留，未完成的停止
+Credit Details 中沒有它的退款",P2,R-247,PM-only: no Design frame yet（Design 2026-10-19）。產生中的標題和完成後的文字由 TC-041 涵蓋
 TC-338,角色,Finish your characters 產生超過 5 分鐘仍在進行,"1. 等對話框出現
-2. 點「Send Feedback」（不要送出）",跳出「We couldn't create your characters」，按鈕為 Close / Send Feedback；回報問題中寫明了角色的數量,P3,R-247,PM-only: no Design frame yet（Design 2026-10-19）
-TC-456,角色,Finish your characters 開在一份大綱上，其卡司是知名的真實公眾人物（送出一個點名公眾人物的想法，例如由知名演員本人演出的短劇，並確認大綱）；先記下點數餘額,"1. 點「Generate all」並等待
+2. 點「Send Feedback」（不要送出）","跳出「We couldn't create your characters」，按鈕為 Close / Send Feedback
+回報問題中寫明了角色的數量",P3,R-247,PM-only: no Design frame yet（Design 2026-10-19）
+TC-456,角色,"1. Finish your characters 開在一份大綱上，其卡司是知名的真實公眾人物（送出一個點名公眾人物的想法，例如由知名演員本人演出的短劇，並確認大綱）
+2. 先記下點數餘額","1. 點「Generate all」並等待
 2. 閱讀對話框
 3. 點「Close」，記錄回到哪裡，以及被擋下的角色欄位顯示什麼
 4. 開啟 Character Library 的 Mine 分頁
-5. 開啟 Credit Details",步驟 2：跳出「This image can't be used」/「It looks like a real public figure. Send us feedback and our support team will check your credits.」，有「Close」和藍色的「Send Feedback」；被擋下的角色圖片不顯示；步驟 3：記錄結果（Q-37）；步驟 4：被擋下的角色不在 Mine 裡；步驟 5：該筆扣點仍保留，沒有自動退款,P2,"R-495, R-496",PM 11/5 §13.26 提到 Finish your characters，但這裡點 Close 會怎樣並沒有說明（Q-37）。伺服器會不會擋下角色，要看大綱怎麼描述他：記錄所用的想法。每試一次都會花掉 Generate all 的價格（允許，REQ-073）。PM-only: no Design frame yet
-TC-339,Make your character,欄位原本已有造型；為它產生了一個新角色,"1. 點 X
-2. 點「Discard」",結果畫面關閉；欄位維持先前的造型；新角色不會出現在 Mine,P3,R-248,PM-only: no Design frame yet（Design 2026-10-19）。空欄位的情況由 TC-134 涵蓋
+5. 開啟 Credit Details","步驟 2：跳出「This image can't be used」/「It looks like a real public figure. Send us feedback and our support team will check your credits.」，有「Close」和藍色的「Send Feedback」
+步驟 2：被擋下的角色圖片不顯示
+步驟 3：記錄結果（Q-37）
+步驟 4：被擋下的角色不在 Mine 裡
+步驟 5：該筆扣點仍保留，沒有自動退款",P2,"R-495, R-496",PM 11/5 §13.26 提到 Finish your characters，但這裡點 Close 會怎樣並沒有說明（Q-37）。伺服器會不會擋下角色，要看大綱怎麼描述他：記錄所用的想法。每試一次都會花掉 Generate all 的價格（允許，REQ-073）。PM-only: no Design frame yet
+TC-339,Make your character,"1. 欄位原本已有造型
+2. 為它產生了一個新角色","1. 點 X
+2. 點「Discard」","結果畫面關閉
+欄位維持先前的造型
+新角色不會出現在 Mine",P3,R-248,PM-only: no Design frame yet（Design 2026-10-19）。空欄位的情況由 TC-134 涵蓋
 TC-340,Make your character,畫面顯示「Discard this character?」,點「Keep」,對話框關閉，產生好的角色仍留在畫面上,P3,R-248,PM-only: no Design frame yet（Design 2026-10-19）
 TC-342,Make your character,已顯示產生好的角色,把結果畫面往下滑,與點 X 相同：跳出「Discard this character?」,P3,R-248,PM-only: no Design frame yet（Design 2026-10-19）
 TC-343,影片,完整影片已完成,"1. 點「Export Full Video」
 2. 匯出期間，查看預覽畫面，並點「Full Edit」、「Export Full Video」和預覽右下角的下載圖示
-3. 等待",不會跳出對話框；預覽中央出現轉圈，播放鈕隱藏、影片暫停；「Full Edit」、「Export Full Video」（標籤不變）和下載圖示變暗，點了沒有反應；完成後轉圈消失，播放鈕和這三個控制項恢復，提示訊息顯示「Saved to Photos.」，輸出的完整影片已在「照片」中,P2,R-249,PM Figma 10/22（4418:2）；PM-only: no Design frame yet
+3. 等待","不會跳出對話框
+預覽中央出現轉圈，播放鈕隱藏、影片暫停
+「Full Edit」、「Export Full Video」（標籤不變）和下載圖示變暗，點了沒有反應
+完成後轉圈消失，播放鈕和這三個控制項恢復，提示訊息顯示「Saved to Photos.」，輸出的完整影片已在「照片」中",P2,R-249,PM Figma 10/22（4418:2）；PM-only: no Design frame yet
 TC-414,影片,Export Full Video 進行中（預覽上有轉圈）,"1. 點第二個場景的縮圖
-2. 等匯出結束",預覽切換到該場景，匯出繼續進行；顯示「Saved to Photos.」，「照片」中存的是整部短劇，而不是那個場景,P2,R-338,PM Figma 10/22（4418:2）；PM-only: no Design frame yet
-TC-415,影片,Export Full Video 進行中（預覽上有轉圈）,點 Back，並停在聊天頁面直到匯出結束,匯出期間 Back 可以用；匯出完成時，聊天頁面顯示提示訊息「Saved to Photos.」，輸出的完整影片已在「照片」中,P2,R-337,PM Figma 10/22（4418:2）；PM-only: no Design frame yet。需請 RD 確認離開後匯出是否會繼續；否則按 Back 會問「Stop exporting?」（Q-21）
-TC-416,影片,完整影片已完成，結果頁已開啟；Appium 已透過 USB 連線,"1. 點「Export Full Video」
+2. 等匯出結束","預覽切換到該場景，匯出繼續進行
+顯示「Saved to Photos.」，「照片」中存的是整部短劇，而不是那個場景",P2,R-338,PM Figma 10/22（4418:2）；PM-only: no Design frame yet
+TC-415,影片,Export Full Video 進行中（預覽上有轉圈）,點 Back，並停在聊天頁面直到匯出結束,"匯出期間 Back 可以用
+匯出完成時，聊天頁面顯示提示訊息「Saved to Photos.」，輸出的完整影片已在「照片」中",P2,R-337,PM Figma 10/22（4418:2）；PM-only: no Design frame yet。需請 RD 確認離開後匯出是否會繼續；否則按 Back 會問「Stop exporting?」（Q-21）
+TC-416,影片,"1. 完整影片已完成，結果頁已開啟
+2. Appium 已透過 USB 連線","1. 點「Export Full Video」
 2. 在匯出完成前關閉 Wi-Fi
 3. 查看結果
-4. 重新打開 Wi-Fi，再點一次「Export Full Video」",第一次匯出結束時顯示提示訊息「Couldn't save your video. Try again.」；轉圈消失，Back、「Full Edit」、「Export Full Video」、下載圖示、播放鈕和縮圖都恢復可用；第二次匯出可以成功儲存（「Saved to Photos.」）,P2,R-339,PM Figma 10/22（4418:2）；PM-only: no Design frame yet。要用真實的斷網（REQ-020）；測完立刻把 Wi-Fi 恢復。如果離線時匯出仍然成功，記為 Blocked（需要能造成失敗的測試資料）
-TC-417,影片,PowerDirector 尚未被詢問過「照片」權限（全新安裝），或權限設為 None；完整影片已完成，結果頁已開啟,點「Export Full Video」並拒絕「照片」存取權限,第一次匯出時 iOS 會詢問相簿存取權限；拒絕後，匯出相關的控制項恢復，並顯示提示訊息「Allow Photos access in Settings to save your video.」,P3,R-340,PM Figma 10/22（4418:2）；PM-only: no Design frame yet。回應 iOS 的權限提示或更改「照片」權限屬於系統設定：要先問使用者，事後也要把權限恢復
-TC-344,聊天行為,聊天中已有數則訊息,送出一則訊息，並在回覆產生的過程中觀察,剛送出的訊息會移到畫面最上方；回覆在它下方產生，畫面不會跟著往下捲；內容超出畫面時會出現 ↓，點它會平順地捲到底部,P2,R-250,
-TC-431,聊天行為,聊天中已有數則訊息；剛送出一則訊息（固定在最上方），其回覆仍在產生中；不要碰螢幕,"1. 等回覆中的骨架畫面變成實際結果
-2. 等下方出現下一則新訊息",步驟 1：實際結果就地取代骨架畫面，聊天不會捲動；步驟 2：聊天只捲到新訊息的開頭進入畫面為止，不會直接捲到底部,P3,R-485,PM 11/4 §13.2 ③（board 5128:8，pm-1002-update）。PM-only: no Design frame yet
-TC-345,影片,分鏡已完成；先數一下場景數,查看影片設定卡片上的「Full Video」,長度為 15 秒 × 場景數（例如 6 個場景是 90 sec，8 個場景是 120 sec）,P3,R-251,Design 的 frame 以 90 sec 和 120 sec 為例；回答了 Q-13
+4. 重新打開 Wi-Fi，再點一次「Export Full Video」","第一次匯出結束時顯示提示訊息「Couldn't save your video. Try again.」
+轉圈消失，Back、「Full Edit」、「Export Full Video」、下載圖示、播放鈕和縮圖都恢復可用
+第二次匯出可以成功儲存（「Saved to Photos.」）",P2,R-339,PM Figma 10/22（4418:2）；PM-only: no Design frame yet。要用真實的斷網（REQ-020）；測完立刻把 Wi-Fi 恢復。如果離線時匯出仍然成功，記為 Blocked（需要能造成失敗的測試資料）
+TC-417,影片,"1. PowerDirector 尚未被詢問過「照片」權限（全新安裝），或權限設為 None
+2. 完整影片已完成，結果頁已開啟",點「Export Full Video」並拒絕「照片」存取權限,"第一次匯出時 iOS 會詢問相簿存取權限
+拒絕後，匯出相關的控制項恢復，並顯示提示訊息「Allow Photos access in Settings to save your video.」",P3,R-340,PM Figma 10/22（4418:2）；PM-only: no Design frame yet。回應 iOS 的權限提示或更改「照片」權限屬於系統設定：要先問使用者，事後也要把權限恢復
+TC-344,聊天行為,聊天中已有數則訊息,送出一則訊息，並在回覆產生的過程中觀察,"剛送出的訊息會移到畫面最上方
+回覆在它下方產生，畫面不會跟著往下捲
+內容超出畫面時會出現 ↓，點它會平順地捲到底部",P2,R-250,
+TC-431,聊天行為,"1. 聊天中已有數則訊息
+2. 剛送出一則訊息（固定在最上方），其回覆仍在產生中
+3. 不要碰螢幕","1. 等回覆中的骨架畫面變成實際結果
+2. 等下方出現下一則新訊息","步驟 1：實際結果就地取代骨架畫面，聊天不會捲動
+步驟 2：聊天只捲到新訊息的開頭進入畫面為止，不會直接捲到底部",P3,R-485,PM 11/4 §13.2 ③（board 5128:8，pm-1002-update）。PM-only: no Design frame yet
+TC-345,影片,"1. 分鏡已完成
+2. 先數一下場景數",查看影片設定卡片上的「Full Video」,長度為 15 秒 × 場景數（例如 6 個場景是 90 sec，8 個場景是 120 sec）,P3,R-251,Design 的 frame 以 90 sec 和 120 sec 為例；回答了 Q-13
 TC-346,角色,帳號已在先前的短劇中看過「Tap to choose a look for {name}」提示,開始新的短劇，並為第一個角色選一個造型,不會出現提示,P3,R-252,
 TC-347,影片,影片設定卡片已顯示,"1. 點 Standard
 2. 點 Fast","副標題依序變成「Seedance 2.0 • Balanced quality for everyday stories」、「Seedance 2.0 Mini • Quicker results, fewer credits」",P3,R-253,PM 10/16 比 Design 新（REQ-026）
 TC-348,角色,卡司已設定,"1. 在聊天中輸入「Can you change one of the characters to look older?」
-2. 點一個角色標籤（例如「The Manager」）",顯示「Sure! Which character would you like to change?」，並附 2–4 個選項標籤；點標籤會把它當成訊息送出，標籤隨即消失,P2,"R-254, R-430",PM 10/16 比 Design 新（REQ-026）
+2. 點一個角色標籤（例如「The Manager」）","顯示「Sure! Which character would you like to change?」，並附 2–4 個選項標籤
+點標籤會把它當成訊息送出，標籤隨即消失",P2,"R-254, R-430",PM 10/16 比 Design 新（REQ-026）
 TC-391,角色,Iris 問了「Which character would you like to change?」並附選項標籤,不點標籤，改為輸入角色名稱並送出,Iris 會把輸入的回答當成點了標籤一樣處理，並提供「Update characters」卡片,P3,R-301,
-TC-349,角色,畫面顯示「Update characters • 1 character」卡片（TC-045）,點 Generate 並等待,卡片消失，Iris 回覆「Working on it...」；接著出現「Here's your updated cast.」和一張顯示新造型的 Story Outline & Characters 新卡片，以及「Your characters' looks are updated! Ready to create the storyboard?」並附 Create storyboard；Credit Details 顯示卡片上的價格只扣了一次（大綱文字也一併更新）,P1,"R-254, R-301",PM 10/16 比 Design 新（REQ-026）
+TC-349,角色,畫面顯示「Update characters • 1 character」卡片（TC-045）,點 Generate 並等待,"卡片消失，Iris 回覆「Working on it...」
+接著出現「Here's your updated cast.」和一張顯示新造型的 Story Outline & Characters 新卡片，以及「Your characters' looks are updated! Ready to create the storyboard?」並附 Create storyboard
+Credit Details 顯示卡片上的價格只扣了一次（大綱文字也一併更新）",P1,"R-254, R-301",PM 10/16 比 Design 新（REQ-026）
 TC-350,角色,卡司已設定,在聊天中要求更換兩個角色的造型,卡片顯示「Update characters • 2 characters」，價格是產生一個角色的兩倍,P2,R-254,PM 10/16 比 Design 新（REQ-026）。點數數字是硬性規定
 TC-351,角色,角色更新產生中（「Working on it...」）,點 Back,"跳出「Stop and lose your credits?」/「This is still generating. If you leave now, it'll stop and the credits you've spent won't be refunded.」，按鈕為 Leave anyway / Keep Generating",P2,R-254,PM 10/16 比 Design 新（REQ-026）
 TC-352,角色,分鏡已經產生過,"1. 在聊天中要求更換某個角色的造型
-2. 點卡片上的 Generate",流程相同；最後出現「Your characters' looks are updated! Ready to create the storyboard?」和有標價的 Create storyboard 卡片（重新產生分鏡會再扣一次費用）,P2,R-254,PM 10/16 比 Design 新（REQ-026）
-TC-353,角色,同時更新兩個角色，其中一個會失敗（Pink › Trip image moderation；記錄所用的開關）,點 Generate 並等待,成功的角色更新完成；失敗的顯示「!」並退還點數，和 §13.10 一樣（TC-042）,P2,R-254,PM 10/16 比 Design 新（REQ-026）
-TC-457,角色,聊天中已有卡司和其 Story Outline & Characters 卡片；先記下點數餘額,"1. 在聊天中輸入「Make The Manager look exactly like <a well-known actor>」
+2. 點卡片上的 Generate","流程相同
+最後出現「Your characters' looks are updated! Ready to create the storyboard?」和有標價的 Create storyboard 卡片（重新產生分鏡會再扣一次費用）",P2,R-254,PM 10/16 比 Design 新（REQ-026）
+TC-353,角色,同時更新兩個角色，其中一個會失敗（Pink › Trip image moderation；記錄所用的開關）,點 Generate 並等待,"成功的角色更新完成
+失敗的顯示「!」並退還點數，和 §13.10 一樣（TC-042）",P2,R-254,PM 10/16 比 Design 新（REQ-026）
+TC-457,角色,"1. 聊天中已有卡司和其 Story Outline & Characters 卡片
+2. 先記下點數餘額","1. 在聊天中輸入「Make The Manager look exactly like <a well-known actor>」
 2. 點「Update characters」卡片上的 Generate 並等待
 3. 點「Close」，並記錄聊天中顯示什麼
-4. 開啟 Credit Details",步驟 2：跳出「This image can't be used」/「It looks like a real public figure. Send us feedback and our support team will check your credits.」，有「Close」和藍色的「Send Feedback」；不顯示新的造型；步驟 3：記錄結果（Q-37）；步驟 4：這次更新的扣點仍保留，沒有自動退款,P2,"R-495, R-496",PM 11/5 §13.26 提到在聊天中更換角色，但這裡點 Close 會怎樣並沒有說明（Q-37）。如果 Iris 在出現卡片前就拒絕或改寫了這個要求，記錄她的回覆，並改成描述該人物的外貌，而不是直接用名字。每試一次都會花掉卡片上的價格（允許，REQ-073）。PM-only: no Design frame yet
+4. 開啟 Credit Details","步驟 2：跳出「This image can't be used」/「It looks like a real public figure. Send us feedback and our support team will check your credits.」，有「Close」和藍色的「Send Feedback」
+步驟 2：不顯示新的造型
+步驟 3：記錄結果（Q-37）
+步驟 4：這次更新的扣點仍保留，沒有自動退款",P2,"R-495, R-496",PM 11/5 §13.26 提到在聊天中更換角色，但這裡點 Close 會怎樣並沒有說明（Q-37）。如果 Iris 在出現卡片前就拒絕或改寫了這個要求，記錄她的回覆，並改成描述該人物的外貌，而不是直接用名字。每試一次都會花掉卡片上的價格（允許，REQ-073）。PM-only: no Design frame yet
 TC-354,Make your character,"角色描述超過 1,000 字（TC-051），必填欄位都已填好","刪除文字，直到少於 1,000 字",計數器不再是紅色，字數上限訊息消失，Generate 恢復可以按,P2,R-255,恢復行為依 PM §13.11；Design frame 只畫了超過上限的狀態
 TC-355,分鏡預覽,分鏡已完成，但預覽失敗（同 TC-078）,"1. 查看 Storyboard Preview 卡片下方
-2. 點「Create video anyways」",失敗的預覽卡片和它的 Retry ◆1 下方有一個「Create video anyways」按鈕；點下去會跳過預覽直接進入影片步驟（記錄開啟的是什麼畫面，例如「Choose your video settings」）,P2,R-256,PM E4 frame；按鈕通往哪裡沒有畫出來。失敗的文案在 TC-078 檢查
+2. 點「Create video anyways」","失敗的預覽卡片和它的 Retry ◆1 下方有一個「Create video anyways」按鈕
+點下去會跳過預覽直接進入影片步驟（記錄開啟的是什麼畫面，例如「Choose your video settings」）",P2,R-256,PM E4 frame；按鈕通往哪裡沒有畫出來。失敗的文案在 TC-078 檢查

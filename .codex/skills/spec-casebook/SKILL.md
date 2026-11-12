@@ -106,6 +106,13 @@ that showed it). No comparison runs during an analysis or before a proposal.
   platform's controls (its debug menu, log, tier switch, install path, system settings): a step that names a control the
   platform lacks is rewritten or parked, never copied (2026-10-27: 13 Android rows named iOS Pink, Developer Server or
   Log stage timings).
+  **One source for both (2026-11-11, phd/batch-editing REQ-011).** Both platforms read the same, newest spec state.
+  When one platform's table was read from Figma (a spec set with `figma` links or `figma_only`) and the other from a
+  PDF export, the PDF-only one also reads that Figma set before its next approval (`reading-the-spec.md`, *No Figma
+  access* › *Another table read Figma*), and an Open question on one platform that the other's requirements answer is
+  a gap, never an assumption. Shown 2026-11-11: Android, read from 「UI UX flow 2.pdf」, kept Q-16 (「All」 states) and
+  Q-17 (strip in Curve / HSL) open with wrong assumptions while iOS had the PM Figma rules (22 spec agent cases
+  missed or contradicted); `check.ts` warns when the two tables' spec sets differ this way.
 - Spec files: every file the user supplied for this feature (PDF, images, exported Figma pages, text).
   Ask for missing ones only if the user said there are more.
 

@@ -111,10 +111,16 @@ lines; put the full rule in the skill or reference file that applies it and poin
   calls, one at a time per server, with their exact description → `--save` (replies copied from the transcripts,
   never retyped; leftovers re-packed) until nothing is left; a read stops at its time budget and keeps what it read
   (`reading-the-spec.md` step 10, *Plan, call, save*).
-- **Full Figma data by script (user, 2026-10-30).** When every node's geometry and styling is needed (not just
-  controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only (never PM or MX):
-  one `use_figma` script per output chunk plus one full-size screenshot per board cropped locally, never per-frame or
-  per-instance MCP reads (`figma/references/source.md`).
+- **Full Figma data by script (user, 2026-10-30; route changed 2026-11-11).** When every node's geometry and styling
+  is needed (not just controls and arrows), read it with the `figma` skill's source branch, on Design Figma links only
+  (never PM or MX), never per-frame or per-instance MCP reads. **Default route (user, 2026-11-11): REST + one
+  `use_figma` call** (`scripts/figma-rest.ts`): one REST node call for every board, one read-only `use_figma` call for
+  what REST lacks (variable and mode names, vertex caps and joins, boolean radius, video fills), board images by one
+  REST image call with `get_screenshot` only for boards too large for it; on AI Mini Drama 2 REST + 1 MCP call against
+  207, with the same fingerprints, screens, arrows and design-check result. **The use_figma-only route stays available
+  when the user asks for it** (`figma-source.ts`, one script per output chunk). The REST token is qa-dm's personal
+  access token (scope File content › Read): `FIGMA_TOKEN`, else the keychain item `com.cyberlink.figma-retrieval`, else
+  `~/.casebook/figma-token`; never in the repo or a log (README Setup 5; `figma/references/source.md`).
 - **What is drawn over a board (user, 2026-11-04, REQ-078).** Arrows, connectors and notes drawn over a Figma board
   are part of it: reads, the change check and board images include them, and a changed board's words are compared
   with its spec notes (`figma-text.ts`) so its rows follow the redraw; `board-lint.ts` (REQ-079) checks every mark
@@ -164,6 +170,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
   warns (`formats.md`, writing rules).
+- **One item per line in Precondition and Expected Result (user, 2026-11-12).** No `;`-joined lines: each
+  precondition on its own numbered line, each expected check on its own unnumbered line (a step prefix repeated on
+  every line of that step); `check.ts` warns (`formats.md`, writing rules).
 - **Source read before the design check (user, 2026-11-04, REQ-081).** Every Design board the casebook inventories
   is read whole before any design pass walks its rows; `design.ts status` stops on a source gap until it is read or
   excluded with a reason (`figma/references/conformance.md` › *Plan*, `source.md` step 1).
@@ -184,6 +193,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   exact text colour, size, weight, lines and drawables; the first install replaces the app with an uninstall (data
   cleared) only with `--yes-uninstall` once agreed. With that build, Android design captures save the view data and
   the check reads it before OCR and pixels (REQ-086; `figma/references/conformance.md` §3).
+- **A design check needs every screen (user, 2026-11-11, video-enhance REQ-013).** A run that left Design screens
+  uncaptured or in the wrong state (Android: or without view data) is discarded for the design check, not topped up:
+  once the phone is free, a design pass on the re-signed debuggable build captures every routed screen again
+  (`figma/references/conformance.md` §2, *All or again*).
 - **What the design check holds the app to (user, 2026-11-06).** A text box's padding and border, font size and the
   text's centring in its box, and the gaps between buttons; never a text's words or its own place on the screen
   (`copy` and `position` are gone; texts pair by place when the words differ) (`figma/references/conformance.md` §3).
@@ -195,6 +208,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   (`library/pdr/knowledge/design-guideline.md`). Padding is measured from the letters' pixels, so a chip narrower only
   because Roboto is narrower is fine, and a chip whose padding differs is a `padding` item, never the next chip's
   position (`figma/references/conformance.md` §3).
+- **Ported from the spec agent's Android branch (user, 2026-11-11).** From rdqe-spec-contract-agent
+  `feat/figma-android-ui-conformance`, copied by hand: Figma replies cut by the host are refused on save; Android
+  design captures clear FLAG_SECURE for the screenshot and refuse a blank one; `unspecced` lists tappable app controls
+  where Figma draws nothing; icon buttons are measured by the icon they paint (`figma/references/conformance.md`).
 - **Design tab items for Design and RD (user, 2026-11-06).** Each item opens with a plain sentence (what differs,
   Design's value, the app's); raw values sit under 「How it was measured」; review notes avoid ΔE and tool terms
   (`figma/references/conformance.md` §4).
@@ -203,6 +220,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   show (`figma/references/conformance.md` §3).
 - **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
   the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
+- **One source for both platforms (user, 2026-11-11, batch-editing REQ-011).** Both tables of a feature read the same,
+  newest spec state: a PDF-only table also reads the Figma set the other table used, the Figma text wins, an Open
+  question the other table answers is a gap; `check.ts` warns. Controls with states get every state-changing event
+  (`analysis.md` pass 10b); Figma-only board text is compared exactly (`figma-text.ts`) (`SKILL.md` step 0).
 - **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names
   one platform (`SKILL.md` step 0).
 - **A Figma link is the spec (user, 2026-11-04).** When the user sends a Figma link and no PDF, read the spec from
@@ -217,6 +238,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   a table's Open questions sit on Cases above the table with answer boxes, applied as rulings (`SKILL.md` step 4,
   Question answers). Open pages update only when what they show changed (user, 2026-11-05): Progress, Results, Coverage and
   Design redraw in place, patching only what differs; Cases offers a Reload button (`scripts/pages.ts` header).
+- **Pages shown to the user (user, 2026-11-12).** A table or run page the user should see opens from the local pages
+  server (`node scripts/pages.ts`) in the browser pane, never as a `file://` copy; the agent's own look at a page uses
+  `get_page_text` / `read_page` on that server, or a tab it closes again before the turn ends.
 - **One pages server, only what is open (user, 2026-11-06).** `node scripts/pages.ts [--lan]` opens a navigation page
   for every table; a page's process starts on its first visit and stops when idle, and what the pages leave on disk
   is cleared (`scripts/pages.ts` header, `lib/housekeeping.ts`). A second start reuses the running server.

@@ -2,9 +2,9 @@
   "feature": "phd/scrollable-collage",
   "platform": "ios",
   "title": "Scrollable Collage",
-  "version": 2,
-  "approved_at": "2026-11-10T01:13:14.537Z",
-  "draft": "20261109-160641",
+  "version": 3,
+  "approved_at": "2026-11-12T01:38:23.939Z",
+  "draft": "edit-20261112-093823",
   "spec_folder": "specs/2026-11-05",
   "spec_files": [
     {
@@ -30,6 +30,15 @@
       "approved_at": "2026-11-10T01:13:14.537Z",
       "spec_set_sha256": "d79381921641a13fa1166c24165801557d185cf4b1b56bef688bd89a17372bff",
       "draft": "20261109-160641",
+      "cases": 151,
+      "csv": "history/v2.csv",
+      "requirements": "history/v2-requirements.md"
+    },
+    {
+      "version": 3,
+      "approved_at": "2026-11-12T01:38:23.939Z",
+      "spec_set_sha256": "d79381921641a13fa1166c24165801557d185cf4b1b56bef688bd89a17372bff",
+      "draft": "edit-20261112-093823",
       "cases": 151,
       "csv": "cases.csv",
       "requirements": "requirements.md"

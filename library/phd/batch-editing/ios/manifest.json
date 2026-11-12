@@ -2,9 +2,9 @@
   "feature": "phd/batch-editing",
   "platform": "ios",
   "title": "Batch Editing",
-  "version": 1,
-  "approved_at": "2026-11-10T01:08:51.870Z",
-  "draft": "20261109-155427",
+  "version": 3,
+  "approved_at": "2026-11-12T01:38:23.894Z",
+  "draft": "edit-20261112-093823",
   "spec_folder": "specs/2026-11-09-figma",
   "spec_files": [
     {
@@ -14,7 +14,7 @@
     }
   ],
   "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
-  "cases": 123,
+  "cases": 125,
   "history": [
     {
       "version": 1,
@@ -22,6 +22,24 @@
       "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
       "draft": "20261109-155427",
       "cases": 123,
+      "csv": "history/v1.csv",
+      "requirements": "history/v1-requirements.md"
+    },
+    {
+      "version": 2,
+      "approved_at": "2026-11-11T09:58:58.551Z",
+      "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
+      "draft": "20261111-173421",
+      "cases": 125,
+      "csv": "history/v2.csv",
+      "requirements": "history/v2-requirements.md"
+    },
+    {
+      "version": 3,
+      "approved_at": "2026-11-12T01:38:23.894Z",
+      "spec_set_sha256": "51e224f33ef6da7f140daf45cc8e5431ced4395259607fd04f58dfd1da4fdc8b",
+      "draft": "edit-20261112-093823",
+      "cases": 125,
       "csv": "cases.csv",
       "requirements": "requirements.md"
     }

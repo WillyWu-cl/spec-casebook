@@ -58,6 +58,8 @@
 //   spacing   the gap between neighbouring buttons off Figma's (layoutCands)                              minor
 //   colour    a filled shape (button, chip, card, badge) ΔE > 12 from its Figma fill, or a text ΔE > 18   minor
 //   control   an unlabelled control of the inventory (icon) with no tappable app element where it is drawn major
+//   unspecced a tappable app control (Android: clickable, enabled, not under a later layer) where Figma draws nothing
+//             of about its size: not in the Design, or drawn elsewhere (ported from rdqe-spec-contract-agent)  minor
 //   extra     short app text (≤ 40 characters) Figma does not draw on the screen                            info
 // Scrolled parts (device.ts design <id> --part 2…) add their texts to copy / missing / extra only.
 // Projection: Figma's frame width maps to the phone's window width (one scale for x and y); texts in the upper half
@@ -93,7 +95,7 @@ const shown = (p: string) => p.startsWith(ROOT) ? p.slice(ROOT.length + 1) : p;
 const read = (p: string): any => JSON.parse(readFileSync(p, 'utf8'));
 const runOf = (r: string) => existsSync(r) ? r : join(runsDir, r);
 const OTHER = /^n\/a:\s*other feature\b/i;
-const KINDS = ['state', 'appearance', 'copy', 'missing', 'truncated', 'lines', 'size', 'weight', 'radius', 'padding', 'align', 'border', 'spacing', 'colour', 'control', 'extra', 'sample', 'position'];
+const KINDS = ['state', 'appearance', 'copy', 'missing', 'truncated', 'lines', 'size', 'weight', 'radius', 'padding', 'align', 'border', 'spacing', 'colour', 'control', 'unspecced', 'extra', 'sample', 'position'];
 const USAGE = 'Usage: node scripts/design.ts <product>/<feature> <ios|android> plan | screens <TC-…> | check <run dir> | settle <run dir> | decide [file] | scope [file] | ebugs <run dir> | status [run dir]';
 // the newest run folder holding design captures
 const newestRun = () => existsSync(runsDir) ? readdirSync(runsDir).filter(d => existsSync(join(runsDir, d, 'design', 'captures.jsonl'))).sort().at(-1) : undefined;
@@ -390,6 +392,47 @@ function measure() {
         && Math.abs(e.box[0] + e.box[2] / 2 - c[0]) <= tol && Math.abs(e.box[1] + e.box[3] / 2 - c[1]) <= tol)
         .sort((a, b) => Math.hypot(a.box[0] + a.box[2] / 2 - c[0], a.box[1] + a.box[3] / 2 - c[1]) - Math.hypot(b.box[0] + b.box[2] / 2 - c[0], b.box[1] + b.box[3] / 2 - c[1]))[0];
       return e ? e.box : w; };
+    // the other way (ported from rdqe-spec-contract-agent COVER-02 with the user's approval, 2026-11-11): a tappable app
+    // control where Figma draws nothing of its size, which no Figma-first item can see (two misplaced Replace buttons on
+    // the character cards passed every other check). Android only: its source says what is clickable (enabled,
+    // clickable, not drawn over by a later layer); under 30 % of the window, outside other features' areas, and only
+    // when the capture is the frame's state (no `state` item: the keyboard down where Figma draws it up put the input
+    // bar's voice button where Figma draws keys, on 10 screens). A Figma node matches when it overlaps half of the smaller of the two and
+    // is between 1/25 and 4 times the control's area, placed by the screen's fit, by its nearest matched text, or by its
+    // distance from the screen's top or bottom edge (below) (a fixed top bar stays put while the chat's texts move: the fit
+    // of the chat texts put the back, credit and history buttons 66 pt off and listed them on 19 screens, 2026-11-11);
+    // of nested controls the outer one is listed.
+    if (!cands.some(c => c.kind === 'state')) {
+      const area = (b: number[]) => b[2] * b[3], winA = cap.win.w * cap.win.h;
+      // from an edge, the app's system bars differ from Figma's iPhone ones (status bar 44 pt; home indicator 34 pt against
+      // Android's taller navigation bar, which raised the input bar's mic 40 pt): up to 24 pt higher at the top, 48 at
+      // the bottom. Only presence is decided here; where a matched control sits is the other items' business.
+      const edge = (b: number[], up: number): Box => [b[0] / k, (half(b) === 'top' ? b[1] - up : Ha - (Hf - b[1] - b[3]) - up) / k, b[2] / k, b[3] / k];
+      const figBoxes = fig.drawn.flatMap(b => [toApp(b), placed(b), ...(half(b) === 'top' ? [0, 8, 16, 24] : [0, 12, 24, 36, 48]).map(u => edge(b, u))]);
+      // and from the app side: the control moved by the offset of the paired text nearest to it (within 200 pt, any pairing:
+      // a character card's name is sample data paired by place), looked up among Figma's nodes. A chat's content moves
+      // its cards and input bar on the phone, where no placement from Figma's side follows them (the cards' refresh
+      // icons and the input bar's mic on Characters Result, 2026-11-11).
+      const nearFig = (b: Box) => { const f = toFig(b), c = [f[0] + f[2] / 2, f[1] + f[3] / 2];
+        const p = base.map(p => ({ p, d: Math.hypot(p.a.f[0] + p.a.f[2] / 2 - c[0], p.a.f[1] + p.a.f[3] / 2 - c[1]) })).sort((x, y) => x.d - y.d)[0];
+        if (!p || p.d > 200) return false;
+        const g: Box = [f[0] + p.p.t.box[0] - p.p.a.f[0], f[1] + p.p.t.box[1] - p.p.a.f[1], f[2], f[3]];
+        return fig.drawn.some(d => { const r = area(d) / area(g); return r >= 1 / 25 && r <= 4 && overlap(d, g) >= 0.5 * Math.min(area(d), area(g)); }); };
+      const overlap = (a: number[], b: number[]) => Math.max(0, Math.min(a[0] + a[2], b[0] + b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[1] + a[3], b[1] + b[3]) - Math.max(a[1], b[1]));
+      const lone = els.filter(e => e.clickable && !e.covered && area(e.box) > 0 && area(e.box) < 0.3 * winA
+        && e.box[0] + e.box[2] / 2 > 0 && e.box[0] + e.box[2] / 2 < cap.win.w && e.box[1] + e.box[3] / 2 > 0 && e.box[1] + e.box[3] / 2 < cap.win.h
+        && !inOut(toFig(e.box))
+        && !figBoxes.some(f => { const r = area(f) / area(e.box); return r >= 1 / 25 && r <= 4 && overlap(f, e.box) >= 0.5 * Math.min(area(f), area(e.box)); })
+        && !nearFig(e.box));
+      const within = (o: Box, i: Box) => o !== i && i[0] >= o[0] && i[1] >= o[1] && i[0] + i[2] <= o[0] + o[2] && i[1] + i[3] <= o[1] + o[3];
+      const outer = lone.filter(e => !lone.some(o => within(o.box, e.box)));
+      const seen = new Map<string, number>();
+      for (const e of outer.sort((a, b) => a.box[1] - b.box[1] || a.box[0] - b.box[0])) {
+        const name = e.rid.replace(/^.*:id\//, '') || normLabel(e.text) || `${Math.round(e.box[0] * k / 8) * 8},${Math.round(e.box[1] * k / 8) * 8}`, n = (seen.get(name) ?? 0) + 1; seen.set(name, n);
+        cands.push({ id: `unspecced:${name}${n > 1 ? `#${n}` : ''}`, kind: 'unspecced', severity: 'minor', note: 'a tappable app control where Figma draws nothing: not in the Design, or drawn somewhere else',
+          app: { ...(e.text ? { text: e.text } : {}), ...(e.rid ? { id: e.rid } : {}), box: r1(toFig(e.box)) } });
+      }
+    }
     // every colour compared is also sampled as drawn on both images (the Figma crop and the capture), so a candidate
     // lists the value set (Figma's fill and token, the app's own view data) beside the colour on screen (user, 2026-11-05)
     const fc = figmaCrop(scr, out), figImg = fc ? { png: fc.png, w: fc.box ? fc.board_w : scr.abs[2], dx: fc.box?.[0] ?? 0, dy: fc.box?.[1] ?? 0 } : null;
@@ -630,7 +673,12 @@ function layoutCands({ fig, base, els, V, k, Wf, cands, placed }: Lay) {
     const w = placed(c.box), cc = [w[0] + w[2] / 2, w[1] + w[3] / 2], tol = 12 / k;
     const e = els.filter(e => e.actionable && fit(e.box, w, 0.5, 2.2) && Math.abs(e.box[0] + e.box[2] / 2 - cc[0]) <= tol && Math.abs(e.box[1] + e.box[3] / 2 - cc[1]) <= tol)
       .sort((a, b) => Math.hypot(a.box[0] + a.box[2] / 2 - cc[0], a.box[1] + a.box[3] / 2 - cc[1]) - Math.hypot(b.box[0] + b.box[2] / 2 - cc[0], b.box[1] + b.box[3] / 2 - cc[1]))[0];
-    return e ? [{ ...c, app: toFig(e.box) }] : [];
+    if (!e) return [];
+    // an icon button whose view is larger than its icon (padding around a vector): the box the icon is painted in
+    // (view data, lib/android-views.ts ViewImage; ported from rdqe-spec-contract-agent 2026-11-11), so the gap is
+    // measured between what is drawn and not centre to centre
+    const im = V?.images?.find(i => i.box.every((v, j) => Math.abs(v - e.box[j]) <= 2) || (inside(e.box, i.box, 2) && fit(i.box, e.box, 0.8, 1.25)));
+    return [{ ...c, app: toFig(im ? im.painted : e.box), ...(im ? { painted: true } : {}) }];
   });
   const lap = (a0: number, a1: number, b0: number, b1: number) => Math.min(a1, b1) - Math.max(a0, b0);
   for (const a of btn) for (const axis of [0, 1]) {
@@ -648,7 +696,7 @@ function layoutCands({ fig, base, els, V, k, Wf, cands, placed }: Lay) {
     const between = (x: Box, y: Box): Box => axis === 0 ? [x[0] + x[2], Math.min(x[1], y[1]), Math.max(1, y[0] - x[0] - x[2]), Math.max(x[1] + x[3], y[1] + y[3]) - Math.min(x[1], y[1])]
       : [Math.min(x[0], y[0]), x[1] + x[3], Math.max(x[0] + x[2], y[0] + y[2]) - Math.min(x[0], y[0]), Math.max(1, y[1] - x[1] - x[3])];
     out.push({ id: `spacing:${a.node}-${next.node}`, kind: 'spacing', severity: 'minor',
-      note: `${axis ? 'vertical' : 'horizontal'} gap from 「${a.name}」 to 「${next.name}」${drawn ? '' : ' (centre to centre: an app box is not the drawn size)'}`,
+      note: `${axis ? 'vertical' : 'horizontal'} gap from 「${a.name}」 to 「${next.name}」${drawn ? '' : ' (centre to centre: an app box is not the drawn size)'}${a.painted || next.painted ? ' (an icon measured by the box it is painted in, view data)' : ''}`,
       figma: { node: a.node, name: a.name, to: next.node, box: rb(between(a.box, next.box)), gap: r1(gf) }, app: { box: rb(between(a.app, next.app)), gap: r1(ga) }, delta: { gap: r1(ga - gf) } });
   }
   return { cands: out, borders, pend, unmatched };

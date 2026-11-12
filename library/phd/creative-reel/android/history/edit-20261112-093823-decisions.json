@@ -1,0 +1,806 @@
+{
+  "saved_at": "2026-11-12T01:38:23.910Z",
+  "version": 2,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line, and Action steps still run together are split one per numbered line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-005",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The room opens titled 「Reel Creator」; top bar shows 「‹」, the credit pill (balance and 「+」) and a history icon",
+      "after": "The room opens titled 「Reel Creator」\nTop bar shows 「‹」, the credit pill (balance and 「+」) and a history icon"
+    },
+    {
+      "id": "TC-006",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No tabs; one page of sections including 「Cinematic Styles 🎬」, 「Year-End Recap 📅」, 「Christmas Time 🎄」 and 「Cool Transitions 🤳🏻」, the three features mixed",
+      "after": "No tabs\nOne page of sections including 「Cinematic Styles 🎬」, 「Year-End Recap 📅」, 「Christmas Time 🎄」 and 「Cool Transitions 🤳🏻」, the three features mixed"
+    },
+    {
+      "id": "TC-008",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Reel Creator room open; note the account's credit balance",
+      "after": "1. Reel Creator room open\n2. Note the account's credit balance"
+    },
+    {
+      "id": "TC-008",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The button shows the account's current balance and a 「+」; tapping it opens the Buy Credit page",
+      "after": "The button shows the account's current balance and a 「+」\nTapping it opens the Buy Credit page"
+    },
+    {
+      "id": "TC-113",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every entry opens the Reel Creator room; each 「‹」 returns to the page that entry was on",
+      "after": "Every entry opens the Reel Creator room\nEach 「‹」 returns to the page that entry was on"
+    },
+    {
+      "id": "TC-011",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog closes; the Edit Room stays with the photo and its edit",
+      "after": "The dialog closes\nThe Edit Room stays with the photo and its edit"
+    },
+    {
+      "id": "TC-012",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Jump dialog shown from the Edit Room; note the photo count in the Gallery",
+      "after": "1. Jump dialog shown from the Edit Room\n2. Note the photo count in the Gallery"
+    },
+    {
+      "id": "TC-012",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Reel Creator room opens; the photo was saved to the Gallery automatically, with the Edit Room edit applied (not the original file)",
+      "after": "The Reel Creator room opens\nThe photo was saved to the Gallery automatically, with the Edit Room edit applied (not the original file)"
+    },
+    {
+      "id": "TC-013",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Neither picker has the Edit Room photo preselected (0 picked); the room opened without carrying the photo",
+      "after": "Neither picker has the Edit Room photo preselected (0 picked)\nThe room opened without carrying the photo"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "PhotoDirector closed; old Cinematic Reel Creator deeplink without parameters",
+      "after": "1. PhotoDirector closed\n2. Old Cinematic Reel Creator deeplink without parameters"
+    },
+    {
+      "id": "TC-114",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "PhotoDirector already running on another page (e.g. Edit Room); deeplink with template = a Creative content GUID",
+      "after": "1. PhotoDirector already running on another page (e.g. Edit Room)\n2. Deeplink with template = a Creative content GUID"
+    },
+    {
+      "id": "TC-114",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The same Preview opens as from a cold start; no crash, the template list is loaded",
+      "after": "The same Preview opens as from a cold start\nNo crash, the template list is loaded"
+    },
+    {
+      "id": "TC-015",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "That template's Preview opens directly; no photo is selected",
+      "after": "That template's Preview opens directly\nNo photo is selected"
+    },
+    {
+      "id": "TC-017",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "That Cinematic template's Preview opens directly; no photo is selected",
+      "after": "That Cinematic template's Preview opens directly\nNo photo is selected"
+    },
+    {
+      "id": "TC-019",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Reel Creator room opens; the category parameter is ignored",
+      "after": "The Reel Creator room opens\nThe category parameter is ignored"
+    },
+    {
+      "id": "TC-024",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「View photo tips」 top left; a mute button on the right; at the bottom the name 「Top 5 of My Year」, the description 「Rank your year's best moments in one reel」, 「5–15 photos」 and 「Use Template」; text over a darkened bottom of the demo",
+      "after": "「View photo tips」 top left\nA mute button on the right\nAt the bottom the name 「Top 5 of My Year」, the description 「Rank your year's best moments in one reel」, 「5–15 photos」 and 「Use Template」\nText over a darkened bottom of the demo"
+    },
+    {
+      "id": "TC-025",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The demo's sound goes off, then back on; the icon follows",
+      "after": "The demo's sound goes off, then back on\nThe icon follows"
+    },
+    {
+      "id": "TC-115",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Preview of the Creative template 「Top 5 of My Year」 (Year-End Recap, 5–15 photos); demo muted",
+      "after": "1. Preview of the Creative template 「Top 5 of My Year」 (Year-End Recap, 5–15 photos)\n2. Demo muted"
+    },
+    {
+      "id": "TC-026",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Up shows the next template of the same category (Year-End Recap) with its own demo, name and count; down returns",
+      "after": "Up shows the next template of the same category (Year-End Recap) with its own demo, name and count\nDown returns"
+    },
+    {
+      "id": "TC-029",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only Cool Transitions templates appear; the list loops",
+      "after": "Only Cool Transitions templates appear\nThe list loops"
+    },
+    {
+      "id": "TC-032",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Room entered; a template's Preview opened",
+      "after": "1. Room entered\n2. A template's Preview opened"
+    },
+    {
+      "id": "TC-037",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The picker 「Add Photos」 opens directly (「‹」, 「Recents ▾」); tray shows 「Select 5–15 photos」 「0/15」 and 「Next」",
+      "after": "The picker 「Add Photos」 opens directly (「‹」, 「Recents ▾」)\nTray shows 「Select 5–15 photos」 「0/15」 and 「Next」"
+    },
+    {
+      "id": "TC-038",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "They show 01, 02, 03 in pick order; tray 「3/15」 with 3 thumbnails; red 「Select at least 5 photos (2 more)」; Next disabled",
+      "after": "They show 01, 02, 03 in pick order\nTray 「3/15」 with 3 thumbnails\nRed 「Select at least 5 photos (2 more)」\nNext disabled"
+    },
+    {
+      "id": "TC-039",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; 3 picked",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. 3 picked"
+    },
+    {
+      "id": "TC-040",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Red hint gone; 「5/15」; Next enabled",
+      "after": "Red hint gone\n「5/15」\nNext enabled"
+    },
+    {
+      "id": "TC-042",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 16th cannot be picked (or Next turns disabled); 15/15 is the most allowed",
+      "after": "The 16th cannot be picked (or Next turns disabled)\n15/15 is the most allowed"
+    },
+    {
+      "id": "TC-043",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; 4 photos picked (01–04)",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. 4 photos picked (01–04)"
+    },
+    {
+      "id": "TC-043",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "It is unpicked; count 3/15; record whether 03 / 04 renumber",
+      "after": "It is unpicked\nCount 3/15\nRecord whether 03 / 04 renumber"
+    },
+    {
+      "id": "TC-045",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; Gallery holds a photo 299 px on its short side",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. Gallery holds a photo 299 px on its short side"
+    },
+    {
+      "id": "TC-046",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; Gallery holds photos of exactly 300 px and 4096 px",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. Gallery holds photos of exactly 300 px and 4096 px"
+    },
+    {
+      "id": "TC-047",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; Gallery holds a photo 4097 px or larger on its long side",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. Gallery holds a photo 4097 px or larger on its long side"
+    },
+    {
+      "id": "TC-048",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; Gallery holds a JPEG of 1200 × 1200 px padded to 11,000,000 bytes (above 10 MB and 10 MiB)",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. Gallery holds a JPEG of 1200 × 1200 px padded to 11,000,000 bytes (above 10 MB and 10 MiB)"
+    },
+    {
+      "id": "TC-126",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; Gallery holds a JPEG of 1200 × 1200 px padded to 9,900,000 bytes (under 10 MB and 10 MiB)",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. Gallery holds a JPEG of 1200 × 1200 px padded to 9,900,000 bytes (under 10 MB and 10 MiB)"
+    },
+    {
+      "id": "TC-049",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; Gallery holds an NSFW test photo",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. Gallery holds an NSFW test photo"
+    },
+    {
+      "id": "TC-050",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; Gallery holds a celebrity photo",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. Gallery holds a celebrity photo"
+    },
+    {
+      "id": "TC-052",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; 3 picked",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. 3 picked"
+    },
+    {
+      "id": "TC-053",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; 7 picked",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. 7 picked"
+    },
+    {
+      "id": "TC-054",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App relaunched (force-stop, then launch) so a new session starts; picker of 「Top 5 of My Year」, 7 photos picked, 「Next」 tapped, then back to the room",
+      "after": "1. App relaunched (force-stop and launch) so a new session starts\n2. Picker of 「Top 5 of My Year」 with 7 photos picked\n3. 「Next」 tapped\n4. Back in the room"
+    },
+    {
+      "id": "TC-054",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Above the tray: 「Use the 7 photos you picked last time?」 with 「Import」 and 「×」; nothing is picked yet (0/15)",
+      "after": "Above the tray: 「Use the 7 photos you picked last time?」 with 「Import」 and 「×」\nNothing is picked yet (0/15)"
+    },
+    {
+      "id": "TC-055",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 7 photos are picked in the picker (7/15) with their numbers ticked; the picker stays open (does not jump to the confirm page)",
+      "after": "The 7 photos are picked in the picker (7/15) with their numbers ticked\nThe picker stays open (does not jump to the confirm page)"
+    },
+    {
+      "id": "TC-056",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The prompt closes; record whether it appears again on the next entry",
+      "after": "The prompt closes\nRecord whether it appears again on the next entry"
+    },
+    {
+      "id": "TC-057",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App relaunched (force-stop, then launch) so a new session starts; 3 photos picked last time in this session (e.g. in a 4-photo AI Transition picker, then left)",
+      "after": "1. App relaunched (force-stop, then launch) so a new session starts\n2. 3 photos picked last time in this session (e.g. in a 4-photo AI Transition picker, then left)"
+    },
+    {
+      "id": "TC-057",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "3 photos imported; tray red 「Select at least 5 photos (2 more)」; Next disabled until 2 more are picked",
+      "after": "3 photos imported\nTray red 「Select at least 5 photos (2 more)」\nNext disabled until 2 more are picked"
+    },
+    {
+      "id": "TC-058",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App relaunched (force-stop, then launch) so a new session starts; 10 photos picked last time on a Creative template",
+      "after": "1. App relaunched (force-stop, then launch) so a new session starts\n2. 10 photos picked last time on a Creative template"
+    },
+    {
+      "id": "TC-058",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "10 photos imported; tray shows red text; Next disabled until photos are removed down to 4",
+      "after": "10 photos imported\nTray shows red text\nNext disabled until photos are removed down to 4"
+    },
+    {
+      "id": "TC-059",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App relaunched (force-stop, then launch) so a new session starts; 6 photos picked last time, then 2 of them deleted from the Gallery",
+      "after": "1. App relaunched (force-stop and launch) so a new session starts\n2. 6 photos picked last time\n3. 2 of them since deleted from the Gallery"
+    },
+    {
+      "id": "TC-060",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App relaunched (force-stop, then launch) so a new session starts; only 1 photo picked last time (e.g. Cinematic Styles)",
+      "after": "1. App relaunched (force-stop, then launch) so a new session starts\n2. Only 1 photo picked last time (e.g. Cinematic Styles)"
+    },
+    {
+      "id": "TC-062",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App relaunched (force-stop, then launch) so a new session starts; 7 photos picked in the Reel Creator picker",
+      "after": "1. App relaunched (force-stop, then launch) so a new session starts\n2. 7 photos picked in the Reel Creator picker"
+    },
+    {
+      "id": "TC-063",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Top: template thumbnail, 「Top 5 of My Year」, 「5–15 photos · output 9:16」, 「‹」 and the credit pill; 「Your photos」 「7/15」 with 「Long-press to reorder · tap × to remove」; 7 numbered photos with 「×」 and a 「+」 tile; 「Text language」 「English ▾」; 「Generate | 60」",
+      "after": "Top: template thumbnail, 「Top 5 of My Year」, 「5–15 photos · output 9:16」, 「‹」 and the credit pill\n「Your photos」 「7/15」 with 「Long-press to reorder · tap × to remove」\n7 numbered photos with 「×」 and a 「+」 tile\n「Text language」 「English ▾」\n「Generate | 60」"
+    },
+    {
+      "id": "TC-065",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The photo is removed; count 6/15",
+      "after": "The photo is removed\nCount 6/15"
+    },
+    {
+      "id": "TC-066",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Count 「4/15」 in red; 「Generate」 disabled",
+      "after": "Count 「4/15」 in red\n「Generate」 disabled"
+    },
+    {
+      "id": "TC-067",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Confirm page of 「Top 5 of My Year」 reached with 7 photos picked; 4 left after removing",
+      "after": "1. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked\n2. 4 left after removing"
+    },
+    {
+      "id": "TC-067",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Toast 「Please upload at least 5 photos」; nothing is generated and no credits are charged",
+      "after": "Toast 「Please upload at least 5 photos」\nNothing is generated and no credits are charged"
+    },
+    {
+      "id": "TC-068",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Confirm page of 「Top 5 of My Year」 reached with 7 photos picked; 4 left after removing",
+      "after": "1. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked\n2. 4 left after removing"
+    },
+    {
+      "id": "TC-116",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Confirm page of 「Top 5 of My Year」 reached with 7 photos picked; photos reordered; Text language 「日本語」; Developer options › Don't keep activities on",
+      "after": "1. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked\n2. Photos reordered\n3. Text language 「日本語」\n4. Developer options › Don't keep activities on"
+    },
+    {
+      "id": "TC-116",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The confirm page is back with the same photos, order, count and Text language; no crash",
+      "after": "The confirm page is back with the same photos, order, count and Text language\nNo crash"
+    },
+    {
+      "id": "TC-072",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; credit balance below 60; Confirm page of 「Top 5 of My Year」 reached with 7 photos picked",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Credit balance below 60\n3. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked"
+    },
+    {
+      "id": "TC-072",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The paywall (IAP page) opens; nothing is generated",
+      "after": "The paywall (IAP page) opens\nNothing is generated"
+    },
+    {
+      "id": "TC-073",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium (subscribed) account; credit balance below 60; Confirm page of 「Top 5 of My Year」 reached with 7 photos picked",
+      "after": "1. Signed in with a PhotoDirector Premium (subscribed) account\n2. Credit balance below 60\n3. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked"
+    },
+    {
+      "id": "TC-073",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「More Credits Required」 appears; its button leads to the Credit Shop",
+      "after": "「More Credits Required」 appears\nIts button leads to the Credit Shop"
+    },
+    {
+      "id": "TC-074",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Credit balance of 60 or more (note it); Confirm page of 「Top 5 of My Year」 reached with 7 photos picked",
+      "after": "1. Credit balance of 60 or more (note it)\n2. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked"
+    },
+    {
+      "id": "TC-074",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Generation starts; the balance drops by exactly 60",
+      "after": "Generation starts\nThe balance drops by exactly 60"
+    },
+    {
+      "id": "TC-117",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Credits ≥ 120 (note the balance); Confirm page of 「Top 5 of My Year」 reached with 7 photos picked",
+      "after": "1. Credits ≥ 120 (note the balance)\n2. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked"
+    },
+    {
+      "id": "TC-118",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The newest entry names the feature (Reel Creator / the Creative feature) and shows 60 deducted; a refund, if any, is listed with its amount",
+      "after": "The newest entry names the feature (Reel Creator / the Creative feature) and shows 60 deducted\nA refund, if any, is listed with its amount"
+    },
+    {
+      "id": "TC-075",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Phone language English; Confirm page of 「Top 5 of My Year」 reached with 7 photos picked",
+      "after": "1. Phone language English\n2. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked"
+    },
+    {
+      "id": "TC-075",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A list opens with 「English (Device language)」 first and ticked, then 「繁體中文」, 「简体中文」, 「日本語」, 「한국어」, 「Español」, 「Français」, 「Deutsch」, 「Português」, 「Italiano」, 「ภาษาไทย」 …; the list scrolls",
+      "after": "A list opens with 「English (Device language)」 first and ticked, then 「繁體中文」, 「简体中文」, 「日本語」, 「한국어」, 「Español」, 「Français」, 「Deutsch」, 「Português」, 「Italiano」, 「ภาษาไทย」 …\nThe list scrolls"
+    },
+    {
+      "id": "TC-076",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App launched in Traditional Chinese (`launch --lang zh-Hant`); Confirm page of 「Top 5 of My Year」 reached with 7 photos picked",
+      "after": "1. App launched in Traditional Chinese (`launch --lang zh-Hant`)\n2. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked"
+    },
+    {
+      "id": "TC-077",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every language PhotoDirector supports is listed; record the list (should match iOS)",
+      "after": "Every language PhotoDirector supports is listed\nRecord the list (should match iOS)"
+    },
+    {
+      "id": "TC-078",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The list closes; Text language shows 「日本語」",
+      "after": "The list closes\nText language shows 「日本語」"
+    },
+    {
+      "id": "TC-081",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Credits ≥ 60; Confirm page of 「Top 5 of My Year」 reached with 7 photos picked; Text language 「日本語」",
+      "after": "1. Credits ≥ 60\n2. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked\n3. Text language 「日本語」"
+    },
+    {
+      "id": "TC-082",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Credits ≥ 60; Confirm page of 「Top 5 of My Year」 reached with 7 photos picked; Text language 「繁體中文」",
+      "after": "1. Credits ≥ 60\n2. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked\n3. Text language 「繁體中文」"
+    },
+    {
+      "id": "TC-083",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Credits ≥ 60; Confirm page of 「Top 5 of My Year」 reached with 7 photos picked; Text language left at 「English (Device language)」",
+      "after": "1. Credits ≥ 60\n2. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked\n3. Text language left at 「English (Device language)」"
+    },
+    {
+      "id": "TC-123",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The tray, the Import prompt and the toast show the right numbers (5–15, 2, N, 5) in that language; no screen crashes or shows a raw placeholder",
+      "after": "The tray, the Import prompt and the toast show the right numbers (5–15, 2, N, 5) in that language\nNo screen crashes or shows a raw placeholder"
+    },
+    {
+      "id": "TC-124",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Layout mirrors (‹ on the right, tray and lists in bounds, swipe guide and tips point at the right controls); Western digits 0–9 are acceptable",
+      "after": "Layout mirrors (‹ on the right, tray and lists in bounds, swipe guide and tips point at the right controls)\nWestern digits 0–9 are acceptable"
+    },
+    {
+      "id": "TC-085",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Credits ≥ 60; Confirm page of 「Top 5 of My Year」 reached with 7 photos picked",
+      "after": "1. Credits ≥ 60\n2. Confirm page of 「Top 5 of My Year」 reached with 7 photos picked"
+    },
+    {
+      "id": "TC-086",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The card shows the date and 「Top 5 of My Year」; the reel plays, and the video file is 9:16 in pixels (width : height)",
+      "after": "The card shows the date and 「Top 5 of My Year」\nThe reel plays, and the video file is 9:16 in pixels (width : height)"
+    },
+    {
+      "id": "TC-088",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The card is still processing (or finished); nothing is lost",
+      "after": "The card is still processing (or finished)\nNothing is lost"
+    },
+    {
+      "id": "TC-121",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A notification with a title and message arrives; tapping it opens My AI Artwork (Reel Creator tab) on the finished reel, never 「APP version does not support feature」",
+      "after": "A notification with a title and message arrives\nTapping it opens My AI Artwork (Reel Creator tab) on the finished reel, never 「APP version does not support feature」"
+    },
+    {
+      "id": "TC-089",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Tabs include 「Image to Video」, 「Reel Creator」, 「Character Motion Swap」; no tab named 「Cinematic Reel Creator」",
+      "after": "Tabs include 「Image to Video」, 「Reel Creator」, 「Character Motion Swap」\nNo tab named 「Cinematic Reel Creator」"
+    },
+    {
+      "id": "TC-122",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Room opened by 「Create More」 from My AI Artwork; credits ≥ 40",
+      "after": "1. Room opened by 「Create More」 from My AI Artwork\n2. Credits ≥ 40"
+    },
+    {
+      "id": "TC-122",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The second job runs and finishes normally; 「‹」 leaves the room without an error or a black screen",
+      "after": "The second job runs and finishes normally\n「‹」 leaves the room without an error or a black screen"
+    },
+    {
+      "id": "TC-092",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Preview shows 「1 photo」; 「Use Template」 opens the picker with 「Select 1 photo」 「0/1」",
+      "after": "The Preview shows 「1 photo」\n「Use Template」 opens the picker with 「Select 1 photo」 「0/1」"
+    },
+    {
+      "id": "TC-093",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The first shows 01 and 1/1; Next enabled; a second cannot be added (or Next turns disabled)",
+      "after": "The first shows 01 and 1/1\nNext enabled\nA second cannot be added (or Next turns disabled)"
+    },
+    {
+      "id": "TC-094",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Confirm page: 「Micro Cinema」, 「1 photo · output 9:16」, 「Your photos」 「1/1」, 「Tap the photo to replace」, 「Generate | 40」; no Text language",
+      "after": "Confirm page: 「Micro Cinema」, 「1 photo · output 9:16」, 「Your photos」 「1/1」, 「Tap the photo to replace」, 「Generate | 40」\nNo Text language"
+    },
+    {
+      "id": "TC-096",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Cinematic confirm page; credits ≥ 40 (note the balance)",
+      "after": "1. Cinematic confirm page\n2. Credits ≥ 40 (note the balance)"
+    },
+    {
+      "id": "TC-096",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "My AI Artwork 「Reel Creator」 tab shows the 「Micro Cinema」 card processing; the balance drops by exactly 40",
+      "after": "My AI Artwork 「Reel Creator」 tab shows the 「Micro Cinema」 card processing\nThe balance drops by exactly 40"
+    },
+    {
+      "id": "TC-127",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The reel plays; the file is 9:16 in pixels (width : height) and opens",
+      "after": "The reel plays\nThe file is 9:16 in pixels (width : height) and opens"
+    },
+    {
+      "id": "TC-097",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App relaunched (force-stop, then launch) so a new session starts; 7 photos picked last time on a Creative template",
+      "after": "1. App relaunched (force-stop, then launch) so a new session starts\n2. 7 photos picked last time on a Creative template"
+    },
+    {
+      "id": "TC-098",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Preview shows a fixed count (「4 photos」 or 「6 photos」); the picker tray reads 「Select 4 photos」 (or 6) with 「0/4」",
+      "after": "The Preview shows a fixed count (「4 photos」 or 「6 photos」)\nThe picker tray reads 「Select 4 photos」 (or 6) with 「0/4」"
+    },
+    {
+      "id": "TC-099",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Next disabled at 3; enabled at 4/4; a 5th cannot be picked",
+      "after": "Next disabled at 3\nEnabled at 4/4\nA 5th cannot be picked"
+    },
+    {
+      "id": "TC-100",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Confirm page with 「4/4」 photos, reorder hint and 「Generate | <price>」; no Text language",
+      "after": "Confirm page with 「4/4」 photos, reorder hint and 「Generate | <price>」\nNo Text language"
+    },
+    {
+      "id": "TC-101",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "AI Transition confirm page with photos A, B, C, D; credits enough (note the balance)",
+      "after": "1. AI Transition confirm page with photos A, B, C, D\n2. Credits enough (note the balance)"
+    },
+    {
+      "id": "TC-101",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The finished video shows the photos in the order D, C, B, A and its file is 9:16 in pixels; the balance drops by the price on the button",
+      "after": "The finished video shows the photos in the order D, C, B, A and its file is 9:16 in pixels\nThe balance drops by the price on the button"
+    },
+    {
+      "id": "TC-105",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The sheet closes (as 「Got it」); the Preview stays",
+      "after": "The sheet closes (as 「Got it」)\nThe Preview stays"
+    },
+    {
+      "id": "TC-106",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked; 3 picked",
+      "after": "1. Picker of 「Top 5 of My Year」 (opened by 「Use Template」), nothing picked\n2. 3 picked"
+    },
+    {
+      "id": "TC-109",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The list closes and the language is unchanged; the confirm page stays",
+      "after": "The list closes and the language is unchanged\nThe confirm page stays"
+    },
+    {
+      "id": "TC-110",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog closes as cancel; the Edit Room stays",
+      "after": "The dialog closes as cancel\nThe Edit Room stays"
+    },
+    {
+      "id": "TC-008",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Read the blue credit button at the top right, then tap it",
+      "after": "1. Read the blue credit button at the top right\n2. Tap it"
+    },
+    {
+      "id": "TC-025",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the mute button, then tap it again",
+      "after": "1. Tap the mute button\n2. Tap it again"
+    },
+    {
+      "id": "TC-115",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Swipe up to the next template, then down again",
+      "after": "1. Swipe up to the next template\n2. Swipe down again"
+    },
+    {
+      "id": "TC-026",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Swipe up, then down",
+      "after": "1. Swipe up\n2. Swipe down"
+    },
+    {
+      "id": "TC-042",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Pick 15 photos, then try to pick a 16th",
+      "after": "1. Pick 15 photos\n2. Try to pick a 16th"
+    },
+    {
+      "id": "TC-061",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Force-stop and relaunch the app, then open the 「Top 5 of My Year」 picker",
+      "after": "1. Force-stop and relaunch the app\n2. Open the 「Top 5 of My Year」 picker"
+    },
+    {
+      "id": "TC-079",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Go back to the picker and tap 「Next」 again; then open another Creative template's confirm page",
+      "after": "1. Go back to the picker\n2. Tap 「Next」 again\n3. Open another Creative template's confirm page"
+    },
+    {
+      "id": "TC-123",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App launched in Traditional Chinese, then in Japanese (`launch --lang zh-Hant` / `ja`)",
+      "after": "1. App launched in Traditional Chinese (`launch --lang zh-Hant`)\n2. App launched again in Japanese (`launch --lang ja`)"
+    },
+    {
+      "id": "TC-125",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "App launched in German, then Portuguese",
+      "after": "1. App launched in German\n2. App launched again in Portuguese"
+    },
+    {
+      "id": "TC-086",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Wait until it finishes, then tap the card",
+      "after": "1. Wait until it finishes\n2. Tap the card"
+    },
+    {
+      "id": "TC-121",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Press Home and wait for the job to finish; tap the completion notification",
+      "after": "1. Press Home\n2. Wait for the job to finish\n3. Tap the completion notification"
+    },
+    {
+      "id": "TC-122",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Generate a Cinematic Styles reel again, then press 「‹」 from the room",
+      "after": "1. Generate a Cinematic Styles reel again\n2. Press 「‹」 from the room"
+    },
+    {
+      "id": "TC-092",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap a Cinematic Styles template (e.g. 「Micro Cinema」), then 「Use Template」",
+      "after": "1. Tap a Cinematic Styles template (e.g. 「Micro Cinema」)\n2. Tap 「Use Template」"
+    },
+    {
+      "id": "TC-093",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Pick 1 photo, then try to pick a 2nd",
+      "after": "1. Pick 1 photo\n2. Try to pick a 2nd"
+    },
+    {
+      "id": "TC-098",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Open a Cool Transitions template; read the count; tap 「Use Template」",
+      "after": "1. Open a Cool Transitions template\n2. Read the count\n3. Tap 「Use Template」"
+    },
+    {
+      "id": "TC-099",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Pick 3 photos, then a 4th",
+      "after": "1. Pick 3 photos\n2. Try to pick a 4th"
+    },
+    {
+      "id": "TC-101",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Long-press to reorder to D, C, B, A, then tap 「Generate」",
+      "after": "1. Long-press to reorder to D, C, B, A\n2. Tap 「Generate」"
+    }
+  ],
+  "notes": []
+}

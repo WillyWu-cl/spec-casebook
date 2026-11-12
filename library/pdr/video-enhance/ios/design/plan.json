@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-10T06:35:06.695Z",
+  "built_at": "2026-11-12T01:42:14.614Z",
   "spec_set": "2026-11-03",
   "file": {
     "fileKey": "HceGLJVaxnKsv7gXSXzKWh",
@@ -211,7 +211,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "Generating and cancel",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p); note the balance",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits\n2. Panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p)\n3. Note the balance",
         "action": "Tap 「Enhance ◆ <credits>」",
         "result": "Not run",
         "run": ""
@@ -293,7 +293,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "Generating and cancel",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p); note the balance",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits\n2. Panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p)\n3. Note the balance",
         "action": "Tap 「Enhance ◆ <credits>」",
         "result": "Not run",
         "run": ""
@@ -334,7 +334,7 @@
         "edge": "Enhance",
         "segment": "",
         "section": "Generating and cancel",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p); note the balance",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits\n2. Panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p)\n3. Note the balance",
         "action": "Tap 「Enhance ◆ <credits>」",
         "result": "Not run",
         "run": ""
@@ -375,7 +375,7 @@
         "edge": "Unlock Pro+ to Enhance",
         "segment": "",
         "section": "Eligibility and purchase",
-        "precondition": "Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine); panel open with a video",
+        "precondition": "1. Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine)\n2. Panel open with a video",
         "action": "Tap 「Unlock Pro+ to Enhance」",
         "result": "Not run",
         "run": ""
@@ -416,7 +416,7 @@
         "edge": "Unlock Pro+ to Enhance",
         "segment": "",
         "section": "Eligibility and purchase",
-        "precondition": "Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine); panel open with a video",
+        "precondition": "1. Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine)\n2. Panel open with a video",
         "action": "Tap 「Unlock Pro+ to Enhance」",
         "result": "Not run",
         "run": ""
@@ -498,7 +498,7 @@
         "edge": "round/ic_info",
         "segment": "",
         "section": "Panel layout and first-run bubble",
-        "precondition": "Panel open; the first-run bubble already seen",
+        "precondition": "1. Panel open\n2. The first-run bubble already seen",
         "action": "1. Tap ⓘ next to 「Selected Length」\n2. Tap anywhere on the screen within 3 s",
         "result": "Not run",
         "run": ""
@@ -539,7 +539,7 @@
         "edge": "Alternative & Exception: VE · 02 預設（已訂閱） · 「Enhance」 (balance too low) → Credit page_paid",
         "segment": "",
         "section": "Eligibility and purchase",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); credit balance below the CTA price (e.g. 0); panel open; note the balance",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine)\n2. Credit balance below the CTA price (e.g. 0)\n3. Panel open\n4. Note the balance",
         "action": "Tap 「Enhance」",
         "result": "Not run",
         "run": ""
@@ -621,7 +621,7 @@
         "edge": "round/ic_video enhancer",
         "segment": "",
         "section": "Entry points",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); the Demo page was never dismissed with 「Don’t show again」 on this install; Launcher open",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine)\n2. The Demo page was never dismissed with 「Don’t show again」 on this install\n3. Launcher open",
         "action": "Tap the big shortcut 「AI Video Enhance」 on the Launcher",
         "result": "Not run",
         "run": ""
@@ -785,7 +785,7 @@
         "edge": "Cancel: leave dialog · 「Leave」 → VE · 02 預設（已訂閱）",
         "segment": "",
         "section": "Generating and cancel",
-        "precondition": "A new task: the leave dialog showing after 「Cancel」 on the processing dialog; balance before 「Enhance」 noted",
+        "precondition": "1. A new task: the leave dialog showing after 「Cancel」 on the processing dialog\n2. Balance before 「Enhance」 noted",
         "action": "Tap 「Leave」",
         "result": "Not run",
         "run": ""
@@ -826,7 +826,7 @@
         "edge": "Cancel: VE · 02 預設（已訂閱） · 「Enhance」 → VE · 03 Generating",
         "segment": "",
         "section": "Generating and cancel",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p); note the balance",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits\n2. Panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p)\n3. Note the balance",
         "action": "Tap 「Enhance ◆ <credits>」",
         "result": "Not run",
         "run": ""
@@ -908,7 +908,7 @@
         "edge": "round/ic_video enhancer",
         "segment": "",
         "section": "Entry points",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); the Demo page was never dismissed with 「Don’t show again」 on this install; Launcher open",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine)\n2. The Demo page was never dismissed with 「Don’t show again」 on this install\n3. Launcher open",
         "action": "Tap the big shortcut 「AI Video Enhance」 on the Launcher",
         "result": "Not run",
         "run": ""
@@ -947,7 +947,7 @@
         "edge": "Home",
         "segment": "",
         "section": "Entry points",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); Demo page not dismissed with 「Don’t show again」",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine)\n2. Demo page not dismissed with 「Don’t show again」",
         "action": "1. Tap 「AI Magic」 in the bottom bar\n2. Scroll to the 「AI Enhance」 section\n3. Tap the 「AI Video Enhance」 card",
         "result": "Not run",
         "run": ""
@@ -985,7 +985,7 @@
         "edge": "Opacity",
         "segment": "",
         "section": "Entry points",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); a project open in the editor with one video clip of 2:30 or less on the timeline",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine)\n2. A project open in the editor with one video clip of 2:30 or less on the timeline",
         "action": "1. Tap the clip on the timeline\n2. Tap 「AI Video Enhance」 in the clip toolbar",
         "result": "Not run",
         "run": ""
@@ -1024,7 +1024,7 @@
         "edge": "round/ic_video enhancer",
         "segment": "",
         "section": "Entry points",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); the Demo page was never dismissed with 「Don’t show again」 on this install; Launcher open",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine)\n2. The Demo page was never dismissed with 「Don’t show again」 on this install\n3. Launcher open",
         "action": "Tap the big shortcut 「AI Video Enhance」 on the Launcher",
         "result": "Not run",
         "run": ""
@@ -1063,7 +1063,7 @@
         "edge": "Main Flow（Free user → IAP）: Launcher_2026_08 「AI Video Enhance」 shortcut → Demo page_Straight video",
         "segment": "",
         "section": "Entry points",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); the Demo page was never dismissed with 「Don’t show again」 on this install; Launcher open",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine)\n2. The Demo page was never dismissed with 「Don’t show again」 on this install\n3. Launcher open",
         "action": "Tap the big shortcut 「AI Video Enhance」 on the Launcher",
         "result": "Not run",
         "run": ""
@@ -1103,7 +1103,7 @@
         "edge": "round/ic_video",
         "segment": "",
         "section": "Demo page",
-        "precondition": "Demo page open from the Launcher (TC-001); 「Don’t show again」 not ticked",
+        "precondition": "1. Demo page open from the Launcher (TC-001)\n2. 「Don’t show again」 not ticked",
         "action": "Tap 「Try It Now」",
         "result": "Not run",
         "run": ""
@@ -1144,7 +1144,7 @@
         "edge": "Main Flow（Free user → IAP）: Add Media video thumbnail → VE · 01 預設（未訂閱）",
         "segment": "",
         "section": "Add Media",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine); Add Media open from the feature; a 12:30 1080p 60 fps video in the album",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine)\n2. Add Media open from the feature\n3. A 12:30 1080p 60 fps video in the album",
         "action": "Tap that video's thumbnail",
         "result": "Not run",
         "run": ""
@@ -1185,7 +1185,7 @@
         "edge": "Main Flow（Free user → IAP）: VE · 01 預設（未訂閱） · 「Unlock Pro+ to Enhance」 → IAP_US",
         "segment": "",
         "section": "Eligibility and purchase",
-        "precondition": "Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine); panel open with a video",
+        "precondition": "1. Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine)\n2. Panel open with a video",
         "action": "Tap 「Unlock Pro+ to Enhance」",
         "result": "Not run",
         "run": ""
@@ -1308,7 +1308,7 @@
         "edge": "Main Flow（Free user → IAP）: purchase success 「OK」 → VE · 02 預設（已訂閱）",
         "segment": "",
         "section": "Eligibility and purchase",
-        "precondition": "Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine) on an account that may buy Pro+; panel open with selection 00:30–05:30 and 「Sharp」; IAP page open",
+        "precondition": "1. Tier Free (Launcher › Pink › ☰ › [0] IAP › status = Free, checked in Mine) on an account that may buy Pro+\n2. Panel open with selection 00:30–05:30 and 「Sharp」\n3. IAP page open",
         "action": "1. Tap 「Continue」\n2. Complete the App Store purchase sheet\n3. Tap 「OK」 on 「You're all set」",
         "result": "Not run",
         "run": ""
@@ -1349,7 +1349,7 @@
         "edge": "Main Flow（Free user → IAP）: VE · 02 預設（已訂閱） · 「Enhance」 → VE · 03 Generating",
         "segment": "",
         "section": "Generating and cancel",
-        "precondition": "Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits; panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p); note the balance",
+        "precondition": "1. Tier Pro+ (Launcher › Pink › ☰ › [0] IAP › status = Pro+, checked in Mine) with enough credits\n2. Panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p)\n3. Note the balance",
         "action": "Tap 「Enhance ◆ <credits>」",
         "result": "Not run",
         "run": ""
@@ -1390,7 +1390,7 @@
         "edge": "Main Flow（Free user → IAP）: VE · 03 Generating (upload done) → Recent · processing",
         "segment": "",
         "section": "Generating and cancel",
-        "precondition": "Processing dialog showing (TC-110); balance before 「Enhance」 noted",
+        "precondition": "1. Processing dialog showing (TC-110)\n2. Balance before 「Enhance」 noted",
         "action": "Wait until the upload finishes",
         "result": "Not run",
         "run": ""

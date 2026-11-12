@@ -19,7 +19,7 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
   const kids = new Map<string, any[]>(), byId = new Map<string, any>();
   for (const n of nodes) { if (!kids.has(n.parent)) kids.set(n.parent, []); kids.get(n.parent)!.push(n); byId.set(n.id, n); }
   const texts: any[] = [], fills: any[] = [], controls: any[] = [], out: { node: string; name: string; box: Box }[] = [];
-  const shapes: any[] = [], buttons: Ctl[] = [];
+  const shapes: any[] = [], buttons: Ctl[] = [], drawn: Box[] = [];
   const CHROME = /status ?bar|home ?indicator|keyboard|iphone x|^notch$/i;
   let keyboard = false;   // the frame draws the keyboard up (the check compares it with the capture)
   const rel = (n: any): Box => [n.abs[0] - scr.abs[0], n.abs[1] - scr.abs[1], n.abs[2], n.abs[3]];
@@ -51,6 +51,8 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
       const box = rel(n);
       if (box[0] >= scr.abs[2] || box[1] >= scr.abs[3] || box[0] + box[2] <= 0 || box[1] + box[3] <= 0) continue;
       if (outIds.has(n.id)) { out.push({ node: n.id, name: n.name, box }); outText(n.id); continue; }
+      // every node drawn on the screen (under half its area), for the app controls Figma does not draw (`unspecced`)
+      if (box[2] * box[3] < 0.5 * scr.abs[2] * scr.abs[3]) drawn.push(box);
       if (controlNodes.has(n.id)) controls.push({ node: n.id, name: n.name, box });
       if (buttonNodes?.has(n.id)) buttons.push({ node: n.id, name: n.name, box });
       if (/^(FRAME|INSTANCE|RECTANGLE|COMPONENT)$/.test(n.type) && box[2] >= 12 && box[3] >= 8 && box[2] * box[3] < 0.4 * scr.abs[2] * scr.abs[3] && !holdsImage(n.id)) {
@@ -99,7 +101,7 @@ export function figmaScreen(nodes: any[], scr: any, controlNodes: Set<string>, s
     if (!boxes.includes(b)) boxes.push(b);
     t.container = b.node;
   }
-  return { texts, fills: shown.slice(0, 40), controls, out, outTexts, keyboard, boxes, buttons };
+  return { texts, fills: shown.slice(0, 40), controls, out, outTexts, keyboard, boxes, buttons, drawn };
 }
 
 // Elements of an XCUITest or UiAutomator2 page source in window units: their text (if any) and whether they can be
@@ -160,7 +162,9 @@ export function appElements(xml: string) {
     for (let x: Node | null = n; x?.parent; x = x.parent) { const o = order(x); if (o === null) continue;
       if (x.parent.kids.some(sib => sib !== x && (order(sib) ?? -1) > o && over(sib))) return true; }
     return false; };
-  const out: { type: string; text: string; box: Box; actionable: boolean; covered: boolean; name: boolean }[] = [];
+  // clickable: Android's own flag, enabled and clickable (null on iOS, whose source has no such fact); rid: its
+  // resource id, which names an unspecced control the same way on every run
+  const out: { type: string; text: string; box: Box; actionable: boolean; covered: boolean; name: boolean; clickable: boolean | null; rid: string }[] = [];
   for (const n of nodes) {
     const at = n.at;
     if (at.visible === 'false' || at.displayed === 'false' || !n.box || n.box[2] <= 0 || n.box[3] <= 0) continue;
@@ -170,7 +174,7 @@ export function appElements(xml: string) {
     const actionable = /Button|Cell|Switch|Link|Image|TextField|SearchField|Tab/.test(type) || at.clickable === 'true';
     // Android: words from content-desc alone on a view that draws no text of its own (an ImageButton's name)
     const name = !!at.class && !at.text && !!at['content-desc'] && !/TextView|EditText|Button$/.test(at.class.replace(/ImageButton$/, 'Image'));
-    out.push({ type, text, box: n.box, actionable, covered: covered(n), name });
+    out.push({ type, text, box: n.box, actionable, covered: covered(n), name, clickable: at.clickable === undefined ? null : at.clickable === 'true' && at.enabled !== 'false', rid: at['resource-id'] ?? '' });
   }
   // a button's label repeated by the text inside it: keep the inner text only
   return out.map((o, i) => o.text && out.some((p, j) => j !== i && p.text === o.text && p.box[2] * p.box[3] < o.box[2] * o.box[3] && p.box[0] >= o.box[0] && p.box[1] >= o.box[1]) ? { ...o, text: '' } : o);

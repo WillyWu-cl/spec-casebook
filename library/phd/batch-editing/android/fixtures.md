@@ -14,11 +14,14 @@ a new row that needs a new photo or account state adds it here in the same draft
   token masked. Rows run as Premium; segment R1-g switches to Free and back.
 - AI Enhance charges no credits (R-004): read the balance before and after, never buy credits.
 
+- Second phone (round R2, 2026-11-11): Samsung Galaxy A53 5G (SM-A5360, adb serial R5CTB22S05Y, 1080 × 2400),
+  same build 20.19.0 (90201900); Stay awake on.
+
 ## Photos in the gallery
 | Photo | Used by | Notes |
 | --- | --- | --- |
 | At least 25 photos of mixed orientation | Picker, room, Enhance, Save rows | The phone's own gallery (≈3,000 photos) |
-| Section 3 stand-ins ① – ④ in album 「Casebook」 (`/sdcard/Pictures/Casebook/`): `casebook_s3_1_escalator_2x3_1706x2559.jpg`, `casebook_s3_2_101_4x5_1576x1970.jpg`, `casebook_s3_3_teacup_1x1_800x800.jpg`, `casebook_s3_4_seascape_16x9_2730x1535.jpg` | TC-048 – TC-061, TC-149 | Generated 2026-11-09 at the exact sizes of PM's Section 3 photos (user approved stand-ins); grid every 100 px, coloured corner discs and a centre dot to read box positions. Select them in the order ① ② ③ ④ |
+| Section 3 stand-ins ① – ④ in album 「Casebook」 (`/sdcard/Pictures/Casebook/`): `casebook_s3_1_escalator_2x3_1706x2559.jpg`, `casebook_s3_2_101_4x5_1576x1970.jpg`, `casebook_s3_3_teacup_1x1_800x800.jpg`, `casebook_s3_4_seascape_16x9_2730x1535.jpg` | TC-048 – TC-061, TC-149 | Generated 2026-11-09 at the exact sizes of PM's Section 3 photos (user approved stand-ins); grid every 100 px, coloured corner discs and a centre dot to read box positions. Select them in the order ① ② ③ ④. On the SM-A5360 regenerated 2026-11-11 at the same names and sizes (PIL: plain colour, 100 px grid, red / green / blue / yellow corner discs at top-left / top-right / bottom-left / bottom-right, white centre dot), pushed with `adb push` and a media-scan broadcast |
 
 ## Network
 - Offline rows (TC-106 – TC-108) turn Wi-Fi off with `device-android.ts wifi off` only while adb sees the phone over

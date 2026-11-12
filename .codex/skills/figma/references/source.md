@@ -1,5 +1,60 @@
 # Figma source data in a few calls
 
+## Two routes (user, 2026-11-11)
+
+| Route | When | Calls for the 11 AI Mini Drama boards | Command |
+|---|---|---|---|
+| **REST + one use_figma call** | **Default** | 2 REST (nodes, images) + 1 `use_figma` (+ `get_screenshot` only for a board REST cannot render 1:1) | `scripts/figma-rest.ts` |
+| **use_figma only** | When the user asks for it, or when this computer has no REST token | 196 `use_figma` + 11 `get_screenshot` (the first read; re-reads only touch changed boards) | `scripts/figma-source.ts` (*Steps*, below) |
+
+Both write the same `out/` (same node format, same board fingerprints in `hashes.json`), so the design check and every
+other reader does not care which route read last. `source.json` names it: `design.ts` unpacks `rest/boards/*.gz` after a
+pull for the REST route, and merges `responses/` for the use_figma route (a feature with no `source.json` is
+use_figma only). A use_figma read older than the last REST read is not merged unless `merge design --mcp`.
+Measured 2026-11-11 (`library/pdr/ai-mini-drama/comparisons/2026-11-11_figma-rest-prototype.md`, local): all 11 board
+fingerprints equal, `screens.json` and `arrows.json` identical, the design check's `compare.json` identical; REST is
+also truer on hidden layers inside instances (real ids, exact boxes, where the plugin makes ids up and estimates).
+
+### Default route: REST + one use_figma call
+
+Needs qa-dm's personal access token (README Setup 5): `FIGMA_TOKEN`, else the keychain item
+`com.cyberlink.figma-retrieval`, else `~/.casebook/figma-token`. CyberLink DC (where the Design files live) gives qa-dm
+a Dev seat: 15 REST file reads a minute. A Design file in a View-seat team gets only up to 20 a month: tell the user.
+All commands are `node scripts/figma-rest.ts <product>/<feature> [<set>] …`; replies go to files under
+`…/figma-source/design/rest/`, never into the conversation.
+
+0. A feature the casebook has not read: `figma-source.ts <feature> init <Design link>` first (records `files.design`).
+1. **List** (1 REST call, first read only): `list [page or section id]` writes the page's sections and boards into
+   `scope.json`. Pick the boards as on the other route (every Design board the casebook inventories included).
+2. **Fetch** (1 REST call): `fetch [board ids…]` (default: the boards `scope.json` lists as read) gets every board's
+   nodes with `geometry=paths` into `rest/nodes.json` (local, about 90 MB for 11 boards).
+3. **Extras** (1 `use_figma` call): `calls` writes `rest/calls/extras.js` and prints its description. Load the
+   `figma-use` skill, `create_session`, then call `use_figma` on `figma-design` with that description, the file's whole
+   content as `code` and `skillNames: "resource:figma-use"` (about 20 KB of code; about 19 KB comes back). Then `save`
+   copies the return from the transcript into `rest/extras.json`. It returns variable names, mode names, vectors with
+   mixed (per-vertex) caps with their arrowheads, joins REST leaves out, boolean-operation radius and video fills;
+   variable values per mode are left out (too large; no reader needs them).
+4. **Publish**: `publish` converts the REST reply and the extras to `out/` (figma-source's node format, with
+   `screens.json`, `arrows.json`, `library.json` and `<board>.metadata.xml` made by figma-source's own functions),
+   writes the committed copy `rest/boards/<file>.gz`, updates `hashes.json` and `scope.json` with the fingerprints and
+   writes `source.json` (route, read time, the boards that changed). It refuses an extras return older than the fetch
+   (`--no-extras` publishes without it: names, caps, radius and videos then stay unknown).
+5. **Images** (1 REST call, only when a board's shared image is not current): `images` renders those boards at 1 px =
+   1 pt into the shared `extracted/figma/` files and lists them in `calls/todo.json`; a board Figma renders smaller
+   (very large boards: `main flow`, 9909 pt, came back 8388 px) is listed for `get_screenshot` on `figma-design`
+   (`nodeId`, `maxDimension`; download to `save_to`). Then `node scripts/figma-source.ts <feature> [<set>] crop design`
+   shrinks, records and crops them as on the other route.
+6. **Commit** `source.json`, `hashes.json`, `scope.json`, `rest/boards/`, `rest/extras.json` and new board images with
+   `shots.json` (`rest/nodes.json`, `rest/out/`, `rest/calls/` and `out/` stay local).
+
+A re-read is steps 2–5 again: one fetch for every board (it also tells which boards changed: `publish` prints them),
+one extras call, images only for changed boards. `scripts/figma-rest-parity.ts` compares a REST `out/` with a
+use_figma one field by field when a question comes up.
+
+### use_figma-only route (on request)
+
+The rest of this file is that route. Use it when the user asks for it, or when no REST token is available.
+
 Part of the figma skill (`../SKILL.md`): the **source** branch. It reads the Design boards' full data once; the
 **conformance** branch (`conformance.md`) and anyone needing pixel-level Figma data (measuring a screen, design
 tokens) read its `out/` files instead of calling Figma again. Not for the casebook's control/arrow inventory (that
@@ -143,6 +198,10 @@ and `library.json` values come from those nodes; `modes` is set only on frames t
   chunk exactly. Keep the smaller plan's return out of `responses/` (the newest plan per board wins). On 2811:89056
   (2026-11-02) one 513-node chunk dropped every time; its pieces took 62 s, 66 s and 16 s.
 - A return over the host's tool output limit: lower `--budget` (the default keeps returns near 40 KB) and plan again.
+  The host may cut a long return without an error: Codex keeps only the head and tail of a string over about 50,000
+  characters (「…N chars truncated…」 in the middle), Claude Code stops at 25,000 tokens (「[OUTPUT TRUNCATED …]」).
+  `save` and `figma-check.ts --save` refuse such a return and say so (`lib/figma-returns.ts` cutByHost, ported from
+  rdqe-spec-contract-agent, 2026-11-11). The missing part is on no disk: run a smaller call, never the same one again.
 - A board over 65536 pt on its long side: `todo.json` says so; take its screens one by one after merge.
 - Quota: Figma counts every call. `summary.json` records how many this read took; note the account's remaining
   quota before a large read and stop (do not retry in a loop) when it runs out.

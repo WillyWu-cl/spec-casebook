@@ -1,0 +1,603 @@
+{
+  "saved_at": "2026-11-12T01:38:23.886Z",
+  "version": 5,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-001",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; a portrait photo in the gallery; the photo open in the editor",
+      "after": "1. Android phone, PhotoDirector signed in\n2. A portrait photo in the gallery\n3. The photo open in the editor"
+    },
+    {
+      "id": "TC-002",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); app in its default (dark) appearance",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. App in its default (dark) appearance"
+    },
+    {
+      "id": "TC-002",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Top to bottom: ⓘ at the top left and the credit pill (balance and ⊕) at the top right; the canvas with eraser and crop at its lower left and compare at its lower right; the category tabs; the thumbnail row; 「Generate」 with its credit price; the bottom bar X, undo, redo, ✓. Dark bars and thumbnail strips as Design frame 「5」",
+      "after": "Top to bottom: ⓘ at the top left and the credit pill (balance and ⊕) at the top right\nThe canvas with eraser and crop at its lower left and compare at its lower right\nThe category tabs\nThe thumbnail row\n「Generate」 with its credit price\nThe bottom bar X, undo, redo, ✓\nDark bars and thumbnail strips as Design frame 「5」"
+    },
+    {
+      "id": "TC-003",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-004",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-005",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); a background generated (template or Custom) and shown on the canvas",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. A background generated (template or Custom) and shown on the canvas"
+    },
+    {
+      "id": "TC-005",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While held the canvas shows the photo before the change; after release it shows the current result again",
+      "after": "While held the canvas shows the photo before the change\nAfter release it shows the current result again"
+    },
+    {
+      "id": "TC-006",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-006",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "ⓘ opens the AI Background information; closing it returns to the room with nothing changed",
+      "after": "ⓘ opens the AI Background information\nClosing it returns to the room with nothing changed"
+    },
+    {
+      "id": "TC-007",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-007",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The credit pill shows the current balance with ⊕; tapping opens the credit purchase page; coming back returns to the room unchanged (no purchase)",
+      "after": "The credit pill shows the current balance with ⊕\nTapping opens the credit purchase page\nComing back returns to the room unchanged (no purchase)"
+    },
+    {
+      "id": "TC-008",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-008",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The bottom bar shows X, undo, redo and ✓; undo and redo are dimmed",
+      "after": "The bottom bar shows X, undo, redo and ✓\nUndo and redo are dimmed"
+    },
+    {
+      "id": "TC-009",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-009",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The categories are capsule tabs in one row and the selected tab has an orange fill. Names spelled correctly (third tab 「Balloon」)",
+      "after": "The categories are capsule tabs in one row and the selected tab has an orange fill\nNames spelled correctly (third tab 「Balloon」)"
+    },
+    {
+      "id": "TC-010",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-010",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The orange 「Custom」 capsule keeps a gap from the screen's left edge (Design: 12 pt, lined up with the first thumbnail); it does not touch the edge",
+      "after": "The orange 「Custom」 capsule keeps a gap from the screen's left edge (Design: 12 pt, lined up with the first thumbnail)\nIt does not touch the edge"
+    },
+    {
+      "id": "TC-011",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-012",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-012",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each thumbnail is an 80 × 80 pt image with its name in a strip below (80 × 98 pt in all), 4 pt apart; smaller than the current app's thumbnails",
+      "after": "Each thumbnail is an 80 × 80 pt image with its name in a strip below (80 × 98 pt in all), 4 pt apart\nSmaller than the current app's thumbnails"
+    },
+    {
+      "id": "TC-013",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-014",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every premium template shows a crown badge at its top right; free ones have none",
+      "after": "Every premium template shows a crown badge at its top right\nFree ones have none"
+    },
+    {
+      "id": "TC-015",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-016",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)"
+    },
+    {
+      "id": "TC-016",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The prompt panel opens over the room with the keyboard; no new room or page opens",
+      "after": "The prompt panel opens over the room with the keyboard\nNo new room or page opens"
+    },
+    {
+      "id": "TC-017",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open"
+    },
+    {
+      "id": "TC-018",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open"
+    },
+    {
+      "id": "TC-019",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a 2,600-character text on the clipboard",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A 2,600-character text on the clipboard"
+    },
+    {
+      "id": "TC-020",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt longer than three lines typed",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt longer than three lines typed"
+    },
+    {
+      "id": "TC-021",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed"
+    },
+    {
+      "id": "TC-022",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed"
+    },
+    {
+      "id": "TC-022",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「My Prompts」 responds and opens My Prompts; back in the panel the typed prompt is still there",
+      "after": "「My Prompts」 responds and opens My Prompts\nBack in the panel the typed prompt is still there"
+    },
+    {
+      "id": "TC-023",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed"
+    },
+    {
+      "id": "TC-023",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The panel and keyboard close; the 「Custom」 thumbnail is selected with an orange stroke; Generate is enabled (orange) and shows 「5」 credits",
+      "after": "The panel and keyboard close\nThe 「Custom」 thumbnail is selected with an orange stroke\nGenerate is enabled (orange) and shows 「5」 credits"
+    },
+    {
+      "id": "TC-024",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed"
+    },
+    {
+      "id": "TC-024",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The panel and keyboard close; the 「Custom」 thumbnail is selected with an orange stroke and Generate is enabled",
+      "after": "The panel and keyboard close\nThe 「Custom」 thumbnail is selected with an orange stroke and Generate is enabled"
+    },
+    {
+      "id": "TC-025",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); the 「Custom」 tab selected and no thumbnail selected",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. The 「Custom」 tab selected and no thumbnail selected"
+    },
+    {
+      "id": "TC-026",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓"
+    },
+    {
+      "id": "TC-027",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; Generate tapped (same run as TC-026)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Generate tapped (same run as TC-026)"
+    },
+    {
+      "id": "TC-028",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; Generate tapped (same run as TC-026)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Generate tapped (same run as TC-026)"
+    },
+    {
+      "id": "TC-029",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; Generate tapped (same run as TC-026)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Generate tapped (same run as TC-026)"
+    },
+    {
+      "id": "TC-030",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; Generate tapped (same run as TC-026)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Generate tapped (same run as TC-026)"
+    },
+    {
+      "id": "TC-031",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; Generate tapped (same run as TC-026)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Generate tapped (same run as TC-026)"
+    },
+    {
+      "id": "TC-032",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; Generate tapped",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Generate tapped"
+    },
+    {
+      "id": "TC-033",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; note the credit balance",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Note the credit balance"
+    },
+    {
+      "id": "TC-033",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The canvas shows the subject on a new background matching the prompt; the credit pill shows the balance minus 5",
+      "after": "The canvas shows the subject on a new background matching the prompt\nThe credit pill shows the balance minus 5"
+    },
+    {
+      "id": "TC-034",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); a template selected; note the credit balance",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. A template selected\n5. Note the credit balance"
+    },
+    {
+      "id": "TC-034",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A wait indicator shows while generating; the canvas then shows the subject on the template's background; the credit pill shows the balance minus 2",
+      "after": "A wait indicator shows while generating\nThe canvas then shows the subject on the template's background\nThe credit pill shows the balance minus 2"
+    },
+    {
+      "id": "TC-056",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); note the credit balance",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. Note the credit balance"
+    },
+    {
+      "id": "TC-056",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Balloon」 is selected (orange fill) and its first template has the orange stroke; the canvas then shows the subject on a new background in that template's look (compare with its thumbnail); the credit pill shows the balance minus exactly 2",
+      "after": "「Balloon」 is selected (orange fill) and its first template has the orange stroke\nThe canvas then shows the subject on a new background in that template's look (compare with its thumbnail)\nThe credit pill shows the balance minus exactly 2"
+    },
+    {
+      "id": "TC-057",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); note the credit balance",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. Note the credit balance"
+    },
+    {
+      "id": "TC-057",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Wood」 is selected (orange fill) and its first template has the orange stroke; the canvas then shows the subject on a new background in that template's look (compare with its thumbnail); the credit pill shows the balance minus exactly 2",
+      "after": "「Wood」 is selected (orange fill) and its first template has the orange stroke\nThe canvas then shows the subject on a new background in that template's look (compare with its thumbnail)\nThe credit pill shows the balance minus exactly 2"
+    },
+    {
+      "id": "TC-058",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); note the credit balance",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. Note the credit balance"
+    },
+    {
+      "id": "TC-058",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Vintage」 is selected (orange fill) and its first template has the orange stroke; the canvas then shows the subject on a new background in that template's look (compare with its thumbnail); the credit pill shows the balance minus exactly 2",
+      "after": "「Vintage」 is selected (orange fill) and its first template has the orange stroke\nThe canvas then shows the subject on a new background in that template's look (compare with its thumbnail)\nThe credit pill shows the balance minus exactly 2"
+    },
+    {
+      "id": "TC-059",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); note the credit balance",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. Note the credit balance"
+    },
+    {
+      "id": "TC-059",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Life」 is selected (orange fill) and its first template has the orange stroke; the canvas then shows the subject on a new background in that template's look (compare with its thumbnail); the credit pill shows the balance minus exactly 2",
+      "after": "「Life」 is selected (orange fill) and its first template has the orange stroke\nThe canvas then shows the subject on a new background in that template's look (compare with its thumbnail)\nThe credit pill shows the balance minus exactly 2"
+    },
+    {
+      "id": "TC-035",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); a background generated (template or Custom) and shown on the canvas",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. A background generated (template or Custom) and shown on the canvas"
+    },
+    {
+      "id": "TC-035",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo brings back the canvas before the generation and enables redo; redo shows the generated result again",
+      "after": "Undo brings back the canvas before the generation and enables redo\nRedo shows the generated result again"
+    },
+    {
+      "id": "TC-036",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); a background generated (template or Custom) and shown on the canvas",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. A background generated (template or Custom) and shown on the canvas"
+    },
+    {
+      "id": "TC-037",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); a background generated (template or Custom) and shown on the canvas",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. A background generated (template or Custom) and shown on the canvas"
+    },
+    {
+      "id": "TC-038",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; note the credit balance; Generate tapped",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Note the credit balance\n7. Generate tapped"
+    },
+    {
+      "id": "TC-038",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The room shows the generation still going or its result; it is not silently lost, and credits are only charged if the result is delivered",
+      "after": "The room shows the generation still going or its result\nIt is not silently lost, and credits are only charged if the result is delivered"
+    },
+    {
+      "id": "TC-039",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, an account that has never used the AI Background free trial (fresh account or reset by RD); a portrait photo in the gallery",
+      "after": "1. Android phone, an account that has never used the AI Background free trial (fresh account or reset by RD)\n2. A portrait photo in the gallery"
+    },
+    {
+      "id": "TC-039",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The CTA reads 「1 Free Trial」 with the price shown as 「2 → 0」 (2 struck through); the paid price does not flash first",
+      "after": "The CTA reads 「1 Free Trial」 with the price shown as 「2 → 0」 (2 struck through)\nThe paid price does not flash first"
+    },
+    {
+      "id": "TC-040",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, an account that has never used the AI Background free trial (fresh account or reset by RD); a portrait photo in the gallery; 「1 Free Trial」 showing; note the credit balance",
+      "after": "1. Android phone, an account that has never used the AI Background free trial (fresh account or reset by RD)\n2. A portrait photo in the gallery\n3. 「1 Free Trial」 showing\n4. Note the credit balance"
+    },
+    {
+      "id": "TC-040",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The new background is generated; the balance does not change (0 credits charged); the CTA then shows the paid 「Generate」 with its price",
+      "after": "The new background is generated\nThe balance does not change (0 credits charged)\nThe CTA then shows the paid 「Generate」 with its price"
+    },
+    {
+      "id": "TC-041",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, an account that has never used the AI Background free trial (fresh account or reset by RD); a portrait photo in the gallery; the free trial used (TC-040)",
+      "after": "1. Android phone, an account that has never used the AI Background free trial (fresh account or reset by RD)\n2. A portrait photo in the gallery\n3. The free trial used (TC-040)"
+    },
+    {
+      "id": "TC-042",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); app log collection on (PhotoDirector log pull not set up yet); a prompt confirmed after erasing part of the subject",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. App log collection on (PhotoDirector log pull not set up yet)\n5. A prompt confirmed after erasing part of the subject"
+    },
+    {
+      "id": "TC-043",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); app log collection on (PhotoDirector log pull not set up yet); a template selected",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. App log collection on (PhotoDirector log pull not set up yet)\n5. A template selected"
+    },
+    {
+      "id": "TC-044",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, an account that has never used the AI Background free trial (fresh account or reset by RD); a portrait photo in the gallery; app log collection on",
+      "after": "1. Android phone, an account that has never used the AI Background free trial (fresh account or reset by RD)\n2. A portrait photo in the gallery\n3. App log collection on"
+    },
+    {
+      "id": "TC-045",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); the app in the appearance that shows the light Design (Q-9)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. The app in the appearance that shows the light Design (Q-9)"
+    },
+    {
+      "id": "TC-046",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open"
+    },
+    {
+      "id": "TC-046",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The first Back closes the keyboard; the second closes the panel and the room stays open (Custom not selected unless a prompt was confirmed)",
+      "after": "The first Back closes the keyboard\nThe second closes the panel and the room stays open (Custom not selected unless a prompt was confirmed)"
+    },
+    {
+      "id": "TC-047",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); 「Custom」 tapped and the prompt panel open; a prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓; Generate tapped",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. 「Custom」 tapped and the prompt panel open\n5. A prompt typed (e.g. 「a sunny beach at sunset」) and the panel closed with ✓\n6. Generate tapped"
+    },
+    {
+      "id": "TC-047",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Back does what AI Enhance does during its wait (Q-7): it never leaves silently with the generation lost; any dialog it shows names what happens to the credits",
+      "after": "Back does what AI Enhance does during its wait (Q-7): it never leaves silently with the generation lost\nAny dialog it shows names what happens to the credits"
+    },
+    {
+      "id": "TC-048",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); a background generated (template or Custom) and shown on the canvas",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. A background generated (template or Custom) and shown on the canvas"
+    },
+    {
+      "id": "TC-049",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); ⓘ information open",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. ⓘ information open"
+    },
+    {
+      "id": "TC-050",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); the credit purchase page open from the credit pill",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. The credit purchase page open from the credit pill"
+    },
+    {
+      "id": "TC-051",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); the eraser (or crop) tool open",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. The eraser (or crop) tool open"
+    },
+    {
+      "id": "TC-052",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); one template generation finished (TC-034)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. One template generation finished (TC-034)"
+    },
+    {
+      "id": "TC-053",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); a template selected; note the credit balance",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. A template selected\n5. Note the credit balance"
+    },
+    {
+      "id": "TC-053",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One generation starts and one result arrives; the balance goes down by 2 only once",
+      "after": "One generation starts and one result arrives\nThe balance goes down by 2 only once"
+    },
+    {
+      "id": "TC-054",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); one generation finished (TC-033 or TC-034)",
+      "after": "1. Android phone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. One generation finished (TC-033 or TC-034)"
+    },
+    {
+      "id": "TC-055",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; a portrait photo open in the editor with another edit applied (e.g. Adjustments › Brightness +50)",
+      "after": "1. Android phone, PhotoDirector signed in\n2. A portrait photo open in the editor with another edit applied (e.g. Adjustments › Brightness +50)"
+    }
+  ],
+  "notes": []
+}

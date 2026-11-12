@@ -1,0 +1,1583 @@
+{
+  "saved_at": "2026-11-12T01:38:23.902Z",
+  "version": 6,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line, and Action steps still run together are split one per numbered line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-001",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Gallery holds at least 25 photos of mixed orientation",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Gallery holds at least 25 photos of mixed orientation"
+    },
+    {
+      "id": "TC-005",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「Batch」 tab is highlighted; a bottom bar shows the hint 「Select 1 to 20 photos to continue. (0/20)」 and 「Next」",
+      "after": "The 「Batch」 tab is highlighted\nA bottom bar shows the hint 「Select 1 to 20 photos to continue. (0/20)」 and 「Next」"
+    },
+    {
+      "id": "TC-006",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Gallery holds at least 25 photos of mixed orientation",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Gallery holds at least 25 photos of mixed orientation"
+    },
+    {
+      "id": "TC-007",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each selected thumbnail shows its order number 1, 2, 3; the hint ends 「(3/20)」; the tray under the bar lists the 3 photos in that order; 「Next」 is enabled",
+      "after": "Each selected thumbnail shows its order number 1, 2, 3\nThe hint ends 「(3/20)」\nThe tray under the bar lists the 3 photos in that order\n「Next」 is enabled"
+    },
+    {
+      "id": "TC-009",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo 2 is deselected; record whether photo 3 is renumbered to 2 and the count drops to 2",
+      "after": "Photo 2 is deselected\nRecord whether photo 3 is renumbered to 2 and the count drops to 2"
+    },
+    {
+      "id": "TC-150",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo 2 leaves the tray and its tile loses the number; the hint ends 「(2/20)」; record whether photo 3 is renumbered to 2",
+      "after": "Photo 2 leaves the tray and its tile loses the number\nThe hint ends 「(2/20)」\nRecord whether photo 3 is renumbered to 2"
+    },
+    {
+      "id": "TC-151",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The photo opens large without being selected; closing it returns to the picker with nothing selected",
+      "after": "The photo opens large without being selected\nClosing it returns to the picker with nothing selected"
+    },
+    {
+      "id": "TC-010",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Record: 「Next」 is disabled or does nothing; Batch Edit Room does not open with no photo",
+      "after": "Record: 「Next」 is disabled or does nothing\nBatch Edit Room does not open with no photo"
+    },
+    {
+      "id": "TC-011",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Photo Picker on 「Batch」; Gallery holds at least 25 photos of mixed orientation",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Photo Picker on 「Batch」\n3. Gallery holds at least 25 photos of mixed orientation"
+    },
+    {
+      "id": "TC-011",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "All 20 can be selected (numbers 1–20); the hint ends 「(20/20)」",
+      "after": "All 20 can be selected (numbers 1–20)\nThe hint ends 「(20/20)」"
+    },
+    {
+      "id": "TC-156",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; Gallery holds at least 25 photos of mixed orientation",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Gallery holds at least 25 photos of mixed orientation"
+    },
+    {
+      "id": "TC-156",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No IAP page or Premium prompt at any count (not at the 7th or the 13th photo); all 20 are selected; Batch Edit Room opens with 20 photos",
+      "after": "No IAP page or Premium prompt at any count (not at the 7th or the 13th photo)\nAll 20 are selected\nBatch Edit Room opens with 20 photos"
+    },
+    {
+      "id": "TC-012",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 21st photo is not selected and the toast 「Please pick at most 20 photos.」 appears; the 20 stay selected",
+      "after": "The 21st photo is not selected and the toast 「Please pick at most 20 photos.」 appears\nThe 20 stay selected"
+    },
+    {
+      "id": "TC-018",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Photo Picker from 「Edit」 on 「Batch」 with 12 photos selected",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Photo Picker from 「Edit」 on 「Batch」 with 12 photos selected"
+    },
+    {
+      "id": "TC-019",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Photo Picker from the 「AI Enhance」 shortcut on 「Batch」 with 3 photos selected (「(3/20)」)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Photo Picker from the 「AI Enhance」 shortcut on 「Batch」 with 3 photos selected (「(3/20)」)"
+    },
+    {
+      "id": "TC-152",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; phone on USB",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Phone on USB"
+    },
+    {
+      "id": "TC-152",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "PhotoDirector opens on the Batch Edit entry; record where it lands (expected: the Photo Picker on 「Batch」)",
+      "after": "PhotoDirector opens on the Batch Edit entry\nRecord where it lands (expected: the Photo Picker on 「Batch」)"
+    },
+    {
+      "id": "TC-023",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-023",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Looks like Edit Room; the bottom bar has only 「Crop & Rotate」, 「Adjustment」, 「AI Enhance」 in that order (no Filter, no Preset, no other tool)",
+      "after": "Looks like Edit Room\nThe bottom bar has only 「Crop & Rotate」, 「Adjustment」, 「AI Enhance」 in that order (no Filter, no Preset, no other tool)"
+    },
+    {
+      "id": "TC-024",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-024",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Home and Replace photo at the left; a feedback button (speech bubble with !), Save (download icon, as Edit Room) and Setting at the right",
+      "after": "Home and Replace photo at the left\nA feedback button (speech bubble with !), Save (download icon, as Edit Room) and Setting at the right"
+    },
+    {
+      "id": "TC-025",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-025",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Record what opens; closing it returns to Batch Edit Room with nothing changed",
+      "after": "Record what opens\nClosing it returns to Batch Edit Room with nothing changed"
+    },
+    {
+      "id": "TC-154",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-154",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Record what opens; closing it returns to Batch Edit Room with nothing changed",
+      "after": "Record what opens\nClosing it returns to Batch Edit Room with nothing changed"
+    },
+    {
+      "id": "TC-026",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)"
+    },
+    {
+      "id": "TC-026",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While held the original photo 1 is shown; on release the edited one returns (as Edit Room)",
+      "after": "While held the original photo 1 is shown\nOn release the edited one returns (as Edit Room)"
+    },
+    {
+      "id": "TC-027",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-027",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The large photo switches to each tapped photo; the strip highlights the current one",
+      "after": "The large photo switches to each tapped photo\nThe strip highlights the current one"
+    },
+    {
+      "id": "TC-028",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-029",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-030",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 12 photos; photo 1 cropped to Square (✓), then photo 2 cropped to 3:2 (✓); photo 2 is current",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 12 photos\n3. Photo 1 cropped to Square (✓)\n4. Photo 2 cropped to 3:2 (✓) after that\n5. Photo 2 is current"
+    },
+    {
+      "id": "TC-030",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only photo 2 goes back to uncropped; photo 1 stays Square",
+      "after": "Only photo 2 goes back to uncropped\nPhoto 1 stays Square"
+    },
+    {
+      "id": "TC-031",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Undo takes photo 1 back to uncropped (photo 2 untouched); Redo makes it Square again",
+      "after": "Undo takes photo 1 back to uncropped (photo 2 untouched)\nRedo makes it Square again"
+    },
+    {
+      "id": "TC-032",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; in the Crop & Rotate room photo 1 set to 3:2 and 「All」 tapped, then photo 3 rotated 90°, then ✓",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. In the Crop & Rotate room photo 1 set to 3:2 and 「All」 tapped\n4. Photo 3 rotated 90°\n5. ✓ tapped"
+    },
+    {
+      "id": "TC-032",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo 3 goes back to its state before this room visit (no 3:2, no rotation) in one step; the other photos keep 3:2",
+      "after": "Photo 3 goes back to its state before this room visit (no 3:2, no rotation) in one step\nThe other photos keep 3:2"
+    },
+    {
+      "id": "TC-033",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo 5 loses its 3:2 in one step; photo 3 and the others are not changed by this Undo",
+      "after": "Photo 5 loses its 3:2 in one step\nPhoto 3 and the others are not changed by this Undo"
+    },
+    {
+      "id": "TC-034",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 3 photos all enhanced (AI Enhance), back on the main screen, photo 2 current",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 3 photos all enhanced (AI Enhance), back on the main screen, photo 2 current"
+    },
+    {
+      "id": "TC-034",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only photo 2 returns to its pre-Enhance look; photos 1 and 3 stay enhanced",
+      "after": "Only photo 2 returns to its pre-Enhance look\nPhotos 1 and 3 stay enhanced"
+    },
+    {
+      "id": "TC-036",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Redo is no longer available and the Enhance result of photo 2 cannot be brought back; on AI Enhance the button reads 「Enhance」 (enabled): photo 2 can be enhanced again",
+      "after": "Redo is no longer available and the Enhance result of photo 2 cannot be brought back\nOn AI Enhance the button reads 「Enhance」 (enabled): photo 2 can be enhanced again"
+    },
+    {
+      "id": "TC-037",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-037",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Same as the current Crop & Rotate room (Rotate, Flip, Flip Vertically, Original, Custom, Square, 2:3, 3:2, 3:4 …, angle slider, ✕ / undo / redo / ✓); no title above the tool panel; top bar ‹, 「W x H」 with a pencil, 「All」; batch thumbnail strip at the bottom",
+      "after": "Same as the current Crop & Rotate room (Rotate, Flip, Flip Vertically, Original, Custom, Square, 2:3, 3:2, 3:4 …, angle slider, ✕ / undo / redo / ✓)\nNo title above the tool panel\nTop bar ‹, 「W x H」 with a pencil, 「All」\nBatch thumbnail strip at the bottom"
+    },
+    {
+      "id": "TC-161",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-161",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The top bar shows photo 1's pixel size 「W x H」 with a pencil; it changes to the other photo's size on switching; the pencil opens the manual pixel input",
+      "after": "The top bar shows photo 1's pixel size 「W x H」 with a pencil\nIt changes to the other photo's size on switching\nThe pencil opens the manual pixel input"
+    },
+    {
+      "id": "TC-155",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all"
+    },
+    {
+      "id": "TC-155",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Same as ✕: back to Batch Edit Room with the room's changes dropped; record if they are kept (as ✓)",
+      "after": "Same as ✕: back to Batch Edit Room with the room's changes dropped\nRecord if they are kept (as ✓)"
+    },
+    {
+      "id": "TC-038",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-039",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-040",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-040",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every photo gets 3:2; the room stays open; the toast 「Applied to 11 photos」 appears; the strip shows all 12 thumbnails cropped at once",
+      "after": "Every photo gets 3:2\nThe room stays open\nThe toast 「Applied to 11 photos」 appears\nThe strip shows all 12 thumbnails cropped at once"
+    },
+    {
+      "id": "TC-041",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 3 photos; Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 3 photos\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-042",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all"
+    },
+    {
+      "id": "TC-042",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「All」 is greyed (disabled) right after the apply; tapping it does nothing: no toast, no photo changes",
+      "after": "「All」 is greyed (disabled) right after the apply\nTapping it does nothing: no toast, no photo changes"
+    },
+    {
+      "id": "TC-153",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-162",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-043",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all"
+    },
+    {
+      "id": "TC-043",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only photo 4 changes to Square; the others keep 3:2",
+      "after": "Only photo 4 changes to Square\nThe others keep 3:2"
+    },
+    {
+      "id": "TC-044",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all; photo 4 changed to Square",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all\n5. Photo 4 changed to Square"
+    },
+    {
+      "id": "TC-044",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every other photo, photo 4 included, is re-cropped to 2:3 from its original (photo 4's Square is overwritten); the strip updates at once",
+      "after": "Every other photo, photo 4 included, is re-cropped to 2:3 from its original (photo 4's Square is overwritten)\nThe strip updates at once"
+    },
+    {
+      "id": "TC-045",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-046",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-046",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every photo is straightened by the same +10°; each photo's crop box shrinks by its own size so no black edges show",
+      "after": "Every photo is straightened by the same +10°\nEach photo's crop box shrinks by its own size so no black edges show"
+    },
+    {
+      "id": "TC-047",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; photo 1 is portrait, photo 2 landscape",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. Photo 1 is portrait, photo 2 landscape"
+    },
+    {
+      "id": "TC-048",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-049",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-049",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only ④ changes: largest 3:4 box 1151×1535, full height, centred; ①②③ unchanged",
+      "after": "Only ④ changes: largest 3:4 box 1151×1535, full height, centred\n①②③ unchanged"
+    },
+    {
+      "id": "TC-050",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-051",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-051",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "④ keeps its box at the left; ①②③ have no horizontal room in 1:1, so their boxes are centred",
+      "after": "④ keeps its box at the left\n①②③ have no horizontal room in 1:1, so their boxes are centred"
+    },
+    {
+      "id": "TC-052",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-052",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "① escalator's largest square sits at the bottom (vertical position synced, 1); ④ seascape has no vertical room and is centred; ③ tea cup whole",
+      "after": "① escalator's largest square sits at the bottom (vertical position synced, 1)\n④ seascape has no vertical room and is centred\n③ tea cup whole"
+    },
+    {
+      "id": "TC-053",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-053",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "④ keeps 865×865 at the bottom right; ① gets 1706×1706 flush with the bottom; ② gets 1576×1576 flush with the bottom; ③ tea cup stays whole. The other boxes are NOT shrunk to ≈56 % (Meitu does that)",
+      "after": "④ keeps 865×865 at the bottom right\n① gets 1706×1706 flush with the bottom\n② gets 1576×1576 flush with the bottom\n③ tea cup stays whole\nThe other boxes are NOT shrunk to ≈56 % (Meitu does that)"
+    },
+    {
+      "id": "TC-054",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-055",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-055",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The others get the same ≈2:1 ratio with their own largest box, placed at the top left (horizontal and vertical where they have room); not 72 % of their width",
+      "after": "The others get the same ≈2:1 ratio with their own largest box, placed at the top left (horizontal and vertical where they have room)\nNot 72 % of their width"
+    },
+    {
+      "id": "TC-056",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open; all four set to 3:2 by 「All」",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open\n4. All four set to 3:2 by 「All」"
+    },
+    {
+      "id": "TC-057",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-057",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The value is refused with a toast (PhD copy, Q-6); the range shown is 238 – 2730 × 238 – 1535 px (this photo's size)",
+      "after": "The value is refused with a toast (PhD copy, Q-6)\nThe range shown is 238 – 2730 × 238 – 1535 px (this photo's size)"
+    },
+    {
+      "id": "TC-058",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-163",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-059",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open"
+    },
+    {
+      "id": "TC-059",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "④ is cropped to 1000×500, the ratio switches to 「Free」 and 「All」 turns normal; after 「All」 the others get the 2:1 ratio with their own largest box (not 1000×500 px)",
+      "after": "④ is cropped to 1000×500, the ratio switches to 「Free」 and 「All」 turns normal\nAfter 「All」 the others get the 2:1 ratio with their own largest box (not 1000×500 px)"
+    },
+    {
+      "id": "TC-060",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open; Square applied to all, then Save",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open\n4. Square applied to all\n5. Saved"
+    },
+    {
+      "id": "TC-060",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Sizes differ per photo (each from its own original: e.g. 1706×1706, 1576×1576, 865-or-larger…); this is expected",
+      "after": "Sizes differ per photo (each from its own original: e.g. 1706×1706, 1576×1576, 865-or-larger…)\nThis is expected"
+    },
+    {
+      "id": "TC-061",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open; Square applied to all; ① then cropped to 2:3 on its own",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open\n4. Square applied to all\n5. ① afterwards cropped to 2:3 on its own"
+    },
+    {
+      "id": "TC-061",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "① is recomputed from its original to its largest 3:2 box; its own 2:3 crop is gone",
+      "after": "① is recomputed from its original to its largest 3:2 box\nIts own 2:3 crop is gone"
+    },
+    {
+      "id": "TC-062",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1"
+    },
+    {
+      "id": "TC-062",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "All 12 photos return to uncropped together in one step; 「All」 turns normal (enabled) again",
+      "after": "All 12 photos return to uncropped together in one step\n「All」 turns normal (enabled) again"
+    },
+    {
+      "id": "TC-063",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all, then undone",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all\n5. That change undone"
+    },
+    {
+      "id": "TC-063",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "All 11 other photos and photo 1 get 3:2 back together; 「All」 is greyed again",
+      "after": "All 11 other photos and photo 1 get 3:2 back together\n「All」 is greyed again"
+    },
+    {
+      "id": "TC-064",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all; then photo 4 changed to Square",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all\n5. Photo 4 afterwards changed to Square"
+    },
+    {
+      "id": "TC-064",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only photo 4 goes back to 3:2 and the room switches to photo 4 (strip selects it); photo 7 is unchanged",
+      "after": "Only photo 4 goes back to 3:2 and the room switches to photo 4 (strip selects it)\nPhoto 7 is unchanged"
+    },
+    {
+      "id": "TC-066",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; photo 1 rotated, photo 2 flipped",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. Photo 1 rotated, photo 2 flipped"
+    },
+    {
+      "id": "TC-067",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all, then photo 4 changed to Square",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all\n5. Photo 4 afterwards changed to Square"
+    },
+    {
+      "id": "TC-067",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Returns to Batch Edit Room; every photo is as before entering the room (no 3:2, no Square)",
+      "after": "Returns to Batch Edit Room\nEvery photo is as before entering the room (no 3:2, no Square)"
+    },
+    {
+      "id": "TC-068",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all"
+    },
+    {
+      "id": "TC-068",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Returns to Batch Edit Room; every photo keeps 3:2",
+      "after": "Returns to Batch Edit Room\nEvery photo keeps 3:2"
+    },
+    {
+      "id": "TC-069",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-070",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1"
+    },
+    {
+      "id": "TC-070",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Same as the 26'10/E Adjustment room; no Subject Detection and no AI Exposure; 「Apply to all」 (icon + 「All」, semi-transparent dark capsule) at the top right; batch strip at the bottom",
+      "after": "Same as the 26'10/E Adjustment room\nNo Subject Detection and no AI Exposure\n「Apply to all」 (icon + 「All」, semi-transparent dark capsule) at the top right\nBatch strip at the bottom"
+    },
+    {
+      "id": "TC-159",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1"
+    },
+    {
+      "id": "TC-159",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "HSL shows 「Hue」 / 「Saturation」 / 「Lightness」 and eight colour dots; Curve shows RGB / red / green / blue channels beside the curve; ﹀ folds the panel and the photo grows, ︿ opens it again; reset and compare sit on the photo",
+      "after": "HSL shows 「Hue」 / 「Saturation」 / 「Lightness」 and eight colour dots\nCurve shows RGB / red / green / blue channels beside the curve\n﹀ folds the panel and the photo grows, ︿ opens it again\nReset and compare sit on the photo"
+    },
+    {
+      "id": "TC-166",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1"
+    },
+    {
+      "id": "TC-166",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While Curve is open the thumbnail strip fades out and does not react: photo 1 stays current; 「All」 is still shown at the top right",
+      "after": "While Curve is open the thumbnail strip fades out and does not react: photo 1 stays current\n「All」 is still shown at the top right"
+    },
+    {
+      "id": "TC-167",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Color › Curve open (strip hidden)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Color › Curve open (strip hidden)"
+    },
+    {
+      "id": "TC-167",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The strip shows again once a slider tool (Exposure) is chosen; tapping photo 2 makes it current",
+      "after": "The strip shows again once a slider tool (Exposure) is chosen\nTapping photo 2 makes it current"
+    },
+    {
+      "id": "TC-168",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1"
+    },
+    {
+      "id": "TC-168",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "With HSL open the strip is hidden and 「All」 is shown; after folding the strip shows again and photo 2 becomes current",
+      "after": "With HSL open the strip is hidden and 「All」 is shown\nAfter folding the strip shows again and photo 2 becomes current"
+    },
+    {
+      "id": "TC-071",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1"
+    },
+    {
+      "id": "TC-071",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The room stays open; the toast 「Applied to 11 photos」 appears; every thumbnail shows the brighter result",
+      "after": "The room stays open\nThe toast 「Applied to 11 photos」 appears\nEvery thumbnail shows the brighter result"
+    },
+    {
+      "id": "TC-072",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all"
+    },
+    {
+      "id": "TC-073",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all; photo 3 Contrast +10",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all\n5. Photo 3 Contrast +10"
+    },
+    {
+      "id": "TC-073",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every other photo now has exactly photo 1's set (Exposure +30); photo 3 loses its Contrast +10",
+      "after": "Every other photo now has exactly photo 1's set (Exposure +30)\nPhoto 3 loses its Contrast +10"
+    },
+    {
+      "id": "TC-074",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1"
+    },
+    {
+      "id": "TC-158",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1"
+    },
+    {
+      "id": "TC-158",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photos 2 and 5 get the same HSL and Curve values (reds shifted, mid-tones brighter); the toast 「Applied to 11 photos」 appears",
+      "after": "Photos 2 and 5 get the same HSL and Curve values (reds shifted, mid-tones brighter)\nThe toast 「Applied to 11 photos」 appears"
+    },
+    {
+      "id": "TC-075",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all"
+    },
+    {
+      "id": "TC-075",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「All」 is greyed (disabled) right after the apply; tapping it does nothing: no toast, no photo changes",
+      "after": "「All」 is greyed (disabled) right after the apply\nTapping it does nothing: no toast, no photo changes"
+    },
+    {
+      "id": "TC-164",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1"
+    },
+    {
+      "id": "TC-076",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all"
+    },
+    {
+      "id": "TC-076",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Exposure +20 is removed from all 12 photos together; 「All」 turns normal (enabled) again",
+      "after": "Exposure +20 is removed from all 12 photos together\n「All」 turns normal (enabled) again"
+    },
+    {
+      "id": "TC-165",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all and undone once",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all and undone once"
+    },
+    {
+      "id": "TC-165",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Exposure +20 is back on all 12 photos together; 「All」 is greyed again",
+      "after": "Exposure +20 is back on all 12 photos together\n「All」 is greyed again"
+    },
+    {
+      "id": "TC-077",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all, then photo 3 Contrast +10",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all\n5. Photo 3 afterwards set to Contrast +10"
+    },
+    {
+      "id": "TC-077",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only photo 3's Contrast +10 is undone and the room switches to photo 3 (strip follows); then Redo puts it back",
+      "after": "Only photo 3's Contrast +10 is undone and the room switches to photo 3 (strip follows)\nThen Redo puts it back"
+    },
+    {
+      "id": "TC-078",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; photo 1 Exposure +20, photo 2 Contrast +10",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Photo 1 Exposure +20, photo 2 Contrast +10"
+    },
+    {
+      "id": "TC-079",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; photo 1 Exposure +20 (Light), then Saturation +10 (Color); Details tab now shown",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Photo 1 Exposure +20 (Light)\n5. Photo 1 Saturation +10 (Color) after that\n6. Details tab now shown"
+    },
+    {
+      "id": "TC-080",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all, photo 3 Contrast +10",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all, photo 3 Contrast +10"
+    },
+    {
+      "id": "TC-080",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Returns to Batch Edit Room; every photo is as before entering the room",
+      "after": "Returns to Batch Edit Room\nEvery photo is as before entering the room"
+    },
+    {
+      "id": "TC-081",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all; then on photo 4 Contrast +10 and Saturation +10 set (not applied)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all\n5. Contrast +10 and Saturation +10 afterwards set on photo 4 (not applied)"
+    },
+    {
+      "id": "TC-081",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Back in Batch Edit Room all photos keep +20; one Undo takes photo 4 back to its state before the room (no Exposure, Contrast or Saturation change); the other photos keep +20",
+      "after": "Back in Batch Edit Room all photos keep +20\nOne Undo takes photo 4 back to its state before the room (no Exposure, Contrast or Saturation change)\nThe other photos keep +20"
+    },
+    {
+      "id": "TC-082",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; Batch Edit Room with 5 photos",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Batch Edit Room with 5 photos"
+    },
+    {
+      "id": "TC-083",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-084",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet"
+    },
+    {
+      "id": "TC-085",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet"
+    },
+    {
+      "id": "TC-086",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 12 photos",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 12 photos"
+    },
+    {
+      "id": "TC-086",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Confirm Dialog opens: 「Enhance 12 photos?」, 「Processing takes a moment and cannot be canceled once started.」, 「Cancel」, 「Start」; no credits shown",
+      "after": "The Confirm Dialog opens: 「Enhance 12 photos?」, 「Processing takes a moment and cannot be canceled once started.」, 「Cancel」, 「Start」\nNo credits shown"
+    },
+    {
+      "id": "TC-087",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Returns to the AI Enhance page; nothing is processed",
+      "after": "Returns to the AI Enhance page\nNothing is processed"
+    },
+    {
+      "id": "TC-089",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 12 photos",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 12 photos"
+    },
+    {
+      "id": "TC-089",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The loading screen shows 「Creating Your AI Image」 and 「Enhancing k / 12」 counting up; a mask covers the whole screen with the strip under it",
+      "after": "The loading screen shows 「Creating Your AI Image」 and 「Enhancing k / 12」 counting up\nA mask covers the whole screen with the strip under it"
+    },
+    {
+      "id": "TC-091",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "There is none; processing cannot be cancelled",
+      "after": "There is none\nProcessing cannot be cancelled"
+    },
+    {
+      "id": "TC-092",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 12 photos, all succeed; note the credit balance",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 12 photos, all succeed\n5. Note the credit balance"
+    },
+    {
+      "id": "TC-092",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every photo shows its enhanced result (no per-photo ✓); the strip shows them; the button reads 「Enhanced」 disabled; the credit balance is unchanged",
+      "after": "Every photo shows its enhanced result (no per-photo ✓)\nThe strip shows them\nThe button reads 「Enhanced」 disabled\nThe credit balance is unchanged"
+    },
+    {
+      "id": "TC-093",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 12 photos; credit balance noted",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 12 photos\n5. Credit balance noted"
+    },
+    {
+      "id": "TC-094",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 20 photos",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 20 photos"
+    },
+    {
+      "id": "TC-094",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The count advances steadily; record the total time; no stall longer than 10 s with the animation running",
+      "after": "The count advances steadily\nRecord the total time\nNo stall longer than 10 s with the animation running"
+    },
+    {
+      "id": "TC-095",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; a photo 1 also enhanced alone in the single Edit Room AI Enhance Standard · Portrait",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. A photo 1 also enhanced alone in the single Edit Room AI Enhance Standard · Portrait"
+    },
+    {
+      "id": "TC-096",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 12 photos; after a batch with 3 failures the summary shows 「9 completed, 3 failed」",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 12 photos\n5. After a batch with 3 failures the summary shows 「9 completed, 3 failed」"
+    },
+    {
+      "id": "TC-096",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only the 3 not-yet-enhanced photos count: 「Enhance 3 photos?」 (if the dialog is shown) and 「Enhancing k / 3」; the 9 enhanced photos are not in N",
+      "after": "Only the 3 not-yet-enhanced photos count: 「Enhance 3 photos?」 (if the dialog is shown) and 「Enhancing k / 3」\nThe 9 enhanced photos are not in N"
+    },
+    {
+      "id": "TC-097",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 3 photos all enhanced; photo 2 Enhance undone on the main screen",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 3 photos all enhanced\n3. Photo 2 Enhance undone on the main screen"
+    },
+    {
+      "id": "TC-097",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The button reads 「Enhance」 (enabled) on this new visit; the dialog reads 「Enhance 3 photos?」; photo 2 is enhanced from its state now, photos 1 and 3 from their enhanced results",
+      "after": "The button reads 「Enhance」 (enabled) on this new visit\nThe dialog reads 「Enhance 3 photos?」\nPhoto 2 is enhanced from its state now, photos 1 and 3 from their enhanced results"
+    },
+    {
+      "id": "TC-157",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 3 photos, all enhanced in one AI Enhance visit, back on the main screen",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 3 photos, all enhanced in one AI Enhance visit, back on the main screen"
+    },
+    {
+      "id": "TC-157",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "On the new visit the button reads 「Enhance」 (enabled); the dialog reads 「Enhance 3 photos?」; all 3 are enhanced again from their enhanced results; then the button reads 「Enhanced」 greyed",
+      "after": "On the new visit the button reads 「Enhance」 (enabled)\nThe dialog reads 「Enhance 3 photos?」\nAll 3 are enhanced again from their enhanced results\nThen the button reads 「Enhanced」 greyed"
+    },
+    {
+      "id": "TC-098",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; Batch Edit Room with 5 photos; AI Enhance page",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Batch Edit Room with 5 photos\n3. AI Enhance page"
+    },
+    {
+      "id": "TC-099",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; Premium IAP page from batch AI Enhance",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Premium IAP page from batch AI Enhance"
+    },
+    {
+      "id": "TC-100",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; enhance finished",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. Enhance finished"
+    },
+    {
+      "id": "TC-101",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 15 photos; 3 set to fail",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 15 photos\n5. 3 set to fail"
+    },
+    {
+      "id": "TC-101",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No dialog per photo; at the end one summary card 「12 completed, 3 failed」 「Failed photos are marked with ! on the thumbnails.」 with a ✕; a red ! at the top right of the 3 failed thumbnails only; the button reads 「Retry Failed (3)」",
+      "after": "No dialog per photo\nAt the end one summary card 「12 completed, 3 failed」 「Failed photos are marked with ! on the thumbnails.」 with a ✕\nA red ! at the top right of the 3 failed thumbnails only\nThe button reads 「Retry Failed (3)」"
+    },
+    {
+      "id": "TC-160",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The card closes; the red ! marks and 「Retry Failed (3)」 stay",
+      "after": "The card closes\nThe red ! marks and 「Retry Failed (3)」 stay"
+    },
+    {
+      "id": "TC-103",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Partial-failure summary 「12 completed, 3 failed」; 2 of the 3 will succeed on retry",
+      "after": "1. Partial-failure summary 「12 completed, 3 failed」\n2. 2 of the 3 will succeed on retry"
+    },
+    {
+      "id": "TC-103",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only the 3 failed photos are processed (count k / 3); the 12 successes are not redone; then 「14 completed, 1 failed」 and 「Retry Failed (1)」; the ! disappears from the 2 retried successes",
+      "after": "Only the 3 failed photos are processed (count k / 3)\nThe 12 successes are not redone\nThen 「14 completed, 1 failed」 and 「Retry Failed (1)」\nThe ! disappears from the 2 retried successes"
+    },
+    {
+      "id": "TC-104",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Summary 「14 completed, 1 failed」; the last photo fails again",
+      "after": "1. Summary 「14 completed, 1 failed」\n2. The last photo fails again"
+    },
+    {
+      "id": "TC-105",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Summary 「14 completed, 1 failed」; the last photo succeeds on retry",
+      "after": "1. Summary 「14 completed, 1 failed」\n2. The last photo succeeds on retry"
+    },
+    {
+      "id": "TC-105",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "All 15 done: the failure message and the Retry button are gone; the button reads 「Enhanced」",
+      "after": "All 15 done: the failure message and the Retry button are gone\nThe button reads 「Enhanced」"
+    },
+    {
+      "id": "TC-106",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 15 photos",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 15 photos"
+    },
+    {
+      "id": "TC-106",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Finished photos are kept; unfinished ones get a red !; the message reads 「8 completed, 7 failed」 (actual counts) and 「Connection lost. Check your connection and retry.」; the button reads 「Retry Failed (7)」",
+      "after": "Finished photos are kept\nUnfinished ones get a red !\nThe message reads 「8 completed, 7 failed」 (actual counts) and 「Connection lost. Check your connection and retry.」\nThe button reads 「Retry Failed (7)」"
+    },
+    {
+      "id": "TC-108",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Connection-lost summary shown; connection restored",
+      "after": "1. Connection-lost summary shown\n2. Connection restored"
+    },
+    {
+      "id": "TC-108",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only the unfinished photos are processed; then the summary updates for the whole batch",
+      "after": "Only the unfinished photos are processed\nThen the summary updates for the whole batch"
+    },
+    {
+      "id": "TC-109",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 15 photos; 2 set to fail; connection drops before the end",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 15 photos\n5. 2 set to fail\n6. Connection drops before the end"
+    },
+    {
+      "id": "TC-109",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Failures and unfinished photos are counted together in 「X completed, Y failed」; the second line shows 「Connection lost. Check your connection and retry.」 (not the thumbnail note)",
+      "after": "Failures and unfinished photos are counted together in 「X completed, Y failed」\nThe second line shows 「Connection lost. Check your connection and retry.」 (not the thumbnail note)"
+    },
+    {
+      "id": "TC-110",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 12 photos",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 12 photos"
+    },
+    {
+      "id": "TC-110",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Processing paused while away and continues from where it was on return; it finishes normally",
+      "after": "Processing paused while away and continues from where it was on return\nIt finishes normally"
+    },
+    {
+      "id": "TC-111",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; 12 photos; some enhanced",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. 12 photos\n5. Some enhanced"
+    },
+    {
+      "id": "TC-111",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Batch Edit Room is gone (no restore); the finished Enhance results are not kept anywhere (gallery, My AI Artwork)",
+      "after": "Batch Edit Room is gone (no restore)\nThe finished Enhance results are not kept anywhere (gallery, My AI Artwork)"
+    },
+    {
+      "id": "TC-112",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 3 photos enhanced and saved",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 3 photos enhanced and saved"
+    },
+    {
+      "id": "TC-113",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-114",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-115",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)"
+    },
+    {
+      "id": "TC-116",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓); Discard Dialog opened from Home",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)\n3. Discard Dialog opened from Home"
+    },
+    {
+      "id": "TC-116",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Goes to the Launcher; nothing is saved",
+      "after": "Goes to the Launcher\nNothing is saved"
+    },
+    {
+      "id": "TC-117",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)"
+    },
+    {
+      "id": "TC-117",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Photo Picker opens on 「Batch」 with the 12 photos still selected; 「Next」 opens Batch Edit Room with every photo unedited (photo 1 no longer Square)",
+      "after": "The Photo Picker opens on 「Batch」 with the 12 photos still selected\n「Next」 opens Batch Edit Room with every photo unedited (photo 1 no longer Square)"
+    },
+    {
+      "id": "TC-118",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓); Discard Dialog open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)\n3. Discard Dialog open"
+    },
+    {
+      "id": "TC-118",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Stays in Batch Edit Room; photo 1 is still Square and Undo still works",
+      "after": "Stays in Batch Edit Room\nPhoto 1 is still Square and Undo still works"
+    },
+    {
+      "id": "TC-119",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓); Replace photo › 「Discard」 › Photo Picker on 「Batch」",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)\n3. Replace photo › 「Discard」 › Photo Picker on 「Batch」"
+    },
+    {
+      "id": "TC-120",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 3 photos, only AI Enhance done",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 3 photos, only AI Enhance done"
+    },
+    {
+      "id": "TC-121",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)"
+    },
+    {
+      "id": "TC-121",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Batch Edit Room is not restored (no 「Continue editing?」 is stated for batch); record what the app shows",
+      "after": "Batch Edit Room is not restored (no 「Continue editing?」 is stated for batch)\nRecord what the app shows"
+    },
+    {
+      "id": "TC-122",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 20 photos, 5 edited, 15 unedited; note the gallery count",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 20 photos, 5 edited, 15 unedited\n3. Note the gallery count"
+    },
+    {
+      "id": "TC-122",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Saving k / 20」 and 「Please do not leave this page or quit the app.」 with a progress bar over the main screen; the top bar is dimmed (no feedback button) and does not respond; k counts up; the Batch Save page opens only when all are saved",
+      "after": "「Saving k / 20」 and 「Please do not leave this page or quit the app.」 with a progress bar over the main screen\nThe top bar is dimmed (no feedback button) and does not respond\nK counts up\nThe Batch Save page opens only when all are saved"
+    },
+    {
+      "id": "TC-123",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Record the time; no stall longer than 10 s with the progress bar moving",
+      "after": "Record the time\nNo stall longer than 10 s with the progress bar moving"
+    },
+    {
+      "id": "TC-125",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "20 new files dated now; the 20 originals are still there unchanged",
+      "after": "20 new files dated now\nThe 20 originals are still there unchanged"
+    },
+    {
+      "id": "TC-127",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 12 photos, AI Enhance running",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 12 photos, AI Enhance running"
+    },
+    {
+      "id": "TC-128",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A thumbnail grid of the 12 saved photos under the title 「Save 12 photos」; 「‹」 top left, Home top right, 「Edit Next Batch」 fixed at the bottom; no Video tab and no 「Turn it to video」",
+      "after": "A thumbnail grid of the 12 saved photos under the title 「Save 12 photos」\n「‹」 top left, Home top right, 「Edit Next Batch」 fixed at the bottom\nNo Video tab and no 「Turn it to video」"
+    },
+    {
+      "id": "TC-134",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 12 photos, photo 1 cropped to Square; saved; Photo Picker opened by 「Edit Next Batch」",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 12 photos, photo 1 cropped to Square\n3. Saved\n4. Photo Picker opened by 「Edit Next Batch」"
+    },
+    {
+      "id": "TC-135",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; IAP flyer / ad frequency as on the test account",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. IAP flyer / ad frequency as on the test account"
+    },
+    {
+      "id": "TC-136",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; the rating dialog trigger count from RD (n saves)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. The rating dialog trigger count from RD (n saves)"
+    },
+    {
+      "id": "TC-138",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet"
+    },
+    {
+      "id": "TC-139",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)"
+    },
+    {
+      "id": "TC-139",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Discard Dialog appears (edits are not dropped silently); record where 「Discard」 then leads",
+      "after": "The Discard Dialog appears (edits are not dropped silently)\nRecord where 「Discard」 then leads"
+    },
+    {
+      "id": "TC-140",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Crop & Rotate room open on photo 1; 3:2 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Crop & Rotate room open on photo 1\n4. 3:2 applied to all"
+    },
+    {
+      "id": "TC-141",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; Adjustment room open on photo 1; Exposure +20 applied to all",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. Adjustment room open on photo 1\n4. Exposure +20 applied to all"
+    },
+    {
+      "id": "TC-142",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet; AI Enhance page open on photo 1, no photo enhanced yet; enhance finished",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos (Launcher 「Edit」 › 「Batch」), no edit yet\n3. AI Enhance page open on photo 1, no photo enhanced yet\n4. Enhance finished"
+    },
+    {
+      "id": "TC-143",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Processing is not interrupted or cancelled; the screen stays under the mask",
+      "after": "Processing is not interrupted or cancelled\nThe screen stays under the mask"
+    },
+    {
+      "id": "TC-145",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓); Discard Dialog open",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with 12 photos, photo 1 cropped to Square and back on the main screen (✓)\n3. Discard Dialog open"
+    },
+    {
+      "id": "TC-146",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Saving is not interrupted; the Batch Save page follows",
+      "after": "Saving is not interrupted\nThe Batch Save page follows"
+    },
+    {
+      "id": "TC-148",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room with 12 photos, photo 1 cropped to Square; saved; Photo Picker opened by 「Edit Next Batch」",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room with 12 photos, photo 1 cropped to Square\n3. Saved\n4. Photo Picker opened by 「Edit Next Batch」"
+    },
+    {
+      "id": "TC-149",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535); Crop & Rotate room open; pixel input open with the keyboard",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Batch Edit Room open with the Section 3 test set in this order: ① escalator 2:3 (1706×2559), ② 101 4:5 (1576×1970), ③ tea cup 1:1 (small), ④ seascape 16:9 (2730×1535)\n3. Crop & Rotate room open\n4. Pixel input open with the keyboard"
+    },
+    {
+      "id": "TC-149",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The first Back closes the keyboard; the second closes the pixel input without applying a value",
+      "after": "The first Back closes the keyboard\nThe second closes the pixel input without applying a value"
+    },
+    {
+      "id": "TC-002",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Photo Picker from 「Edit」, 「Batch」 tab chosen earlier, then the picker closed with ‹",
+      "after": "1. Photo Picker opened from 「Edit」 with the 「Batch」 tab chosen earlier\n2. The picker closed with ‹"
+    },
+    {
+      "id": "TC-026",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Press and hold the compare button on the photo, then release",
+      "after": "1. Press and hold the compare button on the photo\n2. Release it"
+    },
+    {
+      "id": "TC-031",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Switch to photo 1 and tap Undo, then Redo",
+      "after": "1. Switch to photo 1\n2. Tap Undo\n3. Tap Redo"
+    },
+    {
+      "id": "TC-036",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Crop photo 2 to Square (✓), then look at Redo, then open AI Enhance on photo 2",
+      "after": "1. Crop photo 2 to Square (✓)\n2. Look at Redo\n3. Open AI Enhance on photo 2"
+    },
+    {
+      "id": "TC-045",
+      "field": "Action",
+      "decision": "modified",
+      "before": "On photo 1 tap Rotate once, tap Flip and Flip Vertically, then tap 「All」",
+      "after": "1. On photo 1 tap Rotate once\n2. Tap Flip\n3. Tap Flip Vertically\n4. Tap 「All」"
+    },
+    {
+      "id": "TC-047",
+      "field": "Action",
+      "decision": "modified",
+      "before": "On photo 1 choose 2:3, rotate +5°, then 「All」; check photo 2",
+      "after": "1. On photo 1 choose 2:3\n2. Rotate +5°\n3. Tap 「All」\n4. Check photo 2"
+    },
+    {
+      "id": "TC-048",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Choose 「Free」 on photo ① and drag the box, then tap 「All」",
+      "after": "1. Choose 「Free」 on photo ①\n2. Drag the box\n3. Tap 「All」"
+    },
+    {
+      "id": "TC-062",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Choose 3:2 and tap 「All」, then tap Undo once",
+      "after": "1. Choose 3:2\n2. Tap 「All」\n3. Tap Undo once"
+    },
+    {
+      "id": "TC-066",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Switch between photos 1, 2 and 5 several times, then tap Undo twice",
+      "after": "1. Switch between photos 1, 2 and 5 several times\n2. Tap Undo twice"
+    },
+    {
+      "id": "TC-074",
+      "field": "Action",
+      "decision": "modified",
+      "before": "On photo 1 set Exposure +20 (Light), Saturation (Color) and Sharpness (Details), then tap 「All」",
+      "after": "1. On photo 1 set Exposure +20 (Light), Saturation (Color) and Sharpness (Details)\n2. Tap 「All」"
+    },
+    {
+      "id": "TC-078",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Switch photos several times, then tap Undo twice",
+      "after": "1. Switch photos several times\n2. Tap Undo twice"
+    },
+    {
+      "id": "TC-096",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap 「Retry Failed (3)」 and read the Confirm Dialog if it appears, then the loading count",
+      "after": "1. Tap 「Retry Failed (3)」\n2. Read the Confirm Dialog if it appears\n3. Read the loading count"
+    },
+    {
+      "id": "TC-110",
+      "field": "Action",
+      "decision": "modified",
+      "before": "During processing press Home (send the app to the background) for 30 s, then return",
+      "after": "1. During processing press Home (send the app to the background) for 30 s\n2. Return to the app"
+    },
+    {
+      "id": "TC-111",
+      "field": "Action",
+      "decision": "modified",
+      "before": "During or after processing (before Save) kill the app from Recents, then relaunch",
+      "after": "1. During or after processing (before Save) kill the app from Recents\n2. Relaunch it"
+    },
+    {
+      "id": "TC-117",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap Replace photo, then 「Discard」",
+      "after": "1. Tap Replace photo\n2. Tap 「Discard」"
+    }
+  ],
+  "notes": []
+}

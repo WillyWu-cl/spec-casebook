@@ -34,6 +34,7 @@ import { spawnSync } from 'node:child_process';
 import { basename, join } from 'node:path';
 import { arg, assertIds, featureDir, ROOT, writeJson } from './lib/library.ts';
 import { listSpecSets } from './lib/specs.ts';
+import { cutByHost } from './lib/figma-returns.ts';
 
 const argv = process.argv.slice(2).filter((a, i, all) => !a.startsWith('--') && !(i > 0 && all[i - 1].startsWith('--') && !['--all'].includes(all[i - 1])));
 const [feature] = argv;
@@ -260,7 +261,7 @@ function save() {
   files.sort((a, b) => b.t - a.t);
   const desc = new Map(want.map(n => [`casebook figma-source ${role} ${n}`, n])), found = new Map<string, string>();
   const written = new Map(want.map(n => [n, existsSync(join(callsDir, `${n}.js`)) ? statSync(join(callsDir, `${n}.js`)).mtimeMs : 0]));
-  const stale = new Set<string>();
+  const stale = new Set<string>(), cut = new Map<string, string>();
   const fresh = (n: string, at?: string) => { const ok = !at || Date.parse(at) >= written.get(n)! - 60_000; if (!ok) stale.add(n); return ok; };
   const text = (c: any): string => typeof c === 'string' ? c : Array.isArray(c) ? c.map(text).join('') : c && typeof c === 'object' ? (typeof c.text === 'string' ? c.text : text(c.content ?? c.Ok?.content ?? '')) : '';
   const full = (t: string) => { const m = t.match(/Full output saved to: (\S+)/); return m && existsSync(m[1]) ? readFileSync(m[1], 'utf8') : t; };
@@ -282,11 +283,16 @@ function save() {
         if (r && !r.Err && fresh(n, o.timestamp)) here.set(n, full(text(r.Ok?.content ?? r.content ?? r)));
       }
     }
-    for (const [n, t] of here) if (!found.has(n) && parseResult(t)) found.set(n, t);
+    for (const [n, t] of here) if (!found.has(n)) {
+      const why = cutByHost(t);
+      if (why) { if (!cut.has(n)) cut.set(n, why); continue; } // a newer, whole return of the same call still wins
+      if (parseResult(t)) found.set(n, t);
+    }
   }
   mkdirSync(respDir, { recursive: true });
   for (const n of want) {
     const t = found.get(n);
+    if (!t && cut.has(n)) { console.log(`${n}: the return was ${cut.get(n)}; not saved. The missing part is on no disk, so run a smaller call (source.md › When a call fails), not the same one again`); continue; }
     if (!t) { console.log(stale.has(n) ? `stale: ${n} (only returns older than calls/${n}.js were found: run the call again)` : `not found: ${n} (no use_figma call with description "casebook figma-source ${role} ${n}" in the last two days' transcripts)`); continue; }
     if (!parseResult(t)) { console.log(`${n}: the return holds no figma-source result (an error?); not saved:\n${t.slice(0, 300)}`); continue; }
     writeFileSync(join(respDir, `${n}.json`), t);
@@ -309,6 +315,15 @@ function scope(boards: Map<string, any>) {
 // ---- merge --------------------------------------------------------------------------------------------------------------
 function merge() {
   const { boards, chunks } = plans();
+  // two routes (references/source.md): when the newest read is the REST one (source.json), out/ comes from its
+  // rest/boards and an older use_figma read must not replace it; --mcp merges it anyway. A use_figma read newer than
+  // the REST one takes over, and source.json then names this route.
+  const srcJson = join(dir, 'source.json'), restRead = existsSync(srcJson) && read(srcJson).route === 'rest' ? read(srcJson).read_at : null;
+  const newestRead = [...boards.values()].reduce((m: string, b: any) => String(b.checked_at ?? b.read_at) > m ? String(b.checked_at ?? b.read_at) : m, '');
+  if (restRead && newestRead < restRead && !process.argv.includes('--mcp')) {
+    console.error(`The newest Design read is the REST route (${restRead}, source.json); out/ comes from rest/boards (design.ts unpacks it). These use_figma responses are older (${newestRead || 'none'}): merge them anyway with --mcp.`);
+    process.exit(2);
+  }
   scope(boards);
   const got = new Map<string, any[]>();
   for (const { f, r } of chunkResponses()) {
@@ -458,6 +473,8 @@ function merge() {
   for (const i of summary.incomplete) if (boards.get(i.board)?.box) i.box = boards.get(i.board).box;
   writeJson(join(outDir, 'summary.json'), summary);
   writeJson(hashesPath, hashes);
+  // a feature that only ever had use_figma reads keeps no source.json (no file appears on a pull's rebuild)
+  if (existsSync(srcJson)) writeJson(srcJson, { route: 'mcp', read_at: newestRead, boards: summary.boards.length, calls: summary.calls });
   console.log(`${summary.boards.length} board(s) merged (${summary.boards.reduce((s: number, b: any) => s + b.nodes, 0)} nodes, ${screens.length} screens, ${arrows.length} arrows) from ${summary.calls.plan} plan and ${summary.calls.chunk} chunk call(s); out: ${rel(outDir)}`);
   for (const i of summary.incomplete) console.log(`INCOMPLETE ${i.board} ${i.name}: ${i.missing.length ? `missing ${i.missing.join(', ')}` : ''}${i.changed_since_plan.length ? ` changed since the plan (${i.changed_since_plan.join(', ')}): plan this board again` : ''}`);
   // a Design board the casebook inventories but no plan covers was never read (REQ-080): name it, so a design check

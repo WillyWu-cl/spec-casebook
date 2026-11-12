@@ -31,7 +31,8 @@ import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, renameS
 import { homedir, tmpdir } from 'node:os';
 import { basename, dirname, join } from 'node:path';
 import { dexDigest, debuggableOnlyDiff, manifestSummary, parseAxml, replaceZipEntry, setApplicationDebuggable, sha256, zipEntry } from './lib/apk.ts';
-import { VIEWDUMP_HOME, VIEWDUMP_OUT, VIEWDUMP_SRC, compactViews, dumpViews, sourceDigest, viewdumpBuild } from './lib/android-views.ts';
+import { VIEWDUMP_HOME, VIEWDUMP_OUT, VIEWDUMP_SRC, compactViews, dumpViews, secureShot, sourceDigest, viewdumpBuild } from './lib/android-views.ts';
+import { blankShot } from './lib/design-watch.ts';
 
 const argv = process.argv.slice(2), cmd = argv[0];
 const opt = (k: string) => { const i = argv.indexOf(`--${k}`); return i > 0 ? argv[i + 1] : undefined; };
@@ -148,7 +149,11 @@ async function dump(outFile: string) {
   const now = installed();
   if (!now?.debuggable || !runAsWorks()) die(`${PKG} on ${phone()} is not debuggable: node scripts/android-viewdump.ts prepare`, 3);
   let doc: any; try { doc = await dumpViews({ serial: phone(), pkg: PKG }); } catch (e: any) { die(String(e.message ?? e)); }
-  const png = adb(['exec-out', 'screencap', '-p']).buf;
+  // the screenshot with the app's secure windows cleared for that moment, refused when it shows nothing
+  let shot: { png: Buffer; secure?: string[] };
+  try { shot = await secureShot({ serial: phone(), pkg: PKG }, async () => adb(['exec-out', 'screencap', '-p']).buf); } catch (e: any) { die(String(e.message ?? e), 5); }
+  const blank = blankShot(shot!.png); if (blank) die(`${blank}; nothing written`, 5);
+  const png = shot!.png; if (shot!.secure) doc.capture = { ...doc.capture, secure_cleared: shot!.secure };
   mkdirSync(dirname(outFile), { recursive: true });
   doc.capture = { ...doc.capture, version_code: now!.versionCode, wm_size: sh('wm size'), wm_density: sh('wm density') };
   writeFileSync(outFile, JSON.stringify(doc)); writeFileSync(outFile.replace(/\.json$/, '') + '.png', png);

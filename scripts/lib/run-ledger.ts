@@ -46,17 +46,40 @@ export function activityPoints(dir: string, also: string[] = []): number[] {
   return pts;
 }
 
+/** Run folders named in a subagent's brief (its first user message). A segment subagent exists only for its run, so all
+ *  of its messages belong to that run, also those before its first device command (reading the plan and skill) and
+ *  after its last one (the phase wrap-up: eBug drafts, report), which the activity spans miss (2026-11-11: R2 lost 25 %). */
+const briefMemo = new Map<string, { size: number; runs: Set<string> }>();
+function briefRuns(file: string): Set<string> {
+  const size = statSync(file).size, c = briefMemo.get(file);
+  if (c && c.size === size) return c.runs;
+  const runs = new Set<string>();
+  for (const line of readFileSync(file, 'utf8').split('\n')) {
+    if (!line.includes('"user"')) continue;
+    let o: any; try { o = JSON.parse(line); } catch { continue; }
+    if (o.type !== 'user') continue;
+    for (const m of JSON.stringify(o.message?.content ?? '').matchAll(/\b(20\d\d-\d\d-\d\d-[A-Za-z0-9][A-Za-z0-9_-]*)/g)) runs.add(m[1]);
+    break;
+  }
+  briefMemo.set(file, { size, runs });
+  return runs;
+}
+
 /** Messages of this machine's transcripts by run folder: a session (main transcript plus its subagents) counts for every
- *  run folder that any of its files names. */
-export function localRunMessages(files: string[], runs: Set<string>): Map<string, Msg[]> {
+ *  run folder that any of its files names. Messages of a subagent whose brief names the run carry `whole: true`: they
+ *  count for it whatever the activity spans say. */
+export function localRunMessages(files: string[], runs: Set<string>): Map<string, (Msg & { whole?: boolean })[]> {
   const groups = new Map<string, string[]>();
   for (const f of files) { const k = f.includes('/subagents/') ? dirname(dirname(f)) : f.replace(/\.jsonl$/, ''); (groups.get(k) ?? groups.set(k, []).get(k)!).push(f); }
-  const out = new Map<string, Msg[]>();
+  const out = new Map<string, (Msg & { whole?: boolean })[]>();
   for (const fs of groups.values()) {
     const named = new Set(fs.flatMap(f => [...transcriptRuns(f)]).filter(r => runs.has(r)));
     if (!named.size) continue;
     const msgs = transcriptMessages(fs);
-    for (const r of named) (out.get(r) ?? out.set(r, []).get(r)!).push(...msgs);
+    for (const r of named) {
+      const whole = new Set(fs.filter(f => f.includes('/subagents/') && briefRuns(f).has(r)).flatMap(f => transcriptMessages([f]).map(m => m.id)));
+      (out.get(r) ?? out.set(r, []).get(r)!).push(...msgs.map(m => whole.has(m.id) ? { ...m, whole: true } : m));
+    }
   }
   return out;
 }

@@ -32,7 +32,7 @@ const ZH: Record<string, [string, string, string, string?]> = {
   'TC-001': [BASE, `開啟 ${OPEN}`, '頁面停在第一個分頁「Recent」（peach 色選取）；分頁列最右邊有 ☰ 按鈕'],
   'TC-002': [ON('Recent'), '1. 把分頁列往左滑到看見最後一個分頁\n2. 點最後一個分頁', '分頁滑動時 ☰ 固定在分頁列最右邊；點完後最後一個分頁被選取，☰ 仍在最右邊'],
   'TC-003': [ON('Recent'), '從第一個分頁讀到最後一個（往左滑分頁列）', '「Recent」排第一，其他分頁依英文字母順序（A → Z）；沒有作品的功能分頁也在其中', '把分頁清單記下來：TC-007 要拿清單來比對'],
-  'TC-004': [`${ON('Recent')}；有一個沒有作品的功能（分頁裡是空的）`, '在分頁列點那個功能的分頁', '空分頁開啟並顯示「Nothing yet.」和「Start to Create」；該分頁在分頁列上沒有反灰', 'REQ-006：有作品的分頁才會顯示「Create More」'],
+  'TC-004': [`${ON('Recent')}；有一個沒有作品的功能（分頁裡是空的）`, '在分頁列點那個功能的分頁', '空分頁開啟並顯示「Nothing yet.」和「Start to Create」；該分頁在分頁列上沒有反灰', 'REQ-007：有作品的分頁才會顯示「Create More」'],
   'TC-005': [`${ON('Recent')}；Recent 裡有照片也有影片`, '1. 點「Video」\n2. 點「Photo」\n3. 點「Select」\n4. 點「Cancel」', '和改版前一樣：「Video」只顯示影片、「Photo」只顯示照片；「Select」進入多選、「Cancel」結束多選。Recent 仍是原本的列表，沒有列表／格狀切換', 'Q-1 已回答（REQ-003）：「同今天」= App 目前的行為'],
   'TC-006': [ON('Recent'), '點分頁列最右邊的 ☰', '頁面變暗，上方蓋一個標題為「All categories」、右上角有 ✕ 的清單；第一列是「Recent」'],
   'TC-007': [`${SHEET('Recent')}；已記下 TC-003 的分頁清單`, '從上到下讀每一列（捲動清單）', '清單內容和分頁列完全一樣：名稱相同、不多不少、順序相同——「Recent」第一，其他依英文字母順序（A → Z）', 'Q-4 已回答（REQ-003）：只在英文介面檢查順序'],
@@ -44,7 +44,7 @@ const ZH: Record<string, [string, string, string, string?]> = {
   'TC-013': [SHEET('Recent'), '點「AI Creative Studio」', '清單關閉，My AI Artwork 切到「AI Creative Studio」分頁：分頁列上該分頁被選取（peach 底線）且在畫面內，並顯示它的作品'],
   'TC-014': [SHEET('Recent'), '點「AI Art」', '清單關閉並停在「AI Art」分頁，顯示 AI Art 的作品（包含舊作品），不用滑分頁列', 'QA 單 PHI262609-0006 的問題'],
   'TC-015': [ON('Recent'), '1. 在分頁列點「AI Art」分頁\n2. 記下顯示內容（作品、篩選、捲動在最上方）\n3. 點「Recent」分頁\n4. 點 ☰\n5. 點「AI Art」', '從清單選「AI Art」看到的分頁、作品和篩選狀態，和直接點分頁時一樣（「同今天」）'],
-  'TC-016': [`${SHEET('Recent')}；有一個沒有作品的功能`, '點那個功能的列', '清單關閉，切到該功能的空分頁，顯示「Nothing yet.」和「Start to Create」', 'REQ-006'],
+  'TC-016': [`${SHEET('Recent')}；有一個沒有作品的功能`, '點那個功能的列', '清單關閉，切到該功能的空分頁，顯示「Nothing yet.」和「Start to Create」', 'REQ-007'],
   'TC-017': [SHEET('AI Art'), '點「AI Art」（高亮的那列）', '清單關閉，頁面仍停在「AI Art」分頁'],
   'TC-018': [SHEET('AI Art'), '點「Recent」', '清單關閉，回到「Recent」，分頁列上「Recent」被選取'],
   'TC-019': [ON('AI Creative Studio'), '1. 點「Select」\n2. 選兩個作品\n3. 點 ☰\n4. 點「AI Art」\n5. 點「AI Creative Studio」分頁', '步驟 4：清單關閉並停在「AI Art」分頁，選取被取消（沒有作品被選、多選結束：沒有「Cancel」、沒有底部操作列）。步驟 5：那兩個作品已不是選取狀態', 'Q-5 已回答（REQ-003）：多選結束'],
@@ -71,7 +71,7 @@ if (missing.length) throw new Error(`translation out of step with draft.csv: mis
 
 const HEAD = ['編號', '區塊', '前置條件', '操作步驟', '預期結果', '優先度', '規格對應', '備註', '變更', '變更原因'];
 const CHANGE: Record<string, string> = { new: '新增', modified: '修改', removed: '移除', unchanged: '未變更' };
-const ZH_REASON: Record<string, string> = { 'REQ-006: an empty tab shows 「Nothing yet.」 / 「Start to Create」; 「Create More」 only on a tab with works (R-004)': 'REQ-006：空分頁顯示「Nothing yet.」/「Start to Create」；有作品才顯示「Create More」（R-004）', 'New table (REQ-001)': '新建的表（REQ-001）', 'Figma draft: switching tab during multi-select cancels the selection (R-025, REQ-004)': 'Figma draft：多選時切換分頁會取消選取（R-025，REQ-004）' };
+const ZH_REASON: Record<string, string> = { 'REQ-007: an empty tab shows 「Nothing yet.」 / 「Start to Create」; 「Create More」 only on a tab with works (R-004)': 'REQ-007：空分頁顯示「Nothing yet.」/「Start to Create」；有作品才顯示「Create More」（R-004）', 'New table (REQ-001)': '新建的表（REQ-001）', 'Figma draft: switching tab during multi-select cancels the selection (R-025, REQ-004)': 'Figma draft：多選時切換分頁會取消選取（R-025，REQ-004）' };
 const out = rows.map(r => {
   const [pre, action, expected, notes = ''] = ZH[r.ID];
   return [r.ID, SECTION[r.Section] ?? r.Section, pre, action, expected, r.Priority, r['Spec Ref'], notes,

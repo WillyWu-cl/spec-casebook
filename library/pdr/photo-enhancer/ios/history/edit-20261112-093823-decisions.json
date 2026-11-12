@@ -1,0 +1,218 @@
+{
+  "saved_at": "2026-11-12T01:38:23.837Z",
+  "version": 2,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-001",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip"
+    },
+    {
+      "id": "TC-002",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip"
+    },
+    {
+      "id": "TC-002",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A second layer opens over the toolbar with 「Photo Enhance」 first and 「AI Color」 second; 「Photo Enhance」 has the photo-with-sparkle icon",
+      "after": "A second layer opens over the toolbar with 「Photo Enhance」 first and 「AI Color」 second\n「Photo Enhance」 has the photo-with-sparkle icon"
+    },
+    {
+      "id": "TC-003",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project with a video clip on the master track and a photo clip on a PiP track"
+    },
+    {
+      "id": "TC-004",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project with a video clip on the master track and a photo clip on a PiP track"
+    },
+    {
+      "id": "TC-005",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip"
+    },
+    {
+      "id": "TC-006",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip"
+    },
+    {
+      "id": "TC-007",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip"
+    },
+    {
+      "id": "TC-007",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog closes; the photo is unchanged, no toast appears and 「Enhance」 has no white dot",
+      "after": "The dialog closes\nThe photo is unchanged, no toast appears and 「Enhance」 has no white dot"
+    },
+    {
+      "id": "TC-008",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip"
+    },
+    {
+      "id": "TC-009",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip"
+    },
+    {
+      "id": "TC-010",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)"
+    },
+    {
+      "id": "TC-011",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip"
+    },
+    {
+      "id": "TC-011",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The enhancement stops; the editor shows the original photo, no 「Applied Photo Enhance」 toast and no white dot (Q-2)",
+      "after": "The enhancement stops\nThe editor shows the original photo, no 「Applied Photo Enhance」 toast and no white dot (Q-2)"
+    },
+    {
+      "id": "TC-012",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project with a video clip on the master track and a photo clip on a PiP track",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project with a video clip on the master track and a photo clip on a PiP track"
+    },
+    {
+      "id": "TC-012",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The PiP photo shows enhanced and 「Applied Photo Enhance」 appears; the master-track video is unchanged",
+      "after": "The PiP photo shows enhanced and 「Applied Photo Enhance」 appears\nThe master-track video is unchanged"
+    },
+    {
+      "id": "TC-023",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds two photo clips; Photo Enhance applied to the first clip only (TC-009)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds two photo clips\n3. Photo Enhance applied to the first clip only (TC-009)"
+    },
+    {
+      "id": "TC-013",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013); screen recording on",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)\n4. The Photo Enhance panel open (TC-013)\n5. Screen recording on"
+    },
+    {
+      "id": "TC-015",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)\n4. The Photo Enhance panel open (TC-013)"
+    },
+    {
+      "id": "TC-015",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The panel closes; the editor shows the enhanced photo and 「Enhance」 keeps its white dot",
+      "after": "The panel closes\nThe editor shows the enhanced photo and 「Enhance」 keeps its white dot"
+    },
+    {
+      "id": "TC-016",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)\n4. The Photo Enhance panel open (TC-013)"
+    },
+    {
+      "id": "TC-016",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The panel closes; the editor shows the original photo and the toast 「Removed Photo Enhance」 appears",
+      "after": "The panel closes\nThe editor shows the original photo and the toast 「Removed Photo Enhance」 appears"
+    },
+    {
+      "id": "TC-017",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied and removed again (TC-016)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied and removed again (TC-016)"
+    },
+    {
+      "id": "TC-018",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied and removed again (TC-016); screen recording on",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied and removed again (TC-016)\n4. Screen recording on"
+    },
+    {
+      "id": "TC-019",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the Photo Enhance panel open (TC-013)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)\n4. The Photo Enhance panel open (TC-013)"
+    },
+    {
+      "id": "TC-020",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)"
+    },
+    {
+      "id": "TC-021",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Free tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the full-screen preview open (TC-020)",
+      "after": "1. iPhone, PowerDirector signed in, Free tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)\n4. The full-screen preview open (TC-020)"
+    },
+    {
+      "id": "TC-022",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance applied to the photo clip (TC-009); the full-screen preview open (TC-020)",
+      "after": "1. iPhone, PowerDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance applied to the photo clip (TC-009)\n4. The full-screen preview open (TC-020)"
+    },
+    {
+      "id": "TC-024",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PowerDirector signed in, Free tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3); an editor project whose master track holds one photo clip; Photo Enhance not applied to the photo clip; the full-screen preview open",
+      "after": "1. iPhone, PowerDirector signed in, Free tier (Launcher › Pink › ☰ › [0] IAP › status; Q-3)\n2. An editor project whose master track holds one photo clip\n3. Photo Enhance not applied to the photo clip\n4. The full-screen preview open"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,66 @@
+{
+ "draft": "20261111-173421",
+ "current": [
+  "R2"
+ ],
+ "needs": {},
+ "unavailable": {},
+ "phases": [
+  {
+   "id": "R2",
+   "name": "Round 2: rows v5 added or changed (REQ-011) on the SM-A5360",
+   "round": true,
+   "origin": {
+    "TC-162": "P9",
+    "TC-163": "P9",
+    "TC-164": "P9",
+    "TC-165": "P9",
+    "TC-166": "P9",
+    "TC-167": "P9",
+    "TC-168": "P9",
+    "TC-042": "R1",
+    "TC-153": "R1",
+    "TC-059": "R1",
+    "TC-062": "R1",
+    "TC-063": "R1",
+    "TC-075": "R1",
+    "TC-076": "R1",
+    "TC-079": "R1",
+    "TC-081": "R1"
+   },
+   "note": "Premium (check the tier first: Settings › About backdoor, fixtures.md). Section 3 rows use the four stand-ins in the 「Casebook」 album. 「All」 states are read from the screenshot and the element's enabled flag.",
+   "segments": [
+    {
+     "id": "R2-a",
+     "name": "Crop & Rotate: 「All」 states and the size link",
+     "note": "12 gallery photos, Crop & Rotate room on photo 1 (TC-153 → TC-162 → TC-042 → TC-062 → TC-063); then a new batch of the Section 3 stand-ins ① ② ③ ④ (TC-163, TC-059).",
+     "cases": [
+      "TC-153",
+      "TC-162",
+      "TC-042",
+      "TC-062",
+      "TC-063",
+      "TC-163",
+      "TC-059"
+     ]
+    },
+    {
+     "id": "R2-b",
+     "name": "Adjustment: 「All」 states, tab on Undo, one-step room visit, strip in Curve / HSL",
+     "note": "12 gallery photos, Adjustment room on photo 1.",
+     "cases": [
+      "TC-164",
+      "TC-075",
+      "TC-076",
+      "TC-165",
+      "TC-079",
+      "TC-081",
+      "TC-166",
+      "TC-167",
+      "TC-168"
+     ]
+    }
+   ]
+  }
+ ]
+}

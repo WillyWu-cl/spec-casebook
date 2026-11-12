@@ -8,7 +8,7 @@
 //                     English characters each (default 9000). Text already translated anywhere in the library (the
 //                     other platform's table, a repeated precondition) is filled in from that and only the rest is
 //                     left to translate; a row that is fully known needs no translating at all (batch-auto).
-//   merge [--keep]    reads every zh-work/batch-NN.out.json, checks it (「」 UI strings kept, same number of steps,
+//   merge [--keep]    reads every zh-work/batch-NN.out.json, checks it (「」 UI strings kept, same number of steps, Precondition / Action / Expected Result lines one for one,
 //                     nothing left in English), writes the copy and its fingerprints (<copy>.prints.json), regenerates
 //                     cases.html (not cases.xlsx) for an approved table and removes zh-work/ (unless --keep or a check failed)
 //   adopt [--from <csv>]  fingerprints an existing copy that has none (one built by a draft's build-zh.ts) against the
@@ -87,7 +87,9 @@ function memory() {
 
 const RULES = 'Translate into natural Traditional Chinese as a Taiwanese QA tester would write it (spec-casebook/references/zh-copy.md): ' +
   'rewrite each sentence the way it is said in Chinese, never word by word; keep every 「…」 UI string, ID (TC-, R-, KP-, Q-), ' +
-  'eBug code, file name, number and unit exactly; keep numbered steps one per line with the same numbers.';
+  'eBug code, file name, number and unit exactly; keep numbered steps one per line with the same numbers; in Precondition, ' +
+  'Action and Expected Result keep the English lines one for one (same count, same numbers, the same 「步驟 N：」 prefix), ' +
+  'never joined with ；.';
 
 if (cmd === 'export') {
   if (existsSync(work) && readdirSync(work).some(f => f.endsWith('.out.json'))) {
@@ -140,6 +142,15 @@ for (const [id, z] of Object.entries(got)) {
     const miss = quoted(en).filter(q => !c.includes(q));
     if (miss.length) warns.push(`${id} ${f}: UI string(s) not kept: ${miss.join(' ')}`);
     if (steps(en) !== steps(c)) warns.push(`${id} ${f}: ${steps(en)} numbered steps in English, ${steps(c)} in Chinese`);
+    // one item per line (user, 2026-11-12): the Chinese keeps the English lines one for one, never joined with ；
+    if (['Precondition', 'Action', 'Expected Result'].includes(f)) {
+      const E = en.split('\n'), C = c.split('\n');
+      if (E.length !== C.length) { errors.push(`${id} ${f}: ${E.length} lines in English, ${C.length} in Chinese (keep the lines one for one)`); continue; }
+      E.forEach((l, i) => {
+        const lost = quoted(l).filter(q => !C[i].includes(q));
+        if (lost.length && !miss.length) warns.push(`${id} ${f} line ${i + 1}: UI string(s) on another line in Chinese: ${lost.join(' ')}`);
+      });
+    }
     if (en.length > 25 && hanRatio(c) < 0.15) warns.push(`${id} ${f}: looks untranslated`);
   }
 }
