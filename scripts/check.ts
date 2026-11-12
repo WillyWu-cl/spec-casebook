@@ -51,6 +51,18 @@ rows.forEach((r, i) => {
       || (f === 'Action' && /[.;]\s+(?:[A-Z「]|tap\b|open\b|go\b|send\b|type\b|select\b|swipe\b|scroll\b|press\b)/.test(l));
     if (lines.some(runs)) warnings.push(`${at}: ${f} runs several steps together on one line; put each step on its own numbered line (formats.md, one step per line)`);
   }
+  // One item per line in Precondition and Expected Result (user, 2026-11-12): no top-level ";" and no two sentences on
+  // one line. A cell laid out as a header line ("…:") with a list under it, or an Expected Result numbered by step, is left as it is.
+  for (const f of ['Precondition', 'Expected Result']) {
+    const cell = (r[f] ?? '').trim();
+    const raw = cell.split('\n').map(l => l.trim()).filter(Boolean);
+    if (raw.some(l => /:$/.test(l)) || (f === 'Expected Result' && raw.some(l => /^\d+[.)]\s/.test(l)))) continue;
+    let masked = raw.map(l => l.replace(/^\d+[.)]\s+/, '')).join('\n');
+    for (let prev = ''; prev !== masked;) { prev = masked; masked = masked.replace(/\([^()]*\)|\[[^[\]]*\]|「[^「」]*」|"[^"\n]*"|`[^`\n]*`/g, '…'); }
+    const joined = masked.replace(/\b(e\.g|i\.e|etc|vs|approx|No|Fig|min|max|sec|cf)\./gi, '$1').split('\n')
+      .some(l => l.includes(';') || /[^.][.!?]\s+[A-Z「]/.test(l));
+    if (joined) warnings.push(`${at}: ${f} joins several items on one line (";" or two sentences); put each on its own line (formats.md, one item per line)`);
+  }
   if (!r['Spec Ref']) errors.push(`${at}: empty Spec Ref (every case must trace to a requirement)`);
   else if (reqIds) for (const id of r['Spec Ref'].match(/\bR-\d{3,}\b/g) ?? []) if (!reqIds.has(id)) errors.push(`${at}: Spec Ref ${id} is not in requirements.md`);
   if (draft && r.Change && !CHANGES.includes(r.Change)) errors.push(`${at}: Change must be one of ${CHANGES.join(', ')}`);
@@ -126,6 +138,16 @@ if (reqText && reqIds) {
     // PDF-only analysis (Reading the spec, "No Figma access"): the Figma reads are owed, not skipped
     const p: { since?: string; reason?: string; owed?: string[] } = JSON.parse(readFileSync(pendingPath, 'utf8'));
     warnings.push(`PDF-only analysis since ${p.since ?? '?'} (${p.reason ?? 'no Figma access'}): Figma reads owed: ${(p.owed ?? []).join(', ') || 'steps 8 and 10'} (figma-pending.json)`);
+    // One source for both platforms (SKILL.md step 0, 2026-11-11): the other table read this feature's Figma
+    const other = platform === 'ios' ? 'android' : 'ios';
+    const otherSet = readManifest(feature, other)?.spec_folder;
+    const otherSpec = otherSet ? join(featureDir(feature), otherSet, 'spec-set.json') : '';
+    if (otherSet && otherSet !== specFolder && existsSync(otherSpec)) {
+      const o = JSON.parse(readFileSync(otherSpec, 'utf8'));
+      const folder = otherSet.replace(/^specs\//, '');
+      if ((o.figma_only || Object.values(o.figma ?? {}).some(Boolean)) && !reqText?.includes(folder))
+        warnings.push(`The ${other} table reads this feature's Figma (${otherSet}) while this one is PDF-only: read that set too and name it in requirements.md (Reading the spec, "No Figma access" › "Another table read Figma")`);
+    }
   } else if (figmaPath && existsSync(figmaPath)) {
     const frames: { label: string; read?: string }[] = JSON.parse(readFileSync(figmaPath, 'utf8')).frames ?? [];
     const unread = frames.filter(f => !f.read?.trim()).map(f => f.label);
@@ -230,8 +252,14 @@ if (draft && reqText) {
   // `n/a (<why>)` (a combination the spec says cannot be chosen).
   const settingNames = new Set([...(vg ?? []).map(c => c[1]?.match(/^\s*([^=]+?)\s*=/)?.[1]?.trim().toLowerCase()).filter(Boolean)]);
   const combText = reqText.match(/\n#+ Combinations\n([\s\S]*?)(?=\n#+ |\s*$)/)?.[1];
-  if (settingNames.size >= 2 && !combText) errors.push(`No "Combinations" grid in requirements.md (pass 10): the Variants grid lists the settings ${[...settingNames].join(', ')}, so every combination of their values needs its row`);
-  if (combText) {
+  // Variant names that are not settings the user chooses together (the room a rule holds in, the account tier, the
+  // entry, the appearance) are declared `- Not combined: a, b (<why>)` in the grid; only the rest need the cross
+  // product (2026-11-11, phd/batch-editing REQ-011).
+  const notCombined = new Set([...(combText ?? '').matchAll(/^- Not combined:\s*([^(\n]+?)\s*\(([^)\n]+)\)\s*$/gm)].flatMap(m => m[1].split(',').map(s => s.trim().toLowerCase())));
+  for (const n of notCombined) settingNames.delete(n);
+  if (combText && /^- Not combined:/m.test(combText) && !notCombined.size) errors.push('Combinations: write "- Not combined: a, b (<why>)", with the reason in brackets');
+  if (settingNames.size >= 2 && !/^- Setting /m.test(combText ?? '')) errors.push(`No "Combinations" grid in requirements.md (pass 10): the Variants grid lists the settings ${[...settingNames].join(', ')}, so every combination of their values needs its row (or declare the ones not chosen together: "- Not combined: a, b (<why>)")`);
+  if (combText && /^- Setting /m.test(combText)) {
     const settings = [...combText.matchAll(/^- Setting ([^:]+):\s*(.+)$/gm)].map(m => ({ name: m[1].trim(), values: m[2].split(',').map(v => v.trim()).filter(Boolean) }));
     if (settings.length < 2) errors.push('Combinations: list each setting as "- Setting <name>: a, b, c" (two or more settings)');
     const key = (s: string) => s.split('·').map(p => p.trim().replace(/\s*=\s*/, '=').toLowerCase()).join(' · ');

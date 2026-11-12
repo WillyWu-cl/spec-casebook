@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-10T06:37:58.185Z",
+  "built_at": "2026-11-12T01:42:14.918Z",
   "spec_set": "2026-11-03",
   "file": {
     "fileKey": "ULY56f3Q9tl6PceuNNoHBD",
@@ -72,7 +72,7 @@
         "edge": "",
         "segment": "R1-b",
         "section": "Entry and room",
-        "precondition": "iPhone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background); app in its default (dark) appearance",
+        "precondition": "1. iPhone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)\n4. App in its default (dark) appearance",
         "action": "Look at the room before tapping anything",
         "result": "Not run",
         "run": ""
@@ -113,7 +113,7 @@
         "edge": "editing_area/ic_eraser_n",
         "segment": "R1-b",
         "section": "Entry and room",
-        "precondition": "iPhone, PhotoDirector signed in with at least 20 credits; a portrait photo in the gallery. Open the photo in the editor and open 「Background」 (AI Background)",
+        "precondition": "1. iPhone, PhotoDirector signed in with at least 20 credits\n2. A portrait photo in the gallery\n3. Open the photo in the editor and open 「Background」 (AI Background)",
         "action": "1. Tap the eraser at the canvas's lower left\n2. Erase part of the subject (e.g. a shoulder)\n3. Go back to the room",
         "result": "Not run",
         "run": ""

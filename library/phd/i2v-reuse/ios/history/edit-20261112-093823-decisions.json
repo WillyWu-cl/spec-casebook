@@ -1,0 +1,470 @@
+{
+  "saved_at": "2026-11-12T01:38:23.919Z",
+  "version": 2,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-001",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt"
+    },
+    {
+      "id": "TC-001",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The tab looks as today: tiles for finished, processing and failed jobs, 「Create more」 as the only creation button at the bottom; no tile shows a 「Reuse」 or any other new button",
+      "after": "The tab looks as today: tiles for finished, processing and failed jobs, 「Create more」 as the only creation button at the bottom\nNo tile shows a 「Reuse」 or any other new button"
+    },
+    {
+      "id": "TC-002",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt"
+    },
+    {
+      "id": "TC-003",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; video A is listed in My AI Artwork › Recent with the Video filter",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Video A is listed in My AI Artwork › Recent with the Video filter"
+    },
+    {
+      "id": "TC-004",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a failed Custom job (tile with 「View Details」)",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a failed Custom job (tile with 「View Details」)"
+    },
+    {
+      "id": "TC-005",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; a Custom video job still processing in My AI Artwork › 「Image to Video」 tab (tile 「Processing...」)",
+      "after": "1. iPhone, PhotoDirector signed in\n2. A Custom video job still processing in My AI Artwork › 「Image to Video」 tab (tile 「Processing...」)"
+    },
+    {
+      "id": "TC-006",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-006",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The section title is 「Prompts & Settings」; its card shows the model icon and 「Kling 2.6」 with 「Reuse」 at the right of the same row; under them the chips 「10s」, 「Pro」 and 「Sound on」; under the chips video A's prompt; the page has exactly one 「Reuse」 (no separate prompt Reuse row)",
+      "after": "The section title is 「Prompts & Settings」\nIts card shows the model icon and 「Kling 2.6」 with 「Reuse」 at the right of the same row\nUnder them the chips 「10s」, 「Pro」 and 「Sound on」\nUnder the chips video A's prompt\nThe page has exactly one 「Reuse」 (no separate prompt Reuse row)"
+    },
+    {
+      "id": "TC-049",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-050",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page. iPhone set to Dark appearance",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page\n4. iPhone set to Dark appearance"
+    },
+    {
+      "id": "TC-050",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The page is dark as in the Design; the title, model name, chips, prompt and 「Reuse」 are all readable",
+      "after": "The page is dark as in the Design\nThe title, model name, chips, prompt and 「Reuse」 are all readable"
+    },
+    {
+      "id": "TC-007",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Template video",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Template video"
+    },
+    {
+      "id": "TC-008",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video C made with 「Specify Video Start / End」 On (start and end photos)",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video C made with 「Specify Video Start / End」 On (start and end photos)"
+    },
+    {
+      "id": "TC-041",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a Custom video generated before 4/E",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a Custom video generated before 4/E"
+    },
+    {
+      "id": "TC-042",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; a Custom video whose settings cannot be read, e.g. made on Android with the same account, or made before PhotoDirector was reinstalled",
+      "after": "1. iPhone, PhotoDirector signed in\n2. A Custom video whose settings cannot be read, e.g. made on Android with the same account, or made before PhotoDirector was reinstalled"
+    },
+    {
+      "id": "TC-009",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page from My AI Artwork › 「Image to Video」 tab",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page from My AI Artwork › 「Image to Video」 tab"
+    },
+    {
+      "id": "TC-010",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-010",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Image to Video opens on the 「Custom」 tab: 「Model」 shows 「Kling 2.6」; 「Specify Video Start / End」 is Off; 「Add your images」 is empty; the prompt box holds video A's prompt with its counter (e.g. 「58/2,500」); the toast 「Settings applied」 shows",
+      "after": "Image to Video opens on the 「Custom」 tab: 「Model」 shows 「Kling 2.6」\n「Specify Video Start / End」 is Off\n「Add your images」 is empty\nThe prompt box holds video A's prompt with its counter (e.g. 「58/2,500」)\nThe toast 「Settings applied」 shows"
+    },
+    {
+      "id": "TC-011",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」"
+    },
+    {
+      "id": "TC-012",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video B made with a model other than the default, a Duration other than 10s, a Video Quality other than Pro and Generate Sound by AI Off",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video B made with a model other than the default, a Duration other than 10s, a Video Quality other than Pro and Generate Sound by AI Off"
+    },
+    {
+      "id": "TC-012",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The card names video B's model and has chips for its Duration, Quality and Sound (only the settings the model has); in the room, video B's model, Duration and Video Quality are selected and Generate Sound by AI is Off",
+      "after": "The card names video B's model and has chips for its Duration, Quality and Sound (only the settings the model has)\nIn the room, video B's model, Duration and Video Quality are selected and Generate Sound by AI is Off"
+    },
+    {
+      "id": "TC-013",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds video C made with 「Specify Video Start / End」 On. Open its Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds video C made with 「Specify Video Start / End」 On\n3. Open its Save & Share page"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video D made from an inspiration under 「Try with inspirations」. Open its Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video D made from an inspiration under 「Try with inspirations」\n3. Open its Save & Share page"
+    },
+    {
+      "id": "TC-014",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No inspiration is selected under 「Try with inspirations」; the prompt box holds video D's prompt",
+      "after": "No inspiration is selected under 「Try with inspirations」\nThe prompt box holds video D's prompt"
+    },
+    {
+      "id": "TC-015",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; Image to Video's demo / Steps intro has not been dismissed for good (the state in which it shows on entry today). Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Image to Video's demo / Steps intro has not been dismissed for good (the state in which it shows on entry today)\n4. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-015",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The intro shows first and no 「Settings applied」 shows over it; after it closes, the Custom page shows and the toast 「Settings applied」 appears",
+      "after": "The intro shows first and no 「Settings applied」 shows over it\nAfter it closes, the Custom page shows and the toast 「Settings applied」 appears"
+    },
+    {
+      "id": "TC-051",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; Image to Video's AI Processing Notice has not been dismissed for good (the state in which it shows on entry today). Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Image to Video's AI Processing Notice has not been dismissed for good (the state in which it shows on entry today)\n4. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-051",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The AI Processing Notice shows first and no 「Settings applied」 shows over it; after it closes, the Custom page shows and the toast 「Settings applied」 appears",
+      "after": "The AI Processing Notice shows first and no 「Settings applied」 shows over it\nAfter it closes, the Custom page shows and the toast 「Settings applied」 appears"
+    },
+    {
+      "id": "TC-016",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; a state in which a panel shows as the room opens (e.g. the intro from TC-015, or open the model list right away)",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. A state in which a panel shows as the room opens (e.g. the intro from TC-015, or open the model list right away)"
+    },
+    {
+      "id": "TC-017",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Note the credit balance and the newest entry in the credit usage history (Mine › My Credits)",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Note the credit balance and the newest entry in the credit usage history (Mine › My Credits)"
+    },
+    {
+      "id": "TC-018",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」. In a second Custom room opened by 「Create more」, note the price 「Generate」 shows for Kling 2.6 with the same settings",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」\n4. In a second Custom room opened by 「Create more」, note the price 「Generate」 shows for Kling 2.6 with the same settings"
+    },
+    {
+      "id": "TC-019",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; an account that has the Image to Video free trial today",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. An account that has the Image to Video free trial today"
+    },
+    {
+      "id": "TC-019",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Generate」 shows the free trial as a Custom room opened by 「Create more」 does; after the free use it never shows the free trial again",
+      "after": "「Generate」 shows the free trial as a Custom room opened by 「Create more」 does\nAfter the free use it never shows the free trial again"
+    },
+    {
+      "id": "TC-020",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」"
+    },
+    {
+      "id": "TC-021",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」"
+    },
+    {
+      "id": "TC-021",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The other model keeps the reused settings it supports and shows its defaults for the rest (the 4/E model-switch rule); back on Kling 2.6 the settings follow the same rule",
+      "after": "The other model keeps the reused settings it supports and shows its defaults for the rest (the 4/E model-switch rule)\nBack on Kling 2.6 the settings follow the same rule"
+    },
+    {
+      "id": "TC-022",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」"
+    },
+    {
+      "id": "TC-023",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」; enough credits for one Kling 2.6 video. Note the balance and 「Generate」's price",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」\n4. Enough credits for one Kling 2.6 video\n5. Note the balance and 「Generate」's price"
+    },
+    {
+      "id": "TC-023",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The balance drops by the price 「Generate」 showed; a new 「Processing...」 tile appears; video A is still listed",
+      "after": "The balance drops by the price 「Generate」 showed\nA new 「Processing...」 tile appears\nVideo A is still listed"
+    },
+    {
+      "id": "TC-024",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The video is 10 s long with AI sound; its 「Prompts & Settings」 card shows 「Kling 2.6」 with the chips 「10s」, 「Pro」 and 「Sound on」, and video A's prompt",
+      "after": "The video is 10 s long with AI sound\nIts 「Prompts & Settings」 card shows 「Kling 2.6」 with the chips 「10s」, 「Pro」 and 「Sound on」, and video A's prompt"
+    },
+    {
+      "id": "TC-026",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "TC-023 done; app log collection on (PhotoDirector log pull not set up yet)",
+      "after": "1. TC-023 done\n2. App log collection on (PhotoDirector log pull not set up yet)"
+    },
+    {
+      "id": "TC-026",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The request carries Kling 2.6's existing action ID and video A's prompt; the video follows that prompt",
+      "after": "The request carries Kling 2.6's existing action ID and video A's prompt\nThe video follows that prompt"
+    },
+    {
+      "id": "TC-028",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt"
+    },
+    {
+      "id": "TC-029",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; a finished Custom video E whose model has since been removed from Image to Video. Open its Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. A finished Custom video E whose model has since been removed from Image to Video\n3. Open its Save & Share page"
+    },
+    {
+      "id": "TC-029",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The room opens with the default model and the toast shows 「This model is no longer available.」 and 「Switched to recommended model.」 on two lines; 「Settings applied」 does not show",
+      "after": "The room opens with the default model and the toast shows 「This model is no longer available.」 and 「Switched to recommended model.」 on two lines\n「Settings applied」 does not show"
+    },
+    {
+      "id": "TC-030",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Settings the default model supports keep video E's values, the others show the default model's defaults; the prompt box holds video E's prompt",
+      "after": "Settings the default model supports keep video E's values, the others show the default model's defaults\nThe prompt box holds video E's prompt"
+    },
+    {
+      "id": "TC-031",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "As TC-029; a photo added; enough credits; note the balance and 「Generate」's price",
+      "after": "1. As TC-029\n2. A photo added\n3. Enough credits\n4. Note the balance and 「Generate」's price"
+    },
+    {
+      "id": "TC-031",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The balance drops by the default model's current price, the price 「Generate」 showed; Detail lists it under Image to Video",
+      "after": "The balance drops by the default model's current price, the price 「Generate」 showed\nDetail lists it under Image to Video"
+    },
+    {
+      "id": "TC-032",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; a finished Custom video F whose prompt is longer than another model's limit, made with a model that allows it. Open its Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. A finished Custom video F whose prompt is longer than another model's limit, made with a model that allows it\n3. Open its Save & Share page"
+    },
+    {
+      "id": "TC-032",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "At step 2 the whole prompt stays in the box, the box and the counter turn red and 「Generate」 is disabled; at step 3 the red goes and 「Generate」 is enabled; no credits are charged",
+      "after": "At step 2 the whole prompt stays in the box, the box and the counter turn red and 「Generate」 is disabled\nAt step 3 the red goes and 「Generate」 is enabled\nNo credits are charged"
+    },
+    {
+      "id": "TC-033",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; Wi-Fi and mobile data off. Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Wi-Fi and mobile data off\n4. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-033",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Image to Video behaves as when it is opened with no network today (same message or state as entering from 「Create more」 offline); no credits are charged",
+      "after": "Image to Video behaves as when it is opened with no network today (same message or state as entering from 「Create more」 offline)\nNo credits are charged"
+    },
+    {
+      "id": "TC-034",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; a finished Custom video G made with a model that does not support real people; a photo with a person's face. Open its Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. A finished Custom video G made with a model that does not support real people\n3. A photo with a person's face\n4. Open its Save & Share page"
+    },
+    {
+      "id": "TC-034",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「The photo you uploaded includes a real person, which isn't supported by the selected model.」 shows, as today; no credits are charged",
+      "after": "「The photo you uploaded includes a real person, which isn't supported by the selected model.」 shows, as today\nNo credits are charged"
+    },
+    {
+      "id": "TC-035",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; a Free account with fewer credits than 「Generate」's price. Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. A Free account with fewer credits than 「Generate」's price\n4. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-035",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Upgrade to Premium path shows, as today; no credits are charged",
+      "after": "The Upgrade to Premium path shows, as today\nNo credits are charged"
+    },
+    {
+      "id": "TC-036",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; a Pro account with fewer credits than 「Generate」's price. Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. A Pro account with fewer credits than 「Generate」's price\n4. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-036",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「More Credits Required」 shows, as today; no credits are charged",
+      "after": "「More Credits Required」 shows, as today\nNo credits are charged"
+    },
+    {
+      "id": "TC-052",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; a Pro+ account with fewer credits than 「Generate」's price. Open video A's Save & Share page",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. A Pro+ account with fewer credits than 「Generate」's price\n4. Open video A's Save & Share page"
+    },
+    {
+      "id": "TC-052",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「More Credits Required」 shows, as today; no credits are charged",
+      "after": "「More Credits Required」 shows, as today\nNo credits are charged"
+    },
+    {
+      "id": "TC-037",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt; the analytics event log open",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. The analytics event log open"
+    },
+    {
+      "id": "TC-038",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」 (from the Image to Video tab); a photo added; the analytics event log open",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」 (from the Image to Video tab)\n4. A photo added\n5. The analytics event log open"
+    },
+    {
+      "id": "TC-039",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A from My AI Artwork › Recent (Video filter), tap 「Reuse」 and add a photo; the analytics event log open",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A from My AI Artwork › Recent (Video filter), tap 「Reuse」 and add a photo\n4. The analytics event log open"
+    },
+    {
+      "id": "TC-040",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in. In My AI Artwork › 「Image to Video」 tab, tap 「Create more」 and add a photo; the analytics event log open",
+      "after": "1. iPhone, PhotoDirector signed in\n2. In My AI Artwork › 「Image to Video」 tab, tap 「Create more」 and add a photo\n3. The analytics event log open"
+    },
+    {
+      "id": "TC-047",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」"
+    },
+    {
+      "id": "TC-048",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in; My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt. Open video A's Save & Share page and tap 「Reuse」",
+      "after": "1. iPhone, PhotoDirector signed in\n2. My AI Artwork › 「Image to Video」 tab holds a finished Custom video A made with Kling 2.6, 10s, Pro, Generate Sound by AI On, Start/End Off and a typed prompt\n3. Open video A's Save & Share page and tap 「Reuse」"
+    }
+  ],
+  "notes": []
+}

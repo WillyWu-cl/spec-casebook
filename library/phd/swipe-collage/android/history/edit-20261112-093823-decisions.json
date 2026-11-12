@@ -1,0 +1,1100 @@
+{
+  "saved_at": "2026-11-12T01:38:23.959Z",
+  "version": 3,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line, and Action steps still run together are split one per numbered line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-004",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "There is no Launcher shortcut for Swipe Collage in this build; the only in-app entry is the Collage banner",
+      "after": "There is no Launcher shortcut for Swipe Collage in this build\nThe only in-app entry is the Collage banner"
+    },
+    {
+      "id": "TC-005",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "PhotoDirector installed, app closed; deeplink `scrollable_collage` from RD (no parameters)",
+      "after": "1. PhotoDirector installed, app closed\n2. Deeplink `scrollable_collage` from RD (no parameters)"
+    },
+    {
+      "id": "TC-008",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The first ‹ goes to the Template Page; the second goes to the Collage room (or the app's previous page)",
+      "after": "The first ‹ goes to the Template Page\nThe second goes to the Collage room (or the app's previous page)"
+    },
+    {
+      "id": "TC-009",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Templates are laid out as a waterfall (staggered two-column list); the title is 「Scrollable Collage」 with a 「‹」",
+      "after": "Templates are laid out as a waterfall (staggered two-column list)\nThe title is 「Scrollable Collage」 with a 「‹」"
+    },
+    {
+      "id": "TC-010",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each card shows only the photo count and the page count, e.g. 「6 photos · 3 pages」; no portrait / landscape label",
+      "after": "Each card shows only the photo count and the page count, e.g. 「6 photos · 3 pages」\nNo portrait / landscape label"
+    },
+    {
+      "id": "TC-012",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "3 to 4 category tabs are shown; 「Year End」 is the first tab and is selected on entry",
+      "after": "3 to 4 category tabs are shown\n「Year End」 is the first tab and is selected on entry"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Template Page open; CMS tags at least one template NEW",
+      "after": "1. Template Page open\n2. CMS tags at least one template NEW"
+    },
+    {
+      "id": "TC-014",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Templates tagged NEW in the CMS show a 「NEW」 tag; untagged templates show none",
+      "after": "Templates tagged NEW in the CMS show a 「NEW」 tag\nUntagged templates show none"
+    },
+    {
+      "id": "TC-015",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each PRO template shows a 「PRO」 icon at the top right of its card; free templates show none",
+      "after": "Each PRO template shows a 「PRO」 icon at the top right of its card\nFree templates show none"
+    },
+    {
+      "id": "TC-016",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The thumbnail shows that template's next pages one by one, every page of the template; the list does not scroll",
+      "after": "The thumbnail shows that template's next pages one by one, every page of the template\nThe list does not scroll"
+    },
+    {
+      "id": "TC-017",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "20 templates in total (Day 1); note duplicates across categories",
+      "after": "20 templates in total (Day 1)\nNote duplicates across categories"
+    },
+    {
+      "id": "TC-018",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Traditional Chinese and Japanese show the East thumbnail set; English and German show the West set (every page of that set)",
+      "after": "Traditional Chinese and Japanese show the East thumbnail set\nEnglish and German show the West set (every page of that set)"
+    },
+    {
+      "id": "TC-021",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Title 「Template」; the photo and page count (e.g. 「9 photos · 5 pages」) and the category (「Year End」) under the image; a 「Use Template」 button",
+      "after": "Title 「Template」\nThe photo and page count (e.g. 「9 photos · 5 pages」) and the category (「Year End」) under the image\nA 「Use Template」 button"
+    },
+    {
+      "id": "TC-022",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The preview moves one page per swipe; the page dots follow; the shown layout is the template's default layout with sample photos",
+      "after": "The preview moves one page per swipe\nThe page dots follow\nThe shown layout is the template's default layout with sample photos"
+    },
+    {
+      "id": "TC-024",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Canvas opens with the template's pages and layout; its empty frames show 「+」",
+      "after": "The Canvas opens with the template's pages and layout\nIts empty frames show 「+」"
+    },
+    {
+      "id": "TC-025",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; Template Preview of a PRO template",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Template Preview of a PRO template"
+    },
+    {
+      "id": "TC-025",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The preview shows a 「PRO」 icon at the top right; Use Template opens the Canvas with no IAP page",
+      "after": "The preview shows a 「PRO」 icon at the top right\nUse Template opens the Canvas with no IAP page"
+    },
+    {
+      "id": "TC-026",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Top: 「‹」, ↶ / ↷, 「Export」; bottom bar: 「Background」, 「Layers」, 「+」, 「Ratio」, 「Pages」",
+      "after": "Top: 「‹」, ↶ / ↷, 「Export」\nBottom bar: 「Background」, 「Layers」, 「+」, 「Ratio」, 「Pages」"
+    },
+    {
+      "id": "TC-029",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; the template has a text element (「a year in pictures」)",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. The template has a text element (「a year in pictures」)"
+    },
+    {
+      "id": "TC-031",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each ↶ undoes the last operation in reverse order; each ↷ redoes it",
+      "after": "Each ↶ undoes the last operation in reverse order\nEach ↷ redoes it"
+    },
+    {
+      "id": "TC-033",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), at least one edit made; 「Discard changes?」 dialog open",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), at least one edit made\n2. 「Discard changes?」 dialog open"
+    },
+    {
+      "id": "TC-033",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog closes; the Canvas keeps every edit",
+      "after": "The dialog closes\nThe Canvas keeps every edit"
+    },
+    {
+      "id": "TC-034",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), at least one edit made; 「Discard changes?」 dialog open",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), at least one edit made\n2. 「Discard changes?」 dialog open"
+    },
+    {
+      "id": "TC-034",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Returns to the Template Preview; opening Use Template again gives the untouched template",
+      "after": "Returns to the Template Preview\nOpening Use Template again gives the untouched template"
+    },
+    {
+      "id": "TC-038",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog closes and no project is restored; it does not appear again on the next entry",
+      "after": "The dialog closes and no project is restored\nIt does not appear again on the next entry"
+    },
+    {
+      "id": "TC-039",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "A Swipe Collage project was being edited and an Edit Room photo edit was then started; the app is force-stopped",
+      "after": "1. A Swipe Collage project being edited\n2. An Edit Room photo edit started from it\n3. The app is force-stopped"
+    },
+    {
+      "id": "TC-041",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The photos show selection numbers 1 and 2; the button reads 「Done (2)」",
+      "after": "The photos show selection numbers 1 and 2\nThe button reads 「Done (2)」"
+    },
+    {
+      "id": "TC-043",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Returns to the Canvas; the 2 photos fill empty frames in order (selection order into frames left→right, top→bottom); one frame keeps its 「+」",
+      "after": "Returns to the Canvas\nThe 2 photos fill empty frames in order (selection order into frames left→right, top→bottom)\nOne frame keeps its 「+」"
+    },
+    {
+      "id": "TC-045",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The picker title says up to 20 and allows 20 photos; Android is not held to its default limit of 6",
+      "after": "The picker title says up to 20 and allows 20 photos\nAndroid is not held to its default limit of 6"
+    },
+    {
+      "id": "TC-048",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The frame is selected (「Frame selected」); floating Delete / Duplicate / Lock icons appear on it; the bottom bar shows 「Opacity」 「Shadow」 「Flip H」 「Flip V」 「Duplicate」 「Lock」 「Delete」",
+      "after": "The frame is selected (「Frame selected」)\nFloating Delete / Duplicate / Lock icons appear on it\nThe bottom bar shows 「Opacity」 「Shadow」 「Flip H」 「Flip V」 「Duplicate」 「Lock」 「Delete」"
+    },
+    {
+      "id": "TC-049",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A frame in frame focus"
+    },
+    {
+      "id": "TC-049",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The second tap switches to image focus (「Image selected」, image toolbar); the third tap returns to frame focus",
+      "after": "The second tap switches to image focus (「Image selected」, image toolbar)\nThe third tap returns to frame focus"
+    },
+    {
+      "id": "TC-050",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A frame in frame focus"
+    },
+    {
+      "id": "TC-051",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A frame in frame focus"
+    },
+    {
+      "id": "TC-052",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A frame in frame focus"
+    },
+    {
+      "id": "TC-053",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A frame in frame focus"
+    },
+    {
+      "id": "TC-054",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A frame in frame focus"
+    },
+    {
+      "id": "TC-055",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A frame in frame focus"
+    },
+    {
+      "id": "TC-056",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A photo in image focus"
+    },
+    {
+      "id": "TC-056",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One horizontally scrolling bar: 「Replace」 「Flip H」 「Flip V」 「Adjust」 「Filter」 「Removal」 「Enhance」 「Lock」 「Delete」; Removal and Enhance carry a 「PRO」 tag",
+      "after": "One horizontally scrolling bar: 「Replace」 「Flip H」 「Flip V」 「Adjust」 「Filter」 「Removal」 「Enhance」 「Lock」 「Delete」\nRemoval and Enhance carry a 「PRO」 tag"
+    },
+    {
+      "id": "TC-057",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A photo in image focus"
+    },
+    {
+      "id": "TC-057",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The picker opens; the chosen photo replaces the image in that frame",
+      "after": "The picker opens\nThe chosen photo replaces the image in that frame"
+    },
+    {
+      "id": "TC-058",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A photo in image focus"
+    },
+    {
+      "id": "TC-059",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A photo in image focus"
+    },
+    {
+      "id": "TC-060",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A photo in image focus"
+    },
+    {
+      "id": "TC-060",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The photo is removed; the frame stays, empty, with its 「+」 add-image icon",
+      "after": "The photo is removed\nThe frame stays, empty, with its 「+」 add-image icon"
+    },
+    {
+      "id": "TC-061",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n3. A photo in image focus"
+    },
+    {
+      "id": "TC-061",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Object Removal room opens; applying shows the existing IAP page (「PhotoDirector Premium」, 「Continue」, ✕) and nothing is applied yet",
+      "after": "The Object Removal room opens\nApplying shows the existing IAP page (「PhotoDirector Premium」, 「Continue」, ✕) and nothing is applied yet"
+    },
+    {
+      "id": "TC-062",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n3. A photo in image focus"
+    },
+    {
+      "id": "TC-062",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The AI Enhance room opens; applying shows the existing IAP page",
+      "after": "The AI Enhance room opens\nApplying shows the existing IAP page"
+    },
+    {
+      "id": "TC-063",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; IAP page shown from Removal apply",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. IAP page shown from Removal apply"
+    },
+    {
+      "id": "TC-063",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The IAP page closes (as the existing IAP page does); the photo on the Canvas is unchanged",
+      "after": "The IAP page closes (as the existing IAP page does)\nThe photo on the Canvas is unchanged"
+    },
+    {
+      "id": "TC-064",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n3. A photo in image focus"
+    },
+    {
+      "id": "TC-064",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No IAP page; returns to the Canvas and the result replaces that frame's photo",
+      "after": "No IAP page\nReturns to the Canvas and the result replaces that frame's photo"
+    },
+    {
+      "id": "TC-065",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n3. A photo in image focus"
+    },
+    {
+      "id": "TC-065",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No IAP page; returns to the Canvas and the enhanced photo replaces that frame's photo",
+      "after": "No IAP page\nReturns to the Canvas and the enhanced photo replaces that frame's photo"
+    },
+    {
+      "id": "TC-066",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; a Removal result just applied on the Canvas",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. A Removal result just applied on the Canvas"
+    },
+    {
+      "id": "TC-066",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "↶ brings back the original photo; ↷ brings back the Removal result",
+      "after": "↶ brings back the original photo\n↷ brings back the Removal result"
+    },
+    {
+      "id": "TC-067",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; note the newest item in the Gallery 「PhotoDirector」 album",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. Note the newest item in the Gallery 「PhotoDirector」 album"
+    },
+    {
+      "id": "TC-068",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n3. A photo in image focus"
+    },
+    {
+      "id": "TC-069",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While dragging, 「Long press & drag to swap」 is shown; on release the two photos swap frames",
+      "after": "While dragging, 「Long press & drag to swap」 is shown\nOn release the two photos swap frames"
+    },
+    {
+      "id": "TC-071",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), a multi-image frame (e.g. 「3 photos」 film strip) on the canvas; a single-image frame filled too",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), a multi-image frame (e.g. 「3 photos」 film strip) on the canvas\n2. A single-image frame filled too"
+    },
+    {
+      "id": "TC-072",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), 3 pages; an element lies across the line between page 1 and 2 with its centre on page 1, others wholly on page 2",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), 3 pages\n2. An element lies across the line between page 1 and 2 with its centre on page 1, others wholly on page 2"
+    },
+    {
+      "id": "TC-072",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each element moves with the page holding its centre; the cross-page element moves with page 1 and still spans a page line afterwards",
+      "after": "Each element moves with the page holding its centre\nThe cross-page element moves with page 1 and still spans a page line afterwards"
+    },
+    {
+      "id": "TC-073",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a single-image frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A single-image frame in frame focus"
+    },
+    {
+      "id": "TC-073",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「Frame」 panel opens with square thumbnails, each labelled with its photo count (「1 photo」, 「3 photos」 …); dragging a frame onto another does not change its style",
+      "after": "The 「Frame」 panel opens with square thumbnails, each labelled with its photo count (「1 photo」, 「3 photos」 …)\nDragging a frame onto another does not change its style"
+    },
+    {
+      "id": "TC-074",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The frame becomes the 3-cell frame; the photo is in the first cell (left→right, top→bottom); the other cells show 「+」",
+      "after": "The frame becomes the 3-cell frame\nThe photo is in the first cell (left→right, top→bottom)\nThe other cells show 「+」"
+    },
+    {
+      "id": "TC-075",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only A (the first photo) is kept; B and C are removed",
+      "after": "Only A (the first photo) is kept\nB and C are removed"
+    },
+    {
+      "id": "TC-076",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A and B are kept in order; C and D are removed",
+      "after": "A and B are kept in order\nC and D are removed"
+    },
+    {
+      "id": "TC-077",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only A comes back; the other cells show 「+」 (B and C are not restored)",
+      "after": "Only A comes back\nThe other cells show 「+」 (B and C are not restored)"
+    },
+    {
+      "id": "TC-078",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 3-cell frame comes back with A, B and C; ↷ removes them again",
+      "after": "The 3-cell frame comes back with A, B and C\n↷ removes them again"
+    },
+    {
+      "id": "TC-079",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a frame in frame focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A frame in frame focus"
+    },
+    {
+      "id": "TC-079",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The frame shows 「Frame locked」; floating icons become Delete / Duplicate / Unlock",
+      "after": "The frame shows 「Frame locked」\nFloating icons become Delete / Duplicate / Unlock"
+    },
+    {
+      "id": "TC-081",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The toolbar is shown; only Duplicate, Unlock and Delete respond, the others are disabled",
+      "after": "The toolbar is shown\nOnly Duplicate, Unlock and Delete respond, the others are disabled"
+    },
+    {
+      "id": "TC-082",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Duplicate adds a copy; Delete removes the frame (same as unlocked)",
+      "after": "Duplicate adds a copy\nDelete removes the frame (same as unlocked)"
+    },
+    {
+      "id": "TC-085",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; a photo in image focus",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. A photo in image focus"
+    },
+    {
+      "id": "TC-085",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The photo shows 「Image locked」; floating icons Delete / Duplicate / Unlock",
+      "after": "The photo shows 「Image locked」\nFloating icons Delete / Duplicate / Unlock"
+    },
+    {
+      "id": "TC-087",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One toolbar is shown; only 「Unlock」 and 「Delete」 respond, the others are disabled",
+      "after": "One toolbar is shown\nOnly 「Unlock」 and 「Delete」 respond, the others are disabled"
+    },
+    {
+      "id": "TC-088",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Duplicate adds a copy; Delete empties the frame (「+」 shown)",
+      "after": "Duplicate adds a copy\nDelete empties the frame (「+」 shown)"
+    },
+    {
+      "id": "TC-089",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each returns to normal focus; drag, scale and every tool work again",
+      "after": "Each returns to normal focus\nDrag, scale and every tool work again"
+    },
+    {
+      "id": "TC-090",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「Background」 sheet opens with tabs 「Solid」 and 「Texture」 and a ✕; Solid shows 32 colour swatches (8 × 4) and 「Custom color」; no gradients",
+      "after": "The 「Background」 sheet opens with tabs 「Solid」 and 「Texture」 and a ✕\nSolid shows 32 colour swatches (8 × 4) and 「Custom color」\nNo gradients"
+    },
+    {
+      "id": "TC-093",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; Background sheet, Texture tab",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Background sheet, Texture tab"
+    },
+    {
+      "id": "TC-095",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Custom color picker open; the canvas has a photo",
+      "after": "1. Custom color picker open\n2. The canvas has a photo"
+    },
+    {
+      "id": "TC-096",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The picker closes; the background keeps its previous colour",
+      "after": "The picker closes\nThe background keeps its previous colour"
+    },
+    {
+      "id": "TC-099",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「Add Layer」 sheet opens with 「Image」 「Text」 「Sticker」 「Frame」 (NEW tag) 「Text Bubble」 and ✕; no video, file, grid, shape or drawing option",
+      "after": "The 「Add Layer」 sheet opens with 「Image」 「Text」 「Sticker」 「Frame」 (NEW tag) 「Text Bubble」 and ✕\nNo video, file, grid, shape or drawing option"
+    },
+    {
+      "id": "TC-100",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Collage photo picker opens; on finishing, back on the Canvas with the photo added as a new single-image frame (TBD-5 proposal)",
+      "after": "The Collage photo picker opens\nOn finishing, back on the Canvas with the photo added as a new single-image frame (TBD-5 proposal)"
+    },
+    {
+      "id": "TC-101",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Collage text input opens with the keyboard; Done closes the keyboard and the text is on the Canvas",
+      "after": "The Collage text input opens with the keyboard\nDone closes the keyboard and the text is on the Canvas"
+    },
+    {
+      "id": "TC-103",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Edit Room Sticker panel opens (Favorites / Trending / …); the sticker is added to the Canvas",
+      "after": "The Edit Room Sticker panel opens (Favorites / Trending / …)\nThe sticker is added to the Canvas"
+    },
+    {
+      "id": "TC-104",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The new Frame panel with square thumbnails opens; the tapped frame is added to the Canvas with empty 「+」 cells",
+      "after": "The new Frame panel with square thumbnails opens\nThe tapped frame is added to the Canvas with empty 「+」 cells"
+    },
+    {
+      "id": "TC-105",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; Frame panel open from Add Layer",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Frame panel open from Add Layer"
+    },
+    {
+      "id": "TC-105",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "NEW and PRO tags show on the thumbnails the CMS marks; the PRO frame is added without an IAP page",
+      "after": "NEW and PRO tags show on the thumbnails the CMS marks\nThe PRO frame is added without an IAP page"
+    },
+    {
+      "id": "TC-106",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Edit Room Text Bubble panel opens; the bubble is added to the Canvas",
+      "after": "The Edit Room Text Bubble panel opens\nThe bubble is added to the Canvas"
+    },
+    {
+      "id": "TC-107",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The sheet closes; nothing is added",
+      "after": "The sheet closes\nNothing is added"
+    },
+    {
+      "id": "TC-108",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「Layers」 list opens with ✕; each layer shows its thumbnail on a transparency grid, ⋯ on the left and ≡ on the right",
+      "after": "The 「Layers」 list opens with ✕\nEach layer shows its thumbnail on a transparency grid, ⋯ on the left and ≡ on the right"
+    },
+    {
+      "id": "TC-110",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Duplicate adds a copy of the element; Delete removes it from the list and the canvas",
+      "after": "Duplicate adds a copy of the element\nDelete removes it from the list and the canvas"
+    },
+    {
+      "id": "TC-111",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The element is locked on the canvas (locked behaviour); its menu now shows 「Unlock」",
+      "after": "The element is locked on the canvas (locked behaviour)\nIts menu now shows 「Unlock」"
+    },
+    {
+      "id": "TC-113",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The list closes; the changes stay (TBD-4 proposal)",
+      "after": "The list closes\nThe changes stay (TBD-4 proposal)"
+    },
+    {
+      "id": "TC-114",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「Ratio」 sheet opens with ✕ and 「1:1」 「4:5」 「5:4」 「3:4」 「4:3」 「9:16」 「16:9」, each with a crop-style icon and its numbers; no AI Expand promotion",
+      "after": "The 「Ratio」 sheet opens with ✕ and 「1:1」 「4:5」 「5:4」 「3:4」 「4:3」 「9:16」 「16:9」, each with a crop-style icon and its numbers\nNo AI Expand promotion"
+    },
+    {
+      "id": "TC-115",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos; Ratio sheet open",
+      "after": "1. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos\n2. Ratio sheet open"
+    },
+    {
+      "id": "TC-115",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each page takes that ratio; the page width (short side) stays, only the long side changes; elements keep their place and the canvas grows downward or shrinks upward",
+      "after": "Each page takes that ratio\nThe page width (short side) stays, only the long side changes\nElements keep their place and the canvas grows downward or shrinks upward"
+    },
+    {
+      "id": "TC-118",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Pages opens: thumbnails of the pages joined with only a thin line between them; page 2 is selected and the small text reads 「Page 2 / 3」; ✕, ✓, bottom 「−」 「+」",
+      "after": "Pages opens: thumbnails of the pages joined with only a thin line between them\nPage 2 is selected and the small text reads 「Page 2 / 3」\n✕, ✓, bottom 「−」 「+」"
+    },
+    {
+      "id": "TC-119",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Page 3 is selected (「Page 3 / 3」); elements cannot be edited here",
+      "after": "Page 3 is selected (「Page 3 / 3」)\nElements cannot be edited here"
+    },
+    {
+      "id": "TC-121",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While dragging the thumbnail is enlarged and translucent, 「Hold ≡ & drag to reorder」 shows and the others make room; on release page 1 is last",
+      "after": "While dragging the thumbnail is enlarged and translucent, 「Hold ≡ & drag to reorder」 shows and the others make room\nOn release page 1 is last"
+    },
+    {
+      "id": "TC-125",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「+」 adds a page at the end and scrolls to it; 「−」 removes the last page",
+      "after": "「+」 adds a page at the end and scrolls to it\n「−」 removes the last page"
+    },
+    {
+      "id": "TC-126",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 10th page is added (「Page n / 10」); after that the row +, bottom + and Duplicate page are unavailable",
+      "after": "The 10th page is added (「Page n / 10」)\nAfter that the row +, bottom + and Duplicate page are unavailable"
+    },
+    {
+      "id": "TC-127",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One page is left (「Page 1 / 1」); then − and Delete page are unavailable",
+      "after": "One page is left (「Page 1 / 1」)\nThen − and Delete page are unavailable"
+    },
+    {
+      "id": "TC-132",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog closes; Pages still shows the changes",
+      "after": "The dialog closes\nPages still shows the changes"
+    },
+    {
+      "id": "TC-133",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Returns to the Canvas; every page change of this visit is dropped",
+      "after": "Returns to the Canvas\nEvery page change of this visit is dropped"
+    },
+    {
+      "id": "TC-136",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos, 5 pages, free content only",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. On the Canvas of a Year End template (opened from Template Preview › 「Use Template」), every frame filled with photos, 5 pages, free content only"
+    },
+    {
+      "id": "TC-141",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Save & Share page; Instagram installed",
+      "after": "1. Save & Share page\n2. Instagram installed"
+    },
+    {
+      "id": "TC-141",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Instagram opens with all exported images when it accepts several; otherwise Instagram just opens",
+      "after": "Instagram opens with all exported images when it accepts several\nOtherwise Instagram just opens"
+    },
+    {
+      "id": "TC-142",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Save & Share page; Facebook installed",
+      "after": "1. Save & Share page\n2. Facebook installed"
+    },
+    {
+      "id": "TC-142",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Facebook opens with all exported images when it accepts several; otherwise Facebook just opens",
+      "after": "Facebook opens with all exported images when it accepts several\nOtherwise Facebook just opens"
+    },
+    {
+      "id": "TC-145",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; the free-export counter fresh (new install or new account); a canvas with free content only",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. The free-export counter fresh (new install or new account)\n3. A canvas with free content only"
+    },
+    {
+      "id": "TC-145",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The first two exports save with no IAP page; the 3rd save shows the IAP page (「PhotoDirector Premium」)",
+      "after": "The first two exports save with no IAP page\nThe 3rd save shows the IAP page (「PhotoDirector Premium」)"
+    },
+    {
+      "id": "TC-146",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; counter fresh; a canvas with 10 pages and one with 1 page",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Counter fresh\n3. A canvas with 10 pages and one with 1 page"
+    },
+    {
+      "id": "TC-149",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; a canvas from a PRO template",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. A canvas from a PRO template"
+    },
+    {
+      "id": "TC-150",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; a free template with a PRO frame added",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. A free template with a PRO frame added"
+    },
+    {
+      "id": "TC-151",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; a free template with a PRO texture background",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. A free template with a PRO texture background"
+    },
+    {
+      "id": "TC-152",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; PRO content IAP page shown at Export",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. PRO content IAP page shown at Export"
+    },
+    {
+      "id": "TC-152",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The IAP page closes (as the existing IAP page); nothing is saved; the Canvas keeps its edits",
+      "after": "The IAP page closes (as the existing IAP page)\nNothing is saved\nThe Canvas keeps its edits"
+    },
+    {
+      "id": "TC-153",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a PhotoDirector Premium account; a canvas from a PRO template with a PRO frame and PRO texture",
+      "after": "1. Signed in with a PhotoDirector Premium account\n2. A canvas from a PRO template with a PRO frame and PRO texture"
+    },
+    {
+      "id": "TC-153",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No IAP page; the images are saved",
+      "after": "No IAP page\nThe images are saved"
+    },
+    {
+      "id": "TC-154",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; free template, free content only; export counter at 0",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. Free template, free content only\n3. Export counter at 0"
+    },
+    {
+      "id": "TC-154",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No 「Paid style applied」 IAP page: Removal / Enhance are gated in their rooms, not here; the images save",
+      "after": "No 「Paid style applied」 IAP page: Removal / Enhance are gated in their rooms, not here\nThe images save"
+    },
+    {
+      "id": "TC-155",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Any account; note the credit balance (if the account shows one)",
+      "after": "1. Any account\n2. Note the credit balance (if the account shows one)"
+    },
+    {
+      "id": "TC-155",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No credits are charged at any step; the IAP page offers only the existing plans (no new SKU)",
+      "after": "No credits are charged at any step\nThe IAP page offers only the existing plans (no new SKU)"
+    },
+    {
+      "id": "TC-162",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The sheet closes like its ✕; applied changes stay",
+      "after": "The sheet closes like its ✕\nApplied changes stay"
+    },
+    {
+      "id": "TC-164",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The first Back closes the keyboard; the second closes the text input like 「Cancel」",
+      "after": "The first Back closes the keyboard\nThe second closes the text input like 「Cancel」"
+    },
+    {
+      "id": "TC-168",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Signed in with a Free (non-Premium) account; IAP page shown (any trigger)",
+      "after": "1. Signed in with a Free (non-Premium) account\n2. IAP page shown (any trigger)"
+    },
+    {
+      "id": "TC-002",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Leave the Collage room, then open it again; repeat after an app restart",
+      "after": "1. Leave the Collage room\n2. Open it again\n3. Restart the app\n4. Open the Collage room again"
+    },
+    {
+      "id": "TC-008",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap 「‹」, then 「‹」 again",
+      "after": "1. Tap 「‹」\n2. Tap 「‹」 again"
+    },
+    {
+      "id": "TC-018",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Set the app language in turn to Traditional Chinese and Japanese (East), then to English and German (West); after each change reopen the Template Page and swipe through every template page",
+      "after": "1. Set the app language to Traditional Chinese (East), reopen the Template Page and swipe through every template page\n2. Set it to Japanese (East) and do the same\n3. Set it to English (West) and do the same\n4. Set it to German (West) and do the same"
+    },
+    {
+      "id": "TC-025",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Look at the preview, then tap 「Use Template」",
+      "after": "1. Look at the preview\n2. Tap 「Use Template」"
+    },
+    {
+      "id": "TC-027",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Pinch to zoom the view in and out, then scroll left and right across the pages",
+      "after": "1. Pinch to zoom the view in and out\n2. Scroll left and right across the pages"
+    },
+    {
+      "id": "TC-031",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Do one of each: move a photo, flip a frame, change the background, add a sticker; then tap ↶ four times and ↷ four times",
+      "after": "1. Move a photo\n2. Flip a frame\n3. Change the background\n4. Add a sticker\n5. Tap ↶ four times\n6. Tap ↷ four times"
+    },
+    {
+      "id": "TC-049",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the frame again, then tap it once more",
+      "after": "1. Tap the frame again\n2. Tap it once more"
+    },
+    {
+      "id": "TC-053",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the floating Duplicate icon, then 「Duplicate」 on the toolbar",
+      "after": "1. Tap the floating Duplicate icon\n2. Tap 「Duplicate」 on the toolbar"
+    },
+    {
+      "id": "TC-054",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap 「Flip H」, then 「Flip V」",
+      "after": "1. Tap 「Flip H」\n2. Tap 「Flip V」"
+    },
+    {
+      "id": "TC-055",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap 「Opacity」, move its control; tap 「Shadow」, move its control",
+      "after": "1. Tap 「Opacity」 and move its control\n2. Tap 「Shadow」 and move its control"
+    },
+    {
+      "id": "TC-058",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap 「Flip H」, then 「Flip V」",
+      "after": "1. Tap 「Flip H」\n2. Tap 「Flip V」"
+    },
+    {
+      "id": "TC-059",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap 「Adjust」, change a value, apply; tap 「Filter」, pick a filter, apply",
+      "after": "1. Tap 「Adjust」, change a value and apply\n2. Tap 「Filter」, pick a filter and apply"
+    },
+    {
+      "id": "TC-066",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap ↶, then ↷",
+      "after": "1. Tap ↶\n2. Tap ↷"
+    },
+    {
+      "id": "TC-067",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Apply a Removal and an Enhance result on the Canvas, then open the Gallery",
+      "after": "1. Apply a Removal and an Enhance result on the Canvas\n2. Open the Gallery"
+    },
+    {
+      "id": "TC-082",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the floating Duplicate, then the floating Delete",
+      "after": "1. Tap the floating Duplicate\n2. Tap the floating Delete"
+    },
+    {
+      "id": "TC-088",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the floating Duplicate, then the floating Delete",
+      "after": "1. Tap the floating Duplicate\n2. Tap the floating Delete"
+    },
+    {
+      "id": "TC-095",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the eyedropper, then a point on the photo",
+      "after": "1. Tap the eyedropper\n2. Tap a point on the photo"
+    },
+    {
+      "id": "TC-110",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Use ⋯ › 「Duplicate」, then ⋯ › 「Delete」 on a layer",
+      "after": "1. Use ⋯ › 「Duplicate」 on a layer\n2. Use ⋯ › 「Delete」 on a layer"
+    },
+    {
+      "id": "TC-111",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Use ⋯ › 「Lock」 on a frame layer, then open ⋯ on it again",
+      "after": "1. Use ⋯ › 「Lock」 on a frame layer\n2. Open ⋯ on it again"
+    },
+    {
+      "id": "TC-116",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Ratio 9:16 applied, then exported",
+      "after": "1. Ratio 9:16 applied\n2. Canvas exported"
+    },
+    {
+      "id": "TC-119",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the thumbnail of page 3; then try to tap or drag an element inside a thumbnail",
+      "after": "1. Tap the thumbnail of page 3\n2. Try to tap or drag an element inside a thumbnail"
+    },
+    {
+      "id": "TC-125",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the bottom 「+」, then the bottom 「−」",
+      "after": "1. Tap the bottom 「+」\n2. Tap the bottom 「−」"
+    },
+    {
+      "id": "TC-126",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap 「+」 once; then try the row 「+」, the bottom 「+」 and ••• › 「Duplicate page」",
+      "after": "1. Tap 「+」 once\n2. Try the row 「+」\n3. Try the bottom 「+」\n4. Try ••• › 「Duplicate page」"
+    },
+    {
+      "id": "TC-127",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Tap the bottom 「−」; then try 「−」 again and ••• › 「Delete page」",
+      "after": "1. Tap the bottom 「−」\n2. Try 「−」 again\n3. Try ••• › 「Delete page」"
+    },
+    {
+      "id": "TC-139",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Settings › Image Quality set to the lowest option, then the highest",
+      "after": "1. Settings › Image Quality set to the lowest option\n2. Settings › Image Quality set to the highest option"
+    },
+    {
+      "id": "TC-146",
+      "field": "Action",
+      "decision": "modified",
+      "before": "Export the 10-page canvas twice, then the 1-page canvas once",
+      "after": "1. Export the 10-page canvas twice\n2. Export the 1-page canvas once"
+    }
+  ],
+  "notes": []
+}

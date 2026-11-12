@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-06T01:38:44.351Z",
+  "built_at": "2026-11-12T01:42:13.119Z",
   "spec_set": "2026-10-21-2",
   "file": {
     "fileKey": "dZk5HLzZTdcZwWwvN9aZfZ",
@@ -7751,7 +7751,7 @@
         "edge": "Upgrade to Premium",
         "segment": "A1-f",
         "section": "Credits and limits",
-        "precondition": "Tier Free (subscription of the test account: Free); finite daily allowance",
+        "precondition": "1. Tier Free (subscription of the test account: Free)\n2. Finite daily allowance",
         "action": "1. Send chats until the allowance is used up, counting each send\n2. Tap 「Upgrade to Premium」 and leave the subscription page with system back without subscribing",
         "result": "Blocked",
         "run": "2026-10-29-a7-full"
@@ -7791,7 +7791,7 @@
         "edge": "Upgrade to Premium",
         "segment": "A1-f",
         "section": "Credits and limits",
-        "precondition": "Tier Free (subscription of the test account: Free); finite daily allowance",
+        "precondition": "1. Tier Free (subscription of the test account: Free)\n2. Finite daily allowance",
         "action": "1. Send chats until the allowance is used up, counting each send\n2. Tap 「Upgrade to Premium」 and leave the subscription page with system back without subscribing",
         "result": "Blocked",
         "run": "2026-10-29-a7-full"
@@ -9140,7 +9140,7 @@
         "edge": "Create Next Episode",
         "segment": "A1-g3",
         "section": "Video",
-        "precondition": "Full video finished; 「Ready for the next episode?」 shown",
+        "precondition": "1. Full video finished\n2. 「Ready for the next episode?」 shown",
         "action": "Tap 「Create Next Episode」",
         "result": "Pass",
         "run": "2026-10-29-a7-full"
@@ -9181,7 +9181,7 @@
         "edge": "Create Next Episode",
         "segment": "A1-g3",
         "section": "Video",
-        "precondition": "Full video finished; 「Ready for the next episode?」 shown",
+        "precondition": "1. Full video finished\n2. 「Ready for the next episode?」 shown",
         "action": "Tap 「Create Next Episode」",
         "result": "Pass",
         "run": "2026-10-29-a7-full"
@@ -9222,7 +9222,7 @@
         "edge": "Create Next Episode",
         "segment": "A1-g3",
         "section": "Video",
-        "precondition": "Full video finished; 「Ready for the next episode?」 shown",
+        "precondition": "1. Full video finished\n2. 「Ready for the next episode?」 shown",
         "action": "Tap 「Create Next Episode」",
         "result": "Pass",
         "run": "2026-10-29-a7-full"
@@ -9837,7 +9837,7 @@
         "edge": "The New Guy's Secret",
         "segment": "A1-i1",
         "section": "Templates",
-        "precondition": "More › Workplace Romance › position 3; balance at least 300 credits (stop rule below)",
+        "precondition": "1. More › Workplace Romance › position 3\n2. Balance at least 300 credits (stop rule below)",
         "action": "1. Open 「The New Guy's Secret」\n2. Check the cover and title\n3. Play the preview\n4. Tap Make my version",
         "result": "Pass",
         "run": "2026-10-29-a7-full"
@@ -9878,7 +9878,7 @@
         "edge": "The New Guy's Secret",
         "segment": "A1-i1",
         "section": "Templates",
-        "precondition": "More › Workplace Romance › position 3; balance at least 300 credits (stop rule below)",
+        "precondition": "1. More › Workplace Romance › position 3\n2. Balance at least 300 credits (stop rule below)",
         "action": "1. Open 「The New Guy's Secret」\n2. Check the cover and title\n3. Play the preview\n4. Tap Make my version",
         "result": "Pass",
         "run": "2026-10-29-a7-full"
@@ -9960,7 +9960,7 @@
         "edge": "Buy More",
         "segment": "A3-a",
         "section": "Credits and limits",
-        "precondition": "Free tier; My Credits opened from the chat's credit pill (after TC-358, or the pill at any later stage)",
+        "precondition": "1. Free tier\n2. My Credits opened from the chat's credit pill (after TC-358, or the pill at any later stage)",
         "action": "1. Tap 「Buy More」\n2. Go back with system back (Android back gesture or button)\n3. Tap 「Subscribe Now」\n4. Go back with system back without subscribing\n5. Tap 「Claim」\n6. Finally leave My Credits with system back",
         "result": "Pass",
         "run": "2026-10-29-a7-full"
@@ -10001,7 +10001,7 @@
         "edge": "Storyboard Error: scene image regenerating (生成, skeletons in scene detail) → regenerated scene detail",
         "segment": "A3-d",
         "section": "Storyboard",
-        "precondition": "A scene whose Location and scene images both failed; 「Regenerate Image」 ◆12 tapped in its scene detail (after TC-070)",
+        "precondition": "1. A scene whose Location and scene images both failed\n2. 「Regenerate Image」 ◆6 tapped in its scene detail (after TC-070)",
         "action": "Stay on the scene detail until the generation ends",
         "result": "Blocked",
         "run": "2026-10-29-a7-full"
@@ -10042,7 +10042,7 @@
         "edge": "",
         "segment": "",
         "section": "Story outline",
-        "precondition": "Outline generated; the app's Appearance set to Light mode",
+        "precondition": "1. Outline generated\n2. The app's Appearance set to Light mode",
         "action": "1. Read the chat with the 「Story Outline & Characters Result」 card\n2. Scroll to the idea box",
         "result": "Not run",
         "run": ""

@@ -1,0 +1,1247 @@
+{
+  "saved_at": "2026-11-12T01:38:23.894Z",
+  "version": 3,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-001",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-002",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-002",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The picker opens on 「Single」 again (it does not remember 「Batch」); the first ‹ returned to the Launcher",
+      "after": "The picker opens on 「Single」 again (it does not remember 「Batch」)\nThe first ‹ returned to the Launcher"
+    },
+    {
+      "id": "TC-003",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-004",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-004",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "With 「Single」 only one photo can be picked; picking it opens the Edit Room",
+      "after": "With 「Single」 only one photo can be picked\nPicking it opens the Edit Room"
+    },
+    {
+      "id": "TC-005",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-005",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The thumbnails show 1 on C, 2 on A, 3 on B; the bottom reads 「Select 1 to 20 photos to continue.(3/20)」 with 「Next」, and C, A, B appear in the row above 「Next」",
+      "after": "The thumbnails show 1 on C, 2 on A, 3 on B\nThe bottom reads 「Select 1 to 20 photos to continue.(3/20)」 with 「Next」, and C, A, B appear in the row above 「Next」"
+    },
+    {
+      "id": "TC-006",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-007",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-007",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "That photo is no longer ticked; the count reads (2/20) and the remaining photos keep their order (renumbered 1, 2)",
+      "after": "That photo is no longer ticked\nThe count reads (2/20) and the remaining photos keep their order (renumbered 1, 2)"
+    },
+    {
+      "id": "TC-008",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-008",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 21st photo is not ticked and the toast 「Please pick at most 20 photos.」 shows; the count stays at 20",
+      "after": "The 21st photo is not ticked and the toast 「Please pick at most 20 photos.」 shows\nThe count stays at 20"
+    },
+    {
+      "id": "TC-009",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-010",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-011",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); single-photo Edit Room open (Edit › Single › one photo)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Single-photo Edit Room open (Edit › Single › one photo)"
+    },
+    {
+      "id": "TC-011",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Replace photo opens the Photo Picker; with 「Batch」 and 3 photos 「Next」 opens the Batch Edit Room",
+      "after": "Replace photo opens the Photo Picker\nWith 「Batch」 and 3 photos 「Next」 opens the Batch Edit Room"
+    },
+    {
+      "id": "TC-012",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); single-photo Edit Room open",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Single-photo Edit Room open"
+    },
+    {
+      "id": "TC-013",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-015",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-016",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)"
+    },
+    {
+      "id": "TC-017",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); the link phd://navigate/page?name=batch_edit sent to the phone (e.g. in Notes)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. The link phd://navigate/page?name=batch_edit sent to the phone (e.g. in Notes)"
+    },
+    {
+      "id": "TC-018",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-019",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-020",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-020",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The photo shown changes to photo 3, then photo 1; the thumbnails have no ×, and there is no way to add a photo from the strip",
+      "after": "The photo shown changes to photo 3, then photo 1\nThe thumbnails have no ×, and there is no way to add a photo from the strip"
+    },
+    {
+      "id": "TC-021",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-021",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One ↶ takes photo 1 back to before that room visit (no Exposure, no Contrast change); photo 2 keeps Contrast +30. ↷ brings both of photo 1's values back",
+      "after": "One ↶ takes photo 1 back to before that room visit (no Exposure, no Contrast change)\nPhoto 2 keeps Contrast +30\n↷ brings both of photo 1's values back"
+    },
+    {
+      "id": "TC-022",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-022",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One ↶ takes photo 3 back to before that room visit (uncropped and not rotated); photos 1, 2, 4, 5 stay square",
+      "after": "One ↶ takes photo 3 back to before that room visit (uncropped and not rotated)\nPhotos 1, 2, 4, 5 stay square"
+    },
+    {
+      "id": "TC-023",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-023",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "↶ shows photo 2 as before the Enhance (the others stay enhanced); ↷ brings the enhanced photo 2 back",
+      "after": "↶ shows photo 2 as before the Enhance (the others stay enhanced)\n↷ brings the enhanced photo 2 back"
+    },
+    {
+      "id": "TC-024",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-024",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "↷ no longer brings photo 2's enhanced result back; opening 「AI Enhance」 again can enhance it anew",
+      "after": "↷ no longer brings photo 2's enhanced result back\nOpening 「AI Enhance」 again can enhance it anew"
+    },
+    {
+      "id": "TC-025",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)"
+    },
+    {
+      "id": "TC-026",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-027",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-028",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-028",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The batch Crop & Rotate room opens: ‹ and 「1920 x 2560 ✎」-style size at the top, 「All」 disabled at the top right, the thumbnail strip, the angle slider, 「Rotate」, 「Flip」, 「Flip Vertically」, 「Original」, 「Custom」 and the ratios, ✕ ↶ ↷ ✓; no panel title bar",
+      "after": "The batch Crop & Rotate room opens: ‹ and 「1920 x 2560 ✎」-style size at the top, 「All」 disabled at the top right, the thumbnail strip, the angle slider, 「Rotate」, 「Flip」, 「Flip Vertically」, 「Original」, 「Custom」 and the ratios, ✕ ↶ ↷ ✓\nNo panel title bar"
+    },
+    {
+      "id": "TC-029",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-030",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-031",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-032",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-033",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-033",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The ratio switches to Free and 「All」 becomes enabled; after 「All」 the other photos get a 2:1 box at their own largest size, not 1000 x 500 px",
+      "after": "The ratio switches to Free and 「All」 becomes enabled\nAfter 「All」 the other photos get a 2:1 box at their own largest size, not 1000 x 500 px"
+    },
+    {
+      "id": "TC-034",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-035",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-036",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-037",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-037",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only photo 2's box moves; photos 1, 3, 4, 5 keep their square boxes",
+      "after": "Only photo 2's box moves\nPhotos 1, 3, 4, 5 keep their square boxes"
+    },
+    {
+      "id": "TC-038",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-038",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every photo, photo 2 included, now has a 3:4 crop; photo 2's own 2:3 is replaced; the toast reads 「Applied to 4 photos」",
+      "after": "Every photo, photo 2 included, now has a 3:4 crop\nPhoto 2's own 2:3 is replaced\nThe toast reads 「Applied to 4 photos」"
+    },
+    {
+      "id": "TC-039",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-039",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo 1 shows the largest 3:4 box, centred; after 「All」 every photo has its own largest 3:4 box, centred",
+      "after": "Photo 1 shows the largest 3:4 box, centred\nAfter 「All」 every photo has its own largest 3:4 box, centred"
+    },
+    {
+      "id": "TC-040",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-040",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo 1 keeps its small box at the bottom right; every other photo gets the largest square its size allows, pushed right / down only where it has room (centred where it has none)",
+      "after": "Photo 1 keeps its small box at the bottom right\nEvery other photo gets the largest square its size allows, pushed right / down only where it has room (centred where it has none)"
+    },
+    {
+      "id": "TC-041",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1; photo 1 a 16:9 landscape, photo 2 a 2:3 portrait",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1\n5. Photo 1 a 16:9 landscape, photo 2 a 2:3 portrait"
+    },
+    {
+      "id": "TC-041",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo 2 (portrait) gets a centred square, as it has no room left / right; landscape photos get their largest square at the far left",
+      "after": "Photo 2 (portrait) gets a centred square, as it has no room left / right\nLandscape photos get their largest square at the far left"
+    },
+    {
+      "id": "TC-042",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1; photo 1 a 4:5 portrait, photo 2 a 2:3 portrait, photo 3 a 16:9 landscape",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1\n5. Photo 1 a 4:5 portrait, photo 2 a 2:3 portrait, photo 3 a 16:9 landscape"
+    },
+    {
+      "id": "TC-042",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo 2's square sits at the bottom; photo 3 (no room up / down) is centred",
+      "after": "Photo 2's square sits at the bottom\nPhoto 3 (no room up / down) is centred"
+    },
+    {
+      "id": "TC-043",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-044",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-044",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The other photos get the same ratio at their largest box, at the top left where they have room; not the same relative size",
+      "after": "The other photos get the same ratio at their largest box, at the top left where they have room\nNot the same relative size"
+    },
+    {
+      "id": "TC-045",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-046",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1; photo 3 a 1:1 photo",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1\n5. Photo 3 a 1:1 photo"
+    },
+    {
+      "id": "TC-047",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-048",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-049",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-050",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-050",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "↶ removes the square from every photo at once and 「All」 becomes enabled; ↷ applies it to every photo again and 「All」 becomes disabled",
+      "after": "↶ removes the square from every photo at once and 「All」 becomes enabled\n↷ applies it to every photo again and 「All」 becomes disabled"
+    },
+    {
+      "id": "TC-051",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-051",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The room switches to photo 2 (strip selects it) and photo 2 is back to square; photo 4 and the others are unchanged",
+      "after": "The room switches to photo 2 (strip selects it) and photo 2 is back to square\nPhoto 4 and the others are unchanged"
+    },
+    {
+      "id": "TC-052",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-053",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-054",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-055",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Crop & Rotate」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Crop & Rotate」 open on photo 1"
+    },
+    {
+      "id": "TC-056",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-056",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The batch Adjustment room opens: ⓘ and 「All」 (disabled) at the top, the thumbnail strip, the slider, 「Light」 / 「Color」 / 「Details」, the tool row and ✕ ↶ ↷ ✓; no Subject Detection. Note whether 「AI Exposure」 is in the tool row (Design draws it, PM says not; Q-8)",
+      "after": "The batch Adjustment room opens: ⓘ and 「All」 (disabled) at the top, the thumbnail strip, the slider, 「Light」 / 「Color」 / 「Details」, the tool row and ✕ ↶ ↷ ✓\nNo Subject Detection\nNote whether 「AI Exposure」 is in the tool row (Design draws it, PM says not; Q-8)"
+    },
+    {
+      "id": "TC-057",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-057",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each tool changes photo 1 only and enables 「All」; the tools are those of the single Adjustment room (AI Exposure: Q-8)",
+      "after": "Each tool changes photo 1 only and enables 「All」\nThe tools are those of the single Adjustment room (AI Exposure: Q-8)"
+    },
+    {
+      "id": "TC-058",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-059",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-059",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every other photo matches photo 1 (Exposure +30); photo 3 no longer has its Contrast +10",
+      "after": "Every other photo matches photo 1 (Exposure +30)\nPhoto 3 no longer has its Contrast +10"
+    },
+    {
+      "id": "TC-060",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-061",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-061",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The first ↶ switches to photo 2 and undoes its Contrast (only photo 2), and the tab switches to 「Light」 (where Contrast is); the second ↶ undoes the Exposure +20 on every photo and 「All」 becomes enabled",
+      "after": "The first ↶ switches to photo 2 and undoes its Contrast (only photo 2), and the tab switches to 「Light」 (where Contrast is)\nThe second ↶ undoes the Exposure +20 on every photo and 「All」 becomes enabled"
+    },
+    {
+      "id": "TC-062",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-063",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-064",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-065",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-065",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The thumbnail strip hides and does not react to taps; 「All」 is still shown",
+      "after": "The thumbnail strip hides and does not react to taps\n「All」 is still shown"
+    },
+    {
+      "id": "TC-066",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1; Color › Curve open",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1\n5. Color › Curve open"
+    },
+    {
+      "id": "TC-124",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1; Color › Curve open",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1\n5. Color › Curve open"
+    },
+    {
+      "id": "TC-124",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The strip shows again once a slider tool (Exposure) is chosen; tapping photo 2 shows photo 2",
+      "after": "The strip shows again once a slider tool (Exposure) is chosen\nTapping photo 2 shows photo 2"
+    },
+    {
+      "id": "TC-067",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-067",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "HSL has the colour chips and the three sliders and hides the strip while 「All」 stays shown; going back to Exposure shows the strip again",
+      "after": "HSL has the colour chips and the three sliders and hides the strip while 「All」 stays shown\nGoing back to Exposure shows the strip again"
+    },
+    {
+      "id": "TC-068",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1; Color › Curve open with a point moved",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1\n5. Color › Curve open with a point moved"
+    },
+    {
+      "id": "TC-068",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Compare shows the photo without the curve while held; reset puts the curve back to straight",
+      "after": "Compare shows the photo without the curve while held\nReset puts the curve back to straight"
+    },
+    {
+      "id": "TC-069",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-070",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「Adjustment」 open on photo 1",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「Adjustment」 open on photo 1"
+    },
+    {
+      "id": "TC-070",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Auto adjusts photo 1; 「All」 applies the same settings to every other photo",
+      "after": "Auto adjusts photo 1\n「All」 applies the same settings to every other photo"
+    },
+    {
+      "id": "TC-071",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-071",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The batch AI Enhance room opens: one 「Enhance」 button with 「Maximize detaill and clarity with advanced AI.」, the strip above it, ✕ and ✓; no Standard / Advanced tabs, no scenarios, no credit price on the button",
+      "after": "The batch AI Enhance room opens: one 「Enhance」 button with 「Maximize detaill and clarity with advanced AI.」, the strip above it, ✕ and ✓\nNo Standard / Advanced tabs, no scenarios, no credit price on the button"
+    },
+    {
+      "id": "TC-072",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-072",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog 「Enhance 5 photos?」 / 「Processing takes a moment and cannot be canceled once started.」 with 「Cancel」 and 「Start」; no credit price",
+      "after": "The dialog 「Enhance 5 photos?」 / 「Processing takes a moment and cannot be canceled once started.」 with 「Cancel」 and 「Start」\nNo credit price"
+    },
+    {
+      "id": "TC-073",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-073",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog closes; the room is as before and no photo is processed",
+      "after": "The dialog closes\nThe room is as before and no photo is processed"
+    },
+    {
+      "id": "TC-074",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-074",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Creating Your AI Image」 and 「Enhancing k / 5」 with a progress bar cover the whole screen (strip included); k counts up to 5",
+      "after": "「Creating Your AI Image」 and 「Enhancing k / 5」 with a progress bar cover the whole screen (strip included)\nK counts up to 5"
+    },
+    {
+      "id": "TC-075",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-076",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-076",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every photo in the strip is enhanced; the button reads 「Enhanced」, greyed, and tapping it does nothing; no result message when all succeeded",
+      "after": "Every photo in the strip is enhanced\nThe button reads 「Enhanced」, greyed, and tapping it does nothing\nNo result message when all succeeded"
+    },
+    {
+      "id": "TC-077",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-077",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Enhance」 is enabled again; running it enhances the already enhanced photos (the dialog shows first)",
+      "after": "「Enhance」 is enabled again\nRunning it enhances the already enhanced photos (the dialog shows first)"
+    },
+    {
+      "id": "TC-078",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-079",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-079",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Batch Edit Room shows; note whether the enhanced results were kept (Q-11)",
+      "after": "The Batch Edit Room shows\nNote whether the enhanced results were kept (Q-11)"
+    },
+    {
+      "id": "TC-080",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-081",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open; note the credit balance (Mine › My Credits)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open\n5. Note the credit balance (Mine › My Credits)"
+    },
+    {
+      "id": "TC-082",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-083",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); Premium IAP opened from 「Enhance」",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. Premium IAP opened from 「Enhance」"
+    },
+    {
+      "id": "TC-084",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-125",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 20 photos (Launcher › Edit › Batch › 20 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 20 photos (Launcher › Edit › Batch › 20 photos › Next)"
+    },
+    {
+      "id": "TC-125",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A Free user crops, adjusts and saves all 20 photos with no IAP page and no credit; the toasts read 「Applied to 19 photos」",
+      "after": "A Free user crops, adjusts and saves all 20 photos with no IAP page and no credit\nThe toasts read 「Applied to 19 photos」"
+    },
+    {
+      "id": "TC-085",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 20 photos (Launcher › Edit › Batch › 20 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 20 photos (Launcher › Edit › Batch › 20 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-086",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro+ tier (Pink › ☰ › [0] IAP › Status = Pro+); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room with 5 photos; 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro+ tier (Pink › ☰ › [0] IAP › Status = Pro+)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room with 5 photos\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-087",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open; the app log available (log pull)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open\n5. The app log available (log pull)"
+    },
+    {
+      "id": "TC-088",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; some photos made to fail (a failure fixture from RD, or photos the server rejects)",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. Some photos made to fail (a failure fixture from RD, or photos the server rejects)"
+    },
+    {
+      "id": "TC-088",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One message at the end: 「12 completed, 3 failed」 / 「Failed photos are marked with ! on the thumbnails.」 (Design; PM omits 「with !」, Q-12); the failed thumbnails have a red ! at the top right; the button reads 「Retry Failed (3)」",
+      "after": "One message at the end: 「12 completed, 3 failed」 / 「Failed photos are marked with ! on the thumbnails.」 (Design; PM omits 「with !」, Q-12)\nThe failed thumbnails have a red ! at the top right\nThe button reads 「Retry Failed (3)」"
+    },
+    {
+      "id": "TC-089",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 3 failed",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. A run ended with 3 failed"
+    },
+    {
+      "id": "TC-090",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 3 failed",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. A run ended with 3 failed"
+    },
+    {
+      "id": "TC-090",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The message closes; the ! marks and 「Retry Failed (3)」 stay",
+      "after": "The message closes\nThe ! marks and 「Retry Failed (3)」 stay"
+    },
+    {
+      "id": "TC-091",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 「12 completed, 3 failed」; the failure fixture lets 2 of 3 succeed",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. A run ended with 「12 completed, 3 failed」\n6. The failure fixture lets 2 of 3 succeed"
+    },
+    {
+      "id": "TC-091",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only the 3 failed photos are processed (「Enhancing k / 3」); the message reads 「14 completed, 1 failed」 and the button 「Retry Failed (1)」; the ! is gone from the 2 that succeeded",
+      "after": "Only the 3 failed photos are processed (「Enhancing k / 3」)\nThe message reads 「14 completed, 1 failed」 and the button 「Retry Failed (1)」\nThe ! is gone from the 2 that succeeded"
+    },
+    {
+      "id": "TC-092",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 1 failed",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. A run ended with 1 failed"
+    },
+    {
+      "id": "TC-092",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The message and 「Retry Failed」 are gone; every thumbnail is free of !",
+      "after": "The message and 「Retry Failed」 are gone\nEvery thumbnail is free of !"
+    },
+    {
+      "id": "TC-093",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; Wi-Fi and mobile data controllable",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. Wi-Fi and mobile data controllable"
+    },
+    {
+      "id": "TC-093",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Finished photos stay enhanced; the unfinished get !; the message reads 「X completed, Y failed」 / 「Connection lost. Check your connection and retry.」; the button 「Retry Failed (Y)」",
+      "after": "Finished photos stay enhanced\nThe unfinished get !\nThe message reads 「X completed, Y failed」 / 「Connection lost. Check your connection and retry.」\nThe button 「Retry Failed (Y)」"
+    },
+    {
+      "id": "TC-094",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 「Connection lost…」; still offline",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. A run ended with 「Connection lost…」\n6. Still offline"
+    },
+    {
+      "id": "TC-095",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; a run ended with 「Connection lost…」",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. A run ended with 「Connection lost…」"
+    },
+    {
+      "id": "TC-095",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only the unfinished photos are processed; the message counts the whole batch",
+      "after": "Only the unfinished photos are processed\nThe message counts the whole batch"
+    },
+    {
+      "id": "TC-096",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open; the failure fixture on and Wi-Fi to be turned off mid-run",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open\n5. The failure fixture on and Wi-Fi to be turned off mid-run"
+    },
+    {
+      "id": "TC-097",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-098",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next); 「AI Enhance」 open",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 15 photos (Launcher › Edit › Batch › 15 photos › Next)\n4. 「AI Enhance」 open"
+    },
+    {
+      "id": "TC-098",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The app opens without the Batch Edit Room; the enhanced results are not kept anywhere (not in the gallery, not in My AI Artwork)",
+      "after": "The app opens without the Batch Edit Room\nThe enhanced results are not kept anywhere (not in the gallery, not in My AI Artwork)"
+    },
+    {
+      "id": "TC-099",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open; note My AI Artwork's contents",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open\n5. Note My AI Artwork's contents"
+    },
+    {
+      "id": "TC-100",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 20 photos (Launcher › Edit › Batch › 20 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 20 photos (Launcher › Edit › Batch › 20 photos › Next)"
+    },
+    {
+      "id": "TC-100",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Saving k / 20」 and 「Please do not leave this page or quit the app.」 with a progress bar show; when k reaches 20 the Batch Save page opens",
+      "after": "「Saving k / 20」 and 「Please do not leave this page or quit the app.」 with a progress bar show\nWhen k reaches 20 the Batch Save page opens"
+    },
+    {
+      "id": "TC-101",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved"
+    },
+    {
+      "id": "TC-102",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); note the gallery's photo count",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. Note the gallery's photo count"
+    },
+    {
+      "id": "TC-102",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The gallery has 5 new photos (the 4 unedited ones too); the 5 originals are still there unchanged",
+      "after": "The gallery has 5 new photos (the 4 unedited ones too)\nThe 5 originals are still there unchanged"
+    },
+    {
+      "id": "TC-103",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved"
+    },
+    {
+      "id": "TC-104",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved"
+    },
+    {
+      "id": "TC-105",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved"
+    },
+    {
+      "id": "TC-106",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved"
+    },
+    {
+      "id": "TC-107",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved; Photo Picker opened by 「Edit Next Batch」",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved\n6. Photo Picker opened by 「Edit Next Batch」"
+    },
+    {
+      "id": "TC-108",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved; Photo Picker opened by 「Edit Next Batch」",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved\n6. Photo Picker opened by 「Edit Next Batch」"
+    },
+    {
+      "id": "TC-109",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); the app's rating dialog due on the next save (RD setting)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. The app's rating dialog due on the next save (RD setting)"
+    },
+    {
+      "id": "TC-109",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The rating dialog counts the batch as one save (it shows once, not per photo); the IAP flyer / ads behave as for any save",
+      "after": "The rating dialog counts the batch as one save (it shows once, not per photo)\nThe IAP flyer / ads behave as for any save"
+    },
+    {
+      "id": "TC-110",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-111",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)"
+    },
+    {
+      "id": "TC-112",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)"
+    },
+    {
+      "id": "TC-112",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Launcher shows; opening Edit › Batch again starts with no photos and no edits",
+      "after": "The Launcher shows\nOpening Edit › Batch again starts with no photos and no edits"
+    },
+    {
+      "id": "TC-113",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)"
+    },
+    {
+      "id": "TC-113",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog closes; the Batch Edit Room keeps every edit",
+      "after": "The dialog closes\nThe Batch Edit Room keeps every edit"
+    },
+    {
+      "id": "TC-114",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)"
+    },
+    {
+      "id": "TC-115",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)"
+    },
+    {
+      "id": "TC-115",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The dialog shows first; after 「Discard」 the Photo Picker opens on 「Batch」 with the 5 photos still ticked",
+      "after": "The dialog shows first\nAfter 「Discard」 the Photo Picker opens on 「Batch」 with the 5 photos still ticked"
+    },
+    {
+      "id": "TC-116",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)"
+    },
+    {
+      "id": "TC-117",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)"
+    },
+    {
+      "id": "TC-118",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); the phone in Light appearance",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. The phone in Light appearance"
+    },
+    {
+      "id": "TC-119",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); the phone in Dark appearance",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. The phone in Dark appearance"
+    },
+    {
+      "id": "TC-120",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); the app's analytics events visible (log pull or RD event viewer)",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. The app's analytics events visible (log pull or RD event viewer)"
+    },
+    {
+      "id": "TC-121",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro); at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); 「AI Enhance」 open; analytics events visible",
+      "after": "1. iPhone, PhotoDirector signed in, Pro tier (Launcher › Pink › ☰ › [0] IAP › Status = Pro)\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. 「AI Enhance」 open\n5. Analytics events visible"
+    },
+    {
+      "id": "TC-122",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); analytics events visible",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Analytics events visible"
+    },
+    {
+      "id": "TC-123",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "iPhone, PhotoDirector signed in, Free tier; at least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9); Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next); one edit made (Crop & Rotate › 「Squre」 › ✓); saved; analytics events visible",
+      "after": "1. iPhone, PhotoDirector signed in, Free tier\n2. At least 21 photos in the gallery, of different sizes and ratios (e.g. 2:3, 4:5, 1:1, 16:9)\n3. Batch Edit Room open with 5 photos (Launcher › Edit › Batch › 5 photos › Next)\n4. One edit made (Crop & Rotate › 「Squre」 › ✓)\n5. Saved\n6. Analytics events visible"
+    }
+  ],
+  "notes": []
+}

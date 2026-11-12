@@ -170,6 +170,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **One step per line (user, 2026-11-03).** When a table cell holds two or more steps, each goes on its own
   numbered line, whether they were numbered (`1. … 2. …`) or plain sentences (`Open X, then tap Y`); `check.ts`
   warns (`formats.md`, writing rules).
+- **One item per line in Precondition and Expected Result (user, 2026-11-12).** No `;`-joined lines: each
+  precondition on its own numbered line, each expected check on its own unnumbered line (a step prefix repeated on
+  every line of that step); `check.ts` warns (`formats.md`, writing rules).
 - **Source read before the design check (user, 2026-11-04, REQ-081).** Every Design board the casebook inventories
   is read whole before any design pass walks its rows; `design.ts status` stops on a source gap until it is read or
   excluded with a reason (`figma/references/conformance.md` › *Plan*, `source.md` step 1).
@@ -217,6 +220,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
   show (`figma/references/conformance.md` §3).
 - **eBugs on Results (user, 2026-11-04).** A failed case on the Results page links its eBugs (filed from the run,
   the existing ticket it repeats, or named in the result) to eCL (`scripts/results-page.ts` header).
+- **One source for both platforms (user, 2026-11-11, batch-editing REQ-011).** Both tables of a feature read the same,
+  newest spec state: a PDF-only table also reads the Figma set the other table used, the Figma text wins, an Open
+  question the other table answers is a gap; `check.ts` warns. Controls with states get every state-changing event
+  (`analysis.md` pass 10b); Figma-only board text is compared exactly (`figma-text.ts`) (`SKILL.md` step 0).
 - **Both platforms by default (user, 2026-11-04).** A feature gets an iOS and an Android table unless the user names
   one platform (`SKILL.md` step 0).
 - **A Figma link is the spec (user, 2026-11-04).** When the user sends a Figma link and no PDF, read the spec from
@@ -231,6 +238,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   a table's Open questions sit on Cases above the table with answer boxes, applied as rulings (`SKILL.md` step 4,
   Question answers). Open pages update only when what they show changed (user, 2026-11-05): Progress, Results, Coverage and
   Design redraw in place, patching only what differs; Cases offers a Reload button (`scripts/pages.ts` header).
+- **Pages shown to the user (user, 2026-11-12).** A table or run page the user should see opens from the local pages
+  server (`node scripts/pages.ts`) in the browser pane, never as a `file://` copy; the agent's own look at a page uses
+  `get_page_text` / `read_page` on that server, or a tab it closes again before the turn ends.
 - **One pages server, only what is open (user, 2026-11-06).** `node scripts/pages.ts [--lan]` opens a navigation page
   for every table; a page's process starts on its first visit and stops when idle, and what the pages leave on disk
   is cleared (`scripts/pages.ts` header, `lib/housekeeping.ts`). A second start reuses the running server.

@@ -9691,7 +9691,7 @@
         "edge": "The New Guy's Secret",
         "segment": "P4-a",
         "section": "Templates",
-        "precondition": "More › Workplace Romance › position 3; balance at least 300 credits (stop rule below)",
+        "precondition": "1. More › Workplace Romance › position 3\n2. Balance at least 300 credits (stop rule below)",
         "action": "1. Open 「The New Guy's Secret」\n2. Check the cover and title\n3. Play the preview\n4. Tap Make my version",
         "result": "Pass",
         "run": "2026-10-22-p9-full"
@@ -9732,7 +9732,7 @@
         "edge": "The New Guy's Secret",
         "segment": "P4-a",
         "section": "Templates",
-        "precondition": "More › Workplace Romance › position 3; balance at least 300 credits (stop rule below)",
+        "precondition": "1. More › Workplace Romance › position 3\n2. Balance at least 300 credits (stop rule below)",
         "action": "1. Open 「The New Guy's Secret」\n2. Check the cover and title\n3. Play the preview\n4. Tap Make my version",
         "result": "Pass",
         "run": "2026-10-22-p9-full"
@@ -9814,7 +9814,7 @@
         "edge": "Create Next Episode",
         "segment": "P5-c",
         "section": "Video",
-        "precondition": "Full video finished; 「Ready for the next episode?」 shown",
+        "precondition": "1. Full video finished\n2. 「Ready for the next episode?」 shown",
         "action": "Tap 「Create Next Episode」",
         "result": "Blocked",
         "run": "2026-10-22-p9-full"
@@ -9855,7 +9855,7 @@
         "edge": "Create Next Episode",
         "segment": "P5-c",
         "section": "Video",
-        "precondition": "Full video finished; 「Ready for the next episode?」 shown",
+        "precondition": "1. Full video finished\n2. 「Ready for the next episode?」 shown",
         "action": "Tap 「Create Next Episode」",
         "result": "Blocked",
         "run": "2026-10-22-p9-full"
@@ -9978,7 +9978,7 @@
         "edge": "",
         "segment": "",
         "section": "Story outline",
-        "precondition": "Outline generated; the app's Appearance set to 「Light mode」 (Home ☰ › Settings › Preferences › Appearance)",
+        "precondition": "1. Outline generated\n2. The app's Appearance set to 「Light mode」 (Home ☰ › Settings › Preferences › Appearance)",
         "action": "1. Read the chat with the 「Story Outline & Characters Result」 card\n2. Scroll to the idea box",
         "result": "Not run",
         "run": ""
@@ -10126,7 +10126,7 @@
         "edge": "Storyboard Error: scene image regenerating (生成, skeletons in scene detail) → regenerated scene detail",
         "segment": "",
         "section": "Storyboard",
-        "precondition": "A scene whose Location and scene images both failed (Pink › Trip image moderation; record the switch); 「Regenerate Image」 ◆12 tapped in its scene detail (after TC-070)",
+        "precondition": "1. A scene whose Location and scene images both failed (Pink › Trip image moderation; record the switch)\n2. 「Regenerate Image」 ◆6 tapped in its scene detail (after TC-070)",
         "action": "Stay on the scene detail until the generation ends",
         "result": "Not run",
         "run": ""

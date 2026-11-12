@@ -1,0 +1,1576 @@
+{
+  "saved_at": "2026-11-12T01:38:23.951Z",
+  "version": 3,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-001",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Collage room shows at its top the banner 「Try Swipe Collage!」 with 「Create the perfect year-end recap post.」; the rest of the Collage room looks as before (layouts, tabs, templates)",
+      "after": "The Collage room shows at its top the banner 「Try Swipe Collage!」 with 「Create the perfect year-end recap post.」\nThe rest of the Collage room looks as before (layouts, tabs, templates)"
+    },
+    {
+      "id": "TC-002",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Template Page opens with the title 「Swipe Collage」; it is a separate room, not a Collage category tab",
+      "after": "The Template Page opens with the title 「Swipe Collage」\nIt is a separate room, not a Collage category tab"
+    },
+    {
+      "id": "TC-004",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; a deeplink scrollable_collage (no parameters) sent to the phone (e.g. in Notes)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. A deeplink scrollable_collage (no parameters) sent to the phone (e.g. in Notes)"
+    },
+    {
+      "id": "TC-005",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; a deeplink scrollable_collage with the category_guid of a category other than 「Year End」",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. A deeplink scrollable_collage with the category_guid of a category other than 「Year End」"
+    },
+    {
+      "id": "TC-006",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; a deeplink scrollable_collage with a template_guid",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. A deeplink scrollable_collage with a template_guid"
+    },
+    {
+      "id": "TC-007",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; opened a template's Template Preview from a deeplink with template_guid",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Opened a template's Template Preview from a deeplink with template_guid"
+    },
+    {
+      "id": "TC-008",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; opened the Template Page from a deeplink scrollable_collage",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Opened the Template Page from a deeplink scrollable_collage"
+    },
+    {
+      "id": "TC-009",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Features grid shows a 「Swipe Collage」 shortcut with the Swipe Collage icon and no NEW / HOT badge, after 「AI Art」 on the first page; 「Collage」 is still there",
+      "after": "The Features grid shows a 「Swipe Collage」 shortcut with the Swipe Collage icon and no NEW / HOT badge, after 「AI Art」 on the first page\n「Collage」 is still there"
+    },
+    {
+      "id": "TC-010",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open (banner tapped)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open (banner tapped)"
+    },
+    {
+      "id": "TC-010",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Title 「Swipe Collage」 with ‹; category tabs 3–4 long, 「Year End」 first (Design draws 「Year End」, 「Category1」, 「Category2」); 「Year End」 is selected",
+      "after": "Title 「Swipe Collage」 with ‹\nCategory tabs 3–4 long, 「Year End」 first (Design draws 「Year End」, 「Category1」, 「Category2」)\n「Year End」 is selected"
+    },
+    {
+      "id": "TC-011",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open on 「Year End」",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open on 「Year End」"
+    },
+    {
+      "id": "TC-011",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Templates are in a waterfall (masonry) list; each card shows only 「N photos · M pages」 (e.g. 「9 photos · 5 pages」) and no portrait / landscape label; each thumbnail shows the template's first page",
+      "after": "Templates are in a waterfall (masonry) list\nEach card shows only 「N photos · M pages」 (e.g. 「9 photos · 5 pages」) and no portrait / landscape label\nEach thumbnail shows the template's first page"
+    },
+    {
+      "id": "TC-012",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open"
+    },
+    {
+      "id": "TC-012",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The card shows the template's next page (and the next on further swipes); the list itself does not scroll",
+      "after": "The card shows the template's next page (and the next on further swipes)\nThe list itself does not scroll"
+    },
+    {
+      "id": "TC-013",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open on 「Year End」",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open on 「Year End」"
+    },
+    {
+      "id": "TC-013",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each tab shows its own templates; the selected tab is highlighted",
+      "after": "Each tab shows its own templates\nThe selected tab is highlighted"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open"
+    },
+    {
+      "id": "TC-014",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Cards the CMS marks NEW show 「NEW」; PRO templates show a PRO icon at the top right of the card; free templates show neither",
+      "after": "Cards the CMS marks NEW show 「NEW」\nPRO templates show a PRO icon at the top right of the card\nFree templates show neither"
+    },
+    {
+      "id": "TC-015",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open"
+    },
+    {
+      "id": "TC-016",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open; phone region and language Traditional Chinese (Taiwan)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open\n3. Phone region and language Traditional Chinese (Taiwan)"
+    },
+    {
+      "id": "TC-016",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The thumbnails follow the Eastern / Western set of the locale (as PM answers Q-3); every page of a template has a thumbnail",
+      "after": "The thumbnails follow the Eastern / Western set of the locale (as PM answers Q-3)\nEvery page of a template has a thumbnail"
+    },
+    {
+      "id": "TC-017",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open from the Collage banner",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open from the Collage banner"
+    },
+    {
+      "id": "TC-018",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open"
+    },
+    {
+      "id": "TC-019",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; a free 「9 photos · 5 pages」 template's Template Preview open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. A free 「9 photos · 5 pages」 template's Template Preview open"
+    },
+    {
+      "id": "TC-019",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Title 「Template」, the category 「Year End」, 「9 photos · 5 pages」 and the button 「Use Template」; the preview shows the template's default layout (Design draws 「9 photos · 5pages」 with no space: expect 「5 pages」)",
+      "after": "Title 「Template」, the category 「Year End」, 「9 photos · 5 pages」 and the button 「Use Template」\nThe preview shows the template's default layout (Design draws 「9 photos · 5pages」 with no space: expect 「5 pages」)"
+    },
+    {
+      "id": "TC-020",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Preview of a 5-page template open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Preview of a 5-page template open"
+    },
+    {
+      "id": "TC-021",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Page open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Page open"
+    },
+    {
+      "id": "TC-022",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Preview of a free template open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Preview of a free template open"
+    },
+    {
+      "id": "TC-023",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Preview of a PRO template open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Preview of a PRO template open"
+    },
+    {
+      "id": "TC-024",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Preview open from the Template Page",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Preview open from the Template Page"
+    },
+    {
+      "id": "TC-025",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-025",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Bottom: 「Background」, 「Layers」, +, 「Ratio」, 「Pages」, and under them ✕, ↶, ↷, ✓; no top bar. Every empty slot shows +",
+      "after": "Bottom: 「Background」, 「Layers」, +, 「Ratio」, 「Pages」, and under them ✕, ↶, ↷, ✓\nNo top bar\nEvery empty slot shows +"
+    },
+    {
+      "id": "TC-026",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-026",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The canvas scrolls page by page horizontally; the view zooms in and out freely, and the pages stay one continuous canvas",
+      "after": "The canvas scrolls page by page horizontally\nThe view zooms in and out freely, and the pages stay one continuous canvas"
+    },
+    {
+      "id": "TC-027",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)"
+    },
+    {
+      "id": "TC-027",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The frame grows; the photo stays inside it",
+      "after": "The frame grows\nThe photo stays inside it"
+    },
+    {
+      "id": "TC-028",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-029",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)"
+    },
+    {
+      "id": "TC-030",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)"
+    },
+    {
+      "id": "TC-030",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each ↶ undoes one operation in reverse order back to the start; each ↷ redoes them in order",
+      "after": "Each ↶ undoes one operation in reverse order back to the start\nEach ↷ redoes them in order"
+    },
+    {
+      "id": "TC-031",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker placed so its centre is on page 2 and it overlaps page 3",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A sticker placed so its centre is on page 2 and it overlaps page 3"
+    },
+    {
+      "id": "TC-032",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-033",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; 3 empty frames on the canvas",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. 3 empty frames on the canvas"
+    },
+    {
+      "id": "TC-034",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; 3 empty frames on the canvas",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. 3 empty frames on the canvas"
+    },
+    {
+      "id": "TC-035",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; empty frames on several pages",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Empty frames on several pages"
+    },
+    {
+      "id": "TC-036",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; more than 20 empty frames (add frames with + › 「Frame」 until 21 are empty)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. More than 20 empty frames (add frames with + › 「Frame」 until 21 are empty)"
+    },
+    {
+      "id": "TC-037",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; 9 empty frames",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. 9 empty frames"
+    },
+    {
+      "id": "TC-038",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-039",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)"
+    },
+    {
+      "id": "TC-039",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "First tap: frame focus with the frame tools; second: image focus with 「Image selected」 and the image tools; third: back to frame focus",
+      "after": "First tap: frame focus with the frame tools\nSecond: image focus with 「Image selected」 and the image tools\nThird: back to frame focus"
+    },
+    {
+      "id": "TC-040",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus"
+    },
+    {
+      "id": "TC-040",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Feature bar: 「Opacity」, 「Shadow」, 「Flip H」, 「Flip V」, 「Duplicate」, 「Lock」 and Delete; floating Delete, Duplicate and Lock icons at the frame",
+      "after": "Feature bar: 「Opacity」, 「Shadow」, 「Flip H」, 「Flip V」, 「Duplicate」, 「Lock」 and Delete\nFloating Delete, Duplicate and Lock icons at the frame"
+    },
+    {
+      "id": "TC-041",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus"
+    },
+    {
+      "id": "TC-042",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus"
+    },
+    {
+      "id": "TC-043",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus"
+    },
+    {
+      "id": "TC-044",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus"
+    },
+    {
+      "id": "TC-045",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus"
+    },
+    {
+      "id": "TC-046",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus"
+    },
+    {
+      "id": "TC-047",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-047",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "One bar scrolls horizontally: 「Replace」, 「Flip H」, 「Flip V」, 「Adjust」, 「Filter」, 「Removal」, 「Enhance」; 「Removal」 and 「Enhance」 carry a premium tag",
+      "after": "One bar scrolls horizontally: 「Replace」, 「Flip H」, 「Flip V」, 「Adjust」, 「Filter」, 「Removal」, 「Enhance」\n「Removal」 and 「Enhance」 carry a premium tag"
+    },
+    {
+      "id": "TC-048",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-049",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-049",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The image flips horizontally, then vertically, inside its frame; the frame does not flip",
+      "after": "The image flips horizontally, then vertically, inside its frame\nThe frame does not flip"
+    },
+    {
+      "id": "TC-050",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-050",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The tools are the Collage room's; only the focused image changes",
+      "after": "The tools are the Collage room's\nOnly the focused image changes"
+    },
+    {
+      "id": "TC-051",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-052",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-052",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The photo is removed; the frame stays, empty, with the + add-image icon",
+      "after": "The photo is removed\nThe frame stays, empty, with the + add-image icon"
+    },
+    {
+      "id": "TC-053",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Pro tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Pro tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-054",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Pro tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Object Removal opened from image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Pro tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Object Removal opened from image focus"
+    },
+    {
+      "id": "TC-054",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The canvas shows in image focus with the result in place of the photo; ↶ brings the original back; the photo album has no new image",
+      "after": "The canvas shows in image focus with the result in place of the photo\n↶ brings the original back\nThe photo album has no new image"
+    },
+    {
+      "id": "TC-055",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Pro tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Object Removal opened from image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Pro tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Object Removal opened from image focus"
+    },
+    {
+      "id": "TC-056",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Object Removal opened from image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Object Removal opened from image focus"
+    },
+    {
+      "id": "TC-056",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「PhotoDirector Premium」 IAP page opens; nothing is applied to the canvas",
+      "after": "The 「PhotoDirector Premium」 IAP page opens\nNothing is applied to the canvas"
+    },
+    {
+      "id": "TC-057",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in Object Removal",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. The IAP page opened by ✓ in Object Removal"
+    },
+    {
+      "id": "TC-058",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Pro tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Pro tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-059",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Pro tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); AI Enhance opened from image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Pro tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. AI Enhance opened from image focus"
+    },
+    {
+      "id": "TC-059",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The canvas shows in image focus with the enhanced photo; ↶ brings the original back; the photo album has no new image",
+      "after": "The canvas shows in image focus with the enhanced photo\n↶ brings the original back\nThe photo album has no new image"
+    },
+    {
+      "id": "TC-060",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Pro tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); AI Enhance opened from image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Pro tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. AI Enhance opened from image focus"
+    },
+    {
+      "id": "TC-061",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); AI Enhance opened from image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. AI Enhance opened from image focus"
+    },
+    {
+      "id": "TC-061",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「PhotoDirector Premium」 IAP page opens; nothing is applied",
+      "after": "The 「PhotoDirector Premium」 IAP page opens\nNothing is applied"
+    },
+    {
+      "id": "TC-062",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the IAP page opened by ✓ in AI Enhance",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. The IAP page opened by ✓ in AI Enhance"
+    },
+    {
+      "id": "TC-063",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)"
+    },
+    {
+      "id": "TC-064",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a multi-photo frame (e.g. film strip) with photos in its cells",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A multi-photo frame (e.g. film strip) with photos in its cells"
+    },
+    {
+      "id": "TC-065",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame in frame focus"
+    },
+    {
+      "id": "TC-065",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A frame style list opens from the frame toolbar (PM proposal: a first tool 「Frame」); the style changes by choosing, not by dragging",
+      "after": "A frame style list opens from the frame toolbar (PM proposal: a first tool 「Frame」)\nThe style changes by choosing, not by dragging"
+    },
+    {
+      "id": "TC-066",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a single-photo frame holding photo A in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A single-photo frame holding photo A in frame focus"
+    },
+    {
+      "id": "TC-066",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Photo A is in the first cell (top-left); the other cells show + add image",
+      "after": "Photo A is in the first cell (top-left)\nThe other cells show + add image"
+    },
+    {
+      "id": "TC-067",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a 3-photo frame holding A, B, C (reading order) in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A 3-photo frame holding A, B, C (reading order) in frame focus"
+    },
+    {
+      "id": "TC-067",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The frame holds A; B and C are gone",
+      "after": "The frame holds A\nB and C are gone"
+    },
+    {
+      "id": "TC-068",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a 4-photo frame holding A, B, C, D (reading order) in frame focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A 4-photo frame holding A, B, C, D (reading order) in frame focus"
+    },
+    {
+      "id": "TC-068",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The frame holds A and B; C and D are gone",
+      "after": "The frame holds A and B\nC and D are gone"
+    },
+    {
+      "id": "TC-069",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a 3-photo frame A, B, C switched to single (holds A)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A 3-photo frame A, B, C switched to single (holds A)"
+    },
+    {
+      "id": "TC-069",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "After switching back only A is there (the other cells show +); ↶ restores A, B, C",
+      "after": "After switching back only A is there (the other cells show +)\n↶ restores A, B, C"
+    },
+    {
+      "id": "TC-070",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a frame locked (frame focus › 「Lock」)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A frame locked (frame focus › 「Lock」)"
+    },
+    {
+      "id": "TC-071",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a locked frame in focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A locked frame in focus"
+    },
+    {
+      "id": "TC-071",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Opacity」, 「Shadow」, 「Flip H」, 「Flip V」 are disabled and do nothing; 「Duplicate」, 「Unlock」 and Delete work",
+      "after": "「Opacity」, 「Shadow」, 「Flip H」, 「Flip V」 are disabled and do nothing\n「Duplicate」, 「Unlock」 and Delete work"
+    },
+    {
+      "id": "TC-072",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a locked frame in focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A locked frame in focus"
+    },
+    {
+      "id": "TC-073",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a locked frame in focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A locked frame in focus"
+    },
+    {
+      "id": "TC-074",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-074",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Image locked」 shows; the image does not move or zoom",
+      "after": "「Image locked」 shows\nThe image does not move or zoom"
+    },
+    {
+      "id": "TC-075",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a locked image in focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A locked image in focus"
+    },
+    {
+      "id": "TC-075",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every tool except 「Unlock」 and 「Delete」 is disabled; the floating buttons are Delete, Duplicate and Unlock",
+      "after": "Every tool except 「Unlock」 and 「Delete」 is disabled\nThe floating buttons are Delete, Duplicate and Unlock"
+    },
+    {
+      "id": "TC-076",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a locked frame and a locked image",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A locked frame and a locked image"
+    },
+    {
+      "id": "TC-077",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a locked frame on page 2",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A locked frame on page 2"
+    },
+    {
+      "id": "TC-078",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-079",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer open"
+    },
+    {
+      "id": "TC-079",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The photo picker opens; after picking, the canvas shows the photo as a new single-photo frame",
+      "after": "The photo picker opens\nAfter picking, the canvas shows the photo as a new single-photo frame"
+    },
+    {
+      "id": "TC-080",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer open"
+    },
+    {
+      "id": "TC-080",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Collage text input opens with the keyboard; after Done the keyboard closes and the new text 「Strong」 is on the canvas",
+      "after": "The Collage text input opens with the keyboard\nAfter Done the keyboard closes and the new text 「Strong」 is on the canvas"
+    },
+    {
+      "id": "TC-081",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer open"
+    },
+    {
+      "id": "TC-081",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Edit Room sticker panel opens (tabs such as 「Favorites」, 「AI Sticker」, 「Flower」, 「Holiday」); the sticker appears on the canvas",
+      "after": "The Edit Room sticker panel opens (tabs such as 「Favorites」, 「AI Sticker」, 「Flower」, 「Holiday」)\nThe sticker appears on the canvas"
+    },
+    {
+      "id": "TC-082",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer › 「Text」 open with 「Strong」 typed",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer › 「Text」 open with 「Strong」 typed"
+    },
+    {
+      "id": "TC-082",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each style applies to the text as in the Collage text input; the keyboard closes on Done and the styled text is on the canvas",
+      "after": "Each style applies to the text as in the Collage text input\nThe keyboard closes on Done and the styled text is on the canvas"
+    },
+    {
+      "id": "TC-083",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer open"
+    },
+    {
+      "id": "TC-083",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Frame panel shows square thumbnails labelled 「1 photo」, 「3 photos」…; the chosen frame appears on the canvas with 3 empty cells showing +",
+      "after": "The Frame panel shows square thumbnails labelled 「1 photo」, 「3 photos」…\nThe chosen frame appears on the canvas with 3 empty cells showing +"
+    },
+    {
+      "id": "TC-084",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Frame panel open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Frame panel open"
+    },
+    {
+      "id": "TC-084",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "New frames show 「NEW」; PRO frames show a PRO icon",
+      "after": "New frames show 「NEW」\nPRO frames show a PRO icon"
+    },
+    {
+      "id": "TC-085",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Add Layer open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Add Layer open"
+    },
+    {
+      "id": "TC-085",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Edit Room Text Bubble panel opens; the bubble appears on the canvas",
+      "after": "The Edit Room Text Bubble panel opens\nThe bubble appears on the canvas"
+    },
+    {
+      "id": "TC-086",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; a text bubble added and focused, the Text Bubble panel open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. A text bubble added and focused, the Text Bubble panel open"
+    },
+    {
+      "id": "TC-087",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-088",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Background › 「Solid」 open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Background › 「Solid」 open"
+    },
+    {
+      "id": "TC-088",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "32 swatches (8 × 4); the canvas background of every page takes the colour at once",
+      "after": "32 swatches (8 × 4)\nThe canvas background of every page takes the colour at once"
+    },
+    {
+      "id": "TC-089",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Background › 「Solid」 open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Background › 「Solid」 open"
+    },
+    {
+      "id": "TC-090",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Background custom colour picker open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Background custom colour picker open"
+    },
+    {
+      "id": "TC-091",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Background custom colour picker open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Background custom colour picker open"
+    },
+    {
+      "id": "TC-092",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Background custom colour picker open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Background custom colour picker open"
+    },
+    {
+      "id": "TC-093",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Background panel open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Background panel open"
+    },
+    {
+      "id": "TC-093",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The texture fills the whole canvas and every page with no visible seam between pages or tiles; NEW / PRO textures are marked; 「Solid」 switches back to the swatches",
+      "after": "The texture fills the whole canvas and every page with no visible seam between pages or tiles\nNEW / PRO textures are marked\n「Solid」 switches back to the swatches"
+    },
+    {
+      "id": "TC-094",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Background panel open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Background panel open"
+    },
+    {
+      "id": "TC-095",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Background panel open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Background panel open"
+    },
+    {
+      "id": "TC-096",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker and a text added",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A sticker and a text added"
+    },
+    {
+      "id": "TC-097",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Layers open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Layers open"
+    },
+    {
+      "id": "TC-097",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Delete」, 「Duplicate」, 「Lock」 each with an icon; Duplicate adds a copy layer; after Lock the menu shows 「Unlock」 instead of 「Lock」",
+      "after": "「Delete」, 「Duplicate」, 「Lock」 each with an icon\nDuplicate adds a copy layer\nAfter Lock the menu shows 「Unlock」 instead of 「Lock」"
+    },
+    {
+      "id": "TC-098",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Layers open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Layers open"
+    },
+    {
+      "id": "TC-099",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Layers open; a sticker over a photo frame",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Layers open\n5. A sticker over a photo frame"
+    },
+    {
+      "id": "TC-099",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The order changes; on the canvas the sticker is now behind the frame",
+      "after": "The order changes\nOn the canvas the sticker is now behind the frame"
+    },
+    {
+      "id": "TC-100",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Layers open, a layer duplicated",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Layers open, a layer duplicated"
+    },
+    {
+      "id": "TC-100",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The panel closes; the duplicate stays on the canvas",
+      "after": "The panel closes\nThe duplicate stays on the canvas"
+    },
+    {
+      "id": "TC-101",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Layers open, a layer duplicated",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Layers open, a layer duplicated"
+    },
+    {
+      "id": "TC-101",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The panel closes; the duplicate is gone (Q-10)",
+      "after": "The panel closes\nThe duplicate is gone (Q-10)"
+    },
+    {
+      "id": "TC-102",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-103",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)"
+    },
+    {
+      "id": "TC-103",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "At 9:16 each page grows downward and at 1:1 shrinks upward; the width stays the same and no element moves",
+      "after": "At 9:16 each page grows downward and at 1:1 shrinks upward\nThe width stays the same and no element moves"
+    },
+    {
+      "id": "TC-104",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown"
+    },
+    {
+      "id": "TC-104",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Every ratio changes the page shape; the exported images have the chosen ratio with a 1080 px short side (subject to Q-13)",
+      "after": "Every ratio changes the page shape\nThe exported images have the chosen ratio with a 1080 px short side (subject to Q-13)"
+    },
+    {
+      "id": "TC-105",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Ratio panel open, canvas at 1:1",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Ratio panel open, canvas at 1:1"
+    },
+    {
+      "id": "TC-106",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Ratio panel open, canvas at 1:1",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Ratio panel open, canvas at 1:1"
+    },
+    {
+      "id": "TC-107",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the canvas shows page 3 of 5",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. The canvas shows page 3 of 5"
+    },
+    {
+      "id": "TC-107",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Pages opens with page 3 selected and 「Page 3 / 5」; the pages are joined with only a thin line between them",
+      "after": "Pages opens with page 3 selected and 「Page 3 / 5」\nThe pages are joined with only a thin line between them"
+    },
+    {
+      "id": "TC-108",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Pages open with 5 pages",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Pages open with 5 pages"
+    },
+    {
+      "id": "TC-108",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each + adds a blank page at the end and scrolls to it (7 pages); − removes the last page (6 pages)",
+      "after": "Each + adds a blank page at the end and scrolls to it (7 pages)\n− removes the last page (6 pages)"
+    },
+    {
+      "id": "TC-109",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Pages open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Pages open"
+    },
+    {
+      "id": "TC-109",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "At 10 pages the row +, the bottom + and 「Duplicate page」 are disabled; the count stays 10",
+      "after": "At 10 pages the row +, the bottom + and 「Duplicate page」 are disabled\nThe count stays 10"
+    },
+    {
+      "id": "TC-110",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Pages open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Pages open"
+    },
+    {
+      "id": "TC-110",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "At 1 page the bottom − and 「Delete page」 are disabled; the page stays",
+      "after": "At 1 page the bottom − and 「Delete page」 are disabled\nThe page stays"
+    },
+    {
+      "id": "TC-111",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open with 5 pages",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open with 5 pages"
+    },
+    {
+      "id": "TC-112",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open with 5 pages",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open with 5 pages"
+    },
+    {
+      "id": "TC-113",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); a sticker whose centre is on page 2 and which reaches into page 3",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. A sticker whose centre is on page 2 and which reaches into page 3"
+    },
+    {
+      "id": "TC-114",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open with 5 pages",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open with 5 pages"
+    },
+    {
+      "id": "TC-114",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While dragging the thumbnail is enlarged and half transparent and the others make room; after release page 1 is third; the hint 「Hold ≡ & drag to reorder」 is shown",
+      "after": "While dragging the thumbnail is enlarged and half transparent and the others make room\nAfter release page 1 is third\nThe hint 「Hold ≡ & drag to reorder」 is shown"
+    },
+    {
+      "id": "TC-115",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open"
+    },
+    {
+      "id": "TC-116",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open"
+    },
+    {
+      "id": "TC-116",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Page 4 is selected (「Page 4 / 5」); its frames cannot be moved; ✓ returns to the canvas showing page 4",
+      "after": "Page 4 is selected (「Page 4 / 5」)\nIts frames cannot be moved\n✓ returns to the canvas showing page 4"
+    },
+    {
+      "id": "TC-117",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open"
+    },
+    {
+      "id": "TC-118",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open"
+    },
+    {
+      "id": "TC-119",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open; one page deleted; 「Discard changes?」 shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open\n5. One page deleted\n6. 「Discard changes?」 shown"
+    },
+    {
+      "id": "TC-120",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open; one page deleted; 「Discard changes?」 shown",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open\n5. One page deleted\n6. 「Discard changes?」 shown"
+    },
+    {
+      "id": "TC-121",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Pages open, nothing changed",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Pages open, nothing changed"
+    },
+    {
+      "id": "TC-122",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; Pages open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Pages open"
+    },
+    {
+      "id": "TC-122",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The buttons show their pressed states while held; at the limits the stepper's + (10) or − (1) and the row + are drawn disabled, as the Canvas icon button sheets draw",
+      "after": "The buttons show their pressed states while held\nAt the limits the stepper's + (10) or − (1) and the row + are drawn disabled, as the Canvas icon button sheets draw"
+    },
+    {
+      "id": "TC-123",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); one photo moved",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. One photo moved"
+    },
+    {
+      "id": "TC-124",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); 「Discard changes?」 shown after ✕",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. 「Discard changes?」 shown after ✕"
+    },
+    {
+      "id": "TC-124",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The Template Preview of the same template shows; reopening it with 「Use Template」 gives a fresh canvas",
+      "after": "The Template Preview of the same template shows\nReopening it with 「Use Template」 gives a fresh canvas"
+    },
+    {
+      "id": "TC-125",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); 「Discard changes?」 shown after ✕",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. 「Discard changes?」 shown after ✕"
+    },
+    {
+      "id": "TC-126",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); an image in image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. An image in image focus"
+    },
+    {
+      "id": "TC-126",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The same 「Discard changes?」 dialog appears; Discard returns to the Template Preview",
+      "after": "The same 「Discard changes?」 dialog appears\nDiscard returns to the Template Preview"
+    },
+    {
+      "id": "TC-127",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); edits made on several pages",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Edits made on several pages"
+    },
+    {
+      "id": "TC-127",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Continue editing?」 appears (as in Edit Room); continuing reopens the Swipe Collage canvas with every page and edit",
+      "after": "「Continue editing?」 appears (as in Edit Room)\nContinuing reopens the Swipe Collage canvas with every page and edit"
+    },
+    {
+      "id": "TC-128",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; canvas A edited and left with ✕ › 「Discard」; canvas B (another template) edited; the app killed while canvas B is open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Canvas A edited and left with ✕ › 「Discard」\n3. Canvas B (another template) edited\n4. The app killed while canvas B is open"
+    },
+    {
+      "id": "TC-129",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)"
+    },
+    {
+      "id": "TC-130",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open (5 pages)"
+    },
+    {
+      "id": "TC-131",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open (5 pages)"
+    },
+    {
+      "id": "TC-131",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The 「PhotoDirector」 album has 5 new images, one per page, in page order; no watermark on any; no rating dialog appears",
+      "after": "The 「PhotoDirector」 album has 5 new images, one per page, in page order\nNo watermark on any\nNo rating dialog appears"
+    },
+    {
+      "id": "TC-132",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages), preview swiped to 「3/5」",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open (5 pages), preview swiped to 「3/5」"
+    },
+    {
+      "id": "TC-133",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); the canvas reduced to 1 page in Pages",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. The canvas reduced to 1 page in Pages"
+    },
+    {
+      "id": "TC-134",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open (5 pages); Instagram, Facebook, Twitter, Line and Tiktok installed",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open (5 pages)\n5. Instagram, Facebook, Twitter, Line and Tiktok installed"
+    },
+    {
+      "id": "TC-134",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Share to」 lists Instagram, Facebook, Twitter, Line, Tiktok; each app opens with the 5 images when it takes several, otherwise the app just opens",
+      "after": "「Share to」 lists Instagram, Facebook, Twitter, Line, Tiktok\nEach app opens with the 5 images when it takes several, otherwise the app just opens"
+    },
+    {
+      "id": "TC-135",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Settings › Image Quality set to its highest value; canvas ratio 4:5",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Settings › Image Quality set to its highest value\n5. Canvas ratio 4:5"
+    },
+    {
+      "id": "TC-136",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); Save & Share open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Save & Share open"
+    },
+    {
+      "id": "TC-137",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); images saved from Save & Share",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Images saved from Save & Share"
+    },
+    {
+      "id": "TC-138",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; every frame filled with photos (frame + › pick › Done); credit balance noted (Mine › My Credits)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. Every frame filled with photos (frame + › pick › Done)\n4. Credit balance noted (Mine › My Credits)"
+    },
+    {
+      "id": "TC-139",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; a PRO template opened with 「Use Template」 and one frame filled",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. A PRO template opened with 「Use Template」 and one frame filled"
+    },
+    {
+      "id": "TC-140",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; a PRO frame added from Add Layer › 「Frame」",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. A PRO frame added from Add Layer › 「Frame」"
+    },
+    {
+      "id": "TC-141",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown; a PRO texture set as background",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Year End」 template with several pages and empty photo frames (e.g. 「9 photos · 5 pages」) opened with 「Use Template」, canvas shown\n3. A PRO texture set as background"
+    },
+    {
+      "id": "TC-142",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Pro tier; a PRO template opened, a PRO frame and a PRO texture used",
+      "after": "1. Android phone, PhotoDirector signed in, Pro tier\n2. A PRO template opened, a PRO frame and a PRO texture used"
+    },
+    {
+      "id": "TC-142",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Save & Share opens directly and the images save; no IAP page",
+      "after": "Save & Share opens directly and the images save\nNo IAP page"
+    },
+    {
+      "id": "TC-143",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; a free template with 2 pages opened, frames filled; no PRO content",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. A free template with 2 pages opened, frames filled\n3. No PRO content"
+    },
+    {
+      "id": "TC-143",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The first two saves go through; the third save opens the IAP page (counted per export, not per image: 4 images saved before it)",
+      "after": "The first two saves go through\nThe third save opens the IAP page (counted per export, not per image: 4 images saved before it)"
+    },
+    {
+      "id": "TC-144",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Pro tier; a free template opened, frames filled",
+      "after": "1. Android phone, PhotoDirector signed in, Pro tier\n2. A free template opened, frames filled"
+    },
+    {
+      "id": "TC-145",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; the IAP page opened by 「Export」 with PRO content",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. The IAP page opened by 「Export」 with PRO content"
+    },
+    {
+      "id": "TC-145",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The IAP page closes (canvas or Save & Share, as PM answers Q-15); the edits are kept",
+      "after": "The IAP page closes (canvas or Save & Share, as PM answers Q-15)\nThe edits are kept"
+    },
+    {
+      "id": "TC-146",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; the phone in Light appearance (Settings › Display › Light mode)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. The phone in Light appearance (Settings › Display › Light mode)"
+    },
+    {
+      "id": "TC-147",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; the phone in Dark appearance",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. The phone in Dark appearance"
+    },
+    {
+      "id": "TC-148",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; the app's analytics events visible (log pull or RD event viewer)",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. The app's analytics events visible (log pull or RD event viewer)"
+    },
+    {
+      "id": "TC-149",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; analytics events visible; a 3-page canvas at 4:5 with 4 photos",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Analytics events visible\n3. A 3-page canvas at 4:5 with 4 photos"
+    },
+    {
+      "id": "TC-150",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Swipe Collage Template Page open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Swipe Collage Template Page open"
+    },
+    {
+      "id": "TC-151",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Template Preview open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Template Preview open"
+    },
+    {
+      "id": "TC-152",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; canvas open with one edit",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Canvas open with one edit"
+    },
+    {
+      "id": "TC-153",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; 「Discard changes?」 shown over the canvas",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. 「Discard changes?」 shown over the canvas"
+    },
+    {
+      "id": "TC-154",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; photo picker opened from a frame +",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Photo picker opened from a frame +"
+    },
+    {
+      "id": "TC-155",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Add Layer open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Add Layer open"
+    },
+    {
+      "id": "TC-155",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Add Layer closes; the canvas shows",
+      "after": "Add Layer closes\nThe canvas shows"
+    },
+    {
+      "id": "TC-156",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Add Layer › 「Text」 open with the keyboard up",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Add Layer › 「Text」 open with the keyboard up"
+    },
+    {
+      "id": "TC-156",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The keyboard closes first; a second Back leaves the text input",
+      "after": "The keyboard closes first\nA second Back leaves the text input"
+    },
+    {
+      "id": "TC-157",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; each of Background, Layers, Ratio and the Frame panel opened in turn",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Each of Background, Layers, Ratio and the Frame panel opened in turn"
+    },
+    {
+      "id": "TC-158",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Background custom colour picker open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Background custom colour picker open"
+    },
+    {
+      "id": "TC-159",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Pages open with one page deleted",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Pages open with one page deleted"
+    },
+    {
+      "id": "TC-160",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Pages ••• menu open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Pages ••• menu open"
+    },
+    {
+      "id": "TC-160",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The menu closes; Pages stays",
+      "after": "The menu closes\nPages stays"
+    },
+    {
+      "id": "TC-161",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Object Removal opened from image focus",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Object Removal opened from image focus"
+    },
+    {
+      "id": "TC-162",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; IAP page opened from Export",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. IAP page opened from Export"
+    },
+    {
+      "id": "TC-163",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in, Free tier; Save & Share open",
+      "after": "1. Android phone, PhotoDirector signed in, Free tier\n2. Save & Share open"
+    }
+  ],
+  "notes": []
+}

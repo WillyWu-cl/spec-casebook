@@ -1,0 +1,365 @@
+{
+  "saved_at": "2026-11-12T01:38:23.929Z",
+  "version": 3,
+  "summary": "One item per line (user 2026-11-12): Precondition cells put each condition or setup step on its own numbered line, Expected Result cells each check on its own line; wording otherwise unchanged.",
+  "decisions": [
+    {
+      "id": "TC-001",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」"
+    },
+    {
+      "id": "TC-001",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The page opens on 「Recent」, the first tab, shown selected (peach); the tab bar ends with a ☰ button at its far right",
+      "after": "The page opens on 「Recent」, the first tab, shown selected (peach)\nThe tab bar ends with a ☰ button at its far right"
+    },
+    {
+      "id": "TC-002",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab"
+    },
+    {
+      "id": "TC-002",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "While the tabs scroll, ☰ stays fixed at the right edge of the tab bar; after the tap the last tab is selected and ☰ is still at the far right",
+      "after": "While the tabs scroll, ☰ stays fixed at the right edge of the tab bar\nAfter the tap the last tab is selected and ☰ is still at the far right"
+    },
+    {
+      "id": "TC-003",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab"
+    },
+    {
+      "id": "TC-003",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "「Recent」 is first and every other tab follows in alphabetical order (A → Z); tabs of features with no works are among them",
+      "after": "「Recent」 is first and every other tab follows in alphabetical order (A → Z)\nTabs of features with no works are among them"
+    },
+    {
+      "id": "TC-004",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; a feature with no works (its tab holds nothing)",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. A feature with no works (its tab holds nothing)"
+    },
+    {
+      "id": "TC-004",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The empty tab opens and shows 「Create More」; the tab is not greyed in the tab bar",
+      "after": "The empty tab opens and shows 「Create More」\nThe tab is not greyed in the tab bar"
+    },
+    {
+      "id": "TC-005",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; Recent holds photos and videos",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. Recent holds photos and videos"
+    },
+    {
+      "id": "TC-005",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "As before the change: 「Video」 shows only videos, 「Photo」 only photos; 「Select」 starts multi-select and 「Cancel」 ends it. Recent shows the list as before, with no list / grid switch",
+      "after": "As before the change: 「Video」 shows only videos, 「Photo」 only photos\n「Select」 starts multi-select and 「Cancel」 ends it\nRecent shows the list as before, with no list / grid switch"
+    },
+    {
+      "id": "TC-006",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab"
+    },
+    {
+      "id": "TC-006",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "A sheet titled 「All categories」 with ✕ at its top right opens over the dimmed page; its first row is 「Recent」",
+      "after": "A sheet titled 「All categories」 with ✕ at its top right opens over the dimmed page\nIts first row is 「Recent」"
+    },
+    {
+      "id": "TC-007",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open; the tab list from TC-003 written down",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open\n5. The tab list from TC-003 written down"
+    },
+    {
+      "id": "TC-008",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-008",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The list scrolls to its last row, which is the last tab of the tab bar; every feature has a row",
+      "after": "The list scrolls to its last row, which is the last tab of the tab bar\nEvery feature has a row"
+    },
+    {
+      "id": "TC-009",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open; at least one feature with no works",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open\n5. At least one feature with no works"
+    },
+    {
+      "id": "TC-009",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Each row shows only the feature name, with no count of works; the row of the feature with no works has the same text colour as the others (not greyed)",
+      "after": "Each row shows only the feature name, with no count of works\nThe row of the feature with no works has the same text colour as the others (not greyed)"
+    },
+    {
+      "id": "TC-010",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-010",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only 「Recent」 is highlighted in peach; no other row is highlighted",
+      "after": "Only 「Recent」 is highlighted in peach\nNo other row is highlighted"
+    },
+    {
+      "id": "TC-011",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab"
+    },
+    {
+      "id": "TC-011",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "In 「All categories」 the 「AI Art」 row is highlighted in peach; 「Recent」 and the other rows are not",
+      "after": "In 「All categories」 the 「AI Art」 row is highlighted in peach\n「Recent」 and the other rows are not"
+    },
+    {
+      "id": "TC-012",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-013",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-014",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-015",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab"
+    },
+    {
+      "id": "TC-016",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open; a feature with no works",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open\n5. A feature with no works"
+    },
+    {
+      "id": "TC-017",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-018",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-019",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Creative Studio」 tab",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Creative Studio」 tab"
+    },
+    {
+      "id": "TC-019",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 4: the sheet closes on the 「AI Art」 tab and the selection is cancelled (no work selected, multi-select ended: no 「Cancel」, no bottom action bar). Step 5: the two works are no longer selected",
+      "after": "Step 4: the sheet closes on the 「AI Art」 tab and the selection is cancelled (no work selected, multi-select ended: no 「Cancel」, no bottom action bar)\nStep 5: the two works are no longer selected"
+    },
+    {
+      "id": "TC-032",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Creative Studio」 tab",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Creative Studio」 tab"
+    },
+    {
+      "id": "TC-032",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Step 3: the page switches to the 「AI Art」 tab and the selection is cancelled (no work selected, multi-select ended: no 「Cancel」, no bottom action bar). Step 4: the two works are no longer selected",
+      "after": "Step 3: the page switches to the 「AI Art」 tab and the selection is cancelled (no work selected, multi-select ended: no 「Cancel」, no bottom action bar)\nStep 4: the two works are no longer selected"
+    },
+    {
+      "id": "TC-020",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-021",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-021",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The sheet closes; the page is still on the 「AI Art」 tab, unchanged",
+      "after": "The sheet closes\nThe page is still on the 「AI Art」 tab, unchanged"
+    },
+    {
+      "id": "TC-022",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-022",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The sheet closes; the page is still on the 「AI Art」 tab",
+      "after": "The sheet closes\nThe page is still on the 「AI Art」 tab"
+    },
+    {
+      "id": "TC-023",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-023",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "The sheet closes; the page is still on the 「AI Art」 tab",
+      "after": "The sheet closes\nThe page is still on the 「AI Art」 tab"
+    },
+    {
+      "id": "TC-024",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab; ☰ tapped, 「All categories」 open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab\n4. ☰ tapped, 「All categories」 open"
+    },
+    {
+      "id": "TC-024",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "Only the sheet closes; My AI Artwork stays open on the 「AI Art」 tab (the page is not left)",
+      "after": "Only the sheet closes\nMy AI Artwork stays open on the 「AI Art」 tab (the page is not left)"
+    },
+    {
+      "id": "TC-025",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with a free (not subscribed) account; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on 「Recent」; credit balance noted",
+      "after": "1. Android phone, PhotoDirector signed in with a free (not subscribed) account\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on 「Recent」\n4. Credit balance noted"
+    },
+    {
+      "id": "TC-025",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No upgrade or purchase prompt appears at any step; the credit balance is unchanged",
+      "after": "No upgrade or purchase prompt appears at any step\nThe credit balance is unchanged"
+    },
+    {
+      "id": "TC-026",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in with a VIP account; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on 「Recent」; credit balance noted",
+      "after": "1. Android phone, PhotoDirector signed in with a VIP account\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on 「Recent」\n4. Credit balance noted"
+    },
+    {
+      "id": "TC-026",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "No upgrade or purchase prompt appears; the credit balance is unchanged",
+      "after": "No upgrade or purchase prompt appears\nThe credit balance is unchanged"
+    },
+    {
+      "id": "TC-027",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; a feature with a History button (a sheet of paper with a clock) and works saved under it",
+      "after": "1. Android phone, PhotoDirector signed in\n2. A feature with a History button (a sheet of paper with a clock) and works saved under it"
+    },
+    {
+      "id": "TC-027",
+      "field": "Expected Result",
+      "decision": "modified",
+      "before": "My AI Artwork opens on that feature's tab; in 「All categories」 that feature's row is highlighted in peach",
+      "after": "My AI Artwork opens on that feature's tab\nIn 「All categories」 that feature's row is highlighted in peach"
+    },
+    {
+      "id": "TC-028",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; the analytics event log open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. The analytics event log open"
+    },
+    {
+      "id": "TC-029",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab; the analytics event log open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「AI Art」 tab\n4. The analytics event log open"
+    },
+    {
+      "id": "TC-030",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; ☰ tapped, 「All categories」 open; the analytics event log open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. ☰ tapped, 「All categories」 open\n5. The analytics event log open"
+    },
+    {
+      "id": "TC-031",
+      "field": "Precondition",
+      "decision": "modified",
+      "before": "Android phone, PhotoDirector signed in; works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」; My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab; the analytics event log open",
+      "after": "1. Android phone, PhotoDirector signed in\n2. Works saved under at least three features, among them 「AI Art」 and 「AI Creative Studio」\n3. My AI Artwork (Launcher › AI Photos › My Artwork, top right) open on the 「Recent」 tab\n4. The analytics event log open"
+    }
+  ],
+  "notes": []
+}

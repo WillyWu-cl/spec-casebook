@@ -1,76 +1,205 @@
 ﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註
-TC-001,My AI Artwork — Image to Video 分頁,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞,打開 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁，查看卡片和頁面底部,這個分頁和現在一樣：已完成、處理中和失敗的工作都有各自的卡片，底部唯一的建立按鈕是「Create more」；沒有任何卡片出現「Reuse」或其他新按鈕,P2,"R-006, R-007, R-002",Design 的畫面裡有「Character Motion Swap」和「Resume to Upload」；在 Q-14 有答案之前，以 PM 和現況為準
-TC-002,My AI Artwork — Image to Video 分頁,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞,點影片 A 的卡片,開啟影片 A 的「Save & Share」頁，頁面上有「Prompts & Settings」區塊，裡面有「Reuse」,P1,"R-008, R-003, R-062",
-TC-003,My AI Artwork — Image to Video 分頁,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；影片 A 也列在 My AI Artwork › Recent 並套用 Video 篩選時的清單裡,"1. 打開 My AI Artwork › Recent，選 Video 篩選
+TC-001,My AI Artwork — Image to Video 分頁,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞",打開 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁，查看卡片和頁面底部,"這個分頁和現在一樣：已完成、處理中和失敗的工作都有各自的卡片，底部唯一的建立按鈕是「Create more」
+沒有任何卡片出現「Reuse」或其他新按鈕",P2,"R-006, R-007, R-002",Design 的畫面裡有「Character Motion Swap」和「Resume to Upload」；在 Q-14 有答案之前，以 PM 和現況為準
+TC-002,My AI Artwork — Image to Video 分頁,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞",點影片 A 的卡片,開啟影片 A 的「Save & Share」頁，頁面上有「Prompts & Settings」區塊，裡面有「Reuse」,P1,"R-008, R-003, R-062",
+TC-003,My AI Artwork — Image to Video 分頁,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 影片 A 也列在 My AI Artwork › Recent 並套用 Video 篩選時的清單裡","1. 打開 My AI Artwork › Recent，選 Video 篩選
 2. 點影片 A",開啟同一個「Save & Share」頁，有「Prompts & Settings」和「Reuse」,P1,"R-009, R-003",從這一頁返回會去哪裡：Q-5
-TC-004,My AI Artwork — Image to Video 分頁,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一個失敗的 Custom 工作（卡片上有「View Details」）,點失敗卡片上的「View Details」,開啟的畫面沒有「Prompts & Settings」，也沒有「Reuse」,P2,R-013,要有失敗的生成紀錄才能測（fixture）。Design 在這張卡片上畫的是「Resume to Upload」：Q-14
-TC-005,My AI Artwork — Image to Video 分頁,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一個 Custom 影片工作還在處理中（卡片顯示「Processing...」）,點處理中的卡片,沒有開啟 Save & Share 頁，也看不到「Prompts & Settings」或「Reuse」（工作尚未完成）,P2,R-013,只有 PM 有寫：Design 沒有畫這個
-TC-006,Save & Share — Prompts & Settings,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁,查看「Prompts & Settings」區塊,區塊標題是「Prompts & Settings」；卡片上有模型圖示和「Kling 2.6」，同一列右邊是「Reuse」；下方是「10s」、「Pro」、「Sound on」三個標籤；標籤下面是影片 A 的提示詞；整頁只有一個「Reuse」（沒有另外一列提示詞專用的 Reuse）,P1,"R-010, R-011, R-012",Design 範例畫的是另一個模型。PM 畫的是單行「Kling 2.6 · 10s · Pro · Sound On」；以 Design 為準。標籤用字：Q-13
-TC-049,Save & Share — Prompts & Settings,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁,從上到下捲動整個頁面,頁面上由上到下依序是：「Save」、「More Video Editing Tools」、「Add Text」「Add Sticker」「Add Music」、「Prompts & Settings」、「Share to」,P2,R-067,
-TC-050,Save & Share — Prompts & Settings,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁。手機設為深色主題,查看「Prompts & Settings」區塊,頁面像 Design 一樣是深色；標題、模型名稱、標籤、提示詞和「Reuse」都看得清楚,P3,R-068,怎麼切到深色模式：Q-16
-TC-007,Save & Share — Prompts & Settings,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Template 影片,點這支 Template 影片的卡片,它的「Save & Share」頁和現在一樣，有「Save」、「Share to」和「You might also like」，沒有「Prompts & Settings」，也沒有「Reuse」,P1,R-004,只有 PM 有寫：Design 沒有畫這個
-TC-008,Save & Share — Prompts & Settings,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 C，製作時「Specify Video Start / End」是開啟的（有起始和結束照片）,點影片 C 的卡片,它的「Save & Share」頁有「Prompts & Settings」，裡面有模型、標籤和提示詞，以及「Reuse」,P2,R-005,
-TC-041,Save & Share — Prompts & Settings,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支 4/E 之前生成的 Custom 影片,點這支影片的卡片,它的「Save & Share」頁沒有「Reuse」,P3,R-014,只有 PM 有寫：Design 沒有畫這個。需 RD 確認（PM 草稿 Q1，Q-2）；需要一支在 4/E 之前的版本做出來的影片
-TC-042,Save & Share — Prompts & Settings,Android 手機，PhotoDirector 已登入；有一支讀不到設定的 Custom 影片，例如用同一個帳號在 iOS 上做的，或是在重新安裝 PhotoDirector 之前做的,打開這支影片的 Save & Share 頁,頁面上沒有「Reuse」,P3,R-015,只有 PM 有寫：Design 沒有畫這個。需 RD 確認（PM 草稿 Q2，Q-3）；需要跨平台或重新安裝的 fixture
-TC-009,Save & Share — Prompts & Settings,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。從 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁開啟影片 A 的 Save & Share 頁,點左上的 ‹,開啟 My AI Artwork，停在「Image to Video」分頁,P2,"R-034, R-065",如果是從 Recent 進來的：Q-5
-TC-010,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁,點「Reuse」,"開啟 Image to Video 的「Custom」分頁：「Model」顯示「Kling 2.6」；「Specify Video Start / End」是關閉的；「Add your images」是空的；提示詞輸入框裡是影片 A 的提示詞，並顯示字數（例如「58/2,500」）；跳出提示訊息「Settings applied」",P1,"R-016, R-017, R-021, R-022, R-023, R-025, R-001, R-063",只有 PM 有寫：Design 沒有畫這個。文字來自 PM 的 mockup（Q-1）
-TC-011,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」,打開模型設定，查看 Duration、Video Quality 和 Generate Sound by AI,選的是 Duration 10s、Video Quality Pro、Generate Sound by AI 開啟，和影片 A 當初製作的設定一致,P1,"R-018, R-019, R-020, R-001",只有 PM 有寫：Design 沒有畫這個
-TC-012,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 B：用的不是預設模型，Duration 不是 10s，Video Quality 不是 Pro，Generate Sound by AI 關閉,"1. 打開影片 B 的 Save & Share 頁，記下模型和標籤
+TC-004,My AI Artwork — Image to Video 分頁,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一個失敗的 Custom 工作（卡片上有「View Details」）",點失敗卡片上的「View Details」,開啟的畫面沒有「Prompts & Settings」，也沒有「Reuse」,P2,R-013,要有失敗的生成紀錄才能測（fixture）。Design 在這張卡片上畫的是「Resume to Upload」：Q-14
+TC-005,My AI Artwork — Image to Video 分頁,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一個 Custom 影片工作還在處理中（卡片顯示「Processing...」）",點處理中的卡片,沒有開啟 Save & Share 頁，也看不到「Prompts & Settings」或「Reuse」（工作尚未完成）,P2,R-013,只有 PM 有寫：Design 沒有畫這個
+TC-006,Save & Share — Prompts & Settings,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁",查看「Prompts & Settings」區塊,"區塊標題是「Prompts & Settings」
+卡片上有模型圖示和「Kling 2.6」，同一列右邊是「Reuse」
+下方是「10s」、「Pro」、「Sound on」三個標籤
+標籤下面是影片 A 的提示詞
+整頁只有一個「Reuse」（沒有另外一列提示詞專用的 Reuse）",P1,"R-010, R-011, R-012",Design 範例畫的是另一個模型。PM 畫的是單行「Kling 2.6 · 10s · Pro · Sound On」；以 Design 為準。標籤用字：Q-13
+TC-049,Save & Share — Prompts & Settings,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁",從上到下捲動整個頁面,頁面上由上到下依序是：「Save」、「More Video Editing Tools」、「Add Text」「Add Sticker」「Add Music」、「Prompts & Settings」、「Share to」,P2,R-067,
+TC-050,Save & Share — Prompts & Settings,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁
+4. 手機設為深色主題",查看「Prompts & Settings」區塊,"頁面像 Design 一樣是深色
+標題、模型名稱、標籤、提示詞和「Reuse」都看得清楚",P3,R-068,怎麼切到深色模式：Q-16
+TC-007,Save & Share — Prompts & Settings,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Template 影片",點這支 Template 影片的卡片,它的「Save & Share」頁和現在一樣，有「Save」、「Share to」和「You might also like」，沒有「Prompts & Settings」，也沒有「Reuse」,P1,R-004,只有 PM 有寫：Design 沒有畫這個
+TC-008,Save & Share — Prompts & Settings,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 C，製作時「Specify Video Start / End」是開啟的（有起始和結束照片）",點影片 C 的卡片,它的「Save & Share」頁有「Prompts & Settings」，裡面有模型、標籤和提示詞，以及「Reuse」,P2,R-005,
+TC-041,Save & Share — Prompts & Settings,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支 4/E 之前生成的 Custom 影片",點這支影片的卡片,它的「Save & Share」頁沒有「Reuse」,P3,R-014,只有 PM 有寫：Design 沒有畫這個。需 RD 確認（PM 草稿 Q1，Q-2）；需要一支在 4/E 之前的版本做出來的影片
+TC-042,Save & Share — Prompts & Settings,"1. Android 手機，PhotoDirector 已登入
+2. 有一支讀不到設定的 Custom 影片，例如用同一個帳號在 iOS 上做的，或是在重新安裝 PhotoDirector 之前做的",打開這支影片的 Save & Share 頁,頁面上沒有「Reuse」,P3,R-015,只有 PM 有寫：Design 沒有畫這個。需 RD 確認（PM 草稿 Q2，Q-3）；需要跨平台或重新安裝的 fixture
+TC-009,Save & Share — Prompts & Settings,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 從 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁開啟影片 A 的 Save & Share 頁",點左上的 ‹,開啟 My AI Artwork，停在「Image to Video」分頁,P2,"R-034, R-065",如果是從 Recent 進來的：Q-5
+TC-010,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁",點「Reuse」,"開啟 Image to Video 的「Custom」分頁：「Model」顯示「Kling 2.6」
+「Specify Video Start / End」是關閉的
+「Add your images」是空的
+提示詞輸入框裡是影片 A 的提示詞，並顯示字數（例如「58/2,500」）
+跳出提示訊息「Settings applied」",P1,"R-016, R-017, R-021, R-022, R-023, R-025, R-001, R-063",只有 PM 有寫：Design 沒有畫這個。文字來自 PM 的 mockup（Q-1）
+TC-011,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」",打開模型設定，查看 Duration、Video Quality 和 Generate Sound by AI,選的是 Duration 10s、Video Quality Pro、Generate Sound by AI 開啟，和影片 A 當初製作的設定一致,P1,"R-018, R-019, R-020, R-001",只有 PM 有寫：Design 沒有畫這個
+TC-012,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 B：用的不是預設模型，Duration 不是 10s，Video Quality 不是 Pro，Generate Sound by AI 關閉","1. 打開影片 B 的 Save & Share 頁，記下模型和標籤
 2. 點「Reuse」
-3. 打開模型設定",卡片上顯示影片 B 的模型，並有 Duration、Quality 和 Sound 的標籤（只顯示該模型有的設定）；進入房間後，選的是影片 B 的模型、Duration 和 Video Quality，Generate Sound by AI 是關閉的,P1,"R-017, R-018, R-019, R-020, R-012",模型沒有 Quality 或 Sound 時標籤怎麼顯示：Q-10
-TC-013,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支影片 C，製作時「Specify Video Start / End」是開啟的。已開啟它的 Save & Share 頁,點「Reuse」,「Specify Video Start / End」是開啟的，起始和結束的照片欄位是空的，模型和提示詞是影片 C 的，並跳出「Settings applied」,P1,"R-021, R-023, R-005",只有 PM 有寫：Design 沒有畫這個
-TC-014,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 D，是從「Try with inspirations」裡的某個靈感範例做出來的。已開啟它的 Save & Share 頁,點「Reuse」,「Try with inspirations」底下沒有選中任何靈感範例；提示詞輸入框裡是影片 D 的提示詞,P2,"R-024, R-022",只有 PM 有寫：Design 沒有畫這個。提示詞文字會保留：Q-11
-TC-015,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；Image to Video 的 Android 說明面板還沒有被選擇永久不再顯示（也就是現在進入時會顯示的狀態）。已開啟影片 A 的 Save & Share 頁,"1. 點「Reuse」
-2. 關閉說明面板",先出現說明面板，面板上不會蓋著「Settings applied」；關閉面板後，顯示 Custom 頁面，並跳出提示訊息「Settings applied」,P2,R-026,只有 PM 有寫：Design 沒有畫這個。需要 Image to Video 第一次進入的狀態（fixtures.md）
-TC-016,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；房間一開啟就會有面板出現的狀態（例如 TC-015 的說明面板，或是一進去馬上打開模型清單）,"1. 點「Reuse」
+3. 打開模型設定","卡片上顯示影片 B 的模型，並有 Duration、Quality 和 Sound 的標籤（只顯示該模型有的設定）
+進入房間後，選的是影片 B 的模型、Duration 和 Video Quality，Generate Sound by AI 是關閉的",P1,"R-017, R-018, R-019, R-020, R-012",模型沒有 Quality 或 Sound 時標籤怎麼顯示：Q-10
+TC-013,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支影片 C，製作時「Specify Video Start / End」是開啟的
+3. 已開啟它的 Save & Share 頁",點「Reuse」,「Specify Video Start / End」是開啟的，起始和結束的照片欄位是空的，模型和提示詞是影片 C 的，並跳出「Settings applied」,P1,"R-021, R-023, R-005",只有 PM 有寫：Design 沒有畫這個
+TC-014,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 D，是從「Try with inspirations」裡的某個靈感範例做出來的
+3. 已開啟它的 Save & Share 頁",點「Reuse」,"「Try with inspirations」底下沒有選中任何靈感範例
+提示詞輸入框裡是影片 D 的提示詞",P2,"R-024, R-022",只有 PM 有寫：Design 沒有畫這個。提示詞文字會保留：Q-11
+TC-015,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. Image to Video 的 Android 說明面板還沒有被選擇永久不再顯示（也就是現在進入時會顯示的狀態）
+4. 已開啟影片 A 的 Save & Share 頁","1. 點「Reuse」
+2. 關閉說明面板","先出現說明面板，面板上不會蓋著「Settings applied」
+關閉面板後，顯示 Custom 頁面，並跳出提示訊息「Settings applied」",P2,R-026,只有 PM 有寫：Design 沒有畫這個。需要 Image to Video 第一次進入的狀態（fixtures.md）
+TC-016,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 房間一開啟就會有面板出現的狀態（例如 TC-015 的說明面板，或是一進去馬上打開模型清單）","1. 點「Reuse」
 2. 在「Settings applied」還在顯示時，點「Model」",「Settings applied」仍然蓋在面板上方，沒有被面板擋住,P3,R-027,只有 PM 有寫：Design 沒有畫這個。「toast 優先於 panel」的意思：Q-4
-TC-017,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。先記下點數餘額，以及 Buy Credit › Detail 裡最新的一筆紀錄,"1. 打開影片 A 的 Save & Share 頁
+TC-017,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 先記下點數餘額，以及 Buy Credit › Detail 裡最新的一筆紀錄","1. 打開影片 A 的 Save & Share 頁
 2. 點「Reuse」
 3. 從點數按鈕打開 Buy Credit › Detail",餘額沒有變，Buy Credit › Detail 也沒有新增紀錄,P1,R-028,只有 PM 有寫：Design 沒有畫這個
-TC-018,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」。另外用「Create more」開啟第二個 Custom 房間，記下 Kling 2.6 在相同設定下，「Generate」上顯示的價格,查看 Reuse 後房間裡的「Generate」,「Generate」顯示的價格，和全新的 Custom 房間裡 Kling 2.6 在這些設定下的目前價格相同（mockup 是「30」）,P1,R-029,只有 PM 有寫：Design 沒有畫這個。點數數字以實際為準；mockup 的「30」只是範例
-TC-019,Reuse 到 Image to Video 的 Custom,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；帳號目前還有 Image to Video 的免費試用,"1. 打開影片 A 的 Save & Share 頁
+TC-018,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」
+4. 另外用「Create more」開啟第二個 Custom 房間，記下 Kling 2.6 在相同設定下，「Generate」上顯示的價格",查看 Reuse 後房間裡的「Generate」,「Generate」顯示的價格，和全新的 Custom 房間裡 Kling 2.6 在這些設定下的目前價格相同（mockup 是「30」）,P1,R-029,只有 PM 有寫：Design 沒有畫這個。點數數字以實際為準；mockup 的「30」只是範例
+TC-019,Reuse 到 Image to Video 的 Custom,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 帳號目前還有 Image to Video 的免費試用","1. 打開影片 A 的 Save & Share 頁
 2. 點「Reuse」
-3. 查看「Generate」",「Generate」顯示免費試用，和用「Create more」開啟的 Custom 房間一樣；用掉免費次數之後，就不會再顯示免費試用,P2,R-030,只有 PM 有寫：Design 沒有畫這個。需要有免費試用的帳號（fixtures.md）；KP-016
-TC-020,Reuse 之後的房間,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」,點左上的 ‹,回到影片 A 的「Save & Share」頁,P1,"R-033, R-064",只有 PM 有寫：Design 沒有畫這個
-TC-021,Reuse 之後的房間,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」,"1. 點「Model」
+3. 查看「Generate」","「Generate」顯示免費試用，和用「Create more」開啟的 Custom 房間一樣
+用掉免費次數之後，就不會再顯示免費試用",P2,R-030,只有 PM 有寫：Design 沒有畫這個。需要有免費試用的帳號（fixtures.md）；KP-016
+TC-020,Reuse 之後的房間,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」",點左上的 ‹,回到影片 A 的「Save & Share」頁,P1,"R-033, R-064",只有 PM 有寫：Design 沒有畫這個
+TC-021,Reuse 之後的房間,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」","1. 點「Model」
 2. 選另一個模型
 3. 打開它的設定
-4. 切回 Kling 2.6",另一個模型會保留它支援的 Reuse 設定，其餘的設定顯示它自己的預設值（4/E 的切換模型規則）；切回 Kling 2.6 時，設定也依同樣的規則處理,P2,R-031,只有 PM 有寫：Design 沒有畫這個。4/E 的切換模型規則，和 Image to Video Custom 現在的行為相同
-TC-022,Reuse 之後的房間,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」,"1. 連點 ‹ 兩次（回到 My AI Artwork）
+4. 切回 Kling 2.6","另一個模型會保留它支援的 Reuse 設定，其餘的設定顯示它自己的預設值（4/E 的切換模型規則）
+切回 Kling 2.6 時，設定也依同樣的規則處理",P2,R-031,只有 PM 有寫：Design 沒有畫這個。4/E 的切換模型規則，和 Image to Video Custom 現在的行為相同
+TC-022,Reuse 之後的房間,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」","1. 連點 ‹ 兩次（回到 My AI Artwork）
 2. 點「Create more」","Custom 房間是預設的模型和設定，提示詞是預設提示文字，字數顯示「0/2,500」，沒有「Settings applied」",P2,"R-032, R-041",只有 PM 有寫：Design 沒有畫這個
-TC-023,從 Reuse 開始生成,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」；點數足夠生成一支 Kling 2.6 影片。先記下餘額和「Generate」上的價格,"1. 在「Add your images」加一張照片
+TC-023,從 Reuse 開始生成,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」
+4. 點數足夠生成一支 Kling 2.6 影片
+5. 先記下餘額和「Generate」上的價格","1. 在「Add your images」加一張照片
 2. 點「Generate」
-3. 打開 My AI Artwork ›「Image to Video」",餘額減少的數字等於「Generate」顯示的價格；多了一張新的「Processing...」卡片，顯示剛選的照片；影片 A 仍然在清單裡,P1,"R-036, R-037",只有 PM 有寫：Design 沒有畫這個。會完整生成一支影片（要花點數）。影片 A 仍在清單裡：KP-083 的風險
+3. 打開 My AI Artwork ›「Image to Video」","餘額減少的數字等於「Generate」顯示的價格
+多了一張新的「Processing...」卡片，顯示剛選的照片
+影片 A 仍然在清單裡",P1,"R-036, R-037",只有 PM 有寫：Design 沒有畫這個。會完整生成一支影片（要花點數）。影片 A 仍在清單裡：KP-083 的風險
 TC-024,從 Reuse 開始生成,TC-023 的影片已生成完成,"1. 播放新的影片
-2. 打開它的 Save & Share 頁",影片長度 10 秒，並且有 AI 生成的聲音；「Prompts & Settings」卡片顯示「Kling 2.6」，標籤是「10s」、「Pro」和「Sound on」，還有影片 A 的提示詞,P1,"R-038, R-037, R-012",長度請用播放器或儲存下來的檔案確認
+2. 打開它的 Save & Share 頁","影片長度 10 秒，並且有 AI 生成的聲音
+「Prompts & Settings」卡片顯示「Kling 2.6」，標籤是「10s」、「Pro」和「Sound on」，還有影片 A 的提示詞",P1,"R-038, R-037, R-012",長度請用播放器或儲存下來的檔案確認
 TC-025,從 Reuse 開始生成,已完成 TC-023,從點數按鈕打開 Buy Credit › Detail,最新的一筆紀錄寫的是 Image to Video，金額等於 TC-023 扣的點數,P2,"R-036, R-035",只有 PM 有寫：Design 沒有畫這個。KP-017
-TC-026,從 Reuse 開始生成,已完成 TC-023；有辦法取得 PhotoDirector Android 的 log,取出 App 的 log，找到 Image to Video 的生成請求,請求帶的是 Kling 2.6 原有的 action ID 和影片 A 的提示詞；生成的影片也符合這個提示詞,P2,"R-035, R-039",只有 PM 有寫：Design 沒有畫這個。等 log 取得方式建好再跑（KP-036）
-TC-027,從 Reuse 開始生成,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」；已加一張照片；點數足夠生成一支影片,快速連點「Generate」三次,只會啟動一個工作，餘額只扣一次,P2,R-040,只有 PM 有寫：Design 沒有畫這個。KP-019；會完整生成一支影片（要花點數）
-TC-028,Create more（沒有改變）,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞,在 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁點「Create more」,"開啟 Image to Video 的「Custom」分頁，是預設模型（mockup 是「Kling 3.0」）、提示文字「Describe the subject, action, and overall scene, e.g. A woman walking in a park on a sunny afternoon.」、「0/2,500」，沒有「Settings applied」，也沒有可 Reuse 的影片清單",P1,"R-041, R-002, R-066",只有 PM 有寫：Design 沒有畫這個
-TC-029,模型已下架,Android 手機，PhotoDirector 已登入；有一支已完成的 Custom 影片 E，它用的模型後來已從 Image to Video 移除。已開啟它的 Save & Share 頁,點「Reuse」,開啟房間時使用預設模型，並跳出提示訊息，分兩行顯示「This model is no longer available.」和「Switched to recommended model.」；不會出現「Settings applied」,P1,"R-042, R-044",只有 PM 有寫：Design 沒有畫這個。需要 RD 提供已下架模型的 fixture
-TC-030,模型已下架,比照 TC-029，下架提示訊息出現後，房間已開啟,打開模型設定，並查看提示詞輸入框,預設模型也支援的設定會保留影片 E 的值，其他的顯示預設模型自己的預設值；提示詞輸入框裡是影片 E 的提示詞,P2,R-043,只有 PM 有寫：Design 沒有畫這個。mockup 畫的是空的提示詞：Q-6
-TC-031,模型已下架,比照 TC-029；已加一張照片；點數足夠；先記下餘額和「Generate」上的價格,"1. 點「Generate」
-2. 打開 Buy Credit › Detail",餘額減少的數字等於預設模型目前的價格，也就是「Generate」顯示的價格；Detail 把這筆列在 Image to Video 底下,P1,R-045,只有 PM 有寫：Design 沒有畫這個。需要已下架模型的 fixture；會完整生成一支影片（要花點數）
-TC-032,錯誤處理,Android 手機，PhotoDirector 已登入；有一支已完成的 Custom 影片 F，提示詞超過 500 個字元，是用允許這麼長的模型做的。已開啟它的 Save & Share 頁,"1. 點「Reuse」
+TC-026,從 Reuse 開始生成,"1. 已完成 TC-023
+2. 有辦法取得 PhotoDirector Android 的 log",取出 App 的 log，找到 Image to Video 的生成請求,"請求帶的是 Kling 2.6 原有的 action ID 和影片 A 的提示詞
+生成的影片也符合這個提示詞",P2,"R-035, R-039",只有 PM 有寫：Design 沒有畫這個。等 log 取得方式建好再跑（KP-036）
+TC-027,從 Reuse 開始生成,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」
+4. 已加一張照片
+5. 點數足夠生成一支影片",快速連點「Generate」三次,只會啟動一個工作，餘額只扣一次,P2,R-040,只有 PM 有寫：Design 沒有畫這個。KP-019；會完整生成一支影片（要花點數）
+TC-028,Create more（沒有改變）,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞",在 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁點「Create more」,"開啟 Image to Video 的「Custom」分頁，是預設模型（mockup 是「Kling 3.0」）、提示文字「Describe the subject, action, and overall scene, e.g. A woman walking in a park on a sunny afternoon.」、「0/2,500」，沒有「Settings applied」，也沒有可 Reuse 的影片清單",P1,"R-041, R-002, R-066",只有 PM 有寫：Design 沒有畫這個
+TC-029,模型已下架,"1. Android 手機，PhotoDirector 已登入
+2. 有一支已完成的 Custom 影片 E，它用的模型後來已從 Image to Video 移除
+3. 已開啟它的 Save & Share 頁",點「Reuse」,"開啟房間時使用預設模型，並跳出提示訊息，分兩行顯示「This model is no longer available.」和「Switched to recommended model.」
+不會出現「Settings applied」",P1,"R-042, R-044",只有 PM 有寫：Design 沒有畫這個。需要 RD 提供已下架模型的 fixture
+TC-030,模型已下架,比照 TC-029，下架提示訊息出現後，房間已開啟,打開模型設定，並查看提示詞輸入框,"預設模型也支援的設定會保留影片 E 的值，其他的顯示預設模型自己的預設值
+提示詞輸入框裡是影片 E 的提示詞",P2,R-043,只有 PM 有寫：Design 沒有畫這個。mockup 畫的是空的提示詞：Q-6
+TC-031,模型已下架,"1. 比照 TC-029
+2. 已加一張照片
+3. 點數足夠
+4. 先記下餘額和「Generate」上的價格","1. 點「Generate」
+2. 打開 Buy Credit › Detail","餘額減少的數字等於預設模型目前的價格，也就是「Generate」顯示的價格
+Detail 把這筆列在 Image to Video 底下",P1,R-045,只有 PM 有寫：Design 沒有畫這個。需要已下架模型的 fixture；會完整生成一支影片（要花點數）
+TC-032,錯誤處理,"1. Android 手機，PhotoDirector 已登入
+2. 有一支已完成的 Custom 影片 F，提示詞超過 500 個字元，是用允許這麼長的模型做的
+3. 已開啟它的 Save & Share 頁","1. 點「Reuse」
 2. 切換到上限是 500 的模型
-3. 刪掉文字，直到字數降到上限以內",步驟 2：整段提示詞仍留在輸入框裡，輸入框和字數都變紅，「Generate」不能按；步驟 3：紅色消失，「Generate」可以按；全程沒有扣點數,P2,R-046,只有 PM 有寫：Design 沒有畫這個。哪個模型上限是 500：Q-7
-TC-033,錯誤處理,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；Wi-Fi 和行動網路都關閉。已開啟影片 A 的 Save & Share 頁,點「Reuse」,Image to Video 的表現和現在沒網路時開啟一樣（訊息或狀態與離線時從「Create more」進入相同）；沒有扣點數,P2,R-047,只有 PM 有寫：Design 沒有畫這個。請在同一個版本上，和離線時按「Create more」的結果比對
-TC-034,錯誤處理,Android 手機，PhotoDirector 已登入；有一支已完成的 Custom 影片 G，用的模型不支援真人照片；另外準備一張有人臉的照片。已開啟它的 Save & Share 頁,"1. 點「Reuse」
+3. 刪掉文字，直到字數降到上限以內","步驟 2：整段提示詞仍留在輸入框裡，輸入框和字數都變紅，「Generate」不能按
+步驟 3：紅色消失，「Generate」可以按
+全程沒有扣點數",P2,R-046,只有 PM 有寫：Design 沒有畫這個。哪個模型上限是 500：Q-7
+TC-033,錯誤處理,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. Wi-Fi 和行動網路都關閉
+4. 已開啟影片 A 的 Save & Share 頁",點「Reuse」,"Image to Video 的表現和現在沒網路時開啟一樣（訊息或狀態與離線時從「Create more」進入相同）
+沒有扣點數",P2,R-047,只有 PM 有寫：Design 沒有畫這個。請在同一個版本上，和離線時按「Create more」的結果比對
+TC-034,錯誤處理,"1. Android 手機，PhotoDirector 已登入
+2. 有一支已完成的 Custom 影片 G，用的模型不支援真人照片
+3. 另外準備一張有人臉的照片
+4. 已開啟它的 Save & Share 頁","1. 點「Reuse」
 2. 加入有人臉的照片
-3. 點「Generate」","跳出「The photo you uploaded includes a real person, which isn't supported by the selected model.」，和現在一樣；沒有扣點數",P2,R-048,只有 PM 有寫：Design 沒有畫這個。是哪個模型：Q-12
-TC-035,錯誤處理,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；Free 帳號，點數少於「Generate」上的價格。已開啟影片 A 的 Save & Share 頁,"1. 點「Reuse」
+3. 點「Generate」","跳出「The photo you uploaded includes a real person, which isn't supported by the selected model.」，和現在一樣
+沒有扣點數",P2,R-048,只有 PM 有寫：Design 沒有畫這個。是哪個模型：Q-12
+TC-035,錯誤處理,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. Free 帳號，點數少於「Generate」上的價格
+4. 已開啟影片 A 的 Save & Share 頁","1. 點「Reuse」
 2. 加一張照片
-3. 點「Generate」",出現升級 Premium 的流程，和現在一樣；沒有扣點數,P2,R-049,只有 PM 有寫：Design 沒有畫這個。KP-012
-TC-036,錯誤處理,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；VIP 帳號，點數少於「Generate」上的價格。已開啟影片 A 的 Save & Share 頁,"1. 點「Reuse」
+3. 點「Generate」","出現升級 Premium 的流程，和現在一樣
+沒有扣點數",P2,R-049,只有 PM 有寫：Design 沒有畫這個。KP-012
+TC-036,錯誤處理,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. VIP 帳號，點數少於「Generate」上的價格
+4. 已開啟影片 A 的 Save & Share 頁","1. 點「Reuse」
 2. 加一張照片
-3. 點「Generate」",跳出「More Credits Required」，和現在一樣；沒有扣點數,P2,R-050,只有 PM 有寫：Design 沒有畫這個。需要點數不足的 VIP 帳號；KP-012
-TC-037,埋點事件,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；已開啟 analytics 事件記錄,打開影片 A 的 Save & Share 頁，點「Reuse」,送出 ImageToVideo_Reuse_Click，model 是 Kling 2.6 的 model 值,P3,R-051,只有 PM 有寫：Design 沒有畫這個。等事件記錄可以取得再跑（Q-8）
-TC-038,埋點事件,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁（從 Image to Video 分頁進入）並點了「Reuse」；已加一張照片；已開啟 analytics 事件記錄,點「Generate」,送出 ImageToVideo_Result_Generate，from = artwork_reuse,P3,R-052,只有 PM 有寫：Design 沒有畫這個。暫緩（Q-8）；會完整生成一支影片（要花點數）
-TC-039,埋點事件,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。從 My AI Artwork › Recent（Video 篩選）打開影片 A，點「Reuse」並加一張照片；已開啟 analytics 事件記錄,點「Generate」,送出 ImageToVideo_Result_Generate，from = artwork_reuse,P3,R-053,只有 PM 有寫：Design 沒有畫這個。暫緩（Q-8）；會完整生成一支影片（要花點數）
-TC-040,埋點事件,Android 手機，PhotoDirector 已登入。在 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁點「Create more」並加一張照片；已開啟 analytics 事件記錄,點「Generate」,送出 ImageToVideo_Result_Generate，from = Artwork,P3,R-054,只有 PM 有寫：Design 沒有畫這個。暫緩（Q-8）；會完整生成一支影片（要花點數）
-TC-043,Android 系統返回鍵,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」,按系統返回鍵,回到影片 A 的「Save & Share」頁，和點 ‹ 一樣,P2,R-058,只有 PM 有寫：Design 沒有畫這個
-TC-044,Android 系統返回鍵,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。從 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁開啟影片 A 的 Save & Share 頁,按系統返回鍵,開啟 My AI Artwork，停在「Image to Video」分頁，和點 ‹ 一樣,P2,R-059,只有 PM 有寫：Design 沒有畫這個
-TC-045,Android 系統返回鍵,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」。點提示詞輸入框，讓鍵盤跳出來,按系統返回鍵,鍵盤收起，房間仍然開著，影片 A 的提示詞沒有變,P2,R-060,只有 PM 有寫：Design 沒有畫這個
-TC-046,Android 系統返回鍵,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞；狀態同 TC-015（進入時會顯示說明面板）。已開啟影片 A 的 Save & Share 頁並點了「Reuse」,說明面板顯示時，按系統返回鍵,記錄實際發生的狀況；預期（Q-9）：面板關閉，Custom 頁面顯示影片 A 的設定，並跳出「Settings applied」,P3,R-061,只有 PM 有寫：Design 沒有畫這個。規格沒有說明：Q-9
-TC-047,Android：點數與作品,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」,點右上角的歷史記錄按鈕,開啟 My AI Artwork，並停在「Image to Video」分頁,P3,R-056,只有 PM 有寫：Design 沒有畫這個。KP-026
-TC-048,Android：點數與作品,Android 手機，PhotoDirector 已登入；My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞。已開啟影片 A 的 Save & Share 頁並點了「Reuse」,點頂端的點數按鈕,按鈕上顯示帳號的餘額，點下去會開啟 Buy Credit,P3,R-057,只有 PM 有寫：Design 沒有畫這個。KP-020
+3. 點「Generate」","跳出「More Credits Required」，和現在一樣
+沒有扣點數",P2,R-050,只有 PM 有寫：Design 沒有畫這個。需要點數不足的 VIP 帳號；KP-012
+TC-037,埋點事件,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟 analytics 事件記錄",打開影片 A 的 Save & Share 頁，點「Reuse」,送出 ImageToVideo_Reuse_Click，model 是 Kling 2.6 的 model 值,P3,R-051,只有 PM 有寫：Design 沒有畫這個。等事件記錄可以取得再跑（Q-8）
+TC-038,埋點事件,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁（從 Image to Video 分頁進入）並點了「Reuse」
+4. 已加一張照片
+5. 已開啟 analytics 事件記錄",點「Generate」,送出 ImageToVideo_Result_Generate，from = artwork_reuse,P3,R-052,只有 PM 有寫：Design 沒有畫這個。暫緩（Q-8）；會完整生成一支影片（要花點數）
+TC-039,埋點事件,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 從 My AI Artwork › Recent（Video 篩選）打開影片 A，點「Reuse」並加一張照片
+4. 已開啟 analytics 事件記錄",點「Generate」,送出 ImageToVideo_Result_Generate，from = artwork_reuse,P3,R-053,只有 PM 有寫：Design 沒有畫這個。暫緩（Q-8）；會完整生成一支影片（要花點數）
+TC-040,埋點事件,"1. Android 手機，PhotoDirector 已登入
+2. 在 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁點「Create more」並加一張照片
+3. 已開啟 analytics 事件記錄",點「Generate」,送出 ImageToVideo_Result_Generate，from = Artwork,P3,R-054,只有 PM 有寫：Design 沒有畫這個。暫緩（Q-8）；會完整生成一支影片（要花點數）
+TC-043,Android 系統返回鍵,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」",按系統返回鍵,回到影片 A 的「Save & Share」頁，和點 ‹ 一樣,P2,R-058,只有 PM 有寫：Design 沒有畫這個
+TC-044,Android 系統返回鍵,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 從 My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁開啟影片 A 的 Save & Share 頁",按系統返回鍵,開啟 My AI Artwork，停在「Image to Video」分頁，和點 ‹ 一樣,P2,R-059,只有 PM 有寫：Design 沒有畫這個
+TC-045,Android 系統返回鍵,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」
+4. 點提示詞輸入框，讓鍵盤跳出來",按系統返回鍵,鍵盤收起，房間仍然開著，影片 A 的提示詞沒有變,P2,R-060,只有 PM 有寫：Design 沒有畫這個
+TC-046,Android 系統返回鍵,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 狀態同 TC-015（進入時會顯示說明面板）
+4. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」",說明面板顯示時，按系統返回鍵,"記錄實際發生的狀況
+預期（Q-9）：面板關閉，Custom 頁面顯示影片 A 的設定，並跳出「Settings applied」",P3,R-061,只有 PM 有寫：Design 沒有畫這個。規格沒有說明：Q-9
+TC-047,Android：點數與作品,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」",點右上角的歷史記錄按鈕,開啟 My AI Artwork，並停在「Image to Video」分頁,P3,R-056,只有 PM 有寫：Design 沒有畫這個。KP-026
+TC-048,Android：點數與作品,"1. Android 手機，PhotoDirector 已登入
+2. My AI Artwork（Launcher › AI Photos › My Artwork，右上角）›「Image to Video」分頁裡有一支已完成的 Custom 影片 A：用 Kling 2.6、10s、Pro 製作，Generate Sound by AI 開啟、Start/End 關閉，並輸入了提示詞
+3. 已開啟影片 A 的 Save & Share 頁並點了「Reuse」",點頂端的點數按鈕,按鈕上顯示帳號的餘額，點下去會開啟 Buy Credit,P3,R-057,只有 PM 有寫：Design 沒有畫這個。KP-020

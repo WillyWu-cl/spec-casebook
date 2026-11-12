@@ -2,9 +2,9 @@
   "feature": "phd/cutout",
   "platform": "android",
   "title": "Cutout Reset / Undo / Redo",
-  "version": 1,
-  "approved_at": "2026-11-10T09:17:26.094Z",
-  "draft": "20261110-163734",
+  "version": 2,
+  "approved_at": "2026-11-12T01:38:23.914Z",
+  "draft": "edit-20261112-093823",
   "spec_folder": "specs/2026-11-10",
   "spec_files": [
     {
@@ -26,6 +26,15 @@
       "approved_at": "2026-11-10T09:17:26.094Z",
       "spec_set_sha256": "0ebabad8f68f1a53ccd28a556a686f92061bb1541562910a2d39f98ff7df6b68",
       "draft": "20261110-163734",
+      "cases": 51,
+      "csv": "history/v1.csv",
+      "requirements": "history/v1-requirements.md"
+    },
+    {
+      "version": 2,
+      "approved_at": "2026-11-12T01:38:23.914Z",
+      "spec_set_sha256": "0ebabad8f68f1a53ccd28a556a686f92061bb1541562910a2d39f98ff7df6b68",
+      "draft": "edit-20261112-093823",
       "cases": 51,
       "csv": "cases.csv",
       "requirements": "requirements.md"

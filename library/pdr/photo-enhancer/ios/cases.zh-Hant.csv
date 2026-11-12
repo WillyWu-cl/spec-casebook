@@ -1,54 +1,73 @@
 ﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註
-TC-001,照片工具列的 Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段,"1. 點主軌上的照片片段
+TC-001,照片工具列的 Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段","1. 點主軌上的照片片段
 2. 把工具列滑到最後",照片工具列有「Enhance」按鈕（PM 示意圖放在「Effects」和「Tools」之間；規格表則放在「Background」後面：Q-1）,P1,R-001,Q-1 還沒有答案前，不驗證按鈕的位置
-TC-002,照片工具列的 Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段,"1. 點主軌上的照片片段
+TC-002,照片工具列的 Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
-3. 點「Enhance」",工具列上方展開第二層選單，第一個是「Photo Enhance」，第二個是「AI Color」；「Photo Enhance」的圖示是照片加上星芒,P1,"R-003, R-004, R-005, R-050",Design 24.10E 沒有畫 Enhance 的第二層（AI Color 放在 Effects 底下），PM 和規格表較新，以它們為準（Q-1）
-TC-003,照片工具列的 Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有影片片段，子母畫面（PiP）軌上有一個照片片段,"1. 點 PiP 軌上的照片片段
+3. 點「Enhance」","工具列上方展開第二層選單，第一個是「Photo Enhance」，第二個是「AI Color」
+「Photo Enhance」的圖示是照片加上星芒",P1,"R-003, R-004, R-005, R-050",Design 24.10E 沒有畫 Enhance 的第二層（AI Color 放在 Effects 底下），PM 和規格表較新，以它們為準（Q-1）
+TC-003,照片工具列的 Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有影片片段，子母畫面（PiP）軌上有一個照片片段","1. 點 PiP 軌上的照片片段
 2. 把工具列滑到最後",PiP 照片的工具列有「Enhance」按鈕,P1,R-002,
-TC-004,照片工具列的 Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有影片片段，子母畫面（PiP）軌上有一個照片片段,"1. 點 PiP 軌上的照片片段
+TC-004,照片工具列的 Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有影片片段，子母畫面（PiP）軌上有一個照片片段","1. 點 PiP 軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」",開啟的第二層選單和主軌照片相同：第一個是「Photo Enhance」，第二個是「AI Color」,P1,"R-003, R-004, R-051",
-TC-005,照片工具列的 Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段,"1. 點主軌上的照片片段
+TC-005,照片工具列的 Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「AI Color」",針對選取的照片片段開啟 AI Color,P2,R-006,AI Color 本身是另一個功能，這裡只驗證進入的入口
-TC-006,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段,"1. 點主軌上的照片片段
+TC-006,套用 Photo Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「Photo Enhance」",跳出對話框「Ready to Enhance?」，內文是「Your image will look even better in just a few seconds.」，按鈕有「Cancel」和「Continue」,P1,"R-010, R-052",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-007,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段,"1. 點主軌上的照片片段
+TC-007,套用 Photo Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「Photo Enhance」
-5. 點「Cancel」",對話框關閉；照片沒有變化，不會跳出提示訊息，「Enhance」上也沒有白點,P2,R-011,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-008,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段,"1. 點主軌上的照片片段
+5. 點「Cancel」","對話框關閉
+照片沒有變化，不會跳出提示訊息，「Enhance」上也沒有白點",P2,R-011,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
+TC-008,套用 Photo Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「Photo Enhance」
 5. 點「Continue」",編輯器畫面變暗，出現轉圈圖示、「Enhancing...」文字和「Cancel」按鈕,P1,"R-012, R-053",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。捷徑房間約 3–5 秒就處理完一張照片，所以要在點「Continue」前先開始螢幕錄影
-TC-009,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段,"1. 點主軌上的照片片段
+TC-009,套用 Photo Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「Photo Enhance」
 5. 點「Continue」
 6. 等「Enhancing...」消失",預覽畫面顯示增強後的照片（比較清晰，可和套用前先截的圖對照），並跳出提示訊息「Applied Photo Enhance」,P1,"R-014, R-017, R-054",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-010,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）,"1. 查看工具列的「Enhance」按鈕
+TC-010,套用 Photo Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）","1. 查看工具列的「Enhance」按鈕
 2. 點「Enhance」","1. 「Enhance」上有一個小白點
 2. 開啟第二層選單，「Photo Enhance」上有白點",P2,"R-015, R-016, R-055",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-011,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段,"1. 點主軌上的照片片段
+TC-011,套用 Photo Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「Photo Enhance」
 5. 點「Continue」
-6. 在「Enhancing...」顯示時點「Cancel」",增強處理停止；編輯器顯示原本的照片，不會跳出「Applied Photo Enhance」，也沒有白點（Q-2）,P2,R-013,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。Q-2 有答案前，這是暫定的預期結果
-TC-012,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有影片片段，子母畫面（PiP）軌上有一個照片片段,"1. 點 PiP 軌上的照片片段
+6. 在「Enhancing...」顯示時點「Cancel」","增強處理停止
+編輯器顯示原本的照片，不會跳出「Applied Photo Enhance」，也沒有白點（Q-2）",P2,R-013,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。Q-2 有答案前，這是暫定的預期結果
+TC-012,套用 Photo Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有影片片段，子母畫面（PiP）軌上有一個照片片段","1. 點 PiP 軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「Photo Enhance」
 5. 點「Continue」
-6. 等「Enhancing...」消失",PiP 照片顯示為增強後的樣子，並跳出「Applied Photo Enhance」；主軌的影片不受影響,P1,"R-014, R-017",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-023,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有兩個照片片段，只有第一個片段套用過 Photo Enhance（TC-009）,"1. 點主軌上的第二個照片片段
+6. 等「Enhancing...」消失","PiP 照片顯示為增強後的樣子，並跳出「Applied Photo Enhance」
+主軌的影片不受影響",P1,"R-014, R-017",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
+TC-023,套用 Photo Enhance,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有兩個照片片段
+3. 只有第一個片段套用過 Photo Enhance（TC-009）","1. 點主軌上的第二個照片片段
 2. 查看工具列的「Enhance」按鈕
 3. 點「Enhance」
 4. 點「Photo Enhance」
@@ -59,27 +78,60 @@ TC-023,套用 Photo Enhance,iPhone，PowerDirector 已登入，Pro 方案（Laun
 4. 跳出的是「Ready to Enhance?」對話框，不是調整面板
 5. 對話框關閉
 6. 第一個片段仍是增強後的樣子，「Enhance」上也還有白點",P2,"R-015, R-016, R-017, R-010",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。白點和對話框是依「目前選取的片段」判斷，不是依整個專案
-TC-013,Photo Enhance 面板,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）,"1. 點主軌上的照片片段
+TC-013,Photo Enhance 面板,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「Photo Enhance」",不會跳出對話框，直接開啟 Photo Enhance 面板：有照片預覽，左上角是 ✕，右上角有一個圖示，另有「Reset」、標題「Photo Enhance」和「Original」、「Result」兩個選項，預設選在「Result」,P1,"R-020, R-056",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-014,Photo Enhance 面板,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）；已開啟 Photo Enhance 面板（TC-013）；螢幕錄影中,"1. 點「Original」
+TC-014,Photo Enhance 面板,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）
+4. 已開啟 Photo Enhance 面板（TC-013）
+5. 螢幕錄影中","1. 點「Original」
 2. 點「Result」","1. 「Original」出現外框，預覽顯示未增強的原始照片
 2. 「Result」出現外框，增強後的照片立刻回來，不會出現「Enhancing...」的處理進度",P1,"R-021, R-022",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-015,Photo Enhance 面板,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）；已開啟 Photo Enhance 面板（TC-013）,點 ✕,面板關閉；編輯器顯示增強後的照片，「Enhance」上的白點仍然保留,P2,"R-023, R-057",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-016,Photo Enhance 面板,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）；已開啟 Photo Enhance 面板（TC-013）,點「Reset」,面板關閉；編輯器顯示原始照片，並跳出提示訊息「Removed Photo Enhance」,P1,"R-024, R-058",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-017,Photo Enhance 面板,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，已套用 Photo Enhance 後又移除（TC-016）,"1. 查看工具列的「Enhance」按鈕
+TC-015,Photo Enhance 面板,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）
+4. 已開啟 Photo Enhance 面板（TC-013）",點 ✕,"面板關閉
+編輯器顯示增強後的照片，「Enhance」上的白點仍然保留",P2,"R-023, R-057",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
+TC-016,Photo Enhance 面板,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）
+4. 已開啟 Photo Enhance 面板（TC-013）",點「Reset」,"面板關閉
+編輯器顯示原始照片，並跳出提示訊息「Removed Photo Enhance」",P1,"R-024, R-058",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
+TC-017,Photo Enhance 面板,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 已套用 Photo Enhance 後又移除（TC-016）","1. 查看工具列的「Enhance」按鈕
 2. 點「Enhance」","1. 「Enhance」上沒有白點
 2. 第二層選單的「Photo Enhance」上沒有白點",P2,R-025,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-018,Photo Enhance 面板,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，已套用 Photo Enhance 後又移除（TC-016）；螢幕錄影中,"1. 點主軌上的照片片段
+TC-018,Photo Enhance 面板,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 已套用 Photo Enhance 後又移除（TC-016）
+4. 螢幕錄影中","1. 點主軌上的照片片段
 2. 把工具列滑到「Enhance」
 3. 點「Enhance」
 4. 點「Photo Enhance」
 5. 如果跳出「Ready to Enhance?」，就點「Continue」（Q-5）
 6. 傳送 App log","1. 不會出現「Enhancing...」的處理進度，增強後的照片和「Applied Photo Enhance」訊息會立刻出現
 2. log 裡沒有針對這個片段的新增強請求",P1,"R-026, R-022",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。對話框是否還會再跳出來：見 Q-5
-TC-019,Photo Enhance 面板,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）；已開啟 Photo Enhance 面板（TC-013）,長按面板右上角的圖示,比較原始照片和增強後的照片，作用和 Photo Enhance 房間裡的比較按鈕一樣（Q-6）,P3,R-027,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。規格沒有寫這個圖示的功能，Q-6 有答案前先照上面的假設驗證
-TC-020,全螢幕預覽,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）,點預覽畫面下方的全螢幕按鈕,開啟全螢幕預覽，顯示的是增強後的照片,P1,"R-030, R-059",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
-TC-021,全螢幕預覽,iPhone，PowerDirector 已登入，Free 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）；已開啟全螢幕預覽（TC-020）,截圖（側邊按鈕＋音量加）,跳出截圖的 IAP 對話框，樣式和按鈕都和捷徑的 Photo Enhance 房間在截圖時跳出的對話框相同,P1,"R-031, R-032, R-060",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。可用同一個方案，在 Launcher › Photo Enhance 裡截圖對照
-TC-022,全螢幕預覽,iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，且已套用 Photo Enhance（TC-009）；已開啟全螢幕預覽（TC-020）,截圖（側邊按鈕＋音量加）,截圖的處理方式和捷徑的 Photo Enhance 房間在 Pro 帳號下一樣（暫定：可以儲存，不會跳出 IAP 對話框；Q-7）,P2,R-032,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。「一律」可能是指所有方案都擋，要在手機上實測，再和使用者決定（Q-7）
-TC-024,全螢幕預覽,iPhone，PowerDirector 已登入，Free 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）；編輯器專案的主軌上有一個照片片段，沒有套用 Photo Enhance；已開啟全螢幕預覽,截圖（側邊按鈕＋音量加）,截圖會被擋下，和增強後的照片一樣：照「一律」（永遠）的字面意思處理（Q-7）,P3,R-031,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。備註沒有說只擋增強後的照片，要在手機上實測，再和使用者決定（Q-7）
+TC-019,Photo Enhance 面板,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）
+4. 已開啟 Photo Enhance 面板（TC-013）",長按面板右上角的圖示,比較原始照片和增強後的照片，作用和 Photo Enhance 房間裡的比較按鈕一樣（Q-6）,P3,R-027,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。規格沒有寫這個圖示的功能，Q-6 有答案前先照上面的假設驗證
+TC-020,全螢幕預覽,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）",點預覽畫面下方的全螢幕按鈕,開啟全螢幕預覽，顯示的是增強後的照片,P1,"R-030, R-059",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）
+TC-021,全螢幕預覽,"1. iPhone，PowerDirector 已登入，Free 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）
+4. 已開啟全螢幕預覽（TC-020）",截圖（側邊按鈕＋音量加）,跳出截圖的 IAP 對話框，樣式和按鈕都和捷徑的 Photo Enhance 房間在截圖時跳出的對話框相同,P1,"R-031, R-032, R-060",只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。可用同一個方案，在 Launcher › Photo Enhance 裡截圖對照
+TC-022,全螢幕預覽,"1. iPhone，PowerDirector 已登入，Pro 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段已套用 Photo Enhance（TC-009）
+4. 已開啟全螢幕預覽（TC-020）",截圖（側邊按鈕＋音量加）,截圖的處理方式和捷徑的 Photo Enhance 房間在 Pro 帳號下一樣（暫定：可以儲存，不會跳出 IAP 對話框；Q-7）,P2,R-032,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。「一律」可能是指所有方案都擋，要在手機上實測，再和使用者決定（Q-7）
+TC-024,全螢幕預覽,"1. iPhone，PowerDirector 已登入，Free 方案（Launcher › Pink › ☰ › [0] IAP › status；Q-3）
+2. 編輯器專案的主軌上有一個照片片段
+3. 該照片片段沒有套用 Photo Enhance
+4. 已開啟全螢幕預覽",截圖（側邊按鈕＋音量加）,截圖會被擋下，和增強後的照片一樣：照「一律」（永遠）的字面意思處理（Q-7）,P3,R-031,只有 PM 規格：還沒有 Design 畫面（Design 連結是 24.10E 的工具列重新分組；Q-11）。備註沒有說只擋增強後的照片，要在手機上實測，再和使用者決定（Q-7）

@@ -2,9 +2,9 @@
   "feature": "pdr/photo-enhancer",
   "platform": "android",
   "title": "Support Photo Enhancer",
-  "version": 1,
-  "approved_at": "2026-11-06T03:41:33.327Z",
-  "draft": "20261106-105312",
+  "version": 2,
+  "approved_at": "2026-11-12T01:38:23.841Z",
+  "draft": "edit-20261112-093823",
   "spec_folder": "specs/2026-11-06",
   "spec_files": [
     {
@@ -21,6 +21,15 @@
       "approved_at": "2026-11-06T03:41:33.327Z",
       "spec_set_sha256": "ebaf80fc63d02d3d30d0f959c2f352686a61edf386dc46764fc327aacb84112b",
       "draft": "20261106-105312",
+      "cases": 29,
+      "csv": "history/v1.csv",
+      "requirements": "history/v1-requirements.md"
+    },
+    {
+      "version": 2,
+      "approved_at": "2026-11-12T01:38:23.841Z",
+      "spec_set_sha256": "ebaf80fc63d02d3d30d0f959c2f352686a61edf386dc46764fc327aacb84112b",
+      "draft": "edit-20261112-093823",
       "cases": 29,
       "csv": "cases.csv",
       "requirements": "requirements.md"
