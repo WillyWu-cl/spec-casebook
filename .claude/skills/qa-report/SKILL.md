@@ -16,11 +16,48 @@ existing eBugs, and only when the user asks for it in chat. Never add eBug comme
 ## Inputs
 
 - The TR (`ecl_query.py tr <TR>`): product, build, the verify list and its creators. "My bugs" = rows whose
-  Creator is the tester, unless the user names another relation.
+  Creator is the tester, unless the user names another relation. **PhotoDirector Android (PHD-A) TRs only:** every
+  bug on the verify list, whoever created it (*PHD-A QR*, below).
 - A verification run with a verdict, screenshots and logs per bug (`library/<product>/<feature>/<platform>/runs/<date>-<tr>-verify/`,
   `result*.md`). Every verdict must have been seen on the TR's build; a bug never checked is not on the report.
 - The QRs other testers already filed on the TR (links in the TR's 「QA Report」 list): read one or two for the
   team's current wording before drafting.
+
+## PHD-A QR (user, 2026-11-13; PhotoDirector Android TRs only)
+
+On a PhotoDirector Mobile for Android TR, follow the team's template QR261102-0081 exactly; everything else in this
+skill (other products and platforms) keeps its own format below.
+
+- **Scope:** verify every bug on the TR's verify list, whoever created it (Creator ALBERT_CHANG, WILLY_WU, …); the
+  bug rows keep their own Creator.
+- **Draft:** `"style": "phd-a"`, `"textOnly": true`, `"shortDescription"` = the TR's Short Description copied
+  verbatim (e.g. `20.19.0.v202611111946 (Deluxe) for CyberLink 9 Languages + RUS + PTB (Enu, Cht, …) (R3)`).
+  `qa-report.ts check` enforces these.
+- **Form fields:** Short Description (the TR's), Test Result `PHD-A - Bug verification [OK=n, Fail=n]`, Testing
+  Date. Test Result Details is that same Test Result line only (no lettered list). Product Version, Build Day,
+  Build No., Operation System and OS Language stay empty. No attachments, no uploads to the eBugs.
+- **OK Reason** (the row's `summary` is the middle sentence, ending with a full stop):
+  ```
+  Verified OK with 202611111946 build.
+  AI Hair Color template names now stay on one line and are no longer truncated.
+  Risk test: n/a
+  ```
+- **Fail Reason** (`observed` / `expected` in English, `observedZh` / `expectedZh` the 摘要 in Traditional Chinese):
+  ```
+  Verified Fail with 202611111946 build.
+
+  Result:
+  Small triangles still show at the bottom corners of the First and Last Frame sample photos.
+  摘要：首尾影格範例圖下方兩角仍出現小三角形。
+
+  Expected Result:
+  The sample photos should show no triangles at their bottom corners.
+  摘要：範例圖下方兩角不應出現三角形。
+
+  Risk test: n/a
+  ```
+- The build in a Reason is the build number alone (`202611111946`, no version, no device). The *Wording* section's
+  Short Description, Test Result prefix, lettered Details and Account line do not apply to PHD-A.
 
 ## Verify first (user, 2026-11-05, REQ-093)
 

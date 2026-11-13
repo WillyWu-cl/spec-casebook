@@ -29,9 +29,10 @@ type Row = {
   summary: string;             // one line for the Details list
   observed?: string;           // Fail: what the build does (one or two sentences)
   expected?: string;           // Fail: what the eBug expects
+  observedZh?: string; expectedZh?: string; // phd-a Fail: the 摘要 line under Result / Expected Result
   note?: string;               // OK: optional qualifier (e.g. the scenario can no longer be triggered); Hold: why
   reason?: string;             // full override of the generated Reason (avoid; it skips the format)
-  images: string[]; logs?: string[];
+  images: string[]; logs?: string[];   // phd-a: may be empty (text only)
 };
 type Draft = {
   tr: string; product: string; tester: string; template: string; testingDate: string;
@@ -44,6 +45,9 @@ type Draft = {
   evidence?: { file: string; sha256: string; files: number; url?: string };
   attachToBugs?: boolean;              // default true (REQ-101): files go on each eBug; false = old ZIP drafts
   textOnly?: boolean;                  // text only (user, 2026-11-13): no files go anywhere, Reasons name none
+  // The PhotoDirector Android team's QR (user, 2026-11-13, template QR261102-0081): Short Description = the TR's,
+  // Details = the Test Result line, Reason `Verified OK with <build> build.` + one sentence + `Risk test: n/a`, text only.
+  style?: 'phd-a';
   uploaded?: Record<string, string[]>; // BugCode → file names `upload --send` confirmed on its page
 };
 
@@ -62,6 +66,7 @@ const MAX_UPLOAD = 5 * 1024 * 1024;
 export function testResult(d: Draft): string {
   if (d.testResult) return d.testResult;
   const parts = [`OK=${count(d, 'OK')}`, `Fail=${count(d, 'Fail')}`];
+  if (d.style === 'phd-a') return `PHD-A - Bug verification [${parts.join(', ')}]`;
   return `${d.product.includes('iOS') ? 'PDR-i' : 'PDR-A'} - Bug verification [${parts.join(', ')}]`;
 }
 
@@ -71,6 +76,21 @@ export function shortDescription(d: Draft): string {
 
 export function reason(d: Draft, r: Row): string {
   if (r.reason) return r.reason;
+  if (d.style === 'phd-a') return r.result === 'OK'
+    ? `Verified OK with ${d.build} build.
+${r.summary}
+Risk test: n/a`
+    : `Verified Fail with ${d.build} build.
+
+Result:
+${r.observed}
+摘要：${r.observedZh}
+
+Expected Result:
+${r.expected}
+摘要：${r.expectedZh}
+
+Risk test: n/a`;
   // Text only (user, 2026-11-13): the Reason names no files.
   if (d.textOnly) return r.result === 'OK' ? [`Verified OK ${on(d)}`, ...(r.note ? [`Note: ${r.note}`] : [])].join('\n')
     : `Verify Fail ${on(d)}\n\nResult:\n${r.observed}\n\nExpected Result:\n${r.expected}`;
@@ -83,6 +103,7 @@ export function reason(d: Draft, r: Row): string {
 }
 
 export function details(d: Draft): string {
+  if (d.style === 'phd-a') return testResult(d);
   const L = 'abcdefghijklmnopqrstuvwxyz';
   const blocks: string[] = [];
   const add = (s: string) => blocks.push(`${L[blocks.length]}. ${s}`);
@@ -109,12 +130,14 @@ export function details(d: Draft): string {
 
 export function check(d: Draft, base: string): string[] {
   const e: string[] = [];
-  for (const k of ['tr', 'product', 'tester', 'template', 'testingDate', 'version', 'build', 'buildDay', 'os'] as const)
+  for (const k of ['tr', 'product', 'tester', 'template', 'testingDate', 'version', 'build', ...(d.style === 'phd-a' ? [] : ['buildDay', 'os'])] as (keyof Draft)[])
     if (!d[k]) e.push(`missing ${k}`);
+  if (d.style === 'phd-a' && !d.shortDescription) e.push('phd-a: shortDescription must be the TR Short Description');
+  if (d.style === 'phd-a' && !d.textOnly) e.push('phd-a QRs are text only ("textOnly": true)');
   if (!/^TR\d{6}-\d{4}$/.test(d.tr ?? '')) e.push(`TR code looks wrong: ${d.tr}`);
   // The Account line names the phone's signed-in account as the app's menu shows it (user, 2026-11-05, REQ-100), or
   // says the app is not signed in, with its tier, when the bugs need no account (user, 2026-11-13).
-  if (perBug(d) && !/[^\s@]+@[^\s@]+\.[a-z]+|^Not signed in \(.+\)$/i.test(d.env?.account ?? '')) e.push('env.account must name the signed-in account (read it from the app menu), or read "Not signed in (<tier>)"');
+  if (perBug(d) && d.style !== 'phd-a' && !/[^\s@]+@[^\s@]+\.[a-z]+|^Not signed in \(.+\)$/i.test(d.env?.account ?? '')) e.push('env.account must name the signed-in account (read it from the app menu), or read "Not signed in (<tier>)"');
   const seen = new Set<string>();
   for (const r of d.rows) {
     const w = (m: string) => e.push(`${r.bug}: ${m}`);
@@ -122,8 +145,10 @@ export function check(d: Draft, base: string): string[] {
     if (!RESULTS.includes(r.result)) w(`result must be one of ${RESULTS.join(', ')}`);
     if (!r.summary) w('no summary line');
     if (r.result === 'Fail' && !(r.reason || (r.observed && r.expected))) w('Fail needs observed and expected');
+    if (d.style === 'phd-a' && r.result === 'Fail' && !r.reason && !(r.observedZh && r.expectedZh)) w('phd-a Fail needs observedZh and expectedZh (摘要)');
+    if (d.style === 'phd-a' && r.result === 'OK' && !/[.。]$/.test(r.summary ?? '')) w('phd-a: summary is the Reason sentence; end it with a full stop');
     if (r.result === 'Hold' && !r.note) w('Hold needs a note saying what is left to verify');
-    if (r.result !== 'Hold' && !r.images?.length) w('no evidence image');
+    if (r.result !== 'Hold' && d.style !== 'phd-a' && !r.images?.length) w('no evidence image');
     for (const f of rowFiles(r)) if (!existsSync(join(base, f))) w(`file not found: ${f}`);
     if (perBug(d) && !d.textOnly && r.result !== 'Hold') {
       const names = rowFiles(r).map(f => basename(f));
@@ -145,8 +170,11 @@ export function check(d: Draft, base: string): string[] {
 function printText(d: Draft) {
   const out = [
     ['Template', d.template], ['Short Description', shortDescription(d)], ['Test Result', testResult(d)],
-    ['Testing Date', d.testingDate], ['Product Version', d.version], ['Build Day', d.buildDay], ['Build No.', d.build],
-    ['Operation System', d.os], ...(d.osLanguage ? [['OS Language', d.osLanguage]] : []), ['Test Result Details', details(d)],
+    ['Testing Date', d.testingDate],
+    // phd-a: the team template leaves Product Version, Build Day, Build No., OS and OS Language empty
+    ...(d.style === 'phd-a' ? [] : [['Product Version', d.version], ['Build Day', d.buildDay], ['Build No.', d.build],
+      ['Operation System', d.os], ...(d.osLanguage ? [['OS Language', d.osLanguage]] : [])]),
+    ['Test Result Details', details(d)],
   ];
   if (!perBug(d) && !d.evidence?.url) console.log('!!! {{ZIP_URL}} unresolved: upload the ZIP in the form first and put its link in evidence.url\n');
   const missing = perBug(d) && !d.textOnly ? filed(d).filter(r => rowFiles(r).some(f => !d.uploaded?.[r.bug]?.includes(basename(f)))) : [];

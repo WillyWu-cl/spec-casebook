@@ -164,6 +164,10 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **QR text only (user, 2026-11-13).** A QR is filled with text only: no screenshots or logs uploaded to the eBugs
   and no file names in the Reasons (draft `"textOnly": true`); evidence stays in the local run folder. Replaces
   *Evidence on each eBug* (REQ-099) until the user asks for files again.
+- **PHD-A QRs (user, 2026-11-13).** On PhotoDirector Android TRs only: verify every bug on the verify list whoever
+  created it, and write the QR exactly like the team template QR261102-0081 (TR's Short Description, Details = the
+  Test Result line, `Verified OK with <build> build.` + one sentence + `Risk test: n/a`); `qa-report/SKILL.md` ›
+  *PHD-A QR*, draft `"style": "phd-a"`.
 - **Bug verify against today's spec (user, 2026-11-05, REQ-091).** Before verifying a bug, check its Expect Result
   against the current spec in the repo (ticket comments, row, `requirements.md` changes and open questions, newer
   frames in `extracted/`), then judge the build's current behaviour against that. An open question means Hold
