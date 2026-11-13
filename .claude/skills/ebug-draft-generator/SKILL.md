@@ -8,7 +8,7 @@ description: Turn QA verification / sign-off results for a PowerDirector feature
 
 This is the casebook's own copy of the shared eBug skill. **Before drafting or filing, read
 `.claude/skills/ebug-tr-filer/references/casebook-overlay.md`** (Codex: `.codex/skills/…`): reviewer rules 1–7
-(one action per step, Spec Link, attachments and logs, filing account memory, no `[UX]` with its revert steps, no
+(one action per step, Spec Link, attachments and logs, filing account memory, UX to PM as `[AIAgent][UX]` (restored 2026-11-13), no
 comments on existing tickets, dedupe per OS). Those rules and the lines below override the body of this skill.
 
 - **Findings** come from running the approved cases in `library/<product>/<feature>/<platform>/cases.csv`: each names the

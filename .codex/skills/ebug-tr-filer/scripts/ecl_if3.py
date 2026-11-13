@@ -356,6 +356,8 @@ def cmd_create(a):
         cmd = [sys.executable, checker, a.bodies, "--product", short_product,
                "--version", a.version,
                "--upload-dir", os.path.dirname(os.path.abspath(a.bodies))]
+        if os.environ.get("ALLOW_AGENT_UX") == "1":   # casebook: UX rule restored 2026-11-13 (overlay rule 5)
+            cmd.append("--allow-agent-ux")
         print(f"Format check: {short_product} {a.version}", flush=True)
         if subprocess.call(cmd) != 0:
             raise ECLError(

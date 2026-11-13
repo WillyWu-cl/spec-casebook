@@ -44,13 +44,11 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **Dedupe per OS (user, 2026-10-28).** A ticket on the other OS never makes a finding a duplicate; a same-OS match is
   left off the drafts and review page (kept only in `dedupe.txt`), unless that ticket is **closed** and the bug is
   back: then it is a new card naming the closed ticket (overlay, *Dedupe per OS*).
-- **eBug owner and type (RD, 2026-10-21 — replaces the 2026-10-20 rule; revertible).** Casebook findings are
-  `[AIAgent]` Functional or `[UI]`, owner RD, never `[UX]`; RD forwards to PM when it wants a ruling. A
-  finding with no spec basis is filed to PM for a decision (2026-11-11, below). Exploration (`[AIFound]`) keeps filing `[UX]`.
-  **Revert** — the user may restore the 2026-10-20 rule: "A UX problem goes to PM (BugBelong PM), who decides before
-  handing it to RD. A problem that plainly needs an RD fix (performance, waits, missing behaviour) is Functional,
-  owner RD, with no `[UX]` tag." Put that text back here, then follow the revert steps in overlay rule 5
-  (`--allow-agent-ux` / `ALLOW_AGENT_UX=1`).
+- **eBug owner and type (user, 2026-11-13 — the 2026-10-20 rule restored; replaces RD's 2026-10-21 no-`[UX]` rule).**
+  A UX problem goes to PM (BugBelong PM), who decides before handing it to RD. A problem that plainly needs an RD fix
+  (performance, waits, missing behaviour) is Functional, owner RD, with no `[UX]` tag. Casebook UX findings file as
+  `[AIAgent][UX]` (`check_ebug_format.py --allow-agent-ux`, `ALLOW_AGENT_UX=1 verify_ebug_drafts.py`; overlay rule 5).
+  Restored on AI Hair Color Custom ISS-HCC-10 (TR261111-0042). Exploration (`[AIFound]`) keeps filing `[UX]`.
 - **Text bugs go to RD or PM (user, 2026-11-11).** Text that differs from the spec is RD when the spec states it and
   the app shows something else (fix the app's text), PM when the spec's own text must change (wrong, unclear, two
   sheets disagree, or none states it); never Doc (`ebug-draft-generator` › Owner, overlay rule 5).

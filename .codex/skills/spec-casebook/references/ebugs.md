@@ -8,7 +8,7 @@ controls, and the `decision` entries (Won't Fix, NAB, PM rulings) that make a fi
    failed cases that share one defect, cite the case IDs on each entry's `Report step:` line, and map every
    failed case and observation in the reconciliation. A generator script for the batch can live in
    `ebugs/<date>/generators/`. Follow the reviewer rules of the eBug casebook overlay (one action per Repro step,
-   a `Spec Link:` on every entry, image and log attachments, no video unless asked, no `[UX]`).
+   a `Spec Link:` on every entry, image and log attachments, no video unless asked; a UX problem is `[AIAgent][UX]`, BugBelong PM).
    **Spec basis check (PDRA, 2026-10-29, REQ-055; A2 had 4 invalid entries of 40).** Before an entry goes on the
    review page, open the spec text its Expect Result rests on and confirm each point, else hold it as a PM question
    or drop it:
@@ -42,7 +42,7 @@ controls, and the `decision` entries (Won't Fix, NAB, PM rulings) that make a fi
 2. `drafts_to_bodies.py … --out upload/bodies.json --stage upload/`, then `check_ebug_format.py` (0 errors) and
    `verify_ebug_drafts.py`. Avoid `{n}`-style placeholders in body text; they are read as attachments. The format
    check fails a `>` / `›` inside a Repro step, a missing or empty `Spec Link:`, an entry with no image, a video
-   attachment without `--videos-requested`, and `[AIAgent][UX]`.
+   attachment without `--videos-requested`; pass `--allow-agent-ux` (UX rule restored 2026-11-13).
 3. Dedupe with `ecl_query.py dedupe upload/bodies.json --product "<ecl_product>"` (the tested platform's `ecl_product` in
    `library/<product>/product.json`, e.g. "PowerDirector Mobile for iOS") (the
    tested OS only) and read each candidate with `ecl_query.py bug <code>`. **Per OS (user, 2026-10-28):** a match on
