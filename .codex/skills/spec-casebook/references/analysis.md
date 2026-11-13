@@ -76,6 +76,14 @@ and return, waits), which apply to every job.
    the other one in Notes; re-check it at every update of either spec. When the dates can't tell which is newer,
    write the row from the Design (default), mark it 「check on device」 in Notes, check the app's behaviour in the next
    run, and decide with the user before filing anything on it.
+   **Design first (user, 2026-11-13, video-enhance REQ-018):** where the two disagree the Design has priority; the PM
+   wins only when its item is **newer** (above) or was **created from a bug** (it cites an eBug, or its note says it
+   answers one). A newer PM item wins even when it is only a proposal ([建議]) (user, 2026-11-13: the Timeline
+   paste-back of PM D4, 9/29, stays over the undated Design routing note). An older PM item never beats a Design
+   frame or a Design note whose words cover the case; an Open question's assumption follows the same order. Date a
+   Design item by the label on its own board: a dated label on another board of the same section (「1005_Update」 on
+   Main Flow) does not date it; a PM page written to align with a Design version (「對齊 Design 26.09 v2（9/29）」) is
+   newer than that version. Put the losing version in Notes and the Open question.
    **A Design frame older than the newest PM spec file (user, 2026-10-22, REQ-029):** where it conflicts with that PM
    file, the PM governs, even when the PM board itself carries an older date (Design 1016 「Chat navigation」 lost to
    PM Spec 20261021). What such a frame adds and the PM does not contradict (another exit, a landing page) still

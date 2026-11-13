@@ -1,13 +1,13 @@
 ﻿ID,Section,Precondition,Action,Expected Result,Priority,Spec Ref,Notes
-TC-001,Entry points,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-001,Entry points,"1. Signed in with a Pro account (no tier switch on Android)
 2. The Demo page was never dismissed with 「Don’t show again」 on this install
 3. Launcher open",Tap the big shortcut 「AI Video Enhance」 on the Launcher,The Demo page opens with the title 「AI Video Enhance」 (not 「Video Enhance」),P1,"R-001, R-004","Design 1005_Update wording 「AI Video Enhance」; PM and KP-010 (observed build) say 「Video Enhance」: the Design wins. Run the Demo rows before TC-014, which turns the Demo page off for good on this install."
-TC-002,Entry points,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-002,Entry points,"1. Signed in with a Pro account (no tier switch on Android)
 2. Demo page not dismissed with 「Don’t show again」","1. Tap 「AI Magic」 in the bottom bar
 2. Scroll to the 「AI Enhance」 section
 3. Tap the 「AI Video Enhance」 card","The 「AI Enhance」 section lists 「AI Video Enhance」
 The card opens the Demo page",P2,R-002,
-TC-003,Entry points,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-003,Entry points,"1. Signed in with a Pro account (no tier switch on Android)
 2. A project open in the editor with one video clip of 2:30 or less on the timeline
 3. 「Don't show again」 on the Demo page not saved yet (run before TC-014)","1. Tap the clip on the timeline
 2. Tap 「AI Video Enhance」 in the clip toolbar (inside its 「Enhance」 group when the toolbar groups the tools)","The AI Video Enhance panel opens directly with that clip in the Preview
@@ -31,11 +31,11 @@ TC-014,Demo page,"1. Demo page open from the Launcher
 5. Go back to the Launcher
 6. Open 「AI Magic」 › 「AI Video Enhance」","Steps 4 and 6 open Add Media directly
 The Demo page no longer appears from the Launcher or AI Magic",P2,R-009,"Destructive for the Demo rows: run it last (the setting is local; clearing app data resets it, which also signs out and clears History)."
-TC-020,Add Media,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-020,Add Media,"1. Signed in with a Pro account (no tier switch on Android)
 2. Add Media open from the feature
 3. A 12:30 1080p 60 fps video in the album",Tap that video's thumbnail,"Only the 「Video」 tab is offered and one video can be picked
 The tap opens the panel with that video in the Preview at once (no Next button)",P1,"R-012, R-013",
-TC-255,Add Media,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-255,Add Media,"1. Signed in with a Pro account (no tier switch on Android)
 2. The Demo page showing
 3. Videos in All / Recents and in at least one named album or folder
 4. Network on","1. Tap 「Try It Now」
@@ -43,19 +43,19 @@ TC-255,Add Media,"1. Signed in with a Pro+ account (no tier switch on Android)
 3. Open each source in turn and tap a supported video in it, going back to Add Media after each panel opens","Step 1 opens Add Media
 Step 2: every local album or folder and every stock library tab is listed (record them)
 Step 3: each source lists videos and each tapped video opens the panel with that video in the Preview",P3,"R-202, R-008, R-012",Not from the spec: the colleague's build via the spec agent's TC-VE2-153 [Req: REQ-008] (the Design's Add Media draws one 「Video」 tab with Recents). A source that cannot import its video is a defect.
-TC-256,Add Media,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-256,Add Media,"1. Signed in with a Pro account (no tier switch on Android)
 2. Add Media open from the feature
 3. Network on","1. Swipe the provider tab row left until 「Pexels」 shows
 2. Tap 「Pexels」
 3. Tap a Pexels video","Step 2 lists Pexels videos
 Step 3 fetches the video if needed and opens the panel with that video in the Preview",P3,"R-202, R-012","Not from the spec: the colleague's build via the spec agent's TC-VE2-155 [Req: REQ-008] (the Design's Add Media draws one 「Video」 tab with Recents). Swipe the tab row itself, not the grid."
-TC-257,Add Media,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-257,Add Media,"1. Signed in with a Pro account (no tier switch on Android)
 2. Add Media open from the feature
 3. Network on","1. Swipe the provider tab row left until 「Pixabay」 shows
 2. Tap 「Pixabay」
 3. Tap a Pixabay video","Step 2 lists Pixabay videos
 Step 3 fetches the video if needed and opens the panel with that video in the Preview",P3,"R-202, R-012","Not from the spec: the colleague's build via the spec agent's TC-VE2-156 [Req: REQ-008] (the Design's Add Media draws one 「Video」 tab with Recents). Swipe the tab row itself, not the grid."
-TC-258,Add Media,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-258,Add Media,"1. Signed in with a Pro account (no tier switch on Android)
 2. A video that is only in a named album (e.g. 「VE test」), not among the first Recents
 3. Add Media open from the feature","1. Open the album / folder chooser
 2. Tap the named album
@@ -70,7 +70,7 @@ TC-022,Add Media,"1. Add Media open
 5. Tap the video that is not MP4 / MOV","Steps 1–3: each opens the panel like any other source: 「4K」 is selected (a source above the highest option takes the highest), the Preview shows the video and plays it, and the badge at its lower right shows the source's own fps and resolution (e.g. 「30fps · 1440p」, 「30fps · 2160p」, 「30fps · 4320p」)
 Steps 4–5: each is greyed, the tap shows 「This video isn't supported. Try one up to 4K.」 and no panel opens",P2,"R-196, R-044, R-015","Steps 1–3: Design ds-ai-video-enhance 預設值規則 「Resolution 依來源（選不低於來源解析度的最小選項；來源超過最高選項時取最高）」, lookup 1081p → 4K [Req: REQ-011]; the spec agent's 2K+ block (TC-VE2-097 / 098) follows the 2026-10-07 export of the old board and is dropped. PM E1 [待確認] (≤ 4K, over 4K greyed) is older than the Design (Q-13), so a difference on the 8K step is still filed. Steps 4–5: PM E1 / A2 [建議] and [待確認] (Q-13), a difference is a PM question. Needs the five fixtures (fixtures.md)."
 TC-023,Add Media,No video in the album (all videos hidden or a test device with photos only),Open Add Media from the feature,Add Media shows the empty state 「No videos yet」,P3,R-016,PM A2 [建議]; needs an album with no videos (parked: test-data).
-TC-030,Panel layout and first-run bubble,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-030,Panel layout and first-run bubble,"1. Signed in with a Pro account (no tier switch on Android)
 2. The panel was never opened on this install
 3. A 12:30 1080p 60 fps video in the album","1. Pick the video in Add Media
 2. Wait 4 s without touching the screen",The bubble 「Max 8 minutes. Drag to choose which part.」 appears by itself at 「Selected Length」 and closes after about 3 s,P2,R-022,First-use state: run before any other panel row (clearing app data restores it). PM B2 proposed copy 「Choose up to 8 minutes…」 loses to the Design.
@@ -80,7 +80,7 @@ TC-031,Panel layout and first-run bubble,"1. Panel open
 Step 2 closes it at once",P3,"R-022, R-024",
 TC-032,Panel layout and first-run bubble,TC-030 done,"1. Tap ‹ to Add Media
 2. Pick a video again",The panel opens with no automatic bubble,P2,R-023,
-TC-033,Panel layout and first-run bubble,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-033,Panel layout and first-run bubble,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with a 12:30 1080p 60 fps video in the album",Look at the panel top to bottom,"Top bar ‹, 「AI Video Enhance」, the credit pill with the balance and the Recent task icon
 The Preview with 「60fps · 1080p」 at its lower right, 「00:00/12:30」, play and full-screen
 「Selected Length ⓘ」 「08:00」 and the thumbnail strip with a left ‹ and a right › trim handle and the playhead (a line with the bubble 「00:00」 above the strip and a ◀▶ knob under it)
@@ -89,7 +89,7 @@ The Preview with 「60fps · 1080p」 at its lower right, 「00:00/12:30」, pla
 「fps」 30fps / 60fps / 120fps
 「Resolution」 720p / 1080p / 4K (no 2K)
 CTA 「Enhance ◆ <credits>」 with 「Charge X credits per second」 under it",P1,"R-020, R-021, R-045, R-070, R-192",
-TC-259,Panel layout and first-run bubble,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-259,Panel layout and first-run bubble,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 02:30.01 (150.01 s, length checked with ffprobe) video in the album (made for the test)",Open the panel with the video and read the Preview time,"The Preview time reads 「00:00/02:31」 (the total rounded up), not 「00:00/02:30」",P3,R-199,Not from the spec: user requirement 2026-10-21 via the spec agent's TC-VE2-276 [Req: REQ-008]. Same fixture as TC-262 and TC-264.
 TC-035,Panel layout and first-run bubble,Panel open,Tap ⓘ next to 「Mode」,A bubble shows 「Standard: Great quality · up to 8 min」 and 「Professional: Maximum detail · up to 2:30」,P3,R-025,"PM 1002 「Great quality, quick results」 and PM 9/29 「Standard: up to 8 minutes…」 are older."
 TC-036,Panel layout and first-run bubble,Panel open,Tap ⓘ next to 「Enhancement style」,"A bubble shows 「Natural: Lighter enhancement with fewer artifacts, for a more realistic look」 and 「Sharp: Moderate enhancement for a sharp, clear image」",P3,R-026,
@@ -103,12 +103,12 @@ Step 2 pauses it and the time and the frame stay the same through step 3
 Step 4 shows it full screen
 Step 5 returns to the panel with the same video, the selection 02:00–04:00 (「02:00」), 「Professional」, 「Sharp」, 「60fps」, 「4K」 and the noted CTA price",P3,"R-027, R-200","Pause: spec agent TC-VE2-163 (generic player rule, not in the Design) [Req: REQ-008]. A trimmed, non-default panel (spec agent TC-VE2-162, TC-VE2-170) [Req: REQ-016]."
 TC-038,Panel layout and first-run bubble,"Panel open from Add Media, nothing running",Tap ‹ in the panel's top bar,Add Media is shown again,P2,R-028,
-TC-040,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-040,Trim and selected length,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 12:30 1080p 30 fps video in the album",Pick the video in Add Media,"The selection starts at 00:00 and 「Selected Length」 reads 「08:00」 (mm:ss)
 Mode is Standard",P1,R-030,PM 9/29 「5m 00s / 8m max」 and B1 「18s」 formats lose to the Design (Q-19).
-TC-041,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-041,Trim and selected length,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 01:30 1080p 30 fps video in the album",Pick the video in Add Media,The whole video is selected and 「Selected Length」 reads 「01:30」,P2,R-030,
-TC-270,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-270,Trim and selected length,"1. Signed in with a Pro account (no tier switch on Android)
 2. Videos of 00:01 (ve-000100-720p30), 07:59 (ve-0759-1080p30), 07:59.97 (ve-075997-1080p30, one frame under 8:00), 08:00 (ve-0800-1080p30), 08:00.03 (ve-080003-1080p30, one frame over) and 08:01 (ve-0801-1080p30) in the album, lengths checked with ffprobe
 3. Each video's time is burned into its frames","1. Open the panel with the 00:01 video
 2. Go back and open it with the 07:59 video
@@ -144,7 +144,7 @@ TC-043,Trim and selected length,"Panel open with the 12:30 video in Standard, th
 Step 1: 「Selected Length」 stays 「08:00」 and the Preview shows the frame at the new start (burned-in 04:30)
 Step 2: both handles move back by the same amount (about 02:00–10:00)
 Step 2: 「Selected Length」 stays 「08:00」 and the Preview shows the frame at the new start",P2,R-032,"Both directions with the full 8:00 selection (spec agent TC-VE2-232, TC-VE2-233) [Req: REQ-016]."
-TC-271,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-271,Trim and selected length,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 05:24 (324 s) 1080p 30 fps video with its time burned in (ve-0524-1080p30) in the album
 3. Panel open with it in Standard","1. Trim the selection to 01:00–01:30 (「00:30」)
 2. Drag the middle of the selection to the right until its start is about 03:00
@@ -186,7 +186,7 @@ TC-216,Trim and selected length,"1. Panel open with the 12:30 video in Standard
 3. Stop the recording","Step 2: at every sampled moment of the drag the Preview shows the frame at the left handle (its time follows the handle back toward 「04:30/12:30」, no visible lag)
 Step 2: the left handle stops at 04:30 (「Selected Length」 「08:00」) with a light haptic and the bubble 「Up to 8 minutes in Standard mode」
 Step 2: the right handle stays at 12:30",P2,"R-033, R-050, R-031","Twin of TC-044 for the left handle. PM-only: no Design frame yet (PM 9/29 UI). Evidence: screen recording of the whole drag (run-android.md, *Judging a drag*); the fixture burns its time into every frame. Allowed delay: Q-27 (assumed: no visible lag)."
-TC-272,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-272,Trim and selected length,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 05:24 video (ve-0524-1080p30) in Standard
 3. The selection trimmed to 02:00–03:30 (「01:30」)","1. Start a screen recording
 2. Drag the left handle to the left until it is at about 01:30, over 2–3 seconds
@@ -194,7 +194,7 @@ TC-272,Trim and selected length,"1. Signed in with a Pro+ account (no tier switc
 Step 2: 「Selected Length」 grows with the drag and ends at 「02:00」 (end − start)
 Step 2: the right handle stays at 03:30
 Step 2: no limit bubble shows (still under 8:00)",P3,"R-031, R-033","The left handle lengthening a selection under the cap (spec agent TC-VE2-157); TC-216 only checks the stop at 8:00 [Req: REQ-016]. Evidence: screen recording of the whole drag (run-android.md, *Judging a drag*); the fixture burns its time into every frame. Allowed delay: Q-27 (assumed: no visible lag)."
-TC-045,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-045,Trim and selected length,"1. Signed in with a Pro account (no tier switch on Android)
 2. An 08:00 (480 s) and a 12:30 (750 s) video in the album","1. Open the panel with the 08:00 video (Standard)
 2. Drag the right handle left until 「Selected Length」 reads 「02:00」
 3. Tap 「Professional」
@@ -213,7 +213,7 @@ Steps 6–7: the 12:30 strip scrolls sideways with 8:00 filling one width
 Steps 9–10: the strip is re-laid to 2:30 per width and its end (the 12:30 frame) can be reached
 Step 11: back to 8:00 per width with no trim made
 In every step the thumbnails stay in time order and the selection keeps its start, end and length (00:00–02:00 once set)",P3,"R-034, R-051","Q-24: follows the spec agent's reading of PM 9/29 ⑥ (TC-VE2-026, TC-VE2-265, TC-VE2-267) pending PM [Req: REQ-008]; a different layout is a PM question until PM confirms. PM-only: no Design frame yet."
-TC-277,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-277,Trim and selected length,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 00:30 (ve-0030-1080p30) and a 02:30.00 (ve-023000-1080p30) video in the album","1. Open the panel with the 00:30 video (Standard)
 2. Scroll the strip sideways
 3. Tap 「Professional」
@@ -226,7 +226,7 @@ Steps 3–4: still one width, no sideways scroll
 Steps 5–6: one width, no sideways scroll
 Steps 7–8: still one width (exactly at the 2:30 limit), no sideways scroll
 The thumbnails stay in time order and the selection is the whole video throughout",P3,"R-034, R-051",Sources within both caps (spec agent TC-VE2-026) [Req: REQ-016]. Q-24 as in TC-045.
-TC-264,Trim and selected length,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-264,Trim and selected length,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 02:30.01 (150.01 s) and an 08:01 (481 s) video in the album (made for the test)","1. Open the panel with the 02:30.01 video (Standard)
 2. Drag the right handle left until 「Selected Length」 reads 「02:00」
 3. Tap 「Professional」
@@ -247,13 +247,13 @@ The thumbnails stay in time order and the selection keeps 00:00–02:00 through 
 TC-046,Trim and selected length,Panel open with a 01:30 video,Drag the right handle toward the left handle as far as it goes,The selection cannot get shorter than 1 s,P3,R-035,PM B1 [建議] (proposal).
 TC-217,Trim and selected length,Panel open with a 01:30 video,Drag the left handle toward the right handle as far as it goes,"The selection cannot get shorter than 1 s
 The right handle stays where it was",P3,R-035,Twin of TC-046 for the left handle. PM B1 [建議] (proposal).
-TC-050,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-050,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 01:30 1080p 60 fps video in the album",Pick the video in Add Media,Mode 「Standard」 and Enhancement style 「Natural」 are selected,P1,"R-040, R-041",
 TC-051,Default settings,"1. Panel open
 2. Selection 2:30 or less","1. Select 「Professional」 and 「Sharp」
 2. Tap ‹ to Add Media
 3. Pick another video","The panel opens with 「Standard」 and 「Natural」 again (the defaults are fixed, not remembered)",P2,R-042,PM §4.3 「記住上次」 and PM B3 [衝突] proposal lose to the Design 預設值規則 and the PM 1002 rule.
-TC-052,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-052,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 1 fps (ve-fps1-1080p), a 24 fps, a 29 fps (ve-fps29-1080p) and a 30 fps 1080p video in the album","1. Open the panel with the 1 fps video
 2. Go back and open it with the 24 fps video
 3. Go back and open it with the 29 fps video
@@ -265,14 +265,14 @@ Step 3: 「30fps」 is selected
 Step 3: the Preview label reads 「29fps · 1080p」
 Step 4: 「30fps」 is selected
 Step 4: the Preview label reads 「30fps · 1080p」",P1,"R-043, R-021","1 fps is the lowest value of R-043's 1–30 band (analysis.md pass 4, ranges: both outer ends) [Req: REQ-015]; 29 fps is just under its upper edge (spec agent TC-VE2-079, TC-VE2-081) [Req: REQ-016]. The Spec Agent saw no fps selected and every fps chip disabled for a 1 fps source."
-TC-053,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-053,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 50 fps, a 59 fps (ve-fps59-1080p) and a 60 fps 1080p video in the album","1. Open the panel with the 50 fps video
 2. Go back and open it with the 59 fps video
 3. Go back and open it with the 60 fps video","All three select 「60fps」
 Step 1: the Preview label reads 「50fps · 1080p」
 Step 2: the Preview label reads 「59fps · 1080p」
 Step 3: the Preview label reads 「60fps · 1080p」",P1,R-043,59 fps is just under the 60 fps edge (spec agent TC-VE2-084) [Req: REQ-016].
-TC-054,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-054,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. 119 fps (ve-fps119-1080p), 120 fps, 144 fps (ve-fps144-1080p) and 240 fps (slow-motion) 1080p videos in the album","1. Open the panel with the 119 fps video
 2. Go back and open it with the 120 fps video
 3. Go back and open it with the 144 fps video
@@ -281,12 +281,12 @@ Step 1: the Preview label reads 「119fps · 1080p」
 Step 2: the Preview label reads 「120fps · 1080p」
 Step 3: the Preview label reads 「144fps · 1080p」
 Step 4: the Preview label reads 「240fps · 1080p」",P2,R-043,119 and 144 fps either side of the 120 fps edge (spec agent TC-VE2-087 – TC-VE2-090) [Req: REQ-016].
-TC-055,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-055,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 31 fps and a 61 fps video in the album (made for the test)","1. Open the panel with the 31 fps video
 2. Go back and open it with the 61 fps video","31 fps selects 「60fps」 and 61 fps selects 「120fps」 (smallest option not below the source)
 Step 1: the Preview label reads 「31fps · 1080p」
 Step 2: the Preview label reads 「61fps · 1080p」",P3,R-043,"Boundaries of the Design lookup table. PM 1002 「nearest, tie lower」 would give 30fps / 60fps: the Design wins. Needs the two fixture videos."
-TC-056,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-056,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. 360p (ve-res360p, 640 × 360), 480p, 718p (ve-res718p, 1280 × 718, just under 720p) and 720p videos in the album","1. Open the panel with the 360p video
 2. Go back and open it with the 480p video
 3. Go back and open it with the 718p video
@@ -295,18 +295,18 @@ Step 1: the Preview label reads 「30fps · 360p」
 Step 2: the Preview label reads 「30fps · 480p」
 Step 3: the Preview label reads 「30fps · 718p」
 Step 4: the Preview label reads 「30fps · 720p」",P1,R-044,"360p and just under 720p (spec agent TC-VE2-091 – TC-VE2-093; their 719p cannot be encoded, the fixture is 718p) [Req: REQ-016]."
-TC-057,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-057,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 722p (ve-res722p, 1280 × 722, just over 720p), a 900p (e.g. 1600×900) and a 1080p video in the album","1. Open the panel with the 722p video
 2. Go back and open it with the 900p video
 3. Go back and open it with the 1080p video","All three select 「1080p」
 Step 1: the Preview label reads 「30fps · 722p」
 Step 3: the Preview label reads 「30fps · 1080p」",P1,R-044,"PM B3 「nearest, tie lower」 would give 900p → 720p (a downgrade); the Design rule (not below the source) wins. Just over 720p: spec agent TC-VE2-094 (their 721p cannot be encoded, the fixture is 722p) [Req: REQ-016]."
-TC-058,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-058,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 1081p (e.g. 1920 × 1081, made for the test) and a 1200p (1920 × 1200) video in the album","1. Open the panel with the 1081p video
 2. Go back and open it with the 1200p video","Both open the panel with 「4K」 selected (a source from 1081p up to below 2K defaults to 4K)
 Step 1: the Preview label reads 「30fps · 1082p」
 Step 2: the Preview label reads 「30fps · 1200p」",P2,R-044,"1440p, 4K and 8K sources also default to 4K (R-196, TC-022 steps 1–3): Design ds-ai-video-enhance 預設值規則 「Resolution 依來源（選不低於來源解析度的最小選項；來源超過最高選項時取最高）」, lookup 1081p → 4K [Req: REQ-011]. Needs the two fixture videos."
-TC-059,Default settings,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-059,Default settings,"1. Signed in with a Pro account (no tier switch on Android)
 2. A portrait 1080×1920 video in the album",Open the panel with it,「1080p」 is selected (the short side decides),P3,R-044,Q-5: assumption from PM B3; check on device and decide with the user before filing.
 TC-061,Settings chips,"1. Panel open, 「Natural」 selected
 2. Note the CTA price","1. Tap 「Sharp」
@@ -332,7 +332,7 @@ TC-074,Mode length limit,"Professional selected, selection 02:20",Drag the right
 TC-218,Mode length limit,"1. Panel open with the 12:30 video
 2. Professional selected, selection 05:00–07:20 (「02:20」)",Drag the left handle as far left as it goes,"The left handle stops at 04:50 (「Selected Length」 「02:30」) with a light haptic and the bubble 「Up to 2m 30s in Professional mode」
 The right handle stays at 07:20",P2,"R-054, R-033",Twin of TC-074 for the left handle.
-TC-273,Mode length limit,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-273,Mode length limit,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 video (time burned into every frame)","1. In Standard trim the selection to 01:00–08:59 (「07:59」)
 2. Drag the left handle to the left as far as it goes and keep pushing for a second
 3. Drag the playhead to each handle and read the burned-in times
@@ -356,7 +356,7 @@ TC-075,Mode length limit,"Panel open with the 12:30 video, Professional selected
 2. Drag the right handle to the right as far as it goes","Step 1: the Mode is 「Standard」 and the selection is still 00:30–03:00 (start, end and 「02:30」 unchanged)
 Step 2: the selection lengthens past 2:30 and stops at 08:30 (「08:00」)
 Step 2: 「Selected Length」 never reads 「08:01」",P2,R-055,"Start and end, not only the length, and the Standard cap after the switch (spec agent TC-VE2-244) [Req: REQ-016]."
-TC-076,Mode length limit,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-076,Mode length limit,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 2:30.4 long video in the album (made for the test)","1. Open the panel with it (the whole video is selected in Standard)
 2. Tap 「Professional」",The toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 appears and the Mode stays Standard (2:30.4 counts as 151 s),P3,R-056,
 TC-263,Mode length limit,"Panel open with the 12:30 video in Standard, selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「02:31」
@@ -364,7 +364,7 @@ TC-263,Mode length limit,"Panel open with the 12:30 video in Standard, selection
 3. Drag the right handle left until 「Selected Length」 reads 「02:30」
 4. Tap 「Professional」","Step 2: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows for about 3 s, the Mode stays 「Standard」 and the selection keeps 00:00–02:31
 Step 4: the Mode switches to 「Professional」 with no toast and the selection stays 00:00–02:30",P2,"R-052, R-053, R-050","The 151 s / 150 s boundary (spec agent TC-VE2-227, TC-VE2-228) [Req: REQ-008]; their toast copy is PM 9/29's, the Design copy is newer."
-TC-274,Mode length limit,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-274,Mode length limit,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p video in Standard / Natural / 30fps","1. Tap 「720p」
 2. Trim the selection to 00:30–02:50 (「02:20」)
 3. Tap 「Professional」
@@ -388,7 +388,7 @@ Step 9: 「Professional」 with no toast, 00:30–03:00, 「Enhance ◆ 300」
 Step 10: 00:30–03:00, 「Enhance ◆ 150」
 Step 11: 「Enhance ◆ 151」
 Step 12: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 for about 3 s, the Mode stays 「Standard」, the selection keeps 00:30–03:01 and 「Enhance ◆ 151」",P1,"R-052, R-053, R-055, R-063, R-065, R-061","Mode switches both ways at 140, 149, 150 and 151 s with a start after 00:00, and the price each way (spec agent TC-VE2-226, TC-VE2-228, TC-VE2-260 – TC-VE2-263); step 1 taps 「720p」, which no other row taps (TC-VE2-034) [Req: REQ-016]. ECL rates: Standard 720p 30fps 1/s, Professional 2/s."
-TC-275,Mode length limit,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-275,Mode length limit,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 video in Standard (time burned into every frame)","1. Trim the selection to start at 00:30 and nudge the right handle until the frame at it reads 02:59.99 (149.99 s selected)
 2. Tap 「Professional」
 3. Tap 「Standard」
@@ -397,28 +397,28 @@ TC-275,Mode length limit,"1. Signed in with a Pro+ account (no tier switch on An
 Step 2: the frames at the handles still read 00:30 and 02:59.99
 Step 5: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows and the Mode stays 「Standard」
 Step 5: the frames at the handles still read 00:30 and 03:00.01",P3,"R-052, R-053","Fractional boundaries with a later start (spec agent TC-VE2-253, TC-VE2-254); TC-261 / TC-262 use whole videos from 00:00 [Req: REQ-016]. A handle that cannot be set to the hundredth is recorded with the nearest frame reached."
-TC-260,Mode length limit,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-260,Mode length limit,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 00:01 (1 s) and a 00:30 video in the album (720p 30 fps)","1. Open the panel with the 00:01 video
 2. Tap 「Professional」
 3. Go back and open the panel with the 00:30 video
 4. Tap 「Professional」","Steps 1 and 3: the panel opens in 「Standard」 with the whole video selected (「00:01」, 「00:30」)
 Steps 2 and 4: the Mode switches to 「Professional」 with no toast and the selection unchanged",P3,"R-197, R-040, R-030, R-051","The spec agent's TC-VE2-245 / TC-VE2-246 expect the panel to open in Professional (PM 9/29 ①); the newer Design 預設值規則 opens every entry in Standard (R-040), so the boundary is checked on the switch [Req: REQ-008]."
-TC-261,Mode length limit,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-261,Mode length limit,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 02:29.99 (149.99 s) and a 02:30 (150 s) video in the album (made for the test)","1. Open the panel with the 02:29.99 video
 2. Tap 「Professional」
 3. Go back and open the panel with the 02:30 video
 4. Tap 「Professional」","Steps 1 and 3: the panel opens in 「Standard」 with the whole video selected
 Steps 2 and 4: the Mode switches to 「Professional」 with no toast and the selection unchanged (149.99 s rounds up to 150 s, within 2:30)",P2,"R-197, R-040, R-051, R-056",The spec agent's TC-VE2-247 / TC-VE2-248 expect the panel to open in Professional (PM 9/29 ①); the newer Design opens every entry in Standard (R-040) [Req: REQ-008].
-TC-262,Mode length limit,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-262,Mode length limit,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 02:30.01 (150.01 s) and a 12:30 (750 s) video in the album","1. Open the panel with the 02:30.01 video
 2. Tap 「Professional」
 3. Go back and open the panel with the 12:30 video
 4. Tap 「Professional」","Step 1: the panel opens in 「Standard」 with the whole video selected
 Step 3: in 「Standard」 with 00:00–08:00 selected
 Steps 2 and 4: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows, the Mode stays 「Standard」 and the selection is unchanged (150.01 s counts as 151 s)",P2,"R-197, R-040, R-052, R-056",The spec agent's TC-VE2-249 / TC-VE2-250 expect the panel to open in Professional with 2:30 selected (PM 9/29 ①); the newer Design opens every entry in Standard (R-040) and the Design toast is newer [Req: REQ-008].
-TC-080,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-080,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. A 00:03.96 long 1080p 30 fps video in the album","Open the panel with it (whole video, Standard, Natural, 30fps, 1080p)",The CTA reads 「Enhance ◆ 8」 (3.96 s rounds up to 4 s × 2 credits) and 「Charge 2 credits per second」,P1,"R-060, R-063",Credit numbers are binding (formats.md): another price is a defect.
-TC-269,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-269,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Videos of 00:00.9, 00:01, 00:01.01, 00:02.99, 00:03, 00:03.99, 02:59.01, 02:59.99 and 03:00 (lengths checked with ffprobe), all 720p 30 fps, in the album (made for the test)","1. Tap the 00:00.9 video in Add Media
 2. Open the panel with each other video in turn (whole video, Standard / Natural / 30fps / 720p = 1 credit per second) and read the CTA","Step 1: the 0.9 s video is greyed and shows 「This video isn't supported. Try one up to 4K.」 (under 1 s, R-015)
 Step 1: no panel opens
@@ -447,7 +447,7 @@ Step 6: 「Enhance ◆ 48」 (Professional 4K 30fps, 12/s)
 Step 7: 「Enhance ◆ 96」 (24/s)
 Step 8: 「Enhance ◆ 192」 (48/s)
 After each tap 「Charge X credits per second」 shows that rate",P2,"R-065, R-063, R-064",ECL rate table (form 22061491221; spec agent TC-VE2-117 – TC-VE2-149) [Req: REQ-008]: the output fps chip prices the task (Q-3 answered). Credit numbers are binding. A chip drawn disabled (Q-6): record it and skip that step.
-TC-278,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-278,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「30fps」
 2. Tap 「720p」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -458,7 +458,7 @@ Step 3: 「Enhance ◆ 30」 (30 s × 1)
 Step 4: 「Enhance ◆ 90」 (90 s × 1)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 480」 (480 s × 1)
 Step 6: back to 「Enhance ◆ 30」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 30fps · 720p (generated in TC-223) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-114 [Req: REQ-016]. Rate 1 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-279,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-279,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「30fps」
 2. Tap 「1080p」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -469,7 +469,7 @@ Step 3: 「Enhance ◆ 60」 (30 s × 2)
 Step 4: 「Enhance ◆ 180」 (90 s × 2)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 960」 (480 s × 2)
 Step 6: back to 「Enhance ◆ 60」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 30fps · 1080p (generated in TC-225) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-115 [Req: REQ-016]. Rate 2 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-280,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-280,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「30fps」
 2. Tap 「4K」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -480,7 +480,7 @@ Step 3: 「Enhance ◆ 90」 (30 s × 3)
 Step 4: 「Enhance ◆ 270」 (90 s × 3)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 1440」 (480 s × 3)
 Step 6: back to 「Enhance ◆ 90」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 30fps · 4K (generated in TC-224) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-116 [Req: REQ-016]. Rate 3 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-281,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-281,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「60fps」
 2. Tap 「720p」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -491,7 +491,7 @@ Step 3: 「Enhance ◆ 30」 (30 s × 1)
 Step 4: 「Enhance ◆ 90」 (90 s × 1)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 480」 (480 s × 1)
 Step 6: back to 「Enhance ◆ 30」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 60fps · 720p (generated in TC-226) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-117 [Req: REQ-016]. Rate 1 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-282,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-282,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「60fps」
 2. Tap 「1080p」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -502,7 +502,7 @@ Step 3: 「Enhance ◆ 60」 (30 s × 2)
 Step 4: 「Enhance ◆ 180」 (90 s × 2)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 960」 (480 s × 2)
 Step 6: back to 「Enhance ◆ 60」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 60fps · 1080p (generated in TC-221) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-118 [Req: REQ-016]. Rate 2 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-283,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-283,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「60fps」
 2. Tap 「4K」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -513,7 +513,7 @@ Step 3: 「Enhance ◆ 180」 (30 s × 6)
 Step 4: 「Enhance ◆ 540」 (90 s × 6)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 2880」 (480 s × 6)
 Step 6: back to 「Enhance ◆ 180」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 60fps · 4K (generated in TC-227) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-119 [Req: REQ-016]. Rate 6 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-284,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-284,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「120fps」
 2. Tap 「720p」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -524,7 +524,7 @@ Step 3: 「Enhance ◆ 30」 (30 s × 1)
 Step 4: 「Enhance ◆ 90」 (90 s × 1)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 480」 (480 s × 1)
 Step 6: back to 「Enhance ◆ 30」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 120fps · 720p (generated in TC-228) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-120 [Req: REQ-016]. Rate 1 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-285,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-285,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「120fps」
 2. Tap 「1080p」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -535,7 +535,7 @@ Step 3: 「Enhance ◆ 60」 (30 s × 2)
 Step 4: 「Enhance ◆ 180」 (90 s × 2)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 960」 (480 s × 2)
 Step 6: back to 「Enhance ◆ 60」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 120fps · 1080p (generated in TC-222) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-121 [Req: REQ-016]. Rate 2 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-286,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-286,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「120fps」
 2. Tap 「4K」
 3. Drag the right handle left until 「Selected Length」 reads 「00:30」
@@ -546,7 +546,7 @@ Step 3: 「Enhance ◆ 240」 (30 s × 8)
 Step 4: 「Enhance ◆ 720」 (90 s × 8)
 Step 5: 「Selected Length」 「08:00」 and 「Enhance ◆ 3840」 (480 s × 8)
 Step 6: back to 「Enhance ◆ 240」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Natural · 120fps · 4K (generated in TC-229) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-122 [Req: REQ-016]. Rate 8 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-287,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-287,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「30fps」
 3. Tap 「720p」
@@ -558,7 +558,7 @@ Step 4: 「Enhance ◆ 30」 (30 s × 1)
 Step 5: 「Enhance ◆ 90」 (90 s × 1)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 480」 (480 s × 1)
 Step 7: back to 「Enhance ◆ 30」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 30fps · 720p (generated in TC-230) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-123 [Req: REQ-016]. Rate 1 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-288,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-288,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「30fps」
 3. Tap 「1080p」
@@ -570,7 +570,7 @@ Step 4: 「Enhance ◆ 60」 (30 s × 2)
 Step 5: 「Enhance ◆ 180」 (90 s × 2)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 960」 (480 s × 2)
 Step 7: back to 「Enhance ◆ 60」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 30fps · 1080p (generated in TC-220) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-124 [Req: REQ-016]. Rate 2 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-289,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-289,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「30fps」
 3. Tap 「4K」
@@ -582,7 +582,7 @@ Step 4: 「Enhance ◆ 90」 (30 s × 3)
 Step 5: 「Enhance ◆ 270」 (90 s × 3)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 1440」 (480 s × 3)
 Step 7: back to 「Enhance ◆ 90」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 30fps · 4K (generated in TC-231) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-125 [Req: REQ-016]. Rate 3 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-290,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-290,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「60fps」
 3. Tap 「720p」
@@ -594,7 +594,7 @@ Step 4: 「Enhance ◆ 30」 (30 s × 1)
 Step 5: 「Enhance ◆ 90」 (90 s × 1)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 480」 (480 s × 1)
 Step 7: back to 「Enhance ◆ 30」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 60fps · 720p (generated in TC-232) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-126 [Req: REQ-016]. Rate 1 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-291,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-291,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「60fps」
 3. Tap 「1080p」
@@ -606,7 +606,7 @@ Step 4: 「Enhance ◆ 60」 (30 s × 2)
 Step 5: 「Enhance ◆ 180」 (90 s × 2)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 960」 (480 s × 2)
 Step 7: back to 「Enhance ◆ 60」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 60fps · 1080p (generated in TC-233) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-127 [Req: REQ-016]. Rate 2 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-292,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-292,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「60fps」
 3. Tap 「4K」
@@ -618,7 +618,7 @@ Step 4: 「Enhance ◆ 180」 (30 s × 6)
 Step 5: 「Enhance ◆ 540」 (90 s × 6)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 2880」 (480 s × 6)
 Step 7: back to 「Enhance ◆ 180」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 60fps · 4K (generated in TC-234) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-128 [Req: REQ-016]. Rate 6 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-293,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-293,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「120fps」
 3. Tap 「720p」
@@ -630,7 +630,7 @@ Step 4: 「Enhance ◆ 30」 (30 s × 1)
 Step 5: 「Enhance ◆ 90」 (90 s × 1)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 480」 (480 s × 1)
 Step 7: back to 「Enhance ◆ 30」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 120fps · 720p (generated in TC-235) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-129 [Req: REQ-016]. Rate 1 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-294,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-294,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「120fps」
 3. Tap 「1080p」
@@ -642,7 +642,7 @@ Step 4: 「Enhance ◆ 60」 (30 s × 2)
 Step 5: 「Enhance ◆ 180」 (90 s × 2)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 960」 (480 s × 2)
 Step 7: back to 「Enhance ◆ 60」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 120fps · 1080p (generated in TC-236) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-130 [Req: REQ-016]. Rate 2 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-295,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-295,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Tap 「Sharp」
 2. Tap 「120fps」
 3. Tap 「4K」
@@ -654,7 +654,7 @@ Step 4: 「Enhance ◆ 240」 (30 s × 8)
 Step 5: 「Enhance ◆ 720」 (90 s × 8)
 Step 6: 「Selected Length」 「08:00」 and 「Enhance ◆ 3840」 (480 s × 8)
 Step 7: back to 「Enhance ◆ 240」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Standard · Sharp · 120fps · 4K (generated in TC-237) at 30 s, 90 s and the Standard limit; spec agent TC-VE2-131 [Req: REQ-016]. Rate 8 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-296,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-296,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「30fps」
@@ -666,7 +666,7 @@ After step 4: 「Enhance ◆ 60」 (30 s × 2)
 Step 5: 「Enhance ◆ 180」 (90 s × 2)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 300」 (150 s × 2)
 Step 7: back to 「Enhance ◆ 60」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 30fps · 720p (generated in TC-238) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-132 [Req: REQ-016]. Rate 2 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-297,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-297,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「30fps」
@@ -678,7 +678,7 @@ After step 4: 「Enhance ◆ 120」 (30 s × 4)
 Step 5: 「Enhance ◆ 360」 (90 s × 4)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 600」 (150 s × 4)
 Step 7: back to 「Enhance ◆ 120」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 30fps · 1080p (generated in TC-219) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-133 [Req: REQ-016]. Rate 4 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-298,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-298,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「30fps」
@@ -690,7 +690,7 @@ After step 4: 「Enhance ◆ 360」 (30 s × 12)
 Step 5: 「Enhance ◆ 1080」 (90 s × 12)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 1800」 (150 s × 12)
 Step 7: back to 「Enhance ◆ 360」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 30fps · 4K (generated in TC-239) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-134 [Req: REQ-016]. Rate 12 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-299,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-299,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「60fps」
@@ -702,7 +702,7 @@ After step 4: 「Enhance ◆ 120」 (30 s × 4)
 Step 5: 「Enhance ◆ 360」 (90 s × 4)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 600」 (150 s × 4)
 Step 7: back to 「Enhance ◆ 120」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 60fps · 720p (generated in TC-240) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-135 [Req: REQ-016]. Rate 4 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-300,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-300,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「60fps」
@@ -714,7 +714,7 @@ After step 4: 「Enhance ◆ 240」 (30 s × 8)
 Step 5: 「Enhance ◆ 720」 (90 s × 8)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 1200」 (150 s × 8)
 Step 7: back to 「Enhance ◆ 240」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 60fps · 1080p (generated in TC-241) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-136 [Req: REQ-016]. Rate 8 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-301,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-301,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「60fps」
@@ -726,7 +726,7 @@ After step 4: 「Enhance ◆ 720」 (30 s × 24)
 Step 5: 「Enhance ◆ 2160」 (90 s × 24)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 3600」 (150 s × 24)
 Step 7: back to 「Enhance ◆ 720」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 60fps · 4K (generated in TC-242) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-137 [Req: REQ-016]. Rate 24 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-302,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-302,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「120fps」
@@ -738,7 +738,7 @@ After step 4: 「Enhance ◆ 240」 (30 s × 8)
 Step 5: 「Enhance ◆ 720」 (90 s × 8)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 1200」 (150 s × 8)
 Step 7: back to 「Enhance ◆ 240」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 120fps · 720p (generated in TC-243) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-138 [Req: REQ-016]. Rate 8 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-303,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-303,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「120fps」
@@ -750,7 +750,7 @@ After step 4: 「Enhance ◆ 480」 (30 s × 16)
 Step 5: 「Enhance ◆ 1440」 (90 s × 16)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 2400」 (150 s × 16)
 Step 7: back to 「Enhance ◆ 480」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 120fps · 1080p (generated in TC-244) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-139 [Req: REQ-016]. Rate 16 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-304,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-304,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「120fps」
@@ -762,7 +762,7 @@ After step 4: 「Enhance ◆ 1440」 (30 s × 48)
 Step 5: 「Enhance ◆ 4320」 (90 s × 48)
 Step 6: 「Selected Length」 「02:30」 and 「Enhance ◆ 7200」 (150 s × 48)
 Step 7: back to 「Enhance ◆ 1440」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Natural · 120fps · 4K (generated in TC-245) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-140 [Req: REQ-016]. Rate 48 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-305,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-305,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -775,7 +775,7 @@ After step 5: 「Enhance ◆ 60」 (30 s × 2)
 Step 6: 「Enhance ◆ 180」 (90 s × 2)
 Step 7: 「Selected Length」 「02:30」 and 「Enhance ◆ 300」 (150 s × 2)
 Step 8: back to 「Enhance ◆ 60」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Sharp · 30fps · 720p (generated in TC-246) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-141 [Req: REQ-016]. Rate 2 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-306,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-306,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -788,7 +788,7 @@ After step 5: 「Enhance ◆ 120」 (30 s × 4)
 Step 6: 「Enhance ◆ 360」 (90 s × 4)
 Step 7: 「Selected Length」 「02:30」 and 「Enhance ◆ 600」 (150 s × 4)
 Step 8: back to 「Enhance ◆ 120」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Sharp · 30fps · 1080p (generated in TC-247) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-142 [Req: REQ-016]. Rate 4 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-307,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-307,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -801,7 +801,7 @@ After step 5: 「Enhance ◆ 360」 (30 s × 12)
 Step 6: 「Enhance ◆ 1080」 (90 s × 12)
 Step 7: 「Selected Length」 「02:30」 and 「Enhance ◆ 1800」 (150 s × 12)
 Step 8: back to 「Enhance ◆ 360」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Sharp · 30fps · 4K (generated in TC-248) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-143 [Req: REQ-016]. Rate 12 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-308,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-308,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -814,7 +814,7 @@ After step 5: 「Enhance ◆ 120」 (30 s × 4)
 Step 6: 「Enhance ◆ 360」 (90 s × 4)
 Step 7: 「Selected Length」 「02:30」 and 「Enhance ◆ 600」 (150 s × 4)
 Step 8: back to 「Enhance ◆ 120」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Sharp · 60fps · 720p (generated in TC-249) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-144 [Req: REQ-016]. Rate 4 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-309,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-309,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -827,7 +827,7 @@ After step 5: 「Enhance ◆ 240」 (30 s × 8)
 Step 6: 「Enhance ◆ 720」 (90 s × 8)
 Step 7: 「Selected Length」 「02:30」 and 「Enhance ◆ 1200」 (150 s × 8)
 Step 8: back to 「Enhance ◆ 240」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Sharp · 60fps · 1080p (generated in TC-250) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-145 [Req: REQ-016]. Rate 8 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-310,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-310,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -840,7 +840,7 @@ After step 5: 「Enhance ◆ 720」 (30 s × 24)
 Step 6: 「Enhance ◆ 2160」 (90 s × 24)
 Step 7: 「Selected Length」 「02:30」 and 「Enhance ◆ 3600」 (150 s × 24)
 Step 8: back to 「Enhance ◆ 720」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Sharp · 60fps · 4K (generated in TC-251) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-146 [Req: REQ-016]. Rate 24 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-311,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-311,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -853,7 +853,7 @@ After step 5: 「Enhance ◆ 240」 (30 s × 8)
 Step 6: 「Enhance ◆ 720」 (90 s × 8)
 Step 7: 「Selected Length」 「02:30」 and 「Enhance ◆ 1200」 (150 s × 8)
 Step 8: back to 「Enhance ◆ 240」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Sharp · 120fps · 720p (generated in TC-252) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-147 [Req: REQ-016]. Rate 8 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-312,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-312,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -866,7 +866,7 @@ After step 5: 「Enhance ◆ 480」 (30 s × 16)
 Step 6: 「Enhance ◆ 1440」 (90 s × 16)
 Step 7: 「Selected Length」 「02:30」 and 「Enhance ◆ 2400」 (150 s × 16)
 Step 8: back to 「Enhance ◆ 480」 with the four chips and the rate line unchanged",P2,"R-060, R-063, R-065","Price list of combination Professional · Sharp · 120fps · 1080p (generated in TC-253) at 30 s, 90 s and the Professional limit; spec agent TC-VE2-148 [Req: REQ-016]. Rate 16 credits/s from the ECL rate table (form 22061491221). No Enhance is tapped: no credits."
-TC-313,Credit price,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-313,Credit price,"1. Signed in with a Pro account (no tier switch on Android)
 2. Panel open with the 12:30 1080p 30 fps video in Standard / Natural / 30fps / 1080p, the default selection 00:00–08:00","1. Drag the right handle left until 「Selected Length」 reads 「00:30」
 2. Tap 「Professional」
 3. Tap 「Sharp」
@@ -882,10 +882,10 @@ Step 8: back to 「Enhance ◆ 1440」 with the four chips and the rate line unc
 TC-090,Eligibility and purchase,"1. Signed in with a Free account (Android has no tier switch: the tier comes from the account)
 2. Panel open with a video","1. Look at the CTA
 2. Tap it","Step 1: the CTA is an unlock action for Pro with no price (e.g. 「Unlock Pro to Enhance」), not 「Unlock Pro+ to Enhance」, with 「Charge X credits per second」 under it
-Step 2 opens the IAP page on the 「Pro」 tab (the Pro plans)",P1,"R-070, R-071","Android tier from the colleague feedback of 2026-10-07 (spec agent TC-VE2-040, TC-VE2-041) [Req: REQ-008], newer than the Design and PM 9/24, which say Pro+ (now the iOS rule). Exact Android wording: Q-25, recorded, not asserted."
-TC-091,Eligibility and purchase,"1. Signed in with a Pro (not Pro+) account (no tier switch on Android) with enough credits
+Step 2 opens the single 「PowerDirector Pro」 IAP page (no Pro / Pro+ tabs)",P1,"R-070, R-071","Android tier from the colleague feedback of 2026-10-07 (spec agent TC-VE2-040, TC-VE2-041) [Req: REQ-008], newer than the Design and PM 9/24, which say Pro+ (now the iOS rule). Exact Android wording: Q-25, recorded, not asserted."
+TC-091,Eligibility and purchase,"1. Signed in with a Pro account (no tier switch on Android) with enough credits
 2. Panel open with a video",Look at the CTA,"Pro is enough on Android: the CTA is the enabled 「Enhance ◆ <credits>」 with its price and 「Charge X credits per second」
-No unlock action and no IAP page",P1,R-070,Spec agent TC-VE2-241 (colleague feedback 2026-10-07 items 8–9) [Req: REQ-008]. The iOS table keeps Pro+ only. Nothing is generated.
+No unlock action and no IAP page",P1,R-070,Spec agent TC-VE2-241 (colleague feedback 2026-10-07 items 8–9) [Req: REQ-008]. The iOS table keeps Pro+ only; Android has no Pro+ (REQ-012). Nothing is generated.
 TC-093,Eligibility and purchase,IAP page open from the panel (TC-090),"1. Tap 「Monthly」
 2. Tap 「Yearly」","A single 「PowerDirector Pro」 page with no Pro / Pro+ tabs: a yearly and a monthly plan, 「Continue」 and the footer 「Terms of Service」 「Privacy Policy」 「Restore Purchase」
 Each plan tap selects that plan",P3,R-072,"The Design's IAP_US frame (Pro / Pro+ tabs, 「Tap to compare」) is the iOS page; Android sells only Free and Pro [Req: REQ-012; KP-006]. Plan tags, discounts and prices are store data: never assert them (KP-042). Q-7 (trial line) not asserted."
@@ -901,11 +901,11 @@ TC-095,Eligibility and purchase,"1. Signed in with a Free account (Android has n
 4. If a Google Play offer shows, tap 「Not now」","Step 3: the Google Play sheet shows 「PowerDirector Yearly Subscription」, 「Starting today」 and 「Test card, always approves」
 After step 4 the IAP page closes and the panel is back (no 「You're all set」 dialog on Android, not Home or the Pro page)
 The balance is updated in the credit pill, the selection and 「Sharp」 are kept, the CTA reads 「Enhance ◆ <credits>」 and nothing is sent until the CTA is tapped",P1,"R-074, R-075","Needs the user's go-ahead (Google Play test card, no charge; fixtures.md). The Yearly plan and the offer step (spec agent TC-VE2-042) [Req: REQ-016]. 「You're all set」 / 「Your purchase was successful.」 (Design arrows 3293-13678 / 13679) is the iOS dialog [Req: REQ-012]; 「no auto-send」 is PM C2 [建議]."
-TC-096,Eligibility and purchase,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-096,Eligibility and purchase,"1. Signed in with a Pro account (no tier switch on Android)
 2. Credit balance below the CTA price (e.g. 0)
 3. Panel open
-4. Note the balance",Tap 「Enhance」,"The Credit page opens (「My Credits」, 「Buy More」, 「Expiring within 7 days: … credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card)
-No upload dialog appears, Recent task gets no card and the balance is unchanged",P1,R-076,Parked: needs low-balance (the shared account holds many credits).
+4. Note the balance",Tap 「Enhance」,"The Credit page opens (「My Credits」, 「Buy More」, 「Expiring within 7 days: … credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the account's plan card, not a 「PowerDirector Pro+」 one: its exact words recorded)
+No upload dialog appears, Recent task gets no card and the balance is unchanged",P1,R-076,Parked: needs low-balance (the shared account holds many credits). The Design's 「PowerDirector Pro+」 card is the iOS page; Android has no Pro+ and no Android Credit page is drawn [Req: REQ-017].
 TC-097,Eligibility and purchase,"1. TC-096 setup: Credit page open from the panel, the balance noted
 2. The signed-in Google account is a license tester of PowerDirector on Google Play, so the purchase sheet offers 「Test card, always approves」 (no charge)
 3. The user's go-ahead for this purchase","1. Tap 「Buy More」
@@ -920,11 +920,11 @@ TC-098,Eligibility and purchase,"1. Credit page open from the panel (TC-096)
 2. The daily credits not claimed in the last 24 h","1. Tap 「Claim」
 2. Tap ‹ on the Credit page","Step 1 adds the daily credits
 Step 2 returns to the panel with the selection and settings unchanged and the new balance in the credit pill",P2,"R-073, R-078","Parked with TC-096 (needs low-balance). 「Details」 on the Credit page opens the credit history (existing page, KP-041)."
-TC-100,Eligibility and purchase,"1. Signed in with a Pro+ account (no tier switch on Android) with enough credits
+TC-100,Eligibility and purchase,"1. Signed in with a Pro account (no tier switch on Android) with enough credits
 2. Panel open with a video
 3. Wi-Fi off (device-android.ts wifi off) and no mobile data
 4. Note the balance",Tap 「Enhance」,"The toast 「Upload failed. Check your connection and try again.」 appears, the panel stays with its settings, Recent task gets no card and the balance is unchanged",P2,R-079,PM C2 / C3 [建議] copy: a different offline message is a PM question; an upload that starts or a charge is a defect. Turn Wi-Fi back on after the row.
-TC-110,Generating and cancel,"1. Signed in with a Pro+ account (no tier switch on Android) with enough credits
+TC-110,Generating and cancel,"1. Signed in with a Pro account (no tier switch on Android) with enough credits
 2. Panel open with a 01:30 1080p 30 fps video and the defaults kept (Standard, Natural, 30fps, 1080p)
 3. Note the balance",Tap 「Enhance ◆ <credits>」,"No confirmation appears first
 A processing dialog covers the panel with a progress ring counting up (「25%」…), 「Video uploading...」, 「Please keep the app open」 and 「Cancel」
@@ -952,7 +952,7 @@ TC-116,Generating and cancel,A task processing in Recent task (TC-114),"1. Press
 2. Wait until the time the card gave has passed
 3. Reopen PowerDirector from Recents",The task kept running on the server: its card is completed with 「View」 (or still processing with less time left),P2,R-091,
 TC-117,Generating and cancel,A task processing in Recent task,Long-press and swipe the processing card,"No cancel, stop or delete action is offered for a processing task (v1)",P2,R-091,
-TC-118,Generating and cancel,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-118,Generating and cancel,"1. Signed in with a Pro account (no tier switch on Android)
 2. Notifications for PowerDirector turned off in Android Settings (user go-ahead needed for the system setting)
 3. No Video Enhance task created yet on this install",Tap 「Enhance」 and wait for the upload to finish,"After the upload the dialog 「Turn on notifications」 / 「We'll let you know when it's done.」 appears with 「Turn On」 and 「Later」 (Android 12 grants notifications by default, so the prompt is checked with them turned off)",P2,R-093,PM-only: no Design frame yet (PM 397:1151). Turn the notifications back on after the row.
 TC-119,Generating and cancel,The 「Turn on notifications」 dialog showing (TC-118),Tap 「Turn On」,"Android opens PowerDirector's notification settings (the permission is a setting on Android 12)
@@ -991,20 +991,20 @@ TC-143,Recent task,Recent task open with a processing card,"1. Wait on Recent ta
 Step 2 opens the Result
 Step 3 returns to Recent task
 Step 4 opens the same Result",P1,R-112,Step 4: PM D2 「Completed (tap → Result)」; the Design draws only 「View」 (Q-22).
-TC-265,Recent task,"1. Signed in with a Pro+ account (no tier switch on Android) with enough credits
+TC-265,Recent task,"1. Signed in with a Pro account (no tier switch on Android) with enough credits
 2. A 00:01 720p 30 fps video in the album
 3. A screen recording or stopwatch with timestamps","1. Open the panel with the 00:01 video (whole video selected, defaults kept)
 2. Tap 「Enhance ◆ <credits>」
 3. Start timing when the task's card in Recent task first shows its remaining time
 4. Stay on Recent task and stop timing when the card turns completed with 「View」",The time from step 3 to the end of the last step is 1.5 – 2.5 s (1.5 – 2.5 × the 1 s selection),P3,"R-204, R-111","Not from the spec: company performance standard adopted by user instruction, spec agent TC-VE2-221 [Req: REQ-008]. One full generation."
-TC-266,Recent task,"1. Signed in with a Pro+ account (no tier switch on Android) with enough credits
+TC-266,Recent task,"1. Signed in with a Pro account (no tier switch on Android) with enough credits
 2. A 00:03.2 720p 30 fps video in the album
 3. A screen recording or stopwatch with timestamps","1. Open the panel with the 00:03.2 video (whole video selected, defaults kept)
 2. Tap 「Enhance ◆ <credits>」
 3. Start timing when the task's card in Recent task first shows its remaining time
 4. Tap ⌂ to go to the Launcher
 5. Stop timing when the completion banner 「Good news! Your AI Video Enhance task has been completed. Tap here to view your results.」 appears",The time from step 3 to the end of the last step is 4.8 – 8 s (1.5 – 2.5 × the 3.2 s selection),P3,"R-204, R-111","Not from the spec: company performance standard adopted by user instruction, spec agent TC-VE2-222 [Req: REQ-008]. One full generation."
-TC-267,Recent task,"1. Signed in with a Pro+ account (no tier switch on Android) with enough credits
+TC-267,Recent task,"1. Signed in with a Pro account (no tier switch on Android) with enough credits
 2. A 00:30 720p 30 fps video in the album
 3. A screen recording or stopwatch with timestamps","1. Open the panel with the 00:30 video (whole video selected, defaults kept)
 2. Tap 「Enhance ◆ <credits>」
@@ -1042,7 +1042,7 @@ The media picker lists it under 「All」
 It is added to the timeline and plays there",P1,"R-122, R-194",Toast copy is PM D3 [建議]. Steps 3–5: colleague feedback item 14 via the spec agent's TC-VE2-236 [Req: REQ-008]. The default values of a 1080p source; every combination of the four settings is generated in the Setting combinations rows (REQ-008).
 TC-153,Result,Result of a task started from Add Media open,Tap 「Add to Timeline」,"A new project opens with the enhanced video on its timeline
 No existing project is changed and the source video in the album is unchanged",P1,"R-123, R-126",
-TC-314,Result,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-314,Result,"1. Signed in with a Pro account (no tier switch on Android)
 2. A saved project whose only clip is the 3.2 s video (ve-000320-720p30), its length and position noted
 3. Enough credits for one 3.2 s task","1. Open AI Video Enhance from the Launcher and pick the same 3.2 s video in Add Media
 2. Tap 「Enhance ◆ <credits>」 with the defaults
@@ -1052,7 +1052,7 @@ TC-314,Result,"1. Signed in with a Pro+ account (no tier switch on Android)
 Step 5: the saved project still holds its original clip at the same position and length (not the enhanced one)",P2,"R-123, R-126",A project that already uses the source (spec agent TC-VE2-065) [Req: REQ-016]. Q-11 (the Timeline entry's replace) does not apply: this task starts from Add Media. One full generation.
 TC-154,Result,Result open,Tap 「Enhance More」,Add Media opens for the next video,P2,R-124,
 TC-155,Result,Result open from a Recent task card,Tap ‹ on the Result page,Recent task is shown again,P3,R-125,Q-9: no arrow; the previous page is the assumption.
-TC-223,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits
+TC-223,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 4 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Check the defaults: 「Standard」, 「Natural」, 「30fps」 and 「720p」 selected
@@ -1075,7 +1075,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_720p_30fps); spec agent TC-VE2-185 (generate) and TC-VE2-114 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits."
-TC-225,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits
+TC-225,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 8 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「1080p」
@@ -1098,7 +1098,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_1080p_30fps); spec agent TC-VE2-186 (generate) and TC-VE2-115 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits. Processing time: spec agent TC-VE2-186 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-224,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 12 credits
+TC-224,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 12 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「4K」
@@ -1121,7 +1121,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 12 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Natural · fps=30fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 3 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_4k_30fps); spec agent TC-VE2-187 (generate) and TC-VE2-116 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 12 credits. Processing time: spec agent TC-VE2-187 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-226,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits
+TC-226,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 4 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「60fps」
@@ -1144,7 +1144,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_720p_60fps); spec agent TC-VE2-188 (generate) and TC-VE2-117 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits. Processing time: spec agent TC-VE2-188 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-221,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits
+TC-221,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 8 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「60fps」
@@ -1168,7 +1168,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_1080p_60fps); spec agent TC-VE2-189 (generate) and TC-VE2-118 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits. Processing time: spec agent TC-VE2-189 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-227,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 24 credits
+TC-227,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 24 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「60fps」
@@ -1192,7 +1192,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 24 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Natural · fps=60fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 6 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_4k_60fps); spec agent TC-VE2-190 (generate) and TC-VE2-119 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 24 credits. Processing time: spec agent TC-VE2-190 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-228,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits
+TC-228,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 4 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「120fps」
@@ -1215,7 +1215,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_720p_120fps); spec agent TC-VE2-191 (generate) and TC-VE2-120 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits. Processing time: spec agent TC-VE2-191 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-222,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits
+TC-222,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 8 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「120fps」
@@ -1239,7 +1239,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_1080p_120fps); spec agent TC-VE2-192 (generate) and TC-VE2-121 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits. Processing time: spec agent TC-VE2-192 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-229,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits
+TC-229,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 32 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「120fps」
@@ -1263,7 +1263,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Natural · fps=120fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_natural_4k_120fps); spec agent TC-VE2-193 (generate) and TC-VE2-122 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits. Processing time: spec agent TC-VE2-193 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-230,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits
+TC-230,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 4 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1286,7 +1286,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_720p_30fps); spec agent TC-VE2-194 (generate) and TC-VE2-123 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits. Processing time: spec agent TC-VE2-194 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-220,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits
+TC-220,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 8 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1310,7 +1310,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_1080p_30fps); spec agent TC-VE2-195 (generate) and TC-VE2-124 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits. Processing time: spec agent TC-VE2-195 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-231,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 12 credits
+TC-231,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 12 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1334,7 +1334,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 12 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=30fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 3 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_4k_30fps); spec agent TC-VE2-196 (generate) and TC-VE2-125 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 12 credits. Processing time: spec agent TC-VE2-196 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-232,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits
+TC-232,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 4 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1358,7 +1358,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_720p_60fps); spec agent TC-VE2-197 (generate) and TC-VE2-126 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits. Processing time: spec agent TC-VE2-197 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-233,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits
+TC-233,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 8 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1383,7 +1383,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_1080p_60fps); spec agent TC-VE2-198 (generate) and TC-VE2-127 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits. Processing time: spec agent TC-VE2-198 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-234,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 24 credits
+TC-234,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 24 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1408,7 +1408,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 24 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=60fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 6 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_4k_60fps); spec agent TC-VE2-199 (generate) and TC-VE2-128 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 24 credits. Processing time: spec agent TC-VE2-199 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-235,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 4 credits
+TC-235,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 4 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1432,7 +1432,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 4 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 1 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_720p_120fps); spec agent TC-VE2-200 (generate) and TC-VE2-129 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 4 credits. Processing time: spec agent TC-VE2-200 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-236,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits
+TC-236,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 8 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1457,7 +1457,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_1080p_120fps); spec agent TC-VE2-201 (generate) and TC-VE2-130 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits. Processing time: spec agent TC-VE2-201 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-237,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits
+TC-237,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 32 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Sharp」
@@ -1482,7 +1482,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Standard · Enhancement style=Sharp · fps=120fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_std_hd_4k_120fps); spec agent TC-VE2-202 (generate) and TC-VE2-131 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits. Processing time: spec agent TC-VE2-202 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-238,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits
+TC-238,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 8 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1505,7 +1505,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_720p_30fps); spec agent TC-VE2-203 (generate) and TC-VE2-132 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits. Processing time: spec agent TC-VE2-203 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-219,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits
+TC-219,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 16 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1529,7 +1529,7 @@ The task completes in 4.8 – 8 s from the card's first remaining time (1.5 – 
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203, R-204","Combination Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 4 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_1080p_30fps); spec agent TC-VE2-204 (generate) and TC-VE2-133 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 16 credits. Processing time: spec agent TC-VE2-204 (company performance standard, not in the spec) [Req: REQ-016]."
-TC-239,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 48 credits
+TC-239,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 48 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1553,7 +1553,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 48 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=30fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 12 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_4k_30fps); spec agent TC-VE2-205 (generate) and TC-VE2-134 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 48 credits."
-TC-240,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits
+TC-240,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 16 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1577,7 +1577,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 4 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_720p_60fps); spec agent TC-VE2-206 (generate) and TC-VE2-135 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 16 credits."
-TC-241,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits
+TC-241,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 32 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1602,7 +1602,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_1080p_60fps); spec agent TC-VE2-207 (generate) and TC-VE2-136 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
-TC-242,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 96 credits
+TC-242,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 96 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1627,7 +1627,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 96 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=60fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 24 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_4k_60fps); spec agent TC-VE2-208 (generate) and TC-VE2-137 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 96 credits."
-TC-243,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits
+TC-243,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 32 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1651,7 +1651,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_720p_120fps); spec agent TC-VE2-209 (generate) and TC-VE2-138 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
-TC-244,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 64 credits
+TC-244,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 64 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1676,7 +1676,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 64 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 16 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_1080p_120fps); spec agent TC-VE2-210 (generate) and TC-VE2-139 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 64 credits."
-TC-245,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 192 credits
+TC-245,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 192 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1701,7 +1701,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 192 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Natural · fps=120fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 48 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_natural_4k_120fps); spec agent TC-VE2-211 (generate) and TC-VE2-140 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 192 credits."
-TC-246,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 8 credits
+TC-246,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 8 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1725,7 +1725,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 8 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 2 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_720p_30fps); spec agent TC-VE2-212 (generate) and TC-VE2-141 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 8 credits."
-TC-247,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits
+TC-247,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 16 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1750,7 +1750,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 4 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_1080p_30fps); spec agent TC-VE2-213 (generate) and TC-VE2-142 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 16 credits."
-TC-248,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 48 credits
+TC-248,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 48 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1775,7 +1775,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 30 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 48 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=30fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 12 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_4k_30fps); spec agent TC-VE2-214 (generate) and TC-VE2-143 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 48 credits."
-TC-249,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 16 credits
+TC-249,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 16 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1800,7 +1800,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 16 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 4 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_720p_60fps); spec agent TC-VE2-215 (generate) and TC-VE2-144 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 16 credits."
-TC-250,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits
+TC-250,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 32 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1826,7 +1826,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_1080p_60fps); spec agent TC-VE2-216 (generate) and TC-VE2-145 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
-TC-251,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 96 credits
+TC-251,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 96 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1852,7 +1852,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 60 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 96 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=60fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 24 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_4k_60fps); spec agent TC-VE2-217 (generate) and TC-VE2-146 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 96 credits."
-TC-252,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 32 credits
+TC-252,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 32 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1877,7 +1877,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1280 × 720 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 32 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=720p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 8 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_720p_120fps); spec agent TC-VE2-218 (generate) and TC-VE2-147 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 32 credits."
-TC-253,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 64 credits
+TC-253,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 64 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1903,7 +1903,7 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 1920 × 1080 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 64 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=1080p (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 16 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_1080p_120fps); spec agent TC-VE2-219 (generate) and TC-VE2-148 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 64 credits."
-TC-254,Setting combinations,"1. Signed in with a Pro+ account (no tier switch on Android) with at least 192 credits
+TC-254,Setting combinations,"1. Signed in with a Pro account (no tier switch on Android) with at least 192 credits
 2. A 00:03.2 (3.2 s) 720p 30 fps landscape video in the album (made for the test, the same file for every combination row)
 3. Note the balance and the newest entry of the credit history","1. Open the panel with the 3.2 s video (whole video selected)
 2. Tap 「Professional」
@@ -1929,25 +1929,25 @@ The task completes and its Result plays
 「Save Result」 shows 「Saved to your device」
 The saved video is 3.2 s long, 3840 × 2160 and 120 fps
 The credit history's newest entry is one debit 「AI Video Enhance」 of 192 credits",P1,"R-194, R-195, R-060, R-063, R-065, R-062, R-061, R-089, R-122, R-203","Combination Mode=Professional · Enhancement style=Sharp · fps=120fps · Resolution=4K (`### Combinations`, analysis pass 10) [Req: REQ-008]. Rate 48 credits/s from the ECL rate table (form 22061491221, action genvideo_1_sec_byteplus_pro_hd_4k_120fps); spec agent TC-VE2-220 (generate) and TC-VE2-149 (price display). Credit numbers are binding. A chip drawn disabled for this combination (Q-6) is recorded Blocked --as question. One full generation of 192 credits."
-TC-160,Timeline entry,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-160,Timeline entry,"1. Signed in with a Pro account (no tier switch on Android)
 2. A project with a 05:00 clip
 3. Panel opened on it from the clip toolbar","1. Tap 「Professional」
 2. Drag the right handle left until 「Selected Length」 reads 「02:20」
 3. Tap 「Professional」","Step 1: 「Professional」 looks normal
 Step 1: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 shows for about 3 s, the Mode stays Standard and the selection stays 05:00
 Step 3 switches to 「Professional」 with no toast and the selection stays 02:20",P2,"R-057, R-052, R-053",Q-10: draft B1-1 ⑦ disables the chip with 「Professional mode supports clips up to 2m 30s. Split the clip to use it.」; check on device and decide with the user. The spec agent's TC-VE2-269 quotes PM 9/29's toast; the Design copy is newer.
-TC-276,Timeline entry,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-276,Timeline entry,"1. Signed in with a Pro account (no tier switch on Android)
 2. A project with a 06:00 clip (ve-0600-1080p30)
 3. Panel opened on it from the clip toolbar","1. Trim the selection to 00:30–05:30 (「05:00」)
 2. Tap 「Professional」
 3. Drag the right handle left to 02:50 (「02:20」)
 4. Tap 「Professional」","Step 2: the toast 「Professional supports clips up to 2:30. Shorten your selection to switch.」 for about 3 s, the Mode stays 「Standard」 and the selection keeps 00:30–05:30
 Step 4: 「Professional」 with no toast and the selection keeps 00:30–02:50",P3,"R-057, R-052, R-053",A Timeline clip whose selection starts after 00:00 (spec agent TC-VE2-269) [Req: REQ-016]. Q-10 as in TC-160. Needs ve-0600-1080p30.
-TC-161,Timeline entry,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-161,Timeline entry,"1. Signed in with a Pro account (no tier switch on Android)
 2. A project with a 10:00 clip","1. Tap the clip
 2. Tap 「AI Video Enhance」 in the clip toolbar","The panel does not open
 The toast 「Split clips longer than 8 minutes first」 appears",P3,R-058,PM D4 [建議] / B1-1 ⑦ (Q-10): PM-only.
-TC-162,Timeline entry,"1. Signed in with a Pro+ account (no tier switch on Android)
+TC-162,Timeline entry,"1. Signed in with a Pro account (no tier switch on Android)
 2. A project with a 00:30 clip
 3. Panel opened on it from the clip toolbar","1. Tap 「Enhance ◆ <credits>」
 2. Stay in the editor until the task completes","The upload dialog and the Recent task flow are those of the main flow

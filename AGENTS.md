@@ -75,6 +75,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **Design vs PM (2026-10-21/22, REQ-029).** PM-only features become rows now (「PM-only: no Design frame yet」) and are
   updated when the Design draws them; where the two disagree the newer wins, a Design frame older than the newest PM
   file loses to it, and when dates can't tell, check the device and decide with the user (`analysis.md` pass 7).
+  **Design first (user, 2026-11-13):** in a disagreement the Design has priority unless the PM item is newer or was
+  created from a bug; a newer PM proposal ([建議]) counts as newer; an Open question's assumption follows the same
+  order, and a Design item is dated by its own board's label (`analysis.md` pass 7).
 - **What the repo is for (user, 2026-10-27, REQ-036 / REQ-037).** A thorough spec analysis, then a run that does not
   drain tokens. Missed rules are fixed in the reading step or pass that skipped them, never by copying another
   tool's cases; the spec agent comparison is a report on request only (`SKILL.md`, `analysis.md`).

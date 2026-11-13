@@ -47,6 +47,11 @@ each way and the fractional boundaries (TC-274, TC-275, TC-075, TC-276); R-043 /
 360p, 718p, 722p and the Preview label (TC-052 – TC-058); R-060 / R-063 / R-065 at 30 s, 90 s and the Mode limit
 for every combination (TC-278 – TC-313); R-204 timed on 19 combination rows. Requirement text unchanged.
 
+Draft 20261113-095652 [Req: REQ-017]: Android sells only Free and Pro (REQ-012), so the paid account in every
+precondition is Pro, not Pro+ (121 rows). R-070 drops 「Pro+ user」, R-071 opens the single Pro IAP page (no tab), R-076
+names the paid (Pro) user and records the Credit page card instead of asserting 「PowerDirector Pro+」 (TC-090, TC-091,
+TC-096). Coverage unchanged.
+
 ## Entry points
 - R-001 [DS:ds-main-flow Launcher_2026_08; DS:ds-routing 「Launcher / AI Magic → Demo page」] The Launcher big shortcut 「AI Video Enhance」 opens the Demo page (until 「Don’t show again」 was confirmed, R-009).
 - R-002 [DS:ds-entry-points Launcher_AI Magic; DS:ds-routing] The AI Magic tab's 「AI Enhance」 section has an 「AI Video Enhance」 card that opens the Demo page (same rule as R-001).
@@ -128,13 +133,13 @@ for every combination (TC-278 – TC-313); R-204 timed on 19 combination rows. R
 - R-066 [PM:pm-main-flow §6.3] Billing uses the SKU genvideo_1_sec_byteplus_{mode}_{style}_{resolution}_{fps} (e.g. std_hd_1080p_30fps) — NOT TESTABLE: server-side billing id, not shown in the app.
 
 ## Eligibility and purchase
-- R-070 [DS:ds-main-flow VE · 01 「Free user 需要訂閱才能使用」; PM:pm-access-credit §7 / 9/24; Req: REQ-008; spec agent TC-VE2-040, TC-VE2-041, TC-VE2-241 (colleague feedback 2026-10-07 items 8–9, newer than Design and PM 9/24)] On Android the feature unlocks with Pro: a Free user's CTA is an unlock action for Pro (no price; Android wording not drawn, Q-25) and tapping it opens the IAP page; a Pro or Pro+ user gets the enabled 「Enhance ◆ <credits>」. (The Design's 「Unlock Pro+ to Enhance」 and the Pro+-only rule are the iOS rule; PM's 「Upgrade to Pro+」 is older.)
-- R-071 [PM:pm-draft-logic C2 [建議]; Req: REQ-008; spec agent TC-VE2-041] On Android the unlock action opens the IAP page on the 「Pro」 tab (Pro IAP). The PM C2 rule that sends a Pro user to the 「Pro+」 tab is the iOS rule: an Android Pro user never sees the unlock action (R-070).
+- R-070 [DS:ds-main-flow VE · 01 「Free user 需要訂閱才能使用」; PM:pm-access-credit §7 / 9/24; Req: REQ-008; spec agent TC-VE2-040, TC-VE2-041, TC-VE2-241 (colleague feedback 2026-10-07 items 8–9, newer than Design and PM 9/24)] On Android the feature unlocks with Pro: a Free user's CTA is an unlock action for Pro (no price; Android wording not drawn, Q-25) and tapping it opens the IAP page; a Pro user gets the enabled 「Enhance ◆ <credits>」. (The Design's 「Unlock Pro+ to Enhance」 and the Pro+-only rule are the iOS rule; PM's 「Upgrade to Pro+」 is older. Android has no Pro+ [Req: REQ-012, REQ-017].)
+- R-071 [PM:pm-draft-logic C2 [建議]; Req: REQ-008; spec agent TC-VE2-041] On Android the unlock action opens the single 「PowerDirector Pro」 IAP page (no tabs, R-072) [Req: REQ-017]. The PM C2 rule that sends a Pro user to the 「Pro+」 tab is the iOS rule: an Android Pro user never sees the unlock action (R-070).
 - R-072 [DS:ds-main-flow IAP_US] The IAP page shows the Pro / Pro+ tabs, the plans 「Yearly」 (「Best Value」, 「65% OFF」) and 「Monthly」, 「Continue」, 「Tap to compare」 and the footer 「Terms of Service」 「Privacy Policy」 「Restore purchase」. The trial line 「Receive 35 credits during free trial」 conflicts with PM §7 「no free trial in v1」 (Q-7). On Android the page is a single 「PowerDirector Pro」 page with no tabs and no 「Tap to compare」 (Android sells only Free and Pro) [Req: REQ-012].
 - R-073 [PM:pm-draft-logic C2 [建議]] Closing the IAP page or the Credit page without buying returns to the panel unchanged (selection and settings kept).
 - R-074 [DS:ds-main-flow arrows 3293-13677, 3293-13678] 「Continue」 opens the store purchase sheet (Google Play on Android); after the purchase the app shows 「You're all set」 / 「Your purchase was successful.」 with 「OK」. That dialog is iOS only: on Android the IAP page closes and the panel is back at once (R-075) [Req: REQ-012].
 - R-075 [DS:ds-main-flow arrow 3293-13679; DS:ds-alt-exception 「購買成功 → 回 AI Video Enhance（餘額已更新、選取狀態保留）」; PM:pm-draft-logic C2] After a purchase the app returns to the panel with the balance updated and the selection and settings kept; nothing is sent until the user taps the CTA again (PM C2 [建議]).
-- R-076 [DS:ds-alt-exception Insufficient Credits; DS:ds-routing 「餘額不足 → Credit Page」; PM:pm-access-credit §8.1] A Pro+ user whose balance is below the price is taken by 「Enhance」 to the Credit page (「My Credits」, 「Buy More」, 「Expiring within 7 days: 0 credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card); the video is not uploaded and nothing is charged.
+- R-076 [DS:ds-alt-exception Insufficient Credits; DS:ds-routing 「餘額不足 → Credit Page」; PM:pm-access-credit §8.1] A paid user (on Android: Pro, REQ-012) whose balance is below the price is taken by 「Enhance」 to the Credit page (「My Credits」, 「Buy More」, 「Expiring within 7 days: 0 credits」, 「Complimentary daily credits」 「Claim once every 24 hours」 「Claim」, the 「PowerDirector Pro+」 card on iOS; on Android the account's plan card, its words recorded [Req: REQ-017]); the video is not uploaded and nothing is charged.
 - R-077 [DS:ds-alt-exception 購買成功 → 回 AI Video Enhance] After buying credits with 「Buy More」 the app returns to the panel with the new balance and the selection kept. Run with a license-tester account and Google Play's 「Test card, always approves」 (no charge) on the user's go-ahead [Req: REQ-015].
 - R-078 [DS:ds-alt-exception Credit page_paid] 「Claim」 on the Credit page claims the daily credits; back on the panel the credit pill shows the new balance (balance-updated rule of R-075 / R-077).
 - R-079 [PM:pm-draft-logic C2 ① Pro+ → ② network → ③ balance; C3 [建議]] With no network, 「Enhance」 sends nothing and charges nothing; the toast 「Upload failed. Check your connection and try again.」 appears and the panel stays.
@@ -314,12 +319,15 @@ One line per requirement × variant (pass 10).
 | R-005 | 「Pro+」 badge (iOS) | n/a (Android has no Pro+, REQ-012) |
 | R-070 | Free (Pro unlock action, IAP) | TC-090 |
 | R-070 | Pro (enabled Enhance on Android) | TC-091 |
-| R-070 | Pro+ (enabled Enhance) | TC-033, TC-110 |
-| R-071 | Free (IAP opens on the Pro tab) | TC-090 |
+| R-070 | Pro (enabled Enhance, the run account) | TC-033, TC-110 |
+| R-070 | Pro+ | n/a (Android has no Pro+, REQ-012) |
+| R-071 | Free (IAP opens the single Pro page) | TC-090 |
 | R-071 | Pro (IAP on the Pro+ tab: the iOS rule) | n/a (an Android Pro user never sees the unlock action, R-070; TC-091 checks the enabled Enhance) |
-| R-071 | Pro+ | n/a (already unlocked, R-070) |
-| R-072 | Pro tab | TC-093 |
-| R-072 | Pro+ tab | TC-091, TC-093 |
+| R-071 | Pro+ | n/a (Android has no Pro+, REQ-012) |
+| R-072 | single 「PowerDirector Pro」 page | TC-090, TC-093 |
+| R-072 | Pro / Pro+ tabs (iOS) | n/a (Android has a single Pro page, REQ-012; TC-093 checks no tabs show) |
+| R-076 | Pro (the run account; the plan card recorded) | TC-096 |
+| R-076 | Pro+ (the 「PowerDirector Pro+」 card, iOS) | n/a (Android has no Pro+, REQ-012) |
 | R-043 | source 1–30 fps → 30fps (1, 24, 30 fps: the band's low end and both edges) | TC-052 |
 | R-043 | source 31–60 fps → 60fps | TC-053, TC-055 |
 | R-043 | source 61+ fps → 120fps | TC-054, TC-055 |
@@ -473,3 +481,4 @@ None: no Testing Request build is named for this feature yet.
 | REQ-012 (rulings, Android: no Pro+; no 「You're all set」 dialog) | R-005, R-072, R-074, Q-25 |
 | REQ-015 (table, Android: the 4 groups R1 missed — 1 fps default, purchase return, 2 Preview lags) | R-043 (1 fps, TC-052), R-077 (free route, TC-097), R-031, R-193 (recording; TC-042, TC-214, TC-216, TC-215), Q-27 |
 | REQ-016 (table: scenario-level coverage of the spec agent's cases at 8b411402) | R-030, R-031, R-032, R-033, R-043, R-044, R-052, R-053, R-054, R-055, R-060, R-063, R-065, R-077, R-086, R-088, R-114, R-115, R-121, R-123, R-126, R-204 (rows only, no requirement changed) |
+| REQ-017 (table: Android has no Pro+, the paid account is Pro) | R-070, R-071, R-076 (121 preconditions, TC-090, TC-091, TC-096) |
