@@ -159,7 +159,11 @@ lines; put the full rule in the skill or reference file that applies it and poin
   each eBug*). The one exception to *No comments on existing eBugs*: files only, never a comment.
 - **QR account line (user, 2026-11-05, REQ-100).** A QR's Details name the phone's signed-in account as the app's menu
   shows it, with its tier (`Account: cltqauiap2@gmail.com (Premium)`), read from the menu at each verify run
-  (`qa-report/SKILL.md` › *Wording*).
+  (`qa-report/SKILL.md` › *Wording*). An app not signed in is written `Not signed in (Free)`; no sign-in just for
+  the QR (user, 2026-11-13).
+- **QR text only (user, 2026-11-13).** A QR is filled with text only: no screenshots or logs uploaded to the eBugs
+  and no file names in the Reasons (draft `"textOnly": true`); evidence stays in the local run folder. Replaces
+  *Evidence on each eBug* (REQ-099) until the user asks for files again.
 - **Bug verify against today's spec (user, 2026-11-05, REQ-091).** Before verifying a bug, check its Expect Result
   against the current spec in the repo (ticket comments, row, `requirements.md` changes and open questions, newer
   frames in `extracted/`), then judge the build's current behaviour against that. An open question means Hold

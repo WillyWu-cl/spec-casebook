@@ -138,13 +138,18 @@ The first time the form is filled on a new template, record the field names you 
 - Account (user, 2026-11-05, REQ-100): the account the phone is signed in to, as the app's menu shows it (Launcher ☰,
   the account at the top), with its tier: `Account: cltqauiap2@gmail.com (Premium)`. Read it from the menu at the start
   of the verify run (it changes when someone signs in another account) and write it in the run's `result.md`; never
-  copy it from an earlier run.
+  copy it from an earlier run. When the app is not signed in and the bugs need no account, write that with the tier
+  (`Account: Not signed in (Free)`); signing in only for the QR is not needed (user, 2026-11-13).
 - Reasons in English, short, no test IDs, tool names, timestamps or retry history; the detail lives in the run
   folder. Never write a `.zip` file name in a Reason (ECL links it as a web address). The last line is
   `Evidence: {file.png} {file_log.txt}`, the names of the files on that eBug, like a description (OK rows too).
   Details end with `Evidence: screenshots and logs are attached to each eBug and named in its Reason.`
 
 ## Evidence on each eBug (user, 2026-11-05, REQ-099 / REQ-101)
+
+**Text only (user, 2026-11-13): this section is on hold.** The QR is filled with text alone: set `"textOnly": true`
+in the draft, so Reasons and Details name no files and `upload` refuses; the screenshots stay in the run folder for
+the review page. Old-ASP bugs (`PHA252025-…`) cannot take API uploads anyway.
 
 A QR's Reason reaches every linked bug, so each bug's evidence goes on that bug, and the QR carries no ZIP (others
 check the bug and the files there; `pack` refuses per-bug drafts):
@@ -158,6 +163,12 @@ file stays on the ticket. This is part of the QR exception to overlay rule 6: fi
 never a comment.
 
 ## Form notes (first filing, QR261103-0039, 2026-11-03)
+
+- **PhotoDirector Android (QR261113-0020, 2026-11-13).** Standard Report is `QRTemplateID=14830` on the PHD-A TRs
+  (read from the TR page's QA Report Create button with `window.open` stubbed). Operation System lists Android 11–15
+  only: an Android 16 phone leaves it unticked (Details names the OS). Test Result reads `PHD-A - …` (set
+  `testResult` in the draft; the script's default is PDR). The TR's verify list and the tickets moved to Close about
+  two minutes after Create, not at once. `PHA25…` / `PHA262026-…` bugs are old ASP: no API uploads.
 
 - **Create.** The TR page's 「Create QA Report」 › Standard Report › **Create** opens a new tab, which the browser pane
   blocks; open its URL instead: `https://ecl.cyberlink.com/IF3/qr/BPM/Start/Request/NewCreated?QRTemplateID=14564&TRCode=<TR>`
