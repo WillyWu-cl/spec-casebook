@@ -1,0 +1,263 @@
+{
+  "spec_folder": "specs/2026-11-12",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-cms@60,104",
+      "board": "pm-cms",
+      "x": 60,
+      "y": 104,
+      "low": false,
+      "text": "跟以往的 custom 不一樣：這次 Custom 裡面也有 style，所以 style 清單要上 CMS（縮圖、排序、上下架都由 CMS 控）[D6-13] / CMS type: PhDM_AIHairColor_CustomStyle  (MOCK_CMS_TYPE，待 CMS 窗口確認) / 欄位                      說明 / guid                     Style_<流水號>_<UIName>_<model>，deeplink 帶的就是這個 [D6-14] / api_style_value          送給 API 的 style 字串，必須是 11 個合法值之一 [D6-10] / ui_name                  panel 上顯示的名稱（例：Ombre） / thumbnail                style 區的範例截圖 / color_slots              1 或 2 —— solid_color 填 1，其餘填 2 [D6-04] / order                    在 style 區的排序 / usageType                free / purchase（是否吃 premium 門檻）[D3-04] / 11 個合法 api_style_value：solid_color / ombre / colored_roots / dip_dye / balayage / / split_dye_horizontal   —— 來源：廠商 pipeline interface.json 的 legal.values [D6-10]",
+      "trace": "R-024, R-027, R-029, R-061, R-069, R-078"
+    },
+    {
+      "id": "pm-deeplink@60,104",
+      "board": "pm-deeplink",
+      "x": 60,
+      "y": 104,
+      "low": false,
+      "text": "• 需求：deeplink 可直接 locate 在 Custom，並帶一個 style 的 guid [D6-14] / • 開啟後的落點：進 AI Hair Color room → Custom panel 已開啟 → 該 style 已選取 / • 顏色不由 deeplink 帶（顏色是用戶的選擇）；所以落點必定停在「等用戶選色」的狀態 / • 若 guid 在 CMS 查無 / 已下架：退回 Custom panel 未選 style 的狀態，不報錯",
+      "trace": "R-069, R-070, R-071"
+    },
+    {
+      "id": "pm-draft-tbd@84,130",
+      "board": "pm-draft-tbd",
+      "x": 84,
+      "y": 130,
+      "low": false,
+      "text": "Q1  Custom style 的 day-1 清單與 free / premium 歸屬 / 主：PM／待定 / ➡️ fallback：11 種全上、一半 premium / Q2  deeplink 參數命名與既有格式 / 主：RD／待定",
+      "trace": "Q-6, Q-11"
+    },
+    {
+      "id": "pm-draft-tbd@84,510",
+      "board": "pm-draft-tbd",
+      "x": 84,
+      "y": 510,
+      "low": false,
+      "text": "Q3  42–48 秒的原地等是否可接受（ANR / 背景被殺） / 主：RD／待定 / ➡️ fallback：照 10/E 同步 lifecycle，配分段文案 / Q4  CMS type 名稱與欄位 / 主：CMS 窗口／待定",
+      "trace": "Q-12, Q-13"
+    },
+    {
+      "id": "pm-face-check@60,60",
+      "board": "pm-face-check",
+      "x": 60,
+      "y": 60,
+      "low": false,
+      "text": "進房檢查 & Photo Picker（11/25 新增，不併入 10/E template spec）",
+      "trace": "label: section title"
+    },
+    {
+      "id": "pm-face-check@72,344",
+      "board": "pm-face-check",
+      "x": 72,
+      "y": 344,
+      "low": false,
+      "text": "11/25 NEW · 進房驗臉（歪頭 / 臉太小）",
+      "trace": "label: badge 11/25 NEW"
+    },
+    {
+      "id": "pm-face-check@1030,376",
+      "board": "pm-face-check",
+      "x": 1030,
+      "y": 376,
+      "low": false,
+      "text": "【 進房提醒：臉歪 / 臉太小 】 / • 觸發：比例檢查通過（或裁切完回來）之後才驗臉 [D2-01e] / • 門檻與字串全部沿用 Hair Volume / AI Hairstyle，RD 不用新寫 [D2-01d] / － 歪斜：yaw 或 roll > 15° / － 臉太小：1024 縮圖下臉寬 < 128px / － 兩者都是警告不是擋下：OK / Continue Anyway / • 擋下的兩項（也沿用）：0 張臉「No face detected. Face is required for this feature.」、臉太大「The face in this photo is too big.」 [D2-01d] / • 進房檢查完整順序 [D2-01e]：① 無臉（擋）→ ② 比例 > 16:9 / 9:16（Cancel / Crop）→ ③ 臉太大（擋）→ ④ 臉太小 / 歪斜（警告，可 Continue Anyway） / • 順序理由：裁切會改變構圖，裁完 yaw / roll 可能就變了，臉的警告一定要對最終送 API 的那張圖下 [D2-01e] / • 從 Edit Room / Deeplink 進來時照片已選好，四項在同一刻依序跑完 [D2-01e][D1-10] / • ⚠ Android AI Hairstyle 今天的比例上限是長短邊 5 倍，iOS 這條線完全不驗比例 —— 新的 16:9 / 9:16 兩平台都要補 [D2-01b] / • 前一步（比例 dialog → Crop 房）畫在 10/E 頁的 entry_blocked_ratio / crop_room，本頁不重畫 [D2-01b][D2-01c]",
+      "trace": "R-006, R-007, R-008, R-009, R-010, R-011, R-012, R-013, R-014, R-015"
+    },
+    {
+      "id": "pm-flow@60,112",
+      "board": "pm-flow",
+      "x": 60,
+      "y": 112,
+      "low": false,
+      "text": "• 11/E 新增 Custom：用戶自己挑 style（11 種）＋自己給 1–2 個顏色，不走 CMS 色票 [D6-00] / • Custom 是整條色票列的第一顆，點它開 panel；panel 三區：① Style ② Color ③ Generate [D6-01][D6-02] / • `solid_color` 只收一個顏色，其餘 10 種兩色都必填 [D6-04] / • 收合 panel ＝ apply；設定只有「離開 room」與「自己覆蓋」會消失 [D6-08][D6-09] / • 一張圖 6 credit，與 template 同價；lifecycle 同 10/E 原地等 [D6-07] / • ⚠ Custom 廠商實測 42–48 秒／張，需分段安撫字串；template 確定是短秒數，不受影響 [D6-11] / • Custom 的 style 要上 CMS（與以往的 custom 不同）[D6-13] / • Deeplink 可直接 locate 在 Custom 並帶 style guid [D6-14]",
+      "trace": "R-001, R-016, R-018, R-019, R-027, R-029, R-042, R-045, R-040, R-047, R-048, R-024, R-069"
+    },
+    {
+      "id": "pm-flow@637,404",
+      "board": "pm-flow",
+      "x": 637,
+      "y": 404,
+      "low": false,
+      "text": "入口：色票列第一顆 Custom（StyleMenuCustomStyleCell）[D6-01][D6-19]",
+      "trace": "R-016, R-018"
+    },
+    {
+      "id": "pm-flow@1130,404",
+      "board": "pm-flow",
+      "x": 1130,
+      "y": 404,
+      "low": false,
+      "text": "點 Custom → 開半屏 sheet，三區由上到下 [D6-02][D6-16]",
+      "trace": "R-019, R-020"
+    },
+    {
+      "id": "pm-flow@1560,404",
+      "board": "pm-flow",
+      "x": 1560,
+      "y": 404,
+      "low": false,
+      "text": "style + 1~2 色齊備 → sheet 內 AIFeatureGenerateButton 亮起 [D6-07][D6-16]",
+      "trace": "R-038, R-039"
+    },
+    {
+      "id": "pm-flow@1990,404",
+      "board": "pm-flow",
+      "x": 1990,
+      "y": 404,
+      "low": false,
+      "text": "原地等 42–48 秒，分段安撫字串 [D6-11]",
+      "trace": "R-047"
+    },
+    {
+      "id": "pm-flow@2420,404",
+      "board": "pm-flow",
+      "x": 2420,
+      "y": 404,
+      "low": false,
+      "text": "結果原地顯示，Intensity 槽填入 + Retry [D6-12]",
+      "trace": "R-052, R-053"
+    },
+    {
+      "id": "pm-flow@1989,1426",
+      "board": "pm-flow",
+      "x": 1989,
+      "y": 1426,
+      "low": false,
+      "text": "⌄ 收合 ＝ apply / 收合 panel（點空白處或收合鍵）＝ apply；Custom 變選取，外層 Generate 也能生成 [D6-08]",
+      "trace": "R-042, R-043"
+    },
+    {
+      "id": "pm-flow@1560,1660",
+      "board": "pm-flow",
+      "x": 1560,
+      "y": 1660,
+      "low": false,
+      "text": "另一條路徑（D6-22 / D6-23）：panel 不收合、直接在 panel 內按 Generate → 結果回填上方 edit area，panel 內 Generate 上方出現 44pt Intensity row（預設 100%），按鈕變 Retry。該狀態見 Spec - UI 的 result_in_panel。",
+      "trace": "R-041"
+    },
+    {
+      "id": "pm-header@40,230",
+      "board": "pm-header",
+      "x": 40,
+      "y": 230,
+      "low": false,
+      "text": "Custom：用戶自己挑 style 與顏色，不走 CMS 色票。與 10/E template 的差異：template 是「一顆色票 = 一組已調好的 style + 顏色」；Custom 是「自己選 style，再自己給 1–2 個顏色」。 [D6-00][D6-01]",
+      "trace": "R-001"
+    },
+    {
+      "id": "pm-ui@60,60",
+      "board": "pm-ui",
+      "x": 60,
+      "y": 60,
+      "low": false,
+      "text": "UI 依據：PM 提供的 **Design System**（PhotoDirector mobile，由 app 原始碼反推）。畫布回到 **390×844**，色票與尺寸全部改用 DS token： / Tab_Main-Tab_bg #000000（chrome）／Edit_AI_Expand-Bg #1e1b19（編輯區）／Bottom_Sheet_bg #342f2e 上圓角 20（panel）／ / Button_1_bg_n #ffbe98、text #000000（Generate）／Thumbnail-thumbnail_selected_frame #ffbe98 4pt 內框（選取）／ / Thumbnail-thumbnail_name_bg #3f3a38（縮圖名稱列）／Tab_Main-Tab_text #b1aaa7、_text_p #ffbe98（分類 tab）／strikethrough1_n #ff1b3e（必填 *）。 / 版面按 AIHairColorColorSelectionPage 的堆疊重排：47 safe / AIFeatureEditTopBar 44 / 編輯區 91–525（右下 36pt compare）/ **空的 44pt Intensity 槽** / UnderlineTabs 42+1 / / HairColorSwatchPanel 94（StyleThumbCell 64×82、pitch 68、x 從 8）/ 8 / AIFeatureGenerateButton 44 inset 20 / 8 / RoutingUndoRedoPanel 44 / 34 home。 / Custom panel 比照 ImageToVideoModelListPanel：上圓角 20、inset 16、最高 0.65×844 ＝ 548.6。 / Style 縮圖已換成 PM 提供的 9 張實拍（split_dye_vertical / split_dye_horizontal 兩張仍缺，維持純色底）[D6-17]",
+      "trace": "R-021, R-025, R-026, R-079"
+    },
+    {
+      "id": "pm-ui@1432,66",
+      "board": "pm-ui",
+      "x": 1432,
+      "y": 66,
+      "low": false,
+      "text": "UI 依參考檔 · 已裁示",
+      "trace": "label: badge 「UI 依參考檔 · 已裁示」"
+    },
+    {
+      "id": "pm-ui@1030,380",
+      "board": "pm-ui",
+      "x": 1030,
+      "y": 380,
+      "low": false,
+      "text": "【 Custom 在色票列第一顆 】 / • Custom 固定是整條色票列的**第一顆**，在所有 CMS template 之前（比照 AI Background）[D6-01] / • 未設定過時顯示漸層底 + ＋，label「Custom」；此時沒有被選取，選取的仍是第一個 template [D6-01] / • 點它 → 開啟 Custom panel（下一個狀態）[D6-02]",
+      "trace": "R-016, R-017, R-018"
+    },
+    {
+      "id": "pm-ui@2430,380",
+      "board": "pm-ui",
+      "x": 2430,
+      "y": 380,
+      "low": false,
+      "text": "【 panel 開啟 · 尚未選 style 】 / D6-02 panel 三區：① Style ② Color ③ Generate。 / D6-21 Color 區 = 兩列，標題 Base Color / Highlight Color（16pt / Text-Main）。 / D6-21 每列第一顆是彩虹色輪鍵（＋角標）＝ 開 App 既有調色盤；其後 7 顆推薦色，40pt 圓、pitch 50、橫向捲動。 / D6-03 還沒選 style 前：兩列色票與 Generate 全 disabled。 / D6-16 無 undo/redo、無 ✗/✓；右上 ⌄ 收合 ＝ apply（D6-08）。",
+      "trace": "R-019, R-020, R-022, R-023, R-042"
+    },
+    {
+      "id": "pm-ui@3830,380",
+      "board": "pm-ui",
+      "x": 3830,
+      "y": 380,
+      "low": false,
+      "text": "【 Solid：只要一個顏色 】 / D6-04 solid_color 是唯一只收一個顏色的 style → 只出現 Base Color 一列，Highlight Color 整列不出現。 / D6-04 Base Color 必填；填了就 Generate enable。 / D6-21 命名用 Base Color（不再叫 Main / Accent）。 / API：solid_color 只送 main_color_r/g/b，不送 accent。",
+      "trace": "R-027, R-028, R-031"
+    },
+    {
+      "id": "pm-ui@5230,380",
+      "board": "pm-ui",
+      "x": 5230,
+      "y": 380,
+      "low": false,
+      "text": "【 其他 10 種：兩個顏色都必填 】 / D6-04 其餘 10 種 style：Base Color 與 Highlight Color 兩列都必填。 / D6-04 只填一個 → Generate 維持 disabled（圖中已填 Base、未填 Highlight）。 / D6-21 選中的那顆掛 2pt #FFBE98 選取環。",
+      "trace": "R-029, R-030"
+    },
+    {
+      "id": "pm-ui@6630,380",
+      "board": "pm-ui",
+      "x": 6630,
+      "y": 380,
+      "low": false,
+      "text": "【 ② 取色 · 照抄 App 調色盤 】 / D6-05 色輪鍵 → 開 App 既有的調色盤（照抄，RD 直接沿用現成元件）。 / 版型：Cancel / Done 一列 → 飽和度-明度方塊（圓形 ＋ 游標）→ 彩虹 hue slider（圓 handle）→ slider 右側滴管鍵 → 底部 ✕ ↩ ↪ ⊕ ✓。 / D6-05 一次只編輯一個槽（由哪一列的色輪鍵進入就回填哪一列）。 / Done 回填並關閉；Cancel 不回填。 / HEX 轉 RGB 後送 API（API 收 0–255 的 r/g/b）。",
+      "trace": "R-033, R-034, R-035, R-036"
+    },
+    {
+      "id": "pm-ui@7341,380",
+      "board": "pm-ui",
+      "x": 7341,
+      "y": 380,
+      "low": false,
+      "text": "顏色選取狀態",
+      "trace": "label: state title 顏色選取狀態"
+    },
+    {
+      "id": "pm-ui@9430,380",
+      "board": "pm-ui",
+      "x": 9430,
+      "y": 380,
+      "low": false,
+      "text": "【 兩色齊備 · 可生成 】 / D6-07 兩色齊備 → panel 內橘色 Generate enable，顯示「Generate ｜ ⬤ 6」（不帶負號，D6-15）。 / D6-21 Base / Highlight 各一顆掛選取環。 / D6-16 Generate 在 panel 內，不走下排。",
+      "trace": "R-038, R-030, R-039"
+    },
+    {
+      "id": "pm-ui@10830,380",
+      "board": "pm-ui",
+      "x": 10830,
+      "y": 380,
+      "low": false,
+      "text": "【 收合 = apply，Custom 變成被選取 】 / • 點 panel 外的空白處、或按 panel 右上角收合鍵，**都等於 apply**，不是取消 [D6-08] / • 收合後回到 template 色票列，**Custom 那顆變成被選取狀態**，外層 Generate enable（內外層都能生成）[D6-08] / • Custom 格子改成顯示用戶選的兩個顏色，讓用戶看得出設定還在 [D6-08] / • 設定只有兩種情況會消失：**離開 room**、**自己覆蓋**。其餘一律保留 [D6-09]",
+      "trace": "R-042, R-043, R-044, R-045"
+    },
+    {
+      "id": "pm-ui@11917,380",
+      "board": "pm-ui",
+      "x": 11917,
+      "y": 380,
+      "low": false,
+      "text": "【 Custom 結果 】 / • 結果原地顯示；**Intensity 條照給**（0–100%、預設 100%）[D6-12][D1-14] / • 按鈕變 **Retry**，再生成一樣扣 6 [D6-12][D1-18] / • 吃 session 記憶：切走再切回 Custom，叫回這張結果與它當時的 Intensity [D6-12][D1-19] / • 存檔、✓ 回 Edit Room、Artwork 行為全部沿用 10/E [D1-15][D1-13]",
+      "trace": "R-052, R-053, R-055, R-057, R-058"
+    },
+    {
+      "id": "pm-ui@10830,760",
+      "board": "pm-ui",
+      "x": 10830,
+      "y": 760,
+      "low": false,
+      "text": "【 點別的 template 也不丟棄 】 / • 選取環移到該 template，但 **Custom 的設定不被 discard** [D6-09] / • Custom 格子仍顯示剛才那兩個顏色；再點回 Custom 就是原本的設定 [D6-09] / • 這與 D1-19 的「切回已生成色叫回結果」是兩件事：這裡保留的是**還沒生成的設定** [D6-09][D1-19]",
+      "trace": "R-046"
+    }
+  ]
+}

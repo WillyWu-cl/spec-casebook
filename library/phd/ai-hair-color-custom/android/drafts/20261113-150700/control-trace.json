@@ -1,0 +1,628 @@
+{
+ "spec_folder": "specs/2026-11-12",
+ "platform": "android",
+ "inventory": "specs/2026-11-12/extracted/inventory.json",
+ "entries": [
+  {
+   "group": "K-1097a2",
+   "kind": "button",
+   "board": "pm-face-check",
+   "boards": [
+    "pm-face-check"
+   ],
+   "name": "manual/button",
+   "label": "OK",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "Color Selection · entry_warn_face (NEW)"
+   ],
+   "controls": [
+    "M-64997b"
+   ],
+   "app": [],
+   "press": "TC-006"
+  },
+  {
+   "group": "K-d7f17c",
+   "kind": "button",
+   "board": "pm-face-check",
+   "boards": [
+    "pm-face-check"
+   ],
+   "name": "manual/button",
+   "label": "Continue Anyway",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "Color Selection · entry_warn_face (NEW)"
+   ],
+   "controls": [
+    "M-1579de"
+   ],
+   "app": [],
+   "press": "TC-007",
+   "how": "label"
+  },
+  {
+   "group": "K-2da684",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "btn_cancel",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "custom_in_row · flow1"
+   ],
+   "controls": [
+    "M-7c1a97"
+   ],
+   "app": [],
+   "press": "TC-079"
+  },
+  {
+   "group": "K-09e45c",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "btn_confirm",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "custom_in_row · flow1"
+   ],
+   "controls": [
+    "M-9ca412"
+   ],
+   "app": [],
+   "press": "TC-056"
+  },
+  {
+   "group": "K-c962cf",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow",
+    "pm-face-check",
+    "pm-ui"
+   ],
+   "name": "btn_generate",
+   "label": "Generate",
+   "set": false,
+   "instances": 13,
+   "screens": [
+    "custom_in_row · flow1",
+    "collapsed_applied · flow1",
+    "panel_open_no_style · flow1",
+    "panel_ready · flow1",
+    "Color Selection · entry_warn_face (NEW)",
+    "panel_open_no_style (NEW)"
+   ],
+   "controls": [
+    "K-56df51",
+    "K-55df4f",
+    "K-4fcf17",
+    "K-ef8679",
+    "K-f0867b"
+   ],
+   "app": [],
+   "press": "TC-045",
+   "how": "label"
+  },
+  {
+   "group": "K-912745",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow",
+    "pm-ui"
+   ],
+   "name": "btn_generate",
+   "label": "Retry",
+   "set": false,
+   "instances": 3,
+   "screens": [
+    "result_custom · flow1",
+    "result_custom (NEW)"
+   ],
+   "controls": [
+    "K-c12a17",
+    "K-0f2436"
+   ],
+   "app": [],
+   "press": "TC-049",
+   "how": "label"
+  },
+  {
+   "group": "K-9b1bfc",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "btn_redo",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "custom_in_row · flow1"
+   ],
+   "controls": [
+    "M-a9e416"
+   ],
+   "app": [],
+   "press": "TC-053"
+  },
+  {
+   "group": "K-56cb02",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "btn_undo",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "custom_in_row · flow1"
+   ],
+   "controls": [
+    "M-db0a4b"
+   ],
+   "app": [],
+   "press": "TC-053"
+  },
+  {
+   "group": "K-2e1053",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow",
+    "pm-face-check",
+    "pm-ui"
+   ],
+   "name": "chip_credit",
+   "label": "100",
+   "set": false,
+   "instances": 17,
+   "screens": [
+    "custom_in_row · flow1",
+    "panel_open_no_style · flow1",
+    "panel_ready · flow1",
+    "result_custom · flow1",
+    "collapsed_applied · flow1",
+    "Color Selection · entry_warn_face (NEW)"
+   ],
+   "controls": [
+    "K-03f4ab",
+    "K-d877ee",
+    "K-aed732"
+   ],
+   "app": [],
+   "press": "TC-077"
+  },
+  {
+   "group": "K-84545c",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow",
+    "pm-face-check",
+    "pm-ui"
+   ],
+   "name": "ic_history_n",
+   "label": "",
+   "set": false,
+   "instances": 17,
+   "screens": [
+    "custom_in_row · flow1",
+    "panel_open_no_style · flow1",
+    "panel_ready · flow1",
+    "result_custom · flow1",
+    "collapsed_applied · flow1",
+    "Color Selection · entry_warn_face (NEW)"
+   ],
+   "controls": [
+    "K-517ad4",
+    "K-acedae",
+    "K-8fb17d"
+   ],
+   "app": [],
+   "press": "TC-055"
+  },
+  {
+   "group": "K-803a89",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/button",
+   "label": "⌄ Collapse",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_open_no_style · flow1"
+   ],
+   "controls": [
+    "M-25957b"
+   ],
+   "app": [],
+   "press": "TC-038"
+  },
+  {
+   "group": "K-e774a3",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/button",
+   "label": "Base Color wheel",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_open_no_style · flow1"
+   ],
+   "controls": [
+    "M-3dfd8a"
+   ],
+   "app": [],
+   "press": "TC-031"
+  },
+  {
+   "group": "K-ce84bb",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/button",
+   "label": "Highlight Color wheel",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_open_no_style · flow1"
+   ],
+   "controls": [
+    "M-a6ffde"
+   ],
+   "app": [],
+   "press": "TC-033"
+  },
+  {
+   "group": "K-cce00b",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/button",
+   "label": "Try Now",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "Tutorial"
+   ],
+   "controls": [
+    "M-20a2f0"
+   ],
+   "app": [],
+   "press": "TC-002",
+   "how": "label"
+  },
+  {
+   "group": "K-86762e",
+   "kind": "input",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/input",
+   "label": "Intensity",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "result_custom · flow1"
+   ],
+   "controls": [
+    "M-066502"
+   ],
+   "app": [],
+   "press": "TC-053",
+   "dismiss": "n/a: slider, no keyboard"
+  },
+  {
+   "group": "K-20a43c",
+   "kind": "item",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/item",
+   "label": "Face",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_open_no_style · flow1"
+   ],
+   "controls": [
+    "M-850bda"
+   ],
+   "app": [],
+   "press": "TC-058",
+   "how": "label"
+  },
+  {
+   "group": "K-74508f",
+   "kind": "item",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/item",
+   "label": "Base Color swatch",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_open_no_style · flow1"
+   ],
+   "controls": [
+    "M-10a854"
+   ],
+   "app": [],
+   "press": "TC-025"
+  },
+  {
+   "group": "K-f7cf45",
+   "kind": "item",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/item",
+   "label": "Highlight Color swatch",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_open_no_style · flow1"
+   ],
+   "controls": [
+    "M-75b694"
+   ],
+   "app": [],
+   "press": "TC-027"
+  },
+  {
+   "group": "K-5999a1",
+   "kind": "toggle",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "manual/toggle",
+   "label": "Don't show again",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "Tutorial"
+   ],
+   "controls": [
+    "M-931796"
+   ],
+   "app": [],
+   "press": "TC-004"
+  },
+  {
+   "group": "K-c33a75",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "StyleMenuCustomStyleCell",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "custom_in_row · flow1"
+   ],
+   "controls": [
+    "M-6cdcd0"
+   ],
+   "app": [],
+   "press": "TC-019"
+  },
+  {
+   "group": "K-fd4bfb",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "StyleThumbCell template",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "custom_in_row · flow1"
+   ],
+   "controls": [
+    "M-9d11f5"
+   ],
+   "app": [],
+   "press": "TC-041"
+  },
+  {
+   "group": "K-4d73bb",
+   "kind": "tab",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "tab_category",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "custom_in_row · flow1"
+   ],
+   "controls": [
+    "M-d7984e"
+   ],
+   "app": [],
+   "press": "TC-018"
+  },
+  {
+   "group": "K-11d4fd",
+   "kind": "tab",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "tab_category",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "custom_in_row · flow1"
+   ],
+   "controls": [
+    "M-358a08"
+   ],
+   "app": [],
+   "press": "TC-018"
+  },
+  {
+   "group": "K-439156",
+   "kind": "button",
+   "board": "pm-flow",
+   "boards": [
+    "pm-flow"
+   ],
+   "name": "top/ic_back_n",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "Tutorial"
+   ],
+   "controls": [
+    "K-0e2eaf"
+   ],
+   "app": [],
+   "press": "TC-003"
+  },
+  {
+   "group": "K-2b6ab5",
+   "kind": "button",
+   "board": "pm-ui",
+   "boards": [
+    "pm-ui"
+   ],
+   "name": "manual/button",
+   "label": "Eyedropper",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_palette (NEW)"
+   ],
+   "controls": [
+    "M-decc9c"
+   ],
+   "app": [],
+   "press": "TC-035",
+   "how": "label"
+  },
+  {
+   "group": "K-e4881b",
+   "kind": "button",
+   "board": "pm-ui",
+   "boards": [
+    "pm-ui"
+   ],
+   "name": "palette_cancel",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_palette (NEW)"
+   ],
+   "controls": [
+    "M-e0f56c"
+   ],
+   "app": [],
+   "press": "TC-034"
+  },
+  {
+   "group": "K-a97467",
+   "kind": "button",
+   "board": "pm-ui",
+   "boards": [
+    "pm-ui"
+   ],
+   "name": "palette_done",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_palette (NEW)"
+   ],
+   "controls": [
+    "M-197f81"
+   ],
+   "app": [],
+   "press": "TC-032"
+  },
+  {
+   "group": "K-e4019f",
+   "kind": "input",
+   "board": "pm-ui",
+   "boards": [
+    "pm-ui"
+   ],
+   "name": "palette_hue_slider",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_palette (NEW)"
+   ],
+   "controls": [
+    "M-bde84e"
+   ],
+   "app": [],
+   "press": "TC-032",
+   "dismiss": "n/a: slider, no keyboard"
+  },
+  {
+   "group": "K-f69c65",
+   "kind": "input",
+   "board": "pm-ui",
+   "boards": [
+    "pm-ui"
+   ],
+   "name": "palette_sv_square",
+   "label": "",
+   "set": false,
+   "instances": 1,
+   "screens": [
+    "panel_palette (NEW)"
+   ],
+   "controls": [
+    "M-3638be"
+   ],
+   "app": [],
+   "press": "TC-032",
+   "dismiss": "n/a: slider, no keyboard"
+  }
+ ]
+}
