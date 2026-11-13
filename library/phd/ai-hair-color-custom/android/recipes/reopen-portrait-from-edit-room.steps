@@ -1,0 +1,9 @@
+# Leave the Edit Room (where ✕ / Back on the colour page land, O-1) and reopen AI Hair Color with hc_portrait_4x5.
+# Starts: the Edit Room opened from AI Hair Color. Ends: the colour page with hc_portrait_4x5 (Solid tab).
+# From the Launcher already, use pick-portrait.steps instead (a Back on the Launcher opens the exit dialog).
+# Written 2026-11-13 on 20.19.0 (90201900), SM-S9110 (pixels). Charges nothing.
+back
+wait 2
+back
+wait 2
+expect "AI Photos"

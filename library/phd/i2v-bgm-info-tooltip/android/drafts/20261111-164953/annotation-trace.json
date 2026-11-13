@@ -1,0 +1,101 @@
+{
+  "spec_folder": "specs/2026-11-11",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-i2v-info@177,100",
+      "board": "pm-i2v-info",
+      "x": 177,
+      "y": 100,
+      "low": false,
+      "text": "Image to Video: add info icon (why BGM setting cannot be changed)",
+      "trace": "label: board heading (R-001 – R-003)"
+    },
+    {
+      "id": "pm-i2v-info@1118,352",
+      "board": "pm-i2v-info",
+      "x": 1118,
+      "y": 352,
+      "low": false,
+      "text": "【Requirement】add info icon and tooltips / 【Requirement】 ➊ tooltips tooltips text：Sound support varies by template.",
+      "trace": "R-001, R-002"
+    },
+    {
+      "id": "pm-i2v-info@193,916",
+      "board": "pm-i2v-info",
+      "x": 193,
+      "y": 916,
+      "low": false,
+      "text": "Duration / Select Your Template / Video Quality / Tender Kiss / Custom / Generate Background Sound",
+      "trace": "ui: panel labels and the template strip under it, unchanged (R-001)"
+    },
+    {
+      "id": "pm-i2v-info@628,916",
+      "board": "pm-i2v-info",
+      "x": 628,
+      "y": 916,
+      "low": false,
+      "text": "Duration / Select Your Template / Video Quality / Slow Twerk / Tender Kiss / Custom / Generate Background Sound",
+      "trace": "ui: panel labels and the template strip under it, unchanged (R-001)"
+    },
+    {
+      "id": "pm-i2v-info@503,923",
+      "board": "pm-i2v-info",
+      "x": 503,
+      "y": 923,
+      "low": false,
+      "text": "View all > / Warm Hug / Reveal Me / Cheerleader",
+      "trace": "ui: template strip names, unchanged"
+    },
+    {
+      "id": "pm-i2v-info@938,923",
+      "board": "pm-i2v-info",
+      "x": 938,
+      "y": 923,
+      "low": false,
+      "text": "View all > / Warm Hug / Reveal Me / Cheerleader",
+      "trace": "ui: template strip names, unchanged"
+    },
+    {
+      "id": "pm-i2v-info@1141,1056",
+      "board": "pm-i2v-info",
+      "x": 1141,
+      "y": 1056,
+      "low": false,
+      "text": "Slow Twerk",
+      "trace": "ui: template strip name, unchanged"
+    },
+    {
+      "id": "pm-i2v-info@778,1098",
+      "board": "pm-i2v-info",
+      "x": 778,
+      "y": 1098,
+      "low": false,
+      "text": "Sound support varies by template. / Generate",
+      "trace": "R-002"
+    },
+    {
+      "id": "pm-i2v-info@337,1110",
+      "board": "pm-i2v-info",
+      "x": 337,
+      "y": 1110,
+      "low": false,
+      "text": "Generate",
+      "trace": "ui: Generate button, unchanged"
+    },
+    {
+      "id": "pm-i2v-template-config@1119,1800",
+      "board": "pm-i2v-template-config",
+      "x": 1119,
+      "y": 1800,
+      "low": false,
+      "text": "【Requirement - for iOS】跳 toast 邏輯需要比照 Android 目前處理 (TBD) / 【Template config - UIUX】from 25’6/E spec ➊ Generate Background Sound Templates by CL designers/ Vidu 3rd-party API Default “Off”，用戶有選擇 ”On” 才會去 query CMS 加BGM Background Sound 不連動，by 各template設定 Kling 3rd-party API Templates Default “On”，”Off” button 無法選 Panel 的選項為disable的，用戶點擊後出現 toast (Toast string: To achieve the best results, this template's settings are limited.) Custom 不需支援音樂生成",
+      "trace": "R-010, R-011, R-012, R-013, R-014, R-015, R-016"
+    }
+  ]
+}

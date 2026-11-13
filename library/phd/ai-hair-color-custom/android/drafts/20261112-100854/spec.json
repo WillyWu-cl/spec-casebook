@@ -1,0 +1,17 @@
+{
+  "feature": "phd/ai-hair-color-custom",
+  "platform": "android",
+  "title": "AI Hair Color Custom",
+  "draft": "20261112-100854",
+  "created_at": "2026-11-12T02:08:54.171Z",
+  "based_on_version": null,
+  "spec_folder": "specs/2026-11-12",
+  "spec_files": [
+    {
+      "name": "AI Hair Color Custom - PM Figma 3287-89.md",
+      "sha256": "e7cfac53e054c0d10afd04a824aa4f04d7af9bfceea981b3d925aa00761b2f30",
+      "bytes": 20750
+    }
+  ],
+  "spec_set_sha256": "f37188d91b9f6ace99ed9e0c30065ff980fc5f25a4ba75456f7ef08c3704813d"
+}

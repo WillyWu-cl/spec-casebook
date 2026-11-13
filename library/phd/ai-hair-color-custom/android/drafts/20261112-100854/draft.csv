@@ -1,0 +1,327 @@
+ID,Section,Precondition,Action,Expected Result,Priority,Spec Ref,Notes,Change,Change Reason
+TC-001,Intro Demo,"1. Fresh install (or app data cleared)
+2. AI Hair Color never opened",Open AI Hair Color from its Launcher entry,"The Intro Demo page shows 「AI Hair Color」, 「Go beyond traditional hair colors! Explore everything from subtle highlights to vibrant, bold shades.」, an orange 「Try Now」, an unticked 「Don't show again」 and ‹ at the top left",P2,R-002,Q-8 (10/E says no demo on first entry; this newer page draws one). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-002,Intro Demo,Intro Demo page shown (TC-001),Tap 「Try Now」,"The Intro Demo closes and AI Hair Color continues (photo picker, then the colour page)",P2,R-003,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-003,Intro Demo,"1. Intro Demo page shown
+2. 「Don't show again」 not ticked",Tap ‹ at the top left,AI Hair Color closes and the screen it was opened from shows again,P2,R-004,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-004,Intro Demo,"1. Intro Demo page shown
+2. Run after every row that needs the Intro Demo (one-way state)","1. Tick 「Don't show again」
+2. Tap 「Try Now」
+3. Leave AI Hair Color
+4. Open AI Hair Color again",The Intro Demo page does not show on the second entry,P3,R-005,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-005,Entry checks,"A photo whose face is tilted clearly more than 15° (yaw or roll), normal 4:5 ratio",Open AI Hair Color from Launcher and pick the photo,"A dialog shows 「Please choose another photo」, 「The face in this photo is too slanted, which may result in poorly generated results.」, 「OK」 and 「Continue Anyway」
+No credits are used",P2,R-007,Thresholds and strings as Hair Volume / AI Hairstyle. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-006,Entry checks,The slanted-face dialog is shown (TC-005),Tap 「OK」,"The room does not open
+The user can choose another photo",P2,R-009,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-007,Entry checks,The slanted-face dialog is shown (TC-005),Tap 「Continue Anyway」,"The AI Hair Color room opens with the slanted photo, 「Custom」 first in the swatch row",P2,R-009,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-008,Entry checks,"A photo whose face is small (narrower than about 1/8 of the image width), normal ratio","1. Open AI Hair Color from Launcher and pick the photo
+2. Tap 「Continue Anyway」","1. A face-too-small warning shows with 「OK」 and 「Continue Anyway」 (record its text)
+2. The room opens with the photo",P2,"R-008, R-009",128 px on the 1024 px thumbnail = 1/8 of the long side. String not drawn: AI Hairstyle's (Q-9). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-009,Entry checks,"A photo with no face (landscape, object)",Open AI Hair Color from Launcher and pick the photo,「No face detected. Face is required for this feature.」 shows and the room does not open,P2,R-010,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-010,Entry checks,A close-up photo whose face fills most of the frame,Open AI Hair Color from Launcher and pick the photo,"「The face in this photo is too big.」 shows and the room does not open
+There is no Continue Anyway",P2,R-011,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-011,Entry checks,A 21:9 panorama with a slanted face,Open AI Hair Color from Launcher and pick the photo,"The ratio dialog with 「Cancel」 and 「Crop」 shows first, with no Continue Anyway
+No face warning shows before it",P2,"R-012, R-006",Ratio dialog drawn on the 10/E page (entry_blocked_ratio). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-012,Entry checks,The ratio dialog is shown for the 21:9 slanted-face photo (TC-011),"1. Tap 「Crop」
+2. Choose 4:5 and tap ✓","1. The existing Crop room opens
+2. Back in AI Hair Color the slanted-face warning shows, checked on the cropped image",P2,R-013,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-013,Entry checks,A 21:9 photo with no face,Open AI Hair Color from Launcher and pick the photo,"「No face detected. Face is required for this feature.」 shows
+The ratio dialog does not show (no face is checked first)",P3,R-006,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-014,Entry checks,A close-up photo whose face is too big and tilted more than 15°,Open AI Hair Color from Launcher and pick the photo,"「The face in this photo is too big.」 shows (blocked)
+The slanted warning does not show",P3,R-006,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-015,Entry checks,A slanted-face photo open in Edit Room,Open Portrait › Hair › AI Hair Color from Edit Room,"The slanted-face warning shows right away, with no photo picker",P2,R-014,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-016,Entry checks,"A 16:9 photo, a 2:1 photo and a 4:1 photo, each with one front-facing face","1. Open AI Hair Color with the 16:9 photo
+2. Leave the room
+3. Open AI Hair Color with the 2:1 photo
+4. Leave the room
+5. Open AI Hair Color with the 4:1 photo","1. The 16:9 photo opens the room with no ratio dialog
+3. The 2:1 photo shows the 「Cancel」 / 「Crop」 ratio dialog
+5. The 4:1 photo shows the same dialog (the old 5:1 limit does not apply)",P2,"R-015, R-012",Android AI Hairstyle allowed up to 5:1 (D2-01b). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-017,Custom cell,"1. A portrait photo with one clear, front-facing face (passes every entry check)
+2. Solid tab",Open AI Hair Color from Launcher and pick the photo,"「Custom」 is the first cell of the swatch row, before 「Platinum」
+It shows a gradient with ＋ and is not selected
+The first template (「Platinum」) is selected",P1,"R-016, R-017",Q-2: mockups draw a pencil icon. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-018,Custom cell,"In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)","1. Tap the 「Multicolor」 tab
+2. Tap the 「Solid」 tab","1. 「Custom」 is the first cell of the Multicolor row too
+2. 「Custom」 is first again in the Solid row",P2,R-016,Q-1 (only Solid drawn). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-019,Custom panel,"In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)",Tap 「Custom」,"A half-screen sheet titled 「Custom」 opens with ⌄ at the top right, the 「Style」 area, the 「Base Color」 and 「Highlight Color」 rows and an orange Generate with ⬤ 6 inside it
+The ✕ ↺ ↻ ✓ row is not shown",P1,"R-018, R-019, R-020, R-039",PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-020,Custom panel,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open",Look at the panel against the screen height,"The panel covers at most about two thirds of the screen (0.65 of the height) with rounded top corners
+The photo stays visible above it",P3,R-021,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-030,Custom panel,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Style 「Ombré」 selected","1. Swipe the 「Base Color」 row sideways
+2. Swipe the 「Highlight Color」 row sideways","Each row starts with a rainbow colour-wheel key with a ＋ badge followed by 7 round recommended colours, and scrolls sideways",P2,R-022,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-021,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. No style chosen yet","1. Tap a colour in 「Base Color」
+2. Tap Generate",Both colour rows and Generate look disabled and nothing happens on either tap,P1,R-023,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-022,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open",Swipe the 「Style」 row to its end,"Every published Custom style shows with its thumbnail and name (「Face」, 「Bangs」, 「Highlight」, 「Balayage」, 「Ombré」, 「Solid」, …), 11 on day 1 by the fallback
+The two split-dye styles have plain-colour thumbnails",P2,"R-024, R-025",Day-1 list and premium styles: Q-6. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-023,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. No style chosen yet",Tap 「Ombré」,「Ombré」 shows the selected frame (#ffbe98) and both colour rows become enabled,P1,R-026,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-024,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open",Tap 「Solid」,"Only the 「Base Color」 row shows
+No 「Highlight Color」 row",P1,R-027,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-025,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Solid」 selected",Tap a recommended colour in 「Base Color」,"The colour shows its ring and Generate is enabled, showing 「Generate」 with ⬤ 6 (no minus sign)",P1,"R-028, R-038",PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-026,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Ombré」 selected
+4. No colours chosen",Tap a recommended colour in 「Base Color」 only,Generate stays disabled and 「Both Base Color and Highlight Color are required.」 shows under the rows,P1,R-029,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-027,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Balayage」 selected
+4. No colours chosen",Tap a recommended colour in 「Highlight Color」 only,Generate stays disabled and 「Both Base Color and Highlight Color are required.」 shows,P2,R-029,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-028,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Ombré」 selected","1. Tap a colour in 「Base Color」
+2. Tap a colour in 「Highlight Color」",Each chosen colour has a 2 pt #FFBE98 ring and Generate is enabled with ⬤ 6,P1,"R-030, R-038",PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-029,Style,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Ombré」 with both colours chosen","1. Tap 「Solid」
+2. Tap 「Ombré」 again","1. The 「Highlight Color」 row disappears (record whether Base stays chosen and Generate stays enabled)
+2. The 「Highlight Color」 row comes back (record whether its colour is kept)",P2,"R-027, R-029",Q-3. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-031,Colour palette,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Ombré」 selected",Tap the colour-wheel key of 「Base Color」,"The app's colour palette opens: 「Cancel」 and 「Done」 on one line, a saturation-brightness square with a round cursor, a rainbow hue slider with a round handle an eyedropper key right of the slider and, below, the bottom row ✕ ↩ ↪ ⊕ ✓ (described in the note, not drawn: record it)",P1,R-033,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-032,Colour palette,The palette opened from 「Base Color」 (TC-031),"1. Drag the hue handle to blue
+2. Drag the cursor in the square
+3. Tap 「Done」","The palette closes
+The 「Base Color」 row now holds the picked blue as its chosen colour
+「Highlight Color」 is unchanged",P1,"R-034, R-035",PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-033,Colour palette,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Ombré」 with a Base Color chosen","1. Tap the colour-wheel key of 「Highlight Color」
+2. Pick a purple
+3. Tap 「Done」","Only the 「Highlight Color」 row takes the purple
+「Base Color」 keeps its colour
+Generate is enabled",P1,R-034,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-034,Colour palette,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Ombré」 with a Base Color chosen","1. Tap the colour-wheel key of 「Base Color」
+2. Pick another colour
+3. Tap 「Cancel」",The palette closes and 「Base Color」 keeps the colour it had before,P2,R-035,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-035,Colour palette,The palette opened from 「Base Color」,"1. Tap the eyedropper key
+2. Pick a colour on the photo
+3. Tap 「Done」","The picked photo colour fills 「Base Color」, as the app's existing palette does elsewhere",P3,R-037,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-036,Colour palette,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits
+4. 「Solid」 with a pure blue Base Color picked in the palette
+5. App log capture on","1. Tap Generate
+2. Wait for the result
+3. Pull the app log","1. The hair in the result is that blue
+2. The generation request carries the colour as r/g/b values between 0 and 255 (blue ≈ 0/0/255)",P2,R-036,Hidden clause; park the log part until a log pull is set up. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-037,Colour palette,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits
+4. 「Solid」 with a Base Color
+5. App log capture on","1. Tap Generate
+2. Wait for the result
+3. Pull the app log",The request sends style solid_color with main_color_r/g/b only and no accent colour,P3,R-031,Hidden clause; park until a log pull is set up. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-038,Collapse = apply,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Ombré」 with both colours chosen",Tap ⌄ at the top right of the panel,"The panel closes
+The swatch row is back with 「Custom」 selected and showing the two chosen colours
+The outer Generate is enabled with ⬤ 6",P1,"R-042, R-043, R-044",Q-2: the mockup draws a pencil icon in the cell. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-039,Collapse = apply,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Balayage」 with both colours chosen",Tap the photo area above the panel,"The panel closes and the settings are applied as with ⌄: 「Custom」 selected with its colours, outer Generate enabled",P1,R-042,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-040,Collapse = apply,"1. Custom applied by collapse (TC-038)
+2. Account with at least 30 credits",Tap the outer Generate,A Custom generation starts in place (「Applying your new hair color...」) and 6 credits are taken,P1,R-043,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-041,Collapse = apply,"Custom applied by collapse (Ombré, two colours), not generated","1. Tap 「Platinum」
+2. Tap 「Custom」","Step 1: The selection ring moves to 「Platinum」
+Step 1: the Custom cell still shows the two colours
+Step 2: The panel opens with 「Ombré」 and the same two colours chosen",P1,"R-046, R-044",PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-042,Collapse = apply,"Custom applied (Ombré, two colours)","1. Tap 「Custom」
+2. Choose 「Solid」 and another Base Color
+3. Tap ⌄",The Custom cell now shows the new colour and reopening the panel shows 「Solid」 with it (the user's own overwrite replaces the old settings),P2,R-045,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-043,Collapse = apply,"Custom applied (Ombré, two colours)","1. Tap ✕ to leave the room
+2. Open AI Hair Color again with the same photo
+3. Tap 「Custom」",The Custom cell is back to its unset look and the panel has no style or colours chosen,P2,R-045,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-045,Generate and wait,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits
+4. 「Ombré」 with both colours chosen
+5. Note the credit chip",Tap Generate in the panel,"Generation runs in place with 「Applying your new hair color...」 over the photo
+The swatch row and Generate are disabled
+The credit chip drops by 6",P1,"R-047, R-049, R-040, R-001",PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-046,Generate and wait,A Custom generation just started (TC-045),Time the wait until the result shows,"The result shows after about 42–48 s
+The reassuring text changes in stages during the wait and an animation runs the whole time (no 10 s without one)",P2,R-047,Later strings not given (Q-10). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-078,Generate and wait,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. Account with at least 30 credits
+3. 「Platinum」 selected",Tap Generate and time the wait,"The template result shows with its short wait (about 15 s as 10/E), not the 42–48 s Custom wait",P3,R-048,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-047,Generate and wait,A Custom generation started from the panel's Generate without collapsing (TC-045),Wait for the result,"The panel stays open
+The result fills the photo area above
+A 44 pt Intensity row at 100 appears above the panel's button, which now reads 「Retry」 with ⬤ 6",P1,R-041,result_in_panel not drawn (Q-4). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-051,Generate and wait,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits
+4. 「Solid」 with a Base Color
+5. Note the credit chip",Tap Generate 5 times quickly,"One generation runs
+The chip drops by 6 only once and one result shows",P2,R-051,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-052,Generate and wait,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits
+4. 「Solid」 with a Base Color
+5. Note the credit chip","1. Tap Generate
+2. Force-stop the app during the wait
+3. Open AI Hair Color again","No Custom result is shown or recalled and the 6 credits stay charged (no refund), as the 10/E spec states",P3,R-050,Q-12. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-048,Result,"1. Custom applied by collapse
+2. Account with at least 30 credits","1. Tap the outer Generate
+2. Wait for the result","The result shows in place with the Intensity bar at 100 (0–100 range) above the tabs, and the button reads 「Retry」 with ⬤ 6",P1,R-052,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-049,Result,"1. A Custom result with Intensity dragged to 50
+2. Note the credit chip","1. Tap 「Retry」
+2. Wait for the result","A new result replaces the old one, the chip drops by 6 and the Intensity bar is back at 100",P1,"R-053, R-054",PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-053,Result,"1. A Custom result at Intensity 100
+2. Note the credit chip","1. Drag the Intensity handle to about 50 and release
+2. Tap ↺
+3. Tap ↻","Step 1: The new colour shows at about half strength over the original
+Step 1: the chip does not change
+Step 2: Intensity goes back to 100
+Step 3: Intensity returns to about 50",P2,R-056,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-054,Result,"1. A Custom result with Intensity at 50
+2. Note the credit chip","1. Tap 「Platinum」
+2. Tap 「Custom」 and collapse the panel with ⌄","The Custom result and its Intensity 50 come back without a new generation
+The chip is unchanged
+The button reads 「Retry」",P1,R-055,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-055,Result,"A Custom result just shown, Intensity dragged to 30, ✓ not tapped",Tap the Artwork key at the top right,"My AI Artwork opens on the AI Hair tab, Color sub-tab, and the Custom result is listed at full intensity (100%)",P1,R-057,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-056,Result,A Custom result with Intensity at 60,Tap ✓,A new Edit Room opens with the result at Intensity 60,P1,R-058,10/E D1-07: Android saves silently and opens a new Edit Room. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-057,Result,"1. The Intensity notice never dismissed with 「Don't show again」
+2. First result of this install",Generate a Custom result,"A one-time dialog says My AI Artwork keeps only the 100% version
+After 「OK」 the Intensity bar can be used",P3,R-059,"10/E dialog, behaviour inherited (D1-15). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",new,New table (REQ-001)
+TC-058,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the face_framing style (Face)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the face_framing pattern: the strands framing the face take the Highlight Color over the Base Color
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-059,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the colored_bangs style (Bangs)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the colored_bangs pattern: the bangs take the Highlight Color, the rest the Base Color
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-060,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the highlights style (Highlight)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the highlights pattern: Highlight Color streaks run along the hair flow over the Base Color
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-061,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the balayage style (Balayage)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the balayage pattern: the Highlight Color is swept through the lengths over the Base Color
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-062,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the ombre style (Ombré)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the ombre pattern: the Base Color fades into the Highlight Color, the change starting below the ears
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P1,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-063,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap 「Solid」
+2. Choose a vivid Base Color (red)
+3. Tap Generate","The result shows the solid_color pattern: all the hair is the one Base Color
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P1,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-064,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the dip_dye style (name from CMS)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the dip_dye pattern: the ends are dipped in the Highlight Color, the rest the Base Color
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-065,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the colored_roots style (name from CMS)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the colored_roots pattern: the roots take one colour and the lengths the other
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-066,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the earloop_highlights style (name from CMS)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the earloop_highlights pattern: the Highlight Color shows in the layer around and behind the ears
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-067,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the split_dye_vertical style (name from CMS)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the split_dye_vertical pattern: the hair is split left / right into the two colours
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-068,Styles generated,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits","1. Tap the split_dye_horizontal style (name from CMS)
+2. Choose a dark Base Color and a vivid Highlight Color
+3. Tap Generate","The result shows the split_dye_horizontal pattern: the hair is split top / bottom into the two colours
+The hairstyle outline, hair length, face, background and clothes do not change
+6 credits are taken",P2,"R-032, R-060",Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-069,Credits and failures,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Free user
+4. A Custom style whose usageType is purchase","1. Choose the premium style and its colours
+2. Tap Generate",The paywall opens and no credits are taken,P1,R-061,Which styles are premium: Q-6. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-070,Credits and failures,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Free user with fewer than 6 credits
+4. A free style","1. Choose the style and colours
+2. Tap Generate","「Upgrade to Premium」 shows
+Its button opens the paywall",P1,R-062,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-071,Credits and failures,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. VIP user with fewer than 6 credits","1. Choose a style and colours
+2. Tap Generate
+3. Tap 「Get Credit」","2. 「More Credits Required!」 shows
+3. The Credit Shop opens",P1,R-063,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-073,Credits and failures,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with fewer than 6 credits
+4. Quick Credit Refill not used yet","1. Choose a style and colours
+2. Tap Generate",The Quick Credit Refill offer (one-time 10-credit pack) shows,P2,R-064,Android only (10/E D4-04). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-075,Credits and failures,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits
+4. A server failure 4002 can be forced (RD fixture)",Tap Generate,「Please Try Different Content」 shows and the 6 credits are refunded,P2,R-065,Park: needs a failure fixture. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-076,Credits and failures,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. Account with at least 30 credits
+4. Another server failure can be forced (RD fixture)",Tap Generate,「An Error Has Occurred」 shows and the 6 credits are refunded,P2,R-065,Park: needs a failure fixture. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-050,Credits and failures,One Custom generation done (TC-045),"1. Tap the credit chip
+2. Open 「Detail」 at the top right of Buy Credit",The newest entry is AI Hair Color with 6 credits deducted,P2,"R-066, R-040",PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-077,Credits and failures,"In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)","1. Compare the credit chip with the balance in Mine
+2. Tap the credit chip","1. The chip shows the same balance
+2. Buy Credit opens",P2,R-067,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-079,Leaving the room,"1. A Custom result shown, panel closed
+2. Opened from Launcher",Tap ✕ at the bottom left,"The room closes with no confirmation and the screen before entry shows
+The result is still in My AI Artwork",P1,R-068,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-081,Deeplink,"1. A Custom deeplink for the ombre style guid from RD
+2. A portrait photo with one clear, front-facing face (passes every entry check) ready","1. Open the deeplink
+2. Pick the photo if asked","AI Hair Color opens with the Custom panel open and 「Ombré」 selected
+No colours are chosen and Generate is disabled",P2,"R-069, R-070",Park until RD gives the link format (Q-11; fallback mode=custom&style_guid=<guid>). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-082,Deeplink,A Custom deeplink with an unknown or unpublished style guid,Open the deeplink,The Custom panel opens with no style selected and no error is shown,P2,R-071,Park until RD gives the link format (Q-11). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-084,CMS,"The CMS list of PhDM_AIHairColor_CustomStyle (names, order, published state) from the CMS owner",Open the Custom panel and compare the Style row with the CMS list,"The names, thumbnails and order match CMS and only published styles show",P3,R-024,Park: needs CMS data (Q-13). PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-090,Android system Back,Intro Demo page shown,Press system Back,Same as ‹: AI Hair Color closes to the screen it was opened from,P2,R-072,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-087,Android system Back,The slanted-face warning is shown,Press system Back,Record what happens (expected like 「OK」: the room does not open),P3,R-073,Q-14. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-085,Android system Back,"1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)
+2. The Custom panel is open
+3. 「Ombré」 with both colours chosen",Press system Back,"Record what happens (expected like ⌄: the panel closes and the settings are applied, the room stays)",P2,R-074,Q-14. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-086,Android system Back,The palette is open from 「Base Color」 with another colour picked,Press system Back,Same as 「Cancel」: the palette closes and 「Base Color」 is unchanged,P2,R-075,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-088,Android system Back,"1. A Custom result shown, panel closed
+2. Opened from Launcher",Press system Back,Same as ✕: the room closes with no confirmation,P2,R-076,PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)
+TC-089,Android system Back,A Custom generation running,Press system Back,"Record what happens (the screen, whether the generation continues and the credits)",P3,R-077,Q-14. PM-only: no Design frame yet (no Design file supplied 2026-11-12),new,New table (REQ-001)

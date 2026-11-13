@@ -1,0 +1,24 @@
+{
+  "feature": "phd/feature-room-no-title",
+  "folder": "2026-11-11",
+  "received_at": "2026-11-11T08:49:54.353Z",
+  "spec_set_sha256": "cdb97913c16841daa7bc0c29a64027ac1c4f2736f9e26368492181e9c9850a15",
+  "files": [
+    {
+      "name": "Feature room top bar title - PM Figma 14451-2196.md",
+      "sha256": "25c7d62bbe0b1ed098272682a874bb7422b2f3b2d5641ed8266ac06a93231e20",
+      "bytes": 1592
+    }
+  ],
+  "source_priority": [
+    "design",
+    "pm"
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/NacadNfWFAGglU880DupER/UX-Issues?node-id=14451-2196",
+    "design": null,
+    "pm_section": "14451:2197 heading 14568:1714"
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-11): the spec file is a text snapshot of this feature’s part of the PM page 「26 11E UIUX Revamp」 (UX-Issues), read with get_metadata and a section screenshot; use_figma (the inventory read) was refused for qa1 (Full seat). No PDF, no Design or MX file."
+}

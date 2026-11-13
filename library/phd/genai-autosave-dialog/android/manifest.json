@@ -1,0 +1,29 @@
+{
+  "feature": "phd/genai-autosave-dialog",
+  "platform": "android",
+  "title": "Gen AI auto-save dialog",
+  "version": 1,
+  "approved_at": "2026-11-12T01:14:28.280Z",
+  "draft": "20261111-164954",
+  "spec_folder": "specs/2026-11-11",
+  "spec_files": [
+    {
+      "name": "GenAI auto-save dialog - PM Figma 14451-2196.md",
+      "sha256": "581a5160a62c57703655ba96b9b41817b4be9b32a87e6e55641fbe0e9ba282f4",
+      "bytes": 2588
+    }
+  ],
+  "spec_set_sha256": "3f2348db64bb50dd107feb36a77018eb9481d1c7b704137b35c0d3f91877b84a",
+  "cases": 13,
+  "history": [
+    {
+      "version": 1,
+      "approved_at": "2026-11-12T01:14:28.280Z",
+      "spec_set_sha256": "3f2348db64bb50dd107feb36a77018eb9481d1c7b704137b35c0d3f91877b84a",
+      "draft": "20261111-164954",
+      "cases": 13,
+      "csv": "cases.csv",
+      "requirements": "requirements.md"
+    }
+  ]
+}

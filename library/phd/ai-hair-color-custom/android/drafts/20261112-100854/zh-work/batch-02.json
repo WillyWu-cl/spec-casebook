@@ -1,0 +1,527 @@
+{
+ "rules": "Translate into natural Traditional Chinese as a Taiwanese QA tester would write it (spec-casebook/references/zh-copy.md): rewrite each sentence the way it is said in Chinese, never word by word; keep every 「…」 UI string, ID (TC-, R-, KP-, Q-), eBug code, file name, number and unit exactly; keep numbered steps one per line with the same numbers; in Precondition, Action and Expected Result keep the English lines one for one (same count, same numbers, the same 「步驟 N：」 prefix), never joined with ；.",
+ "rows": [
+  {
+   "ID": "TC-061",
+   "en": {
+    "Section": "Styles generated",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits",
+    "Action": "1. Tap the balayage style (Balayage)\n2. Choose a dark Base Color and a vivid Highlight Color\n3. Tap Generate",
+    "Expected Result": "The result shows the balayage pattern: the Highlight Color is swept through the lengths over the Base Color\nThe hairstyle outline, hair length, face, background and clothes do not change\n6 credits are taken",
+    "Notes": "Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "各樣式生成結果",
+    "Action": "1. 點 balayage 樣式（Balayage）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "各樣式生成結果",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數",
+    "Action": "1. 點 balayage 樣式（Balayage）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Expected Result": "結果呈現 balayage 效果：Highlight Color 自然刷染在 Base Color 的髮絲長度上；髮型輪廓、髮長、臉、背景和衣服都不變；扣除 6 點數",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-062",
+   "en": {
+    "Section": "Styles generated",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits",
+    "Action": "1. Tap the ombre style (Ombré)\n2. Choose a dark Base Color and a vivid Highlight Color\n3. Tap Generate",
+    "Expected Result": "The result shows the ombre pattern: the Base Color fades into the Highlight Color, the change starting below the ears\nThe hairstyle outline, hair length, face, background and clothes do not change\n6 credits are taken",
+    "Notes": "Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "各樣式生成結果",
+    "Action": "1. 點 ombre 樣式（Ombré）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "各樣式生成結果",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數",
+    "Action": "1. 點 ombre 樣式（Ombré）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Expected Result": "結果呈現 ombre 效果：Base Color 漸層過渡到 Highlight Color，從耳朵下方開始變色；髮型輪廓、髮長、臉、背景和衣服都不變；扣除 6 點數",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-063",
+   "en": {
+    "Section": "Styles generated",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits",
+    "Action": "1. Tap 「Solid」\n2. Choose a vivid Base Color (red)\n3. Tap Generate",
+    "Expected Result": "The result shows the solid_color pattern: all the hair is the one Base Color\nThe hairstyle outline, hair length, face, background and clothes do not change\n6 credits are taken",
+    "Notes": "Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "各樣式生成結果",
+    "Action": "1. 點「Solid」\n2. 選一個鮮豔的 Base Color（紅色）\n3. 點 Generate",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "各樣式生成結果",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數",
+    "Action": "1. 點「Solid」\n2. 選一個鮮豔的 Base Color（紅色）\n3. 點 Generate",
+    "Expected Result": "結果呈現 solid_color 效果：整頭頭髮都是同一個 Base Color；髮型輪廓、髮長、臉、背景和衣服都不變；扣除 6 點數",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-064",
+   "en": {
+    "Section": "Styles generated",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits",
+    "Action": "1. Tap the dip_dye style (name from CMS)\n2. Choose a dark Base Color and a vivid Highlight Color\n3. Tap Generate",
+    "Expected Result": "The result shows the dip_dye pattern: the ends are dipped in the Highlight Color, the rest the Base Color\nThe hairstyle outline, hair length, face, background and clothes do not change\n6 credits are taken",
+    "Notes": "Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "各樣式生成結果",
+    "Action": "1. 點 dip_dye 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "各樣式生成結果",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數",
+    "Action": "1. 點 dip_dye 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Expected Result": "結果呈現 dip_dye 效果：髮尾染成 Highlight Color，其餘為 Base Color；髮型輪廓、髮長、臉、背景和衣服都不變；扣除 6 點數",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-065",
+   "en": {
+    "Section": "Styles generated",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits",
+    "Action": "1. Tap the colored_roots style (name from CMS)\n2. Choose a dark Base Color and a vivid Highlight Color\n3. Tap Generate",
+    "Expected Result": "The result shows the colored_roots pattern: the roots take one colour and the lengths the other\nThe hairstyle outline, hair length, face, background and clothes do not change\n6 credits are taken",
+    "Notes": "Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "各樣式生成結果",
+    "Action": "1. 點 colored_roots 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "各樣式生成結果",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數",
+    "Action": "1. 點 colored_roots 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Expected Result": "結果呈現 colored_roots 效果：髮根是其中一種顏色，髮絲其餘部分是另一種顏色；髮型輪廓、髮長、臉、背景和衣服都不變；扣除 6 點數",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-066",
+   "en": {
+    "Section": "Styles generated",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits",
+    "Action": "1. Tap the earloop_highlights style (name from CMS)\n2. Choose a dark Base Color and a vivid Highlight Color\n3. Tap Generate",
+    "Expected Result": "The result shows the earloop_highlights pattern: the Highlight Color shows in the layer around and behind the ears\nThe hairstyle outline, hair length, face, background and clothes do not change\n6 credits are taken",
+    "Notes": "Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "各樣式生成結果",
+    "Action": "1. 點 earloop_highlights 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "各樣式生成結果",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數",
+    "Action": "1. 點 earloop_highlights 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Expected Result": "結果呈現 earloop_highlights 效果：Highlight Color 出現在耳朵周圍及耳後的那一層頭髮；髮型輪廓、髮長、臉、背景和衣服都不變；扣除 6 點數",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-067",
+   "en": {
+    "Section": "Styles generated",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits",
+    "Action": "1. Tap the split_dye_vertical style (name from CMS)\n2. Choose a dark Base Color and a vivid Highlight Color\n3. Tap Generate",
+    "Expected Result": "The result shows the split_dye_vertical pattern: the hair is split left / right into the two colours\nThe hairstyle outline, hair length, face, background and clothes do not change\n6 credits are taken",
+    "Notes": "Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "各樣式生成結果",
+    "Action": "1. 點 split_dye_vertical 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "各樣式生成結果",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數",
+    "Action": "1. 點 split_dye_vertical 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Expected Result": "結果呈現 split_dye_vertical 效果：頭髮左右分成兩種顏色；髮型輪廓、髮長、臉、背景和衣服都不變；扣除 6 點數",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-068",
+   "en": {
+    "Section": "Styles generated",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits",
+    "Action": "1. Tap the split_dye_horizontal style (name from CMS)\n2. Choose a dark Base Color and a vivid Highlight Color\n3. Tap Generate",
+    "Expected Result": "The result shows the split_dye_horizontal pattern: the hair is split top / bottom into the two colours\nThe hairstyle outline, hair length, face, background and clothes do not change\n6 credits are taken",
+    "Notes": "Look described from the style name (the spec gives none). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "各樣式生成結果",
+    "Action": "1. 點 split_dye_horizontal 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "各樣式生成結果",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數",
+    "Action": "1. 點 split_dye_horizontal 樣式（名稱來自 CMS）\n2. 選一個深色的 Base Color 和一個鮮豔的 Highlight Color\n3. 點 Generate",
+    "Expected Result": "結果呈現 split_dye_horizontal 效果：頭髮上下分成兩種顏色；髮型輪廓、髮長、臉、背景和衣服都不變；扣除 6 點數",
+    "Notes": "效果是依樣式名稱推測描述（規格沒有說明）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-069",
+   "en": {
+    "Section": "Credits and failures",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Free user\n4. A Custom style whose usageType is purchase",
+    "Action": "1. Choose the premium style and its colours\n2. Tap Generate",
+    "Expected Result": "The paywall opens and no credits are taken",
+    "Notes": "Which styles are premium: Q-6. PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "點數與失敗",
+    "Action": "1. 選擇付費樣式及其顏色\n2. 點 Generate",
+    "Expected Result": "跳出付費方案頁（paywall），且不扣除 credits",
+    "Notes": "哪些樣式是付費樣式：Q-6。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition"
+   ],
+   "prev": {
+    "Section": "點數與失敗",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；Free 使用者；選用 usageType 為 purchase 的 Custom 樣式",
+    "Action": "1. 選擇付費樣式及其顏色\n2. 點 Generate",
+    "Expected Result": "跳出付費方案頁（paywall），且不扣除 credits",
+    "Notes": "哪些樣式是付費樣式：Q-6。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-070",
+   "en": {
+    "Section": "Credits and failures",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Free user with fewer than 6 credits\n4. A free style",
+    "Action": "1. Choose the style and colours\n2. Tap Generate",
+    "Expected Result": "「Upgrade to Premium」 shows\nIts button opens the paywall",
+    "Notes": "PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "點數與失敗",
+    "Action": "1. 選擇樣式及顏色\n2. 點 Generate",
+    "Notes": "僅 PM 有定義：Design 尚無對應畫面（2026-11-12 未提供 Design 檔）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "點數與失敗",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；Free 使用者，credits 少於 6；選用免費樣式",
+    "Action": "1. 選擇樣式及顏色\n2. 點 Generate",
+    "Expected Result": "跳出「Upgrade to Premium」；按它的按鈕會開啟付費方案頁（paywall）",
+    "Notes": "僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-071",
+   "en": {
+    "Section": "Credits and failures",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. VIP user with fewer than 6 credits",
+    "Action": "1. Choose a style and colours\n2. Tap Generate\n3. Tap 「Get Credit」",
+    "Expected Result": "2. 「More Credits Required!」 shows\n3. The Credit Shop opens",
+    "Notes": "PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "點數與失敗",
+    "Action": "1. 選擇樣式及顏色\n2. 點 Generate\n3. 點「Get Credit」",
+    "Expected Result": "2. 跳出「More Credits Required!」\n3. 開啟 Credit Shop",
+    "Notes": "僅 PM 有定義：Design 尚無對應畫面（2026-11-12 未提供 Design 檔）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition"
+   ],
+   "prev": {
+    "Section": "點數與失敗",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；VIP 使用者，credits 少於 6",
+    "Action": "1. 選擇樣式及顏色\n2. 點 Generate\n3. 點「Get Credit」",
+    "Expected Result": "2. 跳出「More Credits Required!」\n3. 開啟 Credit Shop",
+    "Notes": "僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-073",
+   "en": {
+    "Section": "Credits and failures",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with fewer than 6 credits\n4. Quick Credit Refill not used yet",
+    "Action": "1. Choose a style and colours\n2. Tap Generate",
+    "Expected Result": "The Quick Credit Refill offer (one-time 10-credit pack) shows",
+    "Notes": "Android only (10/E D4-04). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "點數與失敗",
+    "Action": "1. 選擇樣式及顏色\n2. 點 Generate",
+    "Expected Result": "跳出 Quick Credit Refill 優惠（一次性的 10 點數 加購包）",
+    "Notes": "僅限 Android（10/E D4-04）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition"
+   ],
+   "prev": {
+    "Section": "點數與失敗",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號 credits 少於 6；尚未使用過 Quick Credit Refill",
+    "Action": "1. 選擇樣式及顏色\n2. 點 Generate",
+    "Expected Result": "跳出 Quick Credit Refill 優惠（一次性的 10 點數 加購包）",
+    "Notes": "僅限 Android（10/E D4-04）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-075",
+   "en": {
+    "Section": "Credits and failures",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits\n4. A server failure 4002 can be forced (RD fixture)",
+    "Action": "Tap Generate",
+    "Expected Result": "「Please Try Different Content」 shows and the 6 credits are refunded",
+    "Notes": "Park: needs a failure fixture. PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "點數與失敗",
+    "Action": "點 Generate",
+    "Expected Result": "跳出「Please Try Different Content」，且 6 點數 已退還",
+    "Notes": "暫緩：需要錯誤測試條件。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition"
+   ],
+   "prev": {
+    "Section": "點數與失敗",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數；可強制觸發伺服器錯誤 4002（RD 提供的測試條件）",
+    "Action": "點 Generate",
+    "Expected Result": "跳出「Please Try Different Content」，且 6 點數 已退還",
+    "Notes": "暫緩：需要錯誤測試條件。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-076",
+   "en": {
+    "Section": "Credits and failures",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. Account with at least 30 credits\n4. Another server failure can be forced (RD fixture)",
+    "Action": "Tap Generate",
+    "Expected Result": "「An Error Has Occurred」 shows and the 6 credits are refunded",
+    "Notes": "Park: needs a failure fixture. PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "點數與失敗",
+    "Action": "點 Generate",
+    "Expected Result": "跳出「An Error Has Occurred」，且 6 點數 已退還",
+    "Notes": "暫緩：需要錯誤測試條件。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition"
+   ],
+   "prev": {
+    "Section": "點數與失敗",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；帳號至少有 30 點數；可強制觸發另一種伺服器錯誤（RD 提供的測試條件）",
+    "Action": "點 Generate",
+    "Expected Result": "跳出「An Error Has Occurred」，且 6 點數 已退還",
+    "Notes": "暫緩：需要錯誤測試條件。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-079",
+   "en": {
+    "Section": "Leaving the room",
+    "Precondition": "1. A Custom result shown, panel closed\n2. Opened from Launcher",
+    "Action": "Tap ✕ at the bottom left",
+    "Expected Result": "The room closes with no confirmation and the screen before entry shows\nThe result is still in My AI Artwork",
+    "Notes": "PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "離開房間",
+    "Action": "點左下角的 ✕",
+    "Notes": "僅 PM 有定義：Design 尚無對應畫面（2026-11-12 未提供 Design 檔）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "離開房間",
+    "Precondition": "已顯示 Custom 結果，面板已收合；從 Launcher 進入",
+    "Action": "點左下角的 ✕",
+    "Expected Result": "房間直接關閉，不會跳出確認，並回到進入前的畫面；結果仍保留在 My AI Artwork 中",
+    "Notes": "僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-081",
+   "en": {
+    "Section": "Deeplink",
+    "Precondition": "1. A Custom deeplink for the ombre style guid from RD\n2. A portrait photo with one clear, front-facing face (passes every entry check) ready",
+    "Action": "1. Open the deeplink\n2. Pick the photo if asked",
+    "Expected Result": "AI Hair Color opens with the Custom panel open and 「Ombré」 selected\nNo colours are chosen and Generate is disabled",
+    "Notes": "Park until RD gives the link format (Q-11; fallback mode=custom&style_guid=<guid>). PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "Deeplink",
+    "Action": "1. 開啟 deeplink\n2. 若有要求，選擇照片",
+    "Notes": "暫緩，等 RD 提供連結格式（Q-11；備案為 mode=custom&style_guid=<guid>）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition",
+    "Expected Result"
+   ],
+   "prev": {
+    "Section": "Deeplink",
+    "Precondition": "備有 RD 提供的 ombre 樣式 guid 的 Custom deeplink；準備好一張只有一張清楚正臉的人像照（通過所有進入檢查）",
+    "Action": "1. 開啟 deeplink\n2. 若有要求，選擇照片",
+    "Expected Result": "開啟 AI Hair Color，Custom 面板已展開且已選「Ombré」；沒有選任何顏色，Generate 不能按",
+    "Notes": "暫緩，等 RD 提供連結格式（Q-11；備案為 mode=custom&style_guid=<guid>）。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-085",
+   "en": {
+    "Section": "Android system Back",
+    "Precondition": "1. In the AI Hair Color room with a portrait photo with one clear, front-facing face (passes every entry check)\n2. The Custom panel is open\n3. 「Ombré」 with both colours chosen",
+    "Action": "Press system Back",
+    "Expected Result": "Record what happens (expected like ⌄: the panel closes and the settings are applied, the room stays)",
+    "Notes": "Q-14. PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "Android 系統返回鍵",
+    "Action": "按系統返回鍵",
+    "Expected Result": "記錄實際情況（預期與按 ⌄ 相同：面板關閉並套用設定，仍停留在房間內）",
+    "Notes": "Q-14。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition"
+   ],
+   "prev": {
+    "Section": "Android 系統返回鍵",
+    "Precondition": "在 AI Hair Color 編輯室內，照片為只有一張清楚正臉的人像照（通過所有進入檢查）；已開啟 Custom 面板；已選「Ombré」並設定好兩個顏色",
+    "Action": "按系統返回鍵",
+    "Expected Result": "記錄實際情況（預期與按 ⌄ 相同：面板關閉並套用設定，仍停留在房間內）",
+    "Notes": "Q-14。僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  },
+  {
+   "ID": "TC-088",
+   "en": {
+    "Section": "Android system Back",
+    "Precondition": "1. A Custom result shown, panel closed\n2. Opened from Launcher",
+    "Action": "Press system Back",
+    "Expected Result": "Same as ✕: the room closes with no confirmation",
+    "Notes": "PM-only: no Design frame yet (no Design file supplied 2026-11-12)",
+    "Change Reason": "New table (REQ-001)"
+   },
+   "zh": {
+    "Section": "Android 系統返回鍵",
+    "Action": "按系統返回鍵",
+    "Expected Result": "與按 ✕ 相同：房間直接關閉，不會跳出確認",
+    "Notes": "僅 PM 有定義：Design 尚無對應畫面（2026-11-12 未提供 Design 檔）",
+    "Change Reason": "新表格（REQ-001）"
+   },
+   "todo": [
+    "Precondition"
+   ],
+   "prev": {
+    "Section": "Android 系統返回鍵",
+    "Precondition": "已顯示 Custom 結果，面板已收合；從 Launcher 進入",
+    "Action": "按系統返回鍵",
+    "Expected Result": "與按 ✕ 相同：房間直接關閉，不會跳出確認",
+    "Notes": "僅 PM 有定義：尚無 Design 畫面（2026-11-12 未提供 Design 檔案）",
+    "Change Reason": "新表格（REQ-001）"
+   }
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "since": "2026-11-11",
+ "reason": "PM Figma file UX-Issues (NacadNfWFAGglU880DupER), page 「26 11E UIUX Revamp」 14451:2196: texts read from get_metadata and the section screenshot on 2026-11-11 (Figma-only spec, no PDF). Step 10 owed: use_figma (the inventory read) was refused for qa1 on this file (「To use MCP tools that make edits, you’ll need a Full seat」, debug e0df7c0f-f825-4dc2-a9c1-6259e92e50a9); controls listed by eye in board-notes.md.",
+ "links": {
+  "design": null,
+  "pm": "https://www.figma.com/design/NacadNfWFAGglU880DupER/UX-Issues?node-id=14451-2196",
+  "mx": null
+ },
+ "owed": [
+  "step 10"
+ ]
+}

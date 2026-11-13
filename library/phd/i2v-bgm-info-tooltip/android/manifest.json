@@ -1,0 +1,29 @@
+{
+  "feature": "phd/i2v-bgm-info-tooltip",
+  "platform": "android",
+  "title": "Image to Video: Background Sound info icon",
+  "version": 1,
+  "approved_at": "2026-11-12T01:14:37.396Z",
+  "draft": "20261111-164953",
+  "spec_folder": "specs/2026-11-11",
+  "spec_files": [
+    {
+      "name": "I2V BGM info icon - PM Figma 14451-2196.md",
+      "sha256": "7bb7d2a3ecba2a5ff8c507aa0bce0c997b78fbae998dd5dfc24b1a6deb5b72b9",
+      "bytes": 2142
+    }
+  ],
+  "spec_set_sha256": "e452f64886c6b0b9e27d9bd62d190b347ff60476fea59d39e1780868239a4e95",
+  "cases": 12,
+  "history": [
+    {
+      "version": 1,
+      "approved_at": "2026-11-12T01:14:37.396Z",
+      "spec_set_sha256": "e452f64886c6b0b9e27d9bd62d190b347ff60476fea59d39e1780868239a4e95",
+      "draft": "20261111-164953",
+      "cases": 12,
+      "csv": "cases.csv",
+      "requirements": "requirements.md"
+    }
+  ]
+}

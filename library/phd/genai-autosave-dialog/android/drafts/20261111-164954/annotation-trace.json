@@ -1,0 +1,20 @@
+{
+  "spec_folder": "specs/2026-11-11",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-genai-dialog@773,4305",
+      "board": "pm-genai-dialog",
+      "x": 773,
+      "y": 4305,
+      "low": false,
+      "text": "➊ dialog dialog title (不變) dialog content (原): All your generated results are saved in My Artwork, so you can acess them anytime. dialog content (改為): Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.",
+      "trace": "R-001, R-002"
+    }
+  ]
+}

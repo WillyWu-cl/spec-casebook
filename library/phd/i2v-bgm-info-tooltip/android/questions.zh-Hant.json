@@ -1,0 +1,6 @@
+{
+  "Q-1": "規格只畫出 tooltip 打開的樣子，沒有說要怎麼關（點外面、再點一次 icon、自動消失，或按 Android 返回鍵）。假設：點 tooltip 以外的地方就會關，按返回鍵會先關 tooltip；案例會記錄每種方式的實際結果。",
+  "Q-2": "R-010 – R-015 的 template 設定規則放在「11/E 改為 TBD 項目」區，是給 iOS 參考的 25'6/E spec（「比照 Android 目前處理」）。假設：這些就是 Android 目前的行為，Android 案例照現況檢查；如有不同先發問，PM 確認前不開 bug。",
+  "Q-3": "Custom 目前有自己的聲音設定（部分模型的「Generate Sound by AI」），規格只說 Custom 不需支援音樂生成。假設：Custom 沒有「Generate Background Sound」也沒有新的 info icon；「Generate Sound by AI」不變，不在這張表檢查。",
+  "Q-4": "App 裡看不出 template 是 CL designers、Vidu 還是 Kling。假設：「Off」可以選的 template 代表 CL designers / Vidu，「Off」是灰色的代表 Kling；需要時請 RD 各指定一個。"
+}

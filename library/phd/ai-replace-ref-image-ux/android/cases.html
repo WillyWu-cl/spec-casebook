@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Replace: Reference image UX Test Cases · Android</title>
+<!-- tab icon (review: a checklist), different on each page so the browser tabs are easy to tell apart -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%233d5bd9'/><path d='M7 10.5l2.5 2.5L14 8.5M7 20.5l2.5 2.5 4.5-4.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/><path d='M17.5 11h8M17.5 21h8' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;650;750&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;600;700&display=swap">
+<style>
+/* Shared by every casebook page (scripts/lib/page-shared.ts puts it at the top of each page's <style>): one palette and
+   one type scale, and the time and usage strip of Progress and Design. A page's own rules come after and may override. */
+:root {
+  --bg: #f4f6f6; --panel: #ffffff; --ink: #172426; --muted: #5b6b6e; --line: #d8e0e1; --accent: #0f6e73; --chip-bg: #eef2f2;
+  --pass: #2f7d4f; --fail: #b8402f; --blocked: #a86b12; --inc: #6a55a8; --notrun: #9aa6a8; --hold: #7a5a14; --skip: #7d878a;
+  --differs: #b8402f; --question: #a86b12; --unreviewed: #6a55a8; --matches: #2f7d4f; --none: #9aa6a8; --info: #2c6fa8;
+  --display: "Archivo", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Sans 3", "Noto Sans TC", "Segoe UI", system-ui, "PingFang TC", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  /* one page width and side gutter on every tab (user, 2026-11-06) */
+  --gutter: max(16px, env(safe-area-inset-left, 0px), calc((100vw - 1280px) / 2));
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd; --chip-bg: #213032;
+  --pass: #5cbf83; --fail: #ec7a66; --blocked: #e0a548; --inc: #a796e0; --notrun: #5f6f71; --hold: #e0b85a; --skip: #8c9a9c;
+  --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; --info: #74b3ea; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111a1b; --panel: #182325; --ink: #e3ecec; --muted: #93a5a7; --line: #2a3a3c; --accent: #4fb8bd; --chip-bg: #213032;
+  --pass: #5cbf83; --fail: #ec7a66; --blocked: #e0a548; --inc: #a796e0; --notrun: #5f6f71; --hold: #e0b85a; --skip: #8c9a9c;
+  --differs: #ec7a66; --question: #e0a548; --unreviewed: #a796e0; --matches: #5cbf83; --none: #5f6f71; --info: #74b3ea; color-scheme: dark }
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0; padding-inline: var(--gutter) }
+/* the tab bar still spans the window, also after a resize */
+.cb-tabs { margin-left: calc(-1 * var(--gutter)) !important; margin-right: calc(-1 * var(--gutter)) !important; padding-inline: var(--gutter) !important }
+/* Time and usage: stays at the top of the page, readable at a glance (user, 2026-11-06). One figure per tile, the
+   estimate first; the account's shared total stays muted (AGENTS.md, Plan usage). */
+.ubox { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px 14px; display: grid; gap: 10px; min-width: 0 }
+.ubox .uh { display: flex; gap: 4px 12px; align-items: baseline; flex-wrap: wrap }
+.ubox .uh h2 { font: 700 1.05rem var(--display); margin: 0; letter-spacing: -0.01em }
+.ubox .uh .uw { color: var(--muted); font-size: 0.86rem }
+.ubox .ulive { font: 600 0.75rem var(--body); color: var(--pass); display: inline-flex; gap: 5px; align-items: center }
+.ubox .ulive i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; animation: cbpulse 1.6s ease-in-out infinite }
+@keyframes cbpulse { 50% { opacity: 0.25 } }
+@media (prefers-reduced-motion: reduce) { .ubox .ulive i { animation: none } }
+.ustrip { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px }
+.ut { background: var(--chip-bg); border-radius: 6px; padding: 8px 12px 10px; display: grid; gap: 2px; align-content: start; min-width: 0 }
+.ut .ul { font-size: 0.82rem; color: var(--muted) }
+.ut .uv { font: 700 1.55rem/1.2 var(--display); font-variant-numeric: tabular-nums }
+.ut .uv.est { color: var(--accent) }
+.ut .us { font-size: 0.84rem; color: var(--muted) }
+.ut .um { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: color-mix(in srgb, var(--muted) 22%, transparent); margin-top: 5px }
+.ut .um span { display: block; height: 100%; background: var(--accent) }
+.ut .um span.idle { background: color-mix(in srgb, var(--muted) 45%, transparent) }
+.ut.acct .uv { font-size: 1.05rem; font-weight: 600; color: var(--muted); line-height: 1.5 }
+.ubox .unone { color: var(--muted); font-style: italic }
+.ubox .ufoot { display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: center }
+.ubox details.how summary { cursor: pointer; font-size: 0.85rem; color: var(--muted) }
+.ubox .notes { color: var(--muted); font-size: 0.85rem; margin: 8px 0 0; display: grid; gap: 4px }
+
+/* Layout: a spreadsheet-like review sheet — header facts, filter bar, rows grouped by section, sticky action bar. */
+:root{
+  --surface:var(--panel); --fg:var(--ink);
+  --new:#1f7a4d; --new-soft:#dff3e8; --mod:#9a5b00; --mod-soft:#fbecd2; --rem:#b3261e; --rem-soft:#fadcd9; --edit:#3d5bd9; --edit-soft:#e2e7fb;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --new:#5cc58e; --new-soft:#173a29; --mod:#e7a94a; --mod-soft:#3b2c12; --rem:#f07a70; --rem-soft:#3e1d1a; --edit:#93a6ff; --edit-soft:#232c55}}
+header{padding:28px 0 4px;display:grid;gap:8px}
+header h1{margin:0;font:750 1.9rem var(--display);letter-spacing:-.01em}
+header .facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.92rem;color:var(--muted)}
+header .facts code{font-family:var(--mono);font-size:.8rem}
+main{padding:16px 0 110px;display:grid;gap:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+details.panel>summary{cursor:pointer;padding:10px 14px;font-weight:600}
+details.panel .md{padding:0 14px 14px;max-height:460px;overflow:auto;font-size:13px}
+.md h2,.md h3,.md h4{margin:12px 0 4px;font-size:.95rem}
+.md ul{margin:4px 0;padding-left:18px}
+.md table{min-width:0;width:auto;border-collapse:collapse;margin:6px 0}
+.md td,.md th{border:1px solid var(--line);padding:4px 8px;position:static;text-transform:none;letter-spacing:0;font:13px var(--body);color:var(--fg)}
+.md code{font-family:var(--mono);font-size:.85em}
+details.panel pre{margin:0;padding:0 14px 14px;white-space:pre-wrap;font:13px/1.55 var(--body);max-height:420px;overflow:auto}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:4px 10px;font:500 .82rem var(--body);cursor:pointer}
+.chip b{font-family:var(--mono);color:var(--muted);margin-left:3px}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip[aria-pressed="true"] b{color:var(--bg)}
+input[type=search],select{font:inherit;padding:5px 9px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+input[type=search]{flex:1 1 220px;min-width:0}
+.sep{width:1px;height:22px;background:var(--line)}
+/* the sheet scrolls inside its own box, so the header row, ID and Decision stay in view both ways (user, 2026-11-06) */
+.tablewrap{overflow:auto;max-height:calc(100vh - 96px)}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:1150px;background:var(--surface)}
+table.slim{min-width:760px}
+table.slim th:nth-child(2){width:24%}table.slim th:nth-child(3){width:32%}table.slim th:nth-child(4){width:34%}
+table.slim th:nth-child(n+5):nth-child(-n+7),table.slim tr[data-row]>td:nth-child(n+5):nth-child(-n+7){display:none}
+td.id,th:first-child{position:sticky;left:0;background:var(--surface);z-index:1}
+td.dec,#decHead{position:sticky;right:0;background:var(--surface);z-index:1}
+th:first-child,#decHead{z-index:3}
+.cv{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.45;padding:4px;border-radius:4px;min-height:1.9em;border:1px solid transparent}
+body:not(.view) .cv{cursor:text} body:not(.view) .cv:hover,.cv:focus-visible{border-color:var(--line);outline:none}
+tr.deleted .cv{text-decoration:line-through}
+#tip{position:fixed;z-index:20;max-width:300px;background:var(--fg);color:var(--bg);font:.82rem/1.35 var(--body);padding:4px 8px;border-radius:5px;pointer-events:none}
+.colsw{font-size:.84rem;color:var(--muted);display:inline-flex;gap:5px;align-items:center}
+th{position:sticky;top:0;background:var(--surface);z-index:2;text-align:left;font:600 .72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:8px;border-bottom:2px solid var(--line)}
+td{border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:top}
+tr.section td{background:var(--bg);font-weight:700;padding:10px 8px}
+tr.section td .add{margin-left:10px}
+td.id{font-family:var(--mono);font-size:.8rem;white-space:nowrap}
+textarea{width:100%;min-height:2.2em;resize:vertical;border:1px solid transparent;background:transparent;color:var(--fg);font:14px/1.45 var(--body);padding:4px;border-radius:4px;field-sizing:content}
+textarea:hover{border-color:var(--line)} textarea:focus{border-color:var(--edit);outline:none;background:var(--surface)}
+.was{font-size:.76rem;color:var(--muted);text-decoration:line-through;padding:0 4px;white-space:pre-wrap}
+.badge{display:inline-block;font:600 .68rem var(--mono);padding:2px 6px;border-radius:4px;text-transform:uppercase;margin-top:4px}
+.b-new{background:var(--new-soft);color:var(--new)} .b-modified{background:var(--mod-soft);color:var(--mod)} .b-removed{background:var(--rem-soft);color:var(--rem)} .b-edited{background:var(--edit-soft);color:var(--edit)} .b-added{background:var(--new-soft);color:var(--new)}
+.reason{font-size:.74rem;color:var(--muted);margin-top:3px;max-width:14em}
+tr.deleted td:not(.dec){opacity:.45} tr.deleted textarea{text-decoration:line-through}
+td.dec{white-space:nowrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{border:0;background:var(--surface);color:var(--muted);font:600 .76rem var(--body);padding:4px 8px;cursor:pointer}
+.seg button[aria-pressed="true"].k{background:var(--new);color:#fff} .seg button[aria-pressed="true"].d{background:var(--rem);color:#fff}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--edit);outline-offset:2px}
+.add{border:1px dashed var(--line);background:transparent;color:var(--muted);border-radius:6px;padding:3px 8px;font:500 .78rem var(--body);cursor:pointer}
+tr.newcase td{background:var(--new-soft);padding:10px 12px}
+tr.newcase textarea.big{min-height:9em;border:1px solid var(--new);background:var(--surface);font-size:14px;padding:8px 10px;field-sizing:content}
+tr.newcase .nh{display:flex;gap:10px;align-items:center;margin-bottom:6px;font-size:.84rem;color:var(--muted)}
+tr.newcase .nh b{color:var(--new)} tr.newcase .nh button{margin-left:auto}
+/* the table scrolls sideways: keep the note box within the window */
+tr.newcase td>*{position:sticky;left:12px;max-width:calc(100vw - 72px)}
+footer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:10px var(--gutter);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;z-index:5}
+footer .counts{font-size:.84rem;color:var(--muted)} footer .counts b{color:var(--fg)}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:8px 14px;border-radius:6px;font:600 .86rem var(--body);cursor:pointer}
+.btn.primary{background:var(--edit);color:#fff;border-color:var(--edit)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+#toast{position:fixed;right:20px;bottom:70px;background:var(--fg);color:var(--bg);padding:10px 14px;border-radius:6px;font-size:.86rem;max-width:520px;display:none;z-index:6}
+.note{font-size:.8rem;color:var(--muted)}
+a.spec{display:inline-block;margin-top:4px;font:600 .7rem var(--mono);color:var(--edit);text-decoration:none;border:1px solid var(--edit-soft);border-radius:4px;padding:1px 5px}
+a.spec:hover{background:var(--edit-soft)}
+.xl{display:flex;flex-wrap:wrap;gap:4px}
+/* Open questions (user, 2026-11-04): one plain panel above the table, and a marker on each row a question touches */
+/* the summary keeps the browser's own marker, like the other panels; the wrapping layout is on the span inside */
+details.qs>summary>.qsum{display:inline-flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;vertical-align:top}
+details.qs>summary .qhint{font-weight:400;font-size:.84rem;color:var(--muted)}
+.qwrap{padding:0 14px 14px;display:grid;gap:10px}
+.qname{display:flex;gap:8px;align-items:center;font-size:.84rem;color:var(--muted)}
+.qname input{font:inherit;padding:4px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
+.qitem{border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:grid;gap:6px}
+.qitem.hit{box-shadow:0 0 0 2px var(--edit)}
+.qhead{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-weight:600}
+.qstate{font:600 .7rem var(--body);border-radius:999px;padding:2px 8px;background:var(--bg);color:var(--muted)}
+.qstate.answered{background:var(--mod-soft);color:var(--mod)} .qstate.done{background:var(--new-soft);color:var(--new)}
+.qtext{font-size:13px;white-space:pre-wrap}
+.qassume{font-size:13px;color:var(--muted)} .qassume b{color:var(--fg);font-weight:600}
+body.l-zh .qitem .qtext:not(.zh),body.l-zh .qitem .qassume:not(.zh){font-size:11.5px;color:var(--muted)} .qitem .zh.qassume{color:var(--fg)}
+.qrows{font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.qrow{display:inline-flex;gap:4px;align-items:center} .qrow a.qcase{font-family:var(--mono);color:var(--edit)} .qrow a.spec{margin-top:0}
+.qitem textarea{border:1px solid var(--line);background:var(--surface);min-height:3.2em;font-size:13.5px}
+.qmeta{font-size:.76rem;color:var(--muted)} .qres{font-size:.8rem;color:var(--new)}
+.qfoot{display:flex;gap:10px;align-items:center;justify-content:flex-end}
+a.qmark{display:inline-block;margin-top:4px;font:600 .7rem var(--body);color:var(--mod);background:var(--mod-soft);border-radius:4px;padding:1px 6px;text-decoration:none}
+a.qmark.answered{color:var(--edit);background:var(--edit-soft)} a.qmark.done{color:var(--new);background:var(--new-soft)}
+tr.focus td{background:var(--edit-soft)} tr.focus td.id{box-shadow:inset 3px 0 0 var(--edit)}
+/* 中文 mode: the Chinese reading copy above each English field; the English stays the editable source */
+.zh{white-space:pre-wrap;font-size:13.5px;line-height:1.5;padding:4px;margin-bottom:2px}
+.zh.stale{color:var(--muted)} .zh.stale::after{content:attr(data-stale);display:block;font-size:.72rem;color:var(--mod)}
+body.l-zh td textarea[data-f]{font-size:11.5px;color:var(--muted);min-height:1.6em}
+body.l-zh td textarea[data-f]:focus{font-size:13px;color:var(--fg)}
+body.l-zh td .cv{font-size:11.5px;color:var(--muted);min-height:1.6em}
+header .lang{justify-self:end;display:inline-flex;border:1px solid #ffffff55;border-radius:6px;overflow:hidden;margin-top:-34px}
+header .lang button{border:0;background:transparent;color:#fff;font:600 12px var(--body);padding:5px 10px;cursor:pointer}
+header .lang button[aria-pressed="true"]{background:var(--edit)}
+</style>
+</head>
+<body>
+<header>
+  <h1 id="h"></h1>
+  <div class="facts" id="facts"></div>
+  <span class="lang" id="lang" role="group" aria-label="Language" hidden><button type="button" data-l="en">English</button><button type="button" data-l="zh">中文</button></span>
+</header>
+<main>
+  <details class="panel qs" id="qBox" hidden><summary id="qSum"></summary><div class="qwrap" id="qList"></div></details>
+  <details class="panel" id="planBox" hidden><summary data-i="plan">Update plan</summary><div class="md" id="plan"></div></details>
+  <details class="panel" id="reqBox" hidden><summary data-i="req">Requirements extracted from the spec</summary><div class="md" id="req"></div></details>
+  <div class="panel bar" id="filters"></div>
+  <div class="panel tablewrap"><table id="tbl"><thead><tr><th data-i="ID">ID</th><th data-i="Precondition">Precondition</th><th data-i="Action">Action</th><th data-i="Expected Result">Expected Result</th><th data-i="Priority">Priority</th><th data-i="Spec Ref">Spec Ref</th><th data-i="Notes">Notes</th><th id="decHead" data-i="Decision">Decision</th></tr></thead><tbody></tbody></table></div>
+  <p class="note" id="foot"></p>
+</main>
+<footer>
+  <span class="counts" id="counts"></span>
+  <span style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn" id="copyCsv" data-i="copyCsv">Copy final CSV</button>
+    <button class="btn" id="copyDec" data-i="copyDec">Copy decisions</button>
+    <button class="btn primary" id="save" data-i="save">Save as approved table</button>
+  </span>
+</footer>
+<div id="toast" role="status"></div>
+<script>
+// Shared by the casebook pages (scripts/lib/page-shared.ts puts it at the top of each page's script).
+// Times: every page shows Taipei time and says so (user, 2026-11-06), whatever the viewer's or the data's zone. Input is
+// an ISO time or the pages' older `YYYY-MM-DD HH:mm UTC`.
+const cbDate = s => { if (!s) return null; const d = new Date(/ UTC$/.test(s) ? String(s).replace(' UTC', 'Z').replace(' ', 'T') : s); return isNaN(d) ? null : d; };
+const cbParts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+const cbWhen = s => { const d = cbDate(s); if (!d) return String(s ?? ''); const p = Object.fromEntries(cbParts.formatToParts(d).map(x => [x.type, x.value])); return `${p.month}-${p.day} ${p.hour}:${p.minute}`; };
+const cbZone = lang => lang === 'zh' ? '台北時間' : 'Taipei time';
+const cbWhenZ = (s, lang) => s ? `${cbWhen(s)} ${cbZone(lang)}` : '';
+const cbSpan = (a, b, lang) => `${cbWhen(a)} → ${cbWhen(b)} ${cbZone(lang)}`;
+const cbEsc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const cbHm = ms => `${Math.floor(ms / 3600000)}h ${String(Math.round(ms / 60000) % 60).padStart(2, '0')}m`;
+const cbTok = n => n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}k` : String(n);
+const cbPct = v => v < 9.95 ? `${v.toFixed(1)}%` : `${Math.round(v)}%`;
+// The usage strip: time, tokens, the two estimates, then the account's shared total, muted. A seat other than 1× Pro
+// also gets the estimate as a share of that seat, which is what the meter fills to.
+// o: { wall, test, idle, gaps, tokens, tokensTitle, wt, est5, estW, noTokens, seat, acct5, acctW, approx, out5, outW, outLabel }
+function cbUsageTiles(o, lang) {
+  const zh = lang === 'zh', tx = (en, z) => zh ? z : en, m = o.seat && o.seat !== 1 ? o.seat : null;
+  const pctA = v => v == null ? '—' : `${o.approx ? '≈' : ''}${Math.round(v)}%`;
+  const est = (label, v, approx, title) => {
+    const none = v == null ? `<span class="uv unone" style="font-size:1rem">${o.noTokens ? tx('no token data yet', '尚無 token 資料') : '—'}</span>` : '';
+    const share = v != null && m ? v / m : v;
+    return `<div class="ut" title="${cbEsc(title)}"><span class="ul">${label}</span>${none || `<span class="uv est">${approx ? '~' : ''}${cbPct(v)}</span>`}`
+      + (v != null ? `<span class="us">${tx('of 1× Pro', '（1× Pro）')}${m ? tx(` · ${cbPct(share)} of the ${m}× seat`, ` · ${m}× 席位的 ${cbPct(share)}`) : ''}</span><span class="um"><span style="width:${Math.min(100, share)}%"></span></span>` : '') + '</div>';
+  };
+  const on = o.wall ? Math.min(100, o.test / o.wall * 100) : 0;
+  return `<div class="ustrip">
+    <div class="ut"><span class="ul">${tx('Test time', '測試時間')}</span><span class="uv">${cbHm(o.test)}</span>
+      <span class="us">${tx(`of ${cbHm(o.wall)} wall`, `總時長 ${cbHm(o.wall)}`)}${o.idle ? tx(` · ${cbHm(o.idle)} idle`, ` · 閒置 ${cbHm(o.idle)}`) : ''}${o.gaps ? tx(` (${o.gaps} gap${o.gaps > 1 ? 's' : ''})`, `（${o.gaps} 段）`) : ''}</span>
+      <span class="um" title="${cbEsc(tx('Test time against idle time', '測試時間與閒置時間'))}"><span style="width:${on}%"></span><span class="idle" style="width:${100 - on}%"></span></span></div>
+    <div class="ut" title="${cbEsc(o.tokensTitle ?? '')}"><span class="ul">${tx('Claude tokens', 'Claude token')}</span><span class="uv">${cbTok(o.tokens)}</span>${o.wt != null ? `<span class="us">${tx(`${cbTok(o.wt)} weighted`, `加權 ${cbTok(o.wt)}`)}</span>` : ''}</div>
+    ${est(tx('5-hour estimate', '5 小時估計'), o.est5, false, tx('Weighted tokens × the calibrated rate', '加權 token × 校準後的比率'))}
+    ${est(tx('Weekly estimate (rough)', '每週估計（粗估）'), o.estW, true, tx('5-hour estimate × the weekly ÷ 5-hour ratio', '5 小時估計 × 每週 ÷ 5 小時比'))}
+    <div class="ut acct" title="${cbEsc(tx('Snapshot increments while this was active, including other users of the account', '這段期間帳號用量快照的增加量，包含帳號的其他使用者'))}"><span class="ul">${tx('Account total (shared)', '帳號合計（共用）')}</span>
+      <span class="uv">${o.acct5 == null && o.acctW == null ? tx('no readings', '無讀數') : `${pctA(o.acct5)} / ${pctA(o.acctW)}`}</span><span class="us">${o.acct5 == null && o.acctW == null ? '' : tx('5-hour / weekly', '5 小時 / 每週')}${o.out5 != null || o.outW != null ? `${o.acct5 == null && o.acctW == null ? '' : ' · '}${cbEsc(o.outLabel)}: ${pctA(o.out5)} / ${pctA(o.outW)}` : ''}</span></div>
+  </div>`;
+}
+
+const D={"mode":"view","save":false,"feature":"phd/ai-replace-ref-image-ux","platform":"android","title":"AI Replace: Reference image UX","draft":"20261111-164954","based_on_version":null,"version":1,"approved_at":"2026-11-11T09:32:11.867Z","spec_files":[{"name":"AI Replace ref image UX - PM Figma 14451-2196.md","sha256":"4137483762c41ab115b6eb5e57488f36963edaf46f788a0eb45b5f6295b7813a","bytes":1615}],"rows":[{"ID":"TC-001","Section":"Choosing how to replace","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask","Action":"Tap 「Next」","Expected Result":"The sheet 「Choose how to replace the selected area」 opens with 「Upload a reference image」 and 「Describe with text」, and neither option shows a badge (no credit cost, 「NEW」 or other tag)","Priority":"P3","Spec Ref":"R-001, R-002","Notes":"Q-1"},{"ID":"TC-002","Section":"Choosing how to replace","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; the sheet 「Choose how to replace the selected area」 open","Action":"1. Tap 「Upload a reference image」\n2. Tap 「Continue」 on the tips sheet\n3. Choose a photo in 「Recents」","Expected Result":"Step 1 shows 「For the best results, follow this advice:」 with 「Continue」 and 「Don't show again」; step 2 opens the photo picker (「Recents」 / 「Stock」); step 3 opens the reference image page with the masked photo under 「Replace Area」 and the chosen photo under 「Reference Image」","Priority":"P1","Spec Ref":"R-003, R-010","Notes":"Do not tick 「Don't show again」: the other rows need the tips sheet as today"},{"ID":"TC-003","Section":"Reference image page","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; 「Next」 › 「Upload a reference image」 › 「Continue」 done and a reference photo chosen, so the reference image page (「Replace Area」 / 「Reference Image」) is open","Action":"Look at 「Generate」 without typing anything","Expected Result":"「Generate」 is enabled and shows 6 credits (「-6」)","Priority":"P1","Spec Ref":"R-011, R-012","Notes":"Q-3: price from the PM mockup (binding)"},{"ID":"TC-004","Section":"Reference image page","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; 「Next」 › 「Upload a reference image」 › 「Continue」 done and a reference photo chosen, so the reference image page (「Replace Area」 / 「Reference Image」) is open","Action":"1. Tap 「Generate」\n2. Wait for the result","Expected Result":"The masked area is replaced using the reference image and the result is shown; the balance drops by the price shown on 「Generate」","Priority":"P1","Spec Ref":"R-013, R-012","Notes":"One generation"},{"ID":"TC-005","Section":"Reference image page","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; 「Next」 › 「Upload a reference image」 › 「Continue」 done and a reference photo chosen, so the reference image page (「Replace Area」 / 「Reference Image」) is open; note the credit balance","Action":"1. Tap 「Generate」 three times quickly\n2. Wait for the result","Expected Result":"Only one job starts: one result, and the balance drops once by the price on 「Generate」","Priority":"P2","Spec Ref":"R-014","Notes":"KP-019; one generation"},{"ID":"TC-006","Section":"Back to the photo picker","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; 「Next」 › 「Upload a reference image」 › 「Continue」 done and a reference photo chosen, so the reference image page (「Replace Area」 / 「Reference Image」) is open","Action":"Tap the back button (top left)","Expected Result":"The reference image photo picker opens (「Recents」 / 「Stock」), the same picker the replace button opens; AI Replace is not left and the mask sheet does not reopen","Priority":"P1","Spec Ref":"R-020, R-030","Notes":""},{"ID":"TC-007","Section":"Back to the photo picker","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; 「Next」 › 「Upload a reference image」 › 「Continue」 done and a reference photo chosen, so the reference image page (「Replace Area」 / 「Reference Image」) is open","Action":"Tap the replace button at the bottom right of 「Reference Image」","Expected Result":"The same reference image photo picker opens as with the back button (TC-006)","Priority":"P2","Spec Ref":"R-021","Notes":""},{"ID":"TC-008","Section":"Back to the photo picker","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; 「Next」 › 「Upload a reference image」 › 「Continue」 done and a reference photo chosen, so the reference image page (「Replace Area」 / 「Reference Image」) is open; back (top left) tapped, so the reference image photo picker is open","Action":"Choose a different photo","Expected Result":"The reference image page returns with the new photo under 「Reference Image」 and the same mask under 「Replace Area」; 「Generate」 is enabled","Priority":"P2","Spec Ref":"R-022, R-010, R-011","Notes":""},{"ID":"TC-009","Section":"Back to the photo picker","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; 「Next」 › 「Upload a reference image」 › 「Continue」 done and a reference photo chosen, so the reference image page (「Replace Area」 / 「Reference Image」) is open","Action":"Press Android system Back once","Expected Result":"The reference image photo picker opens, as with the back button (TC-006)","Priority":"P2","Spec Ref":"R-023","Notes":""},{"ID":"TC-010","Section":"Back to the photo picker","Precondition":"Android phone, PhotoDirector (build under test) signed in, at least 20 credits; a photo with a clear object in AI Replace, its object brushed with the mask; 「Next」 › 「Upload a reference image」 › 「Continue」 done and a reference photo chosen, so the reference image page (「Replace Area」 / 「Reference Image」) is open; back (top left) tapped, so the reference image photo picker is open","Action":"1. Leave the picker without choosing (its back button)\n2. Open the picker again with back (top left)\n3. Press Android system Back","Expected Result":"Steps 1 and 3 each return to the reference image page with the previous reference image, both sections holding an image and 「Generate」 enabled (record where each lands: Q-2)","Priority":"P2","Spec Ref":"R-024, R-010, R-011","Notes":"Q-2"}],"previous":{},"requirements":"# AI Replace: Reference image UX — requirements (android)\nSpec: AI Replace ref image UX - PM Figma 14451-2196.md (spec set 2026-11-11, Figma only: PM file UX-Issues, page 「26 11E UIUX Revamp」, block 「AI Replace - Ref Image UX Refinement」, section 14451:2197)\nRead from the Figma text layer (get_metadata) and the section screenshot; the control inventory is owed (figma-pending.json: use_figma refused, Full seat). No Design or MX file was supplied; the mockups are iPhone frames and their strings are the expected UI text.\n\n## Choosing how to replace\n- R-001 [PM:pm-replace-flow] On the sheet 「Choose how to replace the selected area」, the options 「Upload a reference image」 and 「Describe with text」 show no badge (「badge 都可以拿掉了」; which badges is Q-1).\n- R-002 [PM:pm-replace-flow] After a mask is drawn and 「Next」 is tapped, the sheet 「Choose how to replace the selected area」 offers 「Upload a reference image」 and 「Describe with text」 (flow as drawn, unchanged).\n- R-003 [PM:pm-replace-flow] 「Upload a reference image」 shows the reference tips sheet (「For the best results, follow this advice:」, Recommendation / Avoid, 「Continue」, 「Don't show again」) and 「Continue」 opens the reference image photo picker (「Recents」 / 「Stock」); choosing a photo there opens the reference image page (flow as drawn, unchanged).\n\n## Reference image page\n- R-010 [PM:pm-replace-flow] The reference image page shows two sections, 「Replace Area」 (the photo with the red mask) and 「Reference Image」 (the chosen image, with a replace button at its bottom right), and both always hold an image (「此頁面兩個 section 都恆有圖」).\n- R-011 [PM:pm-replace-flow; KB: KP-035] 「Generate」 on the reference image page is always enabled (「generate btn 恆為 enable」): whenever the page shows, Generate can be tapped, with no prompt typed (a reference image alone is enough).\n- R-012 [PM:pm-replace-flow] 「Generate」 shows a cost of 6 credits (the mockup's 「-6」; credit numbers in the spec are binding, formats.md; Q-3).\n- R-013 [PM:pm-replace-flow] Tapping 「Generate」 starts the replacement with the reference image and the masked area, and a result follows.\n- R-014 [KB: KP-019] Once the first 「Generate」 tap is accepted, further taps are blocked until the job takes over: one charge, one result.\n\n## Back to the photo picker\n- R-020 [PM:pm-replace-flow] The back button (top left) of the reference image page opens the reference image photo picker (「back鍵 -> 回 ref image 的 photo picker」).\n- R-021 [PM:pm-replace-flow] The back button behaves the same as the replace button at the bottom right of 「Reference Image」 (「行為 same as 右下角替換 btn」): the replace button opens the same photo picker.\n- R-022 [PM:pm-replace-flow] Choosing another photo in the picker reached by back returns to the reference image page with the new photo under 「Reference Image」 and the same 「Replace Area」 mask, as after the replace button.\n- R-023 [PM:pm-replace-flow] Android system Back on the reference image page does the same as its back button: it opens the reference image photo picker (system Back follows the screen's own back, REQ-051 rule).\n- R-024 [PM:pm-replace-flow] Leaving the photo picker without choosing a photo (its back / ✕ or system Back) after reaching it from the reference image page returns to the reference image page with the previous reference image (the page always holds an image, R-010; Q-2).\n\n## Flow arrows\n- R-030 [DS: flow arrow pm-replace-flow-a1 https://www.figma.com/design/NacadNfWFAGglU880DupER/UX-Issues?node-id=14565-1576] Reference image page back → the reference image photo picker (note 14565:1576, not a drawn arrow). Walked by: TC-006.\n\n## Open questions\n- Q-1 「badge 都可以拿掉了」 does not say which badges: the credit cost or 「NEW」 tag on 「Upload a reference image」 / 「Describe with text」, or every badge of the AI Replace flow. Assumption: no badge of any kind on the two options of 「Choose how to replace the selected area」; badges elsewhere are not checked. R-001; TC-001.\n- Q-2 The spec does not say where leaving the photo picker goes when it was opened by back (back now opens the picker, so the picker's own back would loop or leave the flow). Assumption: leaving the picker without a choice returns to the reference image page with the image it had (as after the replace button); the row records what happens. R-024; TC-010.\n- Q-3 The 「-6」 on 「Generate」 is only in the mockup (the iPhone frame), and the AI Replace text path cost 2 on iOS 20.15 (KP-022). Assumption: 6 credits, as drawn (binding); PM confirms the price for a reference image. R-012; TC-003.\n\n## Added 2026-11-11 — coverage passes and standing inputs\n### System back\n- Reference image page: TC-009 (opens the reference image photo picker, R-023).\n- Reference image photo picker reached by back: TC-010 (Q-2).\n- 「Choose how to replace the selected area」 sheet and the tips sheet: n/a (unchanged by this spec).\n\n### Hidden clauses\nPass 9: each clause the screen does not show, how a tester observes it and the rows.\n\n| Requirement | Hidden clause | Observed through | Rows |\n|---|---|---|---|\n| R-001 | None: 「Upload a reference image」 is the option's label, not an upload rule | The option's label on screen | n/a (no hidden clause) |\n| R-002 | None: 「Upload a reference image」 is the option's label, not an upload rule | The option's label on screen | n/a (no hidden clause) |\n| R-003 | None: 「Upload a reference image」 is the option's label, not an upload rule | The option's label on screen | n/a (no hidden clause) |\n| R-014 | Only one charge for a burst of Generate taps | The credit balance before and after (one 6-credit drop) and a single result | TC-005 |\n\n### Domain rules\nEvery applicable spec / team rule of knowledge.md.\n\n| Entry | Requirements |\n|---|---|\n| KP-012 Android has one paid mode: VIP = Pro = paid user | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-014 AI Exposure is paid-only | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-015 Mine refreshes entitlement after buying Premium | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-016 A one-time free trial is consumed at once | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-017 Credit Detail lists every AI use with feature name and amounts | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-018 Credit Auto Pass keeps its own name in the Detail | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-019 A burst of Generate taps charges once | R-014 |\n| KP-020 Blue credit button opens Buy Credit | n/a (the credit button in the AI Replace top bar is unchanged by this spec) |\n| KP-021 Premium chat quota is higher, not unlimited | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-024 Finished AI images save to their feature tab | n/a (where results are saved is unchanged by this spec) |\n| KP-025 AI Exposure results go to Recent and the AI Exposure tab | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-026 History button opens the feature's Artwork tab | n/a (the History button in the AI Replace top bar is unchanged by this spec) |\n| KP-027 New features' works reach Recent | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-028 Empty Artwork filter shows Nothing yet | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-029 Long-task tiles and completion notifications | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-030 Saved output matches the last preview | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-032 Features opened from Edit Room get the edited image | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-033 Banners and deep links preselect the linked style | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-034 Discover tip bubble lifecycle | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-035 AI Replace: reference image or prompt enables Next | R-011 (a reference image alone enables Generate) |\n| KP-036 A custom prompt reaches the generator | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-037 AI Try-On: no face check on clothing or pets | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-038 AI Group Shot photo picking | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-039 Agent job finished in background shows on return | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-040 Crop tabs keep one consistent state | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-041 Undo, Redo and Reset | n/a (undo / redo on the mask step are unchanged by this spec) |\n| KP-042 Restored state restores highlight and transform together | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-043 Video Editing template titles keep their look | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-044 Video Editing panels: X discards, V commits | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-045 Audio Range Select close target | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-046 Try-On / Hairstyle Back keeps the style | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-047 Masks survive returning from Artwork or Store | n/a (returning from Artwork to edit the mask is not changed by this spec; R-022 checks the mask stays after the picker) |\n| KP-048 Arabic may keep Western digits | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-049 Localised strings keep their placeholders | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n| KP-050 RTL mirrors layout, not only text | n/a (other feature or flow: not part of the AI Replace reference image flow) |\n\n### Request ledger coverage\nEvery open table entry of requests.md for android.\n\n| Ledger entry | Requirements |\n|---|---|\n| REQ-001 | R-001 – R-030 (the whole table) |\n| REQ-002 | n/a (platform scope: this Android table only) |\n","update_plan":"","zh":{"TC-001":{"ID":"TC-001","Section":"選擇替換方式","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件","Action":"點「Next」","Expected Result":"開啟「Choose how to replace the selected area」選單，裡面有「Upload a reference image」和「Describe with text」，兩個選項都沒有標籤（沒有點數費用、「NEW」或其他標記）","Priority":"P3","Spec Ref":"R-001, R-002","Notes":"Q-1","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-002":{"ID":"TC-002","Section":"選擇替換方式","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已開啟「Choose how to replace the selected area」選單","Action":"1. 點「Upload a reference image」\n2. 在提示選單點「Continue」\n3. 在「Recents」選一張照片","Expected Result":"第 1 步顯示「For the best results, follow this advice:」，有「Continue」和「Don't show again」；第 2 步開啟照片選擇頁（「Recents」 / 「Stock」）；第 3 步開啟參考圖頁面，「Replace Area」下是已遮罩的照片，「Reference Image」下是剛選的照片","Priority":"P1","Spec Ref":"R-003, R-010","Notes":"不要勾選「Don't show again」：其他列需要照常看到提示選單","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-003":{"ID":"TC-003","Section":"參考圖頁面","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）","Action":"什麼都不輸入，直接看「Generate」","Expected Result":"「Generate」可以按，並顯示 6 點（「-6」）","Priority":"P1","Spec Ref":"R-011, R-012","Notes":"Q-3：價格依 PM mockup（具約束力）","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-004":{"ID":"TC-004","Section":"參考圖頁面","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）","Action":"1. 點「Generate」\n2. 等待結果","Expected Result":"遮罩範圍依參考圖被替換，並顯示結果；點數餘額減少的數字等於「Generate」上顯示的價格","Priority":"P1","Spec Ref":"R-013, R-012","Notes":"會產生一次","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-005":{"ID":"TC-005","Section":"參考圖頁面","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）；先記下點數餘額","Action":"1. 快速連點「Generate」三次\n2. 等待結果","Expected Result":"只會啟動一次作業：只有一個結果，點數餘額只扣一次「Generate」上顯示的價格","Priority":"P2","Spec Ref":"R-014","Notes":"KP-019；會產生一次","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-006":{"ID":"TC-006","Section":"返回照片選擇頁","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）","Action":"點左上角的返回按鈕","Expected Result":"開啟參考圖的照片選擇頁（「Recents」 / 「Stock」），和點替換按鈕開啟的是同一個選擇頁；不會離開 AI Replace，遮罩選單也不會再跳出","Priority":"P1","Spec Ref":"R-020, R-030","Notes":"","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-007":{"ID":"TC-007","Section":"返回照片選擇頁","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）","Action":"點「Reference Image」右下角的替換按鈕","Expected Result":"開啟的參考圖照片選擇頁和點返回按鈕時相同（TC-006）","Priority":"P2","Spec Ref":"R-021","Notes":"","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-008":{"ID":"TC-008","Section":"返回照片選擇頁","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）；已點左上角返回，目前停在參考圖照片選擇頁","Action":"選另一張照片","Expected Result":"回到參考圖頁面，「Reference Image」下是新選的照片，「Replace Area」下仍是同一個遮罩；「Generate」可以按","Priority":"P2","Spec Ref":"R-022, R-010, R-011","Notes":"","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-009":{"ID":"TC-009","Section":"返回照片選擇頁","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）","Action":"按一次 Android 系統的返回鍵","Expected Result":"開啟參考圖照片選擇頁，和點返回按鈕時相同（TC-006）","Priority":"P2","Spec Ref":"R-023","Notes":"","Change":"新增","Change Reason":"新表格（REQ-001）"},"TC-010":{"ID":"TC-010","Section":"返回照片選擇頁","Precondition":"Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）；已點左上角返回，目前停在參考圖照片選擇頁","Action":"1. 不選照片，直接離開選擇頁（用它的返回按鈕）\n2. 再點左上角返回，重新開啟選擇頁\n3. 按 Android 系統返回鍵","Expected Result":"第 1 步和第 3 步都會回到參考圖頁面，沿用原本的參考圖，兩個區塊都有圖片，「Generate」可以按（記錄各自回到哪裡：Q-2）","Priority":"P2","Spec Ref":"R-024, R-010, R-011","Notes":"Q-2","Change":"新增","Change Reason":"新表格（REQ-001）"}}};
+const FIELDS=['Section','Precondition','Action','Expected Result','Priority','Spec Ref','Notes'];
+const EDIT=['Precondition','Action','Expected Result','Spec Ref','Notes'];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const REVIEW=D.mode==='review';
+// the other pages: scripts/pages.ts names them (window.CASEBOOK); a static cases.html links to coverage.html beside it
+const PAGES=window.CASEBOOK?.pages??(location.protocol==='file:'?{coverage:'coverage.html'}:{});
+// an edit of the approved table gets a new id each time its server starts (pages.ts stops idle ones): edits are kept per
+// approved version, so they are still here after that
+const KEY='casebook:'+D.feature+':'+D.platform+':'+(/^edit-/.test(D.draft)?'edit-v'+D.version:D.draft);
+// English / 中文 (user, 2026-10-30): the page chrome in Traditional Chinese (Taiwan wording) and, when the table has a
+// Chinese reading copy (D.zh, review.ts), each row's Chinese text above its English fields. Rows stay English: edits,
+// Copy and Save use the English text. The choice follows pages.ts's tab bar (window.CASEBOOK.lang, 'casebook-lang'
+// event) or the page's own switch, kept in localStorage casebook-lang.
+const ZH=D.zh||{};
+const I18N={zh:{plan:'更新計畫',req:'從規格整理出的需求',ID:'編號',Precondition:'前置條件',Action:'操作步驟','Expected Result':'預期結果',Priority:'優先度','Spec Ref':'規格對應',Notes:'備註',Decision:'決定',
+  copyCsv:'複製最終 CSV',copyDec:'複製審查決定',save:'儲存為核准版本',keep:'保留',delete:'刪除',add:'+ 新增案例',addTitle:'用自己的話描述新的案例；下一版草稿會把它們寫成正式的列',
+  search:'搜尋編號或文字',allSections:'所有區塊',allChanges:'所有變更',anyDecision:'所有決定',noMatch:'沒有符合篩選條件的案例。',
+  new:'新增',modified:'修改',removed:'移除',unchanged:'未變更',kept:'保留',edited:'已修改',added:'已新增',deleted:'已刪除',
+  cases:'案例',approvedCases:'核准的測試案例',draft:'草稿',noApproved:'尚無核准版本',updates:v=>`核准版本 v${v}`,workCopy:'工作副本',cols:'優先度、規格對應、備註',version:(v,d)=>`版本 ${v} · 核准於 ${d}`,spec:'規格：',
+  foot:'修改與新案例說明會暫存在這個瀏覽器，直到儲存為止。儲存會寫入核准的 CSV、把前一版保留在 history/、重新產生 Excel 與 HTML，並把新案例說明交給 agent 寫進下一版草稿。中文是對照用的翻譯，表格內容以英文為準，請在英文欄位修改。',
+  footView:'由 cases.csv 產生的唯讀檢視。',noZh:'這份表格還沒有中文翻譯（draft.zh-Hant.csv），只有介面是中文。',
+  stale:'（英文已修改，中文尚未更新）',noteHead:'新案例說明',noteHelp:'用自己的話寫要測什麼，一個或多個案例都可以。儲存或複製審查決定後，agent 會把每個案例放到正確的區塊、補齊各欄，並提出下一版草稿。',
+  remove:'移除',removeConfirm:'要移除這則說明和它的內容嗎？',notePh:'例如：產生大綱時點點數按鈕，應跳出離開對話框，離開後對話仍保留',
+  counts:(f,k,e,a,d,n)=>`最終表格 <b>${f}</b> 筆 · 保留 ${k} · 已修改 ${e} · 已新增 ${a} · 已刪除 ${d}${n?` · 下一版草稿有 <b>${n}</b> 則新案例說明`:''}`,countsView:n=>`<b>${n}</b> 筆案例`,
+  copied:l=>`已複製${l}。`,copyFail:'複製失敗，請手動選取文字。',csvLabel:'最終 CSV',decLabel:'審查決定',csvNotes:'已複製最終 CSV。新案例說明還不是正式的列：請用「複製審查決定」或「儲存」交給 agent。',
+  fillFirst:ids=>`儲存前請先填寫 ${ids} 的操作步驟與預期結果。`,saved:(v,c,p)=>`已儲存為核准版本 ${v}：${c} 筆案例。${p}`,savedNotes:(n,f)=>` · ${n} 則新案例說明已存到 ${f}：請 agent 把它們寫進下一版草稿。`,saveFail:'儲存失敗：',
+  noSave:'請透過 scripts/review.ts 開啟這個頁面才能儲存。',
+  qTitle:'給團隊的問題',qOpen:'待回答',qAnswered:'已回答',qHint:'規格不清楚的地方，表格先依假設撰寫。知道答案的請填寫，其他的可以先跳過。',qName:'您的名字',qOpt:'選填',
+  qRows:'相關案例：',qAssume:'目前表格的假設：',qPh:'如果您知道答案，請填在這裡',qStOpen:'待回答',qStDone:'已套用',qStWait:'已回答 · 等待 agent 處理',qSaveBtn:'儲存回答',qUnsaved:n=>`${n} 則未儲存`,qNoZh:'這題還沒有中文翻譯。'}};
+let L='en';try{L=window.CASEBOOK?.lang??(new URLSearchParams(location.search).get('lang')==='zh'||localStorage.getItem('casebook-lang')==='zh'?'zh':'en')}catch(e){}
+const T=(k,...a)=>{const v=L==='zh'?I18N.zh[k]:undefined;return typeof v==='function'?v(...a):v??null};
+const secZh=s=>{if(L!=='zh')return s;const r=rows.find(r=>r.cur.Section===s&&ZH[r.cur.ID]);return r?ZH[r.cur.ID].Section||s:s};
+function applyLang(){
+  document.documentElement.lang=L==='zh'?'zh-Hant':'en';document.body.classList.toggle('l-zh',L==='zh');
+  document.querySelectorAll('[data-i]').forEach(e=>{e.dataset.en??=e.textContent;e.textContent=T(e.dataset.i)??e.dataset.en});
+  document.querySelectorAll('#lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.l===L)));
+}
+function setLang(v){if(v===L)return;L=v;try{localStorage.setItem('casebook-lang',v)}catch(e){}applyLang();header();filters();body();counts()}
+addEventListener('casebook-lang',e=>setLang(e.detail));
+if(!window.CASEBOOK){$('#lang').hidden=false;document.querySelectorAll('#lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l))}
+// state: each row keeps its original values, current values, and the decision (keep/delete)
+let rows=D.rows.map((r,i)=>({orig:{...r},cur:{...r},dec:r.Change==='removed'?'delete':'keep',added:false,i}));
+// new-case notes (user, 2026-10-28): + Add case opens a free-text box under the section header instead of a blank row;
+// Save and Copy decisions hand the text to the agent, which writes the rows (section, precondition, spec ref) in a new draft
+let notes=[];
+try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(REVIEW&&s&&s.rows){rows=s.rows;notes=s.notes||[];}}catch(e){}
+const F={q:'',section:'',change:'',state:''};
+const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify({rows,notes}))}catch(e){}};
+const liveNotes=()=>notes.filter(n=>n.text.trim());
+const edited=r=>!r.added&&FIELDS.some(f=>(r.cur[f]??'')!==(r.orig[f]??''));
+const state=r=>r.dec==='delete'?'deleted':r.added?'added':edited(r)?'edited':'kept';
+const sections=()=>[...new Set(rows.map(r=>r.cur.Section||'(no section)'))];
+function nextId(){const nums=rows.map(r=>+(String(r.cur.ID).match(/(\d+)$/)||[0,0])[1]);const pre=(String(rows[0]?.cur.ID||'TC-000').match(/^(.*?)(\d+)$/)||[0,'TC-'])[1];return pre+String(Math.max(0,...nums)+1).padStart(3,'0')}
+function toast(t){const el=$('#toast');el.textContent=t;el.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>el.style.display='none',6000)}
+function md(src){
+  const inline=s=>esc(s).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
+  const out=[];let list=false,table=null;
+  const flush=()=>{if(list){out.push('</ul>');list=false}if(table){out.push('<table>'+table.map((r,i)=>'<tr>'+r.map(c=>i?`<td>${inline(c)}</td>`:`<th>${inline(c)}</th>`).join('')+'</tr>').join('')+'</table>');table=null}};
+  for(const line of src.split(/\r?\n/)){
+    const l=line.trim();
+    if(/^\|/.test(l)){if(/^\|[\s:|-]+\|?$/.test(l))continue;if(list){out.push('</ul>');list=false}(table??=[]).push(l.replace(/^\||\|$/g,'').split('|').map(c=>c.trim()));continue}
+    if(table)flush();
+    const h=l.match(/^(#{1,4})\s+(.*)/);
+    if(h){flush();out.push(`<h${Math.min(4,h[1].length+1)}>${inline(h[2])}</h${Math.min(4,h[1].length+1)}>`);continue}
+    if(/^[-*]\s+/.test(l)){if(!list){out.push('<ul>');list=true}out.push(`<li>${inline(l.replace(/^[-*]\s+/,''))}</li>`);continue}
+    flush();if(l)out.push(`<p>${inline(l)}</p>`);
+  }
+  flush();return out.join('');
+}
+// Open questions (user, 2026-11-04): each question of requirements.md with the assumption its rows use and a box for
+// anyone who knows the answer. Answers are saved on their own (POST answers, shared by iOS and Android) and the agent
+// applies them; they do not need the table to be saved, and typing one is kept in this browser until it is saved.
+const QKEY=KEY+':answers';let qEdits={};try{qEdits=JSON.parse(localStorage.getItem(QKEY)||'{}')}catch(e){}
+const qSaved=id=>(D.answers||{})[id];
+const qState=id=>{const a=qSaved(id);return !a?'open':a.status==='done'?'done':'answered'};
+function qSplit(t){const i=t.search(/Assumption:/i);let q=i<0?t:t.slice(0,i),a=i<0?'':t.slice(i).replace(/^Assumption:\s*/i,'');
+  // the requirement and row ids at the end are shown as row links instead
+  a=a.replace(/\s*(?:\(?\bR-\d+[^.]*\)?\.?\s*)+$/,'').replace(/[.;]\s*$/,'');return [q.trim().replace(/[.;]\s*$/,''),a.trim()]}
+function questions(){
+  const qs=D.questions||[];if(!qs.length)return;
+  const open=qs.filter(q=>qState(q.id)==='open').length,ans=qs.length-open;
+  $('#qBox').hidden=false;
+  const qsumText=L==='zh'?`${T('qTitle')} <span class="note">（${T('qOpen')} ${open}${ans?` · ${T('qAnswered')} ${ans}`:''}）</span><span class="qhint">${T('qHint')}</span>`:`Questions for the team <span class="note">(${open} open${ans?` · ${ans} answered`:''})</span><span class="qhint">Where the spec is unclear the rows follow an assumption. Answer any question you know; leave the rest.</span>`;
+  $('#qSum').innerHTML=`<span class="qsum">${qsumText}</span>`;
+  const unsaved=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;
+  let by='';try{by=localStorage.getItem('casebook-q-by')||''}catch(e){}
+  const QZ=D.questions_zh||{};
+  $('#qList').innerHTML=`<label class="qname">${T('qName')??'Your name'} <input id="qBy" value="${esc(by)}" placeholder="${T('qOpt')??'optional'}"></label>`+qs.map(q=>{
+    const [text,assume]=qSplit(q.text),a=qSaved(q.id),st=qState(q.id),v=qEdits[q.id]!==undefined?qEdits[q.id]:(a?a.answer:'');
+    const z=L==='zh'?QZ[q.id]:'',zi=z?z.search(/假設[：:]/):-1,zq=z?(zi<0?z:z.slice(0,zi)).trim():'',za=zi<0?'':z.slice(zi).replace(/^假設[：:]\s*/,'').trim();
+    const zhHtml=L!=='zh'?'':z?`<div class="qtext zh">${esc(zq)}</div>${za?`<div class="qassume zh"><b>${T('qAssume')}</b>${esc(za)}</div>`:''}`:`<div class="qassume">${T('qNoZh')}</div>`;
+    const rowsHtml=q.rows.length?`<div class="qrows"><span>${(T('qRows')??'Rows:').trim()}</span>${q.rows.map(id=>{const r=find(id),pl=r&&!r.added?pageLinks(id):[];
+      return `<span class="qrow"><a class="qcase" href="#${esc(id)}" data-case="${esc(id)}">${esc(id)}</a>${pl.join('')}</span>`}).join('')}</div>`:'';
+    return `<div class="qitem" id="q-${esc(q.id)}"><div class="qhead">${esc(q.id)} <span class="qstate ${st}">${st==='open'?T('qStOpen')??'Open':st==='done'?T('qStDone')??'Applied':T('qStWait')??'Answered · waiting for the agent'}</span></div>
+      ${zhHtml}<div class="qtext">${esc(text)}</div>${assume?`<div class="qassume"><b>For now the rows assume:</b> ${esc(assume)}</div>`:''}${rowsHtml}
+      <textarea data-qa="${esc(q.id)}" placeholder="${T('qPh')??'Your answer, if you know it'}">${esc(v)}</textarea>
+      ${a?`<div class="qmeta">Answered ${esc(a.at.slice(0,16).replace('T',' '))}${a.by?' by '+esc(a.by):''} (${esc(a.platform==='ios'?'iOS':'Android')} page)${a.question!==q.text?' · the question has changed since':''}</div>`:''}${a&&a.resolution?`<div class="qres">${esc(a.resolution)}</div>`:''}</div>`}).join('')+
+    `<div class="qfoot"><span class="note" id="qSt">${unsaved?unsaved+' unsaved':''}</span><button class="btn primary" id="qSave"${unsaved&&D.save?'':' disabled'}${D.save?'':' title="Answers can be saved only on the computer running the pages."'}>${T('qSaveBtn')??'Save answers'}</button></div>`;
+  $('#qBy').oninput=e=>{try{localStorage.setItem('casebook-q-by',e.target.value)}catch(x){}};
+  $('#qList').querySelectorAll('textarea[data-qa]').forEach(t=>t.oninput=()=>{qEdits[t.dataset.qa]=t.value;try{localStorage.setItem(QKEY,JSON.stringify(qEdits))}catch(e){}
+    const n=Object.keys(qEdits).filter(id=>(qEdits[id]||'').trim()!==((qSaved(id)||{}).answer||'')).length;$('#qSt').textContent=n?n+' unsaved':'';$('#qSave').disabled=!n||!D.save});
+  $('#qSave').onclick=async()=>{
+    const items=Object.keys(qEdits).map(id=>({id,answer:(qEdits[id]||'').trim(),question:(qs.find(q=>q.id===id)||{}).text||''})).filter(x=>x.answer!==((qSaved(x.id)||{}).answer||''));
+    $('#qSt').textContent='Saving…';
+    try{const res=await fetch('answers',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({by:$('#qBy').value.trim(),items})});const j=await res.json();if(!res.ok)throw new Error(j.error||res.status);
+      D.answers=j.answers;qEdits={};try{localStorage.removeItem(QKEY)}catch(e){}questions();body();toast('Answers saved. Tell the agent they are in; it updates the rows.')}
+    catch(e){$('#qSt').textContent='Not saved: '+e.message}};
+}
+function openQuestion(id){const el=document.getElementById('q-'+id);if(!el)return;$('#qBox').open=true;
+  document.querySelectorAll('.qitem.hit').forEach(x=>x.classList.remove('hit'));el.classList.add('hit');el.scrollIntoView({block:'center'});el.querySelector('textarea')?.focus({preventScroll:true})}
+function header(){
+  const plat=D.platform==='ios'?'iOS':'Android';
+  $('#h').textContent=`${D.title} · ${plat} · ${REVIEW?T('cases')??'Cases':T('approvedCases')??'Approved test cases'}`;
+  const f=[];
+  if(REVIEW){f.push(D.based_on_version?T('updates',D.based_on_version)??`Approved table v${D.based_on_version}`:T('noApproved')??'No approved table yet');f.push(`${/^edit-/.test(D.draft)?T('workCopy')??'Working copy':T('draft')??'Draft'} <code>${esc(D.draft)}</code>`);}
+  else f.push(T('version',D.version,esc((D.approved_at||'').slice(0,10)))??`Version ${D.version} · approved ${esc((D.approved_at||'').slice(0,10))}`);
+  f.push(`${T('spec')??'Spec: '}${D.spec_files.map(s=>esc(s.name)).join(', ')}`);
+  $('#facts').innerHTML=f.map(x=>`<span>${x}</span>`).join('');
+  if(D.update_plan){$('#planBox').hidden=false;$('#planBox').open=true;$('#plan').innerHTML=md(D.update_plan)}
+  if(D.requirements){$('#reqBox').hidden=false;$('#req').innerHTML=md(D.requirements)}
+  if(!REVIEW){document.body.classList.add('view');$('#decHead').hidden=true;$('#copyDec').hidden=true;$('#save').hidden=true}
+  if(REVIEW&&!D.save){$('#save').disabled=true;$('#save').title=T('noSave')??'Open this page through scripts/review.ts to save.'}
+  $('#foot').textContent=(REVIEW?T('foot')??'Edits and new-case notes are kept in this browser until you save. Save writes the approved CSV, keeps the previous version in history/, regenerates the Excel and HTML views, and hands new-case notes to the agent for the next draft.':T('footView')??'Read-only view generated from cases.csv.')+(L==='zh'&&!Object.keys(ZH).length?' '+T('noZh'):'');
+}
+let wide=false;try{wide=!!localStorage.getItem('cases-wide')}catch(e){}
+function filters(){
+  $('#tbl').classList.toggle('slim',!wide);
+  const cnt=(k,v)=>rows.filter(r=>k==='change'?(r.cur.Change||'')===v:state(r)===v).length;
+  const changes=['new','modified','removed','unchanged'].filter(v=>cnt('change',v));
+  const states=['kept','edited','added','deleted'];
+  let h=`<input type="search" id="q" placeholder="${esc(T('search')??'Search ID or text')}" value="${esc(F.q)}"><select id="sec"><option value="">${T('allSections')??'All sections'} (${rows.length})</option>${sections().map(s=>`<option value="${esc(s)}"${F.section===s?' selected':''}>${esc(secZh(s))}</option>`).join('')}</select>`;
+  if(changes.length){h+=`<span class="sep"></span>`+[['',T('allChanges')??'All changes'],...changes.map(c=>[c,T(c)??c])].map(([v,l])=>`<button class="chip" data-k="change" data-v="${v}" aria-pressed="${F.change===v}">${l}${v?` <b>${cnt('change',v)}</b>`:''}</button>`).join('')}
+  if(REVIEW)h+=`<span class="sep"></span>`+[['',T('anyDecision')??'Any decision'],...states.map(s=>[s,T(s)??s])].map(([v,l])=>`<button class="chip" data-k="state" data-v="${v}" aria-pressed="${F.state===v}">${l}${v?` <b>${cnt('state',v)}</b>`:''}</button>`).join('');
+  h+=`<label class="colsw"><input type="checkbox" id="cols"${wide?' checked':''}> ${T('cols')??'Priority, Spec Ref, Notes'}</label>`;
+  $('#filters').innerHTML=h;
+  $('#cols').onchange=e=>{wide=e.target.checked;try{localStorage.setItem('cases-wide',wide?'1':'')}catch(x){}$('#tbl').classList.toggle('slim',!wide)};
+  $('#q').oninput=e=>{F.q=e.target.value;body()};
+  $('#sec').onchange=e=>{F.section=e.target.value;body()};
+  $('#filters').querySelectorAll('.chip').forEach(b=>b.onclick=()=>{F[b.dataset.k]=b.dataset.v;filters();body()});
+}
+function visible(r){
+  const z=L==='zh'&&ZH[r.cur.ID]?' '+Object.values(ZH[r.cur.ID]).join(' '):'';
+  const t=(r.cur.ID+' '+FIELDS.map(f=>r.cur[f]).join(' ')+z).toLowerCase();
+  return (!F.q||t.includes(F.q.toLowerCase()))&&(!F.section||(r.cur.Section||'(no section)')===F.section)&&(!F.change||(r.cur.Change||'')===F.change)&&(!F.state||state(r)===F.state);
+}
+function cell(r,f){
+  const prev=D.previous[r.cur.ID];
+  const was=prev&&r.cur.Change==='modified'&&(prev[f]??'')!==(r.orig[f]??'')?`<div class="was">${esc(prev[f])}</div>`:'';
+  const z=L==='zh'&&f!=='Spec Ref'?ZH[r.cur.ID]?.[f]:'';
+  const zh=z?`<div class="zh${(r.cur[f]??'')!==(r.orig[f]??'')?' stale':''}" data-stale="${esc(T('stale'))}">${esc(z)}</div>`:'';
+  // plain text until clicked (or Enter): one editor at a time, not 3,000 boxes on the page
+  return `<td>${zh}<div class="cv"${REVIEW?` tabindex="0" data-id="${esc(r.cur.ID)}" data-f="${f}"`:''}>${esc(r.cur[f])}</div>${was}</td>`;
+}
+function idCell(r){
+  const st=state(r),ch=r.cur.Change;
+  const badges=[ch&&ch!=='unchanged'?`<span class="badge b-${ch}">${T(ch)??ch}</span>`:'',REVIEW&&st!=='kept'?`<span class="badge b-${st==='deleted'?'removed':st}">${T(st)??st}</span>`:''].join(' ');
+  // opens the coverage page on this case: its requirements, the spec boards they come from, the controls it presses
+  // and the run plan on it: the segment that runs it and its latest result
+  const links=r.added?[]:pageLinks(r.cur.ID);
+  const spec=links.length?`<div class="xl">${links.join('')}</div>`:'';
+  // the open questions this row's assumption depends on: a marker that opens the question above the table
+  const qm=(D.questions||[]).filter(q=>q.rows.includes(r.cur.ID)).map(q=>{const st=qState(q.id);
+    return `<a class="qmark ${st}" href="#q-${esc(q.id)}" data-q="${esc(q.id)}" title="${esc(st==='open'?'This row assumes an answer to an open question: read it or answer it':st==='done'?'Answered and applied':'Answered, waiting for the agent')}">${esc(q.id)}${st==='open'?' ?':' ✓'}</a>`}).join(' ');
+  const why=(L==='zh'&&ZH[r.cur.ID]?.['Change Reason'])||r.cur['Change Reason'];
+  return `${esc(r.cur.ID)}<div>${badges}</div>${qm?`<div>${qm}</div>`:''}${spec}${why?`<div class="reason">${esc(why)}</div>`:''}`;
+}
+// the Cov / Prog / Res links of a case, on its row and under each question that names it
+function pageLinks(id){
+  return [PAGES.coverage&&`<a class="spec" href="${esc(PAGES.coverage)}#case=${encodeURIComponent(id)}" aria-label="Coverage: where in the spec this case comes from and the controls it presses" data-tip="Coverage: where in the spec this case comes from and the controls it presses">Cov</a>`,
+    PAGES.plan&&`<a class="spec" href="${esc(PAGES.plan)}#case=${encodeURIComponent(id)}" aria-label="Progress: the segment that runs this case and its latest result" data-tip="Progress: the segment that runs this case and its latest result">Prog</a>`,
+    PAGES.results&&`<a class="spec" href="${esc(PAGES.results)}#case=${encodeURIComponent(id)}" aria-label="Results: what each run found, with screenshots" data-tip="Results: what each run found, with screenshots">Res</a>`].filter(Boolean);
+}
+const find=id=>rows.find(r=>r.cur.ID===id);
+function bindField(el){el.onchange=el.oninput=()=>{const r=find(el.dataset.id);r.cur[el.dataset.f]=el.value;persist();counts();const tr=el.closest('tr');tr.querySelector('td.id').innerHTML=idCell(r);};el.onblur=()=>filters()}
+function editCell(d){
+  const ta=document.createElement('textarea');ta.dataset.id=d.dataset.id;ta.dataset.f=d.dataset.f;ta.rows=2;ta.value=find(d.dataset.id).cur[d.dataset.f]??'';
+  d.replaceWith(ta);bindField(ta);ta.focus();
+  ta.onblur=()=>{filters();const v=document.createElement('div');v.className='cv';v.tabIndex=0;v.dataset.id=ta.dataset.id;v.dataset.f=ta.dataset.f;v.textContent=ta.value;ta.replaceWith(v)};
+}
+function body(){
+  const tb=$('#tbl tbody');let h='';
+  for(const s of sections()){
+    const rs=rows.filter(r=>(r.cur.Section||'(no section)')===s&&visible(r));
+    if(!rs.length)continue;
+    h+=`<tr class="section"><td colspan="8">${esc(secZh(s))}${L==='zh'&&secZh(s)!==s?` <span class="note">${esc(s)}</span>`:''} <span class="note">(${rs.length})</span>${REVIEW?`<button class="add" data-sec="${esc(s)}" title="${esc(T('addTitle')??'Describe new cases in your own words; they become rows in the next draft')}">${T('add')??'+ Add case'}</button>`:''}</td></tr>`;
+    for(const n of notes.filter(n=>n.section===s))h+=`<tr class="newcase"><td colspan="8"><div class="nh"><b>${T('noteHead')??'New case notes'}</b><span>${T('noteHelp')??'Write what to test in your own words, one case or several. After Save or Copy decisions, the agent places each case in the right section, fills in the columns and proposes the next draft.'}</span><button class="add" data-del="${esc(n.id)}">${T('remove')??'Remove'}</button></div><textarea class="big" data-note="${esc(n.id)}" placeholder="${esc(T('notePh')??'e.g. Tap the credit pill while the outline is generating: a leave dialog should appear, and leaving keeps the chat')}">${esc(n.text)}</textarea></td></tr>`;
+    for(const r of rs){
+      const st=state(r);
+      h+=`<tr data-row="${esc(r.cur.ID)}" class="${st==='deleted'?'deleted':''}${r.cur.ID===focusId?' focus':''}"><td class="id">${idCell(r)}</td>
+      ${cell(r,'Precondition')}${cell(r,'Action')}${cell(r,'Expected Result')}
+      <td><select data-id="${esc(r.cur.ID)}" data-f="Priority" ${REVIEW?'':'disabled'}>${['','P1','P2','P3'].map(p=>`<option${(r.cur.Priority||'')===p?' selected':''}>${p}</option>`).join('')}</select></td>
+      ${cell(r,'Spec Ref')}${cell(r,'Notes')}
+      ${REVIEW?`<td class="dec"><span class="seg"><button class="k" data-id="${esc(r.cur.ID)}" data-d="keep" aria-pressed="${r.dec==='keep'}">${T('keep')??'Keep'}</button><button class="d" data-id="${esc(r.cur.ID)}" data-d="delete" aria-pressed="${r.dec==='delete'}">${T('delete')??'Delete'}</button></span></td>`:''}</tr>`;
+    }
+  }
+  tb.innerHTML=h||`<tr><td colspan="8" class="note">${T('noMatch')??'No cases match these filters.'}</td></tr>`;
+  tb.querySelectorAll('textarea[data-note]').forEach(el=>el.oninput=()=>{notes.find(n=>n.id===el.dataset.note).text=el.value;persist();counts()});
+  tb.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{const n=notes.find(n=>n.id===b.dataset.del);if(n.text.trim()&&!confirm(T('removeConfirm')??'Remove this note and its text?'))return;notes=notes.filter(x=>x!==n);persist();body();counts()});
+  tb.querySelectorAll('select').forEach(el=>{if(REVIEW)bindField(el)});
+  tb.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{find(b.dataset.id).dec=b.dataset.d;persist();filters();body();counts()});
+  // + Add case: focus the section's empty note, else open a new one
+  tb.querySelectorAll('.add[data-sec]').forEach(b=>b.onclick=()=>{const sec=b.dataset.sec;let n=notes.find(n=>n.section===sec&&!n.text.trim());
+    if(!n){n={id:'N'+Date.now().toString(36),section:sec,text:'',at:new Date().toISOString()};notes.push(n);persist();body();}
+    setTimeout(()=>tb.querySelector(`textarea[data-note="${n.id}"]`)?.focus(),0)});
+}
+function saveState(){
+  if(!REVIEW||!D.save)return;
+  // a working copy of the approved table: nothing to save until something changed (a real draft can be approved as it is)
+  const none=/^edit-/.test(D.draft)&&rows.every(r=>state(r)==='kept')&&!liveNotes().length;
+  $('#save').disabled=none;$('#save').title=none?'Nothing has changed yet':'';
+}
+function counts(){
+  saveState();
+  const c=s=>rows.filter(r=>state(r)===s).length;
+  const fin=rows.filter(r=>r.dec!=='delete').length;
+  const nn=liveNotes().length;
+  if(L==='zh'){$('#counts').innerHTML=REVIEW?T('counts',fin,c('kept'),c('edited'),c('added'),c('deleted'),nn):T('countsView',rows.length);return}
+  $('#counts').innerHTML=REVIEW?`<b>${fin}</b> cases in the final table · kept ${c('kept')} · edited ${c('edited')} · added ${c('added')} · deleted ${c('deleted')}${nn?` · <b>${nn}</b> new-case note${nn>1?'s':''} for the next draft`:''}`:`<b>${rows.length}</b> cases`;
+}
+const COLS=['ID','Section','Precondition','Action','Expected Result','Priority','Spec Ref','Notes'];
+const q=v=>/[",\r\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;
+const finalRows=()=>rows.filter(r=>r.dec!=='delete').map(r=>Object.fromEntries(COLS.map(c=>[c,(r.cur[c]??'').trim()])));
+const csv=()=>[COLS,...finalRows().map(r=>COLS.map(c=>r[c]))].map(r=>r.map(q).join(',')).join('\n');
+function decisions(){
+  const out=[];
+  for(const r of rows){const s=state(r);if(s==='kept')continue;
+    if(s==='deleted')out.push({type:'delete',id:r.cur.ID,was_change:r.cur.Change||''});
+    else if(s==='added')out.push({type:'add',id:r.cur.ID,row:Object.fromEntries(COLS.map(c=>[c,r.cur[c]??'']))});
+    else out.push({type:'edit',id:r.cur.ID,fields:Object.fromEntries(FIELDS.filter(f=>(r.cur[f]??'')!==(r.orig[f]??'')).map(f=>[f,{from:r.orig[f]??'',to:r.cur[f]??''}]))});}
+  return out;
+}
+function decisionText(){
+  const d=decisions(),c=s=>rows.filter(r=>state(r)===s).length;
+  const L=[`Review: ${D.feature} / ${D.platform} · draft ${D.draft}`,`Final table: ${finalRows().length} cases · kept ${c('kept')} · edited ${c('edited')} · added ${c('added')} · deleted ${c('deleted')}`,''];
+  for(const x of d){
+    if(x.type==='delete')L.push(`DELETE ${x.id}`);
+    if(x.type==='add')L.push(`ADD ${x.id} [${x.row.Section}] Action: ${x.row.Action} | Expected: ${x.row['Expected Result']} | Spec Ref: ${x.row['Spec Ref']}`);
+    if(x.type==='edit')L.push(`EDIT ${x.id} `+Object.entries(x.fields).map(([f,v])=>`${f}: "${v.to}"`).join(' | '));
+  }
+  const ns=liveNotes();
+  if(ns.length){L.push('',`NEW CASE NOTES (${ns.length}): turn each into rows in the right section, then propose the next draft`);
+    for(const n of ns)L.push(`NOTE ${n.id} [typed under: ${n.section}]`,...n.text.trim().split(/\r?\n/).map(l=>'  '+l));}
+  return L.join('\n');
+}
+async function copy(text,label){const ok=()=>toast(T('copied',label)??label+' copied.');try{await navigator.clipboard.writeText(text);ok()}catch(e){const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok()}catch(_){toast(T('copyFail')??'Copy failed; select the text manually.')}ta.remove()}}
+$('#copyCsv').onclick=()=>{copy(csv(),T('csvLabel')??'Final CSV');if(liveNotes().length)setTimeout(()=>toast(T('csvNotes')??'Final CSV copied. New-case notes are not rows yet: use Copy decisions or Save to hand them over.'),50)};
+$('#copyDec').onclick=()=>copy(decisionText(),T('decLabel')??'Decisions');
+$('#save').onclick=async()=>{
+  const empty=finalRows().filter(r=>!r.Action||!r['Expected Result']);
+  if(empty.length){const ids=empty.map(r=>r.ID).join(', ');toast(T('fillFirst',ids)??`Fill in Action and Expected Result for ${ids} before saving.`);return}
+  $('#save').disabled=true;
+  try{const res=await fetch('save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({rows:finalRows(),decisions:decisions(),summary:decisionText(),notes:liveNotes()})});
+    const j=await res.json();if(!res.ok)throw new Error(j.error||res.statusText);
+    try{localStorage.removeItem(KEY)}catch(e){}
+    const nn=liveNotes().length;notes=[];body();counts();
+    toast((T('saved',j.version,j.cases,j.csv)??`Saved as approved version ${j.version}: ${j.cases} cases. ${j.csv}`)+(nn?T('savedNotes',nn,j.notes_file)??` · ${nn} new-case note${nn>1?'s':''} saved to ${j.notes_file}: ask the agent to turn them into the next draft.`:''));
+  }catch(e){toast((T('saveFail')??'Save failed: ')+e.message)}finally{$('#save').disabled=false;saveState()}
+};
+// #TC-012 (a link from the coverage page): show that row, clearing filters that hide it
+let focusId='';
+function focusRow(){
+  const id=decodeURIComponent(location.hash.slice(1));const r=rows.find(x=>x.cur.ID===id);if(!r)return;
+  focusId=id;if(!visible(r)){F.q='';F.section='';F.change='';F.state='';filters()}body();
+  document.querySelector(`tr[data-row="${CSS.escape(id)}"]`)?.scrollIntoView({block:'center'});
+}
+addEventListener('hashchange',focusRow);
+// a row's question marker (and a #q-Q-3 link) opens that question above the table, also when clicked twice
+addEventListener('hashchange',()=>{if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3))});
+document.addEventListener('click',e=>{const d=e.target.closest?.('.cv[data-id]');if(d&&!String(getSelection()))editCell(d)});
+// the short Cov / Prog / Res links name themselves at once on hover or focus (a native title is slow, or never shows)
+const tip=document.createElement('div');tip.id='tip';tip.hidden=true;document.body.append(tip);
+for(const ev of ['mouseover','focusin'])document.addEventListener(ev,e=>{const a=e.target.closest?.('a[data-tip]');if(!a){tip.hidden=true;return}
+  tip.textContent=a.dataset.tip;tip.hidden=false;const r=a.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(r.left,innerWidth-tip.offsetWidth-8))+'px';tip.style.top=(r.bottom+6)+'px'});
+document.addEventListener('keydown',e=>{const d=e.target.closest?.('.cv[data-id]');if(d&&e.key==='Enter'){e.preventDefault();editCell(d)}});
+document.addEventListener('click',e=>{const m=e.target.closest?.('a.qmark');if(!m)return;e.preventDefault();
+  if(location.hash!=='#q-'+m.dataset.q)history.pushState(null,'','#q-'+m.dataset.q);openQuestion(m.dataset.q)});
+// a question's row link scrolls to the row every time, also when the address already ends in that row's #ID
+document.addEventListener('click',e=>{const a=e.target.closest?.('a.qcase');if(!a)return;e.preventDefault();
+  if(location.hash!=='#'+a.dataset.case)history.pushState(null,'','#'+encodeURIComponent(a.dataset.case));focusRow()});
+applyLang();header();questions();filters();body();counts();focusRow();if(/^#q-Q-\d+$/.test(location.hash))openQuestion(location.hash.slice(3));
+</script>
+</body>
+</html>

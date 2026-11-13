@@ -1,0 +1,304 @@
+{
+ "add": [
+  {
+   "screen": "3330:848",
+   "label": "Custom",
+   "box": [
+    8,
+    623,
+    64,
+    82
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "StyleMenuCustomStyleCell"
+  },
+  {
+   "screen": "3330:848",
+   "label": "Platinum",
+   "box": [
+    76,
+    623,
+    64,
+    82
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "StyleThumbCell template"
+  },
+  {
+   "screen": "3330:848",
+   "label": "Solid",
+   "box": [
+    128,
+    581,
+    34,
+    17
+   ],
+   "kind": "tab",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "tab_category"
+  },
+  {
+   "screen": "3330:848",
+   "label": "Multicolor",
+   "box": [
+    194,
+    581,
+    68,
+    17
+   ],
+   "kind": "tab",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "tab_category"
+  },
+  {
+   "screen": "3330:848",
+   "label": "✕",
+   "box": [
+    26,
+    776,
+    24,
+    24
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "btn_cancel"
+  },
+  {
+   "screen": "3330:848",
+   "label": "↺ Undo",
+   "box": [
+    131,
+    776,
+    24,
+    24
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "btn_undo"
+  },
+  {
+   "screen": "3330:848",
+   "label": "↻ Redo",
+   "box": [
+    235,
+    776,
+    24,
+    24
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "btn_redo"
+  },
+  {
+   "screen": "3330:848",
+   "label": "✓",
+   "box": [
+    340,
+    776,
+    24,
+    24
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "btn_confirm"
+  },
+  {
+   "screen": "3330:936",
+   "label": "⌄ Collapse",
+   "box": [
+    354,
+    309,
+    11,
+    24
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3330:936",
+   "label": "Face",
+   "box": [
+    8,
+    391,
+    64,
+    82
+   ],
+   "kind": "item",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3330:936",
+   "label": "Base Color wheel",
+   "box": [
+    16,
+    546,
+    40,
+    40
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3330:936",
+   "label": "Highlight Color wheel",
+   "box": [
+    16,
+    658,
+    40,
+    40
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3330:936",
+   "label": "Base Color swatch",
+   "box": [
+    66,
+    546,
+    40,
+    40
+   ],
+   "kind": "item",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3330:936",
+   "label": "Highlight Color swatch",
+   "box": [
+    66,
+    658,
+    40,
+    40
+   ],
+   "kind": "item",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3327:1204",
+   "label": "Cancel",
+   "box": [
+    16,
+    307,
+    53,
+    19
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "palette_cancel"
+  },
+  {
+   "screen": "3327:1204",
+   "label": "Done",
+   "box": [
+    333,
+    307,
+    41,
+    19
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "palette_done"
+  },
+  {
+   "screen": "3327:1204",
+   "label": "Saturation-brightness square",
+   "box": [
+    16,
+    340,
+    358,
+    190
+   ],
+   "kind": "input",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "palette_sv_square"
+  },
+  {
+   "screen": "3327:1204",
+   "label": "Hue slider",
+   "box": [
+    16,
+    555,
+    320,
+    16
+   ],
+   "kind": "input",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)",
+   "layer": "palette_hue_slider"
+  },
+  {
+   "screen": "3327:1204",
+   "label": "Eyedropper",
+   "box": [
+    350,
+    550,
+    24,
+    24
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3330:1372",
+   "label": "Intensity",
+   "box": [
+    111,
+    532,
+    197,
+    16
+   ],
+   "kind": "input",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3370:1668",
+   "label": "OK",
+   "box": [
+    45,
+    446,
+    300,
+    22
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3370:1668",
+   "label": "Continue Anyway",
+   "box": [
+    45,
+    492,
+    300,
+    22
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3491:771",
+   "label": "Try Now",
+   "box": [
+    20,
+    684,
+    335,
+    44
+   ],
+   "kind": "button",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  },
+  {
+   "screen": "3491:771",
+   "label": "Don't show again",
+   "box": [
+    136,
+    744,
+    120,
+    20
+   ],
+   "kind": "toggle",
+   "why": "PM mockup drawn as plain shapes; the extractor skipped it (by hand 2026-11-12 from the text layer and board image)"
+  }
+ ]
+}

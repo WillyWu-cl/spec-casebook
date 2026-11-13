@@ -1,0 +1,171 @@
+{
+ "source": "PM Figma page 3026:89 「26 10E AI Hair Color v2」, texts tagged with the rule ids the Custom page cites; read 2026-11-12 (figma-pm / qa1)",
+ "url": "https://www.figma.com/design/vhIp15PMJcwOcWJ6E9Q4JE/AI-Hair?node-id=3026-89",
+ "texts": [
+  [
+   "3026:94",
+   "Spec - Flow",
+   "• 幫誰：染髮前想先看看像不像、以及想換個顏色貼社群，兩種都吃；衝突時以自然色優先 [D0-00][D0-01][D0-01b]\n• 獨立新 feature：新 feature_id、自己的入口，不掛在 AI Hairstyle 底下 [D0-05]\n• 2026'10/E 上線，iOS / Android 同時；spec 型別 A+B+D [D0-05a][D0-06][D1-01]\n• 入口：Launcher Shortcut / AI Magic → 先 Photo Picker 再進顏色頁；Edit Room › Hair 排在 AI Hairstyle 之後 [D1-02][D0-04b]\n• 生成約 15 秒，原地等待、原地顯示結果，不把用戶送到 My AI Artwork；結果仍存 Artwork [D1-03][D1-03b][D2-05]\n• 色票改為 category + 單一橫向捲動列，不用多排格狀 [D1-09]\n• 競品參考三家：競品 A / Meitu / 競品 B，三家皆為編輯器內即時疊色 [D5-00]\n• 原本為「全 photo feature 都加長按看原圖」而定的邊界（影片 / pack / error tile）隨範圍縮小作廢 [D1-03e]"
+  ],
+  [
+   "3029:7777",
+   "Spec - Flow",
+   "先選照片：臉檢查在扣點之前 [D1-02][D2-01]"
+  ],
+  [
+   "3029:7778",
+   "Spec - Flow",
+   "NEW：category + 單一橫向捲動色票列 [D1-09][D1-06x]"
+  ],
+  [
+   "3029:7779",
+   "Spec - Flow",
+   "原地等待約 15 秒，不進 Artwork [D1-03]"
+  ],
+  [
+   "3029:7780",
+   "Spec - Flow",
+   "原地看結果、拖 Intensity 條調整深淺、可直接換色再生成 [D1-03b][D1-14][D1-04]"
+  ],
+  [
+   "3029:7782",
+   "Spec - Flow",
+   "iOS 帶入畫布並回寫 undo；Android 先靜默存相簿再開新 Edit Room [D1-07]"
+  ],
+  [
+   "3029:7784",
+   "Spec - Flow",
+   "結果同時已存進 My AI Artwork [D2-05]"
+  ],
+  [
+   "3029:7787",
+   "Spec - Flow",
+   "Create More：同 session 帶回原輸入照；之後流程同 row 1，同樣以 ✓ 收在 Edit Room [D1-04b][D1-04c][D1-13]"
+  ],
+  [
+   "3064:764",
+   "Spec - Flow",
+   "按右下角 ✓ 回到 Edit Room 繼續編輯；存檔交給 Edit Room 的 Save [D1-13][D1-10]"
+  ],
+  [
+   "3181:8647",
+   "Spec - Flow",
+   "① 進房擋圖：長邊 / 短邊 > 16:9 的照片不收，單鍵 dialog 請用戶換一張（人臉偵測照舊）[D2-01b]\n② room top bar 拿掉 back 鍵與 feature 名稱，離開一律按下排左下角 ✗ [D1-20]\n③ 允許 Retry：選取中的色本 session 生成過 → 按鈕變 Retry（一樣扣 6）；沒生成過 → 維持 Generate [D1-18]\n④ server 回圖比例與輸入圖不符 → 不給 Intensity 條、只顯示 after 圖（疊圖調 opacity 會錯位）[D1-17]\n畫面上標黃色 10/12 UPDATE 的欄位即為本次改動；其餘欄位未變。"
+  ],
+  [
+   "3030:296",
+   "Spec - UI",
+   "• 分類 tab **Solid / Multicolor** 兩類，預設 Solid；Solid 內自然色排前面 [D2-07b][D0-01b]\n• 分類由三類（純色 / 挑染 / 漸層）收斂為兩類 —— 挑染與漸層併入 Multicolor，與 10/19 的內容清單一致 [D2-07b]\n• 單一橫向捲動色票列，非 4×N 格狀；右緣露出半顆表示可捲 [D1-09]\n• day-1 40 色（純色 20 / 挑染 10 / 漸層 10），一半 premium 掛 PRO icon，free 色不另標 [D2-07][D2-07c][D3-04a][D5-04]\n• 色票視覺由 content team 決定，spec 不規範；mock 以漸層佔位 [D2-07d]\n• 底部 Generate | 6：每次生成扣 6 點 [D3-01a][D4-01]\n• 下排固定操作列 ✗ / undo / redo / ✓，✓ 在右下角，五個狀態都有 [D1-12]\n• room 的 top bar **不放 back 鍵、也不放 feature 名稱**，只留 credit chip 與 artwork 鍵；離開一律用下排左下角 ✗ [D1-20]\n• ✗ ＝ 放棄本次編輯並回到進入前的畫面（Launcher / Edit Room / My AI Artwork），不跳二次確認 [D1-20b]\n• 進房時先驗圖片長寬比再驗人臉；比例過寬 / 過高即擋，見 entry_blocked_ratio [D2-01b][D2-01]"
+  ],
+  [
+   "3030:298",
+   "Spec - UI",
+   "• 按鈕顯示「1 FREE Trial」、-6 劃掉；trial 限 free 色 [D3-03]\n• trial event AIHairColor，version temp_one_time_free [D4-02c]\n• Android 由 RC enable_one_time_free_trial 控制，設定與其他 feature 一致 [D3-03b]\n• premium 色按 Generate → paywall（CMS usageType = purchase）[D3-02a]\n• 第一次進房間不跳 demo video，直接進顏色頁 [D1-08][D1-08b]\n• iOS AI Processing Notice 於按 Generate 當下跳，全 app 一次性 [D1-08c]"
+  ],
+  [
+   "3030:300",
+   "Spec - UI",
+   "• sync short task：按 Generate 後原地跑生成動畫 (橘色水平線上下摔刷動)，預估約 15 秒，不進 My AI Artwork 等 [D1-03]\n• 生成中色票列與 Generate 進入 disabled，不離開畫面 [D1-03]\n• ⚠ app 被系統殺掉時結果消失而點數已扣；今天沒有使用者可見的 Cancel [D1-03]\n• 失敗走既有 dialog 並退點；NSFW 免費自動重試 1 次 [D3-06]"
+  ],
+  [
+   "3030:302",
+   "Spec - UI",
+   "• 結果原地顯示，不另開 Result 頁、不導去 My AI Artwork [D1-03b]\n• 色票列仍在：直接點另一個顏色再 Generate，再扣 6 [D1-04][D3-05]\n• 本 session 已生成過的色，按鈕文案變 **Retry**（一樣扣 6）；未生成過的色維持 Generate，見 result_other_color_selected [D1-18]\n• 輸出 1 張、長邊 1024；髮型輪廓、髮長、臉、背景、衣服不得變 [D2-03][D2-04]\n• Multicolor 類：挑染須落在髮流方向、漸層起點在耳下；光澤自然不列驗收 [D2-04]\n• 生成成功的當下就已存進 My AI Artwork（100% 原圖），不是按 ✓ 才存；1 年、按 Download 才進相簿、分享 IG / FB / More、watermark 依平台預設 [D1-15][D2-05 / D2-06]\n• room 內不放 Download / Share；按右下角 ✓ 進 Edit Room，相簿存檔由 Edit Room 的 Save 統一處理 [D1-13][D1-11]\n• 首次完成時 top bar artwork 鍵上跳 bubble「All your results are saved here at full intensity.」 [D1-11][D1-15]\n• Intensity 條浮在結果圖下緣，0–100%，預設 100%；拖到 0% 即原圖，取代原本的長按看原圖 [D1-14][D1-03d]\n• 結果第一次出現時跳一次性 dialog 告知 Artwork 只存 100%，見 intensity_notice_dialog [D1-15]\n• 每次**新生成**完成後 Intensity 一律回到 100%，不沿用上一次的值 [D1-16]\n• 但切回本 session 已生成過的色時，Intensity 還原成離開該色時的值，見 result_recalled [D1-19]\n• 結果圖長寬比與輸入圖不一致時不給 Intensity 條、只顯示 after 圖，見 result_ratio_mismatch [D1-17]"
+  ],
+  [
+   "3030:306",
+   "Spec - UI",
+   "• 臉檢查、多人擋下、臉太大 / 太小 Continue Anyway 全部同 AI Hairstyle [D2-01]\n• recommend / avoid 新增「避免帽子」；偵測不到頭髮不另做前置檢查，生成失敗走既有 error dialog 並退點 [D2-02]\n• 輸入 1 張照片，上傳前縮到長邊 1024 [D2-03]"
+  ],
+  [
+   "3030:310",
+   "Spec - UI",
+   "• 新增「AI Hair」tab；Artwork tab 依字母序排列 [D1-05]\n• tab 內子分頁：Hairstyle / Color / Hair Volume [D1-05c]\n• 既有 AI Hairstyle 與 Hair Volume 的歷史結果搬進此 tab（兩個已上線 feature 一併改）[D1-05b]\n• 子分頁落點由 AP 判斷用戶上一次生成的是哪個 feature；今天沒有這個狀態，RD 要新存一個值 [D1-05d]\n• Recent category 內三個 AI Hair feature 各自分開、不 group；只有在 AI Hair category 內才 group [D1-05e]\n• Create More：同 session 帶回原輸入照；離開 app 或進其他房間後需重選 [D1-04b][D1-04c]\n• empty state 沿用全 feature 共用版 [D1-04d]"
+  ],
+  [
+   "3030:343",
+   "Spec - UI",
+   "• Day 1：40 色，一半 premium；usageType free / purchase 決定 PRO icon 與 Generate 時的 paywall [D2-07][D3-04a]\n• 價格 per item flat：每次生成 6 credit，不隨分類或顏色變動；✅ free trial 限 free 色 [D4-01][D3-01a][D3-03]\n• feature_id：HairColor (tbd)  ⚠️ HANDOFF BLOCKER — Meg／10/16 [D4-02][D4-02d]\n• action_id：genimage_1_img_tbdvendor_tbdmodel_none_tmpl  ⚠️ HANDOFF BLOCKER — vendor / model 待 10/16 [D4-02][D4-03b]\n• free trial event：AIHairColor，version temp_one_time_free [D4-02c]\n• 模型未定，預計 Gemini 3.0 或 3.1；畫面不顯示模型名 [D4-03][D4-03b]"
+  ],
+  [
+   "3056:8045",
+   "Spec - UI",
+   "• 結束動作與 Launcher 入口完全一致：按右下角 ✓ 回寫 Edit Room 畫布繼續編輯 [D1-10][D1-13]\n• iOS 成為一個 undo step；Android 開新 Edit Room（同進入時的平台行為）[D1-10][D1-07]\n• 生成成功即存 My AI Artwork（100%）；相簿存檔由 Edit Room 的 Save 統一處理，本 feature 不另做存檔 [D1-15][D1-10]\n• 色票列仍在，可直接換色再 Generate（再扣 6）[D1-04][D3-05]\n• Intensity 條與 result 狀態一致 [D1-14]"
+  ],
+  [
+   "3127:931",
+   "Spec - UI",
+   "• Intensity 條 handle 不在滿格、數值顯示當前百分比；結果圖以該 opacity 疊在原圖上 [D1-14]\n• 畫面上沒有常駐提示文字 —— 提醒只在結果第一次出現時跳過一次 dialog [D1-15]\n• My AI Artwork 的那張在生成成功當下就已存成 100%，不受此處拖曳影響 [D1-15]\n• 按 ✓ 帶進 Edit Room 的是目前 Intensity 的合成圖 [D1-15][D1-13]\n• 拖曳不計費；拖曳放手算一個 undo step [D1-14][D1-12]\n• 前提是結果圖與輸入圖同比例；不同比例時整條 bar 不出現，見 result_ratio_mismatch [D1-17]"
+  ],
+  [
+   "3128:952",
+   "Spec - UI",
+   "• 觸發：生成成功、結果第一次出現的當下跳一次（此時 Intensity 還是 100%）；按 OK 才能操作下方色票與 Intensity 條 [D1-15]\n• 勾「Don't show again」之後不再跳；拖曳 bar 的過程中不跳、按 ✓ 也不跳 [D1-15]\n• 比例不符、沒有 Intensity 條的那個狀態也不跳 [D1-17]\n• 單鍵告知：Artwork 那張固定 100%，不給第二個選項 [D1-15]\n• 文案為繪製者擬定，PM 可改 [D1-15]"
+  ],
+  [
+   "3135:8039",
+   "Spec - UI",
+   "• 觸發：server 回來的結果圖長寬比與輸入圖不一致時（AP 在收到圖、顯示之前比對）[D1-17]\n• 此狀態**不顯示 Intensity 條** —— 兩張圖對不齊，疊圖調 opacity 會出現錯位 / 鬼影，不是變淡 [D1-17][D1-14]\n• 只顯示 after 圖：以原比例 fit 進照片區，上下（或左右）留黑，不裁切、不拉伸 [D1-17]\n• 一次性提醒 dialog 在此狀態**不跳**（沒有 Intensity 可調，就沒有落差要講）[D1-17][D1-15]\n• 其餘行為與 result 完全相同：已存進 Artwork、色票列可換色再 Generate、✓ → Edit Room [D1-15][D1-04][D1-13]\n• 正常情況下不該發生（D2-03 要求輸出 1 張、長邊 1024、構圖不得變）；這是 AP 端的防呆，不是常態路徑 [D2-03]"
+  ],
+  [
+   "3165:1029",
+   "Spec - UI",
+   "• 按鈕文案由選取中的色票決定，不是由「畫面上有沒有結果」決定 [D1-18]\n• 選取中的色票本 session 已生成過 → 按鈕為 **Retry**；還沒生成過 → 維持 **Generate** [D1-18]\n• 兩者都扣 6，右側 -6 不變；Retry 不是免費重試 [D1-18][D3-05]\n• 照片區仍停在上一次的結果，按下去之後才換成新色的結果 [D1-18]\n• 選到**已生成過**的色則會直接叫回該色的結果與 Intensity，見 result_recalled [D1-19]\n• session 定義：這一次進入 AI Hair Color 房間；離開房間再進來重新計算（繪製者判讀，PM 可改）[D1-18]\n• bubble 只在本 session 第一次完成時出現，此狀態不重複出現 [D1-11]"
+  ],
+  [
+   "3175:8120",
+   "Spec - UI",
+   "• 點一個本 session 已生成過的色票 → 照片區**直接換回該色的結果**，不重新生成、不扣點 [D1-19]\n• Intensity 一併還原成**離開那個色時的值**（圖示為 40%），不是回到 100% [D1-19][D1-16]\n• 按鈕為 **Retry**（該色已生成過）；再按一次是重新生成，扣 6 [D1-18][D3-05]\n• AP 需在 session 內保存每個已生成色的「結果圖 + Intensity 值」；離開房間即清空 [D1-19]\n• 選到**還沒生成過**的色則是另一個狀態：照片不動、按鈕回 Generate，見 result_other_color_selected [D1-18]\n• 比例不符而沒有 Intensity 條的那一張，還原時一樣沒有 bar [D1-17]"
+  ],
+  [
+   "3181:8633",
+   "Spec - UI",
+   "• 觸發：選完照片進入 AI Hair Color 房間時，除既有人臉偵測外再檢查長寬比 [D2-01b]\n• 門檻：長邊 / 短邊 > 16 / 9（≈1.78）即擋 —— 比 16:9 更寬、或比 9:16 更高的圖 [D2-01b]\n• 擋法改為**雙鍵 dialog**：**Cancel** = 放棄進房，回到進入前的畫面；**Crop** = 帶去 Crop 房裁成支援的比例 [D2-01b][D1-20b]\n• 不給 Continue Anyway —— 極端比例的圖連臉都擺不好，放行只會生出爛結果又收 6 點 [D2-01b]\n• 人臉檢查沿用 AI Hairstyle（沒臉擋、多人擋、臉太大 / 太小 Continue Anyway）；兩項都過才進得了房 [D2-01]\n• 先驗比例再驗臉（比例不合的圖驗臉沒有意義）—— PM 2026-10-29 確認 [D2-01b]\n• 從 Edit Room 進來也要驗（畫布圖同樣可能是極端比例）[D2-01b][D1-10]"
+  ],
+  [
+   "3231:999",
+   "Spec - UI",
+   "• 從 entry_blocked_ratio 的 dialog 按 Crop 進來；**這是 PhD 既有的 Crop 功能，本 feature 不新做房間** [D2-01b]\n• 模板共 9 種，橫向捲動：Square / 4:5 / 5:4 / 3:4 / 4:3 / 2:3 / 3:2 / 9:16 / 16:9 [D2-01b]\n• 9 種都在門檻內（最極端就是 16:9 / 9:16），所以裁完必定通過比例檢查 [D2-01b]\n• 裁切不收費；top bar 不放 credit chip 與 artwork 鍵 [D2-01b]\n• 按 ✓ → **自動帶回 AI Hair Color**，用裁好的圖重新驗（比例必過，但人臉檢查仍要跑）[D2-01c][D2-01]\n• 按 ✗ → 放棄裁切，回到進入 AI Hair Color 之前的畫面，不進房 [D2-01c]\n• ⚠「裁完自動帶回 AI Hair Color」為繪製者判讀，PM 可改成留在 Crop 房"
+  ],
+  [
+   "3031:298",
+   "Competitor Reference - 競品A / Meitu / 競品B",
+   "三家皆為編輯器內即時疊色、秒出、可自由換色；我們是 Gemini 重新生成、原地等待約 15 秒、每次扣 6 點。差異化不跟進。 [D5-01][D1-03]"
+  ],
+  [
+   "3031:307",
+   "Competitor Reference - 競品A / Meitu / 競品B",
+   "立場：色票質感跟進（由 content team 定）；手塗不做；Free 標籤不跟，用 PRO icon [D2-07d][D5-02][D5-04]"
+  ],
+  [
+   "3031:311",
+   "Competitor Reference - 競品A / Meitu / 競品B",
+   "立場：Multicolor 跟進（day-1 20 色，含挑染與漸層）；模特兒縮圖不跟 [D2-07b][D2-07c]"
+  ],
+  [
+   "3031:324",
+   "Draft TBD card Q3",
+   "主：主 PM（Meg）／10/1   ·   day-1：以擠掉 AI Glow Up 繪製 [D1-00]"
+  ],
+  [
+   "3031:328",
+   "Draft TBD card Q4",
+   "主：RD 在 app 確認   ·   day-1：依字母序插入 [D1-05]"
+  ],
+  [
+   "3031:291",
+   "Error Handle",
+   "• 生成失敗沿用既有 dialog：4002 → Please Try Different Content（已退點）；其他 → An Error Has Occurred（已退點）[D3-06]\n• NSFW 結果免費自動重試 1 次，再失敗顯示 Sensitive Content Hidden [D3-06]\n• 沒臉 / 多人 dialog 同 AI Hairstyle，停留在 Photo Picker [D2-01]\n• 照片無頭髮（帽子 / 光頭）不另做前置檢查，走生成失敗並退點 [D2-02]"
+  ],
+  [
+   "3031:293",
+   "Credit not enough",
+   "• Free 用戶 → Upgrade to Premium → paywall [D3-06]\n• 訂閱者 → More Credits Required! → Get Credit → Credit Shop [D3-06]\n• Android 加入 Quick Credit Refill（10 點一次性補充包）；iOS 無此對話框 [D4-04]\n• 費用在按下之前就顯示於 Generate 按鈕 [D3-01a]"
+  ],
+  [
+   "3031:295",
+   "One-time free trial",
+   "• Free 用戶、餘額 < 6、未領過、trial 點數 ≥ 6 時，按鈕變「1 FREE Trial」+ -6 劃掉 [D3-03]\n• 一個錢包一次，限 free 色；premium 色不吃 trial [D3-03]\n• Android 由 RC enable_one_time_free_trial 控制，設定方式與其他 feature 一致 [D3-03b]\n• event AIHairColor，version temp_one_time_free [D4-02c]"
+  ]
+ ]
+}

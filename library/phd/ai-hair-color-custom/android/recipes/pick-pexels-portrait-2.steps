@@ -1,0 +1,6 @@
+# Second half of pick-pexels-portrait.steps, after the search was submitted with adb keyevent 66 (do has no Enter key).
+# Starts: Pexels results for 「woman portrait」. Ends: the colour page with the hat portrait. Charges nothing.
+wait 5
+tap 804 1363
+wait 8
+expect Generate

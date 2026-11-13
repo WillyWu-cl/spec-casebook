@@ -1,0 +1,26 @@
+{
+  "pm-i2v-info.png": {
+    "board": "pm-i2v-info",
+    "group": null,
+    "hash": null,
+    "captured_at": "2026-11-11T08:50:45.325Z",
+    "box": [
+      150,
+      80,
+      2150,
+      1220
+    ]
+  },
+  "pm-i2v-template-config.png": {
+    "board": "pm-i2v-template-config",
+    "group": null,
+    "hash": null,
+    "captured_at": "2026-11-11T08:50:45.651Z",
+    "box": [
+      0,
+      1480,
+      2400,
+      1300
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-11-12T02:21:54.180Z",
+  "feature": "phd/ai-hair-color-custom",
+  "platform": "android",
+  "set": "specs/2026-11-12",
+  "warnings": [
+    {
+      "id": "pm-ui|note-off|pm-ui@3830,380",
+      "board": "pm-ui",
+      "title": "PM · Spec - UI",
+      "kind": "note-off",
+      "text": "spec note 「【 Solid：只要一個顏色 】 / D6-04 solid_color 是唯一只收一個顏色的 style → 只出現 」 is on no board the page draws"
+    },
+    {
+      "id": "pm-ui|note-off|pm-ui@5230,380",
+      "board": "pm-ui",
+      "title": "PM · Spec - UI",
+      "kind": "note-off",
+      "text": "spec note 「【 其他 10 種：兩個顏色都必填 】 / D6-04 其餘 10 種 style：Base Color 與 Highl」 is on no board the page draws"
+    },
+    {
+      "id": "pm-ui|note-off|pm-ui@6630,380",
+      "board": "pm-ui",
+      "title": "PM · Spec - UI",
+      "kind": "note-off",
+      "text": "spec note 「【 ② 取色 · 照抄 App 調色盤 】 / D6-05 色輪鍵 → 開 App 既有的調色盤（照抄，RD 直接沿用現」 is on no board the page draws"
+    },
+    {
+      "id": "pm-ui|note-off|pm-ui@7341,380",
+      "board": "pm-ui",
+      "title": "PM · Spec - UI",
+      "kind": "note-off",
+      "text": "spec note 「顏色選取狀態」 is on no board the page draws"
+    },
+    {
+      "id": "pm-ui|note-off|pm-ui@9430,380",
+      "board": "pm-ui",
+      "title": "PM · Spec - UI",
+      "kind": "note-off",
+      "text": "spec note 「【 兩色齊備 · 可生成 】 / D6-07 兩色齊備 → panel 內橘色 Generate enable，顯示「G」 is on no board the page draws"
+    },
+    {
+      "id": "pm-ui|note-off|pm-ui@10830,380",
+      "board": "pm-ui",
+      "title": "PM · Spec - UI",
+      "kind": "note-off",
+      "text": "spec note 「【 收合 = apply，Custom 變成被選取 】 / • 點 panel 外的空白處、或按 panel 右上角收合」 is on no board the page draws"
+    },
+    {
+      "id": "pm-ui|note-off|pm-ui@11917,380",
+      "board": "pm-ui",
+      "title": "PM · Spec - UI",
+      "kind": "note-off",
+      "text": "spec note 「【 Custom 結果 】 / • 結果原地顯示；**Intensity 條照給**（0–100%、預設 100%）[D」 is on no board the page draws"
+    },
+    {
+      "id": "pm-ui|note-off|pm-ui@10830,760",
+      "board": "pm-ui",
+      "title": "PM · Spec - UI",
+      "kind": "note-off",
+      "text": "spec note 「【 點別的 template 也不丟棄 】 / • 選取環移到該 template，但 **Custom 的設定不被 d」 is on no board the page draws"
+    }
+  ],
+  "skipped": [
+    "pm-header (no Figma screenshot)",
+    "pm-flow (no text read from pm-flow.png)",
+    "pm-cms (no text read from pm-cms.png)",
+    "pm-deeplink (no text read from pm-deeplink.png)",
+    "pm-draft-tbd (no text read from pm-draft-tbd.png)",
+    "pm-face-check (no text read from pm-face-check.png)",
+    "pm-ui (no text read from pm-ui.png)"
+  ]
+}

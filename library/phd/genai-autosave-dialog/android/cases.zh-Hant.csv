@@ -1,0 +1,24 @@
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註,變更,變更原因
+TC-001,對話框內容,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；重置（本案例的一部分）：清除 PhotoDirector 資料（pm clear，先匯出 log）後重新登入，讓這個安裝版本還沒跳出過自動儲存對話框（或接在 TC-003 之後）；已開啟 AI Headshot 結果頁，且生成已完成,在結果頁點 Home（回首頁）,跳出對話框「Results Are Saved Automatically」，文字為「Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.」，且只有一個「Ok」按鈕（沒有「Don't show again」）,P1,"R-001, R-002, R-003, R-010",,新增,新增表格（REQ-001）
+TC-002,對話框內容,緊接 TC-001：AI Headshot 結果頁上正開著自動儲存對話框,點「Ok」,對話框關閉，App 接著前往 Launcher（記錄實際停在哪個畫面：Q-1）,P2,R-003,Q-1,新增,新增表格（REQ-001）
+TC-003,對話框出現的位置,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；重置（本案例的一部分）：清除 PhotoDirector 資料（pm clear，先匯出 log）後重新登入，讓這個安裝版本還沒跳出過自動儲存對話框,"1. 在 AI Headshot 開始生成，生成還在進行時，在結果頁點 Home
+2. 在 AI Try On 重複同樣操作
+3. 在 AI Art 重複同樣操作",三個功能在生成中都不會跳出自動儲存對話框（若有跳出，請記錄是哪一個：它會用掉「只顯示一次」的紀錄）,P3,R-016,重置後最先執行，排在 TC-001 之前,新增,新增表格（REQ-001）
+TC-004,對話框出現的位置,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；重置（本案例的一部分）：清除 PhotoDirector 資料（pm clear，先匯出 log）後重新登入，讓這個安裝版本還沒跳出過自動儲存對話框；已開啟 AI Try On 結果頁，且生成已完成,在結果頁點 Home,跳出對話框「Results Are Saved Automatically」，文字為「Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.」，且只有一個「Ok」按鈕（沒有「Don't show again」）,P2,"R-011, R-001, R-002",,新增,新增表格（REQ-001）
+TC-005,對話框出現的位置,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；重置（本案例的一部分）：清除 PhotoDirector 資料（pm clear，先匯出 log）後重新登入，讓這個安裝版本還沒跳出過自動儲存對話框；已開啟 Image Fusion 結果頁，且生成已完成（Q-4）,在結果頁點 Back,不會跳出自動儲存對話框（Image Fusion 只有點 Home 才會跳出）,P3,R-013,在同一次重置後，排在 TC-006 之前執行。Q-4,新增,新增表格（REQ-001）
+TC-006,對話框出現的位置,緊接 TC-005：再次開啟 Image Fusion 結果頁，且已有生成完成的結果,在結果頁點 Home,跳出對話框「Results Are Saved Automatically」，文字為「Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.」，且只有一個「Ok」按鈕（沒有「Don't show again」）,P2,"R-013, R-001, R-002",Q-4,新增,新增表格（REQ-001）
+TC-007,對話框出現的位置,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；重置（本案例的一部分）：清除 PhotoDirector 資料（pm clear，先匯出 log）後重新登入，讓這個安裝版本還沒跳出過自動儲存對話框；已開啟 AI Glow Up，且正在生成,按 Back,生成中無法離開該功能，也不會跳出自動儲存對話框,P3,R-014,在同一次重置後，排在 TC-008 之前執行,新增,新增表格（REQ-001）
+TC-008,對話框出現的位置,緊接 TC-007：AI Glow Up 生成已完成，畫面上顯示圖片,按 Back 離開 AI Glow Up,跳出對話框「Results Are Saved Automatically」，文字為「Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.」，且只有一個「Ok」按鈕（沒有「Don't show again」）,P2,"R-014, R-001, R-002",,新增,新增表格（REQ-001）
+TC-009,只顯示一次,緊接 TC-002（對話框已在 AI Headshot 跳出過一次）,"1. 在 AI Try On 生成
+2. 在其結果頁點 Home
+3. 在 AI Art 生成
+4. 在其結果頁點 Home",AI Try On 與 AI Art 都不會跳出自動儲存對話框：任一功能跳出過一次，六個功能就都算顯示過,P1,R-020,,新增,新增表格（REQ-001）
+TC-010,只顯示一次,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；重置（本案例的一部分）：清除 PhotoDirector 資料（pm clear，先匯出 log）後重新登入，讓這個安裝版本還沒跳出過自動儲存對話框；已開啟 AI Art 結果頁，且生成已完成,"1. 在結果頁點 Home
+2. 對話框開著時，從 Android 最近使用的應用程式中關閉 PhotoDirector（不要點「Ok」）
+3. 重新開啟 PhotoDirector
+4. 在 AI Art 生成
+5. 在其結果頁點 Home",步驟 1：跳出對話框「Results Are Saved Automatically」，文字為「Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.」，且只有一個「Ok」按鈕（沒有「Don't show again」）；步驟 5：不會跳出對話框，因為對話框一出現就已算顯示過,P2,"R-021, R-012, R-001, R-002",,新增,新增表格（REQ-001）
+TC-011,獨立的提示,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；這個安裝版本已跳出過一次自動儲存對話框「Results Are Saved Automatically」（TC-001 – TC-010 任一個皆可）；付費帳號（AI Exposure 僅限付費）；有辦法讓 AI Exposure 下載失敗（DOWNLOAD_FAILED）,讓 AI Exposure 的結果下載失敗,跳出下載失敗提示，標題為「Results Are Saved Automatically」，文字為「Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.」（Q-2），即使共用的對話框已經跳出過,P3,R-030,需要失敗測試環境（暫緩）。Q-2,新增,新增表格（REQ-001）
+TC-012,獨立的提示,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；這個安裝版本已跳出過一次自動儲存對話框「Results Are Saved Automatically」（TC-001 – TC-010 任一個皆可）；AI Background 正在生成,"1. 結果下載中，關閉 Wi-Fi
+2. 等待錯誤出現",跳出 AI Background 的提示，標題為「Results Are Saved Automatically」，文字為「Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.」（Q-2），且仍可在 My AI Artwork 找到該任務,P3,"R-030, R-032",手機接上 USB 後可以切換 Wi-Fi（AGENTS.md）；可能需要 RD 提供的失敗測試環境。Q-2,新增,新增表格（REQ-001）
+TC-013,獨立的提示,Android 手機，PhotoDirector（受測版本）已登入，帳號點數足夠進行下列生成；這個安裝版本已跳出過一次自動儲存對話框「Results Are Saved Automatically」（TC-001 – TC-010 任一個皆可）；付費帳號；AI Exposure 已生成結果但尚未套用；其關閉提醒尚未以「Don't show again」關掉,在 AI Exposure 點關閉（✕）,跳出 AI Exposure 的關閉提醒，有「Ok」、「Cancel」和「Don't show again」，即使共用的自動儲存對話框已經跳出過,P3,R-031,,新增,新增表格（REQ-001）

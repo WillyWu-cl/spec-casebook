@@ -1,0 +1,29 @@
+{
+  "feature": "phd/feature-room-no-title",
+  "platform": "android",
+  "title": "Feature rooms: no top bar title",
+  "version": 1,
+  "approved_at": "2026-11-11T09:31:59.823Z",
+  "draft": "20261111-164954",
+  "spec_folder": "specs/2026-11-11",
+  "spec_files": [
+    {
+      "name": "Feature room top bar title - PM Figma 14451-2196.md",
+      "sha256": "25c7d62bbe0b1ed098272682a874bb7422b2f3b2d5641ed8266ac06a93231e20",
+      "bytes": 1592
+    }
+  ],
+  "spec_set_sha256": "cdb97913c16841daa7bc0c29a64027ac1c4f2736f9e26368492181e9c9850a15",
+  "cases": 11,
+  "history": [
+    {
+      "version": 1,
+      "approved_at": "2026-11-11T09:31:59.823Z",
+      "spec_set_sha256": "cdb97913c16841daa7bc0c29a64027ac1c4f2736f9e26368492181e9c9850a15",
+      "draft": "20261111-164954",
+      "cases": 11,
+      "csv": "cases.csv",
+      "requirements": "requirements.md"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "arrows": [
+    {
+      "arrow": "3330-1552",
+      "node": "3330-1552",
+      "edge": "pm-flow: custom_in_row · flow1 「Custom」 cell → panel_open_no_style · flow1 (label 「tap Custom」; drawn head-first, direction from the label and the board image)",
+      "expected": "The Custom panel opens as a half-screen sheet with Style, Base Color / Highlight Color and Generate",
+      "source": "figma-inventory"
+    },
+    {
+      "arrow": "3330-1554",
+      "node": "3330-1554",
+      "edge": "pm-flow: panel_open_no_style · flow1 → panel_ready · flow1 (label 「選 style + 色」)",
+      "expected": "After a style and its colours are chosen, the in-panel Generate is enabled",
+      "source": "figma-inventory"
+    },
+    {
+      "arrow": "3330-1558",
+      "node": "3330-1558",
+      "edge": "pm-flow: custom_in_row · flow1 generating → result_custom · flow1 (label 「42–48s」)",
+      "expected": "After about 42–48 s the result shows in place with the Intensity bar at 100 and 「Retry」",
+      "source": "figma-inventory"
+    },
+    {
+      "arrow": "3337-1876",
+      "node": "3337-1876",
+      "edge": "pm-flow: panel_ready · flow1 in-panel 「Generate」 → custom_in_row · flow1 generating (green label 「generate」; drawn head-first)",
+      "expected": "Generation starts in place with 「Applying your new hair color...」",
+      "source": "figma-inventory"
+    },
+    {
+      "arrow": "3337-1879",
+      "node": "3337-1879",
+      "edge": "pm-flow: panel_ready · flow1 ⌄ collapse → collapsed_applied · flow1 (pink label 「⌄ 收合 ＝ apply」; drawn head-first)",
+      "expected": "The panel closes, Custom becomes the selected cell and the outer Generate is enabled",
+      "source": "figma-inventory"
+    }
+  ],
+  "count": 5
+}

@@ -1,0 +1,24 @@
+{
+  "feature": "phd/ai-replace-ref-image-ux",
+  "folder": "2026-11-11",
+  "received_at": "2026-11-11T08:49:54.001Z",
+  "spec_set_sha256": "5e1260a7d7da18cdcb63f0da52a3f6947ec1c180164ee6648a39f4bbfa84f4a7",
+  "files": [
+    {
+      "name": "AI Replace ref image UX - PM Figma 14451-2196.md",
+      "sha256": "4137483762c41ab115b6eb5e57488f36963edaf46f788a0eb45b5f6295b7813a",
+      "bytes": 1615
+    }
+  ],
+  "source_priority": [
+    "design",
+    "pm"
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/NacadNfWFAGglU880DupER/UX-Issues?node-id=14451-2196",
+    "design": null,
+    "pm_section": "14451:2197 heading 14565:1590"
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-11): the spec file is a text snapshot of this feature’s part of the PM page 「26 11E UIUX Revamp」 (UX-Issues), read with get_metadata and a section screenshot; use_figma (the inventory read) was refused for qa1 (Full seat). No PDF, no Design or MX file."
+}

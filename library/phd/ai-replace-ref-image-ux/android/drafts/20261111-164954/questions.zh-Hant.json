@@ -1,0 +1,5 @@
+{
+  "Q-1": "「badge 都可以拿掉了」沒有說是哪些 badge：「Upload a reference image」/「Describe with text」上的點數或「NEW」標籤，還是整個 AI Replace 流程的 badge。假設：「Choose how to replace the selected area」兩個選項上都不能有任何 badge，其他地方的 badge 不檢查。",
+  "Q-2": "規格沒說從 back 進到 photo picker 後再離開 picker 會去哪裡（back 現在會開 picker，picker 自己的返回可能繞回來或直接離開流程）。假設：沒選照片就離開 picker，會回到 reference image 頁，原本的參考圖還在（跟按右下角替換鈕一樣）；案例會記錄實際結果。",
+  "Q-3": "「Generate」上的「-6」只出現在 mockup（iPhone 畫面），而 iOS 20.15 的 AI Replace 文字路徑是 2 點（KP-022）。假設：照圖上的 6 點（規格上的點數有約束力），請 PM 確認用參考圖的價格。"
+}

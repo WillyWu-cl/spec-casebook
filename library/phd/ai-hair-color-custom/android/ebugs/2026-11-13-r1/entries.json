@@ -1,0 +1,107 @@
+{
+ "ISS-HCC-01": {
+  "cases": [
+   "TC-005",
+   "TC-012",
+   "TC-015"
+  ],
+  "why": "No slanted-face warning: a 45° tilted face opens the colour page at once"
+ },
+ "ISS-HCC-02": {
+  "cases": [
+   "TC-009"
+  ],
+  "why": "No-face dialog copy differs from the spec (「A face is required」)"
+ },
+ "ISS-HCC-03": {
+  "cases": [
+   "TC-019",
+   "TC-020"
+  ],
+  "why": "Custom panel: ︽ key instead of ⌄, the ✕ ↩ ↪ ✓ row stays under it, square top corners"
+ },
+ "ISS-HCC-04": {
+  "cases": [
+   "TC-021"
+  ],
+  "why": "Colour rows are enabled before a style is chosen"
+ },
+ "ISS-HCC-05": {
+  "cases": [
+   "TC-026",
+   "TC-027"
+  ],
+  "why": "Two-colour style with Base only: Generate is enabled and the 「both required」 text never shows"
+ },
+ "ISS-HCC-06": {
+  "cases": [
+   "TC-031",
+   "TC-035"
+  ],
+  "why": "Colour palette has no eyedropper key"
+ },
+ "ISS-HCC-07": {
+  "cases": [
+   "TC-086"
+  ],
+  "why": "System Back in the palette closes the whole room, not just the palette"
+ },
+ "ISS-HCC-08": {
+  "cases": [
+   "TC-038",
+   "TC-040",
+   "TC-041",
+   "TC-042"
+  ],
+  "why": "Collapsing the panel never selects Custom; the outer Generate makes the Soft Black template"
+ },
+ "ISS-HCC-09": {
+  "cases": [
+   "TC-039"
+  ],
+  "why": "Tapping the photo above the Custom panel does not collapse it"
+ },
+ "ISS-HCC-10": {
+  "cases": [
+   "TC-045",
+   "TC-046"
+  ],
+  "why": "Custom wait shows only a scan bar: no 「Applying your new hair color...」 text"
+ },
+ "ISS-HCC-11": {
+  "cases": [
+   "TC-047",
+   "TC-048",
+   "TC-049",
+   "TC-053"
+  ],
+  "why": "No Intensity bar on a Custom result (panel open or collapsed)"
+ },
+ "ISS-HCC-12": {
+  "cases": [
+   "TC-057"
+  ],
+  "why": "No one-time 「My AI Artwork keeps the 100% version」 dialog on the first result"
+ },
+ "ISS-HCC-13": {
+  "cases": [
+   "TC-054"
+  ],
+  "why": "Switching to a template and back to Custom does not recall the Custom result"
+ },
+ "ISS-HCC-14": {
+  "cases": [
+   "TC-079",
+   "TC-088",
+   "O-1",
+   "O-3"
+  ],
+  "why": "✕ and system Back on a result ask 「Discard changes?」 and land in the Edit Room, not the Launcher"
+ },
+ "ISS-HCC-15": {
+  "cases": [
+   "O-9"
+  ],
+  "why": "Credit chip keeps the charged balance after a refunded generation"
+ }
+}

@@ -1,0 +1,17 @@
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註,變更,變更原因
+TC-001,選擇替換方式,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件,點「Next」,開啟「Choose how to replace the selected area」選單，裡面有「Upload a reference image」和「Describe with text」，兩個選項都沒有標籤（沒有點數費用、「NEW」或其他標記）,P3,"R-001, R-002",Q-1,新增,新表格（REQ-001）
+TC-002,選擇替換方式,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已開啟「Choose how to replace the selected area」選單,"1. 點「Upload a reference image」
+2. 在提示選單點「Continue」
+3. 在「Recents」選一張照片","第 1 步顯示「For the best results, follow this advice:」，有「Continue」和「Don't show again」；第 2 步開啟照片選擇頁（「Recents」 / 「Stock」）；第 3 步開啟參考圖頁面，「Replace Area」下是已遮罩的照片，「Reference Image」下是剛選的照片",P1,"R-003, R-010",不要勾選「Don't show again」：其他列需要照常看到提示選單,新增,新表格（REQ-001）
+TC-003,參考圖頁面,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）,什麼都不輸入，直接看「Generate」,「Generate」可以按，並顯示 6 點（「-6」）,P1,"R-011, R-012",Q-3：價格依 PM mockup（具約束力）,新增,新表格（REQ-001）
+TC-004,參考圖頁面,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）,"1. 點「Generate」
+2. 等待結果",遮罩範圍依參考圖被替換，並顯示結果；點數餘額減少的數字等於「Generate」上顯示的價格,P1,"R-013, R-012",會產生一次,新增,新表格（REQ-001）
+TC-005,參考圖頁面,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）；先記下點數餘額,"1. 快速連點「Generate」三次
+2. 等待結果",只會啟動一次作業：只有一個結果，點數餘額只扣一次「Generate」上顯示的價格,P2,R-014,KP-019；會產生一次,新增,新表格（REQ-001）
+TC-006,返回照片選擇頁,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）,點左上角的返回按鈕,開啟參考圖的照片選擇頁（「Recents」 / 「Stock」），和點替換按鈕開啟的是同一個選擇頁；不會離開 AI Replace，遮罩選單也不會再跳出,P1,"R-020, R-030",,新增,新表格（REQ-001）
+TC-007,返回照片選擇頁,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）,點「Reference Image」右下角的替換按鈕,開啟的參考圖照片選擇頁和點返回按鈕時相同（TC-006）,P2,R-021,,新增,新表格（REQ-001）
+TC-008,返回照片選擇頁,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）；已點左上角返回，目前停在參考圖照片選擇頁,選另一張照片,回到參考圖頁面，「Reference Image」下是新選的照片，「Replace Area」下仍是同一個遮罩；「Generate」可以按,P2,"R-022, R-010, R-011",,新增,新表格（REQ-001）
+TC-009,返回照片選擇頁,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）,按一次 Android 系統的返回鍵,開啟參考圖照片選擇頁，和點返回按鈕時相同（TC-006）,P2,R-023,,新增,新表格（REQ-001）
+TC-010,返回照片選擇頁,Android 手機，已登入 PhotoDirector（受測版本），至少 20 點；在 AI Replace 開啟一張有明確物件的照片，並已用遮罩塗抹該物件；已完成「Next」 › 「Upload a reference image」 › 「Continue」並選好參考照片，目前停在參考圖頁面（「Replace Area」 / 「Reference Image」）；已點左上角返回，目前停在參考圖照片選擇頁,"1. 不選照片，直接離開選擇頁（用它的返回按鈕）
+2. 再點左上角返回，重新開啟選擇頁
+3. 按 Android 系統返回鍵",第 1 步和第 3 步都會回到參考圖頁面，沿用原本的參考圖，兩個區塊都有圖片，「Generate」可以按（記錄各自回到哪裡：Q-2）,P2,"R-024, R-010, R-011",Q-2,新增,新表格（REQ-001）

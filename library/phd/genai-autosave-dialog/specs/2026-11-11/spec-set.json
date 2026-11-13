@@ -1,0 +1,24 @@
+{
+  "feature": "phd/genai-autosave-dialog",
+  "folder": "2026-11-11",
+  "received_at": "2026-11-11T08:49:54.186Z",
+  "spec_set_sha256": "3f2348db64bb50dd107feb36a77018eb9481d1c7b704137b35c0d3f91877b84a",
+  "files": [
+    {
+      "name": "GenAI auto-save dialog - PM Figma 14451-2196.md",
+      "sha256": "581a5160a62c57703655ba96b9b41817b4be9b32a87e6e55641fbe0e9ba282f4",
+      "bytes": 2588
+    }
+  ],
+  "source_priority": [
+    "design",
+    "pm"
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/NacadNfWFAGglU880DupER/UX-Issues?node-id=14451-2196",
+    "design": null,
+    "pm_section": "14451:2197 heading 14628:1320"
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-11): the spec file is a text snapshot of this feature’s part of the PM page 「26 11E UIUX Revamp」 (UX-Issues), read with get_metadata and a section screenshot; use_figma (the inventory read) was refused for qa1 (Full seat). No PDF, no Design or MX file."
+}

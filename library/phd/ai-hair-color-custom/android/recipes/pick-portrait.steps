@@ -1,0 +1,13 @@
+# Open AI Hair Color from the Launcher and pick hc_portrait_4x5 (open-hair-color.steps plus the photo; do cannot nest).
+# Starts: the Launcher. Ends: the colour page with hc_portrait_4x5 (Solid tab).
+# hc_portrait_4x5 is the 6th photo of the HairColor album (row 2, column 3) while hc_tilted45 sorts first (R1-b).
+# Written 2026-11-13 on 20.19.0 (90201900), SM-S9110 (pixels). Charges nothing.
+lbl "AI Photos"
+wait 2
+lbl "AI Hair Color"
+wait 3
+tapif Continue
+wait 2
+tap 884 913
+wait 5
+expect Generate

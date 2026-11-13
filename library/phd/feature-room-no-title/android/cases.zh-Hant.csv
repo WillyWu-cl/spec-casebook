@@ -1,0 +1,12 @@
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註,變更,變更原因
+TC-001,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher,開啟 AI Try-On（AI Photos ›「AI Try-On」）,頂端列不顯示「AI Try-On」標題（完全沒有功能頁名稱）；左側仍有返回，右側仍有點數按鈕和 History，位置與之前相同（Q-1）；下方功能頁內容沒有變動,P2,"R-001, R-002",,新增,新增表格（REQ-001）
+TC-002,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher,開啟 Collage（Launcher ›「Collage」）,頂端列不顯示「Collage」標題（完全沒有功能頁名稱）；左側仍有返回，右側仍有點數按鈕和 History，位置與之前相同（Q-1）；右側的搜尋和 ☰ 按鈕仍在；下方功能頁內容沒有變動,P2,"R-001, R-002",,新增,新增表格（REQ-001）
+TC-003,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher,開啟 AI Art（AI Photos ›「AI Art」）,頂端列不顯示「AI Art」標題（完全沒有功能頁名稱）；左側仍有返回，右側仍有點數按鈕和 History，位置與之前相同（Q-1）；下方功能頁內容沒有變動,P2,"R-001, R-002",,新增,新增表格（REQ-001）
+TC-004,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher,開啟 AI Hairstyle（AI Photos ›「AI Hairstyle」）,頂端列不顯示「AI Hairstyle」標題（完全沒有功能頁名稱）；左側仍有返回，右側仍有點數按鈕和 History，位置與之前相同（Q-1）；下方功能頁內容沒有變動,P2,"R-001, R-002",,新增,新增表格（REQ-001）
+TC-005,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher,開啟 AI Group Shot（Launcher ›「AI Group Shot」）,頂端列不顯示「AI Group Shot」標題（完全沒有功能頁名稱）；左側仍有返回，右側仍有點數按鈕和 History，位置與之前相同（Q-1）；下方功能頁內容沒有變動,P2,"R-001, R-002",,新增,新增表格（REQ-001）
+TC-006,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher,開啟 AI Headshot（AI Photos ›「AI Headshot」）,頂端列不顯示「AI Headshot」標題（完全沒有功能頁名稱）；左側仍有返回，右側仍有點數按鈕和 History，位置與之前相同（Q-1）；下方功能頁內容沒有變動,P2,"R-001, R-002",,新增,新增表格（REQ-001）
+TC-007,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher,開啟 Image to Video（AI Videos ›「Image to Video」），停在「Custom」分頁,頂端列不顯示「Image to Video」標題；左側仍有返回，右側仍有點數按鈕和 History，位置與之前相同（Q-1）；「Custom」/「Templates」分頁和下方的 Custom 設定沒有變動,P2,"R-001, R-002",Q-3,新增,新增表格（REQ-001）
+TC-008,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher；已開啟 Image to Video（AI Videos ›「Image to Video」）,點「Templates」分頁,切到「Templates」後，頂端列仍不顯示「Image to Video」標題；左側仍有返回，右側仍有點數按鈕和 History，位置與之前相同（Q-1）,P2,"R-001, R-002",Q-3,新增,新增表格（REQ-001）
+TC-009,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher；已開啟 Image to Video 的「Templates」分頁,在某一列範本點「View all >」（See All）,開啟範本「See All」頁，頂端列沒有「Image To Video」標題；左側仍有返回，下方的「All」/「Female」/「Male」分頁和分類沒有變動,P2,"R-001, R-002",,新增,新增表格（REQ-001）
+TC-010,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher；已開啟 AI Art（AI Photos ›「AI Art」）；先記下帳號目前的點數餘額,點頂端列的點數按鈕,點數按鈕顯示帳號的餘額，點下去會開啟 Buy Credit 頁,P2,R-003,KP-020,新增,新增表格（REQ-001）
+TC-011,功能頁頂端列,Android 手機，PhotoDirector（受測版本）已登入，停在 Launcher；已開啟 AI Hairstyle（AI Photos ›「AI Hairstyle」）；至少已儲存一筆 AI Hairstyle 作品,點 History（右上角）,開啟 My AI Artwork，並選取「AI Hairstyle」分頁,P2,R-004,KP-026,新增,新增表格（REQ-001）

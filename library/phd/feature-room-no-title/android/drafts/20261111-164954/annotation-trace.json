@@ -1,0 +1,20 @@
+{
+  "spec_folder": "specs/2026-11-11",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-room-titles@5174,5921",
+      "board": "pm-room-titles",
+      "x": 5174,
+      "y": 5921,
+      "low": false,
+      "text": "【Requirement】移除 Room top bar 上的 room title / ➊ 需要處理的 feature room AI Try-On Collage AI Art AI Hairstyle AI Group Shot AI Headshot Image to Video Image to Video See All 頁面 (AI Face Swap 於 10/E 前 in app 移除，無須調整)",
+      "trace": "R-001, R-005"
+    }
+  ]
+}

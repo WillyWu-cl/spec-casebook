@@ -1,0 +1,10 @@
+# ISS-HCC-08 outer Generate after collapse is a template generation
+# PhotoDirector Android 20.19.0 (90201900), Samsung SM-S9110 / Android 16, logcat of the app captured by the casebook run
+# Lines about generations, failures and the credit balance (shown only when it changes); tokens and IDs dropped.
+
+## TC-040 (2026-11-13 10:44:40–10:45:05)
+2026-11-13 10:44:47.565 NativeDump: doClairFaceDetect2 faceNum 1
+2026-11-13 10:44:47.568 [PHD-A][Mixpanel]: GenAI_Feature_Generate:{"feature":"ai_hair_color","is_customize":"FALSE","style":"Style_6001_Solid-Soft-Black_ChatGPT","from":"AIPhoto","free_quantity":"false"}
+2026-11-13 10:44:47.890 CreditSystem: totalRemain=1988
+2026-11-13 10:44:49.661 CreditSystem: totalRemain=1982
+2026-11-13 10:45:03.703 [PHD-A][Mixpanel]: AIHairColor_Generate_Status:{"generate_status":"succeed","style":"Style_6001_Solid-Soft-Black_ChatGPT"}

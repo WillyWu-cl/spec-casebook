@@ -1,0 +1,17 @@
+{
+  "feature": "phd/ai-replace-ref-image-ux",
+  "platform": "android",
+  "title": "AI Replace: Reference image UX",
+  "draft": "20261111-164954",
+  "created_at": "2026-11-11T08:49:54.003Z",
+  "based_on_version": null,
+  "spec_folder": "specs/2026-11-11",
+  "spec_files": [
+    {
+      "name": "AI Replace ref image UX - PM Figma 14451-2196.md",
+      "sha256": "4137483762c41ab115b6eb5e57488f36963edaf46f788a0eb45b5f6295b7813a",
+      "bytes": 1615
+    }
+  ],
+  "spec_set_sha256": "5e1260a7d7da18cdcb63f0da52a3f6947ec1c180164ee6648a39f4bbfa84f4a7"
+}

@@ -1,0 +1,12 @@
+# Dedupe — AI Hair Color Custom R1 (Android), 2026-11-13, read-only
+# ecl_query.py dedupe upload/bodies.json --product "PhotoDirector Mobile for Android" (product name unconfirmed, library/phd/product.json)
+# plus ecl_query.py bugs --text "AI_Hair_Color" / "haircolor" / "Hair Color" on the same product. Android pool only (dedupe per OS).
+# Result: no same-OS duplicate; every finding stays a new entry. Pool seen (all 20.18.0):
+PHA262026P0005 Close     AI_Hair_Color: generated image not applied to Edit Room — not related to ISS-HCC-14 (dedupe matched only "edit room")
+PHA262026P0008 Close     AI_Hair_Color: "An Error Has Occurred" after Generate — not related
+PHA262026P0029 Assigned  [UX]Edit: hair color hint bubble truncated — not related
+PHA262026P0031 PropWF    [Quality] face line changes after hair colour, slider — not related
+PHA262026P0035 Close     long template names 2 lines — not related
+PHA262026P0039 Assigned  [UX] slanted face photo shows "No face detected" — related to ISS-HCC-01 (named in its Note), not a duplicate: 20.19.0 shows no dialog at all
+PHA262026P0047 Assigned  preview resets after switching to an ungenerated template — related to ISS-HCC-13 (named in its Note), not a duplicate
+PHA262026P0048 Close     long template names truncated in long languages — not related

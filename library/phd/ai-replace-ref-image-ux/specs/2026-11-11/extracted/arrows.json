@@ -1,0 +1,10 @@
+{
+ "arrows": [
+  {
+   "arrow": "pm-replace-flow-a1",
+   "node": "pm-replace-flow-a1",
+   "edge": "Reference image page: back → the reference image photo picker",
+   "expected": "Back on the page with 「Replace Area」 and 「Reference Image」 opens the reference image photo picker, the same as the replace button at the bottom right of the reference image (note 14565:1576, not a drawn arrow)"
+  }
+ ]
+}

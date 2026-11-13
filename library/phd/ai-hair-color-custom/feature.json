@@ -1,0 +1,9 @@
+{
+  "logs": {
+    "files": "logcat-live[.]txt$",
+    "failure": "Exception|error|Error|failed|FAIL",
+    "toast": "Toast",
+    "credit": "[Cc]redit",
+    "timing": "AIHairColor|ai_hair_color|PANEL_AI_HAIRCOLOR"
+  }
+}

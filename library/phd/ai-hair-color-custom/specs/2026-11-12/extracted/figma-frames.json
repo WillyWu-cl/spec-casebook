@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-12",
+  "how": "Figma-only spec set (user, 2026-11-04: a Figma link is read directly, no PDF). PM file AI-Hair (vhIp15PMJcwOcWJ6E9Q4JE), page 3287:89 「26 11E AI Hair Color Custom」 listed with get_metadata (figma-pm, qa1): page-level Title / Diff line and six sections (Spec - Flow 3287:93, Spec - UI 3287:94, CMS · Custom Style 3287:95, Deeplink 3287:96, Draft / TBD 3287:97, Spec - 進房檢查 & Photo Picker（11/25 新增）3370:1666), read as regions in one inventory call (groups p-a and p-ui). Two hidden frames (M4 custom panel (DS), M5 collapsed room (DS)) are not drawn and not read. The page cites rules of the 10/E Hair Color page (D1-xx, D2-01, D3-xx); those rule texts were read from page 3026:89 「26 10E AI Hair Color v2」 (texts tagged [D...] only, saved in hair-color-10e-rules.json) as linked content. No Design file was supplied.",
+  "pm_checked_at": "2026-11-12",
+  "files": {
+    "pm": {
+      "fileKey": "vhIp15PMJcwOcWJ6E9Q4JE",
+      "page": "3287:89",
+      "url": "https://www.figma.com/design/vhIp15PMJcwOcWJ6E9Q4JE/AI-Hair?node-id=3287-89",
+      "account": "qa1@cyberlink.com (Dev seat, PM Workspace)"
+    }
+  },
+  "frames": [
+    {
+      "label": "11/25 NEW · 進房驗臉（歪頭 / 臉太小）",
+      "node": "3370:1666",
+      "in_pdf": false,
+      "read": "pm-face-check"
+    }
+  ]
+}

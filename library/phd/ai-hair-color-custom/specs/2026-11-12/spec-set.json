@@ -1,0 +1,23 @@
+{
+  "feature": "phd/ai-hair-color-custom",
+  "folder": "2026-11-12",
+  "received_at": "2026-11-12T02:08:54.015Z",
+  "spec_set_sha256": "f37188d91b9f6ace99ed9e0c30065ff980fc5f25a4ba75456f7ef08c3704813d",
+  "files": [
+    {
+      "name": "AI Hair Color Custom - PM Figma 3287-89.md",
+      "sha256": "e7cfac53e054c0d10afd04a824aa4f04d7af9bfceea981b3d925aa00761b2f30",
+      "bytes": 20750
+    }
+  ],
+  "source_priority": [
+    "design",
+    "pm"
+  ],
+  "figma": {
+    "pm": "https://www.figma.com/design/vhIp15PMJcwOcWJ6E9Q4JE/AI-Hair?node-id=3287-89",
+    "design": null
+  },
+  "figma_only": true,
+  "note": "Figma-only spec set (user, 2026-11-04): the spec file is the text snapshot of the PM Figma page 3287:89 written from the inventory read; no PDF export, no Design file supplied."
+}

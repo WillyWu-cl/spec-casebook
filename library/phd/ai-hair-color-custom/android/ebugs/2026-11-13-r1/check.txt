@@ -1,0 +1,4 @@
+⚠ WARN  AI-Hair-Color-Custom-R1-02  Severity 4 is very rare in this pool (1 of 175 in the Sept 2026 export)
+
+15 bug(s) checked — 0 error(s), 1 warning(s)
+Format OK — clear to file.

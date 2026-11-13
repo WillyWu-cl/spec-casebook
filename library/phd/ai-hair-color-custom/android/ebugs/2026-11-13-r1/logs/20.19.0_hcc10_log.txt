@@ -1,0 +1,10 @@
+# ISS-HCC-10 Custom generation start and end
+# PhotoDirector Android 20.19.0 (90201900), Samsung SM-S9110 / Android 16, logcat of the app captured by the casebook run
+# Lines about generations, failures and the credit balance (shown only when it changes); tokens and IDs dropped.
+
+## TC-045 / TC-046 (2026-11-13 10:42:20–10:43:14)
+2026-11-13 10:42:22.133 NativeDump: doClairFaceDetect2 faceNum 1
+2026-11-13 10:42:22.136 [PHD-A][Mixpanel]: GenAI_Feature_Generate:{"feature":"ai_hair_color","is_customize":"TRUE","style":"Style_010_Custom_HairColor_gpt-image-2.5-sunburst","from":"AIPhoto","free_quantity":"false"}
+2026-11-13 10:42:22.441 CreditSystem: totalRemain=1994
+2026-11-13 10:42:24.561 CreditSystem: totalRemain=1988
+2026-11-13 10:43:13.632 [PHD-A][Mixpanel]: AIHairColor_Generate_Status:{"generate_status":"succeed","style":"Style_010_Custom_HairColor_gpt-image-2.5-sunburst"}

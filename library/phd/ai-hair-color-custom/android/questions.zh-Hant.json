@@ -1,0 +1,17 @@
+{
+  "Q-1": "「Custom」在 Multicolor 分頁的色票列也是第一顆嗎？規格只說它是整條色票列的第一顆，但只畫了 Solid 分頁。假設：兩個分頁都排第一。",
+  "Q-2": "Custom 格子長什麼樣子？註解說還沒設定時是漸層底加＋，套用後顯示用戶選的兩個顏色；但流程圖和 UI 圖的每張樣稿都畫成鉛筆圖示。假設：以註解為準。",
+  "Q-3": "在 solid_color 和雙色 style 之間切換時，已選的顏色怎麼處理（Highlight 會保留嗎？Base 會保留嗎？）規格沒寫。假設：只有 Highlight 那一列隱藏或出現，其餘由案例記錄實際行為。",
+  "Q-4": "流程註解說在 panel 內按 Generate 的結果見 Spec - UI 的「result_in_panel」，但 Spec - UI 沒有這張圖。假設：照註解文字（結果顯示在上方、Generate 上方出現 44pt Intensity 列且預設 100%、按鈕變「Retry」）。",
+  "Q-5": "還沒選 style 或顏色沒選齊就收合 panel 時會怎樣（Custom 還會被選取嗎？外層 Generate 能按嗎？）規格只說收合＝套用。假設：先不寫案例，待回覆。",
+  "Q-6": "上線第一天有哪些 Custom style、哪些是 premium（Draft / TBD Q1；fallback：11 種全上、一半 premium）？premium style 的縮圖會像 10/E 色票一樣掛 PRO 圖示嗎？假設：照 fallback，PRO 圖示比照 10/E。",
+  "Q-7": "10/E 的一次性免費試用（只限 free 色）適用於 Custom 嗎？哪些 style 可以用？規格沒寫。假設：回覆前不寫案例。",
+  "Q-8": "Intro Demo 頁什麼時候出現？這一頁的流程有畫它，但 10/E 頁寫第一次進房不跳 demo video、直接進顏色頁（D1-08）。假設：以這份較新的頁面為準，第一次進入時出現。",
+  "Q-9": "臉太小的警告字串沒有畫出來（只寫「沿用 Hair Volume / AI Hairstyle」）。假設：用 AI Hairstyle 的字串，跑測時記錄實際文字。",
+  "Q-10": "安撫字串只給了第一段（「Applying your new hair color...」），後面幾段的文字和時間點都沒給。假設：案例只檢查等待期間文字會分段變化。",
+  "Q-11": "deeplink 格式還沒定（Draft / TBD Q2；fallback：mode=custom&style_guid=<guid>）。假設：照 fallback；deeplink 案例等 RD 給連結再跑。",
+  "Q-12": "原地等 42–48 秒可以接受嗎（ANR、在背景被系統殺掉；Draft / TBD Q3）？fallback：照 10/E 的 lifecycle，配分段文案。",
+  "Q-13": "CMS type 名稱和欄位待 CMS 窗口確認（Draft / TBD Q4；fallback：PhDM_AIHairColor_CustomStyle）。",
+  "Q-14": "Android 在 Custom panel、臉部警告視窗和生成中按系統返回鍵的行為沒有定義。假設：由案例記錄實際行為。",
+  "Q-15": "沒有提供 Design 檔，所有案例都依 PM 頁面撰寫（PM-only），UI 字串也是 PM 版本；Design 到了再更新案例。"
+}

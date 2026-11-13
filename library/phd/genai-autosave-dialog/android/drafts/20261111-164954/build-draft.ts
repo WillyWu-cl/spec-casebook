@@ -1,0 +1,48 @@
+// Builds draft.csv for phd/genai-autosave-dialog (android). Run: node build-draft.ts
+import { writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const here = dirname(fileURLToPath(import.meta.url));
+const base = 'Android phone, PhotoDirector (build under test) signed in, enough credits for the generations below';
+const reset = `${base}; Reset (part of this case): PhotoDirector data cleared (pm clear, logs pulled first) and signed in again, so the auto-save dialog has not shown on this install`;
+const seen = `${base}; the auto-save dialog 「Results Are Saved Automatically」 has already shown once on this install (any of TC-001 – TC-010)`;
+const NEW = '「Your generated results are saved in My AI Artwork for 1 year. Download them to keep them permanently.」';
+const dialog = `The dialog 「Results Are Saved Automatically」 opens with the text ${NEW} and only an 「Ok」 button (no 「Don't show again」)`;
+
+type Row = [id: string, section: string, pre: string, action: string, expected: string, prio: string, ref: string, notes?: string];
+const S1 = 'Dialog content', S2 = 'Where the dialog shows', S3 = 'Shown once', S4 = 'Separate prompts';
+const rows: Row[] = [
+  ['TC-001', S1, `${reset} (or right after TC-003); an AI Headshot result page open with the generation finished`, 'Tap Home (回首頁) on the result page',
+    dialog, 'P1', 'R-001, R-002, R-003, R-010'],
+  ['TC-002', S1, 'Right after TC-001: the auto-save dialog open on the AI Headshot result page', 'Tap 「Ok」',
+    'The dialog closes and the app goes on to the Launcher (record where it lands: Q-1)', 'P2', 'R-003', 'Q-1'],
+  ['TC-003', S2, reset, '1. In AI Headshot, start a generation and tap Home on the result page while it is still generating\n2. Repeat in AI Try On\n3. Repeat in AI Art',
+    'No auto-save dialog shows in any of the three while generating (if one shows, record which: it uses up the once-only record)', 'P3', 'R-016', 'Run first, right after the reset, before TC-001'],
+  ['TC-004', S2, `${reset}; an AI Try On result page open with the generation finished`, 'Tap Home on the result page',
+    dialog, 'P2', 'R-011, R-001, R-002'],
+  ['TC-005', S2, `${reset}; an Image Fusion result page open with the generation finished (Q-4)`, 'Tap Back on the result page',
+    'No auto-save dialog shows (only Home shows it in Image Fusion)', 'P3', 'R-013', 'Run before TC-006 behind the same reset. Q-4'],
+  ['TC-006', S2, 'Right after TC-005: an Image Fusion result page open again with a finished result', 'Tap Home on the result page',
+    dialog, 'P2', 'R-013, R-001, R-002', 'Q-4'],
+  ['TC-007', S2, `${reset}; AI Glow Up open with a generation running`, 'Press Back',
+    'The feature does not let the user leave while generating, and no auto-save dialog shows', 'P3', 'R-014', 'Run before TC-008 behind the same reset'],
+  ['TC-008', S2, 'Right after TC-007: the AI Glow Up generation finished, images shown', 'Press Back to leave AI Glow Up',
+    dialog, 'P2', 'R-014, R-001, R-002'],
+  ['TC-009', S3, 'Right after TC-002 (the dialog has shown once, in AI Headshot)', '1. Generate in AI Try On\n2. Tap Home on its result page\n3. Generate in AI Art\n4. Tap Home on its result page',
+    'No auto-save dialog shows in AI Try On or AI Art: one showing in any feature covers all six', 'P1', 'R-020'],
+  ['TC-010', S3, `${reset}; an AI Art result page open with the generation finished`, '1. Tap Home on the result page\n2. With the dialog open, close PhotoDirector from Android Recents (do not tap 「Ok」)\n3. Open PhotoDirector again\n4. Generate in AI Art\n5. Tap Home on its result page',
+    `Step 1: ${dialog}; step 5: no dialog, because it counted as shown when it appeared`, 'P2', 'R-021, R-012, R-001, R-002'],
+  ['TC-011', S4, `${seen}; a paid account (AI Exposure is paid-only); a way to make the AI Exposure download fail (DOWNLOAD_FAILED)`, 'Make the AI Exposure result download fail',
+    `The download-failed prompt opens with the title 「Results Are Saved Automatically」 and the text ${NEW} (Q-2), even though the shared dialog has already shown`, 'P3', 'R-030', 'Needs a failure fixture (parked). Q-2'],
+  ['TC-012', S4, `${seen}; an AI Background generation running`, '1. Turn Wi-Fi off while the result downloads\n2. Wait for the error',
+    `The AI Background prompt opens with 「Results Are Saved Automatically」 and ${NEW} (Q-2), and the task can still be found in My AI Artwork`, 'P3', 'R-030, R-032', 'Wi-Fi may be toggled once the phone is on USB (AGENTS.md); may need RD\'s failure fixture. Q-2'],
+  ['TC-013', S4, `${seen}; a paid account; AI Exposure with a result generated but not applied; its close reminder not turned off with 「Don't show again」`, 'Tap close (✕) in AI Exposure',
+    'The AI Exposure close reminder shows with 「Ok」, 「Cancel」 and 「Don\'t show again」, even though the shared auto-save dialog has already shown', 'P3', 'R-031'],
+];
+
+const q = (s = '') => /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+const head = ['ID', 'Section', 'Precondition', 'Action', 'Expected Result', 'Priority', 'Spec Ref', 'Notes', 'Change', 'Change Reason'];
+const lines = [head.join(','), ...rows.map(r => [...r.slice(0, 7), r[7] ?? '', 'new', 'New table (REQ-001)'].map(v => q(v as string)).join(','))];
+writeFileSync(join(here, 'draft.csv'), '﻿' + lines.join('\r\n') + '\r\n');
+console.log(`draft.csv: ${rows.length} rows`);

@@ -1,0 +1,14 @@
+# From the AI Hair Color photo picker, pick the Pexels stock portrait (woman in a knitted hat, candle behind) used
+# for generations: the HairColor fixtures (hc_*, Shutterstock-watermarked) are rejected by the Custom generation
+# with 「Please Try Different Content」 (CONTENT_REJECTED, R1-d, credits refunded).
+# Starts: the picker (after open-hair-color.steps). Ends: the colour page with that photo (Solid tab).
+# Pexels search 「woman portrait」: the photo is the 2nd one in the right column. Charges nothing.
+# Written 2026-11-13 on 20.19.0 (90201900), SM-S9110 (pixels).
+lbl Stock
+wait 4
+tap 755 462
+wait 2
+tap 500 618
+wait 1
+type woman portrait
+# Enter (search) is sent with adb: adb -s $CASEBOOK_SERIAL shell input keyevent 66, then: do pick-pexels-portrait-2.steps

@@ -1,0 +1,1 @@
+verify_ebug_drafts.py not run: its _find_idx() loops forever on Windows (while d!='/' never reaches '/' on C:\); check_ebug_format.py passed (0 errors).

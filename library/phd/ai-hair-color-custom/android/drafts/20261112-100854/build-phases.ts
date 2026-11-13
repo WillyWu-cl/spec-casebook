@@ -1,0 +1,45 @@
+// Builds phases.json for the first AI Hair Color Custom run on Android (round R1, 2026-11-13).
+// Usage: node library/phd/ai-hair-color-custom/android/drafts/20261112-100854/build-phases.ts
+// User, 2026-11-13: test the installed build 20.19.0 (90201900); the account already has credits, so the round runs
+// everything together (no KP-104 reset at round start). The Intro Demo first (one-way state), then entry checks, the
+// panel with no spending, then generations; the Free / VIP low-balance rows need the KP-105 reset and are held.
+import { writeFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const dir = dirname(fileURLToPath(import.meta.url));
+const phases = [
+  { id: 'R1', name: 'First full run of v1 (build 20.19.0 / 90201900)', round: true,
+    note: 'Account with credits (user, 2026-11-13); read the credit chip before and after every generation (6 credits each, R-040).',
+    segments: [
+      { id: 'R1-a', name: 'Intro Demo and its Back', note: 'Before anything else opens AI Hair Color. If the Intro Demo never shows (feature already opened on this phone), record the rows Blocked --as test-data: app data may not be cleared (KP-105). TC-004 last (one-way).',
+        cases: ['TC-001', 'TC-090', 'TC-003', 'TC-002', 'TC-004'] },
+      { id: 'R1-b', name: 'Entry checks', note: 'Photos in /sdcard/Pictures/HairColor (fixtures.md).',
+        cases: ['TC-005', 'TC-006', 'TC-087', 'TC-007', 'TC-008', 'TC-009', 'TC-010', 'TC-011', 'TC-012', 'TC-013', 'TC-014', 'TC-015', 'TC-016'] },
+      { id: 'R1-c', name: 'Custom cell, panel, style, palette and collapse (no credits)', note: 'hc_portrait_4x5.jpg. Nothing generated except where a row taps Generate with nothing chosen (TC-021).',
+        cases: ['TC-017', 'TC-018', 'TC-019', 'TC-020', 'TC-030', 'TC-022', 'TC-021', 'TC-023', 'TC-024', 'TC-025', 'TC-026', 'TC-027', 'TC-028', 'TC-029',
+          'TC-031', 'TC-032', 'TC-033', 'TC-034', 'TC-035', 'TC-086', 'TC-038', 'TC-039', 'TC-041', 'TC-042', 'TC-043', 'TC-085', 'TC-077'] },
+      { id: 'R1-d', name: 'Generate, wait and result (credits)', note: 'First result of this install checks the Intensity notice (TC-057) on the TC-045 generation. About 10 generations.',
+        cases: ['TC-045', 'TC-057', 'TC-046', 'TC-047', 'TC-050', 'TC-040', 'TC-048', 'TC-053', 'TC-049', 'TC-054', 'TC-055', 'TC-056', 'TC-079', 'TC-088', 'TC-089',
+          'TC-078', 'TC-051', 'TC-052', 'TC-036', 'TC-037'] },
+      { id: 'R1-e', name: 'Every style generated (credits)', note: 'One generation per style, 11 in all; compare each look with its style name.',
+        cases: ['TC-062', 'TC-063', 'TC-061', 'TC-060', 'TC-058', 'TC-059', 'TC-064', 'TC-065', 'TC-066', 'TC-067', 'TC-068'] },
+      { id: 'R1-f', name: 'Low balance, Free and VIP', note: 'Run as found when the balance is already under 6; otherwise needs the KP-105 reset (the user\'s go-ahead, it drops the credits).',
+        cases: ['TC-073', 'TC-070', 'TC-069', 'TC-071'] },
+      { id: 'R1-x', name: 'Parked fixtures', note: 'Recorded Blocked at init from `unavailable`.',
+        cases: ['TC-075', 'TC-076', 'TC-081', 'TC-082', 'TC-084'] },
+    ] },
+];
+const needs: Record<string, string[]> = {
+  'TC-075': ['failure-fixture'], 'TC-076': ['failure-fixture'],
+  'TC-081': ['deeplink'], 'TC-082': ['deeplink'], 'TC-084': ['cms'],
+};
+const unavailable: Record<string, string> = {
+  'failure-fixture': 'observability: no fault switch forces a server failure on PhotoDirector Android',
+  'deeplink': 'RD has not given the Custom deeplink format (Q-11)',
+  'cms': 'the CMS list of PhDM_AIHairColor_CustomStyle was not provided (Q-13)',
+};
+const all = phases.flatMap(p => p.segments.flatMap(s => s.cases));
+if (new Set(all).size !== all.length) throw new Error('a case is in two segments');
+writeFileSync(join(dir, 'phases.json'), JSON.stringify({ draft: '20261112-100854', current: ['R1'], needs, unavailable, phases }, null, 2) + '\n');
+console.log(`phases.json: ${all.length} cases; ${phases.map(p => p.segments.map(s => `${s.id} ${s.cases.length}`).join(', ')).join(' · ')}`);

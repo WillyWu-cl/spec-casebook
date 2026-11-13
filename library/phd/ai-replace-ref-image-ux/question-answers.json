@@ -1,0 +1,10 @@
+{
+  "Q-1": {
+    "question": "「badge 都可以拿掉了」 does not say which badges: the credit cost or 「NEW」 tag on 「Upload a reference image」 / 「Describe with text」, or every badge of the AI Replace flow. Assumption: no badge of any kind on the two options of 「Choose how to replace the selected area」; badges elsewhere are not checked. R-001; TC-001.",
+    "answer": "指的是「NEW」標籤",
+    "by": "",
+    "at": "2026-11-11T09:23:02.220Z",
+    "platform": "android",
+    "status": "open"
+  }
+}

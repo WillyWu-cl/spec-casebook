@@ -1,0 +1,28 @@
+﻿﻿編號,區塊,前置條件,操作步驟,預期結果,優先度,規格對應,備註,變更,變更原因
+TC-001,資訊圖示與提示,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Generate Background Sound」提供「Off」和「On」的範本（CL designers / Vidu，Q-4），已加入一張照片並開啟其設定面板,查看面板上「Generate Background Sound」那一行,「Generate Background Sound」後面緊接著有一個資訊圖示（ⓘ）；「Duration」、「Video Quality」、「Generate Background Sound」（Off / On）、✕ 和 ✓ 都還在,P2,"R-001, R-003",,新增,新表格（REQ-001）
+TC-002,資訊圖示與提示,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Generate Background Sound」提供「Off」和「On」的範本（CL designers / Vidu，Q-4），已加入一張照片並開啟其設定面板,點「Generate Background Sound」旁的資訊圖示,圖示正上方出現指向它的提示，文字剛好是「Sound support varies by template.」；任何設定都沒有變動,P1,"R-002, R-003",,新增,新表格（REQ-001）
+TC-003,資訊圖示與提示,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Generate Background Sound」提供「Off」和「On」的範本（CL designers / Vidu，Q-4），已加入一張照片並開啟其設定面板；已點資訊圖示，畫面上顯示「Sound support varies by template.」提示,"1. 點面板上提示以外的空白處
+2. 再點一次資訊圖示
+3. 再點一次資訊圖示",第 1 步提示關閉，所有設定維持原樣；第 2 步提示再次開啟，第 3 步提示關閉（記錄每次點擊的反應：Q-1）,P3,R-004,Q-1：提示怎麼關閉，設計稿沒有畫,新增,新表格（REQ-001）
+TC-004,資訊圖示與提示,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Generate Background Sound」提供「Off」和「On」的範本（CL designers / Vidu，Q-4），已加入一張照片並開啟其設定面板；已點資訊圖示，畫面上顯示「Sound support varies by template.」提示,按一次 Android 系統的返回鍵,提示關閉，設定面板仍開著，設定都沒有變（若返回鍵是直接關掉面板，請記錄：Q-1）,P3,R-004,Q-1,新增,新表格（REQ-001）
+TC-005,資訊圖示與提示,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Off」不能選的範本（Kling，Q-4），已加入一張照片並開啟其設定面板,"1. 查看「Generate Background Sound」那一行
+2. 點資訊圖示",這個範本的「Generate Background Sound」後面同樣有資訊圖示，點下去後圖示上方會顯示「Sound support varies by template.」,P2,"R-001, R-002, R-003",,新增,新表格（REQ-001）
+TC-006,各範本的背景音效,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；已開啟 AI Videos › 「Image to Video」 › 「Templates」,"1. 選一個「Off」可以選的範本（Q-4）
+2. 加入一張照片
+3. 開啟設定面板",這個範本的面板第一次開啟時，「Generate Background Sound」預設為「Off」,P2,R-010,Q-2：25'6/E 規則，以 Android 目前的行為為準來檢查,新增,新表格（REQ-001）
+TC-007,各範本的背景音效,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；AI Videos › 「Image to Video」 › 「Templates」裡有兩個「Off」可以選的不同範本,"1. 開啟第一個範本的設定面板
+2. 把「Generate Background Sound」設成「On」
+3. 點 ✓
+4. 返回並選第二個範本
+5. 加入一張照片
+6. 開啟它的設定面板",第二個範本的面板顯示它自己的設定（「Off」），不會沿用第一個範本選的「On」,P2,R-012,Q-2,新增,新表格（REQ-001）
+TC-008,各範本的背景音效,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Generate Background Sound」提供「Off」和「On」的範本（CL designers / Vidu，Q-4），已加入一張照片並開啟其設定面板；手機音量已開,"1. 把「Generate Background Sound」設成「On」
+2. 點 ✓
+3. 點「Generate」，等影片產生完成
+4. 開聲音播放結果",產生的影片播放時有背景音樂,P2,R-011,會用掉一次範本產生。Q-2,新增,新表格（REQ-001）
+TC-009,各範本的背景音效,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Generate Background Sound」提供「Off」和「On」的範本（CL designers / Vidu，Q-4），已加入一張照片並開啟其設定面板；手機音量已開,"1. 「Generate Background Sound」維持「Off」，點 ✓
+2. 點「Generate」，等影片產生完成
+3. 開聲音播放結果",產生的影片沒有額外加入的背景音樂,P3,"R-010, R-011",會用掉一次範本產生；用和 TC-008 相同的範本與照片來比較。Q-2,新增,新表格（REQ-001）
+TC-010,各範本的背景音效,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Off」不能選的範本（Kling，Q-4），已加入一張照片並開啟其設定面板,查看「Generate Background Sound」,「On」為選取狀態，「Off」顯示為灰色（不能按）,P2,R-013,Q-2,新增,新表格（REQ-001）
+TC-011,各範本的背景音效,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；從 AI Videos › 「Image to Video」 › 「Templates」選一個「Off」不能選的範本（Kling，Q-4），已加入一張照片並開啟其設定面板,點「Generate Background Sound」下灰色的「Off」,"跳出 toast，文字剛好是「To achieve the best results, this template's settings are limited.」，「On」維持選取",P2,"R-014, R-013",Q-2,新增,新表格（REQ-001）
+TC-012,各範本的背景音效,Android 手機，已登入 PhotoDirector（受測版本），Image to Video 的點數足夠；已開啟 AI Videos › 「Image to Video」的「Custom」分頁,查看 Custom 的各項設定（捲到最底）,Custom 裡沒有「Generate Background Sound」選項，也沒有「Sound support varies by template.」資訊圖示（若模型有「Generate Sound by AI」設定，不在這項檢查範圍內）,P3,R-015,Q-3,新增,新表格（REQ-001）

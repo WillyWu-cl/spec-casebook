@@ -1,0 +1,18 @@
+{
+  "Q-1": {
+    "question": "The spec does not say whether the remaining top bar buttons move into the space the title leaves. Assumption: they stay where they are today (back at the left, the others at the right); a moved button is recorded, not filed, until PM answers. R-002; TC-001 – TC-009.",
+    "answer": "留在原位",
+    "by": "",
+    "at": "2026-11-11T09:31:25.028Z",
+    "platform": "android",
+    "status": "open"
+  },
+  "Q-3": {
+    "question": "The Image to Video capture shows the 「Custom」 tab only. Assumption: the title is gone on both 「Custom」 and 「Templates」. R-001; TC-007, TC-008.",
+    "answer": "都拿掉",
+    "by": "",
+    "at": "2026-11-11T09:31:16.537Z",
+    "platform": "android",
+    "status": "open"
+  }
+}

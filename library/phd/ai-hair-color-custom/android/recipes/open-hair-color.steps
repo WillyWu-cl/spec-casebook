@@ -1,0 +1,11 @@
+# Open AI Hair Color from the Launcher's AI Photos tab and continue past the photo picker's recommendation sheet.
+# Starts: the Launcher (any tab). Ends: the photo picker (Sample Photos / Stock), recommendation sheet closed.
+# The Home hero 「Dye Your Style」 opens the same picker (actionUrl /navigate/page?name=ai_hair_color).
+# The sheet's own 「Don’t show again」 is left unticked. Charges nothing.
+# Written 2026-11-13 on 20.19.0 (90201900), SM-S9110. No Intro Demo showed on this phone (R1-a).
+lbl "AI Photos"
+wait 2
+lbl "AI Hair Color"
+wait 3
+tapif Continue
+wait 2

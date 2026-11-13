@@ -1,0 +1,29 @@
+{
+  "spec_folder": "specs/2026-11-11",
+  "skip": [],
+  "skip_reason": "",
+  "grouping": {
+    "x_tolerance": 120,
+    "y_gap": 140
+  },
+  "blocks": [
+    {
+      "id": "pm-replace-flow@597,3339",
+      "board": "pm-replace-flow",
+      "x": 597,
+      "y": 3339,
+      "low": false,
+      "text": "badge 都可以拿掉了",
+      "trace": "R-001"
+    },
+    {
+      "id": "pm-replace-flow@1967,3339",
+      "board": "pm-replace-flow",
+      "x": 1967,
+      "y": 3339,
+      "low": false,
+      "text": "back鍵 -> 回 ref image 的 photo picker (行為 same as 右下角替換 btn) 此頁面兩個 section 都恆有圖, generate btn 恆為 enable",
+      "trace": "R-020, R-021, R-010, R-011"
+    }
+  ]
+}
