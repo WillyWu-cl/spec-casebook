@@ -1,5 +1,5 @@
 {
-  "written_at": "2026-11-12T05:56:01.893Z",
+  "written_at": "2026-11-13T05:14:36.744Z",
   "file": "qZXJfrM5gb5g4tFoCIS1YU",
   "page": [
     "12:2321",
@@ -265,371 +265,383 @@
       "225:4592",
       "ic_batch_edit",
       "FRAME"
+    ],
+    [
+      "231:4616",
+      "cut",
+      "FRAME"
     ]
   ],
   "read": [
     {
       "id": "13:2380",
       "name": "photo_picker",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "9d6a0937",
       "plan": "rest"
     },
     {
       "id": "110:4804",
       "name": "photo_picker",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "c3791f01",
       "plan": "rest"
     },
     {
       "id": "13:2826",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "55a2cb79",
       "plan": "rest"
     },
     {
       "id": "110:4922",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "5b28d1aa",
       "plan": "rest"
     },
     {
       "id": "48:1432",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "b7720b60",
       "plan": "rest"
     },
     {
       "id": "110:5090",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "a038a8db",
       "plan": "rest"
     },
     {
       "id": "57:3956",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "b3d1020b",
       "plan": "rest"
     },
     {
       "id": "110:5258",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "81bed73b",
       "plan": "rest"
     },
     {
       "id": "57:5448",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "4f140fff",
       "plan": "rest"
     },
     {
       "id": "67:9285",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "fd14bd95",
       "plan": "rest"
     },
     {
       "id": "57:5666",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "ddd06f05",
       "plan": "rest"
     },
     {
       "id": "67:9438",
       "name": "canvas_img_focus",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "307e33d7",
       "plan": "rest"
     },
     {
       "id": "22:2798",
       "name": "3_",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "0434e170",
       "plan": "rest"
     },
     {
       "id": "110:5426",
       "name": "3_",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "3b5d4a96",
       "plan": "rest"
     },
     {
       "id": "31:953",
       "name": "main_down_tool_box",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "418cfcf9",
       "plan": "rest"
     },
     {
       "id": "110:5578",
       "name": "main_down_tool_box",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "a831a92d",
       "plan": "rest"
     },
     {
       "id": "41:923",
       "name": "adjust",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "cc54b0e7",
       "plan": "rest"
     },
     {
       "id": "110:5611",
       "name": "adjust",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "4e5bd379",
       "plan": "rest"
     },
     {
       "id": "47:1430",
       "name": "row label 1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "afc9d5ab",
       "plan": "rest"
     },
     {
       "id": "110:5840",
       "name": "row label 9",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "bade9603",
       "plan": "rest"
     },
     {
       "id": "48:1649",
       "name": "row label 2",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "7eed48f0",
       "plan": "rest"
     },
     {
       "id": "110:5841",
       "name": "row label 10",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "fa9cbc7f",
       "plan": "rest"
     },
     {
       "id": "57:3954",
       "name": "row label 3",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "b06b1657",
       "plan": "rest"
     },
     {
       "id": "110:5842",
       "name": "row label 11",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "eb202556",
       "plan": "rest"
     },
     {
       "id": "57:5665",
       "name": "row label 4",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "73805d5a",
       "plan": "rest"
     },
     {
       "id": "67:10291",
       "name": "row label 8",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "c92f710e",
       "plan": "rest"
     },
     {
       "id": "57:4257",
       "name": "Enhance_1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "eb76b188",
       "plan": "rest"
     },
     {
       "id": "110:5843",
       "name": "Enhance_1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "b209a5c6",
       "plan": "rest"
     },
     {
       "id": "57:5097",
       "name": "Enhance_1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "b222af81",
       "plan": "rest"
     },
     {
       "id": "110:5928",
       "name": "Enhance_1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "5b60bbca",
       "plan": "rest"
     },
     {
       "id": "57:4625",
       "name": "Enhance_1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "17b23c06",
       "plan": "rest"
     },
     {
       "id": "110:6102",
       "name": "Enhance_1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "3eefd3bc",
       "plan": "rest"
     },
     {
       "id": "110:4532",
       "name": "Discard dialog",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "2b3d301f",
       "plan": "rest"
     },
     {
       "id": "110:8280",
       "name": "Discard dialog",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "859475d0",
       "plan": "rest"
     },
     {
       "id": "57:4892",
       "name": "Enhance_1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "4807ec91",
       "plan": "rest"
     },
     {
       "id": "110:6196",
       "name": "Enhance_1",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "53bb9ab6",
       "plan": "rest"
     },
     {
       "id": "57:6001",
       "name": "save2",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "a9e5bf36",
       "plan": "rest"
     },
     {
       "id": "67:10721",
       "name": "save2",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "615ddb28",
       "plan": "rest"
     },
     {
       "id": "57:6798",
       "name": "9_Adjust_curve",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "bf992a3a",
       "plan": "rest"
     },
     {
       "id": "63:7874",
       "name": "9_Adjust_HSL",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "861541ae",
       "plan": "rest"
     },
     {
       "id": "105:4123",
       "name": "9_Adjust_HSL_collapse",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "526f7442",
       "plan": "rest"
     },
     {
       "id": "128:8508",
       "name": "9_Adjust_curve_collapse",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "6b4b3428",
       "plan": "rest"
     },
     {
       "id": "105:4500",
       "name": "status",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "9c48b9ee",
       "plan": "rest"
     },
     {
       "id": "110:6885",
       "name": "status",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "3565bb3a",
       "plan": "rest"
     },
     {
       "id": "134:8803",
       "name": "9_Adjust_curve",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "a60fab3a",
       "plan": "rest"
     },
     {
       "id": "134:9013",
       "name": "9_Adjust_HSL",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "56df7426",
       "plan": "rest"
     },
     {
       "id": "134:9215",
       "name": "9_Adjust_HSL_collapse",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "aa162dd4",
       "plan": "rest"
     },
     {
       "id": "134:9401",
       "name": "9_Adjust_curve_collapse",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "8c7fc8e1",
       "plan": "rest"
     },
     {
       "id": "139:10122",
       "name": "cut",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "4312a6f2",
       "plan": "rest"
     },
     {
       "id": "139:10146",
       "name": "cut",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "c4baf088",
       "plan": "rest"
     },
     {
       "id": "225:3699",
       "name": "launcher · Light · orange · rest",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "0371830e",
       "plan": "rest"
     },
     {
       "id": "225:4592",
       "name": "ic_batch_edit",
-      "read_at": "2026-11-12T05:51:48.323Z",
+      "read_at": "2026-11-13T05:12:10.773Z",
       "hash": "83c735d1",
+      "plan": "rest"
+    },
+    {
+      "id": "231:4616",
+      "name": "cut",
+      "read_at": "2026-11-13T05:12:10.773Z",
+      "hash": "37e22bec",
       "plan": "rest"
     }
   ],
