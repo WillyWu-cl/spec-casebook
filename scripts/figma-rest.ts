@@ -174,17 +174,38 @@ async function images() {
   const changed = new Set<string>(existsSync(join(src, 'source.json')) ? read(join(src, 'source.json')).changed ?? [] : []);
   const slug = (name: string) => name.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'board';
   const shared = (id: string) => Object.entries(shots).find(([, v]) => v.board === id && !v.box && !v.tiles);
-  const want: any[] = [];
+  // figma-source.ts coveringShot: a current image the casebook cut from a larger 1:1 render holding the whole board is
+  // used as it is. REST renders only the node, never what is drawn over it (arrows, notes on the page: REQ-078), so such
+  // an image is never rendered again here (2026-11-12, video-enhance: two boards lost their notes and arrows)
+  const pngW = (p: string) => readFileSync(p).readUInt32BE(16);
+  const covering = (box: number[]) => { const [x, y, w, h] = box;
+    return Object.entries<any>(shots).find(([name, e]) => {
+      if (!e.box || e.tiles || !e.hash || cb[e.board]?.hash !== e.hash) return false;
+      const [bx, by, bw, bh] = e.box, p = join(shotDir, name);
+      return x >= bx - 0.5 && y >= by - 0.5 && x + w <= bx + bw + 0.5 && y + h <= by + bh + 0.5 && existsSync(p) && Math.abs(pngW(p) - bw) <= 1;
+    })?.[0] ?? null; };
+  const want: any[] = [], covered: string[] = [], drawnOver: any[] = [], taken = new Set<string>();
   for (const b of read(join(restOut, 'summary.json')).boards) {
     const e = shared(b.id), file = e && join(shotDir, e[0]);
     const current = !!e && existsSync(file!) && (e[1].source_hash ? e[1].source_hash === b.hash : !!e[1].hash && cb[b.id]?.hash === e[1].hash && !changed.has(b.id));
     if (current) continue;
     const board = read(join(restOut, `${dash(b.id)}.json`)).board, max = Math.ceil(Math.max(...(board.render ?? board.box).slice(2)));
-    const name = e?.[0] ?? (shots[`${slug(b.name)}.png`] ? `${slug(b.name)}-${dash(b.id)}.png` : `${slug(b.name)}.png`);
+    // a board this read found changed is newer than any casebook image of it (2026-11-12, batch-editing: 6 redrawn
+    // boards were about to be cropped from images taken before the redraw)
+    if (!changed.has(b.id) && covering(board.box)) { covered.push(b.id); continue; }
+    // something is drawn over the board (the casebook's change check fingerprints it): a REST image would miss it, so the
+    // casebook re-captures it from its holder (figma-check.ts prints the get_screenshot and --shot commands)
+    if (cb[b.id]?.overlay) { drawnOver.push({ nodeId: b.id, holder: cb[b.id].holder || null, box: cb[b.id].box ?? null }); continue; }
+    const free = (n: string) => !(shots[n] && (shots[n].board !== b.id || shots[n].box || shots[n].tiles)) && !taken.has(n);
+    const name = e?.[0] ?? (free(`${slug(b.name)}.png`) ? `${slug(b.name)}.png` : `${slug(b.name)}-${dash(b.id)}.png`);
+    taken.add(name);
     want.push({ nodeId: b.id, maxDimension: max, fingerprint: b.hash, save_to: rel(join(shotDir, name)) });
   }
   const todoP = join(src, 'calls', 'todo.json');
-  if (!want.length) { console.log('every board image is current: nothing to render'); writeJson(todoP, { server: 'figma-design', fileKey, scale: 1, route: 'rest', chunk_calls: [], screenshots: [] }); return; }
+  const kept = (covered.length ? `; ${covered.length} board(s) cropped from the casebook's current image of what holds them (with what is drawn over them): ${covered.join(', ')}` : '') +
+    (drawnOver.length ? `\n${drawnOver.length} board(s) have marks drawn over them and no current image, which a REST render would leave out: ` +
+      `${drawnOver.map(d => d.nodeId).join(', ')}; run \`node scripts/figma-check.ts ${feature} ${set}\` and take the re-captures it prints` : '');
+  if (!want.length) { console.log(`every board image is current: nothing to render${kept}`); writeJson(todoP, { server: 'figma-design', fileKey, scale: 1, route: 'rest', chunk_calls: [], covered_shots: covered, drawn_over: drawnOver, screenshots: [] }); return; }
   const im = await get(`https://api.figma.com/v1/images/${fileKey}?${new URLSearchParams({ ids: want.map(w => w.nodeId).join(','), scale: '1', format: 'png' })}`, join(restDir, 'images.json'));
   const urls: Record<string, string | null> = read(join(restDir, 'images.json')).images ?? {};
   const mcp: any[] = [];
@@ -195,8 +216,8 @@ async function images() {
     if (size && Math.abs(Math.max(...size) - w.maxDimension) <= 1) { mkdirSync(shotDir, { recursive: true }); copyFileSync(tmp, join(ROOT, w.save_to)); w.via = 'rest'; }
     else { w.via = 'get_screenshot'; w.note = size ? `REST rendered ${size.join('×')}, not 1:1` : 'REST rendered nothing'; mcp.push(w); }
   }
-  writeJson(todoP, { server: 'figma-design', fileKey, scale: 1, route: 'rest', chunk_calls: [], screenshots: want });
-  console.log(`images: 1 REST call (${(im.ms / 1000).toFixed(0)} s) for ${want.length} board(s); ${want.length - mcp.length} saved 1:1` +
+  writeJson(todoP, { server: 'figma-design', fileKey, scale: 1, route: 'rest', chunk_calls: [], covered_shots: covered, drawn_over: drawnOver, screenshots: want });
+  console.log(`images: 1 REST call (${(im.ms / 1000).toFixed(0)} s) for ${want.length} board(s); ${want.length - mcp.length} saved 1:1${kept}` +
     (mcp.length ? `; ${mcp.length} need get_screenshot on figma-design (nodeId, maxDimension; download to save_to): ${mcp.map(m => `${m.nodeId} ${m.maxDimension}px → ${m.save_to}`).join(', ')}` : '') +
     `\nthen: node scripts/figma-source.ts ${feature} ${set} crop design`);
 }
@@ -209,22 +230,23 @@ function extrasCall() {
   const walk = (n: any) => { for (const [c, m] of Object.entries<any>(n.explicitVariableModes ?? {})) cols.add(JSON.stringify([c, m])); for (const k of n.children ?? []) walk(k); };
   for (const e of Object.values<any>(raw.nodes)) if (e) walk(e.document);
   const boards = Object.keys(raw.nodes);
-  // the plugin-walk position of each shown stroked vector REST gives no strokeJoin for (the walk
-  // fingerprint() mirrors, which matched the use_figma read), sent as base-36 gaps
-  const vectors: Record<string, string> = {};
+  // the id of each shown stroked vector REST gives no strokeJoin for (ids: walk positions drifted where the plugin and
+  // REST count hidden layers inside instances differently, 2026-11-12 video-enhance: 12 ROUND joins asked of the wrong
+  // vectors)
+  const segs: string[] = [], segAt = new Map<string, number>(), vectors: { s: string[]; b: Record<string, string> } = { s: segs, b: {} };
+  const pack = (id: string) => id.replace(/^I/, '').split(';').map(g => { if (!segAt.has(g)) { segAt.set(g, segs.length); segs.push(g); } return segAt.get(g)!.toString(36); }).join('.');
   for (const [bid, e] of Object.entries<any>(raw.nodes)) {
     if (!e) continue;
-    const join: number[] = []; let i = 0;
+    const join: string[] = [];
     const go = (n: any, hid: boolean, inInst: boolean) => {
       if (inInst && n.visible === false) return;
-      const hidden = hid || n.visible === false, me = i++;
-      if (n.type === 'VECTOR' && !hidden && n.strokes?.length && !n.strokeJoin) join.push(me);
+      const hidden = hid || n.visible === false;
+      if (n.type === 'VECTOR' && !hidden && n.strokes?.length && !n.strokeJoin) join.push(n.id);
       if (n.type === 'INSTANCE' && hidden) return;
       for (const c of n.children ?? []) go(c, hidden, inInst || n.type === 'INSTANCE');
     };
     go(e.document, false, false);
-    const gaps = (l: number[]) => l.map((x, k) => (x - (k ? l[k - 1] : 0)).toString(36)).join(',');
-    vectors[bid] = gaps(join);
+    vectors.b[bid] = join.map(pack).join(',');
   }
   const code = readFileSync(join(ROOT, 'scripts', 'figma', 'rest-extras.js'), 'utf8').split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('//')).join('\n')
     .replace('__BOARDS__', JSON.stringify(boards)).replace('__VARS__', JSON.stringify(vars)).replace('__COLLECTIONS__', JSON.stringify([...cols].map(c => JSON.parse(c)))).replace('__VECTORS__', JSON.stringify(vectors));
@@ -409,8 +431,10 @@ function convert() {
       // what only the plugin knows (extras): the vertex caps and joins and the arrow they give, boolean radius, videos
       const ev = exVec.get(n.id);
       if (ev && o.strokes) {
-        if (ev[1] && ev[1] !== 'NONE') o.stroke_cap = ev[1]; else delete o.stroke_cap;
-        if (ev[2] && ev[2] !== 'MITER') o.stroke_join = ev[2]; else delete o.stroke_join;
+        // 0 means "not asked" (the call asks caps only of mixed-cap vectors, joins only where REST gave none): REST's own
+        // value stands then (2026-11-12, video-enhance: 15 ROUND joins and a ROUND cap were dropped)
+        if (ev[1] && ev[1] !== 'NONE') o.stroke_cap = ev[1]; else if (ev[1] === 'NONE' || o.stroke_cap === 'mixed') delete o.stroke_cap;
+        if (ev[2] && ev[2] !== 'MITER') o.stroke_join = ev[2]; else if (ev[2] === 'MITER') delete o.stroke_join;
         if (ev[3]) o.arrow = ev[3]; else delete o.arrow;
       } else if (ex && o.stroke_cap === 'mixed' && n.type === 'VECTOR') { delete o.stroke_cap; delete o.arrow; }
       const eb = exBool.get(n.id);
@@ -427,7 +451,10 @@ function convert() {
         if (t.textDecoration && t.textDecoration !== 'NONE') r.decoration = t.textDecoration;
         if (t.textCase && t.textCase !== 'ORIGINAL') r.case = t.textCase;
         const f = paints(fills); if (f) r.fills = f;
-        if (st.text && !(k && table[k] && ['fontFamily', 'fontStyle', 'fontSize', 'fontWeight', 'lineHeightPx', 'lineHeightUnit', 'letterSpacing', 'textCase', 'textDecoration'].some(q => q in table[k] && table[k][q] !== s[q]))) r.text_style = st.text;
+        // a run with its own text style: REST names it in the override's inheritTextStyleId (2026-11-12, video-enhance:
+        // 15 runs such as "Caption/Large_01_SB" inside a "Caption/Large_01_R" text were read with no style)
+        if (k && table[k]?.inheritTextStyleId) r.text_style = S(table[k].inheritTextStyleId);
+        else if (st.text && !(k && table[k] && ['fontFamily', 'fontStyle', 'fontSize', 'fontWeight', 'lineHeightPx', 'lineHeightUnit', 'letterSpacing', 'textCase', 'textDecoration'].some(q => q in table[k] && table[k][q] !== s[q]))) r.text_style = st.text;
         if (st.fill && !(k && table[k]?.fills)) r.fill_style = st.fill;
         if (bv && Object.keys(bv).length) r.variables = aliases(bv);
         return r;

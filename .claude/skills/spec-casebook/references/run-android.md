@@ -17,12 +17,28 @@ adb serial HQ61563393, Android 12, 1080 × 2520; setup in README › Android pho
   (adb `input motionevent` DOWN, moves ~100 ms apart, UP) for text that scrolls inside its own box, and before
   filing a 「drag does X」 bug retry it with `fingerdrag`. `setval` is setText, not a paste: it skips the field's
   paste limit, so an over-limit paste is checked by hand.
+- **Judging a drag (user, 2026-11-12, video-enhance REQ-015).** A row whose Expected Result says something follows a
+  gesture while it moves (the Preview shows the frame at the dragged handle, a bubble and the Preview time follow a
+  knob) is judged from a recording of the whole gesture, never from one screenshot taken with the finger down: R1
+  passed TC-042 / TC-214 / TC-216 / TC-215 that way while another tool's recording showed the Preview stuck on older
+  frames mid-drag. `record start`, the drag (`fingerdrag` with enough steps to last 2–3 s, or several drags in one
+  touch for the back-and-forth rows), `record stop <ID>-drag`, then sample frames on the computer
+  (`ffmpeg -i recordings/<ID>-drag.mp4 -vf fps=4 recordings/<ID>-drag-%03d.png`) and compare, frame by frame, the
+  time burned into the source video (the fixtures carry one) with the handle's or bubble's time. Record the largest
+  gap and how long it lasted in Actual. Pass or Fail against the delay the row names; while the spec states none
+  (an Open question), a visible lag is recorded with the numbers and filed to PM for a decision.
 - **New messages below the screen (user, 2026-11-06, REQ-107).** The AI Mini Drama chat pins the sent message to the
   top and lets the reply and its cards grow below it without following (R-250, R-485; ↓ R-088, R-274), so a new card
   or its lower lines can be off screen and missing from the page source. Every wait or check for something new in a
   chat taps ↓ first: `waitfor "…" --bottom` (taps ↓ each round it shows), `expect "…" --bottom`, or `bottom` on its
   own (seen on 2611061: `button_mini_drama_scroll_bottom`, no content-desc). Leave `--bottom` off only in the rows
   that test the scrolling itself (R-088, R-250, R-274, R-279, R-457, R-485), where tapping ↓ is a step of the case.
+- **One Appium server (user, 2026-11-12).** `start` / `restart` start the shared Android server (port 4724) only when
+  no server exists on that port, detached so it outlives the segment, on macOS and Windows (`lib/appium-server.ts`:
+  a busy server is waited for, a held port is never given a second server, a lock stops two segments starting it at
+  once). Never start `appium` by hand or put it in a run plan: a server started in an agent's background shell dies
+  with that agent and the next segment starts another. `status` prints `Appium servers: …` and warns when a port
+  has more than one; report that to the user rather than killing one.
 - **iOS rule → Android command.** Segment start: `restart` (fresh UiAutomator2 server, PowerDirector in front). Keep
   the phone awake: the user turns on Developer options › Stay awake (or the longest Screen timeout) and uses no PIN
   lock. Rows in a list: `scrollto` (it also prints a row's switch state, `| row Switch on at X,Y`). Pages opened as

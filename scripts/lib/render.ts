@@ -10,6 +10,7 @@ export type PageData = {
   save: boolean;
   feature: string; platform: string; title: string;
   draft: string | null; based_on_version: number | null; version: number | null; approved_at: string | null;
+  saved_from_draft?: boolean;   // review.ts: this draft is the approved version already (Save stays off until a change)
   spec_files: { name: string; sha256: string }[];
   rows: Record<string, string>[];
   previous: Record<string, Record<string, string>>;

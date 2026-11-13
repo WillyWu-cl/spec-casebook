@@ -5,12 +5,14 @@
 //                    the same order (no ids, to stay small; figma-rest.ts keeps the list it sent). Values per mode
 //                    are left out (they alone are about 38 KB here); the MCP read does not have them either
 //   __COLLECTIONS__  [collection id, mode id] pairs from REST explicitVariableModes: their names
-//   __VECTORS__      per board, the plugin-walk positions (gaps, base 36) of shown stroked vectors REST gives no
-//                    strokeJoin for: only a join other than MITER comes back. Caps need no list: REST leaves out
+//   __VECTORS__      the ids of shown stroked vectors REST gives no strokeJoin for (ids, not walk positions: the
+//                    plugin walk and REST count hidden layers inside instances differently, 2026-11-12), packed as
+//                    { s: [id segments], b: { board: "i.j,k" } }: an id is its segments (base-36 indexes, `.`) joined
+//                    by `;`, with `I` in front when it has more than one: only a join other than MITER comes back. Caps need no list: REST leaves out
 //                    strokeCap exactly when it is figma.mixed (vertex caps), so every mixed-cap vector is returned
 // Node facts REST leaves out: a vector's caps and joins set per vertex (REST omits strokeCap / strokeJoin then; the
 // plugin reports the node's value or figma.mixed, and source.js finds the arrowhead from the vertex caps), corner radius
-// on boolean operations, and video fills (REST reports them as an IMAGE with the thumbnail).
+// on boolean operations, and video fills (a loose TEXT label listed as a board has no findAll: 2026-11-12) (REST reports them as an IMAGE with the thumbnail).
 const BOARDS = __BOARDS__, VARS = __VARS__, COLS = __COLLECTIONS__, VECTORS = __VECTORS__, BUDGET = 38000;
 const t0 = Date.now(), MIXED = figma.mixed;
 const r2 = n => Math.round(n * 100) / 100;
@@ -59,10 +61,10 @@ for (const id of BOARDS) {
   const bd = await figma.getNodeByIdAsync(id);
   if (!bd) { boards.push({ id, missing: true }); continue; }
   const o = bd.absoluteBoundingBox || { x: 0, y: 0 }, vec = [], bool = [], video = [];
-  // the asked vectors by walk position (source.js's walk: depth-first, the board is 0): [id, cap, join, arrow | 0]
-  const joinAt = new Set(); { let at = 0; for (const g of VECTORS[id] ? VECTORS[id].split(',') : []) { at += parseInt(g, 36); joinAt.add(at); } }
+  // the asked vectors by id, and every mixed-cap vector: [id, cap, join, arrow | 0]
+  const joinAt = new Set(VECTORS.b[id] ? VECTORS.b[id].split(',').map(x => { const g = x.split('.').map(k => VECTORS.s[parseInt(k, 36)]); return (g.length > 1 ? 'I' : '') + g.join(';'); }) : []);
   const list = [];
-  { let i = 0; const go = n => { if (n.type === 'VECTOR' && (joinAt.has(i) || n.strokeCap === MIXED)) list.push([i, n]); i++; if ('children' in n) for (const c of n.children) go(c); }; go(bd); }
+  { const go = n => { if (n.type === 'VECTOR' && (joinAt.has(n.id) || n.strokeCap === MIXED)) list.push([n.id, n]); if ('children' in n) for (const c of n.children) go(c); }; go(bd); }
   for (const [i, v] of list) {
     if (!Array.isArray(v.strokes) || !v.strokes.length) continue;
     const join = v.strokeJoin === MIXED ? 'mixed' : v.strokeJoin;
@@ -71,12 +73,12 @@ for (const id of BOARDS) {
     let pa = null; if (c) try { pa = arrowPath(v, v.vectorNetwork); } catch (e) {}
     vec.push([v.id, c, j, pa ? pa.map(([x, y]) => [r2(x - o.x), r2(y - o.y)]) : 0]);
   }
-  for (const b of bd.findAllWithCriteria({ types: ['BOOLEAN_OPERATION'] })) {
+  for (const b of ('findAllWithCriteria' in bd ? bd.findAllWithCriteria({ types: ['BOOLEAN_OPERATION'] }) : [])) {
     if (!('cornerRadius' in b)) continue;
     const r = b.cornerRadius === MIXED ? [b.topLeftRadius, b.topRightRadius, b.bottomRightRadius, b.bottomLeftRadius].map(r2) : r2(b.cornerRadius);
     if (Array.isArray(r) ? r.some(x => x) : r) bool.push([b.id, r, 'cornerSmoothing' in b && b.cornerSmoothing ? r2(b.cornerSmoothing) : 0]);
   }
-  for (const n of bd.findAll(n => 'fills' in n && Array.isArray(n.fills) && n.fills.some(p => p.type === 'VIDEO')))
+  for (const n of ('findAll' in bd ? bd.findAll(n => 'fills' in n && Array.isArray(n.fills) && n.fills.some(p => p.type === 'VIDEO')) : []))
     video.push([n.id, n.fills.map((p, i) => p.type === 'VIDEO' ? [i, p.videoHash || ''] : null).filter(Boolean)]);
   boards.push({ id, vec, bool, video });
 }

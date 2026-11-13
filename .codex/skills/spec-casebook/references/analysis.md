@@ -38,6 +38,28 @@ and return, waits), which apply to every job.
 4. **Numbers.** Every number the spec states (credits, durations, counts, sizes, percentages, line limits) gets a
    requirement that quotes it. A pick "at random from a pool of N" gets a row that draws several times and checks the
    picks vary within the pool, not one that taps twice (2026-10-27, 「Surprise me」 from 10 strings). Credit numbers are binding (see requirements.md format).
+   **Ranges and lookup bands (user, 2026-11-12, video-enhance REQ-015).** A stated range or a lookup table of bands
+   (「source 1–30 fps → 30fps, 31–60 → 60fps」) gets fixtures at both ends of every band, and at the two outer ends
+   of the whole range: its lowest value (the 1 of 「1–30」) and its highest, or the highest a source can have when it
+   is open-ended. Edges where two bands meet are not enough: Android R1 took 24, 30, 31, 50, 60, 61, 120 and 240 fps
+   (TC-052 – TC-055) but never 1 fps, where the app selects no fps and disables every fps chip. List each range's
+   values in the requirement's grid line so `check.ts` readers see which ends a row takes.
+   **During a gesture (user, 2026-11-12, REQ-015).** A rule that something follows a drag while it moves (a Preview
+   frame following a handle, a time following a knob) is a timing rule: its row's Notes say 「Evidence: screen
+   recording of the whole drag」 (`run-android.md`, *Judging a drag*; on iOS a recording through the run tools), its
+   Expected Result checks several moments during the movement, not only the end, and when the spec gives no allowed
+   delay the analysis opens an Open question for PM with the row's assumption (until answered: no visible lag,
+   the frame keeps up with the handle). R1 passed four such rows from one screenshot each; another tool's recording
+   found the lag.
+   **Scenarios, not only rules (user, 2026-11-12, video-enhance REQ-016).** A row that checks a rule once does not
+   cover its scenarios. Each gesture is run in both directions (a selection body dragged later *and* earlier, each
+   handle dragged outward *and* inward). Each limit is approached from just under it, with a start after 00:00 as well
+   as from 00:00, and checked to the frame, not only by the rounded label. A price rule is read at several lengths:
+   a short one, a middle one and the Mode's own limit (30 s, 90 s and 8:00 / 2:30), and in both directions of a
+   setting switch that changes it. A default derived from a source (selection length, fps, resolution) is read on
+   the screen that shows it, together with the label of the source it came from. Shown 2026-11-12: the 11/10 tables
+   matched all 271 spec agent cases by rule, but about 120 per platform ran only some of their scenarios. Examples:
+   price at 1 s and 3.2 s only, the body dragged one way, 29 / 59 / 119 fps never opened.
 5. **Persistence and sessions.** For everything the feature saves (task, title, thumbnail, chat position, episode),
    check reopen, rename, same and new session, reinstall and next episode, as far as the spec states them.
 6. **MX flows.** Tiers, daily chats, charge cards, first-use credits, free trial, discount. The MX file is part of
@@ -117,7 +139,9 @@ and return, waits), which apply to every job.
    can change it, each its own check: entering the screen, a change on the current item, the action itself, Undo of
    it, Redo of it, switching to an item with and without its own pending change, and the input modes that feed it
    (linked / unlinked size). A panel that hides or covers other controls (Curve / HSL over the strip) gets what hides,
-   what stays (「All」), what does not react, and every way back (collapse, another tool). One 「record when it is
+   what stays (「All」), what does not react, and every way back (collapse, another tool). Folding a panel and opening it again keeps its values and selection (curve point and channel, HSL colour
+   and its three values): one row per panel (2026-11-12, phd/batch-editing REQ-013, missed until the Figma Agent's
+   `curve-collapse` / `hsl-collapse`). One 「record when it is
    grey」 row is not enough: Android TC-153 stood for eleven state checks (spec agent ADJUSTMENT-ALL-* and CROP-ALL-*).
    A rule the spec changes in place (DR-05g on 2026-11-11, one character) reaches the table only through the change
    check, so run `figma-check.ts` and read `figma-text.ts` before every draft.
@@ -231,6 +255,13 @@ line each with the reason, so the reviewer can overrule it.
 4. **Park, don't drop,** rows that need a fixture the run cannot provide (purchase, new account, finite chat limit,
    failure fixture, microphone): keep them, tag their `needs` in `phases.json` with the reason under `unavailable`,
    so runs record them Blocked without spending time. Money and quota rows matter even when they can't run yet.
+   **Look for a free route first (user, 2026-11-12, video-enhance REQ-015).** Before parking, and again at every
+   update, check whether the blocker has a route that costs nothing: a store purchase can run with the store's test
+   card on a license-tester account (Google Play 「Test card, always approves」, no charge) once the user agrees; a
+   page reached only with a low balance may also open from another control the spec draws. Write that route into
+   the row's Precondition and the feature's `fixtures.md`, and keep the go-ahead as the only `needs`. R1 parked
+   TC-097 (buy credits → back to the panel) as 「needs purchase」; another tool bought the same pack at no charge and
+   found the app returns to My Credits, not the panel.
 5. Requirements from a spec set that is no longer current (older PM frames the newest set does not contain) are not
    added; note them under "Not added".
 

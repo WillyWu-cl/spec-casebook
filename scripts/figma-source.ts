@@ -167,7 +167,9 @@ const slug = (name: string) => name.toLowerCase().normalize('NFKD').replace(/[^a
 // a name no other board's image has: shots.json, or another board named the same in this run (light and dark copies of a
 // frame share their name; 2026-11-05 two boards were given one file)
 const shotName = (id: string, name: string, taken = new Set<string>()) => sharedShot(id)?.[0] ??
-  (n => shots[n] && shots[n].board !== id || taken.has(n) ? `${slug(name)}-${dash(id)}.png` : n)(`${slug(name)}.png`);
+  // an image the casebook cut from a larger render (`box`, `tiles`) is never this board's to overwrite: it holds what is
+  // drawn over the board, which a node render leaves out (2026-11-12, video-enhance: two such images were replaced)
+  (n => shots[n] && (shots[n].board !== id || shots[n].box || shots[n].tiles) || taken.has(n) ? `${slug(name)}-${dash(id)}.png` : n)(`${slug(name)}.png`);
 const pngSize = (p: string) => { const hd = readFileSync(p).subarray(16, 24); return [hd.readUInt32BE(0), hd.readUInt32BE(4)]; };
 // a shared image the casebook cut from a larger 1:1 render (a page region, a section) that holds the whole board and is
 // current (its hash is the region's latest in figma-hashes.json): the board is cropped from it, no screenshot is taken
@@ -212,7 +214,7 @@ if (cmd === 'calls' && sub === 'list') {
     // its own, possibly older check) is only trusted when it was taken at this fingerprint (`source_hash`)
     const changed = !!hashes[id] && hashes[id].hash !== b.hash, e = sharedShot(id)?.[1];
     if (scale === 1 && shotCurrent(id, b.hash) && (!changed || e?.source_hash === b.hash)) { reused.push(id); continue; }
-    if (scale === 1 && coveringShot(b)) { covered.push(id); continue; }
+    if (scale === 1 && !changed && coveringShot(b)) { covered.push(id); continue; }
     const name = scale === 1 ? shotName(id, b.name, taken) : `${dash(id)}@${scale}.png`; taken.add(name);
     shotCalls.push(max <= 65536
       ? { nodeId: id, maxDimension: max, fingerprint: b.hash, save_to: rel(join(shotDir, name)) }

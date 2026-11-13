@@ -14,6 +14,8 @@ what has to be on the phone or the account instead, because it can't be committe
 - Credits: a task costs its CTA price (1–2 credits a second in Standard at 30 fps 720p / 1080p, more for 60 / 120 fps,
   4K and Professional). R1-g's 36 combinations of a 3.2 s video cost a few hundred credits in all.
 - Purchases (TC-095 Pro, TC-097 credit pack) go through Google Play and need the user's go-ahead each time.
+  TC-097 runs at no charge (REQ-015): sign in with a Google account that is a license tester of PowerDirector on
+  Google Play, and pay with 「Test card, always approves」 on the purchase sheet.
 
 ## Videos in the gallery
 Made by `node library/pdr/video-enhance/fixtures/make-videos.ts` into `~/.casebook/video-enhance/videos/` (never

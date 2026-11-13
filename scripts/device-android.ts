@@ -9,7 +9,8 @@
 // content-desc; `id`, `clear` and `setval` take a resource-id (short "btn_ok" or full "<pkg>:id/btn_ok").
 //   start [serial]            create a session (noReset, no app launch) and remember it in <run dir>/.session (+ .serial,
 //                             .uia2-started). Starts the Android Appium server (APPIUM_ANDROID_URL, default port 4724,
-//                             log ~/Library/Logs/appium-android-4724.log) when none answers; the iOS servers on
+//                             log ~/Library/Logs/appium-android-4724.log) only when no server exists on that port, so
+//                             segments share one server (lib/appium-server.ts; never start appium by hand); the iOS servers on
 //                             4723/4725 are never touched (they loaded their drivers before uiautomator2 was installed).
 //   restart [serial]          end the session, stop the phone's UiAutomator2 server, start a fresh session and bring
 //                             the app back to the front; run it at every segment start (as with WDA on iOS)
@@ -30,6 +31,9 @@
 //                             script reads is matched against the Design screens still to capture, and a match is saved
 //                             as `design` would (one `design: captured …` line)
 //   shot NAME                 save <run dir>/screenshots/NAME.png (device pixels; adb screencap when no session)
+//   record start [max s] | record stop NAME
+//                             screen recording around a gesture (default limit 180 s) → <run dir>/recordings/NAME.mp4;
+//                             sample frames on the computer with ffmpeg (run-android.md, *Judging a drag*)
 //   els [filter]              visible elements (format above); filter matches anywhere in the line, case-insensitive
 //   texts [NAME]              the visible on-screen strings only (text and content-desc, ids dropped, duplicates merged),
 //                             top to bottom; with NAME also screenshots/NAME.png + NAME.txt
@@ -103,6 +107,7 @@ import { BLOCKER, env, logActivity, runRecipe, sleep, stamp, webdriver } from '.
 import { armWatch, blankShot, saveCapture, settledCapture, stateMismatch, watchSource } from './lib/design-watch.ts';
 import { keyboardInSource } from './lib/design-match.ts';
 import { compactViews, dumpViews, secureShot, viewdumpProblem } from './lib/android-views.ts';
+import { appiumServersLine, ensureAppium } from './lib/appium-server.ts';
 
 const HOME = homedir();
 const ANDROID_HOME = process.env.ANDROID_HOME ?? process.env.ANDROID_SDK_ROOT ?? join(HOME, 'Library/Android/sdk');
@@ -190,19 +195,16 @@ function ensurePhone(sn?: string) {
   if (v.locked) blocker(`${id} is locked (PIN/pattern keyguard).`);
 }
 
-// The Android Appium server on BASE's port, started here when nothing answers. Its own process with ANDROID_HOME and
-// JAVA_HOME set, so the iOS servers (4723/4725, shared services) are never restarted.
+// The Android Appium server on BASE's port, started here only when no server exists on that port (lib/appium-server.ts:
+// one server per port however many segments start, never a second one beside a busy server). Its own process with
+// ANDROID_HOME and JAVA_HOME set, so the iOS servers (4723/4725, shared services) are never restarted.
 async function ensureServer() {
-  try { await call('GET', '/status', undefined, 5000); return; } catch {}
   const port = new URL(BASE).port || '4724';
-  const log = join(HOME, 'Library/Logs', `appium-android-${port}.log`); mkdirSync(join(HOME, 'Library/Logs'), { recursive: true });
-  const fd = openSync(log, 'a');
-  const bin = ['/opt/homebrew/bin/appium', '/usr/local/bin/appium'].find(existsSync) ?? 'appium';
-  spawn(bin, ['--address', '127.0.0.1', '--port', port, '--log-timestamp', '--local-timezone'], { detached: true, stdio: ['ignore', fd, fd],
-    env: { ...process.env, ANDROID_HOME, ANDROID_SDK_ROOT: ANDROID_HOME, JAVA_HOME, PATH: `${join(ANDROID_HOME, 'platform-tools')}:${join(JAVA_HOME, 'bin')}:${process.env.PATH}` } }).unref();
-  closeSync(fd);
-  for (let i = 0; i < 40; i++) { await sleep(1); try { await call('GET', '/status', undefined, 3000); console.log(`Appium (Android) started on ${BASE}, log ${log}`); return; } catch {} }
-  throw new Error(`Appium did not answer on ${BASE}; see ${log}`);
+  const sep = process.platform === 'win32' ? ';' : ':';
+  await ensureAppium(BASE, { label: 'Appium (Android)',
+    ping: ms => call('GET', '/status', undefined, ms).then(() => true, () => false),
+    log: join(HOME, 'Library/Logs', `appium-android-${port}.log`),
+    env: { ...process.env, ANDROID_HOME, ANDROID_SDK_ROOT: ANDROID_HOME, JAVA_HOME, PATH: `${join(ANDROID_HOME, 'platform-tools')}${sep}${join(JAVA_HOME, 'bin')}${sep}${process.env.PATH}` } });
 }
 
 // ---- page source -------------------------------------------------------------------------------------------------
@@ -359,7 +361,8 @@ switch (cmd) {
     break;
   }
   case 'status': {
-    try { console.log(JSON.stringify((await call('GET', '/status', undefined, 5000)).value)); } catch { console.log(`Appium (Android) not answering on ${BASE} (start launches it)`); }
+    try { console.log(JSON.stringify((await call('GET', '/status', undefined, 15_000)).value)); } catch { console.log(`Appium (Android) not answering on ${BASE}: run \`start\` or \`restart\`, which starts it when no server exists (never start appium by hand)`); }
+    console.log(appiumServersLine());
     for (const d of adbDevices()) console.log('adb', d.line);
     try { const w = sh('dumpsys power 2>/dev/null | grep -m1 mWakefulness=; dumpsys window 2>/dev/null | grep -m1 isKeyguardShowing='); console.log(w.trim().replace(/\s+/g, ' ')); } catch {}
     if (existsSync(SID)) { try { await s('GET', '/window/rect'); console.log('session alive', sid()); } catch (e) { console.log('session not alive:', String(e).slice(0, 200)); } }
@@ -404,6 +407,22 @@ switch (cmd) {
       writeFileSync(p, execFileSync(ADB, ['-s', serial(), 'exec-out', 'screencap', '-p'], { maxBuffer: 64 * 1024 * 1024 })); }
     console.log(p);
     return p;
+  }
+  case 'record': {
+    // Screen recording for rows judged during a gesture (Preview following a drag, motion): one screenshot taken with
+    // the finger down shows one moment, not lag (video-enhance REQ-015, 2026-11-12). `record start` before the
+    // gesture, `record stop NAME` after; NAME.mp4 goes to <run dir>/recordings/ (local, never committed).
+    if (rest[0] === 'start') {
+      await s('POST', '/appium/start_recording_screen', { options: { timeLimit: String(+(rest[1] ?? 180)), bitRate: '8000000', forceRestart: true } });
+      console.log('recording'); break;
+    }
+    if (rest[0] === 'stop' && rest[1]) {
+      const dir = join(runDir, 'recordings'); mkdirSync(dir, { recursive: true });
+      const p = join(dir, `${rest[1]}.mp4`);
+      writeFileSync(p, Buffer.from((await s('POST', '/appium/stop_recording_screen', {})).value, 'base64'));
+      console.log(p); break;
+    }
+    throw new Error('usage: record start [max s] | record stop NAME');
   }
   case 'els': console.log(parseEls(await source(), rest[0]).join('\n')); break;
   case 'source': console.log(await source()); break;

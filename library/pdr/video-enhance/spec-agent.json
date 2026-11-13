@@ -3,5 +3,5 @@
   "ref": "origin/main",
   "feature": "video-enhance",
   "id_prefix": "",
-  "note": "2026-11-04: the Video Enhance cases (test-cases/generated/video-enhance/TC-VE2-*.yaml, one Android set) are not committed in the spec agent repo yet; the snapshot in spec-agent/ was read from its working tree on the user's instruction. Run spec-agent-gaps.ts with --snapshot until they are committed."
+  "note": "2026-11-04: the Video Enhance cases (test-cases/generated/video-enhance/TC-VE2-*.yaml, one Android set) are not committed in the spec agent repo yet; the snapshot in spec-agent/ was read from its working tree on the user's instruction. Run spec-agent-gaps.ts with --snapshot until they are committed. 2026-11-12 (REQ-016): the 271 cases are now committed at spec agent 8b411402 under test-specs/features/video-enhance/review/run-references/20261110-android/cases/<ID>/case.yaml (not the test-cases/generated/ path spec-agent-gaps.ts reads); the scenario comparison read them there (comparisons/20261112b_*.mapping.json)."
 }

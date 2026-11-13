@@ -753,6 +753,12 @@ test('figma-source chunks: small boards share batch calls, instance-free boards 
   run('figma-source.ts', [F, 'calls', 'chunks', 'design']);
   const saves = read(join(calls, 'todo.json')).screenshots.filter((x: any) => x.nodeId.startsWith('5:')).map((x: any) => x.save_to.split('/').pop());
   assert.deepEqual(saves, ['same.png', 'same-5-2.png']);
+  // an image the casebook cut from a larger render for this very board (box: it holds what is drawn over it) is never
+  // the save target: a node render would lose those marks (2026-11-12, video-enhance)
+  const cut = read(join(shared, 'shots.json')); cut['same.png'] = { board: '5:1', group: 'd', hash: 'old', box: [0, 0, 375, 812], captured_at: '2026-01-01T00:00:00Z' };
+  put(join(shared, 'shots.json'), cut);
+  run('figma-source.ts', [F, 'calls', 'chunks', 'design']);
+  assert.equal(read(join(calls, 'todo.json')).screenshots.find((x: any) => x.nodeId === '5:1').save_to.split('/').pop(), 'same-5-1.png');
   // a batch return is read as its boards' chunks
   const node = (i: string, p: number) => ({ i, t: 'TEXT', n: 'L', b: [0, 0, 100, 20], p });
   const part = (id: string) => ({ mode: 'chunk', board: id, read_at: '2026-01-03T00:01:00Z', from: 0, to: 1, first: 0, count: 1, bytes: 10, tables: { V: [], S: [], P: [] }, nodes: [node(id, -1)] });

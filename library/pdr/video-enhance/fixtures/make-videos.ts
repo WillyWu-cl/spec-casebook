@@ -6,7 +6,8 @@
 //
 // Lengths are whole frames, so a 30 fps 「02:30.01」 is 4501 frames = 150.033 s (still over 150 s, which is what the
 // rows test); the printed ffprobe length is the one to quote in a result. 1920 × 1081 cannot be encoded as 4:2:0
-// H.264, so the 「1081p」 video is 1920 × 1082 (the row tests 「just above 1080p」).
+// H.264, so the 「1081p」 video is 1920 × 1082 (the row tests 「just above 1080p」); likewise 「719p」 and 「721p」 are
+// 1280 × 718 and 1280 × 722, and 07:59.99 / 08:00.01 are one frame either side of 08:00 (479.967 s / 480.033 s).
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, utimesSync } from 'node:fs';
 import { homedir } from 'node:os';
@@ -34,6 +35,13 @@ const VIDEOS: V[] = [
   v('ve-0130-1080p30', 90 * 30, ...P1080, 30),
   v('ve-0130-1080p60', 90 * 60, ...P1080, 60),
   v('ve-0030-720p30', 900, ...P720, 30),
+  // REQ-016: the spec agent's exact-length scenarios (8:00 boundary, body drags, Timeline clip with a later start)
+  v('ve-0759-1080p30', 479 * 30, ...P1080, 30),
+  v('ve-075997-1080p30', 14399, ...P1080, 30),
+  v('ve-080003-1080p30', 14401, ...P1080, 30),
+  v('ve-0600-1080p30', 360 * 30, ...P1080, 30),
+  v('ve-0524-1080p30', 324 * 30, ...P1080, 30),
+  v('ve-0030-1080p30', 900, ...P1080, 30),
   // short sources (price rounding, timing)
   v('ve-000396-1080p30', 119, ...P1080, 30),
   v('ve-000399-720p30', 119, ...P720, 30),
@@ -44,10 +52,13 @@ const VIDEOS: V[] = [
   v('ve-000100-720p30', 30, ...P720, 30),
   v('ve-000090-720p30', 27, ...P720, 30),
   // frame rates (10 s, 1080p)
-  ...[24, 30, 31, 50, 60, 61, 120, 240].map(f => v(`ve-fps${f}-1080p`, 10 * f, ...P1080, f)),
+  ...[1, 24, 29, 30, 31, 50, 59, 60, 61, 119, 120, 144, 240].map(f => v(`ve-fps${f}-1080p`, 10 * f, ...P1080, f)),
   // resolutions (10 s, 30 fps)
+  v('ve-res360p', 300, 640, 360, 30),
   v('ve-res480p', 300, 854, 480, 30),
+  v('ve-res718p', 300, 1280, 718, 30),
   v('ve-res720p', 300, ...P720, 30),
+  v('ve-res722p', 300, 1280, 722, 30),
   v('ve-res900p', 300, 1600, 900, 30),
   v('ve-res1082p', 300, 1920, 1082, 30),
   v('ve-res1200p', 300, 1920, 1200, 30),

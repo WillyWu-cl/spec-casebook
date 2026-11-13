@@ -163,7 +163,7 @@ const KEY='casebook:'+D.feature+':'+D.platform+':'+(/^edit-/.test(D.draft)?'edit
 // event) or the page's own switch, kept in localStorage casebook-lang.
 const ZH=D.zh||{};
 const I18N={zh:{plan:'更新計畫',req:'從規格整理出的需求',ID:'編號',Precondition:'前置條件',Action:'操作步驟','Expected Result':'預期結果',Priority:'優先度','Spec Ref':'規格對應',Notes:'備註',Decision:'決定',
-  copyCsv:'複製最終 CSV',copyDec:'複製審查決定',save:'儲存為核准版本',keep:'保留',delete:'刪除',add:'+ 新增案例',addTitle:'用自己的話描述新的案例；下一版草稿會把它們寫成正式的列',
+  copyCsv:'複製最終 CSV',copyDec:'複製審查決定',save:'儲存為核准版本',savedBtn:v=>`已儲存為版本 ${v}`,savedTip:'已儲存；再修改後才能重新儲存。',keep:'保留',delete:'刪除',add:'+ 新增案例',addTitle:'用自己的話描述新的案例；下一版草稿會把它們寫成正式的列',
   search:'搜尋編號或文字',allSections:'所有區塊',allChanges:'所有變更',anyDecision:'所有決定',noMatch:'沒有符合篩選條件的案例。',
   new:'新增',modified:'修改',removed:'移除',unchanged:'未變更',kept:'保留',edited:'已修改',added:'已新增',deleted:'已刪除',
   cases:'案例',approvedCases:'核准的測試案例',draft:'草稿',noApproved:'尚無核准版本',updates:v=>`核准版本 v${v}`,workCopy:'工作副本',cols:'優先度、規格對應、備註',version:(v,d)=>`版本 ${v} · 核准於 ${d}`,spec:'規格：',
@@ -353,11 +353,19 @@ function body(){
     if(!n){n={id:'N'+Date.now().toString(36),section:sec,text:'',at:new Date().toISOString()};notes.push(n);persist();body();}
     setTimeout(()=>tb.querySelector(`textarea[data-note="${n.id}"]`)?.focus(),0)});
 }
+// After a Save (or on reopening a draft that is already the approved version) the button stays off until something
+// changes again, and says which version it saved (user, 2026-11-12).
+let savedSig=null,savedVer=D.saved_from_draft?D.version:null;
+const sig=()=>JSON.stringify([finalRows(),liveNotes()]);
 function saveState(){
   if(!REVIEW||!D.save)return;
+  const untouched=rows.every(r=>state(r)==='kept')&&!liveNotes().length;
   // a working copy of the approved table: nothing to save until something changed (a real draft can be approved as it is)
-  const none=/^edit-/.test(D.draft)&&rows.every(r=>state(r)==='kept')&&!liveNotes().length;
-  $('#save').disabled=none;$('#save').title=none?'Nothing has changed yet':'';
+  const none=/^edit-/.test(D.draft)&&untouched;
+  const saved=savedVer!=null&&(savedSig!=null?sig()===savedSig:untouched);
+  const b=$('#save');b.disabled=none||saved;
+  b.textContent=saved?(T('savedBtn',savedVer)??`Saved as version ${savedVer}`):(T('save')??'Save as approved table');
+  b.title=saved?(T('savedTip')??'Saved. Change something to save again.'):none?'Nothing has changed yet':'';
 }
 function counts(){
   saveState();
@@ -402,7 +410,7 @@ $('#save').onclick=async()=>{
   try{const res=await fetch('save',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({rows:finalRows(),decisions:decisions(),summary:decisionText(),notes:liveNotes()})});
     const j=await res.json();if(!res.ok)throw new Error(j.error||res.statusText);
     try{localStorage.removeItem(KEY)}catch(e){}
-    const nn=liveNotes().length;notes=[];body();counts();
+    const nn=liveNotes().length;notes=[];body();savedVer=j.version;savedSig=sig();counts();
     toast((T('saved',j.version,j.cases,j.csv)??`Saved as approved version ${j.version}: ${j.cases} cases. ${j.csv}`)+(nn?T('savedNotes',nn,j.notes_file)??` · ${nn} new-case note${nn>1?'s':''} saved to ${j.notes_file}: ask the agent to turn them into the next draft.`:''));
   }catch(e){toast((T('saveFail')??'Save failed: ')+e.message)}finally{$('#save').disabled=false;saveState()}
 };

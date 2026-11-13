@@ -2,9 +2,9 @@
   "feature": "phd/batch-editing",
   "platform": "android",
   "title": "Batch Editing",
-  "version": 6,
-  "approved_at": "2026-11-12T01:38:23.902Z",
-  "draft": "edit-20261112-093823",
+  "version": 7,
+  "approved_at": "2026-11-12T06:21:53.526Z",
+  "draft": "20261112-150000",
   "spec_folder": "specs/2026-11-09",
   "spec_files": [
     {
@@ -269,7 +269,7 @@
     }
   ],
   "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
-  "cases": 168,
+  "cases": 170,
   "history": [
     {
       "version": 1,
@@ -324,6 +324,15 @@
       "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
       "draft": "edit-20261112-093823",
       "cases": 168,
+      "csv": "history/v6.csv",
+      "requirements": "history/v6-requirements.md"
+    },
+    {
+      "version": 7,
+      "approved_at": "2026-11-12T06:21:53.526Z",
+      "spec_set_sha256": "da504de304a923a6f5685f5f3f84f72214ada52e6ab7bd619db3f7b03d2f9594",
+      "draft": "20261112-150000",
+      "cases": 170,
       "csv": "cases.csv",
       "requirements": "requirements.md"
     }

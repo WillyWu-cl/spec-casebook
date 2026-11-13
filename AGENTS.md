@@ -282,6 +282,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
 - **On the phone (2026-10-21/27).** Wi-Fi may be toggled for offline cases once the phone is on USB (other system
   settings need the user's go-ahead); rows are reached only with `scrollto` / `pink`; Auto-Lock Never, `device.ts
   restart` at every segment, never uninstall WDA; exit 75 = BLOCKER, pushed to the user (`run.md` steps 1, 3, 4).
+- **One Appium server per port (user, 2026-11-12).** Segments never start `appium` by hand; `device-android.ts
+  start|restart` starts the shared server only when none exists (also on Windows) and `status` counts them
+  (`scripts/lib/appium-server.ts`, `run-android.md`).
 - **One section per context (user, 2026-10-27).** Every run works section by section (segment, phase wrap-up, board
   group); the user's chat only orchestrates, each section in a new subagent with a self-contained brief, else a
   cleared worker session, else a new chat the user opens (`run.md`, "Keep going without asking").

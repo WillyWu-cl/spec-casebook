@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-11-12T01:42:16.056Z",
+  "built_at": "2026-11-12T05:58:54.423Z",
   "spec_set": "2026-11-09-figma",
   "file": {
     "fileKey": "qZXJfrM5gb5g4tFoCIS1YU",
@@ -62,11 +62,11 @@
   },
   "casebook": true,
   "counts": {
-    "screens": 36,
+    "screens": 37,
     "routed": 36,
     "figma_paths": 0,
     "gaps": 0,
-    "no_route": 0,
+    "no_route": 1,
     "excluded": 0
   },
   "by_case": {
@@ -190,7 +190,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/3.png",
       "inventory_screen": "110:5426",
       "status": "routed",
       "route": {
@@ -231,7 +231,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/9-adjust-curve.png",
       "inventory_screen": "57:6798",
       "status": "routed",
       "route": {
@@ -272,7 +272,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/9-adjust-curve-134-8803.png",
       "inventory_screen": "134:8803",
       "status": "routed",
       "route": {
@@ -313,7 +313,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/9-adjust-curve-collapse.png",
       "inventory_screen": "128:8508",
       "status": "routed",
       "route": {
@@ -354,7 +354,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/9-adjust-curve-collapse-134-9401.png",
       "inventory_screen": "134:9401",
       "status": "routed",
       "route": {
@@ -395,7 +395,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/9-adjust-hsl.png",
       "inventory_screen": "63:7874",
       "status": "routed",
       "route": {
@@ -436,7 +436,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/9-adjust-hsl-134-9013.png",
       "inventory_screen": "134:9013",
       "status": "routed",
       "route": {
@@ -477,7 +477,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/9-adjust-hsl-collapse.png",
       "inventory_screen": "105:4123",
       "status": "routed",
       "route": {
@@ -518,7 +518,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/9-adjust-hsl-collapse-134-9215.png",
       "inventory_screen": "134:9215",
       "status": "routed",
       "route": {
@@ -559,7 +559,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/adjust.png",
       "inventory_screen": "41:923",
       "status": "routed",
       "route": {
@@ -600,7 +600,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/adjust-110-5611.png",
       "inventory_screen": "110:5611",
       "status": "routed",
       "route": {
@@ -846,7 +846,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/canvas-img-focus-110-5090.png",
       "inventory_screen": "110:5090",
       "status": "routed",
       "route": {
@@ -887,7 +887,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/canvas-img-focus-110-5258.png",
       "inventory_screen": "110:5258",
       "status": "routed",
       "route": {
@@ -969,7 +969,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/canvas-img-focus.png",
       "inventory_screen": "110:4922",
       "status": "routed",
       "route": {
@@ -1297,7 +1297,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/enhance-1.png",
       "inventory_screen": "110:5843",
       "status": "routed",
       "route": {
@@ -1338,7 +1338,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/enhance-1-110-6102.png",
       "inventory_screen": "110:6102",
       "status": "routed",
       "route": {
@@ -1379,7 +1379,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/enhance-1-110-6196.png",
       "inventory_screen": "110:6196",
       "status": "routed",
       "route": {
@@ -1420,7 +1420,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/enhance-1-110-5928.png",
       "inventory_screen": "110:5928",
       "status": "routed",
       "route": {
@@ -1442,6 +1442,29 @@
         "TC-063",
         "TC-064"
       ],
+      "flags": []
+    },
+    {
+      "id": "225:3699",
+      "name": "launcher · Light · orange · rest",
+      "board": "225:3699",
+      "board_name": "launcher · Light · orange · rest",
+      "abs": [
+        -405,
+        0,
+        375,
+        812
+      ],
+      "board_box": [
+        -405,
+        0,
+        375,
+        812
+      ],
+      "board_png": "specs/2026-11-09-figma/extracted/figma/launcher-light-orange-rest.png",
+      "inventory_screen": null,
+      "status": "no-route",
+      "why": "not in inventory.json, and no Design arrow leads to it",
       "flags": []
     },
     {
@@ -1502,7 +1525,7 @@
         375,
         812
       ],
-      "board_png": null,
+      "board_png": "specs/2026-11-09-figma/extracted/figma/photo-picker.png",
       "inventory_screen": "110:4804",
       "status": "routed",
       "route": {
