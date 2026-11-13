@@ -543,5 +543,61 @@
     "hash": null,
     "source_hash": "0371830e",
     "captured_at": "2026-11-12T05:58:29.889Z"
+  },
+  "main-down-tool-box.png": {
+    "board": "110:5578",
+    "group": null,
+    "hash": null,
+    "source_hash": "a831a92d",
+    "captured_at": "2026-11-13T05:15:27.006Z"
+  },
+  "row-label-9.png": {
+    "board": "110:5840",
+    "group": null,
+    "hash": null,
+    "source_hash": "bade9603",
+    "captured_at": "2026-11-13T05:15:27.006Z"
+  },
+  "row-label-10.png": {
+    "board": "110:5841",
+    "group": null,
+    "hash": null,
+    "source_hash": "fa9cbc7f",
+    "captured_at": "2026-11-13T05:15:27.006Z"
+  },
+  "row-label-11.png": {
+    "board": "110:5842",
+    "group": null,
+    "hash": null,
+    "source_hash": "eb202556",
+    "captured_at": "2026-11-13T05:15:27.006Z"
+  },
+  "status.png": {
+    "board": "110:6885",
+    "group": null,
+    "hash": null,
+    "source_hash": "3565bb3a",
+    "captured_at": "2026-11-13T05:15:27.006Z"
+  },
+  "cut.png": {
+    "board": "139:10146",
+    "group": null,
+    "hash": null,
+    "source_hash": "c4baf088",
+    "captured_at": "2026-11-13T05:15:27.006Z"
+  },
+  "ic-batch-edit.png": {
+    "board": "225:4592",
+    "group": null,
+    "hash": null,
+    "source_hash": "83c735d1",
+    "captured_at": "2026-11-13T05:15:27.006Z"
+  },
+  "cut-231-4616.png": {
+    "board": "231:4616",
+    "group": null,
+    "hash": null,
+    "source_hash": "37e22bec",
+    "captured_at": "2026-11-13T05:15:27.006Z"
   }
 }

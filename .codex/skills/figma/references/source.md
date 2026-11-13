@@ -24,7 +24,7 @@ All commands are `node scripts/figma-rest.ts <product>/<feature> [<set>] …`; r
 `…/figma-source/design/rest/`, never into the conversation.
 
 0. A feature the casebook has not read: `figma-source.ts <feature> init <Design link>` first (records `files.design`).
-1. **List** (1 REST call, first read only): `list [page or section id]` writes the page's sections and boards into
+1. **List** (1 REST call; on a re-read `fetch` does it first by itself, `--no-list` skips it): `list [page or section id]` writes the page's sections and boards into
    `scope.json`. Pick the boards as on the other route (every Design board the casebook inventories included).
 2. **Fetch** (1 REST call): `fetch [board ids…]` (default: the boards `scope.json` lists as read) gets every board's
    nodes with `geometry=paths` into `rest/nodes.json` (local, about 90 MB for 11 boards).
@@ -55,8 +55,11 @@ All commands are `node scripts/figma-rest.ts <product>/<feature> [<set>] …`; r
 6. **Commit** `source.json`, `hashes.json`, `scope.json`, `rest/boards/`, `rest/extras.json` and new board images with
    `shots.json` (`rest/nodes.json`, `rest/out/`, `rest/calls/` and `out/` stay local).
 
-A re-read is steps 2–5 again: one fetch for every board (it also tells which boards changed: `publish` prints them),
-one extras call, images only for changed boards. `scripts/figma-rest-parity.ts` compares a REST `out/` with a
+A re-read is steps 2–5 again: `fetch` lists the page first, so a board drawn on it since the last read is fetched too
+and one gone from it is left out (2026-11-13, batch-editing: board 231:4616 was missed without it), then one fetch
+for every board (it also tells which boards changed: `publish` prints them), one extras call, images only for changed
+boards. `images` records the image of a board with no screen or arrow itself (crop records the others), so it is not
+rendered again on the next read. `scripts/figma-rest-parity.ts` compares a REST `out/` with a
 use_figma one field by field when a question comes up.
 
 ### use_figma-only route (on request)

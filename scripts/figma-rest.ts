@@ -30,7 +30,7 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, appendFileSync, writeFileSync, copyFileSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
 import { spawnSync } from 'node:child_process';
-import { join } from 'node:path';
+import { basename, join } from 'node:path';
 import * as nodeModule from 'node:module';
 import { arg, assertIds, featureDir, ROOT, writeJson } from './lib/library.ts';
 import { listSpecSets } from './lib/specs.ts';
@@ -93,7 +93,18 @@ async function get(url: string, to: string, auth = true) {
 
 // ---- fetch ---------------------------------------------------------------------------------------------------------------
 async function fetchAll() {
-  const ids: string[] = ids0.length ? ids0 : scope.read.map((b: any) => b.id);
+  let ids: string[] = ids0.length ? ids0 : (scope.read ?? []).map((b: any) => b.id);
+  // a re-read lists the page again first (1 small REST call): a board drawn on the page since the last read is fetched
+  // too, and one gone from it is dropped (2026-11-13, batch-editing: 231:4616 added after the first list was missed)
+  if (!ids0.length && ids.length && frames.files?.design?.page && !process.argv.includes('--no-list')) {
+    const before = new Set(ids);
+    await list(true);
+    const boards = (scope.listed ?? []).filter((r: any[]) => r[2] !== 'SECTION').map((r: any[]) => r[0]);
+    const now = new Set(boards), added = boards.filter((id: string) => !before.has(id)), gone = ids.filter(id => !now.has(id));
+    if (added.length) console.log(`${added.length} board(s) new on the page since the last read, fetched too: ${added.join(', ')}`);
+    if (gone.length) console.log(`${gone.length} board(s) no longer on the page, left out: ${gone.join(', ')}`);
+    ids = [...ids.filter(id => now.has(id)), ...added];
+  }
   if (!ids.length) { console.error('No boards read before: pass the board ids (`list` shows the page\'s boards)'); process.exit(2); }
   mkdirSync(restDir, { recursive: true });
   const q = new URLSearchParams({ ids: ids.join(',') });
@@ -103,7 +114,7 @@ async function fetchAll() {
 }
 
 // ---- list: the page's sections and boards (1 REST call, depth 2) ------------------------------------------------------
-async function list() {
+async function list(quiet = false) {
   const page = ids0[0] ?? frames.files.design.page;
   if (!page) { console.error('list [page or section id]: figma-frames.json has no files.design.page'); process.exit(2); }
   mkdirSync(restDir, { recursive: true });
@@ -115,8 +126,10 @@ async function list() {
     listed.push([n.id, String(n.name).trim().slice(0, 60), n.type]);
     if (n.type === 'SECTION') for (const c of n.children ?? []) listed.push([c.id, String(c.name).trim().slice(0, 60), c.type, n.id]);
   }
-  writeJson(scopePath, { ...scope, written_at: new Date().toISOString(), file: fileKey, page: [doc.id, doc.name], listed });
+  Object.assign(scope, { written_at: new Date().toISOString(), file: fileKey, page: [doc.id, doc.name], listed });
+  writeJson(scopePath, scope);
   console.log(`${doc.name}: ${listed.length} node(s) listed in ${rel(scopePath)}`);
+  if (quiet) return;
   for (const r of listed) console.log(`  ${r[3] ? '  ' : ''}${r[0]} ${r[2]} ${r[1]}`);
 }
 
@@ -216,6 +229,15 @@ async function images() {
     if (size && Math.abs(Math.max(...size) - w.maxDimension) <= 1) { mkdirSync(shotDir, { recursive: true }); copyFileSync(tmp, join(ROOT, w.save_to)); w.via = 'rest'; }
     else { w.via = 'get_screenshot'; w.note = size ? `REST rendered ${size.join('×')}, not 1:1` : 'REST rendered nothing'; mcp.push(w); }
   }
+  // crop records the images of boards with screens or arrows; one with neither (a row label, the status bar, an icon) is
+  // recorded here, else every read renders it again (2026-11-13, batch-editing: 7 such boards on each re-read)
+  const cropped = new Set<string>(['screens.json', 'arrows.json'].flatMap(f => existsSync(join(restOut, f)) ? read(join(restOut, f)).map((s: any) => s.board) : []));
+  let recorded = 0;
+  for (const w of want) if (w.via === 'rest' && !cropped.has(w.nodeId)) {
+    shots[basename(w.save_to)] = { board: w.nodeId, group: null, hash: cb[w.nodeId]?.hash ?? null, source_hash: w.fingerprint, captured_at: new Date().toISOString() };
+    recorded++;
+  }
+  if (recorded) writeJson(shotsP, shots);
   writeJson(todoP, { server: 'figma-design', fileKey, scale: 1, route: 'rest', chunk_calls: [], covered_shots: covered, drawn_over: drawnOver, screenshots: want });
   console.log(`images: 1 REST call (${(im.ms / 1000).toFixed(0)} s) for ${want.length} board(s); ${want.length - mcp.length} saved 1:1${kept}` +
     (mcp.length ? `; ${mcp.length} need get_screenshot on figma-design (nodeId, maxDimension; download to save_to): ${mcp.map(m => `${m.nodeId} ${m.maxDimension}px → ${m.save_to}`).join(', ')}` : '') +
