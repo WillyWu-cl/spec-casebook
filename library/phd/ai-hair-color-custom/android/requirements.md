@@ -42,7 +42,7 @@ were read from page 3026:89 「26 10E AI Hair Color v2」 (`extracted/hair-color
 - R-026 [PM:pm-ui UI source note] The selected style shows the selected frame (#ffbe98, 4 pt inner frame).
 - R-027 [PM:pm-ui panel_solid_color] solid_color takes one colour: only the 「Base Color」 row shows; the 「Highlight Color」 row does not appear (D6-04).
 - R-028 [PM:pm-ui panel_solid_color] With solid_color, choosing a Base Color enables Generate (D6-04).
-- R-029 [PM:pm-ui panel_two_tone] Every other style needs both colours: with only one filled, Generate stays disabled and 「Both Base Color and Highlight Color are required.」 shows under the rows (D6-04).
+- R-029 [PM:pm-ui panel_two_tone; Req: REQ-003] Every other style needs a Base Color; the Highlight Color is optional (REQ-003, user ruling 2026-11-13, overrides D6-04 「both required」): Base alone enables Generate and 「Both Base Color and Highlight Color are required.」 does not show; Highlight alone keeps Generate disabled (its message: Q-16).
 - R-030 [PM:pm-ui panel_two_tone] The chosen colour in each row has a 2 pt #FFBE98 ring (D6-21).
 - R-031 [PM:pm-ui panel_solid_color] solid_color sends only main_color_r/g/b to the API, no accent colour.
 - R-032 [PM:pm-cms; PM:10/E D2-04] Each style generates its own colour pattern in the chosen colours (Multicolor: highlights follow the hair flow, the ombré starts below the ears).
@@ -61,7 +61,7 @@ were read from page 3026:89 「26 10E AI Hair Color v2」 (`extracted/hair-color
 - R-041 [PM:pm-flow callout in-panel generate] Generate in the panel without collapsing: the result fills the photo area above, a 44 pt Intensity row (default 100%) appears above the panel's Generate and the button becomes 「Retry」 (D6-22, D6-23; result_in_panel is not drawn, Q-4).
 
 ## Collapse = apply
-- R-042 [PM:pm-ui collapsed_applied] Tapping outside the panel or its ⌄ key both apply the settings; neither cancels (D6-08).
+- R-042 [PM:pm-ui collapsed_applied; Req: REQ-004] The ⌄ key collapses the panel and applies the settings, never cancels (D6-08). Tapping the photo above the panel does not close it: the panel stays open with its settings (REQ-004, user ruling 2026-11-13, overrides D6-08 「tap outside = apply」).
 - R-043 [PM:pm-ui collapsed_applied] After collapsing, the template row is back, the Custom cell is selected and the outer Generate is enabled (D6-08).
 - R-044 [PM:pm-ui collapsed_applied] The Custom cell then shows the two colours the user chose (D6-08; the mockup draws a pencil icon, Q-2).
 - R-045 [PM:pm-ui collapsed_applied] The Custom settings disappear only when the user leaves the room or overwrites them; everything else keeps them (D6-09).
@@ -130,6 +130,7 @@ were read from page 3026:89 「26 10E AI Hair Color v2」 (`extracted/hair-color
 - Q-13 The CMS type name and fields are to be confirmed (Draft / TBD Q4; fallback PhDM_AIHairColor_CustomStyle). R-024, TC-084.
 - Q-14 Android system Back on the Custom panel, the face warning and during generation is not specified. Assumption: rows record it. R-073, R-074, R-077.
 - Q-15 No Design file was supplied; every row is written from the PM page (PM-only) and the UI strings are the PM's. Rows change when the Design arrives.
+- Q-16 With a two-colour style and only a Highlight Color chosen, Generate stays disabled (REQ-003), but which message (if any) tells the user a Base Color is needed? The ruling does not say. Assumption: no message is required; the row records what shows. R-029, TC-027.
 
 ## Added 2026-11-12 — coverage passes and standing inputs
 
@@ -151,7 +152,7 @@ were read from page 3026:89 「26 10E AI Hair Color v2」 (`extracted/hair-color
 | Custom generation | TC-075 | TC-076 |
 
 ### Exit × stage
-| Stage | ⌄ collapse | Tap outside the panel | ✕ (bottom row) | System Back |
+| Stage | ⌄ collapse | Tap the photo (panel stays open, REQ-004) | ✕ (bottom row) | System Back |
 |---|---|---|---|---|
 | Panel open, no style | n/a (Q-5: collapse with nothing chosen is undecided) | n/a (Q-5) | n/a (hidden while the panel is open, D6-16) | TC-085 |
 | Panel ready | TC-038 | TC-039 | n/a (hidden while the panel is open, D6-16) | TC-085 |
@@ -191,7 +192,7 @@ were read from page 3026:89 「26 10E AI Hair Color v2」 (`extracted/hair-color
 | R-034 | Base Color wheel | TC-032 |
 | R-034 | Highlight Color wheel | TC-033 |
 | R-042 | ⌄ key | TC-038 |
-| R-042 | tap outside the panel | TC-039 |
+| R-042 | tap the photo above the panel (stays open, REQ-004) | TC-039 |
 | R-062 | Free user | TC-070 |
 | R-062 | subscriber, for contrast (R-063) | TC-071 |
 | R-063 | VIP user (Android's one paid mode, KP-012) | TC-071 |
@@ -250,3 +251,7 @@ were read from page 3026:89 「26 10E AI Hair Color v2」 (`extracted/hair-color
 | Ledger entry | Requirements |
 |---|---|
 | REQ-001 | analysis entry (this draft); no table requirement |
+| REQ-002 | Android table only: every requirement above is for Android; no iOS draft |
+| REQ-003 | R-029 (Base required, Highlight optional) → TC-026, TC-027 |
+| REQ-004 | R-042 (tapping the photo keeps the panel open) → TC-039 |
+| REQ-005 | run entry (filing decisions); no table requirement |
