@@ -55,6 +55,13 @@ adb serial HQ61563393, Android 12, 1080 × 2520; setup in README › Android pho
   base64url(link) + '/driveItem/children?select=name,size,file,@content.downloadUrl')` and `curl -L` the zip's
   short-lived `@content.downloadUrl` into `~/.casebook/android/apks/<build>/` (outside the repo; the URL carries a
   temporary token, never commit or paste it). Check the size against `size`, then the APK's MD5.
+- **PhotoDirector Free / Premium without a sign-in (user, 2026-11-09 / 11-12, KP-131, phd/swipe-collage REQ-010).**
+  A PHD Android run never stops for the user to sign in Premium, and a run plan never lists that as a user step. The
+  agent switches the tier itself: Launcher gear (top right, `topToolBarSettingBtn`) › About › tap repeatedly just
+  below 「‹」 until the debug dialog opens › 「Set to subscriber」 ON (Premium, paid user) or OFF (Free) › OK ›
+  relaunch. Check Mine: 「Hello VIP!」 = Premium, 「Upgrade to Premium!」 = Free (credits unchanged); screenshot it
+  and record the tier in the checkpoint. Free rows turn it OFF instead of signing out. Change no other option in that
+  dialog (KP-106).
 - **Debug info and session export (user, 2026-11-03, REQ-068).** AI Mini Drama has a Pink-like switch: on the 「Hi I'm
   your AI Drama Assistant」 page, keep tapping the top row with two fingers between Back and the credit icon until the
   toast 「Tap for debug info: ON」; the Create Your Drama page's top bar then turns yellow (like Stage). Tapping the top

@@ -1,0 +1,5 @@
+PhotoDirector Android 20.19.0 (90201900), Samsung Galaxy S23 / Android 16 — logcat excerpt, Swipe Collage.
+Image focus, 「Lock」 tapped twice, then a drag (11:42:22 – 11:43:57). Only the touches are logged; nothing about a lock.
+Times are the phone's (CST); repeated lines and UI-framework noise removed.
+
+2026-11-12 11:42:36.942 18191 18191 I GestureDetector: handleMessage TAP

@@ -1,0 +1,146 @@
+
+0 of 36 entries have a possible duplicate (overlap >= 34%, or a shared quoted label / rare phrase, marked !). Judge each one yourself — wording varies, so this ranks candidates, it does not decide.
+
+[Swipe-Collage-R1-02] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Template card thumbnails and the Template Preview stay blank, with no page dots
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-03] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Template opens with more empty frames than its photo count
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-06] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Selected photos are not marked in the photo picker grid
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-07] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Photo picker limit counts only the current page's frames and has no 20 cap
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-08] PHD-A 20.19.0 - [AIAgent][UX] Swipe_Collage: Canvas has a top bar and no ✕ / ✓ row, unlike the Design
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-09] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: 「Discard」 goes to the Template Page, not the Template Preview
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-11] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: System Back does not close the 「Discard changes?」 dialog
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-12] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Text and text bubble content cannot be typed or edited
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-13] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Frame tool bar has no Flip H, Flip V or Shadow, and the floating icons no Lock
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-14] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: A tap in image focus clears the selection instead of returning to frame focus
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-15] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Image tool bar labels are not the spec's Flip H / Flip V / Adjust / Enhance
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-16] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: No 「Long press & drag to swap」 hint while dragging a photo to swap
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-17] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Frame panel thumbnails carry no photo count
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-19] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: 「Lock」 on the image tool bar does nothing; the photo can still be moved
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-20] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: 「Removal」 on the image tool bar opens nothing
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-21] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Credit button reads 「--」 and opens nothing
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-24] PHD-A 20.19.0 - [AIAgent][UX] Swipe_Collage: Canvas sheets have only a round ✕, no ✓ or collapse ⌄ as the Design draws
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-25] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Background eyedropper pin cannot be moved, so no photo colour can be picked
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-26] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: System Back on the Custom color picker applies the colour instead of cancelling
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-29] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Sticker panel lacks the store, Favorites, AI Sticker, More tile and ✕ / ✓
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-30] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Text Bubble panel has no 「∅」 none item first and no ✕ / ✓ bar
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-31] PHD-A 20.19.0 - [AIAgent][UX] Swipe_Collage: Ratio sheet offers 7 fixed ratios, no Custom, Original, 2:3 or 3:2
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-32] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Ratio change resizes the canvas from its centre and squashes the frames
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-33] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Pages has no 「Page n / N」 or − / + stepper and selects no page on entry
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-34] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Pages has no ✓ or ✕; leaving keeps every page change without 「Discard changes?」
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-35] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Pages keeps ↶ and ↷ on screen and they undo page changes there
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-36] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Pages move button selects on a tap; dragging shows no enlarged page or hint
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-37] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Pages controls overlap from 5 pages; at 10 only the last ••• can be reached
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-38] PHD-A 20.19.0 - [AIAgent][UI] Swipe_Collage: Template cards read 「1 pages」 and Save & Share reads 「1 images」
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-39] PHD-A 20.19.0 - [AIAgent][UX] Swipe_Collage: Save & Share saves on opening, with no Save, counter or single-image save
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-40] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Exports are always 1080 x 1920 whatever the Image Quality setting
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-41] PHD-A 20.19.0 - [AIAgent][UX] Swipe_Collage: Save & Share row has no Twitter (X) or Line target
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-42] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Free user tapping a PRO template card gets the IAP page instead of the preview
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-43] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Background textures and Add Layer frames carry no PRO crown or NEW tag
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-44] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: Free user gets no IAP page at the 3rd export or any later one
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate
+
+[Swipe-Collage-R1-45] PHD-A 20.19.0 - [AIAgent] Swipe_Collage: No 「Continue editing?」 after the app is killed during editing; edits are lost
+      feature='Swipe_Collage'  searched 0 candidate(s)
+      no likely duplicate

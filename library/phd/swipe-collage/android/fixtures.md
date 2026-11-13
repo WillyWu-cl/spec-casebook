@@ -6,7 +6,7 @@ a new row that needs a new photo or account state adds it here in the same draft
 ## Phone, app and account
 - Phone: Samsung Galaxy S23 (SM-S9110, adb serial RFCW2198L7B, Android 16, 1080 × 2340), on USB, Stay awake on, no
   PIN. Always pass the serial; run device and adb commands with `MSYS_NO_PATHCONV=1` in Git Bash.
-- PhotoDirector for Android 20.19.0, versionCode **90201900**, fresh install by the user on 2026-11-12 10:28 (replaced
+- PhotoDirector for Android 20.19.0, versionCode **90201900** = TR261111-0042 build 20.19.0.v202611111946 (BuildNo 202611111946, user 2026-11-12), fresh install by the user on 2026-11-12 10:28 (replaced
   90201901, which had been updated over the 2026-11-02 install), or the TR's build; the Launcher shows the Test Server
   labels.
 - Entry on 20.19.0: Launcher tool grid, page 2 › 「Collage」 › banner 「Try Scrollable Collage!」 (「NEW」, 「›」) above
@@ -16,7 +16,7 @@ a new row that needs a new photo or account state adds it here in the same draft
 - Template thumbnails and Template Preview images are blank on 90201900 (TC-011, TC-021): pick templates by their
   label (「n photos · n pages」) and category, not by picture.
 - Accounts (the user signs in; the agent never types a password):
-  - **Premium** (PhotoDirector Premium) for R1-a – R1-f: TC-064 – TC-068, TC-172, TC-136, TC-179, TC-147, TC-153 need
+  - **Premium** (PhotoDirector Premium) for R1-a – R1-f, set by the agent (user, 2026-11-12, REQ-010): Settings › About › tap the backdoor below 「<」 repeatedly › 「Set to subscriber」 ON (no sign-in, no subscription): TC-064 – TC-068, TC-172, TC-136, TC-179, TC-147, TC-153 need
     it; the other rows there run on any account. On 2026-11-12 (probe) the phone was **signed out**, 1723 credits; after the
     reinstall (R1-a, 10:30–10:47) still **Free / signed out**, Mine 「Upgrade to Premium!」, credits 0 then 300
     (monthly giveaway). Premium is still needed before R1-c.

@@ -1,0 +1,86 @@
+Filing as Creator: WILLY_WU
+  Creator verified — last filed PHA262026P0070 on 2026-11-11
+Format check: PHD-A 20.19.0
+
+36 bug(s) checked — 0 error(s), 0 warning(s)
+Format OK — clear to file.
+
+[Swipe-Collage-R1-02] created PHA262026P0071
+  PHA262026P0071  sev 2  RD  NewCreated  build 202611111946  by WILLY_WU
+[Swipe-Collage-R1-03] created PHA262026P0072
+[Swipe-Collage-R1-06] created PHA262026P0073
+[Swipe-Collage-R1-07] created PHA262026P0074
+[Swipe-Collage-R1-08] created PHA262026P0075
+[Swipe-Collage-R1-09] created PHA262026P0076
+[Swipe-Collage-R1-11] created PHA262026P0077
+[Swipe-Collage-R1-12] created PHA262026P0078
+[Swipe-Collage-R1-13] created PHA262026P0079
+[Swipe-Collage-R1-14] created PHA262026P0080
+[Swipe-Collage-R1-15] created PHA262026P0081
+[Swipe-Collage-R1-16] created PHA262026P0082
+[Swipe-Collage-R1-17] created PHA262026P0083
+[Swipe-Collage-R1-19] created PHA262026P0084
+[Swipe-Collage-R1-20] created PHA262026P0085
+[Swipe-Collage-R1-21] created PHA262026P0086
+[Swipe-Collage-R1-24] created PHA262026P0087
+[Swipe-Collage-R1-25] created PHA262026P0088
+[Swipe-Collage-R1-26] created PHA262026P0089
+[Swipe-Collage-R1-29] created PHA262026P0090
+[Swipe-Collage-R1-30] created PHA262026P0091
+[Swipe-Collage-R1-31] created PHA262026P0092
+[Swipe-Collage-R1-32] created PHA262026P0093
+[Swipe-Collage-R1-33] created PHA262026P0094
+[Swipe-Collage-R1-34] created PHA262026P0095
+[Swipe-Collage-R1-35] created PHA262026P0096
+[Swipe-Collage-R1-36] created PHA262026P0097
+[Swipe-Collage-R1-37] created PHA262026P0098
+[Swipe-Collage-R1-38] created PHA262026P0099
+[Swipe-Collage-R1-39] created PHA262026P0100
+[Swipe-Collage-R1-40] created PHA262026P0101
+[Swipe-Collage-R1-41] created PHA262026P0102
+[Swipe-Collage-R1-42] created PHA262026P0103
+[Swipe-Collage-R1-43] created PHA262026P0104
+[Swipe-Collage-R1-44] created PHA262026P0105
+[Swipe-Collage-R1-45] created PHA262026P0106
+
+created 36 · skipped 0 · failed 0
+
+Read-back (Status: OK is not proof — Version has been seen not to persist):
+  PHA262026P0071  sev 2  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0072  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0073  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0074  sev 2  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0075  sev 3  PM  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0076  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0077  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0078  sev 2  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0079  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0080  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0081  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0082  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0083  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0084  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0085  sev 2  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0086  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0087  sev 3  PM  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0088  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0089  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0090  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0091  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0092  sev 3  PM  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0093  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0094  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0095  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0096  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0097  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0098  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0099  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0100  sev 3  PM  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0101  sev 3  PM  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0102  sev 3  PM  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0103  sev 2  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0104  sev 3  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0105  sev 2  RD  NewCreated  build 202611111946  by WILLY_WU
+  PHA262026P0106  sev 2  RD  NewCreated  build 202611111946  by WILLY_WU
+
+Attachments are NOT part of create — upload them with `ecl_if3.py upload <BugCode> <files…>` (SKILL.md → IF3 attachments over the API).

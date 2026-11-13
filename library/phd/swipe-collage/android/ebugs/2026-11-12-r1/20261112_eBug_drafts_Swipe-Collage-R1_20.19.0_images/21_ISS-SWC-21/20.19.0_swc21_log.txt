@@ -1,0 +1,8 @@
+PhotoDirector Android 20.19.0 (90201900), Samsung Galaxy S23 / Android 16 — logcat excerpt, Swipe Collage.
+Premium, AI Enhance Advanced run from Swipe Collage (11:51:47 – 11:53:42): the balance the app reads (getMemberCreditRemain) while the button shows 「--」.
+Times are the phone's (CST); repeated lines and UI-framework noise removed.
+
+2026-11-12 11:51:54.669 18191 18191 D AIEnhanceViewModel: [advancedActionId] scenario: GENERAL, featureId: PhotoEnhanceV2, actionId: genimage_1_img_openai_gptimage2.5sunburst
+2026-11-12 11:52:44.148 18191 18846 D a       : getMemberCreditRemain, gGetMemberRemainResponse: GGetMemberRemainResponse(totalRemain=2300, data=[BonusItem(remainCredit=300, category=give_away, eventId=giveaway_monthly, sid=742f07f7, activeDate=2026-11-12T00:0
+2026-11-12 11:52:44.356 18191 18846 D a       : creditSystemFeatureList: [FeatureCreditInfo(featureID=AIAnime, actionID=gen_1_img, credit=2, minUnit=1), FeatureCreditInfo(featureID=AIArtisticAva, actionID=gen_1_img, credit=2, minUnit=1), FeatureCreditInfo(feat
+2026-11-12 11:52:45.240 18191 18846 D AIEnhanceAdvancedActionUseCase: [applyEffect] payload: {"effect":"ImageToImageProcess","style_id":"Style_003_Custom_AIImageEnhancement_gpt-image-2.5-sunburst","batch_size":1,"params":{"source_images":["s3:@ap-northeast-1:/

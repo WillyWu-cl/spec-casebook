@@ -1,0 +1,14 @@
+Dedupe — Swipe Collage Android, run 2026-11-12-r1 (phase R1), PhotoDirector 20.19.0 (90201900). Read-only; Android pool
+only (product "PhotoDirector Mobile for Android"; dedupe per OS, user 2026-10-28). 2026-11-12.
+
+1. ecl_query.py dedupe upload/bodies.json --product "PhotoDirector Mobile for Android" --limit 600 (PYTHONUTF8=1)
+   → 0 of 48 entries have a possible duplicate (feature 'Swipe_Collage': 0 candidates; raw output in dedupe-raw.txt).
+2. Text searches in the same pool (ecl_query.py bugs --text …): "Scrollable Collage", "Swipe Collage", "Swipe_Collage",
+   "CollageStudio" → 0 bugs. "Collage" → 36 tickets, all on the classic Collage room (no Swipe / Scrollable Collage
+   ticket). Closest: PHA232023-0346 (18.8.0, NewCreated, RD) "Quality of saved collage image is not sync to settings"
+   — classic Collage, not this feature; related to ISS-SWC-40 (export size ignores Image Quality), not a duplicate.
+3. No earlier eBug batch exists for this feature.
+
+Same-OS matches left off the drafts: none. Every entry stays a new card.
+verify_ebug_drafts.py not used for the gate (it hung waiting on exploration-batch input, as noted for Batch Editing R2);
+check_ebug_format.py (0 errors, 2 warnings: entries 46 / 47 start with a setup step before Launch) is the gate, check.txt.

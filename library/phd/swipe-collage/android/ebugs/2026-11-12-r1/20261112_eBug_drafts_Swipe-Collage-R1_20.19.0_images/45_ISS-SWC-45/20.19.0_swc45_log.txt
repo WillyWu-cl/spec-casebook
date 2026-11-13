@@ -1,0 +1,7 @@
+PhotoDirector Android 20.19.0 (90201900), Samsung Galaxy S23 / Android 16 — logcat excerpt, Swipe Collage.
+Free; force-stop at 16:15:40 on an edited Swipe Collage canvas, relaunch, Collage room, Template Page (16:15:30 – 16:17:30): the launch goes straight on (deepLink is null) with no restore or draft line.
+Times are the phone's (CST); repeated lines and UI-framework noise removed.
+
+2026-11-12 16:15:42.553 28676 28676 D SplashActivity: onAcceptGDPR
+2026-11-12 16:15:42.553 28676 28676 D SplashActivity: processNextTask, deepLink is null
+2026-11-12 16:15:42.670 28676 28676 D SplashActivity: getDynamicLink:onSuccess, versionCode = 90201900

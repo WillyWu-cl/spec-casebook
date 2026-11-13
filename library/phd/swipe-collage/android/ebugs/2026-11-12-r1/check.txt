@@ -1,0 +1,5 @@
+⚠ WARN  Swipe-Collage-R1-46  Repro Steps do not start with '1. Launch the APP'
+⚠ WARN  Swipe-Collage-R1-47  Repro Steps do not start with '1. Launch the APP'
+
+48 bug(s) checked — 0 error(s), 2 warning(s)
+Format OK — clear to file.

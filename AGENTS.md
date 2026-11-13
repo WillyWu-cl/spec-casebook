@@ -273,6 +273,9 @@ lines; put the full rule in the skill or reference file that applies it and poin
   sign-in stays the user's when the agent cannot log in (the agent never types passwords); where a phone signs in with
   its Google account button and no password (the SM-A5360, `fixtures.md`), the agent does it. Every permission the app
   asks for (notifications, photos, microphone…) is allowed (user, 2026-11-04).
+- **PHD Premium by the backdoor (user, 2026-11-12).** A PhotoDirector Android run never waits for a Premium sign-in:
+  the agent turns 「Set to subscriber」 on (Premium) or off (Free) in Settings › About's debug dialog itself
+  (`run-android.md`, KP-131).
 - **Chat waits go to the bottom (user, 2026-11-06, REQ-107).** The AI Mini Drama chat pins the sent message to the
   top (R-250), so a wait or check for a new card taps ↓ first (`waitfor … --bottom`, `expect … --bottom`, `bottom`),
   except in the rows that test the scrolling itself (`run-android.md`).

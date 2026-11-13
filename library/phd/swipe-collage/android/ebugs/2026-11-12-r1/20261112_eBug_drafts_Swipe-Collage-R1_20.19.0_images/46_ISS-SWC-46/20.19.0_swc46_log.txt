@@ -1,0 +1,12 @@
+PhotoDirector Android 20.19.0 (90201900), Samsung Galaxy S23 / Android 16 — logcat excerpt, Swipe Collage.
+Free, first Swipe Collage visit after `pm clear` (16:04:00 – 16:06:10): categories and templates download, 「Use Template」 opens a blank page; no error is logged.
+Times are the phone's (CST); repeated lines and UI-framework noise removed.
+
+2026-11-12 16:04:00.508 17325 17325 W View    : requestLayout() improperly called by androidx.recyclerview.widget.RecyclerView{4579b17 VFED..... ......ID 56,147-900,237 #7f090603 app:id/campaign_category_content} during layout: running second layout pass
+2026-11-12 16:04:46.311 17325 17325 D ExtraWebStoreHelper: [queryCollageCategory] start
+2026-11-12 16:04:46.396 17325 18612 D ExtraWebStoreHelper: [queryCollageCategory] response is null.
+2026-11-12 16:04:46.396 17325 18612 D CollageCategoryActivity: [queryCollage] CollageCategoryActivity.onDownloadCategoryComplete
+2026-11-12 16:04:46.396 17325 18612 D ExtraWebStoreHelper: [queryCollageTemplate] start id: -1
+2026-11-12 16:04:46.411 17325 18612 D ExtraWebStoreHelper: [queryCollageTemplate] response is null.
+2026-11-12 16:04:46.411 17325 18612 D CollageCategoryActivity: [queryCollage] CollageCategoryActivity.onDownloadContentComplete
+2026-11-12 16:05:47.437 17325 18598 D [CLImageCodec]: GetMetadata: (/storage/emulated/0/Download/00PDR-A/PNG-3.png)

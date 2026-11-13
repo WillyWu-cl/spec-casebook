@@ -1,0 +1,10 @@
+PhotoDirector Android 20.19.0 (90201900), Samsung Galaxy S23 / Android 16 — logcat excerpt, Swipe Collage.
+Free, 7 exports from Swipe Collage (16:06:00 – 16:09:40): only CollageStudioActivity, the library picker and a Back are logged; no IAP or subscription activity.
+Times are the phone's (CST); repeated lines and UI-framework noise removed.
+
+2026-11-12 16:06:01.609 17325 17698 D SessionLifecycleService: Activity backgrounding at 710728334
+2026-11-12 16:06:01.612 17325 17325 I LibraryPickerActivity: onPause
+2026-11-12 16:06:01.626 17325 17698 D SessionLifecycleService: Activity foregrounding at 710728351.
+2026-11-12 16:06:02.106 17325 17325 I LibraryPickerActivity: onDestroy
+2026-11-12 16:07:43.614 17325 17325 D Activity: onKeyDown(KEYCODE_BACK), activity=com.cyberlink.photodirector.pages.collageStudio.CollageStudioActivity@5a5f2dc
+2026-11-12 16:08:52.729 17325 17325 I Dialog  : mIsDeviceDefault = false, mIsSamsungBasicInteraction = false, isMetaDataInActivity = false

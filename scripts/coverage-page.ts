@@ -144,7 +144,10 @@ const union = (box: number[], more: number[][]) => {
   const x0 = Math.min(box[0], ...more.map(r => r[0])), y0 = Math.min(box[1], ...more.map(r => r[1]));
   return [x0, y0, Math.max(box[0] + box[2], ...more.map(r => r[0] + r[2])) - x0, Math.max(box[1] + box[3], ...more.map(r => r[1] + r[3])) - y0];
 };
-const regionsByPdf = existsSync(join(ex, 'boards.json')) ? JSON.parse(readFileSync(join(ex, 'boards.json'), 'utf8')) as Record<string, { id: string; title: string; region: number[] }[]> : {};
+// boards.json is { "<pdf>": [boards] } or { "<pdf>": { page_size, note, boards: [boards] } } (Swipe Collage, Batch Editing)
+const regionsByPdf: Record<string, { id: string; title: string; region: number[] }[]> = Object.fromEntries(
+  Object.entries<any>(existsSync(join(ex, 'boards.json')) ? JSON.parse(readFileSync(join(ex, 'boards.json'), 'utf8')) : {})
+    .map(([pdf, v]) => [pdf, Array.isArray(v) ? v : Array.isArray(v?.boards) ? v.boards : []]));
 // The PM and MX Figma reads cut a large section into tiles (board id "<node>/<tile>", e.g. pm-main-flow-11 … -34) to
 // stay in the Figma quota. The page joins them back: every tile inside one spec region (boards.json) becomes that
 // region's board, so a section shows whole, with its title and notes, instead of a slice cut through text.

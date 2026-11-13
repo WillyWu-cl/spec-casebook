@@ -1,0 +1,10 @@
+{
+  "TC-014": {
+    "label": "Test Server content: no template tagged NEW",
+    "note": "no Swipe Collage card in Year End, Daily or Travel carries a NEW tag; whether the CMS tags any cannot be checked from the phone"
+  },
+  "TC-132": {
+    "group": "upstream",
+    "note": "Pages has no ✕ and no 「Discard changes?」 dialog (TC-131), so 「Keep」 cannot be tested"
+  }
+}
